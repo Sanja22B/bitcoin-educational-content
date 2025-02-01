@@ -13,8 +13,9 @@ links:
     - vi: https://github.com/DecouvreBitcoin/sovereign-university-data/blob/dev/resources/bet/bip39-wordlist/assets
     - fi: https://github.com/DecouvreBitcoin/sovereign-university-data/blob/dev/resources/bet/bip39-wordlist/assets
 tags:
-  - bitcoin
-  - technology
+  - keys
+  - backup
+  - good-practice
 contributors:
   - pretty-private
 # Proofreading metadata
