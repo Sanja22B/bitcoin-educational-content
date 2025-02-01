@@ -80,3 +80,6 @@ proofreading:
     urgency: 1
     contributors_id:
     reward: 2582
+tags:
+  - wallets
+  - lightning

@@ -68,3 +68,7 @@ proofreading:
     urgency: 1
     contributors_id:
     reward: 2975
+tags:
+  - deep-dive
+  - technical-analysis
+  - development

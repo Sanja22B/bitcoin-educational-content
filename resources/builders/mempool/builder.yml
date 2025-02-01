@@ -82,3 +82,7 @@ proofreading:
     urgency: 1
     contributors_id:
     reward: 2570
+tags:
+  - software
+  - node
+  - onchain

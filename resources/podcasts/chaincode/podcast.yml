@@ -9,3 +9,7 @@ description: |
   The Chaincode Podcast brings you interviews with the most influential Bitcoin engineers about Bitcoin protocol development.
 contributors:
   - rabbit-hole
+tags:
+  - development
+  - protocols
+  - technical-analysis

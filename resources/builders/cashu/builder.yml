@@ -81,3 +81,7 @@ proofreading:
     urgency: 1
     contributors_id:
     reward: 2588
+tags:
+  - offchain
+  - protocols
+  - privacy

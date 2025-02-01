@@ -80,3 +80,7 @@ proofreading:
     urgency: 1
     contributors_id:
     reward: 2520
+tags:
+  - lightning
+  - offchain
+  - software

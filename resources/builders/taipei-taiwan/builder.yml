@@ -84,3 +84,7 @@ proofreading:
     urgency: 1
     contributors_id:
     reward: 2604
+tags:
+  - offchain
+  - privacy
+  - network-security
