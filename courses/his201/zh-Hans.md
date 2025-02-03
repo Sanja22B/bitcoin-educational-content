@@ -1236,13 +1236,6 @@ Satoshi将网站、论坛和wiki的控制权转移给了Martti，Martti已经在
 > S代表什么？"
 
 
-## 评价 & 评分
-<chapterId>73825805-29e2-54bf-a8c3-62614b52fbef</chapterId>
-<isCourseReview>true</isCourseReview>
-
-## 期末考试
-<chapterId>39e43ec2-5b38-5174-882a-c1f7d284b9e6</chapterId>
-<isCourseExam>true</isCourseExam>
 
 ## 社区接管
 <chapterId>16c5e6d6-2412-48c6-9687-6af92cf0d89a</chapterId>
@@ -1362,10 +1355,11 @@ jimbobway在论坛上发布的与美元等值那天的照片（来源：[Bitcoin
 # 总结
 <partId>89532d9b-af1f-49f3-b87a-b11987e303d5</partId>
 ## 评价 & 评分
-<chapterId>8f27cc89-8759-4a4f-aff2-c1d3d9ecf14e</chapterId>
+<chapterId>73825805-29e2-54bf-a8c3-62614b52fbef</chapterId>
 <isCourseReview>true</isCourseReview>
+
 ## 期末考试
-<chapterId>d61dbdf3-b482-412b-b725-0a19006603b7</chapterId>
+<chapterId>39e43ec2-5b38-5174-882a-c1f7d284b9e6</chapterId>
 <isCourseExam>true</isCourseExam>
 ## 总结
 <chapterId>9c501c44-0f1a-449e-8ab3-a5873abe4db6</chapterId>

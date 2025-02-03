@@ -1289,15 +1289,6 @@ See müstiline aspekt Bitcoini looja ümber võeti hästi kokku Hal Finney poolt
 >
 > Mida tähendab S?"
 
-## Hinnangud & Reitingud
-
-<chapterId>73825805-29e2-54bf-a8c3-62614b52fbef</chapterId>
-<isCourseReview>true</isCourseReview>
-
-## Lõpueksam
-
-<chapterId>39e43ec2-5b38-5174-882a-c1f7d284b9e6</chapterId>
-<isCourseExam>true</isCourseExam>
 
 ## Kogukonna ülevõtmine
 
@@ -1416,16 +1407,16 @@ Neljandaks oli Bitcoin altruistlik loomine. Satoshi Nakamoto pakkus Bitcoini maa
 # Kokkuvõte
 
 <partId>89532d9b-af1f-49f3-b87a-b11987e303d5</partId>
+## Hinnangud & Reitingud
 
-## Hinda seda kursust
-
-<chapterId>8f27cc89-8759-4a4f-aff2-c1d3d9ecf14e</chapterId>
+<chapterId>73825805-29e2-54bf-a8c3-62614b52fbef</chapterId>
 <isCourseReview>true</isCourseReview>
 
 ## Lõpueksam
 
-<chapterId>d61dbdf3-b482-412b-b725-0a19006603b7</chapterId>
+<chapterId>39e43ec2-5b38-5174-882a-c1f7d284b9e6</chapterId>
 <isCourseExam>true</isCourseExam>
+
 
 ## Kokkuvõte
 

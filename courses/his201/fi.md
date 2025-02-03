@@ -1302,15 +1302,6 @@ Tämä mystinen näkökulma Bitcoinin luojasta tiivistettiin hyvin Hal Finneyn t
 >
 > Mitä S tarkoittaa?"
 
-## Arviot & Arvosanat
-
-<chapterId>73825805-29e2-54bf-a8c3-62614b52fbef</chapterId>
-<isCourseReview>true</isCourseReview>
-
-## Loppukoe
-
-<chapterId>39e43ec2-5b38-5174-882a-c1f7d284b9e6</chapterId>
-<isCourseExam>true</isCourseExam>
 
 ## Yhteisön ottaminen haltuun
 
@@ -1431,14 +1422,14 @@ Vuonna 2011 Satoshi katosi, mutta Bitcoin selvisi. Kryptovaluutta otti lopullise
 
 <partId>89532d9b-af1f-49f3-b87a-b11987e303d5</partId>
 
-## Arvioi tämä kurssi
+## Arviot & Arvosanat
 
-<chapterId>8f27cc89-8759-4a4f-aff2-c1d3d9ecf14e</chapterId>
+<chapterId>73825805-29e2-54bf-a8c3-62614b52fbef</chapterId>
 <isCourseReview>true</isCourseReview>
 
 ## Loppukoe
 
-<chapterId>d61dbdf3-b482-412b-b725-0a19006603b7</chapterId>
+<chapterId>39e43ec2-5b38-5174-882a-c1f7d284b9e6</chapterId>
 <isCourseExam>true</isCourseExam>
 
 ## Yhteenveto

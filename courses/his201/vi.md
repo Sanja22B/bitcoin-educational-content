@@ -1242,13 +1242,6 @@ Khía cạnh bí ẩn xung quanh người tạo ra Bitcoin đã được Hal Fin
 >
 > Chữ S đại diện cho cái gì?"
 
-## Nhận xét & Đánh giá
-<chapterId>73825805-29e2-54bf-a8c3-62614b52fbef</chapterId>
-<isCourseReview>true</isCourseReview>
-
-## Kỳ Thi Cuối Kỳ
-<chapterId>39e43ec2-5b38-5174-882a-c1f7d284b9e6</chapterId>
-<isCourseExam>true</isCourseExam>
 
 ## Cộng Đồng Tiếp Quản
 <chapterId>16c5e6d6-2412-48c6-9687-6af92cf0d89a</chapterId>
@@ -1369,10 +1362,11 @@ Vào năm 2011, Satoshi biến mất, nhưng Bitcoin vẫn tồn tại. Đồng 
 # Kết luận
 <partId>89532d9b-af1f-49f3-b87a-b11987e303d5</partId>
 ## Nhận xét & Đánh giá
-<chapterId>8f27cc89-8759-4a4f-aff2-c1d3d9ecf14e</chapterId>
+<chapterId>73825805-29e2-54bf-a8c3-62614b52fbef</chapterId>
 <isCourseReview>true</isCourseReview>
-## Kỳ thi cuối khóa
-<chapterId>d61dbdf3-b482-412b-b725-0a19006603b7</chapterId>
+
+## Kỳ Thi Cuối Kỳ
+<chapterId>39e43ec2-5b38-5174-882a-c1f7d284b9e6</chapterId>
 <isCourseExam>true</isCourseExam>
 ## Kết luận
 <chapterId>9c501c44-0f1a-449e-8ab3-a5873abe4db6</chapterId>

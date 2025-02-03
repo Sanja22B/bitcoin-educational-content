@@ -1209,13 +1209,6 @@ Este aspecto misterioso em torno do criador do Bitcoin foi bem resumido por Hal 
 >
 > O que o S representa?"
 
-## Avaliações & Notas
-<chapterId>73825805-29e2-54bf-a8c3-62614b52fbef</chapterId>
-<isCourseReview>true</isCourseReview>
-
-## Exame Final
-<chapterId>39e43ec2-5b38-5174-882a-c1f7d284b9e6</chapterId>
-<isCourseExam>true</isCourseExam>
 
 ## A Comunidade Assumindo o Controle
 <chapterId>16c5e6d6-2412-48c6-9687-6af92cf0d89a</chapterId>
@@ -1333,10 +1326,11 @@ Em 2011, Satoshi desapareceu, mas o Bitcoin sobreviveu. A criptomoeda até decol
 # Conclusão
 <partId>89532d9b-af1f-49f3-b87a-b11987e303d5</partId>
 ## Avaliações & Notas
-<chapterId>8f27cc89-8759-4a4f-aff2-c1d3d9ecf14e</chapterId>
+<chapterId>73825805-29e2-54bf-a8c3-62614b52fbef</chapterId>
 <isCourseReview>true</isCourseReview>
-## Exame final
-<chapterId>d61dbdf3-b482-412b-b725-0a19006603b7</chapterId>
+
+## Exame Final
+<chapterId>39e43ec2-5b38-5174-882a-c1f7d284b9e6</chapterId>
 <isCourseExam>true</isCourseExam>
 ## Conclusão
 <chapterId>9c501c44-0f1a-449e-8ab3-a5873abe4db6</chapterId>

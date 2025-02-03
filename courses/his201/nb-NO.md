@@ -1289,15 +1289,6 @@ Dette mystiske aspektet rundt skaperen av Bitcoin ble godt oppsummert av Hal Fin
 >
 > Hva står S for?"
 
-## Vurderinger & Karakterer
-
-<chapterId>73825805-29e2-54bf-a8c3-62614b52fbef</chapterId>
-<isCourseReview>true</isCourseReview>
-
-## Avsluttende eksamen
-
-<chapterId>39e43ec2-5b38-5174-882a-c1f7d284b9e6</chapterId>
-<isCourseExam>true</isCourseExam>
 
 ## Fellesskapet tar over
 
@@ -1419,15 +1410,16 @@ I 2011 forsvant Satoshi, men Bitcoin overlevde. Kryptovalutaen tok definitivt av
 
 <partId>89532d9b-af1f-49f3-b87a-b11987e303d5</partId>
 
-## Evaluer dette kurset
+## Vurderinger & Karakterer
 
-<chapterId>8f27cc89-8759-4a4f-aff2-c1d3d9ecf14e</chapterId>
+<chapterId>73825805-29e2-54bf-a8c3-62614b52fbef</chapterId>
 <isCourseReview>true</isCourseReview>
 
 ## Avsluttende eksamen
 
-<chapterId>d61dbdf3-b482-412b-b725-0a19006603b7</chapterId>
+<chapterId>39e43ec2-5b38-5174-882a-c1f7d284b9e6</chapterId>
 <isCourseExam>true</isCourseExam>
+
 
 ## Konklusjon
 

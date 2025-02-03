@@ -1235,13 +1235,6 @@ Aspek misterius yang mengelilingi pencipta Bitcoin ini dirangkum dengan baik ole
 >
 > Apa arti huruf S itu?"
 
-## Ulasan & Penilaian
-<chapterId>73825805-29e2-54bf-a8c3-62614b52fbef</chapterId>
-<isCourseReview>true</isCourseReview>
-
-## Ujian Akhir
-<chapterId>39e43ec2-5b38-5174-882a-c1f7d284b9e6</chapterId>
-<isCourseExam>true</isCourseExam>
 
 ## Komunitas Mengambil Alih
 <chapterId>16c5e6d6-2412-48c6-9687-6af92cf0d89a</chapterId>
@@ -1361,10 +1354,11 @@ Pada tahun 2011, Satoshi menghilang, tetapi Bitcoin bertahan. Mata uang kripto b
 # Kesimpulan
 <partId>89532d9b-af1f-49f3-b87a-b11987e303d5</partId>
 ## Ulasan & Penilaian
-<chapterId>8f27cc89-8759-4a4f-aff2-c1d3d9ecf14e</chapterId>
+<chapterId>73825805-29e2-54bf-a8c3-62614b52fbef</chapterId>
 <isCourseReview>true</isCourseReview>
-## Ujian akhir
-<chapterId>d61dbdf3-b482-412b-b725-0a19006603b7</chapterId>
+
+## Ujian Akhir
+<chapterId>39e43ec2-5b38-5174-882a-c1f7d284b9e6</chapterId>
 <isCourseExam>true</isCourseExam>
 ## Kesimpulan
 <chapterId>9c501c44-0f1a-449e-8ab3-a5873abe4db6</chapterId>

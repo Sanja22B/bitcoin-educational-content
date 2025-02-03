@@ -1339,13 +1339,6 @@ This mysterious aspect surrounding the creator of Bitcoin was well summarized by
 > What does the S stand for?"
 
 
-## Reviews & Ratings
-<chapterId>73825805-29e2-54bf-a8c3-62614b52fbef</chapterId>
-<isCourseReview>true</isCourseReview>
-
-## Final Exam
-<chapterId>39e43ec2-5b38-5174-882a-c1f7d284b9e6</chapterId>
-<isCourseExam>true</isCourseExam>
 
 ## The Community Taking Over
 <chapterId>16c5e6d6-2412-48c6-9687-6af92cf0d89a</chapterId>
@@ -1409,7 +1402,7 @@ With the rise in value during the summer of 2011, Martti Malmi [sold](https://tw
 
 It's not just the technical side that is affected by the founder's departure and the need to cooperate: there's also the social aspect, which helps to strengthen the community by creating links between members. That's why meet-ups and conferences are organized "in real life". These events also have the advantage of introducing Bitcoin to people who might be more resistant to online content.
 
-The first Bitcoin user meet-ups were initiated by Bruce Wagner, the New York-based host of a [YouTube channel](https://www.youtube.com/@vlogwrap) featuring televised debates on technical subjects, where he created a show called the *Bitcoin Show* in April 2011. The very first meeting [took place](https://bitcointalk.org/index.php?topic=1891.msg29174#msg29174) in New York on December 11, 2010 (UTC). Subsequently, a meeting of the same type [occurred](https://web.archive.org/web/20110413231434/http://bitcoin.meetup.com/) in Washington D.C. A meetup was also [organized](https://bitcointalk.org/index.php?topic=2716.msg36886#msg36886) on February 5, 2011, in Zurich, Switzerland by Mike Hearn, with Christian Decker and Stefan Thomas (justmoon) joining.
+The first Bitcoin user meet-ups were initiated by Bruce Wagner, the New York-based host of a [YouTube channel](https://www.youtube.com/@vlogwrap) featuring televised debates on technical subjects, where he created a show called the *Bitcoin Show* in April 2011. The very first meeting[took place](https://bitcointalk.org/index.php?topic=1891.msg29174#msg29174) in New York on December 11, 2010 (UTC). Subsequently, a meeting of the same type [occurred](https://web.archive.org/web/20110413231434/http://bitcoin.meetup.com/) in Washington D.C. A meetup was also [organized](https://bitcointalk.org/index.php?topic=2716.msg36886#msg36886) on February 5, 2011, in Zurich, Switzerland by Mike Hearn, with Christian Decker and Stefan Thomas (justmoon) joining.
 February also marks the [first filmed presentation](https://www.youtube.com/watch?v=koIq58UoNfE) of Bitcoin, conducted by Gavin Andresen on the 8th during an event organized in his hometown of Amherst, Massachusetts. Titled "Making Money," the presentation by the new lead maintainer of the project includes numerous language elements that would characterize the way cryptocurrency is presented in the following years.
 
 ![Video (Youtube) of Gavin's speech at Amherst in February 2011](https://www.youtube.com/watch?v=koIq58UoNfE)
@@ -1480,12 +1473,15 @@ In 2011, Satoshi disappeared, but Bitcoin survived. The cryptocurrency even defi
 
 # Conclusion
 <partId>89532d9b-af1f-49f3-b87a-b11987e303d5</partId>
+
 ## Reviews & Ratings
-<chapterId>8f27cc89-8759-4a4f-aff2-c1d3d9ecf14e</chapterId>
+<chapterId>73825805-29e2-54bf-a8c3-62614b52fbef</chapterId>
 <isCourseReview>true</isCourseReview>
+
 ## Final Exam
-<chapterId>d61dbdf3-b482-412b-b725-0a19006603b7</chapterId>
+<chapterId>39e43ec2-5b38-5174-882a-c1f7d284b9e6</chapterId>
 <isCourseExam>true</isCourseExam>
+
 ## Conclusion
 <chapterId>9c501c44-0f1a-449e-8ab3-a5873abe4db6</chapterId>
 <isCourseConclusion>true</isCourseConclusion>
