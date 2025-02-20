@@ -31,6 +31,12 @@
       "code_translator": "ET"
     },
     {
+      "code": "fa",
+      "name": "Persian (farsi)",
+      "translator": "openai",
+      "code_translator": "fa"
+    },
+    {
       "code": "fi",
       "name": "Finnish",
       "translator": "deepl",
