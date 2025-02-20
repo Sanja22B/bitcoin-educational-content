@@ -49,6 +49,12 @@
       "code_translator": "FR"
     },
     {
+      "code": "ha",
+      "name": "Hausa",
+      "translator": "openai",
+      "code_translator": "ha"
+    },
+    {
       "code": "hi",
       "name": "Hindi",
       "translator": "google",
