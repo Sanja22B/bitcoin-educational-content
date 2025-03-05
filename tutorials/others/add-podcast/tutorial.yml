@@ -1,6 +1,11 @@
 id: 7d66c440-d5f6-4a1f-b3f0-14ca4664f1c4
 builder: Plan ₿ Network
 
+tags:
+  - guides
+  - use-case
+  - user-friendly
+
 category: contribution
 
 level: beginner
@@ -10,7 +15,7 @@ credits:
 
 # Proofreading metadata
 project_id: cd62a137-baad-4133-b90d-711963e510c7
-original_language: fr
+original_language: en
 proofreading:
   - language: cs
     last_contribution_date:
@@ -83,14 +88,8 @@ proofreading:
     urgency: 1
     contributors_id:
     reward: 1.97
-
-
   - language: nb-NO
     last_contribution_date:
     urgency: 1
     contributors_id:
     reward: 1.59
-tags:
-  - guides
-  - user-friendly
-  - easy-explain
