@@ -63,7 +63,6 @@ This lecture sets the stage for a deeper dive into Bitcoin's transformative pote
 
 ## Discovery Of Money
 <chapterId>a0332295-e5e3-4b98-b68c-2ab193e9d0c4</chapterId>
-
 <professorId>dac3b166-31ef-41f3-bfef-6e9d3855c12c</professorId>
 
 ![video replay](https://youtu.be/CnSwXsNO-kE)
@@ -154,7 +153,6 @@ In this chapter, we have explored the evolution of money, from its classical fun
 
 ## Corruption Of Money
 <chapterId>06c2ceba-5e5f-47d4-b8b5-fe5880309caa</chapterId>
-
 <professorId>dac3b166-31ef-41f3-bfef-6e9d3855c12c</professorId>
 
 ![video replay](https://youtu.be/EZEHfr_1-qA)
@@ -222,7 +220,6 @@ The corruption of money through inflation, seigniorage, and fractional reserve b
 
 ## Before Satoshi
 <chapterId>d63c2767-f695-42fd-b543-0a9570ac36ea</chapterId>
-
 <professorId>dac3b166-31ef-41f3-bfef-6e9d3855c12c</professorId>
 
 ![video replay](https://youtu.be/GhDAOEZn3s0)
@@ -287,7 +284,6 @@ Before Satoshi Nakamoto, technologies like cryptographic signatures, proof-of-wo
 
 ## After Satoshi
 <chapterId>2df55019-e885-40d3-8d68-f90cf8fb96f8</chapterId>
-
 <professorId>dac3b166-31ef-41f3-bfef-6e9d3855c12c</professorId>
 
 ![video replay](https://youtu.be/83k4E-NnCb4)
@@ -359,7 +355,6 @@ The period after Satoshi Nakamoto’s disappearance saw rapid developments in th
 
 ## Basic
 <chapterId>e05c3cb9-bb26-42d5-8869-09a1704f9494</chapterId>
-
 <professorId>e7e63d59-ea19-4960-9446-61bd4dcc98f0</professorId>
 
 ![video replay](https://youtu.be/bsBE-EweqT0)
@@ -432,7 +427,6 @@ This concludes the lecture on Bitcoin’s essential knowledge, key management, w
 
 ## Intermediate
 <chapterId>d7443eed-a7f6-49e7-a325-88b49301feb8</chapterId>
-
 <professorId>e7e63d59-ea19-4960-9446-61bd4dcc98f0</professorId>
 
 ![video replay](https://youtu.be/mnDRVQ8hcUU)
@@ -516,8 +510,6 @@ This session is designed to be both instructional and interactive, with ample op
 
 ## Bitcoin "Maximalism"
 <chapterId>20131449-8265-437c-96f1-68d53974f1cf</chapterId>
-
-
 <releasePlace>Lugano, Switzerland</releasePlace>
 <professorId>dac3b166-31ef-41f3-bfef-6e9d3855c12c</professorId>
 
@@ -571,7 +563,6 @@ Bitcoin Maximalism is based on the belief that Bitcoin, with its decentralized, 
 
 ## Bitcoin Criticisms
 <chapterId>d7b07f7e-c11a-4df0-95a2-b01a9af59203</chapterId>
-
 <professorId>dac3b166-31ef-41f3-bfef-6e9d3855c12c</professorId>
 
 ![video replay](https://youtu.be/TKW7GeJg4lY)
@@ -632,7 +623,6 @@ Bitcoin faces a broad range of criticism, but many of them are based on misunder
 
 ## Bitcoin Business Models
 <chapterId>d9cb5bb0-0dd0-46cf-87ba-f48be4cd6543</chapterId>
-
 <professorId>dac3b166-31ef-41f3-bfef-6e9d3855c12c</professorId>
 
 ![video replay](https://youtu.be/vCcnpe5FWNk)
@@ -686,7 +676,6 @@ As we move forward, it’s important for students to critically assess the use o
 
 ## Business Projects Assignment
 <chapterId>430067ff-f833-48bb-9598-b2b57a1e0e1b</chapterId>
-
 <professorId>dac3b166-31ef-41f3-bfef-6e9d3855c12c</professorId>
 
 ![video replay](https://youtu.be/8KmhuHqbreo)
@@ -708,7 +697,6 @@ These themes were part of the nominations for Biz School 2024, and while we enco
 
 ## Mining And Energy
 <chapterId>5249658c-4449-4e91-9d2f-7f64b75b1c6d</chapterId>
-
 <professorId>7f947a09-128b-43bb-8964-87d082955f9d</professorId>
 
 ![video replay](https://youtu.be/BDeWbWJp5Dw)
@@ -827,7 +815,6 @@ Bitcoin, as both a protocol and an asset, continues to evolve within the framewo
 
 ## Bitcoin Market Cycles
 <chapterId>76cfdee0-9968-48d0-9301-6fd6c33bc68a</chapterId>
-
 <professorId>72192d93-c570-4e0e-a3a4-5db6afde73ea</professorId>
 
 ![video replay](https://youtu.be/OD0__M63Ccw)
@@ -884,7 +871,6 @@ In summary, understanding Bitcoin's investment dynamics, market influences, and 
 
 ## Bitcoin Legal Frameworks
 <chapterId>8ff9c748-c12d-434d-99d8-c98715e9d160</chapterId>
-
 <professorId>3e7b3804-cd43-4a65-a280-b1030c023358</professorId>
 
 ![video replay](https://youtu.be/Bf05Nw89qtM)
@@ -951,7 +937,6 @@ The legal status of Bitcoin remains fluid, with evolving interpretations and reg
 
 ## Bitcoin Entrepreneurship
 <chapterId>8fac3c37-6215-40e0-9920-6698e0981898</chapterId>
-
 <professorId>2e1b5182-567e-453a-af29-36009340ff02</professorId>
 
 ![video replay](https://youtu.be/ePhqCCWfoGE)
@@ -1054,7 +1039,6 @@ Bitcoin entrepreneurship is about more than creating a profitable business; it's
 
 ## Cybersecurity And FLOSS Practices
 <chapterId>ef9b48f5-9609-4865-8669-723868c7006d</chapterId>
-
 <professorId>9599c4e8-91af-405d-9798-bb46357fc548</professorId>
 <professorId>d097844f-d3a8-4b8b-9fe9-7de4f70ad6b7</professorId>
 
