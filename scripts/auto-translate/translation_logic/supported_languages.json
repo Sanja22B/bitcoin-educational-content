@@ -118,9 +118,9 @@
     {
       "code": "sr",
       "name": "Serbian",
-      "translator": "openai",
-      "code_translator": "sr",
-      "custom_prompt": "Prevedi sledeći sadržaj o Bitcoinu ili o povezanim temamam na srpski koristeći latinicu. Nemojte koristiti ćirilicu."
+      "translator": "deepseek",
+      "code_translator": "SR",
+      "custom_prompt": "Translate in Serbian using only Latin characters."
     },
     {
       "code": "sv",
