@@ -15,7 +15,7 @@ The industry surrounding Bitcoin is booming.
 This is better that way 
 
 The technological and financial changes in this new world are only accelerating, and it's up to you to take advantage and start falling down the Bitcoin Rabbit Hole. This adventure will be rich in knowledge and will push you to question many of your beliefs. It will give you back freedom and allow you to regain privacy, sovereignty, and financial independence.
-
+news thing
 To help you start this adventure, I have created this free course. Only Bitcoin, no nonsense, no other cryptocurrencies, a straight-to-the-point course. This course has been designed to adapt to you and let you choose the path that suits you.
 
 +++
