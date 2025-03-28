@@ -37,6 +37,10 @@ In this course, we will discuss some monetary aspects of Bitcoin, including how 
 
 ![image](assets/en/01.webp)
 
+HERE IS TRADINGVIEW : 
+
+:::tradingview SYMBOL=BTCUSD WIDTH=800 HEIGHT=500:::
+
 It is essential to understand that Bitcoin is a new monetary system that completely changes our relationship with money, so learning how to use it is a necessary skill for anyone who wants to be in control of their own funds.
 
 **Section 1 - Money**
