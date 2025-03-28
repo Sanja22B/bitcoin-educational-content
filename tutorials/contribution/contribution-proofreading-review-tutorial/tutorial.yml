@@ -19,13 +19,24 @@ proofreading:
   - language: de
     last_contribution_date:
     urgency: 1
+<<<<<<< HEAD:tutorials/contribution/content-review-tutorial/tutorial.yml
     contributor_names:
     reward: 1.36
+=======
+    contributors_id:
+    reward: 0.94
+>>>>>>> 882941d61c (Updating_proofreading_tutorial (#1642)):tutorials/contribution/contribution-proofreading-review-tutorial/tutorial.yml
   - language: en
-    last_contribution_date:
+    last_contribution_date: 2025-03-13
     urgency: 1
+<<<<<<< HEAD:tutorials/contribution/content-review-tutorial/tutorial.yml
     contributor_names:
     reward: 1.36
+=======
+    contributors_id:
+          - MariJJhodl
+    reward: 0.94
+>>>>>>> 882941d61c (Updating_proofreading_tutorial (#1642)):tutorials/contribution/contribution-proofreading-review-tutorial/tutorial.yml
   - language: es
     last_contribution_date:
     urgency: 1
@@ -41,7 +52,7 @@ proofreading:
     urgency: 1
     contributor_names:
       - Asi0Flammeus
-    reward: 0.68
+    reward: 0.47
   - language: it
     last_contribution_date:
     urgency: 1
@@ -55,8 +66,13 @@ proofreading:
   - language: pt
     last_contribution_date:
     urgency: 1
+<<<<<<< HEAD:tutorials/contribution/content-review-tutorial/tutorial.yml
     contributor_names:
     reward: 1.36
+=======
+    contributors_id:
+    reward: 0.94
+>>>>>>> 882941d61c (Updating_proofreading_tutorial (#1642)):tutorials/contribution/contribution-proofreading-review-tutorial/tutorial.yml
   - language: ru
     last_contribution_date:
     urgency: 1
