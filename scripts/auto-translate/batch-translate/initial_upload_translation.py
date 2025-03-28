@@ -12,13 +12,14 @@ ROOT_DIR = os.path.abspath(os.path.join(SCRIPT_DIR, '..', '..', '..'))
 
 def load_supported_languages() -> Dict:
     lang_file_path = os.path.join(SCRIPT_DIR, '..', 'translation_logic', 'supported_languages.json')
+
     try:
         with open(lang_file_path, 'r', encoding='utf-8') as f:
             return json.load(f)
     except Exception as e:
         print(f"Error loading supported languages: {e}")
         sys.exit(1)
-
+ 
 def display_current_languages(languages: List[Dict]) -> None:
     print("\n=== Current Supported Languages ===")
     print(f"Total languages: {len(languages)}\n")
@@ -26,7 +27,7 @@ def display_current_languages(languages: List[Dict]) -> None:
     for idx, lang in enumerate(sorted(languages, key=lambda x: x['code'].lower()), 1):
         print(f"{idx}. {lang['name']} ({lang['code']:<8}) - {lang['translator']}")
     print()
-
+ 
 def get_input(prompt: str) -> str:
     try:
         readline.parse_and_bind('set editing-mode emacs')
@@ -34,7 +35,7 @@ def get_input(prompt: str) -> str:
     except EOFError:
         print("\nInput cancelled")
         sys.exit(1)
-
+ 
 def get_target_language(supported_langs: Dict) -> str:
     display_current_languages(supported_langs['languages'])
     
@@ -46,13 +47,14 @@ def get_target_language(supported_langs: Dict) -> str:
             print("Invalid choice. Please try again.")
         except ValueError:
             print("Please enter a valid number.")
-
+ 
 def translate_file(input_file: str, target_lang: str) -> None:
     try:
         # Just use relative path to translation_controller from current script
         translation_controller = "../translation_controller.py"
         adjusted_input_file = "../../../" + input_file
         command = ["python3", translation_controller, adjusted_input_file, target_lang]
+
         subprocess.run(command, check=True)
         print(f"Translated {input_file} to {target_lang}")
     except subprocess.CalledProcessError as e:
@@ -98,7 +100,7 @@ def find_english_files(base_directories: List[str], target_lang: str) -> List[st
                         english_files.append(relative_path)
     
     return sorted(english_files)
-
+ 
 def main():
     # Paths relative to root directory
     base_directories = [
@@ -155,7 +157,7 @@ def main():
     print(f"\nTranslation completed!")
     print(f"Successfully translated: {success_count} files")
     print(f"Failed translations: {error_count} files")
-
+ 
 if __name__ == "__main__":
     main()
 
