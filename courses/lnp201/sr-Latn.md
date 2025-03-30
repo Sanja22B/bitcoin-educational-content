@@ -1,5 +1,5 @@
 ---
-name: Teorijsko Uvodjenje u Lightning Network
+Naziv: Teorijsko Uvodjenje u Lightning Network
 goal: Otkrijte Lightning Network iz tehničke perspektive
 objectives: 
 
