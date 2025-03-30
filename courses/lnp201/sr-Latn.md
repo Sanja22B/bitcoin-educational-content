@@ -1,16 +1,16 @@
 ---
-Naziv: Teorijsko Uvodjenje u Lightning Network
-goal: Otkrijte Lightning Network iz tehničke perspektive
-objectives: 
+Naziv: Teorijsko Uvodjenje u Lightning Mrežu
+Svrha: Otkrijte Lightning Mrežu iz tehničke perspektive
+Ciljevi: 
 
-  - Razumeti rad kanala mreže.
+  - Razumeti rad kanala unutar mreže.
   - Upoznajte se sa terminima HTLC, LNURL i UTXO.
-  - Asimilirati upravljanje likvidnošću i naknade LNN-a.
+  - Usvojiti znanje o upravljanju likvidnošću i naknadama LNN-a.
   - Prepoznaj Lightning Network kao mrežu.
   - Razumeti teorijske upotrebe Lightning Network.
 
 ---
-# Putovanje do Bitcoin-ove druge Layer
+# Putovanje do drugog nivoa Bitkojna
 
 Zaronite u srž Lightning Network, esencijalnog sistema za budućnost Bitcoin transakcija. LNP201 je teorijski kurs o tehničkom funkcionisanju Lightning-a. Otkriva osnove i mehanizme ove druge Layer mreže, dizajnirane da učini Bitcoin plaćanja brzim, ekonomičnim i skalabilnim.
 
