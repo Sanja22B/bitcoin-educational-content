@@ -294,43 +294,43 @@ Međutim, ovaj sistem ima potencijalnu manu, koju ćemo adresirati u narednom po
 
 ![video en](https://youtu.be/veCs39uVFUk)
 
-U ovom poglavlju, detaljnije ćemo istražiti kako transakcije funkcionišu na Lightning Network tako što ćemo diskutovati o mehanizmima koji su postavljeni da zaštite od varanja, osiguravajući da svaka strana poštuje pravila unutar kanala.
+U ovom poglavlju, detaljnije ćemo istražiti kako transakcije funkcionišu na Lajtning mreži tako što ćemo diskutovati o mehanizmima koji su postavljeni da se zaštite od varanja, osiguravajući da svaka strana poštuje pravila unutar kanala.
 
-### Podsetnik: Commitment Transakcije
+### Podsetnik: Obavezujuće Transakcije
 
-Kao što je ranije viđeno, transakcije na Lightning mreži se oslanjaju na neobjavljene **Commitment transakcije**. Ove transakcije odražavaju trenutnu raspodelu sredstava u kanalu. Kada se izvrši nova Lightning transakcija, kreira se novi Commitment Transaction i potpisuje od strane obe strane kako bi se odrazilo novo stanje kanala.
+Kao što je ranije viđeno, transakcije na Lajtning mreži se oslanjaju na neobjavljene **Obavezujuće transakcije**. Ove transakcije odražavaju trenutnu raspodelu sredstava u kanalu. Kada se izvrši nova Lajtning transakcija, kreira se nova Obavezujuća transakcija i potpisuje se od strane obe strane kako bi se odrazilo novo stanje kanala.
 
 Hajde da uzmemo jednostavan primer:
 
 
-- Početno stanje**: Alice ima **100.000 satoshija**, Bob **30.000 satoshija**.
-- Nakon transakcije u kojoj Alice šalje **40.000 satoshija** Bobu, novi Commitment Transaction raspoređuje sredstva na sledeći način:
-  - Alice: **60,000 satoshija**
-  - Bob: **70,000 satoshija**
+- **Početno stanje**: Alisa ima **100.000 satošija**, Bob **30.000 satošija**.
+- Nakon transakcije u kojoj Alisa šalje **40.000 satošija** Bobu, nova Obavezujuća transakcija raspoređuje sredstva na sledeći način:
+  - Alice: **60,000 satošija**
+  - Bob: **70,000 satošija**
 
 ![LNP201](assets/en/22.webp)
 
-U bilo kom trenutku, obe strane mogu objaviti **najnoviji Commitment Transaction** potpisan za zatvaranje kanala i povrat svojih sredstava.
+U bilo kom trenutku, obe strane mogu objaviti potpisanu **najnoviju Obavezujuću transakciju** kako bi zatvorili kanal i povratili svoja sredstava.
 
-### Greška: Varanje objavljivanjem stare transakcije
+### Mana: Varanje objavljivanjem stare transakcije
 
-Potencijalni problem nastaje ako jedna od strana odluči da **prevari** objavljivanjem starog Commitment Transaction. Na primer, Alisa bi mogla da objavi stariji Commitment Transaction gde je imala **100.000 satoshija**, iako sada u stvarnosti ima samo **60.000**. Ovo bi joj omogućilo da ukrade **40.000 satoshija** od Boba.
+Potencijalni problem nastaje ako jedna od strana odluči da **prevari** objavljivanjem stare Obavezujuće transakcije. Na primer, Alisa bi mogla da objavi stariju Obavezujuću transakciju gde je imala **100.000 satošija**, iako sada u stvarnosti ima samo **60.000**. Ovo bi joj omogućilo da ukrade **40.000 satošija** od Boba.
 
 ![LNP201](assets/en/23.webp)
 
-Još gore, Alice bi mogla objaviti prvu transakciju povlačenja, onu pre nego što je kanal otvoren, gde je imala **130,000 satoshija**, i tako ukrasti celokupna sredstva kanala.
+Još gore, Alisa bi mogla objaviti prvu transakciju povlačenja, onu pre nego što je kanal otvoren, gde je imala **130,000 satošija**, i tako ukrasti celokupna sredstva kanala.
 
 ![LNP201](assets/en/24.webp)
 
-### Rešenje: Ključ za opoziv i vremenska brava
+### Rešenje: Ključ za opoziv i vremenska zabrana trošenja
 
-Da bi se sprečila ovakva vrsta varanja od strane Alice, na Lightning Network, **sigurnosni mehanizmi** su dodati transakcijama Commitment:
+Da bi se sprečila ovakva vrsta varanja od strane Alise, na Lajtning mreži, **sigurnosni mehanizmi** su dodati obavezujućim transakcijama:
 
 
-- Vremenska brava**: Svaki Commitment Transaction uključuje vremensku bravu za Alisina sredstva. Vremenska brava je primitiv Smart contract koji postavlja vremenski uslov koji mora biti ispunjen da bi transakcija bila dodata u blok. To znači da Alisa ne može povratiti svoja sredstva dok ne prođe određeni broj blokova ako objavi jednu od Commitment transakcija. Ova vremenska brava počinje da se primenjuje od potvrde Commitment Transaction. Njeno trajanje je generalno proporcionalno veličini kanala, ali se može i ručno konfigurisati.
-- Revocation Key**: Sredstva Alice takođe može odmah potrošiti Bob ako poseduje **ključ za opoziv**. Ovaj ključ se sastoji od tajne koju drži Alice i tajne koju drži Bob. Imajte na umu da je ova tajna različita za svaki Commitment Transaction.
+- **Vremenska zabrana trošenja**: Svaka Obavezujuća transakcija uključuje vremensku zabranu trošenja za Alisina sredstva. Vremenska zabrana trošenja je primitiv Pametnih ugovora koji postavlja vremenski uslov koji mora biti ispunjen da bi transakcija bila dodata u blok. To znači da Alisa ne može povratiti svoja sredstva dok ne prođe određeni broj blokova ako objavi jednu od Obavezujućih transakcija. Ova vremenska zabrana trošenja počinje da se primenjuje od potvrde Obavezujuće transakcije na blokčejnu. Njeno trajanje je generalno proporcionalno veličini kanala, ali se može i ručno konfigurisati.
+- **Ključ za opoziv**: Sredstva Alice takođe može odmah potrošiti Bob ako poseduje **ključ za opoziv**. Ovaj ključ se sastoji od tajne koju drži Alice i tajne koju drži Bob. Imajte na umu da je ova tajna različita za svaku Obavezujuću transakciju.
 
-Zahvaljujući ova 2 kombinovana mehanizma, Bob ima vremena da otkrije Alisin pokušaj prevare i da je kazni povlačenjem svog izlaza pomoću ključa za opoziv, što za Boba znači povratak svih sredstava kanala. Naš novi Commitment Transaction će sada izgledati ovako:
+Zahvaljujući ova 2 kombinovana mehanizma, Bob ima vremena da otkrije Alisin pokušaj prevare i da je kazni povlačenjem svog izlaza pomoću ključa za opoziv, što za Boba znači povratak svih sredstava kanala. Naša nova Obavezujuća transakcija će sada izgledati ovako:
 
 ![LNP201](assets/en/25.webp)
 
@@ -338,11 +338,11 @@ Hajde da zajedno detaljno opišemo funkcionisanje ovog mehanizma.
 
 ### Proces ažuriranja transakcije
 
-Kada Alisa i Bob ažuriraju stanje kanala novom Lightning transakcijom, oni unapred Exchange svoje odgovarajuće **tajne** za prethodni Commitment Transaction (onaj koji će postati zastareo i mogao bi omogućiti jednom od njih da vara). To znači da, u novom stanju kanala:
+Kada Alisa i Bob ažuriraju stanje kanala novom Lajtning transakcijom, oni unapred razmene svoje odgovarajuće **tajne** za prethodnu Obavezujuću transakciju (onaj koja će postati zastarela i koja bi omogućila jednom od njih da vara). To znači da, u novom stanju kanala:
 
 
-- Alice i Bob imaju novi Commitment Transaction koji predstavlja trenutnu raspodelu sredstava nakon Lightning transakcije.
-- Svako ima tajnu onog drugog za prethodnu transakciju, što im omogućava da koriste ključ za opoziv samo ako jedan od njih pokuša da prevari objavljivanjem transakcije sa starim stanjem u mempoolovima čvorova Bitcoin. Zaista, da bi se kaznila druga strana, neophodno je imati obe tajne i drugu Commitment Transaction, koja uključuje potpisani ulaz. Bez ove transakcije, ključ za opoziv je beskoristan. Jedini način da se dobije ova transakcija je da se preuzme iz mempoolova (u transakcijama koje čekaju potvrdu) ili u potvrđenim transakcijama na Blockchain tokom vremenskog zaključavanja, što dokazuje da druga strana pokušava da prevari, bilo namerno ili ne.
+- Alisa i Bob imaju novu Obavezujuću transakciju koja predstavlja trenutnu raspodelu sredstava nakon Lajtning transakcije.
+- Svako ima tajnu onog drugog za prethodnu transakciju, što im omogućava da koriste ključ za opoziv samo ako jedan od njih pokuša da prevari objavljivanjem transakcije sa starim stanjem u mempoolovima čvorova Bitcoin. Zaista, da bi se kaznila druga strana, neophodno je imati obe tajne i drugu Obavezujuću transakciju, koja uključuje potpisani ulaz. Bez ove transakcije, ključ za opoziv je beskoristan. Jedini način da se dobije ova transakcija je da se preuzme iz mempoolova (u transakcijama koje čekaju potvrdu) ili u potvrđenim transakcijama na Blokčejnu tokom perioda vremenskog zaključavanja, što dokazuje da druga strana pokušava da prevari, bilo namerno ili ne.
 
 Hajde da uzmemo primer kako bismo dobro razumeli ovaj proces:
 
