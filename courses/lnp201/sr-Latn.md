@@ -1,77 +1,77 @@
 ---
-Naziv: Teorijsko Uvodjenje u Lightning Mrežu
-Svrha: Otkrijte Lightning Mrežu iz tehničke perspektive
+Naziv: Teorijsko Uvodjenje u Lajtning Mrežu
+Svrha: Otkrijte Lajtning Mrežu iz tehničke perspektive
 Ciljevi: 
 
-  - Razumeti rad kanala unutar mreže.
+  - Razumeti rad kanala plaćanja unutar mreže.
   - Upoznajte se sa terminima HTLC, LNURL i UTXO.
   - Usvojiti znanje o upravljanju likvidnošću i naknadama LNN-a.
-  - Prepoznaj Lightning Network kao mrežu.
-  - Razumeti teorijske upotrebe Lightning Network.
+  - Prepoznaj Lajtning mrežu kao mrežu.
+  - Razumeti teorijske upotrebe Lajtning Mreže.
 
 ---
 # Putovanje do drugog nivoa Bitkojna
 
-Zaronite u srž Lightning Network, esencijalnog sistema za budućnost Bitcoin transakcija. LNP201 je teorijski kurs o tehničkom funkcionisanju Lightning-a. Otkriva osnove i mehanizme ove druge Layer mreže, dizajnirane da učini Bitcoin plaćanja brzim, ekonomičnim i skalabilnim.
+Zaronite u srž Lajtning mreže, esencijalnog sistema za budućnost Bitcoin transakcija. LNP201 je teorijski kurs o tehničkom funkcionisanju Lajtninga. Otkriva osnove i mehanizme ovog drugog nivoa, dizajniranog da učini Bitcoin plaćanja brzim, ekonomičnim i skalabilnim.
 
-Zahvaljujući svojoj mreži platnih kanala, Lightning omogućava brze i sigurne transakcije bez beleženja svakog Exchange na Bitcoin Blockchain. Kroz poglavlja ćete naučiti kako funkcioniše otvaranje, upravljanje i zatvaranje kanala, kako se plaćanja sigurno usmeravaju kroz posredničke čvorove uz minimiziranje potrebe za poverenjem, i kako upravljati likvidnošću. Otkrićete šta su Commitment transakcije, HTLC-ovi, ključevi opoziva, mehanizmi kažnjavanja, lukovi usmeravanja i fakture.
+Zahvaljujući svojoj mreži platnih kanala, Lajtning omogućava brze i sigurne transakcije bez beleženja svake transakcije na Bitkojn blokčejnu. Kroz poglavlja ćete naučiti kako funkcioniše otvaranje, upravljanje i zatvaranje kanala plaćanja, kako se plaćanja sigurno usmeravaju kroz posredničke čvorove uz minimiziranje potrebe za poverenjem, i kako upravljati likvidnošću. Otkrićete šta su Obavezujuće transakcije, HTLC-ovi, ključevi opoziva, mehanizmi kažnjavanja, rutiranja sa višestrukim šifrovanjem (onion routing) i fakture.
 
-Bilo da ste početnik sa Bitcoin ili iskusniji korisnik, ovaj kurs će pružiti vredne informacije za razumevanje i korišćenje Lightning Network. Iako ćemo pokriti neke osnove rada Bitcoin u prvim delovima, neophodno je savladati osnove izuma Satoshi pre nego što se upustite u LNP201.
+Bilo da ste početnik sa Bitkojnom ili iskusniji korisnik, ovaj kurs će pružiti vredne informacije za razumevanje i korišćenje Lightning Network. Iako ćemo pokriti neke osnove rada Bitkojna u prvim delovima, neophodno je savladati osnove Satošijevog izuma pre nego što se upustite u LNP201.
 
 Uživaj u svom otkriću!
 
 +++
-# Osnovi
+# Osnove
 
 <partId>32647d62-102b-509f-a3ba-ad1d6a4345f1</partId>
 
-## Razumevanje Lightning Network
+## Razumevanje Lajtning Mreže
 
 <chapterId>df6230ae-ff35-56ea-8651-8e65580730a8</chapterId>
 
 ![video en](https://youtu.be/QDQ8NG0l3hk)
 
-Dobrodošli na kurs LNP201, koji ima za cilj da objasni tehničko funkcionisanje Lightning Network.
+Dobrodošli na kurs LNP201, koji ima za cilj da objasni tehničko funkcionisanje Lajtning Mreže.
 
-Lightning Network je mreža platnih kanala izgrađena na Bitcoin protokolu, s ciljem omogućavanja brzih i niskotarifnih transakcija. Omogućava kreiranje platnih kanala između učesnika, unutar kojih se transakcije mogu obavljati gotovo trenutno i uz minimalne naknade, bez potrebe za pojedinačnim beleženjem svake transakcije na Blockchain. Tako, Lightning Network nastoji poboljšati skalabilnost Bitcoin i učiniti ga upotrebljivim za plaćanja male vrednosti.
+Lajtning Mreža je mreža platnih kanala izgrađena na Bitkojn protokolu, s ciljem omogućavanja brzih transakcija i niskih naknada. Omogućava kreiranje platnih kanala između učesnika, unutar kojih se transakcije mogu obavljati gotovo trenutno i uz minimalne naknade, bez potrebe za pojedinačnim beleženjem svake transakcije na blokčejnu. Tako, Lajtning mreća nastoji poboljšati skalabilnost Bitkojna i učiniti ga upotrebljivim za plaćanja male vrednosti.
 
-Pre nego što istražimo aspekt "mreže", važno je razumeti koncept **kanala plaćanja** na Lightning-u, kako funkcioniše i njegove specifičnosti. Ovo je tema prvog poglavlja.
+Pre nego što istražimo aspekt "mreže", važno je razumeti koncept **kanala plaćanja** na Lajtningu, kako funkcioniše i njegove specifičnosti. Ovo je tema prvog poglavlja.
 
 ### Koncept platnog kanala
 
-Kanal plaćanja omogućava dvema stranama, ovde **Alice** i **Bob**, da Exchange sredstva preko Lightning Network. Svaki protagonist ima čvor, simbolizovan krugom, a kanal između njih je predstavljen linijskim segmentom.
+Kanal plaćanja omogućava dvema stranama, ovde **Alice** i **Bob**, da razmene sredstva preko Lajtning mreže. Svaki protagonist ima čvor, simbolizovan krugom, a kanal između njih je predstavljen linijom.
 
 ![LNP201](assets/en/01.webp)
 
-U našem primeru, Alis ima 100.000 satoshija na svojoj strani kanala, a Bob ima 30.000, što ukupno čini 130.000 satoshija, što predstavlja **kapacitet kanala**.
+U našem primeru, Alis ima 100.000 satošija na svojoj strani kanala, a Bob ima 30.000, što ukupno čini 130.000 satošija, što predstavlja **kapacitet kanala**.
 
-**Ali šta je Satoshi?**
+**Ali šta je Satoši?**
 
-**Satoshi** (ili "sat") je obračunska jedinica na Bitcoin. Slično kao cent za euro, Satoshi je jednostavno frakcija Bitcoin. Jedan Satoshi je jednak **0.00000001 Bitcoin**, ili jedna stotina milionitog dela Bitcoin. Korišćenje Satoshi postaje sve praktičnije kako vrednost Bitcoin raste.
+**Satoši** (ili "sat") je obračunska jedinica na Bitkojnu. Slično kao cent za euro, Satoši je jednostavno frakcija Bitkojna. Jedan Satoši je jednak **0.00000001 Bitkojna**, ili jedna stotina milionitog dela Bitkojna. Korišćenje Satošija postaje sve praktičnije kako vrednost Bitkojna raste.
 
 ### Alokacija sredstava u kanalu
 
-Hajde da se vratimo na kanal plaćanja. Ključni koncept ovde je "**strana kanala**". Svaki učesnik ima sredstva na svojoj strani kanala: Alis 100.000 satoshija i Bob 30.000. Kao što smo videli, zbir ovih sredstava predstavlja ukupni kapacitet kanala, broj koji se postavlja kada se otvori.
+Hajde da se vratimo na kanal plaćanja. Ključni koncept ovde je "**strana kanala**". Svaki učesnik ima sredstva na svojoj strani kanala: Alis 100.000 satošija i Bob 30.000. Kao što smo videli, zbir ovih sredstava predstavlja ukupni kapacitet kanala, broj koji se postavlja kada se otvori kanal.
 
 ![LNP201](assets/en/02.webp)
 
-Hajde da uzmemo primer Lightning transakcije. Ako Alisa želi da pošalje 40.000 satoshija Bobu, to je moguće jer ima dovoljno sredstava (100.000 satoshija). Nakon ove transakcije, Alisa će imati 60.000 satoshija na svojoj strani, a Bob 70.000.
+Hajde da uzmemo primer Lajtning transakcije. Ako Alisa želi da pošalje 40.000 satošija Bobu, to je moguće jer ima dovoljno sredstava (100.000 satošija). Nakon ove transakcije, Alisa će imati 60.000 satošija na svojoj strani, a Bob 70.000.
 
 ![LNP201](assets/en/03.webp)
 
-Kapacitet **kanala**, na 130.000 satoshija, ostaje konstantan. Ono što se menja je raspodela sredstava. Ovaj sistem ne dozvoljava slanje više sredstava nego što neko poseduje. Na primer, ako Bob želi da pošalje nazad 80.000 satoshija Alisi, ne bi mogao, jer ima samo 70.000.
+**Kapacitet kanala**, na 130.000 satošija, ostaje konstantan. Ono što se menja je raspodela sredstava. Ovaj sistem ne dozvoljava slanje više sredstava nego što neko poseduje. Na primer, ako Bob želi da pošalje nazad 80.000 satošija Alisi, ne bi mogao, jer ima samo 70.000.
 
-Još jedan način da zamislite raspodelu sredstava je da zamislite **klizač** koji pokazuje gde se sredstva nalaze u kanalu. U početku, sa 100.000 satoshija za Alisu i 30.000 za Boba, klizač je logično na Alisinoj strani. Nakon transakcije od 40.000 satoshija, klizač će se pomeriti blago ka Bobovoj strani, koji sada ima 70.000 satoshija.
+Još jedan način da zamislite raspodelu sredstava je da zamislite **klizač** koji pokazuje gde se sredstva nalaze u kanalu. U početku, sa 100.000 satošija za Alisu i 30.000 za Boba, klizač je logično na Alisinoj strani. Nakon transakcije od 40.000 satošija, klizač će se pomeriti blago ka Bobovoj strani, koji sada ima 70.000 satošija.
 
 ![LNP201](assets/en/04.webp)
 
-Ova reprezentacija može biti korisna za zamišljanje ravnoteže sredstava u kanalu.
+Ova reprezentacija može biti korisna za zamišljanje bilansa sredstava u kanalu.
 
 ### Osnovna pravila platnog kanala
 
 Prva stvar koju treba zapamtiti je da je **kapacitet kanala** fiksiran. To je donekle kao prečnik cevi: određuje maksimalnu količinu sredstava koja se mogu poslati kroz kanal odjednom.
 
-Hajde da uzmemo primer: ako Alisa ima 130.000 satoshija na svojoj strani, može poslati maksimalno 130.000 satoshija Bobu u jednoj transakciji. Međutim, Bob može zatim poslati ta sredstva nazad Alisi, bilo delimično ili u celosti.
+Hajde da uzmemo primer: ako Alisa ima 130.000 satošija na svojoj strani, može poslati maksimalno 130.000 satoshija Bobu u jednoj transakciji. Međutim, Bob može zatim poslati ta sredstva nazad Alisi, bilo delimično ili u celosti.
 
 Važno je razumeti da fiksni kapacitet kanala ograničava maksimalni iznos jedne transakcije, ali ne i ukupan broj mogućih transakcija, niti ukupni obim sredstava razmenjenih unutar kanala.
 
@@ -80,44 +80,44 @@ Važno je razumeti da fiksni kapacitet kanala ograničava maksimalni iznos jedne
 
 - Kapacitet kanala je fiksiran i određuje maksimalnu količinu koja se može poslati u jednoj transakciji.
 - Sredstva u kanalu su raspodeljena između dva učesnika, i svaki može poslati drugome samo sredstva koja poseduju na svojoj strani.
-- Lightning Network na taj način omogućava brzo i efikasno Exchange sredstava, uz poštovanje ograničenja nametnutih kapacitetom kanala.
+- Lajtning mreža na taj način omogućava brzu i efikasnu razmenu sredstava, uz poštovanje ograničenja nametnutih kapacitetom kanala.
 
-Ovo je kraj prvog poglavlja, gde smo postavili temelje za Lightning Network. U narednim poglavljima ćemo videti kako otvoriti kanal i dublje istražiti ovde diskutovane koncepte.
+Ovo je kraj prvog poglavlja, gde smo postavili temelje za Lajtning mrežu. U narednim poglavljima ćemo videti kako otvoriti kanal i dublje istražiti ovde diskutovane koncepte.
 
-## Bitcoin, Adrese, UTXO, i Transakcije
+## Bitkojn, Adrese, UTXO, i Transakcije
 
 <chapterId>0cfb7e6b-96f0-508b-9210-90bc1e28649d</chapterId>
 
 ![video en](https://youtu.be/U9l5IVriCss)
 
-Ovo poglavlje je pomalo posebno jer neće biti direktno posvećeno Lightning-u, već Bitcoin. Naime, Lightning Network je Layer povrh Bitcoin. Stoga je neophodno razumeti određene fundamentalne koncepte Bitcoin kako bi se pravilno shvatilo funkcionisanje Lightning-a u narednim poglavljima. U ovom poglavlju ćemo pregledati osnove Bitcoin adresa za primanje, UTXO-e, kao i funkcionisanje Bitcoin transakcija.
+Ovo poglavlje je pomalo posebno jer neće biti direktno posvećeno Lajtningu, već Bitkojnu. Naime, Lajtning mreža je sloj iznad Bitkojna. Stoga je neophodno razumeti određene fundamentalne koncepte Bitkojna kako bi se pravilno shvatilo funkcionisanje Lajtninga u narednim poglavljima. U ovom poglavlju ćemo pregledati osnove Bitkojn adresa za primanje, UTXO, kao i funkcionisanje Bitkojn transakcija.
 
-### Bitcoin Adrese, Privatni Ključevi i Javni Ključevi
+### Bitkojn Adrese, Privatni Ključevi i Javni Ključevi
 
-Bitcoin Address je niz karaktera izvedenih iz **javnog ključa**, koji se sam izračunava iz **privatnog ključa**. Kao što sigurno znate, koristi se za zaključavanje bitkoina, što je ekvivalentno njihovom primanju u našem Wallet.
+Bitkon adresa je niz karaktera izvedenih iz **javnog ključa**, koji se sam izračunava iz **privatnog ključa**. Kao što sigurno znate, koristi se za zaključavanje bitkoina, što je ekvivalentno njihovom primanju u naš novčanik.
 
-Privatni ključ je tajni element koji **nikada ne treba deliti**, dok se javni ključ i Address mogu deliti bez rizika po bezbednost (njihovo otkrivanje predstavlja rizik samo za vašu privatnost). Ovde je uobičajena reprezentacija koju ćemo usvojiti tokom ove obuke:
+Privatni ključ je tajni element koji **nikada ne treba deliti**, dok se javni ključ i adresa mogu deliti bez rizika po bezbednost (njihovo otkrivanje predstavlja rizik samo za vašu privatnost). Ovde je uobičajena reprezentacija koju ćemo usvojiti tokom ove obuke:
 
 
 - **Privatni ključevi** će biti predstavljeni **vertikalno**.
 - **Javni ključevi** će biti predstavljeni **horizontalno**.
 - Njihova boja označava ko ih poseduje (Alisa u narandžastom i Bob u crnom...).
 
-### Bitcoin Transakcije: Slanje Sredstava i Skripti
+### Bitkojn Transakcije: Slanje Sredstava i Skripte
 
-Na Bitcoin, transakcija uključuje slanje sredstava sa jednog Address na drugi. Uzmimo primer gde Alisa šalje 0.002 Bitcoin Bobu. Alisa koristi privatni ključ povezan sa njenim Address da **potpiše** transakciju, čime dokazuje da zaista može da potroši ta sredstva. Ali šta se tačno dešava iza ove transakcije? Sredstva na Bitcoin Address su zaključana **skriptom**, vrstom mini-programa koji postavlja određene uslove za trošenje sredstava.
+Na Bitkojnu, transakcija uključuje slanje sredstava sa jedne adrese na drugu. Uzmimo primer gde Alisa šalje 0.002 Bitkojna Bobu. Alisa koristi privatni ključ povezan sa njenom adresom da **potpiše** transakciju, čime dokazuje da zaista može da potroši ta sredstva. Ali šta se tačno dešava tokom ove transakcije? Sredstva na Bitkojn adresi su zaključana **skriptom**, vrstom mini-programa koja određuje uslove za trošenje sredstava.
 
-Najčešći skript zahteva potpis sa privatnim ključem povezanim sa Address. Kada Alisa potpiše transakciju svojim privatnim ključem, ona **otključava skript** koji blokira sredstva, i tada se ona mogu preneti. Prenos sredstava uključuje dodavanje novog skripta ovim sredstvima, koji propisuje da će za njihovo trošenje ovog puta biti potreban potpis privatnog ključa **Boba**.
+Najčešće skripta zahteva potpis sa privatnim ključem povezanim sa adresom. Kada Alisa potpiše transakciju svojim privatnim ključem, ona **otključava skriptu** koja blokira sredstva, i tada se ona mogu preneti. Prenos sredstava uključuje dodavanje nove skripte ovim sredstvima, koji propisuje da će za njihovo trošenje ovog puta biti potreban potpis privatnog ključa **Boba**.
 
 ![LNP201](assets/en/05.webp)
 
 ### UTXOs: Neutrošeni Izlazi Transakcija
 
-Na Bitcoin, ono što mi zapravo Exchange nisu direktno bitcoini, već **UTXO** (_Unspent Transaction Outputs_), što znači "nepotrošeni izlazi transakcija".
+Na Bitkojnu, ono što mi zapravo razmenjujemo nisu direktno bitkojni, već **UTXO** (_Unspent Transaction Outputs_), što znači "nepotrošeni izlazi transakcija".
 
-UTXO je deo Bitcoin koji može imati bilo koju vrednost, na primer, **2,000 bitcoina**, **8 bitcoina**, ili čak **8,000 Sats**. Svaki UTXO je zaključan skriptom, i da bi se potrošio, mora se ispuniti uslov skripta, što je često potpis sa privatnim ključem koji odgovara datom primajućem Address.
+UTXO je deo bitkojna koji može imati bilo koju vrednost, na primer, **2,000 bitkojna**, **8 bitkojna**, ili čak **8,000 satsa**. Svaki UTXO je zaključan skriptom, i da bi se potrošio, mora se ispuniti uslov skripte, što je često potpis sa privatnim ključem koji je povezan sa primajućom adresom.
 
-UTXO-i ne mogu biti podeljeni. Svaki put kada se koriste za trošenje iznosa u bitcoinima koji predstavljaju, to mora biti učinjeno u celosti. To je pomalo kao novčanica: ako imate novčanicu od €10 i dugujete pekaru €5, ne možete jednostavno preseći novčanicu na pola. Morate mu dati novčanicu od €10, a on će vam vratiti €5 kusura. Ovo je tačno isti princip za UTXO-e na Bitcoin! Na primer, kada Alisa otključa skriptu svojim privatnim ključem, ona otključava ceo UTXO. Ako želi da pošalje samo deo sredstava predstavljenih ovim UTXO Bobu, može ga "fragmentirati" na nekoliko manjih. Tada će poslati 0.0015 BTC Bobu i poslati ostatak, 0.0005 BTC, na **kusur Address**.
+UTXO-ovi ne mogu biti podeljeni. Svaki put kada se koriste za trošenje iznosa u bitcoinima koji predstavljaju, to mora biti učinjeno u celosti. To je pomalo kao novčanica: ako imate novčanicu od €10 i dugujete pekaru €5, ne možete jednostavno preseći novčanicu na pola. Morate mu dati novčanicu od €10, a on će vam vratiti €5 kusura. Ovo je tačno isti princip za UTXO-em na Bitkojnu! Na primer, kada Alisa otključa skriptu svojim privatnim ključem, ona otključava ceo UTXO. Ako želi da pošalje samo deo sredstava predstavljenih ovim UTXO Bobu, može ga "fragmentirati" na nekoliko manjih. Tada će poslati 0.0015 BTC Bobu i poslati ostatak, 0.0005 BTC, na **kusur adresu**.
 
 Evo primera transakcije sa 2 izlaza:
 
@@ -129,25 +129,25 @@ Evo primera transakcije sa 2 izlaza:
 
 ### Višepotpisne Adrese
 
-Pored jednostavnih adresa generisanih iz jednog javnog ključa, moguće je kreirati **adrese sa više potpisa** iz više javnih ključeva. Posebno zanimljiv slučaj za Lightning Network je **2/2 adresa sa više potpisa Address**, generisana iz dva javna ključa:
+Pored jednostavnih adresa generisanih iz jednog javnog ključa, moguće je kreirati **adrese sa više potpisa** iz više javnih ključeva. Posebno zanimljiv slučaj za Lajtning mrežu je **2/2 adresa sa više potpisa adresa**, generisana iz dva javna ključa:
 
 ![LNP201](assets/en/07.webp)
 
-Da biste potrošili sredstva zaključana sa ovom 2/2 multi-potpisnom Address, neophodno je potpisati sa dva privatna ključa povezana sa javnim ključevima.
+Da biste potrošili sredstva zaključana sa ovom 2/2 multi-potpisnom adresom, neophodno je potpisati sa dva privatna ključa povezana sa javnim ključevima.
 
 ![LNP201](assets/en/08.webp)
 
-Ovaj tip Address je upravo reprezentacija na Bitcoin Blockchain kanala plaćanja na Lightning Network.
+Ovaj tip adresa je upravo reprezentacija na Bitkojn blokčejnu kanala plaćanja na Lajtning mreži.
 
 **Šta treba da ponesete iz ovog poglavlja?**
 
 
-- **Bitcoin Address** je izveden iz javnog ključa, koji je sam izveden iz privatnog ključa.
-- Sredstva na Bitcoin su zaključana pomoću **skripti**, i da bi se ta sredstva potrošila, potrebno je zadovoljiti skriptu, što obično podrazumeva davanje potpisa sa odgovarajućim privatnim ključem.
-- UTXO-i** su delovi bitkoina zaključani skriptama, i svaka transakcija na Bitcoin se sastoji od otključavanja UTXO i zatim kreiranja jednog ili više novih zauzvrat.
-- 2/2 multi-signature adrese** zahtevaju potpis dva privatna ključa za trošenje sredstava. Ove specifične adrese se koriste u kontekstu Lightning-a za kreiranje platnih kanala.
+- **Bitkojn adresa** je izveden iz javnog ključa, koji je sam izveden iz privatnog ključa.
+- Sredstva na Bitkojnu su zaključana pomoću **skripti**, i da bi se ta sredstva potrošila, potrebno je zadovoljiti skriptu, što obično podrazumeva davanje potpisa sa odgovarajućim privatnim ključem.
+-**UTXO-ovi ** su delovi bitkojna zaključani skriptama, i svaka transakcija na Bitkojnu se sastoji od otključavanja UTXO i zatim kreiranja jednog ili više novih zauzvrat.
+- **2/2 multi-potpisne adrese** zahtevaju potpis dva privatna ključa za trošenje sredstava. Ove specifične adrese se koriste u kontekstu Lajtninga za kreiranje platnih kanala.
 
-Ovo poglavlje o Bitcoin omogućilo nam je da pregledamo neke osnovne pojmove za ono što sledi. U sledećem poglavlju, posebno ćemo otkriti kako funkcioniše otvaranje kanala na Lightning Network.
+Ovo poglavlje o Bitkojnu omogućilo nam je da pregledamo neke osnovne pojmove za ono što sledi. U sledećem poglavlju, posebno ćemo otkriti kako funkcioniše otvaranje kanala na Lajtning mreži.
 
 # Otvaranje i zatvaranje kanala
 
@@ -159,134 +159,134 @@ Ovo poglavlje o Bitcoin omogućilo nam je da pregledamo neke osnovne pojmove za 
 
 ![video en](https://youtu.be/Ty80WuN5X-g)
 
-U ovom poglavlju ćemo preciznije videti kako otvoriti platni kanal na Lightning Network i razumeti vezu između ove operacije i osnovnog sistema Bitcoin.
+U ovom poglavlju ćemo preciznije videti kako otvoriti platni kanal na Lajtning mreži i razumeti vezu između ove operacije i osnovnog Bitkojn sistema.
 
-### Lightning Channels
+### Lajtning kanali
 
-Kao što smo videli u prvom poglavlju, **kanal plaćanja** na Lightning mreži može se uporediti sa "cevkom" za razmenu sredstava između dva učesnika (**Alice** i **Bob** u našim primerima). Kapacitet ovog kanala odgovara zbiru dostupnih sredstava na svakoj strani. U našem primeru, Alice ima **100,000 satoshija** a Bob ima **30,000 satoshija**, što daje **ukupni kapacitet** od **130,000 satoshija**.
+Kao što smo videli u prvom poglavlju, **kanal plaćanja** na Lightning mreži može se uporediti sa "cevkom" za razmenu sredstava između dva učesnika (**Alice** i **Bob** u našim primerima). Kapacitet ovog kanala odgovara zbiru dostupnih sredstava na svakoj strani. U našem primeru, Alice ima **100,000 satošija** a Bob ima **30,000 satošija**, što daje **ukupni kapacitet** od **130,000 satošija**.
 
 ![LNP201](assets/en/09.webp)
 
-### Nivoi informacija Exchange
+### Nivoi razmene informacija
 
-Važno je jasno razlikovati različite nivoe Exchange na Lightning Network:
+Važno je jasno razlikovati različite nivoe razmene na Lajtnign mreži:
 
 
-- Komunikacija od tačke do tačke (Lightning protokol)**: Ovo su poruke koje Lightning čvorovi šalju jedni drugima radi komunikacije. Ove poruke ćemo predstavljati isprekidanim crnim linijama u našim dijagramima.
-- Kanali plaćanja (Lightning protokol)**: Ovo su putevi za razmenu sredstava na Lightning mreži, koje ćemo predstaviti punim crnim linijama.
-- Transakcije Bitcoin (protokol Bitcoin)**: Ovo su transakcije izvršene na lancu, koje ćemo predstaviti narandžastim linijama.
+- **Komunikacija od tačke do tačke (Lajtning protokol)**: Ovo su poruke koje Lajtning čvorovi šalju jedni drugima radi komunikacije. Ove poruke ćemo predstavljati isprekidanim crnim linijama u našim dijagramima.
+- **Kanali plaćanja (Lajtning protokol)**: Ovo su putevi za razmenu sredstava na Lajtning mreži, koje ćemo predstaviti punim crnim linijama.
+- **Bitkojn transakcije (Bitkojn protokol)**: Ovo su transakcije izvršene na blokčejnu, koje ćemo predstaviti narandžastim linijama.
 
 ![LNP201](assets/en/10.webp)
 
-Vredi napomenuti da Lightning čvor može komunicirati putem P2P protokola bez otvaranja kanala, ali za Exchange sredstva, kanal je neophodan.
+Vredi napomenuti da Lajtning čvor može komunicirati putem P2P protokola bez otvaranja kanala, ali za razmenu sredstva, kanal je neophodan.
 
-### Koraci za otvaranje Lightning kanala
+### Koraci za otvaranje Lajtning kanala
 
 
-- Poruka Exchange**: Alice želi da otvori kanal sa Bobom. Ona mu šalje poruku koja sadrži iznos koji želi da deponuje u kanalu (130,000 Sats) i njen javni ključ. Bob odgovara deljenjem svog javnog ključa.
+- **Razmena poruke**: Alice želi da otvori kanal sa Bobom. Ona mu šalje poruku koja sadrži iznos koji želi da deponuje u kanalu (130,000 Sats) i njen javni ključ. Bob odgovara deljenjem svog javnog ključa.
 
 ![LNP201](assets/en/11.webp)
 
 
-- Kreiranje multisignature Address**: Sa ova dva javna ključa, Alisa kreira **2/2 multisignature Address**, što znači da će sredstva koja će kasnije biti deponovana na ovaj Address zahtevati oba potpisa (Alise i Boba) da bi bila potrošena.
+- **Kreiranje višepotpisne adrese**: Sa ova dva javna ključa, Alisa kreira **2/2 višepotpisnu adresu**, što znači da će sredstva koja će kasnije biti deponovana na ovaj adresi zahtevati oba potpisa (Alise i Boba) da bi bila potrošena.
 
 ![LNP201](assets/en/12.webp)
 
 
-- Transakcija depozita**: Alice priprema Bitcoin transakciju za deponovanje sredstava na ovaj multisignature Address. Na primer, može odlučiti da pošalje **130,000 satoshija** na ovaj multisignature Address. Ova transakcija je **konstruisana, ali još nije objavljena** na Blockchain.
+- **Depozitna transakcija**: Alice priprema Bitkojn transakciju za deponovanje sredstava na ovoj višepotpisnoj adresi. Na primer, može odlučiti da pošalje **130,000 satošija** na ovu višepotpisnu adresu. Ova transakcija je **kreirana, ali još nije objavljena** na blokčejnu.
 
 ![LNP201](assets/en/13.webp)
 
 
-- Transakcija povlačenja**: Pre objavljivanja transakcije depozita, Alisa konstruira transakciju povlačenja kako bi mogla povratiti svoja sredstva u slučaju problema sa Bobom. Naime, kada Alisa objavi transakciju depozita, njen Sats će biti zaključan na 2/2 multisignaturi Address koja zahteva i njen i Bobov potpis za otključavanje. Alisa se štiti od ovog rizika gubitka konstruisanjem transakcije povlačenja koja joj omogućava da povrati svoja sredstva.
+- **Transakcija povlačenja**: Pre objavljivanja transakcije depozita, Alisa kreira transakciju povlačenja kako bi mogla povratiti svoja sredstva u slučaju problema sa Bobom. Naime, kada Alisa objavi transakciju depozita, njen Sats će biti zaključan na 2/2 višepotpisnoj adresi koja zahteva i njen i Bobov potpis za otključavanje. Alisa se štiti od ovog rizika gubitka kreiranjem transakcije povlačenja koja joj omogućava da povrati svoja sredstva.
 
 ![LNP201](assets/en/14.webp)
 
 
-- Bobov potpis**: Alice šalje transakciju depozita Bobu kao dokaz i traži od njega da potpiše transakciju povlačenja. Kada se dobije Bobov potpis na transakciji povlačenja, Alice je sigurna da može povratiti svoja sredstva u bilo kom trenutku, jer je sada potreban samo njen potpis da bi se otključao multisignature.
+- **Bobov potpis**: Alice šalje transakciju depozita Bobu kao dokaz i traži od njega da potpiše transakciju povlačenja. Kada dobije Bobov potpis na transakciji povlačenja, Alice je sigurna da može povratiti svoja sredstva u bilo kom trenutku, jer je sada potreban samo njen potpis da bi se otključala višepotpisna transakcija.
 
 ![LNP201](assets/en/15.webp)
 
 
-- Objavljivanje transakcije depozita**: Kada se dobije Bobov potpis, Alis može objaviti transakciju depozita na Bitcoin Blockchain, čime se zvanično otvara Lajtning kanal između dva korisnika.
+- **Objavljivanje transakcije depozita**: Kada se dobije Bobov potpis, Alis može objaviti transakciju depozita na Bitkojn blokčejnu, čime se zvanično otvara Lajtning kanal između dva korisnika.
 
 ![LNP201](assets/en/16.webp)
 
 ### Kada je kanal otvoren?
 
-Kanal se smatra otvorenim kada je transakcija depozita uključena u Bitcoin blok i dostigne određenu dubinu potvrda (broj sledećih blokova).
+Kanal se smatra otvorenim kada je transakcija depozita uključena u Bitkojn blok i dostigne određeni broj potvrda (broj sledećih blokova).
 
 **Šta treba da zapamtite iz ovog poglavlja?**
 
 
-- Otvaranje kanala počinje sa Exchange od **poruka** između dve strane (Exchange od iznosa i javnih ključeva).
-- Kanal se formira kreiranjem **2/2 multisignature Address** i deponovanjem sredstava u njega putem Bitcoin transakcije.
+- Otvaranje kanala počinje sa razmenom **poruka** između dve strane (razmenom iznosa i javnih ključeva).
+- Kanal se formira kreiranjem **2/2 višepotpisne adrese** i deponovanjem sredstava na tu adresu putem Bitkojn transakcije.
 - Osoba koja otvara kanal osigurava da može **povratiti svoja sredstva** putem transakcije povlačenja koju je potpisala druga strana pre objavljivanja transakcije depozita.
 
-U narednom poglavlju, istražićemo tehnički rad Lightning transakcije unutar kanala.
+U narednom poglavlju, istražićemo tehnički rad Lajtning transakcije unutar kanala.
 
-## Commitment Transaction
+## Obavezujuće transakcije
 
 <chapterId>7d3fd135-129d-5c5a-b306-d5f2f1e63340</chapterId>
 
 ![video en](https://youtu.be/dzPMGiR_JSE)
 
-U ovom poglavlju ćemo otkriti tehničko funkcionisanje transakcije unutar kanala na Lightning Network, odnosno kada se sredstva premeštaju s jedne strane kanala na drugu.
+U ovom poglavlju ćemo otkriti tehničko funkcionisanje transakcije unutar kanala na Lajtning mreže, odnosno kada se sredstva premeštaju s jedne strane kanala na drugu.
 
 ### Podsetnik o životnom ciklusu kanala
 
-Kao što je ranije viđeno, Lightning kanal počinje sa **otvaranjem** putem Bitcoin transakcije. Kanal se može **zatvoriti** u bilo kom trenutku, takođe putem Bitcoin transakcije. Između ova dva trenutka, unutar kanala se može izvršiti skoro beskonačan broj transakcija, bez prolaska kroz Bitcoin Blockchain. Hajde da vidimo šta se dešava tokom transakcije u kanalu.
+Kao što je ranije viđeno, Lajtning kanal počinje sa **otvaranjem** putem Bitkojn transakcije. Kanal se može **zatvoriti** u bilo kom trenutku, takođe putem Bitkojn transakcije. Između ova dva trenutka, unutar kanala se može izvršiti skoro beskonačan broj transakcija, bez prolaska kroz Bitkojn blokčejn. Hajde da vidimo šta se dešava tokom transakcije u kanalu.
 
 ![LNP201](assets/en/17.webp)
 
 ### Početno stanje kanala
 
-U trenutku otvaranja kanala, Alice je deponovala **130,000 satoshija** na multisignature Address kanala. Dakle, u početnom stanju, sva sredstva su na Aliceinoj strani. Pre otvaranja kanala, Alice je takođe tražila od Boba da potpiše **transakciju povlačenja**, koja bi joj omogućila da povrati svoja sredstva ako želi da zatvori kanal.
+U trenutku otvaranja kanala, Alisa je deponovala **130,000 satošija** na višepotpisnu adresu kanala. Dakle, u početnom stanju, sva sredstva su na Alisinoj strani. Pre otvaranja kanala, Alisa je takođe tražila od Boba da potpiše **transakciju povlačenja**, koja bi joj omogućila da povrati svoja sredstva ako želi da zatvori kanal.
 
 ![LNP201](assets/en/18.webp)
 
-### Neobjavljene transakcije: Commitment transakcije
+### Neobjavljene transakcije: Obavezujuće transakcije
 
-Kada Alisa izvrši transakciju u kanalu da pošalje sredstva Bobu, kreira se nova Bitcoin transakcija kako bi se odrazila ova promena u raspodeli sredstava. Ova transakcija, nazvana **Commitment Transaction**, nije objavljena na Blockchain, ali predstavlja novo stanje kanala nakon Lightning transakcije.
+Kada Alisa izvrši transakciju u kanalu da pošalje sredstva Bobu, kreira se nova Bitkojn transakcija kako bi se odrazila ova promena u raspodeli sredstava. Ova transakcija, nazvana **Obavezujuća transakcija**, nije objavljena na blokčejnu, ali predstavlja novo stanje kanala nakon Lightning transakcije.
 
-Hajde da uzmemo primer gde Alisa šalje 30.000 satoshija Bobu:
+Hajde da uzmemo primer gde Alisa šalje 30.000 satošija Bobu:
 
 
-- U početku**: Alice ima 130.000 satoshija.
-- Nakon transakcije**: Alice ima 100.000 satoshija, a Bob 30.000 satoshija.
+-**U početku**: Alice ima 130.000 satošija.
+-**Nakon transakcije**: Alice ima 100.000 satošija, a Bob 30.000 satošija.
 
-Da bi potvrdili ovaj transfer, Alice i Bob kreiraju novu **neobjavljenu Bitcoin transakciju** koja bi poslala **100.000 satoshija Alice** i **30.000 satoshija Bobu** iz multisignature Address. Obe strane konstruiraju ovu transakciju nezavisno, ali sa istim podacima (iznosi i adrese). Kada je konstruisana, svaka potpisuje transakciju i razmenjuje svoj potpis sa drugom stranom. Ovo omogućava bilo kojoj strani da objavi transakciju u bilo kom trenutku ako je potrebno da povrate svoj deo kanala na glavnom Bitcoin Blockchain.
+Da bi potvrdili ovaj transfer, Alisa i Bob kreiraju novu **neobjavljenu Bitkojn transakciju** koja bi poslala **100.000 satošija Alise** i **30.000 satošija Bobu** iz višepotpisne adrese. Obe strane kreiraju ovu transakciju nezavisno, ali sa istim podacima (iznosi i adrese). Kada je kreirana, svaka strana potpisuje transakciju i razmenjuje svoj potpis sa drugom stranom. Ovo omogućava bilo kojoj strani da objavi transakciju u bilo kom trenutku ako je potrebno da povrate svoj deo kanala na glavnom Bitkojn blokčejnu.
 
 ![LNP201](assets/en/19.webp)
 
-### Proces prenosa: Invoice
+### Proces prenosa: Fakture
 
-Kada Bob želi da primi sredstva, šalje Alisi **_fakturu_** za 30.000 satoshija. Alisa zatim nastavlja da plati ovaj Invoice pokretanjem transfera unutar kanala. Kao što smo videli, ovaj proces se oslanja na kreiranje i potpisivanje novog **Commitment Transaction**.
+Kada Bob želi da primi sredstva, šalje Alisi **_fakturu_** na 30.000 satošija. Alisa zatim nastavlja da plati ovu fakturu pokretanjem transfera unutar kanala. Kao što smo videli, ovaj proces se oslanja na kreiranje i potpisivanje nove **Obavezujuće transakcije**.
 
-Svaki Commitment Transaction predstavlja novu raspodelu sredstava u kanalu nakon transfera. U ovom primeru, nakon transakcije, Bob ima 30,000 satoshija, a Alice ima 100,000 satoshija. Ako bilo koji od dva učesnika odluči da objavi ovaj Commitment Transaction na Blockchain, to bi rezultiralo zatvaranjem kanala i sredstva bi bila raspodeljena prema ovoj poslednjoj raspodeli.
+Svaka Obavezujuća transakcija predstavlja novu raspodelu sredstava u kanalu nakon transfera. U ovom primeru, nakon transakcije, Bob ima 30,000 satošija, a Alisa ima 100,000 satošija. Ako bilo koji od ova dva učesnika odluči da objavi Obavezujužu transakciju na blokčejnu, to bi rezultiralo zatvaranjem kanala i sredstva bi bila raspodeljena prema ovoj poslednjoj raspodeli.
 
 ![LNP201](assets/en/20.webp)
 
 ### Novo stanje nakon druge transakcije
 
-Hajde da uzmemo drugi primer: nakon prve transakcije gde je Alisa poslala 30.000 satoshija Bobu, Bob odlučuje da pošalje **10.000 satoshija nazad Alisi**. Ovo stvara novo stanje kanala. Novi **Commitment Transaction** će predstavljati ovu ažuriranu distribuciju:
+Hajde da uzmemo drugi primer: nakon prve transakcije gde je Alisa poslala 30.000 satošija Bobu, Bob odlučuje da pošalje **10.000 satošija nazad Alisi**. Ovo stvara novo stanje kanala. Nova **Obavezujuća transakcija** će predstavljati ovu ažuriranu distribuciju:
 
 
-- Alice** sada ima **110,000 satoshija**.
-- Bob** ima **20,000 satoshija**.
+- **Alice** sada ima **110,000 satošija**.
+- **Bob** ima **20,000 satošija**.
 
 ![LNP201](assets/en/21.webp)
 
-Ponovo, ova transakcija nije objavljena na Blockchain, ali može biti u bilo kom trenutku u slučaju da je kanal zatvoren.
+Ponovo, ova transakcija nije objavljena na blokčejnu, ali može biti u bilo kom trenutku u slučaju da je kanal zatvoren.
 
-Ukratko, kada se sredstva prenose unutar Lightning kanala:
+Ukratko, kada se sredstva prenose unutar Lajtning kanala:
 
 
-- Alice i Bob kreiraju novi **Commitment Transaction**, koji odražava novu raspodelu sredstava.
-- Ova transakcija Bitcoin je **potpisana** od strane obe strane, ali **nije objavljena** na Bitcoin Blockchain sve dok kanal ostaje otvoren.
-- Transakcije Commitment osiguravaju da svaki učesnik može povratiti svoja sredstva u bilo kom trenutku na Bitcoin Blockchain objavljivanjem poslednje potpisane transakcije.
+- Alice i Bob kreiraju novu **Obavezujuću transakciju**, koji odražava novu raspodelu sredstava.
+- Ova Bitkojn transakcija je **potpisana** od strane obe strane, ali **nije objavljena** na Bitkojn blokčejnu sve dok kanal ostaje otvoren.
+- Obavezujuće transakcije osiguravaju da svaki učesnik može povratiti svoja sredstva u bilo kom trenutku na Bitkojn blokčejnu objavljivanjem poslednje potpisane transakcije.
 
-Međutim, ovaj sistem ima potencijalnu manu, koju ćemo Address u narednom poglavlju. Videćemo kako svaki učesnik može zaštititi sebe od pokušaja prevare od strane druge strane.
+Međutim, ovaj sistem ima potencijalnu manu, koju ćemo adresirati u narednom poglavlju. Videćemo kako svaki učesnik može zaštititi sebe od pokušaja prevare od strane druge strane.
 
 ## Ključ opoziva
 
