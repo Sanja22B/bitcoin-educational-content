@@ -12,11 +12,11 @@ Ciljevi:
 ---
 # Putovanje do drugog nivoa Bitkojna
 
-Zaronite u srž Lajtning mreže, esencijalnog sistema za budućnost Bitcoin transakcija. LNP201 je teorijski kurs o tehničkom funkcionisanju Lajtninga. Otkriva osnove i mehanizme ovog drugog nivoa, dizajniranog da učini Bitcoin plaćanja brzim, ekonomičnim i skalabilnim.
+Zaronite u srž Lajtning mreže, esencijalnog sistema za budućnost Bitkojn transakcija. LNP201 je teorijski kurs o tehničkom funkcionisanju Lajtninga. Otkriva osnove i mehanizme ovog drugog nivoa, dizajniranog da učini Bitkojn plaćanja brzim, ekonomičnim i skalabilnim.
 
 Zahvaljujući svojoj mreži platnih kanala, Lajtning omogućava brze i sigurne transakcije bez beleženja svake transakcije na Bitkojn blokčejnu. Kroz poglavlja ćete naučiti kako funkcioniše otvaranje, upravljanje i zatvaranje kanala plaćanja, kako se plaćanja sigurno usmeravaju kroz posredničke čvorove uz minimiziranje potrebe za poverenjem, i kako upravljati likvidnošću. Otkrićete šta su Obavezujuće transakcije, HTLC-ovi, ključevi opoziva, mehanizmi kažnjavanja, rutiranja sa višestrukim šifrovanjem (onion routing) i fakture.
 
-Bilo da ste početnik sa Bitkojnom ili iskusniji korisnik, ovaj kurs će pružiti vredne informacije za razumevanje i korišćenje Lightning Network. Iako ćemo pokriti neke osnove rada Bitkojna u prvim delovima, neophodno je savladati osnove Satošijevog izuma pre nego što se upustite u LNP201.
+Bilo da ste početnik sa Bitkojnom ili iskusniji korisnik, ovaj kurs će pružiti vredne informacije za razumevanje i korišćenje Lajtning mreže. Iako ćemo pokriti neke osnove rada Bitkojna u prvim delovima, neophodno je savladati osnove Satošijevog izuma pre nego što se upustite u LNP201.
 
 Uživaj u svom otkriću!
 
@@ -33,7 +33,7 @@ Uživaj u svom otkriću!
 
 Dobrodošli na kurs LNP201, koji ima za cilj da objasni tehničko funkcionisanje Lajtning Mreže.
 
-Lajtning Mreža je mreža platnih kanala izgrađena na Bitkojn protokolu, s ciljem omogućavanja brzih transakcija i niskih naknada. Omogućava kreiranje platnih kanala između učesnika, unutar kojih se transakcije mogu obavljati gotovo trenutno i uz minimalne naknade, bez potrebe za pojedinačnim beleženjem svake transakcije na blokčejnu. Tako, Lajtning mreća nastoji poboljšati skalabilnost Bitkojna i učiniti ga upotrebljivim za plaćanja male vrednosti.
+Lajtning Mreža je mreža platnih kanala izgrađena na Bitkojn protokolu, s ciljem omogućavanja brzih transakcija sa niskim naknada. Omogućava kreiranje platnih kanala između učesnika, unutar kojih se transakcije mogu obavljati gotovo trenutno i uz minimalne naknade, bez potrebe za pojedinačnim beleženjem svake transakcije na blokčejnu. Tako, Lajtning mreža nastoji poboljšati skalabilnost Bitkojna i učiniti ga upotrebljivim za plaćanja male vrednosti.
 
 Pre nego što istražimo aspekt "mreže", važno je razumeti koncept **kanala plaćanja** na Lajtningu, kako funkcioniše i njegove specifičnosti. Ovo je tema prvog poglavlja.
 
@@ -342,38 +342,38 @@ Kada Alisa i Bob ažuriraju stanje kanala novom Lajtning transakcijom, oni unapr
 
 
 - Alisa i Bob imaju novu Obavezujuću transakciju koja predstavlja trenutnu raspodelu sredstava nakon Lajtning transakcije.
-- Svako ima tajnu onog drugog za prethodnu transakciju, što im omogućava da koriste ključ za opoziv samo ako jedan od njih pokuša da prevari objavljivanjem transakcije sa starim stanjem u mempoolovima čvorova Bitcoin. Zaista, da bi se kaznila druga strana, neophodno je imati obe tajne i drugu Obavezujuću transakciju, koja uključuje potpisani ulaz. Bez ove transakcije, ključ za opoziv je beskoristan. Jedini način da se dobije ova transakcija je da se preuzme iz mempoolova (u transakcijama koje čekaju potvrdu) ili u potvrđenim transakcijama na Blokčejnu tokom perioda vremenskog zaključavanja, što dokazuje da druga strana pokušava da prevari, bilo namerno ili ne.
+- Svako ima tajnu onog drugog za prethodnu transakciju, što im omogućava da koriste ključ za opoziv samo ako jedan od njih pokuša da prevari objavljivanjem u mempoolovima Bitkojn čvorova one transakcije sa starim stanjem. Zaista, da bi se kaznila druga strana, neophodno je imati obe tajne i drugu Obavezujuću transakciju, koja uključuje potpisani ulaz. Bez ove transakcije, ključ za opoziv je beskoristan. Jedini način da se dobije ova transakcija je da se preuzme iz mempoolova (u transakcijama koje čekaju potvrdu) ili u potvrđenim transakcijama na Blokčejnu tokom perioda vremenskog zaključavanja, što dokazuje da druga strana pokušava da prevari, bilo namerno ili ne.
 
 Hajde da uzmemo primer kako bismo dobro razumeli ovaj proces:
 
 
-- Početno stanje**: Alice ima **100.000 satoshija**, Bob **30.000 satoshija**.
+- **Početno stanje**: Alice ima **100.000 satošija**, Bob **30.000 satošija**.
 
 ![LNP201](assets/en/26.webp)
 
 
-- Bob želi da primi 40.000 satoshija od Alise putem njihovog Lightning kanala. Da bi to uradio:
-   - On joj šalje Invoice zajedno sa svojom tajnom za opozivni ključ njegovog prethodnog Commitment Transaction.
-   - Kao odgovor, Alice pruža svoj potpis za Bobov novi Commitment Transaction, kao i svoju tajnu za ključ opoziva svoje prethodne transakcije.
-   - Konačno, Bob šalje svoj potpis za Alisin novi Commitment Transaction.
-   - Ove razmene omogućavaju Alisi da pošalje **40.000 satoshija** Bobu preko Lightning mreže putem njihovog kanala, a nove Commitment transakcije sada odražavaju ovu novu raspodelu sredstava.
+- Bob želi da primi 40.000 satošija od Alise putem njihovog Lajtning kanala. Da bi to uradio:
+   - On joj šalje Invoice zajedno sa svojom tajnom za ključ opoziva njegove prethodne Obavezujuće transakcije.
+   - Kao odgovor, Alisa pruža svoj potpis za Bobovu novu Obavezujuću transakciju, kao i svoju tajnu za ključ opoziva svoje prethodne transakcije.
+   - Konačno, Bob šalje svoj potpis za Alisinu novu Obavezujuću transakciju.
+   - Ove razmene omogućavaju Alisi da pošalje **40.000 satošija** Bobu preko Lajtning mreže putem njihovog kanala, a nove Obavezujuće transakcije sada odražavaju ovu novu raspodelu sredstava.
 
 ![LNP201](assets/en/27.webp)
 
 
-- Ako Alice pokuša da objavi stari Commitment Transaction gde je još uvek posedovala **100,000 satoshija**, Bob, koji je dobio ključ za opoziv, može odmah povratiti sredstva koristeći ovaj ključ, dok je Alice blokirana vremenskim zaključavanjem.
+- Ako Alisa pokuša da objavi staru Obavezujuću transakciju gde je još uvek posedovala **100,000 satošija**, Bob, koji je dobio ključ za opoziv, može odmah povratiti sredstva koristeći ovaj ključ, dok je Alice blokirana vremenskim zaključavanjem.
 
 ![LNP201](assets/en/28.webp)
 
-Čak i ako, u ovom slučaju, Bob nema ekonomski interes da pokuša da prevari, ako to ipak učini, Alisa takođe ima koristi od simetrične zaštite koja joj nudi iste garancije.
+Čak i ako, u ovom slučaju, Bob nema ekonomski interes da pokuša da prevari, ali ako to ipak učini, Alisa takođe ima koristi od simetrične zaštite koja joj nudi iste garancije.
 
 **Šta bi trebalo da izvučete iz ovog poglavlja?**
 
-**Transakcije Commitment** na Lightning Network uključuju sigurnosne mehanizme koji smanjuju i rizik od varanja i podsticaje za isto. Pre nego što potpišu novi Commitment Transaction, Alice i Bob Exchange svoje odgovarajuće **tajne** za prethodne transakcije Commitment. Ako Alice pokuša da objavi stari Commitment Transaction, Bob može koristiti **ključ za opoziv** da povrati sva sredstva pre nego što Alice to može (jer je blokirana vremenskim zaključavanjem), što je kažnjava za pokušaj varanja.
+**Obavezujuće transakcije** na Lajtning mreži uključuju sigurnosne mehanizme koji smanjuju i rizik od varanja i podsticaje za isto. Pre nego što potpišu novu Obavezujuću transakciju, Alisa i Bob razmenjuju svoje odgovarajuće **tajne** za prethodne Obavezujuće transakcije. Ako Alisa pokuša da objavi staru Obavezujuću transakciju, Bob može koristiti **ključ za opoziv** da povrati sva sredstva pre nego što Alisa to može (jer je blokirana vremenskim zaključavanjem), što je kažnjava za pokušaj varanja.
 
-Ovaj sigurnosni sistem osigurava da učesnici poštuju pravila Lightning Network, i ne mogu profitirati od objavljivanja starih Commitment transakcija.
+Ovaj sigurnosni sistem osigurava da učesnici poštuju pravila Lajtning mreže, i ne mogu profitirati od objavljivanja starih Obavezujućih transakcija.
 
-U ovom trenutku obuke, sada znate kako se otvaraju Lightning kanali i kako funkcionišu transakcije unutar ovih kanala. U sledećem poglavlju, otkrićemo različite načine za zatvaranje kanala i povratak vaših bitcoina na glavnom Blockchain.
+U ovom trenutku obuke, sada znate kako se otvaraju Lajtning kanali i kako funkcionišu transakcije unutar ovih kanala. U sledećem poglavlju, otkrićemo različite načine za zatvaranje kanala i povratak vaših bitcoina na bazni nivo blokčejna.
 
 ## Zatvaranje kanala
 
@@ -381,11 +381,11 @@ U ovom trenutku obuke, sada znate kako se otvaraju Lightning kanali i kako funkc
 
 ![video en](https://youtu.be/zmAa2fj_V7w)
 
-U ovom poglavlju ćemo diskutovati o **zatvaranju kanala** na Lightning Network, što se obavlja putem Bitcoin transakcije, baš kao i otvaranje kanala. Nakon što smo videli kako funkcionišu transakcije unutar kanala, sada je vreme da vidimo kako zatvoriti kanal i povratiti sredstva na Bitcoin Blockchain.
+U ovom poglavlju ćemo diskutovati o **zatvaranju kanala** na Lajtning mreži, što se obavlja putem Bitkojn transakcije, baš kao i otvaranje kanala. Nakon što smo videli kako funkcionišu transakcije unutar kanala, sada je vreme da vidimo kako zatvoriti kanal i povratiti sredstva na Bitkojn blokčejnu.
 
 ### Podsetnik o životnom ciklusu kanala
 
-**Životni ciklus kanala** počinje njegovim **otvaranjem**, putem Bitcoin transakcije, zatim se unutar njega obavljaju Lightning transakcije, i na kraju, kada strane žele da povrate svoja sredstva, kanal se **zatvara** kroz drugu Bitcoin transakciju. Srednje transakcije obavljene na Lightning-u su predstavljene neobjavljenim **Commitment transakcijama**.
+**Životni ciklus kanala** počinje njegovim **otvaranjem**, putem Bitkojn transakcije, zatim se unutar njega obavljaju Lajtning transakcije, i na kraju, kada strane žele da povrate svoja sredstva, kanal se **zatvara** kroz drugu Bitkojn transakciju. Srednje transakcije obavljene na Lajtningu su predstavljene neobjavljenim **Obavezujućim transakcijama**.
 
 ![LNP201](assets/en/29.webp)
 
@@ -394,37 +394,37 @@ U ovom poglavlju ćemo diskutovati o **zatvaranju kanala** na Lightning Network,
 Postoje tri glavna načina da se zatvori ovaj kanal, koji se mogu nazvati **dobar, grub i izostajući** (inspirisano Andreasom Antonopoulosom u _Mastering the Lightning Network_):
 
 
-- The Good**: the **cooperative closure**, where Alice and Bob agree to close the channel.
-- Loše**: **prisilno zatvaranje**, gde jedna od strana odluči da zatvori kanal pošteno, ali bez saglasnosti druge strane.
-- Ružno**: **zatvaranje sa varanjem**, gde jedna od strana pokušava da ukrade sredstva objavljivanjem starog Commitment Transaction (bilo kog osim poslednjeg, koji odražava stvarnu i poštenu raspodelu sredstava).
+- **Dobro**: the **kooperativno zatvaranje**, gde se i Alisa i Bob se slažu da zatvore kanal.
+- **Loše**: **prisilno zatvaranje**, gde jedna od strana odluči da zatvori kanal pošteno, ali bez saglasnosti druge strane.
+- **Ružno**: **zatvaranje sa varanjem**, gde jedna od strana pokušava da ukrade sredstva objavljivanjem stare Obavezujuće transakcije (bilo koje osim poslednje, koja odražava stvarnu i poštenu raspodelu sredstava).
 
 Hajde da uzmemo primer:
 
 
-- Alice poseduje **100,000 satoshija** a Bob **30,000 satoshija**.
-- Ova distribucija se odražava u **2 Commitment transakcije** (jedna po korisniku) koje nisu objavljene, ali bi mogle biti u slučaju zatvaranja kanala.
+- Alisa poseduje **100,000 satošija** a Bob **30,000 satošija**.
+- Ova distribucija se odražava u **2 Obavezujuće transakcije** (jedna po korisniku) koje nisu objavljene, ali bi mogle biti u slučaju zatvaranja kanala.
 
 ![LNP201](assets/en/30.webp)
 
-### The Good: kooperativno zatvaranje
+### Dobro: kooperativno zatvaranje
 
 U **kooperativnom zatvaranju**, Alisa i Bob se dogovaraju da zatvore kanal. Evo kako to ide:
 
 
-- Alice šalje poruku Bobu putem Lightning komunikacionog protokola da predloži zatvaranje kanala.
+- Alice šalje poruku Bobu putem Lajtning komunikacionog protokola kojom predlože zatvaranje kanala.
 - Bob se slaže, i dve strane ne obavljaju dalje transakcije u kanalu.
 
 ![LNP201](assets/en/31.webp)
 
 
-- Alice i Bob zajedno pregovaraju o naknadama za **završnu transakciju**. Ove naknade se obično izračunavaju na osnovu tržišta naknada Bitcoin u trenutku zatvaranja. Važno je napomenuti da **uvek osoba koja je otvorila kanal** (Alice u našem primeru) plaća naknade za zatvaranje.
-- Oni konstruiraju novu **završnu transakciju**. Ova transakcija podseća na Commitment Transaction, ali bez vremenskih zaključavanja ili mehanizama opoziva, jer obe strane sarađuju i nema rizika od varanja. Ova kooperativna završna transakcija je stoga različita od Commitment transakcija.
+- Alisa i Bob zajedno pregovaraju o naknadama za **završnu transakciju**. Ove naknade se obično izračunavaju na osnovu Bitkon naknada na tržištu u trenutku zatvaranja. Važno je napomenuti da **uvek osoba koja je otvorila kanal** (Alisa u našem primeru) plaća naknade za zatvaranje.
+- Oni konstruiraju novu **završnu transakciju**. Ova transakcija podseća na Obavezujuću transakciju, ali bez vremenskih zaključavanja ili mehanizama opoziva, jer obe strane sarađuju i nema rizika od varanja. Ova kooperativna završna transakcija je stoga različita od Obavezujuće transakcije.
 
-Na primer, ako Alisa poseduje **100.000 satoshija** a Bob **30.000 satoshija**, završna transakcija će poslati **100.000 satoshija** na Alisin Address i **30.000 satoshija** na Bobov Address, bez vremenskih ograničenja. Kada obe strane potpišu ovu transakciju, Alisa je objavljuje. Kada transakcija bude potvrđena na Bitcoin Blockchain, Lightning kanal će biti zvanično zatvoren.
+Na primer, ako Alisa poseduje **100.000 satošija** a Bob **30.000 satošija**, završna transakcija će poslati **100.000 satošija** na Alisinu adresu i **30.000 satošija** na Bobovu adresu, bez vremenskih ograničenja. Kada obe strane potpišu ovu transakciju, Alisa je objavljuje. Kada transakcija bude potvrđena na Bitkon blokčejnu, Lajtning kanal će biti zvanično zatvoren.
 
 ![LNP201](assets/en/32.webp)
 
-**Kooperativno zatvaranje** je preferirani metod zatvaranja jer je brzo (nema vremenskog zaključavanja) i naknade za transakcije su prilagođene prema trenutnim Bitcoin tržišnim uslovima. Ovo izbegava plaćanje premalo, što bi moglo rizikovati blokiranje transakcije u mempool-ovima, ili preplaćivanje nepotrebno, što dovodi do nepotrebnog finansijskog gubitka za učesnike.
+**Kooperativno zatvaranje** je preferirani metod zatvaranja jer je brzo (nema vremenskog zaključavanja) i naknade za transakcije su prilagođene prema trenutnim Bitkojn tržišnim uslovima. Ovim se izbegava postavljanje premale naknade, što bi moglo rizikovati blokiranjem transakcije u mempool-ovima, ili nepotrebno preplaćivanje , što dovodi do nepotrebnog finansijskog gubitka za učesnike.
 
 ### Loše: prisilno zatvaranje
 
