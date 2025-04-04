@@ -424,84 +424,84 @@ Na primer, ako Alisa poseduje **100.000 satošija** a Bob **30.000 satošija**, 
 
 ![LNP201](assets/en/32.webp)
 
-**Kooperativno zatvaranje** je preferirani metod zatvaranja jer je brzo (nema vremenskog zaključavanja) i naknade za transakcije su prilagođene prema trenutnim Bitkojn tržišnim uslovima. Ovim se izbegava postavljanje premale naknade, što bi moglo rizikovati blokiranjem transakcije u mempool-ovima, ili nepotrebno preplaćivanje , što dovodi do nepotrebnog finansijskog gubitka za učesnike.
+**Kooperativno zatvaranje** je preferirani metod zatvaranja jer je brzo (nema vremenskog zaključavanja) i naknade za transakcije su prilagođene trenutnim Bitkojn tržišnim uslovima. Ovim se izbegava postavljanje premale naknade, što bi moglo rizikovati blokiranjem transakcije u mempool-ovima, ili nepotrebno preplaćivanje , što dovodi do nepotrebnog finansijskog gubitka za učesnike.
 
 ### Loše: prisilno zatvaranje
 
-Kada Alisin čvor pošalje poruku Bobovom sa zahtevom za kooperativno zatvaranje, ako on ne odgovori (na primer, zbog prekida interneta ili tehničkog problema), Alisa može nastaviti sa **prisilnim zatvaranjem** objavljivanjem **poslednjeg potpisanog Commitment Transaction**.
+Kada Alisin čvor pošalje poruku Bobovom sa zahtevom za kooperativno zatvaranje, ako on ne odgovori (na primer, zbog prekida interneta ili tehničkog problema), Alisa može nastaviti sa **prisilnim zatvaranjem** objavljivanjem **poslednje potpisane Obavezujuće transakcije**.
 
-U ovom slučaju, Alice će jednostavno objaviti poslednji Commitment Transaction, koji odražava stanje kanala u trenutku kada je poslednja Lightning transakcija obavljena sa pravilnom raspodelom sredstava.
+U ovom slučaju, Alice će jednostavno objaviti poslednju Obavezujuću transakciju, koji odražava stanje kanala u trenutku kada je poslednja Lajtning transakcija obavljena sa pravilnom raspodelom sredstava.
 
 ![LNP201](assets/en/33.webp)
 
-Ova transakcija uključuje **timelock** za Alisina sredstva, što usporava zatvaranje.
+Ova transakcija uključuje **vremensko zaključavanje** Alisinih sredstva, što usporava zatvaranje.
 
 ![LNP201](assets/en/34.webp)
 
-Takođe, naknade za Commitment Transaction mogu biti nepogodne u trenutku zatvaranja, jer su postavljene kada je transakcija kreirana, ponekad i nekoliko meseci ranije. Generalno, Lightning klijenti precenjuju naknade kako bi izbegli buduće probleme, ali to može dovesti do prekomernih naknada, ili obrnuto, do preniskih.
+Takođe, naknade za Obavezujuću transakciju mogu biti nepogodne u trenutku zatvaranja, jer su postavljene kada je transakcija kreirana, ponekad i nekoliko meseci ranije. Generalno, Lajtning klijenti precenjuju naknade kako bi izbegli buduće probleme, ali to može dovesti do prekomernih naknada, ili obrnuto, do preniskih.
 
-Ukratko, **prisilno zatvaranje** je opcija poslednjeg izbora kada peer više ne odgovara. Ono je sporije i manje ekonomično od kooperativnog zatvaranja. Stoga, treba ga izbegavati koliko god je to moguće.
+Ukratko, **prisilno zatvaranje** je opcija poslednjeg izbora kada druga strana više ne odgovara. Ono je sporije i manje ekonomično od kooperativnog zatvaranja. Stoga, treba ga izbegavati koliko god je to moguće.
 
 ### Prevara: varanje
 
-Na kraju, zatvaranje sa **varanjem** se dešava kada jedna od strana pokuša da objavi stari Commitment Transaction, često gde su držali više sredstava nego što bi trebalo. Na primer, Alisa bi mogla da objavi staru transakciju gde je posedovala **120,000 satoshija**, dok zapravo sada poseduje samo **100,000**.
+Na kraju, zatvaranje sa **varanjem** se dešava kada jedna od strana pokuša da objavi staru Obavezujuću transakciju, često gde su držali više sredstava nego što bi trebalo. Na primer, Alisa bi mogla da objavi staru transakciju gde je posedovala **120,000 satošija**, dok zapravo sada poseduje samo **100,000**.
 
 ![LNP201](assets/en/35.webp)
 
-Bob, da bi sprečio ovu prevaru, nadgleda Bitcoin Blockchain i njegov Mempool kako bi osigurao da Alice ne objavi staru transakciju. Ako Bob otkrije pokušaj prevare, može koristiti **ključ za opoziv** da povrati Aliceina sredstva i kazni je tako što će uzeti celokupna sredstva kanala. Pošto je Alice blokirana vremenskim zaključavanjem na svom izlazu, Bob ima vremena da ih potroši bez vremenskog zaključavanja sa svoje strane kako bi povratio celokupan iznos na Address koji poseduje.
+Bob, da bi sprečio ovu prevaru, nadgleda Bitkojn blokčejn i njegov Mempool kako bi osigurao da Alice ne objavi staru transakciju. Ako Bob otkrije pokušaj prevare, može koristiti **ključ za opoziv** da uzme Alicina sredstva i kazni je tako što će uzeti celokupna sredstva kanala. Pošto je Alice blokirana vremenskim zaključavanjem na svom izlazu, Bob ima vremena da ih potroši bez vremenskog zaključavanja sa svoje strane kako bi prebacio celokupan iznos na adresu koji poseduje.
 
 ![LNP201](assets/en/36.webp)
 
-Očigledno, varanje može potencijalno uspeti ako Bob ne deluje u okviru vremena koje nameće vremenska brava na Alisinom izlazu. U tom slučaju, Alisin izlaz se otključava, omogućavajući joj da ga iskoristi za kreiranje novog izlaza na Address koji ona kontroliše.
+Očigledno, varanje može potencijalno uspeti ako Bob ne deluje u okviru vremena koliko traje zaključavanje na Alisinom izlazu. U tom slučaju, Alisin izlaz se otključava, omogućavajući joj da ga iskoristi za kreiranje novog izlaza na adresi koju ona kontroliše.
 
 **Šta bi trebalo da izvučete iz ovog poglavlja?**
 
 Postoje tri načina za zatvaranje kanala:
 
 
-- Kooperativno Zatvaranje**: Brzo i manje skupo, gde se obe strane slažu da zatvore kanal i objave prilagođenu transakciju zatvaranja.
-- Prinudno Zatvaranje**: Manje poželjno, jer se oslanja na objavljivanje Commitment Transaction, sa potencijalno nepovoljnim naknadama i vremenskim zaključavanjem, što usporava zatvaranje.
-- Varanje**: Ako jedna od strana pokuša da ukrade sredstva objavljivanjem stare transakcije, druga strana može koristiti ključ za opoziv da kazni ovo varanje.
+- **Kooperativno Zatvaranje**: Brzo i manje skupo, gde se obe strane slažu da zatvore kanal i objave prilagođenu transakciju zatvaranja.
+- **Prinudno Zatvaranje**: Manje poželjno, jer se oslanja na objavljivanje Obavezujuće transakcije, sa potencijalno nepovoljnim naknadama i vremenskim zaključavanjem, što usporava zatvaranje.
+- **Varanje**: Ako jedna od strana pokuša da ukrade sredstva objavljivanjem stare obavezujuće transakcije, druga strana može koristiti ključ za opoziv da kazni ovo varanje.
 
-U narednim poglavljima, istražićemo Lightning Network iz šire perspektive, fokusirajući se na to kako njegova mreža funkcioniše.
+U narednim poglavljima, istražićemo Lajtning mrežu iz šire perspektive, fokusirajući se na to kako njegova mreža funkcioniše.
 
 # Mreža Likvidnosti
 
 <partId>a873f1cb-751f-5f4a-9ed7-25092bfdef11</partId>
 
-## Lightning Network
+## Lajtning mreža
 
 <chapterId>45a7252c-fa4f-554b-b8bb-47449532918e</chapterId>
 
 ![video en](https://youtu.be/44oBdNdXtEQ)
 
-U ovom poglavlju ćemo istražiti kako uplate na Lightning Network mogu stići do primaoca čak i ako nisu direktno povezani platnim kanalom. Lightning je, zapravo, **mreža platnih kanala**, koja omogućava slanje sredstava udaljenom čvoru kroz kanale drugih učesnika. Otkrićemo kako se uplate usmeravaju kroz mrežu, kako se likvidnost kreće između kanala i kako se obračunavaju transakcione naknade.
+U ovom poglavlju ćemo istražiti kako uplate na Lajtning mrežu mogu stići do primaoca čak i ako nisu direktno povezani platnim kanalom. Lajtning je, zapravo, **mreža platnih kanala**, koja omogućava slanje sredstava udaljenom čvoru kroz kanale drugih učesnika. Otkrićemo kako se uplate usmeravaju kroz mrežu, kako se likvidnost kreće između kanala i kako se obračunavaju transakcione naknade.
 
 ### Mreža kanala plaćanja
 
-Na Lightning Network, transakcija odgovara transferu sredstava između dva čvora. Kao što je viđeno u prethodnim poglavljima, neophodno je otvoriti kanal sa nekim da bi se izvršile Lightning transakcije. Ovaj kanal omogućava skoro beskonačan broj off-chain transakcija pre nego što se zatvori kako bi se povratila On-Chain ravnoteža. Međutim, ova metoda ima nedostatak jer zahteva direktan kanal sa drugom osobom za primanje ili slanje sredstava, što podrazumeva otvaranje transakcije i zatvaranje transakcije za svaki kanal. Ako planiram da izvršim veliki broj plaćanja sa ovom osobom, otvaranje i zatvaranje kanala postaje isplativo. Suprotno tome, ako mi je potrebno da izvršim samo nekoliko Lightning transakcija, otvaranje direktnog kanala nije povoljno, jer bi me koštalo 2 On-Chain transakcije za ograničen broj off-chain transakcija. Ovaj slučaj se može desiti, na primer, kada želim da platim Lightning-om kod trgovca bez planiranja povratka.
+Na Lajtning mreži, transakcija odgovara transferu sredstava između dva čvora. Kao što je viđeno u prethodnim poglavljima, neophodno je otvoriti kanal sa nekim da bi se izvršile Lajtning transakcije. Ovaj kanal omogućava skoro beskonačan broj transakcija izvan baznog blokčejna pre nego što se zatvori kako bi se povratila sredstva na bazni blokčejn nivo. Međutim, ova metoda ima nedostatak jer zahteva direktan kanal sa drugom osobom za primanje ili slanje sredstava, što podrazumeva otvaranje transakcije i zatvaranje transakcije za svaki kanal. Ako planiram da izvršim veliki broj plaćanja sa ovom osobom, otvaranje i zatvaranje kanala postaje isplativo. Suprotno tome, ako mi je potrebno da izvršim samo nekoliko Lajtning transakcija, otvaranje direktnog kanala nije povoljno, jer bi me koštalo 2 bazne transakcije za ograničen broj transakcija izvan baznog blokčejna. Ovaj slučaj se može desiti, na primer, kada želim da platim Lajtningom kod trgovca bez planiranja povratka.
 
-Da bi rešio ovaj problem, Lightning Network omogućava usmeravanje plaćanja kroz nekoliko kanala i posredničkih čvorova, čime se omogućava transakcija bez direktnog kanala sa drugom osobom.
+Da bi rešio ovaj problem, Lajtning mreža omogućava usmeravanje plaćanja kroz nekoliko kanala i posredničkih čvorova, čime se omogućava transakcija bez direktnog kanala sa drugom osobom.
 
 Na primer, zamislite da:
 
 
-- Alice** (u narandžastom) ima kanal sa **Suzie** (u sivom) sa **100.000 satoshija** na njenoj strani i **30.000 satoshija** na Suzieinoj strani.
-- Suzie** ima kanal sa **Bobom** u kojem ona poseduje **250.000 satoshija**, dok Bob nema nijedan satoshi.
+- **Alisa** (u narandžastom) ima kanal sa **Suzi** (u sivom) sa **100.000 satošija** na njenoj strani i **30.000 satošija** na Suzinoj strani.
+- **Suzi** ima kanal sa **Bobom** u kojem ona poseduje **250.000 satošija**, dok Bob nema nijedan satoši.
 
 ![LNP201](assets/en/37.webp)
 
-Ako Alice želi da pošalje sredstva Bobu bez otvaranja direktnog kanala sa njim, moraće da prođe kroz Suzie, i svaki kanal će morati da prilagodi likvidnost na svakoj strani. **Poslati satoshi ostaju unutar svojih odgovarajućih kanala**; oni zapravo ne "prelaze" kanale, već se transfer vrši putem prilagođavanja interne likvidnosti u svakom kanalu.
+Ako Alisa želi da pošalje sredstva Bobu bez otvaranja direktnog kanala sa njim, moraće da prođe kroz Suzi, i svaki kanal će morati da prilagodi likvidnost na svakoj strani. **Poslati satošiji ostaju unutar svojih odgovarajućih kanala**; oni zapravo ne "prelaze" kanale, već se transfer vrši putem prilagođavanja interne likvidnosti u svakom kanalu.
 
-Pretpostavimo da Alice želi da pošalje **50.000 satoshija** Bobu:
+Pretpostavimo da Alisa želi da pošalje **50.000 satošija** Bobu:
 
 
-- Alice** šalje 50.000 satoshija **Suzie** u njihovom zajedničkom kanalu.
-- Suzie** replicira ovaj transfer slanjem 50.000 satoshija **Bobu** u njihovom kanalu.
+- **Alice** šalje 50.000 satošija **Suzi** u njihovom zajedničkom kanalu.
+- **Suzi** replicira ovaj transfer slanjem 50.000 satošija **Bobu** u njihovom kanalu.
 
 ![LNP201](assets/en/38.webp)
 
-Dakle, uplata se usmerava Bobu putem kretanja likvidnosti u svakom kanalu. Na kraju operacije, Alis završava sa 50,000 Sats. Ona je zaista prenela 50,000 Sats jer je na početku imala 100,000. Bob, sa svoje strane, završava sa dodatnih 50,000 Sats. Za Suzi (posrednički čvor), ova operacija je neutralna: na početku je imala 30,000 Sats u svom kanalu sa Alis i 250,000 Sats u svom kanalu sa Bobom, ukupno 280,000 Sats. Nakon operacije, ona drži 80,000 Sats u svom kanalu sa Alis i 200,000 Sats u svom kanalu sa Bobom, što je isti zbir kao na početku.
+Dakle, uplata se usmerava Bobu putem kretanja likvidnosti u svakom kanalu. Na kraju operacije, Alisa završava sa 50,000 Sats. Ona je zaista prenela 50,000 Sats jer je na početku imala 100,000. Bob, sa svoje strane, završava sa dodatnih 50,000 Sats. Za Suzi (posrednički čvor), ova operacija je neutralna: na početku je imala 30,000 Sats u svom kanalu sa Alis i 250,000 Sats u svom kanalu sa Bobom, ukupno 280,000 Sats. Nakon operacije, ona drži 80,000 Sats u svom kanalu sa Alis i 200,000 Sats u svom kanalu sa Bobom, što je isti zbir kao na početku.
 
 Ovaj transfer je stoga ograničen **dostupnom likvidnošću** u pravcu transfera.
 
@@ -510,75 +510,75 @@ Ovaj transfer je stoga ograničen **dostupnom likvidnošću** u pravcu transfera
 Hajde da uzmemo teoretski primer druge mreže sa:
 
 
-- 130,000 satoshis** na Alisinoj strani (u narandžastom) u njenom kanalu sa **Suzie** (u sivom).
-- 90,000 satoshija** na **Suzienoj** strani i **200,000 satoshija** na **Karolinoj** strani (u roze boji).
-- 150,000 satoshija** na strani **Carol** i **100,000 satoshija** na strani **Bob**.
+- **130,000 satošija** na Alisinoj strani (u narandžastom) u njenom kanalu sa **Suzi** (u sivom).
+- **90,000 satošija** na **Suzinoj** strani i **200,000 satošija** na **Karolinoj** strani (u roze boji).
+- **150,000 satošija** na strani **Carol** i **100,000 satošija** na strani **Bob**.
 
 ![LNP201](assets/en/39.webp)
 
-Maksimum koji Alice može poslati Bobu u ovoj konfiguraciji je **90.000 satoshija**, jer je ograničena najmanjom dostupnom likvidnošću u kanalu od **Suzie do Carol**. U suprotnom smeru (od Boba do Alice), plaćanje nije moguće jer **Suziena** strana u kanalu sa **Alice** ne sadrži satoshije. Stoga, **nema rute** koja se može koristiti za transfer u ovom smeru.
+Maksimum koji Alice može poslati Bobu u ovoj konfiguraciji je **90.000 satošija**, jer je ograničena najmanjom dostupnom likvidnošću u kanalu od **Suzi do Carol**. U suprotnom smeru (od Boba do Alice), plaćanje nije moguće jer **Suzina** strana u kanalu sa **Alisom** ne sadrži satošija. Stoga, **nema rute** koja se može koristiti za transfer u ovom smeru.
 
-Alice šalje **40,000 satoshija** Bobu kroz kanale:
+Alice šalje **40,000 satošija** Bobu kroz kanale:
 
 
-- Alice prenosi 40,000 satoshija na svoj kanal sa Suzie.
-- Suzie prenosi 40,000 satoshija Caroli u njihovom zajedničkom kanalu.
-- Carol konačno prenosi 40.000 satoshija Bobu.
+- Alice prenosi 40,000 satošija na svoj kanal sa Suzie.
+- Suzie prenosi 40,000 satošija Caroli u njihovom zajedničkom kanalu.
+- Carol konačno prenosi 40.000 satošija Bobu.
 
 ![LNP201](assets/en/40.webp)
 
-**Satošiji poslati** u svakom kanalu **ostaju u kanalu**, tako da satošiji koje je Karol poslala Bobu nisu isti kao oni koje je Alis poslala Suzi. Prenos se vrši samo podešavanjem likvidnosti unutar svakog kanala. Štaviše, ukupni kapacitet kanala ostaje nepromenjen.
+**Satošija poslati** u svakom kanalu **ostaju u kanalu**, tako da satošiji koje je Karol poslala Bobu nisu isti kao oni koje je Alis poslala Suzi. Prenos se vrši samo podešavanjem likvidnosti unutar svakog kanala. Štaviše, ukupni kapacitet kanala ostaje nepromenjen.
 
 ![LNP201](assets/en/41.webp)
 
-Kao u prethodnom primeru, nakon transakcije, izvorni čvor (Alice) ima 40.000 satoshija manje. Međuprostorni čvorovi (Suzie i Carol) zadržavaju isti ukupan iznos, što operaciju čini neutralnom za njih. Na kraju, odredišni čvor (Bob) prima dodatnih 40.000 satoshija.
+Kao u prethodnom primeru, nakon transakcije, izvorni čvor (Alisa) ima 40.000 satošija manje. Međuprostorni čvorovi (Suzi i Karol) zadržavaju isti ukupan iznos, što operaciju čini neutralnom za njih. Na kraju, odredišni čvor (Bob) prima dodatnih 40.000 satošija.
 
-Uloga posrednih čvorova je stoga veoma važna u funkcionisanju Lightning Network. Oni olakšavaju transfere nudeći više puteva za plaćanja. Da bi se ovi čvorovi podstakli da obezbede svoju likvidnost i učestvuju u usmeravanju plaćanja, plaćaju im se **naknade za usmeravanje**.
+Uloga posrednih čvorova je stoga veoma važna u funkcionisanju Lajtning mreže. Oni olakšavaju transfere nudeći više puteva za plaćanja. Da bi se ovi čvorovi podstakli da obezbede svoju likvidnost i učestvuju u usmeravanju plaćanja, plaćaju im se **naknade za usmeravanje**.
 
 ### Naknade za usmeravanje
 
-Međupostajni čvorovi primenjuju naknade kako bi omogućili prolazak uplata kroz njihove kanale. Ove naknade postavlja **svaki čvor za svaki kanal**. Naknade se sastoje od 2 Elements:
+Međuprostorni čvorovi naplaćuju naknade kako bi omogućili prolazak uplata kroz njihove kanale. Ove naknade postavlja **svaki čvor za svaki kanal**. Naknade se sastoje od 2 elementa:
 
 
 - "**Osnovna naknada**": fiksni iznos po kanalu, često **1 sat** po defaultu, ali prilagodljiv.
-- "**Varijabilna naknada**": procenat prenetog iznosa, izračunat u **delovima po milionu (ppm)**. Podrazumevano je **1 ppm** (1 sat po milionu prenetih satoshija), ali se može i prilagoditi.
+- "**Varijabilna naknada**": procenat prenetog iznosa, izračunat u **delovima po milionu (ppm)**. Podrazumevano je **1 ppm** (1 sat po milionu prenetih satošija), ali se može i prilagoditi.
 
-Naknade se takođe razlikuju u zavisnosti od smera transfera. Na primer, za transfer od Alice do Suzie, primenjuju se Aliceine naknade. Suprotno tome, od Suzie do Alice, koriste se Suzieine naknade.
+Naknade se takođe razlikuju u zavisnosti od smera transfera. Na primer, za transfer od Alise do Suzi, primenjuju se Alisine naknade. Suprotno tome, od Suzi do Alise, koriste se Suzine naknade.
 
-Na primer, za kanal između Alice i Suzie, mogli bismo imati:
+Na primer, za kanal između Alise i Suzi, mogli bismo imati:
 
 
-- Alice**: osnovna naknada od 1 sat i 1 ppm za promenljive naknade.
-- Suzie**: osnovna naknada od 0.5 sat i 10 ppm za promenljive naknade.
+- **Alisa**: osnovna naknada od 1 sat i 1 ppm za promenljive naknade.
+- **Suzi**: osnovna naknada od 0.5 sat i 10 ppm za promenljive naknade.
 
 ![LNP201](assets/en/42.webp)
 
-Da bismo bolje razumeli kako funkcionišu naknade, proučićemo isti Lightning Network kao i ranije, ali sada sa sledećim naknadama za rutiranje:
+Da bismo bolje razumeli kako funkcionišu naknade, proučićemo istu Lajtning mrežu kao i ranije, ali sada sa sledećim naknadama za rutiranje:
 
 
-- Kanal **Alice - Suzie**: osnovna naknada od 1 Satoshi i 1 ppm za Alice.
-- Kanal **Suzie - Carol**: osnovna naknada od 0 Satoshi i 200 ppm za Suzie.
-- Carol - Bob** Kanal: osnovna naknada od 1 Satoshi i 1 ppm za Suzie 2.
+- Kanal **Alisa - Suzi**: osnovna naknada od 1 Satošija i 1 ppm za Alisu.
+- Kanal **Suzi - Carol**: osnovna naknada od 0 Satošija i 200 ppm za Suzi.
+- Kanal **Carol - Bob** : osnovna naknada od 1 Satošija i 1 ppm za Suzi 2.
 
 ![LNP201](assets/en/43.webp)
 
-Za istu uplatu od **40,000 satoshija** Bobu, Alisa će morati poslati malo više, jer će svaki posrednički čvor odbiti svoje naknade:
+Za istu uplatu od **40,000 Satošija** Bobu, Alisa će morati poslati malo više, jer će svaki posrednički čvor odbiti svoje naknade:
 
 
-- Carol** oduzima 1.04 satoshija na kanalu sa Bobom:
+- **Karol** oduzima 1.04 Satošija na kanalu sa Bobom:
 
 $$ f*{\text{Carol-Bob}} = \text{osnovna naknada} + \left(\frac{\text{ppm} \times \text{iznos}}{10^6}\right) $$
 
 $$ f*{\text{Carol-Bob}} = 1 + \frac{1 \times 40000}{10^6} = 1 + 0.04 = 1.04 \text{ Sats} $$
 
 
-- Suzie** odbija 8 satoshija kao naknade na kanalu sa Carol:
+- **Suzi** odbija 8 Satošija kao naknade na kanalu sa Carol:
 
 $$ f*{\text{Suzie-Carol}} = \text{osnovna naknada} + \left(\frac{\text{ppm} \times \text{iznos}}{10^6}\right) $$
 
 $$ f*{\text{Suzie-Carol}} = 0 + \frac{200 \times 40001.04}{10^6} = 0 + 8.0002 \approx 8 \text{ Sats} $$
 
-Ukupne naknade za ovu uplatu na ovom putu su stoga **9.04 satoshija**. Dakle, Alisa mora poslati **40,009.04 satoshija** da bi Bob primio tačno **40,000 satoshija**.
+Ukupne naknade za ovu uplatu na ovom putu su stoga **9.04 Satošija**. Dakle, Alisa mora poslati **40,009.04 Satošija** da bi Bob primio tačno **40,000 Satošija**.
 
 ![LNP201](assets/en/44.webp)
 
@@ -586,56 +586,56 @@ Likvidnost se stoga ažurira:
 
 ![LNP201](assets/en/45.webp)
 
-### Onion Routing
+### Onion Routing (usmeravanje)
 
-Da bi usmerio uplatu od pošiljaoca do primaoca, Lightning Network koristi metodu zvanu "**onion routing**". Za razliku od rutiranja klasičnih podataka, gde svaki ruter odlučuje o smeru podataka na osnovu njihove destinacije, onion routing funkcioniše drugačije:
+Da bi usmerio uplatu od pošiljaoca do primaoca, Lajtning koristi metodu zvanu "**onion routing (usmeravanje)**". Za razliku od rutiranja klasičnih podataka, gde svaki ruter odlučuje o smeru podataka na osnovu njihove destinacije, onion usmeravanje funkcioniše drugačije:
 
 
-- Čvor koji šalje izračunava celu rutu**: Na primer, Alisa određuje da njena uplata mora proći kroz Suzi i Karol pre nego što stigne do Boba.
-- Svaki posrednički čvor zna samo svog neposrednog suseda**: Suzie zna samo da je primila sredstva od Alice i da ih mora preneti Carol. Međutim, Suzie ne zna da li je Alice izvorni čvor ili posrednički čvor, i takođe ne zna da li je Carol čvor primaoca ili samo još jedan posrednički čvor. Ovo pravilo se takođe primenjuje na Carol i sve druge čvorove na putu. Onion routing tako čuva poverljivost transakcija maskiranjem identiteta pošiljaoca i krajnjeg primaoca.
+- **Čvor koji šalje izračunava celu rutu**: Na primer, Alisa određuje da njena uplata mora proći kroz Suzi i Karol pre nego što stigne do Boba.
+- **Svaki posrednički čvor zna samo svog neposrednog suseda**: Suzi zna samo da je primila sredstva od Alise i da ih mora preneti Karol. Međutim, Suzi ne zna da li je Alice izvorni čvor ili posrednički čvor, i takođe ne zna da li je Karol čvor primaoca ili samo još jedan posrednički čvor. Ovo pravilo se takođe primenjuje na Karol i sve druge čvorove na putu. Onion usmeravanje tako čuva poverljivost transakcija maskiranjem identiteta pošiljaoca i krajnjeg primaoca.
 
-Da bi se osiguralo da čvor koji prenosi može izračunati kompletnu rutu do primaoca u onion rutiranju, mora održavati **mrežni graf** kako bi znao svoju topologiju i odredio moguće rute.
+Da bi se osiguralo da čvor koji prenosi može izračunati kompletnu rutu do primaoca u onion rutiranju, mora održavati **mrežni graf (grafikon veza izmedju čvorova)** kako bi znao svoju topologiju i odredio moguće rute.
 
 **Šta treba da ponesete iz ovog poglavlja?**
 
 
 - Na Lightning mreži, plaćanja se mogu usmeravati između čvorova koji su indirektno povezani preko posredničkih kanala. Svaki od ovih posredničkih čvorova olakšava prenos likvidnosti.
 - Međuprostorni čvorovi primaju proviziju za svoju uslugu, koja se sastoji od fiksnih i varijabilnih naknada.
-- Onion routing omogućava čvoru koji prenosi podatke da izračuna kompletnu rutu bez da posrednički čvorovi znaju izvor ili konačno odredište.
+- Onion usmeravanje omogućava čvoru koji prenosi podatke da izračuna kompletnu rutu bez da posrednički čvorovi znaju izvor ili konačno odredište.
 
-U ovom poglavlju smo istražili usmeravanje plaćanja na Lightning Network. Ali postavlja se pitanje: šta sprečava posredničke čvorove da prihvate dolazno plaćanje bez prosleđivanja na sledeću destinaciju, sa ciljem presretanja transakcije? Upravo je to uloga HTLC-ova koje ćemo proučiti u narednom poglavlju.
+U ovom poglavlju smo istražili usmeravanje plaćanja na Lajtning mreži. Ali postavlja se pitanje: šta sprečava posredničke čvorove da prihvate dolazno plaćanje bez prosleđivanja na sledeću destinaciju, sa ciljem presretanja transakcije? Upravo je to uloga HTLC-ova koje ćemo proučiti u narednom poglavlju.
 
-## HTLC – Hashed Time Locked Contract
+## HTLC – Hashed Time Locked Contract (hašovan vremenski zaključan ugovor)
 
 <chapterId>4369b85a-1365-55d8-99e1-509088210116</chapterId>
 
 ![video en](https://youtu.be/jI4nM297aHA)
 
-U ovom poglavlju ćemo otkriti kako Lightning omogućava plaćanja da prolaze kroz posredničke čvorove bez potrebe za poverenjem u njih, zahvaljujući **HTLC** (_Hashed Time-Locked Contracts_). Ovi pametni ugovori osiguravaju da će svaki posrednički čvor primiti sredstva iz svog kanala samo ako prosledi uplatu krajnjem primaocu, u suprotnom, uplata neće biti validirana.
+U ovom poglavlju ćemo otkriti kako Lajtning omogućava plaćanja da prolaze kroz posredničke čvorove bez potrebe za poverenjem u njih, zahvaljujući **HTLC** (_Hashed Time-Locked Contracts_). Ovi pametni ugovori osiguravaju da će svaki posrednički čvor primiti sredstva iz svog kanala samo ako prosledi uplatu krajnjem primaocu, u suprotnom, uplata neće biti validirana.
 
-Problem koji se javlja kod usmeravanja plaćanja je stoga neophodno poverenje u posredničke čvorove, kao i među samim posredničkim čvorovima. Da bismo to ilustrovali, hajde da ponovo razmotrimo naš pojednostavljeni primer Lightning Network sa 3 čvora i 2 kanala:
+Problem koji se javlja kod usmeravanja plaćanja je stoga neophodno poverenje u posredničke čvorove, kao i među samim posredničkim čvorovima. Da bismo to ilustrovali, hajde da ponovo razmotrimo naš pojednostavljeni primer Lajtning mreće sa 3 čvora i 2 kanala:
 
 
-- Alice ima kanal sa Suzie.
-- Suzie ima kanal sa Bobom.
+- Alisa ima kanal sa Suzi.
+- Suzi ima kanal sa Bobom.
 
 Alice želi da pošalje 40,000 Sats Bobu, ali nema direktan kanal sa njim i ne želi da otvori jedan. Ona traži rutu i odlučuje da ide preko Suzijinog čvora.
 
 ![LNP201](assets/en/46.webp)
 
-Ako Alice naivno pošalje 40.000 satoshija Suzi u nadi da će Suzi preneti taj iznos Bobu, Suzi bi mogla zadržati sredstva za sebe i ne preneti ništa Bobu.
+Ako Alisa naivno pošalje 40.000 satošja Suzi u nadi da će Suzi preneti taj iznos Bobu, Suzi bi mogla zadržati sredstva za sebe i ne preneti ništa Bobu.
 
 ![LNP201](assets/en/47.webp)
 
-Da bismo izbegli ovu situaciju, na Lightning mreži koristimo HTLC-ove (Hashed Time-Locked Contracts), koji čine plaćanje posredničkom čvoru uslovnim, što znači da Suzie mora ispuniti određene uslove da bi pristupila Aliceinim sredstvima i prenela ih Bobu.
+Da bismo izbegli ovu situaciju, na Lajtning mreži koristimo HTLC-ove (Hashed Time-Locked Contracts), koji čine plaćanje posredničkom čvoru uslovnim, što znači da Suzi mora ispuniti određene uslove da bi pristupila Alisinim sredstvima i prenela ih Bobu.
 
 ### Kako HTLC-ovi Rade
 
-HTLC je poseban Contract zasnovan na dva principa:
+HTLC je poseban ugovor zasnovan na dva principa:
 
 
-- Uslov pristupa**: Primalac mora otkriti tajnu kako bi otključao uplatu koja mu pripada.
-- Isticanje**: Ako uplata nije u potpunosti izvršena u definisanom periodu, ona se otkazuje, a sredstva se vraćaju pošiljaocu.
+- **Uslov pristupa**: Primalac mora otkriti tajnu kako bi otključao uplatu koja mu pripada.
+- **Isticanje**: Ako uplata nije u potpunosti izvršena u definisanom periodu, ona se otkazuje, a sredstva se vraćaju pošiljaocu.
 
 Evo kako ovaj proces funkcioniše u našem primeru sa Alisom, Suzi i Bobom:
 
@@ -647,15 +647,15 @@ $$
 r = h(s)
 $$
 
-Korišćenje funkcije Hash onemogućava pronalaženje _s_ samo sa _h(s)_, ali ako je _s_ obezbeđeno, lako je proveriti da li odgovara _h(s)_.
+Korišćenje heš funkcije onemogućava pronalaženje _s_ samo sa _h(s)_, ali ako je _s_ obezbeđeno, lako je proveriti da li odgovara _h(s)_.
 
 ![LNP201](assets/en/49.webp)
 
-**Slanje zahteva za plaćanje**: Bob šalje **Invoice** Alisi tražeći uplatu. Ovaj Invoice posebno uključuje Hash _r_.
+**Slanje zahteva za plaćanjem**: Bob šalje **fakturu** Alisi tražeći uplatu. Ova faktura posebno uključuje Hash _r_.
 
 ![LNP201](assets/en/50.webp)
 
-**Slanje uslovnog plaćanja**: Alice šalje HTLC od 40,000 satoshija Suzie. Uslov da Suzie primi ova sredstva je da dostavi Alice tajnu _s'_ koja zadovoljava sledeću jednačinu:
+**Slanje uslovnog plaćanja**: Alice šalje HTLC od 40,000 satošija Suzi. Uslov da Suzi primi ova sredstva je da dostavi Alice tajnu _s'_ koja zadovoljava sledeću jednačinu:
 
 $$
 h(s') = r
@@ -663,7 +663,7 @@ $$
 
 ![LNP201](assets/en/51.webp)
 
-**Prenos HTLC krajnjem primaocu**: Suzie, da bi dobila 40,000 satoshija od Alice, mora preneti sličan HTLC od 40,000 satoshija Bobu, koji ima isti uslov, naime da mora obezbediti Suzie tajnu _s'_ koja zadovoljava jednačinu:
+**Prenos HTLC krajnjem primaocu**: Suzi, da bi dobila 40,000 satošija od Alise, mora preneti sličan HTLC od 40,000 satošija Bobu, koji ima isti uslov, naime da mora obezbediti Suzi tajnu _s'_ koja zadovoljava jednačinu:
 
 $$
 h(s') = r
@@ -671,23 +671,23 @@ $$
 
 ![LNP201](assets/en/52.webp)
 
-**Validacija tajnom _s_**: Bob pruža _s_ Suziju da bi primio obećanih 40,000 satoshija u HTLC. Sa ovom tajnom, Suzi može otključati Alisin HTLC i dobiti 40,000 satoshija od Alise. Plaćanje je tada ispravno usmereno Bobu.
+**Validacija tajnom _s_**: Bob pruža _s_ Suzi da bi primio obećanih 40,000 satošija u HTLC. Sa ovom tajnom, Suzi može otključati Alisin HTLC i dobiti 40,000 satošija od Alise. Plaćanje je tada ispravno usmereno Bobu.
 
 ![LNP201](assets/en/53.webp)
 
-Ovaj proces sprečava Suzie da zadrži Aliceina sredstva bez završetka prenosa Bobu, jer mora poslati uplatu Bobu kako bi dobila tajnu _s_ i tako otključala Alicein HTLC. Operacija ostaje ista čak i ako ruta uključuje nekoliko posredničkih čvorova: jednostavno je pitanje ponavljanja Suzinih koraka za svaki posrednički čvor. Svaki čvor je zaštićen uslovima HTLC-ova, jer otključavanje poslednjeg HTLC od strane primaoca automatski pokreće otključavanje svih ostalih HTLC-ova u kaskadi.
+Ovaj proces sprečava Suzi da zadrži Alisina sredstva bez završetka prenosa Bobu, jer mora poslati uplatu Bobu kako bi dobila tajnu _s_ i tako otključala Alisin HTLC. Operacija ostaje ista čak i ako ruta uključuje nekoliko posredničkih čvorova: jednostavno je pitanje ponavljanja Suzinih koraka za svaki posrednički čvor. Svaki čvor je zaštićen uslovima HTLC-ova, jer otključavanje poslednjeg HTLC-a od strane primaoca automatski pokreće otključavanje svih ostalih HTLC-ova u kaskadi.
 
 ### Isticanje i upravljanje HTLC-ovima u slučaju problema
 
-Ako tokom procesa plaćanja, jedan od posredničkih čvorova, ili čvor primaoca, prestane da odgovara, posebno u slučaju prekida interneta ili struje, tada se plaćanje ne može završiti, jer tajna potrebna za otključavanje HTLC-ova nije preneta. Uzimajući naš primer sa Alice, Suzie i Bobom, ovaj problem se javlja, na primer, ako Bob ne prenese tajnu _s_ Suzie. U tom slučaju, svi HTLC-ovi uzvodno od puta su blokirani, kao i sredstva koja oni obezbeđuju.
+Ako tokom procesa plaćanja, jedan od posredničkih čvorova, ili čvor primaoca, prestane da odgovara, posebno u slučaju prekida interneta ili struje, tada se plaćanje ne može završiti, jer tajna potrebna za otključavanje HTLC-ova nije preneta. Uzimajući naš primer sa Alisom, Suzi i Bobom, ovaj problem se javlja, na primer, ako Bob ne prenese tajnu _s_ Suzie. U tom slučaju, svi HTLC-ovi uzvodno od puta su blokirani, kao i sredstva koja oni obezbeđuju.
 
 ![LNP201](assets/en/54.webp)
 
-Da bi se to izbeglo, HTLC-ovi na Lightning-u imaju isteka koji omogućava uklanjanje HTLC ako nije završen nakon određenog vremena. Istek sledi specifičan redosled jer počinje prvo sa HTLC najbližim primaocu, a zatim se progresivno pomera ka izdavaocu transakcije. U našem primeru, ako Bob nikada ne da tajnu _s_ Suzie, to bi prvo izazvalo da Suzie-in HTLC prema Bobu istekne.
+Da bi se to izbeglo, HTLC-ovi na Lajtninu imaju vremenski rok koji omogućava uklanjanje HTLC ako nije završen nakon određenog vremena. Istek sledi specifičan redosled jer počinje prvo sa HTLC najbližim primaocu, a zatim se progresivno pomera ka izdavaocu transakcije. U našem primeru, ako Bob nikada ne da tajnu _s_ Suzi, to bi prvo izazvalo da Suzin HTLC prema Bobu istekne.
 
 ![LNP201](assets/en/55.webp)
 
-Zatim HTLC od Alice do Suzie.
+Zatim HTLC od Alice do Suzi.
 
 ![LNP201](assets/en/56.webp)
 
