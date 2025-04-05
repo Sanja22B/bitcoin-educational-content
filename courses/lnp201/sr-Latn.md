@@ -16,7 +16,7 @@ Zaronite u srž Lajtning mreže, esencijalnog sistema za budućnost Bitkojn tran
 
 Zahvaljujući svojoj mreži platnih kanala, Lajtning omogućava brze i sigurne transakcije bez beleženja svake transakcije na Bitkojn blokčejnu. Kroz poglavlja ćete naučiti kako funkcioniše otvaranje, upravljanje i zatvaranje kanala plaćanja, kako se plaćanja sigurno usmeravaju kroz posredničke čvorove uz minimiziranje potrebe za poverenjem, i kako upravljati likvidnošću. Otkrićete šta su Obavezujuće transakcije, HTLC-ovi, ključevi opoziva, mehanizmi kažnjavanja, rutiranja sa višestrukim šifrovanjem (onion routing) i fakture.
 
-Bilo da ste početnik sa Bitkojnom ili iskusniji korisnik, ovaj kurs će pružiti vredne informacije za razumevanje i korišćenje Lajtning mreže. Iako ćemo pokriti neke osnove rada Bitkojna u prvim delovima, neophodno je savladati osnove Satošijevog izuma pre nego što se upustite u LNP201.
+Bilo da ste Bitkojn početnik ili iskusniji korisnik, ovaj kurs će pružiti vredne informacije za razumevanje i korišćenje Lajtning mreže. Iako ćemo pokriti neke osnove rada Bitkojna u prvim delovima, neophodno je da savladate osnove Satošijevog izuma pre nego što se upustite u LNP201.
 
 Uživaj u svom otkriću!
 
@@ -31,27 +31,27 @@ Uživaj u svom otkriću!
 
 ![video en](https://youtu.be/QDQ8NG0l3hk)
 
-Dobrodošli na kurs LNP201, koji ima za cilj da objasni tehničko funkcionisanje Lajtning Mreže.
+Dobrodošli na kurs LNP201, koji ima za cilj da objasni tehničko funkcionisanje Lajtning mreže.
 
-Lajtning Mreža je mreža platnih kanala izgrađena na Bitkojn protokolu, s ciljem omogućavanja brzih transakcija sa niskim naknada. Omogućava kreiranje platnih kanala između učesnika, unutar kojih se transakcije mogu obavljati gotovo trenutno i uz minimalne naknade, bez potrebe za pojedinačnim beleženjem svake transakcije na blokčejnu. Tako, Lajtning mreža nastoji poboljšati skalabilnost Bitkojna i učiniti ga upotrebljivim za plaćanja male vrednosti.
+Lajtning mreža je mreža platnih kanala izgrađena na Bitkojn protokolu, s ciljem omogućavanja brzih transakcija sa niskim naknada. Omogućava kreiranje platnih kanala između učesnika, unutar kojih se transakcije mogu obavljati gotovo trenutno i uz minimalne naknade, bez potrebe za pojedinačnim beleženjem svake transakcije na blokčejnu. Tako, Lajtning mreža nastoji poboljšati skalabilnost Bitkojna i učiniti ga upotrebljivim za plaćanja male vrednosti.
 
 Pre nego što istražimo aspekt "mreže", važno je razumeti koncept **kanala plaćanja** na Lajtningu, kako funkcioniše i njegove specifičnosti. Ovo je tema prvog poglavlja.
 
 ### Koncept platnog kanala
 
-Kanal plaćanja omogućava dvema stranama, ovde **Alice** i **Bob**, da razmene sredstva preko Lajtning mreže. Svaki protagonist ima čvor, simbolizovan krugom, a kanal između njih je predstavljen linijom.
+Kanal plaćanja omogućava dvema stranama, ovde **Alisa** i **Bob**, da razmene sredstva preko Lajtning mreže. Svaki protagonist ima čvor, simbolizovan krugom, a kanal između njih je predstavljen linijom.
 
 ![LNP201](assets/en/01.webp)
 
-U našem primeru, Alis ima 100.000 satošija na svojoj strani kanala, a Bob ima 30.000, što ukupno čini 130.000 satošija, što predstavlja **kapacitet kanala**.
+U našem primeru, Alisa ima 100.000 satošija na svojoj strani kanala, a Bob ima 30.000, što ukupno čini 130.000 satošija, što predstavlja **kapacitet kanala**.
 
 **Ali šta je Satoši?**
 
-**Satoši** (ili "sat") je obračunska jedinica na Bitkojnu. Slično kao cent za euro, Satoši je jednostavno frakcija Bitkojna. Jedan Satoši je jednak **0.00000001 Bitkojna**, ili jedna stotina milionitog dela Bitkojna. Korišćenje Satošija postaje sve praktičnije kako vrednost Bitkojna raste.
+**Satoši** (ili "sat") je obračunska jedinica na Bitkojnu. Slično kao cent za euro, Satoši je jednostavno deo Bitkojna. Jedan Satoši je jednak **0.00000001 Bitkojna**, ili jedna stotina milionitog dela Bitkojna. Korišćenje Satošija postaje sve praktičnije kako vrednost Bitkojna raste.
 
 ### Alokacija sredstava u kanalu
 
-Hajde da se vratimo na kanal plaćanja. Ključni koncept ovde je "**strana kanala**". Svaki učesnik ima sredstva na svojoj strani kanala: Alis 100.000 satošija i Bob 30.000. Kao što smo videli, zbir ovih sredstava predstavlja ukupni kapacitet kanala, broj koji se postavlja kada se otvori kanal.
+Hajde da se vratimo na kanal plaćanja. Ključni koncept ovde je "**strana kanala**". Svaki učesnik ima sredstva na svojoj strani kanala: Alisa 100.000 satošija i Bob 30.000. Kao što smo videli, zbir ovih sredstava predstavlja ukupni kapacitet kanala, broj koji se postavlja kada se otvori kanal.
 
 ![LNP201](assets/en/02.webp)
 
@@ -71,7 +71,7 @@ Ova reprezentacija može biti korisna za zamišljanje bilansa sredstava u kanalu
 
 Prva stvar koju treba zapamtiti je da je **kapacitet kanala** fiksiran. To je donekle kao prečnik cevi: određuje maksimalnu količinu sredstava koja se mogu poslati kroz kanal odjednom.
 
-Hajde da uzmemo primer: ako Alisa ima 130.000 satošija na svojoj strani, može poslati maksimalno 130.000 satoshija Bobu u jednoj transakciji. Međutim, Bob može zatim poslati ta sredstva nazad Alisi, bilo delimično ili u celosti.
+Hajde da uzmemo primer: ako Alisa ima 130.000 satošija na svojoj strani, može poslati maksimalno 130.000 satošija Bobu u jednoj transakciji. Međutim, Bob može zatim poslati ta sredstva nazad Alisi, bilo delimično ili u celosti.
 
 Važno je razumeti da fiksni kapacitet kanala ograničava maksimalni iznos jedne transakcije, ali ne i ukupan broj mogućih transakcija, niti ukupni obim sredstava razmenjenih unutar kanala.
 
@@ -94,9 +94,9 @@ Ovo poglavlje je pomalo posebno jer neće biti direktno posvećeno Lajtningu, ve
 
 ### Bitkojn Adrese, Privatni Ključevi i Javni Ključevi
 
-Bitkon adresa je niz karaktera izvedenih iz **javnog ključa**, koji se sam izračunava iz **privatnog ključa**. Kao što sigurno znate, koristi se za zaključavanje bitkoina, što je ekvivalentno njihovom primanju u naš novčanik.
+Bitkon adresa je niz karaktera izvedenih iz **javnog ključa**, koji se sam izračunava iz **privatnog ključa**. Kao što sigurno znate, koristi se za zaključavanje bitkojna, što je ekvivalentno primanju bitkojna u naš novčanik.
 
-Privatni ključ je tajni element koji **nikada ne treba deliti**, dok se javni ključ i adresa mogu deliti bez rizika po bezbednost (njihovo otkrivanje predstavlja rizik samo za vašu privatnost). Ovde je uobičajena reprezentacija koju ćemo usvojiti tokom ove obuke:
+Privatni ključ je tajni element koji **nikada ne trebate deliti**, dok se javni ključ i adresa mogu deliti bez rizika po bezbednost (njihovo otkrivanje predstavlja rizik samo za vašu privatnost). Ovde je uobičajena reprezentacija koju ćemo usvojiti tokom ove obuke:
 
 
 - **Privatni ključevi** će biti predstavljeni **vertikalno**.
@@ -107,33 +107,33 @@ Privatni ključ je tajni element koji **nikada ne treba deliti**, dok se javni k
 
 Na Bitkojnu, transakcija uključuje slanje sredstava sa jedne adrese na drugu. Uzmimo primer gde Alisa šalje 0.002 Bitkojna Bobu. Alisa koristi privatni ključ povezan sa njenom adresom da **potpiše** transakciju, čime dokazuje da zaista može da potroši ta sredstva. Ali šta se tačno dešava tokom ove transakcije? Sredstva na Bitkojn adresi su zaključana **skriptom**, vrstom mini-programa koja određuje uslove za trošenje sredstava.
 
-Najčešće skripta zahteva potpis sa privatnim ključem povezanim sa adresom. Kada Alisa potpiše transakciju svojim privatnim ključem, ona **otključava skriptu** koja blokira sredstva, i tada se ona mogu preneti. Prenos sredstava uključuje dodavanje nove skripte ovim sredstvima, koji propisuje da će za njihovo trošenje ovog puta biti potreban potpis privatnog ključa **Boba**.
+Najčešće skripta zahteva potpis sa privatnim ključem povezanim sa adresom. Kada Alisa potpiše transakciju svojim privatnim ključem, ona **otključava skriptu** koja blokira sredstva, i tada se ona mogu preneti. Prenos sredstava uključuje dodavanje nove skripte ovim sredstvima, koja propisuje da će za njihovo trošenje ovog puta biti potreban potpis privatnog ključa **Boba**.
 
 ![LNP201](assets/en/05.webp)
 
 ### UTXOs: Neutrošeni Izlazi Transakcija
 
-Na Bitkojnu, ono što mi zapravo razmenjujemo nisu direktno bitkojni, već **UTXO** (_Unspent Transaction Outputs_), što znači "nepotrošeni izlazi transakcija".
+Na Bitkojnu, ono što mi zapravo razmenjujemo nisu direktno bitkojni, već **UTXO** (_Unspent Transaction Outputs_), što znači "nepotrošeni izlazi transakcije".
 
 UTXO je deo bitkojna koji može imati bilo koju vrednost, na primer, **2,000 bitkojna**, **8 bitkojna**, ili čak **8,000 satsa**. Svaki UTXO je zaključan skriptom, i da bi se potrošio, mora se ispuniti uslov skripte, što je često potpis sa privatnim ključem koji je povezan sa primajućom adresom.
 
-UTXO-ovi ne mogu biti podeljeni. Svaki put kada se koriste za trošenje iznosa u bitcoinima koji predstavljaju, to mora biti učinjeno u celosti. To je pomalo kao novčanica: ako imate novčanicu od €10 i dugujete pekaru €5, ne možete jednostavno preseći novčanicu na pola. Morate mu dati novčanicu od €10, a on će vam vratiti €5 kusura. Ovo je tačno isti princip za UTXO-em na Bitkojnu! Na primer, kada Alisa otključa skriptu svojim privatnim ključem, ona otključava ceo UTXO. Ako želi da pošalje samo deo sredstava predstavljenih ovim UTXO Bobu, može ga "fragmentirati" na nekoliko manjih. Tada će poslati 0.0015 BTC Bobu i poslati ostatak, 0.0005 BTC, na **kusur adresu**.
+UTXO-ovi ne mogu biti podeljeni. Svaki put kada se koriste za trošenje iznosa u bitckojnima koji predstavljaju, to mora biti učinjeno u celosti. To je pomalo kao novčanica: ako imate novčanicu od €10 i dugujete pekaru €5, ne možete jednostavno preseći novčanicu na pola. Morate mu dati novčanicu od €10, a on će vam vratiti €5 kusura. Ovo je tačno isti princip za UTXO-em na Bitkojnu! Na primer, kada Alisa otključa skriptu svojim privatnim ključem, ona otključava ceo UTXO. Ako želi da pošalje samo deo sredstava predstavljenih ovim UTXO Bobu, može ga "fragmentirati" na nekoliko manjih. Tada će poslati 0.0015 BTC Bobu i poslati ostatak, 0.0005 BTC, na svoju **kusur adresu**.
 
 Evo primera transakcije sa 2 izlaza:
 
 
 - UTXO od 0.0015 BTC za Boba, zaključan skriptom koji zahteva potpis Bobovog privatnog ključa.
-- UTXO od 0.0005 BTC za Alice, zaključan skriptom koji zahteva njen sopstveni potpis.
+- UTXO od 0.0005 BTC za Alisu, zaključan skriptom koji zahteva njen sopstveni potpis.
 
 ![LNP201](assets/en/06.webp)
 
 ### Višepotpisne Adrese
 
-Pored jednostavnih adresa generisanih iz jednog javnog ključa, moguće je kreirati **adrese sa više potpisa** iz više javnih ključeva. Posebno zanimljiv slučaj za Lajtning mrežu je **2/2 adresa sa više potpisa adresa**, generisana iz dva javna ključa:
+Pored jednostavnih adresa generisanih iz jednog javnog ključa, moguće je kreirati **adrese sa više potpisa** iz više javnih ključeva. Posebno zanimljiv slučaj za Lajtning mrežu je **2/2 adresa sa više potpisa**, generisana iz dva javna ključa:
 
 ![LNP201](assets/en/07.webp)
 
-Da biste potrošili sredstva zaključana sa ovom 2/2 multi-potpisnom adresom, neophodno je potpisati sa dva privatna ključa povezana sa javnim ključevima.
+Da biste potrošili sredstva zaključana sa ovom 2/2 više-potpisnom adresom, neophodno je potpisati sa dva privatna ključa koja su povezana sa dva javna ključa.
 
 ![LNP201](assets/en/08.webp)
 
@@ -143,9 +143,9 @@ Ovaj tip adresa je upravo reprezentacija na Bitkojn blokčejnu kanala plaćanja 
 
 
 - **Bitkojn adresa** je izveden iz javnog ključa, koji je sam izveden iz privatnog ključa.
-- Sredstva na Bitkojnu su zaključana pomoću **skripti**, i da bi se ta sredstva potrošila, potrebno je zadovoljiti skriptu, što obično podrazumeva davanje potpisa sa odgovarajućim privatnim ključem.
+- Sredstva na Bitkojnu su zaključana pomoću **skripti**, i da bi se ta sredstva potrošila, potrebno je isppuniti uslove iz skripte, što obično podrazumeva davanje potpisa sa odgovarajućim privatnim ključem.
 -**UTXO-ovi ** su delovi bitkojna zaključani skriptama, i svaka transakcija na Bitkojnu se sastoji od otključavanja UTXO i zatim kreiranja jednog ili više novih zauzvrat.
-- **2/2 multi-potpisne adrese** zahtevaju potpis dva privatna ključa za trošenje sredstava. Ove specifične adrese se koriste u kontekstu Lajtninga za kreiranje platnih kanala.
+- **2/2 više-potpisne adrese** zahtevaju potpis dva privatna ključa za trošenje sredstava. Ove specifične adrese se koriste u kontekstu Lajtninga za kreiranje platnih kanala.
 
 Ovo poglavlje o Bitkojnu omogućilo nam je da pregledamo neke osnovne pojmove za ono što sledi. U sledećem poglavlju, posebno ćemo otkriti kako funkcioniše otvaranje kanala na Lajtning mreži.
 
@@ -163,7 +163,7 @@ U ovom poglavlju ćemo preciznije videti kako otvoriti platni kanal na Lajtning 
 
 ### Lajtning kanali
 
-Kao što smo videli u prvom poglavlju, **kanal plaćanja** na Lightning mreži može se uporediti sa "cevkom" za razmenu sredstava između dva učesnika (**Alice** i **Bob** u našim primerima). Kapacitet ovog kanala odgovara zbiru dostupnih sredstava na svakoj strani. U našem primeru, Alice ima **100,000 satošija** a Bob ima **30,000 satošija**, što daje **ukupni kapacitet** od **130,000 satošija**.
+Kao što smo videli u prvom poglavlju, **kanal plaćanja** na Lightning mreži može se uporediti sa "cevkom" za razmenu sredstava između dva učesnika (**Alise** i **Boba** u našim primerima). Kapacitet ovog kanala odgovara zbiru dostupnih sredstava na svakoj strani. U našem primeru, Alisa ima **100,000 satošija** a Bob ima **30,000 satošija**, što daje **ukupni kapacitet** od **130,000 satošija**.
 
 ![LNP201](assets/en/09.webp)
 
@@ -183,7 +183,7 @@ Vredi napomenuti da Lajtning čvor može komunicirati putem P2P protokola bez ot
 ### Koraci za otvaranje Lajtning kanala
 
 
-- **Razmena poruke**: Alice želi da otvori kanal sa Bobom. Ona mu šalje poruku koja sadrži iznos koji želi da deponuje u kanalu (130,000 Sats) i njen javni ključ. Bob odgovara deljenjem svog javnog ključa.
+- **Razmena poruke**: Alisa želi da otvori kanal sa Bobom. Ona mu šalje poruku koja sadrži iznos koji želi da deponuje u kanalu (130,000 Sats) i njen javni ključ. Bob odgovara deljenjem svog javnog ključa.
 
 ![LNP201](assets/en/11.webp)
 
@@ -223,7 +223,7 @@ Kanal se smatra otvorenim kada je transakcija depozita uključena u Bitkojn blok
 - Kanal se formira kreiranjem **2/2 višepotpisne adrese** i deponovanjem sredstava na tu adresu putem Bitkojn transakcije.
 - Osoba koja otvara kanal osigurava da može **povratiti svoja sredstva** putem transakcije povlačenja koju je potpisala druga strana pre objavljivanja transakcije depozita.
 
-U narednom poglavlju, istražićemo tehnički rad Lajtning transakcije unutar kanala.
+U narednom poglavlju, bavićemo se tehničkim funkcionisanjem Lajtning transakcije unutar kanala.
 
 ## Obavezujuće transakcije
 
@@ -231,11 +231,11 @@ U narednom poglavlju, istražićemo tehnički rad Lajtning transakcije unutar ka
 
 ![video en](https://youtu.be/dzPMGiR_JSE)
 
-U ovom poglavlju ćemo otkriti tehničko funkcionisanje transakcije unutar kanala na Lajtning mreže, odnosno kada se sredstva premeštaju s jedne strane kanala na drugu.
+U ovom poglavlju ćemo otkriti tehničko funkcionisanje transakcije u okviru kanala na Lajtning mreži, odnosno kada se sredstva premeštaju s jedne strane kanala na drugu.
 
 ### Podsetnik o životnom ciklusu kanala
 
-Kao što je ranije viđeno, Lajtning kanal počinje sa **otvaranjem** putem Bitkojn transakcije. Kanal se može **zatvoriti** u bilo kom trenutku, takođe putem Bitkojn transakcije. Između ova dva trenutka, unutar kanala se može izvršiti skoro beskonačan broj transakcija, bez prolaska kroz Bitkojn blokčejn. Hajde da vidimo šta se dešava tokom transakcije u kanalu.
+Kao što je prethodno prikazano, Lajtning kanal počinje sa **otvaranjem** putem Bitkojn transakcije. Kanal se može **zatvoriti** u bilo kom trenutku, takođe putem Bitkojn transakcije. Između ova dva trenutka, unutar kanala se može izvršiti skoro beskonačan broj transakcija, bez prolaska kroz Bitkojn blokčejn. Hajde da vidimo šta se dešava tokom transakcije u kanalu.
 
 ![LNP201](assets/en/17.webp)
 
@@ -255,7 +255,7 @@ Hajde da uzmemo primer gde Alisa šalje 30.000 satošija Bobu:
 -**U početku**: Alice ima 130.000 satošija.
 -**Nakon transakcije**: Alice ima 100.000 satošija, a Bob 30.000 satošija.
 
-Da bi potvrdili ovaj transfer, Alisa i Bob kreiraju novu **neobjavljenu Bitkojn transakciju** koja bi poslala **100.000 satošija Alise** i **30.000 satošija Bobu** iz višepotpisne adrese. Obe strane kreiraju ovu transakciju nezavisno, ali sa istim podacima (iznosi i adrese). Kada je kreirana, svaka strana potpisuje transakciju i razmenjuje svoj potpis sa drugom stranom. Ovo omogućava bilo kojoj strani da objavi transakciju u bilo kom trenutku ako je potrebno da povrate svoj deo kanala na glavnom Bitkojn blokčejnu.
+Da bi potvrdili ovaj transfer, Alisa i Bob kreiraju novu **neobjavljenu Bitkojn transakciju** koja bi poslala **100.000 satošija Alisi** i **30.000 satošija Bobu** iz višepotpisne adrese. Obe strane kreiraju ovu transakciju nezavisno, ali sa istim podacima (iznosi i adrese). Kada je kreirana, svaka strana potpisuje transakciju i razmenjuje svoj potpis sa drugom stranom. Ovo omogućava bilo kojoj strani da objavi transakciju u bilo kom trenutku ako je potrebno da povrate svoj deo kanala na glavnom Bitkojn blokčejnu.
 
 ![LNP201](assets/en/19.webp)
 
@@ -263,7 +263,7 @@ Da bi potvrdili ovaj transfer, Alisa i Bob kreiraju novu **neobjavljenu Bitkojn 
 
 Kada Bob želi da primi sredstva, šalje Alisi **_fakturu_** na 30.000 satošija. Alisa zatim nastavlja da plati ovu fakturu pokretanjem transfera unutar kanala. Kao što smo videli, ovaj proces se oslanja na kreiranje i potpisivanje nove **Obavezujuće transakcije**.
 
-Svaka Obavezujuća transakcija predstavlja novu raspodelu sredstava u kanalu nakon transfera. U ovom primeru, nakon transakcije, Bob ima 30,000 satošija, a Alisa ima 100,000 satošija. Ako bilo koji od ova dva učesnika odluči da objavi Obavezujužu transakciju na blokčejnu, to bi rezultiralo zatvaranjem kanala i sredstva bi bila raspodeljena prema ovoj poslednjoj raspodeli.
+Svaka Obavezujuća transakcija predstavlja novu raspodelu sredstava u kanalu nakon transfera. U ovom primeru, nakon transakcije, Bob ima 30,000 satošija, a Alisa ima 100,000 satošija. Ako bilo koji od ova dva učesnika odluči da objavi Obavezujuću transakciju na blokčejnu, to bi rezultiralo zatvaranjem kanala i sredstva bi bila raspodeljena prema ovoj poslednjoj raspodeli.
 
 ![LNP201](assets/en/20.webp)
 
@@ -272,7 +272,7 @@ Svaka Obavezujuća transakcija predstavlja novu raspodelu sredstava u kanalu nak
 Hajde da uzmemo drugi primer: nakon prve transakcije gde je Alisa poslala 30.000 satošija Bobu, Bob odlučuje da pošalje **10.000 satošija nazad Alisi**. Ovo stvara novo stanje kanala. Nova **Obavezujuća transakcija** će predstavljati ovu ažuriranu distribuciju:
 
 
-- **Alice** sada ima **110,000 satošija**.
+- **Alisa** sada ima **110,000 satošija**.
 - **Bob** ima **20,000 satošija**.
 
 ![LNP201](assets/en/21.webp)
@@ -282,7 +282,7 @@ Ponovo, ova transakcija nije objavljena na blokčejnu, ali može biti u bilo kom
 Ukratko, kada se sredstva prenose unutar Lajtning kanala:
 
 
-- Alice i Bob kreiraju novu **Obavezujuću transakciju**, koji odražava novu raspodelu sredstava.
+- Alisa i Bob kreiraju novu **Obavezujuću transakciju**, koja odražava novu raspodelu sredstava.
 - Ova Bitkojn transakcija je **potpisana** od strane obe strane, ali **nije objavljena** na Bitkojn blokčejnu sve dok kanal ostaje otvoren.
 - Obavezujuće transakcije osiguravaju da svaki učesnik može povratiti svoja sredstva u bilo kom trenutku na Bitkojn blokčejnu objavljivanjem poslednje potpisane transakcije.
 
@@ -305,7 +305,7 @@ Hajde da uzmemo jednostavan primer:
 
 - **Početno stanje**: Alisa ima **100.000 satošija**, Bob **30.000 satošija**.
 - Nakon transakcije u kojoj Alisa šalje **40.000 satošija** Bobu, nova Obavezujuća transakcija raspoređuje sredstva na sledeći način:
-  - Alice: **60,000 satošija**
+  - Alisa: **60,000 satošija**
   - Bob: **70,000 satošija**
 
 ![LNP201](assets/en/22.webp)
@@ -328,7 +328,7 @@ Da bi se sprečila ovakva vrsta varanja od strane Alise, na Lajtning mreži, **s
 
 
 - **Vremenska zabrana trošenja**: Svaka Obavezujuća transakcija uključuje vremensku zabranu trošenja za Alisina sredstva. Vremenska zabrana trošenja je primitiv Pametnih ugovora koji postavlja vremenski uslov koji mora biti ispunjen da bi transakcija bila dodata u blok. To znači da Alisa ne može povratiti svoja sredstva dok ne prođe određeni broj blokova ako objavi jednu od Obavezujućih transakcija. Ova vremenska zabrana trošenja počinje da se primenjuje od potvrde Obavezujuće transakcije na blokčejnu. Njeno trajanje je generalno proporcionalno veličini kanala, ali se može i ručno konfigurisati.
-- **Ključ za opoziv**: Sredstva Alice takođe može odmah potrošiti Bob ako poseduje **ključ za opoziv**. Ovaj ključ se sastoji od tajne koju drži Alice i tajne koju drži Bob. Imajte na umu da je ova tajna različita za svaku Obavezujuću transakciju.
+- **Ključ za opoziv**: Sredstva Alise takođe može odmah potrošiti Bob ako poseduje **ključ za opoziv**. Ovaj ključ se sastoji od tajne koju drži Alisa i tajne koju drži Bob. Imajte na umu da je ova tajna različita za svaku Obavezujuću transakciju.
 
 Zahvaljujući ova 2 kombinovana mehanizma, Bob ima vremena da otkrije Alisin pokušaj prevare i da je kazni povlačenjem svog izlaza pomoću ključa za opoziv, što za Boba znači povratak svih sredstava kanala. Naša nova Obavezujuća transakcija će sada izgledati ovako:
 
@@ -342,7 +342,7 @@ Kada Alisa i Bob ažuriraju stanje kanala novom Lajtning transakcijom, oni unapr
 
 
 - Alisa i Bob imaju novu Obavezujuću transakciju koja predstavlja trenutnu raspodelu sredstava nakon Lajtning transakcije.
-- Svako ima tajnu onog drugog za prethodnu transakciju, što im omogućava da koriste ključ za opoziv samo ako jedan od njih pokuša da prevari objavljivanjem u mempoolovima Bitkojn čvorova one transakcije sa starim stanjem. Zaista, da bi se kaznila druga strana, neophodno je imati obe tajne i drugu Obavezujuću transakciju, koja uključuje potpisani ulaz. Bez ove transakcije, ključ za opoziv je beskoristan. Jedini način da se dobije ova transakcija je da se preuzme iz mempoolova (u transakcijama koje čekaju potvrdu) ili u potvrđenim transakcijama na Blokčejnu tokom perioda vremenskog zaključavanja, što dokazuje da druga strana pokušava da prevari, bilo namerno ili ne.
+- Svako ima tajnu onog drugog za prethodnu transakciju, što im omogućava da koriste ključ za opoziv samo ako jedan od njih pokuša da prevari objavljivanjem u mempoolovima Bitkojn čvorova one transakcije sa starim stanjem. Zaista, da bi se kaznila druga strana, neophodno je imati obe tajne i drugu Obavezujuću transakciju, koja uključuje potpisani izlaz. Bez ove transakcije, ključ za opoziv je beskoristan. Jedini način da se dobije ova transakcija je da se preuzme iz mempoolova (u transakcijama koje čekaju potvrdu) ili u potvrđenim transakcijama na Blokčejnu tokom perioda vremenskog zaključavanja, što dokazuje da druga strana pokušava da prevari, bilo namerno ili ne.
 
 Hajde da uzmemo primer kako bismo dobro razumeli ovaj proces:
 
@@ -353,7 +353,7 @@ Hajde da uzmemo primer kako bismo dobro razumeli ovaj proces:
 
 
 - Bob želi da primi 40.000 satošija od Alise putem njihovog Lajtning kanala. Da bi to uradio:
-   - On joj šalje Invoice zajedno sa svojom tajnom za ključ opoziva njegove prethodne Obavezujuće transakcije.
+   - On joj šalje fakturu zajedno sa svojom tajnom za ključ opoziva njegove prethodne Obavezujuće transakcije.
    - Kao odgovor, Alisa pruža svoj potpis za Bobovu novu Obavezujuću transakciju, kao i svoju tajnu za ključ opoziva svoje prethodne transakcije.
    - Konačno, Bob šalje svoj potpis za Alisinu novu Obavezujuću transakciju.
    - Ove razmene omogućavaju Alisi da pošalje **40.000 satošija** Bobu preko Lajtning mreže putem njihovog kanala, a nove Obavezujuće transakcije sada odražavaju ovu novu raspodelu sredstava.
@@ -373,7 +373,7 @@ Hajde da uzmemo primer kako bismo dobro razumeli ovaj proces:
 
 Ovaj sigurnosni sistem osigurava da učesnici poštuju pravila Lajtning mreže, i ne mogu profitirati od objavljivanja starih Obavezujućih transakcija.
 
-U ovom trenutku obuke, sada znate kako se otvaraju Lajtning kanali i kako funkcionišu transakcije unutar ovih kanala. U sledećem poglavlju, otkrićemo različite načine za zatvaranje kanala i povratak vaših bitcoina na bazni nivo blokčejna.
+U ovom trenutku obuke, sada znate kako se otvaraju Lajtning kanali i kako funkcionišu transakcije unutar ovih kanala. U sledećem poglavlju, otkrićemo različite načine za zatvaranje kanala i povratak vaših bitcoina na osnovni nivo blokčejna.
 
 ## Zatvaranje kanala
 
@@ -381,7 +381,7 @@ U ovom trenutku obuke, sada znate kako se otvaraju Lajtning kanali i kako funkci
 
 ![video en](https://youtu.be/zmAa2fj_V7w)
 
-U ovom poglavlju ćemo diskutovati o **zatvaranju kanala** na Lajtning mreži, što se obavlja putem Bitkojn transakcije, baš kao i otvaranje kanala. Nakon što smo videli kako funkcionišu transakcije unutar kanala, sada je vreme da vidimo kako zatvoriti kanal i povratiti sredstva na Bitkojn blokčejnu.
+U ovom poglavlju ćemo diskutovati o **zatvaranju kanala** na Lajtning mreži, što se obavlja putem Bitkojn transakcije, baš kao i otvaranje kanala. Nakon što smo videli kako funkcionišu transakcije unutar kanala, sada je vreme da vidimo kako zatvoriti kanal i povratiti sredstva na Bitkojn blokčejn.
 
 ### Podsetnik o životnom ciklusu kanala
 
@@ -394,7 +394,7 @@ U ovom poglavlju ćemo diskutovati o **zatvaranju kanala** na Lajtning mreži, �
 Postoje tri glavna načina da se zatvori ovaj kanal, koji se mogu nazvati **dobar, grub i izostajući** (inspirisano Andreasom Antonopoulosom u _Mastering the Lightning Network_):
 
 
-- **Dobro**: the **kooperativno zatvaranje**, gde se i Alisa i Bob se slažu da zatvore kanal.
+- **Dobro**: **kooperativno zatvaranje**, gde se i Alisa i Bob slažu da zatvore kanal.
 - **Loše**: **prisilno zatvaranje**, gde jedna od strana odluči da zatvori kanal pošteno, ali bez saglasnosti druge strane.
 - **Ružno**: **zatvaranje sa varanjem**, gde jedna od strana pokušava da ukrade sredstva objavljivanjem stare Obavezujuće transakcije (bilo koje osim poslednje, koja odražava stvarnu i poštenu raspodelu sredstava).
 
@@ -411,16 +411,16 @@ Hajde da uzmemo primer:
 U **kooperativnom zatvaranju**, Alisa i Bob se dogovaraju da zatvore kanal. Evo kako to ide:
 
 
-- Alice šalje poruku Bobu putem Lajtning komunikacionog protokola kojom predlože zatvaranje kanala.
+- Alisa šalje poruku Bobu putem Lajtning komunikacionog protokola kojom predlože zatvaranje kanala.
 - Bob se slaže, i dve strane ne obavljaju dalje transakcije u kanalu.
 
 ![LNP201](assets/en/31.webp)
 
 
 - Alisa i Bob zajedno pregovaraju o naknadama za **završnu transakciju**. Ove naknade se obično izračunavaju na osnovu Bitkon naknada na tržištu u trenutku zatvaranja. Važno je napomenuti da **uvek osoba koja je otvorila kanal** (Alisa u našem primeru) plaća naknade za zatvaranje.
-- Oni konstruiraju novu **završnu transakciju**. Ova transakcija podseća na Obavezujuću transakciju, ali bez vremenskih zaključavanja ili mehanizama opoziva, jer obe strane sarađuju i nema rizika od varanja. Ova kooperativna završna transakcija je stoga različita od Obavezujuće transakcije.
+- Oni kreiraju novu **završnu transakciju**. Ova transakcija podseća na Obavezujuću transakciju, ali bez vremenskih zaključavanja ili mehanizama opoziva, jer obe strane sarađuju i nema rizika od varanja. Ova kooperativna završna transakcija je stoga različita od Obavezujuće transakcije.
 
-Na primer, ako Alisa poseduje **100.000 satošija** a Bob **30.000 satošija**, završna transakcija će poslati **100.000 satošija** na Alisinu adresu i **30.000 satošija** na Bobovu adresu, bez vremenskih ograničenja. Kada obe strane potpišu ovu transakciju, Alisa je objavljuje. Kada transakcija bude potvrđena na Bitkon blokčejnu, Lajtning kanal će biti zvanično zatvoren.
+Na primer, ako Alisa poseduje **100.000 satošija** a Bob **30.000 satošija**, završna transakcija će poslati **100.000 satošija** na Alisinu adresu i **30.000 satošija** na Bobovu adresu, bez vremenskih ograničenja. Kada obe strane potpišu ovu transakciju, Alisa je objavljuje. Kada transakcija bude potvrđena na Bitkojn blokčejnu, Lajtning kanal će biti zvanično zatvoren.
 
 ![LNP201](assets/en/32.webp)
 
@@ -430,7 +430,7 @@ Na primer, ako Alisa poseduje **100.000 satošija** a Bob **30.000 satošija**, 
 
 Kada Alisin čvor pošalje poruku Bobovom sa zahtevom za kooperativno zatvaranje, ako on ne odgovori (na primer, zbog prekida interneta ili tehničkog problema), Alisa može nastaviti sa **prisilnim zatvaranjem** objavljivanjem **poslednje potpisane Obavezujuće transakcije**.
 
-U ovom slučaju, Alice će jednostavno objaviti poslednju Obavezujuću transakciju, koji odražava stanje kanala u trenutku kada je poslednja Lajtning transakcija obavljena sa pravilnom raspodelom sredstava.
+U ovom slučaju, Alice će jednostavno objaviti poslednju Obavezujuću transakciju, koja odražava stanje kanala u trenutku kada je poslednja Lajtning transakcija obavljena sa pravilnom raspodelom sredstava.
 
 ![LNP201](assets/en/33.webp)
 
@@ -448,7 +448,7 @@ Na kraju, zatvaranje sa **varanjem** se dešava kada jedna od strana pokuša da 
 
 ![LNP201](assets/en/35.webp)
 
-Bob, da bi sprečio ovu prevaru, nadgleda Bitkojn blokčejn i njegov Mempool kako bi osigurao da Alice ne objavi staru transakciju. Ako Bob otkrije pokušaj prevare, može koristiti **ključ za opoziv** da uzme Alicina sredstva i kazni je tako što će uzeti celokupna sredstva kanala. Pošto je Alice blokirana vremenskim zaključavanjem na svom izlazu, Bob ima vremena da ih potroši bez vremenskog zaključavanja sa svoje strane kako bi prebacio celokupan iznos na adresu koji poseduje.
+Bob, da bi sprečio ovu prevaru, nadgleda Bitkojn blokčejn i njegov Mempool kako bi osigurao da Alisa ne objavi staru transakciju. Ako Bob otkrije pokušaj prevare, može koristiti **ključ za opoziv** da uzme Alisina sredstva i kazni je tako što će uzeti celokupna sredstva kanala. Pošto je Alisa blokirana vremenskim zaključavanjem na svom izlazu, Bob ima vremena da ih potroši bez vremenskog zaključavanja sa svoje strane kako bi prebacio celokupan iznos na adresu koju poseduje.
 
 ![LNP201](assets/en/36.webp)
 
@@ -459,11 +459,11 @@ Očigledno, varanje može potencijalno uspeti ako Bob ne deluje u okviru vremena
 Postoje tri načina za zatvaranje kanala:
 
 
-- **Kooperativno Zatvaranje**: Brzo i manje skupo, gde se obe strane slažu da zatvore kanal i objave prilagođenu transakciju zatvaranja.
-- **Prinudno Zatvaranje**: Manje poželjno, jer se oslanja na objavljivanje Obavezujuće transakcije, sa potencijalno nepovoljnim naknadama i vremenskim zaključavanjem, što usporava zatvaranje.
-- **Varanje**: Ako jedna od strana pokuša da ukrade sredstva objavljivanjem stare obavezujuće transakcije, druga strana može koristiti ključ za opoziv da kazni ovo varanje.
+- **Kooperativno zatvaranje**: Brzo i manje skupo, gde se obe strane slažu da zatvore kanal i objave prilagođenu transakciju zatvaranja.
+- **Prinudno zatvaranje**: Manje poželjno, jer se oslanja na objavljivanje Obavezujuće transakcije, sa potencijalno nepovoljnim naknadama i vremenskim zaključavanjem, što usporava zatvaranje.
+- **Varanje**: Ako jedna od strana pokuša da ukrade sredstva objavljivanjem stare Obavezujuće transakcije, druga strana može koristiti ključ za opoziv da kazni ovo varanje.
 
-U narednim poglavljima, istražićemo Lajtning mrežu iz šire perspektive, fokusirajući se na to kako njegova mreža funkcioniše.
+U narednim poglavljima, istražićemo Lajtning mrežu iz šire perspektive, fokusirajući se na to kako mreža funkcioniše.
 
 # Mreža Likvidnosti
 
@@ -496,7 +496,7 @@ Ako Alisa želi da pošalje sredstva Bobu bez otvaranja direktnog kanala sa njim
 Pretpostavimo da Alisa želi da pošalje **50.000 satošija** Bobu:
 
 
-- **Alice** šalje 50.000 satošija **Suzi** u njihovom zajedničkom kanalu.
+- **Alisa** šalje 50.000 satošija **Suzi** u njihovom zajedničkom kanalu.
 - **Suzi** replicira ovaj transfer slanjem 50.000 satošija **Bobu** u njihovom kanalu.
 
 ![LNP201](assets/en/38.webp)
