@@ -693,46 +693,46 @@ Zatim HTLC od Alice do Suzi.
 
 Ako bi redosled isteka bio obrnut, Alisa bi mogla da povrati svoju uplatu pre nego što Suzi može da se zaštiti od potencijalne prevare. Zaista, ako se Bob vrati da preuzme svoj HTLC dok je Alisa već uklonila svoj, Suzi bi bila u nepovoljnom položaju. Ovaj kaskadni redosled isteka HTLC stoga osigurava da nijedan posrednički čvor ne trpi nepravedne gubitke.
 
-### Reprezentacija HTLC-ova u Commitment transakcijama
+### Reprezentacija HTLC-ova u Obavezujućim transakcijama
 
-Commitment transakcije predstavljaju HTLC-ove na takav način da se uslovi koje nameću na Lightning mogu preneti na Bitcoin u slučaju prinudnog zatvaranja kanala tokom trajanja HTLC. Kao podsetnik, Commitment transakcije predstavljaju trenutno stanje kanala između dva korisnika i omogućavaju jednostrano prinudno zatvaranje u slučaju problema. Sa svakim novim stanjem kanala, kreiraju se 2 Commitment transakcije: po jedna za svaku stranu. Hajde da ponovo razmotrimo naš primer sa Alice, Suzie i Bobom, ali da detaljnije pogledamo šta se dešava na nivou kanala između Alice i Suzie kada se kreira HTLC.
+Obavezujuće transakcije predstavljaju HTLC-ove na takav način da se uslovi koje nameću na Lajtningu mogu preneti na Bitcoin u slučaju prinudnog zatvaranja kanala tokom trajanja HTLC. Kao podsetnik, Obavezujuće transakcije predstavljaju trenutno stanje kanala između dva korisnika i omogućavaju jednostrano prinudno zatvaranje u slučaju problema. Sa svakim novim stanjem kanala, kreiraju se dve Obavezujuće transakcije: po jedna za svaku stranu. Hajde da ponovo razmotrimo naš primer sa Alisom, Suzi i Bobom, ali da detaljnije pogledamo šta se dešava na nivou kanala između Alise i Suzi kada se kreira HTLC.
 
 ![LNP201](assets/en/57.webp)
 
-Pre početka plaćanja od 40,000 Sats između Alice i Boba, Alice ima 100,000 Sats u svom kanalu sa Suzie, dok Suzie drži 30,000. Njihove Commitment transakcije su sledeće:
+Pre početka plaćanja od 40,000 Sats između Alise i Boba, Alice ima 100,000 Sats u svom kanalu sa Suzi, dok Suzi drži 30,000. Njihove Obavezujuće transakcije su sledeće:
 
 ![LNP201](assets/en/58.webp)
 
-Alice je upravo primila Bobov Invoice, koji značajno sadrži _r_, Hash tajne. Tako može konstruisati HTLC od 40,000 satoshija sa Suzie. Ovaj HTLC je predstavljen u najnovijim Commitment transakcijama kao izlaz pod nazivom "**_HTLC Out_**" na Aliceinoj strani, jer sredstva izlaze, i "**_HTLC In_**" na Suzieinoj strani, jer sredstva ulaze.
+Alisa je upravo primila Bobovu fakturu, koja značajno sadrži _r_, heš tajne. Tako može konstruisati HTLC od 40,000 satošija sa Suzi. Ovaj HTLC je predstavljen u najnovijim Obavezujućim transakcijama kao izlaz pod nazivom "**_HTLC Out_**" na Alisinoj strani, jer sredstva izlaze, i "**_HTLC In_**" na Suzinog strani, jer sredstva ulaze.
 
 ![LNP201](assets/en/59.webp)
 
 Ovi rezultati povezani sa HTLC dele potpuno iste uslove, naime:
 
 
-- Ako Suzie može da obezbedi tajnu _s_, može odmah da otključa ovaj izlaz i prenese ga na Address koji kontroliše.
-- Ako Suzie ne poseduje tajnu _s_, neće moći da otključa ovaj izlaz, a Alice će moći da ga otključa nakon vremenskog zaključavanja kako bi ga poslala na Address koji ona kontroliše. Vremensko zaključavanje tako daje Suzie period da reaguje ako dobije _s_.
+- Ako Suzi može da obezbedi tajnu _s_, može odmah da otključa ovaj izlaz i prenese ga na adresu koju kontroliše.
+- Ako Suzie ne poseduje tajnu _s_, neće moći da otključa ovaj izlaz, a Alice će moći da ga otključa nakon vremenskog zaključavanja kako bi ga poslala na adresu koju ona kontroliše. Vremensko zaključavanje tako daje Suzi period da reaguje ako dobije _s_.
 
-Ovi uslovi važe samo ako je kanal zatvoren (tj. Commitment Transaction je objavljen On-Chain) dok je HTLC još uvek aktivan na Lightning-u, što znači da plaćanje između Alice i Bob-a još nije finalizovano, i HTLC-ovi još nisu istekli. Zahvaljujući ovim uslovima, Suzie može povratiti 40,000 satoshija od HTLC koji joj duguju pružanjem _s_. U suprotnom, Alice povraća sredstva nakon isteka vremenskog zaključavanja, jer ako Suzie ne zna _s_, to znači da nije prenela 40,000 satoshija Bob-u, i stoga, Alice-ina sredstva joj nisu dugovana.
+Ovi uslovi važe samo ako je kanal zatvoren (tj. Obavezujuća transakcija je objavljena na baznom blockčejnu) dok je HTLC još uvek aktivan na Lajtningu, što znači da plaćanje između Alise i Boba još nije finalizovano, i HTLC-ovi još nisu istekli. Zahvaljujući ovim uslovima, Suzi može povratiti 40,000 satošija od HTLC koji joj duguju pružanjem _s_. U suprotnom, Alisa povraća sredstva nakon isteka vremenskog zaključavanja, jer ako Suzi ne zna _s_, to znači da nije prenela 40,000 satošija Bobu, i stoga, Alisina sredstva joj nisu dugovana.
 
 Štaviše, ako je kanal zatvoren dok je nekoliko HTLC-ova na čekanju, biće onoliko dodatnih izlaza koliko ima tekućih HTLC-ova.
 
-Ako kanal nije zatvoren, nakon isteka ili uspeha Lightning uplate, kreiraju se nove Commitment transakcije kako bi odrazile novo, sada stabilno stanje kanala, to jest, bez ikakvih čekajućih HTLC-ova. Izlazi povezani sa HTLC-ovima stoga mogu biti uklonjeni iz Commitment transakcija.
+Ako kanal nije zatvoren, nakon isteka ili uspeha Lajtning uplate, kreiraju se nove Obavezujuće transakcije kako bi odrazile novo, sada stabilno stanje kanala, to jest, bez ikakvih čekajućih HTLC-ova. Izlazi povezani sa HTLC-ovima stoga mogu biti uklonjeni iz Obavezujućih transakcija.
 
 ![LNP201](assets/en/60.webp)
 
-Konačno, u slučaju kooperativnog zatvaranja kanala dok je HTLC aktivan, Alice i Suzie prestaju prihvatati nove uplate i čekaju na rešavanje ili isteknuće tekućih HTLC-ova. Ovo im omogućava da objave lakšu završnu transakciju, bez izlaza vezanih za HTLC-ove, čime se smanjuju naknade i izbegava čekanje na mogući vremenski zaključavanje.
+Konačno, u slučaju kooperativnog zatvaranja kanala dok je HTLC aktivan, Alisa i Suzi prestaju prihvatati nove uplate i čekaju na rešavanje ili isteknuće tekućih HTLC-ova. Ovo im omogućava da objave lakšu završnu transakciju, bez izlaza vezanih za HTLC-ove, čime se smanjuju naknade i izbegava čekanje na mogući vremenski zaključavanje.
 
 **Šta bi trebalo da izvučete iz ovog poglavlja?**
 
-HTLC-ovi omogućavaju usmeravanje Lightning plaćanja kroz više čvorova bez potrebe za poverenjem u njih. Evo ključnih tačaka koje treba zapamtiti:
+HTLC-ovi omogućavaju usmeravanje Lajtning plaćanja kroz više čvorova bez potrebe za poverenjem u njih. Evo ključnih tačaka koje treba zapamtiti:
 
 
-- HTLC-ovi osiguravaju bezbednost plaćanja putem tajne (preimage) i vremena isteka.
-- Rešavanje ili isteknuće HTLC-ova prati specifičan redosled: zatim od odredišta ka izvoru, kako bi se zaštitio svaki čvor.
-- Sve dok HTLC nije ni rešen ni istekao, održava se kao izlaz u najnovijim Commitment transakcijama.
+- HTLC-ovi osiguravaju bezbednost plaćanja putem tajne (ulazna vrednsot heš funkcije) i vremena isteka.
+- Rešavanje ili isteknuće HTLC-ova prati specifičan redosled: od odredišta ka izvoru, kako bi se zaštitio svaki čvor.
+- Sve dok HTLC nije ni rešen ni istekao, održava se kao izlaz u najnovijim Obavezujućim transakcijama
 
-U narednom poglavlju, otkrićemo kako čvor koji izdaje Lightning transakciju pronalazi i bira rute kako bi njegova uplata stigla do čvora primaoca.
+U narednom poglavlju, otkrićemo kako čvor koji kreira Lajtning transakciju pronalazi i bira rute kako bi njegova uplata stigla do čvora primaoca.
 
 ## Pronalaženje Vašeg Puta
 
@@ -744,57 +744,57 @@ U prethodnim poglavljima, videli smo kako koristiti kanale drugih čvorova za us
 
 ### Problem rutiranja u Lightning mreži
 
-Kao što smo videli, u Lightning-u, čvor koji šalje uplatu mora izračunati kompletnu rutu do primaoca, jer koristimo sistem onion rutiranja. Posrednički čvorovi ne znaju ni tačku porekla ni krajnje odredište. Oni znaju samo odakle uplata dolazi i kojem čvoru je moraju dalje preneti. To znači da čvor koji šalje mora održavati dinamičku lokalnu topologiju mreže, sa postojećim Lightning čvorovima i kanalima između svakog, uzimajući u obzir otvaranja, zatvaranja i ažuriranja stanja.
+Kao što smo videli, u Lajtningu, čvor koji šalje uplatu mora izračunati kompletnu rutu do primaoca, jer koristimo sistem onion rutiranja. Posrednički čvorovi ne znaju ni tačku porekla ni krajnje odredište. Oni znaju samo odakle uplata dolazi i kojem čvoru je moraju dalje preneti. To znači da čvor koji šalje mora održavati dinamičku lokalnu topologiju mreže, sa postojećim Lajtning čvorovima i kanalima između svakog, uzimajući u obzir otvaranja, zatvaranja i ažuriranja stanja.
 
 ![LNP201](assets/en/61.webp)
 
-Čak i sa ovom topologijom Lightning Network, postoji suštinska informacija za rutiranje koja ostaje nedostupna čvoru koji šalje, a to je tačna distribucija likvidnosti u kanalima u bilo kom trenutku. Naime, svaki kanal prikazuje samo svoju **ukupnu kapacitet**, ali unutrašnja distribucija sredstava je poznata samo dvema učesničkim čvorovima. Ovo predstavlja izazove za efikasno rutiranje, jer uspeh plaćanja zavisi posebno od toga da li je njegov iznos manji od najniže likvidnosti na odabranoj ruti. Međutim, likvidnosti nisu sve vidljive čvoru koji šalje.
+Čak i sa ovom topologijom Lajtning Mreže, postoji suštinska informacija za rutiranje koja ostaje nedostupna čvoru koji šalje, a to je tačna distribucija likvidnosti u kanalima u bilo kom trenutku. Naime, svaki kanal prikazuje samo svoj **ukupni kapacitet**, ali unutrašnja distribucija sredstava je poznata samo dvema učesničkim čvorovima. Ovo predstavlja izazove za efikasno rutiranje, jer uspeh plaćanja zavisi posebno od toga da li je njegov iznos manji od najniže likvidnosti na odabranoj ruti. Međutim, sve likvidnosti nisu vidljive čvoru koji šalje.
 
 ![LNP201](assets/en/62.webp)
 
 ### Ažuriranje Mape Mreže
 
-Da bi održali svoju mrežnu mapu ažurnom, čvorovi redovno šalju Exchange poruke putem algoritma nazvanog "**_gossip_**". Ovo je distribuirani algoritam koji se koristi za širenje informacija na epidemijski način do svih čvorova u mreži, što omogućava Exchange i sinhronizaciju Global State kanala u nekoliko komunikacionih ciklusa. Svaki čvor propagira informacije jednom ili više suseda izabranih nasumično ili ne, a oni, zauzvrat, propagiraju informacije drugim susedima i tako dalje dok se ne postigne globalno sinhronizovano stanje.
+Da bi održali svoju mrežnu mapu ažurnom, čvorovi redovno razmenjuju poruke putem algoritma nazvanog "**_gossip_**". Ovo je distribuirani algoritam koji se koristi za širenje informacija na epidemijski način do svih čvorova u mreži, što omogućava razmenu i sinhronizaciju globalnog stanja kanala u nekoliko komunikacionih ciklusa. Svaki čvor propagira informacije jednom ili više suseda izabranih nasumično ili ne, a oni, zauzvrat, propagiraju informacije drugim susedima i tako dalje dok se ne postigne globalno sinhronizovano stanje.
 
-Dve glavne poruke razmenjene između Lightning čvorova su sledeće:
+Dve glavne poruke razmenjene između Lajtning čvorova su sledeće:
 
 
 - "**Najave Kanala**": poruke koje signaliziraju otvaranje novog kanala.
-- "**Ažuriranja kanala**": ažurirajte poruke o stanju kanala, posebno o evoluciji naknada (ali ne o distribuciji likvidnosti).
+- "**Ažuriranja kanala**": poruke o novom stanju kanala, posebno o evoluciji naknada (ali ne o distribuciji likvidnosti).
 
-Lightning čvorovi takođe prate Bitcoin Blockchain kako bi detektovali transakcije zatvaranja kanala. Zatvoreni kanal se zatim uklanja sa mape jer se više ne može koristiti za usmeravanje naših plaćanja.
+Lajtning čvorovi takođe prate Bitkojn blokčejn kako bi detektovali transakcije zatvaranja kanala. Zatvoreni kanal se zatim uklanja sa mape jer se više ne može koristiti za usmeravanje naših plaćanja.
 
 ### Usmeravanje Plaćanja
 
-Hajde da uzmemo primer malog Lightning Network sa 7 čvorova: Alice, Bob, 1, 2, 3, 4 i 5. Zamislite da Alice želi da pošalje uplatu Bobu, ali mora proći kroz posredničke čvorove.
+Hajde da uzmemo primer male Lajtning mreže sa 7 čvorova: Alisa, Bob, 1, 2, 3, 4 i 5. Zamislite da Alisa želi da pošalje uplatu Bobu, ali mora proći kroz posredničke čvorove.
 
 ![LNP201](assets/en/63.webp)
 
-Evo stvarna raspodela sredstava u ovim kanalima:
+Evo stvarne raspodele sredstava u ovim kanalima:
 
 
-- Kanal između Alice i 1**: 250,000 Sats na Aliceinoj strani, 80,000 na strani 1 (ukupni kapacitet od 330,000 Sats).
-- Kanal između 1 i 2**: 300.000 Sats na strani 1, 200.000 na strani 2 (ukupni kapacitet od 500.000 Sats).
-- Kanal između 2 i 3**: 50,000 Sats na strani 2, 60,000 na strani 3 (ukupni kapacitet od 110,000 Sats).
-- Kanal između 2 i 5**: 90.000 Sats na strani 2, 160.000 na strani 5 (ukupni kapacitet od 250.000 Sats).
-- Kanal između 2 i 4**: 180,000 Sats na strani 2, 110,000 na strani 4 (ukupni kapacitet od 290,000 Sats).
-- Kanal između 4 i 5**: 200.000 Sats na strani 4, 10.000 na strani 5 (ukupni kapacitet od 210.000 Sats).
-- Kanal između 3 i Bob**: 50,000 Sats na strani 3, 250,000 na strani Bob (ukupni kapacitet od 300,000 Sats).
-- Kanal između 5 i Bob**: 260.000 Sats na strani 5, 100.000 na strani Bob (ukupni kapacitet od 360.000 Sats).
+- **Kanal između Alice i 1**: 250,000 Sats na Alisinog strani, 80,000 na strani 1 (ukupni kapacitet od 330,000 Sats).
+- **Kanal između 1 i 2**: 300.000 Sats na strani 1, 200.000 na strani 2 (ukupni kapacitet od 500.000 Sats).
+- **Kanal između 2 i 3**: 50,000 Sats na strani 2, 60,000 na strani 3 (ukupni kapacitet od 110,000 Sats).
+- **Kanal između 2 i 5**: 90.000 Sats na strani 2, 160.000 na strani 5 (ukupni kapacitet od 250.000 Sats).
+- **Kanal između 2 i 4**: 180,000 Sats na strani 2, 110,000 na strani 4 (ukupni kapacitet od 290,000 Sats).
+- **Kanal između 4 i 5**: 200.000 Sats na strani 4, 10.000 na strani 5 (ukupni kapacitet od 210.000 Sats).
+- **Kanal između 3 i Bob**: 50,000 Sats na strani 3, 250,000 na strani Bob (ukupni kapacitet od 300,000 Sats).
+- **Kanal između 5 i Bob**: 260.000 Sats na strani 5, 100.000 na strani Bob (ukupni kapacitet od 360.000 Sats).
 
 ![LNP201](assets/en/64.webp)
 
-Da izvrši uplatu od 100,000 Sats od Alice do Boba, opcije rutiranja su ograničene dostupnom likvidnošću u svakom kanalu. Optimalna ruta za Alice, na osnovu poznatih distribucija likvidnosti, mogla bi biti sekvenca `Alice → 1 → 2 → 4 → 5 → Bob`:
+Kako bi se izvršila uplata od 100,000 Sats od Alise do Boba, opcije rutiranja su ograničene dostupnom likvidnošću u svakom kanalu. Optimalna ruta za Alisu, na osnovu poznatih distribucija likvidnosti, mogla bi biti sekvenca `Alisa → 1 → 2 → 4 → 5 → Bob`:
 
 ![LNP201](assets/en/65.webp)
 
-Ali pošto Alice ne zna tačnu raspodelu sredstava u svakom kanalu, ona mora da proceni optimalnu rutu probabilistički, uzimajući u obzir sledeće kriterijume:
+Ali pošto Alisa ne zna tačnu raspodelu sredstava u svakom kanalu, ona mora da proceni optimalnu rutu probabilistički, uzimajući u obzir sledeće kriterijume:
 
 
-- Verovatnoća uspeha**: kanal sa većim ukupnim kapacitetom verovatnije će sadržati dovoljnu likvidnost. Na primer, kanal između čvora 2 i čvora 3 ima ukupan kapacitet od 110,000 Sats, tako da je malo verovatno da će se naći 100,000 Sats ili više na strani čvora 2, iako ostaje moguće.
-- Naknade za transakcije**: pri odabiru najbolje rute, čvor koji šalje takođe uzima u obzir naknade koje primenjuje svaki posrednički čvor i nastoji da minimizira ukupne troškove rutiranja.
-- Isticanje HTLC-ova**: da bi se izbegle blokirane uplate, vreme isticanja HTLC-ova je takođe parametar koji treba uzeti u obzir.
-- Broj posredničkih čvorova**: konačno, šire gledano, čvor koji šalje će nastojati da pronađe rutu sa što manje mogućih čvorova kako bi smanjio rizik od neuspeha i ograničio naknade za Lightning transakcije.
+- **Verovatnoća uspeha**: kanal sa većim ukupnim kapacitetom verovatnije će sadržati dovoljnu likvidnost. Na primer, kanal između čvora 2 i čvora 3 ima ukupan kapacitet od 110,000 Sats, tako da je malo verovatno da će se naći 100,000 Sats ili više na strani čvora 2, iako ostaje moguće.
+- **Naknade za transakcije**: pri odabiru najbolje rute, čvor koji šalje takođe uzima u obzir naknade koje primenjuje svaki posrednički čvor i nastoji da minimizira ukupne troškove rutiranja.
+- **Isticanje HTLC-ova**: da bi se izbegle blokirane uplate, vreme isticanja HTLC-ova je takođe parametar koji treba uzeti u obzir.
+- **Broj posredničkih čvorova**: konačno, šire gledano, čvor koji šalje će nastojati da pronađe rutu sa što manje mogućih čvorova kako bi smanjio rizik od neuspeha i ograničio naknade za Lajtning transakciju.
 
 Analizirajući ove kriterijume, čvor koji šalje može testirati najverovatnije rute i pokušati da ih optimizuje. U našem primeru, Alisa bi mogla rangirati najbolje rute na sledeći način:
 
@@ -805,140 +805,140 @@ Analizirajući ove kriterijume, čvor koji šalje može testirati najverovatnije
 
 ### Izvršenje Plaćanja
 
-Alice odlučuje da testira svoju prvu rutu (`Alice → 1 → 2 → 5 → Bob`). Stoga šalje HTLC od 100,000 Sats ka čvoru 1. Ovaj čvor proverava da li ima dovoljno likvidnosti sa čvorom 2 i nastavlja prenos. Čvor 2 zatim prima HTLC od čvora 1, ali shvata da nema dovoljno likvidnosti u svom kanalu sa čvorom 5 da usmeri uplatu od 100,000 Sats. Zatim šalje poruku o grešci nazad čvoru 1, koji je prenosi Alice. Ova ruta nije uspela.
+Alisa odlučuje da testira svoju prvu rutu (`Alice → 1 → 2 → 5 → Bob`). Stoga šalje HTLC od 100,000 Sats ka čvoru 1. Ovaj čvor proverava da li ima dovoljno likvidnosti sa čvorom 2 i nastavlja prenos. Čvor 2 zatim prima HTLC od čvora 1, ali shvata da nema dovoljno likvidnosti u svom kanalu sa čvorom 5 da usmeri uplatu od 100,000 Sats. Zatim šalje poruku o grešci nazad čvoru 1, koji je prenosi Alisi. Ova ruta nije uspela.
 
 ![LNP201](assets/en/66.webp)
 
-Alice zatim pokušava da usmeri svoju uplatu koristeći svoju drugu rutu (`Alice → 1 → 2 → 4 → 5 → Bob`). Ona šalje HTLC od 100,000 Sats čvoru 1, koji ga prenosi čvoru 2, zatim čvoru 4, čvoru 5, i konačno Bobu. Ovog puta, likvidnost je dovoljna i ruta je funkcionalna. Svaki čvor otključava svoj HTLC u kaskadi koristeći preimage koji je obezbedio Bob (tajna _s_), što omogućava da Aliceina uplata Bobu bude uspešno finalizovana.
+Alisa zatim pokušava da usmeri svoju uplatu koristeći svoju drugu rutu (`Alice → 1 → 2 → 4 → 5 → Bob`). Ona šalje HTLC od 100,000 Sats čvoru 1, koji ga prenosi čvoru 2, zatim čvoru 4, čvoru 5, i konačno Bobu. Ovog puta, likvidnost je dovoljna i ruta je funkcionalna. Svaki čvor otključava svoj HTLC u kaskadi koristeći preimage koji je obezbedio Bob (tajna _s_), što omogućava da Alisina uplata Bobu bude uspešno finalizovana.
 
 ![LNP201](assets/en/67.webp)
 
 Pretraga za rutom se sprovodi na sledeći način: čvor koji šalje započinje identifikovanjem najboljih mogućih ruta, zatim pokušava plaćanja sukcesivno dok se ne pronađe funkcionalna ruta.
 
-Vredi napomenuti da Bob može obezbediti Alisi informacije u **Invoice** kako bi olakšao rutiranje. Na primer, može naznačiti obližnje kanale sa dovoljnom likvidnošću ili otkriti postojanje privatnih kanala. Ove indikacije omogućavaju Alisi da izbegne rute sa malom šansom za uspeh i da prvo pokuša puteve koje preporučuje Bob.
+Vredi napomenuti da Bob može obezbediti Alisi informacije u **fakturi** kako bi olakšao rutiranje. Na primer, može naznačiti obližnje kanale sa dovoljnom likvidnošću ili otkriti postojanje privatnih kanala. Ove indikacije omogućavaju Alisi da izbegne rute sa malom šansom za uspeh i da prvo pokuša puteve koje preporučuje Bob.
 
 **Šta bi trebalo da izvučete iz ovog poglavlja?**
 
 
-- Čvorovi održavaju mapu topologije mreže putem najava i praćenjem zatvaranja kanala na Bitcoin Blockchain.
+- Čvorovi održavaju mapu topologije mreže putem najava i praćenjem zatvaranja kanala na Bitkojn blokčejnu.
 - Pretraga optimalne rute za plaćanje ostaje probabilistička i zavisi od mnogih kriterijuma.
-- Bob može pružiti indikacije u **Invoice** kako bi usmerio Alice i spasio je od testiranja neverovatnih ruta.
+- Bob može pružiti indikacije u **fakturi** kako bi usmerio Alice i spasio je od testiranja slabo mogućih ruta.
 
-U narednom poglavlju, posebno ćemo proučiti funkcionisanje faktura, pored nekih drugih alata koji se koriste na Lightning Network.
+U narednom poglavlju, posebno ćemo proučiti funkcionisanje faktura, pored nekih drugih alata koji se koriste na Lajtning mreži.
 
-# Alati Lightning Network
+# Alati Lajtning mreže
 
 <partId>74d6c334-ec5d-55d9-8598-f05694703bf6</partId>
 
-## Invoice, LNURL, and Keysend
+## Faktura, LNURL, and Keysend
 
 <chapterId>e34c7ecd-2327-52e3-b61e-c837d9e5e8b0</chapterId>
 
 ![video en](https://youtu.be/XANzf1Qqp9I)
 
-U ovom poglavlju ćemo detaljnije razmotriti rad **faktura** u Lightning mreži, odnosno zahteva za plaćanje koje čvor primalac šalje čvoru pošiljaocu. Cilj je razumeti kako izvršiti i primiti plaćanja na Lightning mreži. Takođe ćemo diskutovati o 2 alternative klasičnim fakturama: LNURL i Keysend.
+U ovom poglavlju ćemo detaljnije razmotriti rad **faktura** u Lajtning mreži, odnosno zahteva za plaćanje koje čvor primalac šalje čvoru pošiljaocu. Cilj je razumeti kako izvršiti i primiti plaćanja na Lajtning mreži. Takođe ćemo diskutovati o dve alternative klasičnim fakturama: LNURL i Keysend.
 
 ![LNP201](assets/en/68.webp)
 
-### Struktura Lightning faktura
+### Struktura Lajtning faktura
 
-Kao što je objašnjeno u poglavlju o HTLC-ovima, svaka uplata počinje generisanjem **Invoice** od strane primaoca. Ovaj Invoice se zatim prenosi platiocu (putem QR koda ili kopiranjem) kako bi se inicirala uplata. Invoice se sastoji od dva glavna dela:
+Kao što je objašnjeno u poglavlju o HTLC-ovima, svaka uplata počinje generisanjem **fakture** od strane primaoca. Ova faktura se zatim prenosi platiocu (putem QR koda ili kopiranjem) kako bi se inicirala uplata. Faktura se sastoji od dva glavna dela:
 
 
-- The Human Readable Part**: ovaj deo sadrži jasno vidljive metapodatke za poboljšanje korisničkog iskustva.
-- Payload**: ova sekcija uključuje informacije namenjene mašinama za obradu plaćanja.
+- **Deo razumljiv ljudima**: ovaj deo sadrži jasno vidljive metapodatke za poboljšanje korisničkog iskustva.
+- **Payload**: ova sekcija uključuje informacije namenjene mašinama za obradu plaćanja.
 
-Tipična struktura Invoice počinje sa identifikatorom `LN` za "Lightning", zatim `bc` za Bitcoin, pa količina Invoice. Separator `1` razdvaja deo čitljiv ljudima od dela podataka (payload).
+Tipična struktura fakture počinje sa identifikatorom `LN` za "Lightning", zatim `bc` za Bitcoin, pa iznos fakture. Separator `1` razdvaja deo čitljiv ljudima od dela podataka (payload).
 
-Hajde da uzmemo sledeći Invoice kao primer:
+Hajde da uzmemo sledeću fakturur kao primer:
 
 ```invoice
 lnbc100u1p0x7x7dpp5l7r9y50wrzz0lwnsqgxdks50lxtwkl0mhd9lslr4rcgdtt2n6lssp5l3pkhdx0cmc9gfsqvw5xjhph84my2frzjqxqyz5vq9qsp5k4mkzv5jd8u5n89d2yc50x7ptkl0zprx0dfjh3km7g0x98g70hsqq7sqqqgqqyqqqqlgqqvnv2k5ehwnylq3rhpd9g2y0sq9ujyxsqqypjqqyqqqqqqqqqqqsqqqqq9qsq3vql5f6e45xztgj7y6xw6ghrcz3vmh8msrz8myvhsarxg42ce9yyn53lgnryx0m6qqld8fql
 ```
 
-Već možemo da ga podelimo na 2 dela. Prvo, tu je deo čitljiv ljudima:
+Već možemo da ga podelimo na dva dela. Prvo, tu je deo čitljiv ljudima:
 
 ```invoice
 lnbc100u
 ```
 
-Zatim deo namenjen za teret:
+Zatim deo namenjen za kompjuter:
 
 ```invoice
 p0x7x7dpp5l7r9y50wrzz0lwnsqgxdks50lxtwkl0mhd9lslr4rcgdtt2n6lssp5l3pkhdx0cmc9gfsqvw5xjhph84my2frzjqxqyz5vq9qsp5k4mkzv5jd8u5n89d2yc50x7ptkl0zprx0dfjh3km7g0x98g70hsqq7sqqqgqqyqqqqlgqqvnv2k5ehwnylq3rhpd9g2y0sq9ujyxsqqypjqqyqqqqqqqqqqqsqqqqq9qsq3vql5f6e45xztgj7y6xw6ghrcz3vmh8msrz8myvhsarxg42ce9yyn53lgnryx0m6qqld8fql
 ```
 
-Dva dela su odvojena sa `1`. Ovaj separator je izabran umesto specijalnog karaktera kako bi se omogućilo lako kopiranje celog Invoice dvostrukim klikom.
+Dva dela su odvojena sa `1`. Ovaj separator je izabran umesto specijalnog karaktera kako bi se omogućilo lako kopiranje cele fakture dvostrukim klikom.
 
 U prvom delu, možemo videti da:
 
 
 - `LN` označava da je to Lightning transakcija.
-- `bc` ukazuje da je Lightning Network na Bitcoin Blockchain (a ne na Testnet ili na Litecoin).
-- `100u` označava količinu Invoice, izraženu u **mikrobitkoinima** (`u` znači "mikro"), što ovde iznosi 10.000 Sats.
+- `bc` ukazuje da je Lajtning mreža na Bitkojn blokčejnu (a ne na Testnet ili na Litecoin).
+- `100u` označava iznos faktrue, izraženu u **mikrobitkoinima** (`u` znači "mikro"), što ovde iznosi 10.000 Sats.
 
-Da biste odredili iznos plaćanja, on se izražava u podjedinicama Bitcoin. Ovde su korišćene jedinice:
+Da biste odredili iznos plaćanja, on se izražava u podjedinicama Bitkojna. Ovde su korišćene jedinice:
 
 
-- Milibitkoin (označen `m`):** Predstavlja jednu hiljaditinu Bitcoin.
+- **Milibitkoin (označen `m`):** Predstavlja hiljaditi deo jednog Bitkojna.
 
 $$
 1 \, \text{mBTC} = 10^{-3} \, \text{BTC} = 10^5 \, \text{satoshis}
 $$
 
 
-- Mikrobitkoin (označen kao `u`):** Takođe ponekad nazvan "bit", predstavlja jednu milionitu deo Bitcoin.
+- **Mikrobitkoin (označen kao `u`):** Takođe ponekad nazvan "bit", predstavlja milioniti deo Bitkojna.
 
 $$
 1 \, \mu\text{BTC} = 10^{-6} \, \text{BTC} = 100 \, \text{satoshis}
 $$
 
 
-- Nanobitcoin (označeno `n`):** Predstavlja jednu milijarditu deo Bitcoin.
+- **Nanobitcoin (označeno `n`):** Predstavlja milijariditi deo Bitkojna.
 
 $$
 1 \, \text{nBTC} = 10^{-9} \, \text{BTC} = 0.1 \, \text{satoshis}
 $$
 
 
-- Picobitcoin (označeno `p`):** Predstavlja jednu trilionitu deo Bitcoin.
+- **Picobitcoin (označeno `p`):** Predstavlja trilioniti deo Bitkojna.
 
 $$
 1 \, \text{pBTC} = 10^{-12} \, \text{BTC} = 0.0001 \, \text{satoshis}
 $$
 
-### Teret Invoice
+### Teret Fakture
 
-Payload Invoice uključuje nekoliko informacija neophodnih za obradu plaćanja:
+Payload fakture uključuje nekoliko informacija neophodnih za obradu plaćanja:
 
 
-- Timestamp:** Trenutak stvaranja Invoice, izražen u Unix Timestamp (broj sekundi koji su protekli od 1. januara 1970).
-- Hashing the Secret**: Kao što smo videli u delu o HTLC-ovima, čvor koji prima mora obezbediti čvoru koji šalje Hash preimage-a. Ovo se koristi u HTLC-ovima za obezbeđivanje transakcije. Nazvali smo ga "_r_".
-- Tajna Plaćanja**: Još jedna tajna se generiše od strane primaoca, ali se ovaj put prenosi čvoru koji šalje. Koristi se u onion rutiranju kako bi se sprečilo da međučvorovi pogode da li je sledeći čvor konačni primalac ili ne. Ovo na taj način održava oblik poverljivosti za primaoca u odnosu na poslednji međučvor na ruti.
-- Javni ključ primaoca**: Ukazuje platiocu na identifikator osobe kojoj treba platiti.
-- Trajanje isteka**: Maksimalno vreme za plaćanje Invoice (1 sat po defaultu).
-- Routing Hints**: Dodatne informacije koje pruža primalac kako bi pomogao pošiljaocu da optimizuje putanju plaćanja.
-- Potpis**: Garantuje integritet Invoice autentifikacijom svih informacija.
+- **Timestamp:** Trenutak kreiranja fakture, izražen u Unix Timestamp (broj sekundi koji su protekli od 1. januara 1970).
+- **Hashing the Secret**: Kao što smo videli u delu o HTLC-ovima, čvor koji prima mora obezbediti čvoru koji šalje Hash preimage-a. Ovo se koristi u HTLC-ovima za obezbeđivanje transakcije. Nazvali smo ga "_r_".
+- **Tajna Plaćanja**: Još jedna tajna se generiše od strane primaoca, ali se ovaj put prenosi čvoru koji šalje. Koristi se u onion rutiranju kako bi se sprečilo da međučvorovi pogode da li je sledeći čvor konačni primalac ili ne. Ovo na taj način održava oblik poverljivosti za primaoca u odnosu na poslednji međučvor na ruti.
+- **Javni ključ primaoca**: Ukazuje platiocu na identifikator osobe kojoj treba platiti.
+- **Trajanje isteka**: Maksimalno vreme za plaćanje fakture (1 sat po defaultu).
+- **Routing Hints**: Dodatne informacije koje pruža primalac kako bi pomogao pošiljaocu da optimizuje putanju plaćanja.
+- **Potpis**: Garantuje integritet fakture autentifikacijom svih informacija.
 
 Fakture se zatim kodiraju u **bech32**, istom formatu kao za Bitcoin SegWit adrese (format koji počinje sa `bc1`).
 
 ### LNURL Povlačenje
 
-U tradicionalnoj transakciji, kao što je kupovina u prodavnici, Invoice se generiše za ukupan iznos koji treba platiti. Kada se Invoice predstavi (u obliku QR koda ili niza karaktera), kupac ga može skenirati i završiti transakciju. Plaćanje zatim prati tradicionalni proces koji smo proučavali u prethodnom odeljku. Međutim, ovaj proces ponekad može biti veoma nezgodan za korisničko iskustvo, jer zahteva da primalac pošalje informacije pošiljaocu putem Invoice.
+U tradicionalnoj transakciji, kao što je kupovina u prodavnici, faktura se generiše za ukupan iznos koji treba platiti. Kada se faktura predstavi (u obliku QR koda ili niza karaktera), kupac ga može skenirati i završiti transakciju. Plaćanje zatim prati tradicionalni proces koji smo proučavali u prethodnom odeljku. Međutim, ovaj proces ponekad može biti veoma nezgodan za korisničko iskustvo, jer zahteva da primalac pošalje informacije pošiljaocu putem fakture.
 
-Za određene situacije, kao što je povlačenje bitkoina sa online servisa, tradicionalni proces je previše zamoran. U takvim slučajevima, rešenje za povlačenje **LNURL** pojednostavljuje ovaj proces prikazivanjem QR koda koji primalac Wallet skenira kako bi automatski kreirao Invoice. Servis zatim plaća Invoice, a korisnik jednostavno vidi trenutni povlačenje.
+Za određene situacije, kao što je povlačenje bitkojna sa online servisa, tradicionalni proces je previše zamoran. U takvim slučajevima, rešenje za povlačenje **LNURL** pojednostavljuje ovaj proces prikazivanjem QR koda koji novčanik primaoca skenira kako bi automatski kreirao fakture. Servis zatim plaća fakturu, a korisnik jednostavno vidi trenutno povlačenje.
 
 ![LNP201](assets/en/69.webp)
 
-LNURL je komunikacioni protokol koji specificira skup funkcionalnosti dizajniranih da pojednostave interakcije između Lightning čvorova i klijenata, kao i aplikacija trećih strana. LNURL povlačenje, kao što smo upravo videli, je stoga samo jedan primer među ostalim funkcionalnostima.
+LNURL je komunikacioni protokol koji specificira skup funkcionalnosti dizajniranih da pojednostave interakcije između Lajtning čvorova i klijenata, kao i aplikacija trećih strana. LNURL povlačenje, kao što smo upravo videli, je stoga samo jedan primer među ostalim funkcionalnostima.
 
-Ovaj protokol se zasniva na HTTP-u i omogućava kreiranje linkova za razne operacije, kao što su zahtev za plaćanje, zahtev za povlačenje ili druge funkcionalnosti koje poboljšavaju korisničko iskustvo. Svaki LNURL je bech32 kodiran URL sa lnurl prefiksom, koji, kada se skenira, pokreće niz automatskih akcija na Lightning Wallet.
+Ovaj protokol se zasniva na HTTP-u i omogućava kreiranje linkova za razne operacije, kao što su zahtev za plaćanje, zahtev za povlačenje ili druge funkcionalnosti koje poboljšavaju korisničko iskustvo. Svaki LNURL je bech32 kodiran URL sa lnurl prefiksom, koji, kada se skenira, pokreće niz automatskih akcija na Lajtning novčaniku.
 
-Na primer, funkcija LNURL-withdraw (LUD-03) omogućava povlačenje sredstava sa usluge skeniranjem QR koda, bez potrebe za ručnim generate i Invoice. Slično, LNURL-auth (LUD-04) omogućava prijavljivanje na online usluge korišćenjem privatnog ključa na nečijem Lightning Wallet umesto lozinke.
+Na primer, funkcija LNURL-withdraw (LUD-03) omogućava povlačenje sredstava sa usluge skeniranjem QR koda, bez potrebe za ručnim generisanjem fakture. Slično, LNURL-auth (LUD-04) omogućava prijavljivanje na online usluge korišćenjem privatnog ključa na nečijem Lajtning novčaniku umesto lozinke.
 
-### Slanje Lightning uplate bez Invoice: Keysend
+### Slanje Lajtning uplate bez fakture: Keysend
 
-Još jedan zanimljiv slučaj je transfer sredstava bez prethodnog primanja Invoice, poznat kao "**Keysend**". Ovaj protokol omogućava slanje sredstava dodavanjem preimage-a u šifrovane podatke o plaćanju, dostupne samo primaocu. Ovaj preimage omogućava primaocu da otključa HTLC, čime se sredstva preuzimaju bez prethodnog generisanja Invoice.
+Još jedan zanimljiv slučaj je transfer sredstava bez prethodnog primanja fakture, poznat kao "**Keysend**". Ovaj protokol omogućava slanje sredstava dodavanjem preimage-a u šifrovane podatke o plaćanju, dostupne samo primaocu. Ovaj preimage omogućava primaocu da otključa HTLC, čime se sredstva preuzimaju bez prethodnog generisanja fakture.
 
 Da pojednostavimo, u ovom protokolu, pošiljalac je taj koji generiše tajnu korišćenu u HTLC-ovima, umesto primalac. Praktično, ovo omogućava pošiljaocu da izvrši uplatu bez prethodne interakcije sa primaocem.
 
@@ -947,9 +947,9 @@ Da pojednostavimo, u ovom protokolu, pošiljalac je taj koji generiše tajnu kor
 **Šta bi trebalo da ponesete iz ovog poglavlja?**
 
 
-- **Lightning Invoice** je zahtev za plaćanje koji se sastoji od dela čitljivog za ljude i dela sa podacima za mašinu.
-- Invoice je kodiran u **bech32**, sa separatorom `1` radi lakšeg kopiranja i delom podataka koji sadrži sve informacije potrebne za obradu plaćanja.
-- Drugi procesi plaćanja postoje na Lightning mreži, posebno **LNURL-Withdraw** za olakšavanje povlačenja, i **Keysend** za direktne transfere bez Invoice.
+- **Lajtning faktura** je zahtev za plaćanje koji se sastoji od dela čitljivog za ljude i dela sa podacima za mašinu.
+- Faktura je kodiran u **bech32**, sa separatorom `1` radi lakšeg kopiranja i delom podataka koji sadrži sve informacije potrebne za obradu plaćanja.
+- Drugi procesi plaćanja postoje na Lajtning mreži, posebno **LNURL-Withdraw** za olakšavanje povlačenja, i **Keysend** za direktne transfere bez fakture.
 
 U sledećem poglavlju, videćemo kako operater čvora može upravljati likvidnošću u svojim kanalima, kako nikada ne bi bio blokiran i uvek mogao slati i primati uplate na Lightning Network.
 
@@ -959,16 +959,16 @@ U sledećem poglavlju, videćemo kako operater čvora može upravljati likvidno�
 
 ![video en](https://youtu.be/MIbej28La7Y)
 
-U ovom poglavlju ćemo istražiti strategije za efikasno upravljanje likvidnošću na Lightning Network. Upravljanje likvidnošću varira u zavisnosti od tipa korisnika i konteksta. Pogledaćemo glavne principe i postojeće tehnike kako bismo bolje razumeli kako optimizovati ovo upravljanje.
+U ovom poglavlju ćemo istražiti strategije za efikasno upravljanje likvidnošću na Lajtning mreži. Upravljanje likvidnošću varira u zavisnosti od tipa korisnika i konteksta. Pogledaćemo glavne principe i postojeće tehnike kako bismo bolje razumeli kako optimizovati ovo upravljanje.
 
 ### Potrebe za likvidnošću
 
-Postoje tri glavna korisnička profila na Lightning-u, svaki sa specifičnim potrebama za likvidnošću:
+Postoje tri glavna korisnička profila na Lajtningu, svaki sa specifičnim potrebama za likvidnošću:
 
 
-- Payer**: Ovo je onaj koji vrši plaćanja. Oni trebaju odlaznu likvidnost kako bi mogli preneti sredstva drugim korisnicima. Na primer, to može biti potrošač.
-- Prodavac (ili Primilac uplata)**: Ovo je onaj koji prima uplate. Oni trebaju dolaznu likvidnost kako bi mogli prihvatiti uplate na svoj čvor. Na primer, ovo može biti preduzeće ili online prodavnica.
-- The Router**: Međučvor, često specijalizovan za usmeravanje plaćanja, koji mora optimizovati svoju likvidnost u svakom kanalu kako bi usmerio što više plaćanja i zaradio naknade.
+- **Payer**: Ovo je onaj koji vrši plaćanja. Oni trebaju odlaznu likvidnost kako bi mogli preneti sredstva drugim korisnicima. Na primer, to može biti potrošač.
+- **Prodavac (ili Primilac uplata)**: Ovo je onaj koji prima uplate. Oni trebaju dolaznu likvidnost kako bi mogli prihvatiti uplate na svoj čvor. Na primer, ovo može biti preduzeće ili online prodavnica.
+- **The Router**: Međučvor, često specijalizovan za usmeravanje plaćanja, koji mora optimizovati svoju likvidnost u svakom kanalu kako bi usmerio što više plaćanja i zaradio naknade.
 
 Ovi profili očigledno nisu fiksni; korisnik može prelaziti između platioca i primaoca u zavisnosti od transakcija. Na primer, Bob može primiti svoju platu putem Lightning-a od svog poslodavca, što ga stavlja u poziciju "prodavca" koji zahteva dolaznu likvidnost. Nakon toga, ako želi da koristi svoju platu za kupovinu hrane, postaje "platioc" i tada mora imati odlaznu likvidnost.
 
