@@ -924,9 +924,9 @@ Fakture se zatim kodiraju u **bech32**, istom formatu kao za Bitcoin SegWit adre
 
 ### LNURL Povlačenje
 
-U tradicionalnoj transakciji, kao što je kupovina u prodavnici, faktura se generiše za ukupan iznos koji treba platiti. Kada se faktura predstavi (u obliku QR koda ili niza karaktera), kupac ga može skenirati i završiti transakciju. Plaćanje zatim prati tradicionalni proces koji smo proučavali u prethodnom odeljku. Međutim, ovaj proces ponekad može biti veoma nezgodan za korisničko iskustvo, jer zahteva da primalac pošalje informacije pošiljaocu putem fakture.
+U tradicionalnoj transakciji, kao što je kupovina u prodavnici, faktura se generiše za ukupan iznos koji treba platiti. Kada se faktura predstavi (u obliku QR koda ili niza karaktera), kupac je može skenirati i završiti transakciju. Plaćanje zatim prati tradicionalni proces koji smo proučavali u prethodnom odeljku. Međutim, ovaj proces ponekad može biti veoma nezgodan za korisničko iskustvo, jer zahteva da primalac pošalje informacije pošiljaocu putem fakture.
 
-Za određene situacije, kao što je povlačenje bitkojna sa online servisa, tradicionalni proces je previše zamoran. U takvim slučajevima, rešenje za povlačenje **LNURL** pojednostavljuje ovaj proces prikazivanjem QR koda koji novčanik primaoca skenira kako bi automatski kreirao fakture. Servis zatim plaća fakturu, a korisnik jednostavno vidi trenutno povlačenje.
+Za određene situacije, kao što je povlačenje bitkojna sa online servisa, tradicionalni proces je previše zamoran. U takvim slučajevima, rešenje za povlačenje **LNURL** pojednostavljuje ovaj proces prikazivanjem QR koda koji onda novčanik primaoca skenira kako bi automatski kreirao fakture. Servis zatim plaća fakturu, a korisnik jednostavno vidi trenutno povlačenje.
 
 ![LNP201](assets/en/69.webp)
 
@@ -934,7 +934,7 @@ LNURL je komunikacioni protokol koji specificira skup funkcionalnosti dizajniran
 
 Ovaj protokol se zasniva na HTTP-u i omogućava kreiranje linkova za razne operacije, kao što su zahtev za plaćanje, zahtev za povlačenje ili druge funkcionalnosti koje poboljšavaju korisničko iskustvo. Svaki LNURL je bech32 kodiran URL sa lnurl prefiksom, koji, kada se skenira, pokreće niz automatskih akcija na Lajtning novčaniku.
 
-Na primer, funkcija LNURL-withdraw (LUD-03) omogućava povlačenje sredstava sa usluge skeniranjem QR koda, bez potrebe za ručnim generisanjem fakture. Slično, LNURL-auth (LUD-04) omogućava prijavljivanje na online usluge korišćenjem privatnog ključa na nečijem Lajtning novčaniku umesto lozinke.
+Na primer, funkcija LNURL-withdraw (LUD-03) omogućava povlačenje sredstava sa online servisa skeniranjem QR koda, bez potrebe za ručnim generisanjem fakture. Slično, LNURL-auth (LUD-04) omogućava prijavljivanje na online usluge korišćenjem privatnog ključa na nečijem Lajtning novčaniku umesto lozinke.
 
 ### Slanje Lajtning uplate bez fakture: Keysend
 
@@ -951,7 +951,7 @@ Da pojednostavimo, u ovom protokolu, pošiljalac je taj koji generiše tajnu kor
 - Faktura je kodiran u **bech32**, sa separatorom `1` radi lakšeg kopiranja i delom podataka koji sadrži sve informacije potrebne za obradu plaćanja.
 - Drugi procesi plaćanja postoje na Lajtning mreži, posebno **LNURL-Withdraw** za olakšavanje povlačenja, i **Keysend** za direktne transfere bez fakture.
 
-U sledećem poglavlju, videćemo kako operater čvora može upravljati likvidnošću u svojim kanalima, kako nikada ne bi bio blokiran i uvek mogao slati i primati uplate na Lightning Network.
+U sledećem poglavlju, videćemo kako operater čvora može upravljati likvidnošću u svojim kanalima, kako nikada ne bi bio blokiran i uvek mogao slati i primati uplate na Lajtning mrežu.
 
 ## Upravljanje Vašom Likvidnošću
 
@@ -966,61 +966,61 @@ U ovom poglavlju ćemo istražiti strategije za efikasno upravljanje likvidnoš�
 Postoje tri glavna korisnička profila na Lajtningu, svaki sa specifičnim potrebama za likvidnošću:
 
 
-- **Payer**: Ovo je onaj koji vrši plaćanja. Oni trebaju odlaznu likvidnost kako bi mogli preneti sredstva drugim korisnicima. Na primer, to može biti potrošač.
+- **Platilac**: Ovo je onaj koji vrši plaćanja. Oni trebaju odlaznu likvidnost kako bi mogli preneti sredstva drugim korisnicima. Na primer, to može biti potrošač.
 - **Prodavac (ili Primilac uplata)**: Ovo je onaj koji prima uplate. Oni trebaju dolaznu likvidnost kako bi mogli prihvatiti uplate na svoj čvor. Na primer, ovo može biti preduzeće ili online prodavnica.
-- **The Router**: Međučvor, često specijalizovan za usmeravanje plaćanja, koji mora optimizovati svoju likvidnost u svakom kanalu kako bi usmerio što više plaćanja i zaradio naknade.
+- **Usmerivač**: Međučvor, često specijalizovan za usmeravanje plaćanja, koji mora optimizovati svoju likvidnost u svakom kanalu kako bi usmerio što više plaćanja i zaradio naknade.
 
-Ovi profili očigledno nisu fiksni; korisnik može prelaziti između platioca i primaoca u zavisnosti od transakcija. Na primer, Bob može primiti svoju platu putem Lightning-a od svog poslodavca, što ga stavlja u poziciju "prodavca" koji zahteva dolaznu likvidnost. Nakon toga, ako želi da koristi svoju platu za kupovinu hrane, postaje "platioc" i tada mora imati odlaznu likvidnost.
+Ovi profili očigledno nisu fiksni; korisnik može prelaziti između platioca i primaoca u zavisnosti od transakcija. Na primer, Bob može primiti svoju platu putem Lajtninga od svog poslodavca, što ga stavlja u poziciju "prodavca" koji zahteva dolaznu likvidnost. Nakon toga, ako želi da koristi svoju platu za kupovinu hrane, postaje "platioc" i tada mora imati odlaznu likvidnost.
 
-Da bismo bolje razumeli, uzmimo primer jednostavne mreže sastavljene od tri čvora: kupca (Alice), rutera (Suzie) i prodavca (Bob).
+Da bismo bolje razumeli, uzmimo primer jednostavne mreže sastavljene od tri čvora: kupca (Alice), usmerivača (Suzie) i prodavca (Bob).
 
 ![LNP201](assets/en/71.webp)
 
 Zamislite da kupac želi poslati 30.000 Sats prodavcu i da uplata ide kroz čvor rutera. Svaka strana tada mora imati minimalnu količinu likvidnosti u pravcu uplate:
 
 
-- Platilac mora imati najmanje 30.000 satoshija na svojoj strani kanala sa ruterom.
-- Prodavac mora imati kanal gde je 30,000 satoshija na suprotnoj strani da bi mogao da ih primi.
-- Ruter mora imati 30.000 satoshija na strani platioca u njihovom kanalu, i takođe 30.000 satoshija na njihovoj strani u kanalu sa prodavcem, da bi mogao da usmeri uplatu.
+- Platilac mora imati najmanje 30.000 satošija na svojoj strani kanala sa usmerivačem.
+- Prodavac mora imati kanal gde je 30,000 satošija na suprotnoj strani da bi mogao da ih primi.
+- Usmerivač mora imati 30.000 satošija na strani platioca u njihovom kanalu, i takođe 30.000 satošija na njihovoj strani u kanalu sa prodavcem, da bi mogao da usmeri uplatu.
 
 ![LNP201](assets/en/72.webp)
 
 ### Strategije upravljanja likvidnošću
 
-Platioci moraju osigurati održavanje dovoljne likvidnosti na svojoj strani kanala kako bi garantovali odlaznu likvidnost. Ovo se pokazuje kao relativno jednostavno, jer je dovoljno otvoriti nove Lightning kanale da bi se imala ova likvidnost. Naime, početna sredstva zaključana u Multisig On-Chain su u potpunosti na strani platioca u Lightning kanalu na početku. Kapacitet plaćanja je stoga osiguran sve dok su kanali otvoreni sa dovoljno sredstava. Kada se odlazna likvidnost iscrpi, dovoljno je otvoriti nove kanale.
+Platioci moraju osigurati održavanje dovoljne likvidnosti na svojoj strani kanala kako bi garantovali odlaznu likvidnost. Ovo se pokazuje kao relativno jednostavno, jer je dovoljno otvoriti nove Lajtning kanale da bi se imala ova likvidnost. Naime, početna sredstva zaključana u višepotpisnoj baznoj transakciji su u potpunosti na strani platioca u Lightning kanalu na početku. Kapacitet plaćanja je stoga osiguran sve dok su kanali otvoreni sa dovoljno sredstava. Kada se odlazna likvidnost iscrpi, dovoljno je otvoriti nove kanale.
 
-S druge strane, za prodavca, zadatak je složeniji. Da bi mogli da primaju uplate, moraju imati likvidnost na suprotnoj strani svojih kanala. Dakle, otvaranje kanala nije dovoljno: moraju takođe izvršiti uplatu u ovom kanalu kako bi premestili likvidnost na drugu stranu pre nego što sami mogu primati uplate. Za određene profile korisnika Lightning mreže, kao što su trgovci, postoji jasna nesrazmera između onoga što njihov čvor šalje i onoga što prima, s obzirom na to da je cilj poslovanja prvenstveno da prikupi više nego što troši, kako bi ostvarilo profit. Srećom, za ove korisnike sa specifičnim potrebama za dolaznom likvidnošću, postoji nekoliko rešenja:
+S druge strane, za prodavca, zadatak je složeniji. Da bi mogli da primaju uplate, moraju imati likvidnost na suprotnoj strani svojih kanala. Dakle, otvaranje kanala nije dovoljno: moraju takođe izvršiti uplatu u ovom kanalu kako bi premestili likvidnost na drugu stranu pre nego što sami mogu primati uplate. Za određene profile korisnika Lajtning mreže, kao što su trgovci, postoji jasna nesrazmera između onoga što njihov čvor šalje i onoga što prima, s obzirom na to da je cilj poslovanja prvenstveno da prikupi više nego što troši, kako bi ostvarili profit. Srećom, za ove korisnike sa specifičnim potrebama za dolaznom likvidnošću, postoji nekoliko rešenja:
 
 
-- Privlačenje kanala**: Trgovac ima prednost zbog obima očekivanih dolaznih uplata na svom čvoru. Uzimajući to u obzir, mogu pokušati privući rutirajuće čvorove koji traže prihod od naknada za transakcije i koji bi mogli otvoriti kanale prema njima, nadajući se da će usmeravati njihove uplate i prikupiti povezane naknade.
-- Kretanje likvidnosti**: Prodavac takođe može otvoriti kanal i preneti deo sredstava na suprotnu stranu tako što će izvršiti fiktivna plaćanja drugom čvoru, koji će vratiti novac na drugi način. U sledećem delu ćemo videti kako da izvedemo ovu operaciju.
-- Trokutasto otvaranje**: Platforme postoje za čvorove koji žele zajednički otvarati kanale, omogućavajući svakom da ima trenutnu dolaznu i odlaznu likvidnost. Na primer, [LightningNetwork+](https://lightningnetwork.plus/) nudi ovu uslugu. Ako Alice, Bob i Suzie žele otvoriti kanal sa 100,000 Sats, mogu se dogovoriti na ovoj platformi da Alice otvori kanal prema Bobu, Bob prema Suzie, a Suzie prema Alice. Na ovaj način, svaki ima 100,000 Sats odlazne likvidnosti i 100,000 Sats dolazne likvidnosti, dok su zaključali samo 100,000 Sats.
+- **Privlačenje kanala**: Trgovac ima prednost zbog obima očekivanih dolaznih uplata na svom čvoru. Uzimajući to u obzir, mogu pokušati privući posredničke čvorove koji traže prihod od naknada za transakcije i koji bi mogli otvoriti kanale prema njima, nadajući se da će usmeravati njihove uplate i prikupiti povezane naknade.
+- **Kretanje likvidnosti**: Prodavac takođe može otvoriti kanal i preneti deo sredstava na suprotnu stranu tako što će izvršiti fiktivna plaćanja drugom čvoru, koji će vratiti novac na drugi način. U sledećem delu ćemo videti kako da izvedemo ovu operaciju.
+- **Trokutasto otvaranje**: Platforme postoje za čvorove koji žele zajednički otvarati kanale, omogućavajući svakom da ima trenutnu dolaznu i odlaznu likvidnost. Na primer, [LightningNetwork+](https://lightningnetwork.plus/) nudi ovu uslugu. Ako Alisa, Bob i Suzi žele otvoriti kanal sa 100,000 Sats, mogu se dogovoriti na ovoj platformi da Alisa otvori kanal prema Bobu, Bob prema Suzi, a Suzi prema Alisi. Na ovaj način, svaki ima 100,000 Sats odlazne likvidnosti i 100,000 Sats dolazne likvidnosti, dok su zaključali samo 100,000 Sats.
 
 ![LNP201](assets/en/73.webp)
 
 
-- Kupovina kanala**: Postoje usluge za iznajmljivanje Lightning kanala kako bi se dobila dolazna likvidnost, kao što su [Bitrefill Thor](https://www.bitrefill.com/thor-lightning-network-channels/) ili [Lightning Labs Pool](https://lightning.engineering/pool/). Na primer, Alisa može kupiti kanal od milion satoshija prema svom čvoru kako bi mogla primati uplate.
+- **Kupovina kanala**: Postoje usluge za iznajmljivanje Lightning kanala kako bi se dobila dolazna likvidnost, kao što su [Bitrefill Thor](https://www.bitrefill.com/thor-lightning-network-channels/) ili [Lightning Labs Pool](https://lightning.engineering/pool/). Na primer, Alisa može kupiti kanal od milion satošija prema svom čvoru kako bi mogla primati uplate.
 
 ![LNP201](assets/en/74.webp)
 
-Konačno, za rutere, čiji je cilj da maksimiziraju broj obrađenih uplata i prikupljenih naknada, oni moraju:
+Konačno, za usmerivače, čiji je cilj da maksimiziraju broj obrađenih uplata i prikupljenih naknada, oni moraju:
 
 
 - Otvorite dobro finansirane kanale sa strateškim čvorovima.
 - Redovno prilagođavajte raspodelu sredstava u kanalima prema potrebama mreže.
 
-### Loop Out Service
+### Loop Out Usluga
 
-Usluga [Loop Out](https://lightning.engineering/loop/), koju nudi Lightning Labs, omogućava premeštanje likvidnosti na suprotnu stranu kanala dok se sredstva povraćaju na Bitcoin Blockchain. Na primer, Alisa šalje 1 milion satoshija putem Lightning-a ka loop čvoru, koji joj zatim vraća ta sredstva u On-Chain bitkoinima. Ovo balansira njen kanal sa 1 milion satoshija na svakoj strani, optimizujući njen kapacitet za primanje uplata.
+Usluga [Loop Out](https://lightning.engineering/loop/), koju nudi Lightning Labs, omogućava premeštanje likvidnosti na suprotnu stranu kanala dok se sredstva vraćaju na Bitkojn blokčejn. Na primer, Alisa šalje 1 milion satošija putem Lajtninga ka loop čvoru, koji joj zatim vraća ta sredstva u baznim bitkoinima. Ovo balansira njen kanal sa 1 milion satošija na svakoj strani, optimizujući njen kapacitet za primanje uplata.
 
 ![LNP201](assets/en/75.webp)
 
-Stoga, ova usluga omogućava dolaznu likvidnost dok povraća nečije bitkoine On-Chain, što pomaže u ograničavanju imobilizacije gotovine potrebne za prihvatanje plaćanja putem Lightning-a.
+Stoga, ova usluga omogućava dolaznu likvidnost dok vraća nečije bitkoine na bazni blokčejn, što pomaže u ograničavanju imobilizacije gotovine potrebne za prihvatanje plaćanja putem Lajtninga.
 
 **Šta treba da ponesete iz ovog poglavlja?**
 
 
-- Da biste slali uplate na Lightning mreži, morate imati dovoljno likvidnosti na vašoj strani u vašim kanalima. Da biste povećali ovaj kapacitet slanja, jednostavno otvorite nove kanale.
+- Da biste slali uplate na Lajtning mreži, morate imati dovoljno likvidnosti na vašoj strani u vašim kanalima. Da biste povećali ovaj kapacitet slanja, jednostavno otvorite nove kanale.
 - Da biste primali uplate, potrebno je da imate likvidnost na suprotnoj strani u vašim kanalima. Povećanje ovog kapaciteta za primanje je složenije, jer zahteva da drugi otvore kanale prema vama, ili da izvrše (fiktivne ili stvarne) uplate kako bi premestili likvidnost na drugu stranu.
 - Održavanje likvidnosti tamo gde je to potrebno može biti još izazovnije u zavisnosti od korišćenja kanala. Zato postoje alati i usluge koji pomažu da se kanali balansiraju prema želji.
 
@@ -1038,21 +1038,20 @@ U narednom poglavlju, predlažem da pregledamo najvažnije koncepte ove obuke.
 
 U ovom završnom poglavlju koje označava kraj obuke LNP201, predlažem da ponovo pregledamo važne koncepte koje smo zajedno obradili.
 
-Cilj ove obuke bio je da vam pruži sveobuhvatno i tehničko razumevanje Lightning Network. Otkrili smo kako Lightning Network oslanja se na Bitcoin Blockchain za obavljanje off-chain transakcija, dok zadržava osnovne karakteristike Bitcoin, posebno odsustvo potrebe za poverenjem u druge čvorove.
+Cilj ove obuke bio je da vam pruži sveobuhvatno i tehničko razumevanje Lajtning mreže. Otkrili smo kako se Lajtning mreža oslanja na Bitkojn blokčejn za obavljanje off-chain transakcija, van Bitkojn blokčejna, dok zadržava osnovne karakteristike Bitkojna, posebno odsustvo potrebe za poverenjem u druge čvorove.
 
 ### Kanali Plaćanja
 
-U početnim poglavljima, istražili smo kako dve strane, otvaranjem platnog kanala, mogu obavljati transakcije van Bitcoin Blockchain. Evo koraka koji su obuhvaćeni:
+U početnim poglavljima, istražili smo kako dve strane, otvaranjem platnog kanala, mogu obavljati transakcije van Bitkojn blokčejna. Evo koraka koji su obuhvaćeni:
 
 
-- Otvaranje Kanala**: Kreiranje kanala se vrši putem Bitcoin transakcije koja zaključava sredstva u 2/2 multisignature Address. Ovaj depozit predstavlja Lightning kanal na Blockchain.
+- **Otvaranje Kanala**: Kreiranje kanala se vrši putem Bitkojn transakcije koja zaključava sredstva u 2/2 višepotpisnoj adresi. Ovaj depozit predstavlja Lajtning kanal na Bitkojn blokčejnu.
 
-![LNP201](assets/en/76.webp) 2. **Transactions in the Channel**: In this channel, it is then possible to carry out numerous transactions without having to publish them on the blockchain. Each Lightning transaction creates a new state of the channel reflected in a commitment transaction.
-
+![LNP201](assets/en/76.webp) 2. **Transakcije unutar kanaala**: Unutar ovih platnih kanala, onda je moguće izvršiti bezbroj transakcija bez potrebe da se transakcije objavljuju na baznom blokčejnu. Svaka Lajtning transakcija kreira novo stanje kanala koje se reflektuje u Obavezujućoj transakciji. 
 ![LNP201](assets/en/77.webp)
 
 
-- Osiguranje i Zatvaranje**: Učesnici se obavezuju na novo stanje kanala razmenom ključeva za opoziv kako bi osigurali sredstva i sprečili bilo kakvu prevaru. Oba učesnika mogu zatvoriti kanal kooperativno pravljenjem nove transakcije na Bitcoin Blockchain, ili kao poslednja opcija kroz prisilno zatvaranje. Ova poslednja opcija, iako manje efikasna jer je duža i ponekad loše ocenjena u smislu naknada, ipak omogućava povraćaj sredstava. U slučaju prevare, žrtva može kazniti prevaranta povraćajem svih sredstava iz kanala na Blockchain.
+- **Osiguranje i Zatvaranje**: Učesnici se obavezuju na novo stanje kanala razmenom ključeva za opoziv kako bi osigurali sredstva i sprečili bilo kakvu prevaru. Oba učesnika mogu zatvoriti kanal kooperativno pravljenjem nove transakcije na Bitkojn blokčejnu, ili kao poslednja opcija kroz prisilno zatvaranje. Ova poslednja opcija, iako manje efikasna jer je duža i ponekad loše ocenjena u smislu naknada, ipak omogućava povraćaj sredstava. U slučaju prevare, žrtva može kazniti prevaranta povraćajem svih sredstava iz kanala na Blokčejn.
 
 ![LNP201](assets/en/78.webp)
 
@@ -1061,37 +1060,37 @@ U početnim poglavljima, istražili smo kako dve strane, otvaranjem platnog kana
 Nakon proučavanja izolovanih kanala, proširili smo našu analizu na mrežu kanala:
 
 
-- Ruting**: Kada dve strane nisu direktno povezane kanalom, mreža omogućava rutiranje kroz posredničke čvorove. Plaćanja tada prolaze sa jednog čvora na drugi.
+- **Usemeravanje**: Kada dve strane nisu direktno povezane kanalom, mreža omogućava rutiranje kroz posredničke čvorove. Plaćanja tada prolaze sa jednog čvora na drugi.
 
 ![LNP201](assets/en/79.webp)
 
 
-- HTLCs**: Plaćanja koja prolaze kroz posredničke čvorove su osigurana "_Hash Time-Locked Contracts_" (HTLC), što omogućava da sredstva budu zaključana dok se plaćanje ne završi od početka do kraja.
+- **HTLCs**: Plaćanja koja prolaze kroz posredničke čvorove su osigurana "_Hash Time-Locked Contracts_" (HTLC), što omogućava da sredstva budu zaključana dok se plaćanje ne završi od početka do kraja.
 
 ![LNP201](assets/en/80.webp)
 
 
-- Onion Routing**: Da bi se osigurala poverljivost plaćanja, onion routing maskira krajnju destinaciju za posredničke čvorove. Čvor koji šalje mora stoga izračunati celu rutu, ali u nedostatku potpunih informacija o likvidnosti kanala, nastavlja kroz sukcesivne pokušaje da usmeri plaćanje.
+- **Onion usemeravanje**: Da bi se osigurala poverljivost plaćanja, onion usmeravanje maskira krajnju destinaciju za posredničke čvorove. Čvor koji šalje mora stoga izračunati celu rutu, ali u nedostatku potpunih informacija o likvidnosti kanala, nastavlja kroz sukcesivne pokušaje da usmeri plaćanje.
 
 ![LNP201](assets/en/81.webp)
 
 ### Upravljanje Likvidnošću
 
-Videli smo da je upravljanje likvidnošću izazov na Lightning mreži kako bi se osigurao nesmetan tok plaćanja. Slanje plaćanja je relativno jednostavno: zahteva samo otvaranje kanala. Međutim, primanje plaćanja zahteva da se ima likvidnost na suprotnoj strani nečijih kanala. Evo nekih strategija koje su diskutovane:
+Videli smo da je upravljanje likvidnošću izazov na Lajtning mreži kako bi se osigurao nesmetan tok plaćanja. Slanje plaćanja je relativno jednostavno: zahteva samo otvaranje kanala. Međutim, primanje plaćanja zahteva da se ima likvidnost na suprotnoj strani nečijih kanala. Evo nekih strategija koje su diskutovane:
 
 
-- Attracting Channels**: Podsticanjem drugih čvorova da otvore kanale prema sebi, korisnik dobija dolaznu likvidnost.
-- Premještanje Likvidnosti**: Slanjem uplata na druge kanale, likvidnost se pomera na suprotnu stranu.
+- **Privlačenje kanala**: Kada korisnik podsticanjem drugih čvorova da otvore kanale prema njemu, time obezbeđuje dolaznu likvidnost.
+- **Premeštanje likvidnosti**: Slanjem uplata na druge kanale, likvidnost se pomera na suprotnu stranu.
 
 ![LNP201](assets/en/82.webp)
 
 
-- Korišćenje usluga kao što su Loop i Pool**: Ove usluge omogućavaju rebalansiranje ili kupovinu kanala sa likvidnošću na suprotnoj strani.
+- **Korišćenje usluga kao što su Loop i Pool**: Ove usluge omogućavaju rebalansiranje ili kupovinu kanala sa likvidnošću na suprotnoj strani.
 
 ![LNP201](assets/en/83.webp)
 
 
-- Kolaborativna Otvaranja**: Dostupne su i platforme za povezivanje radi izvođenja trostranih otvaranja i za obezbeđivanje dolazne likvidnosti.
+- **Kolaborativna Otvaranja**: Dostupne su i platforme za povezivanje radi izvođenja trostranih otvaranja i za obezbeđivanje dolazne likvidnosti.
 
 ![LNP201](assets/en/84.webp)
 
