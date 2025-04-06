@@ -10,7 +10,7 @@ objectives:
   - Razumeti teorijske upotrebe Lightning Network.
 
 ---
-# Putovanje do Bitcoin-ove druge Layer
+# Putovanje do Bitcoin-ove druge niova
 
 Zaronite u srž Lightning Network, esencijalnog sistema za budućnost Bitcoin transakcija. LNP201 je teorijski kurs o tehničkom funkcionisanju Lightning-a. Otkriva osnove i mehanizme ove druge Layer mreže, dizajnirane da učini Bitcoin plaćanja brzim, ekonomičnim i skalabilnim.
 
