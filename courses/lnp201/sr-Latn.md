@@ -12,7 +12,7 @@ Ciljevi:
 ---
 # Putovanje do drugog nivoa Bitkojna
 
-Zaronite u srž Lajtning mreže, esencijalnog sistema za budućnost Bitkojn transakcija. LNP201 je teorijski kurs o tehničkom funkcionisanju Lajtninga. Otkriva osnove i mehanizme ovog drugog nivoa, dizajniranog da učini Bitkojn plaćanja brzim, ekonomičnim i skalabilnim.
+Istražite srž Lajtning mreže, esencijalnog sistema za budućnost Bitkojn transakcija. LNP201 je teorijski kurs o tehničkom funkcionisanju Lajtninga. Otkriva osnove i mehanizme ovog drugog nivoa, dizajniranog da učini Bitkojn plaćanja brzim, ekonomičnim i skalabilnim.
 
 Zahvaljujući svojoj mreži platnih kanala, Lajtning omogućava brze i sigurne transakcije bez beleženja svake transakcije na Bitkojn blokčejnu. Kroz poglavlja ćete naučiti kako funkcioniše otvaranje, upravljanje i zatvaranje kanala plaćanja, kako se plaćanja sigurno usmeravaju kroz posredničke čvorove uz minimiziranje potrebe za poverenjem, i kako upravljati likvidnošću. Otkrićete šta su Obavezujuće transakcije, HTLC-ovi, ključevi opoziva, mehanizmi kažnjavanja, rutiranja sa višestrukim šifrovanjem (onion routing) i fakture.
 
