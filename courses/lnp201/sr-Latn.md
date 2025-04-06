@@ -342,7 +342,7 @@ Kada Alisa i Bob ažuriraju stanje kanala novom Lajtning transakcijom, oni unapr
 
 
 - Alisa i Bob imaju novu Obavezujuću transakciju koja predstavlja trenutnu raspodelu sredstava nakon Lajtning transakcije.
-- Svako ima tajnu onog drugog za prethodnu transakciju, što im omogućava da koriste ključ za opoziv samo ako jedan od njih pokuša da prevari objavljivanjem u mempoolovima Bitkojn čvorova one transakcije sa starim stanjem. Zaista, da bi se kaznila druga strana, neophodno je imati obe tajne i drugu Obavezujuću transakciju, koja uključuje potpisani izlaz. Bez ove transakcije, ključ za opoziv je beskoristan. Jedini način da se dobije ova transakcija je da se preuzme iz mempoolova (u transakcijama koje čekaju potvrdu) ili u potvrđenim transakcijama na Blokčejnu tokom perioda vremenskog zaključavanja, što dokazuje da druga strana pokušava da prevari, bilo namerno ili ne.
+- Svako ima tajnu onog drugog za prethodnu transakciju, što im omogućava da koriste ključ za opoziv samo ako jedan od njih pokuša da prevari objavljivanjem u mempoolovima Bitkojn čvorova one transakcije sa starim stanjem. Zaista, da bi se kaznila druga strana, neophodno je imati obe tajne i drugu Obavezujuću transakciju, koja uključuje potpisani ulaz. Bez ove transakcije, ključ za opoziv je beskoristan. Jedini način da se dobije ova transakcija je da se preuzme iz mempoolova (u transakcijama koje čekaju potvrdu) ili u potvrđenim transakcijama na Blokčejnu tokom perioda vremenskog zaključavanja, što dokazuje da druga strana pokušava da prevari, bilo namerno ili ne.
 
 Hajde da uzmemo primer kako bismo dobro razumeli ovaj proces:
 
@@ -505,29 +505,29 @@ Dakle, uplata se usmerava Bobu putem kretanja likvidnosti u svakom kanalu. Na kr
 
 Ovaj transfer je stoga ograničen **dostupnom likvidnošću** u pravcu transfera.
 
-### Izračunavanje rute i limita likvidnosti
+### Izračunavanje rute i limiti likvidnosti
 
 Hajde da uzmemo teoretski primer druge mreže sa:
 
 
 - **130,000 satošija** na Alisinoj strani (u narandžastom) u njenom kanalu sa **Suzi** (u sivom).
 - **90,000 satošija** na **Suzinoj** strani i **200,000 satošija** na **Karolinoj** strani (u roze boji).
-- **150,000 satošija** na strani **Carol** i **100,000 satošija** na strani **Bob**.
+- **150,000 satošija** na strani **Karol** i **100,000 satošija** na strani **Bob**.
 
 ![LNP201](assets/en/39.webp)
 
-Maksimum koji Alice može poslati Bobu u ovoj konfiguraciji je **90.000 satošija**, jer je ograničena najmanjom dostupnom likvidnošću u kanalu od **Suzi do Carol**. U suprotnom smeru (od Boba do Alice), plaćanje nije moguće jer **Suzina** strana u kanalu sa **Alisom** ne sadrži satošija. Stoga, **nema rute** koja se može koristiti za transfer u ovom smeru.
+Maksimum koji Alisa može poslati Bobu u ovoj konfiguraciji je **90.000 satošija**, jer je ograničena najmanjom dostupnom likvidnošću u kanalu od **Suzi do Karol**. U suprotnom smeru (od Boba do Alise), plaćanje nije moguće jer **Suzina** strana u kanalu sa **Alisom** ne sadrži satošija. Stoga, **nema rute** koja se može koristiti za transfer u ovom smeru.
 
-Alice šalje **40,000 satošija** Bobu kroz kanale:
+Alisa šalje **40,000 satošija** Bobu kroz kanale:
 
 
-- Alice prenosi 40,000 satošija na svoj kanal sa Suzie.
-- Suzie prenosi 40,000 satošija Caroli u njihovom zajedničkom kanalu.
-- Carol konačno prenosi 40.000 satošija Bobu.
+- Alisa prenosi 40,000 satošija na svoj kanal sa Suzi.
+- Suzi prenosi 40,000 satošija Karol u njihovom zajedničkom kanalu.
+- Karol konačno prenosi 40.000 satošija Bobu.
 
 ![LNP201](assets/en/40.webp)
 
-**Satošija poslati** u svakom kanalu **ostaju u kanalu**, tako da satošiji koje je Karol poslala Bobu nisu isti kao oni koje je Alis poslala Suzi. Prenos se vrši samo podešavanjem likvidnosti unutar svakog kanala. Štaviše, ukupni kapacitet kanala ostaje nepromenjen.
+**Satošiji poslati** u svakom kanalu **ostaju u kanalu**, tako da satošiji koje je Karol poslala Bobu nisu isti kao oni koje je Alis poslala Suzi. Prenos se vrši samo podešavanjem likvidnosti unutar svakog kanala. Štaviše, ukupni kapacitet kanala ostaje nepromenjen.
 
 ![LNP201](assets/en/41.webp)
 
@@ -537,10 +537,10 @@ Uloga posrednih čvorova je stoga veoma važna u funkcionisanju Lajtning mreže.
 
 ### Naknade za usmeravanje
 
-Međuprostorni čvorovi naplaćuju naknade kako bi omogućili prolazak uplata kroz njihove kanale. Ove naknade postavlja **svaki čvor za svaki kanal**. Naknade se sastoje od 2 elementa:
+Posrednički čvorovi naplaćuju naknade kako bi omogućili prolazak uplata kroz njihove kanale. Ove naknade postavlja **svaki čvor za svaki kanal**. Naknade se sastoje od 2 elementa:
 
 
-- "**Osnovna naknada**": fiksni iznos po kanalu, često **1 sat** po defaultu, ali prilagodljiv.
+- "**Osnovna naknada**": fiksni iznos po kanalu, često **1 sat** po defaultu, ali je konfigurabilan.
 - "**Varijabilna naknada**": procenat prenetog iznosa, izračunat u **delovima po milionu (ppm)**. Podrazumevano je **1 ppm** (1 sat po milionu prenetih satošija), ali se može i prilagoditi.
 
 Naknade se takođe razlikuju u zavisnosti od smera transfera. Na primer, za transfer od Alise do Suzi, primenjuju se Alisine naknade. Suprotno tome, od Suzi do Alise, koriste se Suzine naknade.
@@ -557,8 +557,8 @@ Da bismo bolje razumeli kako funkcionišu naknade, proučićemo istu Lajtning mr
 
 
 - Kanal **Alisa - Suzi**: osnovna naknada od 1 Satošija i 1 ppm za Alisu.
-- Kanal **Suzi - Carol**: osnovna naknada od 0 Satošija i 200 ppm za Suzi.
-- Kanal **Carol - Bob** : osnovna naknada od 1 Satošija i 1 ppm za Suzi 2.
+- Kanal **Suzi - Karol**: osnovna naknada od 0 Satošija i 200 ppm za Suzi.
+- Kanal **Karol - Bob** : osnovna naknada od 1 Satošija i 1 ppm za Suzi 2.
 
 ![LNP201](assets/en/43.webp)
 
@@ -592,7 +592,7 @@ Da bi usmerio uplatu od pošiljaoca do primaoca, Lajtning koristi metodu zvanu "
 
 
 - **Čvor koji šalje izračunava celu rutu**: Na primer, Alisa određuje da njena uplata mora proći kroz Suzi i Karol pre nego što stigne do Boba.
-- **Svaki posrednički čvor zna samo svog neposrednog suseda**: Suzi zna samo da je primila sredstva od Alise i da ih mora preneti Karol. Međutim, Suzi ne zna da li je Alice izvorni čvor ili posrednički čvor, i takođe ne zna da li je Karol čvor primaoca ili samo još jedan posrednički čvor. Ovo pravilo se takođe primenjuje na Karol i sve druge čvorove na putu. Onion usmeravanje tako čuva poverljivost transakcija maskiranjem identiteta pošiljaoca i krajnjeg primaoca.
+- **Svaki posrednički čvor zna samo svog neposrednog suseda**: Suzi zna samo da je primila sredstva od Alise i da ih mora preneti Karol. Međutim, Suzi ne zna da li je Alisa izvorni čvor ili posrednički čvor, i takođe ne zna da li je Karol čvor primaoca ili samo još jedan posrednički čvor. Ovo pravilo se takođe primenjuje na Karol i sve druge čvorove na putu. Onion usmeravanje tako čuva poverljivost transakcija maskiranjem identiteta pošiljaoca i krajnjeg primaoca.
 
 Da bi se osiguralo da čvor koji prenosi može izračunati kompletnu rutu do primaoca u onion rutiranju, mora održavati **mrežni graf (grafikon veza izmedju čvorova)** kako bi znao svoju topologiju i odredio moguće rute.
 
@@ -600,12 +600,12 @@ Da bi se osiguralo da čvor koji prenosi može izračunati kompletnu rutu do pri
 
 
 - Na Lightning mreži, plaćanja se mogu usmeravati između čvorova koji su indirektno povezani preko posredničkih kanala. Svaki od ovih posredničkih čvorova olakšava prenos likvidnosti.
-- Međuprostorni čvorovi primaju proviziju za svoju uslugu, koja se sastoji od fiksnih i varijabilnih naknada.
+- Posrednički čvorovi primaju proviziju za svoju uslugu, koja se sastoji od fiksnih i varijabilnih naknada.
 - Onion usmeravanje omogućava čvoru koji prenosi podatke da izračuna kompletnu rutu bez da posrednički čvorovi znaju izvor ili konačno odredište.
 
 U ovom poglavlju smo istražili usmeravanje plaćanja na Lajtning mreži. Ali postavlja se pitanje: šta sprečava posredničke čvorove da prihvate dolazno plaćanje bez prosleđivanja na sledeću destinaciju, sa ciljem presretanja transakcije? Upravo je to uloga HTLC-ova koje ćemo proučiti u narednom poglavlju.
 
-## HTLC – Hashed Time Locked Contract (hašovan vremenski zaključan ugovor)
+## HTLC – Hashed Time Locked Contract (hešovan vremenski zaključan ugovor)
 
 <chapterId>4369b85a-1365-55d8-99e1-509088210116</chapterId>
 
@@ -613,13 +613,13 @@ U ovom poglavlju smo istražili usmeravanje plaćanja na Lajtning mreži. Ali po
 
 U ovom poglavlju ćemo otkriti kako Lajtning omogućava plaćanja da prolaze kroz posredničke čvorove bez potrebe za poverenjem u njih, zahvaljujući **HTLC** (_Hashed Time-Locked Contracts_). Ovi pametni ugovori osiguravaju da će svaki posrednički čvor primiti sredstva iz svog kanala samo ako prosledi uplatu krajnjem primaocu, u suprotnom, uplata neće biti validirana.
 
-Problem koji se javlja kod usmeravanja plaćanja je stoga neophodno poverenje u posredničke čvorove, kao i među samim posredničkim čvorovima. Da bismo to ilustrovali, hajde da ponovo razmotrimo naš pojednostavljeni primer Lajtning mreće sa 3 čvora i 2 kanala:
+Problem koji se javlja kod usmeravanja plaćanja je neophodno poverenje u posredničke čvorove, kao i među samim posredničkim čvorovima. Da bismo to ilustrovali, hajde da ponovo razmotrimo naš pojednostavljeni primer Lajtning mreže sa 3 čvora i 2 kanala:
 
 
 - Alisa ima kanal sa Suzi.
 - Suzi ima kanal sa Bobom.
 
-Alice želi da pošalje 40,000 Sats Bobu, ali nema direktan kanal sa njim i ne želi da otvori jedan. Ona traži rutu i odlučuje da ide preko Suzijinog čvora.
+Alisa želi da pošalje 40,000 Sats Bobu, ali nema direktan kanal sa njim i ne želi da otvori jedan. Ona traži rutu i odlučuje da ide preko Suzijinog čvora.
 
 ![LNP201](assets/en/46.webp)
 
@@ -641,7 +641,7 @@ Evo kako ovaj proces funkcioniše u našem primeru sa Alisom, Suzi i Bobom:
 
 ![LNP201](assets/en/48.webp)
 
-**Kreiranje tajne**: Bob generiše nasumičnu tajnu označenu kao _s_ (preimage), i izračunava njen Hash označen kao _r_ sa Hash funkcijom označenom kao _h_. Imamo:
+**Kreiranje tajne**: Bob generiše nasumičnu tajnu označenu kao _s_ (preimage), i izračunava njen Heš označen kao _r_ sa Heš funkcijom označenom kao _h_. Imamo:
 
 $$
 r = h(s)
@@ -655,7 +655,7 @@ Korišćenje heš funkcije onemogućava pronalaženje _s_ samo sa _h(s)_, ali ak
 
 ![LNP201](assets/en/50.webp)
 
-**Slanje uslovnog plaćanja**: Alice šalje HTLC od 40,000 satošija Suzi. Uslov da Suzi primi ova sredstva je da dostavi Alice tajnu _s'_ koja zadovoljava sledeću jednačinu:
+**Slanje uslovnog plaćanja**: Alice šalje HTLC od 40,000 satošija Suzi. Uslov da Suzi primi ova sredstva je da dostavi Alisi tajnu _s'_ koja zadovoljava sledeću jednačinu:
 
 $$
 h(s') = r
@@ -675,11 +675,11 @@ $$
 
 ![LNP201](assets/en/53.webp)
 
-Ovaj proces sprečava Suzi da zadrži Alisina sredstva bez završetka prenosa Bobu, jer mora poslati uplatu Bobu kako bi dobila tajnu _s_ i tako otključala Alisin HTLC. Operacija ostaje ista čak i ako ruta uključuje nekoliko posredničkih čvorova: jednostavno je pitanje ponavljanja Suzinih koraka za svaki posrednički čvor. Svaki čvor je zaštićen uslovima HTLC-ova, jer otključavanje poslednjeg HTLC-a od strane primaoca automatski pokreće otključavanje svih ostalih HTLC-ova u kaskadi.
+Ovaj proces sprečava Suzi da zadrži Alisina sredstva bez završetka prenosa Bobu, jer mora poslati uplatu Bobu kako bi dobila tajnu _s_ i tako otključala Alisin HTLC. Operacija ostaje ista čak i ako ruta uključuje nekoliko posredničkih čvorova: to je jednostavno ponavljanja Suzinih koraka za svaki posrednički čvor. Svaki čvor je zaštićen uslovima HTLC-ova, jer otključavanje poslednjeg HTLC-a od strane primaoca automatski pokreće otključavanje svih ostalih HTLC-ova u kaskadi.
 
 ### Isticanje i upravljanje HTLC-ovima u slučaju problema
 
-Ako tokom procesa plaćanja, jedan od posredničkih čvorova, ili čvor primaoca, prestane da odgovara, posebno u slučaju prekida interneta ili struje, tada se plaćanje ne može završiti, jer tajna potrebna za otključavanje HTLC-ova nije preneta. Uzimajući naš primer sa Alisom, Suzi i Bobom, ovaj problem se javlja, na primer, ako Bob ne prenese tajnu _s_ Suzie. U tom slučaju, svi HTLC-ovi uzvodno od puta su blokirani, kao i sredstva koja oni obezbeđuju.
+Ako tokom procesa plaćanja, jedan od posredničkih čvorova, ili čvor primaoca, prestane da odgovara, posebno u slučaju prekida interneta ili struje, tada se plaćanje ne može završiti, jer tajna potrebna za otključavanje HTLC-ova nije preneta. Uzimajući naš primer sa Alisom, Suzi i Bobom, ovaj problem se javlja, na primer, ako Bob ne prenese tajnu _s_ Suzi. U tom slučaju, svi HTLC-ovi uzvodno od puta su blokirani, kao i sredstva koja oni obezbeđuju.
 
 ![LNP201](assets/en/54.webp)
 
@@ -699,11 +699,11 @@ Obavezujuće transakcije predstavljaju HTLC-ove na takav način da se uslovi koj
 
 ![LNP201](assets/en/57.webp)
 
-Pre početka plaćanja od 40,000 Sats između Alise i Boba, Alice ima 100,000 Sats u svom kanalu sa Suzi, dok Suzi drži 30,000. Njihove Obavezujuće transakcije su sledeće:
+Pre početka plaćanja od 40,000 Sats između Alise i Boba, Alisa ima 100,000 Sats u svom kanalu sa Suzi, dok Suzi drži 30,000. Njihove Obavezujuće transakcije su sledeće:
 
 ![LNP201](assets/en/58.webp)
 
-Alisa je upravo primila Bobovu fakturu, koja značajno sadrži _r_, heš tajne. Tako može konstruisati HTLC od 40,000 satošija sa Suzi. Ovaj HTLC je predstavljen u najnovijim Obavezujućim transakcijama kao izlaz pod nazivom "**_HTLC Out_**" na Alisinoj strani, jer sredstva izlaze, i "**_HTLC In_**" na Suzinog strani, jer sredstva ulaze.
+Alisa je upravo primila Bobovu fakturu, koja sadrži _r_, heš tajne. Tako može konstruisati HTLC od 40,000 satošija sa Suzi. Ovaj HTLC je predstavljen u najnovijim Obavezujućim transakcijama kao izlaz pod nazivom "**_HTLC Out_**" na Alisinoj strani, jer sredstva izlaze, i "**_HTLC In_**" na Suzinog strani, jer sredstva ulaze.
 
 ![LNP201](assets/en/59.webp)
 
@@ -711,7 +711,7 @@ Ovi rezultati povezani sa HTLC dele potpuno iste uslove, naime:
 
 
 - Ako Suzi može da obezbedi tajnu _s_, može odmah da otključa ovaj izlaz i prenese ga na adresu koju kontroliše.
-- Ako Suzie ne poseduje tajnu _s_, neće moći da otključa ovaj izlaz, a Alice će moći da ga otključa nakon vremenskog zaključavanja kako bi ga poslala na adresu koju ona kontroliše. Vremensko zaključavanje tako daje Suzi period da reaguje ako dobije _s_.
+- Ako Suzi ne poseduje tajnu _s_, neće moći da otključa ovaj izlaz, a Alisa će moći da ga otključa nakon vremenskog zaključavanja kako bi ga poslala na adresu koju ona kontroliše. Vremensko zaključavanje tako daje Suzi period da reaguje ako dobije _s_.
 
 Ovi uslovi važe samo ako je kanal zatvoren (tj. Obavezujuća transakcija je objavljena na baznom blockčejnu) dok je HTLC još uvek aktivan na Lajtningu, što znači da plaćanje između Alise i Boba još nije finalizovano, i HTLC-ovi još nisu istekli. Zahvaljujući ovim uslovima, Suzi može povratiti 40,000 satošija od HTLC koji joj duguju pružanjem _s_. U suprotnom, Alisa povraća sredstva nakon isteka vremenskog zaključavanja, jer ako Suzi ne zna _s_, to znači da nije prenela 40,000 satošija Bobu, i stoga, Alisina sredstva joj nisu dugovana.
 
@@ -721,7 +721,7 @@ Ako kanal nije zatvoren, nakon isteka ili uspeha Lajtning uplate, kreiraju se no
 
 ![LNP201](assets/en/60.webp)
 
-Konačno, u slučaju kooperativnog zatvaranja kanala dok je HTLC aktivan, Alisa i Suzi prestaju prihvatati nove uplate i čekaju na rešavanje ili isteknuće tekućih HTLC-ova. Ovo im omogućava da objave lakšu završnu transakciju, bez izlaza vezanih za HTLC-ove, čime se smanjuju naknade i izbegava čekanje na mogući vremenski zaključavanje.
+Konačno, u slučaju kooperativnog zatvaranja kanala dok je HTLC aktivan, Alisa i Suzi prestaju prihvatati nove uplate i čekaju na rešavanje ili okončanje tekućih HTLC-ova. Ovo im omogućava da objave lakšu završnu transakciju, bez izlaza vezanih za HTLC-ove, čime se smanjuju naknade i izbegava čekanje na moguće vremenske zaključavanje.
 
 **Šta bi trebalo da izvučete iz ovog poglavlja?**
 
@@ -729,8 +729,8 @@ HTLC-ovi omogućavaju usmeravanje Lajtning plaćanja kroz više čvorova bez pot
 
 
 - HTLC-ovi osiguravaju bezbednost plaćanja putem tajne (ulazna vrednsot heš funkcije) i vremena isteka.
-- Rešavanje ili isteknuće HTLC-ova prati specifičan redosled: od odredišta ka izvoru, kako bi se zaštitio svaki čvor.
-- Sve dok HTLC nije ni rešen ni istekao, održava se kao izlaz u najnovijim Obavezujućim transakcijama
+- Rešavanje ili istek HTLC-ova prati specifičan redosled: od odredišta ka izvoru, kako bi se zaštitio svaki čvor.
+- Sve dok HTLC nije ni rešen ni istekao, predstavljen je kao izlaz u najnovijim Obavezujućim transakcijama
 
 U narednom poglavlju, otkrićemo kako čvor koji kreira Lajtning transakciju pronalazi i bira rute kako bi njegova uplata stigla do čvora primaoca.
 
@@ -740,21 +740,21 @@ U narednom poglavlju, otkrićemo kako čvor koji kreira Lajtning transakciju pro
 
 ![video en](https://youtu.be/CqetCElRjUQ)
 
-U prethodnim poglavljima, videli smo kako koristiti kanale drugih čvorova za usmeravanje plaćanja i dostizanje čvora bez direktnog povezivanja putem kanala. Takođe smo diskutovali o tome kako osigurati bezbednost transfera bez poverenja u posredničke čvorove. U ovom poglavlju, fokusiraćemo se na pronalaženje najbolje moguće rute za dostizanje ciljnog čvora.
+U prethodnim poglavljima, videli smo kako koristiti kanale drugih čvorova za usmeravanje plaćanja i dostizanje čvora bez direktnog povezivanja putem kanala. Takođe smo diskutovali o tome kako osigurati bezbednost transfera bez poverenja u posredničke čvorove. U ovom poglavlju, fokusiraćemo se na pronalaženje najbolje moguće rute za dostizanje odredišnog čvora.
 
-### Problem rutiranja u Lightning mreži
+### Problem rutiranja u Lajtning mreži
 
 Kao što smo videli, u Lajtningu, čvor koji šalje uplatu mora izračunati kompletnu rutu do primaoca, jer koristimo sistem onion rutiranja. Posrednički čvorovi ne znaju ni tačku porekla ni krajnje odredište. Oni znaju samo odakle uplata dolazi i kojem čvoru je moraju dalje preneti. To znači da čvor koji šalje mora održavati dinamičku lokalnu topologiju mreže, sa postojećim Lajtning čvorovima i kanalima između svakog, uzimajući u obzir otvaranja, zatvaranja i ažuriranja stanja.
 
 ![LNP201](assets/en/61.webp)
 
-Čak i sa ovom topologijom Lajtning Mreže, postoji suštinska informacija za rutiranje koja ostaje nedostupna čvoru koji šalje, a to je tačna distribucija likvidnosti u kanalima u bilo kom trenutku. Naime, svaki kanal prikazuje samo svoj **ukupni kapacitet**, ali unutrašnja distribucija sredstava je poznata samo dvema učesničkim čvorovima. Ovo predstavlja izazove za efikasno rutiranje, jer uspeh plaćanja zavisi posebno od toga da li je njegov iznos manji od najniže likvidnosti na odabranoj ruti. Međutim, sve likvidnosti nisu vidljive čvoru koji šalje.
+Čak i sa ovom topologijom Lajtning mreže, postoji suštinska informacija za rutiranje koja ostaje nedostupna čvoru koji šalje, a to je tačna distribucija likvidnosti u kanalima u bilo kom trenutku. Naime, svaki kanal prikazuje samo svoj **ukupni kapacitet**, ali unutrašnja distribucija sredstava je poznata samo dvema učesničkim čvorovima. Ovo predstavlja izazove za efikasno rutiranje, jer uspeh plaćanja zavisi posebno od toga da li je njegov iznos manji od najniže likvidnosti na odabranoj ruti. Međutim, sve likvidnosti nisu vidljive čvoru koji šalje.
 
 ![LNP201](assets/en/62.webp)
 
-### Ažuriranje Mape Mreže
+### Ažuriranje Mrežne mape
 
-Da bi održali svoju mrežnu mapu ažurnom, čvorovi redovno razmenjuju poruke putem algoritma nazvanog "**_gossip_**". Ovo je distribuirani algoritam koji se koristi za širenje informacija na epidemijski način do svih čvorova u mreži, što omogućava razmenu i sinhronizaciju globalnog stanja kanala u nekoliko komunikacionih ciklusa. Svaki čvor propagira informacije jednom ili više suseda izabranih nasumično ili ne, a oni, zauzvrat, propagiraju informacije drugim susedima i tako dalje dok se ne postigne globalno sinhronizovano stanje.
+Da bi održali svoju mrežnu mapu ažurnom, čvorovi redovno razmenjuju poruke putem algoritma nazvanog "**_gossip_ (ogovaranje)**". Ovo je distribuirani algoritam koji se koristi za širenje informacija na epidemijski način do svih čvorova u mreži, što omogućava razmenu i sinhronizaciju globalnog stanja kanala u nekoliko komunikacionih ciklusa. Svaki čvor propagira informacije jednom ili više povezanih čvorova izabranih nasumično ili ne, a oni, zauzvrat, propagiraju informacije drugim susedima i tako dalje dok se ne postigne globalno sinhronizovano stanje.
 
 Dve glavne poruke razmenjene između Lajtning čvorova su sledeće:
 
@@ -762,7 +762,7 @@ Dve glavne poruke razmenjene između Lajtning čvorova su sledeće:
 - "**Najave Kanala**": poruke koje signaliziraju otvaranje novog kanala.
 - "**Ažuriranja kanala**": poruke o novom stanju kanala, posebno o evoluciji naknada (ali ne o distribuciji likvidnosti).
 
-Lajtning čvorovi takođe prate Bitkojn blokčejn kako bi detektovali transakcije zatvaranja kanala. Zatvoreni kanal se zatim uklanja sa mape jer se više ne može koristiti za usmeravanje naših plaćanja.
+Lajtning čvorovi takođe prate Bitkojn blokčejn kako bi detektovali transakcije zatvaranja kanala. Zatvoreni kanal se zatim uklanja sa mape jer se više ne može koristiti za usmeravanje plaćanja.
 
 ### Usmeravanje Plaćanja
 
@@ -846,7 +846,7 @@ Kao što je objašnjeno u poglavlju o HTLC-ovima, svaka uplata počinje generisa
 
 
 - **Deo razumljiv ljudima**: ovaj deo sadrži jasno vidljive metapodatke za poboljšanje korisničkog iskustva.
-- **Payload**: ova sekcija uključuje informacije namenjene mašinama za obradu plaćanja.
+- **Payload (sadržaj)**: ova sekcija uključuje informacije namenjene mašinama za obradu plaćanja.
 
 Tipična struktura fakture počinje sa identifikatorom `LN` za "Lightning", zatim `bc` za Bitcoin, pa iznos fakture. Separator `1` razdvaja deo čitljiv ljudima od dela podataka (payload).
 
@@ -874,7 +874,7 @@ U prvom delu, možemo videti da:
 
 
 - `LN` označava da je to Lightning transakcija.
-- `bc` ukazuje da je Lajtning mreža na Bitkojn blokčejnu (a ne na Testnet ili na Litecoin).
+- `bc` ukazuje da je Lajtning mreža na Bitkojn blokčejnu (a ne na Testnet-u ili na Litecoin-u).
 - `100u` označava iznos faktrue, izraženu u **mikrobitkoinima** (`u` znači "mikro"), što ovde iznosi 10.000 Sats.
 
 Da biste odredili iznos plaćanja, on se izražava u podjedinicama Bitkojna. Ovde su korišćene jedinice:
@@ -907,14 +907,14 @@ $$
 1 \, \text{pBTC} = 10^{-12} \, \text{BTC} = 0.0001 \, \text{satoshis}
 $$
 
-### Teret Fakture
+### Sadržaj Fakture
 
-Payload fakture uključuje nekoliko informacija neophodnih za obradu plaćanja:
+Sadržaj fakture uključuje nekoliko informacija neophodnih za obradu plaćanja:
 
 
-- **Timestamp:** Trenutak kreiranja fakture, izražen u Unix Timestamp (broj sekundi koji su protekli od 1. januara 1970).
-- **Hashing the Secret**: Kao što smo videli u delu o HTLC-ovima, čvor koji prima mora obezbediti čvoru koji šalje Hash preimage-a. Ovo se koristi u HTLC-ovima za obezbeđivanje transakcije. Nazvali smo ga "_r_".
-- **Tajna Plaćanja**: Još jedna tajna se generiše od strane primaoca, ali se ovaj put prenosi čvoru koji šalje. Koristi se u onion rutiranju kako bi se sprečilo da međučvorovi pogode da li je sledeći čvor konačni primalac ili ne. Ovo na taj način održava oblik poverljivosti za primaoca u odnosu na poslednji međučvor na ruti.
+- **Vremenska oznaka:** Trenutak kreiranja fakture, izražen u Unix Timestamp (broj sekundi koji su protekli od 1. januara 1970).
+- **Heširanje tajne**: Kao što smo videli u delu o HTLC-ovima, čvor koji prima mora obezbediti čvoru koji šalje vrednost heša ulazne vrednosti tajne. Ovo se koristi u HTLC-ovima za obezbeđivanje transakcije. Nazvali smo ga "_r_".
+- **Tajna Plaćanja**: Još jedna tajna se generiše od strane primaoca, ali se ovaj put prenosi čvoru koji šalje. Koristi se u onion rutiranju kako bi se sprečilo da međučvorovi pogode da li je sledeći čvor konačni primalac ili ne. Ovo na taj način obezbeđuje oblik poverljivosti za primaoca prema poslednjem međučvoru na ruti.
 - **Javni ključ primaoca**: Ukazuje platiocu na identifikator osobe kojoj treba platiti.
 - **Trajanje isteka**: Maksimalno vreme za plaćanje fakture (1 sat po defaultu).
 - **Routing Hints**: Dodatne informacije koje pruža primalac kako bi pomogao pošiljaocu da optimizuje putanju plaćanja.
@@ -930,7 +930,7 @@ Za određene situacije, kao što je povlačenje bitkojna sa online servisa, trad
 
 ![LNP201](assets/en/69.webp)
 
-LNURL je komunikacioni protokol koji specificira skup funkcionalnosti dizajniranih da pojednostave interakcije između Lajtning čvorova i klijenata, kao i aplikacija trećih strana. LNURL povlačenje, kao što smo upravo videli, je stoga samo jedan primer među ostalim funkcionalnostima.
+LNURL je komunikacioni protokol koji precizira skup funkcionalnosti dizajniranih da pojednostave interakcije između Lajtning čvorova i klijenata, kao i aplikacija trećih strana. LNURL povlačenje, kao što smo upravo videli, je stoga samo jedan primer među ostalim funkcionalnostima.
 
 Ovaj protokol se zasniva na HTTP-u i omogućava kreiranje linkova za razne operacije, kao što su zahtev za plaćanje, zahtev za povlačenje ili druge funkcionalnosti koje poboljšavaju korisničko iskustvo. Svaki LNURL je bech32 kodiran URL sa lnurl prefiksom, koji, kada se skenira, pokreće niz automatskih akcija na Lajtning novčaniku.
 
@@ -938,7 +938,7 @@ Na primer, funkcija LNURL-withdraw (LUD-03) omogućava povlačenje sredstava sa 
 
 ### Slanje Lajtning uplate bez fakture: Keysend
 
-Još jedan zanimljiv slučaj je transfer sredstava bez prethodnog primanja fakture, poznat kao "**Keysend**". Ovaj protokol omogućava slanje sredstava dodavanjem preimage-a u šifrovane podatke o plaćanju, dostupne samo primaocu. Ovaj preimage omogućava primaocu da otključa HTLC, čime se sredstva preuzimaju bez prethodnog generisanja fakture.
+Još jedan zanimljiv slučaj je transfer sredstava bez prethodnog primanja fakture, poznat kao "**Keysend**". Ovaj protokol omogućava slanje sredstava dodavanjem ulazne vrednosti heša u šifrovane podatke o plaćanju, dostupne samo primaocu. Ova ulazna vrednost omogućava primaocu da otključa HTLC, čime se sredstva preuzimaju bez prethodnog generisanja fakture.
 
 Da pojednostavimo, u ovom protokolu, pošiljalac je taj koji generiše tajnu korišćenu u HTLC-ovima, umesto primalac. Praktično, ovo omogućava pošiljaocu da izvrši uplatu bez prethodne interakcije sa primaocem.
 
@@ -948,7 +948,7 @@ Da pojednostavimo, u ovom protokolu, pošiljalac je taj koji generiše tajnu kor
 
 
 - **Lajtning faktura** je zahtev za plaćanje koji se sastoji od dela čitljivog za ljude i dela sa podacima za mašinu.
-- Faktura je kodiran u **bech32**, sa separatorom `1` radi lakšeg kopiranja i delom podataka koji sadrži sve informacije potrebne za obradu plaćanja.
+- Faktura je kodirana u **bech32**, sa separatorom `1` radi lakšeg kopiranja i sastoji se od podataka koji sadrže sve informacije potrebne za obradu plaćanja.
 - Drugi procesi plaćanja postoje na Lajtning mreži, posebno **LNURL-Withdraw** za olakšavanje povlačenja, i **Keysend** za direktne transfere bez fakture.
 
 U sledećem poglavlju, videćemo kako operater čvora može upravljati likvidnošću u svojim kanalima, kako nikada ne bi bio blokiran i uvek mogao slati i primati uplate na Lajtning mrežu.
@@ -968,15 +968,15 @@ Postoje tri glavna korisnička profila na Lajtningu, svaki sa specifičnim potre
 
 - **Platilac**: Ovo je onaj koji vrši plaćanja. Oni trebaju odlaznu likvidnost kako bi mogli preneti sredstva drugim korisnicima. Na primer, to može biti potrošač.
 - **Prodavac (ili Primilac uplata)**: Ovo je onaj koji prima uplate. Oni trebaju dolaznu likvidnost kako bi mogli prihvatiti uplate na svoj čvor. Na primer, ovo može biti preduzeće ili online prodavnica.
-- **Usmerivač**: Međučvor, često specijalizovan za usmeravanje plaćanja, koji mora optimizovati svoju likvidnost u svakom kanalu kako bi usmerio što više plaćanja i zaradio naknade.
+- **Usmeravač**: Međučvor, često specijalizovan za usmeravanje plaćanja, koji mora optimizovati svoju likvidnost u svakom kanalu kako bi usmerio što više plaćanja i zaradio naknade.
 
 Ovi profili očigledno nisu fiksni; korisnik može prelaziti između platioca i primaoca u zavisnosti od transakcija. Na primer, Bob može primiti svoju platu putem Lajtninga od svog poslodavca, što ga stavlja u poziciju "prodavca" koji zahteva dolaznu likvidnost. Nakon toga, ako želi da koristi svoju platu za kupovinu hrane, postaje "platioc" i tada mora imati odlaznu likvidnost.
 
-Da bismo bolje razumeli, uzmimo primer jednostavne mreže sastavljene od tri čvora: kupca (Alice), usmerivača (Suzie) i prodavca (Bob).
+Da bismo bolje razumeli, uzmimo primer jednostavne mreže sastavljene od tri čvora: kupca (Alise), usmerivača (Suzi) i prodavca (Bob).
 
 ![LNP201](assets/en/71.webp)
 
-Zamislite da kupac želi poslati 30.000 Sats prodavcu i da uplata ide kroz čvor rutera. Svaka strana tada mora imati minimalnu količinu likvidnosti u pravcu uplate:
+Zamislite da kupac želi poslati 30.000 Sats prodavcu i da uplata ide kroz čvor usmerivača. Svaka strana tada mora imati minimalnu količinu likvidnosti u pravcu uplate:
 
 
 - Platilac mora imati najmanje 30.000 satošija na svojoj strani kanala sa usmerivačem.
@@ -999,7 +999,7 @@ S druge strane, za prodavca, zadatak je složeniji. Da bi mogli da primaju uplat
 ![LNP201](assets/en/73.webp)
 
 
-- **Kupovina kanala**: Postoje usluge za iznajmljivanje Lightning kanala kako bi se dobila dolazna likvidnost, kao što su [Bitrefill Thor](https://www.bitrefill.com/thor-lightning-network-channels/) ili [Lightning Labs Pool](https://lightning.engineering/pool/). Na primer, Alisa može kupiti kanal od milion satošija prema svom čvoru kako bi mogla primati uplate.
+- **Kupovina kanala**: Postoje usluge za iznajmljivanje Lajtning kanala kako bi se dobila dolazna likvidnost, kao što su [Bitrefill Thor](https://www.bitrefill.com/thor-lightning-network-channels/) ili [Lightning Labs Pool](https://lightning.engineering/pool/). Na primer, Alisa može kupiti kanal od milion satošija prema svom čvoru kako bi mogla primati uplate.
 
 ![LNP201](assets/en/74.webp)
 
@@ -1007,7 +1007,7 @@ Konačno, za usmerivače, čiji je cilj da maksimiziraju broj obrađenih uplata 
 
 
 - Otvorite dobro finansirane kanale sa strateškim čvorovima.
-- Redovno prilagođavajte raspodelu sredstava u kanalima prema potrebama mreže.
+- Redovno prilagođavaju raspodelu sredstava u kanalima prema potrebama mreže.
 
 ### Loop Out Usluga
 
@@ -1015,13 +1015,13 @@ Usluga [Loop Out](https://lightning.engineering/loop/), koju nudi Lightning Labs
 
 ![LNP201](assets/en/75.webp)
 
-Stoga, ova usluga omogućava dolaznu likvidnost dok vraća nečije bitkoine na bazni blokčejn, što pomaže u ograničavanju imobilizacije gotovine potrebne za prihvatanje plaćanja putem Lajtninga.
+Stoga, ova usluga omogućava dolaznu likvidnost dok vraća nečije bitkojne na bazni blokčejn, što pomaže u smanjivanju imobilizacije gotovine neophodne za prihvatanje plaćanja putem Lajtninga.
 
 **Šta treba da ponesete iz ovog poglavlja?**
 
 
 - Da biste slali uplate na Lajtning mreži, morate imati dovoljno likvidnosti na vašoj strani u vašim kanalima. Da biste povećali ovaj kapacitet slanja, jednostavno otvorite nove kanale.
-- Da biste primali uplate, potrebno je da imate likvidnost na suprotnoj strani u vašim kanalima. Povećanje ovog kapaciteta za primanje je složenije, jer zahteva da drugi otvore kanale prema vama, ili da izvrše (fiktivne ili stvarne) uplate kako bi premestili likvidnost na drugu stranu.
+- Da biste primali uplate, potrebno je da imate likvidnost na suprotnoj strani u vašim kanalima. Uvećanje ovog kapaciteta za primanje je složenije, jer zahteva da drugi otvore kanale prema vama, ili da izvrše (fiktivne ili stvarne) uplate kako bi premestili likvidnost na drugu stranu.
 - Održavanje likvidnosti tamo gde je to potrebno može biti još izazovnije u zavisnosti od korišćenja kanala. Zato postoje alati i usluge koji pomažu da se kanali balansiraju prema želji.
 
 U narednom poglavlju, predlažem da pregledamo najvažnije koncepte ove obuke.
@@ -1047,7 +1047,8 @@ U početnim poglavljima, istražili smo kako dve strane, otvaranjem platnog kana
 
 - **Otvaranje Kanala**: Kreiranje kanala se vrši putem Bitkojn transakcije koja zaključava sredstva u 2/2 višepotpisnoj adresi. Ovaj depozit predstavlja Lajtning kanal na Bitkojn blokčejnu.
 
-![LNP201](assets/en/76.webp) 2. **Transakcije unutar kanaala**: Unutar ovih platnih kanala, onda je moguće izvršiti bezbroj transakcija bez potrebe da se transakcije objavljuju na baznom blokčejnu. Svaka Lajtning transakcija kreira novo stanje kanala koje se reflektuje u Obavezujućoj transakciji. 
+![LNP201](assets/en/76.webp) 
+2.**Transakcije unutar kanala**: Unutar ovih platnih kanala, onda je moguće izvršiti bezbroj transakcija bez potrebe da se transakcije objavljuju na baznom blokčejnu. Svaka Lajtning transakcija kreira novo stanje kanala koje se reflektuje u Obavezujućoj transakciji. 
 ![LNP201](assets/en/77.webp)
 
 
@@ -1065,7 +1066,7 @@ Nakon proučavanja izolovanih kanala, proširili smo našu analizu na mrežu kan
 ![LNP201](assets/en/79.webp)
 
 
-- **HTLCs**: Plaćanja koja prolaze kroz posredničke čvorove su osigurana "_Hash Time-Locked Contracts_" (HTLC), što omogućava da sredstva budu zaključana dok se plaćanje ne završi od početka do kraja.
+- **HTLC**: Plaćanja koja prolaze kroz posredničke čvorove su osigurana "_Hash Time-Locked Contracts_" (HTLC), što omogućava da sredstva budu zaključana dok se plaćanje ne završi od početka do kraja.
 
 ![LNP201](assets/en/80.webp)
 
