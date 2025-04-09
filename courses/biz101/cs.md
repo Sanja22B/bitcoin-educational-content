@@ -4,7 +4,7 @@ goal: Naučte se základy plateb a pokladny, abyste mohli svou společnost přip
 objectives: 
 
   - Bitcoin jako rozvíjející se měna a obchodní nástroj
-  - Pochopit, proč a jak může podnik držet bitcoin v pokladně nebo ho používat k platbám
+  - Pochopit, proč a jak může podnik držet bitcoin v pokladně nebo ho používat k platbámlkjlkj
   - Mít konkrétní představu, jak přijímat platby bitcoinem v praxi
   - Připravte se na správu fiskálních a účetních požadavků
 
