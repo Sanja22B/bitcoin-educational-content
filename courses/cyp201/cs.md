@@ -1,4 +1,5 @@
 ---
+checking agan
 name: Vnitřní fungování Bitcoinových peněženek
 goal: Ponořte se do kryptografických principů, které stojí za Bitcoinovými peněženkami.
 objectives:
