@@ -8,7 +8,7 @@ objectives:
   - Porozumět principům hašovacích funkcí, kryptografických klíčů a digitálních podpisů.
 ---
 
-# Cesta do srdce Bitcoinových peněženek
+# Cesta do srdce Bitcoinových peněženekkjlkj
 
 Objevte tajemství deterministických a hierarchických Bitcoinových peněženek s naším kurzem CYP201! Ať už jste pravidelný uživatel nebo nadšenec, který si chce prohloubit své znalosti, tento kurz nabízí kompletní ponoření do fungování těchto nástrojů, které všichni používáme každý den.
 
