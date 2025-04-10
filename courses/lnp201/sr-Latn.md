@@ -4,7 +4,7 @@ Svrha: Otkrijte Lajtning Mrežu iz tehničke perspektive
 Ciljevi: 
 
   - Razumeti rad kanala plaćanja unutar mreže.
-  - Upoznajte se sa terminima HTLC, LNURL i UTXO.
+  - Upoznati se sa terminima HTLC, LNURL i UTXO.
   - Usvojiti znanje o upravljanju likvidnošću i naknadama LNN-a.
   - Prepoznaj Lajtning mrežu kao mrežu.
   - Razumeti teorijske upotrebe Lajtning Mreže.
