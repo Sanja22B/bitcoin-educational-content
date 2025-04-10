@@ -1,5 +1,5 @@
 ---
-name: Unutrašnji Rad Bitcoin Novčanika
+naziv: Unutrašnji Rad Bitkojn Novčanika
 goal: Uronite se u kriptografske principe koji pokreću Bitcoin novčanike.
 objectives: 
 
