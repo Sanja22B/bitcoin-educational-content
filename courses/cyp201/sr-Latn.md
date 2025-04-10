@@ -1,7 +1,7 @@
 ---
-name: Unutrašnji Rad Bitcoin Novčanika
-goal: Uronite se u kriptografske principe koji pokreću Bitcoin novčanike.
-objectives: 
+naziv: Unutrašnji Rad Bitcoin Novčanika
+svrha: Uronite se u kriptografske principe koji pokreću Bitcoin novčanike.
+ciljevi: 
 
   - Definišite teorijske pojmove neophodne za razumevanje kriptografskih algoritama korišćenih u Bitcoin.
   - Potpuno razumeti konstrukciju determinističkog i hijerarhijskog Wallet.
