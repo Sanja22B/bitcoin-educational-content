@@ -1029,25 +1029,25 @@ https://planb.network/courses/d2fd9fc0-d9ed-4a87-9fa3-0fdbb3937e28
 
 <chapterId>fcb2bd58-5dda-5ecf-bb8f-ad1a0561ab4a</chapterId>
 
-Kao što je ranije viđeno, algoritmi digitalnog potpisa u Bitcoin zasnivaju se na paru privatnih i javnih ključeva koji su matematički povezani. Hajde da zajedno istražimo šta je ta matematička veza i kako se oni generišu.
+Kao što je ranije viđeno, algoritmi digitalnog potpisa u Bitcoin-u zasnivaju se na paru privatnih i javnih ključeva koji su matematički povezani. Hajde da zajedno istražimo šta je ta matematička veza i kako se oni generišu.
 
 
 ### Privatni ključ
 
 
-Privatni ključ je jednostavno nasumičan ili pseudo-nasumičan broj. U slučaju Bitcoin, ovaj broj je veličine 256 bita. Broj mogućnosti za Bitcoin privatni ključ je stoga teoretski $2^{256}$.
+Privatni ključ je jednostavno nasumičan ili pseudo-nasumičan broj. U slučaju Bitcoin-a, ovaj broj je veličine 256 bita. Broj mogućnosti za Bitcoin privatni ključ je stoga teoretski $2^{256}$.
 
 
 **Napomena**: "Pseudo-slučajan broj" je broj koji ima osobine bliske onima pravog slučajnog broja, ali se generiše determinističkim algoritmom.
 
 
-Međutim, u praksi, postoji samo $n$ različitih tačaka na našoj eliptičnoj krivoj secp256k1, gde je $n$ red generatora tačke $G$ krive. Videćemo kasnije čemu odgovara ovaj broj, ali jednostavno zapamtite da je važeći privatni ključ ceo broj između $1$ i $n-1$, znajući da je $n$ broj blizak, ali malo manji od $2^{256}$. Dakle, postoje neki 256-bitni brojevi koji nisu važeći za postajanje privatnim ključem u Bitcoin, konkretno, svi brojevi između $n$ i $2^{256}$. Ako generisanje slučajnog broja (privatnog ključa) proizvede vrednost $k$ takvu da je $k \geq n$, smatra se nevažećom i mora se generisati nova slučajna vrednost.
+Međutim, u praksi, postoji samo $n$ različitih tačaka na našoj eliptičnoj krivoj secp256k1, gde je $n$ red generatora tačke $G$ krive. Videćemo kasnije čemu odgovara ovaj broj, ali jednostavno zapamtite da je važeći privatni ključ ceo broj između $1$ i $n-1$, znajući da je $n$ broj blizak, ali malo manji od $2^{256}$. Dakle, postoje neki 256-bitni brojevi koji nisu važeći da budu privatni ključevi u Bitcoin-u, konkretno, svi brojevi između $n$ i $2^{256}$. Ako generisanje slučajnog broja (privatnog ključa) proizvede vrednost $k$ takvu da je $k \geq n$, smatra se nevažećom i mora se generisati nova slučajna vrednost.
 
 
-Broj mogućnosti za privatni ključ Bitcoin je stoga oko $n$, što je broj blizak $1.158 \times 10^{77}$. Ovaj broj je toliko veliki da, ako nasumično izaberete privatni ključ, statistički je gotovo nemoguće da pogodite privatni ključ drugog korisnika. Da biste dobili predstavu o razmeri, broj mogućih privatnih ključeva u Bitcoin je reda veličine bliskog procenjenom broju atoma u posmatranom univerzumu.
+Broj mogućnosti za privatni ključ Bitcoin-a je stoga oko $n$, što je broj blizak $1.158 \times 10^{77}$. Ovaj broj je toliko veliki da, ako nasumično izaberete privatni ključ, statistički je gotovo nemoguće da pogodite privatni ključ drugog korisnika. Da biste dobili predstavu o razmeri, broj mogućih privatnih ključeva u Bitcoin-u je reda veličine procenjenom broju atoma u posmatranom univerzumu.
 
 
-Kao što ćemo videti u narednim poglavljima, danas većina privatnih ključeva korišćenih u Bitcoin nije generisana nasumično, već je rezultat determinističke derivacije iz Mnemonic fraze, koja je sama po sebi pseudo-nasumična (ovo je čuvena fraza od 12 ili 24 reči). Ova informacija ne menja ništa za upotrebu algoritama za potpisivanje kao što je ECDSA, ali pomaže da se naša popularizacija u Bitcoin ponovo fokusira.
+Kao što ćemo videti u narednim poglavljima, danas većina privatnih ključeva korišćenih u Bitcoin-u nije generisana nasumično, već je rezultat determinističke derivacije iz bezbednosne fraze, koja je sama po sebi pseudo-nasumična (ovo je čuvena fraza od 12 ili 24 reči). Ova informacija ne menja ništa za upotrebu algoritama za potpisivanje kao što je ECDSA, ali pomaže da se preusmeri naš fokus na popularizaciju Bitcoina.
 
 
 U ostatku objašnjenja, privatni ključ će biti označen malim slovom $k$.
@@ -1061,10 +1061,10 @@ Javni ključ je tačka na eliptičkoj krivi, označena velikim slovom $K$, i izr
 U praksi, nekompresovani javni ključ je predstavljen sa 520 bita (ili 65 bajtova), što odgovara dvema 256-bitnim brojevima ($x$ i $y$) postavljenim jedan za drugim, sa prefiksom od 8 bita $0x04$.
 
 
-Međutim, moguće je predstaviti javni ključ i u komprimovanom obliku koristeći samo 33 bajta (264 bita) tako što se zadrži samo apscisa $x$ naše tačke na krivi i bajt koji označava paritet $y$. Ovo je poznato kao komprimovani javni ključ. Više ću o tome govoriti u poslednjim poglavljima ove obuke. Ali ono što treba da zapamtite je da je javni ključ $K$ tačka opisana sa $x$ i $y$.
+Međutim, moguće je predstaviti javni ključ i u kompresovanom obliku koristeći samo 33 bajta (264 bita) tako što se zadrži samo apscisa $x$ naše tačke na krivi i bajt koji označava paritet $y$. Ovo je poznato kao kompresovani javni ključ. Više ću o tome govoriti u poslednjim poglavljima ove obuke. Ali ono što treba da zapamtite je da je javni ključ $K$ tačka opisana sa $x$ i $y$.
 
 
-Da bismo izračunali tačku $K$ koja odgovara našem javnom ključu, koristimo operaciju skalarne množenja na eliptičkim krivama, definisanu kao ponovljeno sabiranje ($k$ puta) generatora tačke $G$:
+Da bismo izračunali tačku $K$ koja odgovara našem javnom ključu, koristimo operaciju skalarnog množenja na eliptičkim krivama, definisanu kao ponovljeno sabiranje ($k$ puta) generatora tačke $G$:
 
 
 $$
@@ -1084,7 +1084,7 @@ gde:
 - $\cdot$ predstavlja skalarno množenje na eliptičnoj krivi, što je ekvivalentno dodavanju tačke $G$ samoj sebi $k$ puta.
 
 
-Činjenica da je tačka $G$ zajednička za sve javne ključeve u Bitcoin omogućava nam da budemo sigurni da će isti privatni ključ $k$ uvek dati isti javni ključ $K$:
+Činjenica da je tačka $G$ zajednička za sve javne ključeve u Bitcoin-u omogućava nam da budemo sigurni da će isti privatni ključ $k$ uvek dati isti javni ključ $K$:
 
 
 ![CYP201](assets/fr/017.webp)
@@ -1099,7 +1099,7 @@ Glavna karakteristika ove operacije je da je to jednosmerna funkcija. Lako je iz
 ### Dodavanje i udvostručavanje tačaka na eliptičkim krivama
 
 
-Koncept sabiranja na eliptičkim krivama je definisan geometrijski. Ako imamo dve tačke $P$ i $Q$ na krivi, operacija $P + Q$ se izračunava povlačenjem prave koja prolazi kroz $P$ i $Q$. Ova prava će nužno preseći krivu u trećoj tački $R'$. Zatim uzimamo ogledalnu sliku ove tačke u odnosu na x-osu da bismo dobili tačku $R$, što je rezultat sabiranja:
+Koncept sabiranja na eliptičkim krivama je definisan geometrijski. Ako imamo dve tačke $P$ i $Q$ na krivi, operacija $P + Q$ se izračunava povlačenjem prave koja prolazi kroz $P$ i $Q$. Ova prava će nužno preseći krivu u trećoj tački $R'$. Zatim uzimamo refleksiju ove tačke u odnosu na x-osu da bismo dobili tačku $R$, što je rezultat sabiranja:
 
 
 $$
@@ -1116,7 +1116,7 @@ Grafički, ovo se može predstaviti na sledeći način:
 ![CYP201](assets/fr/019.webp)
 
 
-Za udvostručavanje tačke, što je operacija $P + P$, povlačimo tangentu na krivu u tački $P$. Ova tangenta seče krivu u drugoj tački $S'$. Zatim uzimamo zrcalnu sliku ove tačke u odnosu na x-osu da bismo dobili tačku $S$, što je rezultat udvostručavanja:
+Za udvostručavanje tačke, što je operacija $P + P$, povlačimo tangentu na krivu u tački $P$. Ova tangenta seče krivu u drugoj tački $S'$. Zatim uzimamo refleksiju ove tačke u odnosu na x-osu da bismo dobili tačku $S$, što je rezultat udvostručavanja:
 
 
 $$
@@ -1206,7 +1206,7 @@ Tako smo mogli lako izračunati javni ključ $K$ znajući $k$ i $G$.
 Sada, ako neko zna samo javni ključ $K$, suočen je sa problemom diskretnog logaritma: pronalaženje $k$ takvog da je $K = k \cdot G$. Ovaj problem se smatra teškim jer ne postoji efikasan algoritam za njegovo rešavanje na eliptičkim krivama. Ovo osigurava sigurnost ECDSA i Schnorr algoritama.
 
 
-Naravno, u ovom pojednostavljenom primeru sa $k = 4$, bilo bi moguće pronaći $k$ metodom pokušaja i greške, jer je broj mogućnosti mali. Međutim, u praksi, $k$ je 256-bitni ceo broj, što čini broj mogućnosti astronomski velikim (oko $1.158 \times 10^{77}$). Stoga je neizvodljivo pronaći $k$ metodom grube sile.
+Naravno, u ovom pojednostavljenom primeru sa $k = 4$, bilo bi moguće pronaći $k$ metodom pokušaja i greške, jer je broj mogućnosti mali. Međutim, u praksi, $k$ je 256-bitni ceo broj, što čini broj mogućnosti astronomski velikim (oko $1.158 \times 10^{77}$). Stoga je neizvodljivo pronaći $k$ metodom silovite pretrage (bruteforce).
 
 
 ## Potpisivanje privatnim ključem
@@ -1221,7 +1221,7 @@ Sada kada znate kako da izvedete javni ključ iz privatnog ključa, već možete
 ### Parametri eliptičke krive
 
 
-Da bi se izvršio digitalni potpis, svi učesnici moraju prvo da se dogovore o parametrima korišćene eliptičke krive. U slučaju Bitcoin, parametri **secp256k1** su sledeći:
+Da bi se izvršio digitalni potpis, svi učesnici moraju prvo da se dogovore o parametrima korišćene eliptičke krive. U slučaju Bitcoin-a, parametri **secp256k1** su sledeći:
 
 
 Konačno polje $\mathbb{Z}_p$ definisano sa:
@@ -1274,7 +1274,7 @@ h=1
 $$
 
 
-$h$ je kofaktor ili broj podgrupa. Neću ovde elaborirati šta to predstavlja, jer je prilično složeno, a u slučaju Bitcoin, ne moramo ga uzimati u obzir pošto je jednak $1$.
+$h$ je kofaktor ili broj podgrupa. Neću ovde elaborirati šta to predstavlja, jer je prilično složeno, a u slučaju Bitcoin-a, ne moramo ga uzimati u obzir pošto je jednak $1$.
 
 
 Sve ove informacije su javne i poznate svim učesnicima. Zahvaljujući njima, korisnici mogu napraviti digitalni potpis i verifikovati ga.
@@ -1283,13 +1283,13 @@ Sve ove informacije su javne i poznate svim učesnicima. Zahvaljujući njima, ko
 ### Potpis sa ECDSA
 
 
-ECDSA algoritam omogućava korisniku da potpiše poruku koristeći svoj privatni ključ, na takav način da svako ko zna odgovarajući javni ključ može da proveri validnost potpisa, a da privatni ključ nikada ne bude otkriven. U kontekstu Bitcoin, poruka koja se potpisuje zavisi od _sighash_-a koji korisnik izabere. Upravo taj _sighash_ će odrediti koji delovi transakcije su pokriveni potpisom. O tome ću više govoriti u sledećem poglavlju.
+ECDSA algoritam omogućava korisniku da potpiše poruku koristeći svoj privatni ključ, na takav način svako ko zna odgovarajući javni ključ može da proveri validnost potpisa, a da privatni ključ nikada ne bude otkriven. U kontekstu Bitcoin-a, poruka koja se potpisuje zavisi od _sighash_-a koji korisnik izabere. Upravo taj _sighash_ će odrediti koji delovi transakcije su pokriveni potpisom. O tome ću više govoriti u sledećem poglavlju.
 
 
-Evo koraka za generate ECDSA potpis:
+Evo koraka za generisanje ECDSA potpisa:
 
 
-Prvo, izračunavamo Hash ($e$) poruke koja treba da bude potpisana. Poruka $m$ se stoga propušta kroz kriptografsku Hash funkciju, obično SHA256 ili dvostruki SHA256 u slučaju Bitcoin:
+Prvo, izračunavamo heš ($e$) poruke koja treba da bude potpisana. Poruka $m$ se stoga propušta kroz kriptografsku heš funkciju, obično SHA256 ili dvostruki SHA256 u slučaju Bitcoin-a:
 
 
 $$
@@ -1297,7 +1297,7 @@ e = \text{HASH}(m)
 $$
 
 
-Zatim, izračunavamo Nonce. U kriptografiji, Nonce je jednostavno broj generisan na slučajan ili pseudo-slučajan način koji se koristi samo jednom. To jest, svaki put kada se napravi novi digitalni potpis sa ovim parom ključeva, biće veoma važno koristiti drugačiji Nonce, inače će to ugroziti sigurnost privatnog ključa. Stoga je dovoljno odrediti slučajan i jedinstven ceo broj $r$ takav da $1 \leq r \leq n-1$, gde je $n$ red generišuće tačke $G$ eliptičke krive.
+Zatim, izračunavamo nonce (broj koji se koristi samo jednom). U kriptografiji, nonce je jednostavno broj generisan na slučajan ili pseudo-slučajan način koji se koristi samo jednom. To jest, svaki put kada se napravi novi digitalni potpis sa ovim parom ključeva, biće veoma važno koristiti drugačiji nonce, inače će to ugroziti sigurnost privatnog ključa. Stoga je dovoljno odrediti slučajan i jedinstven ceo broj $r$ takav da $1 \leq r \leq n-1$, gde je $n$ red generišuće tačke $G$ eliptičke krive.
 
 
 Zatim ćemo izračunati tačku $R$ na eliptičnoj krivoj sa koordinatama $(x_R, y_R)$ tako da:
@@ -1322,7 +1322,7 @@ gde:
 
 - $r^{-1}$ je modularni inverz od $r$ po modulu $n$, to jest, ceo broj takav da $r \cdot r^{-1} \equiv 1 \mod n$;
 - $k$ je korisnikov privatni ključ;
-- $e$ je Hash poruke;
+- $e$ je heš poruke;
 - $n$ je red generatora tačke $G$ eliptičke krive.
 
 
@@ -1343,7 +1343,7 @@ Da bi verifikovao potpis $(x_R, s)$, svako ko zna javni ključ $K$ i parametre e
 Prvo, proverite da li su $x_R$ i $s$ unutar intervala $[1, n-1]$. Ovo osigurava da potpis poštuje matematička ograničenja eliptičke grupe. Ako to nije slučaj, verifikator odmah odbacuje potpis kao nevažeći.
 
 
-Zatim, izračunaj Hash poruke:
+Zatim, izračunaj heš poruke:
 
 
 $$
@@ -1384,7 +1384,7 @@ Potpis je važeći samo ako je $x_V \equiv x_R \mod n$, gde je $x_V$ $x$ koordin
 ### Potpisivanje sa Schnorr protokolom
 
 
-Šema Schnorr potpisa je alternativa ECDSA koja nudi mnoge prednosti. Moguće ju je koristiti u Bitcoin od 2021. godine i uvođenja Taproot, sa šablonima skripti P2TR. Kao i ECDSA, šema Schnorr omogućava potpisivanje poruke korišćenjem privatnog ključa, na takav način da potpis može biti verifikovan od strane bilo koga ko zna odgovarajući javni ključ.
+Šema Schnorr potpisa je alternativa ECDSA koja nudi mnoge prednosti. Moguće ju je koristiti u Bitcoin-u od 2021. godine i uvođenja Taproot-a, sa šablonima skripti P2TR. Kao i ECDSA, šema Schnorr omogućava potpisivanje poruke korišćenjem privatnog ključa, na takav način da potpis može biti verifikovan od strane bilo koga ko zna odgovarajući javni ključ.
 
 U slučaju Schnorra, koristi se potpuno ista kriva kao kod ECDSA sa istim parametrima. Međutim, javni ključevi su predstavljeni malo drugačije u poređenju sa ECDSA. Naime, oni su određeni samo $x$ koordinatom tačke na eliptičnoj krivi. Za razliku od ECDSA, gde su kompresovani javni ključevi predstavljeni sa 33 bajta (sa prefiksnim bajtom koji označava paritet $y$), Schnorr koristi 32-bajtne javne ključeve, koji odgovaraju samo $x$ koordinati tačke $K$, i pretpostavlja se da je $y$ paran po defaultu. Ova pojednostavljena reprezentacija smanjuje veličinu potpisa i olakšava određene optimizacije u algoritmima za verifikaciju.
 
@@ -1396,13 +1396,13 @@ $$
 $$
 
 
-Prvi korak do generate potpisa je Hash poruka. Ali za razliku od ECDSA, to se radi sa drugim vrednostima i koristi se označena Hash funkcija kako bi se izbegle kolizije u različitim kontekstima. Označena Hash funkcija jednostavno podrazumeva dodavanje proizvoljne oznake ulazima Hash funkcije zajedno sa podacima poruke.
+Prvi korak do generisanja potpisa je heš poruka. Ali za razliku od ECDSA, to se radi sa drugim vrednostima i koristi se označena heš funkcija kako bi se izbegle kolizije u različitim kontekstima. Označena heš funkcija jednostavno podrazumeva dodavanje proizvoljne oznake ulazima heš funkcije zajedno sa podacima poruke.
 
 
 ![CYP201](assets/fr/023.webp)
 
 
-Pored poruke, $x$ koordinata javnog ključa $K_x$, kao i tačka $R = r \cdot G$, izračunata iz Nonce $r$ (koji je sam po sebi jedinstven ceo broj za svaki potpis, deterministički izračunat iz privatnog ključa i poruke kako bi se izbegle ranjivosti povezane sa ponovnom upotrebom Nonce), takođe se prosleđuju u označenu funkciju. Kao i za javni ključ, samo $x$ koordinata Nonce tačke $R_x$ se zadržava da opiše tačku.
+Pored poruke, $x$ koordinata javnog ključa $K_x$, kao i tačka $R = r \cdot G$, izračunata iz nonce-a $r$ (koji je sam po sebi jedinstven ceo broj za svaki potpis, deterministički izračunat iz privatnog ključa i poruke kako bi se izbegle ranjivosti povezane sa ponovnom upotrebom nonce-a), takođe se prosleđuju u označenu funkciju. Kao i za javni ključ, samo $x$ koordinata nonce tačke $R_x$ se zadržava da opiše tačku.
 
 
 Rezultat ovog heširanja označen $e$ naziva se "izazov":
@@ -1413,10 +1413,10 @@ e = \text{HASH}(\text{``BIP0340/challenge''}, R_x \Vert K_x \Vert m) \mod n
 $$
 
 
-Ovde, $\text{Hash}$ je SHA256 Hash funkcija, a $\text{``BIP0340/challenge''}$ je specifična oznaka za heširanje.
+Ovde, $\text{Hash}$ je SHA256 heš funkcija, a $\text{``BIP0340/challenge''}$ je specifična oznaka za heširanje.
 
 
-Konačno, parametar $s$ se izračunava iz privatnog ključa $k$, Nonce $r$, i izazova $e$ na sledeći način:
+Konačno, parametar $s$ se izračunava iz privatnog ključa $k$, nonce-a $r$, i izazova $e$ na sledeći način:
 
 
 $$
@@ -1500,24 +1500,24 @@ Isto tako, više potpisa može biti agregirano u jedan važeći potpis. Dakle, u
 ![CYP201](assets/fr/025.webp)
 
 
-Štaviše, agregacija potpisa poboljšava privatnost. Sa Schnorr-om, postaje nemoguće razlikovati transakciju sa višestrukim potpisom od standardne transakcije sa jednim potpisom. Ova homogenost otežava analizu lanca, jer ograničava mogućnost identifikacije Wallet otisaka prstiju.
+Štaviše, agregacija potpisa poboljšava privatnost. Sa Schnorr-om, postaje nemoguće razlikovati transakciju sa višestrukim potpisom od standardne transakcije sa jednim potpisom. Ova homogenost otežava analizu lanca, jer ograničava mogućnost identifikacije novčanika.
 
 
 Konačno, Schnorr takođe nudi mogućnost grupne verifikacije. Verifikovanjem više potpisa istovremeno, čvorovi mogu postići efikasnost, posebno za blokove koji sadrže mnogo transakcija. Ova optimizacija smanjuje vreme i resurse potrebne za validaciju bloka.
 
-Takođe, Schnorr potpisi nisu podložni promenama, za razliku od potpisa proizvedenih sa ECDSA. To znači da napadač ne može da izmeni važeći potpis kako bi stvorio drugi važeći potpis za istu poruku i isti javni ključ. Ova ranjivost je prethodno bila prisutna u Bitcoin i značajno je sprečila sigurnu implementaciju Lightning Network. Rešena je za ECDSA sa SegWit softforkom 2017. godine, koji uključuje premeštanje potpisa u zasebnu bazu podataka od transakcija kako bi se sprečila njihova promenljivost.
+Takođe, Schnorr potpisi nisu podložni promenama, za razliku od potpisa proizvedenih sa ECDSA. To znači da napadač ne može da izmeni važeći potpis kako bi stvorio drugi važeći potpis za istu poruku i isti javni ključ. Ova ranjivost je prethodno bila prisutna u Bitcoin i značajno je sprečila sigurnu implementaciju Lightning Network-a. Rešena je za ECDSA sa SegWit softforkom 2017. godine, koji uključuje premeštanje potpisa u zasebnu bazu podataka od transakcija kako bi se sprečila njihova promenljivost.
 
 
 ### Zašto je Satoshi izabrao ECDSA?
 
 
-Kao što smo videli, Satoshi je u početku odlučio da implementira ECDSA za digitalne potpise u Bitcoin. Ipak, takođe smo videli da je Schnorr superiorniji od ECDSA u mnogim aspektima, a ovaj protokol je kreirao Claus-Peter Schnorr 1989. godine, 20 godina pre izuma Bitcoin.
+Kao što smo videli, Satoshi je u početku odlučio da implementira ECDSA za digitalne potpise u Bitcoin-u. Ipak, takođe smo videli da je Schnorr superiorniji od ECDSA u mnogim aspektima, a ovaj protokol je kreirao Claus-Peter Schnorr 1989. godine, 20 godina pre izuma Bitcoin.
 
 
 Pa, mi stvarno ne znamo zašto Satoshi nije izabrao to, ali verovatna hipoteza je da je ovaj protokol bio pod patentom do 2008. Iako je Bitcoin kreiran godinu dana kasnije, u januaru 2009, u to vreme nije postojala otvorena standardizacija za Schnorr potpise. Možda je Satoshi smatrao da je sigurnije koristiti ECDSA, koji je već bio široko korišćen i testiran u open-source softveru i imao nekoliko priznatih implementacija (posebno OpenSSL biblioteka korišćena do 2015. u Bitcoin Core, zatim zamenjena libsecp256k1 u verziji 0.10.0). Ili možda jednostavno nije bio svestan da će ovaj patent isteći 2008. U svakom slučaju, najverovatnija hipoteza izgleda da je povezana sa ovim patentom i činjenicom da je ECDSA imao dokazanu istoriju i bio lakši za implementaciju.
 
 
-## Zastavice sighash
+## Sighash indikatori
 
 
 <chapterId>231c41a2-aff2-4655-9048-47b6d2d83d64</chapterId>
@@ -1526,24 +1526,23 @@ Pa, mi stvarno ne znamo zašto Satoshi nije izabrao to, ali verovatna hipoteza j
 Kao što smo videli u prethodnim poglavljima, digitalni potpisi se često koriste za otključavanje skripte ulaza. U procesu potpisivanja, neophodno je uključiti potpisane podatke u izračunavanje, označene u našim primerima kao poruka $m$. Ovi podaci, kada su jednom potpisani, ne mogu biti izmenjeni bez poništavanja potpisa. Zaista, bilo da se radi o ECDSA ili Schnorr, verifikator potpisa mora uključiti u svoje izračunavanje istu poruku $m$. Ako se razlikuje od poruke $m$ koju je inicijalno koristio potpisnik, rezultat će biti netačan i potpis će biti proglašen nevažećim. Tada se kaže da potpis pokriva određene podatke i na neki način ih štiti od neovlašćenih izmena.
 
 
-### Šta je sighash zastavica?
+### Šta je sighash indikator?
 
 
-U specifičnom slučaju Bitcoin, videli smo da poruka $m$ odgovara transakciji. Međutim, u stvarnosti je to malo složenije. Zaista, zahvaljujući sighash zastavicama, moguće je odabrati specifične podatke unutar transakcije koji će biti pokriveni ili ne potpisom.
+U specifičnom Bitcoin slučaju, videli smo da poruka $m$ odgovara transakciji. Međutim, u stvarnosti je to malo složenije. Zaista, zahvaljujući sighash indikatorima, moguće je odabrati specifične podatke unutar transakcije koji će biti pokriveni ili ne potpisom.
 
-"Sighash zastavica" je stoga parametar dodat svakom ulazu, omogućavajući određivanje komponenti transakcije koje su pokrivene pridruženim potpisom. Te komponente su ulazi i izlazi. Izbor sighash zastavice stoga određuje koji ulazi i koji izlazi transakcije su fiksirani potpisom i koji se još uvek mogu menjati bez poništavanja. Ovaj mehanizam omogućava potpisima da obavežu podatke transakcije prema namerama potpisnika.
+"Sighash indikator" je stoga parametar dodat svakom ulazu, omogućavajući određivanje komponenti transakcije koje su pokrivene pridruženim potpisom. Te komponente su ulazi i izlazi. Izbor sighash indikatora stoga određuje koji ulazi i koji izlazi transakcije su fiksirani potpisom i koji se još uvek mogu menjati bez poništavanja. Ovaj mehanizam omogućava da potpisi obavezuju podatke o transakciji u skladu sa namerama potpisivača.
 
-
-Očigledno, kada je transakcija potvrđena na Blockchain, postaje nepromenljiva, bez obzira na korišćene sighash zastavice. Mogućnost izmene putem sighash zastavica ograničena je na period između potpisivanja i potvrde.
-
-
-Generalno, Wallet softver vam ne nudi opciju da ručno modifikujete sighash zastavicu vaših ulaza kada konstruirate transakciju. Podrazumevano, `SIGHASH_ALL` je postavljen. Lično, znam samo za Sparrow Wallet koji omogućava ovu modifikaciju od strane korisnika Interface.
+Očigledno, kada je transakcija potvrđena na blokčejnu, postaje nepromenljiva, bez obzira na korišćene sighash indikatore. Mogućnost izmene putem sighash indikatora ograničena je na period između potpisivanja i potvrde.
 
 
-### Koji su postojeći sighash flagovi u Bitcoin?
+Generalno, softverski novčanik vam ne nudi opciju da ručno modifikujete sighash indikator vaših ulaza kada kreirate transakciju. Podrazumevano, `SIGHASH_ALL` je postavljen. Lično, znam samo za Sparrow Wallet koji omogućava ovu modifikaciju uz pomoć korisničkog interfejsa.
 
 
-U Bitcoin, postoje pre svega 3 osnovne sighash zastavice:
+### Koji su postojeći sighash indikatori u Bitcoin-u?
+
+
+U Bitcoin-u, postoje pre svega 3 osnovna sighash indikatora:
 
 
 
@@ -1553,11 +1552,11 @@ U Bitcoin, postoje pre svega 3 osnovne sighash zastavice:
 ![CYP201](assets/fr/026.webp)
 
 
-U svim dijagramima ovog poglavlja, narandžasta boja predstavlja Elements pokriven potpisom, dok crna boja označava one koji nisu.
+U svim dijagramima ovog poglavlja, narandžasta boja predstavlja elemente pokriven potpisom, dok crna boja označava one koji nisu.
 
 
 
-- `SIGHASH_NONE` (`0x02`): Potpis pokriva sve ulaze, ali nijedan izlaz, što omogućava modifikaciju izlaza nakon potpisivanja. U konkretnim terminima, ovo je slično blanko čeku. Potpisnik otključava UTXO-e u ulazima, ali ostavlja polje izlaza potpuno modifikabilnim. Svako ko zna za ovu transakciju može dodati izlaz po svom izboru, na primer, specificiranjem primanja Address za prikupljanje sredstava potrošenih ulazima, a zatim emitovati transakciju da povrati bitkoine. Potpis vlasnika ulaza neće biti poništen, jer pokriva samo ulaze.
+- `SIGHASH_NONE` (`0x02`): Potpis pokriva sve ulaze, ali nijedan izlaz, što omogućava modifikaciju izlaza nakon potpisivanja. U konkretnim terminima, ovo je slično blanko čeku. Potpisnik otključava UTXO-e u ulazima, ali ostavlja polje izlaza potpuno promenljivim. Svako ko zna za ovu transakciju može dodati izlaz po svom izboru, na primer, specificiranjem adrese za primanje kako bi prikupio sredstava potrošenih inputa, a zatim emitovati transakciju da prihvati bitkoine. Potpis vlasnika ulaza neće biti poništen, jer pokriva samo ulaze.
 
 
 ![CYP201](assets/fr/027.webp)
@@ -1570,11 +1569,11 @@ U svim dijagramima ovog poglavlja, narandžasta boja predstavlja Elements pokriv
 ![CYP201](assets/fr/028.webp)
 
 
-Pored ova tri sighash zastavice, postoji i modifikator `SIGHASH_ANYONECANPAY` (`0x80`). Ovaj modifikator se može kombinovati sa osnovnom sighash zastavicom kako bi se kreirale tri nove sighash zastavice:
+Pored ova tri sighash indikatora, postoji i modifikator `SIGHASH_ANYONECANPAY` (`0x80`). Ovaj modifikator se može kombinovati sa osnovnim sighash indikatorom kako bi se kreirala tri nova sighash indikatora:
 
 
 
-- `SIGHASH_ALL | SIGHASH_ANYONECANPAY` (`0x81`): Potpis pokriva jedan ulaz dok uključuje sve izlaze transakcije. Ova kombinovana zastavica sighash omogućava, na primer, kreiranje transakcije za crowdfunding. Organizator priprema izlaz sa svojim Address i ciljnim iznosom, a svaki investitor može dodati ulaze kako bi finansirao ovaj izlaz. Kada se skupi dovoljno sredstava u ulazima da zadovolje izlaz, transakcija se može emitovati.
+- `SIGHASH_ALL | SIGHASH_ANYONECANPAY` (`0x81`): Potpis pokriva jedan ulaz dok uključuje sve izlaze transakcije. Ovaj kombinovani sighash indikator omogućava, na primer, kreiranje transakcije za crowdfunding. Organizator priprema izlaz sa svojom adresom i ciljnim iznosom, a svaki investitor može dodati ulaze kako bi finansirao ovaj izlaz. Kada se skupi dovoljno sredstava u ulazima da zadovolje izlaz, transakcija se može emitovati.
 
 
 ![CYP201](assets/fr/029.webp)
@@ -1594,21 +1593,21 @@ Pored ova tri sighash zastavice, postoji i modifikator `SIGHASH_ANYONECANPAY` (`
 ![CYP201](assets/fr/031.webp)
 
 
-### Projekti za dodavanje novih Sighash zastavica
+### Projekti za dodavanje novih Sighash indikatora
 
 
-Trenutno (2024), samo sighash zastavice predstavljene u prethodnom odeljku su upotrebljive u Bitcoin. Međutim, neki projekti razmatraju dodavanje novih sighash zastavica. Na primer, BIP118, koji su predložili Christian Decker i Anthony Towns, uvodi dve nove sighash zastavice: `SIGHASH_ANYPREVOUT` i `SIGHASH_ANYPREVOUTANYSCRIPT` (_AnyPrevOut = "Bilo koji prethodni izlaz"_).
+Trenutno (2024), samo sighash indikatoei predstavljeni u prethodnom odeljku su upotrebljivi u Bitcoin-u. Međutim, neki projekti razmatraju dodavanje novih sighash indikatora. Na primer, BIP118, koji su predložili Christian Decker i Anthony Towns, uvodi dva nova sighash indikatora: `SIGHASH_ANYPREVOUT` i `SIGHASH_ANYPREVOUTANYSCRIPT` (_AnyPrevOut = "Bilo koji prethodni izlaz"_).
 
 
-Ove dve sighash zastavice bi ponudile dodatnu mogućnost u Bitcoin: kreiranje potpisa koji ne pokrivaju nijedan specifičan ulaz transakcije.
+Ova dva sighash indikatora bi ponudile dodatnu mogućnost u Bitcoin-u: kreiranje potpisa koji ne pokrivaju nijedan specifičan ulaz transakcije.
 
 
 ![CYP201](assets/fr/032.webp)
 
 
-Ovu ideju su prvobitno formulisali Joseph Poon i Thaddeus Dryja u Lightning White Paper-u. Pre nego što je preimenovana, ova sighash zastavica se zvala `SIGHASH_NOINPUT`.
+Ovu ideju su prvobitno formulisali Joseph Poon i Thaddeus Dryja u Lightning White Paper-u. Pre nego što je preimenovan, ovaj sighash indikator se zvao `SIGHASH_NOINPUT`.
 
-Ako se ova zastavica sighash integriše u Bitcoin, omogućiće korišćenje zaveta, ali je takođe obavezan preduslov za implementaciju Eltoo-a, opšteg protokola za druge slojeve koji definiše kako zajednički upravljati Ownership od UTXO. Eltoo je specifično dizajniran da reši probleme povezane sa mehanizmima za pregovaranje o stanju Lightning kanala, to jest, između otvaranja i zatvaranja.
+Ako se ovaj sighash indikator integriše u Bitcoin, omogućiće korišćenje zaveta, ali je takođe obavezan preduslov za implementaciju Eltoo-a, opšteg protokola za druge slojeve koji definiše kako zajednički upravljati vlasništvom nad UTXO-om. Eltoo je specifično dizajniran da reši probleme povezane sa mehanizmima za pregovaranje o stanju Lightning kanala, to jest, između otvaranja i zatvaranja.
 
 
 Da biste produbili svoje znanje o Lightning Network, nakon kursa CYP201, toplo preporučujem kurs LNP201 od Fanisa Michalakisa, koji detaljno pokriva ovu temu:
@@ -1616,10 +1615,10 @@ Da biste produbili svoje znanje o Lightning Network, nakon kursa CYP201, toplo p
 
 https://planb.network/courses/34bd43ef-6683-4a5c-b239-7cb1e40a4aeb
 
-U sledećem delu, predlažem da otkrijemo kako Mnemonic fraza na bazi vašeg Bitcoin Wallet funkcioniše.
+U narednom delu predlažem da otkrijemo kako funkcioniše bezbednosna fraza koja je osnova vašeg Bitcoin novčanika.
 
 
-# Mnemonic fraza
+# Bezbednosna fraza
 
 
 <partId>4070af16-c8a2-58b5-9871-a22c86c07458</partId>
@@ -1631,33 +1630,33 @@ U sledećem delu, predlažem da otkrijemo kako Mnemonic fraza na bazi vašeg Bit
 <chapterId>9d9acd5d-a0e5-5dfd-b544-f043fae8840f</chapterId>
 
 
-Sada kada smo istražili funkcionisanje Hash funkcija i digitalnih potpisa, možemo proučiti kako funkcionišu Bitcoin novčanici. Cilj će biti da opišemo kako je Wallet u Bitcoin konstruisan, kako se dekomponuje i za šta se koriste različiti delovi informacija koji ga čine. Ovo razumevanje mehanizama Wallet omogućiće vam da poboljšate korišćenje Bitcoin u smislu sigurnosti i privatnosti.
+Sada kada smo istražili funkcionisanje heš funkcija i digitalnih potpisa, možemo proučiti kako funkcionišu Bitcoin novčanici. Cilj će biti da opišemo kako je novčanik u Bitcoin-u konstruisan, kako se dekomponuje i za šta se koriste različiti delovi informacija koji ga čine. Ovo razumevanje mehanizama novčanika omogućiće vam da poboljšate korišćenje Bitcoin-a u smislu sigurnosti i privatnosti.
 
 
-Pre nego što se upustimo u tehničke detalje, neophodno je razjasniti šta se podrazumeva pod "Bitcoin Wallet" i razumeti njegovu korisnost.
+Pre nego što se upustimo u tehničke detalje, neophodno je razjasniti šta se podrazumeva pod "Bitcoin novčanik" i razumeti njegovu korisnost.
 
 
-### Šta je Bitcoin Wallet?
+### Šta je Bitcoin novčanik?
 
 
-Za razliku od tradicionalnih novčanika, koji vam omogućavaju da čuvate fizičke novčanice i kovanice, Bitcoin Wallet ne "sadrži" bitkoine per se. Naime, bitkoini ne postoje u fizičkom ili digitalnom obliku koji se može čuvati, već su predstavljeni jedinicama računa prikazanim u Bitcoin sistemu u obliku **UTXO-a** (_Unspent Transaction Outputs_).
+Za razliku od tradicionalnih novčanika, koji vam omogućavaju da čuvate fizičke novčanice i kovanice, Bitcoin novčanik ne "sadrži" bitkoine per se. Naime, bitkoini ne postoje u fizičkom ili digitalnom obliku koji se može čuvati, već su predstavljeni jedinicama obračuna prikazanim u Bitcoin sistemu u obliku **UTXO-a** (_Unspent Transaction Outputs_).
 
 
 UTXO-i tako predstavljaju fragmente bitkoina, različitih veličina, koji se mogu potrošiti pod uslovom da je njihov _scriptPubKey_ zadovoljen. Da bi potrošio svoje bitkoine, korisnik mora obezbediti _scriptSig_ koji otključava _scriptPubKey_ povezan sa njegovim UTXO. Ovaj dokaz se obično vrši putem digitalnog potpisa, generisanog iz privatnog ključa koji odgovara javnom ključu prisutnom u _scriptPubKey_. Dakle, ključni element koji korisnik mora obezbediti je privatni ključ.
 
-Uloga Bitcoin Wallet je upravo da bezbedno upravlja ovim privatnim ključevima. U stvarnosti, njegova uloga je više slična ulozi priveska za ključeve nego Wallet u tradicionalnom smislu.
+Uloga Bitcoin novčanika je upravo da bezbedno upravlja ovim privatnim ključevima. U stvarnosti, njegova uloga je više slična ulozi priveska za ključeve nego novčanika u tradicionalnom smislu.
 
 
 ### JBOK Novčanici
 
 
-Prvi novčanici korišćeni u Bitcoin bili su JBOK (_Just a Bunch Of Keys_) novčanici, koji su grupisali privatne ključeve generisane nezavisno i bez ikakve veze među njima. Ovi novčanici su radili na jednostavnom modelu gde je svaki privatni ključ mogao da otključa jedinstveni Bitcoin primajući Address.
+Prvi novčanici korišćeni u Bitcoin-u bili su JBOK (_Just a Bunch Of Keys_) novčanici, koji su grupisali privatne ključeve generisane nezavisno i bez ikakve veze među njima. Ovi novčanici su radili na jednostavnom modelu gde je svaki privatni ključ mogao da otključa jedinstvenu Bitcoin primajuću adresu.
 
 
 ![CYP201](assets/fr/033.webp)
 
 
-Ako neko želi da koristi više privatnih ključeva, bilo je potrebno napraviti onoliko rezervnih kopija koliko je potrebno da se obezbedi pristup sredstvima u slučaju problema sa uređajem koji hostuje Wallet. Ako se koristi jedan privatni ključ, ova struktura Wallet može biti dovoljna, jer je jedna rezervna kopija dovoljna. Međutim, ovo predstavlja problem: u Bitcoin se snažno savetuje protiv korišćenja uvek istog privatnog ključa. Naime, privatni ključ je povezan sa jedinstvenim Address, a Bitcoin adrese za primanje su obično dizajnirane za jednokratnu upotrebu. Svaki put kada primite sredstva, trebalo bi da generate novi prazan Address.
+Ako neko želi da koristi više privatnih ključeva, bilo je potrebno napraviti onoliko rezervnih kopija koliko je potrebno da se obezbedi pristup sredstvima u slučaju problema sa uređajem koji hostuje novčanik. Ako se koristi jedan privatni ključ, ova struktura Wallet može biti dovoljna, jer je jedna rezervna kopija dovoljna. Međutim, ovo predstavlja problem: u Bitcoin se snažno savetuje protiv korišćenja uvek istog privatnog ključa. Naime, privatni ključ je povezan sa jedinstvenim Address, a Bitcoin adrese za primanje su obično dizajnirane za jednokratnu upotrebu. Svaki put kada primite sredstva, trebalo bi da generate novi prazan Address.
 
 
 Ovo ograničenje proizlazi iz Bitcoin modela privatnosti. Ponovnim korišćenjem istog Address, spoljnim posmatračima se olakšava praćenje Bitcoin transakcija. Zato se ponovna upotreba prijemnog Address snažno obeshrabruje. Međutim, da bismo imali više adresa i javno odvojili naše transakcije, neophodno je upravljati sa više privatnih ključeva. U slučaju JBOK novčanika, to podrazumeva kreiranje onoliko rezervnih kopija koliko ima novih parova ključeva, zadatak koji može brzo postati složen i težak za održavanje korisnicima.
