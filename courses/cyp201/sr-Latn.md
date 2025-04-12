@@ -215,13 +215,13 @@ Dakle, otpornost na drugi preimage (ulaz) je donekle slična otpornosti na koliz
 Najčešće korišćena heš funkcija u Bitkojnu je **SHA256** ("_Secure Hash Algorithm 256 bits"_). Dizajnirana početkom 2000-ih od strane NSA i standardizovana od strane NIST, proizvodi 256-bitni heš izlaz.
 
 
-Ova funkcija se koristi u mnogim aspektima Bitkojna. Na nivou protokola, koristi se kod Proof-of-Work mehanizma, gde se primenjuje u dvostrukom heširanju za pretragu delimične kolizije između zaglavlja kandidatskog bloka, kreiranog od strane rudara, i cilja težine. Ako se ovaj delimični sudar pronađe, kandidatski blok postaje važeći i može biti dodat u blokčejn.
+Ova funkcija se koristi u mnogim aspektima Bitkojna. Na nivou protokola, koristi se kod Proof-of-Work mehanizma, gde se primenjuje u dvostrukom heširanju za pretragu delimične kolizije između zaglavlja kandidatskog bloka, kreiranog od strane rudara, i cilja težine (difficulty target). Ako se ova delimična kolizija pronađe, kandidatski blok postaje važeći i može biti dodat u blokčejn.
 
 
-SHA256 se takođe koristi u konstrukciji Merkle Tree, koji je posebno akumulator korišćen za beleženje transakcija u blokovima. Ova struktura se takođe nalazi u Utreexo protokolu, koji omogućava smanjenje veličine UTXO skupa. Pored toga, sa uvođenjem Taproot u 2021. godini, SHA256 se koristi u MAST (_Merkelised Alternative Script Tree_), što omogućava otkrivanje samo uslova potrošnje koji su zapravo korišćeni u skripti, bez otkrivanja drugih mogućih opcija. Takođe se koristi u izračunavanju identifikatora transakcija, u prenosu paketa preko P2P mreže, u elektronskim potpisima... Na kraju, i ovo je od posebnog interesa u ovoj obuci, SHA256 se koristi na nivou aplikacije za konstrukciju Bitcoin novčanika i derivaciju adresa.
+SHA256 se takođe koristi u konstrukciji Merkle Tree (Merkelovo stablo), koji je specifičan akumulator koji se koristi za beleženje transakcija u blokovima. Ova struktura se takođe nalazi u Utreexo protokolu, koji omogućava smanjenje veličine UTXO skupa. Pored toga, sa uvođenjem Taproot-a u 2021. godini, SHA256 se koristi u MAST-u (_Merkelised Alternative Script Tree_), što omogućava otkrivanje samo zahteva potrošnje koji su zapravo korišćeni u skripti, bez otkrivanja drugih mogućih opcija. Takođe se koristi u izračunavanju identifikatora transakcija, u prenosu paketa preko P2P mreže, u elektronskim potpisima... Na kraju, i ovo je od posebnog interesa u ovoj obuci, SHA256 se koristi na nivou aplikacije za kreiranje Bitcoin novčanika i derivaciju adresa.
 
 
-Većinu vremena, kada naiđete na upotrebu SHA256 u Bitcoin, to će zapravo biti dvostruki Hash SHA256, označen kao "**HASH256**", što jednostavno podrazumeva primenu SHA256 dva puta uzastopno:
+Većinu vremena, kada naiđete na upotrebu SHA256 u Bitcoin-u, to će zapravo biti dvostruki heš SHA256 funkcije, označen kao "**HASH256**", što jednostavno podrazumeva primenu SHA256 dva puta uzastopno:
 
 
 $$
@@ -229,10 +229,10 @@ $$
 $$
 
 
-Ova praksa dvostrukog heširanja dodaje dodatni Layer nivo sigurnosti protiv određenih potencijalnih napada, iako se jedan SHA256 danas smatra kriptografski sigurnim.
+Ova praksa dvostrukog heširanja dodaje dodatni nivo sigurnosti protiv određenih potencijalnih napada, iako se jedan SHA256 danas smatra kriptografski sigurnim.
 
 
-Još jedna funkcija heširanja dostupna u Script jeziku i korišćena za dobijanje adresa za primanje je RIPEMD160 funkcija. Ova funkcija proizvodi 160-bitni Hash (dakle kraći od SHA256). Obično se kombinuje sa SHA256 da bi se formirala HASH160 funkcija:
+Još jedna funkcija heširanja dostupna u Script jeziku i korišćena za dobijanje adresa za primanje je RIPEMD160 funkcija. Ova funkcija proizvodi 160-bitni heš (dakle kraći od SHA256). Obično se kombinuje sa SHA256 da bi se formirala HASH160 funkcija:
 
 
 $$
@@ -240,13 +240,13 @@ $$
 $$
 
 
-Ova kombinacija se koristi za generate kraće heševe, posebno u kreiranju određenih Bitcoin adresa koje predstavljaju heševe ključeva ili skript heševe, kao i za proizvodnju otisaka prstiju ključeva.
+Ova kombinacija se koristi za generisanje kraćih heševa, posebno u kreiranju određenih Bitcoin adresa koje predstavljaju heševe ključeva ili skript heševe, kao i za kreiranje otisaka ključeva (jedinstveni indentifikator javnog ključa).
 
 
-Konačno, samo na nivou aplikacije, ponekad se koristi i funkcija SHA512, koja indirektno igra ulogu u derivaciji ključeva za novčanike. Ova funkcija je veoma slična SHA256 u svom radu; obe pripadaju istoj SHA2 porodici, ali SHA512 proizvodi, kao što njen naziv ukazuje, 512-bitni Hash, u poređenju sa 256 bita za SHA256. Njenu upotrebu ćemo detaljno opisati u narednim poglavljima.
+Konačno, samo na nivou aplikacije, ponekad se koristi i funkcija SHA512, koja indirektno igra ulogu u derivaciji ključeva za novčanike. Ova funkcija je veoma slična SHA256 u svom radu; obe pripadaju istoj SHA2 porodici, ali SHA512 proizvodi, kao što njen naziv ukazuje, 512-bitni heš, u poređenju sa 256 bita za SHA256. Njenu upotrebu ćemo detaljno opisati u narednim poglavljima.
 
 
-Sada znate osnovne osnove o heš funkcijama za ono što sledi. U sledećem poglavlju predlažem da detaljnije otkrijemo kako funkcioniše funkcija koja je u srcu Bitcoin: SHA256. Rastavićemo je kako bismo razumeli kako postiže karakteristike koje smo ovde opisali. Ovo sledeće poglavlje je prilično dugo i tehničko, ali nije neophodno za praćenje ostatka obuke. Dakle, ako imate poteškoća sa razumevanjem, ne brinite i pređite direktno na sledeće poglavlje, koje će biti mnogo pristupačnije.
+Sada znate osnove o heš funkcijama za ono što sledi. U sledećem poglavlju predlažem da detaljnije otkrijemo kako funkcioniše funkcija koja je u srcu Bitcoin-a: SHA256. Rastavićemo je kako bismo razumeli kako postiže karakteristike koje smo ovde opisali. Ovo sledeće poglavlje je prilično dugo i tehničko, ali nije neophodno za praćenje ostatka obuke. Dakle, ako imate poteškoća sa razumevanjem, ne brinite i pređite direktno na sledeće poglavlje, koje će biti mnogo pristupačnije.
 
 
 ## Unutrašnji mehanizmi SHA256
@@ -255,19 +255,19 @@ Sada znate osnovne osnove o heš funkcijama za ono što sledi. U sledećem pogla
 <chapterId>905eb320-f15b-5fb6-8d2d-5bb447337deb</chapterId>
 
 
-Prethodno smo videli da heš funkcije poseduju važne karakteristike koje opravdavaju njihovu upotrebu u Bitcoin. Hajde sada da ispitamo unutrašnje mehanizme ovih heš funkcija koje im daju ova svojstva, i da bismo to uradili, predlažem da rastavimo operaciju SHA256.
+Prethodno smo videli da heš funkcije poseduju važne karakteristike koje opravdavaju njihovu upotrebu u Bitcoin-u. Hajde sada da ispitamo unutrašnje mehanizme ovih heš funkcija koje im daju ova svojstva, i da bismo to uradili, predlažem da rastavimo operaciju SHA256.
 
 
 Funkcije SHA256 i SHA512 pripadaju istoj porodici SHA2. Njihov mehanizam zasniva se na specifičnoj konstrukciji zvanoj **Merkle-Damgård konstrukcija**. RIPEMD160 takođe koristi ovu istu vrstu konstrukcije.
 
 
-Kao podsetnik, imamo poruku proizvoljne veličine kao ulaz za SHA256, i proći ćemo je kroz funkciju da bismo dobili 256-bitni Hash kao izlaz.
+Kao podsetnik, imamo poruku proizvoljne veličine kao ulaz za SHA256, i provući ćemo je kroz funkciju da bismo dobili 256-bitni heš kao izlaz.
 
 
 ### Pre-procesiranje ulaza
 
 
-Da bismo započeli, potrebno je pripremiti našu ulaznu poruku $m$ tako da ima standardnu dužinu koja je višestruka od 512 bita. Ovaj korak je ključan za pravilno funkcionisanje algoritma u nastavku.
+Da bismo započeli, potrebno je pripremiti našu ulaznu poruku $m$ tako da ima standardnu dužinu koja je deljiva sa 512 bita. Ovaj korak je ključan za pravilno funkcionisanje algoritma u nastavku.
 
 Da bismo to uradili, počinjemo sa korakom dodavanja bitova za popunjavanje. Prvo dodajemo separator bit `1` poruci, praćen sa određenim brojem `0` bitova. Broj dodatih `0` bitova se računa tako da ukupna dužina poruke nakon ovog dodavanja bude kongruentna sa 448 modulo 512. Dakle, dužina $L$ poruke sa bitovima za popunjavanje je jednaka:
 
@@ -277,10 +277,10 @@ L \equiv 448 \mod 512
 $$
 
 
-$\text{mod}$, za modulo, je matematička operacija koja, između dva cela broja, vraća ostatak Euklidove deobe prvog broja drugim. Na primer: $16 \mod 5 = 1$. To je operacija koja se široko koristi u kriptografiji.
+$\text{mod}$, za modulo operaciju, je matematička operacija koja, između dva cela broja, vraća ostatak Euklidovskog deljanja prvog broja drugim. Na primer: $16 \mod 5 = 1$. To je operacija koja se široko koristi u kriptografiji.
 
 
-Ovde, korak popunjavanja osigurava da, nakon dodavanja 64 bita u sledećem koraku, ukupna dužina izjednačene poruke bude višekratnik od 512 bita. Ako početna poruka ima dužinu od $M$ bita, broj ($N$) `0` bita koji treba dodati je:
+Ovde, korak popunjavanja osigurava da, nakon dodavanja 64 bita u sledećem koraku, ukupna dužina izjednačene poruke bude deljiva sa 512 bita. Ako početna poruka ima dužinu od $M$ bita, broj ($N$) `0` bita koji treba dodati je:
 
 
 $$
@@ -311,7 +311,7 @@ N & = 9 \mod 512 \\
 $$
 
 
-Dakle, imali bismo 9 `0` pored separatora `1`. Naši bityvi za popunjavanje koji će biti dodati direktno nakon naše poruke $M$ bi bili:
+Dakle, imali bismo 9 `0` pored separatora `1`. Naši bitovi za popunjavanje koji će biti dodati direktno nakon naše poruke $M$ bi bili:
 
 
 ```text
@@ -319,10 +319,10 @@ Dakle, imali bismo 9 `0` pored separatora `1`. Naši bityvi za popunjavanje koji
 ```
 
 
-Nakon dodavanja padding bitova našoj poruci $M$, takođe dodajemo 64-bitnu reprezentaciju originalne dužine poruke $M$, izraženu u binarnom obliku. Ovo omogućava funkciji Hash da bude osetljiva na redosled bitova i dužinu poruke.
+Nakon dodavanja bitova popune našoj poruci $M$, takođe dodajemo 64-bitnu reprezentaciju originalne dužine poruke $M$, izraženu u binarnom obliku. Ovo omogućava funkciji heš da bude osetljiva na redosled bitova i dužinu poruke.
 
 
-Ako se vratimo na naš primer sa početnom porukom od 950 bita, konvertujemo decimalni broj `950` u binarni, što nam daje `1110 1101 10`. Ovaj broj dopunjujemo nulama na osnovi da bismo dobili ukupno 64 bita. U našem primeru, to daje:
+Ako se vratimo na naš primer sa početnom porukom od 950 bita, konvertujemo decimalni broj `950` u binarni, što nam daje `1110 1101 10`. Ovaj broj dopunjujemo nulama na početku da bismo dobili ukupno 64 bita. U našem primeru, to daje:
 
 
 ```text
@@ -330,12 +330,12 @@ Ako se vratimo na naš primer sa početnom porukom od 950 bita, konvertujemo dec
 ```
 
 
-Ova veličina popunjavanja se dodaje nakon popunjavanja bitovima. Dakle, poruka nakon naše predobrade sastoji se od tri dela:
+Ovo popunjavanje bitovima za dužinu poruje se dodaje nakon popunjavanja bitovima. Dakle, poruka nakon naše predobrade sastoji se od tri dela:
 
 
 
 - Originalna poruka $M$;
-- Bit `1` praćen sa nekoliko bitova `0` da formira bit padding;
+- Bit `1` praćen sa nekoliko bitova `0` da formira bit popunjavenje;
 - 64-bitna reprezentacija dužine $M$ za formiranje popunjavanja sa veličinom.
 
 
@@ -345,7 +345,7 @@ Ova veličina popunjavanja se dodaje nakon popunjavanja bitovima. Dakle, poruka 
 ### Inicijalizacija promenljivih
 
 
-SHA256 koristi osam početnih promenljivih stanja, označenih sa $A$ do $H$, svaka od 32 bita. Ove promenljive su inicijalizovane specifičnim konstantama, koje su razlomljeni delovi kvadratnih korena prvih osam prostih brojeva. Ove vrednosti ćemo koristiti naknadno tokom procesa heširanja:
+SHA256 koristi osam početnih promenljivih stanja, označenih sa $A$ do $H$, svaka od 32 bita. Ove promenljive su inicijalizovane specifičnim konstantama, koje su decimalni delovi kvadratnih korena prvih osam prostih brojeva. Ove vrednosti ćemo koristiti naknadno tokom procesa heširanja:
 
 
 
@@ -359,7 +359,7 @@ SHA256 koristi osam početnih promenljivih stanja, označenih sa $A$ do $H$, sva
 - $H = 0x5be0cd19$
 
 
-SHA256 takođe koristi 64 druge konstante, označene sa $K_0$ do $K_{63}$, koje su frakcioni delovi kubnih korenova prvih 64 prostih brojeva:
+SHA256 takođe koristi 64 druge konstante, označene sa $K_0$ do $K_{63}$, koje su decimalni delovi kubnih korenova prvih 64 prostih brojeva:
 
 
 $$
@@ -384,13 +384,13 @@ K[0 \ldots 63] = \begin{pmatrix}
 $$
 
 
-### Podela unosa
+### Deljenje ulaza
 
 
-Sada kada imamo izjednačen ulaz, preći ćemo na glavnu fazu obrade SHA256 algoritma: funkciju kompresije. Ovaj korak je veoma važan, jer je to prvenstveno ono što daje Hash funkciji njene kriptografske osobine koje smo proučavali u prethodnom poglavlju.
+Sada kada imamo izjednačen ulaz, preći ćemo na glavnu fazu obrade SHA256 algoritma: funkciju kompresije. Ovaj korak je veoma važan, jer je to prvenstveno ono što daje heš funkciji njene kriptografske osobine koje smo proučavali u prethodnom poglavlju.
 
 
-Prvo, počinjemo tako što naš izjednačeni poruku (rezultat koraka predobrade) delimo na nekoliko blokova $P$ od po 512 bita. Ako naša izjednačena poruka ima ukupnu veličinu od $n \times 512$ bita, imaćemo $n$ blokova, svaki od po 512 bita. Svaki blok od 512 bita biće obrađen pojedinačno pomoću funkcije kompresije, koja se sastoji od 64 runde uzastopnih operacija. Nazovimo ove blokove $P_1$, $P_2$, $P_3$...
+Prvo, počinjemo tako što našu izjednačenu poruku (rezultat koraka predobrade) delimo na nekoliko blokova $P$ od po 512 bita. Ako naša izjednačena poruka ima ukupnu veličinu od $n \times 512$ bita, imaćemo $n$ blokova, svaki od po 512 bita. Svaki blok od 512 bita biće obrađen pojedinačno pomoću funkcije kompresije, koja se sastoji od 64 runde uzastopnih operacija. Nazovimo ove blokove $P_1$, $P_2$, $P_3$...
 
 
 ### Logičke Operacije
@@ -400,9 +400,9 @@ Pre nego što detaljno istražimo funkciju kompresije, važno je razumeti osnovn
 
 
 
-- Konjunkcija (I)**: označena sa $\land$, odgovara logičkom "I".
-- Disjunkcija (ILI)**: označena sa $\lor$, odgovara logičkom "ILI".
-- Negacija (NOT)**: označena sa $\lnot$, odgovara logičkom "NOT".
+- **Konjunkcija (I)**: označena sa $\land$, odgovara logičkom "I".
+- **Disjunkcija (ILI)**: označena sa $\lor$, odgovara logičkom "ILI".
+- **Negacija (NE)**: označena sa $\lnot$, odgovara logičkom "NE".
 
 
 Iz ovih osnovnih operacija možemo definisati složenije operacije, kao što je "Ekskluzivno ILI" (XOR) označeno sa $\oplus$, koje se široko koristi u kriptografiji.
@@ -419,7 +419,7 @@ Za XOR ($\oplus$):
 | 1   | 0   | 1            |
 | 1   | 1   | 0            |
 
-Za AND ($\land$):
+Za I (AND) ($\land$):
 
 
 | $p$ | $q$ | $p \land q$ |
@@ -429,7 +429,7 @@ Za AND ($\land$):
 | 1   | 0   | 0           |
 | 1   | 1   | 1           |
 
-Za NOT ($\lnot p$):
+Za NE (NOT) ($\lnot p$):
 
 
 | $p$ | $\lnot p$ |
@@ -437,7 +437,7 @@ Za NOT ($\lnot p$):
 | 0   | 1         |
 | 1   | 0         |
 
-Hajde da uzmemo primer da bismo razumeli operaciju XOR na nivou bita. Ako imamo dva binarna broja na 6 bita:
+Hajde da uzmemo primer da bismo razumeli operaciju XOR na nivou bita. Ako imamo dva binarna broja sa 6 bita:
 
 
 
@@ -494,9 +494,9 @@ Shema desno pomeranje može se videti ovako:
 ![CYP201](assets/fr/007.webp)
 
 
-Još jedna operacija koja se koristi u SHA256 za manipulaciju bitovima je desna kružna rotacija, označena sa $RotR_n(x)$, koja pomera bitove $x$ udesno za $n$ pozicija, ponovo umećući pomerene bitove na početak niza.
+Još jedna operacija koja se koristi u SHA256 za manipulaciju bitovima je desna kružna rotacija, označena sa $RotR_n(x)$, koja pomera $x$ bitove udesno za $n$ pozicija, umećući pomerene bitove na početak niza.
 
-Na primer, za $x = 101100001$ (preko 9 bita) i $n = 4$:
+Na primer, za $x = 101100001$ (sa 9 bitova) i $n = 4$:
 
 
 $$
@@ -507,7 +507,7 @@ RotR_4(101100001) = 000110110
 $$
 
 
-Shema za desno kružno pomeranje može izgledati ovako:
+Šema za desno kružno pomeranje može izgledati ovako:
 
 
 ![CYP201](assets/fr/008.webp)
@@ -523,15 +523,15 @@ U prethodnom koraku, podelili smo naš ulaz na nekoliko delova od 512 bita $P$. 
 
 
 
-- Reči poruke $W_i$**: za $i$ od 0 do 63.
-- Konstante $K_i$**: za $i$ od 0 do 63, definisane u prethodnom koraku.
-- Državne promenljive $A, B, C, D, E, F, G, H$**: inicijalizovane vrednostima iz prethodnog koraka.
+- **Reči poruke $W_i$**: za $i$ od 0 do 63.
+- **Konstante $K_i$**: za $i$ od 0 do 63, definisane u prethodnom koraku.
+- **Varijable stanja $A, B, C, D, E, F, G, H$**: inicijalizovane vrednostima iz prethodnog koraka.
 
 
 Prvih 16 reči, $W_0$ do $W_{15}$, direktno su izvučene iz obrađenog 512-bitnog bloka $P$. Svaka reč $W_i$ se sastoji od 32 uzastopna bita iz bloka. Tako, na primer, uzimamo naš prvi deo ulaza $P_1$, i dalje ga delimo na manje 32-bitne delove koje nazivamo rečima.
 
 
-Sledećih 48 reči ($W_{16}$ do $W_{63}$) generiše se koristeći sledeću formulu:
+Sledećih 48 reči ($W_{16}$ do $W_{63}$) generišu se koristeći sledeću formulu:
 
 
 $$
@@ -555,7 +555,7 @@ Kada odredimo sve reči $W_i$ za naš 512-bitni deo, možemo preći na funkciju 
 
 ![CYP201](assets/fr/009.webp)
 
-Za svaku rundu $i$ od 0 do 63, imamo tri različite vrste ulaza. Prvo, $W_i$ koji smo upravo odredili, delimično sastavljen od našeg dela poruke $P_n$. Zatim, 64 konstante $K_i$. Na kraju, koristimo promenljive stanja $A$, $B$, $C$, $D$, $E$, $F$, $G$ i $H$, koje će se razvijati tokom procesa heširanja i biti modifikovane svakom funkcijom kompresije. Međutim, za prvi deo $P_1$, koristimo prethodno date početne konstante.
+Za svaku rundu $i$ od 0 do 63, imamo tri različite vrste ulaza. Prvo, $W_i$ koji smo upravo odredili, delimično sastavljen od našeg dela poruke $P_n$. Zatim, 64 konstante $K_i$. Na kraju, koristimo variable stanja $A$, $B$, $C$, $D$, $E$, $F$, $G$ i $H$, koje će se menjati tokom procesa heširanja i biti modifikovane svakom funkcijom kompresije. Međutim, za prvi deo $P_1$, koristimo prethodno date početne konstante.
 
 
 Zatim izvodimo sledeće operacije na našim ulazima:
@@ -618,7 +618,7 @@ temp2 = \Sigma_0(A) + Maj(A, B, C) \mod 2^{32}
 $$
 
 
-Zatim ažuriramo promenljive stanja na sledeći način:
+Zatim ažuriramo varijable stanja na sledeći način:
 
 
 $$
@@ -644,12 +644,12 @@ Sledeći dijagram predstavlja rundu SHA256 kompresione funkcije kako smo upravo 
 
 - Strelice označavaju tok podataka;
 - Kutije predstavljaju izvršene operacije;
-- $+$ okruženi predstavljaju sabiranje modulo $2^{32}$.
+- Okruženi $+$ predstavljaju sabiranje modulo $2^{32}$.
 
 
-Već možemo primetiti da ova runda daje nove promenljive stanja $A$, $B$, $C$, $D$, $E$, $F$, $G$, i $H$. Ove nove promenljive će služiti kao ulaz za sledeću rundu, koja će zauzvrat proizvesti nove promenljive $A$, $B$, $C$, $D$, $E$, $F$, $G$, i $H$, koje će se koristiti za narednu rundu. Ovaj proces se nastavlja do 64. runde.
+Već možemo primetiti da ova runda daje nove varijable stanja $A$, $B$, $C$, $D$, $E$, $F$, $G$, i $H$. Ove nove promenljive će služiti kao ulaz za sledeću rundu, koja će zauzvrat proizvesti nove promenljive $A$, $B$, $C$, $D$, $E$, $F$, $G$, i $H$, koje će se koristiti za narednu rundu. Ovaj proces se nastavlja do 64. runde.
 
-Nakon 64 runde, ažuriramo početne vrednosti promenljivih stanja dodavanjem konačnih vrednosti na kraju 64. runde:
+Nakon 64 runde, ažuriramo početne vrednosti variajabli stanja dodavanjem konačnih vrednosti na kraju 64. runde:
 
 
 $$
@@ -669,7 +669,7 @@ $$
 Ove nove vrednosti $A$, $B$, $C$, $D$, $E$, $F$, $G$ i $H$ će služiti kao početne vrednosti za sledeći blok, $P_2$. Za ovaj blok $P_2$, ponavljamo isti proces kompresije sa 64 runde, zatim ažuriramo promenljive za blok $P_3$, i tako dalje sve do poslednjeg bloka našeg izjednačenog ulaza.
 
 
-Nakon obrade svih blokova poruka, koncateniramo konačne vrednosti promenljivih $A$, $B$, $C$, $D$, $E$, $F$, $G$ i $H$ da bismo formirali konačni 256-bitni Hash naše heš funkcije:
+Nakon obrade svih blokova poruka, spajamo konačne vrednosti promenljivih $A$, $B$, $C$, $D$, $E$, $F$, $G$ i $H$ da bismo formirali konačni 256-bitni heš naše heš funkcije:
 
 
 $$
@@ -680,18 +680,18 @@ $$
 $$
 
 
-Svaka promenljiva je 32-bitni ceo broj, tako da njihova konkatenacija uvek daje 256-bitni rezultat, bez obzira na veličinu našeg ulaznog poruke za heš funkciju.
+Svaka promenljiva je 32-bitni ceo broj, tako da njihova spajanje (konkatinacija) uvek daje 256-bitni rezultat, bez obzira na veličinu naše ulazne poruke za heš funkciju.
 
 
-### Justifikacija Kriptografskih Svojstava
+### Dokaz kriptografskih svojstava
 
 
-Ali, kako je onda ova funkcija ireverzibilna, otporna na sudare i otporna na neovlašćene izmene?
+Ali, kako je onda ova funkcija ireverzibilna, otporna na kolizije i otporna na neovlašćene izmene?
 
 
-Za otpornost na neovlašćene izmene, prilično je jednostavno razumeti. Postoji toliko mnogo proračuna koji se izvode u kaskadi, a koji zavise i od ulaza i od konstanti, da i najmanja modifikacija početne poruke potpuno menja putanju, a time i potpuno menja izlaz Hash. Ovo se naziva efektom lavine. Ovo svojstvo je delimično osigurano mešanjem međustanja sa početnim stanjima za svaki deo.
+Za otpornost na neovlašćene izmene, prilično je jednostavno razumeti. Postoji toliko mnogo proračuna koji se izvode u kaskadi, a koji zavise i od ulaza i od konstanti, da i najmanja modifikacija početne poruke potpuno menja putanju, a time i potpuno menja izlazni heš. Ovo se naziva efektom lavine. Ovo svojstvo je delimično osigurano mešanjem međustanja sa početnim stanjima za svaki naredni deo.
 
-Zatim, kada se diskutuje o kriptografskoj funkciji Hash, termin "nepovratnost" se generalno ne koristi. Umesto toga, govorimo o "otpornosti na preimage," što znači da je za bilo koje dato $y$ teško pronaći $x$ takvo da je $h(x) = y$. Ova otpornost na preimage je zagarantovana algebarskom složenošću i jakom nelinearnošću operacija koje se izvode u funkciji kompresije, kao i gubitkom određenih informacija u procesu. Na primer, za dati rezultat sabiranja po modulu, postoji nekoliko mogućih operanada:
+Zatim, kada se diskutuje o heš kriptografskoj funkciji, termin "nepovratnost" se generalno ne koristi. Umesto toga, govorimo o "otpornosti na preimage," što znači da je za bilo koje dato $y$ teško pronaći $x$ takvo da je $h(x) = y$. Ova otpornost na preimage je zagarantovana algebarskom složenošću i jakom nelinearnošću operacija koje se izvode u funkciji kompresije, kao i gubitkom određenih informacija u procesu. Na primer, za dati rezultat sabiranja po modulu, postoji nekoliko mogućih operanada:
 
 
 $$
@@ -713,15 +713,15 @@ Za operaciju XOR suočavamo se sa istim problemom. Setite se tabele istinitosti 
 Funkcija kompresije takođe koristi operaciju $\text{ShR}$. Ova operacija uklanja deo osnovnih informacija, koje je kasnije nemoguće povratiti. Još jednom, ne postoji algebarski način da se ova operacija obrne. Sve ove operacije jednosmernog gubitka informacija koriste se vrlo često u funkcijama kompresije. Broj mogućih ulaza za dati izlaz je stoga gotovo beskonačan, a svaki pokušaj obrnutog izračunavanja doveo bi do jednačina sa veoma velikim brojem nepoznatih, koje bi eksponencijalno rasle na svakom koraku.
 
 
-Konačno, za karakteristiku otpornosti na kolizije, nekoliko parametara dolazi u igru. Predobrada originalne poruke igra ključnu ulogu. Bez ove predobrade, moglo bi biti lakše pronaći kolizije na funkciji. Iako, teoretski, kolizije postoje (zbog principa golubarnika), struktura Hash funkcije, u kombinaciji sa prethodno navedenim svojstvima, čini verovatnoću pronalaženja kolizije izuzetno niskom.
+Konačno, za karakteristiku otpornosti na kolizije, nekoliko parametara dolazi u igru. Predobrada originalne poruke igra ključnu ulogu. Bez ove predobrade, moglo bi biti lakše pronaći kolizije na funkciji. Iako, teoretski, kolizije postoje (zbog principa fioka), struktura heš funkcije, u kombinaciji sa prethodno navedenim svojstvima, čini verovatnoću pronalaženja kolizije izuzetno niskom.
 
-Da bi funkcija Hash bila otporna na sudare, neophodno je da:
+Da bi funkcija heš bila otporna na sudare, neophodno je da:
 
 
 
-- Izlaz je nepredvidiv: Svaka predvidljivost može biti iskorišćena za pronalaženje kolizija brže nego sa napadom grubom silom. Funkcija osigurava da svaki bit izlaza zavisi na složen način od ulaza. Drugim rečima, funkcija je dizajnirana tako da svaki bit konačnog rezultata ima nezavisnu verovatnoću da bude 0 ili 1, čak i ako ta nezavisnost nije apsolutna u praksi.
+- je izlaz nepredvidiv: Svaka predvidljivost može biti iskorišćena za pronalaženje kolizija brže nego sa napadom grubom silom. Funkcija osigurava da svaki bit izlaza zavisi na složen način od ulaza. Drugim rečima, funkcija je dizajnirana tako da svaki bit konačnog rezultata ima nezavisnu verovatnoću da bude 0 ili 1, čak i ako ta nezavisnost nije apsolutna u praksi.
 - Distribucija heševa je pseudo-slučajna: Ovo osigurava da su heševi ravnomerno raspoređeni.
-- Veličina Hash je značajna: što je veći mogući prostor za rezultate, to je teže pronaći koliziju.
+- Veličina heša je značajna: što je veći mogući prostor za rezultate, to je teže pronaći koliziju.
 
 
 Kriptografi dizajniraju ove funkcije procenjujući najbolje moguće napade za pronalaženje kolizija, a zatim prilagođavaju parametre kako bi ovi napadi postali neefikasni.
@@ -730,10 +730,10 @@ Kriptografi dizajniraju ove funkcije procenjujući najbolje moguće napade za pr
 ### Merkle-Damgård Konstrukcija
 
 
-Struktura SHA256 zasnovana je na Merkle-Damgård konstrukciji, koja omogućava transformisanje kompresione funkcije u Hash funkciju koja može obrađivati poruke proizvoljne dužine. Ovo je upravo ono što smo videli u ovom poglavlju.
+Struktura SHA256 zasnovana je na Merkle-Damgård konstrukciji, koja omogućava transformisanje kompresione funkcije u heš funkciju koja može obrađivati poruke proizvoljne dužine. Ovo je upravo ono što smo videli u ovom poglavlju.
 
 
-Međutim, neke stare funkcije Hash kao što su SHA1 ili MD5, koje koriste ovu specifičnu konstrukciju, su ranjive na napade produženja dužine. Ovo je tehnika koja omogućava napadaču koji zna Hash poruke $M$ i dužinu $M$ (bez poznavanja same poruke) da izračuna Hash poruke $M'$ formirane spajanjem $M$ sa dodatnim sadržajem.
+Međutim, neke stare heš funkcije kao što su SHA1 ili MD5, koje koriste ovu specifičnu konstrukciju, su ranjive na napade produženja dužine. Ovo je tehnika koja omogućava napadaču koji zna heš poruke $M$ i dužinu $M$ (bez poznavanja same poruke) da izračuna heš vrednost poruke $M'$ formirane spajanjem $M$ sa dodatnim sadržajem.
 
 
 SHA256, čak iako koristi isti tip konstrukcije, teoretski je otporan na ovu vrstu napada, za razliku od SHA1 i MD5. Ovo bi moglo objasniti misteriju dvostrukog heširanja implementiranog kroz Bitcoin od strane Satoshi Nakamota. Da bi izbegao ovu vrstu napada, Satoshi je možda preferirao da koristi dvostruki SHA256:
@@ -747,9 +747,9 @@ $$
 $$
 
 
-Ovo poboljšava sigurnost protiv potencijalnih napada povezanih sa Merkle-Damgård konstrukcijom, ali ne povećava sigurnost procesa heširanja u smislu otpornosti na kolizije. Štaviše, čak i da je SHA256 bio ranjiv na ovu vrstu napada, to ne bi imalo ozbiljan uticaj, jer svi slučajevi upotrebe Hash funkcija u Bitcoin uključuju javne podatke. Međutim, napad produženja dužine mogao bi biti koristan za napadača samo ako su heširani podaci privatni i korisnik je koristio Hash funkciju kao mehanizam autentifikacije za te podatke, slično kao MAC. Stoga, implementacija dvostrukog heširanja ostaje misterija u dizajnu Bitcoin.
+Ovo poboljšava sigurnost protiv potencijalnih napada povezanih sa Merkle-Damgård konstrukcijom, ali ne povećava sigurnost procesa heširanja u smislu otpornosti na kolizije. Štaviše, čak i da je SHA256 bio ranjiv na ovu vrstu napada, to ne bi imalo ozbiljan uticaj, jer svi slučajevi upotrebe heš funkcija u Bitcoin-u uključuju javne podatke. Međutim, napad produženja dužine mogao bi biti koristan za napadača samo ako su heširani podaci privatni i korisnik je koristio heš funkciju kao mehanizam autentifikacije za te podatke, slično kao MAC. Stoga, implementacija dvostrukog heširanja ostaje misterija u dizajnu Bitcoin.
 
-Sada kada smo detaljno pogledali kako funkcionišu Hash funkcije, posebno SHA256, koja se intenzivno koristi u Bitcoin, fokusiraćemo se konkretnije na algoritme kriptografske derivacije korišćene na nivou aplikacije, posebno za derivaciju ključeva za vaš Wallet.
+Sada kada smo detaljno pogledali kako funkcionišu heš funkcije, posebno SHA256, koja se intenzivno koristi u Bitcoin-u, fokusiraćemo se konkretnije na algoritme kriptografske derivacije koje se koriste na nivou aplikacije, posebno na derivaciju ključeva za vaš novčanik.
 
 
 ## Algoritmi korišćeni za izvođenje
@@ -758,15 +758,15 @@ Sada kada smo detaljno pogledali kako funkcionišu Hash funkcije, posebno SHA256
 <chapterId>cc668121-7789-5e99-bf5e-1ba085f4f5f2</chapterId>
 
 
-Na Bitcoin na nivou aplikacije, pored funkcija Hash, koriste se kriptografski algoritmi derivacije za generate zaštitu podataka od početnih ulaza. Iako se ovi algoritmi oslanjaju na funkcije Hash, služe različitim svrhama, posebno u smislu autentifikacije i generisanja ključeva. Ovi algoritmi zadržavaju neke od karakteristika funkcija Hash, kao što su ireverzibilnost, otpornost na manipulacije i otpornost na kolizije.
+Na Bitcoin-u na nivou aplikacije, pored heš funkcija, koriste se kriptografski algoritmi derivacije služe da iz početnih podataka naprave nove, kriptografski bezbedne vrednosti. Iako se ovi algoritmi oslanjaju na hep funkcije, služe različitim svrhama, posebno u smislu autentifikacije i generisanja ključeva. Ovi algoritmi zadržavaju neke od karakteristika heš funkcija, kao što su ireverzibilnost, otpornost na manipulacije i otpornost na kolizije.
 
 
 U Bitcoin novčanicima, uglavnom se koriste 2 algoritma derivacije:
 
 
 
-- HMAC (_Hash-based Message Authentication Code_)**
-- PBKDF2 (_Password-Based Key Derivation Function 2_)**
+- **HMAC (_Hash-based Message Authentication Code_)**
+- **PBKDF2 (_Password-Based Key Derivation Function 2_)**
 
 
 Zajedno ćemo istražiti funkcionisanje i ulogu svakog od njih.
@@ -775,10 +775,10 @@ Zajedno ćemo istražiti funkcionisanje i ulogu svakog od njih.
 ### HMAC-SHA512
 
 
-HMAC je kriptografski algoritam koji izračunava autentifikacioni kod na osnovu kombinacije Hash funkcije i tajnog ključa. Bitcoin koristi HMAC-SHA512, varijantu HMAC-a koja koristi SHA512 Hash funkciju. Već smo videli u prethodnom poglavlju da je SHA512 deo iste porodice Hash funkcija kao i SHA256, ali proizvodi 512-bitni izlaz.
+HMAC je kriptografski algoritam koji izračunava autentifikacioni kod na osnovu kombinacije heš funkcije i tajnog ključa. Bitcoin koristi HMAC-SHA512, varijantu HMAC-a koja koristi SHA512 heš funkciju. Već smo videli u prethodnom poglavlju da je SHA512 deo iste porodice heš funkcija kao i SHA256, ali proizvodi 512-bitni izlaz.
 
 
-Evo njegovog opšteg operativnog šema sa $m$ kao ulaznom porukom i $K$ kao tajnim ključem:
+Evo njegove opšte operativne šeme sa $m$ kao ulaznom porukom i $K$ kao tajnim ključem:
 
 
 ![CYP201](assets/fr/011.webp)
@@ -790,10 +790,10 @@ Hajde da detaljnije proučimo šta se dešava u ovoj HMAC-SHA512 crnoj kutiji. F
 
 - $m$: proizvoljno velika poruka koju bira korisnik (prvi unos);
 - $K$: proizvoljni tajni ključ koji bira korisnik (drugi unos);
-- $K'$: ključ $K$ prilagođen veličini $B$ blokova funkcije Hash (1024 bita za SHA512, ili 128 bajtova);
-- $\text{SHA512}$: funkcija SHA512 Hash;
+- $K'$: ključ $K$ prilagođen veličini $B$ blokova heš funkcije (1024 bita za SHA512, ili 128 bajtova);
+- $\text{SHA512}$: SHA512 heš funkcija;
 - $\oplus$: XOR (isključivo ili) operacija;
-- $\Vert$: operator za konkatenaciju, povezuje bitne nizove od kraja do kraja;
+- $\Vert$: operator za konkatenaciju, povezuje nizove bitova od kraja do kraja;
 - $\text{opad}$: konstanta sastavljena od bajta $0x5c$ ponovljenog 128 puta
 - $\text{ipad}$: konstanta sastavljena od bajta $0x36$ ponovljenog 128 puta.
 
@@ -827,9 +827,9 @@ Ova jednačina je razložena na sledeće korake:
 - XOR prilagođeni ključ $K'$ sa $\text{ipad}$ da bi se dobio $\text{iKpad}$;
 - XOR prilagođeni ključ $K'$ sa $\text{opad}$ da bi se dobio $\text{oKpad}$;
 - Konkatenirajte $\text{iKpad}$ sa porukom $m$.
-- Hash ovaj rezultat sa SHA512 da bi se dobio posredni Hash $H_1$.
+- Heširaj ovaj rezultat sa SHA512 da bi se dobio posredni heš $H_1$.
 - Konkateniraj $\text{oKpad}$ sa $H_1$.
-- Hash ovaj rezultat sa SHA512 da bi se dobio konačni rezultat $H_2$.
+- Heširaj ovaj rezultat sa SHA512 da bi se dobio konačni rezultat $H_2$.
 
 
 Ovi koraci se mogu šematski rezimirati na sledeći način:
@@ -838,7 +838,7 @@ Ovi koraci se mogu šematski rezimirati na sledeći način:
 ![CYP201](assets/fr/012.webp)
 
 
-HMAC se koristi u Bitcoin posebno za derivaciju ključeva u HD (Hijerarhijski Deterministički) novčanicima (o tome ćemo detaljnije govoriti u narednim poglavljima) i kao komponenta PBKDF2.
+HMAC se koristi u Bitcoin-u posebno za derivaciju ključeva u HD (Hijerarhijski Deterministički) novčanicima (o tome ćemo detaljnije govoriti u narednim poglavljima) i kao komponenta PBKDF2.
 
 
 ### PBKDF2
@@ -847,14 +847,14 @@ HMAC se koristi u Bitcoin posebno za derivaciju ključeva u HD (Hijerarhijski De
 PBKDF2 (_Password-Based Key Derivation Function 2_) je algoritam za derivaciju ključeva dizajniran da poboljša sigurnost lozinki. Algoritam primenjuje pseudo-slučajnu funkciju (ovde HMAC-SHA512) na lozinku i kriptografski salt, a zatim ponavlja ovu operaciju određeni broj puta kako bi proizveo izlazni ključ.
 
 
-U Bitcoin, PBKDF2 se koristi za generate seed HD Wallet iz Mnemonic fraze i passphrase (ali o tome ćemo detaljnije govoriti u narednim poglavljima).
+U Bitcoin-u, PBKDF2 se koristi za generisanje seed HD Wallet iz bezbednosne fraze i passphrase (ali o tome ćemo detaljnije govoriti u narednim poglavljima).
 
 
 PBKDF2 proces je sledeći, sa:
 
 
 
-- $m$: korisnikova Mnemonic fraza;
+- $m$: korisnikova bezbednosna fraza;
 - $s$: opcioni passphrase za povećanje sigurnosti (prazno polje ako nema passphrase);
 - $n$: broj iteracija funkcije, u našem slučaju, to je 2048.
 
@@ -870,13 +870,13 @@ $$
 $$
 
 
-Shema PBKDF2 može biti predstavljen na sledeći način:
+Šema PBKDF2 može biti predstavljen na sledeći način:
 
 
 ![CYP201](assets/fr/013.webp)
 
 
-U ovom poglavlju smo istražili funkcije HMAC-SHA512 i PBKDF2, koje koriste heš funkcije kako bi osigurale integritet i sigurnost derivacija ključeva u Bitcoin protokolu. U sledećem delu ćemo se baviti digitalnim potpisima, još jednom kriptografskom metodom koja se široko koristi u Bitcoin.
+U ovom poglavlju smo istražili funkcije HMAC-SHA512 i PBKDF2, koje koriste heš funkcije kako bi osigurale integritet i sigurnost derivacija ključeva u Bitcoin protokolu. U sledećem delu ćemo se baviti digitalnim potpisima, još jednom kriptografskom metodom koja se široko koristi u Bitcoin-u.
 
 
 # Digitalni potpisi
@@ -891,29 +891,29 @@ U ovom poglavlju smo istražili funkcije HMAC-SHA512 i PBKDF2, koje koriste heš
 <chapterId>c9dd9672-6da1-57f8-9871-8b28994d4c1a</chapterId>
 
 
-Druga kriptografska metoda korišćena u Bitcoin uključuje algoritme digitalnog potpisa. Hajde da istražimo šta to podrazumeva i kako funkcioniše.
+Druga kriptografska metoda korišćena u Bitcoin-u uključuje algoritme digitalnog potpisa. Hajde da istražimo šta to podrazumeva i kako funkcioniše.
 
 
 ### Bitcoini, UTXO-i i Uslovi Trošenja
 
 
-Termin "_novčanik_" u Bitcoin može biti prilično zbunjujući za početnike. Zaista, ono što se naziva Bitcoin Wallet je softver koji ne drži direktno vaše bitkoine, za razliku od fizičkog Wallet koji može držati kovanice ili novčanice. Bitkoini su jednostavno jedinice obračuna. Ova jedinica obračuna je predstavljena **UTXO** (_Unspent Transaction Outputs_), što su neiskorišćeni izlazi transakcija. Ako ovi izlazi nisu iskorišćeni, to znači da pripadaju korisniku. UTXO-i su, na neki način, delovi bitkoina, promenljive veličine, koji pripadaju korisniku.
+Termin "_novčanik_" u Bitcoin-u može biti prilično zbunjujući za početnike. Zaista, ono što se naziva Bitcoin novčanikom je softver koji ne drži direktno vaše bitkoine, za razliku od fizičkog novčanika koji može držati kovanice ili novčanice. Bitkoini su jednostavno jedinice obračuna. Ova jedinica obračuna je predstavljena **UTXO-om** (_Unspent Transaction Outputs_), što su neiskorišćeni izlazi transakcija. Ako ovi izlazi nisu iskorišćeni, to znači da pripadaju korisniku. UTXO-ovi su, na neki način, delovi bitkoina, promenljive veličine, koji pripadaju korisniku.
 
 
-Bitcoin protokol je distribuiran i funkcioniše bez centralnog autoriteta. Stoga, nije kao tradicionalni bankarski zapisi, gde su evri koji pripadaju vama jednostavno povezani sa vašim ličnim identitetom. U Bitcoin, vaši UTXO-i pripadaju vama jer su zaštićeni uslovima trošenja specificiranim u Script jeziku. Da pojednostavimo, postoje dve vrste skripti: skripta zaključavanja (_scriptPubKey_), koja štiti UTXO, i skripta otključavanja (_scriptSig_), koja omogućava otključavanje UTXO i time trošenje Bitcoin jedinica koje predstavlja.
+Bitcoin protokol je distribuiran i funkcioniše bez centralnog autoriteta. Stoga, nije kao tradicionalni bankarski zapisi, gde su evri koji pripadaju vama jednostavno povezani sa vašim ličnim identitetom. U Bitcoin-u, vaši UTXO-ovi pripadaju vama jer su zaštićeni uslovima trošenja specificiranim u Script jeziku. Da pojednostavimo, postoje dve vrste skripti: skripta zaključavanja (_scriptPubKey_), koja štiti UTXO, i skripta otključavanja (_scriptSig_), koja omogućava otključavanje UTXO-a i time trošenje Bitcoin jedinica koje predstavlja.
 
-Početna operacija Bitcoin sa P2PK skriptama uključuje korišćenje javnog ključa za zaključavanje sredstava, navodeći u _scriptPubKey_ da osoba koja želi da potroši ovaj UTXO mora obezbediti važeći potpis sa privatnim ključem koji odgovara ovom javnom ključu. Da bi se otključao ovaj UTXO, potrebno je obezbediti važeći potpis u _scriptSig_. Kao što njihova imena sugerišu, javni ključ je poznat svima jer se emituje na Blockchain, dok je privatni ključ poznat samo legitimnom vlasniku sredstava.
+U početku Bitcoin je funkcionisao sa P2PK skriptama koja uključuje korišćenje javnog ključa za zaključavanje sredstava, navodeći u _scriptPubKey_ da osoba koja želi da potroši ovaj UTXO mora obezbediti važeći potpis sa privatnim ključem koji odgovara ovom javnom ključu. Da bi se otključao ovaj UTXO, potrebno je obezbediti važeći potpis u _scriptSig_. Kao što njihova imena sugerišu, javni ključ je poznat svima jer se emituje na blokčejnu, dok je privatni ključ poznat samo legitimnom vlasniku sredstava.
 
-Ovo je osnovna operacija Bitcoin, ali s vremenom je ova operacija postala složenija. Prvo, Satoshi je takođe uveo P2PKH skripte, koje koriste prijemni Address u _scriptPubKey_, što predstavlja Hash javnog ključa. Zatim je sistem postao još složeniji dolaskom SegWit, a potom i Taproot. Međutim, opšti princip ostaje u osnovi isti: javni ključ ili njegova reprezentacija se koristi za zaključavanje UTXO-a, a odgovarajući privatni ključ je potreban da bi se oni otključali i time potrošili.
+Ovo je osnovna operacija Bitcoin-a, ali s vremenom je ova operacija postala složenija. Prvo, Satoshi je takođe uveo P2PKH skripte, koje koriste prijemnu adresu u _scriptPubKey_, što predstavlja heš javnog ključa. Zatim je sistem postao još složeniji dolaskom SegWit-a, a potom i Taproot. Međutim, opšti princip ostaje u osnovi isti: javni ključ ili njegova reprezentacija se koristi za zaključavanje UTXO-a, a odgovarajući privatni ključ je potreban da bi se oni otključali i time potrošili.
 
 
 Korisnik koji želi da izvrši Bitcoin transakciju mora stoga kreirati digitalni potpis koristeći svoj privatni ključ na transakciji. Potpis može biti verifikovan od strane drugih učesnika mreže. Ako je validan, to znači da je korisnik koji inicira transakciju zaista vlasnik privatnog ključa, a samim tim i vlasnik bitkoina koje želi da potroši. Drugi korisnici tada mogu prihvatiti i propagirati transakciju.
 
 
-Kao rezultat toga, korisnik koji poseduje bitkoine zaključane javnim ključem mora pronaći način da bezbedno čuva ono što omogućava otključavanje njihovih sredstava: privatni ključ. Bitcoin Wallet je upravo uređaj koji će vam omogućiti da lako čuvate sve svoje ključeve bez da im drugi ljudi imaju pristup. Stoga je više nalik na privezak za ključeve nego na Wallet.
+Kao rezultat toga, korisnik koji poseduje bitkoine zaključane javnim ključem mora pronaći način da bezbedno čuva ono što omogućava otključavanje njihovih sredstava: privatni ključ. Bitcoin novčanik je upravo uređaj koji će vam omogućiti da lako čuvate sve svoje ključeve bez da im drugi ljudi imaju pristup. Stoga je više nalik na privezak za ključeve nego na novčanik.
 
 
-Matematička veza između javnog ključa i privatnog ključa, kao i mogućnost izvršavanja potpisa kako bi se dokazalo posedovanje privatnog ključa bez njegovog otkrivanja, omogućeni su algoritmom digitalnog potpisa. U protokolu Bitcoin koriste se dva algoritma potpisa: **ECDSA** (_Elliptic Curve Digital Signature Algorithm_) i **Schnorr signature scheme**. ECDSA je protokol digitalnog potpisa korišćen u Bitcoin od samog početka. Schnorr je noviji u Bitcoin, jer je uveden u novembru 2021. sa ažuriranjem Taproot.
+Matematička veza između javnog ključa i privatnog ključa, kao i mogućnost izvršavanja potpisa kako bi se dokazalo posedovanje privatnog ključa bez njegovog otkrivanja, omogućeni su algoritmom digitalnog potpisa. U Bitcoin protokolu koriste se dva algoritma potpisa: **ECDSA** (_Elliptic Curve Digital Signature Algorithm_) i **Schnorr signature scheme**. ECDSA je protokol digitalnog potpisa korišćen u Bitcoin-u od samog početka. Schnorr je noviji u Bitcoin-u, jer je uveden u novembru 2021. sa ažuriranjem Taproot-a.
 
 Ova dva algoritma su prilično slična u svojim mehanizmima. Obe su zasnovane na kriptografiji eliptičkih krivih. Glavna razlika između ovih protokola leži u strukturi potpisa i nekim specifičnim matematičkim svojstvima. Stoga ćemo proučiti funkcionisanje ovih algoritama, počevši od najstarijeg: ECDSA.
 
@@ -924,7 +924,7 @@ Ova dva algoritma su prilično slična u svojim mehanizmima. Obe su zasnovane na
 Kriptografija eliptičkih krivih (ECC) je skup algoritama koji koriste eliptičku krivu zbog njenih različitih matematičkih i geometrijskih svojstava u kriptografske svrhe. Sigurnost ovih algoritama oslanja se na težinu problema diskretnog logaritma na eliptičkim krivama. Eliptičke krive se posebno koriste za razmenu ključeva, asimetričnu enkripciju ili za kreiranje digitalnih potpisa.
 
 
-Važna osobina ovih krivih je da su simetrične u odnosu na x-osu. Dakle, svaka neskalna linija koja seče krivu u dve različite tačke će uvek preseći krivu u trećoj tački. Štaviše, svaka tangenta na krivu u nesingularnoj tački će preseći krivu u drugoj tački. Ove osobine će biti korisne za definisanje operacija na krivoj.
+Važna osobina ovih krivih je da su simetrične u odnosu na x-osu. Dakle, svaka nevertikalna linija koja seče krivu u dve različite tačke će uvek preseći krivu u trećoj tački. Štaviše, svaka tangenta na krivu u nesingularnoj tački će preseći krivu u drugoj tački. Ove osobine će biti korisne za definisanje operacija na krivoj.
 
 
 Evo prikaza eliptičke krive nad poljem realnih brojeva:
@@ -950,7 +950,7 @@ $$
 Da bi se koristio ECDSA ili Schnorr, potrebno je izabrati parametre eliptičke krive, odnosno vrednosti $a$ i $b$ u jednačini krive. Postoje različiti standardi eliptičkih krivih za koje se smatra da su kriptografski sigurni. Najpoznatija je _secp256r1_ kriva, definisana i preporučena od strane NIST-a (_National Institute of Standards and Technology_).
 
 
-Uprkos tome, Satoshi Nakamoto, pronalazač Bitcoin, odlučio je da ne koristi ovu krivu. Razlog za ovu odluku je nepoznat, ali neki veruju da je želeo da pronađe alternativu jer parametri ove krive potencijalno mogu sadržati zadnja vrata. Umesto toga, Bitcoin protokol koristi standardnu **_secp256k1_** krivu. Ova kriva je definisana parametrima $a = 0$ i $b = 7$. Njena jednačina je stoga:
+Uprkos tome, Satoshi Nakamoto, pronalazač Bitcoin-a, odlučio je da ne koristi ovu krivu. Razlog za ovu odluku je nepoznat, ali neki veruju da je želeo da pronađe alternativu jer parametri ove krive potencijalno mogu sadržati namerno ubačenu slabost, skrivenu ranjivost, koja omogućava zaobilaženje standardnih bezbednosnih mehanizama — često bez znanja korisnika. Umesto toga, Bitcoin protokol koristi standardnu **_secp256k1_** krivu. Ova kriva je definisana parametrima $a = 0$ i $b = 7$. Njena jednačina je stoga:
 
 
 $$
@@ -967,11 +967,11 @@ Njegova grafička reprezentacija preko polja realnih brojeva izgleda ovako:
 ![CYP201](assets/fr/015.webp)
 
 
-Međutim, u kriptografiji radimo sa konačnim skupovima brojeva. Tačnije, radimo na konačnom polju $\mathbb{F}_p$, koje je polje celih brojeva po modulu prostog broja $p$.
+Međutim, u kriptografiji radimo sa konačnim skupovima brojeva. Tačnije, radimo na konačnom polju $\mathbb{F}_p$, koje je polje celih brojeva modulo prosti broj $p$.
 
-**Definicija**: Prosti broj je prirodan ceo broj veći ili jednak 2 koji ima samo dva različita pozitivna cela delitelja: 1 i samog sebe. Na primer, broj 7 je prost broj jer se može deliti samo sa 1 i 7. S druge strane, broj 8 nije prost jer se može deliti sa 1, 2, 4 i 8.
+**Definicija**: Prosti broj je prirodan ceo broj veći ili jednak od 2 koji ima samo dva različita pozitivna cela delitelja: 1 i samog sebe. Na primer, broj 7 je prost broj jer se može deliti samo sa 1 i 7. S druge strane, broj 8 nije prost jer se može deliti sa 1, 2, 4 i 8.
 
-U Bitcoin, prost broj $p$ korišćen za definisanje konačnog polja je veoma veliki. Izabran je na takav način da je red polja (tj. broj Elements u $\mathbb{F}_p$) dovoljno veliki da obezbedi kriptografsku sigurnost.
+U Bitcoin-u, prost broj $p$ korišćen za definisanje konačnog polja je veoma veliki. Izabran je na takav način da je red polja (tj. broj elemenata u $\mathbb{F}_p$) dovoljno veliki da obezbedi kriptografsku sigurnost.
 
 
 Prosti broj $p$ koji se koristi je:
@@ -1004,7 +1004,7 @@ y^2 \equiv x^3 + 7 \mod p
 $$
 
 
-S obzirom na to da je ova kriva definisana nad konačnim poljem $\mathbb{F}_p$, ona više ne liči na kontinuiranu krivu već na diskretan skup tačaka. Na primer, evo kako izgleda kriva korišćena u Bitcoin za veoma malo $p = 17$:
+S obzirom na to da je ova kriva definisana nad konačnim poljem $\mathbb{F}_p$, ona više ne liči na kontinuiranu krivu već na diskretan skup tačaka. Na primer, evo kako izgleda kriva korišćena u Bitcoin-u za veoma malo $p = 17$:
 
 
 ![CYP201](assets/fr/016.webp)
