@@ -1656,13 +1656,13 @@ Prvi novčanici korišćeni u Bitcoin-u bili su JBOK (_Just a Bunch Of Keys_) no
 ![CYP201](assets/fr/033.webp)
 
 
-Ako neko želi da koristi više privatnih ključeva, bilo je potrebno napraviti onoliko rezervnih kopija koliko je potrebno da se obezbedi pristup sredstvima u slučaju problema sa uređajem koji hostuje novčanik. Ako se koristi jedan privatni ključ, ova struktura Wallet može biti dovoljna, jer je jedna rezervna kopija dovoljna. Međutim, ovo predstavlja problem: u Bitcoin se snažno savetuje protiv korišćenja uvek istog privatnog ključa. Naime, privatni ključ je povezan sa jedinstvenim Address, a Bitcoin adrese za primanje su obično dizajnirane za jednokratnu upotrebu. Svaki put kada primite sredstva, trebalo bi da generate novi prazan Address.
+Ako neko želi da koristi više privatnih ključeva, bilo je potrebno napraviti onoliko rezervnih kopija koliko je potrebno da se obezbedi pristup sredstvima u slučaju problema sa uređajem koji hostuje novčanik. Ako se koristi jedan privatni ključ, ova struktura novčanika može biti dovoljna, jer je jedna rezervna kopija dovoljna. Međutim, ovo predstavlja problem: u Bitcoin-u se snažno savetuje protiv korišćenja uvek istog privatnog ključa. Naime, privatni ključ je povezan sa jedinstvenom adresaom, a Bitcoin adrese za primanje su obično dizajnirane za jednokratnu upotrebu. Svaki put kada primite sredstva, trebalo bi da generate novu praznu adresu.
 
 
-Ovo ograničenje proizlazi iz Bitcoin modela privatnosti. Ponovnim korišćenjem istog Address, spoljnim posmatračima se olakšava praćenje Bitcoin transakcija. Zato se ponovna upotreba prijemnog Address snažno obeshrabruje. Međutim, da bismo imali više adresa i javno odvojili naše transakcije, neophodno je upravljati sa više privatnih ključeva. U slučaju JBOK novčanika, to podrazumeva kreiranje onoliko rezervnih kopija koliko ima novih parova ključeva, zadatak koji može brzo postati složen i težak za održavanje korisnicima.
+Ovo ograničenje proizlazi iz Bitcoin modela privatnosti. Ponovnim korišćenjem iste adrese, spoljnim posmatračima se olakšava praćenje Bitcoin transakcija. Zato se ponovna upotreba prijemne adrese snažno obeshrabruje. Međutim, da bismo imali više adresa i javno odvojili naše transakcije, neophodno je upravljati sa više privatnih ključeva. U slučaju JBOK novčanika, to podrazumeva kreiranje onoliko rezervnih kopija koliko ima novih parova ključeva, zadatak koji može brzo postati složen i težak za održavanje korisnicima.
 
 
-Da biste saznali više o modelu privatnosti Bitcoin i otkrili metode za zaštitu vaše privatnosti, takođe preporučujem da pratite moj BTC204 kurs na Plan ₿ Network:
+Da biste saznali više o modelu privatnosti Bitcoin-a i otkrili metode za zaštitu vaše privatnosti, takođe preporučujem da pratite moj BTC204 kurs na Plan ₿ Network:
 
 
 https://planb.network/courses/65c138b0-4161-4958-bbe3-c12916bc959c
@@ -1670,25 +1670,25 @@ https://planb.network/courses/65c138b0-4161-4958-bbe3-c12916bc959c
 ### HD Novčanici
 
 
-Za Address ograničenje JBOK novčanika, naknadno je korišćena nova struktura Wallet. Godine 2012, Pieter Wuille je predložio poboljšanje sa BIP32, koje uvodi HD (Hijerarhijski Deterministički) novčanike. Princip HD Wallet je da se svi privatni ključevi izvedu iz jednog izvora informacija, nazvanog seed, na deterministički i hijerarhijski način. Ovaj seed se nasumično generiše kada se Wallet kreira i predstavlja jedinstvenu rezervnu kopiju koja omogućava rekreaciju svih privatnih ključeva Wallet. Tako korisnik može generate veoma veliki broj privatnih ključeva kako bi izbegao ponovnu upotrebu Address i očuvao svoju privatnost, dok mu je potrebno samo da napravi jednu rezervnu kopiju svog Wallet putem seed.
+Kako bi se rešilo ograničenje JBOK novčanika, naknadno je korišćena nova struktura novčanika. Godine 2012, Pieter Wuille je predložio poboljšanje sa BIP32, koje uvodi HD (Hijerarhijski Deterministički) novčanike. Princip HD novčanika je da se svi privatni ključevi izvedu iz jednog izvora informacija, nazvanog seed, na deterministički i hijerarhijski način. Ovaj seed se nasumično generiše kada se novčanik kreira i predstavlja jedinstvenu rezervnu kopiju koja omogućava rekreaciju svih privatnih ključeva novčanika. Tako korisnik može generisati veoma veliki broj privatnih ključeva kako bi izbegao ponovnu upotrebu adresa i očuvao svoju privatnost, dok mu je potrebno samo da napravi jednu rezervnu kopiju svog novčanika putem seed-a.
 
 
 ![CYP201](assets/fr/034.webp)
 
 
-U HD novčanicima, derivacija ključeva se vrši prema hijerarhijskoj strukturi koja omogućava da ključevi budu organizovani u derivacione podprostore, pri čemu se svaki podprostor može dalje deliti, kako bi se olakšalo upravljanje sredstvima i interoperabilnost između različitih Wallet softvera. Danas, ovaj standard usvaja velika većina korisnika Bitcoin. Iz tog razloga, detaljno ćemo ga ispitati u narednim poglavljima.
+U HD novčanicima, derivacija ključeva se vrši prema hijerarhijskoj strukturi koja omogućava da ključevi budu organizovani u derivacione podprostore, pri čemu se svaki podprostor može dalje deliti, kako bi se olakšalo upravljanje sredstvima i interoperabilnost između različitih softverskih novčanika. Danas, ovaj standard usvaja velika većina korisnika Bitcoin-a. Iz tog razloga, detaljno ćemo ga ispitati u narednim poglavljima.
 
 
-### BIP39 Standard: Mnemonic Fraza
+### BIP39 Standard: Bezbednosna fraza
 
 
-Pored BIP32, BIP39 standardizuje seed format kao Mnemonic frazu, kako bi olakšao bekap i čitljivost korisnicima. Mnemonic fraza, takođe nazvana fraza za oporavak ili fraza od 24 reči, je sekvenca reči izvučena iz unapred definisane liste koja sigurno kodira Wallet-ov seed.
+Pored BIP32, BIP39 standardizuje seed format kao bezbednosnu frazu, kako bi olakšalo pravljenje sigurnosne kopije i čitljivost korisnicima. Bezbednosna fraza, takođe nazvana fraza za oporavak ili fraza od 24 reči, je sekvenca reči izvučena iz unapred definisane liste koja sigurno kodira seed novčanika.
 
 
-Fraza Mnemonic u velikoj meri pojednostavljuje bekap za korisnika. U slučaju gubitka, oštećenja ili krađe uređaja koji hostuje Wallet, jednostavno poznavanje ove fraze Mnemonic omogućava rekreaciju Wallet i povratak pristupa svim sredstvima koja su njome osigurana.
+Bezbednosna fraza u velikoj meri pojednostavljuje pravljenje sigurnosne kopije za korisnika. U slučaju gubitka, oštećenja ili krađe uređaja koji hostuje novčanik, jednostavno poznavanje ove bezbednosne fraze omogućava rekreaciju novčanika i povratak pristupa svim sredstvima koja su njome osigurana.
 
 
-U narednim poglavljima istražićemo unutrašnje funkcionisanje HD novčanika, uključujući mehanizme derivacije ključeva i različite moguće hijerarhijske strukture. Ovo će vam omogućiti bolje razumevanje kriptografskih osnova na kojima se zasniva sigurnost sredstava u Bitcoin. I za početak, u sledećem poglavlju, predlažem da otkrijemo ulogu entropije u osnovi vašeg Wallet.
+U narednim poglavljima istražićemo unutrašnje funkcionisanje HD novčanika, uključujući mehanizme derivacije ključeva i različite moguće hijerarhijske strukture. Ovo će vam omogućiti bolje razumevanje kriptografskih osnova na kojima se zasniva sigurnost sredstava u Bitcoin-u. I za početak, u sledećem poglavlju, predlažem da otkrijemo ulogu entropije u osnovi vašeg novčanika.
 
 
 ## Entropija i Slučajni Brojevi
@@ -1696,16 +1696,16 @@ U narednim poglavljima istražićemo unutrašnje funkcionisanje HD novčanika, u
 
 <chapterId>b43c715d-affb-56d8-a697-ad5bc2fffd63</chapterId>
 
-Moderni HD novčanici oslanjaju se na jedan početni deo informacija nazvan "entropija" kako bi deterministički generate čitav skup Wallet ključeva. Ova entropija je pseudo-slučajni broj koji delimično određuje sigurnost Wallet.
+Moderni HD novčanici oslanjaju se na jedan početni deo informacija nazvan "entropija" kako bi deterministički generisali čitav skup ključeva u novčaniku. Ova entropija je pseudo-slučajni broj koji delimično određuje sigurnost novčanika.
 
 
 ### Definicija entropije
 
 
-Entropija, u kontekstu kriptografije i informacija, je kvantitativna mera nesigurnosti ili nepredvidljivosti povezane sa izvorom podataka ili slučajnim procesom. Ona igra važnu ulogu u bezbednosti kriptografskih sistema, posebno u generisanju ključeva i slučajnih brojeva. Visoka entropija osigurava da su generisani ključevi dovoljno nepredvidljivi i otporni na napade grube sile, gde napadač pokušava sve moguće kombinacije da pogodi ključ.
+Entropija, u kontekstu kriptografije i informacija, je kvantitativna mera nesigurnosti ili nepredvidljivosti povezane sa izvorom podataka ili slučajnim procesom. Ona igra važnu ulogu u bezbednosti kriptografskih sistema, posebno u generisanju ključeva i slučajnih brojeva. Visoka entropija osigurava da su generisani ključevi dovoljno nepredvidljivi i otporni na napade silovite pretrage, gde napadač pokušava da otkrije ključ isprobavanjem svih mogućih kombinacija.
 
 
-U kontekstu Bitcoin, entropija se koristi za generate seed. Kada se kreira HD Wallet, konstrukcija Mnemonic fraze se vrši iz slučajnog broja, koji je sam izveden iz izvora entropije. Fraza se zatim koristi za generate više privatnih ključeva, na deterministički i hijerarhijski način, kako bi se kreirali uslovi trošenja na UTXO-ima.
+U kontekstu Bitcoin-a, entropija se koristi za generisanje seed-a. Kada se kreira HD novčanik, konstrukcija bezbednosne fraze se vrši iz slučajnog broja, koji je sam izveden iz izvora entropije. Fraza se zatim koristi za genirsanje više privatnih ključeva, na deterministički i hijerarhijski način, kako bi se kreirali uslovi trošenja na UTXO-vima.
 
 
 ### Metode generisanja entropije
@@ -1715,40 +1715,40 @@ Početna entropija korišćena za HD Wallet je generalno 128 bita ili 256 bita, 
 
 
 
-- 128 bita entropije** odgovara Mnemonic frazi od **12 reči**;
-- 256 bita entropije** odgovara Mnemonic frazi od **24 reči**.
+- **128 bita entropije** odgovara bezbednosnoj frazi od **12 reči**;
+- **256 bita entropije** odgovara bezbednosnoj frazi od **24 reči**.
 
 
-U većini slučajeva, ovaj nasumični broj automatski generiše Wallet softver koristeći PRNG (_Pseudo-Random Number Generator_). PRNG-ovi su kategorija algoritama koji se koriste za generate sekvence brojeva iz početnog stanja, koje imaju karakteristike približne onima nasumičnog broja, bez da su zaista nasumični. Dobar PRNG mora imati osobine kao što su uniformnost izlaza, nepredvidivost i otpornost na prediktivne napade. Za razliku od pravih generatora nasumičnih brojeva (TRNG-ova), PRNG-ovi su deterministički i reproduktivni.
+U većini slučajeva, ovaj nasumični broj automatski generiše softver novčanika koristeći PRNG (_Pseudo-Random Number Generator_). PRNG-ovi su kategorija algoritama koji se koriste za generisanje sekvence brojeva iz početnog stanja, koje imaju karakteristike približne onima nasumičnog broja, bez da su zaista nasumični. Dobar PRNG mora imati osobine kao što su uniformnost izlaza, nepredvidivost i otpornost na napade putem predviđanja vrednosti. Za razliku od pravih generatora nasumičnih brojeva (TRNG-ova), PRNG-ovi su deterministički i reproduktivni.
 
 
 ![CYP201](assets/fr/035.webp)
 
 
-Alternativa je ručno generate entropiju, što nudi bolju kontrolu, ali je takođe mnogo rizičnije. Snažno savetujem protiv generisanja entropije za vaš HD Wallet sami.
+Alternativa je ručno generisanje entropije, što nudi bolju kontrolu, ali je takođe mnogo rizičnije. Snažno preporučujem da ne pokušavate sami da generišete entropiju za svoj HD novčanik.
 
 
-U sledećem poglavlju, videćemo kako prelazimo sa nasumičnog broja na Mnemonic frazu od 12 ili 24 reči.
+U sledećem poglavlju, videćemo kako prelazimo sa nasumičnog broja na bezbednosnu frazu od 12 ili 24 reči.
 
 
-## Mnemonic Fraza
+## Bezbednosna fraza
 
 
 <chapterId>8f9340c1-e6dc-5557-a2f2-26c9669987d5</chapterId>
 
-Fraza Mnemonic, takođe nazvana "fraza seed", "fraza za oporavak", "tajna fraza" ili "fraza od 24 reči", je sekvenca koja se obično sastoji od 12 ili 24 reči, a generiše se iz entropije. Koristi se za determinističko izvođenje svih ključeva HD Wallet. To znači da je iz ove fraze moguće deterministički generate i ponovo kreirati sve privatne i javne ključeve Bitcoin Wallet, i samim tim pristupiti sredstvima koja su njome zaštićena. Svrha fraze Mnemonic je da obezbedi način za bekap i oporavak bitkoina koji je i siguran i jednostavan za korišćenje. Uvedena je 2013. godine sa standardom BIP39.
+Bezbednosna fraza, takođe nazvana "seed fraza", "fraza za oporavak", "tajna fraza" ili "fraza od 24 reči", je sekvenca koja se obično sastoji od 12 ili 24 reči, a generiše se iz entropije. Koristi se za determinističko izvođenje svih ključeva HD novčanika. To znači da je iz ove fraze moguće deterministički generisati i ponovo kreirati sve privatne i javne ključeve Bitcoin novčanika, i samim tim pristupiti sredstvima koja su njome zaštićena. Svrha bezbednosne fraze je da omogući siguran i jednostavan način za pravljenje rezervne kopije i oporavak bitkoina. Uvedena je 2013. godine sa standardom BIP39.
 
 
-Hajde da zajedno otkrijemo kako preći od entropije do Mnemonic fraze.
+Hajde da zajedno otkrijemo kako preći od entropije do bezbednosne fraze.
 
 
-### Kontrolna suma
+### Kontrolna suma (checksum)
 
 
-Da bi se entropija transformisala u Mnemonic frazu, prvo se mora dodati kontrolna suma (ili "checksum") na kraj entropije. Ova kontrolna suma je kratka sekvenca bitova koja osigurava integritet podataka proverom da nije došlo do slučajnih izmena.
+Da bi se entropija transformisala u bezbednosnu frazu, prvo se mora dodati kontrolna suma (ili "checksum") na kraj entropije. Ova kontrolna suma je kratka sekvenca bitova koja osigurava integritet podataka proverom da nije došlo do slučajnih izmena.
 
 
-Da bi se izračunao kontrolni zbir, funkcija SHA256 Hash se primenjuje na entropiju (samo jednom; ovo je jedan od retkih slučajeva u Bitcoin gde se koristi jedan SHA256 Hash umesto duplog Hash). Ova operacija proizvodi 256-bitni Hash. Kontrolni zbir se sastoji od prvih bitova ovog Hash, a njegova dužina zavisi od dužine entropije, prema sledećoj formuli:
+Da bi se izračunala kontrolna suma, SHA256 heš funkcija se primenjuje na entropiju (samo jednom; ovo je jedan od retkih slučajeva u Bitcoin-u gde se koristi jedan SHA256 heš umesto duplog heša). Ova operacija proizvodi 256-bitni heš. Kontrolni zbir se sastoji od prvih bitova ovog heša, a njegova dužina zavisi od dužine entropije, prema sledećoj formuli:
 
 
 $$
@@ -1759,7 +1759,7 @@ $$
 gde $\text{ENT}$ predstavlja dužinu entropije u bitovima, a $\text{CS}$ dužinu kontrolne sume u bitovima.
 
 
-Na primer, za entropiju od 256 bita, prvih 8 bita Hash se uzima da formira kontrolni zbir:
+Na primer, za entropiju od 256 bita, prvih 8 bita heša se uzima da formira kontrolni zbir:
 
 
 $$
@@ -1767,22 +1767,22 @@ $$
 $$
 
 
-Jednom kada je kontrolni zbir izračunat, on se konkatenira sa entropijom da bi se dobila proširena sekvenca bitova označena sa $\text{ENT} \Vert \text{CS}$ ("konkatenirati" znači staviti kraj uz kraj).
+Jednom kada je kontrolni zbir izračunat, on se konkatenira sa entropijom da bi se dobila proširena sekvenca bitova označena sa $\text{ENT} \Vert \text{CS}$ ("konkatenirati" znači spojiti stvari jednu za drugom).
 
 
 ![CYP201](assets/fr/036.webp)
 
 
-### Korespondencija između Entropije i Mnemonic Fraze
+### Korespondencija između entropije i bezbednosne fraze
 
 
-Broj reči u frazi Mnemonic zavisi od veličine početne entropije, kao što je prikazano u sledećoj tabeli sa:
+Broj reči u bezbednosnoj frazi zavisi od veličine početne entropije, kao što je prikazano u sledećoj tabeli sa:
 
 
 
 - $\text{ENT}$: veličina entropije u bitovima;
 - $\text{CS}$: veličina u bitovima kontrolnog zbira;
-- $w$: broj reči u konačnoj Mnemonic frazi.
+- $w$: broj reči u konačnoj bezbednosnoj frazi.
 
 
 $$
@@ -1800,10 +1800,10 @@ $$
 $$
 
 
-Na primer, za entropiju od 256 bita, rezultat $\text{ENT} \Vert \text{CS}$ je 264 bita i daje Mnemonic frazu od 24 reči.
+Na primer, za entropiju od 256 bita, rezultat $\text{ENT} \Vert \text{CS}$ je 264 bita i daje bezbednosnu frazu od 24 reči.
 
 
-### Pretvaranje binarnog niza u Mnemonic frazu
+### Pretvaranje binarnog niza u bezbednosnu frazu
 
 
 Bit sekvenca $\text{ENT} \Vert \text{CS}$ se zatim deli na segmente od 11 bita. Svaki segment od 11 bita, kada se konvertuje u decimalni oblik, odgovara broju između 0 i 2047, koji označava poziciju reči [u listi od 2048 reči standardizovanih od strane BIP39](https://github.com/Planb-Network/Bitcoin-educational-content/blob/dev/resources/bet/bip39-wordlist/assets/BIP39-WORDLIST.pdf).
@@ -1833,22 +1833,22 @@ Ova prepiska se ponavlja za svaki od 12 segmenata, kako bi se dobila fraza od 12
 ### Karakteristike BIP39 liste reči
 
 
-Jedinstvena karakteristika BIP39 liste reči je da nijedna reč ne deli iste prve četiri slova u istom redosledu sa drugom rečju. To znači da je zapisivanje samo prva četiri slova svake reči dovoljno za čuvanje Mnemonic fraze. Ovo može biti zanimljivo za uštedu prostora, posebno za one koji žele da je ugraviraju na metalnu podlogu.
+Jedinstvena karakteristika BIP39 liste reči je da nijedna reč ne deli iste prve četiri slova u istom redosledu sa drugom rečju. To znači da je zapisivanje samo prva četiri slova svake reči dovoljno za čuvanje bezbednosne fraze. Ovo može biti zanimljivo za uštedu prostora, posebno za one koji žele da je ugraviraju na metalnu podlogu.
 
 
-Ova lista od 2048 reči postoji na nekoliko jezika. Ovo nisu jednostavni prevodi, već različite reči za svaki jezik. Međutim, snažno se preporučuje pridržavanje engleske verzije, jer verzije na drugim jezicima generalno nisu podržane od strane Wallet softvera.
+Ova lista od 2048 reči postoji na nekoliko jezika. Ovo nisu jednostavni prevodi, već različite reči za svaki jezik. Međutim, snažno se preporučuje pridržavanje engleske verzije, jer verzije na drugim jezicima generalno nisu podržane od strane svih softverskih novčanika.
 
 
-### Koju dužinu odabrati za svoju Mnemonic frazu?
+### Koju dužinu odabrati za svoju bezbednosnu frazu?
 
 
-Da biste odredili optimalnu dužinu vaše Mnemonic fraze, potrebno je razmotriti stvarnu sigurnost koju pruža. Fraza od 12 reči obezbeđuje 128 bita sigurnosti, dok fraza od 24 reči nudi 256 bita.
+Da biste odredili optimalnu dužinu vaše bezbednosne fraze, potrebno je razmotriti stvarnu sigurnost koju pruža. Fraza od 12 reči obezbeđuje 128 bita sigurnosti, dok fraza od 24 reči nudi 256 bita.
 
 
-Međutim, ova razlika u sigurnosti na nivou fraza ne poboljšava ukupnu sigurnost Bitcoin Wallet, jer privatni ključevi izvedeni iz ove fraze imaju korist samo od 128 bita sigurnosti. Zaista, kao što smo ranije videli, Bitcoin privatni ključevi se generišu iz slučajnih brojeva (ili izvedeni iz slučajnog izvora) u rasponu između $1$ i $n-1$, gde $n$ predstavlja red generator tačke $G$ krive secp256k1, broj nešto manji od $2^{256}$. Moglo bi se stoga pomisliti da ovi privatni ključevi nude 256 bita sigurnosti. Međutim, njihova sigurnost leži u težini pronalaženja privatnog ključa iz njegovog pridruženog javnog ključa, težini koju postavlja matematički problem diskretnog logaritma na eliptičkim krivama (_ECDLP_). Do danas, najpoznatiji algoritam za rešavanje ovog problema je Pollardov rho algoritam, koji smanjuje broj operacija potrebnih za razbijanje ključa na kvadratni koren njegove veličine.
+Međutim, ova razlika u sigurnosti na nivou fraza ne poboljšava ukupnu sigurnost Bitcoin novčanika, jer privatni ključevi izvedeni iz ove fraze imaju korist samo od 128 bita sigurnosti. Zaista, kao što smo ranije videli, Bitcoin privatni ključevi se generišu iz slučajnih brojeva (ili izvedeni iz slučajnog izvora) u rasponu između $1$ i $n-1$, gde $n$ predstavlja red generator tačke $G$ krive secp256k1, broj nešto manji od $2^{256}$. Moglo bi se stoga pomisliti da ovi privatni ključevi nude 256 bita sigurnosti. Međutim, njihova sigurnost leži u težini pronalaženja privatnog ključa iz njegovog pridruženog javnog ključa, težini koju postavlja matematički problem diskretnog logaritma na eliptičkim krivama (_ECDLP_). Do danas, najpoznatiji algoritam za rešavanje ovog problema je Pollardov rho algoritam, koji smanjuje broj operacija potrebnih za razbijanje ključa na kvadratni koren njegove veličine.
 
 
-Za ključeve od 256 bita, kao što su oni korišćeni u Bitcoin, Pollardov rho algoritam tako smanjuje složenost na $2^{128}$ operacija:
+Za ključeve od 256 bita, kao što su oni korišćeni u Bitcoin-u, Pollardov rho algoritam tako smanjuje složenost na $2^{128}$ operacija:
 
 
 $$
@@ -1859,42 +1859,42 @@ O(\sqrt{2^{256}}) = O(2^{128})
 $$
 
 
-Stoga se smatra da privatni ključ korišćen u Bitcoin nudi 128 bita sigurnosti.
+Stoga se smatra da privatni ključ korišćen u Bitcoin-u nudi 128 bita sigurnosti.
 
 
-Kao rezultat toga, odabir fraze od 24 reči ne pruža dodatnu zaštitu za Wallet, jer 256 bita sigurnosti na frazi je besmisleno ako izvedeni ključevi nude samo 128 bita sigurnosti. Da ilustrujemo ovaj princip, to je kao da imate kuću sa dvoja vrata: stara drvena vrata i ojačana vrata. U slučaju provale, ojačana vrata ne bi bila od koristi, jer bi provalnik prošao kroz drvena vrata. Ovo je analogna situacija ovde.
+Kao rezultat toga, odabir fraze od 24 reči ne pruža dodatnu zaštitu za novčanik, jer 256 bita sigurnosti na frazi je besmisleno ako izvedeni ključevi nude samo 128 bita sigurnosti. Da ilustrujemo ovaj princip, to je kao da imate kuću sa dvoja vrata: stara drvena vrata i ojačana vrata. U slučaju provale, ojačana vrata ne bi bila od koristi, jer bi provalnik prošao kroz drvena vrata. Ovo je analogna situacija ovde.
 
 
-Fraza od 12 reči, koja takođe nudi 128 bita sigurnosti, trenutno je dovoljna da zaštiti vaše bitkoine od bilo kakvog pokušaja krađe. Sve dok se algoritam digitalnog potpisa ne promeni da koristi veće ključeve ili da se oslanja na matematički problem drugačiji od ECDLP, fraza od 24 reči ostaje suvišna. Štaviše, duža fraza povećava rizik od gubitka tokom bekapa: bekap koji je duplo kraći uvek je lakši za upravljanje.
+Fraza od 12 reči, koja takođe nudi 128 bita sigurnosti, trenutno je dovoljna da zaštiti vaše bitkoine od bilo kakvog pokušaja krađe. Sve dok se algoritam digitalnog potpisa ne promeni da koristi veće ključeve ili da se oslanja na matematički problem drugačiji od ECDLP, fraza od 24 reči ostaje suvišna. Štaviše, duža fraza povećava rizik od gubitka tokom pravljenja sigurnosne kopije: sigurnosna kopija koja je duplo kraća uvek je lakše za upravljanje.
 
 
-Da biste išli dalje i konkretno naučili kako ručno generate test Mnemonic frazu, savetujem vam da otkrijete ovaj vodič:
+Da biste išli dalje i konkretno naučili kako ručno generisati testnu bezbednosnu frazu, savetujem vam da otkrijete ovaj vodič:
 
 
 https://planb.network/tutorials/wallet/backup/generate-mnemonic-phrase-47507d90-e6af-4cac-b01b-01a14d7a8228
 
-Pre nego što nastavim sa izvođenjem Wallet iz ove Mnemonic fraze, u sledećem poglavlju ću vas upoznati sa BIP39 passphrase, jer igra ulogu u procesu izvođenja i nalazi se na istom nivou kao i Mnemonic fraza.
+Pre nego što nastavim sa izvođenjem novčanika iz ove bezbednosne fraze, u sledećem poglavlju ću vas upoznati sa BIP39 passphrase, jer igra ulogu u procesu izvođenja i nalazi se na istom nivou kao i bezbednosna fraza.
 
 
-## passphrase
+## passphrase (lozinka bezbednosne fraze)
 
 
 <chapterId>6a51b397-f3b5-5084-b151-cef94bc9b93f</chapterId>
 
 
-Kao što smo upravo videli, HD novčanici se generišu iz Mnemonic fraze koja obično sadrži 12 ili 24 reči. Ova fraza je veoma važna jer omogućava obnavljanje svih ključeva Wallet u slučaju da se fizički uređaj (kao što je Hardware Wallet, na primer) izgubi. Međutim, ona predstavlja jedinstvenu tačku otkaza, jer ako je kompromitovana, napadač bi mogao da ukrade sve bitkoine. Tu na scenu stupa BIP39 passphrase.
+Kao što smo upravo videli, HD novčanici se generišu iz bezbednosne fraze koja obično sadrži 12 ili 24 reči. Ova fraza je veoma važna jer omogućava obnavljanje svih ključeva novčanika u slučaju da se fizički uređaj (kao što je hardverski novčanik, na primer) izgubi. Međutim, ona predstavlja jedinstvenu tačku otkaza, jer ako je kompromitovana, napadač bi mogao da ukrade sve bitkoine. Tu na scenu stupa BIP39 passphrase.
 
 
 ### Šta je BIP39 passphrase?
 
 
-passphrase je opcionalna lozinka, koju možete slobodno izabrati, koja se dodaje Mnemonic frazi u procesu derivacije ključa kako bi se poboljšala sigurnost Wallet.
+passphrase je opcionalna lozinka, koju možete slobodno izabrati, koja se dodaje bezbednosnoj frazi u procesu derivacije ključa kako bi se poboljšala sigurnost novčanika.
 
 
-Budite pažljivi, passphrase ne treba mešati sa PIN kodom vašeg Hardware Wallet ili lozinkom koja se koristi za otključavanje pristupa vašem Wallet na vašem računaru. Za razliku od svih ovih Elements, passphrase igra ulogu u derivaciji ključeva vašeg Wallet. **To znači da bez njega nikada nećete moći da povratite svoje bitkoine.**
+Budite pažljivi, passphrase ne treba mešati sa PIN kodom vašeg hardverskog novčanika ili lozinkom koja se koristi za otključavanje pristupa vašem novčaniku na vašem računaru. Za razliku od svih ovih elemenata, passphrase igra ulogu u derivaciji ključeva vašeg novčanika. **To znači da bez njega nikada nećete moći da povratite svoje bitkoine.**
 
 
-passphrase radi u tandemu sa frazom Mnemonic, modifikujući seed iz koje se generišu ključevi. Dakle, čak i ako neko dobije vašu frazu od 12 ili 24 reči, bez passphrase, ne može pristupiti vašim sredstvima. Korišćenje passphrase u suštini stvara novi Wallet sa različitim ključevima. Modifikovanje (čak i minimalno) passphrase će generate drugačiji Wallet.
+passphrase radi u tandemu sa bezbednosnom frazom, modifikujući seed iz koje se generišu ključevi. Dakle, čak i ako neko dobije vašu frazu od 12 ili 24 reči, bez passphrase, ne može pristupiti vašim sredstvima. Korišćenje passphrase u suštini stvara novi novčanik sa različitim ključevima. Modifikovanje (čak i minimalno) passphrase će generisati drugačiji novčanik.
 
 
 ![CYP201](assets/fr/041.webp)
@@ -1903,27 +1903,27 @@ passphrase radi u tandemu sa frazom Mnemonic, modifikujući seed iz koje se gene
 ### Zašto bi trebalo da koristite passphrase?
 
 
-passphrase je proizvoljan i može biti bilo koja kombinacija karaktera koju izabere korisnik. Korišćenje passphrase stoga nudi nekoliko prednosti. Pre svega, smanjuje sve rizike povezane sa kompromitovanjem Mnemonic fraze zahtevajući drugi faktor za pristup sredstvima (provala, pristup vašem domu, itd.).
+passphrase je proizvoljan i može biti bilo koja kombinacija karaktera koju izabere korisnik. Korišćenje passphrase stoga nudi nekoliko prednosti. Pre svega, smanjuje sve rizike povezane sa kompromitovanjem bezbednosne fraze zahtevajući još jedan sigurnosni korak za pristup sredstvima (provala, pristup vašem domu, itd.).
 
 
-Dalje, može se strateški koristiti za kreiranje mamca Wallet, kako bi se suočili sa fizičkim ograničenjima za krađu vaših sredstava kao što je ozloglašeni "_napad ključem od $5_". U ovom scenariju, ideja je imati Wallet bez passphrase koji sadrži samo malu količinu bitkoina, dovoljno da zadovolji potencijalnog napadača, dok je pravi Wallet skriven. Ovaj poslednji koristi istu Mnemonic frazu, ali je osiguran dodatnim passphrase.
+Dalje, može se strateški koristiti za kreiranje mamca novčanika, kako bi se suočili sa fizičkim ograničenjima za krađu vaših sredstava kao što je ozloglašeni "_napad uz fizičku pretnju_". U ovom scenariju, ideja je imati novčanik bez passphrase koji sadrži samo malu količinu bitkoina, dovoljno da zadovolji potencijalnog napadača, dok je pravi novčanik skriven. Ovaj poslednji koristi istu bezbednosnu frazu, ali je osiguran dodatnim passphrase-om.
 
-Konačno, upotreba passphrase je zanimljiva kada se želi kontrolisati nasumičnost generisanja seed od HD Wallet.
+Konačno, upotreba passphrase-a je zanimljiva kada se želi kontrolisati nasumičnost generisanja seed od HD novčanika.
 
 
 ### Kako odabrati dobar passphrase?
 
 
-Da bi passphrase bio efikasan, mora biti dovoljno dug i nasumičan. Kao i kod jakih lozinki, preporučujem odabir passphrase koji je što duži i nasumičniji, sa raznovrsnošću slova, brojeva i simbola kako bi bilo koji napad grubom silom bio nemoguć.
+Da bi passphrase bio efikasan, mora biti dovoljno dug i nasumičan. Kao i kod jakih lozinki, preporučujem odabir passphrase koji je što duži i nasumičniji, sa raznovrsnošću slova, brojeva i simbola kako bi bilo koji napad silovitom pretragom bio nemoguć.
 
 
-Takođe je važno pravilno sačuvati ovaj passphrase, na isti način kao i frazu Mnemonic. **Gubitak znači gubitak pristupa vašim bitcoinima**. Snažno savetujem protiv oslanjanja samo na pamćenje, jer to nerazumno povećava rizik od gubitka. Idealno je zapisati ga na fizički medijum (papir ili metal) odvojen od fraze Mnemonic. Ova rezervna kopija mora očigledno biti uskladištena na drugom mestu od mesta gde je vaša fraza Mnemonic uskladištena kako bi se sprečilo da obe budu istovremeno ugrožene.
+Takođe je važno pravilno sačuvati ovaj passphrase, na isti način kao i bezbednosnu frazu. **Gubitak znači gubitak pristupa vašim bitcoinima**. Snažno savetujem protiv oslanjanja samo na pamćenje, jer to nerazumno povećava rizik od gubitka. Idealno je zapisati ga na fizički medijum (papir ili metal) odvojen od bezbednosne fraze. Ova rezervna kopija mora očigledno biti uskladištena na drugom mestu od mesta gde je vaša bezbednosna fraza uskladištena kako bi se sprečilo da obe budu istovremeno ugrožene.
 
 
 ![CYP201](assets/fr/042.webp)
 
 
-U sledećem odeljku, otkrićemo kako se ova dva Elements na bazi vašeg Wallet — Mnemonic fraza i passphrase — koriste za izvođenje parova ključeva korišćenih u _scriptPubKey_ koji zaključavaju vaše UTXO-e.
+U sledećem odeljku, otkrićemo kako se ova dva osnovna elementa vašeg novčanika — bezbednosna fraza i passphrase — koriste za izvođenje parova ključeva korišćenih u _scriptPubKey_ koji zaključavaju vaše UTXO-e.
 
 
 # Kreiranje Bitcoin novčanika
@@ -1938,31 +1938,31 @@ U sledećem odeljku, otkrićemo kako se ova dva Elements na bazi vašeg Wallet �
 <chapterId>63093760-2010-5691-8d0e-9a04732ae557</chapterId>
 
 
-Kada se generišu Mnemonic fraza i opcioni passphrase, može početi proces derivacije Bitcoin HD Wallet. Mnemonic fraza se prvo konvertuje u seed koji čini osnovu svih ključeva Wallet.
+Kada se generišu bezbednosna fraza i opcioni passphrase, može početi proces derivacije Bitcoin HD novčanika. Bezbednsona fraza se prvo konvertuje u seed koji čini osnovu svih ključeva novčanika.
 
 
 ![CYP201](assets/fr/043.webp)
 
 
-### seed od HD Wallet
+### Seed HD novčanika
 
 
-BIP39 standard definiše seed kao 512-bitni niz, koji služi kao početna tačka za izvođenje svih ključeva HD Wallet. seed se izvodi iz Mnemonic fraze i mogućeg passphrase koristeći **PBKDF2** algoritam (_Password-Based Key Derivation Function 2_) koji smo već diskutovali u poglavlju 3.3. U ovoj funkciji izvođenja, koristićemo sledeće parametre:
+BIP39 standard definiše seed kao 512-bitni niz, koji služi kao početna tačka za izvođenje svih ključeva HD novčanika. Seed se izvodi iz bezbednosne fraze i mogućeg passphrase koristeći **PBKDF2** algoritam (_Password-Based Key Derivation Function 2_) koji smo već diskutovali u poglavlju 3.3. U ovoj funkciji izvođenja, koristićemo sledeće parametre:
 
 
 
-- $m$ : Mnemonic fraza;
-- $p$ : opcioni passphrase koji korisnik bira da poboljša sigurnost seed. Ako nema passphrase, ovo polje ostaje prazno;
+- $m$ : bezbednosna fraza;
+- $p$ : opcioni passphrase koji korisnik bira da poboljša sigurnost seed-a. Ako nema passphrase, ovo polje ostaje prazno;
 - $\text{PBKDF2}$ : the derivation function with $\text{HMAC-SHA512}$ and $2048$ iterations;
-- $s$: the 512-bit Wallet seed.
+- $s$: the 512-bit seed novčanika.
 
-Bez obzira na izabranu dužinu fraze Mnemonic (132 bita ili 264 bita), funkcija PBKDF2 će uvek proizvesti izlaz od 512 bita, i seed će stoga uvek biti ove veličine.
-
-
-### seed Šema izvedbe sa PBKDF2
+Bez obzira na izabranu dužinu bezbednosne fraze (132 bita ili 264 bita), funkcija PBKDF2 će uvek proizvesti izlaz od 512 bita, i seed će stoga uvek biti ove veličine.
 
 
-Sledeća jednačina ilustruje izvođenje seed iz fraze Mnemonic i passphrase:
+### Šema izveđenja seed-a sa PBKDF2
+
+
+Sledeća jednačina ilustruje izvođenje seed-a iz bezbednonse fraze i passphrase-a:
 
 
 $$
@@ -1973,27 +1973,27 @@ $$
 ![CYP201](assets/fr/044.webp)
 
 
-Vrednost seed je stoga pod uticajem vrednosti fraze Mnemonic i passphrase. Promenom passphrase dobija se drugačiji seed. Međutim, sa istom frazom Mnemonic i passphrase, uvek se generiše isti seed, jer je PBKDF2 deterministička funkcija. Ovo osigurava da se isti parovi ključeva mogu povratiti putem naših rezervnih kopija.
+Vrednost seed-a je stoga pod uticajem vrednosti bezbednonse fraze i passphrase. Promenom passphrase dobija se drugačiji seed. Međutim, sa istom bezbednosnom frazom i passphrase, uvek se generiše isti seed, jer je PBKDF2 deterministička funkcija. Ovo osigurava da se isti parovi ključeva mogu povratiti putem naših rezervnih kopija.
 
 
-**Napomena:** U svakodnevnom jeziku, termin "seed" često se pogrešno koristi za frazu Mnemonic. Naime, u odsustvu passphrase, jedno je jednostavno kodiranje drugog. Međutim, kao što smo videli, u tehničkoj stvarnosti novčanika, seed i fraza Mnemonic su zaista dva različita Elements.
+**Napomena:** U svakodnevnom jeziku, termin "seed" često se pogrešno koristi za bezbednosnu frazu. Naime, u odsustvu passphrase-a, jedno je jednostavno kodiranje drugog. Međutim, kao što smo videli, u tehničkoj stvarnosti novčanika, seed i bezbednosna fraza su zaista dva različita elementa.
 
 
-Sada kada imamo naš seed, možemo nastaviti sa izvođenjem našeg Bitcoin Wallet.
+Sada kada imamo naš seed, možemo nastaviti sa izvođenjem našeg Bitcoin novčanika.
 
 
-### Master Key i Master Chain Code
+### Glavni ključ i glavni kod lanca
 
 
-Kada se seed dobije, sledeći korak u izvođenju HD Wallet uključuje izračunavanje glavnog privatnog ključa i glavnog lanca koda, koji će predstavljati dubinu 0 našeg Wallet.
+Kada se seed dobije, sledeći korak u izvođenju HD novčanika uključuje izračunavanje glavnog privatnog ključa i glavnog koda lance, koji će predstavljati dubinu 0 našeg novčanika.
 
 
-Da bi se dobio glavni privatni ključ i glavni lančani kod, HMAC-SHA512 funkcija se primenjuje na seed, koristeći fiksni ključ "_Bitcoin Seed_" identičan za sve Bitcoin korisnike. Ova konstanta je izabrana kako bi se osiguralo da su izvedeni ključevi specifični za Bitcoin. Ovde su Elements:
+Da bi se dobio glavni privatni ključ i glavni koda lanca, HMAC-SHA512 funkcija se primenjuje na seed, koristeći fiksni ključ "_Bitcoin Seed_" identičan za sve Bitcoin korisnike. Ova konstanta je izabrana kako bi se osiguralo da su izvedeni ključevi specifični za Bitcoin. Ovde su elementi:
 
 
 
 - $\text{HMAC-SHA512}$: funkcija derivacije;
-- $s$: the 512-bit Wallet seed;
+- $s$: 512-bit seed novčanika;
 - "$\text{"Bitcoin seed"}$": zajednička konstanta derivacije za sve Bitcoin novčanike.
 
 
@@ -2010,7 +2010,7 @@ Izlaz ove funkcije je stoga 512 bita. Zatim se deli na 2 dela:
 
 
 - Levih 256 bita čine **glavni privatni ključ**;
-- Desnih 256 bita čine **master chain code**.
+- Desnih 256 bita čine **glavni kod lanca**.
 
 
 Matematički, ove dve vrednosti mogu se zapisati na sledeći način, gde je $k_M$ glavni privatni ključ, a $C_M$ glavni lančani kod:
@@ -2035,10 +2035,10 @@ $$
 Glavni privatni ključ se smatra roditeljskim ključem, iz kojeg će svi izvedeni privatni ključevi — deca, unuci, praunuci, itd. — biti generisani. On predstavlja nulti nivo u hijerarhiji derivacije.
 
 
-S druge strane, glavni lančani kod uvodi dodatni izvor entropije u proces izvođenja ključeva za decu, kako bi se suprotstavio određenim potencijalnim napadima. Štaviše, u HD Wallet, svaki par ključeva ima jedinstveni lančani kod povezan s njim, koji se takođe koristi za izvođenje dečijih ključeva iz ovog para, ali o tome ćemo detaljnije raspravljati u narednim poglavljima.
+S druge strane, glavni lančani kod uvodi dodatni izvor entropije u proces izvođenja ključeva, kako bi se suprotstavio određenim potencijalnim napadima. Štaviše, u HD novčaniku, svaki par ključeva ima jedinstveni lančani kod povezan s njim, koji se takođe koristi za izvođenje ključeva iz ovog para, ali o tome ćemo detaljnije raspravljati u narednim poglavljima.
 
 
-Pre nego što nastavimo sa izvođenjem HD Wallet sa sledećim Elements, želim da vas u sledećem poglavlju upoznam sa proširenim ključevima, koji se često mešaju sa glavnim ključem. Videćemo kako su konstruisani i koju ulogu igraju u Bitcoin Wallet.
+Pre nego što nastavimo sa izvođenjem HD novčanika sa sledećim elementima, želim da vas u sledećem poglavlju upoznam sa proširenim ključevima, koji se često mešaju sa glavnim ključem. Videćemo kako su konstruisani i koju ulogu igraju u Bitcoin novčaniku.
 
 
 ## Prošireni ključevi
@@ -2046,7 +2046,7 @@ Pre nego što nastavimo sa izvođenjem HD Wallet sa sledećim Elements, želim d
 <chapterId>8dcffce1-31bd-5e0b-965b-735f5f9e4602</chapterId>
 
 
-Prošireni ključ je jednostavno konkatenacija ključa (bilo privatnog ili javnog) i njegovog pridruženog lanca koda. Ovaj lanac koda je ključan za izvođenje podključeva jer, bez njega, nije moguće izvesti podključeve iz roditeljskog ključa, ali ćemo ovaj proces preciznije istražiti u sledećem poglavlju. Ovi prošireni ključevi tako omogućavaju agregaciju svih potrebnih informacija za izvođenje podključeva, čime se pojednostavljuje upravljanje računima unutar HD Wallet.
+Prošireni ključ je jednostavno konkatenacija ključa (bilo privatnog ili javnog) i njegovog pridruženog lanca koda. Ovaj lanac koda je ključan za izvođenje podključeva jer, bez njega, nije moguće izvesti podključeve iz roditeljskog ključa, ali ćemo ovaj proces preciznije istražiti u sledećem poglavlju. Ovi prošireni ključevi tako omogućavaju agregaciju svih potrebnih informacija za izvođenje podključeva, čime se pojednostavljuje upravljanje računima unutar HD novčanika.
 
 
 ![CYP201](assets/fr/046.webp)
