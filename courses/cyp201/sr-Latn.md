@@ -2119,7 +2119,7 @@ Ako se jedan bajt doda samo privatnom ključu, to je zato što je kompresovani j
 
 ### Prefiksi proširenih ključeva
 
-Kao što smo upravo videli, prošireni ključevi uključuju prefiks koji označava i verziju proširenog ključa i njegovu prirodu. Oznaka `pub` ukazuje da se odnosi na prošireni javni ključ, a oznaka `prv` označava prošireni privatni ključ. Dodatno slovo na bazi proširenog ključa pomaže da se naznači da li je standard koji se prati Legacy, SegWit v0, SegWit v1, itd.
+Kao što smo upravo videli, prošireni ključevi uključuju prefiks koji označava i verziju proširenog ključa i njegovu prirodu. Oznaka `pub` ukazuje da se odnosi na prošireni javni ključ, a oznaka `prv` označava prošireni privatni ključ. Dodatno slovo na bazi proširenog ključa pomaže da se naznači da li je standard koji se prati Legacy, SegWit v0 ili SegWit v1, itd.
 
 Evo sažetka prefiksa koji se koriste i njihovih značenja:
 
@@ -2147,7 +2147,7 @@ Da bismo bolje razumeli unutrašnju strukturu proširenog ključa, uzmimo jedan 
 
 
 
-- **U Bazi58**:
+- **U formatu Base58**:
 
 
 ```text
@@ -2207,15 +2207,15 @@ U ovom poglavlju smo otkrili da postoje dve različite vrste dečijih (pod) klju
 
 
 
-## Izvođenje dečijih parova ključeva
+## Izvođenje podparova ključeva
 
 <chapterId>61c0807c-845b-5076-ad06-7f395b36adfd</chapterId>
 
 
-Izvođenje parova ključeva za decu u Bitcoin HD novčanicima oslanja se na hijerarhijsku strukturu koja omogućava generisanje velikog broja ključeva, dok organizuje ove parove u različite grupe kroz grane. Svaki par za decu izveden iz roditeljskog para može se koristiti ili direktno u *scriptPubKey* za zaključavanje bitkoina, ili kao početna tačka za generate više ključeva za decu, i tako dalje, kako bi se stvorilo stablo ključeva.
+Izvođenje parova ključeva za decu u Bitcoin HD novčanicima oslanja se na hijerarhijsku strukturu koja omogućava generisanje velikog broja ključeva, dok organizuje ove parove u različite grupe kroz grane. Svaki podpar izveden iz roditeljskog (nad)para može se koristiti ili direktno u *scriptPubKey* za zaključavanje bitkoina, ili kao početna tačka za generisanje više podključeva, i tako dalje, kako bi se stvorilo stablo ključeva.
 
 
-Sva ova izvođenja počinju sa glavnim ključem i glavnim lancem kodova, koji su prvi roditelji na dubinskom nivou 0. Oni su, na neki način, Adam i Eva ključeva vašeg Wallet, zajednički preci svih izvedenih ključeva.
+Sva ova izvođenja počinju sa glavnim ključem i glavnim kodom lanca, koji su prvi roditelji na dubinskom nivou 0. Oni su, na neki način, Adam i Eva ključeva vašeg novčanika, zajednički preci svih izvedenih ključeva.
 
 
 ![CYP201](assets/fr/048.webp)
@@ -2224,27 +2224,27 @@ Sva ova izvođenja počinju sa glavnim ključem i glavnim lancem kodova, koji su
 Hajde da istražimo kako ova deterministička derivacija funkcioniše.
 
 
-### Različite vrste derivacija ključeva za decu
+### Različite vrste derivacija podključeva
 
 
-Kao što smo ukratko pomenuli u prethodnom poglavlju, ključevi za decu su podeljeni u dve glavne vrste.
+Kao što smo ukratko pomenuli u prethodnom poglavlju, podključevi su podeljeni u dve glavne vrste.
 
 
-- Normal child keys** ($k_{\text{CHD}}^n, K_{\text{CHD}}^n$): Ovi se izvode iz proširenog javnog ključa ($K_{\text{PAR}}$), ili proširenog privatnog ključa ($k_{\text{PAR}}$), prvo izvodeći javni ključ.
-- Očvrsli ključevi za decu** ($k_{\text{CHD}}^h, K_{\text{CHD}}^h$): Ovi ključevi mogu biti izvedeni samo iz proširenog privatnog ključa ($k_{\text{PAR}}$) i stoga su nevidljivi posmatračima koji imaju samo prošireni javni ključ.
+- **Normalni podključevi** ($k_{\text{CHD}}^n, K_{\text{CHD}}^n$): Ovi se izvode iz proširenog javnog ključa ($K_{\text{PAR}}$), ili proširenog privatnog ključa ($k_{\text{PAR}}$), prvo izvodeći javni ključ.
+- **Ojačani podključevi** ($k_{\text{CHD}}^h, K_{\text{CHD}}^h$): Ovi ključevi mogu biti izvedeni samo iz proširenog privatnog ključa ($k_{\text{PAR}}$) i stoga su nevidljivi posmatračima koji imaju samo prošireni javni ključ.
 
 
-Svaki par ključeva deteta identifikovan je 32-bitnim **indeksom** (nazvanim $i$ u našim proračunima). Indeksi za normalne ključeve kreću se od $0$ do $2^{31}-1$, dok se oni za ojačane ključeve kreću od $2^{31}$ do $2^{32}-1$. Ovi brojevi se koriste za razlikovanje parova ključeva braće i sestara tokom derivacije. Naime, svaki roditeljski par ključeva mora biti sposoban da izvede više parova ključeva deteta. Ako bismo sistematski primenili isti proračun sa roditeljskih ključeva, svi dobijeni ključevi braće i sestara bi bili identični, što nije poželjno. Indeks tako uvodi promenljivu koja modifikuje proračun derivacije, omogućavajući da se svaki par braće i sestara razlikuje. Osim za specifičnu upotrebu u određenim protokolima i standardima derivacije, generalno počinjemo derivaciju prvog ključa deteta sa indeksom `0`, drugog sa indeksom `1`, i tako dalje.
+Svaki par podključeva identifikovan je 32-bitnim **indeksom** (nazvanim $i$ u našim proračunima). Indeksi za normalne ključeve kreću se od $0$ do $2^{31}-1$, dok se oni za ojačane ključeve kreću od $2^{31}$ do $2^{32}-1$. Ovi brojevi se koriste za razlikovanje parova ključeva braće i sestara tokom derivacije. Naime, svaki roditeljski par ključeva mora biti sposoban da izvede više parova ključeva deteta. Ako bismo sistematski primenili isti proračun sa roditeljskih ključeva, svi dobijeni ključevi braće i sestara bi bili identični, što nije poželjno. Indeks tako uvodi promenljivu koja modifikuje proračun derivacije, omogućavajući da se svaki par braće i sestara razlikuje. Osim za specifičnu upotrebu u određenim protokolima i standardima derivacije, generalno počinjemo derivaciju prvog ključa deteta sa indeksom `0`, drugog sa indeksom `1`, i tako dalje.
 
 
 ### Proces derivacije sa HMAC-SHA512
 
 
-Izvođenje svakog ključa deteta zasniva se na HMAC-SHA512 funkciji, koju smo diskutovali u Odeljku 2 o Hash funkcijama. Ona uzima dva ulaza: roditeljski lančani kod $C_{\text{PAR}}$, i konkatenaciju roditeljskog ključa (bilo javnog ključa $K_{\text{PAR}}$ ili privatnog ključa $k_{\text{PAR}}$, u zavisnosti od tipa željenog ključa deteta) sa indeksom. Izlaz HMAC-SHA512 je 512-bitni niz, podeljen na dva dela:
+Izvođenje svakog ključa deteta zasniva se na HMAC-SHA512 funkciji, koju smo diskutovali u Odeljku 2 o heš funkcijama. Ona uzima dva ulaza: roditeljski kod lanca$C_{\text{PAR}}$, i konkatenaciju roditeljskog ključa (bilo javnog ključa $K_{\text{PAR}}$ ili privatnog ključa $k_{\text{PAR}}$, u zavisnosti od tipa željenog ključa deteta) sa indeksom. Izlaz HMAC-SHA512 je 512-bitni niz, podeljen na dva dela:
 
 
-- Prvih 32 bajta** (ili $h_1$) koriste se za izračunavanje novog para potomaka.
-- Poslednjih 32 bajta** (ili $h_2$) služe kao novi lančani kod $C_{\text{CHD}}$ za par deteta.
+- **Prvih 32 bajta** (ili $h_1$) koriste se za izračunavanje novog para potomaka.
+- **Poslednjih 32 bajta** (ili $h_2$) služe kao novi kod lanca $C_{\text{CHD}}$ za par deteta.
 
 
 U svim našim proračunima, označiću $\text{Hash}$ kao izlaz funkcije HMAC-SHA512.
@@ -2368,7 +2368,7 @@ Možemo videti da normalna derivacija i pojačana derivacija funkcionišu na ist
 #### Izvođenje javnog ključa deteta iz javnog ključa roditelja
 
 
-Ako znamo samo roditeljski javni ključ $K_{\text{PAR}}$ i pridruženi lančani kod $C_{\text{PAR}}$, tj. prošireni javni ključ, moguće je izvesti dečije javne ključeve $K_{\text{CHD}}^n$, ali samo za normalne (neotvrdnute) dečije ključeve. Ovaj princip posebno omogućava praćenje kretanja računa u Bitcoin Wallet sa `xpub` (*samo za gledanje*).
+Ako znamo samo roditeljski javni ključ $K_{\text{PAR}}$ i pridruženi lančani kod $C_{\text{PAR}}$, tj. prošireni javni ključ, moguće je izvesti dečije javne ključeve $K_{\text{CHD}}^n$, ali samo za normalne (neojačane) dečije ključeve. Ovaj princip posebno omogućava praćenje kretanja računa u Bitcoin novčanicima sa `xpub` (*samo za gledanje*).
 
 
 Da bismo izvršili ovaj proračun, izračunaćemo $\text{Hash}$ sa indeksom $i < 2^{31}$ (normalna derivacija):
@@ -2435,8 +2435,8 @@ Evo šematskog prikaza celokupne izvedbe:
 Pitanje koje se može postaviti je kako normalni javni ključ deteta izveden iz roditeljskog javnog ključa može odgovarati normalnom privatnom ključu deteta izvedenom iz odgovarajućeg roditeljskog privatnog ključa. Ova veza je precizno osigurana svojstvima eliptičkih krivih. Naime, za izvođenje normalnog javnog ključa deteta, HMAC-SHA512 se primenjuje na isti način, ali se njegov izlaz koristi drugačije:
 
 
-   - Normal child private key**: $k_{\text{CHD}}^n = \text{parse256}(h_1) + k_{\text{PAR}} \mod n$
-   - Normal child public key**: $K_{\text{CHD}}^n = \text{parse256}(h_1) \cdot G + K_{\text{PAR}}$
+   - **Normalan privatni ključ deteta**: $k_{\text{CHD}}^n = \text{parse256}(h_1) + k_{\text{PAR}} \mod n$
+   - **Normalan javni ključ deteta**: $K_{\text{CHD}}^n = \text{parse256}(h_1) \cdot G + K_{\text{PAR}}$
 
 
 Zahvaljujući operacijama sabiranja i udvostručavanja na eliptičnoj krivi, obe metode proizvode dosledne rezultate: javni ključ izveden iz privatnog ključa deteta je identičan javnom ključu deteta izvedenom direktno iz javnog ključa roditelja.
@@ -2462,24 +2462,24 @@ K_{\text{PAR}} \rightarrow K_{\text{CHD}} & K_{\text{PAR}} & K_{\text{CHD}}^n & 
 $$
 
 
-Do sada ste naučili kako da kreirate osnovni Elements od HD Wallet: Mnemonic frazu, seed, a zatim master ključ i master chain kod. Takođe ste otkrili kako da izvedete parove ključeva za decu u ovom poglavlju. U sledećem poglavlju, istražićemo kako su ove izvedbe organizovane u Bitcoin novčanicima i koju strukturu treba pratiti da bi se konkretno dobile adrese za primanje, kao i parovi ključeva korišćeni u *scriptPubKey* i *scriptSig*.
+Do sada ste naučili kako da kreirate osnovne elemente HD novčanika: bezbednosnu frazu, seed, a zatim glavni ključ i glavni kod lanca. Takođe ste otkrili kako da izvedete parove ključeva za decu u ovom poglavlju. U sledećem poglavlju, istražićemo kako su ove izvedbe organizovane u Bitcoin novčanicima i koju strukturu treba pratiti da bi se konkretno dobile adrese za primanje, kao i parovi ključeva korišćeni u *scriptPubKey* i *scriptSig*.
 
 
-## Wallet Struktura i Putanje Izvoda
+## Struktura novčanika i putanje derivacije
 
 <chapterId>34e1bbda-67de-5493-b268-1fded8d67689</chapterId>
 
 
-Hijerarhijska struktura HD novčanika u Bitcoin omogućava organizaciju parova ključeva na različite načine. Ideja je da se iz glavnog privatnog ključa i glavnog lanca koda izvedu različiti nivoi dubine. Svaki dodati nivo odgovara derivaciji para ključeva deteta iz para ključeva roditelja.
+Hijerarhijska struktura HD novčanika u Bitcoin-u omogućava organizaciju parova ključeva na različite načine. Ideja je da se iz glavnog privatnog ključa i glavnog lanca koda izvedu različiti nivoi dubine. Svaki dodati nivo odgovara derivaciji para ključeva deteta iz para ključeva roditelja.
 
 
 Tokom vremena, različiti BIP-ovi su uveli standarde za ove putanje derivacije, s ciljem standardizacije njihove upotrebe u različitim softverima. Dakle, u ovom poglavlju ćemo otkriti značenje svakog nivoa derivacije u HD novčanicima, prema tim standardima.
 
 
-### Dubine derivacije HD Wallet
+### Dubine derivacije HD novčanicima
 
 
-Putanje derivacije su organizovane u slojeve dubine, počevši od dubine 0, koja predstavlja master ključ i master lančani kod, do slojeva podnivoa za derivaciju adresa koje se koriste za zaključavanje UTXO-a. BIP-ovi (*Bitcoin Improvement Proposals*) definišu standarde za svaki Layer, što pomaže u harmonizaciji praksi među različitim Wallet softverima za upravljanje.
+Putanje derivacije su organizovane u slojeve dubine, počevši od dubine 0, koja predstavlja master ključ i master lančani kod, do slojeva podnivoa za derivaciju adresa koje se koriste za zaključavanje UTXO-a. BIP-ovi (*Bitcoin Improvement Proposals*) definišu standarde za svaki nivo, što pomaže u harmonizaciji praksi među različitim softverima novčanika za upravljanje.
 
 
 Putanja derivacije, dakle, odnosi se na sekvencu indeksa korišćenih za izvođenje podključeva iz glavnog ključa.
@@ -2488,16 +2488,16 @@ Putanja derivacije, dakle, odnosi se na sekvencu indeksa korišćenih za izvođe
 **Dubina 0: Glavni ključ (BIP32)**
 
 
-Ova dubina odgovara glavnom privatnom ključu i glavnom lancu koda Wallet. Predstavlja se notacijom $m/$.
+Ova dubina odgovara glavnom privatnom ključu i glavnom lancu koda novčanika. Predstavlja se notacijom $m/$.
 
 
 **Dubina 1: Svrha (BIP43)**
 
 
-Svrha određuje logičku strukturu izvođenja. Na primer, P2WPKH Address će imati $/84'/$ na dubini 1 (prema BIP84), dok će P2TR Address imati $/86'/$ (prema BIP86). Ovaj Layer olakšava kompatibilnost između novčanika označavanjem brojeva indeksa koji odgovaraju BIP brojevima.
+Svrha određuje logičku strukturu izvođenja. Na primer, P2WPKH Address će imati $/84'/$ na dubini 1 (prema BIP84), dok će P2TR Address imati $/86'/$ (prema BIP86). Ovaj nivo olakšava kompatibilnost između novčanika označavanjem brojeva indeksa koji odgovaraju BIP brojevima.
 
 
-Drugim rečima, kada imate glavni ključ i glavni lančani kod, oni služe kao roditeljski par ključeva za izvođenje para dečijih ključeva. Indeks korišćen u ovoj izvedbi može biti, na primer, $/84'/$ ako je Wallet namenjen za korišćenje SegWit v0 tip skripti. Ovaj par ključeva je tada na dubini 1. Njegova uloga nije da zaključava bitkoine, već jednostavno da služi kao međutačka u hijerarhiji izvođenja.
+Drugim rečima, kada imate glavni ključ i glavni lančani kod, oni služe kao roditeljski par ključeva za izvođenje para dečijih ključeva. Indeks korišćen u ovoj izvedbi može biti, na primer, $/84'/$ ako je novčanik namenjen za korišćenje SegWit v0 tip skripti. Ovaj par ključeva je tada na dubini 1. Njegova uloga nije da zaključava bitkoine, već jednostavno da služi kao međutačka u hijerarhiji izvođenja.
 
 
 **Dubina 2: Tip valute (BIP44)**
@@ -2520,10 +2520,10 @@ Da bih vam dao druge primere, evo indeksa nekih valuta:
 **Dubina 3: Račun (BIP32)**
 
 
-Svaki Wallet može biti podeljen na nekoliko naloga, numerisanih od $2^{31}$, i predstavljenih na dubini 3 sa $/0'/$ za prvi nalog, $/1'/$ za drugi, i tako dalje. Generalno, kada se pominje prošireni ključ `xpub`, to se odnosi na ključeve na ovoj dubini derivacije.
+Svaki novčanik može biti podeljen na nekoliko naloga, numerisanih od $2^{31}$, i predstavljenih na dubini 3 sa $/0'/$ za prvi nalog, $/1'/$ za drugi, i tako dalje. Generalno, kada se pominje prošireni ključ `xpub`, to se odnosi na ključeve na ovoj dubini derivacije.
 
 
-Ova podela na različite naloge je opcionalna. Cilj joj je da pojednostavi organizaciju Wallet za korisnike. U praksi se često koristi samo jedan nalog, obično prvi po defaultu. Međutim, u nekim slučajevima, ako neko želi jasno da razlikuje parove ključeva za različite namene, ovo može biti korisno. Na primer, moguće je kreirati lični nalog i profesionalni nalog iz istog seed, sa potpuno različitim grupama ključeva od ove dubine derivacije.
+Ova podela na različite naloge je opcionalna. Cilj joj je da pojednostavi organizaciju novčanika za korisnike. U praksi se često koristi samo jedan nalog, obično prvi po defaultu. Međutim, u nekim slučajevima, ako neko želi jasno da razlikuje parove ključeva za različite namene, ovo može biti korisno. Na primer, moguće je kreirati lični nalog i profesionalni nalog iz istog seed-a, sa potpuno različitim grupama ključeva od ove dubine derivacije.
 
 
 **Dubina 4: Lanac (BIP32)**
@@ -2532,14 +2532,14 @@ Ova podela na različite naloge je opcionalna. Cilj joj je da pojednostavi organ
 Svaki nalog definisan na dubini 3 je zatim strukturisan u dva lanca:
 
 
-- Eksterni lanac**: U ovom lancu se izvode takozvane "javne" adrese. Ove adrese za primanje su namenjene za zaključavanje UTXO-a koji dolaze iz eksternih transakcija (odnosno, koji potiču iz potrošnje UTXO-a koji ne pripadaju vama). Jednostavno rečeno, ovaj eksterni lanac se koristi kad god želite da primite bitkoine. Kada kliknete na "*primi*" u vašem Wallet softveru, uvek vam se nudi Address iz eksternog lanca. Ovaj lanac je predstavljen parom ključeva izvedenih sa indeksom $/0/$.
-- Interni lanac (change)**: Ovaj lanac je rezervisan za primanje adresa koje zaključavaju bitkoine dolazeći od potrošnje UTXO-a koji pripadaju vama, drugim rečima, adrese za kusur. Identifikovan je indeksom $/1/$.
+- **Eksterni lanac**: U ovom lancu se izvode takozvane "javne" adrese. Ove adrese za primanje su namenjene za zaključavanje UTXO-a koji dolaze iz eksternih transakcija (odnosno, koji potiču iz potrošnje UTXO-a koji ne pripadaju vama). Jednostavno rečeno, ovaj eksterni lanac se koristi kad god želite da primite bitkoine. Kada kliknete na "*primi*" u vašem novčanik softveru, uvek vam se nudi adresa iz eksternog lanca. Ovaj lanac je predstavljen parom ključeva izvedenih sa indeksom $/0/$.
+- **Interni lanac (kusur)**: Ovaj lanac je rezervisan za primanje adresa koje zaključavaju bitkoine dolazeći od potrošnje UTXO-a koji pripadaju vama, drugim rečima, adrese za kusur. Identifikovan je indeksom $/1/$.
 
 
-**Dubina 5: Address Indeks (BIP32)**
+**Dubina 5: Indeks adrese (BIP32)**
 
 
-Konačno, dubina 5 predstavlja poslednji korak derivacije u Wallet. Iako je tehnički moguće nastaviti beskonačno, trenutni standardi se zaustavljaju ovde. Na ovoj konačnoj dubini, parovi ključeva koji će zapravo biti korišćeni za zaključavanje i otključavanje UTXO-a su izvedeni. Svaki indeks omogućava razlikovanje između parova ključeva braće i sestara: tako će prvi prijemni Address koristiti indeks $/0/$, drugi indeks $/1/$, i tako dalje.
+Konačno, dubina 5 predstavlja poslednji korak derivacije u novčaniku. Iako je tehnički moguće nastaviti beskonačno, trenutni standardi se zaustavljaju ovde. Na ovoj konačnoj dubini, parovi ključeva koji će zapravo biti korišćeni za zaključavanje i otključavanje UTXO-a su izvedeni. Svaki indeks omogućava razlikovanje između parova ključeva braće i sestara: tako će prva prijemna adresa koristiti indeks $/0/$, drugi indeks $/1/$, i tako dalje.
 
 
 ![CYP201](assets/fr/053.webp)
@@ -2562,7 +2562,7 @@ $$
 U heksadecimalnom formatu, ovo je `0x8000002C`.
 
 
-Sada kada smo razumeli glavne principe putanja derivacije, hajde da uzmemo primer! Evo putanje derivacije za Bitcoin koji prima Address:
+Sada kada smo razumeli glavne principe putanja derivacije, hajde da uzmemo primer! Evo putanje derivacije za Bitcoin primajuću adresu:
 
 
 
@@ -2578,49 +2578,49 @@ U ovom primeru:
 
 - $84'$ označava standard P2WPKH (SegWit v0);
 - $0'$ označava valutu Bitcoin na Mainnet;
-- $1'$ odgovara drugom nalogu u Wallet;
-- $0$ označava da je Address na spoljašnjem lancu;
-- $7$ označava 8. eksterni Address ovog naloga.
+- $1'$ odgovara drugom nalogu u novčaniku;
+- $0$ označava da je adresa na eksternom lancu;
+- $7$ označava 8. eksternu adrsu na ovom nalogu.
 
 
 ### Rezime strukture izvođenja
 
 
-| Depth | Description        | Standard Example                  |
+|Dubina | Opis               | Standardni primer                 |
 | ----- | ------------------ | --------------------------------- |
-| 0     | Master Key         | $m/$                              |
-| 1     | Purpose            | $/86'/$ (P2TR)                    |
-| 2     | Currency           | $/0'/$ (Bitcoin)                  |
-| 3     | Account            | $/0'/$ (First account)            |
-| 4     | Chain              | $/0/$ (external) or $/1/$ (change)|
-| 5     | Address Index      | $/0/$ (first address)             |
+| 0     | Glavni ključ       | $m/$                              |
+| 1     | Svrha              | $/86'/$ (P2TR)                    |
+| 2     | Valuta             | $/0'/$ (Bitcoin)                  |
+| 3     | Nalog              | $/0'/$ (First account)            |
+| 4     | Lanac              | $/0/$ (eksterni) ili $/1/$ (kusur)|
+| 5     | Indeks adrese      | $/0/$ (prva adresa)               |
 
-U sledećem poglavlju, otkrićemo šta su "*output script descriptors*", nedavno uvedena inovacija u Bitcoin Core koja pojednostavljuje bekap Bitcoin Wallet.
+U sledećem poglavlju, otkrićemo šta su "*output script descriptors*", nedavno uvedena inovacija u Bitcoin Core-u koja pojednostavljuje bekap Bitcoin novčanika.
 
 
 ## Izlazni opisi skripti
 
 <chapterId>e4f1c2d3-9b8a-4d3e-8f2a-7b6c5d4e3f2a</chapterId>
 
-Često vam se govori da je sama fraza Mnemonic dovoljna za povratak pristupa Wallet. U stvarnosti, stvari su malo složenije. U prethodnom poglavlju smo pogledali strukturu derivacije HD Wallet, i možda ste primetili da je ovaj proces prilično složen. Derivacioni putevi govore softveru koji pravac da prati kako bi izveo korisničke ključeve. Međutim, prilikom oporavka Bitcoin Wallet, ako neko ne zna ove puteve, sama fraza Mnemonic nije dovoljna. Ona omogućava dobijanje glavnog ključa i glavnog lanca koda, ali je tada potrebno znati indekse korišćene za dostizanje podređenih ključeva.
+Često vam se govori da je sama bezbednosna fraza dovoljna za povratak pristupa novčaniku. U stvarnosti, stvari su malo složenije. U prethodnom poglavlju smo pogledali strukturu derivacije HD novčanika, i možda ste primetili da je ovaj proces prilično složen. Derivacioni putevi govore softveru koji pravac da prati kako bi izveo korisničke ključeve. Međutim, prilikom oporavka Bitcoin novčanika, ako neko ne zna ove puteve, sama bezbednosna fraza nije dovoljna. Ona omogućava dobijanje glavnog ključa i glavnog lanca koda, ali je tada potrebno znati indekse korišćene za dostizanje podređenih ključeva.
 
 
-Teoretski, bilo bi neophodno sačuvati ne samo Mnemonic frazu našeg Wallet već i puteve do naloga koje koristimo. U praksi, često je moguće povratiti pristup dečijim ključevima bez ovih informacija, pod uslovom da su standardi ispoštovani. Testiranjem svakog standarda jedan po jedan, generalno je moguće povratiti pristup bitkoinima. Međutim, ovo nije zagarantovano i posebno je komplikovano za početnike. Takođe, sa diverzifikacijom tipova skripti i pojavom složenijih konfiguracija, ove informacije bi mogle postati teške za ekstrapolaciju, čime se ovi podaci pretvaraju u privatne informacije koje je teško povratiti grubom silom. Zbog toga je nedavno uvedena inovacija koja počinje da se integriše u vaš omiljeni Wallet softver: *output script descriptors*.
+Teoretski, bilo bi neophodno sačuvati ne samo bezbednosnu frazu našeg novčanika već i puteve do naloga koje koristimo. U praksi, često je moguće povratiti pristup dečijim ključevima bez ovih informacija, pod uslovom da su standardi ispoštovani. Testiranjem svakog standarda jedan po jedan, generalno je moguće povratiti pristup bitkoinima. Međutim, ovo nije zagarantovano i posebno je komplikovano za početnike. Takođe, sa diverzifikacijom tipova skripti i pojavom složenijih konfiguracija, ove informacije bi mogle postati teške za ekstrapolaciju, čime se ovi podaci pretvaraju u privatne informacije koje je teško povratiti silovitom pretragom. Zbog toga je nedavno uvedena inovacija koja počinje da se integriše u vaš omiljeni novčanik softver: *output script descriptors*.
 
 
 ### Šta je "descriptor"?
 
 
-"*output script descriptors*", ili jednostavno "*deskriptori*", su strukturirani izrazi koji u potpunosti opisuju izlazni skript (*scriptPubKey*) i pružaju sve neophodne informacije za praćenje transakcija povezanih sa određenim skriptom. Oni olakšavaju upravljanje ključevima u HD novčanicima nudeći standardizovan i potpun opis Wallet strukture i tipova adresa koje se koriste.
+"*output script descriptors*", ili jednostavno "*deskriptori*", su strukturirani izrazi koji u potpunosti opisuju izlazni skript (*scriptPubKey*) i pružaju sve neophodne informacije za praćenje transakcija povezanih sa određenom skriptom. Oni olakšavaju upravljanje ključevima u HD novčanicima nudeći standardizovan i potpun opis strukture novčanika i tipova adresa koje se koriste.
 
 
-Glavna prednost deskriptora leži u njihovoj sposobnosti da enkapsuliraju sve bitne informacije za vraćanje Wallet u jedan niz (pored fraze za oporavak). Čuvanjem deskriptora sa povezanim Mnemonic frazama, postaje moguće vratiti privatne ključeve preciznim poznavanjem njihove pozicije u hijerarhiji. Za Multisig novčanike, čija je rezervna kopija u početku bila složenija, deskriptor uključuje `xpub` svakog faktora, čime se osigurava mogućnost regenerisanja adresa u slučaju problema.
+Glavna prednost deskriptora leži u njihovoj sposobnosti da enkapsuliraju sve bitne informacije za oporavak novčanika u jedan niz (pored fraze za oporavak). Čuvanjem deskriptora sa povezanom bezbednosnim frazama, postaje moguće vratiti privatne ključeve preciznim poznavanjem njihove pozicije u hijerarhiji. Za višepotpisne novčanike, čija je rezervna kopija u početku bila složenija, deskriptor uključuje `xpub` svakog faktora, čime se osigurava mogućnost regenerisanja adresa u slučaju problema.
 
 
 ### Izgradnja deskriptora
 
 
-Opis se sastoji od nekoliko Elements:
+Opis se sastoji od nekoliko elemenata:
 
 
 - Skripte funkcije kao što su `pk` (*Pay-to-PubKey*), `pkh` (*Pay-to-PubKey-Hash*), `wpkh` (*Pay-to-Witness-PubKey-Hash*), `sh` (*Pay-to-Script-Hash*), `wsh` (*Pay-to-Witness-Script-Hash*), `tr` (*Pay-to-Taproot*), `multi` (*Multisignature*), i `sortedmulti` (*Multisignature with sorted keys*);
@@ -2629,7 +2629,7 @@ Opis se sastoji od nekoliko Elements:
 - Kontrolni zbir, prethodi mu znak Hash, za proveru integriteta deskriptora.
 
 
-Na primer, opis za P2WPKH (SegWit v0) Wallet mogao bi izgledati ovako:
+Na primer, opis za P2WPKH (SegWit v0) novčanik mogao bi izgledati ovako:
 
 
 ```text
@@ -2643,10 +2643,10 @@ U ovom opisu, funkcija derivacije `wpkh` označava tip skripte *Pay-to-Witness-P
 - `cdeab12f`: otisak glavnog ključa;
 - `84h`: što označava upotrebu BIP84 svrhe, namenjene za SegWit v0 adrese;
 - `0h`: što ukazuje da je to BTC valuta na Mainnet;
-- `0h`: što se odnosi na specifičan broj računa korišćen u Wallet.
+- `0h`: što se odnosi na specifičan broj naloga korišćen u novčaniku.
 
 
-Opis takođe uključuje prošireni javni ključ korišćen u ovom Wallet:
+Opis takođe uključuje prošireni javni ključ korišćen u ovom novčaniku:
 
 
 ```text
@@ -2654,13 +2654,13 @@ xpub6CUGRUonZSQ4TWtTMmzXdrXDtyPWKiKbERr4d5qkSmh5h17C1TjvMt7DJ9Qve4dRxm91CDv6cNfK
 ```
 
 
-Zatim, notacija `/<0;1>/*` specificira da deskriptor može generate adrese iz spoljašnjeg lanca (`0`) i unutrašnjeg lanca (`1`), sa džoker znakom (`*`) koji omogućava sekvencijalnu derivaciju više adresa na konfigurisani način, slično upravljanju "gap limitom" na tradicionalnom Wallet softveru.
+Zatim, notacija `/<0;1>/*` specificira da deskriptor može generisati adrese iz spoljašnjeg lanca (`0`) i unutrašnjeg lanca (`1`), sa džoker znakom (`*`) koji omogućava sekvencijalnu derivaciju više adresa na konfigurisani način, slično upravljanju "gap limitom" na tradicionalnom novčanik softveru.
 
 
 Konačno, `#jy0l7nr4` predstavlja kontrolni zbir za verifikaciju integriteta deskriptora.
 
 
-Sada znate sve o radu HD novčanika u Bitcoin i procesu derivacije parova ključeva. Međutim, u poslednjim poglavljima smo se ograničili na generisanje privatnih i javnih ključeva, bez bavljenja konstrukcijom adresa za primanje. Upravo će to biti tema sledećeg poglavlja!
+Sada znate sve o radu HD novčanika u Bitcoin-u i procesu derivacije parova ključeva. Međutim, u poslednjim poglavljima smo se ograničili na generisanje privatnih i javnih ključeva, bez bavljenja konstrukcijom adresa za primanje. Upravo će to biti tema sledećeg poglavlja!
 
 
 ## Adrese za primanje
@@ -2668,13 +2668,13 @@ Sada znate sve o radu HD novčanika u Bitcoin i procesu derivacije parova ključ
 <chapterId>ca80a89d-f8da-4e09-8c35-43179b65bced</chapterId>
 
 
-Primajuće adrese su delovi informacija ugrađeni u *scriptPubKey* kako bi zaključali novo kreirane UTXO-e. Jednostavno rečeno, Address služi za primanje bitkoina. Hajde da istražimo njihovo funkcionisanje u vezi sa onim što smo proučavali u prethodnim poglavljima.
+Primajuće adrese su delovi informacija ugrađeni u *scriptPubKey* kako bi zaključali novo kreirane UTXO-e. Jednostavno rečeno, adresa služi za primanje bitkoina. Hajde da istražimo njihovo funkcionisanje u vezi sa onim što smo proučavali u prethodnim poglavljima.
 
 
 ### Uloga Bitcoin adresa u skriptama
 
 
-Kao što je ranije objašnjeno, uloga transakcije je da prenese Ownership bitkoina sa ulaza na izlaze. Ovaj proces uključuje korišćenje UTXO-a kao ulaza dok se kreiraju novi UTXO-i kao izlazi. Ovi UTXO-i su osigurani skriptama, koje definišu neophodne uslove za otključavanje sredstava.
+Kao što je ranije objašnjeno, uloga transakcije je da prenese vlasništvo nad bitkoinima sa ulaza na izlaze. Ovaj proces uključuje korišćenje UTXO-a kao ulaza dok se kreiraju novi UTXO-vi kao izlazi. Ovi UTXO-i su osigurani skriptama, koje definišu neophodne uslove za otključavanje sredstava.
 
 
 Kada korisnik primi bitkoine, pošiljalac kreira UTXO i zaključava ga pomoću *scriptPubKey*. Ovaj skript sadrži pravila za otključavanje UTXO, obično navodeći potpise i javne ključeve koji su potrebni. Da bi potrošio ovaj UTXO u novoj transakciji, korisnik mora obezbediti tražene informacije putem *scriptSig*. Izvršenje *scriptSig* u kombinaciji sa *scriptPubKey* mora vratiti "true" ili `1`. Ako je ovaj uslov ispunjen, UTXO se može potrošiti za kreiranje novog UTXO, koji je sam zaključan novim *scriptPubKey*, i tako dalje.
@@ -2709,7 +2709,7 @@ OP_DUP OP_HASH160 OP_PUSHBYTES_20 <pubKeyHash> OP_EQUALVERIFY OP_CHECKSIG
 ```
 
 
-Kao što ćemo videti u ovom poglavlju, `<pubKeyHash>` zapravo predstavlja sadržaj primajućeg Address korišćenog za zaključavanje UTXO. Da bi se otključao ovaj *scriptPubKey*, potrebno je obezbediti *scriptSig* koji sadrži:
+Kao što ćemo videti u ovom poglavlju, `<pubKeyHash>` zapravo predstavlja sadržaj primajuće adrese korišćene za zaključavanje UTXO. Da bi se otključao ovaj *scriptPubKey*, potrebno je obezbediti *scriptSig* koji sadrži:
 
 
 ```text
@@ -2717,7 +2717,7 @@ Kao što ćemo videti u ovom poglavlju, `<pubKeyHash>` zapravo predstavlja sadr�
 ```
 
 
-U skriptnom jeziku, stek je *LIFO* ("*Last In, First Out*") struktura podataka koja se koristi za privremeno skladištenje Elements tokom izvršavanja skripte. Svaka operacija skripte manipuliše ovim stekom, gde se Elements može dodati (*push*) ili ukloniti (*pop*). Skripte koriste stek za evaluaciju izraza, skladištenje privremenih varijabli i upravljanje uslovima.
+U skriptnom jeziku, stek je *LIFO* ("*Last In, First Out*") struktura podataka koja se koristi za privremeno skladištenje elemenata tokom izvršavanja skripte. Svaka operacija skripte manipuliše ovim stekom, gde se element može dodati (*push*) ili ukloniti (*pop*). Skripte koriste stek za evaluaciju izraza, skladištenje privremenih varijabli i upravljanje uslovima.
 
 
 Izvršenje skripte koju sam upravo dao kao primer prati ovaj proces:
@@ -2745,21 +2745,21 @@ Izvršenje skripte koju sam upravo dao kao primer prati ovaj proces:
 
 
 
-- `OP_HASH160` vraća Hash javnog ključa koji je upravo dupliran:
+- `OP_HASH160` vraća heš javnog ključa koji je upravo dupliran:
 
 
 ![CYP201](assets/fr/058.webp)
 
 
 
-- `OP_PUSHBYTES_20 <pubKeyHash>` postavlja Bitcoin Address sadržan u *scriptPubKey* na stek:
+- `OP_PUSHBYTES_20 <pubKeyHash>` postavlja Bitcoin adresu sadržanu u *scriptPubKey* na stek:
 
 
 ![CYP201](assets/fr/059.webp)
 
 
 
-- `OP_EQUALVERIFY` proverava da li se heširani javni ključ poklapa sa datim primanjem Address:
+- `OP_EQUALVERIFY` proverava da li se heširani javni ključ poklapa sa datom primajućom adresom:
 
 
 ![CYP201](assets/fr/060.webp)
@@ -2779,37 +2779,37 @@ Izvršenje skripte koju sam upravo dao kao primer prati ovaj proces:
 ![CYP201](assets/fr/062.webp)
 
 
-Stoga, da rezimiramo, ovaj skript omogućava verifikaciju, uz pomoć digitalnog potpisa, da korisnik koji tvrdi da je vlasnik Ownership ovog UTXO i želi da ga potroši zaista poseduje privatni ključ povezan sa prijemnim Address korišćenim tokom kreiranja ovog UTXO.
+Stoga, da rezimiramo, ovaj skript omogućava verifikaciju, uz pomoć digitalnog potpisa, da korisnik koji tvrdi da je vlasnik ovog UTXO-a i želi da ga potroši zaista poseduje privatni ključ povezan sa prijemnom adresom korišćenom tokom kreiranja ovog UTXO.
 
 
 ### Različite vrste Bitcoin adresa
 
 
-Tokom evolucije Bitcoin, dodano je nekoliko standardnih modela skripti. Svaki od njih koristi različitu vrstu prijemnog Address. Ovde je pregled glavnih modela skripti dostupnih do danas:
+Tokom evolucije Bitcoin-a, dodato je nekoliko standardnih modela skripti. Svaki od njih koristi različitu vrstu prijemne adrese. Ovde je pregled glavnih modela skripti dostupnih do danas:
 
 
 **P2PK (*Pay-to-PubKey*)**:
 
 
-Ovaj model skripte je uveden u prvoj verziji Bitcoin od strane Satoshi Nakamoto. P2PK skripta zaključava bitkoine direktno koristeći sirovi javni ključ (dakle, nijedan prijemni Address se ne koristi sa ovim modelom). Njegova struktura je jednostavna: sadrži javni ključ i zahteva odgovarajući digitalni potpis za otključavanje sredstava. Ova skripta je deo "*Legacy*" standarda.
+Ovaj model skripte je uveden u prvoj verziji Bitcoin-a od strane Satoshi Nakamoto. P2PK skripta zaključava bitkoine direktno koristeći sirovi javni ključ (dakle, nijedna prijemna adresa se ne koristi sa ovim modelom). Njegova struktura je jednostavna: sadrži javni ključ i zahteva odgovarajući digitalni potpis za otključavanje sredstava. Ova skripta je deo "*Legacy*" standarda.
 
 
 **P2PKH (*Pay-to-PubKey-Hash*)**:
 
 
-Kao P2PK, P2PKH skripta je uvedena prilikom lansiranja Bitcoin. Za razliku od svog prethodnika, ona zaključava bitkoine koristeći Hash javnog ključa, umesto da direktno koristi sirovi javni ključ. *scriptSig* tada mora obezbediti javni ključ povezan sa primajućim Address, kao i važeći potpis. Adrese koje odgovaraju ovom modelu počinju sa `1` i kodirane su u *base58check*. Ova skripta takođe pripada "*Legacy*" standardu.
+Kao P2PK, P2PKH skripta je uvedena prilikom lansiranja Bitcoin-a. Za razliku od svog prethodnika, ona zaključava bitkoine koristeći heš javnog ključa, umesto da direktno koristi sirovi javni ključ. *scriptSig* tada mora obezbediti javni ključ povezan sa primajućom adresom, kao i važeći potpis. Adrese koje odgovaraju ovom modelu počinju sa `1` i kodirane su u *base58check*. Ova skripta takođe pripada "*Legacy*" standardu.
 
 
 **P2SH (*Pay-to-Script-Hash*)**:
 
 
-Uveden 2012. sa BIP16, model P2SH omogućava korišćenje Hash proizvoljnog skripta u *scriptPubKey*. Ovaj heširani skript, nazvan "*redeemscript*", sadrži uslove za otključavanje sredstava. Da bi se potrošio UTXO zaključan sa P2SH, potrebno je obezbediti *scriptSig* koji sadrži originalni *redeemscript* kao i potrebne podatke za njegovu validaciju. Ovaj model se posebno koristi za stare multisigove. Adrese povezane sa P2SH počinju sa `3` i kodirane su u *base58check*. Ovaj skript takođe pripada "*Legacy*" standardu.
+Uveden 2012. sa BIP16, model P2SH omogućava korišćenje heša proizvoljne skripte u *scriptPubKey*. Ovaj heširani skript, nazvan "*redeemscript*", sadrži uslove za otključavanje sredstava. Da bi se potrošio UTXO zaključan sa P2SH, potrebno je obezbediti *scriptSig* koji sadrži originalni *redeemscript* kao i potrebne podatke za njegovu validaciju. Ovaj model se posebno koristi za stare multisigove. Adrese povezane sa P2SH počinju sa `3` i kodirane su u *base58check*. Ovaj skript takođe pripada "*Legacy*" standardu.
 
 
 **P2WPKH (*Pay-to-Witness-PubKey-Hash*)**:
 
 
-Ovaj skript je sličan P2PKH, jer takođe zaključava bitkoine koristeći Hash javnog ključa. Međutim, za razliku od P2PKH, *scriptSig* je premešten u poseban deo nazvan "*Witness*". Ovo se ponekad naziva "*scriptWitness*" da označi skup koji obuhvata potpis i javni ključ. Svaki SegWit ulaz ima svoj *scriptWitness*, a kolekcija *scriptWitnesses* čini *Witness* polje transakcije. Ovo premeštanje podataka o potpisu je inovacija uvedena SegWit ažuriranjem, posebno usmerena na sprečavanje promenljivosti transakcija zbog ECDSA potpisa.
+Ovaj skript je sličan P2PKH, jer takođe zaključava bitkoine koristeći heš javnog ključa. Međutim, za razliku od P2PKH, *scriptSig* je premešten u poseban deo nazvan "*Witness*". Ovo se ponekad naziva "*scriptWitness*" da označi skup koji obuhvata potpis i javni ključ. Svaki SegWit ulaz ima svoj *scriptWitness*, a kolekcija *scriptWitnesses* čini *Witness* polje transakcije. Ovo premeštanje podataka o potpisu je inovacija uvedena SegWit ažuriranjem, posebno usmerena na sprečavanje izmenljivosti transakcija zbog ECDSA potpisa.
 
 P2WPKH koristi *bech32* kodiranje i uvek počinje sa `bc1q`. Ovaj tip skripte odgovara verziji 0 SegWit izlaza.
 
@@ -2817,7 +2817,7 @@ P2WPKH koristi *bech32* kodiranje i uvek počinje sa `bc1q`. Ovaj tip skripte od
 **P2WSH (*Pay-to-Witness-Script-Hash*)**:
 
 
-Model P2WSH je takođe uveden sa ažuriranjem SegWit u avgustu 2017. Slično modelu P2SH, zaključava bitkoine koristeći Hash skripte. Glavna razlika leži u načinu na koji se potpisi i skripte uključuju u transakciju. Da bi se potrošili bitkoini zaključani ovim tipom skripte, primalac mora obezbediti originalnu skriptu, zvanu *witnessScript* (ekvivalentno *redeemscript* u P2SH), zajedno sa neophodnim podacima za validaciju ove *witnessScript*. Ovaj mehanizam omogućava implementaciju složenijih uslova trošenja, kao što su multisigs.
+Model P2WSH je takođe uveden sa ažuriranjem SegWit u avgustu 2017. Slično modelu P2SH, zaključava bitkoine koristeći heš skripte. Glavna razlika leži u načinu na koji se potpisi i skripte uključuju u transakciju. Da bi se potrošili bitkoini zaključani ovim tipom skripte, primalac mora obezbediti originalnu skriptu, zvanu *witnessScript* (ekvivalentno *redeemscript* u P2SH), zajedno sa neophodnim podacima za validaciju ove *witnessScript*. Ovaj mehanizam omogućava implementaciju složenijih uslova trošenja, kao što su multisigs.
 
 
 P2WSH adrese koriste *bech32* kodiranje i uvek počinju sa `bc1q`. Ovaj skript takođe odgovara verziji 0 SegWit izlaza.
@@ -2826,14 +2826,14 @@ P2WSH adrese koriste *bech32* kodiranje i uvek počinju sa `bc1q`. Ovaj skript t
 **P2TR (*Pay-to-Taproot*)**:
 
 
-Model P2TR je uveden sa implementacijom Taproot u novembru 2021. Baziran je na Schnorr protokolu za kriptografsko agregiranje ključeva, kao i na Merkle Tree za alternativne skripte, nazvane MAST (*Merkelized Alternative Script Tree*). Za razliku od drugih tipova skripti, gde su uslovi trošenja javno izloženi (bilo pri prijemu ili pri trošenju), P2TR omogućava skrivanje kompleksnih skripti iza jednog, prividnog javnog ključa.
+Model P2TR je uveden sa implementacijom Taproot u novembru 2021. Baziran je na Schnorr protokolu za kriptografsko agregiranje ključeva, kao i na Merkle Tree-u za alternativne skripte, nazvane MAST (*Merkelized Alternative Script Tree*). Za razliku od drugih tipova skripti, gde su uslovi trošenja javno izloženi (bilo pri prijemu ili pri trošenju), P2TR omogućava skrivanje kompleksnih skripti iza jednog, prividnog javnog ključa.
 
 
 Tehnički, P2TR skripta zaključava bitkoine na jedinstveni Schnorr javni ključ, označen kao $Q$. Ovaj ključ $Q$ je zapravo agregat javnog ključa $P$ i javnog ključa $M$, pri čemu se potonji izračunava iz Merkle Root liste *scriptPubKey*. Bitkoini zaključani ovom vrstom skripte mogu se potrošiti na dva načina:
 
 
 - Objavljivanjem potpisa za javni ključ $P$ (*putanja ključa*).
-- Ispunjavanjem jednog od skripti sadržanih u Merkle Tree (*putanja skripte*).
+- Ispunjavanjem jednog od skripti sadržanih u Merkle Tree-u (*putanja skripte*).
 
 
 P2TR tako nudi veliku fleksibilnost, jer omogućava zaključavanje bitkoina bilo sa jedinstvenim javnim ključem, sa nekoliko skripti po izboru, ili oba istovremeno. Prednost ove Merkle Tree strukture je da se tokom transakcije otkriva samo skripta koja se koristi za trošenje, dok sve druge alternativne skripte ostaju tajne.
@@ -2842,32 +2842,32 @@ P2TR tako nudi veliku fleksibilnost, jer omogućava zaključavanje bitkoina bilo
 ![CYP201](assets/fr/063.webp)
 
 
-P2TR odgovara verziji 1 SegWit izlaza, što znači da su potpisi za P2TR ulaze pohranjeni u *Witness* sekciji transakcije, a ne u *scriptSig*. P2TR adrese koriste *bech32m* kodiranje i počinju sa `bc1p`, ali su prilično jedinstvene jer ne koriste Hash funkciju za svoju konstrukciju. Zapravo, one direktno predstavljaju javni ključ $Q$ koji je jednostavno formatiran sa metapodacima. Dakle, to je skript model blizak P2PK.
+P2TR odgovara verziji 1 SegWit izlaza, što znači da su potpisi za P2TR ulaze pohranjeni u *Witness* sekciji transakcije, a ne u *scriptSig*. P2TR adrese koriste *bech32m* kodiranje i počinju sa `bc1p`, ali su prilično jedinstvene jer ne koriste heš funkciju za svoju konstrukciju. Zapravo, one direktno predstavljaju javni ključ $Q$ koji je jednostavno formatiran sa metapodacima. Dakle, to je skript model blizak P2PK.
 
 
 Sada kada smo pokrili teoriju, pređimo na praksu! U sledećem poglavlju, predlažem izvođenje i SegWit v0 Address i SegWit v1 Address iz para ključeva.
 
 
-## Address Izvod
+## Izvođenje adresa
 
 <chapterId>3ebdc750-4135-4881-b07e-08965941b93e</chapterId>
 
 
-Hajde da zajedno istražimo kako da generate primanje Address iz para ključeva lociranih, na primer, na dubini 5 HD Wallet. Ovaj Address se zatim može koristiti u Wallet softveru za zaključavanje UTXO.
+Hajde da zajedno istražimo kako da generišete adresu za primanje iz para ključeva lociranih, na primer, na dubini 5 HD novčanika. Ova adresa se zatim može koristiti u novčanik softveru za zaključavanje UTXO-a.
 
 
-Pošto proces generisanja Address zavisi od usvojenog modela skripte, fokusirajmo se na dva specifična slučaja: generisanje SegWit v0 Address u P2WPKH i SegWit v1 Address u P2TR. Ove dve vrste adresa pokrivaju veliku većinu današnjih upotreba.
+Pošto proces generisanja adresa zavisi od usvojenog modela skripte, fokusirajmo se na dva specifična slučaja: generisanje SegWit v0 adrese u P2WPKH i SegWit v1 adrese u P2TR. Ove dve vrste adresa pokrivaju veliku većinu današnjih upotreba.
 
 
 ### Kompresija javnog ključa
 
 
-Nakon izvođenja svih koraka derivacije od glavnog ključa do dubine 5 koristeći odgovarajuće indekse, dobijamo par ključeva ($k$, $K$) sa $K = k \cdot G$. Iako je moguće koristiti ovaj javni ključ kao takav za zaključavanje sredstava sa P2PK standardom, to nije naš cilj ovde. Umesto toga, cilj nam je da kreiramo Address u P2WPKH u prvom slučaju, a zatim u P2TR za drugi primer.
+Nakon izvođenja svih koraka derivacije od glavnog ključa do dubine 5 koristeći odgovarajuće indekse, dobijamo par ključeva ($k$, $K$) sa $K = k \cdot G$. Iako je moguće koristiti ovaj javni ključ kao takav za zaključavanje sredstava sa P2PK standardom, to nije naš cilj ovde. Umesto toga, cilj nam je da kreiramo adresu u P2WPKH u prvom slučaju, a zatim u P2TR za drugi primer.
 
 
 Prvi korak je kompresija javnog ključa $K$. Da bismo dobro razumeli ovaj proces, prvo se prisetimo nekih osnovnih pojmova obrađenih u delu 3.
 
-Javni ključ u Bitcoin je tačka $K$ koja se nalazi na eliptičnoj krivi. Predstavljen je u obliku $(x, y)$, gde su $x$ i $y$ koordinate tačke. U svom nekomprimovanom obliku, ovaj javni ključ meri 520 bita: 8 bita za prefiks (početna vrednost `0x04`), 256 bita za $x$ koordinatu i 256 bita za $y$ koordinatu.
+Javni ključ u Bitcoin-u je tačka $K$ koja se nalazi na eliptičnoj krivi. Predstavljen je u obliku $(x, y)$, gde su $x$ i $y$ koordinate tačke. U svom nekompresovanom obliku, ovaj javni ključ meri 520 bita: 8 bita za prefiks (početna vrednost `0x04`), 256 bita za $x$ koordinatu i 256 bita za $y$ koordinatu.
 
 Međutim, eliptičke krive imaju svojstvo simetrije u odnosu na x-osu: za datu $x$ koordinatu, postoje samo dve moguće vrednosti za $y$: $y$ i $-y$. Ove dve tačke se nalaze sa obe strane x-ose. Drugim rečima, ako znamo $x$, dovoljno je odrediti da li je $y$ paran ili neparan da bismo identifikovali tačnu tačku na krivi.
 
@@ -2878,7 +2878,7 @@ Međutim, eliptičke krive imaju svojstvo simetrije u odnosu na x-osu: za datu $
 Da bi se kompresovao javni ključ, kodira se samo $x$, koji zauzima 256 bita, i dodaje se prefiks da bi se specificirala parnost $y$. Ova metoda smanjuje veličinu javnog ključa na 264 bita umesto početnih 520. Prefiks `0x02` označava da je $y$ paran, a prefiks `0x03` označava da je $y$ neparan.
 
 
-Hajde da uzmemo primer da bismo bolje razumeli, sa sirovim javnim ključem u nekomprimovanoj reprezentaciji:
+Hajde da uzmemo primer da bismo bolje razumeli, sa nekodiranim javnim ključem u nekompresovanoj reprezentaciji:
 
 
 ```text
@@ -2906,13 +2906,13 @@ K = 03678afdb0fe5548271967f1a67130b7105cd6a828e03909a67962e0ea1f61deb6
 
 Ova operacija se primenjuje na sve modele skripti zasnovane na ECDSA, to jest, sve osim P2TR koji koristi Schnorr. U slučaju Schnorr-a, kao što je objašnjeno u delu 3, zadržavamo samo vrednost $x$, bez dodavanja prefiksa za označavanje pariteta $y$, za razliku od ECDSA. Ovo je omogućeno činjenicom da je jedinstveni paritet proizvoljno izabran za sve ključeve. Ovo omogućava blago smanjenje prostora za skladištenje potrebnog za javne ključeve.
 
-### Izvod SegWit v0 (bech32) Address
+### Izvođenje SegWit v0 (bech32) adrese
 
 
-Sada kada smo dobili naš komprimovani javni ključ, možemo izvesti SegWit v0 primajući Address iz njega.
+Sada kada smo dobili naš kompresovani javni ključ, možemo izvesti SegWit v0 primajuću adresu iz njega.
 
 
-Prvi korak je primena HASH160 Hash funkcije na kompresovani javni ključ. HASH160 je kompozicija dve uzastopne Hash funkcije: SHA256, praćena sa RIPEMD160:
+Prvi korak je primena HASH160 heš funkcije na kompresovani javni ključ. HASH160 je kompozicija dve uzastopne heš funkcije: SHA256, praćena sa RIPEMD160:
 
 
 
@@ -2939,10 +2939,10 @@ RIPEMD160(SHA256(K)) = 9F81322CC88622CA4CCB2A52A21E2888727AA535
 ```
 
 
-Dobili smo 160-bitni Hash javnog ključa, koji čini ono što se naziva payload Address. Ovaj payload predstavlja centralni i najvažniji deo Address. Takođe se koristi u *scriptPubKey* za zaključavanje UTXO-a.
+Dobili smo 160-bitni heš javnog ključa, koji čini ono što se naziva payload adrese. Ovaj payload predstavlja centralni i najvažniji deo adrese. Takođe se koristi u *scriptPubKey* za zaključavanje UTXO-a.
 
 
-Međutim, da bi ovaj payload bio lakše upotrebljiv za ljude, dodaje mu se metapodatak. Sledeći korak uključuje kodiranje ovog Hash u grupe od 5 bita u decimalnom obliku. Ova decimalna transformacija će biti korisna za konverziju u *bech32*, koji se koristi za adrese posle SegWit. Binarnom Hash od 160 bita se tako deli na 32 grupe od po 5 bita:
+Međutim, da bi ovaj payload bio lakše upotrebljiv za ljude, dodaje mu se metapodatak. Sledeći korak uključuje kodiranje ovog heša u grupe od 5 bita u decimalnom obliku. Ova decimalna transformacija će biti korisna za konverziju u *bech32*, koji se koristi za adrese posle SegWit. Binarnom hešu od 160 bita se tako deli na 32 grupe od po 5 bita:
 
 
 
@@ -2997,19 +2997,19 @@ HASH = 19 30 00 19 04 11 06 08 16 24 17 12 20 19 06 11 05 09 09 10 04 07 17 08 1
 ```
 
 
-Kada je Hash kodiran u grupe od 5 bita, kontrolni zbir se dodaje na Address. Ovaj kontrolni zbir se koristi za proveru da li teret Address nije izmenjen tokom skladištenja ili prenosa. Na primer, omogućava softveru Wallet da osigura da niste napravili grešku prilikom unosa primajućeg Address. Bez ove provere, mogli biste slučajno poslati bitkoine na pogrešan Address, što bi rezultiralo trajnim gubitkom sredstava, jer ne posedujete povezani javni ili privatni ključ. Stoga, kontrolni zbir je zaštita protiv ljudskih grešaka.
+Kada je heš kodiran u grupe od 5 bita, kontrolni zbir se dodaje na adresu. Ovaj kontrolni zbir se koristi za proveru da li payload adrese nije izmenjen tokom skladištenja ili prenosa. Na primer, omogućava softveru novčanika da osigura da niste napravili grešku prilikom unosa primajuće adrese. Bez ove provere, mogli biste slučajno poslati bitkoine na pogrešnu adresu, što bi rezultiralo trajnim gubitkom sredstava, jer ne posedujete povezani javni ili privatni ključ. Stoga, kontrolni zbir je zaštita protiv ljudskih grešaka.
 
 
 Za stare Bitcoin *Legacy* adrese, kontrolni zbir je jednostavno izračunat od početka Address Hash sa HASH256 funkcijom. Sa uvođenjem SegWit i *bech32* formata, sada se koriste BCH kodovi (*Bose, Ray-Chaudhuri, i Hocquenghem*). Ovi kodovi za ispravljanje grešaka koriste se za otkrivanje i ispravljanje grešaka u sekvencama podataka. Oni osiguravaju da prenesene informacije stignu netaknute na svoje odredište, čak i u slučaju manjih izmjena. BCH kodovi se koriste u mnogim oblastima, kao što su SSD-ovi, DVD-ovi i QR kodovi. Na primer, zahvaljujući ovim BCH kodovima, delimično zaklonjen QR kod i dalje može biti pročitan i dekodiran.
 
 
-U kontekstu Bitcoin, BCH kodovi nude bolji kompromis između veličine i sposobnosti detekcije grešaka u poređenju sa jednostavnim Hash funkcijama korišćenim za *Legacy* adrese. Međutim, u Bitcoin, BCH kodovi se koriste samo za detekciju grešaka, ne i za ispravljanje. Dakle, Wallet softver će signalizirati netačan prijem Address ali ga neće automatski ispraviti. Ovo ograničenje je namerno: omogućavanje automatskog ispravljanja bi smanjilo sposobnost detekcije grešaka.
+U kontekstu Bitcoin-a, BCH kodovi nude bolji kompromis između veličine i sposobnosti detekcije grešaka u poređenju sa jednostavnim heš funkcijama korišćenim za *Legacy* adrese. Međutim, u Bitcoin-u, BCH kodovi se koriste samo za detekciju grešaka, ne i za ispravljanje. Dakle, softver novčanik će signalizirati netačnu prijemnu adresu ali ga neće automatski ispraviti. Ovo ograničenje je namerno: omogućavanje automatskog ispravljanja bi smanjilo sposobnost detekcije grešaka.
 
 
-Da bismo izračunali kontrolni zbir sa BCH kodovima, potrebno je pripremiti nekoliko Elements.
+Da bismo izračunali kontrolni zbir sa BCH kodovima, potrebno je pripremiti nekoliko elemenata.
 
 
-- HRP (*Human Readable Part*)**: Za Bitcoin Mainnet, HRP je `bc`;
+- **HRP (*Human Readable Part*)**: Za Bitcoin Mainnet, HRP je `bc`;
 
 
 HRP mora biti proširen razdvajanjem svakog karaktera na dva dela:
@@ -3034,15 +3034,15 @@ Sa separatorom `0` između dva karaktera, HRP ekstenzija je stoga:
 
 
 
-- Verzija svedoka**: Za SegWit verziju 0, to je `00`;
+- **Verzija svedoka**: Za SegWit verziju 0, to je `00`;
 
 
 
-- Nosač**: Decimalne vrednosti javnog ključa Hash;
+- **Payload**: Decimalne vrednosti heša javnog ključa;
 
 
 
-- Rezervacija za kontrolni zbir**: Dodajemo 6 nula `[0, 0, 0, 0, 0, 0]` na kraj niza.
+- **Rezervacija za kontrolni zbir**: Dodajemo 6 nula `[0, 0, 0, 0, 0, 0]` na kraj niza.
 
 
 Svi podaci kombinovani za unos u program za izračunavanje kontrolnog zbira su sledeći:
@@ -3066,12 +3066,12 @@ Izračun kontrolnog zbira je prilično složen. Uključuje aritmetiku polinoma u
 ```
 
 
-Sada možemo konstruisati prijemni Address konkatenacijom sledećih Elements redosledom:
+Sada možemo konstruisati prijemnu adresu konkatenacijom redom sledećih elemenata:
 
 
-- SegWit verzija**: `00`
-- Payload**: Javni ključ Hash
-- The checksum**: Vrednosti dobijene u prethodnom koraku (`10 16 11 04 13 18`)
+- **SegWit verzija**: `00`
+- **Payload**: heš javnog ključa 
+- **Kontrolni zbir**: Vrednosti dobijene u prethodnom koraku (`10 16 11 04 13 18`)
 
 
 Ovo nam daje u decimalnom:
@@ -3108,7 +3108,7 @@ $$
 Da biste konvertovali vrednost u _bech32_ karakter koristeći ovu tabelu, jednostavno pronađite vrednosti u prvoj koloni i prvom redu koje, kada se saberu, daju željeni rezultat. Zatim, preuzmite odgovarajući karakter. Na primer, decimalni broj `19` će biti konvertovan u slovo `n`, jer $19 = 16 + 3$.
 
 
-Mapiranjem svih naših vrednosti, dobijamo sledeće Address:
+Mapiranjem svih naših vrednosti, dobijamo sledeću adresu:
 
 
 ```
@@ -3116,7 +3116,7 @@ qn7qnytxgsc3v5nxt9ff2y83g3pe84ff42stydj
 ```
 
 
-Sve što preostaje je da dodate HRP `bc`, što označava da je to Address za Bitcoin Mainnet, kao i separator `1`, kako biste dobili kompletan prijem Address:
+Sve što preostaje je da dodate HRP `bc`, što označava da je to adresa za Bitcoin Mainnet, kao i separator `1`, kako biste dobili kompletnu prijemnu adresu:
 
 
 ```
@@ -3133,16 +3133,16 @@ Da rezimiramo, evo procesa izvođenja:
 ![CYP201](assets/fr/065.webp)
 
 
-Ovo je način kako izvesti P2WPKH (SegWit v0) primajući Address iz para ključeva. Sada pređimo na P2TR (SegWit v1 / Taproot) adrese i otkrijmo njihov proces generisanja.
+Ovo je način kako izvesti P2WPKH (SegWit v0) primajuću adresu iz para ključeva. Sada pređimo na P2TR (SegWit v1 / Taproot) adrese i otkrijmo njihov proces generisanja.
 
 
-### Derivacija SegWit v1 (bech32m) Address
+### Derivacija SegWit v1 (bech32m) adresa
 
 
 Za Taproot adrese, proces generisanja se malo razlikuje. Hajde da pogledamo ovo zajedno!
 
 
-Od koraka kompresije javnog ključa, pojavljuje se prva razlika u poređenju sa ECDSA: javni ključevi korišćeni za Schnorr u Bitcoin su predstavljeni samo njihovom apscisom ($x$). Dakle, nema prefiksa, a kompresovani ključ meri tačno 256 bita.
+Od koraka kompresije javnog ključa, pojavljuje se prva razlika u poređenju sa ECDSA: javni ključevi korišćeni za Schnorr u Bitcoin-u su predstavljeni samo njihovom apscisom ($x$). Dakle, nema prefiksa, a kompresovani ključ meri tačno 256 bita.
 
 Kao što smo videli u prethodnom poglavlju, skripta P2TR zaključava bitkoine na jedinstvenom Schnorr javnom ključu, označenom sa $Q$. Ovaj ključ $Q$ je agregat dva javna ključa: $P$, glavnog internog javnog ključa, i $M$, javnog ključa izvedenog iz Merkle Root liste _scriptPubKey_. Bitkoini zaključani ovim tipom skripte mogu se potrošiti na dva načina:
 
@@ -3152,7 +3152,7 @@ Kao što smo videli u prethodnom poglavlju, skripta P2TR zaključava bitkoine na
 - Zadovoljavajući jedan od skripti uključenih u Merkle Tree (_putanja skripte_).
 
 
-U stvarnosti, ova dva ključa nisu zaista "agregirana." Ključ $P$ je umesto toga prilagođen ključem $M$. U kriptografiji, "prilagoditi" javni ključ znači modifikovati ovaj ključ primenom aditivne vrednosti koja se zove "prilagodba." Ova operacija omogućava da modifikovani ključ ostane kompatibilan sa originalnim privatnim ključem i prilagodbom. Tehnički, prilagodba je skalarna vrednost $t$ koja se dodaje početnom javnom ključu. Ako je $P$ originalni javni ključ, prilagođeni ključ postaje:
+U stvarnosti, ova dva ključa nisu zaista "agregirana." Ključ $P$ je umesto toga izmenjen ključem $M$. U kriptografiji, "prilagoditi (izmeniti)" javni ključ znači modifikovati ovaj ključ primenom aditivne vrednosti koja se zove "prilagodba (tweak)." Ova operacija omogućava da modifikovani ključ ostane kompatibilan sa originalnim privatnim ključem i prilagodbom. Tehnički, prilagodba je skalarna vrednost $t$ koja se dodaje početnom javnom ključu. Ako je $P$ originalni javni ključ, prilagođeni ključ postaje:
 
 
 
@@ -3166,7 +3166,7 @@ $$
 Gde je $G$ generator eliptičke krive koja se koristi. Ova operacija proizvodi novi javni ključ izveden iz originalnog ključa, zadržavajući kriptografske osobine koje omogućavaju njegovu upotrebu.
 
 
-Ako ne treba da dodajete alternativne skripte (trošenje isključivo putem _ključne putanje_), možete generate Taproot Address uspostavljen isključivo na javnom ključu prisutnom na dubini 5 vašeg Wallet. U tom slučaju, potrebno je kreirati skriptu koja se ne može potrošiti za _putanju skripte_, kako bi se ispunili zahtevi strukture. Tweak $t$ se zatim izračunava primenom označene Hash funkcije, **`TapTweak`**, na interni javni ključ $P$:
+Ako ne treba da dodajete alternativne skripte (trošenje isključivo putem _ključne putanje_), možete generisati Taproot adresu generisanu isključivo na javnom ključu prisutnom na dubini 5 vašeg novčanika. U tom slučaju, potrebno je kreirati skriptu koja se ne može potrošiti za _putanju skripte_, kako bi se ispunili zahtevi strukture. Prilagodba $t$ se zatim izračunava primenom označene heš funkcije, **`TapTweak`**, na interni javni ključ $P$:
 
 
 
@@ -3181,11 +3181,11 @@ gde:
 
 
 
-- $\text{H}_{\text{TapTweak}}$** je SHA256 Hash funkcija označena oznakom `TapTweak`. Ako niste upoznati sa time šta je označena Hash funkcija, pozivam vas da pogledate poglavlje 3.3;
+- $\text{H}_{\text{TapTweak}}$** je SHA256 Hash funkcija označena oznakom `TapTweak`. Ako niste upoznati sa time šta je označena heš funkcija, pozivam vas da pogledate poglavlje 3.3;
 - $P$ je interni javni ključ, predstavljen u komprimovanom formatu od 256 bita, koristeći samo $x$ koordinatu.
 
 
-Javni ključ Taproot $Q$ se zatim izračunava dodavanjem prilagođavanja $t$, pomnoženog sa generatorom eliptičke krive $G$, internom javnom ključu $P$:
+Javni ključ Taproot $Q$ se zatim izračunava dodavanjem prilagodbe $t$, pomnoženog sa generatorom eliptičke krive $G$, internom javnom ključu $P$:
 
 
 
@@ -3196,22 +3196,22 @@ Q = P + t \cdot G
 $$
 
 
-Jednom kada se dobije javni ključ Taproot $Q$, možemo generate odgovarajući prijemni Address. Za razliku od drugih formata, Taproot adrese nisu uspostavljene na Hash javnog ključa. Stoga se ključ $Q$ ubacuje direktno u Address, na sirov način.
+Jednom kada se dobije javni ključ Taproot $Q$, možemo generisati odgovarajuću prijemnu adresu. Za razliku od drugih formata, Taproot adrese nisu uspostavljene na hešu javnog ključa. Stoga se ključ $Q$ ubacuje direktno u adresu, na sirov način.
 
 
-Da bismo započeli, izdvajamo $x$ koordinatu tačke $Q$ kako bismo dobili komprimovani javni ključ. Na ovom payload-u se izračunava kontrolna suma koristeći BCH kodove, kao kod SegWit v0 adresa. Međutim, program korišćen za Taproot adrese se malo razlikuje. Naime, nakon uvođenja _bech32_ formata sa SegWit, otkriven je bug: kada je poslednji karakter Address `p`, umetanje ili uklanjanje `q` neposredno pre ovog `p` ne čini kontrolnu sumu nevažećom. Iako ovaj bug nema posledice na SegWit v0 (zahvaljujući ograničenju veličine), mogao bi predstavljati problem u budućnosti. Ovaj bug je stoga ispravljen za Taproot adrese, a novi ispravljeni format se zove "_bech32m_".
+Da bismo započeli, izdvajamo $x$ koordinatu tačke $Q$ kako bismo dobili kompresovani javni ključ. Na ovom payload-u se izračunava kontrolna suma koristeći BCH kodove, kao kod SegWit v0 adresa. Međutim, program korišćen za Taproot adrese se malo razlikuje. Naime, nakon uvođenja _bech32_ formata sa SegWit, otkriven je bug: kada je poslednji karakter Address `p`, umetanje ili uklanjanje `q` neposredno pre ovog `p` ne čini kontrolnu sumu nevažećom. Iako ovaj bug nema posledice na SegWit v0 (zahvaljujući ograničenju veličine), mogao bi predstavljati problem u budućnosti. Ovaj bug je stoga ispravljen za Taproot adrese, a novi ispravljeni format se zove "_bech32m_".
 
 
-Taproot Address se generiše enkodiranjem $x$ koordinate od $Q$ u _bech32m_ formatu, sa sledećim Elements:
+Taproot adresa se generiše enkodiranjem $x$ koordinate od $Q$ u _bech32m_ formatu, sa sledećim elementima:
 
 
 
-- HRP (_Human Readable Part_)**: `bc`, da označi glavnu Bitcoin mrežu;
-- Verzija**: `1` da označi Taproot / SegWit v1;
-- Kontrolni zbir**.
+- **HRP (_Human Readable Part_)**: `bc`, da označi glavnu Bitcoin mrežu;
+- **Verzija**: `1` da označi Taproot / SegWit v1;
+- **Kontrolni zbir**.
 
 
-Konačni Address će stoga imati format:
+Konačni adresa će stoga imati format:
 
 
 ```
@@ -3219,10 +3219,10 @@ bc1p[Qx][checksum]
 ```
 
 
-S druge strane, ako želite dodati alternativne skripte pored trošenja sa internim javnim ključem (_script path_), izračunavanje primanja Address će biti malo drugačije. Trebaće da uključite Hash alternativnih skripti u izračunavanje prilagođavanja. U Taproot, svaka alternativna skripta, koja se nalazi na kraju Merkle Tree, naziva se "list".
+S druge strane, ako želite dodati alternativne skripte pored trošenja sa internim javnim ključem (_script path_), izračunavanje adrese za primanje će biti malo drugačije. Trebaće da uključite heš alternativnih skripti u izračunavanje prilagođavanja. U Taproot, svaka alternativna skripta, koja se nalazi na kraju Merkle Tree, naziva se "list".
 
 
-Kada su različiti alternativni skripti napisani, morate ih pojedinačno proći kroz označenu Hash funkciju `TapLeaf`, praćenu nekim metapodacima:
+Kada su različite alternativne skripte napisane, morate ih pojedinačno proći kroz označenu heš funkciju `TapLeaf`, praćenu nekim metapodacima:
 
 
 
@@ -3242,7 +3242,7 @@ Sa:
 - $S$: skripta.
 
 
-Različiti heševi skripti ($\text{h}_{\text{leaf}}$) prvo se sortiraju u leksikografskom redosledu. Zatim se konkateniraju u parovima i prosleđuju kroz označenu Hash funkciju `TapBranch`. Ovaj proces se ponavlja iterativno kako bi se, korak po korak, izgradio Merkle Tree:
+Različiti heševi skripti ($\text{h}_{\text{leaf}}$) prvo se sortiraju u leksikografskom redosledu. Zatim se konkateniraju u parovima i prosleđuju kroz označenu heš funkciju `TapBranch`. Ovaj proces se ponavlja iterativno kako bi se, korak po korak, izgradio Merkle Tree:
 
 $$
 
@@ -3251,13 +3251,13 @@ $$
 $$
 
 
-Zatim nastavljamo spajanjem rezultata dva po dva, propuštajući ih kroz označenu funkciju Hash `TapBranch` na svakom koraku, sve dok ne dobijemo Merkle Tree koren:
+Zatim nastavljamo spajanjem rezultata dva po dva, propuštajući ih kroz označenu heš funkciju `TapBranch` na svakom koraku, sve dok ne dobijemo Merkle Tree koren:
 
 
 ![CYP201](assets/fr/066.webp)
 
 
-Jednom kada se izračuna Merkle Root $h_{\text{root}}$, možemo izračunati prilagodbu. Za ovo, konkatenišemo interni javni ključ Wallet $P$ sa korenom $h_{\text{root}}$, a zatim sve to propuštamo kroz označenu Hash funkciju `TapTweak`:
+Jednom kada se izračuna Merkle Root $h_{\text{root}}$, možemo izračunati prilagodbu. Za ovo, konkatenišemo interni javni ključ novčanika $P$ sa korenom $h_{\text{root}}$, a zatim sve to propuštamo kroz označenu heš funkciju `TapTweak`:
 
 
 
@@ -3278,7 +3278,7 @@ Q = P + t \cdot G
 
 $$
 
-Zatim, generisanje Address sledi istom procesu, koristeći sirovi javni ključ $Q$ kao sadržaj, uz dodatne metapodatke.
+Zatim, generisanje adrese sledi istom procesu, koristeći sirovi javni ključ $Q$ kao sadržaj, uz dodatne metapodatke.
 
 
 I eto ga! Stigli smo do kraja ovog kursa CYP201. Ako vam je ovaj kurs bio od pomoći, bio bih veoma zahvalan ako biste mogli odvojiti nekoliko trenutaka da mu date dobru ocenu u sledećem poglavlju za evaluaciju. Slobodno ga podelite i sa svojim voljenima ili na svojim društvenim mrežama. Na kraju, ako želite da dobijete diplomu za ovaj kurs, možete polagati završni ispit odmah nakon poglavlja za evaluaciju.
@@ -3288,13 +3288,13 @@ I eto ga! Stigli smo do kraja ovog kursa CYP201. Ako vam je ovaj kurs bio od pom
 <partId>58111408-b734-54db-9ea7-0d5b67f99f99</partId>
 
 
-## Recenzije i Ocene
+## Recenzije i ocene
 
 <chapterId>0cd71541-a7fd-53db-b66a-8611b6a28b04</chapterId>
 
 <isCourseReview>true</isCourseReview>
 
-## Završni Ispit
+## Završni ispit
 
 <chapterId>a53ea27d-0f84-56cd-b37c-a66210a4b31d</chapterId>
 
