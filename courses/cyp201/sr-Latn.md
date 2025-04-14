@@ -2055,32 +2055,32 @@ Prošireni ključ je jednostavno konkatenacija ključa (bilo privatnog ili javno
 Prošireni ključ se sastoji iz dva dela:
 
 
-- Nosač, koji sadrži privatni ili javni ključ kao i povezani lančani kod;
+- payload, koji sadrži privatni ili javni ključ kao i povezani lančani kod;
 - Metapodaci, koji su različiti delovi informacija za olakšavanje interoperabilnosti između softvera i poboljšanje razumevanja za korisnika.
 
 
 ### Kako funkcionišu prošireni ključevi
 
-Kada prošireni ključ sadrži privatni ključ, naziva se prošireni privatni ključ. Prepoznaje se po prefiksu koji sadrži identifikator `prv`. Pored privatnog ključa, prošireni privatni ključ takođe sadrži pridruženi lančani kod. Sa ovom vrstom proširenog ključa, moguće je izvesti sve vrste podređenih privatnih ključeva. Stoga, dodavanjem i udvostručavanjem tačaka na eliptičkim krivama, omogućava i izvođenje podređenih javnih ključeva.
+Kada prošireni ključ sadrži privatni ključ, naziva se prošireni privatni ključ. Prepoznaje se po prefiksu koji sadrži identifikator `prv`. Pored privatnog ključa, prošireni privatni ključ takođe sadrži pridruženi kod lanca. Sa ovom vrstom proširenog ključa, moguće je izvesti sve vrste podređenih privatnih ključeva. Stoga, dodavanjem i udvostručavanjem tačaka na eliptičkim krivama, omogućava i izvođenje podređenih javnih ključeva.
 
 
-Kada prošireni ključ ne sadrži privatni ključ, već umesto toga javni ključ, naziva se prošireni javni ključ. Prepoznaje se po prefiksu koji sadrži identifikator `pub`. Očigledno, pored ključa, sadrži i pridruženi lančani kod. Za razliku od proširenog privatnog ključa, prošireni javni ključ omogućava izvođenje samo "normalnih" podređenih javnih ključeva (što znači da ne može izvesti "ojačane" podređene ključeve). U sledećem poglavlju ćemo videti šta znače ovi kvalifikatori "normalni" i "ojačani".
+Kada prošireni ključ ne sadrži privatni ključ, već umesto toga javni ključ, naziva se prošireni javni ključ. Prepoznaje se po prefiksu koji sadrži identifikator `pub`. Očigledno, pored ključa, sadrži i pridruženi kod lanca. Za razliku od proširenog privatnog ključa, prošireni javni ključ omogućava izvođenje samo "normalnih" podređenih javnih ključeva (što znači da ne može izvesti "ojačane" podređene ključeve). U sledećem poglavlju ćemo videti šta znače ovi kvalifikatori "normalni" i "ojačani".
 
 
-U svakom slučaju, prošireni javni ključ ne omogućava izvođenje privatnih ključeva dece. Dakle, čak i ako neko ima pristup `xpub`, neće moći da troši povezana sredstva, jer neće imati pristup odgovarajućim privatnim ključevima. Oni mogu samo izvesti javne ključeve dece kako bi posmatrali povezane transakcije.
+U svakom slučaju, prošireni javni ključ ne omogućava izvođenje privatnih podključeva. Dakle, čak i ako neko ima pristup `xpub`, neće moći da troši povezana sredstva, jer neće imati pristup odgovarajućim privatnim ključevima. Oni mogu samo izvesti javne podključeve kako bi posmatrali povezane transakcije.
 
 
-Za sledeće, usvojićemo sledeću notaciju:
+Za nastavak, usvojićemo sledeću notaciju:
 
 
-- $K_{\text{PAR}}$: javni ključ roditelja;
-- $k_{\text{PAR}}$: roditeljski privatni ključ;
-- $C_{\text{PAR}}$: kod roditeljskog lanca;
-- $C_{\text{CHD}}$: kod lanca deteta;
-- $K_{\text{CHD}}^n$: normalan javni ključ deteta;
-- $k_{\text{CHD}}^n$: normalan dečiji privatni ključ;
-- $K_{\text{CHD}}^h$: ojačani javni ključ deteta;
-- $k_{\text{CHD}}^h$: očvrsnuti privatni ključ deteta.
+- $K_{\text{PAR}}$: javni nadključ;
+- $k_{\text{PAR}}$: privatni nadključ;
+- $C_{\text{PAR}}$: kod nad lanca;
+- $C_{\text{CHD}}$: kod pod lanca;
+- $K_{\text{CHD}}^n$: normalan javni podključ;
+- $k_{\text{CHD}}^n$: normalan privatni podključ;
+- $K_{\text{CHD}}^h$: ojačani javni podključ;
+- $k_{\text{CHD}}^h$: ojačani privatni podključ.
 
 
 ![CYP201](assets/fr/047.webp)
@@ -2092,32 +2092,32 @@ Za sledeće, usvojićemo sledeću notaciju:
 Prošireni ključ je strukturisan na sledeći način:
 
 
-- Verzija**: Kod verzije za identifikaciju prirode ključa (`xprv`, `xpub`, `yprv`, `ypub`...). Videćemo na kraju ovog poglavlja čemu odgovaraju slova `x`, `y` i `z`.
-- Dubina**: Hijerarhijski nivo u HD Wallet u odnosu na glavni ključ (0 za glavni ključ).
-- Parent Fingerprint**: Prva 4 bajta HASH160 Hash roditeljskog javnog ključa korišćenog za izvođenje ključa prisutnog u korisnom teretu.
-- Broj indeksa**: Identifikator deteta među ključevima braće i sestara, to jest, među svim ključevima na istom nivou derivacije koji imaju iste roditeljske ključeve.
-- Chain Code**: Jedinstveni 32-bajtni kod za izvođenje podređenih ključeva.
-- Ključ**: Privatni ključ (prefiksiran sa 1 bajtom za veličinu) ili javni ključ.
-- Checksum**: Kontrolni zbir izračunat pomoću funkcije HASH256 (dvostruki SHA256) se takođe dodaje, što omogućava verifikaciju integriteta proširenog ključa tokom njegovog prenosa ili skladištenja.
+- **Verzija**: Kod verzije za identifikaciju prirode ključa (`xprv`, `xpub`, `yprv`, `ypub`...). Videćemo na kraju ovog poglavlja čemu odgovaraju slova `x`, `y` i `z`.
+- **Dubina**: Hijerarhijski nivo u HD novčaniku u odnosu na glavni ključ (0 za glavni ključ).
+- **Roditeljski otisak**: Prva 4 bajta HASH160 heša roditeljskog javnog (nad)ključa korišćenog za izvođenje ključa prisutnog u payload-u.
+- **Broj indeksa**: Identifikator deteta među ključevima braće i sestara, to jest, među svim ključevima na istom nivou derivacije koji imaju iste roditeljske ključeve.
+- **Kod lanca**: Jedinstveni 32-bajtni kod za izvođenje podređenih ključeva.
+- **Ključ**: Privatni ključ (prefiksiran sa 1 bajtom za veličinu) ili javni ključ.
+- **Kontrolni zbir**: Kontrolni zbir izračunat pomoću funkcije HASH256 (dvostruki SHA256) se takođe dodaje, što omogućava verifikaciju integriteta proširenog ključa tokom njegovog prenosa ili skladištenja.
 
 
-Potpuni format proširenog ključa je stoga 78 bajtova bez kontrolnog zbira, i 82 bajta sa kontrolnim zbirom. Zatim se konvertuje u Base58 kako bi se dobila reprezentacija koja je lako čitljiva korisnicima. Base58 format je isti kao onaj koji se koristi za *Legacy* adrese za primanje (pre *SegWit*).
+Potpuni format proširenog ključa je stoga 78 bajtova bez kontrolnog zbira, i 82 bajta sa kontrolnim zbirom. Zatim se konvertuje u Base58 kako bi se dobila reprezentacija koja je lako čitljiva korisnicima. Base58 format je isti kao onaj koji se koristi za *Legacy* adrese (stariji format adrese) za primanje (pre *SegWit*).
 
 
-| Element           | Description                                                                                                        | Size      |
+| Element           | Opis                                                                                                               | Veličina  |
 | ----------------- | ------------------------------------------------------------------------------------------------------------------ | --------- |
-| Version           | Indicates whether the key is public (`xpub`, `ypub`) or private (`xprv`, `zprv`), as well as the version of the extended key | 4 bytes   |
-| Depth             | Level in the hierarchy relative to the master key                                                                  | 1 byte    |
-| Parent Fingerprint| The first 4 bytes of HASH160 of the parent public key                                                              | 4 bytes   |
-| Index Number      | Position of the key in the order of children                                                                       | 4 bytes   |
-| Chain Code        | Used to derive child keys                                                                                          | 32 bytes  |
-| Key               | The private key (with a 1-byte prefix) or the public key                                                          | 33 bytes  |
-| Checksum          | Checksum to verify integrity                                                                                       | 4 bytes   |
+| Verzija           | Indicates whether the key is public (`xpub`, `ypub`) or private (`xprv`, `zprv`), as well as the version of the extended key | 4 bytes   |
+| Dubina            | Level in the hierarchy relative to the master key                                                                  | 1 byte    |
+| Roditeljski otisak| The first 4 bytes of HASH160 of the parent public key                                                              | 4 bytes   |
+| Indeksni broj     | Position of the key in the order of children                                                                       | 4 bytes   |
+| Lanac koda        | Used to derive child keys                                                                                          | 32 bytes  |
+| Ključ             | The private key (with a 1-byte prefix) or the public key                                                          | 33 bytes  |
+| Kontrolni zbir    | Kontrolni zbir za verifikaciju integriteta                                                                         | 4 bytes   |
 
 Ako se jedan bajt doda samo privatnom ključu, to je zato što je kompresovani javni ključ duži od privatnog ključa za jedan bajt. Ovaj dodatni bajt, dodat na početak privatnog ključa kao `0x00`, izjednačava njihovu veličinu, osiguravajući da je sadržaj proširenog ključa iste dužine, bilo da je u pitanju javni ili privatni ključ.
 
 
-### Prošireni prefiksi ključeva
+### Prefiksi proširenih ključeva
 
 Kao što smo upravo videli, prošireni ključevi uključuju prefiks koji označava i verziju proširenog ključa i njegovu prirodu. Oznaka `pub` ukazuje da se odnosi na prošireni javni ključ, a oznaka `prv` označava prošireni privatni ključ. Dodatno slovo na bazi proširenog ključa pomaže da se naznači da li je standard koji se prati Legacy, SegWit v0, SegWit v1, itd.
 
@@ -2140,14 +2140,14 @@ Evo sažetka prefiksa koji se koriste i njihovih značenja:
 | `vprv`          | `045f18bc`      | Testnet | SegWit V0           | P2WPKH              | `m/84'/1'`             | private      |
 
 
-### Detalji proširenog ključa Elements
+### Detalji o elementima proširenog ključa
 
 
 Da bismo bolje razumeli unutrašnju strukturu proširenog ključa, uzmimo jedan kao primer i razložimo ga. Evo jednog proširenog ključa:
 
 
 
-- U Bazi58**:
+- **U Bazi58**:
 
 
 ```text
@@ -2156,7 +2156,7 @@ xpub6CTNzMUkzpurBWaT4HQoYzLP4uBbGJuWY358Rj7rauiw4rMHCyq3Rfy9w4kyJXJzeFfyrKLUar2r
 
 
 
-- U heksadecimalnom**:
+- **U heksadecimalnom formatu**:
 
 
 ```text
@@ -2164,7 +2164,7 @@ xpub6CTNzMUkzpurBWaT4HQoYzLP4uBbGJuWY358Rj7rauiw4rMHCyq3Rfy9w4kyJXJzeFfyrKLUar2r
 ```
 
 
-Ovaj prošireni ključ se razlaže na nekoliko različitih Elements:
+Ovaj prošireni ključ se razlaže na nekoliko različitih elemenata:
 
 
 1.**Verzija**: `0488B21E`
@@ -2176,13 +2176,13 @@ Prva 4 bajta su verzija. Ovde, ona odgovara proširenom javnom ključu na Mainne
 2.**Dubina**: `03`
 
 
-Ovo polje označava hijerarhijski nivo ključa unutar HD Wallet. U ovom slučaju, dubina od `03` znači da je ovaj ključ tri nivoa derivacije ispod glavnog ključa.
+Ovo polje označava hijerarhijski nivo ključa unutar HD novčanika. U ovom slučaju, dubina od `03` znači da je ovaj ključ tri nivoa derivacije ispod glavnog ključa.
 
 
-3.**Parent fingerprint**: `6D5601AD`
+3.**Roditeljski otisak**: `6D5601AD`
 
 
-Ovo su prva 4 bajta HASH160 Hash nadređenog javnog ključa koji je korišćen za izvođenje ovog `xpub`.
+Ovo su prva 4 bajta HASH160 heša nadređenog javnog ključa koji je korišćen za izvođenje ovog `xpub`.
 
 
 4.**Indeks broj**: `80000000`
@@ -2191,10 +2191,10 @@ Ovo su prva 4 bajta HASH160 Hash nadređenog javnog ključa koji je korišćen z
 Ovaj indeks označava poziciju ključa među decom njegovog roditelja. Prefiks `0x80` označava da je ključ izveden na ojačan način, a pošto je ostatak ispunjen nulama, to označava da je ovaj ključ prvi među svojim mogućim srodnicima.
 
 
-5.**Chain code**: `C605DF9FBD77FD6965BD02B77831EC5C78646AD3ACA14DC3984186F72633A893`
+5.**Kod lanca**: `C605DF9FBD77FD6965BD02B77831EC5C78646AD3ACA14DC3984186F72633A893`
 
 
-6.**Public Key**: `03772CCB99F4EF346078D167065404EED8A58787DED31BFA479244824DF5065805`
+6.**Javni ključ**: `03772CCB99F4EF346078D167065404EED8A58787DED31BFA479244824DF5065805`
 
 
 7.**Kontrolni zbir**: `1F067C3A`
@@ -2203,7 +2203,7 @@ Ovaj indeks označava poziciju ključa među decom njegovog roditelja. Prefiks `
 Kontrolni zbir odgovara prva 4 bajta Hash (dupli SHA256) svega ostalog.
 
 
-U ovom poglavlju smo otkrili da postoje dve različite vrste dečijih ključeva. Takođe smo naučili da za izvođenje ovih dečijih ključeva je potreban ključ (bilo privatni ili javni) i njegov lančani kod. U sledećem poglavlju ćemo detaljno ispitati prirodu ovih različitih vrsta ključeva i kako ih izvesti iz njihovog roditeljskog ključa i lančanog koda.
+U ovom poglavlju smo otkrili da postoje dve različite vrste dečijih (pod) ključeva. Takođe smo naučili da za izvođenje ovih dečijih ključeva je potreban ključ (bilo privatni ili javni) i njegov lančani kod. U sledećem poglavlju ćemo detaljno ispitati prirodu ovih različitih vrsta ključeva i kako ih izvesti iz njihovog roditeljskog ključa i lančanog koda.
 
 
 
