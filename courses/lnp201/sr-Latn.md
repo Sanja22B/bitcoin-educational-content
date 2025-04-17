@@ -21,6 +21,38 @@ Bilo da ste Bitkojn početnik ili iskusniji korisnik, ovaj kurs će pružiti vre
 Uživaj u svom otkriću!
 
 +++
+Uvod
+<partId>9da7290a-3895-49a2-93ea-2a6272ca4af4</partId>
+
+Pregled kursa
+<chapterId>f2e71062-5121-4114-a7f8-27df69884ce8</chapterId>
+
+Dobrodošli na kurs LNP201!
+
+Ova obuka ima za cilj da vam pruži duboko tehničko razumevanje Lightning Network-a, mreže koja je dizajnirana da olakša brze i često jeftine Bitcoin transakcije. Postepeno ćete otkrivati osnovne koncepte koji upravljaju ovim sistemom, od otvaranja platnih kanala do tehnika usmeravanja i upravljanja likvidnošću.
+
+**Deo 1: Osnovni principi**
+
+Počećemo sa opštim uvodom u Lightning Network, postavljajući osnovne temelje o Bitcoinu, njegovim adresama, UTXO-ima i načinu na koji transakcije funkcionišu. Ova osnovna analiza je neophodna da bismo razumeli kako Lightning Network oslanja na mehanizme osnovnog blockchain-a da bi sigurno funkcionisao.
+
+**Deo 2: Otvaranje i zatvaranje kanala**
+
+U ovom delu ćemo istražiti proces otvaranja kanala, koji je kamen temeljac Lightning Network-a. Naučićete kako se kreiraju transakcije obaveze, ulogu ključeva za opoziv u bezbednosti i kako se kanali mogu zatvoriti ili zajednički ili jednostrano. Svaki korak će biti precizno i tehnički objašnjen kako biste razumeli sve suptilnosti.
+
+**Deo 3: Mreža likvidnosti**
+
+Lightning Network nije ograničen na pojedinačne kanale; to je prava mreža plaćanja. Videćemo kako se transakcije mogu usmeravati kroz posredničke čvorove koristeći HTLC-ove. Ovaj deo će vas takođe upoznati sa izazovima ulazne i izlazne likvidnosti.
+
+**Deo 4: Alati Lightning Network-a**
+
+Ovaj deo predstavlja praktične alate Lightning Network-a, kao što su Fakture, LNURL i Keysend. Takođe ćete naučiti kako da upravljate likvidnošću svojih kanala, što je suštinski aspekt za obezbeđivanje nesmetanih plaćanja i maksimizaciju efikasnosti vaših transakcija na Lightning-u.
+
+**Deo 5: Dalje**
+
+Na kraju, zaključićemo obuku ponavljanjem pokrivenih koncepata i otvaranjem puta za naprednije teme za one koji žele da prodube svoje znanje o Lightning Network-u.
+
+Spremni da otkrijete tehničke mehanizme Lightning Network-a? Hajde da zaronimo!
+
 # Osnove
 
 <partId>32647d62-102b-509f-a3ba-ad1d6a4345f1</partId>
@@ -1095,7 +1127,7 @@ Videli smo da je upravljanje likvidnošću izazov na Lajtning mreži kako bi se 
 
 ![LNP201](assets/en/84.webp)
 
-# Zaključak
+# Završni deo
 
 <partId>b8715c1c-7ae2-49b7-94c7-35bf85346ad3</partId>
 
