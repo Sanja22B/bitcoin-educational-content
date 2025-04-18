@@ -1,7 +1,7 @@
 ---
-naziv: Unutrašnje funkcionisanje Bitkojn novčanika
-svrha: Uronite u kriptografske principe koji pokreću Bitkojn novčanike.
-ciljevi: 
+name: Unutrašnje funkcionisanje Bitkojn novčanika
+objective: Uronite u kriptografske principe koji pokreću Bitkojn novčanike.
+goals: 
 
   - Definisanje teorijskih pojmova neophodnih za razumevanje kriptografskih algoritama korišćenih u Bitkojnu
   - Potpuno razumevanje konstrukcije determinističkog i hijerarhijskog novčanika.
@@ -2032,7 +2032,7 @@ $$
 ### Uloga glavnog ključa i lanca koda
 
 
-Glavni privatni ključ se smatra roditeljskim ključem, iz kojeg će svi izvedeni privatni ključevi — deca, unuci, praunuci, itd. — biti generisani. On predstavlja nulti nivo u hijerarhiji derivacije.
+Glavni privatni ključ se smatra roditeljskim ključem, iz kojeg će biti generisani svi izvedeni privatni ključevi — deca, unuci, praunuci, itd. On predstavlja nulti nivo u hijerarhiji derivacije.
 
 
 S druge strane, glavni lančani kod uvodi dodatni izvor entropije u proces izvođenja ključeva, kako bi se suprotstavio određenim potencijalnim napadima. Štaviše, u HD novčaniku, svaki par ključeva ima jedinstveni lančani kod povezan s njim, koji se takođe koristi za izvođenje ključeva iz ovog para, ali o tome ćemo detaljnije raspravljati u narednim poglavljima.
@@ -2055,7 +2055,7 @@ Prošireni ključ je jednostavno konkatenacija ključa (bilo privatnog ili javno
 Prošireni ključ se sastoji iz dva dela:
 
 
-- payload, koji sadrži privatni ili javni ključ kao i povezani lančani kod;
+- payload ili glavni sadržaj, koji sadrži privatni ili javni ključ kao i povezani lančani kod;
 - Metapodaci, koji su različiti delovi informacija za olakšavanje interoperabilnosti između softvera i poboljšanje razumevanja za korisnika.
 
 
@@ -2106,13 +2106,13 @@ Potpuni format proširenog ključa je stoga 78 bajtova bez kontrolnog zbira, i 8
 
 | Element           | Opis                                                                                                               | Veličina  |
 | ----------------- | ------------------------------------------------------------------------------------------------------------------ | --------- |
-| Verzija           | Indicates whether the key is public (`xpub`, `ypub`) or private (`xprv`, `zprv`), as well as the version of the extended key | 4 bytes   |
-| Dubina            | Level in the hierarchy relative to the master key                                                                  | 1 byte    |
-| Roditeljski otisak| The first 4 bytes of HASH160 of the parent public key                                                              | 4 bytes   |
-| Indeksni broj     | Position of the key in the order of children                                                                       | 4 bytes   |
-| Lanac koda        | Used to derive child keys                                                                                          | 32 bytes  |
-| Ključ             | The private key (with a 1-byte prefix) or the public key                                                          | 33 bytes  |
-| Kontrolni zbir    | Kontrolni zbir za verifikaciju integriteta                                                                         | 4 bytes   |
+| Verzija           | Označava je li je ključ javni (`xpub`, `ypub`) ili privatni (`xprv`, `zprv`), kao i verziju proširenog ključa      | 4 bajta   |
+| Dubina            | Nivo u hiararhiji u odnosu na glavni ključ                                                                         | 1 bajt    |
+| Roditeljski otisak| Prva 4 bajta HASH160 roditeljskog javnog ključa                                                                    | 4 bajta   |
+| Indeksni broj     | Redni broj ključa u hijerarhiji potomaka                                                                           | 4 bajta   |
+| Lanac koda        | Koristi se za izvođenje potključeva                                                                                | 32 bajta  |
+| Ključ             | Privatni ključ (koji sadrži prefiks od jednog bajta) ili javni ključ                                               | 33 bajta  |
+| Kontrolni zbir    | Kontrolni zbir za verifikaciju integriteta                                                                         | 4 bajta   |
 
 Ako se jedan bajt doda samo privatnom ključu, to je zato što je kompresovani javni ključ duži od privatnog ključa za jedan bajt. Ovaj dodatni bajt, dodat na početak privatnog ključa kao `0x00`, izjednačava njihovu veličinu, osiguravajući da je sadržaj proširenog ključa iste dužine, bilo da je u pitanju javni ili privatni ključ.
 
@@ -2124,20 +2124,20 @@ Kao što smo upravo videli, prošireni ključevi uključuju prefiks koji označa
 Evo sažetka prefiksa koji se koriste i njihovih značenja:
 
 
-| Base 58 Prefix  | Base 16 Prefix  | Network | Purpose             | Associated Scripts  | Derivation            | Key Type     |
+| Base 58 Prefix  | Base 16 Prefix  | Mreža   | Svrha               | Pridružene skripte  | Derivacija            | Tip ključa   |
 | --------------- | --------------- | ------- | ------------------- | ------------------- | --------------------- | ------------ |
-| `xpub`          | `0488b21e`      | Mainnet | Legacy and SegWit V1 | P2PK / P2PKH / P2TR | `m/44'/0'`, `m/86'/0'` | public       |
-| `xprv`          | `0488ade4`      | Mainnet | Legacy and SegWit V1 | P2PK / P2PKH / P2TR | `m/44'/0'`, `m/86'/0'` | private      |
-| `tpub`          | `043587cf`      | Testnet | Legacy and SegWit V1 | P2PK / P2PKH / P2TR | `m/44'/1'`, `m/86'/1'` | public       |
-| `tprv`          | `04358394`      | Testnet | Legacy and SegWit V1 | P2PK / P2PKH / P2TR | `m/44'/1'`, `m/86'/1'` | private      |
-| `ypub`          | `049d7cb2`      | Mainnet | Nested SegWit       | P2WPKH in P2SH      | `m/49'/0'`             | public       |
-| `yprv`          | `049d7878`      | Mainnet | Nested SegWit       | P2WPKH in P2SH      | `m/49'/0'`             | private      |
-| `upub`          | `049d7cb2`      | Testnet | Nested SegWit       | P2WPKH in P2SH      | `m/49'/1'`             | public       |
-| `uprv`          | `044a4e28`      | Testnet | Nested SegWit       | P2WPKH in P2SH      | `m/49'/1'`             | private      |
-| `zpub`          | `04b24746`      | Mainnet | SegWit V0           | P2WPKH              | `m/84'/0'`             | public       |
-| `zprv`          | `04b2430c`      | Mainnet | SegWit V0           | P2WPKH              | `m/84'/0'`             | private      |
-| `vpub`          | `045f1cf6`      | Testnet | SegWit V0           | P2WPKH              | `m/84'/1'`             | public       |
-| `vprv`          | `045f18bc`      | Testnet | SegWit V0           | P2WPKH              | `m/84'/1'`             | private      |
+| `xpub`          | `0488b21e`      | Mainnet | Legacy and SegWit V1 | P2PK / P2PKH / P2TR | `m/44'/0'`, `m/86'/0'` | javni       |
+| `xprv`          | `0488ade4`      | Mainnet | Legacy and SegWit V1 | P2PK / P2PKH / P2TR | `m/44'/0'`, `m/86'/0'` | privatni    |
+| `tpub`          | `043587cf`      | Testnet | Legacy and SegWit V1 | P2PK / P2PKH / P2TR | `m/44'/1'`, `m/86'/1'` | javni       |
+| `tprv`          | `04358394`      | Testnet | Legacy and SegWit V1 | P2PK / P2PKH / P2TR | `m/44'/1'`, `m/86'/1'` | privatni    |
+| `ypub`          | `049d7cb2`      | Mainnet | Nested SegWit       | P2WPKH in P2SH      | `m/49'/0'`             | javni        |
+| `yprv`          | `049d7878`      | Mainnet | Nested SegWit       | P2WPKH in P2SH      | `m/49'/0'`             | privatni     |
+| `upub`          | `049d7cb2`      | Testnet | Nested SegWit       | P2WPKH in P2SH      | `m/49'/1'`             | javni        |
+| `uprv`          | `044a4e28`      | Testnet | Nested SegWit       | P2WPKH in P2SH      | `m/49'/1'`             | privatni     |
+| `zpub`          | `04b24746`      | Mainnet | SegWit V0           | P2WPKH              | `m/84'/0'`             | javni        |
+| `zprv`          | `04b2430c`      | Mainnet | SegWit V0           | P2WPKH              | `m/84'/0'`             | privatni     |
+| `vpub`          | `045f1cf6`      | Testnet | SegWit V0           | P2WPKH              | `m/84'/1'`             | javni        |
+| `vprv`          | `045f18bc`      | Testnet | SegWit V0           | P2WPKH              | `m/84'/1'`             | privatni     |
 
 
 ### Detalji o elementima proširenog ključa
@@ -2170,7 +2170,7 @@ Ovaj prošireni ključ se razlaže na nekoliko različitih elemenata:
 1.**Verzija**: `0488B21E`
 
 
-Prva 4 bajta su verzija. Ovde, ona odgovara proširenom javnom ključu na Mainnet sa svrhom derivacije ili *Legacy* ili *SegWit v1*.
+Prva 4 bajta su verzija. Ovde, ona odgovara proširenom javnom ključu na Mainnet-u sa svrhom derivacije ili *Legacy* ili *SegWit v1*.
 
 
 2.**Dubina**: `03`
@@ -2200,7 +2200,7 @@ Ovaj indeks označava poziciju ključa među decom njegovog roditelja. Prefiks `
 7.**Kontrolni zbir**: `1F067C3A`
 
 
-Kontrolni zbir odgovara prva 4 bajta Hash (dupli SHA256) svega ostalog.
+Kontrolni zbir odgovara prva 4 bajta heša (dupli SHA256) svega ostalog.
 
 
 U ovom poglavlju smo otkrili da postoje dve različite vrste dečijih (pod) ključeva. Takođe smo naučili da za izvođenje ovih dečijih ključeva je potreban ključ (bilo privatni ili javni) i njegov lančani kod. U sledećem poglavlju ćemo detaljno ispitati prirodu ovih različitih vrsta ključeva i kako ih izvesti iz njihovog roditeljskog ključa i lančanog koda.
@@ -2362,7 +2362,7 @@ Evo šematskog prikaza celokupne izvedbe:
 ![CYP201](assets/fr/051.webp)
 
 
-Možemo videti da normalna derivacija i pojačana derivacija funkcionišu na isti način, sa ovom razlikom: normalna derivacija koristi roditeljski javni ključ kao ulaz za HMAC funkciju, dok pojačana derivacija koristi roditeljski privatni ključ.
+Možemo videti da normalna derivacija i ojačana derivacija funkcionišu na isti način, sa ovom razlikom: normalna derivacija koristi roditeljski javni ključ kao ulaz za HMAC funkciju, dok ojačana derivacija koristi roditeljski privatni ključ.
 
 
 #### Izvođenje javnog ključa deteta iz javnog ključa roditelja
