@@ -961,7 +961,7 @@ y^2 = x^3 + 7
 $$
 
 
-Njegova grafička reprezentacija preko polja realnih brojeva izgleda ovako:
+Njegova grafička reprezentacija u skupu realnih brojeva izgleda ovako:
 
 
 ![CYP201](assets/fr/015.webp)
@@ -1016,7 +1016,7 @@ U ovom primeru, namerno sam ograničio konačno polje na $p = 17$ iz obrazovnih 
 Koristimo konačno polje celih brojeva modulo $p$ kako bismo osigurali tačnost operacija na krivi. Naime, eliptičke krive nad poljem realnih brojeva podložne su netačnostima zbog grešaka zaokruživanja tokom računskih proračuna. Ako se na krivi izvrši veliki broj operacija, te greške se akumuliraju i konačni rezultat može biti netačan ili teško ponovljiv. Isključiva upotreba pozitivnih celih brojeva osigurava savršenu tačnost proračuna i time ponovljivost rezultata.
 
 
-Matematika eliptičkih krivih nad konačnim poljima je analogna onoj nad poljem realnih brojeva, s prilagodbom da se sve operacije izvode modulo $p$. Da bismo pojednostavili objašnjenja, u narednim poglavljima ćemo nastaviti ilustrirati pojmove koristeći krivu definisanu nad realnim brojevima, imajući na umu da je u praksi kriva definisana nad konačnim poljem.
+Matematika eliptičkih krivih nad konačnim poljima je analogna onoj nad poljem realnih brojeva, s prilagodbom da se sve operacije izvode modulo $p$. Da bismo pojednostavili objašnjenja, u narednim poglavljima ćemo nastaviti ilustrovati pojmove koristeći krivu definisanu nad realnim brojevima, imajući na umu da je u praksi kriva definisana nad konačnim poljem.
 
 
 Ako želite da saznate više o matematičkim osnovama moderne kriptografije, preporučujem da pogledate i ovaj drugi kurs na Plan ₿ Network:
@@ -1041,10 +1041,10 @@ Privatni ključ je jednostavno nasumičan ili pseudo-nasumičan broj. U slučaju
 **Napomena**: "Pseudo-slučajan broj" je broj koji ima osobine bliske onima pravog slučajnog broja, ali se generiše determinističkim algoritmom.
 
 
-Međutim, u praksi, postoji samo $n$ različitih tačaka na našoj eliptičnoj krivoj secp256k1, gde je $n$ red generatora tačke $G$ krive. Videćemo kasnije čemu odgovara ovaj broj, ali jednostavno zapamtite da je važeći privatni ključ ceo broj između $1$ i $n-1$, znajući da je $n$ broj blizak, ali malo manji od $2^{256}$. Dakle, postoje neki 256-bitni brojevi koji nisu važeći da budu privatni ključevi u Bitcoin-u, konkretno, svi brojevi između $n$ i $2^{256}$. Ako generisanje slučajnog broja (privatnog ključa) proizvede vrednost $k$ takvu da je $k \geq n$, smatra se nevažećom i mora se generisati nova slučajna vrednost.
+Međutim, u praksi, postoji samo $n$ različitih tačaka na našoj eliptičnoj krivoj secp256k1, gde je $n$ red generatora tačke $G$ krive. Videćemo kasnije čemu odgovara ovaj broj, ali jednostavno zapamtite da je važeći privatni ključ ceo broj između $1$ i $n-1$, znajući da je $n$ broj blizak, ali malo manji od $2^{256}$. Dakle, postoje neki 256-bitni brojevi koji nisu važeći da budu privatni ključevi u Bitcoin-u, konkretno, svi brojevi između $n$ i $2^{256}$. Ako generisanje slučajnog broja (privatnog ključa) proizvede vrednost $k$ takvu da je $k \geq n$, ta vrednost se smatra nevažećom i mora se generisati nova slučajna vrednost.
 
 
-Broj mogućnosti za privatni ključ Bitcoin-a je stoga oko $n$, što je broj blizak $1.158 \times 10^{77}$. Ovaj broj je toliko veliki da, ako nasumično izaberete privatni ključ, statistički je gotovo nemoguće da pogodite privatni ključ drugog korisnika. Da biste dobili predstavu o razmeri, broj mogućih privatnih ključeva u Bitcoin-u je reda veličine procenjenom broju atoma u posmatranom univerzumu.
+Broj mogućnosti za privatni ključ Bitcoin-a je stoga oko $n$, što je broj blizak $1.158 \times 10^{77}$. Ovaj broj je toliko veliki da, ako nasumično izaberete privatni ključ, statistički je gotovo nemoguće da bude isti kao privatni ključ drugog korisnika. Da biste dobili predstavu o razmeri, broj mogućih privatnih ključeva u Bitcoin-u je reda veličine procenjenom broju atoma u posmatranom univerzumu.
 
 
 Kao što ćemo videti u narednim poglavljima, danas većina privatnih ključeva korišćenih u Bitcoin-u nije generisana nasumično, već je rezultat determinističke derivacije iz bezbednosne fraze, koja je sama po sebi pseudo-nasumična (ovo je čuvena fraza od 12 ili 24 reči). Ova informacija ne menja ništa za upotrebu algoritama za potpisivanje kao što je ECDSA, ali pomaže da se preusmeri naš fokus na popularizaciju Bitcoina.
@@ -1061,7 +1061,7 @@ Javni ključ je tačka na eliptičkoj krivi, označena velikim slovom $K$, i izr
 U praksi, nekompresovani javni ključ je predstavljen sa 520 bita (ili 65 bajtova), što odgovara dvema 256-bitnim brojevima ($x$ i $y$) postavljenim jedan za drugim, sa prefiksom od 8 bita $0x04$.
 
 
-Međutim, moguće je predstaviti javni ključ i u kompresovanom obliku koristeći samo 33 bajta (264 bita) tako što se zadrži samo apscisa $x$ naše tačke na krivi i bajt koji označava paritet $y$. Ovo je poznato kao kompresovani javni ključ. Više ću o tome govoriti u poslednjim poglavljima ove obuke. Ali ono što treba da zapamtite je da je javni ključ $K$ tačka opisana sa $x$ i $y$.
+Međutim, moguće je predstaviti javni ključ i u kompresovanom obliku koristeći samo 33 bajta (264 bita) tako što će da sadrži samo apscisa $x$ naše tačke na krivi i bajt koji označava paritet $y$. Ovo je poznato kao kompresovani javni ključ. Više ću o tome govoriti u poslednjim poglavljima ove obuke. Ali ono što treba da zapamtite je da je javni ključ $K$ tačka opisana sa $x$ i $y$.
 
 
 Da bismo izračunali tačku $K$ koja odgovara našem javnom ključu, koristimo operaciju skalarnog množenja na eliptičkim krivama, definisanu kao ponovljeno sabiranje ($k$ puta) generatora tačke $G$:
@@ -1080,7 +1080,7 @@ gde:
 
 
 - $k$ je privatni ključ (slučajan ceo broj između $1$ i $n-1$);
-- $G$ je generatorna tačka eliptičke krive koju koriste svi učesnici Bitcoin mreže;
+- $G$ je generišuća tačka eliptičke krive koju koriste svi učesnici Bitcoin mreže;
 - $\cdot$ predstavlja skalarno množenje na eliptičnoj krivi, što je ekvivalentno dodavanju tačke $G$ samoj sebi $k$ puta.
 
 
@@ -1099,7 +1099,7 @@ Glavna karakteristika ove operacije je da je to jednosmerna funkcija. Lako je iz
 ### Dodavanje i udvostručavanje tačaka na eliptičkim krivama
 
 
-Koncept sabiranja na eliptičkim krivama je definisan geometrijski. Ako imamo dve tačke $P$ i $Q$ na krivi, operacija $P + Q$ se izračunava povlačenjem prave koja prolazi kroz $P$ i $Q$. Ova prava će nužno preseći krivu u trećoj tački $R'$. Zatim uzimamo refleksiju ove tačke u odnosu na x-osu da bismo dobili tačku $R$, što je rezultat sabiranja:
+Koncept sabiranja na eliptičkim krivama je definisan geometrijski. Ako imamo dve tačke $P$ i $Q$ na krivi, operacija $P + Q$ se izračunava povlačenjem prave koja prolazi kroz $P$ i $Q$. Ova prava će nužno preseći krivu u trećoj tački $R'$. Zatim uzimamo refleksiju ove tačke u odnosu na x-osu da bismo dobili tačku $R$, koja je rezultat sabiranja:
 
 
 $$
@@ -1116,7 +1116,7 @@ Grafički, ovo se može predstaviti na sledeći način:
 ![CYP201](assets/fr/019.webp)
 
 
-Za udvostručavanje tačke, što je operacija $P + P$, povlačimo tangentu na krivu u tački $P$. Ova tangenta seče krivu u drugoj tački $S'$. Zatim uzimamo refleksiju ove tačke u odnosu na x-osu da bismo dobili tačku $S$, što je rezultat udvostručavanja:
+Za udvostručavanje tačke, što je operacija $P + P$, povlačimo tangentu na krivu u tački $P$. Ova tangenta seče krivu u drugoj tački $S'$. Zatim uzimamo refleksiju ove tačke u odnosu na x-osu da bismo dobili tačku $S$, koja je rezultat udvostručavanja:
 
 
 $$
@@ -1215,7 +1215,7 @@ Naravno, u ovom pojednostavljenom primeru sa $k = 4$, bilo bi moguće pronaći $
 <chapterId>bb07826f-826e-5905-b307-3d82001fb778</chapterId>
 
 
-Sada kada znate kako da izvedete javni ključ iz privatnog ključa, već možete primati bitkoine koristeći ovaj par ključeva kao uslov za trošenje. Ali kako ih potrošiti? Da biste potrošili bitkoine, potrebno je da otključate _scriptPubKey_ priložen uz vaš UTXO kako biste dokazali da ste zaista njegov legitimni vlasnik. Da biste to uradili, morate proizvesti potpis $s$ koji odgovara javnom ključu $K$ prisutnom u _scriptPubKey_ koristeći privatni ključ $k$ koji je prvobitno korišćen za izračunavanje $K$. Digitalni potpis je tako neoboriv dokaz da posedujete privatni ključ povezan sa javnim ključem koji tvrdite da imate.
+Sada kada znate kako da izvedete javni ključ iz privatnog ključa, već možete primati bitkojne koristeći ovaj par ključeva kao uslov za trošenje. Ali kako ih potrošiti? Da biste potrošili bitkoine, potrebno je da otključate _scriptPubKey_ priložen uz vaš UTXO kako biste dokazali da ste zaista njegov legitimni vlasnik. Da biste to uradili, morate proizvesti potpis $s$ koji odgovara javnom ključu $K$ prisutnom u _scriptPubKey_ koristeći privatni ključ $k$ koji je prvobitno korišćen za izračunavanje $K$. Digitalni potpis je tako neoboriv dokaz da posedujete privatni ključ povezan sa javnim ključem koji tvrdite da imate.
 
 
 ### Parametri eliptičke krive
@@ -1258,7 +1258,7 @@ G = 0x0279BE667EF9DCBBAC55A06295CE870B07029BFCDB2DCE28D959F2815B16F81798
 
 Ovaj broj je kompresovani oblik koji daje samo apscisu tačke $G$. Prefiks `02` na početku određuje koja od dve vrednosti koje imaju ovu apscisu $x$ treba da se koristi kao generišuća tačka.
 
-Redosled $n$ od $G$ (broj postojećih tačaka) i kofaktor $h$:
+Red grupe $n$ (broj postojećih tačaka) generišuće tačke $G$  i kofaktor $h$:
 
 
 ```text
@@ -1396,13 +1396,13 @@ $$
 $$
 
 
-Prvi korak do generisanja potpisa je heš poruka. Ali za razliku od ECDSA, to se radi sa drugim vrednostima i koristi se označena heš funkcija kako bi se izbegle kolizije u različitim kontekstima. Označena heš funkcija jednostavno podrazumeva dodavanje proizvoljne oznake ulazima heš funkcije zajedno sa podacima poruke.
+Prvi korak do generisanja potpisa je heš poruka. Ali za razliku od ECDSA, to se radi sa drugim vrednostima i koristi se heš funkcija kojoj je dodata oznaka (label) kako bi se izbegle kolizije u različitim kontekstima. Ova heš funkcija jednostavno podrazumeva dodavanje proizvoljne oznake ulazima heš funkcije zajedno sa podacima poruke.
 
 
 ![CYP201](assets/fr/023.webp)
 
 
-Pored poruke, $x$ koordinata javnog ključa $K_x$, kao i tačka $R = r \cdot G$, izračunata iz nonce-a $r$ (koji je sam po sebi jedinstven ceo broj za svaki potpis, deterministički izračunat iz privatnog ključa i poruke kako bi se izbegle ranjivosti povezane sa ponovnom upotrebom nonce-a), takođe se prosleđuju u označenu funkciju. Kao i za javni ključ, samo $x$ koordinata nonce tačke $R_x$ se zadržava da opiše tačku.
+Pored poruke, $x$ koordinata javnog ključa $K_x$, kao i tačka $R = r \cdot G$, izračunata iz nonce-a $r$ (koji je sam po sebi jedinstven ceo broj za svaki potpis, deterministički izračunat iz privatnog ključa i poruke kako bi se izbegle ranjivosti povezane sa ponovnom upotrebom nonce-a), takođe se prosleđuju u heš funkciju sa oznakom. Kao i za javni ključ, samo $x$ koordinata nonce tačke $R_x$ se zadržava da opiše tačku.
 
 
 Rezultat ovog heširanja označen $e$ naziva se "izazov":
@@ -1435,9 +1435,9 @@ $$
 ### Verifikacija Schnorr potpisa
 
 
-Verifikacija Schnorr potpisa je jednostavnija od verifikacije ECDSA potpisa. Ovde su koraci za verifikaciju potpisa $(R_x, s)$ sa javnim ključem $K_x$ i porukom $m$.
+Verifikacija Schnorr potpisa je jednostavnija od verifikacije ECDSA potpisa. Ovo su koraci za verifikaciju potpisa $(R_x, s)$ sa javnim ključem $K_x$ i porukom $m$.
 
-Prvo, proveravamo da li je $K_x$ validan ceo broj manji od $p$. Ako je to slučaj, pronalazimo odgovarajuću tačku na krivi sa $K_y$ koji je paran. Takođe izdvajamo $R_x$ i $s$ razdvajanjem potpisa $\text{SIG}$. Zatim proveravamo da li je $R_x < p$ i $s < n$ (red krive).
+Prvo, proveravamo da li je $K_x$ validan ceo broj manji od $p$. Ako je to slučaj, pronalazimo odgovarajuću tačku na krivi sa parnim $K_y$. Takođe izdvajamo $R_x$ i $s$ razdvajanjem potpisa $\text{SIG}$. Zatim proveravamo da li je $R_x < p$ i $s < n$ (red krive).
 
 Zatim, izračunavamo izazov $e$ na isti način kao izdavalac potpisa:
 
@@ -1500,12 +1500,12 @@ Isto tako, više potpisa može biti agregirano u jedan važeći potpis. Dakle, u
 ![CYP201](assets/fr/025.webp)
 
 
-Štaviše, agregacija potpisa poboljšava privatnost. Sa Schnorr-om, postaje nemoguće razlikovati transakciju sa višestrukim potpisom od standardne transakcije sa jednim potpisom. Ova homogenost otežava analizu lanca, jer ograničava mogućnost identifikacije novčanika.
+Štaviše, agregacija potpisa poboljšava privatnost. Sa Schnorr-om, postaje nemoguće razlikovati transakciju sa višestrukim potpisom od standardne transakcije sa jednim potpisom. Ova homogenost otežava analizu blokčejna, jer ograničava mogućnost identifikacije novčanika.
 
 
-Konačno, Schnorr takođe nudi mogućnost grupne verifikacije. Verifikovanjem više potpisa istovremeno, čvorovi mogu postići efikasnost, posebno za blokove koji sadrže mnogo transakcija. Ova optimizacija smanjuje vreme i resurse potrebne za validaciju bloka.
+Konačno, Schnorr takođe nudi mogućnost grupne verifikacije. Verifikovanjem više potpisa istovremeno, čvorovi mogu postići veću efikasnost, posebno za blokove koji sadrže mnogo transakcija. Ova optimizacija smanjuje vreme i resurse potrebne za validaciju bloka.
 
-Takođe, Schnorr potpisi nisu podložni promenama, za razliku od potpisa proizvedenih sa ECDSA. To znači da napadač ne može da izmeni važeći potpis kako bi stvorio drugi važeći potpis za istu poruku i isti javni ključ. Ova ranjivost je prethodno bila prisutna u Bitcoin i značajno je sprečila sigurnu implementaciju Lightning Network-a. Rešena je za ECDSA sa SegWit softforkom 2017. godine, koji uključuje premeštanje potpisa u zasebnu bazu podataka od transakcija kako bi se sprečila njihova promenljivost.
+Takođe, Schnorr potpisi nisu podložni promenama, za razliku od potpisa proizvedenih sa ECDSA. To znači da napadač ne može da izmeni važeći potpis kako bi stvorio drugi važeći potpis za istu poruku i isti javni ključ. Ova ranjivost je prethodno bila prisutna u Bitcoin i značajno je sprečila sigurnu implementaciju Lightning Network-a. Ovaj propust za ECDSA je rešen sa SegWit softforkom 2017. godine, koji uključuje premeštanje potpisa u zasebnu bazu podataka od transakcija kako bi se sprečila njihova promenljivost.
 
 
 ### Zašto je Satoshi izabrao ECDSA?
@@ -1514,7 +1514,7 @@ Takođe, Schnorr potpisi nisu podložni promenama, za razliku od potpisa proizve
 Kao što smo videli, Satoshi je u početku odlučio da implementira ECDSA za digitalne potpise u Bitcoin-u. Ipak, takođe smo videli da je Schnorr superiorniji od ECDSA u mnogim aspektima, a ovaj protokol je kreirao Claus-Peter Schnorr 1989. godine, 20 godina pre izuma Bitcoin.
 
 
-Pa, mi stvarno ne znamo zašto Satoshi nije izabrao to, ali verovatna hipoteza je da je ovaj protokol bio pod patentom do 2008. Iako je Bitcoin kreiran godinu dana kasnije, u januaru 2009, u to vreme nije postojala otvorena standardizacija za Schnorr potpise. Možda je Satoshi smatrao da je sigurnije koristiti ECDSA, koji je već bio široko korišćen i testiran u open-source softveru i imao nekoliko priznatih implementacija (posebno OpenSSL biblioteka korišćena do 2015. u Bitcoin Core, zatim zamenjena libsecp256k1 u verziji 0.10.0). Ili možda jednostavno nije bio svestan da će ovaj patent isteći 2008. U svakom slučaju, najverovatnija hipoteza izgleda da je povezana sa ovim patentom i činjenicom da je ECDSA imao dokazanu istoriju i bio lakši za implementaciju.
+Pa, mi stvarno ne znamo zašto Satoshi nije izabrao to, ali verovatna hipoteza je da je ovaj protokol bio pod patentom do 2008. Iako je Bitcoin kreiran godinu dana kasnije, u januaru 2009, u to vreme nije postojala otvorena standardizacija za Schnorr potpise. Možda je Satoshi smatrao da je sigurnije koristiti ECDSA, koji je već bio široko korišćen i testiran u open-source softveru i imao nekoliko priznatih implementacija (posebno OpenSSL biblioteka korišćena do 2015. u Bitcoin Core-u, zatim zamenjena libsecp256k1 u verziji 0.10.0). Ili možda jednostavno nije bio svestan da će ovaj patent isteći 2008. U svakom slučaju, najverovatnija hipoteza izgleda da je povezana sa ovim patentom i činjenicom da je ECDSA imao dokazanu istoriju i bio lakši za implementaciju.
 
 
 ## Sighash indikatori
@@ -1523,7 +1523,7 @@ Pa, mi stvarno ne znamo zašto Satoshi nije izabrao to, ali verovatna hipoteza j
 <chapterId>231c41a2-aff2-4655-9048-47b6d2d83d64</chapterId>
 
 
-Kao što smo videli u prethodnim poglavljima, digitalni potpisi se često koriste za otključavanje skripte ulaza. U procesu potpisivanja, neophodno je uključiti potpisane podatke u izračunavanje, označene u našim primerima kao poruka $m$. Ovi podaci, kada su jednom potpisani, ne mogu biti izmenjeni bez poništavanja potpisa. Zaista, bilo da se radi o ECDSA ili Schnorr, verifikator potpisa mora uključiti u svoje izračunavanje istu poruku $m$. Ako se razlikuje od poruke $m$ koju je inicijalno koristio potpisnik, rezultat će biti netačan i potpis će biti proglašen nevažećim. Tada se kaže da potpis pokriva određene podatke i na neki način ih štiti od neovlašćenih izmena.
+Kao što smo videli u prethodnim poglavljima, digitalni potpisi se često koriste za otključavanje skripte ulaza (input skripta). U procesu potpisivanja, neophodno je uključiti potpisane podatke u izračunavanje, označene u našim primerima kao poruka $m$. Ovi podaci, kada su jednom potpisani, ne mogu biti izmenjeni bez poništavanja potpisa. Zaista, bilo da se radi o ECDSA ili Schnorr, verifikator potpisa mora uključiti u svoje izračunavanje istu poruku $m$. Ako se razlikuje od poruke $m$ koju je inicijalno koristio potpisnik, rezultat će biti netačan i potpis će biti proglašen nevažećim. Tada se kaže da potpis pokriva određene podatke i na neki način ih štiti od neovlašćenih izmena.
 
 
 ### Šta je sighash indikator?
@@ -1531,7 +1531,7 @@ Kao što smo videli u prethodnim poglavljima, digitalni potpisi se često korist
 
 U specifičnom Bitcoin slučaju, videli smo da poruka $m$ odgovara transakciji. Međutim, u stvarnosti je to malo složenije. Zaista, zahvaljujući sighash indikatorima, moguće je odabrati specifične podatke unutar transakcije koji će biti pokriveni ili ne potpisom.
 
-"Sighash indikator" je stoga parametar dodat svakom ulazu, omogućavajući određivanje komponenti transakcije koje su pokrivene pridruženim potpisom. Te komponente su ulazi i izlazi. Izbor sighash indikatora stoga određuje koji ulazi i koji izlazi transakcije su fiksirani potpisom i koji se još uvek mogu menjati bez poništavanja. Ovaj mehanizam omogućava da potpisi obavezuju podatke o transakciji u skladu sa namerama potpisivača.
+"Sighash indikator" je stoga parametar dodat svakom ulazu, omogućavajući određivanje komponenti transakcije koje su pokrivene pridruženim potpisom. Te komponente su ulazi i izlazi. Izbor sighash indikatora stoga određuje koji ulazi i koji izlazi transakcije su fiksirani potpisom i koji se još uvek mogu menjati bez poništavanja potpisa. Ovaj mehanizam omogućava da potpisi obuhvate podatke o transakciji u skladu sa namerama potpisnika.
 
 Očigledno, kada je transakcija potvrđena na blokčejnu, postaje nepromenljiva, bez obzira na korišćene sighash indikatore. Mogućnost izmene putem sighash indikatora ograničena je na period između potpisivanja i potvrde.
 
@@ -1552,11 +1552,11 @@ U Bitcoin-u, postoje pre svega 3 osnovna sighash indikatora:
 ![CYP201](assets/fr/026.webp)
 
 
-U svim dijagramima ovog poglavlja, narandžasta boja predstavlja elemente pokriven potpisom, dok crna boja označava one koji nisu.
+U svim dijagramima ovog poglavlja, narandžasta boja predstavlja elemente pokrivene potpisom, dok crna boja označava one koji nisu.
 
 
 
-- `SIGHASH_NONE` (`0x02`): Potpis pokriva sve ulaze, ali nijedan izlaz, što omogućava modifikaciju izlaza nakon potpisivanja. U konkretnim terminima, ovo je slično blanko čeku. Potpisnik otključava UTXO-e u ulazima, ali ostavlja polje izlaza potpuno promenljivim. Svako ko zna za ovu transakciju može dodati izlaz po svom izboru, na primer, specificiranjem adrese za primanje kako bi prikupio sredstava potrošenih inputa, a zatim emitovati transakciju da prihvati bitkoine. Potpis vlasnika ulaza neće biti poništen, jer pokriva samo ulaze.
+- `SIGHASH_NONE` (`0x02`): Potpis pokriva sve ulaze, ali nijedan izlaz, što omogućava modifikaciju izlaza nakon potpisivanja. U konkretnim terminima, ovo je slično blanko čeku. Potpisnik otključava UTXO-e u ulazima, ali ostavlja polje izlaza potpuno promenljivim. Svako ko zna za ovu transakciju može dodati izlaz po svom izboru, na primer, specificiranjem adrese za primanje kako bi prikupio sredstava potrošenih inputa, a zatim emitovati transakciju da prihvati bitkojne. Potpis vlasnika ulaza neće biti poništen, jer pokriva samo ulaze.
 
 
 ![CYP201](assets/fr/027.webp)
@@ -1596,7 +1596,7 @@ Pored ova tri sighash indikatora, postoji i modifikator `SIGHASH_ANYONECANPAY` (
 ### Projekti za dodavanje novih Sighash indikatora
 
 
-Trenutno (2024), samo sighash indikatoei predstavljeni u prethodnom odeljku su upotrebljivi u Bitcoin-u. Međutim, neki projekti razmatraju dodavanje novih sighash indikatora. Na primer, BIP118, koji su predložili Christian Decker i Anthony Towns, uvodi dva nova sighash indikatora: `SIGHASH_ANYPREVOUT` i `SIGHASH_ANYPREVOUTANYSCRIPT` (_AnyPrevOut = "Bilo koji prethodni izlaz"_).
+Trenutno (2024), samo sighash indikatori predstavljeni u prethodnom odeljku su upotrebljivi u Bitcoin-u. Međutim, neki projekti razmatraju dodavanje novih sighash indikatora. Na primer, BIP118, koji su predložili Christian Decker i Anthony Towns, uvodi dva nova sighash indikatora: `SIGHASH_ANYPREVOUT` i `SIGHASH_ANYPREVOUTANYSCRIPT` (_AnyPrevOut = "Bilo koji prethodni izlaz"_).
 
 
 Ova dva sighash indikatora bi ponudile dodatnu mogućnost u Bitcoin-u: kreiranje potpisa koji ne pokrivaju nijedan specifičan ulaz transakcije.
@@ -1607,7 +1607,7 @@ Ova dva sighash indikatora bi ponudile dodatnu mogućnost u Bitcoin-u: kreiranje
 
 Ovu ideju su prvobitno formulisali Joseph Poon i Thaddeus Dryja u Lightning White Paper-u. Pre nego što je preimenovan, ovaj sighash indikator se zvao `SIGHASH_NOINPUT`.
 
-Ako se ovaj sighash indikator integriše u Bitcoin, omogućiće korišćenje zaveta, ali je takođe obavezan preduslov za implementaciju Eltoo-a, opšteg protokola za druge slojeve koji definiše kako zajednički upravljati vlasništvom nad UTXO-om. Eltoo je specifično dizajniran da reši probleme povezane sa mehanizmima za pregovaranje o stanju Lightning kanala, to jest, između otvaranja i zatvaranja.
+Ako se ovaj sighash indikator integriše u Bitcoin, to će omogućiti upotrebu tzv. kovenanata — pravila koja ograničavaju kako se sredstva mogu trošiti u budućnosti, ali je takođe i obavezan preduslov za implementaciju Eltoo-a, opšteg protokola za druge slojeve koji definiše kako zajednički upravljati vlasništvom nad UTXO-om. Eltoo je specifično dizajniran da reši probleme povezane sa mehanizmima za pregovaranje o stanju Lightning kanala, to jest, između otvaranja i zatvaranja.
 
 
 Da biste produbili svoje znanje o Lightning Network, nakon kursa CYP201, toplo preporučujem kurs LNP201 od Fanisa Michalakisa, koji detaljno pokriva ovu temu:
@@ -1656,7 +1656,7 @@ Prvi novčanici korišćeni u Bitcoin-u bili su JBOK (_Just a Bunch Of Keys_) no
 ![CYP201](assets/fr/033.webp)
 
 
-Ako neko želi da koristi više privatnih ključeva, bilo je potrebno napraviti onoliko rezervnih kopija koliko je potrebno da se obezbedi pristup sredstvima u slučaju problema sa uređajem koji hostuje novčanik. Ako se koristi jedan privatni ključ, ova struktura novčanika može biti dovoljna, jer je jedna rezervna kopija dovoljna. Međutim, ovo predstavlja problem: u Bitcoin-u se snažno savetuje protiv korišćenja uvek istog privatnog ključa. Naime, privatni ključ je povezan sa jedinstvenom adresaom, a Bitcoin adrese za primanje su obično dizajnirane za jednokratnu upotrebu. Svaki put kada primite sredstva, trebalo bi da generate novu praznu adresu.
+Ako neko želi da koristi više privatnih ključeva, bilo je potrebno napraviti onoliko rezervnih kopija koliko je potrebno da se obezbedi pristup sredstvima u slučaju problema sa uređajem koji hostuje novčanik. Ako se koristi jedan privatni ključ, ova struktura novčanika može biti dovoljna, jer je jedna rezervna kopija dovoljna. Međutim, ovo predstavlja problem: u Bitcoin-u se snažno savetuje protiv korišćenja uvek istog privatnog ključa. Naime, privatni ključ je povezan sa jedinstvenom adresom, a Bitcoin adrese za primanje su obično dizajnirane za jednokratnu upotrebu. Svaki put kada primite sredstva, trebalo bi da generišete novu praznu adresu.
 
 
 Ovo ograničenje proizlazi iz Bitcoin modela privatnosti. Ponovnim korišćenjem iste adrese, spoljnim posmatračima se olakšava praćenje Bitcoin transakcija. Zato se ponovna upotreba prijemne adrese snažno obeshrabruje. Međutim, da bismo imali više adresa i javno odvojili naše transakcije, neophodno je upravljati sa više privatnih ključeva. U slučaju JBOK novčanika, to podrazumeva kreiranje onoliko rezervnih kopija koliko ima novih parova ključeva, zadatak koji može brzo postati složen i težak za održavanje korisnicima.
@@ -1670,7 +1670,7 @@ https://planb.network/courses/65c138b0-4161-4958-bbe3-c12916bc959c
 ### HD Novčanici
 
 
-Kako bi se rešilo ograničenje JBOK novčanika, naknadno je korišćena nova struktura novčanika. Godine 2012, Pieter Wuille je predložio poboljšanje sa BIP32, koje uvodi HD (Hijerarhijski Deterministički) novčanike. Princip HD novčanika je da se svi privatni ključevi izvedu iz jednog izvora informacija, nazvanog seed, na deterministički i hijerarhijski način. Ovaj seed se nasumično generiše kada se novčanik kreira i predstavlja jedinstvenu rezervnu kopiju koja omogućava rekreaciju svih privatnih ključeva novčanika. Tako korisnik može generisati veoma veliki broj privatnih ključeva kako bi izbegao ponovnu upotrebu adresa i očuvao svoju privatnost, dok mu je potrebno samo da napravi jednu rezervnu kopiju svog novčanika putem seed-a.
+Kako bi se rešilo ograničenje JBOK novčanika, naknadno je korišćena nova struktura novčanika. Godine 2012, Pieter Wuille je predložio poboljšanje sa BIP32, koje uvodi HD (Hijerarhijski Determinističke) novčanike. Princip HD novčanika je da se svi privatni ključevi izvedu iz jednog izvora informacija, nazvanog seed, na deterministički i hijerarhijski način. Ovaj seed se nasumično generiše kada se novčanik kreira i predstavlja jedinstvenu rezervnu kopiju koja omogućava rekreaciju svih privatnih ključeva novčanika. Tako korisnik može generisati veoma veliki broj privatnih ključeva kako bi izbegao ponovnu upotrebu adresa i očuvao svoju privatnost, dok mu je potrebno samo da napravi jednu rezervnu kopiju svog novčanika putem seed-a.
 
 
 ![CYP201](assets/fr/034.webp)
@@ -1682,16 +1682,16 @@ U HD novčanicima, derivacija ključeva se vrši prema hijerarhijskoj strukturi 
 ### BIP39 Standard: Bezbednosna fraza
 
 
-Pored BIP32, BIP39 standardizuje seed format kao bezbednosnu frazu, kako bi olakšalo pravljenje sigurnosne kopije i čitljivost korisnicima. Bezbednosna fraza, takođe nazvana fraza za oporavak ili fraza od 24 reči, je sekvenca reči izvučena iz unapred definisane liste koja sigurno kodira seed novčanika.
+Pored BIP32, BIP39 standardizuje seed format kao bezbednosnu frazu, kako bi olakšalo pravljenje sigurnosne kopije i čitljivosti korisnicima. Bezbednosna fraza, takođe nazvana fraza za oporavak ili fraza od 24 reči, je sekvenca reči izvučena iz unapred definisane liste koja sigurno kodira seed novčanika.
 
 
 Bezbednosna fraza u velikoj meri pojednostavljuje pravljenje sigurnosne kopije za korisnika. U slučaju gubitka, oštećenja ili krađe uređaja koji hostuje novčanik, jednostavno poznavanje ove bezbednosne fraze omogućava rekreaciju novčanika i povratak pristupa svim sredstvima koja su njome osigurana.
 
 
-U narednim poglavljima istražićemo unutrašnje funkcionisanje HD novčanika, uključujući mehanizme derivacije ključeva i različite moguće hijerarhijske strukture. Ovo će vam omogućiti bolje razumevanje kriptografskih osnova na kojima se zasniva sigurnost sredstava u Bitcoin-u. I za početak, u sledećem poglavlju, predlažem da otkrijemo ulogu entropije u osnovi vašeg novčanika.
+U narednim poglavljima istražićemo unutrašnje funkcionisanje HD novčanika, uključujući mehanizme derivacije ključeva i različite moguće hijerarhijske strukture. Ovo će vam omogućiti bolje razumevanje kriptografskih osnova na kojima se zasniva sigurnost sredstava u Bitcoin-u. I za početak, u sledećem poglavlju, predlažem da otkrijemo ulogu entropije koja je u osnovi vašeg novčanika.
 
 
-## Entropija i Slučajni Brojevi
+## Entropija i slučajni brojevi
 
 
 <chapterId>b43c715d-affb-56d8-a697-ad5bc2fffd63</chapterId>
@@ -1736,7 +1736,7 @@ U sledećem poglavlju, videćemo kako prelazimo sa nasumičnog broja na bezbedno
 
 <chapterId>8f9340c1-e6dc-5557-a2f2-26c9669987d5</chapterId>
 
-Bezbednosna fraza, takođe nazvana "seed fraza", "fraza za oporavak", "tajna fraza" ili "fraza od 24 reči", je sekvenca koja se obično sastoji od 12 ili 24 reči, a generiše se iz entropije. Koristi se za determinističko izvođenje svih ključeva HD novčanika. To znači da je iz ove fraze moguće deterministički generisati i ponovo kreirati sve privatne i javne ključeve Bitcoin novčanika, i samim tim pristupiti sredstvima koja su njome zaštićena. Svrha bezbednosne fraze je da omogući siguran i jednostavan način za pravljenje rezervne kopije i oporavak bitkoina. Uvedena je 2013. godine sa standardom BIP39.
+Bezbednosna fraza, takođe nazvana "seed fraza", "fraza za oporavak", "tajna fraza" ili "fraza od 24 reči", je sekvenca koja se obično sastoji od 12 ili 24 reči, a generiše se iz entropije. Koristi se za determinističko izvođenje svih ključeva HD novčanika. To znači da je iz ove fraze moguće deterministički generisati i ponovo kreirati sve privatne i javne ključeve Bitcoin novčanika, i samim tim pristupiti sredstvima koja su njome zaštićena. Svrha bezbednosne fraze je da omogući siguran i jednostavan način za pravljenje rezervne kopije i povraćaj pristupa bitkoinima. Uvedena je 2013. godine sa standardom BIP39.
 
 
 Hajde da zajedno otkrijemo kako preći od entropije do bezbednosne fraze.
@@ -1759,7 +1759,7 @@ $$
 gde $\text{ENT}$ predstavlja dužinu entropije u bitovima, a $\text{CS}$ dužinu kontrolne sume u bitovima.
 
 
-Na primer, za entropiju od 256 bita, prvih 8 bita heša se uzima da formira kontrolni zbir:
+Na primer, za entropiju od 256 bita, prvih 8 bita heša se uzima da predstavlja kontrolni zbir:
 
 
 $$
@@ -1818,7 +1818,7 @@ Na primer, za entropiju od 128 bita, kontrolni zbir je 4 bita, i tako ukupna sek
 ![CYP201](assets/fr/038.webp)
 
 
-Svaki segment se zatim konvertuje u decimalni broj koji predstavlja reč na listi. Na primer, binarni segment `01011010001` je ekvivalentan decimalnom broju `721`. Dodavanjem 1 da bi se uskladilo sa indeksiranjem liste (koje počinje od 1, a ne od 0), ovo daje rang reči `722`, što je "_focus_" na listi.
+Svaki segment se zatim konvertuje u decimalni broj koji predstavlja reč u listi. Na primer, binarni segment `01011010001` je ekvivalentan decimalnom broju `721`. Dodavanjem 1 da bi se uskladilo sa indeksiranjem liste (koje počinje od 1, a ne od 0), ovo daje rang reči `722`, što je "_focus_" u listi.
 
 
 ![CYP201](assets/fr/039.webp)
@@ -1833,7 +1833,7 @@ Ova prepiska se ponavlja za svaki od 12 segmenata, kako bi se dobila fraza od 12
 ### Karakteristike BIP39 liste reči
 
 
-Jedinstvena karakteristika BIP39 liste reči je da nijedna reč ne deli iste prve četiri slova u istom redosledu sa drugom rečju. To znači da je zapisivanje samo prva četiri slova svake reči dovoljno za čuvanje bezbednosne fraze. Ovo može biti zanimljivo za uštedu prostora, posebno za one koji žele da je ugraviraju na metalnu podlogu.
+Jedinstvena karakteristika BIP39 liste reči je da nijedna reč ne deli ista prva četiri slova u istom redosledu sa drugom rečju. To znači da je zapisivanje samo prva četiri slova svake reči dovoljno za čuvanje bezbednosne fraze. Ovo može biti zanimljivo za uštedu prostora, posebno za one koji žele da je ugraviraju na metalnu podlogu.
 
 
 Ova lista od 2048 reči postoji na nekoliko jezika. Ovo nisu jednostavni prevodi, već različite reči za svaki jezik. Međutim, snažno se preporučuje pridržavanje engleske verzije, jer verzije na drugim jezicima generalno nisu podržane od strane svih softverskih novčanika.
@@ -1865,7 +1865,7 @@ Stoga se smatra da privatni ključ korišćen u Bitcoin-u nudi 128 bita sigurnos
 Kao rezultat toga, odabir fraze od 24 reči ne pruža dodatnu zaštitu za novčanik, jer 256 bita sigurnosti na frazi je besmisleno ako izvedeni ključevi nude samo 128 bita sigurnosti. Da ilustrujemo ovaj princip, to je kao da imate kuću sa dvoja vrata: stara drvena vrata i ojačana vrata. U slučaju provale, ojačana vrata ne bi bila od koristi, jer bi provalnik prošao kroz drvena vrata. Ovo je analogna situacija ovde.
 
 
-Fraza od 12 reči, koja takođe nudi 128 bita sigurnosti, trenutno je dovoljna da zaštiti vaše bitkoine od bilo kakvog pokušaja krađe. Sve dok se algoritam digitalnog potpisa ne promeni da koristi veće ključeve ili da se oslanja na matematički problem drugačiji od ECDLP, fraza od 24 reči ostaje suvišna. Štaviše, duža fraza povećava rizik od gubitka tokom pravljenja sigurnosne kopije: sigurnosna kopija koja je duplo kraća uvek je lakše za upravljanje.
+Fraza od 12 reči, koja takođe nudi 128 bita sigurnosti, trenutno je dovoljna da zaštiti vaše bitkojne od bilo kakvog pokušaja krađe. Sve dok se algoritam digitalnog potpisa ne promeni da koristi veće ključeve ili da se oslanja na matematički problem drugačiji od ECDLP, fraza od 24 reči ostaje suvišna. Štaviše, duža fraza povećava rizik od gubitka tokom pravljenja sigurnosne kopije: sigurnosna kopija koja je duplo kraća uvek je lakše za upravljanje.
 
 
 Da biste išli dalje i konkretno naučili kako ručno generisati testnu bezbednosnu frazu, savetujem vam da otkrijete ovaj vodič:
@@ -1888,13 +1888,13 @@ Kao što smo upravo videli, HD novčanici se generišu iz bezbednosne fraze koja
 ### Šta je BIP39 passphrase?
 
 
-passphrase je opcionalna lozinka, koju možete slobodno izabrati, koja se dodaje bezbednosnoj frazi u procesu derivacije ključa kako bi se poboljšala sigurnost novčanika.
+Passphrase je opcionalna lozinka, koju možete slobodno izabrati, koja se dodaje bezbednosnoj frazi u procesu derivacije ključa kako bi se poboljšala sigurnost novčanika.
 
 
 Budite pažljivi, passphrase ne treba mešati sa PIN kodom vašeg hardverskog novčanika ili lozinkom koja se koristi za otključavanje pristupa vašem novčaniku na vašem računaru. Za razliku od svih ovih elemenata, passphrase igra ulogu u derivaciji ključeva vašeg novčanika. **To znači da bez njega nikada nećete moći da povratite svoje bitkoine.**
 
 
-passphrase radi u tandemu sa bezbednosnom frazom, modifikujući seed iz koje se generišu ključevi. Dakle, čak i ako neko dobije vašu frazu od 12 ili 24 reči, bez passphrase, ne može pristupiti vašim sredstvima. Korišćenje passphrase u suštini stvara novi novčanik sa različitim ključevima. Modifikovanje (čak i minimalno) passphrase će generisati drugačiji novčanik.
+Passphrase radi u tandemu sa bezbednosnom frazom, modifikujući seed iz koje se generišu ključevi. Dakle, čak i ako neko dobije vašu frazu od 12 ili 24 reči, bez passphrase, ne može pristupiti vašim sredstvima. Korišćenje passphrase u suštini stvara novi novčanik sa različitim ključevima. Modifikovanje passphrase-a (čak i minimalno) će generisati drugačiji novčanik.
 
 
 ![CYP201](assets/fr/041.webp)
@@ -1903,12 +1903,12 @@ passphrase radi u tandemu sa bezbednosnom frazom, modifikujući seed iz koje se 
 ### Zašto bi trebalo da koristite passphrase?
 
 
-passphrase je proizvoljan i može biti bilo koja kombinacija karaktera koju izabere korisnik. Korišćenje passphrase stoga nudi nekoliko prednosti. Pre svega, smanjuje sve rizike povezane sa kompromitovanjem bezbednosne fraze zahtevajući još jedan sigurnosni korak za pristup sredstvima (provala, pristup vašem domu, itd.).
+Passphrase je proizvoljan i može biti bilo koja kombinacija karaktera koju izabere korisnik. Korišćenje passphrase-a stoga nudi nekoliko prednosti. Pre svega, smanjuje sve rizike povezane sa kompromitovanjem bezbednosne fraze zahtevajući još jedan sigurnosni korak za pristup sredstvima (provala, pristup vašem domu, itd.).
 
 
-Dalje, može se strateški koristiti za kreiranje mamca novčanika, kako bi se suočili sa fizičkim ograničenjima za krađu vaših sredstava kao što je ozloglašeni "_napad uz fizičku pretnju_". U ovom scenariju, ideja je imati novčanik bez passphrase koji sadrži samo malu količinu bitkoina, dovoljno da zadovolji potencijalnog napadača, dok je pravi novčanik skriven. Ovaj poslednji koristi istu bezbednosnu frazu, ali je osiguran dodatnim passphrase-om.
+Dalje, može se strateški koristiti za kreiranje "mamca" novčanika, kako bi se suočili sa fizičkim ograničenjima za krađu vaših sredstava kao što je ozloglašeni "_napad uz fizičku pretnju_". U ovom scenariju, ideja je imati novčanik bez passphrase koji sadrži samo malu količinu bitkoina, dovoljno da zadovolji potencijalnog napadača, dok je pravi novčanik skriven. Ovaj poslednji koristi istu bezbednosnu frazu, ali je osiguran dodatnim passphrase-om.
 
-Konačno, upotreba passphrase-a je zanimljiva kada se želi kontrolisati nasumičnost generisanja seed od HD novčanika.
+Konačno, upotreba passphrase-a je zanimljiva kada se želi kontrolisati nasumičnost generisanja seed-a od HD novčanika.
 
 
 ### Kako odabrati dobar passphrase?
@@ -1923,7 +1923,7 @@ Takođe je važno pravilno sačuvati ovaj passphrase, na isti način kao i bezbe
 ![CYP201](assets/fr/042.webp)
 
 
-U sledećem odeljku, otkrićemo kako se ova dva osnovna elementa vašeg novčanika — bezbednosna fraza i passphrase — koriste za izvođenje parova ključeva korišćenih u _scriptPubKey_ koji zaključavaju vaše UTXO-e.
+U sledećem odeljku, otkrićemo kako se ova dva osnovna elementa vašeg novčanika — bezbednosna fraza i passphrase — koriste za izvođenje parova ključeva korišćenih u _scriptPubKey_ koji zaključavaju vaše UTXO-ve.
 
 
 # Kreiranje Bitcoin novčanika
@@ -1932,7 +1932,7 @@ U sledećem odeljku, otkrićemo kako se ova dva osnovna elementa vašeg novčani
 <partId>9c25e767-7eae-50b8-8c5f-679d8fc83bab</partId>
 
 
-## Kreiranje seed i Glavnog Ključa
+## Kreiranje seed-a i glavnog ključa
 
 
 <chapterId>63093760-2010-5691-8d0e-9a04732ae557</chapterId>
@@ -1947,7 +1947,7 @@ Kada se generišu bezbednosna fraza i opcioni passphrase, može početi proces d
 ### Seed HD novčanika
 
 
-BIP39 standard definiše seed kao 512-bitni niz, koji služi kao početna tačka za izvođenje svih ključeva HD novčanika. Seed se izvodi iz bezbednosne fraze i mogućeg passphrase koristeći **PBKDF2** algoritam (_Password-Based Key Derivation Function 2_) koji smo već diskutovali u poglavlju 3.3. U ovoj funkciji izvođenja, koristićemo sledeće parametre:
+BIP39 standard definiše seed kao 512-bitni niz, koji služi kao početna tačka za izvođenje svih ključeva HD novčanika. Seed se izvodi iz bezbednosne fraze i mogućeg passphrase-a koristeći **PBKDF2** algoritam (_Password-Based Key Derivation Function 2_) koji smo već diskutovali u poglavlju 3.3. U ovoj funkciji izvođenja, koristićemo sledeće parametre:
 
 
 
@@ -1973,7 +1973,7 @@ $$
 ![CYP201](assets/fr/044.webp)
 
 
-Vrednost seed-a je stoga pod uticajem vrednosti bezbednonse fraze i passphrase. Promenom passphrase dobija se drugačiji seed. Međutim, sa istom bezbednosnom frazom i passphrase, uvek se generiše isti seed, jer je PBKDF2 deterministička funkcija. Ovo osigurava da se isti parovi ključeva mogu povratiti putem naših rezervnih kopija.
+Vrednost seed-a je stoga pod uticajem vrednosti bezbednosne fraze i passphrase-a. Promenom passphrase-a dobija se drugačiji seed. Međutim, sa istom bezbednosnom frazom i passphrase-om, uvek se generiše isti seed, jer je PBKDF2 deterministička funkcija. Ovo osigurava da se isti parovi ključeva mogu povratiti putem naših rezervnih kopija.
 
 
 **Napomena:** U svakodnevnom jeziku, termin "seed" često se pogrešno koristi za bezbednosnu frazu. Naime, u odsustvu passphrase-a, jedno je jednostavno kodiranje drugog. Međutim, kao što smo videli, u tehničkoj stvarnosti novčanika, seed i bezbednosna fraza su zaista dva različita elementa.
@@ -1982,13 +1982,13 @@ Vrednost seed-a je stoga pod uticajem vrednosti bezbednonse fraze i passphrase. 
 Sada kada imamo naš seed, možemo nastaviti sa izvođenjem našeg Bitcoin novčanika.
 
 
-### Glavni ključ i glavni kod lanca
+### Glavni ključ i glavni kod lanca (eng. chain code)
 
 
 Kada se seed dobije, sledeći korak u izvođenju HD novčanika uključuje izračunavanje glavnog privatnog ključa i glavnog koda lance, koji će predstavljati dubinu 0 našeg novčanika.
 
 
-Da bi se dobio glavni privatni ključ i glavni koda lanca, HMAC-SHA512 funkcija se primenjuje na seed, koristeći fiksni ključ "_Bitcoin Seed_" identičan za sve Bitcoin korisnike. Ova konstanta je izabrana kako bi se osiguralo da su izvedeni ključevi specifični za Bitcoin. Ovde su elementi:
+Da bi se dobio glavni privatni ključ i glavni kod lanca, HMAC-SHA512 funkcija se primenjuje na seed, koristeći fiksni termin "_Bitcoin Seed_" identičan za sve Bitcoin korisnike. Ova konstanta je izabrana kako bi se osiguralo da su izvedeni ključevi specifični za Bitcoin. Ovde su elementi:
 
 
 
@@ -2013,7 +2013,7 @@ Izlaz ove funkcije je stoga 512 bita. Zatim se deli na 2 dela:
 - Desnih 256 bita čine **glavni kod lanca**.
 
 
-Matematički, ove dve vrednosti mogu se zapisati na sledeći način, gde je $k_M$ glavni privatni ključ, a $C_M$ glavni lančani kod:
+Matematički, ove dve vrednosti mogu se zapisati na sledeći način, gde je $k_M$ glavni privatni ključ, a $C_M$ glavni kod lanca:
 
 
 $$
