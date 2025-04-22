@@ -1,7 +1,7 @@
 ---
 name: Unutrašnje funkcionisanje Bitkojn novčanika
-objective: Uronite u kriptografske principe koji pokreću Bitkojn novčanike.
-goals: 
+goal: Uronite u kriptografske principe koji pokreću Bitkojn novčanike.
+objectives: 
 
   - Definisanje teorijskih pojmova neophodnih za razumevanje kriptografskih algoritama korišćenih u Bitkojnu
   - Potpuno razumevanje konstrukcije determinističkog i hijerarhijskog novčanika.
