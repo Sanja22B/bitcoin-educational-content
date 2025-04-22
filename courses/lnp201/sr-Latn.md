@@ -1,7 +1,7 @@
 ---
-Name: Teorijsko Uvodjenje u Lajtning Mrežu
-Goal: Otkrijte Lajtning Mrežu iz tehničke perspektive
-Objectives: 
+name: Teorijsko Uvodjenje u Lajtning Mrežu
+goal: Otkrijte Lajtning Mrežu iz tehničke perspektive
+objectives: 
 
   - Razumeti rad kanala plaćanja unutar mreže.
   - Upoznati se sa terminima HTLC, LNURL i UTXO.
