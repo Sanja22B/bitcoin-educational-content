@@ -1,25 +1,25 @@
 ---
 name: Uvod u formalnu kriptografiju
-goal: Duboko uranjanje u nauku i praksu kriptografije.
+goal: Detaljna analiza nauke i prakse kriptografije.
 objectives: 
 
   - Istražite Beale šifre i moderne kriptografske metode kako biste razumeli osnovne i istorijske koncepte kriptografije.
-  - Uronite se u teoriju brojeva, grupe i polja kako biste savladali ključne matematičke pojmove koji su osnova kriptografije.
+  - Udubite se u teoriju brojeva, grupe i polja kako biste savladali ključne matematičke pojmove koji su osnova kriptografije.
   - Proučite RC4 stream šifru i AES sa 128-bitnim ključem da biste saznali više o simetričnim kriptografskim algoritmima.
   - Istražite RSA kriptosistem, distribuciju ključeva i Hash funkcije kako biste istražili asimetričnu kriptografiju.
 
 
 ---
-# Duboko zaronite u kriptografiju
+# Dubinska analiza kriptografije
 
 
-Teško je pronaći mnogo materijala koji nude dobru sredinu u obrazovanju o kriptografiji.
+Teško je pronaći mnogo materijala koji nude uravnotežen pristup učenju kriptografije.
 
 
-S jedne strane, postoje dugački, formalni traktati, zaista dostupni samo onima sa jakom pozadinom u matematici, logici ili nekoj drugoj formalnoj disciplini. S druge strane, postoje veoma uvodne prezentacije koje zaista skrivaju previše detalja za svakoga ko je makar malo radoznao.
+S jedne strane, postoje dugački, formalni traktati, zaista dostupni samo onima sa jakom pozadinom u matematici, logici ili nekoj drugoj formalnoj disciplini. S druge strane, uvodi koji su koncipirani na visokom nivou često zanemaruju mnoge detalje, što nije prikladno za one koji su iole radoznali.
 
 
-Ovaj uvod u kriptografiju nastoji da zauzme srednji put. Iako bi trebalo da bude relativno izazovan i detaljan za svakoga ko je nov u kriptografiji, nije zečja rupa tipičnog osnovnog traktata.
+Ovaj uvod u kriptografiju nastoji da zauzme srednji put. Za one koji tek ulaze u svet kriptografije, biće dovoljno izazovno i informativno, ali bez preteranog zalaženja u dubinu kao kod većine temeljnih radova.
 
 
 +++
@@ -36,7 +36,7 @@ Ovaj uvod u kriptografiju nastoji da zauzme srednji put. Iako bi trebalo da bude
 Dobrodošli na kurs CYP302!
 
 
-Ova knjiga nudi dubinsko uvodno proučavanje nauke i prakse kriptografije. Gde god je moguće, fokusira se na konceptualno, a ne formalno izlaganje materijala.
+Ova knjiga predstavlja detaljan uvod u naučne osnove i praktičnu primenu kriptografije. Gde god je moguće, fokusira se na konceptualno, a ne formalno izlaganje materijala.
 
 
 > Ovaj kurs je zasnovan na [JWBurgers-ovom repozitorijumu](https://github.com/JWBurgers/An_Introduction_to_Cryptography). Sva prava njemu. Sadržaj još nije završen i ovde je samo da pokaže kako bismo ga mogli integrisati ako se JWburger složi.
@@ -50,7 +50,7 @@ Teško je pronaći mnogo materijala koji nude dobru sredinu u obrazovanju o krip
 S jedne strane, postoje dugački, formalni traktati, zaista dostupni samo onima sa snažnom pozadinom u matematici, logici ili nekoj drugoj formalnoj disciplini. S druge strane, postoje vrlo uvodne prezentacije na visokom nivou koje zaista skrivaju previše detalja za svakoga ko je makar malo radoznao.
 
 
-Ovaj uvod u kriptografiju nastoji da zauzme srednji put. Iako bi trebalo da bude relativno izazovan i detaljan za svakoga ko je nov u kriptografiji, nije zečja rupa tipičnog osnovnog traktata.
+Ovaj uvod u kriptografiju nastoji da zauzme srednji put. Iako bi za one koji su novi u kriptografiji trebalo da bude relativno izazovna i dovoljno detaljna, ova knjiga ne predstavlja nepreglednu dubinu kakvu često imaju klasična temeljna dela.
 
 
 
@@ -64,13 +64,13 @@ Od programera do intelektualno radoznalih, ova knjiga je korisna za svakoga ko �
 **Uputstva za čitanje**
 
 
-Knjiga trenutno sadrži sedam poglavlja: "Šta je kriptografija?" (Poglavlje 1), "Matematičke osnove kriptografije I" (Poglavlje 2), "Matematičke osnove kriptografije II" (Poglavlje 3), "Simetrična kriptografija" (Poglavlje 4), "RC4 i AES" (Poglavlje 5), "Asimetrična kriptografija" (Poglavlje 6) i "RSA kriptosistem" (Poglavlje 7). Završno poglavlje, "Kriptografija u praksi," će još biti dodato. Ono se fokusira na razne kriptografske primene, uključujući sigurnost transporta Layer, onion routing i Bitcoin-ov sistem vrednosti Exchange.
+Knjiga trenutno sadrži sedam poglavlja: "Šta je kriptografija?" (Poglavlje 1), "Matematičke osnove kriptografije I" (Poglavlje 2), "Matematičke osnove kriptografije II" (Poglavlje 3), "Simetrična kriptografija" (Poglavlje 4), "RC4 i AES" (Poglavlje 5), "Asimetrična kriptografija" (Poglavlje 6) i "RSA kriptosistem" (Poglavlje 7). Završno poglavlje, "Kriptografija u praksi," će još biti dodato. Ono se fokusira se na različite primene kriptografije, uključujući bezbednost transportnog sloja, onion routing i sistem razmene vrednosti na kojem se zasniva Bitcoin.
 
 
 Osim ako nemate snažnu pozadinu u matematici, teorija brojeva je verovatno najteža tema u ovoj knjizi. Nudim pregled u Poglavlju 3, a pojavljuje se i u izlaganju AES-a u Poglavlju 5 i RSA kriptosistema u Poglavlju 7.
 
 
-Ako se zaista mučite sa formalnim detaljima u ovim delovima knjige, preporučujem da se prvi put zadovoljite čitanjem na visokom nivou.
+Ako imate poteškoća sa formalnim detaljima u ovim delovima knjige, savetujem da ih prvi put pročitate bez previše detaljnog razumevanja, fokusirajući se na osnovne ideje.
 
 
 
@@ -93,7 +93,7 @@ Za one čitaoce koji žele da potraže naprednije znanje o kriptografiji nakon o
 **Doprinosi**
 
 
-Molimo pogledajte [datoteku sa doprinosima u spremištu](https://github.com/JWBurgers/An_Introduction_to_Cryptography/blob/master/Contributions.md) za neke smernice o tome kako podržati projekat.
+Molimo pogledajte [datoteku sa doprinosima u spremištu](https://github.com/JWBurgers/An_Introduction_to_Cryptography/blob/master/Contributions.md) za neke smernice o tome kako da podržite projekat.
 
 
 
