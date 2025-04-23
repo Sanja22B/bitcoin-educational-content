@@ -1,5 +1,5 @@
 ---
-name: Uvod u formalnu Kriptografiju
+name: Uvod u formalnu kriptografiju
 goal: Duboko uranjanje u nauku i praksu kriptografije.
 objectives: 
 
