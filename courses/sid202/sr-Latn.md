@@ -220,25 +220,25 @@ Potpisivanje blokova od strane federacije se sastoji od nekoliko faza:
 Zato što generisanje blokova kod Jake federacije nije probabilističko i zasniva se na fiksnom skupu potpisnika, nikada neće biti podložno reorganizacijama sa više blokova. Ovo omogućava značajno smanjenje vremena čekanja povezanog sa potvrđivanjem transakcija. Takođe uklanja podsticaj za rudarenje radi profita (tj. nagrade za blokove) i zamenjuje ga podsticajem za produktivno učešće u mreži gde svi učesnici imaju isti zajednički cilj; osiguranje da mreža nastavi da funkcioniše na način koji je koristan za sve. Ovo se postiže bez uvođenja jedinstvene tačke kvara ili većih zahteva za poverenje.
 
 
-### Elements kao Sidechain - watchmen i Federated 2-Way Peg
+### Elements kao Sidechain - Čuvari i Federated 2-Way Peg
 
 
-Kada se pokreće kao Sidechain, neki članovi Strong Federation imaju dodatnu ulogu da ispune, onu watchmen. watchmen su odgovorni za transfer sredstava u i iz Elements Sidechain, procesi poznati kao `Peg-In` i `Peg-Out`.
+Kada se pokreće kao Sidechain, neki članovi Jake federacije imaju dodatnu ulogu da ispune, ulogu čuvara. Čuvari su odgovorni za transfer sredstava u i iz Elements Sidechain-a, procesi poznati kao `Peg-In` i `Peg-Out`.
 
 
-Da bi Sidechain radio na pouzdan način, mora omogućiti učesnicima da verifikuju da je Supply sredstava kontrolisan i proverljiv. Elements Sidechain koristi dvosmerni federativni peg za omogućavanje dvosmernog transfera sredstava u i iz Elements Blockchain. Ovo zadovoljava zahteve dokazivog izdavanja i međulančanih transfera.
+Da bi Sidechain radio na pouzdan način, mora omogućiti učesnicima da verifikuju da je ponuda sredstava kontrolisana i proverljiva. Elements Sidechain koristi dvosmerni federativni peg koji omogućava dvosmeran transfera sredstava u i iz Elements blokčejna. Ovo zadovoljava zahteve dokazivog izdavanja sredstava ili tokena i transfera između blokčejna.
 
 
-Funkcija Federated 2-Way Peg omogućava da jedan aset bude interoperabilan sa drugim blokčejnovima i da predstavlja drugi izvorni aset Blockchain. Povezivanjem vašeg Blockchain sa drugim, možete proširiti mogućnosti mainchain i prevazići neka od njegovih inherentnih ograničenja.
+Funkcija Federated 2-Way Peg-a omogućava da digitalna sredstva na jednom blokčejnu bude interoperabilna sa drugim blokčejnovima i da predstavlja drugi izvorni resurs blokčejna. Povezivanjem vašeg blokčejna sa drugim, možete proširiti mogućnosti glavnog i prevazići neka od njegovih inherentnih ograničenja.
 
 
-Na visokom nivou, transferi u Sidechain se dešavaju kada neko pošalje mainchain sredstva na Address kontrolisan od strane multi-potpisnog watchmen Wallet. Ovo efektivno zamrzava sredstva na mainchain. watchmen zatim validira transakciju i oslobađa istu količinu povezanog sredstva unutar Sidechain. Oslobođena sredstva se šalju na Sidechain Wallet koji može dokazati pravo na originalna mainchain sredstva. Ovaj proces efektivno premešta sredstva sa matičnog lanca na Sidechain.
+Na visokom nivou, transferi u Sidechain-u se dešavaju kada neko pošalje sredstva na glavnom blokčejnu na adresu kontrolisnu od strane višepotpisnog novčanika čuvara. Ovo efektivno zamrzava sredstva na glavnom blokčejnu. Čuvari zatim validiraju transakciju i oslobađaju istu količinu povezanog sredstva unutar Sidechain-a. Oslobođena sredstva se šalju na Sidechain novčanik koji može dokazati pravo na originalna sredstva na glavnom blokčejnu. Ovaj proces efektivno premešta sredstva sa matičnog lanca na Sidechain.
 
 
-Kako bi prebacio sredstva nazad na mainchain, korisnik pravi specijalnu peg-out transakciju na Sidechain. Ovu transakciju proverava watchmen koji zatim potpisuju transakciju trošenja sa multi-potpisnog Wallet koji kontrolišu na mainchain. Prag broja učesnika u federaciji mora potpisati pre nego što transakcija na mainchain postane važeća. Kada watchmen pošalju sredstvo nazad na mainchain, oni takođe uništavaju odgovarajući iznos na Sidechain, efektivno prenoseći sredstva između blokčejnova.
+Kako bi prebacila sredstva nazad na mainchain, korisnik pravi specijalnu peg-out transakciju na Sidechain-u. Ovu transakciju proveravaju Čuvari koji zatim potpisuju transakciju trošenja sa više-potpisnog novčanika koji kontrolišu na glavnom blokčejnu. Određeni broj učesnika u federaciji mora potpisati pre nego što transakcija na glavnom blokčejnu postane važeća. Kada Čuvari pošalju sredstvo nazad na glavni blokčejn, oni takođe uništavaju odgovarajući iznos na Sidechain-u, efektivno prenoseći sredstva između blokčejnova.
 
 
-## Postavljanje i Pokretanje Elements
+## Postavljanje i pokretanje Elements platforme
 
 
 <chapterId>cc806e5a-81ab-457b-9531-9f863120a019</chapterId>
@@ -247,7 +247,7 @@ Kako bi prebacio sredstva nazad na mainchain, korisnik pravi specijalnu peg-out 
 :::video id=1f73dfee-3623-483b-ab42-07d9286ed999:::
 
 
-Kako je Elements zasnovan na kodnoj bazi Bitcoin, komponente koje čine funkcionalnu mrežu su veoma slične.
+Kako je Elements zasnovan na kodnoj bazi Bitcoin-a, komponente koje čine funkcionalnu mrežu su veoma slične.
 
 
 Sama Elements čvor softver se zove `elementsd` i radi kao daemon na korisnikovom računaru. daemon (ili servis u Windows-u) je program koji radi kao pozadinski servis bez potrebe za direktnom kontrolom prijavljenog korisnika.
