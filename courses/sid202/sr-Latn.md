@@ -1,28 +1,28 @@
 ---
-name: Zgrada sa Elements i Liquid Network
-goal: Naučite koristiti i razvijati se uz Elements open-source Blockchain platformu i njene ključne funkcije
+name: Pravljenje novih rešenja sa Elements i Liquid mrežom
+goal: Naučite koristiti i praviti aplikacije koristeći Elements open-source Blockchain platformu i njene ključne funkcije
 objectives: 
 
-  - Razumite osnovne pojmove platforme Elements Blockchain i Liquid bočnih lanaca.
-  - Naučite kako postaviti i pokrenuti Elements čvorove za samostalne i Sidechain konfiguracije.
-  - Steknite praktično iskustvo sa federisanim block signing i Federated 2-Way Peg.
-  - Postavite i upravljajte sigurnim, efikasnim Blockchain okruženjima za stvarne slučajeve upotrebe.
+  - Razumite osnovne pojmove Elements Blockchain platforme i Liquid bočnih lanaca.
+  - Naučite kako postaviti i pokrenuti Elements čvorove kao samostalne konfiguracije i konfiguracije bočnih lanaca (eng. sidechain).
+  - Steknite praktično iskustvo sa potpisivanjem blokova od strane federacije i Federated 2-Way Peg.
+  - Postavite i upravljajte sigurnim, efikasnim Blockchain okruženjima sa praktičnim primerima upotrebe.
 
 ---
 
-# Izgraditi na Liquid i Elements
+# Praviti na Liquid i Elements
 
 
-Otkrijte napredne funkcije i mogućnosti Liquid i Elements, i naučite kako efikasno koristiti ove alate za unapređenje vaših razvojnih projekata. Ova obuka pruža potpunu teorijsku i praktičnu osnovu, omogućavajući vam da savladate funkcije kao što su Confidential Transactions, Issued Assets i Federated block signing.
+Otkrijte napredne funkcije i mogućnosti Liquid i Elements, i naučite kako efikasno koristiti ove alate za unapređenje vaših razvojnih projekata. Ova obuka pruža potpunu teorijsku i praktičnu osnovu, omogućavajući vam da savladate funkcije kao što su poverljive transakcije (eng. Confidential Transactions), emitovani aseti (eng. Issued Assets) i potpisivanje blokova od strane federacije (eng. Federated block signing).
 
 
-Liquid, baziran na okviru Elements, dizajniran je za poboljšanje privatnosti, skalabilnosti i funkcionalnosti za finansijska i tehnička rešenja. U ovom kursu, steći ćete praktično iskustvo sa izdavanjem i upravljanjem sredstvima, Federated 2-Way Peg, i korišćenjem alata kao što su elementsd i elements-cli, osnažujući vas da kreirate inovativna rešenja prilagođena vašim potrebama.
+Liquid, baziran na Elements platformi, dizajniran je za poboljšanje privatnosti, skalabilnosti i funkcionalnosti za finansijska i tehnička rešenja. U ovom kursu, steći ćete praktično iskustvo sa izdavanjem i upravljanjem sredstvima, Federated 2-Way Peg, i korišćenjem alata kao što su elementsd i elements-cli, osnažujući vas da kreirate inovativna rešenja prilagođena vašim potrebama.
 
 
-Ovaj kurs je prilagođen programerima svih nivoa iskustva. Početnici i korisnici srednjeg nivoa će pronaći pristupačna objašnjenja i praktične primere, dok napredni korisnici mogu dublje istražiti tehničke detalje i manje poznate funkcije Liquid i Elements.
+Ovaj kurs je prilagođen programerima svih nivoa iskustva. Početnici i korisnici srednjeg nivoa će pronaći pristupačna objašnjenja i praktične primere, dok napredni korisnici mogu detaljnije istražiti tehničke detalje i manje poznate funkcije Liquid-a i Elements-a.
 
 
-Pridružite nam se kako biste unapredili svoje veštine, otključali puni potencijal Liquid i Elements, i kreirali uticajne alate za budućnost inovacija Liquid.
+Pridružite nam se kako biste unapredili svoje veštine, otključali puni potencijal Liquid-a i Elements-a, i razvijali alate od značaja za budućnost inovacija zasnovanih na Liquid mreži.
 
 +++
 
@@ -44,15 +44,15 @@ Pridružite nam se kako biste unapredili svoje veštine, otključali puni potenc
 Dobrodošli na kurs SID202!
 
 
-Cilj *Elements Academy* je da predstavi i objasni ključne koncepte *Elements*, platforme otvorenog koda na kojoj je izgrađen Liquid Sidechain. Do kraja ovog kursa, trebalo bi da imate solidno razumevanje glavnih karakteristika Elements, kao što su Confidential Transactions i Issued Assets, kao i procesa uključenih u rad sa Elements Core. Svaki deo kursa uključuje lekcije sa objašnjavajućim tekstovima i video zapisima, nakon čega sledi kviz.
+Cilj *Elements Academy* je da predstavi i objasni ključne koncepte *Elements-a*, platforme otvorenog koda na kojoj je izgrađen Liquid Sidechain. Do kraja ovog kursa, trebalo bi da imate solidno razumevanje glavnih karakteristika Elements-a, kao što su Confidential Transactions i Issued Assets, kao i procesa uključenih u rad sa Elements Core-om. Svaki deo kursa uključuje lekcije sa objašnjavajućim tekstovima i video zapisima, nakon čega sledi kviz.
 
 
-Ova obuka ima za cilj da vas nauči kako da koristite i razvijate sa open-source platformom Elements, sa fokusom na Liquid Network. Otkrićete kako ove tehnologije mogu poboljšati privatnost, skalabilnost i funkcionalnost vaših razvojnih projekata. Bilo da ste početnik ili iskusni programer, ovaj kurs će vam pružiti snažnu osnovu za savladavanje osnovnih koncepata Elements i Liquid, kao i njihovih praktičnih primena.
+Ova obuka ima za cilj da vas nauči kako da koristite i razvijate sa open-source platformom Elements, sa fokusom na Liquid Network. Otkrićete kako ove tehnologije mogu poboljšati privatnost, skalabilnost i funkcionalnost vaših razvojnih projekata. Bilo da ste početnik ili iskusni programer, ovaj kurs će vam pružiti snažnu osnovu za savladavanje osnovnih koncepata Elements-a i Liquid-a, kao i njihovih praktičnih primena.
 
 
 **Sekcija 1: Uvod**
 
-Počećemo sa sveobuhvatnim pregledom koncepata Elements. Naučićete kako je ova platforma dizajnirana da pruži modularnu i fleksibilnu osnovu za kreiranje bočnih lanaca kao što je Liquid. Cilj je razumeti strukturu Elements pre nego što se upustimo u njene praktične primene.
+Počećemo sa sveobuhvatnim pregledom Elements koncepata. Naučićete kako je ova platforma dizajnirana da pruži modularnu i fleksibilnu osnovu za kreiranje bočnih lanaca kao što je Liquid. Cilj je razumeti strukturu Elements-a pre nego što se upustimo u njegove praktične primene.
 
 
 **Sekcija 2: Elements**
@@ -60,21 +60,21 @@ Počećemo sa sveobuhvatnim pregledom koncepata Elements. Naučićete kako je ov
 Ovaj deo će se fokusirati na to kako Elements funkcioniše. Naučićete kako da konfigurišete Elements čvor, upravljate njime u samostalnom režimu, ili ga koristite kao Sidechain.
 
 
-**Sekcija 3: Korišćenje Elements – Praktične Upotrebe**
+**Sekcija 3: Korišćenje Elements-a – Praktične upotrebe**
 
-Kada se savladaju teorijske osnove, pokrićemo praktične primene Elements. Naučićete kako da izvršite Confidential Transactions, izdate sredstva i upravljate ponovnim izdavanjem sredstava.
-
-
-**Sekcija 4: Elements Federacija**
-
-Ovde ćemo istražiti napredne mehanizme, uključujući federisani block signing, korišćenje Elements kao Sidechain, i kreiranje nezavisnih blokčejnova. Ovaj deo će vam pomoći da razumete kako da osigurate bezbednost, integritet i interoperabilnost blokčejnova zasnovanih na Elements.
+Kada se savladaju teorijske osnove, pokrićemo praktične primene Elements-a. Naučićete kako da izvršite poverljive transakcije, izdate sredstva i upravljate ponovnim izdavanjem sredstava.
 
 
-Spremni da istražite potencijal Elements i Liquid Sidechain? Hajde da počnemo!
+**Sekcija 4: Elements federacija**
+
+Ovde ćemo istražiti napredne mehanizme, uključujući federisano potpisivanje blokova, korišćenje Elements-a kao Sidechain-a, i kreiranje nezavisnih blokčejnova. Ovaj deo će vam pomoći da razumete kako da osigurate bezbednost, integritet i interoperabilnost blokčejnova zasnovanih na Elements-u.
+
+
+Spremni da istražite potencijal Elements-a i Liquid Sidechain-a? Hajde da počnemo!
 
 
 
-## Pregled Elements
+## Pregled Elements-a
 
 
 <chapterId>7a7f2712-5300-4a6d-b1ed-05eab731bc35</chapterId>
@@ -83,52 +83,52 @@ Spremni da istražite potencijal Elements i Liquid Sidechain? Hajde da počnemo!
 :::video id=eae666b4-eddc-4e00-adea-2a5f94396044:::
 
 
-Elements je open source, Sidechain-sposobna Blockchain platforma, koja omogućava pristup moćnim funkcijama razvijenim od strane članova zajednice, kao što su Confidential Transactions i Issued Assets.
+Elements je open source, Sidechain-sposobna Blockchain platforma, koja omogućava pristup moćnim funkcijama razvijenim od strane članova zajednice, kao što su poverljive transakcije i izdavanje digitalnih resursa.
 
 
-Elements je, u svojoj suštini, protokol koji omogućava postizanje konsenzusa oko istorije transakcija i pravila koja upravljaju prenosom i kreiranjem sredstava pohranjenih u distribuiranom Blockchain Ledger.
+Elements je, u svojoj suštini, protokol koji omogućava postizanje konsenzusa oko istorije transakcija i pravila koja upravljaju prenosom i kreiranjem digitalnih sredstava sačuvanih u distribuiranom Blockchain digitalnom dnevniku (eng. Ledger).
 
 
-Više informacija o Elements možete lako pronaći na vebsajtu Elements projekta (https://elementsproject.org/), zvaničnom blogu Liquid (https://blog.Liquid.net/) i portalu za programere (https://Liquid.net/devs).
+Više informacija o Elements možete lako pronaći na vebsajtu Elements projekta (https://elementsproject.org/), zvaničnom Liquid blogu (https://blog.Liquid.net/) i portalu za programere (https://Liquid.net/devs).
 
 
 ### Elements
 
 
-Pokrenut 2015. godine, Elements smanjuje troškove interne izrade i istraživanja i koristi najnoviju Blockchain tehnologiju, otvarajući mnoge nove slučajeve upotrebe za implementaciju. Blockchain zasnovan na Elements može raditi ili kao samostalni Blockchain ili biti povezan s drugim i raditi kao Sidechain. Pokretanje Elements kao Sidechain omogućava da se sredstva verifikovano prenose između različitih blokčejnova.
+Pokrenut 2015. godine, Elements smanjuje troškove interne izrade i istraživanja i koristi najnoviju Blockchain tehnologiju, otvarajući mogućnosti za brojne nove primene. Blockchain zasnovan na Elements može raditi ili kao samostalni Blockchain ili biti povezan s drugim i raditi kao Sidechain. Pokretanje Elements kao Sidechain-a omogućava da se sredstva verifikovano prenose između različitih blokčejnova.
 
 
-Izgrađen na kodnoj bazi Bitcoin i proširujući je, omogućava programerima koji su upoznati sa bitcoind API-jem da brzo i ekonomično kreiraju funkcionalne blokčejnove i testiraju projekte dokazivanja koncepta. Budući da je izgrađen na kodnoj bazi Bitcoin, Elements takođe može služiti kao testna platforma za promene u samom Bitcoin protokolu.
+Zasnovano na Bitcoin kodnoj bazi i prošireno dodatnim funkcionalnostima, omogućava programerima koji su upoznati sa bitcoind API-jem da brzo i ekonomično kreiraju funkcionalne blokčejnove i raditi na projektima koji služe kao dokaz izvodljivosti ideje (eng. proof-of-concepts projects). Budući da je izgrađen na kodnoj bazi Bitcoin-a, Elements takođe može služiti kao testna platforma za promene u samom Bitcoin protokolu.
 
 
-Neke od glavnih karakteristika Elements navedene su u nastavku.
+Neke od glavnih karakteristika Elements-a navedene su u nastavku.
 
 
-#### Confidential Transactions
+#### Poverljive transakcije
 
 
-Podrazumevano, sve adrese u Elements su blinded koristeći Confidential Transactions. Zaslepljivanje je proces kojim se količina i tip sredstva koje se prenosi kriptografski skrivaju od svih, osim učesnika i onih kojima odluče da otkriju ključ za zaslepljivanje.
+Podrazumevano, sve adrese u Elements su skrivene koristeći poverljive transakcije. Skrivanje je proces u kojem se iznos i vrsta imovine koja se prenosi kriptografski sakrivaju od svih, osim učesnika i onih kojima odluče da otkriju ključ za skrivanje.
 
 
-#### Issued Assets
+#### Izdavanje digitalnih resursa
 
 
-Issued Assets na Elements omogućava izdavanje i prenos više tipova sredstava između učesnika mreže. Izdato sredstvo takođe ima koristi od Confidential Transactions i može biti ponovo izdano ili uništeno od strane bilo koga ko poseduje relevantni reissuance token.
+Izdavanje digitalnih resursa na Elements platformi omogućava izdavanje i prenos više tipova sredstava između učesnika mreže. Izdata imovina takođe koristi poverljive transakcije i može biti ponovo izdana ili uništena od strane bilo koga ko drži relevantni token za ponovno izdavanje. (eng. reissuance token).
 
 
 #### Federated 2-Way Peg
 
 
-Elements je platforma opšte namene Blockchain koja se takođe može "vezati" za postojeći Blockchain (kao što je Bitcoin) kako bi se omogućio dvosmerni prenos sredstava sa jednog lanca na drugi. Implementacija Elements kao Sidechain omogućava vam da zaobiđete neka od inherentnih svojstava glavnog lanca, dok zadržavate dobar stepen sigurnosti koju pružaju sredstva osigurana na glavnom lancu.
+Elements je platforma opšte Blockchain namene koja se takođe može "vezati" za postojeći Blockchain (kao što je Bitcoin) kako bi se omogućio dvosmerni prenos sredstava sa jednog lanca na drugi. Implementacija Elements-a kao Sidechain-a omogućava vam da zaobiđete neka od inherentnih svojstava glavnog lanca, dok zadržavate dobar stepen sigurnosti koju pružaju sredstva osigurana na glavnom lancu.
 
 
-#### Potpisani Blokovi
+#### Potpisivanje blokova
 
 
-Elements koristi Strong Federation potpisnika, nazvanih Blok Potpisnici, koji potpisuju i kreiraju blokove na pouzdan i pravovremen način. Ovo uklanja kašnjenje transakcija u PoW Mining procesu, koji je podložan velikim varijacijama vremena bloka zbog svoje nasumične poisson distribucije. Federisani block signing proces postiže pouzdano kreiranje blokova bez uvođenja potrebe za poverenjem treće strane ili računarskim `algoritmom` zasnovanim na Mining.
+Elements koristi Strong Federation potpisnika, nazvanih Blok potpisnici, koji potpisuju i kreiraju blokove na pouzdan i pravovremen način. Ovo uklanja kašnjenje transakcija u PoW procesu rudarenja, koji je podložan velikim varijacijama u vremenu potvrđivanja bloka zbog svoje nasumične Poisson distribucije. Federisani proces potpisivanja blokova postiže pouzdano kreiranje blokova bez uvođenja potrebe za poverenjem treće strane ili računarskim `algoritmom` zasnovanim na rudarenju.
 
 
-Elements dodaje sve ove funkcije na Bitcoin Core kodnu bazu, proširujući mogućnosti mainchain protokola i omogućavajući nove poslovne slučajeve kada se implementira kao Sidechain ili kao samostalno Blockchain rešenje.
+Elements dodaje sve ove funkcije na Bitcoin Core kodnu bazu, proširujući mogućnosti glavnog protokola i omogućavajući nove poslovne slučajeve kada se implementira kao Sidechain-i ili kao samostalno blokčejn rešenje.
 
 
 # Element
@@ -146,63 +146,63 @@ Elements dodaje sve ove funkcije na Bitcoin Core kodnu bazu, proširujući mogu�
 :::video id=7c8c7981-11e5-47a2-a257-ef998f4892f5:::
 
 
-Elements pruža tehničko rešenje za probleme sa kojima se korisnici Blockchain suočavaju svakodnevno; kašnjenje transakcija, nedostatak privatnosti i rizik za fungibilnost.
+Elements pruža tehničko rešenje za probleme sa kojima se korisnici blokčejna suočavaju svakodnevno; čekanje na potrvđivanje transakcija, nedostatak privatnosti i rizik po zamenjivost.
 
 
-Elements prevazilazi ove probleme kroz korišćenje Federated block signing i Confidential Transactions.
+Elements prevazilazi ove probleme kroz korišćenje federacije za potpisivanje blokova i poverljivih transakcija.
 
 
-Za razliku od mreže Bitcoin, proces block signing unutar Elements ne oslanja se na Dinamičke Članstvo Multiparty Potpise (DMMS) i Proof of Work (PoW). Umesto toga, Elements koristi Strong Federation potpisnika, nazvanih Blok Potpisnici, koji mogu potpisivati i kreirati blokove na pouzdan i pravovremen način. Ovo uklanja kašnjenje transakcija u PoW Mining procesu, koji je podložan velikoj varijabilnosti vremena bloka zbog svoje slučajne poisson distribucije. Federisani block signing proces postiže pouzdano kreiranje blokova bez uvođenja potrebe za poverenjem treće strane.
+Za razliku od Bitcoin mreže, proces potpisivanja blokova unutar Elements-a ne oslanja se na Dinamičke potpise za više učesnika sa promenljivim članstvom (DMMS) i Proof of Work (PoW). Umesto toga, Elements koristi Strong Federation potpisnika, nazvanih Blok Potpisnici, koji mogu potpisivati i kreirati blokove na pouzdan i pravovremen način. Ovo uklanja čekanje potvrde transakcija kao što je u PoW procesu rudarenja, koji je podložan velikoj varijabilnosti dužine čekanja na potvrdu bloka zbog svoje slučajne Poisson distribucije. Federisani proces potpisivanja blokova postiže pouzdano kreiranje blokova bez uvođenja potrebe za poverenjem treće strane.
 
 
-Elements može raditi kao Sidechain za drugi Blockchain, kao što je Bitcoin, ili kao samostalni Blockchain bez zavisnosti od drugih mreža.
+Elements može raditi kao Sidechain za drugi blokčejn, kao što je Bitcoin, ili kao samostalni blokčejn bez zavisnosti od drugih mreža.
 
 
-Kada se koristi kao Sidechain, Strong Federation takođe sadrži članove koji omogućavaju siguran i kontrolisan prenos sredstava između glavnog lanca i Elements Sidechain. Kontrolisani prenos sredstava naziva se Federated 2-Way Peg, a članovi koji obavljaju ulogu prenosa sredstava nazivaju se watchmen.
+Kada se koristi kao Sidechain, Strong Federation takođe sadrži članove koji omogućavaju siguran i kontrolisan prenos sredstava između glavnog lanca i Elements Sidechain-a. Kontrolisani prenos sredstava naziva se Federated 2-Way Peg, a članovi koji obavljaju ulogu prenosa sredstava nazivaju se Čuvarima (eng. Watchmen).
 
 
-Procesi uključeni u vođenje Elements mreže i uloge učesnika u mreži su važni za razumevanje kako Elements funkcioniše.
+Procesi uključeni u vođenje Elements mreže kao i  uloge učesnika u mreži su važni za razumevanje kako Elements funkcioniše.
 
 
-Bilo da je implementiran kao Sidechain ili samostalni Blockchain, Elements koristi Jake Federacije Potpisnika Blokova za proizvodnju blokova.
+Bilo da je implementiran kao Sidechain ili samostalni blokčejn, Elements koristi Strong Federaciju potpisnika blokova za potvrđivanje blokova.
 
 
-### Snažne Federacije
+### Jake federacije 
 
 
-Elements koristi konsenzus model koji je prvi predložio Blockstream, nazvan Strong Federations. Strong Federation ne treba Proof of Work (PoW) i umesto toga se oslanja na kolektivne akcije grupe međusobno-nepoverljivih učesnika, nazvanih Functionaries.
+Elements koristi konsenzus model koji je prvi predložio Blockstream, nazvan Jake federacije (eng. Strong Federations). Strong Federation ne koristi Proof of Work (PoW) i umesto toga se oslanja na kolektivne akcije grupe međusobno-nepoverljivih učesnika, nazvanih Funkcionerima (eng.Functionaries).
 
 
-Uloge koje Funkcioner može ispuniti unutar Strong Federation su: Potpisnici Blokova i watchmen. Potpisnici Blokova su potrebni ako pokrećete Elements bilo u Sidechain ili u samostalnom Blockchain režimu, dok su watchmen potrebni samo u Sidechain postavci.
+Uloge koje Funkcioner može ispuniti unutar Jake federacije su: Potpisnici blokova i čuvari. Potpisnici blokova su potrebni ako pokrećete Elements bilo kao Sidechain ili u samostalnom Blockchain režimu, dok su čuvari potrebni samo u Sidechain konfiguraciji.
 
 
-Radnje koje član Strong Federation može da izvrši podeljene su između dve različite uloge kako bi se poboljšala sigurnost i ograničila šteta koju napadač može da prouzrokuje.
+Radnje koje član Jake fderacije može da izvrši podeljene su između dve različite uloge kako bi se poboljšala sigurnost i ograničila šteta koju napadač može da prouzrokuje.
 
 
-Kada se kombinuju, uloge ovih učesnika omogućavaju Elements da obezbedi i brzo kreiranje blokova (brže i konačno potvrđivanje transakcija) i osigurane, prenosive asete (aseti vezani direktno za drugi Blockchain).
+Kada se kombinuju, uloge ovih učesnika omogućavaju Elements-u da obezbedi brzo kreiranje blokova (brže i konačno potvrđivanje transakcija) kao i osiguranih, prenosivih digitalnih sredstava (sredstava vezana direktno za drugi blokčejn).
 
 
-Možete pročitati dokument o Strong Federations ovde: https://blockstream.com/strong-federations.pdf
+Možete pročitati dokument o konsenzusu Jake federacije ovde: https://blockstream.com/strong-federations.pdf
 
 
-### Blokiraj Potpisnike
+### Potpisini blokova
 
 
-Blockchain poput Bitcoin se produžava kada bilo ko ko je deo dinamičke grupe potpisnika blokova produži lanac demonstrirajući da je Proof of Work potrošen. Dinamička priroda skupa uvodi probleme latencije svojstvene takvim sistemima.
+Blokčejn poput Bitcoin-a se produžava kada bilo ko ko je deo dinamičke grupe potpisnika blokova produži lanac demonstrirajući da je Proof of Work utošen. Dinamička priroda ove grupe uvodi probleme čekanja svojstvene takvim sistemima.
 
 
-Korišćenjem fiksnog skupa potpisnika, federativni model zamenjuje dinamički skup poznatim skupom, šemom sa više potpisa. Smanjenje broja učesnika potrebnih za proširenje Blockchain povećava brzinu i skalabilnost sistema, dok validacija od strane svih strana osigurava integritet istorije transakcija.
+Korišćenjem fiksnog skupa potpisnika, federativni model zamenjuje dinamički skup poznatim skupom, šemom sa više potpisa. Smanjenje broja učesnika potrebnih za proširenje blokčejna povećava brzinu i skalabilnost sistema, dok validacija od strane svih strana osigurava integritet istorije transakcija.
 
 
-Federated block signing se sastoji od nekoliko faza:
-
-
-
-- Korak 1 - Blok Potpisnici predlažu kandidatske blokove naizmenično svim ostalim učesnicima Blok Potpisnicima.
+Potpisivanje blokova od strane federacije se sastoji od nekoliko faza:
 
 
 
-- Korak 2 - Svaki block signer signalizira svoju nameru unapred se obavezujući da će potpisati dati kandidat blok.
+- Korak 1 - Blok potpisnici predlažu kandidatske blokove naizmenično svim ostalim učesnicima.
+
+
+
+- Korak 2 - Svaki potpisnik bloka signalizira svoju nameru unapred obavezujući se da će potpisati dati blok koji je kandidat.
 
 
 
@@ -210,14 +210,14 @@ Federated block signing se sastoji od nekoliko faza:
 
 
 
-- Korak 4 - Ako je prag potpisa (koji može biti različit od onog u koraku 3) ispunjen, blok se prihvata i šalje mreži. Strong Federation je postigao konsenzus o najnovijem bloku transakcija.
+- Korak 4 - Ako je prag potpisa (koji može biti različit od onog u koraku 3) ispunjen, blok se prihvata i šalje mreži. Jaka federacija je postigla konsenzus o najnovijem bloku transakcija.
 
 
 
-- Korak 5 - Sledeći blok zatim predlaže sledeći block signer u round-robin i proces se ponavlja.
+- Korak 5 - Sledeći blok zatim predlaže sledeći potpisnik po round-robin mehanizmu i proces se ponavlja.
 
 
-Zato što generisanje blokova kod Strong Federation nije probabilističko i zasniva se na fiksnom skupu potpisnika, nikada neće biti podložno reorganizacijama sa više blokova. Ovo omogućava značajno smanjenje vremena čekanja povezanog sa potvrđivanjem transakcija. Takođe uklanja podsticaj za rudarenje radi profita (tj. nagrade za blokove) i zamenjuje ga podsticajem za produktivno učešće u mreži gde svi učesnici imaju isti zajednički cilj; osiguranje da mreža nastavi da funkcioniše na način koji je koristan za sve. Ovo postiže bez uvođenja jedne tačke kvara ili većih zahteva za poverenjem.
+Zato što generisanje blokova kod Jake federacije nije probabilističko i zasniva se na fiksnom skupu potpisnika, nikada neće biti podložno reorganizacijama sa više blokova. Ovo omogućava značajno smanjenje vremena čekanja povezanog sa potvrđivanjem transakcija. Takođe uklanja podsticaj za rudarenje radi profita (tj. nagrade za blokove) i zamenjuje ga podsticajem za produktivno učešće u mreži gde svi učesnici imaju isti zajednički cilj; osiguranje da mreža nastavi da funkcioniše na način koji je koristan za sve. Ovo se postiže bez uvođenja jedinstvene tačke kvara ili većih zahteva za poverenje.
 
 
 ### Elements kao Sidechain - watchmen i Federated 2-Way Peg
