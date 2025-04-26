@@ -250,31 +250,31 @@ Kako bi prebacila sredstva nazad na mainchain, korisnik pravi specijalnu peg-out
 Kako je Elements zasnovan na kodnoj bazi Bitcoin-a, komponente koje čine funkcionalnu mrežu su veoma slične.
 
 
-Sama Elements čvor softver se zove `elementsd` i radi kao daemon na korisnikovom računaru. daemon (ili servis u Windows-u) je program koji radi kao pozadinski servis bez potrebe za direktnom kontrolom prijavljenog korisnika.
+Sam softver Elements čvora se zove `elementsd` i radi kao daemon na korisnikovom računaru. daemon (ili servis u Windows-u) je program koji radi kao pozadinski servis bez potrebe za direktnom kontrolom prijavljenog korisnika.
 
 
-Napomena: Kroz ovaj dokument, uvek ćemo se pozivati na elementsd kao na verziju daemon, ali sve bi moglo biti urađeno sa Elements-qt, pod uslovom da je opcija servera omogućena.
+Napomena: Kroz ovaj dokument, uvek ćemo se pozivati na elementsd kao na daemon verziju, ali sve bi moglo biti urađeno sa Elements-qt, pod uslovom da je opcija servera omogućena.
 
 
-Elements daemon se povezuje sa drugim čvorovima na mreži kako bi mogao Exchange transakcije i podatke o blokovima, validirajući i proširujući svoju lokalnu kopiju mrežnog Blockchain.
+Elements daemon se povezuje sa drugim čvorovima na mreži kako bi mogao razmenjivati transakcije i podatke o blokovima, validirajući i proširujući svoju lokalnu kopiju mrežnog blokčejna.
 
 
-Elements softver takođe se sastoji od klijentskog programa nazvanog `elements-cli` koji vam omogućava da šaljete Remote Procedure Call (RPC) komande ka elementsd sa komandne linije. Ovo se može koristiti za upit Wallet balansa, pregled podataka o transakcijama ili blokovima ili emitovanje transakcije, na primer. Ova postavka bi trebalo da bude poznata svima koji su koristili Bitcoin ekvivalente; bitcoind i bitcoin-cli.
+Elements softver takođe se sastoji od klijentskog programa nazvanog `elements-cli` koji vam omogućava da šaljete Remote Procedure Call (RPC) komande ka elementsd sa komandne linije. Ovo se može koristiti, na primer, za upit balansa novčanika, pregled podataka o transakcijama ili blokovima ili emitovanje transakcije. Ova postavka bi trebalo da bude poznata svima koji su koristili Bitcoin ekvivalente; bitcoind i bitcoin-cli.
 
 
-Čvor Elements može se konfigurisati prosleđivanjem parametara prilikom pokretanja ili putem konfiguracione datoteke, što omogućava pokretanje više instanci na istom računaru. Ovo je korisno za testiranje i razvojne svrhe jer možete postaviti sopstvenu lokalnu mrežu na jednom računaru, pri čemu svaki Elements čvor ima svoju kopiju Blockchain podataka, upravlja sopstvenim skupom nepotvrđenih validnih transakcija i sluša RPC zahteve na različitim portovima.
+Čvor Elements može se konfigurisati prosleđivanjem parametara prilikom pokretanja ili putem konfiguracione datoteke, što omogućava pokretanje više instanci na istom računaru. Ovo je korisno za testiranje i razvojne svrhe jer možete postaviti sopstvenu lokalnu mrežu na jednom računaru, pri čemu svaki Elements čvor ima svoju kopiju blokčejn podataka, upravlja sopstvenim skupom nepotvrđenih validnih transakcija i sluša RPC zahteve na različitim portovima.
 
 
-### Elements Code Repository i Zajednica
+### Repositorijum Elements koda i zajednica
 
 
 Elements je projekat otvorenog koda i njegov izvorni kod se može pronaći u Elements GitHub repozitorijumu na https://github.com/ElementsProject/Elements. Repozitorijum sadrži izvorni kod za elementsd i elements-cli programe zajedno sa alatima za instalaciju i izgradnju, skup testova i neku instruktivnu dokumentaciju.
 
 
-Da bi upotpunio repozitorijum koda, tu je i vebsajt https://elementsproject.org, resurs fokusiran na zajednicu koji sadrži objašnjenja šta je Elements, kako funkcioniše i sveobuhvatan odeljak sa tutorijalima. Tutorijal se fokusira na učenje o Elements prateći primere komandne linije i pokazuje vam kako da izgradite jednostavne desktop i veb aplikacije na njemu. Sajt takođe navodi popularne Elements forume za diskusiju u zajednici i sam je hostovan na GitHub-u, omogućavajući doprinos zajednice sadržaju sajta.
+Da bi upotpunio repozitorijum koda, tu je i vebsajt https://elementsproject.org, resurs fokusiran na zajednicu koji sadrži objašnjenja šta je Elements, kako funkcioniše i sveobuhvatan odeljak sa tutorijalima. Tutorijal se fokusira na učenje o Elements-u prateći primere komandne linije i pokazuje vam kako da izgradite jednostavne desktop i veb aplikacije na njemu. Sajt takođe navodi popularne Elements forume za diskusiju unutar zajednice i sam je hostovan na GitHub-u, omogućavajući doprinos zajednice sadržaju sajta.
 
 
-Da biste pokrenuli Elements na vašem računaru, prvo ćete morati klonirati (preuzeti kopiju) izvorni kod, instalirati sve zavisnosti koje kod ima i na kraju izgraditi izvršne datoteke daemon i klijenta. Softver Elements je tada spreman za konfiguraciju i pokretanje.
+Da biste pokrenuli Elements na vašem računaru, prvo ćete morati klonirati (preuzeti kopiju) izvornog koda, instalirati sve zavisnosti koje kod ima i na kraju izbilodovati izvršne datoteke daemon i klijenta. Softver Elements je tada spreman za konfiguraciju i pokretanje.
 
 
 ## Konfigurisanje čvorova i umrežavanje
@@ -283,7 +283,7 @@ Da biste pokrenuli Elements na vašem računaru, prvo ćete morati klonirati (pr
 <chapterId>df1ec0aa-84ea-4149-af7a-b4523d67e1d9</chapterId>
 
 
-Postavke konfiguracije mogu se proslediti čvoru Elements prilikom pokretanja kako bi se promenio način na koji radi, validira podatke, povezuje se sa drugim čvorovima i inicijalizuje svoje Blockchain podatke.
+Postavke konfiguracije mogu se proslediti Elements čvoru prilikom pokretanja kako bi se promenio način na koji radi, validira podatke, povezuje se sa drugim čvorovima i inicijalizuje svoje blokčejn podatke.
 
 
 Postavke se ili učitavaju iz određenog `Elements.conf` fajla ili se prosleđuju kao parametri putem komandne linije.
@@ -293,13 +293,13 @@ Neke stvari se mogu promeniti korišćenjem ovih parametara:
 
 
 
-- Naziv default asset korišćen u samostalnim implementacijama Blockchain.
+- Naziv default asseta korišćen u samostalnim blokčejnimplementacijama.
 - Broj početne imovine koja je stvorena.
 - Imovina koja će se koristiti prilikom plaćanja transakcijskih naknada na mreži.
-- Lokacija skladištenja Blockchain datoteka.
+- Lokacija skladištenja blokčejn datoteka.
 - RPC akreditivi korišćeni za povezivanje sa Bitcoin čvorom.
-- Prag `n od m` prag koji treba ispuniti i važeći javni ključevi koji mogu potpisivati blokove.
-- Skripta koja treba biti zadovoljena kako bi se izvršio prenos sredstava u i iz Sidechain.
+- `n od m` prag koji treba ispuniti i važeći javni ključevi koji mogu potpisivati blokove.
+- Skripta koja treba biti zadovoljena kako bi se izvršio prenos sredstava u i iz Sidechain-a.
 - Da li se povezati na Bitcoin čvor kao Sidechain ili ne.
 
 
@@ -312,7 +312,7 @@ Korišćenje parametara biće obrađeno kasnije u kursu, kako i kada budu poveza
 ### Osnovne operacije korišćenjem komandne linije
 
 
-Ovaj kurs će prikazati primere koji koriste program `elements-cli` za upućivanje poziva RPC ka jednom ili više čvorova Elements. Ovo se radi iz terminal sesije i da bi komande bile kraće koristiće se `alias`. Prema ovoj konvenciji kada vidite nešto poput sledećih komandi:
+Ovaj kurs će prikazati primere kod kojih se koriste program `elements-cli` za upućivanje poziva RPC ka jednom ili više Elements čvorova. Ovo se radi iz terminal sesije i da bi komande bile kraće koristiće se `alias`. Prema ovoj konvenciji kada vidite nešto poput sledećih komandi:
 
 
 ```bash
