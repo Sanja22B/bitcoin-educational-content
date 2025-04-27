@@ -322,7 +322,7 @@ e1-cli getnewaddress
 ```
 
 
-`e1-dae` i `e1-CLI` su zapravo tipografske prečice koje koriste funkciju `alias` terminala. `e1-dae` i `e1-CLI` će zapravo biti zamenjeni kada se komanda izvrši i komanda koja će se pokrenuti biće slična:
+`e1-dae` i `e1-CLI` su zapravo tipografske skraćenice koje koriste funkciju `alias` terminala. `e1-dae` i `e1-CLI` će zapravo biti zamenjeni kada se komanda izvrši i komanda koja će se pokrenuti biće slična ovoj:
 
 
 ```
@@ -332,10 +332,10 @@ $HOME/elements/src/elements-cli -datadir=$HOME/elementsdir1 getnewaddress
 ```
 
 
-Ono što vidimo iznad je poziv za pokretanje Elements daemon i poziv za elements-cli programe smeštene u direktorijumu `$HOME/Elements/src` i vrednost za `datadir` parametar. Parametar `datadir` nam omogućava da kažemo daemon i klijent instance gde da pronađu njihove konfiguracione fajlove i, u slučaju daemon, gde da sačuvaju svoju kopiju Blockchain. Kako dele konfiguracioni fajl, klijent će biti u mogućnosti da izvrši RPC pozive ka daemon.
+Ono što vidimo iznad je poziv za pokretanje Elements daemon i poziv za elements-cli programe smeštene u direktorijumu `$HOME/Elements/src` i vrednost za `datadir` parametar. Parametar `datadir` nam omogućava da kažemo daemon i klijentskoj instanci gde da pronađu njihove konfiguracione fajlove i, u slučaju daemon, gde da sačuvaju svoju kopiju blokčejna. Kako dele konfiguracioni fajl, klijent će biti u mogućnosti da izvrši RPC pozive ka daemon-u.
 
 
-Pokretanjem gornje komande ponovo, ali sa drugačijom vrednošću `datadir`, možemo pokrenuti više od jedne instance Elements, svaka sa svojom zasebnom kopijom Blockchain i podešavanjima konfiguracije. Po ovom konvencionalnom pravilu koristićemo alias `e2-dae` i `e2-CLI` u toku kursa da se referišemo na drugačiji datadir direktorijum od e1. Tako bi gornji primer za našu drugu `e2` instancu bio:
+Pokretanjem gornje komande ponovo, ali sa drugačijom vrednošću `datadir`, možemo pokrenuti više od jedne instance Elements, svaka sa svojom zasebnom kopijom blokčejna i konfiguracionim podešavanjima. Po ovom konvencionalnom pravilu koristićemo alias `e2-dae` i `e2-CLI` u toku kursa da se referišemo na drugačiji datadir direktorijum od e1. Tako bi gornji primer za našu drugu `e2` instancu bio:
 
 
 ```
@@ -345,16 +345,16 @@ $HOME/elements/src/elements-cli -datadir=$HOME/elementsdir2 getnewaddress
 ```
 
 
-Ovo će nam omogućiti da izvršimo sve vrste operacija kao što su transakcije sredstava između čvorova, izdavanje sredstava i proveru upotrebe zaslepljivanja u Confidential Transactions između različitih čvorova na istoj mreži.
+Ovo će nam omogućiti da izvršimo sve vrste operacija kao što su transakcije sredstava između čvorova, izdavanje sredstava i proveru upotrebe zaslepljivanja u poverljivim transakcijama između različitih čvorova na istoj mreži.
 
 
-# Korišćenje Elementa Praktična primena
+# Praktična primena korišćenje Elements-a
 
 
 <partId>3f31a30a-957a-4813-b5fe-5dccbb5366f3</partId>
 
 
-## Confidential Transactions
+## Poverljive transakcije
 
 
 <chapterId>263b1c5b-59ed-49e7-b811-95c354f41eae</chapterId>
@@ -363,22 +363,22 @@ Ovo će nam omogućiti da izvršimo sve vrste operacija kao što su transakcije 
 :::video id=ea2121b6-24a8-458d-91e6-0c92eaf4dc65:::
 
 
-U ovom odeljku ćete naučiti kako da koristite funkciju Confidential Transactions uređaja Elements.
+U ovom odeljku ćete naučiti kako da koristite funkciju Poverljivih transakcija na Elements platformi.
 
 
-Sve adrese u Elements su, po defaultu, blinded koristeći Confidential Transactions, što čini da količina i tip prenetih sredstava budu vidljivi samo učesnicima u transakciji (i onima kojima odluče da otkriju ključ za zaslepljivanje), dok se i dalje kriptografski garantuje da se ne može potrošiti više novčića nego što je dostupno.
+Sve adrese u Elements-u su, po defaultu, sakrivene koristeći Poverljive transakcije, što čini da količina i tip prenetih sredstava budu vidljivi samo učesnicima u transakciji (i onima kojima odluče da otkriju ključ za zaslepljivanje), dok se i dalje kriptografski garantuje da se ne može potrošiti više novčića nego što je dostupno.
 
 
-### Poverljive Adrese i Confidential Transactions
+### Poverljive adrese i Poverljive transakcije
 
 
-Podrazumevano, kada kreirate novi Address u Elements koristeći komandu `getnewaddress`, on se kreira kao poverljivi Address.
+Podrazumevano, kada kreirate novu adresu u Elements-u koristeći komandu `getnewaddress`, ona se kreira kao poverljiva adresa.
 
 
-Kako bismo demonstrirali Confidential Transactions, poslaćemo e2 da sam sebi pošalje neka sredstva, a zatim ćemo pokušati da pregledamo transakciju sa e1. Ovo će pokazati poverljivu prirodu transakcija u Elements.
+Kako bismo demonstrirali poverljive transakcije, imaćemo da e2 sam sebi pošalje neka sredstva, a zatim ćemo pokušati da pregledamo transakciju sa e1. Ovo će pokazati poverljivu prirodu transakcija u Elements-u.
 
 
-Svaki novi Address generisan od strane Elements čvora je poverljiv po defaultu. Možemo to demonstrirati tako što ćemo dobiti e2 da generate novi Address.
+Svaki nova adresa generisna od strane Elements čvora je poverljiva po defaultu. Možemo to demonstrirati tako što ćemo koristeći e2 da generišemo novu adresu.
 
 
 ```
@@ -386,7 +386,7 @@ e2-cli getnewaddress
 ```
 
 
-Imajte na umu da Address počinje sa e1. Ovo ga identifikuje kao Pov. Address. Detaljnije ispitivanje Address pomoću komande getaddressinfo prikazuje više detalja o Address.
+Imajte na umu da adrese počinje sa e1. Ovo ga identifikuje kao Poverljiva adresa. Detaljnije ispitivanje adrese pomoću komande getaddressinfo prikazuje više detalja o adresi.
 
 
 ```
@@ -394,16 +394,16 @@ e2-cli getaddressinfo <address>
 ```
 
 
-Možete videti da postoji svojstvo confidential_key koje nam govori da je to poverljivo Address.
+Možete videti da postoji poverljivi_ključ (eng. confidential_key) parametar koje nam govori da je to poverljiva adresa.
 
 
-Poverljivi_ključ je javni ključ za zaslepljivanje, koji se dodaje samom poverljivom Address. Ovo je razlog zašto je poverljivi Address tako dug.
+Poverljivi_ključ je javni ključ za zaslepljivanje, koji se dodaje samoj poverljivoj adresi. Ovo je razlog zašto je poverljiva adresa tako duga.
 
 
-Takođe ima pridruženi nekonfidencijalni Address. Ako želite da koristite redovne, nekonfidencijalne transakcije unutar Elements, sredstva treba poslati na ovaj Address umesto na onaj sa prefiksom lq1.
+Takođe ima pridruženu neprikrivenu adresu. Ako želite da koristite redovne, neprikrivene transakcije unutar Elements, sredstva treba poslati na ovu adresu umesto na onu sa prefiksom lq1.
 
 
-Sada možemo omogućiti da e2 pošalje neka sredstva na Address koji je generisao. Ovo će kasnije pokazati da e1, pošto nije jedna od strana u transakciji, neće moći da vidi detalje transakcije.
+Sada možemo omogućiti da e2 pošalje neka sredstva na adresu koja je generisana. Kasnije čemo pokazati da e1, pošto nije jedna od strana u transakciji, neće moći da vidi detalje ove transakcije.
 
 
 ```
@@ -427,10 +427,10 @@ e2-cli gettransaction <txid>
 ```
 
 
-Pomicanjem naviše kroz detalje transakcije, možete videti da e2 može pregledati iznose poslate i primljene, kao i imovinu koja je transaktovana. Takođe možete videti amountblinder i assetblinder svojstva, koja se koriste za sakrivanje detalja od drugih čvorova koji nisu uključeni u transakciju.
+Pomicanjem naviše kroz detalje transakcije, možete videti da e2 može pregledati poslate i primljene iznose, kao i imovinu koja je transaktovana. Takođe možete videti amountblinder i assetblinder parametre, koja se koriste za sakrivanje detalja od drugih čvorova koji nisu uključeni u transakciju.
 
 
-Da bismo proverili detalje iste transakcije iz e1, prvo moramo dobiti sirove detalje transakcije.
+Da bismo proverili detalje iste transakcije koristeći e1, prvo moramo dobiti sirove detalje transakcije.
 
 
 ```
@@ -438,7 +438,7 @@ e1-cli getrawtransaction <txid>
 ```
 
 
-To vraća sirove detalje transakcije. Ako pogledate unutar vout sekcije, možete videti da postoje tri instance. Prve dve instance su iznosi primanja i kusura, a treća je naknada za transakciju. Od ova tri iznosa, naknada je jedina u kojoj možete videti vrednost, jer je sama naknada uvek unblinded unutar Elements.
+To vraća sirove detalje transakcije. Ako pogledate unutar vout sekcije, možete videti da postoje tri instance. Prve dve instance su iznosi primanja i kusura, a treća je naknada za transakciju. Od ova tri iznosa, naknada je jedina kojoj možete videti vrednost, jer je sama naknada uvek ne sakrivena unutar Elements-a.
 
 
 ### Blinding Keys
@@ -447,7 +447,7 @@ To vraća sirove detalje transakcije. Ako pogledate unutar vout sekcije, možete
 Ono što prva dva odeljka vout prikazuju su "blinded opsezi" iznosa vrednosti i Commitment podaci koji služe kao dokaz stvarnog iznosa i tipa prenete imovine.
 
 
-Čak i ako bismo uvezli privatni ključ e2 u e1-ov Wallet, i dalje ne bi mogao videti iznose i tip transakcije imovine jer još uvek nema saznanja o ključu za zaslepljivanje koji koristi e2. Dokazaćemo ovo uvozom privatnog ključa koji koristi e2-ov Wallet u e1-ov. Prvo moramo izvesti ključ iz e2.
+Čak i ako bismo uvezli privatni ključ e2 u novčanik e1, i dalje ne bi mogli videti iznose i tip transakcije imovine jer još uvek nemamo saznanja o ključu za zaslepljivanje koji koristi e2. Dokazaćemo ovo uvozom privatnog ključa koji koristi e2-ov novčanik u e1-ov. Prvo moramo izvesti ključ iz e2.
 
 
 ```
@@ -455,7 +455,7 @@ e2-cli dumpprivkey <address>
 ```
 
 
-Zatim ga uvezi u e1.
+Zatim ga uvesti u e1.
 
 
 ```
@@ -474,7 +474,7 @@ e1-cli gettransaction <txid>
 Zaista, prikazuje 0 kao iznos tx kada je zapravo bio 1.
 
 
-Da bismo mogli videti stvarnu, nezamaskiranu vrednost, potrebna nam je maskirajuća ključ. Da bismo to uradili, prvo izvozimo maskirajuću ključ iz e2.
+Da bismo mogli videti stvarnu, nezamaskiranu vrednost, potrebna nam je ključ za maskiranje. Da bismo to uradili, prvo izvozimo maskirajuću ključ iz e2.
 
 
 ```
@@ -498,13 +498,13 @@ e1-cli gettransaction <txid>
 ```
 
 
-Pokazuje da sa uvezenim ključem za zaslepljivanje, sada možemo videti stvarnu vrednost 1 unutar transakcije.
+Pokazuje da sa uvezenim ključem za maskiranje, sada možemo videti stvarnu vrednost 1 unutar transakcije.
 
 
-U ovom odeljku smo videli da upotreba ključa za zaslepljivanje skriva iznos i tip sredstava u transakciji, i da uvozom pravog ključa za zaslepljivanje možemo otkriti te vrednosti. U praktičnoj upotrebi, ključ za zaslepljivanje može, na primer, biti dat revizoru, ukoliko postoji potreba da se verifikuju iznosi i tipovi sredstava koje poseduje neka strana. Funkcija Confidential Transactions iz Elements takođe omogućava izvođenje "dokaza opsega". Dokazi opsega mogu dokazati da je iznos sredstva unutar datog opsega, bez potrebe da se otkrije stvarni iznos.
+U ovom odeljku smo videli da upotreba ključa za maskiranje skriva iznos i tip sredstava u transakciji, i da uvozom pravog maskirajućeg ključa možemo otkriti te vrednosti. U praktičnoj upotrebi, ključ za zaslepljivanje može, na primer, biti dat revizoru, ukoliko postoji potreba da se verifikuju iznosi i tipovi sredstava koje poseduje neka strana. Funkcija Poverljivih transakcija unutar Elements-a takođe omogućava izvođenje "dokaza opsega". Dokazi opsega mogu dokazati da je iznos sredstva unutar datog opsega, bez potrebe da se otkrije stvarni iznos.
 
 
-Takođe smo videli da su Confidential Transactions opcioni, ali su podrazumevano omogućeni kada se generiše novi Address.
+Takođe smo videli da su Poverljive transakije opcioni, ali su podrazumevano omogućene kada se generišu nove adrese.
 
 
 To je to za ovu lekciju; srećno na kvizu i vidimo se u sledećoj!
@@ -519,22 +519,22 @@ To je to za ovu lekciju; srećno na kvizu i vidimo se u sledećoj!
 :::video id=7ac63148-d730-496d-85d4-0032aaf09be1:::
 
 
-U ovom odeljku ćete naučiti kako koristiti funkciju Issued Assets uređaja Elements.
+U ovom odeljku ćete naučiti kako koristiti funkciju Issued Assets unutar Elements.
 
 
-Issued Assets omogućava izdavanje i prenos više vrsta sredstava između učesnika Elements mreže. Bilo koji čvor na mreži može izdati sopstvena sredstva. Izdavanja mogu predstavljati fungibilne Ownership bilo kog sredstva uključujući vaučere, kupone, valute, depozite, obveznice, akcije, itd. Issued Assets otvara vrata za izgradnju Trustless berzi, opcija i drugih naprednih pametnih ugovora koji uključuju samostalni Issued Assets.
+Issued Assets omogućava izdavanje i prenos više vrsta sredstava između učesnika Elements mreže. Bilo koji čvor na mreži može izdati sopstvena sredstva. Izdavanja mogu predstavljati zamenjivo vlasništvo bilo kog sredstva uključujući vaučere, kupone, valute, depozite, obveznice, akcije, itd. Issued Assets otvaraju vrata za izgradnju Trustless berzi, opcija i drugih naprednih pametnih ugovora koji uključuju samostalni Issued Assets.
 
 
-Izdati resurs takođe ima koristi od Confidential Transactions i može ga ponovo izdati bilo ko ko drži povezani token.
+Izdati resurs takođe ima koristi i od Poverljivih transakcija i može ga ponovo izdati bilo ko ko drži povezani token.
 
 
-Prvi korak je da ćemo trebati pristup dvema Elements čvorovima, koje ćemo nazvati e1 i e2. Čvorovima su resetovani blokčeinovi i default asset je podeljen između njih.
+Prvi korak je da ćemo trebati imati pristup dvema Elements čvorovima, koje ćemo nazvati e1 i e2. Čvorovima su resetovani blokčejnovi i default asset je podeljen između njih.
 
 
-Dva čvora su na istoj lokalnoj mreži i povezana su međusobno, te stoga dele iste transakcije u svojim transakcijama Mempool i identične blokčejnove. Iako rade na istoj mašini, važno je napomenuti da ne dele iste stvarne Blockchain fajlove. Svaki čvor upravlja svojom lokalnom kopijom Blockchain, koja sadrži istu istoriju transakcija jer su u konsenzusu i pridržavaju se istih pravila protokola kao i drugi.
+Dva čvora su na istoj lokalnoj mreži i povezana su međusobno, te stoga dele iste transakcije u svojim Mempool-ovima i identične blokčejnove. Iako rade na istoj mašini, važno je napomenuti da ne dele iste stvarne blokčejn fajlove. Svaki čvor upravlja svojom lokalnom kopijom blokčejna, koja sadrži istu istoriju transakcija jer su u konsenzusu i pridržavaju se istih pravila protokola kao i drugi.
 
 
-Hajde da počnemo proverom pogleda svakog čvora na postojeća izdavanja sredstava na mreži.
+Hajde da počnemo proverom pogleda svakog čvora na postojeća izdavata sredstava na mreži.
 
 
 Ovo se radi pomoću komande listissuances.
@@ -547,7 +547,7 @@ e2-cli listissuances
 ```
 
 
-Kao što možete videti, oba čvora prikazuju istu istoriju izdavanja. Obe prikazuju jedan aset, inicijalno izdavanje od 21 milion Bitcoin koje je kreirano on chain inicijalizacijom. Možete videti heksadecimalni ID aseta u rezultatima pokretanja gore navedene komande, kao i oznaku dodeljenu asetu, koja je 'Bitcoin'.
+Kao što možete videti, oba čvora prikazuju istu istoriju izdavanja. Obe prikazuju jedan aset, inicijalno izdavanje od 21 milion Bitcoin koje je kreirano on chain inicijalizacijom. Možete videti heksadecimalni ID aseta u rezultatima pokretanjem gore navedene komande, kao i oznaku dodeljenu asetu, koja je 'Bitcoin'.
 
 
 Važno je napomenuti da default asset uvek dobija oznaku kada se lanac inicijalizuje. Kada izdajete sopstvene asete, možete sami postaviti oznake za njih, što ćemo uskoro i uraditi. Pre nego što to možemo da uradimo, potrebno je da izdamo sopstveni aset.
@@ -564,7 +564,7 @@ e1-cli issueasset 100 1 false
 `issueasset` prihvata 3 parametra.
 
 
-Količina novog sredstva za izdavanje, koristili smo 100. Količina tokena za kreiranje (tokeni se koriste za ponovno izdavanje količina sredstva), od kojih smo odabrali 1. Konačni parametar govori Elements da ili kreira izdavanje sredstva kao blinded ili unblinded. Koristićemo unblinded jer želimo da vidimo količine izdavanja iz e2 za minut, pa ćemo uneti false.
+Količina novog sredstva za izdavanje, koristili smo 100. Količina tokena za kreiranje (tokeni se koriste za ponovno izdavanje količina neke imovine), od kojih smo odabrali 1. Konačni parametar govori Elements-u da ili kreira izdavanje sredstva kao blinded ili unblinded. Koristićemo unblinded jer želimo da vidimo izdate količine iz e2 vrlo brzo, pa ćemo uneti false.
 
 
 Pokretanje komande vraća podatke o izdavanju. Ovo uključuje transaction ID, od kojeg možete uzeti kopiju za kasniju upotrebu, jedinstvenu heksadecimalnu vrednost sredstva i jedinstvenu heksadecimalnu vrednost tokena sredstva.
@@ -578,7 +578,7 @@ e1-cli -generate 1
 ```
 
 
-Pokreni komandu `listissuances` protiv e1 ponovo.
+Pokreni komandu `listissuances` unutar e1 ponovo.
 
 
 ```
@@ -586,7 +586,7 @@ e1-cli listissuances
 ```
 
 
-To nam pokazuje da je e1 sada svestan 2 izdavanja, početnog izdavanja Bitcoin i našeg novoizdatog sredstva, od kojeg možemo videti 100. Obratite pažnju na heksadecimalnu vrednost novog sredstva i da nema pridružene oznake sredstva, kao što postoji za izdavanje Bitcoin.
+To nam pokazuje da je e1 sada svestan e2 izdavanja, početnog izdavanja Bitcoin i našeg novoizdatog sredstva, od kojeg možemo videti 100. Obratite pažnju na heksadecimalnu vrednost novog sredstva i da nema pridružene oznake sredstva, kao što postoji za izdavanje Bitcoin-a.
 
 
 Proveri ponovo e2-ovu listu poznatih izdanja.
@@ -600,16 +600,16 @@ e2-cli listissuances
 To nam pokazuje da e2 nije svestan izdavanja sredstava koje je izvršio e1. Može videti samo početno izdavanje Bitcoin koje je već mogao videti.
 
 
-Ovo je zato što e2 nije svestan i ne prati Address na koji je nova imovina poslata kada ju je izdao e1.
+Ovo je zato što e2 nije svestan i ne prati adrese na koju je nova imovina poslata kada ju je izdao e1.
 
 
-Važno je napomenuti da čak iako e2 ne može videti samo izdavanje, e1 bi i dalje mogao poslati e2 deo imovine. Nova imovina bi se zatim pojavila kao raspoloživo stanje u e2-ovom Wallet, iako nije svesna originalnog izdavanja.
+Važno je napomenuti da čak iako e2 ne može videti samo izdavanje, e1 bi i dalje mogao poslati e2 deo imovine. Nova imovina bi se zatim pojavila kao raspoloživo stanje u e2-ovom novčaniku, iako nije svesna originalnog izdavanja.
 
 
-Da bi omogućili e2 da vidi stvarno izdavanje (i samim tim iznos izdat), potrebno je dodati Address u e2 kao praćeni Address.
+Da bi omogućili e2 da vidi stvarno izdavanje (i samim tim izdat iznos), potrebno je dodati adresu u e2 kao praćenu adresu.
 
 
-Da bismo to uradili, moramo saznati Address na koji je sredstvo poslato. Za ovo ćemo koristiti transaction ID koji smo ranije kopirali i zatražiti od e1 da preuzme detalje te transakcije kako bismo pronašli tačan Address koji ćemo dodati na Wallet listu praćenja e2.
+Da bismo to uradili, moramo saznati adresu na koji je sredstvo poslato. Za ovo ćemo koristiti transaction ID koji smo ranije kopirali i zatražiti od e1 da preuzme detalje te transakcije kako bismo pronašli tačnu adresu koju ćemo dodati u e2 novčanik listu praćenja.
 
 
 ```
@@ -617,13 +617,13 @@ e1-cli gettransaction <the-issuance-transaction-id>
 ```
 
 
-Pomicanjem naviše pored heksa podataka transakcije videćete Address koji je primio 100 naših novih sredstava, identifikovanih po njihovoj heks vrednosti.
+Pomicanjem naviše pored heksa podataka transakcije videćete adresu na kojoj se nalazi 100 naših novih sredstava, identifikovanih po njihovoj heks vrednosti.
 
 
-Uzmite Address i kopirajte ga kako bismo ga mogli uvesti u e2.
+Uzmite adresu i kopirajte je kako bismo je mogli uvesti u e2.
 
 
-Sada da uvezemo taj Address u e2. Da bismo to uradili koristimo komandu importaddress.
+Sada trebada uvezemo tu adresu u e2. Da bismo to uradili koristimo komandu importaddress.
 
 
 ```
@@ -639,7 +639,7 @@ e2-cli listissuances
 ```
 
 
-Možete videti da je naš novoizdati aset sada uključen na listu. Čvor e2 je takođe u mogućnosti da odredi količinu aseta koja je izdata, zajedno sa količinom povezanog tokena, jer je izdavanje bilo unblinded izdavanje. Da biste omogućili korišćenje mapiranja ID-a aseta u ime unutar Elements, prvo zaustavite Elements.
+Možete videti da je naš novoizdati aset sada uključen na listu. Čvor e2 je takođe u mogućnosti da odredi količinu aseta koja je izdata, zajedno sa količinom povezanog tokena, jer je izdavanje bilo unblinded izdavanje. Da biste omogućili korišćenje mapiranja ID-a aseta u ime unutar Elements-a, prvo zaustavite Elements.
 
 
 ```
@@ -647,7 +647,7 @@ e1-cli stop
 ```
 
 
-Zatim ga ponovo pokrenite sa dodatnim parametrom koji mapira heksadecimalnu vrednost sredstva na obezbeđenu oznaku. Ovo omogućava čvoru da prikaže podatke o sredstvu u formatu koji je čitljiviji ljudima. Možete dodati ovo na kraj Elements.conf ako želite, tada ne morate dodavati argument za daemon svaki put kada ga pokrenete. Na primer:
+Zatim ga ponovo pokrenite sa dodatnim parametrom koji mapira heksadecimalnu vrednost sredstva na ponuđenu oznaku. Ovo omogućava čvoru da prikaže podatke o sredstvu u formatu koji je čitljiviji ljudima. Možete dodati ovo na kraj Elements.conf ako želite, tada ne morate dodavati argument za daemon svaki put kada ga pokrenete. Na primer:
 
 
 ```
@@ -663,7 +663,7 @@ e1-dae -assetdir=<assetid-here>:<name-of-the-new-asset>
 ```
 
 
-Ponovno upitujem čvor za listu izdanja.
+Ponovno šaljem upit čvoru za listu izdanja.
 
 
 ```
@@ -706,10 +706,10 @@ e2-cli listissuances
 Oznake sredstava su lokalne za svaki čvor, samo heksadecimalni oblik sredstva prepoznaju drugi čvorovi na mreži.
 
 
-Mapiranje oznake na heksadecimalnu vrednost sredstva je korisno prilikom izvršavanja radnji kao što su transakcije i Wallet upiti stanja, jer omogućava skraćeni način referisanja na sredstvo. Na primer, ako želimo da pošaljemo deo našeg novog sredstva (u iznosu od 10) sa e1 na e2 bez korišćenja oznake.
+Mapiranje oznake na heksadecimalnu vrednost sredstva je korisno prilikom izvršavanja radnji kao što su transakcije i upiti stanja unutar novčanika, jer omogućava skraćeni način referisanja na sredstvo. Na primer, ako želimo da pošaljemo deo našeg novog sredstva (u iznosu od 10) sa e1 na e2 bez korišćenja oznake.
 
 
-Prvo treba da nabavimo Address na koji ćemo poslati sredstvo.
+Prvo treba da nabavimo adresu na koji ćemo poslati sredstvo.
 
 
 ```
@@ -744,7 +744,7 @@ e2-cli getwalletinfo
 Možemo videti da je sredstvo zaista primljeno.
 
 
-Imajte na umu da e2 mapira heksadecimalnu vrednost primljenog sredstva i prikazuje je koristeći sopstvenu oznaku. Lakši način da se uradi ista stvar bio bi korišćenje oznake sredstva e1 prilikom slanja.
+Imajte na umu da e2 mapira heksadecimalnu vrednost primljenog sredstva i prikazuje je koristeći sopstvenu oznaku. Lakši način da se uradi ista stvar bio bi korišćenje oznake sredstva unutar e1 prilikom slanja.
 
 
 ```
@@ -770,16 +770,16 @@ U ovom odeljku smo videli kako izdati i označiti sredstva. U sledećem odeljku 
 U ovom odeljku ćete naučiti kako da izdate više već izdatog sredstva, kao i kako da uništite određenu količinu izdatog sredstva.
 
 
-Potrebno je ponovo izdati (stvoriti više) imovine ili uništiti određenu količinu imovine kada imovina predstavlja nešto što nema fiksni Supply. Ovo bi moglo da se odnosi na imovinu koja predstavlja zlato čuvano u trezoru, na primer; kako jedinice zlata ulaze i izlaze iz trezora, imovina koja predstavlja Supply trezora mora biti prilagođena naviše ili naniže u skladu s tim.
+Potrebno je ponovo izdati (stvoriti više) imovine ili uništiti određenu količinu imovine kada imovina predstavlja nešto što nema fiksnu ponudu. Ovo bi moglo da se odnosi na imovinu koja predstavlja zlato čuvano u trezoru, na primer; kako jedinice zlata ulaze i izlaze iz trezora, imovina koja predstavlja ponudu trezora mora biti prilagođena naviše ili naniže u skladu s tim.
 
 
-Ponovno izdavanje iznosa sredstva zahteva Ownership povezanog tokena koji je kreiran zajedno sa sredstvom kada je prvobitno izdato.
+Ponovno izdavanje iznosa sredstva zahteva vlasništvo nad povezanim tokenom koji je kreiran zajedno sa sredstvom kada je prvobitno izdato.
 
 
-Kada kreirate više od jednog sredstva, nije važno koji čvor je prvobitno izdao sredstvo, sve dok čvor koji ponovo izdaje količinu sredstva poseduje ono što se obično naziva reissuance token sredstva. Pogledaćemo kako inicijalno kreirati reissuance token, kako ga koristiti za ponovno izdavanje količine sredstva i takođe kako preneti reissuance token na druge čvorove, kako bi i oni imali dozvolu da ponovo izdaju sredstvo.
+Kada kreirate više od jednog sredstva, nije važno koji čvor je prvobitno izdao sredstvo, sve dok čvor koji ponovo izdaje određenu količinu sredstva poseduje ono što se obično naziva reissuance token sredstava. Pogledaćemo kako inicijalno kreirati reissuance token, kako ga koristiti za ponovno izdavanje nekog iznosa sredstva i takođe kako preneti reissuance token na druge čvorove, kako bi i oni imali dozvolu da ponovo izdaju sredstvo.
 
 
-Trebaće nam pristup dvema Elements čvorovima, koje ćemo nazvati e1 i e2. Čvorovima su resetovani blokčeinovi i default asset je podeljen između njih.
+Trebaće nam pristup dvema Elements čvorovima, koje ćemo nazvati e1 i e2. Čvorovima su resetovani blokčejnovi i defaultni asset je podeljen između njih.
 
 
 Izdaćemo e1 količinu od 100 novog sredstva i kreirati 1 reissuance token za to isto sredstvo. Kreiraćemo izdavanje kao unblinded kako bismo pojednostavili primer. Dakle, hajde da izdamo sredstvo i njegov povezani reissuance token.
@@ -793,7 +793,7 @@ e1-cli issueasset 100 1 false
 Zabeleži ID sredstva i takođe ID (ponovnog izdavanja) tokena.
 
 
-Kako ćemo kasnije ponovo izdavati više sredstava iz e2, potrebno je da zabeležimo transaction ID u kojem je sredstvo izdano i iskoristimo to za uvoz Address u koji je sredstvo poslato.
+Kako ćemo kasnije ponovo izdavati još sredstava iz e2, potrebno je da zabeležimo transaction ID u kojem je sredstvo izdato i da iskoristimo to za uvoz adresu u koju je sredstvo poslato.
 
 
 Potvrdite transakciju.
@@ -812,13 +812,13 @@ e1-cli gettransaction <txid>
 ```
 
 
-Pomicanjem naviše pored heksa podataka transakcije videćete da je u transakciji e1 primio 1 reissuance token i 100 povezanog sredstva.
+Pomicanjem naviše pored heksa podataka transakcije videćete da je u transakciji e1 primio 1 reissuance token i 100 izdatog sredstva.
 
 
-Napravite kopiju Address kako bismo je mogli uvesti u e2.
+Napravite kopiju adrese kako bismo je mogli uvesti u e2.
 
 
-A sada uvoz Address u e2-ov Wallet.
+A sada uvoz adrese u e2-ov novčanik.
 
 
 ```
@@ -836,7 +836,7 @@ e2-cli listissuances
 ```
 
 
-Trenutno e1 drži količinu imovine i 1 reissuance token, ali e2 ne.
+Trenutno e1 drži svu količinu imovine i 1 reissuance token, ali e2 ne.
 
 
 ```
@@ -844,7 +844,7 @@ e1-cli getwalletinfo
 ```
 
 
-Takođe imajte na umu da e1 ima manje default asset nego ranije jer je platio mali iznos za pokrivanje transakcijskih naknada. Ovaj iznos treba da bude prikupljen od strane e1 kada blok koji je kreiran sazri preko 100 blokova duboko.
+Takođe imajte na umu da e1 ima manje default asset nego ranije jer je platio mali iznos za pokrivanje transakcijskih naknada. Ovaj iznos treba da bude prikupljen od strane e1 kada blok koji je kreiran bude imao preko 100 blokova konfirmacija.
 
 
 ```
@@ -852,7 +852,7 @@ e2-cli getwalletinfo
 ```
 
 
-Kako e1 drži reissuance token, može ponovo izdati više toga. Ovo se radi korišćenjem komande reissueasset. Hajde da e1 ponovo izda još 100 te imovine.
+Kako e1 drži reissuance token, može ponovo izdati više sredstava. Ovo se radi korišćenjem komande reissueasset. Hajde da e1 ponovo izda još 100 te imovine.
 
 
 ```
@@ -871,7 +871,7 @@ e1-cli getwalletinfo
 Možete videti da e1 sada drži 200 jedinica imovine, kao što se očekivalo.
 
 
-Kako e2 ne drži količinu reissuance token, dobiće grešku ako pokušaju ponovo izdati sredstvo.
+Kako e2 ne poseduje količinu tokena za ponovno izdavanje, dobiće grešku ako pokušaja ponovo izdati sredstvo.
 
 
 ```
@@ -893,7 +893,7 @@ e1-cli listissuances
 Zabeleži zastavicu `is_reissuance`.
 
 
-Ako sada pošaljemo e2 određenu količinu reissuance token, oni će moći sami da ponovo izdaju količinu tog sredstva. Prvo nam je potreban Address da bismo ga poslali. Vredi napomenuti da se reissuance token tretira isto kao i bilo koje drugo sredstvo unutar Elements prilikom slanja i prikazivanja stanja i da se takođe može razložiti na manje apoene kao i bilo koje drugo sredstvo, tako da ne moramo poslati 1 reissuance token e2 da bi mogao ponovo izdati sredstvo. Bilo koji apoen će biti dovoljan. Generisanje Address za e2 da primi reissuance token.
+Ako sada pošaljemo e2 određenu količinu reissuance tokena, oni će moći sami da ponovo izdaju količinu tog sredstva. Prvo nam je potrebna adresa da bismo ih poslali. Vredi napomenuti da se reissuance token tretira isto kao i bilo koje drugo sredstvo unutar Elements-a prilikom slanja i prikazivanja stanja i da se takođe može razložiti na manje apoene kao i bilo koje drugo sredstvo, tako da ne moramo poslati 1 reissuance token e2 da bi mogao ponovo izdati sredstvo. Bilo koji apoen će biti dovoljan. Generisanje adrese za e2 da primi reissuance token.
 
 
 ```
@@ -925,7 +925,7 @@ e2-cli getwalletinfo
 ```
 
 
-To znači da e2 sada može ponovo izdati više sredstava povezanih sa RIT-om koji drži u svom Wallet. Ponovo ćemo izdati 500 sredstava za e2.
+To znači da e2 sada može ponovo izdati više sredstava povezanih sa RIT-om koji drži u svom novčaniku. Ponovo ćemo izdati 500 sredstava sa e2.
 
 
 ```
@@ -941,7 +941,7 @@ e2-cli getwalletinfo
 ```
 
 
-Možete videti da e2 sada drži iznos ponovo izdat u svom Wallet saldu i da sam RIT nije potrošen u procesu ponovnog izdavanja imovine.
+Možete videti da e2 sada drži iznos ponovo izdatih asseta u svom saldu novčanika i da sam RIT nije potrošen u procesu ponovnog izdavanja imovine.
 
 
 Uništavanje količine imovine je nešto što svako ko poseduje bar količinu koja se uništava može da uradi, to nije regulisano od strane reissuance token.
@@ -957,13 +957,13 @@ e2-cli getwalletinfo
 U ovom odeljku smo videli kako izdati sredstvo, zajedno sa načinom korišćenja reissuance token koji se opcionalno kreira kao deo izdavanja sredstva. Takođe smo videli kako je prenos reissuance token jednostavan kao i prenos bilo kog drugog sredstva, i da posedovanje bilo koje količine reissuance token daje vlasniku pravo da izda više povezanog sredstva. Stoga je veoma važno kontrolisati ko ima pristup tokenima za ponovno izdavanje u vašoj mreži. Takođe smo videli kako uništiti količinu sredstva i da ovaj proces nije kontrolisan posedovanjem reissuance token.
 
 
-# Element Federacija
+# Elements federacija
 
 
 <partId>173a2440-0203-4dcc-8e2b-f8fa2cc8d3ca</partId>
 
 
-## block signing
+## potpisivanje blokova
 
 
 <chapterId>c47b217e-db14-4843-a66f-3e5f3a00a808</chapterId>
@@ -981,19 +981,19 @@ Ranije, i radi lakšeg primera, kreirali smo blokove koristeći komandu `generat
 Postavićemo naše čvorove da zahtevaju 2-od-2 Multisig kreiranje blokova. Ovo će biti postavljeno korišćenjem signblockscript parametra, koji može biti dodat u konfiguracioni fajl ili prosleđen čvoru prilikom pokretanja. Da bismo inicijalizovali lanac sa ovim parametrom, prvo moramo izgraditi skriptu od koje je sastavljen.
 
 
-Uradićemo ovo koristeći neke postojeće čvorove, sačuvati podatke koje oni generišu, a zatim obrisati lanac kako bismo ga mogli ponovo pokrenuti koristeći naš signblockscript parametar. Ovo je neophodno jer skripta čini deo konsenzusnih pravila mreže i biće potrebno postaviti je pri on chain inicijalizaciji. Ne može se dodati kasnije na već postojeći lanac.
+Uradićemo ovo koristeći neke postojeće čvorove, sačuvati podatke koje oni generišu, a zatim obrisati lanac kako bismo ga mogli ponovo pokrenuti koristeći naš signblockscript parametar. Ovo je neophodno jer skripta čini deo konsenzusnih pravila mreže i biće potrebno postaviti je pre on chain inicijalizacije. Ne može se dodati kasnije na već postojeći lanac.
 
 
-Trebaće nam pristup dvema Elements čvorovima, koje ćemo nazvati e1 i e2. Čvorovima su resetovani blokčeinovi i default asset je podeljen između njih.
+Trebaće nam pristup dvema Elements čvorovima, koje ćemo nazvati e1 i e2. Čvorovima su resetovani blokčejnovi i default asset je podeljen između njih.
 
 
-Osigurajte da je parametar con_max_block_sig_size postavljen na visoku vrednost u vašoj Elements.conf datoteci, inače će block signing kasnije u ovom odeljku zakazati. Za ovaj vodič smo postavili con_max_block_sig_size=2000.
+Osigurajte da je parametar con_max_block_sig_size postavljen na visoku vrednost u vašoj Elements.conf datoteci, inače će potpisivanje blokova kasnije u ovom odeljku zakazati. Za ovaj vodič smo postavili con_max_block_sig_size=2000.
 
 
-Kako ćemo resetovati naš Blockchain i obrisati novčanike povezane sa e1 i e2, biće nam potrebno da napravimo kopiju adresa, javnih ključeva i privatnih ključeva koje koristimo za generate skriptu block signing kako bismo ih mogli koristiti kasnije.
+Kako ćemo resetovati naš blokčejn i obrisati novčanike povezane sa e1 i e2, biće nam potrebno da napravimo kopiju adresa, javnih ključeva i privatnih ključeva koje koristimo za generate skriptu potpisivanje blokova kako bismo ih mogli koristiti kasnije.
 
 
-Prvo, potrebno je da svaki od onih koji će biti block signing čvorovi do generate novi Address, od kojih treba da uzmete kopiju.
+Prvo, potrebno je da svaki od onih čvorova koji će biti potpisnici blokova da generišemo novu adresu, od kojih treba da uzmete kopiju.
 
 
 ```
@@ -1013,7 +1013,7 @@ e2-cli getaddressinfo <e2-address>
 ```
 
 
-Zatim izdvojite privatne ključeve, koje ćemo ponovo uvesti kasnije kako bi čvorovi mogli potpisivati blokove nakon što ponovo inicijalizujemo naše Blockchain i Wallet podatke.
+Zatim izdvojite privatne ključeve, koje ćemo ponovo uvesti kasnije kako bi čvorovi mogli potpisivati blokove nakon što ponovo inicijalizujemo naše blokčejnove i podatke novčanika.
 
 
 ```
