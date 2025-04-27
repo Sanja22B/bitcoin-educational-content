@@ -1474,34 +1474,34 @@ Peg-out se dešava kada Elements čvor pozove komandu `sendtomainchain`, koja ka
 :::video id=4955306b-4be3-429c-9d30-068f7644ea73:::
 
 
-Do sada smo pogledali kako pokrenuti Elements kao Sidechain. Međutim, može takođe funkcionisati kao samostalno Blockchain rešenje sa sopstvenim podrazumevanim izvornim sredstvom. U ovoj postavci Elements Blockchain i dalje zadržava sve karakteristike Sidechain implementacije, kao što su Confidential Transactions i Issued Assets, ali nije potrebno peg-in ili peg-out za dodavanje ili uklanjanje default asset iznosa iz opticaja.
+Do sada smo videli kako pokrenuti Elements kao Sidechain. Međutim, Elements može takođe funkcionisati kao samostalno blokčejn rešenje sa sopstvenim podrazumevanim izvornim sredstvom. U ovoj postavci Elements blokčejn i dalje zadržava sve karakteristike Sidechain implementacije, kao što su Confidential Transactions i Issued Assets, ali nije potrebno peg-in ili peg-out za dodavanje ili uklanjanje default asset iznosa iz opticaja.
 
 
 U ovom odeljku ćemo:
 
 
-Inicijalizuj novi Elements Blockchain sa default asset nazvanim `newasset`.
+Inicijalizovati novi Elements blokčejn sa default assetom nazvanim `newasset`.
 
 
-Navedite 1,000,000 `newasset` koji će biti kreiran zajedno sa 2 tokena za ponovno izdavanje za njega.
+Navedsti 1,000,000 `newasset` koji će biti kreirani zajedno sa 2 tokena za ponovno izdavanje.
 
 
-Zatraži sve anyone-can-spend `newasset` kovanice.
+Zatražiti sve anyone-can-spend `newasset` kovanice.
 
 
-Zatraži sve anyone-can-spend tokene za ponovno izdavanje za 'newasset'.
+Zatražiti sve anyone-can-spend tokene za ponovno izdavanje 'newasset-a'.
 
 
-Pošalji sredstvo i njegov reissuance token na Wallet drugog čvora.
+Poslati sredstvo i njegov reissuance token na novčanik drugog čvora.
 
 
-Ponovo izdajte više 'newasset' sa oba čvora.
+Ponovo izdati više 'newasset-a' sa oba čvora.
 
 
-Da bi se inicijalizovala Elements mreža da radi kao samostalna Blockchain, svaki čvor treba da se pokrene sa nekim osnovnim parametrima. Oni se koriste da bi se čvoru reklo da ne pokušava da validira peg-ins sa druge Blockchain, ime mreže default asset i količina default asset i pridruženog reissuance token koji treba kreirati.
+Da bi se inicijalizovala Elements mreža da radi kao samostali blokčejn, svaki čvor treba da se pokrene sa nekim osnovnim parametrima. Oni se koriste da bi se čvoru reklo da ne pokušava da validira peg-ins sa drugog blokčejna, ime default asseta mreže kao i količinu default assetaa i pridruženog reissuance tokena koji treba kreirati.
 
 
-Počećemo novi lanac koristeći ove parametre na naša dva povezana Elements čvora sada. Nazvaćemo default asset `newasset` i izdaćemo milion njih i dva `newasset` tokena za ponovno izdavanje.
+Počećemo sada novi lanac koristeći ove parametre na naša dva povezana Elements čvora. Nazvaćemo default asset `newasset` i izdaćemo milion njih i dva `newasset` tokena za ponovno izdavanje.
 
 
 ```
@@ -1514,7 +1514,7 @@ e2-dae -validatepegin=0 -defaultpeggedassetname=newasset -initialfreecoins=10000
 Imajte na umu da su iznosi korišćeni ovde u najmanjoj denominaciji koju mreža može prihvatiti, tako da dvesta miliona tokena za ponovnu izdaju zapravo odgovaraju dvema celim tokenima. Isto važi i za denominaciju početnih besplatnih novčića.
 
 
-Proverite trenutne Wallet bilanse našeg čvora.
+Proverite trenutni bilans novčanika našeg čvora.
 
 
 ```
@@ -1540,7 +1540,7 @@ e1-cli sendtoaddress <e1-address> 1000000 "" "" true
 Imajte na umu da ne moramo navesti 'newasset' kao sredstvo za slanje jer je to već default asset. i stoga je i default asset korišćen za plaćanje mrežnih naknada.
 
 
-U okviru Elements, možete poslati više tipova sredstava na isti Address, tako da možemo ponovo koristiti Address koji smo upravo generisali za primanje default asset, i koristiti ga kao odredišni Address za ponovnu izdavanje tokena.
+U okviru Elements, možete poslati više tipova sredstava na istu adresu, tako da možemo ponovo koristiti adresu koji smo upravo generisali za primanje default asseta, i koristiti ga kao odredišnu adresu za ponovnu izdavanje tokena.
 
 
 ```
@@ -1556,7 +1556,7 @@ e1-cli generate 101
 ```
 
 
-Proverićemo da je e1 jedini nosilac sredstva i njegov reissuance token sada.
+Proverićemo da je e1 sada jedini vlasnik sredstva i tokena za ponovno izdavanje tih sredstava.
 
 
 ```
@@ -1566,7 +1566,7 @@ e2-cli getwalletinfo
 ```
 
 
-Što možemo videti da je zaista slučaj.
+Što možemo videti da je zaista i slučaj.
 
 
 Sada ćemo poslati deo 'newasset' korisniku e2, koji trenutno ima saldo nula.
@@ -1579,10 +1579,10 @@ e1-cli sendtoaddress <e2-address> 500 "" "" false
 ```
 
 
-Imajte na umu da nismo morali da navedemo tip sredstva koje treba poslati, jer je `newasset` kreiran kao mrežni default asset
+Imajte na umu da nismo morali da navedemo tip sredstva koje treba poslati, jer je `newasset` kreiran kao mrežni podrazumevani asset
 
 
-Hajde da pošaljemo i neke od tokena za ponovno izdavanje za `newasset` na e2.
+Hajde da pošaljemo i neke od tokena za ponovno izdavanje `newasset-a` na e2.
 
 
 ```
@@ -1608,7 +1608,7 @@ e2-cli getwalletinfo
 ```
 
 
-Sada ćemo ponovo izdati neke od default asset iz e1. Imajte na umu da je mogućnost da se ovo uradi omogućena početnim parametrom initialreissuancetokens. Koji, ako se izostavi ili postavi na nulu, će rezultirati default asset koji ne može biti ponovo izdat kasnije.
+Sada ćemo ponovo izdati neke od podrazumevanog asseta iz e1. Imajte na umu da je mogućnost da se ovo uradi omogućena početnim parametrom initialreissuancetokens. Koji, ako se izostavi ili postavi na nulu, će rezultirati default asset koji ne može biti ponovo izdat kasnije.
 
 
 ```
@@ -1647,48 +1647,48 @@ e2-cli getwalletinfo
 ```
 
 
-U ovom odeljku smo postavili Elements kao samostalni Blockchain i proverili da osnovna funkcionalnost radi kako očekujemo.
+U ovom odeljku smo postavili Elements kao samostalni blokčejn i proverili da osnovna funkcionalnost radi kako očekujemo.
 
 
 Koristili smo startne parametre za:
 
 
-Inicijalizuj novi Elements Blockchain sa default asset nazvanim 'newasset'.
+Inicijalizaciju novog Elements blokčejna sa defaultnim assetom nazvanim 'newasset'.
 
 
-Navedite količinu default asset za kreiranje inicijalizacije on chain.
+Naveli količinu default asseta za kreiranje inicijalizacije on chain.
 
 
-Kreirajte neke tokene za ponovnu izdavanje za default asset i ponovo izdajte više default asset sa oba čvora.
+Kreirali neke tokene za ponovnu izdavanje defaultnog asseta i ponovo izdali više defaultnog asseta sa oba čvora.
 
 
-Na našoj samostalnoj Blockchain Elements mreži, sve druge transakcione operacije će funkcionisati na isti način kao primeri pokriveni u glavnim delovima kursa, ali će koristiti 'newasset' umesto `Bitcoin` kao podrazumevani i naknadni aset.
+Na našoj samostalnoj blokčejn Elements mreži, sve druge transakcione operacije će funkcionisati na isti način kao primeri pokriveni u glavnim delovima kursa, ali će koristiti 'newasset' umesto `Bitcoin` kao podrazumevano sredstvo i sredstvo za naknadu.
 
 
-### Parametri pokretanja čvora i inicijalizacije lanca
+### Parametri pokretanja čvora i inicijalizacije blokčejna
 
 
-Da bi se Elements čvor postavio da radi kao samostalni Blockchain, potrebno je koristiti nekoliko parametara zajedno. Sada ćemo pogledati svaki od njih i saznati šta rade.
+Da bi se Elements čvor postavio da radi kao samostalni blokčejn, potrebno je koristiti nekoliko parametara zajedno. Sada ćemo pogledati svaki od njih i saznati šta rade.
 
 
 #### `validatepegin=0`
 
-Kao samostalni Blockchain ne treba da validira bilo koje peg-in ili peg-out transakcije, potrebno je da onemogućimo te provere. Sa ovom postavkom, ne morate da pokrećete Bitcoin klijentski softver ili čuvate kopiju Bitcoin Blockchain, jer će Elements mreža raditi nezavisno.
+Kao samostalni blokčejn nije potrebno da validira bilo koje peg-in ili peg-out transakcije, potrebno je da onemogućimo te provere. Sa ovom postavkom, ne morate da pokrećete Bitcoin klijentski softver ili čuvate kopiju Bitcoin blokčejna, jer će Elements mreža raditi nezavisno.
 
 
 #### `defaultpeggedassetname`
 
-Ovo vam omogućava da navedete ime default asset kreiranog prilikom inicijalizacije Blockchain.
+Ovo vam omogućava da navedete ime defaultnog asseta kreiranog prilikom inicijalizacije blokčejna.
 
 
 #### `initialfreecoins`
 
-Broj (u ekvivalentu jedinice Bitcoin's Satoshi) default asset za kreiranje.
+Broj (ekvivalentno jedinici bitkojn satošija) defaultnog asseta za kreiranje.
 
 
 #### `initialreissuancetokens`
 
-Broj (u ekvivalentu jedinice Bitcoin Satoshi) tokena za ponovno izdavanje za kreiranje default asset. Bez ovoga bi bilo nemoguće kreirati više default asset. Ako ne želite da bude moguće kreirati više default asset, ovo može biti postavljeno na nulu ili izostavljeno.
+Broj (ekvivalentno jedinici bitkojn satošija) tokena za ponovno izdavanje za kreiranje podrazumevanog sredstva. Bez ovoga bi bilo nemoguće kreirati više default asset. Ako ne želite da bude moguće kreirati više osnovne imovine, ovo može biti postavljeno na nulu ili izostavljeno.
 
 
 Koristeći ove parametre, uobičajeni način za pokretanje čvora bi izgledao ovako:
@@ -1702,10 +1702,10 @@ e1-dae -validatepegin=0 -defaultpeggedassetname=newasset -initialfreecoins=10000
 ### Osnovne operacije
 
 
-Parametar `defaultpeggedassetname` primenjuje oznaku na default asset. Bez ovog podešavanja, default asset će automatski biti nazvan `Bitcoin`. U prethodnim odeljcima, kada smo slali sredstva koja smo sami izdali na drugi čvor, morali smo da navedemo ili heksadecimalnu vrednost sredstva ili lokalno primenjenu oznaku sredstva kako bismo rekli Elements koje sredstvo šaljemo. Pošto se `defaultpeggedassetname` primenjuje na sve čvorove, ne moramo ga imenovati kada ga šaljemo, čak iako njegovo ime nije `Bitcoin`. Svaka funkcija koja bi pre podrazumevano slala `Bitcoin` sada će poslati šta god ste odlučili da označite kao default asset.
+Parametar `defaultpeggedassetname` primenjuje oznaku na osnovnu imovinu. Bez ovog podešavanja, osnovna imovina će automatski biti nazvan `Bitcoin`. U prethodnim odeljcima, kada smo slali sredstva koja smo sami izdali na drugi čvor, morali smo da navedemo ili heksadecimalnu vrednost sredstva ili lokalno primenjenu oznaku sredstva kako bismo rekli Elements platformi koje sredstvo šaljemo. Pošto se `defaultpeggedassetname` primenjuje na sve čvorove, ne moramo ga imenovati kada ga šaljemo, čak iako njegovo ime nije `Bitcoin`. Svaka funkcija koja bi pre podrazumevano slala `Bitcoin` sada će poslati šta god ste odlučili da označite kao podrazumevanu imovinu.
 
 
-Dakle, slanje 10 novih default asset na Address je jednostavno kao:
+Dakle, slanje 10 novih default asset na adresu je jednostavno kao:
 
 
 ```
@@ -1716,7 +1716,7 @@ e1-cli sendtoaddress <destination address> 10 "" "" true
 Ako ste takođe obezbedili čvoru vrednost za `initialreissuancetokens` veću od nule, onda ćete takođe moći da ponovo izdate više default asset, što nije moguće ako pokrenete Elements kao Sidechain.
 
 
-Da bi to uradio, bilo koji čvor koji drži količinu tokena povezanog sa default asset samo treba da izda komandu u obliku:
+Da bi se to uradilo, bilo koji čvor koji drži neku količinu tokena povezanog sa defaultnim assetom samo treba da izda komandu u obliku:
 
 
 ```
@@ -1724,7 +1724,7 @@ e1-cli reissueasset <default asset name> <amount>
 ```
 
 
-Korišćenjem gore navedenih parametara možete upravljati Elements kao samostalnim Blockchain sa sopstvenim default asset, odvojenim od Bitcoin i drugih blokčejnova.
+Korišćenjem gore navedenih parametara možete upravljati Elements-om kao samostalnim blokčejnom sa sopstvenom osnovnom imovinom, odvojenom od Bitcoin-a i drugih blokčejnova.
 
 
 ## Zaključak
@@ -1736,13 +1736,13 @@ Korišćenjem gore navedenih parametara možete upravljati Elements kao samostal
 :::video id=bd5167d5-edba-40b0-a8b1-ba8b74493a08:::
 
 
-Na ovom kursu smo naučili da je Elements open-source mrežni protokol koji se može implementirati kao Sidechain na drugi Blockchain, ili kao samostalno Blockchain rešenje.
+Na ovom kursu smo naučili da je Elements open-source mrežni protokol koji se može implementirati kao Sidechain na drugi blokčejn, ili kao samostalno blokčejn rešenje.
 
 
-Videli smo da su izvorni kod i vebsajt za Elements (https://github.com/ElementsProject/Elements) hostovani na GitHub-u i da postoje forumi za diskusiju u zajednici, kao što su Build On L2 (https://community.Liquid.net/c/developers/), ili Liquid Developers Telegram (https://t.me/liquid_devel), koji se mogu koristiti za više informacija o implementaciji i razvoju aplikacija na Elements i Liquid. Ključne funkcije kao što su Confidential Transactions i Issued Assets su pokrivene, zajedno sa time kako članovi Strong Federation omogućavaju federisani block signing i mehanizam 2-Way Peg.
+Videli smo da su izvorni kod i vebsajt za Elements (https://github.com/ElementsProject/Elements) hostovani na GitHub-u i da postoje forumi za diskusiju u zajednici, kao što su Build On L2 (https://community.Liquid.net/c/developers/), ili Liquid Developers Telegram (https://t.me/liquid_devel), koji se mogu koristiti za više informacija o implementaciji i razvoju aplikacija na Elements-u i Liquid-u. Ključne funkcije kao što su Confidential Transactions i Issued Assets su pokrivene, zajedno sa time kako članovi Jake federacije omogućavaju federisani potpis blokova i mehanizam 2-Way Peg.
 
 
-Sledeći korak je da se izazoveš kumulativnim kvizom koji pokriva sve prethodne sekcije, a zatim da započneš svoje Elements putovanje…srećno!
+Sledeći korak je da se izazoveš sveobuhvatnim kvizom koji pokriva sve prethodne sekcije, a zatim da započneš svoje Elements putovanje…srećno!
 
 
 # Završni deo
