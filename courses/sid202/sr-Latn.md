@@ -1022,7 +1022,7 @@ e2-cli dumpprivkey <e2-address>
 ```
 
 
-Sada treba da generišemo Redeem skriptu sa zahtevima za višestruki potpis 2 od 2. To radimo koristeći komandu createmultisig i prosleđujući prvi parametar kao 2, a zatim obezbeđujući dva javna ključa. To su ključevi čije vlasništvo treba da se dokaže kasnije kada se blok kreira.
+Sada treba da generišemo skriptu za preuzimanje sredstava (otkupna skripta eng.redeem script) sa zahtevom za višepotpis 2 od 2. To radimo koristeći komandu createmultisig i prosleđujući 2 kao prvi parametar, a zatim obezbeđujući dva javna ključa. To su ključevi čije vlasništvo treba da se dokaže kasnije kada se blok kreira.
 
 
 Bilo koji čvor, e1 ili e2, može generisati Multisig.
@@ -1039,7 +1039,7 @@ To nam daje naš redeemscript, koji možete kopirati za kasniju upotrebu.
 Sada moramo obrisati postojeće podatke blokčejna i novčanika kako bismo mogli ponovo početi sa novim signblockscript kao deo pravila konsenzusa blokčejna. Zato smo ranije morali napraviti kopiju nekih podataka, kao što su privatni ključevi koji će se koristiti u novom lancu za potpisivanje blokova. Ovo morate uraditi pre nego što nastavite.
 
 
-Sa našim postojećim novčanikom i podacima lanca obrisanim, sada možemo pokrenuti naše čvorove i inicijalizovati novi lanac koristeći signblockscript parametar. Prosledićemo -evbparams=dynafed:0::: da onemogućimo dynafed aktivaciju, jer nam ta napredna funkcija nije potrebna za ovaj primer.
+Sa našim postojećim novčanikom i obrisanim podacima lanca, sada možemo pokrenuti naše čvorove i inicijalizovati novi lanac koristeći signblockscript parametar. Prosledićemo -evbparams=dynafed:0::: da onemogućimo dynafed aktivaciju, jer nam ta napredna funkcija nije potrebna za ovaj primer.
 
 
 ```
@@ -1135,7 +1135,7 @@ e1-cli submitblock <combined-signed-hex>
 ```
 
 
-Provera da li je podnesak bio važeći.
+Provera da li je podnošenje bilo važeće.
 
 
 ```
@@ -1154,7 +1154,7 @@ Da rezimiramo proces. U ovom odeljku imamo:
 - Predloženi blok.
 - Svaki čvor potpisuje blok.
 - Kombinovanje potpisa.
-- Provere da su potpisi važeći i da ispunjavaju redeemscript prag definisan u blokčejnu.
+- Provere da su potpisi važeći i da ispunjavaju prag za redeemscript definisan u blokčejnu.
 - Podnošenje bloka.
 
 
@@ -1171,14 +1171,14 @@ Iako proces u početku deluje složeno, redosled potpisivanje bloka u Elements-u
 
 2. Kreiranje višepotpisne adrese pod nazivom `signblockscript` koristeći javne ključeve potpisivača bloka federacije (eng. Federated Block Signers).
 
-3. Redeem Skripta iz ove adrese se koristi za pokretanje novog blokčejna.
+3. Redeem skripta iz ove adrese se koristi za pokretanje novog blokčejna.
 
 4. Proizvodnja blokova (u toku)
 
 5. Predloženi blokovi se generišu i razmenjuju radi potpisivanja.
 
 
-Kada prag broja potpisnika potpiše predloženi blok, potpisi se kombinuje i šalje mreži. Ako ispunjava kriterijume `signblockscript` lanca, čvorovi ga prihvataju kao važeći blok.
+Kada potreban prag broja potpisnika potpiše predloženi blok, potpisi se kombinuje i šalju mreži. Ako ispunjava kriterijume `signblockscript` lanca, čvorovi ga prihvataju kao važeći blok.
 
 
 ## Elements kao bočni lanac
@@ -1190,28 +1190,28 @@ Kada prag broja potpisnika potpiše predloženi blok, potpisi se kombinuje i ša
 :::video id=c15e7eaf-9b5d-4696-bb36-bd10e7b56967:::
 
 
-Elements je blokčejn platforma opšte namene otvorenog koda koja se takođe može `vezati` za postojeći blokčejn, kao što je Bitcoin. Kada je vezana za drugui blokčejn, za Elements se kaže da radi kao `Sidechain`. Bočni lanci omogućavaju dvosmerni prenos sredstava sa jednog lanca na drugi. Implementacija Elements kao Sidechain-a omogućava vam da zaobiđete neka od inherentnih ograničenja glavnog lanca (eng. mainchain), dok zadržavate dobar stepen sigurnosti koju pružaju sredstva osigurana na glavnom lancu.
+Elements je blokčejn platforma opšte namene otvorenog koda koja se takođe može `vezati` za postojeći blokčejn, kao što je Bitcoin. Kada je vezana za drugi blokčejn, za Elements se kaže da radi kao `Sidechain`. Bočni lanci omogućavaju dvosmerni prenos sredstava sa jednog lanca na drugi. Implementacija Elements kao Sidechain-a omogućava vam da zaobiđete neka od inherentnih ograničenja glavnog lanca (eng. mainchain), dok zadržavate dobar stepen sigurnosti koju pružaju sredstva osigurana na glavnom lancu.
 
 
 Iako je Sidechain svestan mainchain-a i njegove istorije transakcija, mainchain nema svest o Sidechain-u i nije potrebna za njegovo funkcionisanje. Ovo omogućava sporednim lancima da inoviraju bez ograničenja ili kašnjenja povezanih sa predlozima za poboljšanje mainchain protokola. Umesto da se pokušava direktno promeniti, proširenje glavnog protokola unutar Sidechain-a omogućava da mainchain ostane siguran i specijalizovan, podržavajući nesmetano funkcionisanje Sidechain-a.
 
 
-Proširivanjem funkcionalnosti Bitcoin-a i korišćenjem njegove osnovne sigurnosti, Elements-bazirani Sidechain je u mogućnosti da pruži novu funkcionalnost koja prethodno nije bila dostupna korisnicima mainchain-a. Primer Elements-baziranog Sidechain u proizvodnoj upotrebi je Liquid Network.
+Proširivanjem funkcionalnosti Bitcoin-a i korišćenjem njegove osnovne sigurnosti, Sidechain bazirani na Elements platformi je u mogućnosti da pruži novu funkcionalnost koja prethodno nije bila dostupna korisnicima mainchain-a. Primer bočnog lanca baziranog na Elements-u u proizvodnoj upotrebi je Liquid Network.
 
 
 Da bismo inicijalizovali Elements blokčejn kao Sidechain, potrebno je da koristimo federated peg script parametar. Ovaj parametar može biti postavljen u konfiguracionom fajlu čvora ili prosleđen prilikom pokretanja.
 
 
-federated peg script definiše koji članovi Strong Federation mogu da obavljaju funkcije peg-in i peg-out. Ovi funkcioneri se nazivaju `watchmen` jer nadgledaju mainchain i Sidechain za validne peg-in i peg-out transakcije i izvršavaju ih ako su validne. `Peg-out` znači premestiti povezanu imovinu iz Sidechain u mainchain, dok `peg-in` znači premestiti povezanu imovinu u Sidechain iz mainchain. Kada kažemo `premestiti u Sidechain`, zapravo mislimo da se sredstva zaključavaju u multi-potpisnom adresom na mainchain-u i odgovarajući iznos imovine se kreira na Elements Sidechain-u. Kada kažemo `premestiti iz Sidechain-a`, mislimo da se imovina uništava na Elements Sidechain-u i odgovarajući iznos se oslobađa iz zaključanih sredstava na mainchain-u. Dozvola za obavljanje funkcija peg-in i peg-out zahteva da funkcioneri dokažu vlasništvo nad javnih ključeva korišćenih u federated peg script-i. Ovo se postiže korišćenjem odgovarajućih privatnih ključeva.
+Federated peg script definiše koji članovi Strong Federation-a mogu da obavljaju funkcije peg-in i peg-out. Ovi funkcioneri se nazivaju `watchmen` jer nadgledaju mainchain i Sidechain za validne peg-in i peg-out transakcije i izvršavaju ih ako su validne. `Peg-out` znači premestiti povezanu imovinu iz Sidechain-a u mainchain, dok `peg-in` znači premestiti povezanu imovinu u Sidechain iz mainchain-a. Kada kažemo `premestiti u Sidechain`, zapravo mislimo da se sredstva zaključavaju multi-potpisnom adresom na mainchain-u i odgovarajući iznos imovine se kreira na Elements Sidechain-u. Kada kažemo `premestiti iz Sidechain-a`, mislimo da se imovina uništava na Elements Sidechain-u i odgovarajući iznos se oslobađa iz zaključanih sredstava na mainchain-u. Dozvola za obavljanje funkcija peg-in i peg-out zahteva da funkcioneri dokažu vlasništvo nad javnim ključevima korišćenih u federated peg script-i. Ovo se postiže korišćenjem odgovarajućih privatnih ključeva.
 
 
 Da bismo kreirali federated peg script, prvo moramo da obezbedimo da svaki od naših čvorova generiše javni ključ. Takođe moramo da sačuvamo povezane privatne ključeve za kasniju upotrebu jer ćemo morati da obrišemo sve postojeće podatke lanca i inicijalizujemo novi lanac koristeći federated peg script. Ovo je zato što federated peg script čini deo konsenzus pravila Sidechain-a, i ne može se primeniti na postojeći, nepovezani, blokčejn kasnije.
 
 
-Dakle, hajde da generišemo adese za svaki od naših čvorova, sačuvamo relevantne podatke za kasniju upotrebu i generišemo federated peg script koju ćemo koristiti za inicijalizaciju našeg Sidechain-a kasnije.
+Dakle, hajde da generišemo adrese za svaki od naših čvorova, sačuvamo relevantne podatke za kasniju upotrebu i generišemo federated peg script koju ćemo koristiti za inicijalizaciju našeg Sidechain-a kasnije.
 
 
-Prvo nam je potrebno da svaki od naših čvorova, koji će delovati kao watchmen u našoj mreži, da generate novu adresu.
+Prvo nam je potrebno da svaki od naših čvorova, koji će delovati kao watchmen u našoj mreži, da generiše novu adresu.
 
 
 ```
@@ -1221,7 +1221,7 @@ e2-cli getnewaddress
 ```
 
 
-Zatim validiramo adrse da bismo dobili javne ključeve.
+Zatim validiramo adrese da bismo dobili javne ključeve.
 
 
 ```
@@ -1231,7 +1231,7 @@ e2-cli getaddressinfo <e2-address>
 ```
 
 
-A zatim preuzmite privatne ključeve povezane sa svakim adresom.
+A zatim preuzmite privatne ključeve povezane sa svakom adresom.
 
 
 ```
@@ -1247,7 +1247,7 @@ Sačuvajte privatne i javne ključeve za kasniju upotrebu.
 Sada moramo obrisati postojeće podatke blokčejna i novčanika jer ćemo inicijalizovati novi lanac koristeći federated peg script. Možete to učiniti sada. Ne zaboravite pokrenuti Bitcoin daemon, koji ćemo morati povezati.
 
 
-Sada možemo inicijalizovati novi lanac sa federated peg script kreiranim korišćenjem javnih ključeva koje smo ranije sačuvali. Brojevi koje unosimo i koji okružuju naše javne ključeve u komandi definišu i ograničavaju broj korišćenih ključeva, kao i broj ključeva nad čijim vlasništvo mora biti dokazan kako bi se izvršilo peg-in i peg-out iz našeg Sidechain.
+Sada možemo inicijalizovati novi lanac sa federated peg script kreiranim korišćenjem javnih ključeva koje smo ranije sačuvali. Brojevi koje unosimo i koji okružuju naše javne ključeve u komandi definišu i ograničavaju broj korišćenih ključeva, kao i broj ključeva nad čijim vlasništvo mora biti dokazan kako bi se izvršilo peg-in i peg-out iz našeg Sidechain-a.
 
 
 ```
@@ -1257,7 +1257,7 @@ e2-dae -fedpegscript=5221<e1-pubkey>21<e2-pubkey>52ae
 ```
 
 
-Sada ćemo uvesti privatne ključeve koje smo ranije sačuvali, kako bi naši čvorovi kasnije mogli da potpišu i završe prenos sredstava između lanaca i ispune zahteve federated peg script.
+Sada ćemo uvesti privatne ključeve koje smo ranije sačuvali, kako bi naši čvorovi kasnije mogli da potpišu i završe prenos sredstava između lanaca i ispune zahteve federated peg script-e.
 
 
 ```
@@ -1267,7 +1267,7 @@ e2-cli importprivkey <priv-key-1>
 ```
 
 
-Sada treba da potvrdimo neke blokove na oba lanca. Potvrđivanje blokova je zahtev procesa povezivanja jer štiti od reorganizacije blokova na mainchain-u što vodi ka inflaciji ponude pegged asseta unutar Sidechain-a.
+Sada treba da potvrdimo neke blokove na oba lanca. Potvrđivanje blokova je neophodan zahtev ovog procesa povezivanja lanaca jer štiti od reorganizacije blokova na mainchain-u što vodi ka inflaciji ponude vezane imovine unutar Sidechain-a.
 
 
 Da bismo ovu sekciju fokusirali na federisani peg, generisaćemo blokove bez korišćenja modela potpisivanje blokova koji smo razmatrali u prethodnoj sekciji, i vratićemo se korišćenju komande 'generate' za kreiranje novih blokova.
@@ -1283,7 +1283,7 @@ e1-cli generate 1
 Ne moramo nužno da generišemo blokove odmah za Elements. Ali, hajde da generišemo jedan ipak. To je dobra praksa da se izbegnu potencijalne nedoslednosti.
 
 
-Sada je naš lanac spreman za peg-in. Da bismo izvršili peg-in, potrebno je da generišemp posebnu vrstu adrese koristeći komandu getpeginaddress. Imajte na umu da trajanje između generisanja peg-in adrese sa getpeginaddress i njenog preuzimanja sa claimpegin treba da bude što kraće. peg-in adrese nisu dugoročno izdržljive i ne bi trebalo da se ponovo koriste.
+Sada je naš lanac spreman za peg-in. Da bismo izvršili peg-in, potrebno je da generišemp posebnu vrstu adrese koristeći komandu getpeginaddress. Imajte na umu da vremenski period između generisanja peg-in adrese sa getpeginaddress i njenog preuzimanja sa claimpegin treba da bude što kraće. Peg-in adrese nisu dugoročno izdržljive i ne bi trebalo da se ponovo koriste.
 
 
 ```
@@ -1291,10 +1291,10 @@ e1-cli getpeginaddress
 ```
 
 
-Možete videti da komanda kreira novu mainchain adresu, kao i novi skript koji će biti potrebno zadovoljiti kako bi se preuzela peg-in sredstva. mainchain adresa je `pay to script Hash` adresa koju će koristiti funkcioneri koji obavljaju watchmen ulogu unutar Elements mreže.
+Možete videti da komanda kreira novu mainchain adresu, kao i novi skript koji će biti potrebno zadovoljiti kako bi se preuzela peg-in sredstva. Mainchain adresa je `pay to script Hash` adresa koju će koristiti funkcioneri koji obavljaju Watchmen ulogu unutar Elements mreže.
 
 
-Kao i getnewaddress, getpeginaddress dodaje novu tajnu pozivnom čvoru novačnika, tako da je važno uključiti rezervnu kopiju novčanika datoteke u vaš proces upravljanja čvorovima.
+Kao i getnewaddress, getpeginaddress dodaje novu tajnu novčaniku pozivnog čvora , tako da je važno da uključite rezervnu kopiju datoteke novčanika u vaš proces upravljanja čvorovima.
 
 
 Sada ćemo poslati neki Bitcoin iz mainchain-a u Sidechain. Naš mainchain regresioni test novčanik već drži neka sredstva.
@@ -1316,7 +1316,7 @@ b-cli sendtoaddress <e1-pegin-address>
 Moramo sačuvati ID ove transakcije jer će nam kasnije trebati kao dokaz o finansiranju.
 
 
-Sada možemo videti da je saldo mainchain novčanika smanjen za iznos koji smo poslali, plus dodatni mali iznos za pokrivanje troškova transakcija.
+Sada možemo videti da je bilans mainchain novčanika smanjen za iznos koji smo poslali, plus dodatni mali iznos za pokrivanje troškova transakcija.
 
 
 ```
@@ -1324,7 +1324,7 @@ b-cli getwalletinfo
 ```
 
 
-Moramo ponovo da obradimo transakciju.
+Moramo ponovo da prihvatimo transakciju potvrđivanjem bloka.
 
 
 ```
@@ -1332,7 +1332,7 @@ b-cli generate 101
 ```
 
 
-Da bi naš Elements čvor preuzeo peg-in sredstva, potrebno je da pribavimo `dokaz` da je peg-in transakcija izvršena. Kriptografski dokaz koristi finansiranje transaction ID za izračunavanje Merkle putanje i dokazuje da je transakcija prisutna u potvrđenom bloku.
+Da bi naš Elements čvor preuzeo peg-in sredstva, potrebno je da pribavimo `dokaz` da je peg-in transakcija izvršena. Kriptografski dokaz koristi ID finansirajuće transakcije za izračunavanje Merkle putanje koja dokazuje da je transakcija prisutna u potvrđenom bloku.
 
 
 ```
@@ -1340,7 +1340,7 @@ b-cli gettxoutproof '["<tx-id>"]'
 ```
 
 
-Takođe nam trebaju sirovi podaci o transakcijama.
+Takođe nam trebaju neobrađenim podaci o transakcijama.
 
 
 ```
@@ -1452,7 +1452,7 @@ Napomena: Karakteri izvan javnih ključeva su graničnici koji označavaju javni
 ### Peg-in
 
 
-Pre nego što peg-in može biti prihvaćen od strane Elements Sidechain-a, mora imati dovoljno potvrda na mainchain-u. Ovo je neophodno kako bi se izbegla inflacija ponude pegged asseta na Elements Sidechain-u koja bi mogla biti uzrokovana reorganizacijom mainchain-a.
+Pre nego što peg-in može biti prihvaćen od strane Elements Sidechain-a, mora imati dovoljno potvrda na mainchain-u. Ovo je neophodno kako bi se izbegla inflacija ponude povezanog (eng. pegged) asseta na Elements Sidechain-u koja bi mogla biti uzrokovana reorganizacijom mainchain-a.
 
 
 Kratke reorganizacije vrha Bitcoin blokčejna očekuju se kao deo normalnog rada Proof of Work (PoW) konsenzusnog mehanizma. Kao takav, Elements prihvata peg-in kao važeći samo kada ima dovoljan broj potvrda unutar Bitcoin blokčejna. Ovo služi da se spreči da Elements prihvati isti peg-in više puta.
@@ -1461,7 +1461,7 @@ Kratke reorganizacije vrha Bitcoin blokčejna očekuju se kao deo normalnog rada
 ### Peg-Out
 
 
-Peg-out se dešava kada Elements čvor pozove komandu `sendtomainchain`, koja kao ulaz uzima mainchain adresu (odredište peg-out-a) kao i iznos pegged asset koji treba da bude `povučen`. Ovo kreira peg-out transakciju na Sidechain. Kada Funkcioneri koji deluju kao watchmen otkriju da je peg-out transakcija potvrđena na Sidechain-u, oni se pobrinu da zapravo oslobode sredstvo na mainchain-u na peg-out-a adresu, kao što smo naučili u ranijim delovima kursa.
+Peg-out se dešava kada Elements čvor pozove komandu `sendtomainchain`, koja kao ulaz uzima mainchain adresu (odredište peg-out-a) kao i iznos povezanog asseta koji treba da bude `povučen`. Ovo kreira peg-out transakciju na Sidechain. Kada funkcioneri koji deluju kao watchmen-i otkriju da je peg-out transakcija potvrđena na Sidechain-u, oni se pobrinu da zapravo oslobode sredstvo na mainchain-u na peg-out-a adresu, kao što smo naučili u ranijim delovima kursa.
 
 
 ## Elements kao samostalni blokčejn
@@ -1473,16 +1473,15 @@ Peg-out se dešava kada Elements čvor pozove komandu `sendtomainchain`, koja ka
 :::video id=4955306b-4be3-429c-9d30-068f7644ea73:::
 
 
-Do sada smo videli kako pokrenuti Elements kao Sidechain. Međutim, Elements može takođe funkcionisati kao samostalno blokčejn rešenje sa sopstvenim podrazumevanim izvornim sredstvom. U ovoj postavci Elements blokčejn i dalje zadržava sve karakteristike Sidechain implementacije, kao što su Confidential Transactions i Issued Assets, ali nije potrebno peg-in ili peg-out za dodavanje ili uklanjanje default asset iznosa iz opticaja.
-
+Do sada smo videli kako pokrenuti Elements kao Sidechain. Međutim, Elements može takođe funkcionisati kao samostalno blokčejn rešenje sa sopstvenim podrazumevanim izvornim sredstvom. U ovoj postavci Elements blokčejn i dalje zadržava sve karakteristike Sidechain implementacije, kao što su Confidential Transactions i Issued Assets, ali nije potrebno izvršiti peg-in ili peg-out da bi se osnovna sredstva dodala ili uklonila iz opticaja.
 
 U ovom odeljku ćemo:
 
 
-Inicijalizovati novi Elements blokčejn sa default assetom nazvanim `newasset`.
+Inicijalizovati novi Elements blokčejn sa defaultnim assetom nazvanim `newasset`.
 
 
-Navedsti 1,000,000 `newasset` koji će biti kreirani zajedno sa 2 tokena za ponovno izdavanje.
+Navesti 1,000,000 `newasset` koji će biti kreirani zajedno sa 2 tokena za ponovno izdavanje.
 
 
 Zatražiti sve anyone-can-spend `newasset` kovanice.
@@ -1497,7 +1496,7 @@ Poslati sredstvo i njegov reissuance token na novčanik drugog čvora.
 Ponovo izdati više 'newasset-a' sa oba čvora.
 
 
-Da bi se inicijalizovala Elements mreža da radi kao samostali blokčejn, svaki čvor treba da se pokrene sa nekim osnovnim parametrima. Oni se koriste da bi se čvoru reklo da ne pokušava da validira peg-ins sa drugog blokčejna, ime default asseta mreže kao i količinu default assetaa i pridruženog reissuance tokena koji treba kreirati.
+Da bi se inicijalizovala Elements mreža da radi kao samostalni blokčejn, svaki čvor treba da se pokrene sa nekim osnovnim parametrima. Oni se koriste da bi se čvoru reklo da ne pokušava da validira peg-ins sa drugog blokčejna, ime default asseta mreže kao i količinu defaultnog asseta i pridruženog reissuance tokena koji treba kreirati.
 
 
 Počećemo sada novi lanac koristeći ove parametre na naša dva povezana Elements čvora. Nazvaćemo default asset `newasset` i izdaćemo milion njih i dva `newasset` tokena za ponovno izdavanje.
@@ -1510,7 +1509,7 @@ e2-dae -validatepegin=0 -defaultpeggedassetname=newasset -initialfreecoins=10000
 ```
 
 
-Imajte na umu da su iznosi korišćeni ovde u najmanjoj denominaciji koju mreža može prihvatiti, tako da dvesta miliona tokena za ponovnu izdaju zapravo odgovaraju dvema celim tokenima. Isto važi i za denominaciju početnih besplatnih novčića.
+Imajte na umu da su iznosi korišćeni ovde u najmanjoj denominaciji koju mreža može prihvatiti, tako da dvesta miliona tokena za ponovno izdavanje zapravo odgovaraju dvema celim tokenima. Isto važi i za denominaciju početnih besplatnih novčića.
 
 
 Proverite trenutni bilans novčanika našeg čvora.
@@ -1523,7 +1522,7 @@ e2-cli getwalletinfo
 ```
 
 
-Možemo videti da je inicijalizacija radila ispravno.
+Možemo videti da se inicijalizacija završila ispravno.
 
 
 Kako su početna izdavanja sredstava kreirana kao `bilo ko može potrošiti`, e1 će ih sve preuzeti kako bismo mogli ukloniti pristup e2.
@@ -1536,10 +1535,10 @@ e1-cli sendtoaddress <e1-address> 1000000 "" "" true
 ```
 
 
-Imajte na umu da ne moramo navesti 'newasset' kao sredstvo za slanje jer je to već default asset. i stoga je i default asset korišćen za plaćanje mrežnih naknada.
+Imajte na umu da ne moramo navesti 'newasset' kao sredstvo za slanje jer je to već default asset. I samim tim je i defaultni asset korišćen za plaćanje mrežnih naknada.
 
 
-U okviru Elements, možete poslati više tipova sredstava na istu adresu, tako da možemo ponovo koristiti adresu koji smo upravo generisali za primanje default asseta, i koristiti ga kao odredišnu adresu za ponovnu izdavanje tokena.
+U okviru Elements-a, možete poslati više tipova sredstava na istu adresu, tako da možemo ponovo koristiti adresu koji smo upravo generisali za primanje defaultnog asseta, i koristiti ga kao odredišnu adresu za ponovno izdavanje tokena.
 
 
 ```
@@ -1555,7 +1554,7 @@ e1-cli generate 101
 ```
 
 
-Proverićemo da je e1 sada jedini vlasnik sredstva i tokena za ponovno izdavanje tih sredstava.
+Proverićemo da je e1 sada jedini vlasnik sredstava i tokena za ponovno izdavanje tih sredstava.
 
 
 ```
@@ -1578,10 +1577,10 @@ e1-cli sendtoaddress <e2-address> 500 "" "" false
 ```
 
 
-Imajte na umu da nismo morali da navedemo tip sredstva koje treba poslati, jer je `newasset` kreiran kao mrežni podrazumevani asset
+Imajte na umu da nismo morali da navedemo tip sredstva koje treba poslati, jer je `newasset` kreiran kao mrežni podrazumevani asset.
 
 
-Hajde da pošaljemo i neke od tokena za ponovno izdavanje `newasset-a` na e2.
+Hajde da pošaljemo i neke od tokena za ponovno izdavanje `newasset-a` čvoru e2.
 
 
 ```
@@ -1607,7 +1606,7 @@ e2-cli getwalletinfo
 ```
 
 
-Sada ćemo ponovo izdati neke od podrazumevanog asseta iz e1. Imajte na umu da je mogućnost da se ovo uradi omogućena početnim parametrom initialreissuancetokens. Koji, ako se izostavi ili postavi na nulu, će rezultirati default asset koji ne može biti ponovo izdat kasnije.
+Sada ćemo ponovo izdati nešto od defaultnog asseta iz e1. Imajte na umu da je mogućnost da se ovo uradi omogućena početnim parametrom initialreissuancetokens. Koji, ako se izostavi ili postavi na nulu, će rezultirati defaultnim assetom koji ne može biti ponovo izdat kasnije.
 
 
 ```
@@ -1615,10 +1614,10 @@ e1-cli reissueasset newasset 100
 ```
 
 
-Mogli smo koristiti oznaku `newasset` umesto da moramo obezbediti hex id vrednost jer Elements lanac uvek označava svoj default asset.
+Mogli smo koristiti oznaku `newasset` umesto da moramo obezbediti hex id vrednost jer Elements lanac uvek označava svoj defaultni asset.
 
 
-Provera da li je ponovno izdavanje default asset uspelo:
+Provera da li je ponovno izdavanje defaultnog asseta uspelo:
 
 
 ```
@@ -1628,7 +1627,7 @@ e1-cli getwalletinfo
 ```
 
 
-Dokazaćemo sada da, pošto e2 drži neke tokene ponovnog izdavanja `newasset`, može takođe ponovo izdati default asset.
+Dokazaćemo sada da, pošto e2 drži neke tokene ponovnog izdavanja `newasset`, može takođe ponovo izdati defaultni asset.
 
 
 ```
@@ -1636,7 +1635,7 @@ e2-cli reissueasset newasset 100
 ```
 
 
-Provera da li je ponovno izdavanje default asset od strane e2 uspelo.
+Provera da li je ponovno izdavanje defaultnog asseta od strane e2 uspelo.
 
 
 ```
@@ -1655,10 +1654,10 @@ Koristili smo startne parametre za:
 Inicijalizaciju novog Elements blokčejna sa defaultnim assetom nazvanim 'newasset'.
 
 
-Naveli količinu default asseta za kreiranje inicijalizacije on chain.
+Naveli količinu defaultnog asseta za kreiranje on chain inicijalizacije.
 
 
-Kreirali neke tokene za ponovnu izdavanje defaultnog asseta i ponovo izdali više defaultnog asseta sa oba čvora.
+Kreirali neke tokene za ponovno izdavanje defaultnog asseta i ponovo izdali više defaultnog asseta sa oba čvora.
 
 
 Na našoj samostalnoj blokčejn Elements mreži, sve druge transakcione operacije će funkcionisati na isti način kao primeri pokriveni u glavnim delovima kursa, ali će koristiti 'newasset' umesto `Bitcoin` kao podrazumevano sredstvo i sredstvo za naknadu.
@@ -1687,7 +1686,7 @@ Broj (ekvivalentno jedinici bitkojn satošija) defaultnog asseta za kreiranje.
 
 #### `initialreissuancetokens`
 
-Broj (ekvivalentno jedinici bitkojn satošija) tokena za ponovno izdavanje za kreiranje podrazumevanog sredstva. Bez ovoga bi bilo nemoguće kreirati više default asset. Ako ne želite da bude moguće kreirati više osnovne imovine, ovo može biti postavljeno na nulu ili izostavljeno.
+Broj (ekvivalentno jedinici bitkojn satošija) tokena za ponovno izdavanje za kreiranje podrazumevanog sredstva. Bez ovoga bi bilo nemoguće kreirati više defaultnog asseta. Ako ne želite da bude moguće kreirati više osnovne imovine, ovo može biti postavljeno na nulu ili izostavljeno.
 
 
 Koristeći ove parametre, uobičajeni način za pokretanje čvora bi izgledao ovako:
@@ -1704,7 +1703,7 @@ e1-dae -validatepegin=0 -defaultpeggedassetname=newasset -initialfreecoins=10000
 Parametar `defaultpeggedassetname` primenjuje oznaku na osnovnu imovinu. Bez ovog podešavanja, osnovna imovina će automatski biti nazvan `Bitcoin`. U prethodnim odeljcima, kada smo slali sredstva koja smo sami izdali na drugi čvor, morali smo da navedemo ili heksadecimalnu vrednost sredstva ili lokalno primenjenu oznaku sredstva kako bismo rekli Elements platformi koje sredstvo šaljemo. Pošto se `defaultpeggedassetname` primenjuje na sve čvorove, ne moramo ga imenovati kada ga šaljemo, čak iako njegovo ime nije `Bitcoin`. Svaka funkcija koja bi pre podrazumevano slala `Bitcoin` sada će poslati šta god ste odlučili da označite kao podrazumevanu imovinu.
 
 
-Dakle, slanje 10 novih default asset na adresu je jednostavno kao:
+Dakle, slanje 10 novih defaultnih asseta na adresu je jednostavno kao:
 
 
 ```
@@ -1712,7 +1711,7 @@ e1-cli sendtoaddress <destination address> 10 "" "" true
 ```
 
 
-Ako ste takođe obezbedili čvoru vrednost za `initialreissuancetokens` veću od nule, onda ćete takođe moći da ponovo izdate više default asset, što nije moguće ako pokrenete Elements kao Sidechain.
+Ako ste takođe obezbedili čvoru vrednost za `initialreissuancetokens` veću od nule, onda ćete takođe moći da ponovo izdate više defaultnog asseta, što nije moguće ako pokrenete Elements kao Sidechain.
 
 
 Da bi se to uradilo, bilo koji čvor koji drži neku količinu tokena povezanog sa defaultnim assetom samo treba da izda komandu u obliku:
@@ -1735,10 +1734,10 @@ Korišćenjem gore navedenih parametara možete upravljati Elements-om kao samos
 :::video id=bd5167d5-edba-40b0-a8b1-ba8b74493a08:::
 
 
-Na ovom kursu smo naučili da je Elements open-source mrežni protokol koji se može implementirati kao Sidechain na drugi blokčejn, ili kao samostalno blokčejn rešenje.
+Na ovom kursu smo naučili da je Elements mrežni protokol otvorenog koda koji se može implementirati kao bočni lanac na drugi blokčejn, ili kao samostalno blokčejn rešenje.
 
 
-Videli smo da su izvorni kod i vebsajt za Elements (https://github.com/ElementsProject/Elements) hostovani na GitHub-u i da postoje forumi za diskusiju u zajednici, kao što su Build On L2 (https://community.Liquid.net/c/developers/), ili Liquid Developers Telegram (https://t.me/liquid_devel), koji se mogu koristiti za više informacija o implementaciji i razvoju aplikacija na Elements-u i Liquid-u. Ključne funkcije kao što su Confidential Transactions i Issued Assets su pokrivene, zajedno sa time kako članovi Jake federacije omogućavaju federisani potpis blokova i mehanizam 2-Way Peg.
+Videli smo da su izvorni kod i vebsajt za Elements (https://github.com/ElementsProject/Elements) hostovani na GitHub-u i da postoje forumi za diskusiju u zajednici, kao što su Build On L2 (https://community.Liquid.net/c/developers/), ili Liquid Developers Telegram (https://t.me/liquid_devel), koji se mogu koristiti za više informacija o implementaciji i razvoju aplikacija na Elements-u i Liquid-u. Ključne funkcije kao što su Confidential Transactions i Issued Assets su pokrivene, zajedno sa time kako članovi Strong Federation omogućavaju federisani potpis blokova i mehanizam 2-Way Peg.
 
 
 Sledeći korak je da se izazoveš sveobuhvatnim kvizom koji pokriva sve prethodne sekcije, a zatim da započneš svoje Elements putovanje…srećno!
