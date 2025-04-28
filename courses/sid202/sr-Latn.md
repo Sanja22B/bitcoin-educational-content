@@ -1,6 +1,6 @@
 ---
 name: Pravljenje novih rešenja sa Elements i Liquid mrežom
-goal: Naučite kako koristiti i praviti aplikacije na Elements open-source blokčejn platformu i njene ključne funkcije
+goal: Naučite kako koristiti i praviti aplikacije na Elements blokčejn platformi otvorenog koda i njene ključne funkcije
 objectives: 
 
   - Razumevanje osnovnih pojmova Elements blokčejn platforme i Liquid bočnog lanca (eng. sidechain).
