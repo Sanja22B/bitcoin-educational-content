@@ -1,29 +1,29 @@
 ---
-name: Privatnost na Bitcoin
-goal: Razumite i ovladajte principima zaštite privatnosti prilikom korišćenja Bitcoin
+name: Privatnost na Bitcoin-u
+goal: Razumite i ovladajte principima zaštite privatnosti prilikom korišćenja Bitcoina
 objectives: 
 
 
   - Definišite teorijske koncepte potrebne za razumevanje pitanja privatnosti
-  - Identifikujte i ublažite rizike povezane sa gubitkom poverljivosti za korisnike Bitcoin
-  - Korišćenje metoda i alata za zaštitu vaše privatnosti na Bitcoin
+  - Identifikujte i ublažite rizike povezane sa gubitkom poverljivosti za Bitcoin korisnike 
+  - Korišćenje metoda i alata za zaštitu vaše privatnosti na Bitcoin-u
   - Razumeti metode analize lanca i razviti odbrambene strategije
 
 
 ---
-# Zaštitite svoju privatnost na Bitcoin
+# Zaštitite svoju privatnost na Bitcoin-u
 
 
-U svetu gde poverljivost finansijskih transakcija postaje luksuz, razumevanje i ovladavanje principima zaštite privatnosti pri korišćenju Bitcoin je od suštinskog značaja. Ovaj kurs obuke vam pruža sve ključeve, kako teorijske tako i praktične, da to postignete samostalno.
+U svetu gde poverljivost finansijskih transakcija postaje luksuz, razumevanje i ovladavanje principima zaštite privatnosti pri korišćenju Bitcoin-a je od suštinskog značaja. Ovaj kurs obuke vam pruža sve ključeve, kako teorijske tako i praktične, da to postignete samostalno.
 
 
-Danas, na Bitcoin, kompanije se specijalizuju za analizu Blockchain. Njihov osnovni posao se sastoji upravo u upadanju u vašu privatnu sferu, kako bi ugrozili poverljivost vaših transakcija. U stvarnosti, ne postoji nešto kao "pravo na privatnost" u Bitcoin. Dakle, na vama je, korisniku, da ostvarite svoja prirodna prava i zaštitite poverljivost svojih transakcija, jer to niko drugi neće učiniti za vas.
+Danas, na Bitcoin-u, kompanije se specijalizuju za analizu blokčejna. Njihovo osnovno poslovanje upravo se sastoji u zadiranju u vašu privatnu sferu, s ciljem da naruše poverljivost vaših transakcija. U stvarnosti, ne postoji nešto kao "pravo na privatnost" na Bitcoin-u. Dakle, na vama je, korisniku, da ostvarite svoja prirodna prava i zaštitite poverljivost svojih transakcija, jer to niko drugi neće učiniti za vas.
 
 
-Kurs je dizajniran da bude sveobuhvatan i opšti. Svaki tehnički koncept je detaljno obrađen i podržan objašnjavajućim dijagramima. Cilj je učiniti znanje dostupnim svima. BTC204 je stoga pristupačan za početnike i korisnike srednjeg nivoa. Kurs takođe nudi dodatnu vrednost za iskusnije bitkoinere, jer ulazimo dublje u određene tehničke koncepte koji su često pogrešno shvaćeni.
+Kurs je dizajniran da bude sveobuhvatan i opšti. Svaki tehnički koncept je detaljno obrađen i podržan objašnjavajućim dijagramima. Cilj je učiniti znanje dostupnim svima. BTC204 je stoga pristupačan za početnike i korisnike srednjeg nivoa. Kurs takođe nudi dodatnu vrednost za iskusnije bitkoinere, jer ulazimo detaljnije u određene tehničke koncepte koji su često pogrešno shvaćeni.
 
 
-Pridružite nam se kako biste transformisali svoju upotrebu Bitcoin i postali informisani korisnik, sposoban da razume pitanja oko poverljivosti i zaštite vaše privatnosti.
+Pridružite nam se kako biste unapredili svoje koršćenje Bitcoin-a i postali informisani korisnik, sposobni da razumete izazove oko poverljivosti i zaštite privatnosti.
 
 
 +++
@@ -42,34 +42,34 @@ Pridružite nam se kako biste transformisali svoju upotrebu Bitcoin i postali in
 Dobrodošli na kurs BTC204!
 
 
-U svetu gde poverljivost finansijskih transakcija postaje luksuz, razumevanje i ovladavanje principima zaštite privatnosti pri korišćenju Bitcoin je od suštinskog značaja. Ovaj kurs obuke vam pruža sve ključeve, kako teorijske tako i praktične, da to postignete samostalno.
+U svetu gde poverljivost finansijskih transakcija postaje luksuz, razumevanje i ovladavanje principima zaštite privatnosti pri korišćenju Bitcoin-a je od suštinskog značaja. Ovaj kurs obuke vam pruža sve ključeve, kako teorijske tako i praktične, da to postignete samostalno.
 
 
-Danas, na Bitcoin, kompanije se specijalizuju za analizu Blockchain. Njihov osnovni posao se sastoji upravo u upadanju u vašu privatnu sferu, kako bi ugrozili poverljivost vaših transakcija. U stvarnosti, ne postoji nešto kao "pravo na privatnost" u Bitcoin. Dakle, na vama je, korisniku, da ostvarite svoja prirodna prava i zaštitite poverljivost svojih transakcija, jer to niko drugi neće učiniti za vas.
+Danas, na Bitcoin-u, kompanije se specijalizuju za analizu blokčejna. Njihov osnovni posao se sastoji upravo u zadiranje u vašu privatnu sferu, kako bi ugrozili poverljivost vaših transakcija. U stvarnosti, ne postoji nešto kao "pravo na privatnost" na Bitcoin-u. Dakle, na vama je, korisniku, da ostvarite svoja prirodna prava i zaštitite poverljivost svojih transakcija, jer to niko drugi neće učiniti za vas.
 
 
-Bitcoin nije samo o "Broj Ide Gore" i očuvanju vrednosti ušteđevine. Sa svojim jedinstvenim karakteristikama i istorijom, pre svega je alat kontra-ekonomije. Zahvaljujući ovom izvanrednom izumu, možete slobodno raspolagati svojim novcem, trošiti ga i akumulirati, a da vas niko ne može zaustaviti.
+Bitcoin nije samo priča o rastu vrednosti i očuvanju štednje. Sa svojim jedinstvenim karakteristikama i istorijom, on je pre svega alat paralelne ekonomije. Zahvaljujući ovom izvanrednom izumu, možete slobodno raspolagati svojim novcem, trošiti ga i akumulirati, a da vas niko ne može zaustaviti.
 
 
-Bitcoin nudi miran beg od jarma države, omogućavajući vam da u potpunosti uživate u svojim prirodnim pravima, koja ne mogu biti osporena postojećim zakonima. Zahvaljujući izumu Satoshi Nakamoto, imate moć da osigurate poštovanje vaše privatne svojine i povratite slobodu da Contract.
+Bitcoin nudi miran beg od jarma države, omogućavajući vam da u potpunosti uživate u svojim prirodnim pravima, koja ne mogu biti osporena postojećim zakonima. Zahvaljujući izumu Satoshi Nakamoto-a, imaš mogućnost da obezbediš poštovanje svog privatnog vlasništva i ponovo stekneš slobodu ugovaranja.
 
 
-Međutim, Bitcoin nije anoniman po defaultu, što može predstavljati rizik za pojedince uključene u kontra-ekonomiju, posebno u regionima pod despotskom vlašću. Ali ovo nije jedina opasnost. Pošto je Bitcoin vredna i necenzurisana imovina, može biti meta za lopove. Dakle, zaštita vaše privatnosti postaje i pitanje sigurnosti: može vam pomoći da sprečite hakovanje i fizički napad.
+Međutim, Bitcoin po svojoj prirodi nije anoniman, što može predstavljati rizik za pojedince uključene u paralelnu ekonomiju, posebno u regionima pod despotskom vlašću. Ali ovo nije jedina opasnost. Pošto je Bitcoin vredna i necenzurisana imovina, može biti meta za lopove. Dakle, zaštita vaše privatnosti postaje i pitanje sigurnosti: može vam pomoći da sprečite hakovanje i fizički napad.
 
 
 Kao što ćemo videti, iako protokol nudi određene zaštite poverljivosti sam po sebi, ključno je koristiti dodatne alate za optimizaciju i odbranu ove poverljivosti.
 
 
-Ovaj kurs obuke je osmišljen da pruži sveobuhvatan, opšti pregled pitanja koja se tiču poverljivosti Bitcoin. Svaki tehnički koncept je detaljno obrađen, uz podršku objašnjavajućih dijagrama. Cilj je da ovo znanje bude dostupno svima, čak i početnicima i korisnicima srednjeg nivoa. Za iskusnije Bitcoinere, takođe pokrivamo visoko tehničke i ponekad malo poznate koncepte tokom kursa, kako bismo produbili razumevanje svake teme.
+Ovaj kurs obuke je osmišljen da pruži sveobuhvatan, opšti pregled pitanja koja se tiču poverljivosti Bitcoin-a. Svaki tehnički koncept je detaljno obrađen, uz podršku objašnjavajućih dijagrama. Cilj je da ovo znanje bude dostupno svima, čak i početnicima i korisnicima srednjeg nivoa. Za iskusnije Bitcoinere, takođe pokrivamo visoko tehničke i ponekad malo poznate koncepte tokom kursa, kako bismo unapredili razumevanje svake teme.
 
 
-Cilj ovog kursa obuke nije da vas učini potpuno anonimnim u korišćenju Bitcoin, već da vam pruži osnovne alate kako biste znali kako da zaštitite svoju poverljivost u skladu sa vašim ličnim ciljevima. Imaćete slobodu da birate između predstavljenih koncepata i alata kako biste razvili sopstvene strategije, prilagođene vašim specifičnim ciljevima i potrebama.
+Cilj ovog kursa obuke nije da vas učini potpuno anonimnim u korišćenju Bitcoin-a, već da vam pruži osnovne alate kako biste znali kako da zaštitite svoju poverljivost u skladu sa vašim ličnim ciljevima. Imaćete slobodu da birate između predstavljenih koncepata i alata kako biste razvili sopstvene strategije, prilagođene vašim specifičnim ciljevima i potrebama.
 
 
 **Sekcija 1: Definicije i ključni koncepti**
 
 
-Za početak, pregledaćemo osnovne principe koji upravljaju radom Bitcoin, kako bismo zatim mogli mirno pristupiti pojmovima koji se odnose na poverljivost. Neophodno je savladati nekoliko osnovnih koncepata, kao što su UTXO, primanje adresa i skriptovanje, pre nego što u potpunosti možete razumeti koncepte koje ćemo obraditi u narednim odeljcima. Takođe ćemo predstaviti opšti model poverljivosti Bitcoin, kako ga je zamislio Satoshi Nakamoto, što će nam omogućiti da shvatimo povezane uloge i rizike.
+Za početak, razmotrićemp osnovne principe koji regulišu rad Bitcoin-a, kako bismo zatim mogli mirno pristupiti pojmovima koji se odnose na poverljivost. Neophodno je savladati nekoliko osnovnih koncepata, kao što su UTXO, adrese za prijem i programiranje skripti, pre nego što u potpunosti možete razumeti koncepte koje ćemo obraditi u narednim odeljcima. Takođe ćemo predstaviti Bitcoin-ov opšti model poverljivosti, kako ga je zamislio Satoshi Nakamoto, što će nam omogućiti da shvatimo povezane uloge i rizike.
 
 
 ![BTC204](assets/fr/001.webp)
@@ -78,7 +78,7 @@ Za početak, pregledaćemo osnovne principe koji upravljaju radom Bitcoin, kako 
 **Sekcija 2: Razumevanje i zaštita od analize lanca**
 
 
-U drugom delu, razmatramo tehnike koje koriste kompanije za analizu Blockchain kako bi pratili vašu aktivnost na Bitcoin. Razumevanje ovih metoda je ključno za jačanje zaštite vaše privatnosti. Cilj ovog dela je ispitivanje strategija napadača kako bismo bolje razumeli rizike i pripremili teren za tehnike koje ćemo proučavati u narednim delovima. Analiziraćemo obrasce transakcija, interne i eksterne heuristike, i verovatne interpretacije ovih obrazaca. Pored teorije, naučićemo kako da koristimo Block explorer za analizu lanca, kroz praktične primere i vežbe.
+U drugom delu, razmatramo tehnike koje koriste kompanije za analizu blokčejna kako bi pratili vašu aktivnost na Bitcoin-u. Razumevanje ovih metoda je ključno za jačanje zaštite vaše privatnosti. Cilj ovog dela je ispitivanje strategija napadača kako bismo bolje razumeli rizike i pripremili teren za tehnike koje ćemo proučavati u narednim delovima. Analiziraćemo obrasce transakcija, interne i eksterne heuristike, i verovatne interpretacije ovih obrazaca. Pored teorije, naučićemo kako da koristimo Block explorer za analizu lanca, kroz praktične primere i vežbe.
 
 
 ![BTC204](assets/fr/002.webp)
@@ -87,7 +87,7 @@ U drugom delu, razmatramo tehnike koje koriste kompanije za analizu Blockchain k
 **Sekcija 3: Ovladavanje najboljim praksama za zaštitu vaše privatnosti**
 
 
-U trećem delu našeg kursa obuke, prelazimo na suštinu: praksu! Cilj je da ovladamo svim ključnim najboljim praksama koje bi trebalo da postanu prirodni refleksi za svakog korisnika Bitcoin. Obradićemo upotrebu praznih adresa, označavanje, konsolidaciju, upotrebu kompletnih čvorova, kao i KYC i metode akvizicije. Cilj je da vam pružimo sveobuhvatan pregled zamki koje treba izbeći kako bismo uspostavili čvrste temelje u našoj potrazi za zaštitom privatnosti. Za neke od ovih praksi, bićete upućeni na specifičan vodič o tome kako ih implementirati.
+U trećem delu našeg kursa obuke, prelazimo na suštinu: praksu! Cilj je da se savladaju sve osnovne najbolje prakse koje bi trebalo da postanu prirodni refleksi za svakog korisnika Bitcoin-a. Obradićemo upotrebu praznih adresa, označavanje (eng. tagging), konsolidaciju, upotrebu kompletnih čvorova, kao i KYC i metode akvizicije. Cilj je da vam pružimo sveobuhvatan pregled zamki koje trebate izbeći kako bismo uspostavili čvrste temelje u našoj potrazi za zaštitom privatnosti. Za neke od ovih praksi, bićete upućeni na specifičan vodič o tome kako ih implementirati.
 
 
 ![BTC204](assets/fr/003.webp)
@@ -96,7 +96,7 @@ U trećem delu našeg kursa obuke, prelazimo na suštinu: praksu! Cilj je da ovl
 **Sekcija 4: Razumevanje CoinJoin transakcija**
 
 
-Kako možemo govoriti o privatnosti na Bitcoin bez spominjanja coinjoin-a? U odeljku 4, saznaćete sve što treba da znate o ovoj metodi mešanja. Naučićete šta su coinjoin-i, njihovu istoriju i ciljeve, kao i različite tipove CoinJoin koji postoje. Na kraju, za iskusnije korisnike, pogledaćemo šta su anonset-i i entropija, i kako ih izračunati.
+Kako možemo govoriti o privatnosti na Bitcoin-u bez spominjanja coinjoin-a? U odeljku 4, saznaćete sve što treba da znate o ovoj metodi mešanja. Naučićete šta su coinjoin-i, njihovu istoriju i ciljeve, kao i različite tipove CoinJoin-a koji postoje. Na kraju, za iskusnije korisnike, pogledaćemo šta su anonset-i i entropija, i kako ih izračunati.
 
 
 ![BTC204](assets/fr/004.webp)
@@ -105,15 +105,15 @@ Kako možemo govoriti o privatnosti na Bitcoin bez spominjanja coinjoin-a? U ode
 **Sekcija 5: Razumevanje izazova drugih naprednih tehnika poverljivosti**
 
 
-U petom delu, pogledaćemo sve druge tehnike dostupne za zaštitu vaše privatnosti na Bitcoin, osim CoinJoin. Tokom godina, programeri su pokazali izuzetnu kreativnost u dizajniranju alata posvećenih privatnosti. Pogledaćemo sve ove metode, kao što su PayJoin, kolaborativne transakcije, Coin Swap i Atomic Swap, detaljno objašnjavajući kako funkcionišu, njihove ciljeve i eventualne slabosti.
+U petom delu, pogledaćemo sve druge tehnike dostupne za zaštitu vaše privatnosti na Bitcoin-u, osim CoinJoin-a. Tokom godina, programeri su pokazali izuzetnu kreativnost u dizajniranju alata posvećenih privatnosti. Pogledaćemo sve ove metode, kao što su PayJoin, kolaborativne transakcije, Coin Swap i Atomic Swap, detaljno objašnjavajući kako funkcionišu, njihove ciljeve i eventualne slabosti.
 
 
-Takođe ćemo razmotriti privatnost na nivou mreže čvorova i širenje transakcija. Takođe ćemo diskutovati o raznim protokolima koji su predloženi tokom godina kako bi se poboljšala privatnost korisnika na Bitcoin, uključujući statičke Address protokole.
+Takođe ćemo razmotriti privatnost na nivou mreže čvorova i distribucija transakcija. Takođe ćemo diskutovati o raznim protokolima koji su predloženi tokom godina kako bi se poboljšala privatnost korisnika na Bitcoin-u, uključujući statičke adrese protokola.
 
 
 ![BTC204](assets/fr/005.webp)
 
-Spremni da istražimo složenosti privatnosti na Bitcoin? Hajde da krenemo!
+Spremni da istražimo složenosti privatnosti na Bitcoin-u? Hajde da krenemo!
 
 
 # Definicije i ključni koncepti
@@ -122,23 +122,23 @@ Spremni da istražimo složenosti privatnosti na Bitcoin? Hajde da krenemo!
 <partId>b9bbbde3-34c0-4851-83e8-e2ffb029cf31</partId>
 
 
-## Bitcoin's UTXO model
+## Bitcoin-ov UTXO model
 
 
 <chapterId>8d6b50c5-bf74-44f4-922b-25204991cb75</chapterId>
 
 
 
-Bitcoin je pre svega valuta, ali da li zaista znate kako su BTC predstavljeni na protokolu?
+Bitcoin je pre svega valuta, ali da li zaista znate kako su BTC predstavljeni unutar protokola?
 
 
-### UTXO-i na Bitcoin: šta su oni?
+### UTXO-i na Bitcoin-u: šta su oni?
 
 
 Bitcoin protokol je zasnovan na modelu UTXO, koji označava "Neutrošeni Izlaz Transakcije".
 
 
-Ovaj model se duboko razlikuje od tradicionalnih bankarskih sistema, koji se oslanjaju na mehanizam računa i stanja za praćenje finansijskih tokova. Zaista, u bankarskom sistemu, pojedinačna stanja se održavaju na računima vezanim za identitet. Na primer, kada kupite baget od pekara, vaša banka jednostavno zadužuje iznos kupovine sa vašeg računa, smanjujući vaše stanje, dok se pekarov račun odobrava za isti iznos, povećavajući njegovo stanje. U ovom sistemu, ne postoji pojam veze između novca koji ulazi na vaš račun i novca koji ga napušta, osim evidencije transakcija.
+Ovaj model se duboko razlikuje od tradicionalnih bankarskih sistema, koji se oslanjaju na mehanizam računa i bilansa za praćenje finansijskih tokova. Zaista, u bankarskom sistemu, pojedinačna stanja se održavaju na računima vezanim za identitet. Na primer, kada kupite baget od pekara, vaša banka jednostavno zadužuje iznos kupovine sa vašeg računa, smanjujući vaše stanje, dok se pekarov račun odobrava za isti iznos, povećavajući njegovo stanje. U ovom sistemu, ne postoji pojam veze između novca koji ulazi na vaš račun i novca koji ga napušta, osim evidencije transakcija.
 
 
 ![BTC204](assets/fr/006.webp)
