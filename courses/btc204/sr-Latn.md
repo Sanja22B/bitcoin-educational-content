@@ -1142,7 +1142,7 @@ Identifikator transakcije za analizu :
 Koji je model za ovu transakciju?
 
 
-Identifikovanjem njegovog modela, koristeći interne heuristike transakcije, koji izlaz će Exchange verovatno predstavljati?
+Nakon identifikovanja modela transakcije, koristeći interne heuristike transakcije, koji izlaz će verovatno predstavljati kusur?
 
 
 ### Vežba 4
@@ -1159,7 +1159,7 @@ Identifikator transakcije za analizu :
 Koji je model za ovu transakciju?
 
 
-Identifikovanjem njegovog modela, koristeći interne heuristike transakcije, koji izlaz će Exchange verovatno predstavljati?
+Nakon identifikovanja modela transakcije, koristeći interne heuristike transakcije, koji izlaz će verovatno predstavljati kusur?
 
 
 ### Vežba 5
@@ -1176,16 +1176,16 @@ bc1qja0hycrv7g9ww00jcqanhfpqmzx7luqalum3vu
 ```
 
 
-Na osnovu ovih informacija i koristeći **samo Address heuristiku ponovne upotrebe**, koje Bitcoin transakcije se mogu povezati sa Loïc-ovim identitetom?
+Na osnovu ovih informacija i koristeći **samo heuristiku ponovne upotrebe adrese**, koje Bitcoin transakcije se mogu povezati sa Loïc-ovim identitetom?
 
 
-*Očigledno, nisam pravi vlasnik ovog prijema Address i nisam ga postavio na društvene mreže. To je Address koji sam nasumično uzeo iz Blockchain*
+*Očigledno, nisam pravi vlasnik ove prijemnde adrese i nisam je postavio na društvene mreže. To je adresa koji sam nasumično uzeo iz blokčejna*
 
 
 ### Vežba 6
 
 
-Nakon vežbe 5, zahvaljujući heuristici ponovne upotrebe Address, uspeli ste da identifikujete nekoliko Bitcoin transakcija u koje izgleda da je Loïc umešan. Normalno, među identifikovanim transakcijama, trebalo bi da ste uočili ovu:
+Nakon vežbe 5, zahvaljujući heuristici ponovne upotrebe adrese, uspeli ste da identifikujete nekoliko Bitcoin transakcija u koje izgleda da je Loïc umešan. Normalno, među identifikovanim transakcijama, trebalo bi da ste uočili ovu:
 
 
 ```plaintext
@@ -1193,13 +1193,13 @@ Nakon vežbe 5, zahvaljujući heuristici ponovne upotrebe Address, uspeli ste da
 ```
 
 
-Ova transakcija je prva koja šalje sredstva na Loïc-ov Address. Odakle mislite da su bitkoini koje je Loïc primio putem ove transakcije došli?
+Ova transakcija je prva koja šalje sredstva na Loïc-ov adresu. Odakle mislite da su bitkoini koje je Loïc primio putem ove transakcije došli?
 
 
 ### Vežba 7
 
 
-Prateći vežbu 5, zahvaljujući heuristici ponovne upotrebe Address, uspeli ste da identifikujete nekoliko Bitcoin transakcija u kojima izgleda da je Loïc uključen. Sada želite da saznate odakle je Loïc došao. Na osnovu pronađenih transakcija, izvršite vremensku analizu kako biste pronašli vremensku zonu koju Loïc najverovatnije koristi. Iz ove vremenske zone, odredite lokaciju gde izgleda da Loïc živi (zemlja, država/regija, grad...).
+Prateći vežbu 5, zahvaljujući heuristici ponovne upotrebe adrese, uspeli ste da identifikujete nekoliko Bitcoin transakcija u kojima izgleda da je Loïc uključen. Sada želite da saznate odakle je Loïc došao. Na osnovu pronađenih transakcija, izvršite vremensku analizu kako biste pronašli vremensku zonu koju Loïc najverovatnije koristi. Iz ove vremenske zone, odredite lokaciju gde izgleda da Loïc živi (zemlja, država/regija, grad...).
 
 
 ![BTC204](assets/fr/066.webp)
@@ -1225,19 +1225,19 @@ Gledajući samo ovu transakciju, koje informacije možemo protumačiti?
 ***Vežba 1:***
 
 
-Model za ovu transakciju je jednostavan model plaćanja. Ako proučavamo samo njegovu strukturu, možemo interpretirati da jedan izlaz predstavlja Exchange, a drugi izlaz predstavlja stvarnu uplatu. Stoga znamo da posmatrani korisnik verovatno više nije u posedu jednog od dva UTXO-a u izlazu (onog za uplatu), ali je i dalje u posedu drugog UTXO (onog za Exchange).
+Model za ovu transakciju je jednostavan obrazac plaćanja. Ako proučavamo samo njegovu strukturu, možemo interpretirati da jedan izlaz predstavlja kusur, a drugi izlaz predstavlja stvarnu uplatu. Stoga znamo da posmatrani korisnik verovatno više nije u posedu jednog od dva UTXO-a u izlazu (onog za uplatu), ali je i dalje u posedu drugog UTXO (onog za kusur).
 
 
 ***Vežba 2:***
 
 
-Model za ovu transakciju je model grupisane potrošnje. Ovaj model verovatno otkriva ekonomsku aktivnost velikih razmera, kao što je Exchange platforma. Možemo zaključiti da ulazni UTXO dolazi od kompanije sa visokim nivoom ekonomske aktivnosti, i da će izlazni UTXO-i biti raspršeni. Neki će pripadati klijentima kompanije koji su povukli svoje bitkoine u novčanike za samostalno čuvanje. Drugi mogu otići partnerskim kompanijama. Na kraju, nesumnjivo će biti nekih Exchange koji će se vratiti izdavačkoj kompaniji.
+Model za ovu transakciju je obrazac grupisane potrošnje. Ovaj model verovatno otkriva ekonomsku aktivnost velikih razmera, kao što je platforma za trgovinu. Možemo zaključiti da ulazni UTXO dolazi od kompanije sa visokim nivoom ekonomske aktivnosti, i da će izlazni UTXO-i biti raspršeni. Neki će pripadati klijentima kompanije koji su povukli svoje bitkoine u novčanike za samostalno čuvanje. Drugi mogu otići partnerskim kompanijama. Na kraju, nesumnjivo će biti nekih kusura koji će se vratiti kompaniji.
 
 
 ***Vežba 3:***
 
 
-Model za ovu transakciju je jednostavno plaćanje. Stoga možemo primeniti interne heuristike na transakciju kako bismo pokušali identifikovati Exchange.
+Model za ovu transakciju je jednostavno plaćanje. Stoga možemo primeniti interne heuristike na transakciju kako bismo pokušali identifikovati kusur.
 
 
 Lično sam identifikovao najmanje dve interne heuristike koje podržavaju istu hipotezu:
@@ -1249,7 +1249,7 @@ Lično sam identifikovao najmanje dve interne heuristike koje podržavaju istu h
 - Najveći izlaz.
 
 
-Najočiglednija heuristika je ponovna upotreba iste vrste skripte. Zaista, izlaz `0` je `P2SH`, prepoznatljiv po svom prijemu Address koji počinje sa `3` :
+Najočiglednija heuristika je ponovna upotreba iste vrste skripte. Zaista, izlaz `0` je `P2SH`, prepoznatljiv po svojoj prijemnoj adresi koja počinje sa `3` :
 
 
 ```plaintext
@@ -1257,7 +1257,7 @@ Najočiglednija heuristika je ponovna upotreba iste vrste skripte. Zaista, izlaz
 ```
 
 
-Dok je izlaz `1` `P2WPKH`, prepoznatljiv po svom Address koji počinje sa `bc1q` :
+Dok je izlaz `1` `P2WPKH`, prepoznatljiv po svojoj adresi koja počinje sa `bc1q` :
 
 
 ```plaintext
@@ -1273,22 +1273,22 @@ bc1qyfuytw8pcvg5vx37kkgwjspg73rpt56l5mx89k
 ```
 
 
-Dakle, možemo pretpostaviti da izlaz `0` odgovara uplati, a izlaz `1` je transakcija Exchange, što bi značilo da ulazni korisnik uvek poseduje izlaz `1`.
+Dakle, možemo pretpostaviti da izlaz `0` odgovara uplati, a izlaz `1` je kusur, što bi značilo da ulazni korisnik uvek poseduje izlaz `1`.
 
 
 Da bismo podržali ili opovrgli ovu hipotezu, možemo potražiti druge heuristike koje ili potvrđuju naše razmišljanje, ili smanjuju verovatnoću da je naša hipoteza tačna.
 
 
-Identifikovao sam bar još jednu heuristiku. To je heuristika najvećeg izlaza. Izlaz `0` meri `123,689 Sats`, dok izlaz `1` meri `505,839 Sats`. Stoga postoji značajna razlika između ova dva izlaza. Heuristika najvećeg izlaza sugeriše da je najveći izlaz verovatno strani Exchange. Ova heuristika dodatno jača našu početnu hipotezu.
+Identifikovao sam bar još jednu heuristiku. To je heuristika najvećeg izlaza. Izlaz `0` iznosi `123,689 Sats`, dok izlaz `1` iznosi `505,839 Sats`. Stoga postoji značajna razlika između ova dva izlaza. Heuristika najvećeg izlaza sugeriše da je najveći izlaz verovatno kusur. Ova heuristika dodatno jača našu početnu hipotezu.
 
 
-Čini se stoga verovatnim da korisnik koji je dostavio UTXO kao ulaz i dalje drži izlaz `1`, koji izgleda da predstavlja transakciju Exchange.
+Čini se stoga verovatnim da korisnik koji je dostavio UTXO kao ulaz i dalje drži izlaz `1`, koji izgleda da predstavlja kusur.
 
 
 ***Vežba 4:***
 
 
-Model za ovu transakciju je jednostavno plaćanje. Stoga možemo primeniti interne heuristike na transakciju kako bismo pokušali identifikovati Exchange.
+Model za ovu transakciju je jednostavno plaćanje. Stoga možemo primeniti interne heuristike na transakciju kako bismo pokušali identifikovati kusur.
 
 
 Lično sam identifikovao najmanje dve interne heuristike koje podržavaju istu hipotezu:
@@ -1300,7 +1300,7 @@ Lično sam identifikovao najmanje dve interne heuristike koje podržavaju istu h
 - Okrugli izlaz posta.
 
 
-Najočiglednija heuristika je ponovna upotreba iste vrste skripte. Zaista, izlaz `0` je `P2SH`, prepoznatljiv po svom prijemu Address koji počinje sa `3` :
+Najočiglednija heuristika je ponovna upotreba iste vrste skripte. Zaista, izlaz `0` je `P2SH`, prepoznatljiv po svojoj prijemnoj adresi koja počinje sa `3` :
 
 
 ```plaintext
@@ -1308,7 +1308,7 @@ Najočiglednija heuristika je ponovna upotreba iste vrste skripte. Zaista, izlaz
 ```
 
 
-Dok je izlaz `1` `P2WPKH`, prepoznatljiv po svom Address koji počinje sa `bc1q` :
+Dok je izlaz `1` `P2WPKH`, prepoznatljiv po svojoj prijemnoj adresi koja počinje sa `bc1q` :
 
 
 ```plaintext
@@ -1324,19 +1324,19 @@ bc1qku3f2y294h3ks5eusv63dslcua2xnlzxx0k6kp
 ```
 
 
-Dakle, možemo pretpostaviti da izlaz `0` odgovara uplati, a izlaz `1` je transakcija Exchange, što bi značilo da ulazni korisnik uvek poseduje izlaz `1`.
+Dakle, možemo pretpostaviti da izlaz `0` odgovara uplati, a izlaz `1` je kusur, što bi značilo da ulazni korisnik uvek poseduje izlaz `1`.
 
 
 Da bismo podržali ili opovrgli ovu hipotezu, možemo potražiti druge heuristike koje ili potvrđuju naše razmišljanje, ili smanjuju verovatnoću da je naša hipoteza tačna.
 
 
-Identifikovao sam bar još jednu heuristiku. To je izlaz sa okruglim iznosom. Izlaz `0` meri `70,000 Sats`, dok izlaz `1` meri `22,962 Sats`. Stoga imamo savršeno okrugao izlaz u BTC jedinici obračuna. Heuristika okruglog izlaza sugeriše da je UTXO sa okruglim iznosom najverovatnije onaj koji se odnosi na plaćanje, i da eliminacijom, drugi predstavlja Exchange. Ova heuristika dodatno jača našu početnu hipotezu.
+Identifikovao sam bar još jednu heuristiku. To je izlaz sa celim iznosom. Izlaz `0` iznosi `70,000 Sats`, dok izlaz `1` iznosi `22,962 Sats`. Stoga imamo savršeno zaokružen izlaz u BTC jedinici obračuna. Heuristika zaokruženog izlaza sugeriše da je UTXO sa celim iznosom najverovatnije onaj koji se odnosi na plaćanje, i da eliminacijom, drugi predstavlja kusur. Ova heuristika dodatno jača našu početnu hipotezu.
 
 
-Međutim, u ovom primeru, druga heuristika bi mogla osporiti našu početnu hipotezu. Zaista, izlaz `0` je veći od izlaza `1`. Na osnovu heuristike da je najveći izlaz generalno strani Exchange, mogli bismo zaključiti da je izlaz `0` strani Exchange. Međutim, ova kontra-hipoteza deluje neverovatno, jer se druge dve heuristike čine znatno uverljivijim od heuristike najvećeg izlaza. Shodno tome, čini se razumnim zadržati našu početnu hipotezu uprkos ovoj očiglednoj kontradikciji.
+Međutim, u ovom primeru, druga heuristika bi mogla osporiti našu početnu hipotezu. Zaista, izlaz `0` je veći od izlaza `1`. Na osnovu heuristike da je najveći izlaz generalno kusur, mogli bismo zaključiti da je izlaz `0` kusur. Međutim, ova kontra-hipoteza deluje neverovatno, jer se druge dve heuristike čine znatno uverljivijim od heuristike najvećeg izlaza. Shodno tome, čini se razumnim zadržati našu početnu hipotezu uprkos ovoj očiglednoj kontradikciji.
 
 
-Čini se stoga verovatnim da korisnik koji je uneo UTXO kao ulaz i dalje drži izlaz `1`, koji izgleda da predstavlja transakciju Exchange.
+Čini se stoga verovatnim da korisnik koji je uneo UTXO kao ulaz i dalje drži izlaz `1`, koji izgleda da predstavlja kusur.
 
 
 ***Vežba 5:***
@@ -1353,7 +1353,7 @@ bc4dcf2200c88ac1f976b8c9018ce70f9007e949435841fc5681fd33308dd762
 ```
 
 
-Ostala 4 se odnose na pošiljke Bitcoin:
+Ostala 4 se odnose na pošiljke Bitcoin-a:
 
 
 ```plaintext
@@ -1367,10 +1367,10 @@ a6dbebebca119af3d05c0196b76f80fdbf78f20368ebef1b7fd3476d0814517d
 ***Vežba 6:***
 
 
-Ako pogledamo model ove transakcije, jasno je da se radi o objedinjeni potrošnji. Zaista, transakcija ima jedan ulaz i 51 izlaz, što ukazuje na visok nivo ekonomske aktivnosti. Stoga možemo pretpostaviti da je Loïc povukao bitkoine sa Exchange platforme.
+Ako pogledamo model ove transakcije, jasno je da se radi o objedinjenoj potrošnji. Zaista, transakcija ima jedan ulaz i 51 izlaz, što ukazuje na visok nivo ekonomske aktivnosti. Stoga možemo pretpostaviti da je Loïc povukao bitkoine sa platforme za trgovinu.
 
 
-Nekoliko faktora pojačava ovu hipotezu. Prvo, tip skripta korišćenog za obezbeđivanje UTXO unosa je P2SH 2/3 Multisig skripta, što ukazuje na napredni nivo sigurnosti tipičan za Exchange platforme:
+Nekoliko faktora pojačava ovu hipotezu. Prvo, tip skripte korišćene za obezbeđivanje UTXO ulaza je P2SH 2/3 Multisig skripta, što ukazuje na napredni nivo sigurnosti tipičan za platforme za trgovinu:
 
 
 ```plaintext
@@ -1383,13 +1383,13 @@ OP_CHECKMULTISIG
 ```
 
 
-Štaviše, Address proučavan `3PUv9tQMSDCEPSMsYSopA5wDW86pwRFbNF` se ponovo koristi u preko 220.000 različitih transakcija, što je često karakteristično za Exchange platforme, koje generalno ne brinu o svojoj poverljivosti.
+Štaviše, adresa `3PUv9tQMSDCEPSMsYSopA5wDW86pwRFbNF` se ponovo koristi u preko 220.000 različitih transakcija, što je često karakteristično za platforme, koje generalno ne brinu o svojoj poverljivosti.
 
 
-Vremenska heuristika primenjena na ovaj Address takođe pokazuje redovno emitovanje transakcija skoro svakodnevno tokom 3-mesečnog perioda, sa produženim radnim vremenom preko 24 sata, što sugeriše kontinuiranu aktivnost platforme Exchange.
+Vremenska heuristika primenjena na ovu adresu takođe pokazuje redovno emitovanje transakcija skoro svakodnevno tokom 3-mesečnog perioda, sa produženim radnim vremenom preko 24 sata, što sugeriše kontinuiranu aktivnost platforme.
 
 
-Konačno, obimi kojima upravlja ovaj entitet su kolosalni. Address je primio i poslao 44 BTC u 222,262 transakcije između decembra 2022. i marta 2023. Ovi veliki obimi dodatno potvrđuju verovatnu prirodu aktivnosti platforme Exchange.
+Konačno, obimi kojima upravlja ovaj entitet su kolosalni. Adresa je primila i poslala 44 BTC u 222,262 transakcije između decembra 2022. i marta 2023. Ovi veliki obimi dodatno potvrđuju verovatnu prirodu aktivnosti platforme.
 
 
 ***Vežba 7:***
@@ -1410,7 +1410,7 @@ Analizom vremena potvrde transakcije, mogu se identifikovati sledeća UTC vremen
 ```
 
 
-Analiza ovih rasporeda pokazuje da su UTC-7 i UTC-8 u skladu sa rasponom trenutnih ljudskih aktivnosti (između 08:00 i 23:00) za većinu rasporeda:
+Analiza ovih rasporeda pokazuje da su UTC-7 i UTC-8 u skladu sa rasponom uobičajenih ljudskih aktivnosti (između 08:00 i 23:00) za većinu rasporeda:
 
 
 ```plaintext
@@ -1460,13 +1460,13 @@ Analiza ove transakcije otkriva 5 ulaza i jedan izlaz, što sugeriše konsolidac
 ___
 
 
-*Da napišem ovu analizu dela 3 on chain, koristio sam sledeće resurse:*
+*Da napišem treći odeljak o on chain analizi, koristio sam sledeće resurse:*
 
 
 
 
-- Serija od četiri članka pod nazivom: [Understanding Bitcoin Privacy with OXT](https://medium.com/oxt-research/understanding-Bitcoin-privacy-with-oxt-part-1-4-8177a40a5923), koju je proizveo Samourai Wallet 2021. godine ;*
-- Različiti izveštaji sa [OXT Research](https://medium.com/oxt-research), kao i njihov besplatni alat za analizu Blockchain (trenutno nije dostupan nakon hapšenja osnivača Samourai Wallet) ;*
+- Serija od četiri članka pod nazivom: [Understanding Bitcoin Privacy with OXT](https://medium.com/oxt-research/understanding-Bitcoin-privacy-with-oxt-part-1-4-8177a40a5923), koju je napravio Samourai Wallet 2021. godine ;*
+- Različiti izveštaji sa [OXT Research](https://medium.com/oxt-research), kao i njihov besplatni alat za analizu blokčejna (trenutno nije dostupan nakon hapšenja osnivača Samourai Wallet-a) ;*
 - Šire gledano, moje znanje dolazi iz raznih tvitova i sadržaja od [@LaurentMT](https://twitter.com/LaurentMT) i [@ErgoBTC](https://twitter.com/ErgoBTC) ;*
 - [Space Kek #19](https://podcasters.spotify.com/pod/show/decouvrebitcoin/episodes/SpaceKek-19---Analyse-de-chane--anonsets-et-entropie-e1vfuji) u kojem sam učestvovao u društvu [@louneskmt](https://twitter.com/louneskmt), [@TheoPantamis](https://twitter.com/TheoPantamis), [@Sosthene___](https://twitter.com/Sosthene___) i [@LaurentMT](https://twitter.com/LaurentMT).*
 
@@ -1486,29 +1486,28 @@ ___
 <partId>9bd04b63-f1af-4e50-9061-6bc90009df68</partId>
 
 
-## Address ponovna upotreba
+## Ponovna upotreba adrese
 
 
 <chapterId>f3e97645-3df3-41bc-a4ed-d2c740113d96</chapterId>
 
 
 
-Nakon što smo proučili tehnike koje mogu narušiti vašu poverljivost na Bitcoin, u ovom trećem delu ćemo sada pogledati najbolje prakse koje treba usvojiti kako biste se zaštitili. Cilj ovog dela nije istraživanje metoda za poboljšanje poverljivosti, tema koja će biti obrađena kasnije, već razumevanje kako pravilno komunicirati sa Bitcoin kako biste zadržali poverljivost koju prirodno nudi, bez pribegavanja dodatnim tehnikama.
+Nakon što smo proučili tehnike koje mogu narušiti vašu privatnost na Bitcoin-u, u ovom trećem delu ćemo sada pogledati najbolje prakse koje treba usvojiti kako biste se zaštitili. Cilj ovog dela nije istraživanje metoda za poboljšanje privatnosti, tema koja će biti obrađena kasnije, već razumevanje kako pravilno komunicirati sa Bitcoin-om kako biste zadržali poverljivost koju prirodno nudi, bez pribegavanja dodatnim tehnikama.
 
 
-Očigledno, da bismo započeli ovaj treći deo, razgovaraćemo o ponovnoj upotrebi Address. Ovaj fenomen je glavna pretnja poverljivosti korisnika. Ovo poglavlje je sigurno najvažnije u celom kursu.
+Očigledno, da bismo započeli ovaj treći deo, razgovaraćemo o ponovnoj upotrebi adrese. Ovaj fenomen je glavna pretnja poverljivosti korisnika. Ovo poglavlje je sigurno najvažnije u celom kursu.
 
 
-### Šta je prijemni Address?
+### Šta je prijemna adresa?
 
 
-Bitcoin koji prima Address je niz ili identifikator koji se koristi za primanje bitkoina na Wallet.
+Bitcoin adresa za primanje je niz znakova ili identifikator koji se koristi za primanje bitkoina u novčanik.
+
+Tehnički, Bitcoin adresa za primanje ne "prima" bitkoine u doslovnom smislu, već služi za definisanje uslova pod kojima se bitkoini mogu potrošiti. Konkretno, kada vam se pošalje uplata, transakcija pošiljaoca kreira novi UTXO za vas kao izlaz iz UTXO-a koje je potrošila kao ulaz. Na ovom izlazu, prilaže se skripta koja definiše kako se ovaj UTXO može potrošiti kasnije. Ova skripta je poznata kao "*ScriptPubKey*" ili "*skripta za zaključavanje (eng. Locking Script)*". Vaša adresa za primanje, ili preciznije njegov sadržaj, integriše se u ovu skriptu. U laičkim terminima, ova skripta u osnovi kaže:
 
 
-Tehnički, Bitcoin koji prima Address ne "prima" bitkoine u doslovnom smislu, već služi za definisanje uslova pod kojima se bitkoini mogu potrošiti. Konkretno, kada vam se pošalje uplata, transakcija pošiljaoca kreira novi UTXO za vas kao izlaz iz UTXO-a koje je potrošila kao ulaze. Na ovom izlazu, on prilaže skriptu koja definiše kako se ovaj UTXO može potrošiti kasnije. Ova skripta je poznata kao "*ScriptPubKey*" ili "*Locking Script*". Vaš primajući Address, ili preciznije njegov sadržaj, integriše se u ovu skriptu. U laičkim terminima, ova skripta u osnovi kaže:
-
-
-> "*Da biste potrošili ovaj novi UTXO, morate obezbediti digitalni potpis koristeći privatni ključ povezan sa ovim prijemnim Address.*"
+> "*Da biste potrošili ovaj novi UTXO, morate obezbediti digitalni potpis koristeći privatni ključ povezan sa ovom prijemnom adresom.*"
 ![BTC204](assets/fr/067.webp)
 
 
@@ -1518,7 +1517,7 @@ Bitcoin adrese dolaze u različitim tipovima, u zavisnosti od korišćenog model
 SegWit V0 (`P2WPKH` i `P2WSH`) i Taproot / SegWit V1 (`P2TR`) adrese predstavljaju moderne formate. SegWit adrese počinju sa `bc1q`, a Taproot adrese, uvedene 2021. godine, počinju sa `bc1p`.
 
 
-Na primer, ovde je prijem Taproot Address:
+Na primer, ovo je primer Taproot adrese:
 
 
 ```text
@@ -1539,20 +1538,20 @@ Kako će ScriptPubKey biti konstruisan zavisiće od standarda koji koristite:
 | P2SH - P2WSH | OP_HASH160 `<redeemScriptHash>` OP_EQUAL |
 | P2TR | 1 `<pubKey>` |
 
-Izgradnja adresa za prijem takođe zavisi od izabranog modela skripte:
+Konstrukcija adresa za prijem takođe zavisi od izabranog modela skripte:
 
 
 
 
-- Za `P2PKH` i `P2WPKH` adrese, payload, tj. jezgro Address, predstavlja Hash javnog ključa;
-- Za `P2SH` i `P2WSH` adrese, sadržaj predstavlja Hash od ;
+- Za `P2PKH` i `P2WPKH` adrese, payload, tj. sadržaj adrese, predstavlja heš javnog ključa;
+- Za `P2SH` i `P2WSH` adrese, sadržaj adrese predstavlja heš od ;
 - Što se tiče `P2TR` adresa, payload je prilagođeni javni ključ. P2TR izlazi kombinuju aspekte _Pay-to-PubKey_ i _Pay-to-Script_. Prilagođeni javni ključ je rezultat dodavanja klasičnog javnog ključa za trošenje sa "prilagođavanjem", izvedenim iz Merkle Root skupa skripti koje se takođe mogu koristiti za trošenje bitkoina.
 
 
 ![BTC204](assets/fr/068.webp)
 
 
-Adrese prikazane na vašem portfolijskom softveru takođe uključuju HRP (*Human-Readable Part*), obično `bc` za post-SegWit adrese, separator `1`, i broj verzije `q` za SegWit V0 i `p` za Taproot/SegWit V1. Takođe se dodaje kontrolni zbir kako bi se garantovala integritet i validnost Address tokom prenosa.
+Adrese prikazane na vašem portfolijskom softveru takođe uključuju HRP (*Human-Readable Part*), obično `bc` za post-SegWit adrese, separator `1`, i broj verzije `q` za SegWit V0 i `p` za Taproot/SegWit V1. Takođe se dodaje kontrolni zbir kako bi se garantovala integritet i validnost adrese tokom prenosa.
 
 
 Konačno, adrese se stavljaju u standardni format:
@@ -1575,44 +1574,44 @@ Evo matrica sabiranja za formate bech32 i bech32m (SegWit i Taproot) iz baze 10:
 | 16 | s | 3 | j | n | 5 | 4 | k | h |
 | 24 | c | e | 6 | m | u | a | 7 | l |
 
-### Šta je ponovna upotreba Address?
+### Šta je ponovna upotreba adrese?
 
 
-Ponovna upotreba Address je korišćenje istog prijemnog Address za blokiranje nekoliko različitih UTXO-a.
+Ponovna upotreba adrese predstavlja korišćenje iste adrese za primanje više različitih UTXO-ova.
 
 
-Kao što smo videli u prethodnom odeljku, svaki UTXO ima svoj ScriptPubKey, koji ga zaključava i mora biti zadovoljen da bi se UTXO mogao koristiti kao ulaz u novoj transakciji. Upravo unutar ovog ScriptPubKey-a su integrisane adrese tereta.
+Kao što smo videli u prethodnom odeljku, svaki UTXO ima svoj ScriptPubKey, koji ga zaključava i mora biti zadovoljen da bi se UTXO mogao koristiti kao ulaz u novoj transakciji. Upravo unutar ovog ScriptPubKey-a su ugrađene adrese koje sadrže podatke potrebne za validaciju transakcije.
 
 
-Kada različiti ScriptPubKeys sadrže isti primajući Address, to se naziva ponovna upotreba Address. U praksi, to znači da je korisnik više puta dao isti Address pošiljaocima kako bi primio bitkoine putem više uplata. I upravo je ta praksa katastrofalna za vašu privatnost.
+Kada različiti ScriptPubKeys sadrže istu primajuću adresu, to se naziva ponovna upotreba adrese. U praksi, to znači da je korisnik više puta dao istu adresu pošiljaocima kako bi primio bitkoine putem više uplata. I upravo je ta praksa katastrofalna za vašu privatnost.
 
 
-### Zašto je ponovna upotreba Address problem?
+### Zašto je ponovna upotreba adresa problem?
 
 
-Pošto je Blockchain javan, lako je videti koje adrese zaključavaju koji UTXO i koliko bitkoina. Ako se isti Address koristi za nekoliko transakcija, postaje moguće zaključiti da svi bitkoini povezani sa tim Address pripadaju istoj osobi. Ova praksa ugrožava privatnost korisnika omogućavajući uspostavljanje determinističkih veza između različitih transakcija i praćenje bitkoina na Blockchain. Satoshi Nakamoto je sam već istakao ovaj problem u Bitcoin-ovom White Paper-u:
+Pošto je blokčejn javan, lako je videti koje adrese zaključavaju koji UTXO i koliko bitkoina. Ako se ista adresa koristi za nekoliko transakcija, postaje moguće zaključiti da svi bitkoini povezani sa tom adresom pripadaju istoj osobi. Ova praksa ugrožava privatnost korisnika omogućavajući uspostavljanje determinističkih veza između različitih transakcija i praćenje bitkoina na blokčejnu. Satoshi Nakamoto je sam već istakao ovaj problem u Bitcoin-ovom White Paper-u:
 
 
-> *Kao dodatni firewall, novi par ključeva mogao bi se koristiti za svaku transakciju kako bi ostali nepovezani sa zajedničkim vlasnikom*
+> *Kao dodatna zaštita, novi par ključeva mogao bi se koristiti za svaku transakciju kako bi ostali nepovezani sa zajedničkim vlasnikom*
 ![BTC204](assets/fr/055.webp)
 
 
 Izvor: S. Nakamoto, "Bitcoin: Sistem elektronskog novca od osobe do osobe", https://Bitcoin.org/Bitcoin.pdf, 2009.
 
 
-Namera Satoshi u ovoj rečenici bila je da stvori dodatni firewall u slučaju povezivanja identiteta korisnika i para ključeva na Bitcoin, kako bi se sprečilo da cela njegova aktivnost bude javno povezana sa njegovim identitetom. Danas, sa proliferacijom kompanija za analizu Blockchain i KYC regulativama, korišćenje jedinstvenih adresa više nije "dodatni firewall", već neophodna praksa za svakoga ko želi da sačuva minimum privatnosti.
+Namera Satoshija u ovoj rečenici bila je da stvori dodatnu zaštitu u slučaju povezivanja identiteta korisnika i para ključeva na Bitcoin-u, kako bi se sprečilo da cela njegova aktivnost bude javno povezana sa njegovim identitetom. Danas, sa proliferacijom kompanija za analizu blokčejna i KYC regulativama, korišćenje jedinstvenih adresa više nije "dodatna zaštita", već neophodna praksa za svakoga ko želi da sačuva minimum privatnosti.
 
 
-Kada ponovo koristite Address, pravite gotovo neosporivu vezu između svih transakcija povezanih sa tim Address. Iako ovo direktno ne ugrožava vaša sredstva, jer eliptička kriptografija garantuje sigurnost vaših privatnih ključeva, ipak olakšava praćenje vaših aktivnosti. Naime, svako ko ima čvor može posmatrati transakcije i stanja adresa, potpuno kompromitujući vašu anonimnost.
+Kada ponovo koristite adrese, pravite gotovo neosporivu vezu između svih transakcija povezanih sa tom adresom. Iako ovo direktno ne ugrožava vaša sredstva, jer eliptička kriptografija garantuje sigurnost vaših privatnih ključeva, ipak olakšava praćenje vaših aktivnosti. Naime, svako ko ima čvor može posmatrati transakcije i stanja adresa, potpuno kompromitujući vašu anonimnost.
 
 
 ![BTC204](assets/fr/054.webp)
 
 
-Da bismo ilustrovali ovu tačku, uzmimo primer Boba, korisnika koji redovno kupuje bitkoine u malim količinama putem DCA i uvek ih šalje na isti Address. Nakon dve godine, ovaj Address sadrži značajnu količinu bitkoina. Ako Bob koristi ovaj Address za plaćanje lokalnom trgovcu, trgovac će moći da vidi sva povezana sredstva i zaključi Bobovo bogatstvo. Ovo može dovesti do rizika po ličnu sigurnost, kao što su pokušaji krađe ili iznude. Da je Bob koristio prazan Address za primanje svake periodične kupovine, otkrio bi beskonačno manje informacija svom trgovcu.
+Da bismo ilustrovali ovu tačku, uzmimo primer Boba, korisnika koji redovno kupuje bitkoine u malim količinama putem DCA i uvek ih šalje na istu adresu. Nakon dve godine, ova adresa sadrži značajnu količinu bitkoina. Ako Bob koristi ovu adresu za plaćanje lokalnom trgovcu, trgovac će moći da vidi sva povezana sredstva i zaključi Bobovo bogatstvo. Ovo može dovesti do rizika po ličnu sigurnost, kao što su pokušaji krađe ili iznude. Da je Bob koristio prazne adrese za primanje svake periodične kupovine, otkrio bi beskonačno manje informacija svom trgovcu.
 
 
-U analizi stringova, postoje 2 tipa ponovne upotrebe Address:
+U analizi stringova, postoje 2 tipa ponovne upotrebe adrese:
 
 
 
@@ -1621,41 +1620,41 @@ U analizi stringova, postoje 2 tipa ponovne upotrebe Address:
 - Interna ponovna upotreba unutar transakcije.
 
 
-Prvi je kada se Address ponovo koristi u nekoliko različitih Bitcoin transakcija. Ovo je ono o čemu smo ranije govorili: ova heuristika zaključuje da svi UTXO-i koji su prošli kroz ovaj Address pripadaju jednom entitetu.
+Prva je kada se adresa ponovo koristi u nekoliko različitih Bitcoin transakcija. Ovo je ono o čemu smo ranije govorili: ova heuristika zaključuje da svi UTXO-i koji su prošli kroz ovu adresu pripadaju jednom entitetu.
 
 
-Interna ponovna upotreba Address ne dešava se kada se ponovna upotreba dešava kroz nekoliko transakcija, već kada se dešava unutar jedne transakcije. Naime, ako se isti Address koji je korišćen za zaključavanje ulaza koristi kao izlaz transakcije, onda možemo zaključiti da ovaj izlaz i dalje pripada istom korisniku (Exchange), i da drugi izlaz predstavlja stvarno plaćanje. Ova druga heuristika omogućava da se trag sredstava nastavi kroz nekoliko transakcija.
+Interna ponovna upotreba adrese ne dešava se kada se ponovna upotreba dešava kroz nekoliko transakcija, već kada se dešava unutar jedne transakcije. Naime, ako se ista adresa koja je korišćena za zaključavanje ulaza koristi kao izlaz transakcije, onda možemo zaključiti da ovaj izlaz i dalje pripada istom korisniku (kusur), i da drugi izlaz predstavlja stvarno plaćanje. Ova druga heuristika omogućava da se trag sredstava nastavi kroz nekoliko transakcija.
 
 
 ![BTC204](assets/fr/045.webp)
 
 
-Ponovna upotreba Address je prava pošast na Bitcoin. Prema OXT.me vebsajtu (trenutno nedostupnom), ukupna stopa ponovne upotrebe Address na Bitcoin bila je oko 52% u 2022:
+Ponovna upotreba adresa je prava pošast na Bitcoin-u. Prema OXT.me vebsajtu (trenutno nedostupnom), ukupna stopa ponovne upotrebe adresa na Bitcoin-u bila je oko 52% u 2022:
 
 
 ![BTC204](assets/fr/069.webp)
 
 
-Ova stopa je ogromna, ali dolazi pretežno sa Exchange platformi, a ne od pojedinačnih korisnika.
+Ova stopa je ogromna, ali dolazi pretežno sa platformi za trgovinu, a ne od pojedinačnih korisnika.
 
 
-### Kako izbeći ponovnu upotrebu Address?
+### Kako izbeći ponovnu upotrebu adrese?
 
 
-Izbegavanje ponovne upotrebe Address je prilično jednostavno: **jednostavno koristite novi, prazni Address za sve nove uplate vašem Wallet**.
+Izbegavanje ponovne upotrebe adrese je prilično jednostavno: **jednostavno koristite novu, praznu adresu za sve nove uplate vašim novčanikom**.
 
 
-Zahvaljujući BIP32, moderni portfelji su sada deterministički i hijerarhijski. To znači da korisnik može generate veliki broj adresa iz jednog početnog podatka: seed. Čuvanjem ovog jednog podatka, moguće je obnoviti sve privatne ključeve u portfelju, omogućavajući pristup sredstvima osiguranim odgovarajućim adresama.
+Zahvaljujući BIP32, moderni novčanici su sada deterministički i hijerarhijski. To znači da korisnik može generisati veliki broj adresa iz jednog početnog podatka: seed. Čuvanjem ovog jednog podatka, moguće je obnoviti sve privatne ključeve u novčaniku, omogućavajući pristup sredstvima osiguranim odgovarajućim adresama.
 
 
 ![BTC204](assets/fr/070.webp)
 
 
-Zato se, kada pritisnete dugme "*receive*" u vašem Wallet softveru, svaki put predlaže neiskorišćeni prijemni Address. Nakon primanja bitkoina na ovom Address, softver automatski predlaže novi.
+Zato se, kada pritisnete dugme "*receive*" u vašem softveru novčanika, svaki put predlaže neiskorišćena prijemna adresa. Nakon primanja bitkoina na ovoj adresi, softver automatski predlaže novu.
 
 
-> *PS: Nedavno su neki Wallet softverski programi najavili svoju nameru da prestanu sa generisanjem praznih adresa, plašeći se da će vlasti to percipirati kao oblik pranja novca. Ako je vaš softver jedan od ovih, toplo vam savetujem da ga odmah zamenite, jer ovo nije prihvatljivo za korisnika.*
-Ako vam je potreban statički identifikator za primanje uplata, kao što su donacije, nije preporučljivo koristiti klasični Bitcoin Address zbog rizika od ponovne upotrebe. Umesto toga, koristite Lightning Address, ili se odlučite za statički onchain identifikator plaćanja, kao što su BIP47 ili Silent Payments. Ovi protokoli su detaljno objašnjeni u 6. delu ovog kursa obuke.
+> *PS: Nedavno su neki softverski programi najavili svoju nameru da prestanu sa generisanjem praznih adresa, plašeći se da će vlasti to percipirati kao oblik pranja novca. Ako je vaš softver jedan od ovih, toplo vam savetujem da ga odmah zamenite, jer ovo nije prihvatljivo za korisnika.*
+Ako vam je potreban statički identifikator za primanje uplata, kao što su donacije, nije preporučljivo koristiti klasične Bitcoin adrese zbog rizika od ponovne upotrebe. Umesto toga, koristite Lightning adresu, ili se odlučite za statički onchain identifikator plaćanja, kao što su BIP47 ili Silent Payments. Ovi protokoli su detaljno objašnjeni u 6. delu ovog kursa obuke.
 
 
 ## Označavanje i proveravanje delova
@@ -1668,71 +1667,71 @@ Ako vam je potreban statički identifikator za primanje uplata, kao što su dona
 Kao što smo otkrili u odeljku o analizi stringova, postoji mnoštvo heuristika i obrazaca koji se mogu koristiti za izvođenje informacija o transakciji. Kao korisnik, važno je biti svestan ovih tehnika kako biste se bolje zaštitili od njih.
 
 
-Ovo uključuje rigorozno upravljanje vašim Wallet u samostalnom čuvanju, što znači poznavanje porekla vaših UTXO-a, kao i pažljiv odabir kojih UTXO-a da potrošite prilikom plaćanja. Ovo efikasno upravljanje Wallet oslanja se na dve važne karakteristike dobrih Bitcoin novčanika: označavanje i kontrolu novčića.
+Ovo uključuje rigorozno upravljanje vašim novčanikom koji se nalazi u samostalnom čuvanju, što znači poznavanje porekla vaših UTXO-a, kao i pažljiv odabir kojih UTXO-a da potrošite prilikom plaćanja. Ovo efikasno upravljanje novčanikom oslanja se na dve važne karakteristike dobrih Bitcoin novčanika: označavanje i kontrola novčića.
 
 
-U ovom poglavlju ćemo pogledati ove funkcije i videti kako ih možete inteligentno koristiti, bez dodavanja previše posla, kako biste značajno optimizovali svoju privatnost na Bitcoin.
+U ovom poglavlju ćemo pogledati ove funkcije i videti kako ih možete inteligentno koristiti, bez dodavanja previše posla, kako biste značajno optimizovali svoju privatnost na Bitcoin-u.
 
 
 ### Šta je etiketiranje?
 
 
-Označavanje je praksa dodeljivanja anotacije ili oznake specifičnom UTXO u Bitcoin Wallet. Ove anotacije se čuvaju lokalno od strane Wallet softvera i nikada se ne prenose preko Bitcoin mreže. Označavanje je stoga alat za lično upravljanje.
+Označavanje je praksa dodeljivanja anotacije ili oznake specifičnom UTXO u Bitcoin novčaniku. Ove anotacije se čuvaju lokalno od strane softvera novčanika i nikada se ne prenose preko Bitcoin mreže. Označavanje je stoga alat za lično upravljanje.
 
 
 Na primer, ako imam UTXO iz kupovine P2P na Bisq sa Charlesom, mogao bih ga označiti kao "`Non-KYC Bisq Charles`".
 
 
-Označavanje je dobra praksa koja pomaže da se zapamti poreklo ili predviđena destinacija UTXO, što stoga olakšava upravljanje sredstvima i optimizaciju privatnosti. Zaista, vaš Bitcoin Wallet sigurno obezbeđuje nekoliko UTXO-a. Ako su izvori ovih UTXO-a različiti, možda nećete želeti da spojite ove UTXO-e u budućnosti, inače biste mogli otkriti njihov zajednički Ownership. Pravilnim označavanjem svih vaših delova, možete biti sigurni da ćete se setiti odakle su došli kada budete trebali da ih koristite, čak i ako je to godinama kasnije.
+Označavanje je dobra praksa koja pomaže da se zapamti poreklo ili predviđena destinacija UTXO-a, što olakšava upravljanje sredstvima i optimizaciju privatnosti. Zaista, vaš Bitcoin novčanik sigurno obezbeđuje nekoliko UTXO-a. Ako su izvori ovih UTXO-a različiti, možda nećete želeti da spojite ove UTXO-e u budućnosti, inače biste mogli otkriti njihovo zajedničko vlasništvo. Pravilnim označavanjem svih vaših delova, možete biti sigurni da ćete se setiti odakle su došli kada budete trebali da ih koristite, čak i ako je to godinama kasnije.
 
 
-### Šta je kontrola ugla?
+### Šta je kontrola novčića?
 
 
-Aktivna upotreba etiketiranja postaje još zanimljivija kada se kombinuje sa opcijom kontrole novčića na vašem softveru za portfolio.
+Aktivna upotreba etiketiranja postaje još zanimljivija kada se kombinuje sa opcijom kontrole novčića na vašem softver novčaniku.
 
 
-Kontrola novčića je funkcija koja se nalazi u dobrom Bitcoin Wallet softveru, omogućavajući vam da ručno odaberete specifične UTXO-e koje ćete koristiti kao ulaze za dovršavanje transakcije. Zapravo, da biste zadovoljili izlazno plaćanje, potrebno je da zauzvrat potrošite ulazni UTXO. Iz više razloga, koje ćemo kasnije razmotriti, možda ćete želeti da precizno odaberete koje delove ćete potrošiti kao ulaze da biste zadovoljili određeno plaćanje. Ovo je upravo ono što vam kontrola novčića omogućava da uradite. Da vam dam analogiju, ova funkcija je slična biranju specifičnog novčića iz vašeg Wallet kada plaćate svoj baget.
+Kontrola novčića je funkcija koja se nalazi u dobrom Bitcoin softver novčaniku, omogućavajući vam da ručno odaberete specifične UTXO-e koje ćete koristiti kao ulaze za dovršavanje transakcije. Zapravo, da biste zadovoljili izlazno plaćanje, potrebno je da zauzvrat potrošite ulazni UTXO. Iz više razloga, koje ćemo kasnije razmotriti, možda ćete želeti da precizno odaberete koje delove ćete potrošiti kao ulaze da biste zadovoljili određeno plaćanje. Ovo je upravo ono što vam kontrola novčića omogućava da uradite. Da vam dam analogiju, ova funkcija je slična biranju specifičnog novčića iz vašeg novčanika kada plaćate svoj baget.
 
 
 ![BTC204](assets/fr/071.webp)
 
 
-Korišćenje softvera za portfolio sa kontrolom novčića, u kombinaciji sa UTXO označavanjem, omogućava korisnicima da razlikuju i precizno odaberu UTXO-e za svoje transakcije.
+Korišćenje softver novčanika sa kontrolom novčića, u kombinaciji sa UTXO označavanjem, omogućava korisnicima da razlikuju i precizno odaberu UTXO-e za svoje transakcije.
 
 
-### Kako označavate svoje UTXO-e?
+### Kako da označite svoje UTXO-e?
 
 
-Ne postoji univerzalna metoda za označavanje UTXO-a. Na vama je da definišete sistem označavanja koji je lako razumljiv za vaš portfolio. U svakom slučaju, imajte na umu da je dobro označavanje ono koje možete razumeti kada vam zatreba. Ako je vaš Bitcoin Wallet prvenstveno namenjen za štednju, oznake vam možda neće biti korisne decenijama unapred. Zato se pobrinite da budu jasne, precizne i sveobuhvatne.
+Ne postoji univerzalna metoda za označavanje UTXO-a. Na vama je da definišete sistem označavanja koji je lako razumljiv za vaš novčanik. U svakom slučaju, imajte na umu da je dobro označavanje ono koje možete razumeti kada vam zatreba. Ako je vaš Bitcoin novčanik prvenstveno namenjen za štednju, oznake vam možda neće biti korisne decenijama unapred. Zato se pobrinite da budu jasne, precizne i sveobuhvatne.
 
 
-Važno je da vaši voljeni mogu lako identifikovati poreklo sredstava ako, jednog dana, budu trebali pristupiti vašem portfoliju. Ovo će im pomoći kako iz razloga poverljivosti, tako i za pravne svrhe, ukoliko budu morali da opravdaju poreklo sredstava pred nekom institucijom.
+Važno je da vaši voljeni mogu lako identifikovati poreklo sredstava ako, jednog dana, budu trebali pristupiti vašem novčaniku. Ovo će im pomoći kako iz razloga poverljivosti, tako i za pravne svrhe, ukoliko budu morali da opravdaju poreklo sredstava pred nekom institucijom.
 
 
-Najvažnija stvar koju treba primetiti na etiketi je izvor UTXO. Trebalo bi jednostavno naznačiti kako je novčić dospeo u vaš Wallet. Da li je rezultat kupovine na Exchange platformi? Invoice uplata od kupca? Peer-to-peer Exchange? Ili predstavlja Exchange troška? Na primer, možete navesti:
+Najvažnija stvar koju treba primetiti na etiketi je izvor UTXO. Trebalo bi jednostavno naznačiti kako je novčić dospeo u vaš novčanik. Da li je rezultat kupovine na berzi? Uplata fakture od kupca? Peer-to-peer razmena? Ili predstavlja kusur? Na primer, možete navesti:
 
 
 
 
-- ukloni Exchange.com` ;
+- povlačenje sa Exchange.com` ;
 - plaćanje kupca David` ;
-- kupi P2P Charles` ;
-- `Promeni kupovinu sofe`
+- kupovina P2P Charles` ;
+- `kusur od kupovinu sofe`
 
 
 ![BTC204](assets/fr/072.webp)
 
 
-Da biste fino podesili upravljanje vašim UTXO i poštovali strategije segregacije fondova unutar vašeg portfolija, možete obogatiti vaše oznake dodatnim indikatorom koji odražava ove separacije. Ako vaš portfolio sadrži dve kategorije UTXO koje ne želite da mešate, možete uključiti marker u vaše oznake kako biste jasno razlikovali ove grupe. Ovi markeri za separaciju će zavisiti od vaših sopstvenih kriterijuma, kao što je razlikovanje između UTXO-a koji proizilaze iz procesa akvizicije koji uključuje KYC, ili između profesionalnih i ličnih fondova. Uzimajući u obzir primere oznaka pomenute gore, ovo bi moglo da se prevede u:
+Da biste fino podesili upravljanje vašim UTXO-vima i poštovali strategije segregacije sredstava unutar vašeg novčanika, možete obogatiti vaše oznake dodatnim indikatorom koji odražava ove separacije. Ako vaš novčanik sadrži dve kategorije UTXO-a koje ne želite da mešate, možete uključiti marker u vaše oznake kako biste jasno razlikovali ove grupe. Ovi markeri za separaciju će zavisiti od vaših sopstvenih kriterijuma, kao što je razlikovanje između UTXO-a koji proizilaze iz procesa akvizicije koji uključuje KYC, ili između profesionalnih i ličnih fondova. Uzimajući u obzir primere oznaka pomenute gore, ovo bi moglo da se prevede u:
 
 
 
 
-- `KYC - Povlačenje Exchange.com` ;
+- `KYC - Povlačenje sa Exchange.com` ;
 - `KYC - Plaćanje Kupca David` ;
-- `NO KYC - Kupi P2P Charles` ;
-- `NO KYC - Promena kupovine sofe`
+- `NO KYC - Kupovina P2P Charles` ;
+- `NO KYC - Kusur od kupovine sofe`
 
 
 ![BTC204](assets/fr/073.webp)
@@ -1741,7 +1740,7 @@ Da biste fino podesili upravljanje vašim UTXO i poštovali strategije segregaci
 Takođe je preporučljivo da se obeležavanje dela nastavi tokom transakcija. Na primer, kada konsolidujete UTXO no-KYC, obavezno označite rezultat ne samo kao `consolidation`, već specifično kao `consolidation no-KYC` kako biste zadržali jasan zapis o poreklu novčića.
 
 
-Konačno, nije obavezno staviti datum na etiketu. Većina Wallet softvera već prikazuje datum transakcije, i uvek je moguće pronaći ovu informaciju na Block explorer zahvaljujući njegovom txid.
+Konačno, nije obavezno staviti datum na etiketu. Većina softver novčanika već prikazuje datum transakcije, i uvek je moguće pronaći ovu informaciju na Block explorer-u zahvaljujući txid.
 
 
 ### Kako odabrati prave delove?
@@ -1762,25 +1761,25 @@ Da ilustrujemo prvu tačku, uzmimo konkretan primer. Pretpostavimo da kupujete b
 ![BTC204](assets/fr/074.webp)
 
 
-Na primer, ako jedan od vaših UTXO-a dolazi sa platforme Exchange i radije biste da pekar ne zna za vaš nalog na toj platformi, izbegavaćete korišćenje tog UTXO za plaćanje. Ako imate UTXO visoke vrednosti koji otkriva značajnu količinu bitkoina, možda ćete takođe odlučiti da ga ne koristite kako biste izbegli da pekar postane svestan vašeg BTC bogatstva.
+Na primer, ako jedan od vaših UTXO-a dolazi sa berze i radije biste da pekar ne zna za vaš nalog na toj platformi, izbegavaćete korišćenje tog UTXO-a za plaćanje. Ako imate UTXO visoke vrednosti koji otkriva značajnu količinu bitkoina, možda ćete takođe odlučiti da ga ne koristite kako biste izbegli da pekar postane svestan vašeg BTC bogatstva.
 
 
-Odabir koje UTXO-e koristiti za ovu prvu tačku je stoga lična odluka, pod uticajem onoga što ste spremni da otkrijete ili ne. Oznake koje dodelite svojim UTXO-ima kada ih primite pomoći će vam da odaberete one koje, kada se potroše, otkrivaju samo informacije koje ste spremni da otkrijete primaocu.
+Odabir kojeg UTXO-a koristiti za ovu prvu tačku je stoga lična odluka, pod uticajem onoga što ste spremni da otkrijete ili ne. Oznake koje dodelite svojim UTXO-ima kada ih primite pomoći će vam da odaberete one koje, kada se potroše, otkrivaju samo informacije koje ste spremni da otkrijete primaocu.
 
 
-Osim informacija koje se potencijalno otkrivaju primaocu, izbor ulaza takođe utiče na ono što otkrivate svim posmatračima Blockchain. Naime, korišćenjem nekoliko UTXO-a kao ulaza za vašu transakciju, otkrivate da ih poseduje isti entitet, prema CIOH heuristici (_Common Input Ownership Heuristic_).
+Osim informacija koje se potencijalno otkrivaju primaocu, izbor ulaza takođe utiče na ono što otkrivate svim posmatračima blokčejna. Naime, korišćenjem nekoliko UTXO-a kao ulaza za vašu transakciju, otkrivate da ih poseduje isti entitet, prema CIOH heuristici (_Common Input Ownership Heuristic_).
 
 
 ![BTC204](assets/fr/075.webp)
 
 
-Kada birate svoje delove, stoga, morate biti svesni da će transakcija koju ćete emitovati stvoriti vezu između svih korišćenih UTXO-a. Ova veza može biti problematična za vašu ličnu privatnost, posebno ako UTXO-i dolaze iz različitih izvora.
+Kada birate svoje novčiće, stoga, morate biti svesni da će transakcija koju ćete emitovati stvoriti vezu između svih korišćenih UTXO-a. Ova veza može biti problematična za vašu ličnu privatnost, posebno ako UTXO-i dolaze iz različitih izvora.
 
 
 ![BTC204](assets/fr/076.webp)
 
 
-Uzmimo primer mog no-KYC UTXO sa Bisq-a; želim da izbegnem kombinovanje sa UTXO sa, recimo, regulisane Exchange platforme koja zna moj identitet. Zaista, ako ikada koristim ova 2 UTXO-a kao ulaze u istu transakciju, regulisana platforma će moći da poveže moj identitet sa UTXO koji sam kupio na Bisq-u, a koji prethodno nije bio povezan sa mojim identitetom.
+Uzmimo primer mog no-KYC UTXO-a sa Bisq-a; želim da izbegnem kombinovanje UTXO-a sa, recimo, regulisane platforme za trgovinu koja zna moj identitet. Zaista, ako ikada koristim ova 2 UTXO-a kao ulaze u istu transakciju, regulisana platforma će moći da poveže moj identitet sa UTXO-a koji sam kupio na Bisq-u, a koji prethodno nije bio povezan sa mojim identitetom.
 
 
 ![BTC204](assets/fr/077.webp)
@@ -1789,64 +1788,64 @@ Uzmimo primer mog no-KYC UTXO sa Bisq-a; želim da izbegnem kombinovanje sa UTXO
 Konačno, kada birate koje UTXO-e koristiti kao ulaze za transakciju, najvažnije je izbegavati korišćenje više UTXO-a. Uglavnom, kada možete, izaberite jedan novčić dovoljno veliki da zadovolji vašu uplatu. Na ovaj način potpuno izbegavate rizike povezane sa CIOH. Međutim, ako nijedan pojedinačni UTXO nije dovoljan za uplatu i morate koristiti nekoliko, pobrinite se da dolaze iz sličnih izvora kako biste minimizirali rizik od neželjenih veza. Takođe imajte na umu da primalac može povezati informacije koje ima o vama sa istorijom novčića korišćenih u ulazima.
 
 
-### Razumevanje automatskog odabira delova
+### Razumevanje automatskog izbora ulaznih delova (UTXO-a)
 
 
-U prethodnim odeljcima, diskutovali smo o ručnom izboru UTXO-a koji će se koristiti za transakciju. Ali šta se dešava kada Wallet softver automatski izvrši ovaj izbor? Postoji nekoliko metoda za određivanje koje kovanice treba potrošiti, a izbor UTXO-a predstavlja pravo polje istraživanja na Bitcoin. Glavni cilj ovog automatskog procesa je često minimiziranje troškova transakcije za korisnika.
+U prethodnim odeljcima, diskutovali smo o ručnom izboru UTXO-a koji će se koristiti za transakciju. Ali šta se dešava kada softver novčanik automatski izvrši ovaj izbor? Postoji nekoliko metoda za određivanje koje kovanice treba potrošiti, a izbor UTXO-a predstavlja pravo polje istraživanja na Bitcoin-u. Glavni cilj ovog automatskog procesa je često minimiziranje troškova transakcije za korisnika.
 
 
-Metode selekcije UTXO kao što su FIFO (*First In First Out*) i LIFO (*Last In First Out*) spadaju među najjednostavnije, ali i najmanje efikasne. Kod FIFO, najstariji delovi u portfoliju se koriste prvi. Ovaj pristup je generalno neefikasan kako za minimiziranje troškova transakcija, tako i za očuvanje poverljivosti, osim u slučajevima kada se koriste relativni vremenski zaključavanja koja treba redovno obnavljati. Suprotno tome, LIFO daje prioritet korišćenju najnovijih UTXO-a. Obe metode, iako jednostavne, često se pokazuju kao neefikasne.
+Metode selekcije UTXO-a kao što su FIFO (*Prvi unutra, prvi napolje (eng.First In First Out)*) i LIFO (*Poslednji unutra, prvi napolje (eng. Last In First Out)*) spadaju među najjednostavnije, ali i najmanje efikasne. Kod FIFO, najstariji delovi u portfoliju se koriste prvi. Ovaj pristup je generalno neefikasan kako za minimiziranje troškova transakcija, tako i za očuvanje poverljivosti, osim u slučajevima kada se koriste relativni vremenski zaključavači (timelocks) koje je potrebno povremeno obnavljati. Suprotno tome, LIFO daje prioritet korišćenju najnovijih UTXO-a. Obe metode, iako jednostavne, često se pokazuju kao neefikasne.
 
 
-Naprednija metoda je *Knapsack Solver*. Ovo je korišćeno na Bitcoin Core Wallet do verzije 0.17. Sastoji se od iterativnog i nasumičnog odabira UTXO-a sa Wallet, njihovog sabiranja u podskupove, i zadržavanja rešenja koje smanjuje težinu transakcije što je više moguće, kako bi se smanjili troškovi za korisnika.
+Naprednija metoda je *Knapsack Solver*. Ovo je korišćeno na Bitcoin Core novčaniku do verzije 0.17. Sastoji se od iterativnog i nasumičnog odabira UTXO-a sa novčanika, njihovog sabiranja u podskupove, i zadržavanja rešenja koje smanjuje težinu transakcije što je više moguće, kako bi se smanjili troškovi za korisnika.
 
 
-*Branch-and-Bound* (BNB), često nazivan "Murch algoritam" po svom pronalazaču, zamenio je *Knapsack Solver* u Bitcoin Core od verzije 0.17. Ova naprednija metoda ima za cilj da pronađe skup UTXO-a koji tačno odgovara iznosu potrebnom za ispunjavanje izlaza transakcije. Cilj BNB-a je da minimizira iznos Exchange kao i naknade, smanjenjem takozvanog kriterijuma otpada, koji uzima u obzir kako trenutne troškove, tako i očekivane buduće troškove Exchange. Ova metoda je izvedena iz originalnog koncepta *Branch-and-Bound*, koji su 1960. godine osmislile Ailsa Land i Alison Harcourt, i nudi precizniju optimizaciju naknada od *Knapsack Solver*-a.
+*Branch-and-Bound* (BNB), često nazivan "Murch algoritam" po svom pronalazaču, zamenio je *Knapsack Solver* u Bitcoin Core od verzije 0.17. Ova naprednija metoda ima za cilj da pronađe skup UTXO-a koji tačno odgovara iznosu potrebnom za ispunjavanje izlaza transakcije. Cilj BNB-a je da minimizira iznos kusura kao i naknade, smanjenjem takozvanog kriterijuma otpada, koji uzima u obzir kako trenutne troškove, tako i očekivane buduće troškove kusura. Ova metoda je izvedena iz originalnog koncepta *Branch-and-Bound*, koji su 1960. godine osmislile Ailsa Land i Alison Harcourt, i nudi precizniju optimizaciju naknada od *Knapsack Solver*-a.
 
 
 Sve ove automatske metode selekcije UTXO mogu biti efikasne u smanjenju troškova transakcija, ali su često neefikasne u očuvanju poverljivosti korisnika. Naime, ovi algoritmi mogu spojiti nekoliko UTXO-a u ulaze, čime se otkriva zajednička svojina ovih UTXO-a zbog CIOH-a. Očigledno, ove metode ne mogu uzeti u obzir oznake priložene UTXO-ima, koje su ipak ključne za svesno biranje koje delove otkriti primaocu transakcije. Trenutno, jedini način da se optimizuje poverljivost prilikom selekcije novčića je da se to uradi ručno.
 
 
-### Uputstvo za označavanje UTXO
+### Uputstvo za označavanje UTXO-a
 
 
-Ako želite da saznate kako da označite svoje UTXO-e, napravili smo sveobuhvatan vodič o glavnom Bitcoin Wallet softveru koji postoji:
+Ako želite da saznate kako da označite svoje UTXO-e, napravili smo sveobuhvatan vodič o glavnom Bitcoin softver novčaniku koji postoji:
 
 
 https://planb.network/tutorials/privacy/on-chain/utxo-labelling-d997f80f-8a96-45b5-8a4e-a3e1b7788c52
 
-## KYC i ključna identifikacija
+## KYC i identifikacija ključeva
 
 
 <chapterId>cec6b9d9-0eed-4f85-bc4e-1e9aa59ca605</chapterId>
 
 
 
-KYC označava "Know Your Customer". To je regulatorna procedura koju sprovode određene kompanije koje posluju u sektoru Bitcoin. Cilj ove procedure je verifikacija i registracija identiteta njihovih klijenata, sa navedenim ciljem borbe protiv pranja novca i finansiranja terorizma.
+KYC označava "upoznajte svog kupca (eng. Know Your Customer)". To je regulatorna procedura koju sprovode određene kompanije koje posluju u Bitcoin sektoru. Cilj ove procedure je verifikacija i registracija identiteta njihovih klijenata, sa ciljem borbe protiv pranja novca i finansiranja terorizma.
 
 
-U praktičnom smislu, KYC uključuje prikupljanje različitih ličnih podataka od klijenta, što može varirati u zavisnosti od jurisdikcije, ali generalno uključuje ID, fotografiju i dokaz o Address. Ove informacije se zatim verifikuju i čuvaju za buduću upotrebu.
+U praktičnom smislu, KYC uključuje prikupljanje različitih ličnih podataka od klijenta, što može varirati u zavisnosti od jurisdikcije, ali generalno uključuje ID, fotografiju i dokaz o adresi. Ove informacije se zatim verifikuju i čuvaju za buduću upotrebu.
 
 
-Ovaj postupak je postao obavezan za sve regulisane Exchange platforme u većini zapadnih zemalja. To znači da svako ko želi da Exchange državne valute za Bitcoin putem ovih platformi mora da se pridržava KYC zahteva.
+Ovaj postupak je postao obavezan za sve regulisane platforme za trgovinu u većini zapadnih zemalja. To znači da svako ko želi da razmenjuje državne valute za Bitcoin putem ovih platformi mora da se pridržava KYC zahteva.
 
 
-Ovaj postupak nije bez rizika za privatnost i sigurnost korisnika. U ovom poglavlju ćemo detaljno ispitati ove rizike i analizirati specifične uticaje KYC i procesa identifikacije na privatnost korisnika Bitcoin.
+Ovaj postupak nije bez rizika za privatnost i sigurnost korisnika. U ovom poglavlju ćemo detaljno ispitati ove rizike i analizirati specifične uticaje KYC i procesa identifikacije na privatnost Bitcoin korisnika.
 
 
-### Olakšavanje praćenja na lancu
+### Olakšavanje praćenja na blokčejnu
 
 
-Prvi rizik povezan sa KYC je da nudi privilegovanu ulaznu tačku za analizu Blockchain. Kao što smo videli u prethodnom odeljku, analitičari mogu grupisati i pratiti aktivnost na Blockchain koristeći obrasce transakcija i heuristiku. Kada uspeju da grupišu korisnikovu aktivnost na lancu, sve što treba da urade je da pronađu jednu ulaznu tačku među svim njegovim transakcijama i ključevima kako bi u potpunosti ugrozili njegovu poverljivost.
+Prvi rizik povezan sa KYC je da nudi privilegovanu ulaznu tačku za analizu blokčejnu. Kao što smo videli u prethodnom odeljku, analitičari mogu grupisati i pratiti aktivnost na blokčejnu koristeći obrasce transakcija i heuristiku. Kada uspeju da grupišu korisnikovu aktivnost na lancu, sve što treba da urade je da pronađu jednu ključnu ulaznu tačku među svim njegovim transakcijama i ključevima kako bi u potpunosti ugrozili njegovu poverljivost.
 
 
 ![BTC204](assets/fr/078.webp)
 
 
-Kada izvršite KYC, obezbeđujete visokokvalitetnu ulaznu tačku za Blockchain analizu, jer povezujete svoje adrese za primanje koje koristite prilikom povlačenja svojih bitkoina sa Exchange platforme sa svojim punim, verifikovanim identitetom. U teoriji, ove informacije su poznate samo kompaniji kojoj ste ih pružili, ali, kao što ćemo videti u nastavku, rizik od curenja podataka je stvaran. Štaviše, sama činjenica da kompanija poseduje ove informacije može biti problematična, čak i ako ih ne deli.
+Kada izvršite KYC, obezbeđujete visokokvalitetnu ulaznu ključnu tačku za blokčejn analizu, jer povezujete svoje adrese za primanje koje koristite prilikom povlačenja svojih bitkoina sa berze sa svojim punim, verifikovanim identitetom. U teoriji, ove informacije su poznate samo kompaniji kojoj ste ih pružili, ali, kao što ćemo videti u nastavku, rizik od curenja podataka je stvaran. Štaviše, sama činjenica da kompanija poseduje ove informacije može biti problematična, čak i ako ih ne deli.
 
 
-Dakle, ako ne preduzmete druge korake da ograničite agregaciju vaših aktivnosti na Blockchain, bilo ko ko zna za ovu KYC ulaznu tačku može potencijalno povezati sve vaše aktivnosti na Bitcoin sa vašim identitetom. Iz ugla te kompanije, vaša upotreba Bitcoin gubi svu poverljivost.
+Dakle, ako ne preduzmete druge korake da ograničite agregaciju vaših aktivnosti na blokčejnu, bilo ko ko zna za ovu KYC ulaznu tačku može potencijalno povezati sve vaše aktivnosti na Bitcoin-u sa vašim identitetom. Iz ugla te kompanije, vaša upotreba Bitcoin-a gubi svu poverljivost.
 
 
 ![BTC204](assets/fr/079.webp)
@@ -1855,7 +1854,7 @@ Dakle, ako ne preduzmete druge korake da ograničite agregaciju vaših aktivnost
 Da ilustrujemo ovo poređenjem, to je kao da vaš bankar u *Banci X* ne samo da ima pristup svim vašim transakcijama sa *Bankom X*, već može i da posmatra vaše transakcije sa *Bankom Y* i sve vaše gotovinske transakcije.
 
 
-Setite se iz prvog dela ovog kursa obuke: Bitcoin-ov model poverljivosti, kako ga je osmislio Satoshi Nakamoto, zasniva se na razdvajanju između identiteta korisnika i njegovih parova ključeva. Iako ovaj Layer poverljivosti danas više nije dovoljan, i dalje je razumno ograničiti njegovo pogoršanje koliko god je to moguće.
+Setite se iz prvog dela ovog kursa obuke: Bitcoin-ov model poverljivosti, kako ga je osmislio Satoshi Nakamoto, zasniva se na razdvajanju između identiteta korisnika i njegovih parova ključeva. Iako ovaj sloj poverljivosti danas više nije dovoljan, i dalje je razumno ograničiti njegovo pogoršanje koliko god je to moguće.
 
 
 ### Izloženost državnom nadzoru
