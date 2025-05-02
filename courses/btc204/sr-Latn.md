@@ -144,10 +144,10 @@ Ovaj model se duboko razlikuje od tradicionalnih bankarskih sistema, koji se osl
 ![BTC204](assets/fr/006.webp)
 
 
-Bitcoin funkcioniše drugačije. Koncept naloga ne postoji, a monetarne jedinice se ne upravljaju putem stanja, već kroz UTXO-e. UTXO predstavlja određenu količinu bitkoina koja još nije potrošena, čime se formira "deo Bitcoin", koji može biti veliki ili mali. Na primer, jedan UTXO može vredeti `500 BTC` ili jednostavno `700 Sats`.
+Bitcoin funkcioniše drugačije. Koncept računa ne postoji, a monetarne jedinice se ne upravljaju putem stanja, već kroz UTXO-e. UTXO predstavlja određenu količinu bitkoina koja još nije potrošena, čime se formira "deo Bitcoina", koji može biti veliki ili mali. Na primer, jedan UTXO može vredeti `500 BTC` ili jednostavno `700 Sats`.
 
 
-**> Satoshi, često skraćeno na sat, je najmanja jedinica Bitcoin, uporediva sa centimom u fiat valutama.
+**> Satoši, često skraćeno na sat, je najmanja jedinica Bitcoin-a, uporediva sa centimom u fiat valutama.
 
 
 ```plaintext
@@ -164,19 +164,19 @@ Teoretski, jedan UTXO može predstavljati bilo koju vrednost u bitkoinima, u ras
 ### UTXO-i uslovi trošenja
 
 
-UTXO-i su instrumenti Exchange na Bitcoin. Svaka transakcija rezultira potrošnjom UTXO-a kao ulaza i kreiranjem novih UTXO-a kao izlaza. Kada je transakcija završena, UTXO-i korišćeni kao ulazi se smatraju "potrošenim", a novi UTXO-i se generišu i dodeljuju primaocima navedenim u izlazima transakcije. Tako, UTXO jednostavno predstavlja nepotrošeni izlaz transakcije, i stoga količinu bitkoina koja pripada korisniku u datom trenutku.
+UTXO-i su instrumenti razmene na Bitcoin-u. Svaka transakcija rezultira potrošnjom UTXO-a kao ulaza i kreiranjem novih UTXO-a kao izlaza. Kada je transakcija završena, UTXO-i korišćeni kao ulazi se smatraju "potrošenim", a novi UTXO-i se generišu i dodeljuju primaocima navedenim u izlazima transakcije. Tako, UTXO jednostavno predstavlja nepotrošeni izlaz transakcije, i samim tim količinu bitkoina koja pripada korisniku u datom trenutku.
 
 
 ![BTC204](assets/fr/007.webp)
 
 
-Svi UTXO-i su osigurani skriptama koje definišu uslove pod kojima se mogu potrošiti. Da bi se potrošio UTXO, korisnik mora pokazati mreži da ispunjava uslove koje je postavila skripta koja osigurava taj UTXO. Tipično, UTXO-i su zaštićeni javnim ključem (ili primanjem Address koji predstavlja ovaj javni ključ). Da bi potrošio UTXO povezan s ovim javnim ključem, korisnik mora dokazati da poseduje odgovarajući privatni ključ, pružajući digitalni potpis napravljen ovim ključem. Zato kažemo da vaš Bitcoin Wallet zapravo ne sadrži bitkoine, već čuva vaše privatne ključeve, koji vam zauzvrat daju pristup vašim UTXO-ima i, prošireno, bitkoinima koje oni predstavljaju.
+Svi UTXO-i su osigurani skriptama koje definišu uslove pod kojima se mogu potrošiti. Da bi se potrošio UTXO, korisnik mora pokazati mreži da ispunjava uslove koje je postavila skripta koja osigurava taj UTXO. Tipično, UTXO-i su zaštićeni javnim ključem (ili adresom za primanjem koji predstavlja ovaj javni ključ). Da bi potrošio UTXO povezan s ovim javnim ključem, korisnik mora dokazati da poseduje odgovarajući privatni ključ, pružajući digitalni potpis napravljen ovim ključem. Zato kažemo da vaš Bitcoin novčanik zapravo ne sadrži bitkoine, već čuva vaše privatne ključeve, koji vam zauzvrat daju pristup vašim UTXO-ima, a samim tim i bitkoinima koje oni predstavljaju.
 
 
 ![BTC204](assets/fr/008.webp)
 
 
-Pošto ne postoji koncept naloga u Bitcoin, saldo Wallet je jednostavno zbir vrednosti svih UTXO-a koje može potrošiti. Na primer, ako vaš Bitcoin Wallet može potrošiti sledeća 4 UTXO-a:
+Pošto ne postoji koncept računa u Bitcoin-u, saldo novčanika je jednostavno zbir vrednosti svih UTXO-a koje taj novčanik može potrošiti. Na primer, ako vaš Bitcoin novčanik može potrošiti sledeća 4 UTXO-a:
 
 
 ```plaintext
@@ -203,13 +203,13 @@ Ukupni saldo vašeg portfolija bi bio `17 BTC`.
 ### Ulazi i izlazi transakcije
 
 
-Transakcija Bitcoin je operacija zabeležena na Blockchain koja prenosi Ownership bitkoina sa jedne osobe na drugu. Tačnije, pošto smo na modelu UTXO i ne postoje nalozi, transakcija ispunjava uslove potrošnje koji su obezbedili jedan ili više UTXO-a, troši ih i ekvivalentno stvara nove UTXO-e sa novim uslovima potrošnje. Ukratko, transakcija pomera bitkoine iz zadovoljenog skripta u novi skript dizajniran da ih obezbedi.
+Bitcoin transakcija je operacija zabeležena na blokčejnu koja prenosi vlasništvo bitkoina sa jedne osobe na drugu. Tačnije, pošto smo na modelu UTXO i ne postoje nalozi, transakcija ispunjava uslove potrošnje koji su obezbedili jedan ili više UTXO-a, troši ih i ekvivalentno stvara nove UTXO-e sa novim uslovima potrošnje. Ukratko, transakcija pomera bitkoine iz zadovoljenog skripta u novi skript napravljen da ih obezbedi.
 
 
 ![BTC204](assets/fr/010.webp)
 
 
-Svaka Bitcoin transakcija se stoga sastoji od jednog ili više ulaza i jednog ili više izlaza. Ulazi su UTXO-i koje transakcija troši na generate izlaze. Izlazi su novi UTXO-i koji se mogu koristiti kao ulazi za buduće transakcije.
+Svaka Bitcoin transakcija se stoga sastoji od jednog ili više ulaza i jednog ili više izlaza. Ulazi su UTXO-i koje transakcija troši na bi generisala izlaze. Izlazi su novi UTXO-i koji se mogu koristiti kao ulazi za buduće transakcije.
 
 
 ![BTC204](assets/fr/011.webp)
@@ -218,19 +218,19 @@ Svaka Bitcoin transakcija se stoga sastoji od jednog ili više ulaza i jednog il
 **> Teoretski, Bitcoin transakcija može imati beskonačan broj ulaza i izlaza. Jedino ograničenje je maksimalna veličina bloka.
 
 
-Svaki unos u transakciji Bitcoin odnosi se na prethodni neutrošeni UTXO. Da bi se UTXO koristio kao unos, njegov vlasnik mora dokazati da je zakoniti vlasnik validacijom pridruženog skripta, tj. ispunjavanjem nametnutog uslova trošenja. Generalno govoreći, to znači pružanje digitalnog potpisa proizvedenog privatnim ključem koji odgovara javnom ključu koji je prvobitno osigurao ovaj UTXO. Skript se stoga sastoji u verifikaciji da potpis odgovara javnom ključu korišćenom kada su sredstva primljena.
+Svaki ulaz u Bitcoin transakciji odnosi se na prethodni neutrošeni UTXO. Da bi se UTXO koristio kao ulaz, njegov vlasnik mora dokazati da je zakoniti vlasnik validacijom pridružene skripte, tj. ispunjavanjem nametnutog uslova trošenja. Generalno govoreći, to znači pružanje digitalnog potpisa proizvedenog privatnim ključem koji odgovara javnom ključu koji je prvobitno osigurao ovaj UTXO. Skript se stoga sastoji u verifikaciji da potpis odgovara javnom ključu korišćenom kada su sredstva primljena.
 
 
 ![BTC204](assets/fr/012.webp)
 
 
-Svaki izlaz, zauzvrat, određuje količinu bitkoina koja će biti preneta, kao i primaoca. Potonji je definisan novim skriptom, koji obično blokira novo kreirani UTXO sa prijemnim Address ili novim javnim ključem.
+Svaki izlaz, zauzvrat, određuje količinu bitkoina koja će biti preneta, kao i primaoca. Potonji je definisan novom skriptom, koja obično blokira novo kreirani UTXO sa prijemajućom adresom ili novim javnim ključem.
 
 
 Da bi transakcija bila smatrana validnom prema pravilima konsenzusa, ukupni izlazi moraju biti manji ili jednaki ukupnim ulazima. Drugim rečima, suma novih UTXO-a generisanih transakcijom ne sme premašiti sumu UTXO-a korišćenih kao ulazi. Ovaj princip je logičan: ako imate samo `500,000 Sats`, ne možete obaviti kupovinu od `700,000 Sats`.
 
 
-### Exchange i spajanje u Bitcoin transakciju
+### Razmena i spajanje u Bitcoin transakciji
 
 
 Akcija Bitcoin transakcije na UTXO može se uporediti sa pretopljavanjem zlatnog novčića. Zaista, UTXO nije deljiv, već samo topiv. To znači da korisnik ne može jednostavno podeliti UTXO koji predstavlja određeni iznos u bitkoinima na nekoliko manjih UTXO-a. On mora u potpunosti da ga potroši u transakciji kako bi kreirao jedan ili više novih UTXO-a proizvoljnih vrednosti u izlazima, koje moraju biti manje ili jednake početnoj vrednosti.
@@ -239,13 +239,13 @@ Akcija Bitcoin transakcije na UTXO može se uporediti sa pretopljavanjem zlatnog
 Ovaj mehanizam je sličan onom kod zlatnog novčića. Recimo da posedujete novčić od 2 unce i želite da izvršite uplatu od 1 unce, pod pretpostavkom da prodavac ne može da vam vrati kusur. Morali biste da istopite svoj novčić i izlivate 2 nova od po 1 uncu.
 
 
-Bitcoin radi na sličan način. Zamislimo da Alisa ima UTXO od `10,000 Sats` i želi da kupi baget koji košta `4,000 Sats`. Alisa će izvršiti transakciju sa 1 UTXO od `10,000 Sats` kao ulaz, koji će u potpunosti potrošiti, i 2 UTXO-a od `4,000 Sats` i `6,000 Sats` kao izlaz. UTXO od `4,000 Sats` će biti poslat pekaru kao plaćanje za baget, dok će se UTXO od `6,000 Sats` vratiti Alisi u obliku kusura. Ovaj UTXO, koji se vraća originalnom izdavaocu transakcije, poznat je kao "Exchange" u žargonu Bitcoin.
+Bitcoin radi na sličan način. Zamislimo da Alisa ima UTXO od `10,000 Sats` i želi da kupi baget koji košta `4,000 Sats`. Alisa će izvršiti transakciju sa 1 UTXO od `10,000 Sats` kao ulaz, koji će u potpunosti potrošiti, i 2 UTXO-a od `4,000 Sats` i `6,000 Sats` kao izlaz. UTXO od `4,000 Sats` će biti poslat pekaru kao plaćanje za baget, dok će se UTXO od `6,000 Sats` vratiti Alisi u obliku kusura. Ovaj UTXO, koji se vraća originalnom izdavaocu transakcije, poznat je kao "Exchange" u Bitcoin žargonu.
 
 
 ![BTC204](assets/fr/013.webp)
 
 
-Sada zamislimo da Alisa nema nijedan UTXO od `10,000 Sats`, već dva UTXO-a od `3,000 Sats` svaki. U ovoj situaciji, nijedan od UTXO-a pojedinačno nije dovoljan da postavi štapić na `4,000 Sats`. Alisa stoga mora istovremeno koristiti 2 UTXO-a od `3,000 Sats` kao ulaze za svoju transakciju. Na ovaj način, ukupna količina ulaza će dostići `6,000 Sats`, omogućavajući joj da zadovolji uplatu od `4,000 Sats` pekaru. Ova metoda, u kojoj se nekoliko UTXO-a grupiše zajedno kao ulazi u transakciju, često se naziva "spajanje".
+Sada zamislimo da Alisa nema nijedan UTXO od `10,000 Sats`, već dva UTXO-a od `3,000 Sats` svaki. U ovoj situaciji, nijedan od UTXO-a pojedinačno nije dovoljan da kupi čarobni štapić od `4,000 Sats`. Alisa stoga mora istovremeno koristiti 2 UTXO-a od `3,000 Sats` kao ulaze za svoju transakciju. Na ovaj način, ukupna količina ulaza će dostići `6,000 Sats`, omogućavajući joj da zadovolji uplatu od `4,000 Sats` pekaru. Ova metoda, u kojoj se nekoliko UTXO-a grupiše zajedno kao ulazi u transakciju, često se naziva "spajanje".
 
 
 ![BTC204](assets/fr/014.webp)
