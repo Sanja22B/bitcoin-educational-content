@@ -513,7 +513,7 @@ U tome možemo povući analogiju sa kriptografijom i kriptoanalizom. Dobar kript
 Važno je razumeti da analiza stringova nije egzaktna nauka. Ona se oslanja na heuristike izvedene iz prethodnih zapažanja ili logičkih interpretacija. Ova pravila nam omogućavaju da dobijemo prilično pouzdane rezultate, ali nikada sa apsolutnom preciznošću. Drugim rečima, **analiza lanaca uvek uključuje dimenziju verovatnoće u donetim zaključcima**. Na primer, moguće je proceniti sa različitim stepenima sigurnosti da dve adrese pripadaju istoj entitetu, ali potpuna sigurnost će uvek biti nedostižna.
 
 
-Cela analiza lančane analize leži upravo u agregaciji različitih heuristika kako bi se smanjio rizik od greške. Na neki način, to je akumulacija dokaza koja nas približava stvarnosti.
+Cela lančana analize leži upravo u agregaciji različitih heuristika kako bi se smanjio rizik od greške. Na neki način, to je akumulacija dokaza koja nas približava stvarnosti.
 
 
 Ove poznate heuristike mogu se grupisati u različite kategorije, koje ćemo detaljno opisati u nastavku:
@@ -521,9 +521,9 @@ Ove poznate heuristike mogu se grupisati u različite kategorije, koje ćemo det
 
 
 
-- Obrasci transakcija ;**
-- Heuristika unutar transakcije ;**
-- Heuristike eksterno za transakciju.**
+- **Obrasci transakcija ;**
+- **Heuristika unutar transakcije ;**
+- **Heuristike eksterne za transakciju.**
 
 
 ### Satoshi Nakamoto i analiza lanca
@@ -535,7 +535,7 @@ Prve dve heuristike analize lanca otkrio je sam Satoshi Nakamoto. On o njima gov
 
 
 - cIOH (*Common Input Ownership Heuristic*);
-- i ponovna upotreba Address.
+- i ponovna upotreba adrese.
 
 
 ![BTC204](assets/fr/031.webp)
@@ -554,7 +554,7 @@ Videćemo šta su oni u narednim poglavljima, ali već je zanimljivo primetiti d
 
 
 
-Obrazac transakcije je jednostavno opšti model ili struktura tipične transakcije, koja se može pronaći na Blockchain, i čije je verovatno tumačenje poznato. Kada proučavamo obrasce, fokusiramo se na jednu transakciju i analiziramo je na visokom nivou.
+Obrazac transakcije je jednostavno opšti model ili struktura tipične transakcije, koja se može pronaći na blokčejnu, i čije je verovatno tumačenje poznato. Kada proučavamo obrasce, fokusiramo se na jednu transakciju i analiziramo je na visokom nivou.
 
 
 Drugim rečima, gledaćemo samo broj UTXO u ulazima i broj UTXO u izlazima, bez zadržavanja na specifičnijim detaljima ili okruženju transakcije. Na osnovu uočenog obrasca, možemo interpretirati prirodu transakcije. Zatim ćemo tražiti karakteristike njene strukture i izvesti interpretaciju.
@@ -575,16 +575,16 @@ Hajde da počnemo sa veoma uobičajenim obrascem, pošto je to onaj koji se poja
 ![BTC204](assets/fr/033.webp)
 
 
-Kada uočimo ovu strukturu transakcije na Blockchain, već možemo izvući interpretaciju. Kao što ime sugeriše, ovaj model ukazuje da smo u prisustvu transakcije slanja ili plaćanja. Korisnik je potrošio svoj sopstveni UTXO u ulazima kako bi zadovoljio u izlazima plaćanje UTXO i Exchange UTXO (novac vraćen istom korisniku).
+Kada uočimo ovu strukturu transakcije na blokčejnu, već možemo izvući interpretaciju. Kao što ime sugeriše, ovaj model ukazuje da smo u prisustvu transakcije slanja ili plaćanja. Korisnik je potrošio svoj sopstveni UTXO u ulazima kako bi zadovoljio u izlazima plaćanje UTXO i UTXO kusura (novac vraćen istom korisniku).
 
 
-Stoga znamo da posmatrani korisnik verovatno više nije u posedu jednog od dva izlazna UTXO-a (plaćanje UTXO), ali je i dalje u posedu drugog UTXO (Exchange UTXO).
+Stoga znamo da posmatrani korisnik verovatno više nije u posedu jednog od dva izlazna UTXO-a (UTXO za plaćanje), ali je i dalje u posedu drugog UTXO (UTXO za kusur).
 
 
 Za sada ne možemo precizirati koji izlaz predstavlja koji UTXO, jer to nije svrha proučavanja šablona. Do toga ćemo doći oslanjajući se na heuristike koje ćemo proučavati u narednim odeljcima. U ovoj fazi, naš cilj je ograničen na identifikaciju prirode transakcije o kojoj je reč, koja je u ovom slučaju jednostavno slanje.
 
 
-Na primer, ovde je Bitcoin transakcija koja usvaja obrazac jednostavnog slanja:
+Na primer, ovo primer Bitcoin transakcije koja ima obrazac jednostavnog slanja:
 
 
 ```plaintext
@@ -613,13 +613,13 @@ Ovaj drugi model karakteriše potrošnja jednog UTXO kao ulaza i proizvodnja jed
 ![BTC204](assets/fr/035.webp)
 
 
-Interpretacija ovog modela je da smo u prisustvu samotransfera. Korisnik je prebacio svoje bitkoine sebi, na drugi Address koji mu pripada. Pošto nema Exchange u transakciji, vrlo je malo verovatno da smo u prisustvu plaćanja. Naime, kada se vrši plaćanje, gotovo je nemoguće da platiša ima UTXO koji tačno odgovara iznosu koji zahteva prodavac, plus naknada za transakciju. Generalno, platiša je stoga prinuđen da proizvede Exchange izlaz.
+Interpretacija ovog modela je da smo u prisustvu samo transfera. Korisnik je prebacio svoje bitkoine sebi, na drugu adresu koja mu pripada. Pošto nema kusura u transakciji, vrlo je malo verovatno da smo u prisustvu plaćanja. Naime, kada se vrši plaćanje, gotovo je nemoguće da platiša ima UTXO koji tačno odgovara iznosu koji zahteva prodavac, plus naknada za transakciju. Generalno, platiša je stoga prinuđen da proizvede izlaz za kusur.
 
 
 Zatim znamo da posmatrani korisnik verovatno još uvek poseduje ovaj UTXO. U kontekstu analize lanca, ako znamo da UTXO korišćen kao ulaz u transakciju pripada Alisi, možemo pretpostaviti da UTXO korišćen kao izlaz takođe pripada njoj. Ono što će kasnije postati zanimljivo jeste pronalaženje heuristika unutar transakcije koje bi mogle ojačati ovu pretpostavku (pogledaćemo ove heuristike u poglavlju 3.3).
 
 
-Na primer, ovde je Bitcoin transakcija koja usvaja obrazac čišćenja:
+Na primer, ovo je primer Bitcoin transakcije koja ima obrazac čišćenja:
 
 
 ```plaintext
@@ -633,10 +633,10 @@ Na primer, ovde je Bitcoin transakcija koja usvaja obrazac čišćenja:
 Izvor : [Mempool.space](https://Mempool.space/fr/tx/35f1072a0fda5ae106efb4fda871ab40e1f8023c6c47f396441ad4b995ea693d)
 
 
-Međutim, budite oprezni, jer ovaj tip obrasca može takođe otkriti samoprenos na račun platforme za kriptovalute Exchange. Biće to proučavanje poznatih adresa i konteksta transakcije koje će nam reći da li je to prebacivanje na samostalno čuvanje Wallet ili povlačenje na platformu. Zaista, adrese platformi Exchange često su lako prepoznatljive.
+Međutim, budite oprezni, jer ovaj tip obrasca može takođe otkriti samoprenos na račun platforme za trgovinu kriptovalutama. Biće to proučavanje poznatih adresa i konteksta transakcije koje će nam reći da li je to prebacivanje na samostalno čuvanje unutar novčanika ili povlačenje na platformu. Zaista, adrese platformi za trgovinu često su lako prepoznatljive.
 
 
-Hajde da ponovo uzmemo primer Alice: ako skeniranje dovede do Address poznatog platformi (kao što je Binance, na primer), to može značiti da su bitkoini prebačeni izvan Alicinog direktnog poseda, verovatno sa namerom da ih proda ili skladišti na ovoj platformi. S druge strane, ako je odredišni Address nepoznat, razumno je pretpostaviti da je to jednostavno još jedan Wallet koji i dalje pripada Alice. Ali ovaj tip studije više spada u kategoriju heuristike nego obrazaca.
+Hajde da ponovo uzmemo primer Alise: ako skeniranje dovede do adrese poznate platforme (kao što je Binance, na primer), to može značiti da su bitkoini prebačeni izvan Alisinog direktnog poseda, verovatno sa namerom da ih proda ili skladišti na ovoj platformi. S druge strane, ako je odredišna adresa nepoznata, razumno je pretpostaviti da je to jednostavno još jedan novčanik koji i dalje pripada Alisi. Ali ova vrsta proučavanja više spada u kategoriju heuristika nego obrazaca.
 
 
 ### Konsolidacija
@@ -648,16 +648,16 @@ Ovaj model karakteriše potrošnja nekoliko UTXO-a na ulazu i proizvodnja jednog
 ![BTC204](assets/fr/037.webp)
 
 
-Tumačenje ovog obrasca je da smo u prisustvu konsolidacije. Ovo je uobičajena praksa među korisnicima Bitcoin, usmerena na spajanje nekoliko UTXO-a u očekivanju mogućeg povećanja transakcijskih naknada. Izvođenjem ove operacije tokom perioda kada su naknade niske, moguće je uštedeti na budućim naknadama. Više ćemo govoriti o ovoj praksi u poglavlju 4.3.
+Tumačenje ovog obrasca je da smo u prisustvu konsolidacije. Ovo je uobičajena praksa među korisnicima Bitcoin-a, usmerena na spajanje nekoliko UTXO-a u očekivanju mogućeg povećanja transakcijskih naknada. Izvođenjem ove operacije tokom perioda kada su naknade niske, moguće je uštedeti na budućim naknadama. Više ćemo govoriti o ovoj praksi u poglavlju 4.3.
 
 
 Možemo zaključiti da je korisnik iza ovog modela transakcije verovatno bio u posedu svih UTXO-a na ulazu i da je još uvek u posedu UTXO na izlazu. Dakle, verovatno je reč o automatskom prenosu.
 
 
-Kao i "sweep", ovaj tip šablona takođe može otkriti samoprenos na račun Exchange platforme. Biće to proučavanje poznatih adresa i konteksta transakcije koje će nam reći da li je to konsolidacija u portfelj samostalnog čuvanja ili povlačenje na platformu.
+Kao i "sweep", ovaj tip šablona takođe može otkriti samoprenos na račun platforme za trgovinu. Proučavanjem poznatih adresa i konteksta transakcije biće nam jasnije da li je reč o konsolidaciji u portfelj radi samostalnog čuvanja ili povlačenje na platformu.
 
 
-Na primer, ovde je Bitcoin transakcija koja usvaja obrazac konsolidacije:
+Na primer, ove je preimer Bitcoin transakcije koja ima obrazac konsolidacije:
 
 
 ```plaintext
@@ -686,13 +686,13 @@ Ovaj model karakteriše potrošnja nekoliko UTXO-a kao ulaza (često samo jednog
 ![BTC204](assets/fr/040.webp)
 
 
-Tumačenje ovog modela je da smo u prisustvu grupisane potrošnje. To je praksa koja verovatno otkriva veoma veliku ekonomsku aktivnost, kao što je Exchange platforma. Grupisana potrošnja omogućava ovim entitetima da uštede troškove kombinovanjem svojih troškova u jednoj transakciji.
+Tumačenje ovog modela je da smo u prisustvu grupisane potrošnje. To je praksa koja verovatno otkriva veoma veliku ekonomsku aktivnost, kao što je platforma za trgovinu. Grupisana potrošnja omogućava ovim entitetima da uštede troškove kombinovanjem svojih troškova u jednoj transakciji.
 
 
-Iz ovog modela možemo zaključiti da UTXO na ulazu dolazi iz kompanije sa visokim nivoom ekonomske aktivnosti, i da će se UTXO-i na izlazu raspršiti. Mnogi će pripadati klijentima kompanije koji su povukli bitkoine sa platforme. Drugi mogu otići partnerskim kompanijama. Na kraju, sigurno će biti jedna ili više razmena koje se vraćaju izdavačkoj kompaniji.
+Iz ovog modela možemo zaključiti da UTXO na ulazu dolazi iz kompanije sa visokim nivoom ekonomske aktivnosti, i da će se UTXO-i na izlazu raspršiti. Mnogi će pripadati klijentima kompanije koji su povukli bitkoine sa platforme. Drugi mogu otići partnerskim kompanijama. Na kraju, sigurno će biti jedna ili više kusur izlaza koje se vraćaju kompaniji.
 
 
-Na primer, evo Bitcoin transakcije koja usvaja obrazac grupisane potrošnje (verovatno, to je transakcija izdata od strane Bybit platforme):
+Na primer, evo Bitcoin transakcije koja ima obrazac grupisane potrošnje (verovatno, to je transakcija izdata od strane Bybit platforme):
 
 
 ```plaintext
@@ -715,10 +715,10 @@ Među obrascima transakcija, možemo takođe identifikovati one koji otkrivaju u
 ![BTC204](assets/fr/042.webp)
 
 
-Analiza ovog obrasca sugeriše da verovatno prisustvujemo kolaborativnoj transakciji. Takođe je moguće uočiti CoinJoin. Ako se ova poslednja hipoteza pokaže tačnom, tada bi broj izlaza mogao da nam pruži grubu procenu broja učesnika u CoinJoin.
+Analiza ovog obrasca sugeriše da verovatno prisustvujemo kolaborativnoj transakciji. Takođe je moguće uočiti CoinJoin. Ako se ova poslednja hipoteza pokaže tačnom, tada bi broj izlaza mogao da nam pruži grubu procenu broja učesnika u CoinJoin-u.
 
 
-Na primer, ovde je transakcija Bitcoin koja usvaja obrazac kolaborativne transakcije CoinJoin:
+Na primer, ovo je primer Bitcoin transakcije koja ima obrazac kolaborativne transakcije CoinJoin:
 
 
 ```plaintext
@@ -750,11 +750,11 @@ Interna heuristika je specifična karakteristika koju identifikujemo unutar same
 
 
 
-- Iznosi različitih UTXO-a unutra i van;
+- Iznosi različitih ulaznih i izlaznih UTXO-a;
 - Sve što ima veze sa skriptama: adrese za prijem, verzionisanje, vremena zaključavanja..
 
 
-Generalno govoreći, ova vrsta heuristike će nam omogućiti da identifikujemo Exchange u specifičnoj transakciji. Na taj način, možemo nastaviti praćenje entiteta kroz nekoliko različitih transakcija. Zaista, ako identifikujemo UTXO koji pripada korisniku kojeg želimo pratiti, ključno je odrediti, kada on izvrši transakciju, koji izlaz je prenet na drugog korisnika i koji izlaz predstavlja Exchange, koji tako ostaje u njegovom posedu.
+Generalno govoreći, ova vrsta heuristike će nam omogućiti da identifikujemo kusur u specifičnoj transakciji. Na taj način, možemo nastaviti praćenje entiteta kroz nekoliko različitih transakcija. Zaista, ako identifikujemo UTXO koji pripada korisniku kojeg želimo pratiti, ključno je odrediti, kada on izvrši transakciju, koji izlaz je prenet na drugog korisnika i koji izlaz predstavlja kusur, koji tako ostaje u njegovom posedu.
 
 
 ![BTC204](assets/fr/044.webp)
@@ -766,19 +766,19 @@ Još jednom, dozvolite mi da vas podsetim da ove heuristike nisu apsolutno preci
 ### Unutrašnje sličnosti
 
 
-Ova heuristika uključuje proučavanje sličnosti između ulaza i izlaza iste transakcije. Ako se ista karakteristika primeti na ulazima i na samo jednom od izlaza transakcije, onda je verovatno da taj izlaz predstavlja Exchange.
+Ova heuristika uključuje proučavanje sličnosti između ulaza i izlaza iste transakcije. Ako se ista karakteristika primeti na ulazima i na samo jednom od izlaza transakcije, onda je verovatno da taj izlaz predstavlja kusur.
 
 
-Najočiglednija karakteristika je ponovna upotreba prijemnog Address u istoj transakciji.
+Najočiglednija karakteristika je ponovna upotreba prijemne adrese u istoj transakciji.
 
 
 ![BTC204](assets/fr/045.webp)
 
 
-Ova heuristika ostavlja malo prostora za sumnju. Osim ako mu privatni ključ nije hakovan, isti primajući Address nužno otkriva aktivnost jednog korisnika. Rezultujuća interpretacija je da je transakcija Exchange izlaz sa istim Address kao ulazom. Zatim možemo nastaviti da pratimo pojedinca od ovog Exchange.
+Ova heuristika ostavlja malo prostora za sumnju. Osim ako mu privatni ključ nije hakovan, ista primajuća adresa nužno otkriva aktivnost jednog korisnika. Rezultujuća interpretacija je da je kusur transakcija izlaz sa istom adresom kao ulaz. Zatim možemo nastaviti da pratimo pojedinca od ovog kusur UTXO-a.
 
 
-Na primer, ovde je transakcija na koju se ova heuristika verovatno može primeniti:
+Na primer, ovo je transakcija na koju se ova heuristika verovatno može primeniti:
 
 
 ```plaintext
@@ -792,13 +792,13 @@ Na primer, ovde je transakcija na koju se ova heuristika verovatno može primeni
 Izvor : [Mempool.space](https://Mempool.space/tx/54364146665bfc453a55eae4bfb8fdf7c721d02cb96aadc480c8b16bdeb8d6d0)
 
 
-Ove sličnosti između ulaza i izlaza ne zaustavljaju se na ponovnoj upotrebi Address. Bilo koja sličnost u upotrebi skripti može se koristiti za primenu heuristike. Na primer, ponekad možemo primetiti isto verzionisanje između ulaza i jednog od izlaza transakcije.
+Ove sličnosti između ulaza i izlaza ne zaustavljaju se na ponovnoj upotrebi adrese. Bilo koja sličnost u upotrebi skripti može se koristiti za primenu ove heuristike. Na primer, ponekad možemo primetiti isto verzionisanje između ulaza i jednog od izlaza transakcije.
 
 
 ![BTC204](assets/fr/047.webp)
 
 
-Na ovom dijagramu, možemo videti da ulaz br. 0 otključava P2WPKH skriptu (SegWit V0 počinje sa `bc1q`). Izlaz br. 0 koristi isti tip skripte. Izlaz br. 1, s druge strane, koristi P2TR skriptu (SegWit V1 počinje sa `bc1p`). Interpretacija ove karakteristike je da je verovatno da Address sa istim verzionisanjem kao ulaz je Exchange Address. Stoga bi uvek pripadao istom korisniku.
+Na ovom dijagramu, možemo videti da se ulaz br. 0 otključava P2WPKH skriptom (SegWit V0 počinje sa `bc1q`). Izlaz br. 0 koristi isti tip skripte. Izlaz br. 1, s druge strane, koristi P2TR skriptu (SegWit V1 počinje sa `bc1p`). Interpretacija ove karakteristike je da je verovatno adresa sa istim verzionisanjem kao ulaz u stvari kusur adresa. Stoga bi uvek pripadala istom korisniku.
 
 
 Evo transakcije na koju se ova heuristika verovatno može primeniti:
@@ -818,25 +818,25 @@ Izvor : [Mempool.space](https://Mempool.space/tx/db07516288771ce5d0a06b275962ec4
 Na potonjem, možemo videti da ulaz br. 0 i izlaz br. 1 koriste P2WPKH skripte (SegWit V0), dok izlaz br. 0 koristi drugačiju P2PKH skriptu (Legacy).
 
 
-Početkom 2010-ih, ova heuristika zasnovana na verzionisanju skripti bila je relativno neupotrebljiva zbog ograničenih tipova dostupnih skripti. Međutim, tokom vremena i sa sukcesivnim Bitcoin ažuriranjima, uvedena je sve veća raznolikost tipova skripti. Ova heuristika stoga postaje sve relevantnija, jer sa širim spektrom tipova skripti, korisnici se dele u manje grupe, čime se povećavaju šanse za primenu ove interne heuristike ponovne upotrebe verzionisanja. Iz tog razloga, isključivo iz perspektive poverljivosti, preporučljivo je odlučiti se za najčešći tip skripte. Na primer, dok pišem ove redove, Taproot skripte (`bc1p`) se ređe koriste od SegWit V0 skripti (`bc1q`). Iako prve nude ekonomske i poverljivostne prednosti u određenim specifičnim kontekstima, za tradicionalnije upotrebe sa jednim potpisom, može imati smisla pridržavati se starijeg standarda iz razloga poverljivosti, sve dok novi standard ne bude šire prihvaćen.
+Početkom 2010-ih, ova heuristika zasnovana na verzionisanju skripti bila je relativno neupotrebljiva zbog ograničenih tipova dostupnih skripti. Međutim, tokom vremena i sa sukcesivnim Bitcoin ažuriranjima, uvedena je sve veća raznolikost tipova skripti. Ova heuristika stoga postaje sve relevantnija, jer sa širim spektrom tipova skripti, korisnici se dele u manje grupe, čime se povećavaju šanse za primenu ove interne heuristike ponovne upotrebe verzionisanja. Iz tog razloga, isključivo iz perspektive poverljivosti, preporučljivo je da se odlučite za najčešći tip skripte. Na primer, dok pišem ove redove, Taproot skripte (`bc1p`) se ređe koriste od SegWit V0 skripti (`bc1q`). Iako prve nude ekonomske i prednosti u pogledu privatnosti u određenim specifičnim kontekstima, za tradicionalnije upotrebe sa jednim potpisom, može imati smisla pridržavati se starijeg standarda iz razloga privatnosti, sve dok novi standard ne bude šire prihvaćen.
 
 
 ### Plaćanja zaokruženih iznosa
 
 
-Još jedna interna heuristika koja nam može pomoći da identifikujemo Exchange je heuristika okruglog broja. Generalno govoreći, kada se suočimo sa jednostavnim obrascem plaćanja (1 ulaz i 2 izlaza), ako jedan od izlaza troši okrugli iznos, onda to predstavlja plaćanje.
+Još jedna interna heuristika koja nam može pomoći da identifikujemo kusur je heuristika okruglog broja. Generalno govoreći, kada se suočimo sa jednostavnim obrascem plaćanja (1 ulaz i 2 izlaza), ako jedan od izlaza troši okrugli iznos, onda to predstavlja plaćanje.
 
 
 ![BTC204](assets/fr/049.webp)
 
 
-Eliminacijom, ako jedan izlaz predstavlja plaćanje, drugi predstavlja Exchange. Stoga se može tumačiti kao verovatno da je ulazni korisnik uvek u posedu izlaza označenog kao Exchange.
+Eliminacijom, ako jedan izlaz predstavlja plaćanje, drugi predstavlja kusur. Stoga se može zaključiti da je verovatno da je korisnik sa ulazne strane transakcije uvek vlasnik izlaza koji je identifikovan kao kusur.
 
 
-Treba naglasiti da ova heuristika nije uvek primenljiva, jer se većina plaćanja i dalje vrši u fiducijarnim jedinicama obračuna. Naime, kada trgovac u Francuskoj prihvati Bitcoin, on uglavnom neće prikazivati stabilne cene u Sats. Umesto toga, odlučiće se za konverziju između cene u evrima i iznosa u bitkoinima koji treba platiti. Stoga ne bi trebalo da bude zaokruženih brojeva na kraju transakcije.
+Treba naglasiti da ova heuristika nije uvek primenljiva, jer se većina plaćanja i dalje vrši u fiducijarnim jedinicama obračuna. Naime, kada trgovac u Francuskoj prihvati Bitcoin, on uglavnom neće prikazivati stabilne cene u Sats-ima. Umesto toga, odlučiće se za konverziju između cene u evrima i iznosa u bitkoinima koji treba platiti. Stoga ne bi trebalo da bude zaokruženih brojeva na kraju transakcije.
 
 
-Ipak, analitičar bi mogao pokušati da izvrši ovu konverziju uzimajući u obzir stopu Exchange koja je bila na snazi kada je transakcija emitovana na mreži. Uzmimo primer transakcije sa ulazom od `97,552 Sats` i dva izlaza, jedan od `31,085 Sats` i drugi od `64,152 Sats`. Na prvi pogled, ova transakcija ne izgleda kao da uključuje zaokružene iznose. Međutim, primenom stope Exchange od €64,339 u vreme transakcije, dobijamo konverziju u evre na sledeći način:
+Ipak, analitičar bi mogao pokušati da izvrši ovu konverziju uzimajući u obzir valutni kurs koji je bilo na snazi kada je transakcija emitovana na mreži. Uzmimo primer transakcije sa ulazom od `97,552 Sats-a` i dva izlaza, jedan od `31,085 Sats-a` i drugi od `64,152 Sats-a`. Na prvi pogled, ova transakcija ne izgleda kao da uključuje zaokružene iznose. Međutim, primenom valutnog kursa od €64,339 u vreme transakcije, dobijamo konverziju u evre na sledeći način:
 
 
 
@@ -846,7 +846,7 @@ Ipak, analitičar bi mogao pokušati da izvrši ovu konverziju uzimajući u obzi
 - Izlaz od €41.27.
 
 
-Jednom kada se konvertuje u fiat valutu, ova transakcija se može koristiti za primenu heuristike plaćanja zaokruženog iznosa. Izlaz od €20 je verovatno otišao trgovcu, ili je barem promenio Ownership. Dedukcijom, izlaz od €41.27 je verovatno ostao u posedu originalnog korisnika.
+Jednom kada se konvertuje u fiat valutu, ova transakcija se može koristiti za primenu heuristike plaćanja zaokruženog iznosa. Izlaz od €20 je verovatno otišao trgovcu, ili je barem promenio vlasništvo. Dedukcijom, izlaz od €41.27 je verovatno ostao u posedu originalnog korisnika.
 
 
 ![BTC204](assets/fr/050.webp)
@@ -872,7 +872,7 @@ Izvor : [Mempool.space](https://Mempool.space/tx/2bcb42fab7fba17ac1b176060e7d7d7
 ### Najveći izlaz
 
 
-Kada identifikujemo dovoljno veliki razmak između 2 izlaza transakcije na jednostavnom modelu plaćanja, možemo proceniti da je najveći izlaz verovatno strani Exchange.
+Kada identifikujemo dovoljno veliki razmak između 2 izlaza transakcije na jednostavnom modelu plaćanja, možemo proceniti da je najveći izlaz verovatno kusur.
 
 
 ![BTC204](assets/fr/052.webp)
@@ -898,35 +898,35 @@ b79d8f8e4756d34bbb26c659ab88314c220834c7a8b781c047a3916b56d14dcf
 Izvor : [Mempool.space](https://Mempool.space/tx/b79d8f8e4756d34bbb26c659ab88314c220834c7a8b781c047a3916b56d14dcf)
 
 
-## Eksterni heuristici
+## Eksterna heuristika
 
 
 <chapterId>4a170e3b-200d-431a-8285-18a23ff617ba</chapterId>
 
 
 
-Proučavanje spoljašnjih heuristika znači analiziranje sličnosti, obrazaca i karakteristika određenih Elements koji nisu specifični za samu transakciju. Drugim rečima, dok smo se ranije ograničavali na iskorišćavanje Elements svojstvenih transakciji sa unutrašnjim heuristikama, sada širimo naše polje analize kako bismo uključili okruženje transakcije, zahvaljujući spoljašnjim heuristikama.
+Proučavanje spoljašnjih heuristika znači analiziranje sličnosti, obrazaca i karakteristika određenih elemenata koji nisu specifični za samu transakciju. Drugim rečima, dok smo se ranije ograničavali na korišćenje elemenata koji su intrinzični samoj transakciji koristeći interne heuristike, sada širimo naše polje analize kako bismo uključili okruženje transakcije, zahvaljujući spoljašnjim heuristikama.
 
 
-### Address ponovna upotreba
+### Ponovna upotreba adrese
 
 
-Ovo je jedna od najpoznatijih heuristika bitkoinera. Ponovna upotreba Address omogućava uspostavljanje veze između različitih transakcija i različitih UTXO-a. To se dešava kada se Bitcoin primajući Address koristi više puta.
+Ovo je jedna od najpoznatijih heuristika bitkoinera. Ponovna upotreba adrese omogućava uspostavljanje veze između različitih transakcija i različitih UTXO-a. To se dešava kada se Bitcoin primajuća adresa koristi više puta.
 
 
-Dakle, moguće je iskoristiti ponovnu upotrebu Address unutar iste transakcije kao internu heuristiku za identifikaciju Exchange (kao što smo videli u prethodnom poglavlju). Ali ponovna upotreba Address može se koristiti i kao eksterna heuristika za prepoznavanje jedinstvenosti entiteta iza nekoliko transakcija.
+Dakle, moguće je iskoristiti adresu ponovo unutar iste transakcije kao internu heuristiku za identifikaciju kusura (kao što smo videli u prethodnom poglavlju). Ali ponovna upotreba adrese može se koristiti i kao eksterna heuristika za prepoznavanje jedinstvenosti entiteta iza nekoliko transakcija.
 
 
-Tumačenje ponovne upotrebe Address je da svi UTXO-ovi blokirani na tom Address pripadaju (ili su pripadali) istoj entitetu. Ova heuristika ostavlja malo prostora za nesigurnost. Jednom kada se identifikuje, dobijeno tumačenje verovatno odgovara stvarnosti. Stoga omogućava grupisanje različitih aktivnosti na lancu.
+Tumačenje ponovne upotrebe adrese je da svi UTXO-ovi blokirani na toj adresi pripadaju (ili su pripadali) istom entitetu. Ova heuristika ostavlja malo prostora za nesigurnost. Jednom kada se identifikuje, dobijeno tumačenje verovatno odgovara stvarnosti. Stoga omogućava grupisanje različitih aktivnosti na lancu.
 
 
 ![BTC204](assets/fr/054.webp)
 
 
-Kao što je objašnjeno u uvodu u Deo 3, ovu heuristiku je otkrio sam Satoshi Nakamoto. U Belom Papiru, on pominje rešenje koje pomaže korisnicima da izbegnu njeno generisanje, a to je jednostavno korišćenje praznog Address za svaku novu transakciju:
+Kao što je objašnjeno u uvodu u trećeg dela, ovu heuristiku je otkrio sam Satoshi Nakamoto. U Belom Papiru, on pominje rešenje koje pomaže korisnicima da izbegnu njeno generisanje, a to je jednostavno korišćenje prazne adrese za svaku novu transakciju:
 
 
-"_Kao dodatni firewall, novi par ključeva mogao bi se koristiti za svaku transakciju kako bi ostale nepovezane sa zajedničkim vlasnikom._"
+"_Kao dodatna zaštita, novi par ključeva mogao bi se koristiti za svaku transakciju kako bi ostale nepovezane sa zajedničkim vlasnikom._"
 
 
 ![BTC204](assets/fr/055.webp)
@@ -935,7 +935,7 @@ Kao što je objašnjeno u uvodu u Deo 3, ovu heuristiku je otkrio sam Satoshi Na
 Izvor: S. Nakamoto, "Bitcoin: A Peer-to-Peer Electronic Cash System", https://Bitcoin.org/Bitcoin.pdf, 2009.
 
 
-Na primer, ovde je Address koji se ponovo koristi u nekoliko transakcija:
+Na primer, ovo je primer adrese koja se korišćena u nekoliko transakcija:
 
 
 ```plaintext
@@ -949,19 +949,19 @@ bc1qqtmeu0eyvem9a85l3sghuhral8tk0ar7m4a0a0
 Izvor : [Mempool.space](https://Mempool.space/Address/bc1qqtmeu0eyvem9a85l3sghuhral8tk0ar7m4a0a0)
 
 
-### Sličnost skripti i otisci Wallet
+### Sličnost skripti i jedinstveni indetifikatori novčanika
 
 
-Pored ponovne upotrebe Address, postoje mnoge druge heuristike koje vam omogućavaju da povežete akcije sa istim portfoliom ili Address klasterom.
+Pored ponovne upotrebe adrese, postoje mnoge druge heuristike koje vam omogućavaju da povežete akcije sa istim portfoliom ili klasterom adresa.
 
 
 Prvo, analitičar može tražiti sličnosti u upotrebi skripti. Na primer, određene manjinske skripte kao što je Multisig mogu biti lakše uočljive nego SegWit V0 skripte. Što je veća grupa u kojoj se krijemo, teže nas je uočiti. Ovo je jedan od razloga zašto, na dobrim CoinJoin protokolima, svi učesnici koriste tačno isti tip skripte.
 
 
-Više generalno, analitičar se može fokusirati i na karakteristične otiske prstiju portfolija. Ovo su procesi specifični za upotrebu koji se mogu identifikovati sa ciljem njihovog iskorišćavanja kao heuristika za praćenje. Drugim rečima, ako primetimo akumulaciju istih unutrašnjih karakteristika na transakcijama pripisanim praćenoj entitetu, možemo pokušati da identifikujemo iste karakteristike na drugim transakcijama.
+Više generalno, analitičar se može fokusirati i na karakteristične otiske portfolija. Ovo su procesi specifični za upotrebu koji se mogu identifikovati sa ciljem njihovog upotrebe kao heuristika za praćenje. Drugim rečima, ako primetimo akumulaciju istih unutrašnjih karakteristika na transakcijama povezanim sa praćenim entitetom, možemo pokušati da identifikujemo iste karakteristike na drugim transakcijama.
 
 
-Na primer, moći ćemo da identifikujemo da praćeni korisnik sistematski šalje svoj kusur na P2TR adrese (`bc1p...`). Ako se ovaj proces ponavlja, možemo ga koristiti kao heuristiku za ostatak naše analize. Takođe možemo koristiti druge otiske, kao što su redosled UTXO-a, mesto kusura u izlazima, RBF (Replace-by-fee) signalizacija, ili broj verzije, polje `nSequence` i polje `nLockTime`.
+Na primer, moći ćemo da identifikujemo da praćeni korisnik sistematski šalje svoj kusur na P2TR adrese (`bc1p...`). Ako se ovaj proces ponavlja, možemo ga koristiti kao heuristiku za ostatak naše analize. Takođe možemo koristiti druge identifikatore, kao što su redosled UTXO-a, mesto kusura u izlazima, RBF (Replace-by-fee) signalizacija, ili broj verzije, polje `nSequence` i polje `nLockTime`.
 
 
 ![BTC204](assets/fr/057.webp)
@@ -970,13 +970,13 @@ Na primer, moći ćemo da identifikujemo da praćeni korisnik sistematski šalje
 Kao što [@LaurentMT](https://twitter.com/LaurentMT) ističe u [Space Kek #19](https://podcasters.spotify.com/pod/show/decouvrebitcoin/episodes/SpaceKek-19---Analyse-de-chane--anonsets-et-entropie-e1vfuji) (podkast na francuskom jeziku), korisnost otisaka portfolija u analizi lanca značajno raste tokom vremena. Naime, sve veći broj tipova skripti i sve progresivnije uvođenje ovih novih funkcija od strane softvera za portfolije naglašavaju razlike. U nekim slučajevima, čak je moguće identifikovati tačan softver koji koristi entitet koji se prati. Stoga je važno razumeti da je proučavanje otisaka portfolija posebno relevantno za nedavne transakcije, a ne za one inicirane početkom 2010-ih.
 
 
-Da sumiramo, otisak može biti bilo koja specifična praksa, koju automatski izvodi Wallet ili ručno korisnik, a koju možemo pronaći na drugim transakcijama kako bi nam pomogla u našoj analizi.
+Da sumiramo, otisak može biti bilo koja specifična praksa, koju automatski izvršava novčanik ili ručno korisnik, a koju možemo pronaći i na drugim transakcijama što nam pomaže u našoj analizi.
 
 
 ### Common Input Ownership Heuristički (CIOH)
 
 
-Zajednički Ulaz Ownership Heuristika (CIOH) je heuristika koja navodi da kada transakcija ima više ulaza, svi oni verovatno potiču od jednog entiteta. Shodno tome, njihov Ownership je zajednički.
+Common Input Ownership Heuristika (CIOH) je heuristika koja navodi da kada transakcija ima više ulaza, svi oni verovatno potiču od jednog entiteta. Shodno tome, vlasništvo nad njima je zajedničko.
 
 
 ![BTC204](assets/fr/058.webp)
@@ -988,7 +988,7 @@ Da bismo primenili CIOH, prvo posmatramo transakciju sa nekoliko ulaza. To može
 ![BTC204](assets/fr/059.webp)
 
 
-S druge strane, ako transakcija ne odgovara nijednom poznatom modelu kolaborativne transakcije, onda možemo interpretirati da svi ulazi verovatno dolaze od iste entitete. Ovo može biti veoma korisno za proširenje već poznatog klastera ili nastavak praćenja.
+S druge strane, ako transakcija ne odgovara nijednom poznatom modelu kolaborativne transakcije, onda možemo interpretirati da svi ulazi verovatno dolaze od istog entiteta. Ovo može biti veoma korisno za proširenje već poznatog klastera ili nastavak praćenja.
 
 
 ![BTC204](assets/fr/060.webp)
@@ -1003,7 +1003,7 @@ CIOH je otkrio Satoshi Nakamoto. On o tome govori u delu 10 Bele knjige:
 ![BTC204](assets/fr/061.webp)
 
 
-Posebno je fascinantno primetiti da je Satoshi Nakamoto, čak i pre zvaničnog lansiranja Bitcoin, već identifikovao dve glavne ranjivosti privatnosti za korisnike, naime CIOH i ponovnu upotrebu Address. Takva predviđanja su prilično izuzetna, jer ove dve heuristike ostaju, čak i danas, najkorisnije u analizi Blockchain.
+Posebno je fascinantno primetiti da je Satoshi Nakamoto, čak i pre zvaničnog lansiranja Bitcoin-a, već identifikovao dve glavne ranjivosti privatnosti za korisnike, naime CIOH i ponovnu upotrebu adrese. Takva predviđanja su prilično izuzetna, jer ove dve heuristike ostaju, čak i danas, najkorisnije u analizi blokčejna.
 
 
 Da vam dam primer, evo transakcije na koju verovatno možemo primeniti CIOH:
@@ -1020,22 +1020,22 @@ Da vam dam primer, evo transakcije na koju verovatno možemo primeniti CIOH:
 Izvor : [Mempool.space](https://Mempool.space/tx/20618e63b6eed056263fa52a2282c8897ab2ee71604c7faccfe748e1a202d712)
 
 
-### off-chain podaci
+### Off-chain podaci
 
 
-Naravno, analiza lanca nije ograničena isključivo na onchain podatke. Bilo koji podaci iz prethodne analize ili dostupni na Internetu takođe se mogu koristiti za preciziranje analize.
+Naravno, analiza lanca nije ograničena isključivo na podatke unutar blokčejna. Bilo koji podaci iz prethodne analize ili su dostupni na Internetu takođe se mogu koristiti za preciziranje analize.
 
 
-Na primer, ako primetimo da se praćene transakcije sistematski emituju sa istog Bitcoin čvora, i uspemo da identifikujemo njegov IP Address, možda ćemo moći da identifikujemo druge transakcije od iste entitete, kao i da odredimo deo identiteta izdavaoca. Iako ova praksa nije lako ostvariva, jer zahteva rad brojnih čvorova, može biti korišćena od strane nekih kompanija koje se bave analizom Blockchain.
+Na primer, ako primetimo da se praćene transakcije sistematski emituju sa istog Bitcoin čvora, i uspemo da identifikujemo njegovu IP adresu, možda ćemo moći da identifikujemo druge transakcije od istog entiteta, kao i da odredimo deo identiteta izdavaoca. Iako ova praksa nije lako ostvariva, jer zahteva rad brojnih čvorova, može biti korišćena od strane nekih kompanija koje se bave analizom blokčejna.
 
 
-Analitičar takođe ima opciju da se osloni na analize koje su prethodno postale open-source, ili na svoje prethodne analize. Možda ćemo moći da pronađemo rezultat koji ukazuje na klaster adresa koje smo već identifikovali. Ponekad je takođe moguće osloniti se na rezultate koji ukazuju na Exchange platformu, jer su adrese ovih kompanija generalno poznate.
+Analitičar takođe ima opciju da se osloni na analize koje su prethodno postale open-source, ili na svoje prethodne analize. Možda ćemo moći da pronađemo rezultat koji ukazuje na klaster adresa koje smo već identifikovali. Ponekad je takođe moguće osloniti se na rezultate koji ukazuju na platformu za trgovinu, jer su adrese ovih kompanija generalno poznate.
 
 
-Na isti način, možete izvršiti analizu eliminacijom. Na primer, ako prilikom analize transakcije sa dva izlaza, jedan od njih se odnosi na već poznati klaster Address, ali različit od entiteta koji pratimo, onda možemo interpretirati da drugi izlaz verovatno predstavlja Exchange.
+Na isti način, možete izvršiti analizu eliminacijom. Na primer, ako prilikom analize transakcije sa dva izlaza, i ako se jedan od njih odnosi na već poznatu klaster adresu, ali je različita od entiteta koji pratimo, onda možemo interpretirati da drugi izlaz verovatno predstavlja kusur.
 
 
-Analiza kanala takođe uključuje nešto opštiju OSINT (*Open Source Intelligence*) komponentu, koja podrazumeva pretrage na internetu. Iz tog razloga savetujemo da se adrese ne objavljuju direktno na društvenim mrežama ili na veb-sajtu, bilo da su pod pseudonimom ili ne.
+Analiza blokčejna takođe uključuje nešto opštiju OSINT (*Open Source Intelligence*) komponentu, koja podrazumeva pretrage na internetu. Iz tog razloga savetujemo da se adrese ne objavljuju direktno na društvenim mrežama ili na veb-sajtu, bilo da su pod pseudonimom ili ne.
 
 
 ![BTC204](assets/fr/063.webp)
@@ -1044,16 +1044,16 @@ Analiza kanala takođe uključuje nešto opštiju OSINT (*Open Source Intelligen
 ### Temporalni modeli
 
 
-Manje o tome razmišljamo manje, ali određena ljudska ponašanja su prepoznatljiva na lancu. Možda je najkorisnije u analizi vaš obrazac spavanja! Da, kada spavate, ne emitujete Bitcoin transakcije. Ali generalno spavate otprilike u isto vreme. Zato je uobičajena praksa koristiti vremensku analizu u Blockchain analizi. Jednostavno rečeno, ovo je popis vremena u kojima se transakcije određenog entiteta emituju na Bitcoin mrežu. Analizom ovih vremenskih obrazaca možemo izvući bogatstvo informacija.
+Manje razmišljamo o tome, ali određena ljudska ponašanja su prepoznatljiva na blockchain-u. Možda je najkorisniji u analizi vaš obrazac spavanja! Da, kada spavate, ne emitujete Bitcoin transakcije. Ali generalno spavate otprilike u isto vreme. Zato je uobičajena praksa koristiti vremensku analizu u blokčejn analizi. Jednostavno rečeno, ovo je popis vremena u kojima se transakcije određenog entiteta emituju na Bitcoin mrežu. Analizom ovih vremenskih obrazaca možemo izvući bogatstvo informacija.
 
 
 Prvo, vremenska analiza može ponekad identifikovati prirodu praćenog entiteta. Ako primetimo da se transakcije emituju dosledno tokom 24 sata, onda će to odati visok nivo ekonomske aktivnosti. Entitet iza ovih transakcija verovatno je kompanija, potencijalno međunarodna i možda sa automatizovanim internim procedurama.
 
 
-Na primer, [prepoznao sam ovaj obrazac pre nekoliko meseci](https://twitter.com/Loic_Pandul/status/1701127409712452072) kada sam analizirao [transakciju koja je greškom dodelila 19 bitkoina u naknadama](https://Mempool.space/tx/d5392d474b4c436e1c9d1f4ff4be5f5f9bb0eb2e26b61d2781751474b7e870fd). Jednostavna vremenska analiza omogućila mi je da pretpostavim da imamo posla sa automatizovanom uslugom, i stoga verovatno sa velikim entitetom kao što je Exchange platforma.
+Na primer, [prepoznao sam ovaj obrazac pre nekoliko meseci](https://twitter.com/Loic_Pandul/status/1701127409712452072) kada sam analizirao [transakciju koja je greškom dodelila 19 bitkoina u naknadama](https://Mempool.space/tx/d5392d474b4c436e1c9d1f4ff4be5f5f9bb0eb2e26b61d2781751474b7e870fd). Jednostavna vremenska analiza omogućila mi je da pretpostavim da imamo posla sa automatizovanom uslugom, i stoga verovatno sa velikim entitetom kao što je platforma za trgovinu.
 
 
-Zaista, nekoliko dana kasnije, otkriveno je da sredstva pripadaju PayPalu, putem Paxos Exchange platforme.
+Zaista, nekoliko dana kasnije, otkriveno je da sredstva pripadaju PayPalu, putem Paxos platforme za razmenu kriptovaluta.
 
 
 Naprotiv, ako možemo videti da je vremenski obrazac prilično raspoređen preko 16 specifičnih sati, onda možemo proceniti da imamo posla sa individualnim korisnikom, ili možda lokalnom kompanijom u zavisnosti od razmenjenih količina.
@@ -1062,7 +1062,7 @@ Naprotiv, ako možemo videti da je vremenski obrazac prilično raspoređen preko
 Pored prirode posmatranog entiteta, vremenski obrazac nam takođe može približno reći gde se korisnik nalazi, zahvaljujući vremenskim zonama. Na ovaj način, možemo uskladiti druge transakcije i koristiti njihove vremenske oznake kao dodatnu heuristiku koja se može dodati našoj analizi.
 
 
-Na primer, na više korišćenom Address koji sam ranije pomenuo, možemo videti da su transakcije, kako dolazne tako i odlazne, koncentrisane u intervalu od 13 sati.
+Na primer, na adresi koja se više puta koristila, a koju sam ranije pomenuo, možemo videti da su transakcije, kako dolazne tako i odlazne, koncentrisane u intervalu od 13 sati.
 
 
 ```plaintext
@@ -1079,10 +1079,10 @@ Izvor : OXT.me
 Ovaj raspon verovatno odgovara Evropi, Africi ili Bliskom Istoku. Stoga možemo pretpostaviti da korisnik iza ovih transakcija živi u ovim oblastima.
 
 
-U drugačijem smislu, vremenska analiza ovog tipa takođe je dovela do hipoteze da Satoshi Nakamoto nije delovao iz Japana, već iz SAD: [*The Time Zones of Satoshi Nakamoto*](https://medium.com/@insearchofsatoshi/the-time-zones-of-Satoshi-nakamoto-aa40f035178f)
+U drugom kontekstu, vremenska analiza ovog tipa takođe je dovela do hipoteze da Satoshi Nakamoto nije delovao iz Japana, već iz SAD: [*The Time Zones of Satoshi Nakamoto*](https://medium.com/@insearchofsatoshi/the-time-zones-of-Satoshi-nakamoto-aa40f035178f)
 
 
-## Stavljanje u praksu sa Block explorer
+## Praktična primena pomoću alata za istraživanje blokova (eng. block explorer)
 
 
 <chapterId>6493cf2f-225c-405f-9375-c4304f1087ed</chapterId>
@@ -1091,7 +1091,7 @@ U drugačijem smislu, vremenska analiza ovog tipa takođe je dovela do hipoteze 
 U ovom poslednjem poglavlju, primenićemo koncepte koje smo do sada proučavali. Pokazaću vam primere stvarnih Bitcoin transakcija, a vi ćete morati da izdvojite informacije koje tražim od vas.
 
 
-Idealno bi bilo koristiti profesionalni alat za analizu lanca za izvođenje ovih vežbi. Međutim, od hapšenja tvoraca Samourai Wallet, jedini besplatni alat za analizu OXT.me više nije dostupan. Stoga ćemo se odlučiti za klasični Block explorer za ove vežbe. Preporučujem korišćenje [Mempool.space](https://Mempool.space/) zbog mnogih funkcija i opsega alata za analizu lanca, ali možete se odlučiti i za drugi pretraživač kao što je [Bitcoin Explorer](https://bitcoinexplorer.org/).
+Idealno bi bilo koristiti profesionalni alat za analizu blokčejna za izvođenje ovih vežbi. Međutim, od hapšenja tvoraca Samourai Wallet-a, jedini besplatni alat za analizu OXT.me više nije dostupan. Stoga ćemo se odlučiti za klasični Block explorer za ove vežbe. Preporučujem korišćenje [Mempool.space](https://Mempool.space/) zbog mnogih funkcija i opsega alata za analizu lanca, ali se možete odlučiti i za drugi pretraživač kao što je [Bitcoin Explorer](https://bitcoinexplorer.org/).
 
 
 Za početak, predstaviću vam vežbe. Koristite svoj Block explorer da ih završite i zapišite svoje odgovore na list papira. Zatim, na kraju ovog poglavlja, daću vam odgovore kako biste mogli da proverite i ispravite svoje rezultate.
