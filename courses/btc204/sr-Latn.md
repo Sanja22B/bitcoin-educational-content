@@ -230,7 +230,7 @@ Svaki izlaz, zauzvrat, određuje količinu bitkoina koja će biti preneta, kao i
 Da bi transakcija bila smatrana validnom prema pravilima konsenzusa, ukupni izlazi moraju biti manji ili jednaki ukupnim ulazima. Drugim rečima, suma novih UTXO-a generisanih transakcijom ne sme premašiti sumu UTXO-a korišćenih kao ulazi. Ovaj princip je logičan: ako imate samo `500,000 Sats`, ne možete obaviti kupovinu od `700,000 Sats`.
 
 
-### Razmena i spajanje u Bitcoin transakciji
+### Kusur i spajanje u Bitcoin transakciji
 
 
 Akcija Bitcoin transakcije na UTXO može se uporediti sa pretopljavanjem zlatnog novčića. Zaista, UTXO nije deljiv, već samo topiv. To znači da korisnik ne može jednostavno podeliti UTXO koji predstavlja određeni iznos u bitkoinima na nekoliko manjih UTXO-a. On mora u potpunosti da ga potroši u transakciji kako bi kreirao jedan ili više novih UTXO-a proizvoljnih vrednosti u izlazima, koje moraju biti manje ili jednake početnoj vrednosti.
@@ -262,13 +262,13 @@ Frais = total inputs - total outputs
 ```
 
 
-Uzmimo primer Alise, koja ima UTXO od `10,000 Sats` i želi da kupi baget za `4,000 Sats`. Alisa kreira transakciju sa svojim UTXO od `10,000 Sats` kao ulaz. Zatim generiše izlaz od `4,000 Sats` za pekara da plati baget. Da bi podstakla rudare da integrišu njenu transakciju u blok, Alisa dodeljuje `200 Sats` kao naknadu. Zatim kreira drugi izlaz, Exchange, koji će joj biti vraćen, u iznosu od `5,800 Sats`.
+Uzmimo primer Alise, koja ima UTXO od `10,000 Sats` i želi da kupi baget za `4,000 Sats`. Alisa kreira transakciju sa svojim UTXO od `10,000 Sats` kao ulaz. Zatim generiše izlaz od `4,000 Sats` za pekara da plati baget. Da bi podstakla rudare da integrišu njenu transakciju u blok, Alisa dodeljuje `200 Sats` kao naknadu. Zatim kreira drugi izlaz, kusur, koji će joj biti vraćen, u iznosu od `5,800 Sats`.
 
 
 ![BTC204](assets/fr/015.webp)
 
 
-Primjenom formule naknade, vidimo da zaista ima `200 Sats` preostalih za maloletnike:
+Primenom formule za naknade, vidimo da zaista ima `200 Sats` preostalih za rudare:
 
 
 ```plaintext
@@ -279,43 +279,43 @@ Frais = 200
 ```
 
 
-Kada Miner uspe u validaciji bloka, ovlašćen je da prikupi ove naknade za sve transakcije uključene u njegov blok, putem takozvane "coinbase" transakcije.
+Kada neki rudar uspe u validaciji bloka, ovlašćen je da prikupi ove naknade za sve transakcije uključene u njegov blok, putem takozvane "coinbase" transakcije.
 
 
-### Kreiranje UTXO-a na Bitcoin
+### Kreiranje UTXO-a na Bitcoin-u
 
 
 Ako ste pažljivo pratili prethodne pasuse, sada ćete znati da se UTXO-i mogu kreirati samo trošenjem drugih postojećih UTXO-a. Na ovaj način, Bitcoin novčići formiraju kontinuirani lanac. Međutim, možda se pitate kako su nastali prvi UTXO-i u ovom lancu. Ovo postavlja problem sličan onom o kokoški i jajetu: odakle su došli ti originalni UTXO-i?
 
 
-Odgovor je u **transaction coinbase**.
+Odgovor je u **coinbase transakciji**.
 
 
-Coinbase je specifična vrsta Bitcoin transakcije, koja je jedinstvena za svaki blok i uvek je prva od ovih. Omogućava Miner koji je pronašao važeći Proof of Work da primi svoj Block reward. Ova nagrada se sastoji od dva Elements: **blok grant** i **naknada za transakciju**, o čemu je bilo reči u prethodnom odeljku.
+Coinbase je specifična vrsta Bitcoin transakcije, koja je jedinstvena za svaki blok i uvek je prva od svih transakcija unutar bloka. Omogućava rudaru koji je pronašao važeći Proof of Work da primi svoju Block nagradu. Ova nagrada se sastoji od dva elementa: **blok nagrada** i **transakciona naknada**, o čemu je bilo reči u prethodnom odeljku.
 
 
-Coinbase Transaction je jedinstven po tome što je jedini sposoban da stvara bitkoine ex nihilo, bez potrebe za trošenjem ulaza na izlaze generate. Ovi novostvoreni bitkoini su ono što bismo mogli nazvati "originalni UTXO-i".
+Coinbase transakcija je jedinstvena po tome što je jedina sposoban da stvara bitkoine ex nihilo, bez potrebe za trošenjem ulaza da bi se generisali izlazi. Ovi novostvoreni bitkoini su ono što bismo mogli nazvati "originalni UTXO-i".
 
 
 ![BTC204](assets/fr/016.webp)
 
 
-Bitkoini subvencionisani blokom su novi BTC stvoreni od nule, prema unapred utvrđenom rasporedu izdavanja u pravilima konsenzusa. Subvencija bloka se prepolovi na svakih 210.000 blokova, tj. otprilike svake četiri godine, u procesu poznatom kao "Halving". Prvobitno je sa svakom subvencijom stvarano 50 bitkoina, ali se ovaj iznos postepeno smanjivao; trenutno iznosi 3.125 bitkoina po bloku.
+Bitkoini subvencionisani blokom su novi BTC stvoreni od nule, prema unapred utvrđenom rasporedu izdavanja definisanim u pravilima konsenzusa. Nagrada za blok se prepolovi na svakih 210.000 blokova, tj. otprilike svake četiri godine, u procesu poznatom kao "prepolovljavanje (eng. Halving)". Prvobitno je sa svakom subvencijom stvarano 50 bitkoina, ali se ovaj iznos postepeno smanjivao; trenutno iznosi 3.125 bitkoina po bloku.
 
 
-Što se tiče naknada za transakcije, iako one takođe predstavljaju novo kreirane BTC, ne smeju premašiti razliku između ukupnih ulaza i izlaza svih transakcija u bloku. Ranije smo videli da ove naknade predstavljaju deo ulaza koji nije iskorišćen u izlazima transakcija. Ovaj deo je tehnički "izgubljen" tokom transakcije, a Miner ima pravo da rekreira ovu vrednost u obliku jednog ili više novih UTXO-a. Ovo je transfer vrednosti između izdavaoca transakcije i Miner koji ga dodaje Blockchain.
+Što se tiče naknada za transakcije, iako one takođe predstavljaju novo kreirane BTC, ne smeju premašiti razliku između ukupnih ulaza i izlaza svih transakcija u bloku. Ranije smo videli da ove naknade predstavljaju deo ulaza koji nije iskorišćen u izlazima transakcija. Ovaj deo je tehnički "izgubljen" tokom transakcije, a rudar ima pravo da rekreira ovu vrednost u obliku jednog ili više novih UTXO-a. Ovo je transfer vrednosti između izdavaoca transakcije i rudara koji ga dodaje blokčejnu.
 
 
-**> Bitcoini generisani od strane Coinbase Transaction podležu periodu zrelosti od 100 blokova, tokom kojeg ih Miner ne može potrošiti. Ovo pravilo je osmišljeno kako bi se izbegle komplikacije povezane sa korišćenjem novokreiranih bitcoina na lancu koji bi kasnije mogao postati zastareo.
+**> Bitcoini generisani od strane Coinbase transakcije podležu periodu zrelosti od 100 blokova, tokom kojeg ih rudar ne može potrošiti. Ovo pravilo je osmišljeno kako bi se izbegle komplikacije povezane sa korišćenjem novokreiranih bitcoina na lancu koji bi kasnije mogao postati zastareo.
 
 
-### Implikacije modela UTXO
+### Implikacije UTXO modela 
 
 
-Prvo i najvažnije, model UTXO direktno utiče na transakcione naknade Bitcoin. Pošto je kapacitet svakog bloka ograničen, rudari favorizuju transakcije koje nude najbolje naknade u odnosu na prostor koji će zauzeti u bloku. Zaista, što više UTXO-a transakcija uključuje u svojim ulazima i izlazima, to je teža, i stoga zahteva veće naknade. Ovo je jedan od razloga zašto često pokušavamo da smanjimo broj UTXO-a u našem portfoliju, što takođe može uticati na poverljivost, temu kojom ćemo se detaljno baviti u trećem delu ovog kursa.
+Prvo i najvažnije, model UTXO direktno utiče na transakcione naknade unutar Bitcoin-a. Pošto je kapacitet svakog bloka ograničen, rudari favorizuju transakcije koje nude najbolje naknade u odnosu na prostor koji će zauzeti u bloku. Zaista, što više UTXO-a transakcija uključuje u svojim ulazima i izlazima, to je teža, i stoga zahteva veće naknade. Ovo je jedan od razloga zašto često pokušavamo da smanjimo broj UTXO-a u našem portfoliju, što takođe može uticati na poverljivost, temu kojom ćemo se detaljno baviti u trećem delu ovog kursa.
 
 
-Drugo, kao što je pomenuto u prethodnim odeljcima, Bitcoin novčići su u suštini lanac UTXO-a. Svaka transakcija tako stvara vezu između prošlog UTXO i budućeg UTXO. UTXO-i stoga omogućavaju eksplicitno praćenje puta Bitcoina od njihovog stvaranja do trenutne potrošnje. Ova transparentnost može biti pozitivno shvaćena, jer omogućava svakom korisniku da utvrdi autentičnost primljenih bitcoina. Međutim, upravo na ovom principu sledljivosti i revizorske sposobnosti se zasniva Blockchain analiza, praksa osmišljena da ugrozi vašu poverljivost. Detaljno ćemo razmotriti ovu praksu u drugom delu kursa.
+Drugo, kao što je pomenuto u prethodnim odeljcima, Bitcoin novčići su u suštini lanac UTXO-a. Svaka transakcija tako stvara vezu između prošlog UTXO i budućeg UTXO. UTXO-i stoga omogućavaju eksplicitno praćenje puta Bitcoina od njihovog stvaranja do trenutne potrošnje. Ova transparentnost može biti pozitivno shvaćena, jer omogućava svakom korisniku da utvrdi autentičnost primljenih bitcoina. Međutim, upravo na ovom principu sledljivosti i revizorske sposobnosti se zasniva blokčejn analiza, praksa osmišljena da ugrozi vašu poverljivost. Detaljno ćemo razmotriti ovu praksu u drugom delu kursa.
 
 
 ## Bitcoin-ov model privatnosti
@@ -328,7 +328,7 @@ Drugo, kao što je pomenuto u prethodnim odeljcima, Bitcoin novčići su u sušt
 ### Novac: autentičnost, integritet i dvostruko trošenje
 
 
-Jedna od funkcija novca je rešavanje problema dvostruke podudarnosti potreba. U sistemu zasnovanom na trampi, završetak Exchange zahteva ne samo pronalaženje osobe koja daje robu koja odgovara mojoj potrebi, već i obezbeđivanje robe jednake vrednosti koja zadovoljava njegovu sopstvenu potrebu. Postizanje ove ravnoteže je složena stvar.
+Jedna od funkcija novca je rešavanje problema dvostruke podudarnosti potreba. U sistemu zasnovanom na trampi, završetak razmene zahteva ne samo pronalaženje osobe koja daje robu koja odgovara mojoj potrebi, već i obezbeđivanje robe jednake vrednosti koja zadovoljava njegovu sopstvenu potrebu. Postizanje ove ravnoteže je složena stvar.
 
 
 ![BTC204](assets/fr/017.webp)
@@ -345,11 +345,11 @@ Da bi kovanice rešile ovaj problem, neophodno je da strana koja pruža robu ili
 
 
 
-- Komad mora imati integritet i autentičnost ;**
-- i ne sme biti dvostruko potrošeni.**
+- **Komad mora imati integritet i autentičnost ;**
+- **i ne sme biti dvostruko potrošeni.**
 
 
-Ako koristite fizičku valutu, prva karakteristika je najkompleksnija za potvrditi. U različitim periodima istorije, integritet metalnih novčića često je bio pogođen praksama kao što su obrezivanje ili bušenje. U starom Rimu, na primer, bilo je uobičajeno da građani stružu ivice zlatnih novčića kako bi sakupili malo plemenitog metala, dok su ih čuvali za buduće transakcije. Intrinzična vrednost novčića je tako bila smanjena, ali je njegova nominalna vrednost ostala ista. Ovo je jedan od razloga zašto je ivica novčića kasnije bila nazubljena.
+Ako koristite fizičku valutu, prva karakteristika je najkompleksnija za potvrditi. U različitim periodima istorije, integritet metalnih novčića često je bio narušen praksama kao što su obrezivanje ili bušenje. U starom Rimu, na primer, bilo je uobičajeno da građani stružu ivice zlatnih novčića kako bi sakupili malo plemenitog metala, dok su ih čuvali za buduće transakcije. Intrinzična vrednost novčića je tako bila smanjena, ali je njegova nominalna vrednost ostala ista. Ovo je jedan od razloga zašto je ivica novčića kasnije bila nazubljena.
 
 
 Autentičnost je takođe teško proveriti na fizičkom monetarnom medijumu. Današnje tehnike za borbu protiv falsifikovanog novca postaju sve složenije, primoravajući trgovce da ulažu u skupe sisteme za verifikaciju.
@@ -361,34 +361,34 @@ S druge strane, zbog svoje prirode, dvostruko trošenje nije problem za fizičke
 ![BTC204](assets/fr/019.webp)
 
 
-Za digitalnu valutu, težina je drugačija. Osiguravanje autentičnosti i integriteta novčića je često jednostavnije. Kao što smo videli u prethodnom odeljku, model Bitcoin's UTXO omogućava praćenje novčića do njegovog porekla, i na taj način verifikaciju da je zaista kreiran od strane Miner u skladu sa pravilima konsenzusa.
+Za digitalnu valutu, teškoća je drugačija. Osiguravanje autentičnosti i integriteta novčića je često jednostavnije. Kao što smo videli u prethodnom odeljku, model Bitcoin UTXO-a omogućava praćenje novčića do njegovog porekla, i na taj način verifikaciju da je zaista kreiran od strane rudara u skladu sa pravilima konsenzusa.
 
 
-S druge strane, osiguravanje da nema Double-spending je složenije, jer su sva digitalna dobra u suštini informacije. Za razliku od fizičkih dobara, informacije se ne dele kada se razmenjuju, već se šire množenjem. Na primer, ako vam pošaljem dokument putem e-pošte, on će biti dupliran. Ne možete biti sigurni da sam obrisao originalni dokument.
+S druge strane, osiguravanje da nema duplog trošenja je složenije, jer su sva digitalna dobra u suštini informacije. Za razliku od fizičkih dobara, informacije se ne dele kada se razmenjuju, već se šire množenjem. Na primer, ako vam pošaljem dokument putem e-pošte, on će biti dupliran. Ne možete biti sigurni da sam obrisao originalni dokument.
 
 
 ![BTC204](assets/fr/020.webp)
 
 
-### Sprečavanje dvostrukog trošenja na Bitcoin
+### Sprečavanje dvostrukog trošenja na Bitcoin-u
 
 
-Jedini način da se izbegne ovo dupliranje digitalnog sredstva je da budemo svesni svih razmena u sistemu. Na ovaj način možemo znati ko šta poseduje i ažurirati imovinu svake osobe u skladu sa izvršenim transakcijama. Ovo se dešava, na primer, sa skripturnim novcem u bankarskom sistemu. Kada platite €10 trgovcu kreditnom karticom, banka beleži Exchange i ažurira knjigu računa.
+Jedini način da se izbegne ovo dupliranje digitalnog sredstva je da budemo svesni svih razmena u sistemu. Na ovaj način možemo znati ko šta poseduje i ažurirati imovinu svake osobe u skladu sa izvršenim transakcijama. Ovo se dešava, na primer, sa skripturnim (depozitnim) novcem u bankarskom sistemu. Kada platite €10 trgovcu kreditnom karticom, banka beleži razmenu i ažurira knjigu računa.
 
 
 ![BTC204](assets/fr/021.webp)
 
 
-Na Bitcoin, Double-spending je sprečen na isti način. Nastojimo da potvrdimo odsustvo transakcije koja je već potrošila predmetne novčiće. Ako novčići nikada nisu korišćeni, onda možemo biti sigurni da neće doći do dvostrukog trošenja. Ovaj princip je opisao Satoshi Nakamoto u Belom Papiru sa čuvenom frazom:
+Na Bitcoin-u, duplo trošenje je sprečeno na isti način. Nastojimo da potvrdimo odsustvo transakcije koja je već potrošila predmetne novčiće. Ako novčići nikada nisu korišćeni, onda možemo biti sigurni da neće doći do dvostrukog trošenja. Ovaj princip je opisao Satoshi Nakamoto u Belom Papiru sa čuvenom frazom:
 
 
-**Jedini način da potvrdite odsustvo transakcije je da budete svesni svih transakcija
+**Jedini način da potvrdite odsustvo transakcije je da budete svesni svih transakcija**
 
 
-Ali za razliku od bankarskog modela, ne želimo da moramo verovati centralnom entitetu na Bitcoin. Tako da svi korisnici treba da budu u mogućnosti da potvrde odsustvo dvostrukog trošenja, bez oslanjanja na treću stranu. Dakle, svi treba da budu svesni svih Bitcoin transakcija. Zato se Bitcoin transakcije javno emituju na svim mrežnim čvorovima i beleže u čistom tekstu na Blockchain.
+Ali za razliku od bankarskog modela, na Bitcoin-u ne želimo da moramo verovati centralnom entitetu. Tako da svi korisnici treba da budu u mogućnosti da potvrde odsustvo dvostrukog trošenja, bez oslanjanja na treću stranu. Dakle, svi treba da budu svesni svih Bitcoin transakcija. Zato se Bitcoin transakcije javno emituju na svim mrežnim čvorovima i beleže u čistom tekstu na blokčejnu.
 
 
-Upravo to javno širenje informacija komplikuje zaštitu privatnosti u Bitcoin. U tradicionalnom bankarskom sistemu, teoretski, samo finansijska institucija je svesna obavljenih transakcija. S druge strane, sa Bitcoin, svi korisnici su informisani o svim transakcijama, putem svojih odgovarajućih čvorova.
+Upravo to javno širenje informacija komplikuje zaštitu privatnosti unutar Bitcoin-a. U tradicionalnom bankarskom sistemu, teoretski, samo finansijska institucija je svesna obavljenih transakcija. S druge strane, sa Bitcoin-om, svi korisnici su informisani o svim transakcijama, putem svojih odgovarajućih čvorova.
 
 
 ### Model poverljivosti: bankarski sistem vs. Bitcoin
@@ -406,7 +406,7 @@ Na primer, vaš bankar zna da svako jutro kupujete baget od lokalnog pekara, ali
 ![BTC204](assets/fr/023.webp)
 
 
-Zbog ograničenja javnog objavljivanja transakcija koje smo videli u prethodnom odeljku, model poverljivosti Bitcoin ne može pratiti model bankarskog sistema. U slučaju Bitcoin, pošto se tok informacija ne može prekinuti između transakcija i javne sfere, **model privatnosti se oslanja na razdvajanje između identiteta korisnika i samih transakcija**.
+Zbog ograničenja javnog objavljivanja transakcija koje smo videli u prethodnom odeljku, model poverljivosti Bitcoin-a ne može pratiti model bankarskog sistema. U slučaju Bitcoin-a, pošto se tok informacija ne može prekinuti između transakcija i javne sfere, **model privatnosti se oslanja na razdvajanje između identiteta korisnika i samih transakcija**.
 
 
 ![BTC204](assets/fr/024.webp)
@@ -427,7 +427,7 @@ Ali pošto su Bitcoin transakcije javne, i dalje je moguće uspostaviti veze izm
 <partId>4739371e-9fef-45b0-bcaa-b7a4df6b4470</partId>
 
 
-## Šta je analiza lanca Bitcoin?
+## Šta je analiza Bitcoin lanca?
 
 
 <chapterId>7d198ba6-4af2-4f24-86cb-3c79cb25627e</chapterId>
@@ -437,40 +437,40 @@ Ali pošto su Bitcoin transakcije javne, i dalje je moguće uspostaviti veze izm
 ### Definicija i rad
 
 
-Analiza Blockchain je praksa praćenja toka bitkoina na Blockchain. Generalno govoreći, analiza lanca zasniva se na posmatranju karakteristika u uzorcima prethodnih transakcija. Zatim se sastoji od identifikacije tih istih karakteristika na transakciji koju želimo analizirati i izvođenja mogućih interpretacija iz njih. Ova metoda rešavanja problema, zasnovana na praktičnom pristupu pronalaženju dovoljno dobrog rešenja, poznata je kao "heuristika".
+Blockchain analiza je praksa praćenja toka bitkoina na blokčejnu. Generalno govoreći, analiza lanca zasniva se na posmatranju karakteristika u uzorcima prethodnih transakcija. Zatim se sastoji od identifikacije tih istih karakteristika na transakciji koju želimo analizirati i izvođenja mogućih interpretacija iz njih. Ova metoda rešavanja problema, zasnovana na praktičnom pristupu pronalaženju dovoljno dobrog rešenja, poznata je kao "heuristika".
 
 
-Laicki rečeno, postoje tri glavne faze u analizi lanca:
+Laički rečeno, postoje tri glavne faze u analizi lanca:
 
 
-1. **Posmatranje Blockchain ;**
+1. **Posmatranje blokčejna ;**
 
 
 2. **Identifikacija poznatih karakteristika ;**
 
 
-3. **Oduzimanje pretpostavki **
+3. **Izvođenje pretpostavki**
 
 
 ![BTC204](assets/fr/026.webp)
 
 
-Analiza Blockchain može biti izvedena od strane bilo koga. Sve što vam je potrebno je pristup javnim informacijama Blockchain putem kompletnog čvora kako biste posmatrali kretanje transakcija i pravili hipoteze. Postoje i besplatni alati koji olakšavaju ovu analizu, kao što je [OXT.me](https://oxt.me/), koji ćemo detaljno istražiti u poslednja dva poglavlja ovog odeljka. Međutim, glavni rizik za poverljivost dolazi od kompanija koje se specijalizuju za analizu lanaca. Ove kompanije su podigle analizu Blockchain na industrijski nivo i prodaju svoje usluge finansijskim institucijama i vladama. Među tim kompanijama, Chainalysis je sigurno najpoznatija.
+Blokčejn analiza može biti izvedena od strane bilo koga. Sve što vam je potrebno je pristup javnim blokčejn informacijama putem kompletnog čvora kako biste posmatrali kretanje transakcija i pravili hipoteze. Postoje i besplatni alati koji olakšavaju ovu analizu, kao što je [OXT.me](https://oxt.me/), koji ćemo detaljno istražiti u poslednja dva poglavlja ovog odeljka. Međutim, glavni rizik za poverljivost dolazi od kompanija koje se specijalizuju za analizu lanaca. Ove kompanije su podigle analizu blokčejna na industrijski nivo i prodaju svoje usluge finansijskim institucijama i vladama. Među tim kompanijama, Chainalysis je sigurno najpoznatija.
 
 
 ### Ciljevi analize lanca
 
 
-Jedan od ciljeva analize Blockchain je da se grupišu različite aktivnosti na Bitcoin kako bi se utvrdila jedinstvenost korisnika koji ih je izvršio. Nakon toga, biće moguće pokušati povezati ovaj skup aktivnosti sa stvarnim identitetom.
+Jedan od ciljeva blokčejn analize je da se grupišu različite aktivnosti na Bitcoin-u kako bi se utvrdila jedinstvenost korisnika koji ih je izvršio. Nakon toga, biće moguće pokušati povezati ovaj skup aktivnosti sa stvarnim identitetom.
 
 
 ![BTC204](assets/fr/027.webp)
 
 
-Setite se prethodnog poglavlja. Objasnio sam zašto je Bitcoin-ov model privatnosti prvobitno bio zasnovan na odvajanju korisničkog identiteta od transakcija. Stoga bi bilo primamljivo misliti da je analiza Blockchain beskorisna, jer čak i ako uspemo da agregiramo aktivnosti na lancu, ne možemo ih povezati sa stvarnim identitetom.
+Setite se prethodnog poglavlja. Objasnio sam zašto je Bitcoin-ov model privatnosti prvobitno bio zasnovan na odvajanju korisničkog identiteta od transakcija. Stoga bi bilo primamljivo misliti da je analiza blokčejna beskorisna, jer čak i ako uspemo da agregiramo aktivnosti na lancu, ne možemo ih povezati sa stvarnim identitetom.
 
 
-Teoretski, ova izjava je tačna. U prvom delu ovog kursa, videli smo da se kriptografski parovi ključeva koriste za uspostavljanje uslova na UTXO. U suštini, ovi parovi ključeva ne otkrivaju nikakve informacije o identitetu njihovih vlasnika. Dakle, čak i ako uspemo da grupišemo aktivnosti povezane sa različitim parovima ključeva, to nam ništa ne govori o entitetu iza tih aktivnosti.
+Teoretski, ova izjava je tačna. U prvom delu ovog kursa, videli smo da se kriptografski parovi ključeva koriste za uspostavljanje uslova na UTXO-u. U suštini, ovi parovi ključeva ne otkrivaju nikakve informacije o identitetu njihovih vlasnika. Dakle, čak i ako uspemo da grupišemo aktivnosti povezane sa različitim parovima ključeva, to nam ništa ne govori o entitetu iza tih aktivnosti.
 
 
 ![BTC204](assets/fr/028.webp)
@@ -479,10 +479,10 @@ Teoretski, ova izjava je tačna. U prvom delu ovog kursa, videli smo da se kript
 Međutim, praktična stvarnost je daleko složenija. Postoji mnoštvo ponašanja koja mogu povezati pravi identitet sa aktivnostima na lancu. U analizi, ovo se naziva ulazna tačka, i postoji mnoštvo njih.
 
 
-Najčešći je KYC (*Know Your Customer*). Ako povučete svoje Bitcoine sa regulisane platforme na jednu od vaših ličnih adresa za primanje, neki ljudi mogu povezati vaš identitet sa tim Address. Šire gledano, ulazna tačka može biti bilo koji oblik interakcije između vašeg stvarnog života i Bitcoin transakcije. Na primer, ako objavite primanje Address na vašim društvenim mrežama, to bi mogla biti ulazna tačka za analizu. Ako izvršite plaćanje u Bitcoinima vašem pekaru, on će moći da poveže vaše lice (deo vašeg identiteta) sa Bitcoin Address.
+Najčešći je KYC (*Know Your Customer*). Ako povučete svoje Bitcoine sa regulisane platforme na jednu od vaših ličnih adresa za primanje, neki ljudi mogu povezati vaš identitet sa tom adresom. Šire gledano, ulazna tačka može biti bilo koji oblik interakcije između vašeg stvarnog života i Bitcoin transakcije. Na primer, ako objavite adresu za primanje na vašim društvenim mrežama, to bi mogla biti ulazna tačka za analizu. Ako izvršite plaćanje u Bitcoinima vašem pekaru, on će moći da poveže vaše lice (deo vašeg identiteta) sa Bitcoin adresom.
 
 
-Ove ulazne tačke su praktično neizbežne kada koristite Bitcoin. Iako možemo pokušati da ograničimo njihov obim, one će uvek biti prisutne. Zato je ključno kombinovati metode usmerene na očuvanje vaše privatnosti. Iako je održavanje razdvajanja između vašeg stvarnog identiteta i vaših transakcija zanimljiv pristup, on danas ostaje nedovoljan. Naime, ako se sve vaše aktivnosti na lancu mogu grupisati zajedno, onda je čak i najmanja ulazna tačka verovatno da ugrozi jedinstveni Layer poverljivosti koji ste uspostavili.
+Ove ulazne tačke su praktično neizbežne kada koristite Bitcoin. Iako možemo pokušati da ograničimo njihov obim, one će uvek biti prisutne. Zato je ključno kombinovati metode usmerene na očuvanje vaše privatnosti. Iako je očuvanje razdvojenosti između vašeg pravog identiteta i vaših transakcija zanimljiv pristup, to danas i dalje nije dovoljno. Naime, ako se sve vaše aktivnosti na lancu mogu grupisati zajedno, onda je čak i najmanja ulazna tačka verovatno da ugrozi jedinstveni sloj poverljivosti koji ste uspostavili.
 
 
 ![BTC204](assets/fr/029.webp)
@@ -491,20 +491,20 @@ Ove ulazne tačke su praktično neizbežne kada koristite Bitcoin. Iako možemo 
 ### Odbrana od analize lanca
 
 
-Dakle, takođe moramo biti sposobni da se nosimo sa analizom Blockchain u našoj upotrebi Bitcoin. Time možemo minimizirati agregaciju naših aktivnosti i ograničiti uticaj ulazne tačke na našu privatnost.
+Dakle, takođe moramo biti sposobni da se nosimo sa analizom blokčejna u našoj upotrebi Bitcoin-a. Time možemo minimizirati agregaciju naših aktivnosti i ograničiti uticaj ulazne tačke na našu privatnost.
 
 
 ![BTC204](assets/fr/030.webp)
 
 
-Koji je bolji način da se suprotstavite analizi Blockchain nego da naučite o metodama koje se u njoj koriste? Ako želite da znate kako da poboljšate svoju privatnost na Bitcoin, morate razumeti ove metode. Ovo će vam dati bolji uvid u tehnike kao što su CoinJoin ili PayJoin (tehnike koje ćemo razmotriti u završnim delovima kursa), i smanjiti greške koje biste mogli napraviti.
+Koji je bolji način da se suprotstavite blokčejn analizi nego da naučite o metodama koje se u njoj koriste? Ako želite da znate kako da poboljšate svoju privatnost na Bitcoin-u, morate razumeti ove metode. Ovo će vam dati bolji uvid u tehnike kao što su CoinJoin ili PayJoin (tehnike koje ćemo razmotriti u završnim delovima kursa), i smanjiti greške koje biste mogli napraviti.
 
 
 https://planb.network/tutorials/privacy/on-chain/coinjoin-samourai-wallet-e566803d-ab3f-4d98-9136-5462009262ef
 
 https://planb.network/tutorials/privacy/on-chain/payjoin-848b6a23-deb2-4c5f-a27e-93e2f842140f
 
-U tome možemo povući analogiju sa kriptografijom i kriptoanalizom. Dobar kriptograf je pre svega dobar kriptoanalitičar. Da biste osmislili novi algoritam za šifrovanje, morate znati koje napade će pretrpeti, kao i proučiti zašto su prethodni algoritmi bili probijeni. Isti princip se primenjuje na Bitcoin privatnost. Razumevanje Blockchain metoda analize je ključ za zaštitu od njih. Zato sam uključio čitavu sekciju on chain analize u ovaj kurs obuke.
+U tome možemo povući analogiju sa kriptografijom i kriptoanalizom. Dobar kriptograf je pre svega dobar kriptoanalitičar. Da biste osmislili novi algoritam za šifrovanje, morate znati koje napade će pretrpeti, kao i proučiti zašto su prethodni algoritmi bili probijeni. Isti princip se primenjuje na Bitcoin privatnost. Razumevanje blokčejn metoda analize je ključ za zaštitu od njih. Zato sam uključio čitavu sekciju o blokčejn analizi u ovaj kurs obuke.
 
 
 ### Metode analize lanca
