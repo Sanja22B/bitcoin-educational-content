@@ -1860,10 +1860,10 @@ Setite se iz prvog dela ovog kursa obuke: Bitcoin-ov model poverljivosti, kako g
 ### Izloženost državnom nadzoru
 
 
-Drugi veliki problem sa KYC je što otkriva državi da ste u nekom trenutku posedovali Bitcoin. Kada kupujete bitkoine preko regulisanog aktera, postaje moguće da država sazna za ovo vlasništvo. Trenutno, ovo može delovati trivijalno, ali je važno zapamtiti da politička i ekonomska budućnost vaše zemlje nije u vašim rukama.
+Drugi veliki problem sa KYC-ijem je što otkriva državi da ste u nekom trenutku posedovali Bitcoin. Kada kupujete bitkoine preko regulisanog aktera, postaje moguće da država sazna za ovo vlasništvo. Trenutno, ovo može delovati trivijalno, ali je važno zapamtiti da politička i ekonomska budućnost vaše zemlje nije u vašim rukama.
 
 
-Prvo, država može brzo usvojiti autoritarni stav. Istorija je puna primera gde su se politike naglo menjale. Danas, u Evropi, Bitkoin entuzijasti mogu pisati članke o Bitcoin, učestvovati na konferencijama i upravljati svojim novčanicima u samostalnom vlasništvu. Ali ko može reći šta donosi sutra? Ako Bitcoin iznenada postane javni neprijatelj broj jedan, povezivanje s njim u vladinim dosijeima moglo bi se pokazati problematičnim.
+Prvo, država može brzo usvojiti autoritarni stav. Istorija je puna primera gde su se politike naglo menjale. Danas, u Evropi, Bitkoin entuzijasti mogu pisati članke o Bitcoin-u, učestvovati na konferencijama i upravljati svojim novčanicima u sopstvenom vlasništvu. Ali ko može reći šta donosi sutra? Ako Bitcoin iznenada postane javni neprijatelj broj jedan, povezivanje s njim u vladinim dosijeima moglo bi se pokazati problematičnim.
 
 
 Zatim, suočena sa ozbiljnim ekonomskim krizama, država bi mogla razmotriti zaplenu bitkoina koje drže građani. Možda će sutra bitkoineri biti percipirani kao profiteri krize i biće prekomerno oporezovani za svoje kapitalne dobitke suočeni sa devalvacijom fiat valute.
@@ -1878,46 +1878,46 @@ Dakle, važno je uzeti u obzir rizik da država sazna da ste posedovali BTC, ma 
 Još jedan problem koji KYC postavlja u smislu državnog nadzora je obavezno izveštavanje od strane regulisanih platformi. Iako nisam upoznat sa propisima u drugim jurisdikcijama, u Francuskoj, *Prestataires de Services sur Actifs Numériques* (PSAN) su obavezni da prijave finansijskim nadzornim organima svaki pokret sredstava koji smatraju sumnjivim.
 
 
-U Francuskoj 2023. godine, PSAN-i su prijavili 1.449 sumnjivih radnji. Za sada je većina tih radnji povezana sa kriminalom. Međutim, vlasti takođe traže od regulisanih platformi da prijave sve sumnjive Bitcoin transakcije isključivo na osnovu njihove strukture. Ako obavite kolaborativnu transakciju, ili čak samo transakciju sa malo atipičnim obrascem, i ta transakcija se dogodi nedaleko od povlačenja vaših Bitcoina sa tih platformi, mogli biste biti prijavljeni vlastima. Čak i u odsustvu zloupotrebe i u legitimnom ostvarivanju vaših prava, takvo prijavljivanje moglo bi dovesti do pojačanih provera i nadzora, neprijatnosti koje biste izbegli bez KYC.
+U Francuskoj 2023. godine, PSAN-i su prijavili 1.449 sumnjivih radnji. Za sada je većina tih radnji povezana sa kriminalom. Međutim, vlasti takođe traže od regulisanih platformi da prijave sve sumnjive Bitcoin transakcije isključivo na osnovu njihove strukture. Ako obavite kolaborativnu transakciju, ili čak samo transakciju sa malo atipičnim obrascem, i ta transakcija se dogodi ne tako daleko od povlačenja vaših Bitcoina sa tih platformi, mogli biste biti prijavljeni vlastima. Čak i u odsustvu bilo kakve zloupotrebe i u legitimnom ostvarivanju vaših prava, takvo prijavljivanje moglo bi dovesti do pojačanih provera i nadzora, neprijatnosti koje biste mogli izbeći kada ne bi bilo KYC-a.
 
 
 ### Rizik od curenja ličnih podataka
 
 
-Još jedan problem sa KYC je što zahteva da svi vaši lični podaci budu pohranjeni na serverima privatne kompanije.
+Još jedan problem sa KYC-em je što zahteva da svi vaši lični podaci budu pohranjeni na serverima privatne kompanije.
 
 
-Nedavni događaji su nas podsetili da niko nije imun na finansijske ili IT neuspehe. U 2022. godini, korisnici Celsiusa su pretrpeli posledice. Nakon bankrota kompanije, imena poverilaca i iznos njihovih sredstava su objavljeni od strane američkih sudova tokom administrativnog postupka.
+Nedavni događaji su nas podsetili da niko nije imun na finansijske ili IT neuspehe. U 2022. godini, korisnici Celsiusa su pretrpeli posledice. Nakon bankrota kompanije, imena poverilaca i iznos njihovih sredstava objavljeni su od strane američkih sudova tokom administrativnog postupka.
 
 
-Pre nešto više od dve godine, bio je to vodeći projekat u sajber bezbednosti kriptovaluta koji je doživeo krađu ličnih podataka svojih korisnika. Iako ovaj incident nije bio direktno povezan sa kupovinom bitkoina, takav rizik takođe ostaje za Exchange platforme. Stoga postoji definitivan rizik povezan sa ličnim podacima.
+Pre nešto više od dve godine, bio je to vodeći projekat u sajber bezbednosti kriptovaluta koji je doživeo krađu ličnih podataka svojih korisnika. Iako ovaj incident nije bio direktno povezan sa kupovinom bitkoina, takav rizik takođe postoji za platforme za trgovinu. Stoga postoji definitivan rizik povezan sa ličnim podacima.
 
 
-Istina je da već poveravamo mnoge naše lične podatke privatnim kompanijama. Međutim, rizik ovde je dvostruk, jer ovi podaci ne samo da vas identifikuju, već su i povezani sa aktivnostima na Bitcoin. Zaista, kada haker dobije pristup podacima korisnika platforme Exchange, može razumno pretpostaviti da ti korisnici poseduju Bitcoine. Ovaj rizik je pojačan činjenicom da Bitcoin, kao i svaka druga vredna imovina, privlači pažnju lopova.
+Istina je da mnoge naše lične podatke već poveravamo privatnim kompanijama. Međutim, rizik ovde je dvostruk, jer ovi podaci ne samo da vas identifikuju, već su i povezani sa aktivnostima na Bitcoin-u. Zaista, kada haker dobije pristup podacima korisnika neke platforme za trgovinu, može razumno pretpostaviti da ti korisnici poseduju bitkoine. Ovaj rizik je pojačan činjenicom da Bitcoin, kao i svaka druga vredna imovina, privlači pažnju lopova.
 
 
 U slučaju curenja podataka, u najboljem slučaju mogli biste biti meta ciljanih pokušaja phishinga. U najgorem slučaju, mogli biste se naći u centru fizičkih pretnji vašem domu.
 
 
-Pored specifičnih rizika povezanih sa Bitcoin, postoje i opasnosti povezane sa prenosom identifikacionih dokumenata. Zaista, u slučaju curenja podataka, moguće je postati žrtva krađe identiteta. Dakle, ulozi nisu ograničeni samo na zaštitu poverljivosti transakcija, već se tiču i lične sigurnosti svake osobe.
+Pored specifičnih rizika povezanih sa Bitcoin-om, postoje i opasnosti povezane sa prenosom identifikacionih dokumenata. Zaista, u slučaju curenja podataka, moguće je postati žrtva krađe identiteta. Dakle, ulozi nisu ograničeni samo na zaštitu poverljivosti transakcija, već se tiču i lične sigurnosti svake osobe.
 
 
-### Neke unapred stvorene ideje o KYC
+### Neka unapred formirana mišljenja o KYC-u
 
 
 Važno je dekonstruisati neke od unapred stvorenih ideja o KYC koje često srećemo na Twitteru ili u našim razmenama između bitkoinaša.
 
 
-Prvo, netačno je misliti da je zaštita vaše privatnosti za Bitcoine stečene putem KYC besmislena. Alati i metode privatnosti na Bitcoin su raznovrsni i služe različitim svrhama. Korišćenje CoinJoin transakcija na Bitcoinima stečenim putem KYC, na primer, nije loša ideja. Naravno, morate biti oprezni sa regulisanim Exchange platformama kako biste izbegli zamrzavanje ili zabranu vašeg naloga, ali sa strogo tehničke tačke gledišta, ove prakse nisu nespojive. CoinJoin ima efekat prekidanja istorije novčića, pomažući vam da osujetite određene rizike analize lanca povezane sa KYC. Iako ne eliminiše sve rizike, predstavlja značajnu korist.
+Prvo, netačno je misliti da je zaštita privatnosti za bitkoine stečene putem KYC-a besmislena. Alati i metode privatnosti na Bitcoin-u su raznovrsni i služe različitim svrhama. Korišćenje CoinJoin transakcija na bitkoinima stečenim putem KYC, na primer, nije loša ideja. Naravno, morate biti oprezni sa regulisanim platformama za trgovinu kako biste izbegli zamrzavanje ili zabranu vašeg naloga, ali sa strogo tehničke tačke gledišta, ove prakse nisu nespojive. CoinJoin ima efekat prekidanja istorijata novčića, pomažući vam da osujetite određene rizike analize lanca povezane sa KYC-em. Iako ne eliminiše sve rizike, predstavlja značajnu korist.
 
 
 ![BTC204](assets/fr/080.webp)
 
 
-Poverljivost na Bitcoin ne treba posmatrati na binaran način, kao razliku između "anonimnih" bitkoina i onih koji to nisu. Posedovanje Bitkoina stečenih putem KYC ne znači da je sve izgubljeno; naprotiv, korišćenje alata za poverljivost može se pokazati još korisnijim.
+Poverljivost na Bitcoin-u ne treba posmatrati na binaran način, kao razliku između "anonimnih" bitkoina i onih koji to nisu. Posedovanje Bitkoina stečenih putem KYC ne znači da je sve izgubljeno; naprotiv, korišćenje alata za poverljivost može se pokazati još korisnijim.
 
 
-Suprotno tome, sticanje Bitcoin putem metode bez KYC ne garantuje savršenu poverljivost, niti vas oslobađa potrebe za preduzimanjem drugih zaštitnih mera. Ako posedujete Bitcoin bez KYC, ali više puta koristite iste adrese za primanje, vaše transakcije mogu biti praćene i objedinjene. Najmanja veza sa svetom van Bitcoin mogla bi ugroziti jedini Layer poverljivosti koji imate. Zato je važno razmotriti sve alate i metode za poboljšanje privatnosti na Bitcoin kao komplementarne. Svaka tehnika rešava specifičan rizik i može dodati dodatni Layer zaštite. Dakle, posedovanje Bitcoin bez KYC ne znači da ne treba da preduzimate druge mere predostrožnosti.
+Suprotno tome, sticanje Bitcoin-a putem metode bez KYC ne garantuje savršenu poverljivost, niti vas oslobađa potrebe za preduzimanjem drugih zaštitnih mera. Ako posedujete Bitcoin bez KYC-ija, ali više puta koristite iste adrese za primanje, vaše transakcije mogu biti praćene i objedinjene. Najmanja veza sa svetom van Bitcoin-a mogla bi ugroziti jedini sloj poverljivosti koji imate. Zato je važno razmotriti sve alate i metode za poboljšanje privatnosti na Bitcoin-u kao komplementarne. Svaka tehnika rešava specifičan rizik i može dodati dodatni sloj zaštite. Dakle, posedovanje Bitcoin-a bez KYC ne znači da ne treba da preduzimate druge mere predostrožnosti.
 
 
 ### Može li KYC biti otkazan?
@@ -1926,10 +1926,10 @@ Suprotno tome, sticanje Bitcoin putem metode bez KYC ne garantuje savršenu pove
 Ponekad me pitaju da li je moguće "vratiti se" nakon obavljanja KYC-a, i kao što možete zamisliti iz prethodnih pasusa, odgovor je nijansiran. Najjednostavniji način da se izbegnu rizici povezani sa KYC-om je da ga ne koristite prilikom nabavke bitkoina. O ovoj temi ćemo detaljnije govoriti u sledećem poglavlju. Međutim, ako je KYC već obavljen i bitkoini kupljeni, da li postoje načini za ublažavanje uključenih rizika?
 
 
-Kada je u pitanju rizik praćenja vaših transakcija, korišćenje CoinJoin je rešenje. Detaljno ćemo razmotriti ovu metodu kasnije u kursu, ali treba da znate da CoinJoin omogućava prekid istorije novčića i sprečava njegovo praćenje prošlost-sadašnjost i sadašnjost-prošlost. Čak i za BTC dobijen putem regulisane platforme, ova tehnika može sprečiti njihovu praćenost.
+Kada je u pitanju rizik praćenja vaših transakcija, korišćenje CoinJoin-a je rešenje. Detaljno ćemo razmotriti ovu metodu kasnije u kursu, ali treba da znate da CoinJoin omogućava prekid istorije novčića i sprečava njegovo praćenje prošlost-sadašnjost i sadašnjost-prošlost. Čak i za BTC dobijen putem regulisane platforme, ova tehnika može sprečiti njihovu praćenost.
 
 
-Međutim, CoinJoin ne uklanja drugi rizik povezan sa KYC: činjenicu da država može biti obaveštena o vašem posedovanju bitkoina. Zaista, čak i ako vaši novčići više nisu uočljivi, država, u zavisnosti od jurisdikcije, može imati pristup vašim deklaracijama o transferu kripto-imovine. Kako ovaj rizik nije tehnički, već administrativni, ne postoje specifična Bitcoin rešenja za njegovo eliminisanje, osim da se u prvom redu ne izlažete KYC. Jedini legalni pristup za ublažavanje ovog rizika je prodaja na regulisanim platformama vaših Bitkoina stečenih putem regulisanih platformi, a zatim njihova ponovna kupovina putem sredstava bez KYC. Prodajom i deklarisanjem transfera, vlasti bi trebalo da vide da ih više ne posedujete.
+Međutim, CoinJoin ne uklanja drugi rizik povezan sa KYC-ijem: činjenicu da država može biti obaveštena o vašem posedovanju bitkoina. Zaista, čak i ako vaši novčići više nisu uočljivi, država, u zavisnosti od jurisdikcije, može imati pristup vašim deklaracijama o transferu kripto-imovine. Kako ovaj rizik nije tehnički, već administrativni, ne postoje specifična Bitcoin rešenja za njegovo eliminisanje, osim da se u prvom redu ne izlažete KYC-iju. Jedini legalni pristup za ublažavanje ovog rizika je prodaja na regulisanim platformama vaših Bitkoina stečenih putem regulisanih platformi, a zatim njihova ponovna kupovina putem sredstava bez KYC. Prodajom i deklarisanjem transfera, vlasti bi trebalo da vide da ih više ne posedujete.
 
 
 Što se tiče rizika od curenja vaših ličnih podataka i identifikacionih dokumenata, ovo je opasnost koja je spoljašnja u odnosu na Bitcoin, i ne postoji tehničko rešenje da se to izbegne. Kada su vaši podaci otkriveni, teško je poništiti operaciju. Možete pokušati da zatvorite svoj nalog na platformi, ali to ne garantuje brisanje vaših KYC podataka, naročito kada je verifikacija identiteta eksternalizovana. Verifikacija potpunog brisanja vaših informacija je nemoguća. Stoga ne postoji rešenje da se ovaj rizik potpuno spreči i osigura da više ne postoji.
@@ -1938,31 +1938,31 @@ Međutim, CoinJoin ne uklanja drugi rizik povezan sa KYC: činjenicu da država 
 ### Razlika između KYC i identifikacije ključa
 
 
-Ponekad, neki bitkoineri imaju tendenciju da prošire pojam "KYC" na bilo koji BTC Exchange koji uključuje bankovni transfer ili plaćanje kreditnom karticom, jer ovi načini takođe mogu otkriti poreklo plaćanja, baš kao što bi to učinio KYC. Međutim, KYC ne treba mešati sa identifikacijom ključa. Na ličnom nivou, moram priznati da se moje shvatanje ove teme razvijalo tokom vremena.
+Ponekad, neki bitkoineri imaju tendenciju da prošire pojam "KYC" na bilo koju BTC platformu koja uključuje bankovni transfer ili plaćanje kreditnom karticom, jer ovi načini takođe mogu otkriti poreklo plaćanja, baš kao što bi to učinio KYC. Međutim, KYC ne treba mešati sa identifikacijom ključa. Na ličnom nivou, moram priznati da se moje shvatanje ove teme razvijalo tokom vremena.
 
 
-KYC se posebno odnosi na regulatorni postupak koji sprovode određene kompanije kako bi verifikovale i registrovale identitet svojih klijenata. To je binarna stvar: prilikom sticanja bitkoina, ili radite KYC, ili ne. Međutim, identifikacija ključa, koja se tiče veze između aspekta identiteta korisnika i aktivnosti na lancu, nije tako binarna, već predstavlja kontinuum. Zaista, u kontekstu sticanja ili prenosa Bitcoin, takva identifikacija je uvek moguća u različitim stepenima.
+KYC se posebno odnosi na regulatorni postupak koji sprovode određene kompanije kako bi verifikovale i registrovale identitet svojih klijenata. To je binarna stvar: prilikom sticanja bitkoina, ili radite KYC, ili ne. Međutim, identifikacija ključa, koja se tiče veze između identiteta korisnika i aktivnosti na lancu, nije tako binarna, već predstavlja kontinuum. Zaista, u kontekstu sticanja ili prenosa bitkoina, takva identifikacija je uvek moguća u različitim stepenima.
 
 
-Na primer, ako kupite bitkoine na regulisanoj platformi u Švajcarskoj, KYC nije potreban. Međutim, vaši ključevi mogu biti identifikovani, jer je kupovina obavljena putem vašeg bankovnog računa. Ovde se prva dva rizika povezana sa KYC - olakšavanje praćenja na lancu i izloženost državnom nadzoru - takođe mogu manifestovati u Exchange bez KYC. Ako švajcarski entitet prijavi sumnjive transakcije vlastima u vašoj zemlji, oni mogu jednostavno proveriti bankovni račun korišćen za kupovinu kako bi otkrili vaš identitet. Dakle, kupovina bez KYC na regulisanim platformama je prilično visoko na skali rizika za identifikaciju ključeva.
+Na primer, ako kupite bitkoine na regulisanoj platformi u Švajcarskoj, KYC nije potreban. Međutim, vaši ključevi mogu biti identifikovani, jer je kupovina obavljena putem vašeg bankovnog računa. Ovde se prva dva rizika povezana sa KYC - olakšavanje praćenja na lancu i izloženost državnom nadzoru - takođe mogu manifestovati i kod platforme za trgovinu BTC bez KYC. Ako švajcarski entitet prijavi sumnjive transakcije vlastima u vašoj zemlji, oni mogu jednostavno proveriti bankovni račun korišćen za kupovinu kako bi otkrili vaš identitet. Dakle, kupovina bez KYC na regulisanim platformama je prilično visoko na skali rizika za identifikaciju ključeva.
 
 
 ![BTC204](assets/fr/081.webp)
 
 
-Međutim, izbegavanje regulisanih platformi i odlučivanje za metode nabavke P2P ne eliminiše u potpunosti rizik od identifikacije ključa, već ga samo smanjuje. Uzmimo za primer kupovinu na Bisq ili nekoj drugoj P2P platformi. Da biste platili svojoj suprotnoj strani, verovatno ćete koristiti svoj bankovni račun. Ako vlasti ispitaju osobu sa kojom ste trgovali i zatraže vaše ime, vraćamo se na rizike 1 i 2. Iako su ovi rizici mnogo manji nego kada kupujete na platformi bez KYC, i još manji nego kada kupujete sa KYC, oni su i dalje prisutni u manjoj meri.
+Međutim, izbegavanje regulisanih platformi i odlučivanje za metode nabavke P2P ne eliminiše u potpunosti rizik od identifikacije ključa, već ga samo smanjuje. Uzmimo za primer kupovinu na Bisq ili nekoj drugoj P2P platformi. Da biste platili svojoj suprotnoj strani, verovatno ćete koristiti svoj bankovni račun. Ako vlasti ispitaju osobu sa kojom ste trgovali i zatraže vaše ime, vraćamo se na rizike 1 i 2. Iako su ovi rizici mnogo manji nego kada kupujete na platformi bez KYC-ija, i još manji nego kada kupujete sa KYC-ijem, oni su i dalje prisutni u manjoj meri.
 
 
 ![BTC204](assets/fr/082.webp)
 
 
-Konačno, čak i ako nabavite svoje bitkoine putem fizičkog Exchange za gotovinu, niste potpuno anonimni. Osoba s kojom ste razmenili je videla vaše lice, što je deo vašeg identiteta. Iako minimalna u ovom primeru, i dalje postoji mogućnost ključne identifikacije.
+Konačno, čak i ako nabavite svoje bitkoine putem fizičke razmene za gotovinu, niste potpuno anonimni. Osoba s kojom ste razmenili je videla vaše lice, što je deo vašeg identiteta. Iako minimalna u ovom primeru, i dalje postoji mogućnost identifikacije ključa.
 
 
 ![BTC204](assets/fr/083.webp)
 
 
-U zaključku, kada se bitkoini razmenjuju za druge asete, bilo da je to kupovina u državnoj valuti ili prodaja za stvarnu robu, uvek postoji neki oblik ključne identifikacije. U zavisnosti od izabrane Exchange metode, ova identifikacija može varirati u intenzitetu. Važno je ne mešati ovu identifikaciju sa KYC, koji je jasno definisan regulatorni proces. Međutim, postoji veza između KYC i spektra identifikacije, jer se KYC nalazi na višem kraju spektra, pošto sistematski olakšava identifikaciju korisničkih ključeva od strane vlasti.
+U zaključku, kada se bitkoini razmenjuju za druge asete, bilo da je to kupovina u državnoj valuti ili prodaja za stvarnu robu, uvek postoji neki oblik identifikacije ključa. U zavisnosti od izabrane metode za razmenu, ova identifikacija može varirati u intenzitetu. Važno je ne mešati ovu identifikaciju sa KYC, koji je jasno definisan regulatorni proces. Međutim, postoji veza između KYC i spektra identifikacije, jer se KYC nalazi na višem kraju spektra, pošto sistematski olakšava identifikaciju korisničkih ključeva od strane vlasti.
 
 
 ## Metode prodaje i akvizicije
@@ -1972,19 +1972,19 @@ U zaključku, kada se bitkoini razmenjuju za druge asete, bilo da je to kupovina
 
 
 
-Nakon čitanja prethodnog poglavlja, možda se pitate kako možete kupiti ili prodati Bitcoin bez potrebe za postupkom verifikacije identiteta, kako biste izbegli rizike povezane sa KYC. Postoji nekoliko načina za trgovinu Bitcoin.
+Nakon čitanja prethodnog poglavlja, možda se pitate kako možete kupiti ili prodati Bitcoin bez potrebe za postupkom verifikacije identiteta, kako biste izbegli rizike povezane sa KYC-ijem. Postoji nekoliko načina za trgovinu bitkoinima.
 
 
 ### P2P razmene gotovine
 
 
-Kao što smo videli, najbolja metoda u smislu poverljivosti ostaje P2P (osoba-osoba) Exchange sa gotovinskim poravnanjem. Ova metoda vam omogućava da minimizirate tragove koji ostaju, i znatno smanjuje mogućnost identifikacije ključa, bilo da kupujete ili prodajete.
+Kao što smo videli, najbolja metoda u smislu poverljivosti ostaje P2P (osoba-osoba) razmena sa gotovinskim poravnanjem. Ova metoda vam omogućava da minimizirate tragove koji ostaju, i znatno smanjuje mogućnost identifikacije ključa, bilo da kupujete ili prodajete.
 
 
 ![BTC204](assets/fr/084.webp)
 
 
-Ipak, postoje rizici po ličnu sigurnost. Glavna opasnost leži u činjenici da će, tokom Exchange, druga strana znati da imate veliku sumu novca, bilo u gotovini ili u bitkoinima. Ova informacija može privući pažnju zlonamernih osoba. Zaista, generalno je preporučljivo biti diskretan u vezi sa vašim Bitcoin sredstvima. Ovaj savet se takođe može primeniti na gotovinu. Međutim, prilikom lične razmene, neizbežno je otkriti da posedujete bitkoine, što može privući neželjenu pažnju.
+Ipak, postoje rizici po ličnu sigurnost. Glavna opasnost leži u činjenici da će, tokom razmene, druga strana znati da imate veliku sumu novca, bilo u gotovini ili u bitkoinima. Ova informacija može privući pažnju zlonamernih osoba. Zaista, generalno je preporučljivo biti diskretan u vezi sa vašim Bitcoin sredstvima. Ovaj savet se takođe može primeniti na gotovinu. Međutim, prilikom lične razmene, neizbežno je otkriti da posedujete bitkoine, što može privući neželjenu pažnju.
 
 
 ![BTC204](assets/fr/085.webp)
@@ -1999,7 +1999,7 @@ Da biste ograničili ovaj rizik, savetovao bih vam da favorizujete gotovinske tr
 Razmena gotovine takođe može predstavljati pravne rizike u slučaju policijskih ili drugih provera. Iako u većini zemalja ne postoje ograničenja u pogledu količine gotovine koju možete nositi sa sobom, prekomerne količine mogu izazvati sumnju. Zato budite oprezni, posebno ako morate putovati na velike udaljenosti, i izbegavajte obavljanje previše velikih transakcija odjednom, kako ne biste morali da opravdavate posedovanje velikih suma.
 
 
-Konačno, još jedan nedostatak kupovine P2P je što je cena često viša nego na regulisanim platformama. Prodavci često naplaćuju maržu koja se kreće od 1% do ponekad više od 10%. Postoji nekoliko razloga za ovu razliku u ceni. Prvo, ovo je uobičajena praksa među prodavcima P2P koja se vremenom ustalila. Drugo, prodavci imaju naknade povezane sa transakcijom za slanje sredstava kupcu. Takođe, postoji povećan rizik od krađe u prodaji P2P u poređenju sa transakcijama na platformama, što opravdava kompenzaciju za preuzeti rizik. Na kraju, dodatni trošak može biti povezan sa potražnjom i kvalitetom Exchange u smislu poverljivosti. Kao kupac, dobitak u poverljivosti ima cenu koja se odražava u marži koju primenjuje prodavac. Neki bitkoineri takođe veruju da cena marže BTC kupljenog na P2P odražava njegovu pravu cenu, i tvrde da su niže cene na regulisanim platformama rezultat kompromisa u vezi sa poverljivošću vaših ličnih podataka.
+Konačno, još jedan nedostatak kupovine P2P je što je cena često viša nego na regulisanim platformama. Prodavci često naplaćuju maržu koja se kreće od 1% do ponekad više od 10%. Postoji nekoliko razloga za ovu razliku u ceni. Prvo, ovo je uobičajena praksa među prodavcima P2P koja se vremenom ustalila. Drugo, prodavci imaju naknade povezane sa transakcijom za slanje sredstava kupcu. Takođe, postoji povećan rizik od krađe u prodaji P2P u poređenju sa transakcijama na platformama, što opravdava kompenzaciju za preuzeti rizik. Na kraju, dodatni trošak može biti povezan sa potražnjom i kvalitetom razmene u smislu poverljivosti. Kao kupac, dobitak u poverljivosti ima cenu koja se odražava u marži koju primenjuje prodavac. Neki bitkoineri takođe veruju da cena marže BTC kupljenog na P2P odražava njegovu pravu cenu, i tvrde da su niže cene na regulisanim platformama rezultat kompromisa u vezi sa poverljivošću vaših ličnih podataka.
 
 
 ![BTC204](assets/fr/086.webp)
