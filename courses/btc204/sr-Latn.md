@@ -2350,28 +2350,28 @@ Pored svih ovih dobrih praksi koje treba primenjivati svakodnevno, postoje i jo�
 
 
 
-Nakon što smo proučili osnove zaštite privatnosti, sada ćemo pogledati sofisticiranije tehnike usmerene na aktivnu odbranu vaše poverljivosti, posebno razdvajanjem vaše Bitcoin istorije. U sledećem delu, razmotrićemo čitav niz malih tehnika, ali prvo bih želeo da vam kažem nešto o CoinJoin.
+Nakon što smo proučili osnove zaštite privatnosti, sada ćemo pogledati sofisticiranije tehnike usmerene na aktivnu odbranu vaše poverljivosti, posebno razdvajanjem vaše Bitcoin istorije. U sledećem delu, razmotrićemo čitav niz malih tehnika, ali prvo bih želeo da vam kažem nešto o CoinJoin-u.
 
 
-CoinJoin se često smatra najefikasnijom metodom zaštite privatnosti korisnika Bitcoin. Ali šta tačno predstavlja transakcija CoinJoin? Hajde da saznamo.
+CoinJoin se često smatra najefikasnijom metodom zaštite privatnosti Bitcoin korisnika. Ali šta tačno predstavlja transakcija CoinJoin? Hajde da saznamo.
 
 
-### Osnovni principi CoinJoin
+### Osnovni principi CoinJoin-a
 
 
-CoinJoin je tehnika za razbijanje praćenja Bitcoin na Blockchain. Zasniva se na kolaborativnoj transakciji sa specifičnom strukturom istog imena: CoinJoin transakcija.
+CoinJoin je tehnika za razbijanje praćenja bitkoina na blokčejnu. Zasniva se na kolaborativnoj transakciji sa specifičnom strukturom istog imena: CoinJoin transakcija.
 
 
-Kao što smo videli u prvim delovima ovog kursa, Bitcoin transakcije su poznate svim korisnicima putem njihovog čvora. Stoga je lako proveriti lanac elektronskih potpisa svakog novčića i posmatrati njegovu istoriju. To znači da svi korisnici mogu pokušati da analiziraju transakcije drugih korisnika. Kao rezultat, anonimnost na nivou transakcija je nemoguća. Međutim, anonimnost se čuva na nivou individualne identifikacije. Za razliku od konvencionalnog bankarskog sistema, gde je svaki račun povezan sa ličnim identitetom, na Bitcoin, sredstva su povezana sa kriptografskim parovima ključeva (ili skriptama), nudeći korisnicima oblik pseudonimnosti iza kriptografskih identifikatora.
+Kao što smo videli u prvim delovima ovog kursa, Bitcoin transakcije su poznate svim korisnicima putem njihovog čvora. Stoga je lako proveriti lanac elektronskih potpisa svakog novčića i posmatrati njegovu istoriju. To znači da svi korisnici mogu pokušati da analiziraju transakcije drugih korisnika. Kao rezultat, anonimnost na nivou transakcija je nemoguća. Međutim, anonimnost je sačuvana na nivou identifikacije pojedinca. Za razliku od konvencionalnog bankarskog sistema, gde je svaki račun povezan sa ličnim identitetom, na Bitcoin-u, sredstva su povezana sa kriptografskim parovima ključeva (ili skriptama), nudeći korisnicima oblik pseudonimnosti iza kriptografskih identifikatora.
 
 
 ![BTC204](assets/fr/103.webp)
 
 
-Poverljivost Bitcoin je ugrožena kada spoljašnji posmatrači mogu da povežu specifične UTXO-e sa identifikovanim korisnicima. Kada se ova povezanost uspostavi, postaje moguće pratiti njihove transakcije i analizirati njihovu istoriju Bitcoin. CoinJoin je upravo tehnika razvijena da prekine mogućnost praćenja UTXO-a, kako bi korisnicima Bitcoin ponudio određeni Layer nivo poverljivosti na nivou transakcija.
+Poverljivost bitkoina je ugrožena kada spoljašnji posmatrači mogu da povežu specifične UTXO-e sa identifikovanim korisnicima. Kada se ova povezanost uspostavi, postaje moguće pratiti njihove transakcije i analizirati njihovu Bitcoin istoriju. CoinJoin je upravo tehnika razvijena da prekine mogućnost praćenja UTXO-a, kako bi se Bitcoin korisnicima ponudio određeni nivo poverljivosti na nivou transakcija.
 
 
-Coinjoins pojačavaju poverljivost korisnika Bitcoin tako što čine analizu lanca složenijom za spoljne posmatrače. Njihova struktura omogućava da se više novčića od različitih korisnika spoji u jednu transakciju, zamagljujući linije i otežavajući određivanje veza između ulaznih i izlaznih adresa.
+Coinjoins pojačavaju poverljivost Bitcoin korisnika tako što čine analizu lanca složenijom za spoljne posmatrače. Njihova struktura omogućava da se više novčića od različitih korisnika spoji u jednu transakciju, zamagljujući linije i otežavajući određivanje veza između ulaznih i izlaznih adresa.
 
 
 Važno je razumeti da je cilj CoinJoin transakcije da prekine istoriju novčića. Ova tehnika ne pruža trajnu anonimnost niti definitivno blokira Bitcoin praćenje, suprotno onome što biste mogli misliti. CoinJoin ima za cilj samo da prekine istoriju na tački gde se CoinJoin transakcija obavlja. Međutim, pre i posle ove operacije, novčić ostaje podložan istim rizicima u pogledu poverljivosti.
@@ -2383,24 +2383,24 @@ Važno je razumeti da je cilj CoinJoin transakcije da prekine istoriju novčića
 ### Kako funkcionišu coinjoin transakcije?
 
 
-Princip CoinJoin zasnovan je na kolaborativnom pristupu: nekoliko korisnika koji žele da mešaju svoje bitkoine deponuju identične iznose kao ulaze u istu transakciju. Ti iznosi se zatim preraspodeljuju u izlaze jednake vrednosti svakom korisniku.
+CoinJoin princip zasnovan je na kolaborativnom pristupu: nekoliko korisnika koji žele da mešaju svoje bitkoine deponuju identične iznose kao ulaze u istu transakciju. Ti iznosi se zatim preraspodeljuju u izlaze jednake vrednosti svakom korisniku.
 
 
 ![BTC204](assets/fr/105.webp)
 
 
-Na kraju transakcije, postaje nemoguće povezati određeni izlaz sa korisnikom poznatim kao ulaz. Ne postoji direktna veza između ulaza i izlaza, što prekida povezanost između korisnika i njihovih UTXO-a, kao i istoriju svakog dela.
+Na kraju transakcije, postaje nemoguće povezati određeni izlaz sa ulazom poznatog korisnika. Ne postoji direktna veza između ulaza i izlaza, što prekida povezanost između korisnika i njihovih UTXO-a, kao i istoriju svakog UTXO-a.
 
 
 ![BTC204](assets/fr/106.webp)
 
 
-Hajde da uzmemo Alisin primer. Ona želi da pošalje oko 100,000 Sats svojoj sestri Ivi za njen rođendan. Međutim, Alisa ne želi da Iva može da prati njenu istoriju transakcija, jer ne želi da otkrije koliko bitkoina ima ili kako ih je dobila. U tu svrhu, Alisa odlučuje da prekine svoju UTXO istoriju sa CoinJoin transakcijom. Ona se organizuje sa Bobom, Čarlsom, Dejvidom i Frenkom da sprovedu kolaborativnu transakciju:
+Hajde da uzmemo Alisin primer. Ona želi da pošalje oko 100,000 Sats-a svojoj sestri Ivi za njen rođendan. Međutim, Alisa ne želi da Iva može da prati njenu istoriju transakcija, jer ne želi da otkrije koliko bitkoina ima ili kako ih je dobila. U tu svrhu, Alisa odlučuje da prekine svoju UTXO istoriju sa CoinJoin transakcijom. Ona se organizuje sa Bobom, Čarlsom, Dejvidom i Frenkom da sprovedu kolaborativnu transakciju:
 
 
 
 
-- Alisa, Bob, Čarls, Dejvid i Frenk svaki unose UTXO od 105,000 Sats (sa 5,000 Sats za Mining naknade) kao ulaze u transakciju:
+- Alis, Bob, Čarls, Dejvid i Frenk unose UTXO-e od 105,000 Sats (sa 5,000 Sats kao naknade za rudare) kao ulaze u transakciju:
 
 
 ![BTC204](assets/fr/107.webp)
@@ -2408,7 +2408,7 @@ Hajde da uzmemo Alisin primer. Ona želi da pošalje oko 100,000 Sats svojoj ses
 
 
 
-- U zamenu za konzumiranje ovih ulaza, svaki generiše prazan Address da bi stvorio pet identičnih izlaza od po 100.000 Sats. Svaki preuzima jedan izlaz:
+- U zamenu za konzumiranje ovih ulaza, svaki generiše praznu adresu da bi stvorio pet identičnih izlaza od po 100.000 Sats-a. Svaki preuzima jedan izlaz:
 
 
 ![BTC204](assets/fr/108.webp)
@@ -2416,7 +2416,7 @@ Hajde da uzmemo Alisin primer. Ona želi da pošalje oko 100,000 Sats svojoj ses
 
 
 
-- Alice se nalazi sa UTXO od 100,000 Sats čija je istorija pomešana. Ona koristi ovaj UTXO u novoj transakciji da pošalje iznos Evi za njen rođendan:
+- Alisa ima UTXO od 100,000 Sats-a čija je istorija sada pomešana. Ona koristi ovaj UTXO u novoj transakciji da pošalje iznos Evi za njen rođendan:
 
 
 ![BTC204](assets/fr/109.webp)
@@ -2424,21 +2424,21 @@ Hajde da uzmemo Alisin primer. Ona želi da pošalje oko 100,000 Sats svojoj ses
 
 
 
-- Ako Eva pokuša da analizira ovu transakciju kako bi izvukla informacije, suočiće se sa transakcijom CoinJoin koja uključuje Alisu, Boba, Čarlsa, Davida i Frenka. Zbog uniformnosti iznosa, Eva neće moći da razlikuje koji ulaz pripada kome, te neće moći da prati Alisinu UTXO istoriju, niti da utvrdi koliko bitkoina njena sestra poseduje ili kako ih je stekla:
+- Ako Eva pokuša da analizira ovu transakciju kako bi izvukla informacije, suočiće se sa CoinJoin transakcijom koja uključuje Alisu, Boba, Čarlsa, Davida i Frenka. Zbog uniformnosti iznosa, Eva neće moći da razlikuje koji ulaz pripada kome, te neće moći da prati Alisinu UTXO istoriju, niti da utvrdi koliko bitkoina njena sestra poseduje ili kako ih je stekla:
 
 
 ![BTC204](assets/fr/110.webp)
 
 
-U ovom slučaju, Alisa je koristila tehniku CoinJoin kako bi povećala poverljivost u vezi sa retrospektivnom analizom. U suštini, Alisa se štiti od moguće analize od strane Eve, koja bi počela od određene transakcije i radila unazad kroz istoriju UTXO. Ova zaštita od analize od sadašnjosti ka prošlosti poznata je kao retrospektivni anonset. O ovom konceptu ćemo detaljnije govoriti u završnim poglavljima ovog odeljka.
+U ovom slučaju, Alisa je koristila tehniku CoinJoin kako bi povećala poverljivost u vezi sa retrospektivnom analizom. U suštini, Alisa se štiti od moguće analize od strane Eve, koja bi počela od određene transakcije i radila unazad kroz istoriju UTXO-a. Ova zaštita od analize od sadašnjosti ka prošlosti poznata je kao retrospektivni anonset. O ovom konceptu ćemo detaljnije govoriti u završnim poglavljima ovog odeljka.
 
 
-Međutim, CoinJoin takođe nudi mogućnost jačanja poverljivosti u svetlu analize od prošlosti ka sadašnjosti, poznate kao prospektivni anonset. Vratimo se našem primeru gde je Alisa poslala Evi 98,000 Sats za njen rođendan, ali sa obrnutim ulogama. Sada zamislimo da je Eva ta koja je zabrinuta za svoju privatnost. Zaista, Alisa bi mogla biti u iskušenju da prati novčić koji je poslala Evi kako bi iz njega izvukla informacije. Eva bi mogla konsolidovati ovaj UTXO koji je upravo primila sa svim svojim drugim UTXO-ima, što bi Alisi moglo otkriti količinu bitkoina koje ima u svom Wallet. Da bi to izbegla, Eva takođe može prekinuti istoriju novčića koji je upravo primila:
+Međutim, CoinJoin takođe nudi mogućnost jačanja poverljivosti u svetlu analize od prošlosti ka sadašnjosti, poznate kao prospektivni anonset. Vratimo se našem primeru gde je Alisa poslala Evi 98,000 Sats za njen rođendan, ali sa obrnutim ulogama. Sada zamislimo da je Eva ta koja je zabrinuta za svoju privatnost. Zaista, Alisa bi mogla biti u iskušenju da prati novčić koji je poslala Evi kako bi iz njega izvukla informacije. Eva bi mogla konsolidovati ovaj UTXO koji je upravo primila sa svim svojim drugim UTXO-ima, što bi Alisi moglo otkriti količinu bitkoina koje ima u svom novčaniku. Da bi to izbegla, Eva takođe može prekinuti istoriju novčića koji je upravo primila:
 
 
 
 
-- Eve, Grace, Mallory, Oscar i Victor su svaki uneli UTXO od 98,000 Sats kao ulaz u Bitcoin transakciju:
+- Eva, Grace, Mallory, Oscar i Victor su svaki uneli UTXO od 98,000 Sat-as kao ulaz u Bitcoin transakciju:
 
 
 ![BTC204](assets/fr/111.webp)
@@ -2446,7 +2446,7 @@ Međutim, CoinJoin takođe nudi mogućnost jačanja poverljivosti u svetlu anali
 
 
 
-- U zamenu za korišćenje ovih ulaza, svaki korisnik obezbeđuje prazan Address koji će se koristiti za kreiranje 5 izlaza od 97.500 potpuno jednakih Sats. Svaki korisnik dobija jedan izlaz:
+- U zamenu za korišćenje ovih ulaza, svaki korisnik obezbeđuje praznu adresu koja će se koristiti za kreiranje 5 izlaza od potpuno jednakih 97.500 Sats-a. Svaki korisnik dobija jedan izlaz:
 
 
 ![BTC204](assets/fr/112.webp)
@@ -2454,13 +2454,13 @@ Međutim, CoinJoin takođe nudi mogućnost jačanja poverljivosti u svetlu anali
 
 
 
-- Eve sada drži UTXO od 97,500 Sats čija je istorija prekinuta. Može ga koristiti bez straha za obavljanje budućih transakcija. Zaista, ako Alisa pokuša da prati bitkoine koje je poslala Evi, suočiće se sa CoinJoin transakcijom. Neće moći da odredi koji odlazni UTXO pripada Evi. Analiza postaje nemoguća:
+- Eva sada drži UTXO od 97,500 Sats-a čija je istorija prekinuta. Može ga koristiti bez straha za obavljanje budućih transakcija. Zaista, ako Alisa pokuša da prati bitkoine koje je poslala Evi, suočiće se sa CoinJoin transakcijom. Neće moći da odredi koji odlazni UTXO pripada Evi. Analiza postaje nemoguća:
 
 
 ![BTC204](assets/fr/113.webp)
 
 
-U prvom primeru, videli smo kako CoinJoin može zaštititi privatnost sobe u odnosu na njenu prošlost, a u drugom primeru, kako može osigurati istoriju sobe u odnosu na njenu budućnost. Zato sam pomenuo da CoinJoin treba posmatrati kao jedinstven događaj koji segmentira deo istorije u oba smera:
+U prvom primeru, videli smo kako CoinJoin može zaštititi privatnost osobe u odnosu na njenu prošlost, a u drugom primeru, kako može osigurati istoriju osobe u odnosu na njenu budućnost. Zato sam pomenuo da CoinJoin treba posmatrati kao jedinstven događaj koji segmentira deo istorije u oba smera:
 
 
 ![BTC204](assets/fr/104.webp)
@@ -2472,13 +2472,13 @@ U prvom primeru, videli smo kako CoinJoin može zaštititi privatnost sobe u odn
 Coinjoins se ponekad opisuju kao "mikseri", termin koji neki bitkoineri odbacuju, plašeći se da bi mogao biti pomešan sa kustodijalnim mikserima. Verujem, međutim, da je ovaj strah neosnovan, jer, u matematičkom kontekstu, CoinJoin upravo oličava koncept mešanja.
 
 
-U opštem polju matematike, mešanje se odnosi na osobinu dinamičkog sistema gde, nakon određenog vremenskog perioda, svi delovi početnog prostora mogu teoretski postati pomešani sa bilo kojim drugim delom. Mešanje implicira da se položaj čestice ili stanje sistema razvija na takav način da je njegova buduća distribucija nezavisna od početne distribucije, dostižući tako stanje u kojem su karakteristike početnog stanja ravnomerno raspoređene kroz prostor sistema. Ovo je tačno ono što se dešava u CoinJoin sa bitcoinima. Dakle, po mom mišljenju, CoinJoin je zaista metoda mešanja novčića.
+U oblasti matematike uopšte, mešanje se odnosi na osobinu dinamičkog sistema gde, nakon određenog vremenskog perioda, svi delovi početnog prostora mogu teoretski postati pomešani sa bilo kojim drugim delom. Mešanje implicira da se položaj čestice ili stanje sistema razvija na takav način da je njegova buduća distribucija nezavisna od početne distribucije, dostižući tako stanje u kojem su karakteristike početnog stanja ravnomerno raspoređene kroz prostor sistema. Ovo je tačno ono što se dešava u CoinJoin sa bitcoinima. Dakle, po mom mišljenju, CoinJoin je zaista metoda mešanja novčića.
 
 
 ![BTC204](assets/fr/114.webp)
 
 
-S druge strane, važno je razlikovati CoinJoin od shufflera. Shuffler je usluga gde korisnici šalju svoje bitcoine da budu pomešani. Ove usluge su bile popularne tokom 2010-ih, ali njihova upotreba je opala zbog dva glavna nedostatka u poređenju sa CoinJoin:
+S druge strane, važno je razlikovati CoinJoin od shufflera. Shuffler je usluga gde korisnici šalju svoje bitcoine da budu pomešani. Ove usluge su bile popularne tokom 2010-ih, ali je njihova upotreba opala zbog dva glavna nedostatka u poređenju sa CoinJoin-om:
 
 
 
@@ -2500,10 +2500,10 @@ Današnji korisnici stoga preferiraju CoinJoin, jer im omogućava da zadrže pot
 
 
 
-Privatnost koju pruža CoinJoin zaslužena je veličinom grupe u kojoj je naš deo skriven. To znači pronalaženje što većeg broja učesnika. Potpuno je moguće kreirati CoinJoin ručno, sa korisnicima koje smo sami pronašli, ali ovo je složen proces i neće vam doneti velike anonsete.
+Privatnost koju pruža CoinJoin obezbeđena je veličinom grupe u kojoj je naš deo skriven. To znači pronalaženje što većeg broja učesnika. Potpuno je moguće kreirati CoinJoin ručno, sa korisnicima koje smo sami pronašli, ali ovo je složen proces i neće vam doneti velike anonsete.
 
 
-Zato su koordinatori CoinJoin razvijeni na Bitcoin. Njihova uloga je da povežu različite korisnike međusobno i prenesu informacije potrebne za završetak kolaborativne transakcije.
+Zato su koordinatori CoinJoin-a razvijeni na Bitcoin-u. Njihova uloga je da povežu različite korisnike međusobno i da prenesu informacije potrebne za završetak kolaborativne transakcije.
 
 
 ![BTC204](assets/fr/116.webp)
@@ -2515,7 +2515,7 @@ Ali kako možemo osigurati da koordinator nikada nema pristup korisničkim bitco
 ### Chaumovi slepi potpisi
 
 
-Moderne implementacije CoinJoin koriste slepe potpise Davida Chauma kako bi izbegle curenje informacija. Hajde da brzo pogledamo kako ovi slepi potpisi funkcionišu.
+Moderne implementacije CoinJoin-a koriste slepe potpise Davida Chauma kako bi izbegle curenje informacija. Hajde da brzo pogledamo kako ovi slepi potpisi funkcionišu.
 
 
 Chaumovi slepi potpisi su oblik digitalnog potpisa u kojem izdavalac potpisa ne zna sadržaj poruke koju potpisuje. Ali potpis se zatim može verifikovati u odnosu na originalnu poruku. Ovu tehniku je razvio kriptograf David Chaum 1983. godine.
@@ -2524,7 +2524,7 @@ Chaumovi slepi potpisi su oblik digitalnog potpisa u kojem izdavalac potpisa ne 
 ![BTC204](assets/fr/117.webp)
 
 
-Uzmimo primer kompanije koja želi da autentifikuje poverljivi dokument, kao što je Contract, bez otkrivanja njegovog sadržaja. Kompanija primenjuje proces maskiranja koji kriptografski transformiše originalni dokument na reverzibilan način. Ovaj modifikovani dokument se šalje sertifikacionoj vlasti, koja stavlja slepi potpis bez poznavanja osnovnog sadržaja. Nakon što primi potpisani dokument, kompanija demaskira potpis. Rezultat je originalni dokument autentifikovan potpisom vlasti, bez da je vlast ikada videla originalni sadržaj.
+Uzmimo primer kompanije koja želi da autentifikuje poverljivi dokument, kao što je ugovor, bez otkrivanja njegovog sadržaja. Kompanija primenjuje proces maskiranja koji kriptografski transformiše originalni dokument na reverzibilan način. Ovaj modifikovani dokument se šalje sertifikacionoj vlasti, koja stavlja slepi potpis bez poznavanja osnovnog sadržaja. Nakon što primi potpisani dokument, kompanija demaskira potpis. Rezultat je originalni dokument autentifikovan potpisom vlasti, bez da je vlast ikada videla originalni sadržaj.
 
 
 Chaumovi slepi potpisi stoga mogu potvrditi autentičnost dokumenta bez poznavanja njegovog sadržaja, čime se garantuje i poverljivost korisničkih podataka i integritet potpisanog dokumenta.
@@ -2536,7 +2536,7 @@ Chaumovi slepi potpisi stoga mogu potvrditi autentičnost dokumenta bez poznavan
 Takozvani "Chaumian" coinjoini kombinuju upotrebu Tor-a i slepih potpisa Davida Chauma kako bi se osiguralo da koordinator ne može znati koji izlaz pripada kojem korisniku.
 
 
-Proces konstruisanja transakcije CoinJoin uključuje 3 glavne faze: registraciju ulaza, registraciju izlaza i potpisivanje transakcije. Pogledajmo ovaj proces kroz primer Alise, jedne od učesnica CoinJoin. Svi ostali učesnici prate iste korake kao Alisa, svaki za sebe.
+Proces konstruisanja transakcije CoinJoin uključuje 3 glavne faze: registraciju ulaza, registraciju izlaza i potpisivanje transakcije. Pogledajmo ovaj proces kroz primer Alise, jedne od učesnica CoinJoin-a. Svi ostali učesnici prate iste korake kao Alisa, svaki za sebe.
 
 
 **Korak 1: Unos registracije
@@ -2544,7 +2544,7 @@ Proces konstruisanja transakcije CoinJoin uključuje 3 glavne faze: registraciju
 
 
 
-- Alis prenosi koordinatoru UTXO koji želi da koristi kao ulaz u transakciju, kao i maskirani prijemni Address koji želi da koristi kao izlaz za primanje svojih bitkoina. Koordinator stoga nema način da sazna Alisin Address. On vidi samo njenu maskiranu verziju:
+- Alis prenosi koordinatoru UTXO koji želi da koristi kao ulaz u transakciju, kao i maskiranu prijemnu adresu koju želi da koristi kao izlaz za primanje svojih bitkoina. Koordinator stoga nema način da sazna Alisin adresu. On vidi samo njenu maskiranu verziju:
 
 
 ![BTC204](assets/fr/118.webp)
@@ -2552,7 +2552,7 @@ Proces konstruisanja transakcije CoinJoin uključuje 3 glavne faze: registraciju
 
 
 
-- Koordinator proverava validnost unosa, zatim potpisuje Alisin maskirani Address svojim privatnim ključem. On vraća slepi potpis Alisi:
+- Koordinator proverava validnost unosa, zatim potpisuje Alisinu maskiranu adresu svojim privatnim ključem. On vraća slepi potpis Alisi:
 
 
 ![BTC204](assets/fr/119.webp)
@@ -2563,7 +2563,7 @@ Proces konstruisanja transakcije CoinJoin uključuje 3 glavne faze: registraciju
 
 
 
-- Alice može da razotkrije svoj Address, sada potpisan privatnim ključem koordinatora. Ona će uspostaviti novu vezu pod drugačijim Tor identitetom. Koordinator ne može da identifikuje da je to Alice koja se povezuje pod ovim novim identitetom:
+- Alisa može da razotkrije svoj adresu, sada potpisan privatnim ključem koordinatora. Ona će uspostaviti novu vezu pod drugačijim Tor identitetom. Koordinator ne može da identifikuje da je to Alisa koja se povezuje sada sa novim identitetom:
 
 
 ![BTC204](assets/fr/120.webp)
@@ -2571,7 +2571,7 @@ Proces konstruisanja transakcije CoinJoin uključuje 3 glavne faze: registraciju
 
 
 
-- Alice šalje nemaskirani Address i potpis koordinatoru (koji još uvek ne zna da je to Alice):
+- Alice šalje nemaskiranu adresu i potpis koordinatoru (koji još uvek ne zna da je to Alisa):
 
 
 ![BTC204](assets/fr/121.webp)
