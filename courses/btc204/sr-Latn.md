@@ -1,13 +1,13 @@
 ---
 name: Privatnost na Bitcoin-u
-goal: Razumite i ovladajte principima zaštite privatnosti prilikom korišćenja Bitcoina
+goal: Razumite principe privatnosti i savladajte njihovu primenu dok koristite Bitcoin
 objectives: 
 
 
-  - Definišite teorijske koncepte potrebne za razumevanje pitanja privatnosti
-  - Identifikujte i ublažite rizike povezane sa gubitkom poverljivosti za Bitcoin korisnike 
-  - Korišćenje metoda i alata za zaštitu vaše privatnosti na Bitcoin-u
-  - Razumeti metode analize lanca i razviti odbrambene strategije
+  - Upoznajte se sa teorijskim konceptima neophodnim za razumevanje privatnosti
+  - Identifikujte i ublažite rizike povezane sa gubitkom poverljivosti kao Bitcoin korisnik
+  - Primena metoda i alata za očuvanje privatnosti u radu sa Bitcoinom
+  - Razumite metode analize blokčejna i razvijte strategije zaštite
 
 
 ---
@@ -2563,7 +2563,7 @@ Proces konstruisanja transakcije CoinJoin uključuje 3 glavne faze: registraciju
 
 
 
-- Alisa može da razotkrije svoj adresu, sada potpisan privatnim ključem koordinatora. Ona će uspostaviti novu vezu pod drugačijim Tor identitetom. Koordinator ne može da identifikuje da je to Alisa koja se povezuje sada sa novim identitetom:
+- Alisa može da razotkrije svoj adresu, sada potpisanu privatnim ključem koordinatora. Ona će uspostaviti novu vezu pod drugačijim Tor identitetom. Sada sa novim identitetom koordinator ne može da identifikuje da je to Alisa koja se povezuje:
 
 
 ![BTC204](assets/fr/120.webp)
@@ -2571,7 +2571,7 @@ Proces konstruisanja transakcije CoinJoin uključuje 3 glavne faze: registraciju
 
 
 
-- Alice šalje nemaskiranu adresu i potpis koordinatoru (koji još uvek ne zna da je to Alisa):
+- Alisa šalje nemaskiranu adresu i potpis koordinatoru (koji još uvek ne zna da je to Alisa):
 
 
 ![BTC204](assets/fr/121.webp)
@@ -2598,16 +2598,16 @@ Proces konstruisanja transakcije CoinJoin uključuje 3 glavne faze: registraciju
 
 
 
-- Nakon prikupljanja potpisa od svih učesnika CoinJoin, koordinator može emitovati transakciju na Bitcoin mreži, kako bi mogla biti dodata u blok.
+- Nakon prikupljanja potpisa od svih učesnika CoinJoin, koordinator može emitovati transakciju na Bitcoin mrežu, kako bi mogla biti dodata u blok.
 
 
 U ovom sistemu, koordinator nije u mogućnosti da poveže ulaz sa specifičnim izlazom. Štaviše, on ne može prisvojiti sredstva učesnika, jer nikada nema pristup privatnim ključevima potrebnim za otključavanje njihovih UTXO-a. Tokom celog procesa, do kraja koraka 3, on takođe nema pristup potpisima. Kada Alisa i ostali učesnici potpišu globalnu transakciju, nakon provere da je sve ispravno, koordinator više ne može da izmeni transakciju, uključujući izlaze, a da je ne učini nevažećom. Ovo sprečava koordinatora da ukrade bitkoine.
 
 
-Konačno, kada registruje svoj izlaz u transakciji, korisnik CoinJoin želi da ima garancije slične onima koje ima građanin prilikom glasanja na izborima. Postoji dualnost između javnih i privatnih aspekata ovih radnji. S jedne strane, tu je ono što želite da zadržite privatnim: za glasača, on ne želi da njegov glasački listić bude povezan sa njegovim identitetom; za korisnika CoinJoin, on ne želi da njegov izlaz bude povezan sa njegovim ulazom. Zaista, ako koordinator, ili bilo koja druga strana, uspe da uspostavi vezu između ulaza i izlaza, CoinJoin gubi svaki interes. Kao što je gore objašnjeno, CoinJoin mora funkcionisati kao prekid u istoriji novčića. Ovaj prekid se dešava upravo zbog nemogućnosti povezivanja određenog ulaza sa određenim izlazom u CoinJoin transakciji (prospektivni anonset) i obrnuto (retrospektivni anonset).
+Konačno, kada registruje svoj izlaz u transakciji, korisnik CoinJoin-a želi da ima garancije slične onima koje ima građanin prilikom glasanja na izborima. Postoji dualnost između javnih i privatnih aspekata ovih radnji. S jedne strane, tu je ono što želite da zadržite privatnim: za glasača, on ne želi da njegov glasački listić bude povezan sa njegovim identitetom; za korisnika CoinJoin, on ne želi da njegov izlaz bude povezan sa njegovim ulazom. Zaista, ako koordinator, ili bilo koja druga strana, uspe da uspostavi vezu između ulaza i izlaza, CoinJoin gubi svaki smisao. Kao što je gore objašnjeno, CoinJoin mora funkcionisati kao prekid u istoriji novčića. Ovaj prekid se dešava upravo zbog nemogućnosti povezivanja određenog ulaza sa određenim izlazom u CoinJoin transakciji (prospektivni anonset) i obrnuto (retrospektivni anonset).
 
 
-S druge strane, tu je javni aspekt: birač želi da bude siguran da je njegov glasački listić ubačen u glasačku kutiju; slično tome, korisnik CoinJoin želi da bude siguran da je njegov izlaz uključen u CoinJoin transakciju. Zaista, učesnici CoinJoin apsolutno moraju biti u mogućnosti da verifikuju prisustvo svog izlaza pre potpisivanja transakcije, inače bi koordinator mogao da ukrade sredstva.
+S druge strane, tu je javni aspekt: birač želi da bude siguran da je njegov glasački listić ubačen u glasačku kutiju; slično tome, korisnik CoinJoin želi da bude siguran da je njegov izlaz uključen u CoinJoin transakciju. Zaista, učesnici CoinJoin-a apsolutno moraju biti u mogućnosti da verifikuju prisustvo svog izlaza pre potpisivanja transakcije, inače bi koordinator mogao da ukrade sredstva.
 
 
 Upravo ova 2 javna i privatna aspekta, omogućena korišćenjem slepih potpisa Davida Chauma, garantuju učesnicima u Chaumian coinjoin-ima da njihovi bitkoini neće biti ukradeni i da njihova sredstva ne mogu biti praćena.
@@ -2616,10 +2616,10 @@ Upravo ova 2 javna i privatna aspekta, omogućena korišćenjem slepih potpisa D
 ### Ko je izumeo koncept CoinJoin?
 
 
-Teško je reći ko je prvi predstavio ideju CoinJoin Bitcoin, i ko je došao na ideju korišćenja slepih potpisa Davida Chauma u ovom kontekstu. Često se misli da je to bio Gregory Maxwell koji je prvi pomenuo u [poruci na BitcoinTalk-u 2013](https://bitcointalk.org/index.php?topic=279249.0) :
+Teško je reći ko je prvi predstavio ideju korišćena CoinJoin-a unutar Bitcoin-a, i ko je došao na ideju korišćenja slepih potpisa Davida Chauma u ovom kontekstu. Često se misli da je to bio Gregory Maxwell koji je prvi pomenuo u [poruci na BitcoinTalk-u 2013](https://bitcointalk.org/index.php?topic=279249.0) :
 
 
-> *"Korišćenje Chaumovih slepih potpisa: Korisnici se prijavljuju i pružaju unose (i Exchange adrese) kao i kriptografski blinded verziju Address na koju žele da pošalju svoje privatne delove; server potpisuje tokene i šalje ih nazad. Korisnici se anonimno ponovo povezuju, otkrivaju svoje izlazne adrese i šalju ih nazad serveru. Server može videti da su svi izlazi potpisani od strane njega i da, shodno tome, svi izlazi dolaze od validnih učesnika. Kasnije, ljudi se ponovo povezuju i prijavljuju se
+> *"Korišćenje Chaumovih slepih potpisa: Korisnici se prijavljuju i predstavljaju ulaze (i kusur adrese) kao i kriptografski maskiranu verziju adrese na koju žele da pošalju svoje privatne UTXO-ve; server potpisuje tokene i šalje ih nazad. Korisnici se anonimno ponovo povezuju, otkrivaju svoje izlazne adrese i šalju ih nazad serveru. Server može videti da su svi izlazi potpisani od strane njega i da, shodno tome, svi izlazi dolaze od validnih učesnika. Kasnije, ljudi se ponovo povezuju i prijavljuju se
 Maxwell, G. (2013, August 22). *CoinJoin: Bitcoin privacy for the real world*. BitcoinTalk Forum. https://bitcointalk.org/index.php?topic=279249.0
 
 
@@ -2638,7 +2638,7 @@ U istoj temi možemo pronaći [poruku od hashcoin kao odgovor na Duncan Townsend
 ### Zerolink
 
 
-Zerolink je sveobuhvatan protokol za mešanje koji uključuje Chaumian coinjoin-ove i razne strategije za zaštitu anonimnosti korisnika protiv različitih oblika analize lanca, posebno minimiziranjem grešaka povezanih sa upravljanjem portfoliom. Ovaj protokol [su predstavili nopara73 i TDevD 2017. godine](https://github.com/nopara73/ZeroLink/blob/master/README.md).
+Zerolink je sveobuhvatan protokol za mešanje koji uključuje Chaumian coinjoin-ove i razne strategije za zaštitu anonimnosti korisnika protiv različitih oblika analize lanca, posebno minimiziranjem grešaka povezanih sa upravljanjem portfoliom UTXO-va. Ovaj protokol [su predstavili nopara73 i TDevD 2017. godine](https://github.com/nopara73/ZeroLink/blob/master/README.md).
 
 
 ![BTC204](assets/fr/126.webp)
@@ -2650,22 +2650,22 @@ Kao što ime sugeriše, princip iza Zerolink-a je da kreira CoinJoin transakcije
 ![BTC204](assets/fr/127.webp)
 
 
-Važna preventivna mera koju preduzima Zerolink je da drži nemiksovane UTXO-ove potpuno odvojene od miksovanih UTXO-ova korišćenjem zasebnih kriptografskih ključeva, ili čak zasebnih portfolija. Ovo razlikuje "*pre-mix*" Wallet, namenjen za delove pre mešanja, od "*post-mix*" Wallet, rezervisanog za delove koji su miksovani.
+Važna preventivna mera koju preduzima Zerolink je da drži nemiksovane UTXO-ove potpuno odvojene od miksovanih UTXO-ova korišćenjem zasebnih kriptografskih ključeva, ili čak zasebnih novčanika. Ovo razlikuje "*pre-mix*" novčanik, namenjen za UTXO-ve pre mešanja, od "*post-mix*" novačanika, rezervisanog za UTXO-ve koji su miksovani.
 
 
 ![BTC204](assets/fr/128.webp)
 
 
-Ova rigorozna separacija UTXO-a služi pre svega da spreči slučajne asocijacije između mešanog UTXO i nemešanog UTXO. Zaista, ako se takve veze dogode, efikasnost CoinJoin na mešani UTXO se poništava bez da je korisnik toga svestan, čime se ugrožava poverljivost UTXO čiju istoriju je mislio da je prekinuo. Ove veze mogu nastati ili kroz ponovnu upotrebu Address pri osiguravanju mešanog UTXO sa nemešanim, ili kroz primenu CIOH (_Common-Input-Ownership Heuristic_), ako korisnik koristi mešane i nemešane UTXO-e kao ulaze u istu transakciju. Separacijom portfolija pre-mešanja i post-mešanja, izbegavamo takve slučajne asocijacije i štitimo korisnika od nenamernih grešaka.
+Ova rigorozna separacija UTXO-a služi pre svega da spreči slučajne asocijacije između mešanog UTXO i nemešanog UTXO. Zaista, ako se takve veze dogode, efikasnost CoinJoin-a na mešani UTXO se poništava bez da je korisnik toga svestan, čime se ugrožava poverljivost UTXO čiju istoriju je korisnik mislio da je prekinuo. Ove veze mogu nastati ili kroz ponovnu upotrebu adresa pri osiguravanju mešanog UTXO sa nemešanim, ili kroz primenu CIOH (_Common-Input-Ownership Heuristic_), ako korisnik koristi mešane i nemešane UTXO-e kao ulaze u istu transakciju. Separacijom UTXO-a pre-mešanja i nakon-mešanja, izbegavamo takve slučajne asocijacije i štitimo korisnika od nenamernih grešaka.
 
 
 ![BTC204](assets/fr/129.webp)
 
 
-Ovo razdvajanje takođe nudi mogućnost primene različitih pravila između pre-mix i post-mix portfolija na nivou softvera za portfolije. Na primer, u post-mix portfoliju, softver može zabraniti spajanje UTXO-a u ulaze kako bi se sprečila primena CIOH-a, što bi ugrozilo korisnikov anonset. Takođe je moguće standardizovati upotrebu skripti i opcija transakcija (kao što je RBF izveštavanje, na primer) kako bi se sprečila identifikacija putem Wallet otisaka prstiju.
+Ovo razdvajanje takođe nudi mogućnost primene različitih pravila između pre-mix i post-mix portfolija na nivou softver novčanika. Na primer, u post-mix portfoliju, softver može zabraniti spajanje UTXO-a u ulaze kako bi se sprečila primena CIOH-a, što bi ugrozilo korisnikov anonset. Takođe je moguće standardizovati upotrebu skripti i opcija transakcija (kao što je RBF izveštavanje, na primer) kako bi se sprečila identifikacija putem jedinstvenih karakteristika novčanika.
 
 
-Trenutno je Whirlpool jedina implementacija CoinJoin koja rigorozno primenjuje Zerolink protokol. U sledećem poglavlju, pogledaćemo razne implementacije CoinJoin koje postoje, kao i prednosti i nedostatke svake od njih.
+Trenutno je Whirlpool jedina implementacija CoinJoin-a koja rigorozno primenjuje Zerolink protokol. U sledećem poglavlju, pogledaćemo razne implementacije CoinJoin-a koje postoje, kao i prednosti i nedostatke svake od njih.
 
 
 ## CoinJoin implementacije
@@ -2675,10 +2675,10 @@ Trenutno je Whirlpool jedina implementacija CoinJoin koja rigorozno primenjuje Z
 
 
 
-*U 2024. godini, svedočimo velikim promenama u alatima dostupnim korisnicima koji žele da prave coinjoin-ove na Bitcoin. Trenutno smo na prekretnici, a tržište CoinJoin prolazi kroz veliku restrukturaciju. Ovo poglavlje će sigurno biti ažurirano tokom vremena
+*U 2024. godini, svedočimo velikim promenama u alatima dostupnim korisnicima koji žele da prave coinjoin-ove na Bitcoin-u. Trenutno smo na prekretnici, a tržište CoinJoin-a prolazi kroz veliku restrukturaciju. Ovo poglavlje će sigurno biti ažurirano tokom vremena
 
 
-Za sada postoje uglavnom 3 različite implementacije CoinJoin na Bitcoin:
+Za sada postoje uglavnom 3 različite implementacije CoinJoin-a na Bitcoin-u:
 
 
 
@@ -2694,16 +2694,17 @@ Svaka od ovih implementacija ima za cilj da prekine istoriju UTXO-a putem CoinJo
 ### JoinMarket
 
 
-JoinMarket, founded in 2015 by Adam Gibson and Chris Belcher, stands out clearly from other CoinJoin implementations thanks to its unique model for connecting users. The system is based on a P2P Exchange market where some users, the "makers", make their bitcoins available for mixing, while others, the "takers", use this cash to make coinjoins in return for a fee.
+JoinMarket, koji su 2015. godine osnovali Adam Gibson i Chris Belcher, jasno se izdvaja od drugih CoinJoin implementacija zahvaljujući svom jedinstvenom modelu povezivanja korisnika. Sistem je zasnovan na P2P tržištu razmene, gde neki korisnici, tzv. „davaoci“ (eng. makers), stavljaju svoje bitkoine na raspolaganje za mešanje, dok drugi, tzv. „primaoci“ (eng. takers), koriste ta sredstva da obave coinjoin transakcije u zamenu za naknadu.
+
 
 
 ![BTC204](assets/fr/130.webp)
 
 
-U ovom modelu, "proizvođači" stavljaju svoje bitkoine na raspolaganje "korisnicima" i primaju naknadu za svoju uslugu. Korisnici, zauzvrat, plaćaju za korišćenje bitkoina proizvođača kako bi sproveli sopstvene CoinJoin transakcije. Naknade za uslugu variraju u zavisnosti od uloge koju zauzimaju: "proizvođači" akumuliraju naknade za pružanje likvidnosti, dok "korisnici" plaćaju naknade. Tržište funkcioniše slobodno, bez uslova korišćenja.
+U ovom modelu, "proizvođači" stavljaju svoje bitkoine na raspolaganje "korisnicima" i primaju naknadu za svoju uslugu. Korisnici, zauzvrat, plaćaju za korišćenje bitkoina proizvođača kako bi sproveli sopstvene CoinJoin transakcije. Naknade za uslugu variraju u zavisnosti od uloge koju zauzimaju: "proizvođači" akumuliraju naknade za pružanje likvidnosti, dok "korisnici" plaćaju naknade. Tržište je otvoreno i ne postavlja nikakve uslove za korišćenje.
 
 
-Jedan od glavnih nedostataka JoinMarket-a je njegova složenost upotrebe, koja zahteva određeni stepen udobnosti sa terminalima za efikasno rukovanje. Iako ova složenost nije prepreka za iskusne korisnike, može ograničiti pristup široj javnosti. Međutim, nedavno uvođenje web Interface pod nazivom JAM učinilo je upotrebu malo lakšom.
+Jedan od glavnih nedostataka JoinMarket-a je njegova složenost upotrebe, koja zahteva određeni nivo snakaženja sa terminalima kako bi se efikasno koristio. Iako ova složenost nije prepreka za iskusne korisnike, može ograničiti pristup široj javnosti. Međutim, nedavno uvođenje veb korisničkog interfejsa pod nazivom JAM učinilo je upotrebu malo lakšom.
 
 
 ![BTC204](assets/fr/131.webp)
@@ -2712,10 +2713,10 @@ Jedan od glavnih nedostataka JoinMarket-a je njegova složenost upotrebe, koja z
 Izvor : [JAM](https://github.com/joinmarket-webui/jam/blob/devel/docs/assets/screenshot-dark.webp)
 
 
-Međutim, tehnička barijera ostaje glavna prepreka. U ekosistemu CoinJoin, gde je poverljivost pojačana brojem učesnika, svako ograničenje koje smanjuje pristupačnost direktno utiče na dostupnu likvidnost, što je ključni faktor u efikasnosti mešavine. Bitcoin, koji je već niša u finansijskim transakcijama, vidi svoju upotrebu coinjoins kao pod-nišu, a JoinMarket predstavlja još specijalizovaniji deo toga, što stoga ograničava njegov potencijal da poveća anonset svojih korisnika.
+Međutim, tehnička barijera ostaje glavna prepreka. U ekosistemu CoinJoin-a, gde je poverljivost pojačana brojem učesnika, svako ograničenje koje smanjuje pristupačnost direktno utiče na dostupnu likvidnost, što je ključni faktor u efikasnosti miksanja. Bitcoin je već niša u okviru finansijskih transakcija, coinjoin predstavlja još užu podnišu unutar toga, a JoinMarket još specifičniji segment — što ograničava njegovu sposobnost da poveća broj korisnika unutar anonimnih skupova (anonseta).
 
 
-Uprkos svom inovativnom P2P modelu povezivanja za coinjoinere, JoinMarket ima neke značajne nedostatke, posebno u pogledu transakcione strukture. Za razliku od drugih implementacija kao što je Whirlpool, JoinMarket ne garantuje savršenu jednakost između izlaza, i moguće je pratiti determinističke veze između ulaza i izlaza. Štaviše, nema alate za sprečavanje da se delovi koji su već pomešani ponovo mešaju, što bi moglo ugroziti poverljivost koju korisnici traže.
+Uprkos svom inovativnom P2P modelu povezivanja za coinjoinere, JoinMarket ima neke značajne nedostatke, posebno u pogledu transakcione strukture. Za razliku od drugih implementacija kao što je Whirlpool, JoinMarket ne garantuje savršenu jednakost između izlaza, i moguće je pratiti determinističke veze između ulaza i izlaza. Štaviše, nema alate za sprečavanje da se UTXO-vi koji su već pomešani ponovo mešaju, što bi moglo ugroziti poverljivost koju korisnici traže.
 
 
 Konačno, iako je koncept JoinMarket-a zanimljiv, posebno za one koji su zainteresovani za dinamično tržište likvidnosti, njegove strukturne slabosti i tehnička složenost ga čine, po mom mišljenju, manje zanimljivim za početnike i stručnjake koji traže CoinJoin implementaciju.
@@ -2724,22 +2725,22 @@ Konačno, iako je koncept JoinMarket-a zanimljiv, posebno za one koji su zainter
 ### Wabisabi
 
 
-Wabisabi je još jedna implementacija CoinJoin, sa pristupom koji centralizuje koordinaciju transakcija. Ovaj model su osmislili Ádám Ficsór (nopara73), Yuval Kogman, Lucas Ontivero i István András Seres 2021. godine, a integrisan je u Wasabi 2.0 softver naredne godine. Wabisabi je tačno evolucija Wasabi softverskog CoinJoin modela lansiranog 2018. godine.
+Wabisabi je još jedna CoinJoin implementacija, sa pristupom koji centralizuje koordinaciju transakcija. Ovaj model su osmislili Ádám Ficsór (nopara73), Yuval Kogman, Lucas Ontivero i István András Seres 2021. godine, a integrisan je u Wasabi 2.0 softver naredne godine. Wabisabi je evolucija Wasabi softverskog CoinJoin modela lansiranog 2018. godine.
 
 
 ![BTC204](assets/fr/132.webp)
 
 
-Krajem 2010-ih, Wasabi je usvojio radikalno drugačiju strukturu transakcija CoinJoin u odnosu na Whirlpool. Wasabi je koristio veoma velike CoinJoin transakcije koje su uključivale desetine učesnika kako bi povećao anonset svojih učesnika. Nasuprot tome, Whirlpool se odlučio za više malih transakcija, omogućavajući da anonseti eksponencijalno rastu sa svakim ciklusom.
+Krajem 2010-ih, Wasabi je usvojio radikalno drugačiju strukturu CoinJoin transakcija u odnosu na Whirlpool. Wasabi je koristio veoma velike CoinJoin transakcije koje su uključivale desetine učesnika kako bi povećao anonset svojih učesnika. Nasuprot tome, Whirlpool se odlučio za više malih transakcija, omogućavajući da anonseti eksponencijalno rastu sa svakim ciklusom.
 
 
-Metode upravljanja Exchange takođe su razlikovale dve implementacije. Sa Whirlpool, strani Exchange je bio isključen i izolovan od UTXO-a pre CoinJoin ciklusa zahvaljujući TX0, konceptu koji ću dalje objasniti u sledećem poglavlju. Sa Wasabi, s druge strane, strani Exchange je formirao jedan od izlaza CoinJoin transakcije, održavajući determinističke veze između određenih ulaza i izlaza.
+Metode upravljanja kusurom takođe su se razlikovale izmešu ove dve implementacije. Sa Whirlpool-om, kusur je bio isključen i izolovan od UTXO-a pre CoinJoin ciklusa zahvaljujući TX0, konceptu koji ću dalje objasniti u sledećem poglavlju. Sa Wasabi, s druge strane, kusur je formirao jedan od izlaza CoinJoin transakcije, održavajući determinističke veze između određenih ulaza i izlaza.
 
 
 ![BTC204](assets/fr/133.webp)
 
 
-Sa Wabisabi, Wasabi verzija 2.0 je prilagodila svoj pristup coinjoin-ovima kako bi odgovarala onom Whirlpool. Iako CoinJoin transakcije ostaju veoma velike, sada je moguće povezati nekoliko uzastopnih ciklusa, prateći model Whirlpool. Posebna pažnja je takođe posvećena upravljanju stopom Exchange: za razliku od Wasabi 1.0, gde je stopa Exchange bila direktno povezana sa korisničkim unosima, Wabisabi nastoji da podeli stopu Exchange na nekoliko malih suma, podeljenih u jednake denominacije za sve učesnike.
+Sa Wabisabi, Wasabi verzija 2.0 je prilagodila svoj pristup coinjoin-ovima kako bi odgovarala onom u Whirlpool-u. Iako CoinJoin transakcije ostaju veoma velike, sada je moguće povezati nekoliko uzastopnih ciklusa, prateći Whirlpool model. Posebna pažnja je takođe posvećena upravljanju stopom Exchange: za razliku od Wasabi 1.0, gde je stopa Exchange bila direktno povezana sa korisničkim unosima, Wabisabi nastoji da podeli stopu Exchange na nekoliko malih suma, podeljenih u jednake denominacije za sve učesnike.
 
 
 Hajde da ovo ilustrujemo pojednostavljenim primerom koji uključuje samo 2 korisnika: Alisa želi da pomeša 115,000 Sats, a Bob 210,000 Sats. Ignorišući naknade, sa Wasabi 1.0, transakcija CoinJoin bi generisala 3 izlaza od 100,000 Sats, plus 1 Exchange od 15,000 Sats za Alisu i 1 Exchange od 10,000 Sats za Boba. Izlazi Exchange bi i dalje bili povezani sa ulazima:
