@@ -2014,19 +2014,19 @@ Manje rizična alternativa u smislu lične sigurnosti je obavljanje P2P razmena 
 ![BTC204](assets/fr/087.webp)
 
 
-Ovaj pristup izbegava mnoge rizike povezane sa gotovinskim transakcijama. Međutim, rizik da druga strana ne ispuni obaveze u online Exchange je veći. Zaista, u fizičkom Exchange, ako predate novac prodavcu koji vam zauzvrat ne pošalje bitkoine, možete ga odmah pozvati na odgovornost, jer stoji ispred vas. S druge strane, online je često nemoguće pronaći nekoga ko vas je pokrao.
+Ovim pristupom izbegavate mnoge rizike povezane sa gotovinskim transakcijama. Međutim, rizik da druga strana ne ispuni obaveze u online razmeni je veći. Zaista, prilikom fizičke razmene, ako predate novac prodavcu koji vam zauzvrat ne pošalje bitkoine, možete ga odmah pozvati na odgovornost, jer stoji ispred vas. S druge strane, online je često nemoguće pronaći nekoga ko vas je pokrao.
 
 
 ![BTC204](assets/fr/088.webp)
 
 
-Da bi se ublažio ovaj rizik, moguće je koristiti specijalizovane platforme za razmene P2P. Ove platforme koriste mehanizme za rešavanje sukoba kako bi zaštitile oštećene korisnike. Obično nude sistem eskroua, gde se bitkoini drže sve dok prodavac ne potvrdi uplatu u fiat valuti.
+Da bi se ublažio ovaj rizik, moguće je koristiti specijalizovane platforme za P2P razmene. Ove platforme koriste mehanizme za rešavanje sukoba kako bi zaštitile oštećene korisnike. Obično ove platforme koriste sistem posredničkog čuvanja sredstava (escrow), gde se bitkoini drže sve dok prodavac ne potvrdi uplatu u fiat valuti.
 
 
 ![BTC204](assets/fr/089.webp)
 
 
-U smislu lične bezbednosti, ovaj metod kupovine je znatno sigurniji od fizičkog keša Exchange. Međutim, kao što je gore pomenuto, online P2P razmene ostavljaju više tragova nego fizički Exchange, što može biti štetno za privatnost na Bitcoin. Korišćenjem online fiat metode plaćanja kao što je banka, izlažete više informacija koje bi mogle olakšati ključnu identifikaciju.
+U smislu lične bezbednosti, ovaj metod kupovine je znatno sigurniji od fizičke razmene keša. Međutim, kao što je gore pomenuto, online P2P razmene ostavljaju više tragova nego fizičke razmene, što može biti štetno za privatnost na Bitcoin-u. Korišćenjem online fiat metode plaćanja kao što je banka, izlažete više informacija koje bi mogle olakšati ključnu identifikaciju.
 
 
 ![BTC204](assets/fr/090.webp)
@@ -2035,13 +2035,13 @@ U smislu lične bezbednosti, ovaj metod kupovine je znatno sigurniji od fizičko
 Još jednom, ne bih preporučio pravljenje previše velikih trgovina u jednoj transakciji na ovim platformama. Deljenjem vaših transakcija, širite rizik od krađe od strane druge strane.
 
 
-Još jednom, još jedan nedostatak kupovine P2P je taj što je cena često viša nego ona koja se primećuje na regulisanim platformama. Prodavci često naplaćuju maržu koja se kreće od 1% do ponekad više od 10%. Postoji nekoliko razloga za ovu razliku u ceni. Prvo, ovo je uobičajena praksa među prodavcima P2P koja se vremenom ustalila. Drugo, prodavci imaju naknade povezane sa transakcijom za slanje sredstava kupcu. Takođe postoji povećan rizik od krađe u prodaji P2P u poređenju sa transakcijama na platformama, što opravdava kompenzaciju za preuzeti rizik. Na kraju, dodatni trošak može biti povezan sa potražnjom i kvalitetom Exchange u smislu poverljivosti. Kao kupac, dobitak u poverljivosti ima cenu koja se odražava u marži koju primenjuje prodavac. Neki bitkoineri takođe veruju da cena marže BTC kupljenog na P2P odražava njegovu pravu cenu, i tvrde da su niže cene na regulisanim platformama rezultat kompromisa na poverljivosti vaših ličnih podataka.
+Još jednom, još jedan nedostatak kupovine P2P je taj što je cena često viša nego ona koja se primenjuje na regulisanim platformama. Prodavci često naplaćuju maržu koja se kreće od 1% a ponekad i više od 10%. Postoji nekoliko razloga za ovu razliku u ceni. Prvo, ovo je uobičajena praksa među P2P prodavcima koja se vremenom ustalila. Drugo, prodavci imaju naknade povezane sa transakcijom za slanje sredstava kupcu. Takođe postoji povećan rizik od krađe u P2P prodaji u poređenju sa transakcijama na platformama, što opravdava kompenzaciju za preuzeti rizik. Na kraju, dodatni trošak može biti povezan sa potražnjom i kvalitetom razmene u smislu poverljivosti. Kao kupac, dobitak u poverljivosti ima cenu koja se odražava u marži koju primenjuje prodavac. Neki bitkoineri takođe veruju da cena marže kupljenog BTC na P2P odražava njegovu pravu cenu, i tvrde da su niže cene na regulisanim platformama rezultat kompromisa po pitanju poverljivosti vaših ličnih podataka.
 
 
 ![BTC204](assets/fr/086.webp)
 
 
-Što se tiče rešenja, lično sam uvek koristio [Bisq](https://bisq.network/) i veoma sam zadovoljan njime. Njihov sistem je proveren i čini se pouzdanim. Međutim, Bisq je dostupan samo na PC-ju i njegov Interface može biti previše složen za početnike. Još jedan nedostatak je što Bisq radi samo sa onchain transakcijama, koje mogu postati skupe tokom perioda visokih Bitcoin naknada za transakcije.
+Što se tiče rešenja, lično sam uvek koristio [Bisq](https://bisq.network/) i veoma sam zadovoljan njime. Njihov sistem je proveren i čini se pouzdanim. Međutim, Bisq je dostupan samo na PC-ju i njegov korisnički interfejs može biti previše složen za početnike. Još jedan nedostatak je što Bisq radi samo sa onchain transakcijama, koje mogu postati skupe tokom perioda visokih Bitcoin naknada za transakcije.
 
 
 -> Pogledajte naš Bisq vodič.
@@ -2065,7 +2065,7 @@ Još jedna opcija na mreži je [HodlHodl](https://hodlhodl.com/), dobro uspostav
 
 https://planb.network/tutorials/exchange/peer-to-peer/hodlhodl-d7344cd5-6b18-40f5-8e78-2574a93a3879
 
-Za rešenja zasnovana na Lightning Network, probajte [RoboSats](https://learn.robosats.com/) i [LNP2PBot](https://lnp2pbot.com/). RoboSats je dostupan putem vebsajta i relativno je jednostavan za korišćenje. LNP2PBot je neobičniji, jer radi putem Exchange sistema na aplikaciji za razmenu poruka Telegram.
+Za rešenja zasnovana na Lightning mreži, probajte [RoboSats](https://learn.robosats.com/) i [LNP2PBot](https://lnp2pbot.com/). RoboSats je dostupan putem vebsajta i relativno je jednostavan za korišćenje. LNP2PBot je neobičniji, jer radi putem sistema za razmenu na Telegram aplikaciji za razmenu poruka.
 
 
 -> Pogledajte naš RoboSats vodič.
@@ -2087,12 +2087,12 @@ https://planb.network/tutorials/exchange/peer-to-peer/lnp2pbot-v2-e6bcb210-610b-
 U zavisnosti od zemlje u kojoj živite, možda imate pristup regulisanim platformama koje ne zahtevaju KYC procedure za kupovinu ili prodaju bitkoina. U Švajcarskoj, na primer, možete koristiti platforme kao što su [Relai](https://relai.app/) i [MtPelerin](https://www.mtpelerin.com/).
 
 
--> Pogledajte naš vodič o Relai.
+-> Pogledajte naš vodič o Relai-u.
 
 
 https://planb.network/tutorials/exchange/centralized/relai-v2-30a9671d-e407-459d-9203-4c3eae15b30e
 
-Kao što smo videli u prethodnom poglavlju, ovaj tip platforme vas štiti od rizika povezanih sa KYC procedurama, ali predstavljaju viši nivo rizika za identifikaciju ključeva. Što se tiče poverljivosti Bitcoin, ove platforme nude bolju zaštitu od metoda kupovine sa KYC, ali su i dalje manje privlačne od P2P berzi.
+Kao što smo videli u prethodnom poglavlju, ovaj tip platforme vas štiti od rizika povezanih sa KYC procedurama, ali istovremeno nosi viši nivo rizika za identifikaciju ključeva. Što se tiče poverljivosti Bitcoin-a, ove platforme nude bolju zaštitu od metoda kupovine sa KYC, ali su i dalje manje privlačne od P2P razmene.
 
 
 Međutim, u pogledu lične sigurnosti, korišćenje ovih platformi je daleko manje rizično nego P2P razmene. Takođe su često jednostavnije za korišćenje od P2P platformi.
@@ -2101,16 +2101,16 @@ Međutim, u pogledu lične sigurnosti, korišćenje ovih platformi je daleko man
 ### Bankomati
 
 
-Još jedna opcija za kupovinu ili prodaju bitcoina bez KYC su kripto bankomati. Lično, nikada nisam imao priliku da isprobam ovo rešenje, jer ih nema u mojoj zemlji. Ali ovaj metod može biti veoma zanimljiv, u zavisnosti od toga gde živite.
+Još jedna opcija za kupovinu ili prodaju bitcoina bez KYC-ija su kripto bankomati. Lično, nikada nisam imao priliku da isprobam ovo rešenje, jer ih nema u mojoj zemlji. Ali ovaj metod može biti veoma zanimljiv, u zavisnosti od toga gde živite.
 
 
 ![BTC204](assets/fr/092.webp)
 
 
-Problem sa bankomatima je što su ili zabranjeni u nekim zemljama, ili strogo regulisani u drugim. Ako bankomat zahteva proceduru verifikacije identiteta, onda je izložen istim rizicima kao i platforme koje su regulisane KYC-om. S druge strane, ako bankomat omogućava transakcije bez verifikacije identiteta za male iznose, onda njegova upotreba može ponuditi nivo poverljivosti uporediv sa onim kod P2P gotovinskog Exchange, dok se izbegava većina rizika povezanih sa ovom vrstom Exchange.
+Problem sa bankomatima je što su ili zabranjeni u nekim zemljama, ili strogo regulisani u drugim. Ako bankomat zahteva proceduru verifikacije identiteta, onda je nosi iste rizike kao i platforme koje su regulisane KYC-om. S druge strane, ako bankomat omogućava transakcije bez verifikacije identiteta za male iznose, onda njegova upotreba može ponuditi nivo poverljivosti uporediv sa onim kod P2P gotovinske razmene, dok se izbegava većina rizika povezanih sa ovom vrstom trgovine.
 
 
-Glavni nedostatak bankomata je često visoka Exchange naknada, koja se kreće od nekoliko procenata do ponekad 15% od iznosa koji se menja.
+Glavni nedostatak bankomata je često visoka naknada, koja se kreće od nekoliko procenata do ponekad 15% od iznosa koji se menja.
 
 
 ### Poklon kartice
@@ -2119,7 +2119,7 @@ Glavni nedostatak bankomata je često visoka Exchange naknada, koja se kreće od
 Konačno, želeo sam da vam predstavim rešenje koje dobro funkcioniše za one koji žele da koriste svoje bitkoine na dnevnoj bazi za kupovinu, umesto da ih prodaju za fiat valute.
 
 
-Najbolji način da potrošite BTC je, naravno, korišćenje Bitcoin ili direktno Lightning Network za kupovinu dobara ili usluga. Međutim, u mnogim zemljama, broj trgovaca koji prihvataju Bitcoin je još uvek ograničen. Praktična alternativa je korišćenje poklon kartica.
+Najbolji način da potrošite BTC je, naravno, korišćenje Bitcoin-a ili direktno Lightning mreže za kupovinu dobara ili usluga. Međutim, u mnogim zemljama, broj trgovaca koji prihvataju Bitcoin je još uvek ograničen. Praktična alternativa je korišćenje poklon kartica.
 
 
 Nekoliko platformi koje ne zahtevaju KYC procedure nude mogućnost razmene bitkoina za poklon kartice koje se mogu koristiti kod velikih trgovaca. To uključuje [CoinsBee](https://www.coinsbee.com/), [The Bitcoin Company](https://thebitcoincompany.com/) i [Bitrefill](https://www.bitrefill.com/). Ove platforme znatno olakšavaju svakodnevno korišćenje bitkoina, omogućavajući vam pristup širokom spektru proizvoda i usluga bez potrebe za njihovom konverzijom u fiat valutu.
@@ -2133,10 +2133,9 @@ https://planb.network/tutorials/exchange/centralized/bitrefill-8c588412-1bfc-465
 ### Ostale metode akvizicije
 
 
-Drugi načini za sticanje bitkoina uz zaštitu vaše privatnosti uključuju, naravno, Mining. Da biste pokrenuli Mining Sats, ne morate otkriti svoj identitet; jednostavno pronađite važeći Proof of Work i pošaljite ga mreži. Ako se odlučite za pool Mining, neki pool-ovi zahtevaju neki oblik identifikacije, kao što je KYC, dok drugi ne.
+Drugi načini za sticanje bitkoina uz zaštitu vaše privatnosti uključuju, naravno, rudarenje. Da biste pokrenuli rudarenje Sats-a, ne morate otkriti svoj identitet; jednostavno pronađite važeći Proof of Work i pošaljite ga mreži. Ako se odlučite za udruženo rudarenje (eng. pool mining), neka udruženja zahtevaju neku vrstu identifikacije, poput KYC-a, dok drugi to ne traže.
 
-
-Drugi metod je rad u Exchange za bitkoine. Ovaj metod sticanja može biti zanimljiv, ali stepen potrebne identifikacije znatno varira u zavisnosti od okolnosti.
+Drugi metod je da radite u zamenu za bitkoine. Ovaj metod sticanja može biti zanimljiv, ali stepen potrebne identifikacije znatno varira u zavisnosti od okolnosti.
 
 
 *Da napišem ovo poglavlje, koristio sam BTC205 kurs obuke koji drži [@pivi___](https://x.com/pivi___) na Plan ₿ Network (trenutno dostupan samo na francuskom)
@@ -2155,18 +2154,17 @@ Jedan od najsloženijih aspekata vođenja portfolija sa samostalnim čuvanjem je
 ### Šta je konsolidacija?
 
 
-Bitcoin funkcioniše kao aukcijsko tržište, gde rudari daju prednost transakcijama koje nude najniže naknade. Međutim, svaki blok ima maksimalnu težinu, što ograničava broj transakcija koje mogu biti uključene. Kako se blok proizvodi u proseku svakih 10 minuta, prostor dostupan u svakom bloku je oskudan resurs.
+Bitcoin funkcioniše kao aukcijsko tržište, gde rudari daju prednost transakcijama koje nude najviše naknade. Međutim, svaki blok ima maksimalnu težinu, što ograničava broj transakcija koje mogu biti uključene. Kako se blok proizvodi u proseku svakih 10 minuta, prostor dostupan u svakom bloku je oskudan resurs.
 
 
-Rudari, čije aktivnosti generate značajne troškove u smislu električne energije, fiksne imovine i održavanja, prirodno nastoje maksimizirati svoju profitabilnost. Stoga teže favorizuju transakcije koje generate najviše naknade u odnosu na njihovu težinu.
+Rudari, čije aktivnosti generiše značajne troškove u smislu električne energije, fiksne imovine i održavanja, prirodno nastoje maksimizirati svoju profitabilnost. Stoga teže da daju prednost transakcijama koje generišu najveće naknade u odnosu na svoju težinu.
+
+Nisu sve Bitcoin transakcije iste težine. One sa više ulaza i izlaza će imati i veću težinu. Na primer, zamislimo 2 transakcije:
 
 
-Nisu sve Bitcoin transakcije iste težine. One sa više ulaza i izlaza će imati veću težinu. Na primer, zamislimo 2 transakcije:
 
 
-
-
-- Transakcija A se sastoji od 1 ulaza i 1 izlaza. Dodeljuje 1,994 Sats naknada i ima težinu od 141 vB ;
+- Transakcija A se sastoji od 1 ulaza i 1 izlaza. Dodeljuje 1,994 Sats u naknada i ima težinu od 141 vB ;
 - Transakcija B, složenija transakcija sa 2 ulaza i 2 izlaza, dodeljuje 2,640 Sats u naknadama za težinu od 220 vB.
 
 
@@ -2182,22 +2180,22 @@ TXB : 2640 / 220 = 12 sats / vB
 ```
 
 
-To znači da za svaku jedinicu težine, transakcija A nudi više troškova nego transakcija B, iako transakcija B nudi više troškova u apsolutnim iznosima.
+To znači da za svaku jedinicu težine, transakcija A nudi više naknada nego transakcija B, iako transakcija B nudi više naknada u apsolutnom iznosu.
 
 
 ![BTC204](assets/fr/095.webp)
 
 
-Stoga je korisniku uvek zanimljivije da troši što manje ulaza u svojim transakcijama. Međutim, potrebno je potrošiti dovoljne količine kako bi se moglo zadovoljiti izlazno plaćanje. Kada upravljate svojim portfoliom, potrebno je imati dovoljno velike UTXO-e.
+Stoga je korisniku uvek zanimljivije da troši što manje ulaza u svojim transakcijama. Međutim, potrebno je potrošiti dovoljne količine kako bi se moglo zadovoljiti izlazno plaćanje. Kada upravljate svojim portfoliom, potrebno je da imate dovoljno velike UTXO-e.
 
 
-Princip konsolidacije je upravo da se iskoriste periodi kada su naknade niske na Bitcoin kako bi se spojili manji UTXO-ovi u jedan veći. Na ovaj način, kada naknade porastu na Bitcoin, moći ćete da obavljate transakcije sa minimalnim brojem ulaza, i stoga trošite manje na naknade u apsolutnim iznosima. Cilj je, dakle, predvideti obavezne transakcije koje će se obavljati tokom perioda visokih naknada.
+Princip konsolidacije je upravo da se iskoriste periodi kada su naknade niske na Bitcoin-u kako bi se spojili manji UTXO-ovi u jedan veći. Na ovaj način, kada naknade porastu na Bitcoin-u, moći ćete da obavljate transakcije sa minimalnim brojem ulaza, i stoga trošite manje na naknade u apsolutnim iznosima. Cilj je, dakle, predvideti obavezne transakcije koje će se obavljati tokom perioda visokih naknada.
 
 
 ![BTC204](assets/fr/096.webp)
 
 
-Pored uštede na troškovima transakcija, konsolidacija UTXO-a pomaže u sprečavanju formiranja "Dust". "Dust" se odnosi na UTXO-e čija je vrednost u Sats toliko niska da nije dovoljna da pokrije troškove transakcije potrebne za njihovo trošenje. To čini ove UTXO-e ekonomski neracionalnim za korišćenje sve dok troškovi transakcije ostaju visoki. Proaktivnim objedinjavanjem svojih UTXO-a, sprečavate ih da postanu Dust, osiguravajući da sva vaša sredstva ostanu upotrebljiva.
+Pored uštede na troškovima transakcija, konsolidacija UTXO-a pomaže u sprečavanju formiranja "Dust-a". "Dust" se odnosi na UTXO-e čija je vrednost u Sats-ima toliko niska da nije dovoljna da pokrije troškove transakcije potrebne za njihovo trošenje. To čini ove UTXO-e ekonomski neracionalnim za korišćenje sve dok troškovi transakcije ostaju visoki. Proaktivnim objedinjavanjem svojih UTXO-a, sprečavate ih da postanu Dust, osiguravajući da sva vaša sredstva ostanu upotrebljiva.
 
 
 ### Koja je minimalna veličina za vaše UTXO-e?
@@ -2222,7 +2220,7 @@ Gde:
 - m$ je minimalni iznos u satoshima za svaki UTXO.
 
 
-Pretpostavimo da planirate da pokrijete naknade za standardnu SegWit transakciju sa 1 ulazom i 2 izlaza, težine 141 vB. Ako se osiguravate do 800 Sats/vB, i spremni ste da potrošite do 12% vrednosti UTXO na naknade najviše, onda bi proračun bio:
+Pretpostavimo da planirate da pokrijete naknade za standardnu SegWit transakciju sa 1 ulazom i 2 izlaza, težine 141 vB. Ako se osiguravate do 800 Sats/vB, i spremni ste da potrošite najviše do 12% vrednosti UTXO na naknade, onda bi proračun bio:
 
 
 $$
@@ -2236,25 +2234,25 @@ U ovom primeru, stoga bi bilo pametno zadržati minimalnu vrednost od 940,000 Sa
 ### Konsolidacija i CIOH
 
 
-Jedna od najčešće korišćenih heuristika u analizi Blockchain je CIOH (*Common Input Ownership Heuristic*), koja pretpostavlja da svi ulazi u Bitcoin transakciju pripadaju istom entitetu. Sam princip konsolidacije je da se konzumira nekoliko UTXO-a kao ulazi i kreira jedan UTXO kao izlaz. Konsolidacija tako omogućava primenu ICOH-a.
+Jedna od najčešće korišćenih heuristika u analizi blokčejna je CIOH (*Common Input Ownership Heuristic*), koja pretpostavlja da svi ulazi u Bitcoin transakciju pripadaju istom entitetu. Sam princip konsolidacije je da se konzumira nekoliko UTXO-a kao ulazi i kreira jedan UTXO kao izlaz. Konsolidacija tako omogućava primenu ICOH-a.
 
 
 ![BTC204](assets/fr/097.webp)
 
 
-U praksi, ovo znači da spoljašnji posmatrač može zaključiti da svi konsolidovani UTXO-i verovatno pripadaju istoj osobi, i da jedinstveni izlaz koji je generisan takođe pripada njoj. Ova situacija može ugroziti vašu poverljivost povezivanjem različitih istorija transakcija. Na primer, recimo da konsolidujem 3 UTXO-a stečena putem P2P sa jednim UTXO dobijenim putem platforme koja zahteva KYC :
+U praksi, ovo znači da spoljašnji posmatrač može zaključiti da svi konsolidovani UTXO-i verovatno pripadaju istoj osobi, i da jedinstveni izlaz koji je generisan takođe pripada istoj osobi. Ova situacija može ugroziti vašu poverljivost povezivanjem različitih istorija transakcija. Na primer, recimo da konsolidujem 3 UTXO-a stečena putem P2P zajedno sa jednim UTXO-om dobijenim putem platforme koja zahteva KYC :
 
 
 ![BTC204](assets/fr/098.webp)
 
 
-Čineći to, bilo koji entitet sa pristupom podacima platforme Exchange, potencijalno uključujući vladine agencije, moći će da identifikuje da posedujem druge količine BTC-a. Prethodno, ovi UTXO-i nisu bili direktno povezani sa mojim identitetom; sada jesu. Štaviše, to otkriva svim izvorima da posedujem određenu količinu bitkoina.
+Čineći to, bilo koji entitet sa pristupom podacima platforme za razmenu, potencijalno uključujući vladine agencije, moći će da identifikuje da posedujem druge količine BTC-a. Prethodno, ovi UTXO-i nisu bili direktno povezani sa mojim identitetom; sada jesu. Štaviše, to otkriva svim izvorima da posedujem određenu količinu bitkoina.
 
 
 Kada je reč o upravljanju UTXO-ima, ekonomski razlozi, koji podstiču konsolidaciju radi smanjenja troškova, dolaze u sukob sa dobrom praksom privatnosti, koja bi preporučila da se UTXO-i nikada ne spajaju. Izbor između ekonomičnosti i poverljivosti stoga zavisi od prioriteta svakog korisnika.
 
 
-Ako možete izbeći konsolidaciju dok održavate značajne UTXO-e, to je idealno. Da biste to postigli, optimizujte svoje metode akvizicije. Ako kupujete svoje bitkoine putem DCA, pokušajte da razmaknete svoje jednokratne kupovine što je više moguće kako biste konsolidovali vrednost preko manje UTXO-a. Biće lakše upravljati jednokratnom kupovinom od €1,000 svakih 2 meseca, nego kupovinom od €120 svake nedelje. Ovo minimizuje broj generisanih UTXO-a i pojednostavljuje upravljanje vašim portfoliom dok čuva vašu poverljivost.
+Ako možete da izbegnete konsolidaciju, a da zadržite značajne UTXO-e, to je idealno. Da biste to postigli, optimizujte svoje metode akvizicije. Ako kupujete svoje bitkoine putem DCA, pokušajte da razmaknete svoje jednokratne kupovine što je više moguće kako biste konsolidovali vrednost sa manje UTXO-a. Biće lakše upravljati jednokratnom kupovinom od €1,000 svakih 2 meseca, nego kupovinom od €120 svake nedelje. Ovo minimizuje broj generisanih UTXO-a i pojednostavljuje upravljanje vašim skupom UTXO-a dok čuva vašu poverljivost.
 
 
 Ako se nađete u situaciji da morate konsolidovati svoje bitkoine, dajte prednost konsolidaciji UTXO-a iz istog izvora. Na primer, spajanje 10 UTXO-a sa jedne platforme će manje uticati na vašu poverljivost nego mešanje 5 UTXO-a sa platforme A sa 5 UTXO-a sa platforme B. Ako je konsolidacija iz različitih izvora neizbežna, pokušajte da ih razdvojite prema njihovim karakteristikama. Na primer, grupišite zajedno UTXO-e stečene putem KYC-a u jednoj transakciji, a one dobijene putem P2P u drugoj.
@@ -2270,40 +2268,40 @@ U svakom slučaju, ne zaboravite da svaka konsolidacija neizbežno podrazumeva g
 
 
 
-Hajde da pogledamo nekoliko drugih najboljih praksi za optimizaciju vaše privatnosti na Bitcoin.
+Hajde da pogledamo nekoliko drugih najboljih praksi za optimizaciju vaše privatnosti na Bitcoin-u.
 
 
 ### Kompletan čvor
 
 
-Posedovanje svojih bitkoina u samostalnom staranju je sjajno, ali korišćenje sopstvenog kompletnog čvora je još bolje! Evo zašto je posedovanje sopstvenog čvora ključno za potpuno suverenu upotrebu Bitcoin:
+Posedovanje svojih bitkoina u samostalnom vlasništvu je sjajno, ali korišćenje sopstvenog kompletnog čvora je još bolje! Evo zašto je posedovanje sopstvenog čvora ključno za potpuno suverenu upotrebu Bitcoin-a:
 
 
 
 
-- Otpornost na cenzuru**: Vaše transakcije ne mogu biti blokirane od strane bilo koga;
-- Nezavisnost od trećih strana**: Više ne zavisite od bilo koje spoljne usluge za verifikaciju Blockchain podataka;
-- Aktivno učešće**: Možete definisati sopstvena pravila validacije i direktno učestvovati u konsenzusu;
-- Doprinos mreži**: Pokretanjem čvora, pomažete u jačanju i distribuciji Bitcoin mreže;
-- Tehničko obrazovanje**: Upravljanje kompletnim čvorom je odličan način da produbite svoje tehničko znanje o Bitcoin.
+- **Otpornost na cenzuru**: Vaše transakcije ne mogu biti blokirane od strane bilo koga;
+- **Nezavisnost od trećih strana**: Više ne zavisite od bilo koje spoljne usluge za verifikaciju blokčejn podataka;
+- **Aktivno učešće**: Možete definisati sopstvena pravila validacije i direktno učestvovati u konsenzusu;
+- **Doprinos mreži**: Pokretanjem čvora, pomažete u jačanju i distribuciji Bitcoin mreže;
+- **Tehničko obrazovanje**: Upravljanje kompletnim čvorom je odličan način da produbite svoje tehničko znanje o Bitcoin-u.
 
 
-Pored ovih prednosti, korišćenje kompletnog čvora takođe poboljšava vašu poverljivost prilikom emitovanja vaših transakcija. Kada izdate transakciju, ona se prvo kreira i potpisuje putem vašeg Wallet. Da bi se emitovala na Bitcoin mreži, mora biti poznata barem jednom čvoru. Korišćenjem sopstvenog čvora, imate direktnu kontrolu nad ovom distribucijom, čime se pojačava vaša poverljivost i ograničava rizik od curenja podataka.
+Pored ovih prednosti, korišćenje kompletnog čvora takođe poboljšava vašu poverljivost prilikom emitovanja vaših transakcija. Kada izdate transakciju, ona se prvo kreira i potpisuje putem vašeg novčanika. Da bi se emitovala na Bitcoin mrežu, mora biti poznata barem jednom čvoru. Korišćenjem sopstvenog čvora, imate direktnu kontrolu nad ovom distribucijom, čime se pojačava vaša poverljivost i ograničava rizik od curenja podataka.
 
 
 ![BTC204](assets/fr/099.webp)
 
 
-Ako nemate svoj Bitcoin čvor, bićete primorani da koristite čvor treće strane, kao što je onaj koji nudi vaš Wallet softverski provajder. Pored emitovanja transakcija, vašem Wallet je potreban pristup raznim informacijama kao što su transakcije na čekanju, stanja povezana sa vašim adresama i broj potvrda za vaše transakcije. Da biste pristupili svim ovim podacima, potrebno je da izvršite upit čvora.
+Ako nemate svoj Bitcoin čvor, bićete primorani da koristite čvor treće strane, kao što je onaj koji nudi provajder vašeg softverskog novčanika. Pored emitovanja transakcija, vašem novčaniku je potreban pristup raznim informacijama kao što su transakcije na čekanju, salda povezana sa vašim adresama i broj potvrda za vaše transakcije. Da biste pristupili svim ovim podacima, potrebno je da izvršite upit nad vašim node-om.
 
 
 ![BTC204](assets/fr/100.webp)
 
 
-Glavni rizik kada ne koristite sopstveni Bitcoin čvor je da operater treće strane može posmatrati vaše aktivnosti na Blockchain, ili čak podeliti ove informacije sa drugim entitetima. Da biste ograničili ovaj rizik, posredničko rešenje je korišćenje Wallet softvera koji maskira vaše konekcije putem Tor-a. Ovo može smanjiti izloženost vaših podataka. Međutim, optimalno rešenje je imati sopstveni Bitcoin čvor i koristiti ga za emitovanje vaših transakcija. Naravno, takođe ćete morati biti pažljivi da ne otkrijete bilo kakve informacije putem vašeg čvora, ali to je druga tema kojom ćemo se baviti u narednim odeljcima.
+Glavni rizik kada ne koristite sopstveni Bitcoin čvor je da operater treće strane može posmatrati vaše aktivnosti na blokčejnu, ili čak podeliti ove informacije sa drugim entitetima. Da biste ograničili ovaj rizik, posredničko rešenje je korišćenje softvera novčanika koji maskira vaše konekcije putem Tor-a. Ovo može smanjiti izloženost vaših podataka. Međutim, optimalno rešenje je imati sopstveni Bitcoin čvor i koristiti ga za emitovanje vaših transakcija. Naravno, takođe ćete morati biti pažljivi da ne otkrijete bilo kakve informacije putem vašeg čvora, ali to je druga tema kojom ćemo se baviti u narednim odeljcima.
 
 
-Pored očigledne prednosti za vašu privatnost, posedovanje sopstvenog kompletnog čvora takođe vam garantuje verodostojnost podataka na Blockchain, štiti vas od cenzure i omogućava vam aktivno učešće u upravljanju Bitcoin. Korišćenjem sopstvenog čvora, doprinosite svojom ekonomskom težinom lancu po vašem izboru, što je važno tokom sukoba unutar zajednice, kao što je bio slučaj tokom Rata oko veličine bloka od 2015. do 2017. godine, na primer. U slučaju Fork, korišćenje čvora treće strane moglo bi vas navesti da podržite lanac koji ne želite da favorizujete, jer operater čvora donosi odluku umesto vas.
+Pored očigledne prednosti za vašu privatnost, posedovanje sopstvenog kompletnog čvora takođe vam garantuje verodostojnost podataka na blokčejnu, štiti vas od cenzure i omogućava vam aktivno učešće u upravljanju Bitcoin-u. Korišćenjem sopstvenog čvora, doprinosite svojom ekonomskom težinom lancu po vašem izboru, što je važno tokom sukoba unutar zajednice, na primer, kao što je bio slučaj tokom sukoba oko veličine bloka od 2015. do 2017. godine. U slučaju grananja lanca na dva ili više različita lanca, korišćenjem čvora treće strane moglo bi vas navesti da podržite lanac koji ne želite da favorizujete, jer operater čvora donosi odluku umesto vas.
 
 
 Kao što možete videti, u interesu poverljivosti i individualnog suvereniteta, neophodno je pokrenuti i koristiti svoj sopstveni kompletan čvor!
@@ -2312,10 +2310,10 @@ Kao što možete videti, u interesu poverljivosti i individualnog suvereniteta, 
 ### Obmanjujuće heuristike analize
 
 
-Šire gledano, važno je razumeti heuristike o kojima smo govorili u prethodnom delu, kako bismo ih bolje izbegli ili obmanuli. Usvajanje niza najboljih praksi može biti korisno, čak i ako nisu neophodne. One nude dodatnu Layer zaštitu koja može biti važna za održavanje poverljivosti prilikom korišćenja Bitcoin.
+Šire gledano, važno je razumeti heuristike o kojima smo govorili u prethodnom delu, kako bismo ih bolje izbegli ili obmanuli. Usvajanje niza najboljih praksi može biti korisno, čak i ako nisu neophodne. One nude dodatni sloj zaštite koji može biti važan za održavanje poverljivosti prilikom korišćenja Bitcoin-a.
 
 
-Prvi savet koji bih mogao da dam je da se uklopiš u najgušću gomilu. Na Bitcoin, ovo znači korišćenje najšire prihvaćenih šablona skripti. Na primer, P2WSH skripte, često korišćene za SegWit V0 Multisig konfiguracije, su veoma neuobičajene. One ti ne omogućavaju da se sakriješ u velikom skupu anonimnosti. Isto važi i za starije modele kao što su P2PKH ili P2SH. Iako su široko prisutni u UTXO setu, sve manje se koriste za nove transakcije.
+Prvi savet koji bih mogao da dam je da se uklopiš u najgušću gomilu. Na Bitcoin-u, ovo znači korišćenje najšire prihvaćenih šablona skripti. Na primer, P2WSH skripte, često korišćene za SegWit V0 Multisig konfiguracije, su veoma neuobičajene. One ti ne omogućavaju da se sakriješ u velikom skupu anonimnosti. Isto važi i za starije modele kao što su P2PKH ili P2SH. Iako su široko prisutni u UTXO setu, sve manje se koriste za nove transakcije.
 
 
 Generalno govoreći, mudrije je odlučiti se za najnoviji standard skriptovanja, pod uslovom da je dovoljno usvojen. Dakle, ako bih 2022. godine savetovao protiv korišćenja P2TR (Taproot) zbog niske usvojenosti, u 2024. bih preporučio da se odlučite za ovu vrstu skripte, ili ako to nije moguće, za SegWit V0 skriptu, jer broj transakcija koje koriste P2TR počinje da predstavlja veoma značajan udeo.
@@ -2327,16 +2325,16 @@ Generalno govoreći, mudrije je odlučiti se za najnoviji standard skriptovanja,
 Izvor : [txstats.com](https://txstats.com/d/000000054/UTXO-set-repartition-by-output-type)
 
 
-Još jedan savet za očuvanje vaše poverljivosti je pokušaj zaobilaženja internih heuristika transakcija. Na primer, prilikom plaćanja, možete pokušati da izbegnete kreiranje izlaza sa okruglim iznosom, jer to može signalizirati da drugi izlaz predstavlja strani Exchange. Ako treba da pošaljete 100 k Sats prijatelju, razmislite o prenosu nešto većeg iznosa kako biste izbegli ovu heuristiku. Slično tome, pokušajte da ne kreirate strane Exchange izlaze koji su nesrazmerno visoki u odnosu na izvršeno plaćanje, jer to takođe može otkriti koji od izlaza predstavlja strani Exchange.
+Još jedan savet za očuvanje vaše poverljivosti je pokušaj zaobilaženja internih heuristika transakcija. Na primer, prilikom plaćanja, možete pokušati da izbegnete kreiranje izlaza sa okruglim iznosom, jer to može signalizirati da drugi izlaz predstavlja kusur. Ako treba da pošaljete 100 k Sats-a prijatelju, razmislite o prenosu nešto većeg iznosa kako biste izbegli ovu heuristiku. Slično tome, pokušajte da ne kreirate kusur izlaze koji su nesrazmerno visoki u odnosu na izvršeno plaćanje, jer to takođe može otkriti koji od izlaza je kusur.
 
 
 ![BTC204](assets/fr/102.webp)
 
 
-Konačno, ako redovno obavljate Bitcoin transakcije, pobrinite se da ih ne emitujete uvek u isto vreme. Širenjem emitovanja vaših transakcija tokom dana i nedelje, izbegavate davanje prilike spoljnim posmatračima da otkriju vremenski obrazac zasnovan na vremenskoj zoni koji bi mogao ojačati njihovu analizu.
+Konačno, ako redovno obavljate Bitcoin transakcije, pobrinite se da ih ne emitujete uvek u isto vreme. Raspoređivanjem emitovanja vaših transakcija tokom dana i nedelje, izbegavate davanje prilike spoljnim posmatračima da otkriju vremenski obrazac zasnovan na vremenskoj zoni koji bi mogao ojačati njihovu analizu.
 
 
-Pored svih ovih dobrih praksi koje treba usvojiti na dnevnoj bazi, postoje još efikasnije metode za potpuno prekidanje praćenja vaših bitkoina. To uključuje, naravno, CoinJoin transakcije, koje ćemo detaljno razmotriti u narednom odeljku.
+Pored svih ovih dobrih praksi koje treba primenjivati svakodnevno, postoje i još efikasnije metode za potpuno prekidanje mogućnosti praćenja vaših bitkoina.
 
 
 # Razumevanje CoinJoin transakcija
