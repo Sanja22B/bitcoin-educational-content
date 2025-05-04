@@ -2740,38 +2740,38 @@ Metode upravljanja kusurom takođe su se razlikovale izmešu ove dve implementac
 ![BTC204](assets/fr/133.webp)
 
 
-Sa Wabisabi, Wasabi verzija 2.0 je prilagodila svoj pristup coinjoin-ovima kako bi odgovarala onom u Whirlpool-u. Iako CoinJoin transakcije ostaju veoma velike, sada je moguće povezati nekoliko uzastopnih ciklusa, prateći Whirlpool model. Posebna pažnja je takođe posvećena upravljanju stopom Exchange: za razliku od Wasabi 1.0, gde je stopa Exchange bila direktno povezana sa korisničkim unosima, Wabisabi nastoji da podeli stopu Exchange na nekoliko malih suma, podeljenih u jednake denominacije za sve učesnike.
+Sa Wabisabi, Wasabi verzija 2.0 je prilagodila svoj pristup coinjoin-ovima kako bi odgovarala onom u Whirlpool-u. Iako CoinJoin transakcije ostaju veoma velike, sada je moguće povezati nekoliko uzastopnih ciklusa, prateći Whirlpool model. Posebna pažnja posvećena je i načinu razmene vrednosti kusura: za razliku od Wasabi 1.0, gde je vrednost bila direktno povezana sa ulazima korisnika, Wabisabi teži da je podeli na više manjih iznosa, raspoređenih u jednake apoene za sve učesnike.
 
 
-Hajde da ovo ilustrujemo pojednostavljenim primerom koji uključuje samo 2 korisnika: Alisa želi da pomeša 115,000 Sats, a Bob 210,000 Sats. Ignorišući naknade, sa Wasabi 1.0, transakcija CoinJoin bi generisala 3 izlaza od 100,000 Sats, plus 1 Exchange od 15,000 Sats za Alisu i 1 Exchange od 10,000 Sats za Boba. Izlazi Exchange bi i dalje bili povezani sa ulazima:
+Hajde da ovo ilustrujemo pojednostavljenim primerom koji uključuje samo 2 korisnika: Alisa želi da pomeša 115,000 Sats, a Bob 210,000 Sats. Ignorišući naknade, sa Wasabi 1.0, transakcija CoinJoin bi generisala 3 izlaza od 100,000 Sats, plus 1 kusur od 15,000 Sats za Alisu i 1 kusur od 10,000 Sats za Boba. Izlazi kusura bi i dalje bili povezani sa ulazima:
 
 
 ![BTC204](assets/fr/134.webp)
 
 
-Pod Wabisabi, ista transakcija bi proizvela 3 izlaza od 100,000 Sats i 5 izlaza od 5,000 Sats, čime bi se Exchange disperzovao tako da ne bi mogao biti direktno povezan sa specifičnim ulazom:
+Pod Wabisabi, ista transakcija bi proizvela 3 izlaza od 100,000 Sats i 5 izlaza od 5,000 Sats, čime bi se kusur disperzovao tako da ne bi mogao biti direktno povezan sa specifičnim ulazom:
 
 
 ![BTC204](assets/fr/135.webp)
 
 
-Lično smatram da strano upravljanje Exchange kompanije Wabisabi predstavlja nekoliko rizika koji bi mogli ugroziti njegovu efikasnost u pogledu poverljivosti:
+Lično smatram da upravljanje kusurom kompanije Wabisabi predstavlja nekoliko rizika koji bi mogli ugroziti njegovu efikasnost u pogledu poverljivosti:
 
 
 
 
-- Kada korisnik doprinese UTXO koji je značajno veći od onih drugih učesnika, on neizbežno završi sa Exchange iznosom koji će biti povezan sa njegovim unosom. Ovo je u suprotnosti sa originalnim ciljem protokola, koji je eliminisanje svih prepoznatljivih razmena;
-- Množenje denominacija s ciljem fragmentacije Exchange može paradoksalno biti štetno za efikasnost mešanja. Ovaj proces može dovesti do smanjenja anonseta za određene izlaze, jer postaju lakše prepoznatljivi;
+- Kada korisnik doprinese UTXO-em koji je značajno veći od onih drugih učesnika, on neizbežno završi sa iznosom kusura koji će biti povezan sa njegovim unosom. Ovo je u suprotnosti sa originalnim ciljem protokola, a koji je eliminisanje svih prepoznatljivih razmene;
+- Množenje denominacija s ciljem fragmentacije kusura može paradoksalno biti štetno za efikasnost mešanja. Ovaj proces može dovesti do smanjenja anonseta za određene izlaze, jer postaju lakše prepoznatljivi;
 - Ovaj metod takođe generiše UTXO-e niske vrednosti koji predstavljaju problem upravljanja za korisnika. Ovi mali UTXO-i, ako postanu preskupi za trošenje u odnosu na njihovu vrednost, mogu postati "Dust". Ovaj fenomen navodi korisnika da spoji nekoliko UTXO-a u ulaze za buduće transakcije, ili da ih konsoliduje. U oba slučaja, zbog CIOH-a, ovo može ili smanjiti dobijene anonsete, ili potpuno poništiti koristi od poverljivosti stečene inicijalnim CoinJoin.
 
 
-Za razliku od Whirlpool, koji implementira ZeroLink protokol osiguravajući rigoroznu separaciju između pre-mix i post-mix UTXO-a, Wabisabi ne održava ovu strogu segregaciju. Takođe su postojali problemi sa ponovnom upotrebom Address od strane nekih Wasabi korisnika, što je očigledno veoma štetno za korisnika.
+Za razliku od Whirlpool-a, koji implementira ZeroLink protokol osiguravajući rigoroznu separaciju između pre-mix i post-mix UTXO-a, Wabisabi ne održava ovu strogu segregaciju. Takođe su postojali problemi sa ponovnom upotrebom adresa od strane nekih Wasabi korisnika, što je očigledno veoma štetno za korisnika.
 
 
-U Wasabi verziji 2.0, implementirana je nova CoinJoin politika naknada. Od sada, naknade koordinatora su postavljene na 0,3% za UTXO iznad 0,01 Bitcoin, dok su za manje UTXO ove naknade potpuno besplatne. Pored toga, remiksi za ove manje UTXO su besplatni, iako Mining naknade ostaju obaveza korisnika za sve transakcije, uključujući remikse.
+U Wasabi verziji 2.0, implementirana je nova CoinJoin politika naknada. Od sada, naknade koordinatoru su postavljene na 0,3% za UTXO iznad 0,01 bitkoina, dok su za manje UTXO-ve ove naknade potpuno besplatne. Pored toga, remiksi za ove manje UTXO su besplatni, iako naknade za rudare ostaju obaveza korisnika za sve transakcije, uključujući remikse.
 
 
-Ovo je u suprotnosti sa politikom Whirlpool, gde naknade ostaju fiksne, bez obzira na veličinu dobijenih anonsetova. Sa Wasabi 2.0, iako su naknade koordinatora ukinute za male UTXO-e, korisnik i dalje mora da plati Mining naknade na sve transakcije, uključujući remikse.
+Ovo je u suprotnosti sa politikom Whirlpool-a, gde naknade ostaju fiksne, bez obzira na veličinu dobijenih anonsetova. Sa Wasabi 2.0, iako su naknade koordinatora ukinute za male UTXO-e, korisnik i dalje mora da plati naknade rudaru na sve transakcije, uključujući remikse.
 
 
 Dok pišem ove redove, upotreba Wabisabi-ja postala je značajno složenija kao rezultat nedavnih događaja. Nakon hapšenja osnivača Samourai Wallet, zkSNACKs, kompanija koja finansira i upravlja razvojem Wasabi-ja, objavila je da će njen CoinJoin koordinator servis biti ukinut 1. juna 2024. Ovaj koordinator, koji je bio podešen kao podrazumevani na Wasabi-ju, bio je odgovoran za veliku većinu likvidnosti.
@@ -2780,13 +2780,13 @@ Dok pišem ove redove, upotreba Wabisabi-ja postala je značajno složenija kao 
 Sa prekidom rada ovog glavnog koordinatora, korisnici sada moraju da se povežu sa novim, nezavisnim koordinatorima. Ova promena izaziva niz zabrinutosti: s jedne strane, novi koordinatori možda neće imati dovoljno likvidnosti, što smanjuje efikasnost coinjoin-a u smislu poverljivosti. S druge strane, postoji rizik od nailaženja na zlonamernog koordinatora. Ova situacija dodaje značajne nove rizike za one koji žele da koriste Wabisabi.
 
 
-Pored tehničkih problema, odluka kompanije zkSNACKs, koja stoji iza Wasabi-ja, da koristi usluge kompanije za analizu stringova kako bi filtrirala učesnike CoinJoin, postavlja ozbiljna etička i strateška pitanja. Početna ideja je bila da se spreči korišćenje coinjoin-a na Wasabi-ju od strane kriminalaca, potez koji može delovati legitimno. Međutim, to postavlja paradoks: plaćanje naknada koordinatoru čija je primarna misija jačanje poverljivosti korisnika, samo da bi se finansirala kompanija čiji je cilj kompromitovanje te iste poverljivosti.
+Pored tehničkih problema, odluka kompanije zkSNACKs, koja stoji iza Wasabi-ja, da koristi usluge kompanije za analizu stringova kako bi filtrirala učesnike CoinJoin-a, postavlja ozbiljna etička i strateška pitanja. Početna ideja je bila da se spreči korišćenje coinjoin-a na Wasabi-ju od strane kriminalaca, potez koji može delovati legitimno. Međutim, to postavlja paradoks: plaćanje naknada koordinatoru čija je primarna misija jačanje poverljivosti korisnika, samo da bi se finansirala kompanija čiji je cilj kompromitovanje te iste poverljivosti.
 
 
-Još zabrinjavajući je princip filtriranja, koji je u radikalnom kontrastu sa filozofijom Bitcoin da ponudi otvoren, necenzurisan finansijski sistem. Iako se može činiti opravdanim želja da se isključe kriminalne aktivnosti, ovo filtriranje bi takođe moglo uticati na pojedince čije akcije, iako klasifikovane kao ilegalne u određenim kontekstima, mogu biti moralno opravdane ili društveno korisne. Primer Edvarda Snoudena savršeno ilustruje ovu dihotomiju: smatran kriminalcem od strane nekih vlada zbog svojih otkrića, on je viđen od strane drugih kao uzbunjivač koji je delovao u javnom interesu. Ova složenost naglašava potencijalnu opasnost filtriranja koje, iako dobronamerno, može na kraju potkopati prava i sigurnost legitimnih korisnika. Takođe bih mogao pomenuti aktiviste i novinare koji su progonjeni pod određenim autoritarnim režimima.
+Još zabrinjavajući je princip filtriranja, koji je u radikalnom kontrastu sa filozofijom Bitcoin-a da ponudi otvoren, necenzurisan finansijski sistem. Iako se može činiti opravdanim želja da se isključe kriminalne aktivnosti, ovo filtriranje bi takođe moglo uticati na pojedince čije akcije, iako klasifikovane kao ilegalne u određenim kontekstima, mogu biti moralno opravdane ili društveno korisne. Primer Edvarda Snoudena savršeno ilustruje ovu dihotomiju: smatran kriminalcem od strane nekih vlada zbog svojih otkrića, on je viđen od strane drugih kao uzbunjivač koji je delovao u javnom interesu. Ova složenost naglašava potencijalnu opasnost filtriranja koje, iako dobronamerno, može na kraju potkopati prava i sigurnost legitimnih korisnika. Takođe bih mogao pomenuti aktiviste i novinare koji su progonjeni pod određenim autoritarnim režimima.
 
 
-Kao što ste do sada već shvatili, moj izbor je definitivno model Whirlpool za coinjoins na Bitcoin. Ovaj sistem se ističe svojom rigoroznošću i nudi superiorne garancije poverljivosti. Takođe je jedini koji nudi miks koji se smatra savršenim u matematičkom kontekstu. Po mom mišljenju, ovaj model predstavlja budućnost coinjoins na Bitcoin. Pozivam vas da istražite ovaj model detaljnije u narednom poglavlju.
+Kao što ste do sada već shvatili, moj izbor je definitivno Whirlpool model na Bitcoin-u za coinjoins. Ovaj sistem se ističe svojom rigoroznošću i nudi superiorne garancije poverljivosti. Takođe je jedini koji nudi miks koji se smatra savršenim u matematičkom kontekstu. Po mom mišljenju, ovaj model predstavlja budućnost coinjoins-a na Bitcoin-u. Pozivam vas da istražite ovaj model detaljnije u narednom poglavlju.
 
 
 ## Kako Whirlpool funkcioniše
@@ -2796,7 +2796,7 @@ Kao što ste do sada već shvatili, moj izbor je definitivno model Whirlpool za 
 
 
 
-Ono što izdvaja Whirlpool od drugih metoda CoinJoin je upotreba "_ZeroLink_" transakcija, koje osiguravaju da ne postoji nikakva moguća tehnička veza između svih ulaza i izlaza. Ova savršena mešavina se postiže kroz strukturu u kojoj svaki učesnik doprinosi identičnim iznosom ulaza (sa izuzetkom Mining naknada), generišući izlaze savršeno jednakih iznosa.
+Ono što izdvaja Whirlpool od drugih CoinJoin metoda je upotreba "_ZeroLink_" transakcija, koje osiguravaju da ne postoji nikakva moguća tehnička veza između svih ulaza i izlaza. Ova savršena mešavina se postiže kroz strukturu u kojoj svaki učesnik doprinosi identičnim iznosom ulaza (sa izuzetkom rudarskih naknada), generišući izlaze savršeno jednakih iznosa.
 
 
 Ovaj restriktivni pristup unosima daje Whirlpool CoinJoin transakcijama jedinstvenu karakteristiku: potpuni izostanak determinističkih veza između ulaza i izlaza. Drugim rečima, svaki izlaz ima jednaku verovatnoću da bude pripisan bilo kojem učesniku, u odnosu na sve druge izlaze u transakciji.
@@ -2808,7 +2808,7 @@ Ovaj restriktivni pristup unosima daje Whirlpool CoinJoin transakcijama jedinstv
 ### Kako Whirlpool funkcioniše
 
 
-U početku je broj učesnika u svakom Whirlpool CoinJoin bio ograničen na 5, sa 2 nova učesnika i 3 remiksera (ove pojmove ćemo objasniti kasnije). Međutim, povećanje naknada za transakcije On-Chain primećeno 2023. godine podstaklo je timove Samourai da preispitaju svoj model kako bi poboljšali poverljivost uz smanjenje troškova. Tako, uzimajući u obzir situaciju na tržištu naknada i broj učesnika, koordinator sada može organizovati coinjoin sesije sa 6, 7 ili 8 učesnika. Ove unapređene sesije poznate su kao "Surge Cycles". Važno je napomenuti da, bez obzira na konfiguraciju, uvek postoje samo 2 nova učesnika u Whirlpool coinjoin sesijama.
+U početku je broj učesnika u svakom Whirlpool CoinJoin-u bio ograničen na 5, sa 2 nova učesnika i 3 remiksera (ove pojmove ćemo objasniti kasnije). Međutim, povećanje naknada za On-Chain transakcije koje je primećeno 2023. godine podstaklo je timove Samourai da preispitaju svoj model kako bi poboljšali poverljivost uz smanjenje troškova. Tako, uzimajući u obzir situaciju na tržištu naknada i broj učesnika, koordinator sada može organizovati coinjoin sesije sa 6, 7 ili 8 učesnika. Ove unapređene sesije poznate su kao "Surge Cycles". Važno je napomenuti da, bez obzira na konfiguraciju, uvek postoje samo 2 nova učesnika u Whirlpool coinjoin sesijama.
 
 
 Dakle, Whirlpool transakcije karakteriše identičan broj ulaza i izlaza, koji mogu biti :
@@ -2846,13 +2846,13 @@ Dakle, Whirlpool transakcije karakteriše identičan broj ulaza i izlaza, koji m
 ![BTC204](assets/fr/140.webp)
 
 
-Model Whirlpool zasnovan je na malim transakcijama CoinJoin. Za razliku od Wabisabi i JoinMarket, gde se robusnost anonseta zasniva na obimu učesnika u jednom ciklusu (ili u nekoliko ciklusa), Whirlpool se oslanja na sekvencu nekoliko malih ciklusa.
+Model Whirlpool zasnovan je na malim iznosima CoinJoin transakcija. Za razliku od Wabisabi-ja i JoinMarket-a, gde se robusnost anonseta zasniva na obimu učesnika u jednom ciklusu (ili u nekoliko ciklusa), Whirlpool se oslanja na sekvencu nekoliko malih ciklusa.
 
 
-U ovom modelu, korisnici plaćaju naknade samo kada se prvi put pridruže bazenu, što im omogućava učešće u mnoštvu remiksa bez dodatnih troškova. Novi učesnici plaćaju Mining naknade za remiksere.
+U ovom modelu, korisnici plaćaju naknade samo kada se prvi put pridruže bazenu, što im omogućava učešće u mnoštvu remiksa bez dodatnih troškova. Novi učesnici plaćaju rudarske naknade za remiksere.
 
 
-Sa svakim dodatnim CoinJoin u kojem učestvuje neki komad, kao i sa njegovim vršnjacima susretanim u prošlosti, anonseti će eksponencijalno rasti. Cilj je iskoristiti ove besplatne remikse, koji, svaki put kada se dogode, doprinose jačanju gustine anonseta povezanih sa svakim pomešanim komadom.
+Sa svakim dodatnim CoinJoin u kojem učestvuje neki UTXO, kao i sa njegovim vršnjacima susretanim u prošlosti, anonseti će eksponencijalno rasti. Cilj je iskoristiti ove besplatne remikse, koji, svaki put kada se dogode, doprinose jačanju gustine anonseta povezanih sa svakim pomešanim komadom.
 
 
 ![BTC204](assets/fr/141.webp)
@@ -2867,10 +2867,10 @@ Whirlpool je dizajniran sa dva važna zahteva na umu:
 - Brzi ciklusi remiksovanja kako bi se podstakao značajan porast anonseta.
 
 
-Ove imperative su usmeravale izbore koje su doneli programeri Samourai Wallet prilikom dizajniranja Whirlpool, što ih je navelo da ograniče broj učesnika po ciklusu. Premalo učesnika bi ugrozilo efikasnost CoinJoin, drastično smanjujući broj anonsetova generisanih po ciklusu, dok bi previše učesnika izazvalo probleme u upravljanju na mobilnim aplikacijama i ometalo tok ciklusa.
+Ovi imperativi su usmeravali izbore koje su doneli programeri Samourai novčanika prilikom dizajniranja Whirlpool-a, što ih je navelo da ograniče broj učesnika po ciklusu. Premalo učesnika bi ugrozilo efikasnost CoinJoin-a, drastično smanjujući broj anonsetova generisanih po ciklusu, dok bi previše učesnika izazvalo probleme u upravljanju na mobilnim aplikacijama i ometalo tok ciklusa.
 
 
-Konačno, nema potrebe imati veliki broj učesnika po CoinJoin na Whirlpool, jer se anonseti prave na akumulaciji nekoliko CoinJoin ciklusa. Najvažniji princip ovde je homogenost UTXO-a svih učesnika, jer to osigurava savršeno mešanje, i stoga punu korist od ciklusa mešanja i ponovnog mešanja.
+Konačno, nema potrebe imati veliki broj učesnika po CoinJoin-u na Whirlpool-u, jer se anonseti prave na akumulaciji nekoliko CoinJoin ciklusa. Najvažniji princip ovde je homogenost UTXO-a svih učesnika, jer to osigurava savršeno mešanje, i stoga punu korist od ciklusa mešanja i ponovnog mešanja.
 
 
 ### CoinJoin bazeni i naknade
