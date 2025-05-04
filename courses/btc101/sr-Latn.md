@@ -1,5 +1,5 @@
 ---
-name: Putovanje Bitcoin
+name: Putovanje kroz Bitcoin
 goal: Otkrijte osnove Bitcoin, uključujući njegovu novčanu vrednost, rudare, transakcije i novčanike.
 objectives: 
 
