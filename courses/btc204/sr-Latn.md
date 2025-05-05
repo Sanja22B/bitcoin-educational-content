@@ -3164,17 +3164,17 @@ Postoje 2 tipa anonseta:
 
 
 
-- **Perspektivni anonset ;**
+- **Proaktivni anonset ;**
 - **Retrospektivni anonset.**
 
 
-### Perspektivni anonset
+### Proaktivni anonset
 
 
 Proaktivni anonset označava veličinu grupe među kojom je proučavan UTXO na kraju ciklusa skriven, s obzirom na UTXO na početku, tj. broj međusobno nerazlučuvih delova prisutnih unutar ove grupe. Naziv ovog indikatora je "proaktivna metrika".
 
 
-Ovaj indikator meri otpornost poverljivosti UTXO-a na analizu od prošlosti do sadašnjosti (od ulaza do izlaza).
+Ovaj indikator meri otpornost na ugrožavanje poverljivosti UTXO-a prilikom analize od prošlosti do sadašnjosti (od ulaza do izlaza).
 
 
 ![BTC204](assets/fr/152.webp)
@@ -3198,7 +3198,7 @@ Na primer, zamislimo da naš novčić na početku CoinJoin ciklusa ima perspekti
 ### Retrospektivni anonset
 
 
-Retrospektivni anonset ukazuje na broj mogućih izvora za dati deo, znajući UTXO na kraju ciklusa. Ovaj indikator meri otpornost na narušavanje poverljivosti UTXO dela na analizu od sadašnjosti ka prošlosti (od izlaza ka ulazu), tj. koliko je analitičaru teško da prati vaš deo nazad do njegovog porekla, pre CoinJoin ciklusa. Naziv ovog indikatora je "retrospektivni anonset", ili "metrike usmerene unazad".
+Retrospektivni anonset ukazuje na broj mogućih izvora za dati UTXO deo, znajući UTXO na kraju ciklusa. Ovaj indikator meri otpornost na narušavanje poverljivosti UTXO dela prilikom analize od sadašnjosti ka prošlosti (od izlaza ka ulazu), tj. koliko je analitičaru teško da prati vaš deo nazad do njegovog porekla, pre CoinJoin ciklusa. Naziv ovog indikatora je "retrospektivni anonset", ili "metrike usmerene unazad".
 
 
 ![BTC204](assets/fr/155.webp)
@@ -3237,7 +3237,7 @@ https://planb.network/tutorials/privacy/analysis/wst-anonsets-0354b793-c301-48af
 
 
 
-Kao što smo videli u ovom odeljku o coinjoins, homogenost UTXO-a u ulazu i izlazu igra važnu ulogu u poboljšanju poverljivosti Bitcoin transakcije. Ovaj parametar stvara verodostojnu poricljivost u suočavanju sa Blockchain analizom. Nekoliko metoda se može koristiti za merenje ove homogenosti, ali jedna od najefikasnijih, po mom mišljenju, je korišćenje indikatora koje pruža alat *Boltzmann*, razvijen od strane OXT i Samourai Wallet timova, a posebno entropija transakcije. Ovo ćemo detaljno razmotriti u ovom poglavlju.
+Kao što smo videli u ovom odeljku o coinjoin-ovima, homogenost UTXO-a u ulazu i izlazu igra važnu ulogu u poboljšanju poverljivosti Bitcoin transakcije. Ovaj parametar stvara mogućnost uverljivog poricanja u suočavanju sa blokčejn analizom. Nekoliko metoda se može koristiti za merenje ove homogenosti, ali jedna od najefikasnijih, po mom mišljenju, je korišćenje indikatora koje pruža alat *Boltzmann*, razvijen od strane OXT i Samourai Wallet timova, a posebno entropija transakcije. Ovo ćemo detaljno razmotriti u ovom poglavlju.
 
 
 Za razliku od anonsetova, koji se računaju na skupu transakcija, indikatori predstavljeni ovde fokusiraju se na jednu transakciju, bilo da je to CoinJoin ili tradicionalnija transakcija.
@@ -3255,13 +3255,13 @@ Na primer, jednostavna platna transakcija sa 1 ulazom i 2 izlaza imaće samo jed
 ![BTC204](assets/fr/159.webp)
 
 
-S druge strane, Whirlpool 5x5 ugao ima $1\,496$ mogućih kombinacija:
+S druge strane, Whirlpool 5x5 konfiguracija ima $1\,496$ mogućih kombinacija:
 
 
 ![BTC204](assets/fr/160.webp)
 
 
-Whirlpool Surge Cycle 8x8 CoinJoin ima $9\,934\,563$ mogućih interpretacija:
+Whirlpool Surge Cycle 8x8 konfiguracija ima $9\,934\,563$ mogućih interpretacija:
 
 
 ![BTC204](assets/fr/161.webp)
@@ -3276,16 +3276,16 @@ Iz broja interpretacija Bitcoin transakcije, možemo izračunati njenu entropiju
 U opštem kontekstu kriptografije i informacija, entropija je kvantitativna mera nesigurnosti ili nepredvidljivosti povezane sa izvorom podataka ili slučajnim procesom. Drugim rečima, entropija je način merenja koliko je teško predvideti ili pogoditi neki deo informacije.
 
 
-U specifičnom kontekstu analize Blockchain, entropija je takođe naziv indikatora, izvedenog iz Shannonove entropije i [izumljenog od strane LaurentMT](https://gist.github.com/LaurentMT/e758767ca4038ac40aaf), koji se može izračunati na transakciji Bitcoin.
+U specifičnom kontekstu blokčejn analize, entropija je takođe naziv indikatora, izvedenog iz Shannonove entropije i [izumljenog od strane LaurentMT](https://gist.github.com/LaurentMT/e758767ca4038ac40aaf), koji se može izračunati na Bitcoin transakciji.
 
 
 Kada transakcija predstavlja veliki broj mogućih interpretacija, često je relevantnije pozvati se na njenu entropiju. Ovaj indikator meri nedostatak znanja analitičara o tačnoj konfiguraciji transakcije. Drugim rečima, što je veća entropija, to postaje teže za analitičare da identifikuju tok bitkoina između ulaza i izlaza.
 
 
-U praksi, entropija otkriva da li, sa stanovišta spoljnog posmatrača, transakcija predstavlja više mogućih interpretacija, zasnovanih isključivo na količinama ulaza i izlaza, bez uzimanja u obzir drugih spoljašnjih ili unutrašnjih obrazaca i heuristika. Visoka entropija je stoga sinonim za veću poverljivost transakcije.
+U praksi, entropija otkriva da li, sa stanovišta spoljnog posmatrača, transakcija predstavlja više mogućih interpretacija, zasnovanih isključivo na iznosima ulaza i izlaza, bez uzimanja u obzir drugih spoljašnjih ili unutrašnjih obrazaca i heuristika. Visoka entropija je stoga sinonim za veću poverljivost transakcije.
 
 
-Entropija je definisana kao binarni logaritam broja mogućih kombinacija. Evo formule koja se koristi sa $E$ entropijom transakcije i $C$ brojem mogućih interpretacija:
+Entropija je definisana kao binarni logaritam broja mogućih kombinacija. Evo formule gde se sa $E$ označava entropija transakcije i sa $C$ broj mogućih interpretacija:
 
 
 $$
@@ -3296,7 +3296,7 @@ $$
 U matematici, binarni logaritam (logaritam sa bazom 2) je inverzna operacija eksponenciranja broja 2. Drugim rečima, binarni logaritam od $x$ je eksponent na koji se $2$ mora podići da bi se dobilo $x$. Ovaj pokazatelj se stoga izražava u bitovima.
 
 
-Uzmimo primer izračuna entropije za transakciju CoinJoin strukturisanu prema Whirlpool 5x5 modelu, koji, kao što je pomenuto u prethodnom odeljku, ima broj mogućih interpretacija od $1\,496$ :
+Uzmimo primer izračunavanje entropije za CoinJoin transakciju strukturisanu prema Whirlpool 5x5 modelu, koji, kao što je pomenuto u prethodnom odeljku, ima broj mogućih interpretacija od $1\,496$ :
 
 
 $$
@@ -3308,7 +3308,7 @@ E &= 10.5469 \text{ bits}
 $$
 
 
-Dakle, ova transakcija CoinJoin ima entropiju od $10.5469$ bita, što se smatra veoma zadovoljavajućim. Što je ova vrednost viša, to više različitih interpretacija transakcija dopušta, čime se pojačava njen nivo poverljivosti.
+Dakle, ova CoinJoin transakcija ima entropiju od $10.5469$ bita, što se smatra veoma zadovoljavajućim. Što je ova vrednost viša, to više različitih interpretacija transakcija dopušta, čime se pojačava njen nivo poverljivosti.
 
 
 Za CoinJoin 8x8 transakciju sa $9\,934\,563$ interpretacija, entropija bi bila :
@@ -3350,7 +3350,7 @@ Na osnovu entropije transakcije, možemo takođe izračunati njenu efikasnost u 
 Ovo nas dovodi do koncepta maksimalne entropije, koja odgovara najvećoj entropiji koju određena struktura transakcije teoretski može postići. Efikasnost transakcije se zatim izračunava poređenjem ove maksimalne entropije sa stvarnom entropijom transakcije koja se analizira.
 
 
-Formula koja se koristi je sledeća sa:
+Formula koja se koristi je sledeća gde je:
 
 
 
@@ -3365,7 +3365,7 @@ Ef = E_R - E_M
 $$
 
 
-Na primer, za strukturu Whirlpool 5x5 CoinJoin, maksimalna entropija je $10.5469$ :
+Na primer, za strukturu Whirlpool CoinJoin 5x5, maksimalna entropija je $10.5469$ :
 
 
 $$
@@ -3422,7 +3422,7 @@ E_D = \frac{E}{T}
 $$
 
 
-Uzmimo primer Whirlpool 5x5 CoinJoin:
+Uzmimo primer 5x5 Whirlpool CoinJoin:
 
 
 $$
@@ -3450,7 +3450,7 @@ E_D &= 1.453 \text{ bits}
 $$
 
 
-Analizom entropijsku gustinu ove dve vrste CoinJoin, postaje jasno da, čak i kada se entropija normalizuje brojem Elements, "Surge Cycle 8x8" CoinJoin generiše više nesigurnosti za analizu.
+Analizom entropijske gustine ova dva CoinJoin-a, postaje jasno da, čak i kada se entropija normalizuje brojem elemenata, "Surge Cycle 8x8" CoinJoin generiše više nesigurnosti za analizu.
 
 
 ### Boltzmannov skor
@@ -3459,7 +3459,7 @@ Analizom entropijsku gustinu ove dve vrste CoinJoin, postaje jasno da, čak i ka
 Još jedan deo informacija analiziranih u transakciji je Boltzmann-ov skor svakog elementa u odnosu na drugi. Ovo je tabela verovatnoća podudaranja između ulaza i izlaza. Ova tabela pokazuje, kroz Boltzmann-ov skor, uslovnu verovatnoću da je određeni ulaz povezan sa datim izlazom. To je, dakle, kvantitativna mera uslovne verovatnoće da će se desiti asocijacija između ulaza i izlaza u transakciji, zasnovana na odnosu broja povoljnih pojava ovog događaja prema ukupnom broju mogućih pojava, u skupu interpretacija.
 
 
-Koristeći primer Whirlpool CoinJoin, tabela uslovne verovatnoće bi istakla šanse za vezu između svakog ulaza i izlaza, nudeći kvantitativnu meru nejasnoće asocijacija u transakciji:
+Koristeći primer Whirlpool CoinJoin-a, tabela uslovne verovatnoće bi predstaljala šanse za vezu između svakog ulaza i izlaza, nudeći kvantitativnu meru nejasnoće asocijacija u transakciji:
 
 
 | % | Output 0 | Output 1 | Output 2 | Output 3 | Output 4 |
@@ -3486,7 +3486,7 @@ $$
 $$
 
 
-Ako uzmemo primer Whirlpool 8x8 Surge Cycle CoinJoin, Boltzmannova tabela bi izgledala ovako:
+Ako uzmemo primer 8x8 Whirlpool Surge Cycle CoinJoin, Boltzmannova tabela bi izgledala ovako:
 
 
 | OUT.0 | OUT.1 | OUT.2 | OUT.3 | OUT.4 | OUT.5 | OUT.6 | OUT.7 |
@@ -3540,7 +3540,7 @@ Bilo je moguće koristiti i vebsajt KYCP.org za ove analize:
 Nažalost, nakon hapšenja osnivača Samourai-a, ovi alati više nisu operativni.
 
 
-Sada kada smo detaljno obradili coinjoin-e, pogledaćemo druge tehnike privatnosti dostupne na Bitcoin u poslednjem delu našeg kursa. Pogledaćemo payjoin-e, specifične pseudo-CoinJoin tipove transakcija, statične Address protokole, kao i mere za jačanje poverljivosti ne na nivou samih transakcija, već na nivou mreže čvorova.
+Sada kada smo detaljno obradili coinjoin-e, pogledaćemo druge tehnike privatnosti dostupne na Bitcoin-u u poslednjem delu našeg kursa. Pogledaćemo payjoin-e, specifične pseudo-CoinJoin tipove transakcija, protokole statičnih adresa, kao i mere za jačanje poverljivosti ne na nivou samih transakcija, već na nivou mreže čvorova.
 
 
 https://planb.network/tutorials/privacy/analysis/boltzmann-entropy-738e45af-18a6-4ce6-af1a-1bf58e15f1fe
@@ -3558,7 +3558,7 @@ https://planb.network/tutorials/privacy/analysis/boltzmann-entropy-738e45af-18a6
 
 
 
-CoinJoin je trenutno najefikasnija metoda za uvođenje nesigurnosti u praćenje delova u analizi lanca. Kao što smo videli u prethodnim poglavljima, da bi se dobila mešavina visokih performansi, ulazi i izlazi moraju biti što homogeniji. Pored toga, važno je da delovi budu integrisani u što veću grupu kako bi se maksimizirala anonimnost. Dakle, da bi coinjoini bili efikasni, moraju uključivati veliki broj uniformnih delova. Ovaj mnoštvo zahteva znači da transakcije CoinJoin imaju veoma rigidnu strukturu: iznosi su unapred fiksirani, i svi učesnici moraju ih se pridržavati kako bi se garantovala uniformnost procesa. Pored toga, coinjoini zahtevaju sinhronizaciju između svih učesnika i koordinatora tokom konstrukcije transakcije.
+CoinJoin je trenutno najefikasnija metoda za uvođenje nesigurnosti u praćenje UTXO delova u analizi lanca. Kao što smo videli u prethodnim poglavljima, da bi se dobila mešavina visokih performansi, ulazi i izlazi moraju biti što homogeniji. Pored toga, važno je da delovi budu integrisani u što veću grupu kako bi se maksimizirala anonimnost. Dakle, da bi coinjoini bili efikasni, moraju uključivati veliki broj uniformnih delova. Ovo mnoštvo zahteva znači da CoinJoin transakcije imaju veoma rigidnu strukturu: iznosi su unapred fiksirani, i svi učesnici moraju ih se pridržavati kako bi se garantovala uniformnost procesa. Pored toga, coinjoini zahtevaju sinhronizaciju između svih učesnika i koordinatora tokom konstrukcije transakcije.
 
 
 Ovi zahtevi čine CoinJoin nepogodnim za direktna plaćanja. Na primer, ako imate 1M Sats novčić u CoinJoin bazenu, korišćenje istog direktno kao plaćanje bilo bi složeno. To bi zahtevalo sinhronizaciju sa ostalim učesnicima i koordinatorom kako bi se izgradila kolaborativna transakcija tačno u trenutku kada treba da izvršite plaćanje, a iznos kupovine bi morao tačno da odgovara vrednosti vašeg novčića, što je praktično neizvodljivo. CoinJoin transakcija je stoga po svojoj prirodi kolaborativna transakcija čišćenja, tj. obično su isti vlasnici ulaza koje nalazimo u izlazima.
@@ -3570,10 +3570,10 @@ Međutim, bilo bi zanimljivo imati strukture transakcija koje omogućavaju plać
 ### Šta je PayJoin transakcija?
 
 
-PayJoin je specifična struktura transakcije Bitcoin koja poboljšava privatnost korisnika prilikom trošenja kroz saradnju sa primaocem plaćanja.
+PayJoin je specifična struktura Bitcoin transakcije koja poboljšava privatnost korisnika prilikom trošenja kroz saradnju sa primaocem plaćanja.
 
 
-LaurentMT je prvi put nazvao ovu metodu "*steganografske transakcije*" 2015. godine, prema dokumentu dostupnom [ovde](https://gist.githubusercontent.com/LaurentMT/e758767ca4038ac40aaf/raw/c8125f6a3c3d0e90246dc96d3b603690ab6f1dcc/gistfile1.txt). Tehniku je kasnije usvojio Samourai Wallet, koji je 2018. postao prvi korisnik koji ju je implementirao sa alatom Stowaway. Koncept PayJoin se takođe može pronaći u [BIP79](https://github.com/Bitcoin/bips/blob/master/bip-0079.mediawiki) i [BIP78](https://github.com/Bitcoin/bips/blob/master/bip-0078.mediawiki). Nekoliko termina se koristi za označavanje PayJoin:
+LaurentMT je prvi put nazvao ovu metodu "*steganografske transakcije*" 2015. godine, prema dokumentu dostupnom [ovde](https://gist.githubusercontent.com/LaurentMT/e758767ca4038ac40aaf/raw/c8125f6a3c3d0e90246dc96d3b603690ab6f1dcc/gistfile1.txt). Tehniku je kasnije usvojio Samourai Wallet, koji je 2018. postao prvi korisnik koji ju je implementirao sa alatom Stowaway. Koncept PayJoin se takođe može pronaći u [BIP79](https://github.com/Bitcoin/bips/blob/master/bip-0079.mediawiki) i [BIP78](https://github.com/Bitcoin/bips/blob/master/bip-0078.mediawiki). Nekoliko termina se koristi za označavanje PayJoin-a:
 
 
 
@@ -3584,37 +3584,37 @@ LaurentMT je prvi put nazvao ovu metodu "*steganografske transakcije*" 2015. god
 - Steganografska transakcija.
 
 
-Posebna karakteristika PayJoin leži u njegovoj sposobnosti da generate transakciju koja na prvi pogled izgleda obično, ali je zapravo mini CoinJoin između dve osobe. Da bi se to postiglo, struktura transakcije uključuje primaoca uplate u ulazima zajedno sa stvarnim pošiljaocem. Primalac tako uključuje uplatu sebi usred transakcije, što mu omogućava da bude plaćen.
+Posebna karakteristika PayJoin-a leži u njegovoj sposobnosti da generiše transakciju koja na prvi pogled izgleda obično, ali je zapravo mini CoinJoin između dve osobe. Da bi se to postiglo, struktura transakcije uključuje primaoca uplate u ulazima zajedno sa stvarnim pošiljaocem. Primalac tako uključuje uplatu sebi usred transakcije, što mu omogućava da bude plaćen.
 
 
-Hajde da uzmemo primer kako bismo bolje razumeli ovaj proces. Alisa kupuje baget za 4,000 Sats koristeći UTXO od 10,000 Sats i odlučuje se za PayJoin. Njen pekar, Bob, dodaje UTXO od 15,000 Sats koji pripada njemu kao ulaz, koji u potpunosti povrati kao izlaz, pored Alisinih 4,000 Sats.
+Hajde da uzmemo primer kako bismo bolje razumeli ovaj proces. Alisa kupuje baget za 4,000 Sats koristeći UTXO od 10,000 Sats i odlučuje se za PayJoin. Njen pekar, Bob, dodaje UTXO od 15,000 Sats koji pripada njemu kao ulaz, koji on u potpunosti povrati kao izlaz, pored Alisinih 4,000 Sats.
 
 
 ![BTC204](assets/fr/165.webp)
 
 
-U ovom primeru, Bob pekar unosi 15,000 Sats kao ulaz i izlazi sa 19,000 Sats, pri čemu je razlika tačno 4,000 Sats, tj. cena bageta. Sa Alisine strane, ona unosi 10,000 Sats i završava sa 6,000 Sats kao izlaz, što predstavlja saldo od -4,000 Sats, tj. cena bageta. Da bih pojednostavio primer, namerno sam izostavio troškove Mining u ovoj transakciji.
+U ovom primeru, Bob pekar unosi 15,000 Sats kao ulaz i izlazi sa 19,000 Sats, pri čemu je razlika tačno 4,000 Sats, tj. cena bageta. Sa Alisine strane, ona unosi 10,000 Sats i završava sa 6,000 Sats kao izlaz, što predstavlja saldo od -4,000 Sats, tj. cena bageta. Da bih pojednostavio primer, namerno sam izostavio troškove rudarenja u ovoj transakciji.
 
 
 ### Čemu služi PayJoin?
 
 
-Transakcija PayJoin ispunjava dva cilja, omogućavajući korisnicima da poboljšaju poverljivost svoje uplate.
+Transakcija PayJoin ispunjava dva cilja, omogućava korisnicima da poboljšaju poverljivost svoje uplate.
 
 
-Prvo, PayJoin ima za cilj da zavara spoljnog posmatrača stvaranjem mamca u analizi lanca. Ovo je omogućeno CIOH heuristikom (*Common Input Ownership Heuristic*). Kao što smo videli u delu 3, obično, kada transakcija na Blockchain ima nekoliko ulaza, pretpostavlja se da svi ti ulazi pripadaju istom entitetu ili korisniku.
+Prvo, PayJoin ima za cilj da zavara spoljnog posmatrača stvaranjem mamca u analizi lanca. Ovo je omogućeno CIOH heuristikom (*Common Input Ownership Heuristic*). Kao što smo videli u delu 3, obično, kada transakcija na blokčejnu ima nekoliko ulaza, pretpostavlja se da svi ti ulazi pripadaju istom entitetu ili korisniku.
 
 
-Dakle, kada analitičar ispituje transakciju PayJoin, on ili ona je naveden(a) da veruje da svi ulazi dolaze od iste osobe. Međutim, ova percepcija je pogrešna, jer primalac takođe doprinosi ulazima zajedno sa stvarnim platiocem. Analiza lanca je stoga usmerena ka interpretaciji koja se ispostavlja kao pogrešna.
+Dakle, kada analitičar ispituje PayJoin transakciju, on ili ona je naveden(a) da veruje da svi ulazi dolaze od iste osobe. Međutim, ova percepcija je pogrešna, jer primalac takođe doprinosi ulazima zajedno sa stvarnim platiocem. Analiza lanca je stoga usmerena ka interpretaciji koja se ispostavlja kao pogrešna.
 
 
-Hajde da uzmemo naš primer transakcije PayJoin za plaćanje bageta:
+Hajde da uzmemo naš primer PayJoin transakcije za plaćanje bageta:
 
 
 ![BTC204](assets/fr/166.webp)
 
 
-Videći ovu transakciju na Blockchain, spoljašnji posmatrač koji prati uobičajene heuristike analize Blockchain bi napravio sledeću interpretaciju: "*Alice je spojila 2 UTXO-a kao ulaze u transakciju kako bi platila 19,000 Sats Bobu*".
+Videći ovu transakciju na blokčejnu, spoljašnji posmatrač koji prati uobičajene heuristike analize blokčejna bi napravio sledeću interpretaciju: "*Alisa je spojila 2 UTXO-a kao ulaze u transakciju kako bi platila 19,000 Sats Bobu*".
 
 
 ![BTC204](assets/fr/167.webp)
@@ -3632,10 +3632,10 @@ Na ovaj način, analiza spoljnog posmatrača se usmerava ka pogrešnom zaključk
 ### Steganografska transakcija
 
 
-Druga svrha PayJoin je da zavara spoljnog posmatrača o stvarnom iznosu izvršene uplate. Analizom strukture transakcije, analitičar bi mogao poverovati da uplata odgovara iznosu jednog od izlaza.
+Druga svrha PayJoin-a je da zavara spoljnog posmatrača o stvarnom iznosu izvršene uplate. Analizom strukture transakcije, analitičar bi mogao poverovati da uplata odgovara iznosu jednog od izlaza.
 
 
-Ako se vratimo na naš primer kupovine bageta, analitičar će misliti da iznos plaćanja odgovara ili UTXO od 6,000 Sats, ili UTXO od 19,000 Sats. U ovom slučaju, analitičar će pre misliti da je iznos plaćanja 19,000 Sats, jer postoje 2 UTXO-a u izlazima, od kojih je bar jedan veći od 6,000 Sats (nema logičnog razloga da se koriste 2 UTXO-a za plaćanje 6,000 Sats kada bi jedan UTXO bio dovoljan da zadovolji ovo plaćanje).
+Ako se vratimo na naš primer kupovine bageta, analitičar će misliti da iznos plaćanja odgovara ili UTXO od 6,000 Sats, ili UTXO od 19,000 Sats. U ovom slučaju, analitičar će pre misliti da je iznos od 19,000 Sats iznos plaćanja, jer postoje 2 UTXO-a u izlazima, od kojih je bar jedan veći od 6,000 Sats (nema logičnog razloga da se koriste 2 UTXO-a za plaćanje 6,000 Sats kada bi jedan UTXO bio dovoljan da zadovolji ovo plaćanje).
 
 
 ![BTC204](assets/fr/169.webp)
@@ -3647,22 +3647,22 @@ Ali u stvarnosti, ova analiza je manjkava. Iznos plaćanja ne odgovara nijednom 
 ![BTC204](assets/fr/170.webp)
 
 
-U tom pogledu, transakcija PayJoin spada u oblast steganografije. Omogućava da stvarni iznos transakcije bude skriven unutar lažne transakcije koja služi kao mamac.
+U tom pogledu, PayJoin transakcija spada u oblast steganografije. Omogućava da stvarni iznos transakcije bude skriven unutar lažne transakcije koja služi kao mamac.
 
 
 Steganografija je tehnika za skrivanje informacija unutar drugih podataka ili objekata, tako da prisustvo skrivenih informacija nije primetno. Na primer, tajna poruka može biti sakrivena unutar tačke u nepovezanom tekstu, čineći je neprimetnom golim okom (ovo je tehnika [mikrotačke](https://fr.wikipedia.org/wiki/Micropoint)).
 
 
-Za razliku od enkripcije, koja čini informacije nerazumljivim bez ključa za dešifrovanje, steganografija ne modifikuje informacije. One ostaju prikazane u čistom tekstu. Umesto toga, njen cilj je da sakrije samo postojanje tajne poruke, dok enkripcija jasno otkriva prisustvo skrivene informacije, iako je nedostupna bez ključa. Zbog toga je originalni naziv PayJoin bio "steganografske transakcije".
+Za razliku od enkripcije, koja čini informacije nerazumljivim bez ključa za dešifrovanje, steganografija ne modifikuje informacije. One ostaju prikazane u čistom tekstu. Umesto toga, njen cilj je da sakrije samo postojanje tajne poruke, dok enkripcija jasno otkriva prisustvo skrivene informacije, iako je nedostupna bez ključa. Zbog toga je originalni naziv PayJoin-a bio "steganografske transakcije".
 
 
-Analogija se može povući između kriptografije i CoinJoin, i između steganografije i PayJoin. CoinJoin ima slične atribute kao enkripcija: metoda je prepoznatljiva, ali informacija je nečitljiva. Nasuprot tome, PayJoin je sličan steganografiji: informacija je teoretski dostupna, ali pošto metoda skrivanja nije prepoznatljiva, postaje nedostupna.
+Analogija se može povući između kriptografije i CoinJoin-a, i između steganografije i PayJoin-a. CoinJoin ima slične atribute kao enkripcija: metoda je prepoznatljiva, ali informacija je nečitljiva. Nasuprot tome, PayJoin je sličan steganografiji: informacija je teoretski dostupna, ali pošto metoda skrivanja nije prepoznatljiva, postaje nedostupna.
 
 
 ### Kako da koristim PayJoin?
 
 
-Dobro poznati softverski programi koji podržavaju PayJoin uključuju Sparrow Wallet, Wasabi Wallet, Mutiny, BitMask, BlueWallet i JoinMarket, kao i procesor plaćanja BTCPay.
+Dobro poznati softverski novčanici koji podržavaju PayJoin uključuju Sparrow Wallet, Wasabi Wallet, Mutiny, BitMask, BlueWallet i JoinMarket, kao i procesor plaćanja BTCPay.
 
 
 ![BTC204](assets/fr/171.webp)
@@ -3674,7 +3674,7 @@ Najnaprednija implementacija PayJoin bila je samo Stowaway na Samourai Wallet. M
 ![BTC204](assets/fr/172.webp)
 
 
-Teškoća u korišćenju PayJoin leži u njegovoj zavisnosti od učešća trgovca. Kao kupac, ne možete koristiti PayJoin ako ga trgovac ne podržava. Ovo dodaje dodatnu teškoću procesu kupovine: ne samo da je teško pronaći trgovce koji prihvataju Bitcoin, već ako takođe tražite one koji podržavaju payjoins, postaje još komplikovanije.
+Teškoća u korišćenju PayJoin-a leži u njegovoj zavisnosti od učešća trgovca. Kao kupac, ne možete koristiti PayJoin ako ga trgovac ne podržava. Ovo dodaje dodatnu teškoću procesu kupovine: ne samo da je teško pronaći trgovce koji prihvataju Bitcoin, već ako takođe tražite one koji podržavaju payjoins, postaje još komplikovanije.
 
 
 Jedno rešenje bi bilo korišćenje struktura transakcija koje uvode nejasnoće u analizu lanca bez potrebe za saradnjom primaoca. Ovo bi nam omogućilo da poboljšamo poverljivost naših plaćanja bez oslanjanja na aktivno učešće trgovaca. Upravo to ćemo razmotriti u narednom poglavlju.
@@ -3684,14 +3684,14 @@ https://planb.network/tutorials/privacy/on-chain/payjoin-sparrow-wallet-087a0e49
 
 https://planb.network/tutorials/privacy/on-chain/payjoin-samourai-wallet-48a5c711-ee3d-44db-b812-c55913080eab
 
-## Plaćanje mini-CoinJoin
+## Mini-CoinJoin plaćanja
 
 
 <chapterId>300777ee-30ae-43d7-ab00-479dac3522c1</chapterId>
 
 
 
-Kada želite da izvršite platnu transakciju uz održavanje određenog stepena poverljivosti, PayJoin je dobra opcija. Ali kao što smo upravo videli, PayJoin zahteva učešće primaoca. Dakle, šta raditi ako primalac odbije da učestvuje u PayJoin, ili ako jednostavno ne želite da ih uključite? Jedna alternativa je korišćenje Stonewall ili Stonewall x2 transakcije. Hajde da detaljnije pogledamo ove dve vrste transakcija.
+Kada želite da izvršite platnu transakciju uz održavanje određenog stepena poverljivosti, PayJoin je dobra opcija. Ali kao što smo upravo videli, PayJoin zahteva učešće primaoca. Dakle, šta raditi ako primalac odbije da učestvuje u PayJoin-u, ili ako jednostavno ne želite da ih uključite? Jedna alternativa je korišćenje Stonewall ili Stonewall x2 transakcije. Hajde da detaljnije pogledamo ove dve vrste transakcija.
 
 
 ### Stonewall transakcija
@@ -3700,7 +3700,7 @@ Kada želite da izvršite platnu transakciju uz održavanje određenog stepena p
 Stonewall je specifičan oblik Bitcoin transakcije dizajniran da poveća poverljivost korisnika prilikom trošenja, imitirajući pseudo-CoinJoin između dve osobe, bez da to zapravo bude. U stvari, ova transakcija nije kolaborativna. Korisnik je može izgraditi samostalno, koristeći samo UTXO-ove koje poseduje kao ulaze. Tako možete kreirati Stonewall transakciju za bilo koju priliku, bez potrebe za sinhronizacijom sa drugim korisnikom ili primaocem.
 
 
-Stonewall transakcija funkcioniše na sledeći način: kao ulaz u transakciju, izdavalac koristi 2 UTXO-a koja pripadaju njemu. Na izlazu, transakcija proizvodi 4 UTXO-a, od kojih su 2 potpuno iste vrednosti. Druga 2 UTXO-a će činiti strani Exchange. Od 2 izlaza iste vrednosti, samo jedan će zapravo ići primaocu.
+Stonewall transakcija funkcioniše na sledeći način: kao ulaz u transakciju, izdavalac koristi 2 UTXO-a koja pripadaju njemu. Na izlazu, transakcija proizvodi 4 UTXO-a, od kojih su 2 potpuno iste vrednosti. Druga 2 UTXO-a će činiti kusur. Od 2 izlaza iste vrednosti, samo jedan će zapravo ići primaocu.
 
 
 Dakle, postoje samo 2 uloge u Stonewall transakciji:
@@ -3718,19 +3718,19 @@ Hajde da uzmemo primer da bismo razumeli ovu strukturu transakcije. Alisa odlazi
 ![BTC204](assets/fr/173.webp)
 
 
-Analizom ove transakcije, možemo videti da je Bob pekar zapravo primio 4,000 Sats kao uplatu za baget. Alisa je koristila 2 UTXO-a kao ulaze: jedan za 10,000 Sats i jedan za 15,000 Sats. U izlazima, ona je povratila 3 UTXO-a: jedan za 4,000 Sats, jedan za 6,000 Sats i jedan za 11,000 Sats. Alisa stoga ima neto saldo od -4,000 Sats na ovoj transakciji, što odgovara ceni bageta.
+Analizom ove transakcije, možemo videti da je Bob pekar zapravo primio 4,000 Sats kao uplatu za baget. Alisa je koristila 2 UTXO-a kao ulaze: jedan sa 10,000 Sats i jedan sa 15,000 Sats. U izlazima, ona je povratila 3 UTXO-a: jedan sa 4,000 Sats, jedan sa 6,000 Sats i jedan sa 11,000 Sats. Alisa stoga ima neto saldo od -4,000 Sats na ovoj transakciji, što odgovara ceni bageta.
 
 
-U ovom primeru, namerno sam zanemario Mining naknade kako bih olakšao razumevanje. U stvarnosti, troškove transakcije u potpunosti snosi izdavalac.
+U ovom primeru, namerno sam zanemario rudarske naknade kako bih olakšao razumevanje. U stvarnosti, troškove transakcije u potpunosti snosi izdavalac.
 
 
 ### Koji su ciljevi Stonewall transakcije?
 
 
-Stonewall struktura dodaje ogromnu količinu entropije transakciji, zamagljujući linije analize lanca. Gledano spolja, takva transakcija može biti interpretirana kao mini-CoinJoin između dve osobe. Ali u stvarnosti, to je plaćanje. Ova metoda stoga stvara nesigurnosti u analizi lanca, ili čak vodi do lažnih tragova.
+Stonewall struktura dodaje ogromnu količinu entropije transakciji, čime značajno otežava analizu blokčejna. Gledano spolja, takva transakcija može biti interpretirana kao mini-CoinJoin između dve osobe. Ali u stvarnosti, to je plaćanje. Ova metoda stoga stvara nesigurnosti u analizi lanca, ili čak vodi do lažnih tragova.
 
 
-Hajde da uzmemo primer Alise kod Boba pekara. Transakcija na Blockchain bi izgledala ovako:
+Hajde da uzmemo primer Alise kod Boba pekara. Transakcija na blokčejnu bi izgledala ovako:
 
 
 ![BTC204](assets/fr/174.webp)
@@ -3742,7 +3742,7 @@ Spoljašnji posmatrač koji se oslanja na uobičajene heuristike analize lanca m
 ![BTC204](assets/fr/175.webp)
 
 
-Ovo tumačenje je netačno, jer, kao što znate, jedan UTXO je poslat Bobu pekaru, 2 UTXO ulaza su došla od Alice, a ona je povratila 3 Exchange izlaza.
+Ovo tumačenje je netačno, jer, kao što znate, jedan UTXO je poslat Bobu pekaru, 2 UTXO ulaza su došla od Alice, a ona je isto tako povratila 3 izlaza.
 
 
 ![BTC204](assets/fr/176.webp)
@@ -3757,7 +3757,7 @@ A što je posebno zanimljivo u vezi sa strukturom Stonewall transakcije je to š
 Stonewall x2 je još jedan specifičan oblik Bitcoin transakcije koji takođe ima za cilj povećanje poverljivosti korisnika prilikom trošenja, ali ovaj put kroz saradnju sa trećom osobom koja nije uključena u to trošenje. Ova metoda funkcioniše kao pseudo-CoinJoin između dva učesnika, dok istovremeno vrši plaćanje trećoj osobi.
 
 
-Operacija Stonewall x2 transakcije je relativno jednostavna: koristimo UTXO u našem posedu da izvršimo uplatu i angažujemo pomoć treće strane koja takođe doprinosi sa svojim UTXO. Transakcija se završava sa četiri izlaza: dva od njih su u jednakim iznosima, jedan namenjen za Address primaoca, drugi za Address koji pripada saradniku. Treći UTXO se vraća na drugi Address koji pripada saradniku, omogućavajući mu da povrati početni iznos (neutralna akcija za njega, modulo troškovi Mining), a konačni UTXO se vraća na Address koji pripada nama, što čini uplatu Exchange.
+Operacija Stonewall x2 transakcije je relativno jednostavna: koristimo UTXO u našem posedu da izvršimo uplatu i angažujemo pomoć treće strane koja takođe doprinosi sa svojim UTXO. Transakcija se završava sa četiri izlaza: dva od njih su u jednakim iznosima, jedan namenjen za adresu primaoca, drugi za adresu koji pripada saradniku. Treći UTXO se vraća na drugu adfresu koji pripada saradniku, omogućavajući mu da povrati početni iznos (neutralna akcija za njega, ne uzimajući u obzir troškovi rudarenja), a konačni UTXO se vraća na adresu koja pripada nama, što čini uplatu kusura.
 
 
 Tri različite uloge su tako definisane u Stonewall x2 transakcijama:
@@ -3767,10 +3767,10 @@ Tri različite uloge su tako definisane u Stonewall x2 transakcijama:
 
 - Izdavalac, koji vrši stvarnu uplatu ;
 - Primaoc, koji možda nije svestan specifične prirode transakcije i jednostavno očekuje uplatu od pošiljaoca;
-- Saradnik, koji stavlja bitkoine na raspolaganje kako bi doveo u sumnju analizu transakcije, dok na kraju u potpunosti povrati svoja sredstva (neutralna akcija za njega, modulo troškovi Mining).
+- Saradnik, koji stavlja bitkoine na raspolaganje kako bi doveo u sumnju analizu transakcije, dok na kraju u potpunosti povrati svoja sredstva (neutralna akcija za njega, ne uzimajući u obzir troškovi rudarenja).
 
 
-Hajde da se vratimo na naš primer sa Alis, koja je kod Boba pekara da kupi svoj baget, koji košta 4,000 Sats. Ona želi da plati u bitkoinima, dok održava određeni nivo poverljivosti u vezi sa svojom uplatom. Zato se obraća svom prijatelju Čarlsu, koji će joj pomoći u ovom procesu.
+Hajde da se vratimo na naš primer sa Alisom, koja je kod Boba pekara da kupi svoj baget, koji košta 4,000 Sats. Ona želi da plati u bitkoinima, dok održava određeni nivo poverljivosti u vezi sa svojom uplatom. Zato se obraća svom prijatelju Čarlsu, koji će joj pomoći u ovom procesu.
 
 
 ![BTC204](assets/fr/177.webp)
@@ -3779,28 +3779,28 @@ Hajde da se vratimo na naš primer sa Alis, koja je kod Boba pekara da kupi svoj
 Analizirajući ovu transakciju, možemo videti da je Bob pekar zapravo primio 4,000 Sats kao uplatu za baget. Alisa je koristila 10,000 Sats kao ulaz i povratila 6,000 Sats kao izlaz, tj. neto saldo od -4,000 Sats, što odgovara ceni bageta. Što se tiče Čarlsa, on je obezbedio 15,000 Sats kao ulaz i primio dva izlaza: jedan od 4,000 Sats i drugi od 11,000 Sats, što daje saldo od 0.
 
 
-U ovom primeru, namerno sam izostavio naknade kako bi bilo lakše za razumevanje. U stvarnosti, Mining naknade se obično dele jednako između izdavaoca uplate i davaoca doprinosa.
+U ovom primeru, namerno sam izostavio naknade kako bi bilo lakše za razumevanje. U stvarnosti, rudarske naknade se obično dele jednako između izdavaoca uplate i davaoca doprinosa.
 
 
 ### Koji su ciljevi Stonewall x2 transakcije?
 
 
-Kao i struktura Stonewall, struktura Stonewall x2 dodaje veliku količinu entropije transakciji i zbunjuje analizu lanca. Gledano spolja, takva transakcija može biti interpretirana kao mali CoinJoin između dve osobe. Ali u stvarnosti, to je plaćanje. Ova metoda stoga stvara nesigurnosti u analizi lanca, ili čak dovodi do lažnih tragova.
+Kao i struktura Stonewall-a, struktura Stonewall x2 dodaje veliku količinu entropije transakciji i zbunjuje analizu lanca. Gledano spolja, takva transakcija može biti interpretirana kao mali CoinJoin između dve osobe. Ali u stvarnosti, to je plaćanje. Ova metoda stoga stvara nesigurnosti u analizi lanca, ili čak dovodi do lažnih tragova.
 
 
-Hajde da uzmemo primer Alise, Boba Pekara i Čarlsa. Transakcija na Blockchain bi izgledala ovako:
+Hajde da uzmemo primer Alise, Boba Pekara i Čarlsa. Transakcija na blokčejnu bi izgledala ovako:
 
 
 ![BTC204](assets/fr/178.webp)
 
 
-Spoljašnji posmatrač koji se oslanja na uobičajene heuristike analize lanca mogao bi pogrešno zaključiti da su "*Alice i Charles izveli mali CoinJoin, sa po jednim UTXO u ulazu i po dva UTXO-a u izlazu*". Ponovo, analiza ove transakcije spolja ne dovodi do primene ICOH-a, jer prisustvo dva izlaza iste vrednosti sugeriše obrazac CoinJoin. Sa spoljašnje tačke gledišta, CIOH stoga nije primenljiv u ovom konkretnom slučaju.
+Spoljašnji posmatrač koji se oslanja na uobičajene heuristike analize lanca mogao bi pogrešno zaključiti da su "*Alisa i Čarls napravili mali CoinJoin, sa po jednim UTXO u ulazu i po dva UTXO-a u izlazu*". Ponovo, analiza ove transakcije spolja ne dovodi do primene ICOH-a, jer prisustvo dva izlaza iste vrednosti sugeriše obrazac CoinJoin. Sa spoljašnje tačke gledišta, CIOH stoga nije primenljiv u ovom konkretnom slučaju.
 
 
 ![BTC204](assets/fr/179.webp)
 
 
-Ovo tumačenje je netačno, jer, kao što znate, jedan UTXO je poslat Bobu pekaru, Alisa ima samo jedan Exchange izlaz, a Čarls ima dva.
+Ovo tumačenje je netačno, jer, kao što znate, jedan UTXO je poslat Bobu pekaru, Alisa ima samo jedan kusur kod izlaza, a Čarls ima dva.
 
 
 ![BTC204](assets/fr/180.webp)
@@ -3812,7 +3812,7 @@ I još jednom, ono što je posebno zanimljivo u vezi sa strukturom Stonewall x2 
 ### Koja je razlika između Stonewall i Stonewall x2?
 
 
-Transakcija StonewallX2 funkcioniše isto kao i Stonewall transakcija, osim što je prva kolaborativna, dok druga nije. Kao što smo videli, StonewallX2 transakcija uključuje učešće treće strane (Charles), koja je eksterno povezana sa plaćanjem i koja će staviti svoje bitkoine na raspolaganje kako bi poboljšala poverljivost transakcije. U klasičnoj Stonewall transakciji, ulogu saradnika preuzima pošiljalac.
+Transakcija StonewallX2 funkcioniše isto kao i Stonewall transakcija, osim što je prva kolaborativna, dok druga nije. Kao što smo videli, StonewallX2 transakcija uključuje učešće treće strane (Čarls), koja je eksterno povezana sa plaćanjem i koja će staviti svoje bitkoine na raspolaganje kako bi poboljšala poverljivost transakcije. U klasičnoj Stonewall transakciji, ulogu saradnika preuzima pošiljalac.
 
 
 ![BTC204](assets/fr/181.webp)
@@ -3833,7 +3833,7 @@ Ova poslednja tačka je zbog činjenice da Stonewall x2 transakcije prate potpun
 ### Kada treba koristiti Stonewall i Stonewall x2 transakcije?
 
 
-Logika bi trebala biti sledeća kada želite da koristite alat za poverljivost za trošak:
+Logika bi trebala biti sledeća kada želite da koristite alat za poverljivost prilikom plaćanja:
 
 
 
@@ -3852,7 +3852,7 @@ Transakcije Stonewall i Stonewall x2 dostupne su na aplikaciji Samourai Wallet i
 ![BTC204](assets/fr/183.webp)
 
 
-Međutim, kao i sa payjoins, nakon hapšenja osnivača Samourai-a, Stonewall x2 transakcije sada funkcionišu samo ručnim razmenjivanjem PSBT-ova između uključenih strana. Nažalost, automatski Exchange putem Soroban-a više nije dostupan.
+Međutim, kao i sa payjoins, nakon hapšenja osnivača Samourai-a, Stonewall x2 transakcije sada funkcionišu samo ručnim razmenjivanjem PSBT-ova između uključenih strana. Nažalost, automatska razmena putem Soroban-a više nije dostupna.
 
 
 Takođe je moguće izvršiti ovu vrstu transakcije ručno iz bilo kog Bitcoin Wallet softvera.
@@ -3865,23 +3865,23 @@ https://planb.network/tutorials/privacy/on-chain/stonewall-033daa45-d42c-40e1-95
 
 https://planb.network/tutorials/privacy/on-chain/stonewall-x2-05120280-f6f9-4e14-9fb8-c9e603f73e5b
 
-## Odbijanja
+## Rikošet
 
 
 <chapterId>db9a20ac-a149-443d-884b-ea6c03f28499</chapterId>
 
 
 
-Korišćenje struktura transakcija Bitcoin koje dodaju nejasnoću analizi lanca, kao što je CoinJoin, posebno je korisno za zaštitu privatnosti. Međutim, kao što smo diskutovali u poglavlju o payjoin-ovima, CoinJoin transakcije su prirodno prepoznatljive na lancu. Setite se analogije koju smo povukli između enkripcije i coinjoin-ova: kada je fajl enkriptovan, treća strana koja otkrije enkriptovani fajl ne može pristupiti njegovom sadržaju, ali može jasno identifikovati da je fajl modifikovan kako bi sakrio svoj sadržaj. Isto važi i za CoinJoin: kada analitičar ispituje CoinJoin transakciju, iako ne može uspostaviti direktne veze između ulaza i izlaza (i obrnuto), ipak može prepoznati da je posmatrana transakcija CoinJoin.
+Korišćenje struktura Bitcoin transakcija koje dodaju nejasnoću analizi lanca, kao što je CoinJoin, posebno je korisno za zaštitu privatnosti. Međutim, kao što smo diskutovali u poglavlju o payjoin-ovima, CoinJoin transakcije su prirodno prepoznatljive na lancu. Setite se analogije koju smo povukli između enkripcije i coinjoin-ova: kada je fajl enkriptovan, treća strana koja otkrije enkriptovani fajl ne može pristupiti njegovom sadržaju, ali može jasno identifikovati da je fajl modifikovan kako bi sakrio svoj sadržaj. Isto važi i za CoinJoin: kada analitičar ispituje CoinJoin transakciju, iako ne može uspostaviti direktne veze između ulaza i izlaza (i obrnuto), ipak može prepoznati da je posmatrana transakcija CoinJoin.
 
 
-U zavisnosti od toga kako planirate da koristite svoj deo nakon CoinJoin ciklusa, činjenica da je prošao kroz ovaj proces može biti problematična. Na primer, ako planirate da prodate svoj novčić na regulisanoj Exchange platformi, ali je nedavno prošao kroz CoinJoin, alat za analizu lanca platforme će otkriti ovu činjenicu. Platforma tada može odbiti da prihvati vaš coinjoined UTXO, ili čak zahtevati objašnjenje od vas, uz rizik da vaš nalog bude suspendovan ili vaša sredstva zamrznuta. U nekim slučajevima, platforma može takođe prijaviti vaše ponašanje državnim vlastima (ovo je, na primer, ono što TRACFIN zahteva od PSAN-ova u Francuskoj).
+U zavisnosti od toga kako planirate da koristite svoj deo nakon CoinJoin ciklusa, činjenica da je prošao kroz ovaj proces može biti problematična. Na primer, ako planirate da prodate svoj novčić na regulisanoj platformi za trgovinu, koji je nedavno prošao kroz CoinJoin, alat za analizu lanca platforme će otkriti ovu činjenicu. Platforma tada može odbiti da prihvati vaš izmiksovani UTXO, ili čak zahtevati objašnjenje od vas, uz rizik da vaš nalog bude suspendovan ili vaša sredstva zamrznuta. U nekim slučajevima, platforma može takođe prijaviti vaše ponašanje državnim vlastima (ovo je, na primer, ono što TRACFIN zahteva od PSAN-ova u Francuskoj).
 
 
 ![BTC204](assets/fr/184.webp)
 
 
-Ono što nam je potrebno da bismo to izbegli jeste alat sposoban da zamagli tragove prošlosti Bitcoin novčića, kako bismo povratili neki oblik fungibilnosti. Upravo je to svrha ricochet-a.
+Ono što nam je potrebno da bismo to izbegli jeste alat sposoban da zamagli tragove prošlosti Bitcoin novčića, kako bismo povratili neki oblik zamenljivosti (eng. fungability). Upravo je to svrha rikošeta.
 
 
 ![BTC204](assets/fr/185.webp)
@@ -3890,22 +3890,22 @@ Ono što nam je potrebno da bismo to izbegli jeste alat sposoban da zamagli trag
 ### Šta je rikošet?
 
 
-Rikošet je tehnika koja se sastoji od izvođenja nekoliko fiktivnih transakcija prema sebi (sweep) kako bi se simulirao transfer Bitcoin Ownership. Ovaj alat se razlikuje od drugih struktura transakcija o kojima smo razgovarali, jer ne dobija perspektivnu anonimnost, već oblik retrospektivne anonimnosti. U stvari, rikošet zamagljuje specifičnosti koje mogu ugroziti fungibilnost Bitcoin novčića zbog njegove prošlosti.
+Rikošet je tehnika koja se sastoji od izvođenja nekoliko fiktivnih transakcija prema sebi (sweep) kako bi se simulirao transfer Bitcoin vlasništva. Ovaj alat se razlikuje od drugih struktura transakcija o kojima smo razgovarali, jer se ne dobija buduća anonimnost, već oblik retrospektivne anonimnosti. U stvari, rikošet zamagljuje specifičnosti koje mogu ugroziti zamenljivost Bitcoin novčića zbog njegove prošlosti.
 
 
-Da bi se izgladilo otisak koji je ostavio prošli događaj na novčiću, kao što su CoinJoin ciklusi, rikoset izvršava četiri uzastopne transakcije u kojima korisnik prenosi sredstva sebi na različite adrese.
+Da bi se ublažio trag koji je prethodni događaj ostavio na novčiću, kao što su CoinJoin ciklusi, rikoset izvršava četiri uzastopne transakcije u kojima korisnik prenosi sredstva sebi na različite adrese.
 
 
 ![BTC204](assets/fr/186.webp)
 
 
-Nakon ovog niza transakcija, ricochet alat konačno usmerava bitkoine na njihovu konačnu destinaciju, kao što je Exchange platforma.
+Nakon ovog niza transakcija, rikošet alat konačno usmerava bitkoine na njihovu konačnu destinaciju, kao što je platforma za trgovinu.
 
 
 ![BTC204](assets/fr/187.webp)
 
 
-Cilj je stvoriti distancu koja utiče na fungibilnost novčića, kao što je transakcija CoinJoin, i konačni čin trošenja, koji bi mogao odbiti ovaj novčić zbog njegove prošlosti. Tako bi alati za analizu lanca mogli zaključiti da je verovatno došlo do promene Ownership nakon događaja, i smatrati ovaj novčić fungibilnim. U slučaju CoinJoin, alati za analizu Blockchain bi tada mogli pretpostaviti da nije ista osoba poslala bitkoine i izvršila CoinJoin, te da stoga nema smisla preduzimati akciju protiv pošiljaoca.
+Cilj je stvoriti distancu koja utiče na laku zamenljivost novčića, kao što je transakcija CoinJoin, i konačni čin trošenja, koji bi mogao odbiti ovaj novčić zbog njegove prošlosti. Tako bi alati za analizu lanca mogli zaključiti da je verovatno došlo do promene vlasništva nakon događaja, i smatrati ovaj novčić fungibilnim (zamenljivim). U slučaju CoinJoin-a, alati za analizu blokčejna bi tada mogli pretpostaviti da nije ista osoba poslala bitkoine i izvršila CoinJoin, te da stoga nema smisla preduzimati akciju protiv pošiljaoca.
 
 
 ![BTC204](assets/fr/188.webp)
@@ -3914,40 +3914,40 @@ Cilj je stvoriti distancu koja utiče na fungibilnost novčića, kao što je tra
 ### Zašto to radi?
 
 
-Suočeni sa ovom metodom rikoseta, moglo bi se zamisliti da bi softver za analizu lanaca produbio svoje ispitivanje izvan četiri odbijanja. Međutim, ove platforme suočavaju se s dilemom u optimizaciji praga detekcije. Moraju postaviti granicu na broj skokova nakon kojih prihvataju da je verovatno došlo do promene svojstva i da bi veza s prethodnim događajem (kao što je CoinJoin) trebalo da bude ignorisana.
+Suočeni sa ovom metodom rikošeta, moglo bi se zamisliti da bi softver za analizu lanaca produbio svoje ispitivanje izvan četiri odbijanja. Međutim, ove platforme suočavaju se s dilemom u optimizaciji praga detekcije. Moraju postaviti granicu na broj skokova nakon kojih prihvataju da je verovatno došlo do promene svojstva i da bi veza s prethodnim događajem (kao što je CoinJoin) trebalo da bude ignorisana.
 
 
 ![BTC204](assets/fr/189.webp)
 
 
-Međutim, postavljanje ovog praga je rizično: svako proširenje broja posmatranih skokova eksponencijalno povećava obim lažno pozitivnih rezultata, tj. pojedinaca koji su pogrešno označeni kao učesnici u događaju, kada je zapravo operaciju izveo neko drugi. Ovaj scenario predstavlja veliki rizik za ove kompanije, jer lažno pozitivni rezultati dovode do nezadovoljstva, što može naterati pogođene klijente da pređu kod konkurencije. Na duži rok, previsok prag detekcije dovodi platformu do gubitka više klijenata nego njeni konkurenti, što bi moglo ugroziti njenu održivost. Stoga je komplikovano za ove platforme da povećaju broj posmatranih skokova, a 4 je često dovoljan broj da se suprotstave njihovim analizama.
+Međutim, postavljanje ovog praga je rizično: svako proširenje broja posmatranih skokova eksponencijalno povećava obim lažno pozitivnih rezultata, tj. pojedinaca koji su pogrešno označeni kao učesnici u događaju, kada je zapravo operaciju izveo neko drugi. Ovaj scenario predstavlja veliki rizik za ove kompanije, jer lažno pozitivni rezultati dovode do nezadovoljstva, što može naterati pogođene klijente da pređu kod konkurencije. Na duži rok, previsok prag detekcije dovodi platformu do gubitka više klijenata nego njeni konkurenti, što bi moglo ugroziti njenu održivost. Stoga je komplikovano za ove platforme da povećaju broj posmatranih skokova, a 4 je često dovoljan broj da se osujeti njihova analiza.
 
 
 Fenomen posmatran ovde donekle je analogan teoriji o šest stepeni razdvojenosti.
 
 
-Teorija o šest stepeni razdvojenosti sugeriše da je svaka osoba na Zemlji povezana sa bilo kojom drugom osobom lancem odnosa koji se sastoji od najviše šest posrednika. Stoga bi bilo dovoljno proći kroz niz od šest osoba, gde svaka lično poznaje sledeću, da bi se došlo do bilo koje individue na svetu.
+Teorija o šest stepeni razdvojenosti sugeriše da je svaka osoba na zamlji povezana sa bilo kojom drugom osobom lancem odnosa koji se sastoji od najviše šest posrednika. Stoga bi bilo dovoljno proći kroz niz od šest osoba, gde svaka lično poznaje sledeću, da bi se došlo do bilo koje individue na svetu.
 
 
-U slučaju transakcija Bitcoin, pronalazimo sličan fenomen. Praćenjem dovoljnog broja transakcija Bitcoin, neizbežno nailazimo na CoinJoin. Metoda rikoseta koristi ovu principu tako što koristi veći broj skokova nego što platforme Exchange mogu razumno pratiti. Ako platforme odluče da prate više transakcija, tada je moguće jednostavno dodati dodatni skok kako bi se zaobišla ova mera.
+U slučaju Bitcoin transakcija, pronalazimo sličan fenomen. Praćenjem dovoljnog broja Bitcoin transakcija, neizbežno nailazimo na CoinJoin. Metoda rikošeta koristi ovaj princip tako što koristi veći broj skokova nego što platforme za trgovinu mogu razumno pratiti. Ako platforme odluče da prate više transakcija, tada je moguće jednostavno dodati dodatni skok kako bi se zaobišla ova mera.
 
 
-### Kada i kako koristiti ricochet?
+### Kada i kako koristiti rikošet?
 
 
-Najčešći slučaj upotrebe za ricochet javlja se kada je potrebno prikriti prethodno učešće u CoinJoin na UTXO koji posedujete. Idealno bi bilo izbeći prenos bitkoina koji su prošli kroz CoinJoin ka regulisanim entitetima. Ipak, u slučaju da se nađete bez druge opcije, posebno u hitnoj potrebi za likvidacijom bitkoina u državnu valutu, ricochet nudi efikasno rešenje.
+Najčešći slučaj upotrebe rikošeta javlja se kada je potrebno prikriti prethodno učešće u CoinJoin-u na UTXO-u koji posedujete. Idealno bi bilo izbeći prenos bitkoina koji su prošli kroz CoinJoin ka regulisanim entitetima. Ipak, u slučaju da se nađete bez druge opcije, posebno u hitnoj potrebi za likvidacijom bitkoina u državnu valutu, rikošet nudi efikasno rešenje.
 
 
-Ova metoda je efikasna ne samo za coinjoin-e, već i za bilo koji drugi znak koji bi mogao ugroziti fungibilnost dela.
+Ova metoda je efikasna ne samo za coinjoin-e, već i za bilo koji drugi znak koji bi mogao ugroziti fungibilnost UTXO dela.
 
 
-Ideja za ovu metodu rikoseta prvobitno je došla od timova Samourai Wallet, koji su je integrisali u svoju aplikaciju kako bi automatizovali proces. Usluga nije besplatna na Samourai, jer rikoset uključuje naknadu za uslugu od 100.000 Sats, plus troškove Mining. Njena upotreba se stoga preporučuje za transfere značajnih iznosa.
+Ideja za rikošet metodu prvobitno je došla od timova Samourai Wallet, koji su je integrisali u svoju aplikaciju kako bi automatizovali proces. Usluga nije besplatna na Samourai, jer rikošet uključuje naknadu za uslugu od 100.000 Sats, plus troškove rudarenja. Njena upotreba se stoga preporučuje za transfere značajnih iznosa.
 
 
 ![BTC204](assets/fr/190.webp)
 
 
-Samurai aplikacija nudi dve varijante rikoseta:
+Samurai aplikacija nudi dve varijante rikošeta:
 
 
 
@@ -3960,21 +3960,21 @@ Samurai aplikacija nudi dve varijante rikoseta:
 
 
 
-- Klasični rikoset, koji je dizajniran da izvrši operaciju brzo, emitujući sve transakcije u smanjenom vremenskom intervalu. Ova metoda, dakle, nudi manje poverljivosti i manju otpornost na analizu od pojačane metode. Trebalo bi da se koristi samo za hitne pošiljke.
+- Klasični rikošet, koji je dizajniran da izvrši operaciju brzo, emitujući sve transakcije u smanjenom vremenskom intervalu. Ova metoda, dakle, nudi manje poverljivosti i manju otpornost na analizu od pojačane metode. Trebalo bi da se koristi samo za hitne pošiljke.
 
 
 ![BTC204](assets/fr/192.webp)
 
 
-Rikošetiranje jednostavno znači slanje bitkoina sebi. Potpuno je moguće ručno rikošetirati bitkoine na bilo kojem Wallet softveru, bez korišćenja specijalizovanog alata. Sve što treba da uradite je da sukcesivno prebacujete isti novčić sebi, koristeći svaki put novi, prazan Address.
+Rikošetiranje jednostavno znači slanje bitkoina sebi. Potpuno je moguće ručno rikošetirati bitkoine na bilo kojem softver novčaniku, bez korišćenja specijalizovanog alata. Sve što treba da uradite je da sukcesivno prebacujete isti novčić sebi, koristeći svaki put novu, praznu adresu.
 
 
-U sledećem poglavlju, razmatramo različite tehnike za tajne prenose Ownership. Ove metode se radikalno razlikuju od onih koje smo do sada ispitali, kako u pogledu operacije, tako i rezultata.
+U sledećem poglavlju, razmatramo različite tehnike za tajne prenose vlasništva. Ove metode se radikalno razlikuju od onih koje smo do sada ispitali, kako u pogledu operacije, tako i rezultata.
 
 
 https://planb.network/tutorials/privacy/on-chain/ricochet-e0bb1afe-becd-44a6-a940-88a463756589
 
-## Tajne prenose Ownership
+## Tajni prenos vlasništva
 
 
 <chapterId>a2067036-849c-4d6b-87d2-44235cfae7a1</chapterId>
