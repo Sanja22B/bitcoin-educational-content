@@ -3981,61 +3981,61 @@ https://planb.network/tutorials/privacy/on-chain/ricochet-e0bb1afe-becd-44a6-a94
 
 
 
-Još jedna od tehnika poverljivosti Bitcoin je tajni prenos Ownership. Ova metoda ima za cilj prenos Ownership Bitcoina sa jedne osobe na drugu, i obrnuto, bez da transakcija bude eksplicitno vidljiva na Blockchain. Pogledajmo različite dostupne tehnike, zajedno sa njihovim prednostima i nedostacima.
+Još jedna od tehnika poverljivosti je tajni prenos vlasništva. Ova metoda ima za cilj prenos vlasništva nad bitkoinima sa jedne osobe na drugu, i obrnuto, bez da transakcija bude eksplicitno vidljiva na blokčejnu. Pogledajmo različite dostupne tehnike, zajedno sa njihovim prednostima i nedostacima.
 
 
-### The coinswap
+### Coinswap (zamena novčića)
 
 
-Coinwap se zasniva na relativno jednostavnom konceptu: koristi pametne ugovore za olakšavanje prenosa Bitcoin Ownership između dva korisnika, bez potrebe za poverenjem i bez da ovaj prenos bude eksplicitno vidljiv na Blockchain.
+Coinswap se zasniva na relativno jednostavnom konceptu: koristi pametne ugovore za olakšavanje prenosa vlasništva nad bitkoinima između dva korisnika, bez potrebe za poverenjem i bez da ovaj prenos bude eksplicitno vidljiv na blokčejnu.
 
 
 ![BTC204](assets/fr/193.webp)
 
 
-Hajde da zamislimo naivan primer sa Alisom i Bobom. Alisa drži 1 BTC osiguran privatnim ključem $A$, a Bob takođe drži 1 BTC osiguran privatnim ključem $B$. Oni bi teoretski mogli Exchange svoje privatne ključeve putem spoljnog komunikacionog kanala kako bi izvršili tajni transfer.
+Hajde da zamislimo naivan primer sa Alisom i Bobom. Alisa drži 1 BTC osiguran privatnim ključem $A$, a Bob takođe drži 1 BTC osiguran privatnim ključem $B$. Oni bi teoretski mogli razmeniti svoje privatne ključeve putem spoljnog komunikacionog kanala kako bi izvršili tajni transfer.
 
 
 ![BTC204](assets/fr/194.webp)
 
 
-Međutim, ovaj naivni metod predstavlja visok rizik u smislu poverenja. Ništa ne sprečava Alisu da zadrži kopiju privatnog ključa $A$ nakon Exchange i kasnije ga iskoristi da ukrade bitkoine, kada je ključ u Bobovim rukama.
+Međutim, ovaj naivni metod predstavlja visok rizik u smislu poverenja. Ništa ne sprečava Alisu da zadrži kopiju svog privatnog ključa $A$ nakon razmene i kasnije da ga iskoristi da ukrade bitkoine, kada je ključ i u Bobovim rukama.
 
 
 ![BTC204](assets/fr/195.webp)
 
 
-Štaviše, nema garancije da Alice neće primiti Bobov privatni ključ $B$ i nikada preneti svoj privatni ključ $A$ u Exchange. Ovaj Exchange stoga se oslanja na prekomerno poverenje između strana i neefikasan je u osiguravanju sigurnog tajnog prenosa Ownership.
+Nadalje, nema garancije da će Alisa dobiti Bobov privatni ključ, niti da će zauzvrat predati svoj. Ova razmena stoga se oslanja na prekomerno poverenje između strana i neefikasan je u osiguravanju sigurnog i tajnog prenosa vlasništva.
 
 
 ![BTC204](assets/fr/196.webp)
 
 
-Da bismo rešili ove probleme i omogućili razmene između strana koje ne veruju jedna drugoj, umesto toga ćemo koristiti Smart contract sisteme. Smart contract je program koji se automatski izvršava kada su ispunjeni unapred definisani uslovi. U našem slučaju, ovo osigurava da se Exchange svojine odvija automatski, bez potrebe za međusobnim poverenjem.
+Da bismo rešili ove probleme i omogućili razmene između strana koje ne veruju jedna drugoj, umesto toga ćemo koristiti sisteme pametnih ugovora (eng. smart contract). Smart contract je program koji se automatski izvršava kada su ispunjeni unapred definisani uslovi. U našem slučaju, ovo osigurava da se razmena svojine odvija automatski, bez potrebe za međusobnim poverenjem.
 
 
-Ovo se može postići korišćenjem HTLC (*Hash Time-Locked Contracts*) ili PTLC (*Point Time-Locked Contracts*). Ova dva protokola funkcionišu na sličan način, koristeći sistem vremenskog zaključavanja koji osigurava da se Exchange ili uspešno završi ili potpuno otkaže, čime se štiti integritet sredstava obe strane. Glavna razlika između HTLC i PTLC je u tome što HTLC koristi hešove i preimage za obezbeđivanje transakcije, dok PTLC koristi Adaptor Signatures.
+Ovo se može postići korišćenjem HTLC (*Hash Time-Locked Contracts*) ili PTLC (*Point Time-Locked Contracts*). Ova dva protokola funkcionišu na sličan način, koristeći sistem vremenskog zaključavanja koji osigurava da se razmena ili uspešno završi ili potpuno otkaže, čime se štiti integritet sredstava obe strane. Glavna razlika između HTLC i PTLC je u tome što HTLC koristi hešove i preimage (ulazna vrednost) za obezbeđivanje transakcije, dok PTLC koristi adaptor potpise (engl. adaptor signatures). 
 
 
-U scenariju zamene novčića koristeći HTLC ili PTLC između Alise i Boba, Exchange se odvija sigurno: ili uspeva i svaki dobija BTC onog drugog, ili ne uspeva i svaki zadržava svoj BTC. Ovo onemogućava bilo kojoj strani da prevari ili ukrade BTC onog drugog.
+U scenariju zamene novčića koristeći HTLC ili PTLC između Alise i Boba, razmena se odvija sigurno: ili uspeva i svako dobija BTC onog drugog, ili ne uspeva i svaki zadržava svoj BTC. Ovo onemogućava bilo kojoj strani da prevari ili ukrade BTC onog drugog.
 
 
-> *HTLC je takođe mehanizam koji se koristi za sigurno usmeravanje plaćanja kroz dvosmerne kanale Lightning Network*
-Upotreba Adaptor Signatures je posebno zanimljiva u ovom kontekstu, jer omogućava izostavljanje tradicionalnih skripti (mehanizam koji se ponekad naziva "_scriptless scripts_"). Ova karakteristika smanjuje troškove povezane sa Exchange. Još jedna velika prednost Adaptor Signatures je da ne zahtevaju upotrebu zajedničkog Hash za obe strane u transakciji, čime se izbegava potreba za otkrivanjem direktne veze između njih u određenim tipovima Exchange.
+> *HTLC je takođe mehanizam koji se koristi za sigurno usmeravanje plaćanja kroz dvosmerne kanale Lightning mreže*
+Upotreba Adaptor Signatures-a je posebno zanimljiva u ovom kontekstu, jer omogućava izostavljanje tradicionalnih skripti (mehanizam koji se ponekad naziva "_scriptless scripts_"). Ova karakteristika smanjuje troškove povezane sa razmenom. Još jedna velika prednost Adaptor Signatures-a je da ne zahtevaju upotrebu zajedničkog heša za obe strane u transakciji, čime se izbegava potreba za otkrivanjem direktne veze između njih u određenim tipovima razmene.
 
 
-### Adaptor Signatures
+### Adaptor potpisi (eng. Adaptor Signatures)
 
 
-Adaptor Signatures su kriptografska metoda koja integriše važeći potpis sa dodatnim potpisom, nazvanim "_adaptor signature_", kako bi otkrila tajne podatke. Ovaj mehanizam je dizajniran na takav način da poznavanje 2 od sledeća 3 elementa Elements: važeći potpis, adaptor potpis i tajna, omogućava nam da zaključimo nedostajući treći element. Zanimljiva osobina ove metode je da, ako znamo adaptor potpis našeg partnera i specifičnu tačku na eliptičnoj krivi povezanu sa tajnom korišćenom za izračunavanje tog adaptor potpisa, možemo izvesti sopstveni adaptor potpis koji će biti kompatibilan sa tom istom tajnom, a da nikada nemamo direktan pristup samoj tajni.
+Adaptor potpisi su kriptografska metoda koja integriše važeći potpis sa dodatnim potpisom, nazvanim "_adaptor signature_", kako bi otkrila tajne podatke. Ovaj mehanizam je dizajniran na takav način da poznavanje 2 od sledeća 3 elementa: važeći potpis, adaptor potpis i tajna, omogućava nam da zaključimo nedostajući treći element. Zanimljiva osobina ove metode je da, ako znamo adaptor potpis našeg partnera i specifičnu tačku na eliptičnoj krivi povezanu sa tajnom korišćenom za izračunavanje tog adaptor potpisa, možemo izvesti sopstveni adaptor potpis koji će biti kompatibilan sa tom istom tajnom, a da nikada nemamo direktan pristup samoj tajni.
 
 
-U coinswap-u, upotreba Adaptor Signatures omogućava simultano otkrivanje dva dela osetljivih informacija između učesnika, čime se izbegava potreba za međusobnim poverenjem. Uzmimo primer da ilustrujemo ovaj proces sa Alice i Bobom, koji žele da Exchange poseduju po 1 BTC, ali ne veruju jedno drugom. Oni koriste Adaptor Signatures da eliminišu potrebu za međusobnim poverenjem u ovom Exchange. Evo kako to rade:
+U coinswap-u, upotreba Adaptor potpisa omogućava simultano otkrivanje dva dela osetljivih informacija između učesnika, čime se izbegava potreba za međusobnim poverenjem. Uzmimo primer da ilustrujemo ovaj proces sa Alisom i Bobom, koji žele da razmene po 1 BTC, ali ne veruju jedno drugom. Oni koriste Adaptor potpise da eliminišu potrebu za međusobnim poverenjem u ovoj razmeni. Evo kako to rade:
 
 
 
 
-- Alis pokreće Exchange kreiranjem $m_A$ transakcije koja šalje 1 BTC Bobu. Ona generiše potpis $s_A$, koji validira ovu transakciju, koristeći svoj privatni ključ $p_A$ ($P_A = p_A \cdot G$), Nonce $n_A$ ($N_A = n_A \cdot G$) i tajnu $t$ ($T = t \cdot G$) :
+- Alis pokreće razmenu kreiranjem $m_A$ transakcije koja šalje 1 BTC Bobu. Ona generiše potpis $s_A$, koji validira ovu transakciju, koristeći svoj privatni ključ $p_A$ ($P_A = p_A \cdot G$), Nonce $n_A$ ($N_A = n_A \cdot G$) i tajnu $t$ ($T = t \cdot G$) :
 
 
 $$s_A = n_A + t + H(N_A + T \parallel P_A \parallel m_A) \cdot p_A$$
@@ -4051,7 +4051,7 @@ $$s_A' = s_A - t$$
 
 
 
-- Alice šalje Bobu svoj adaptor potpisa $s'_A$, svoju nepotpisanu transakciju $m_A$, tačku koja odgovara tajni ($T$), i tačku koja odgovara Nonce ($N_A$). Ovi Elements čine ono što je poznato kao "adaptor". Važno je napomenuti da, sa samo ovim informacijama, Bob ne može povratiti Alicein BTC.
+- Alicsa šalje Bobu svoj adaptor potpisa $s'_A$, svoju nepotpisanu transakciju $m_A$, tačku koja odgovara tajni ($T$), i tačku koja odgovara Nonce ($N_A$). Ovi elementi čine ono što je poznato kao "adaptor". Važno je napomenuti da, sa samo ovim informacijama, Bob ne može povratiti Alisin BTC.
 - Međutim, Bob može proveriti da li Alisa ne pokušava da ga pokrade. Da bi to uradio, proverava da li Alisin adaptor potpis $s_A'$ zaista odgovara predloženoj transakciji $m_A$. Ako je sledeća jednačina tačna, onda može biti siguran da je Alisin adaptor potpisa validan:
 
 
@@ -4060,7 +4060,7 @@ $$s_A' \cdot G = N_A + H(N_A + T \parallel P_A \parallel m_A) \cdot P_A$$
 
 
 
-- Ova verifikacija pruža Bobu dovoljne garancije da može nastaviti Exchange s potpunim poverenjem. Zatim kreira svoju transakciju $m_B$, namenjenu slanju 1 BTC Alisi, i generiše svoj adaptor potpis $s_B'$, koji će takođe biti povezan sa istom tajnom $t$. U ovoj fazi, samo Alisa zna vrednost $t$; Bob zna samo odgovarajuću tačku $T$ koju mu je Alisa prenela:
+- Ova verifikacija pruža Bobu dovoljne garancije da može nastaviti razmenu s potpunim poverenjem. Zatim kreira svoju transakciju $m_B$, namenjenu slanju 1 BTC Alisi, i generiše svoj adaptor potpis $s_B'$, koji će takođe biti povezan sa istom tajnom $t$. U ovoj fazi, samo Alisa zna vrednost $t$; Bob zna samo odgovarajuću tačku $T$ koju mu je Alisa prenela:
 
 
 $$s_B' = n_B + H(N_B + T \parallel P_B \parallel m_B) \cdot p_B$$
@@ -4068,7 +4068,7 @@ $$s_B' = n_B + H(N_B + T \parallel P_B \parallel m_B) \cdot p_B$$
 
 
 
-- Bob šalje Alisi svoj adaptor potpis $s_B'$, njegov nepotpisani transakcioni zapis $m_B$, kao i tačku koja odgovara tajni ($T$) i tačku koja odgovara Nonce ($N_B$). Alisa, koja zna tajnu $t$, sada može kombinovati Bobov adaptor potpis $s_B'$ sa ovom tajnom da bi generate validan potpis $s_B$ za transakciju $m_B$ koja će preneti Bobov BTC na nju:
+- Bob šalje Alisi svoj adaptor potpis $s_B'$, njegov nepotpisani transakcioni zapis $m_B$, kao i tačku koja odgovara tajni ($T$) i tačku koja odgovara Nonce ($N_B$). Alisa, koja zna tajnu $t$, sada može kombinovati Bobov adaptor potpis $s_B'$ sa ovom tajnom da bi generisala validan potpis $s_B$ za transakciju $m_B$ koja će preneti Bobov BTC na nju:
 
 
 $$s_B = s_B' + t$$
@@ -4079,7 +4079,7 @@ $$(s_B' + t) \cdot G = N_B + T + H(N_B + T \parallel P_B \parallel m_B) \cdot P_
 
 
 
-- Alisa emituje ovu potpisanu $m_B$ transakciju na Bitcoin Blockchain da preuzme BTC koji je Bob obećao. Kada Bob vidi ovu transakciju na Blockchain, može da izdvoji potpis $s_B = s_B' + t$. Sa ovim informacijama, Bob je tada u mogućnosti da izoluje čuvenu tajnu $t$ koja mu je bila potrebna:
+- Alisa emituje ovu potpisanu $m_B$ transakciju na Bitcoin blokčejn da preuzme BTC koji je Bob obećao. Kada Bob vidi ovu transakciju na blokčejnu, može da izdvoji potpis $s_B = s_B' + t$. Sa ovim informacijama, Bob je tada u mogućnosti da izoluje čuvenu tajnu $t$ koja mu je bila potrebna:
 
 
 $$t = (s_B' + t) - s_B' = s_B - s_B'$$
@@ -4087,7 +4087,7 @@ $$t = (s_B' + t) - s_B' = s_B - s_B'$$
 
 
 
-- A ova tajna $t$ je bila jedini element koji je nedostajao Bobu da generate validan potpis $s_A$ iz Alisinog adaptor potpisa $s_A'$. Ovaj potpis potvrđuje $m_A$ transakciju, koja šalje BTC od Alise do Boba. Bob zatim izračunava $s_A$ i emituje $m_A$ transakciju na Blockchain:
+- A ova tajna $t$ je bila jedini element koji je nedostajao Bobu da generiše validan potpis $s_A$ iz Alisinog adaptor potpisa $s_A'$. Ovaj potpis potvrđuje $m_A$ transakciju, koja šalje BTC od Alise do Boba. Bob zatim izračunava $s_A$ i emituje $m_A$ transakciju na blokčejn:
 
 
 $$s_A = s_A' + t$$
@@ -4096,22 +4096,22 @@ $$s_A = s_A' + t$$
 $$(s_A' + t) \cdot G = N_A + T + H(N_A + T \parallel P_A \parallel m_A) \cdot P_A$$
 
 
-Hajde da rezimiramo kako funkcioniše Adaptor Signature u coinswap-u. U početku, Alisa šalje Bobu nepotpisanu transakciju zajedno sa adaptorom, omogućavajući Bobu da proveri da će mu tajna koja će kasnije biti otkrivena omogućiti pristup bitcoinima. Zauzvrat, Bob šalje Alisi svoju nepotpisanu transakciju i adaptor. Alisa tada može finalizovati Bobovu transakciju i preuzeti bitcoine emitovanjem validne transakcije zahvaljujući tajni. Kada se ova transakcija objavi na Blockchain, Bob ima mogućnost da izvuče tajnu i tako otključa Alisinu transakciju. Posledično, ako Alisa inicira transfer Bobovog Bitcoin, Bob može, zauzvrat, pristupiti Alisinom Bitcoin bez potrebe za međusobnim poverenjem.
+Hajde da rezimiramo kako funkcioniše Adaptor Signature u coinswap-u. U početku, Alisa šalje Bobu nepotpisanu transakciju zajedno sa adaptorom, omogućavajući Bobu da proveri da će mu tajna koja će kasnije biti otkrivena omogućiti pristup bitcoinima. Zauzvrat, Bob šalje Alisi svoju nepotpisanu transakciju i adaptor. Alisa tada može finalizovati Bobovu transakciju i preuzeti bitcoine emitovanjem validne transakcije zahvaljujući tajni. Kada se ova transakcija objavi na blokčejnu, Bob ima mogućnost da izvuče tajnu i tako otključa Alisinu transakciju. Posledično, ako Alisa inicira transfer Bobovog bitkoina, Bob može, zauzvrat, pristupiti Alisinom bitkoinu bez potrebe za međusobnim poverenjem.
 
 
 Imajte na umu da je coinswaps prvi predložio [Gregory Maxwell u oktobru 2013. na BitcoinTalk-u](https://bitcointalk.org/index.php?topic=321228.0).
 
 
-### Atomska zamena
+### Atomska razmena (eng. atomic swap)
 
 
-Na sličan način kao coinswap, i koristeći iste tipove pametnih ugovora, moguće je izvršiti i atomske zamene. Atomska zamena omogućava direktan Exchange različitih kriptovaluta, kao što su BTC i XMR, između dva korisnika bez potrebe za poverenjem ili intervencijom posrednika. Ove razmene se nazivaju "atomske" jer imaju samo dva moguća ishoda: ili je zamena uspešna i obe strane su zadovoljne, ili ne uspe i svaka zadržava svoje originalne kriptovalute, eliminišući potrebu za poverenjem drugoj strani.
+Na sličan način kao coinswap, i koristeći iste tipove pametnih ugovora, moguće je izvršiti i atomske razmene. Atomska razmena omogućava direktnu razmenu različitih kriptovaluta, kao što su BTC i XMR, između dva korisnika bez potrebe za poverenjem ili intervencijom posrednika. Ove razmene se nazivaju "atomske" jer imaju samo dva moguća ishoda: ili je zamena uspešna i obe strane su zadovoljne, ili ne uspe i svaka zadržava svoje originalne kriptovalute, eliminišući potrebu za poverenjem drugoj strani.
 
 
 ![BTC204](assets/fr/197.webp)
 
 
-Atomski svop i coinswap dele sličan način rada i nude iste prednosti i nedostatke u pogledu poverljivosti. Zaista, iz perspektive Bitcoin, atomski svop je uporediv sa coinswap-om koji se sprovodi u dve faze. Prvo, mi Exchange naš BTC za drugu kriptovalutu, zatim se ta kriptovaluta može zameniti za drugi BTC. Na kraju, dobijamo BTC drugog korisnika. Zbog toga, u analizi pitanja poverljivosti, grupišem ova dva protokola pod kategoriju vlasničkih tajnih razmena.
+Atomska razmena i coinswap dele sličan način rada i nude iste prednosti i nedostatke u pogledu poverljivosti. Zaista, iz perspektive Bitcoin-a, atomski swap je uporediv sa coinswap-om koji se sprovodi u dve faze. Prvo, mi razmenimo naš BTC za drugu kriptovalutu, zatim se ta kriptovaluta može zameniti za drugi BTC. Na kraju, dobijamo BTC drugog korisnika. Zbog toga, u analizi pitanja poverljivosti, grupišem ova dva protokola pod kategoriju tajnih razmena vlasništva.
 
 
 ![BTC204](assets/fr/198.webp)
@@ -4120,43 +4120,43 @@ Atomski svop i coinswap dele sličan način rada i nude iste prednosti i nedosta
 Međutim, imajte na umu da za razliku od coinswap-a, atomic swap može imati neravnoteže u pogledu dostupne likvidnosti, posebno u BTC/XMR razmenama. Generalno je lakše zameniti bitkoine za altkoine, jer postoji velika potražnja za bitkoinima, što održava niske premije za ovaj pravac konverzije. Međutim, razmena altkoina za BTC može biti složenija zbog manje potražnje, što često rezultira veoma visokim premijama.
 
 
-Konačno, kada atomska zamena uključuje onchain bitkoine i bitkoine na Lightning Network, govorimo o "podmorskoj zameni".
+Konačno, kada atomska zamena uključuje onchain bitkoine i bitkoine na Lightning mreži, govorimo o "subatomskoj zameni (eng. subatomic swaps)".
 
 
 ### Da li je zaista korisno?
 
 
-Tajne transakcije Ownership, kao što su coinswaps i atomic swaps, imaju prednost u zavaravanju heuristike analize lanca. Ove metode mogu sugerisati da transakcije uključuju istog korisnika, dok je stvarni Ownership promenio vlasnika. Međutim, glavni nedostatak ovih metoda je što su veoma rizične bez korišćenja dodatne tehnike za prekid istorije novčića.
+Tajne transakcije razmene vlasništva, kao što su coinswaps i atomic swaps, imaju prednost u zavaravanju heuristike analize lanca. Ove metode mogu sugerisati da transakcije uključuju istog korisnika, dok je u stvarnosti promenjen vlasnik. Međutim, glavni nedostatak ovih metoda je što su veoma rizične bez korišćenja dodatne tehnike za prekid istorije novčića.
 
 
-Zaista, kada Alisa izvrši coinswap ili atomic swap sa Bobom, ona razmenjuje posedovanje svojih bitkoina sa Bobovim. U slučaju atomic swap-a, Exchange uključuje Altcoin, ali princip ostaje isti. Tako Alisa završava sa $B$ novčićem, a Bob sa $A$ novčićem. Ovo dodaje sumnju u analizu lanca, ali istorija novčića ostaje uočljiva. Ako analitičar ispituje deo $A$, može pratiti Alisine prethodne aktivnosti, i obrnuto za deo $B$.
+Zaista, kada Alisa izvrši coinswap ili atomic swap sa Bobom, ona razmenjuje posedovanje svojih bitkoina sa Bobovim. U slučaju atomic swap-a, razmena uključuje Altcoin, ali princip ostaje isti. Tako Alisa završava sa $B$ novčićem, a Bob sa $A$ novčićem. Ovo dodaje sumnju u analizu lanca, ali istorija novčića ostaje uočljiva. Ako analitičar ispituje deo $A$, može pratiti Alisine prethodne aktivnosti, i obrnuto za deo $B$.
 
 
 ![BTC204](assets/fr/199.webp)
 
 
-Iz Alisinog ugla gledanja, rizik je da bi istorija novčića $B$ mogla biti smatrana sumnjivom od strane određenih entiteta. Ako je, na primer, Bob stekao novčić $B$ putem kriminalnog dela kao što je hakovanje, novčić bi ostao povezan sa njegovim ilegalnim aktivnostima. Alisa bi se tada mogla naći u posedu novčića koji ne bi mogla preneti na regulisane Exchange platforme bez rizika da joj sredstva budu zamrznuta, ili čak da bude optužena za Bobove zločine, iako s njima nema nikakve veze.
+Iz Alisinog ugla gledanja, rizik je da bi istorija novčića $B$ mogla biti smatrana sumnjivom od strane određenih entiteta. Ako je, na primer, Bob stekao novčić $B$ putem kriminalnog dela kao što je hakovanje, novčić bi ostao povezan sa njegovim ilegalnim aktivnostima. Alisa bi se tada mogla naći u posedu novčića koji ne bi mogla preneti na regulisane platformama za trgovinu bez rizika da joj sredstva budu zamrznuta, ili čak da bude optužena za Bobove zločine, iako s njima nema nikakve veze.
 
 
 ![BTC204](assets/fr/200.webp)
 
 
-Neizbežno, metode poverljivosti kao što su coinswap ili atomic swap su favorizovane od strane kriminalaca čija su sredstva pod nadzorom vlasti. Ovi protokoli im omogućavaju da se oslobode svojih bitkoina pod nadzorom u Exchange za savršeno zamenljive bitkoine. Takođe im omogućavaju da stvore diverziju, usmeravajući vlasti ka drugim korisnicima. Dakle, postoji dvostruka svrha za ove ljude.
+Neizbežno, metode poverljivosti kao što su coinswap ili atomic swap su favorizovane od strane kriminalaca čija su sredstva pod nadzorom vlasti. Ovi protokoli im omogućavaju da se oslobode svojih bitkoina koji su pod nadzorom i da ih razmene za savršeno zamenljive bitkoine. Takođe im omogućavaju da stvore diverziju, usmeravajući vlasti ka drugim korisnicima. Dakle, postoji dvostruka svrha za ove ljude.
 
 
-Sa CoinJoin, čak i ako je vaš novčić pomešan sa nadgledanim bitcoinima, istorija novčića je prekinuta, pružajući oblik uverljive poricljivosti koja ne postoji u tajnim Ownership protokolima prenosa kao što su coinswap ili atomic swap.
+Sa CoinJoin, čak i ako je vaš novčić pomešan sa nadgledanim bitcoinima, istorija novčića je prekinuta, pružajući oblik uverljive poricljivosti koja ne postoji u tajnim protokolima prenosa vlasništva kao što su coinswap ili atomic swap.
 
 
 ![BTC204](assets/fr/201.webp)
 
 
-Ako Alisa želi da izbegne bilo kakav rizik, mora nužno koristiti metodu za prekid istorije novčića $B$, kao što je prolazak kroz coinjoins. Ovo postavlja pitanje o korisnosti kombinovanja tajnog transfera Ownership i CoinJoin. CoinJoin, prekidajući istoriju novčića, već nudi dovoljan nivo poverljivosti za Alisu. Stoga, moje mišljenje je da, ako Alisa želi da zaštiti svoju privatnost, bilo bi mudrije da direktno pređe na CoinJoin umesto da se upušta u coinswap praćen CoinJoin.
+Ako Alisa želi da izbegne bilo kakav rizik, mora nužno koristiti metodu za prekid istorije novčića $B$, kao što je prolazak kroz coinjoins. Ovo postavlja pitanje o korisnosti kombinovanja tajnog transfera vlasništva i CoinJoin-a. CoinJoin, prekidajući istoriju novčića, već nudi dovoljan nivo poverljivosti za Alisu. Stoga, moje mišljenje je da, ako Alisa želi da zaštiti svoju privatnost, bilo bi mudrije da direktno pređe na CoinJoin umesto da se upušta u coinswap praćen CoinJoin-om.
 
 
-Da bi tajne metode prenosa Ownership bile zaista efikasne i izbegle rizik povezivanja istorije korisnika $A$ sa korisnikom $B$, paradoksalno bi bilo neophodno da njihova upotreba bude široko poznata. Ako se coinswap masovno koristi i vlasti su svesne ove uobičajene prakse, tada bi se mogla uspostaviti uverljiva forma poricanja. Međutim, sve dok upotreba ovih prenosa ostaje marginalna, mislim da će ove metode ostati previše rizične za korisnike.
+Da bi tajne metode prenosa vlasništva bile zaista efikasne i izbegle rizik povezivanja istorije korisnika $A$ sa korisnikom $B$, paradoksalno bi bilo neophodno da njihova upotreba bude široko poznata. Ako se coinswap masovno koristi i vlasti su svesne ove uobičajene prakse, tada bi se mogla uspostaviti uverljiva forma poricanja. Međutim, sve dok upotreba ovih prenosa ostaje marginalna, mislim da će ove metode ostati previše rizične za korisnike.
 
 
-Do sada smo uglavnom proučavali metode poverljivosti na nivou samih transakcija. U sledećem poglavlju ćemo razmatrati pitanja na nivou mreže i širenja transakcija.
+Do sada smo uglavnom proučavali metode poverljivosti na nivou samih transakcija. U sledećem poglavlju ćemo razmatrati pitanja na nivou mreže i distribucijom transakcija.
 
 
 ## Privatnost na P2P mreži
@@ -4169,19 +4169,19 @@ Do sada smo uglavnom proučavali metode poverljivosti na nivou samih transakcija
 U Delu 4, razgovarali smo o važnosti korišćenja kompletnog čvora za zaštitu poverljivosti vaših transakcija. Međutim, važno je razumeti da i vaš čvor može biti podložan napadima koji pokušavaju da izvuku informacije o vašim aktivnostima. Stoga ćemo u ovom poglavlju razmotriti različite mere koje možete preduzeti za zaštitu vaše privatnosti, ne na nivou samih transakcija ili Bitcoin tokova, već na nivou mreže.
 
 
-### Maslačak
+### Maslačak (eng. Dandelion)
 
 
-Jedan od načina da se izbegnu razni napadi de-anonimizacije je korišćenje Dandelion predloga. Ovaj protokol emitovanja je formalizovan u BIP156, ali nikada nije implementiran na Bitcoin.
+Jedan od načina da se izbegnu razni napadi de-anonimizacije je korišćenje Dandelion predloga. Ovaj protokol emitovanja je formalizovan u BIP156, ali nikada nije implementiran na Bitcoin-u.
 
 
-Ideja iza Dandelion-a je poboljšanje poverljivosti usmeravanja transakcija u Bitcoin mreži kako bi se suprotstavilo raznim oblicima napada. Njegov glavni cilj je sakriti izvorni čvor koji je inicijalno emitovao transakciju na mreži. Otkrivanje ovog čvora moglo bi omogućiti povezivanje Bitcoin transakcije sa specifičnim IP Address (ako čvor radi na clearnet-u), što bi moglo pružiti ulaznu tačku za analizu lanca.
+Ideja iza Dandelion-a je poboljšanje poverljivosti usmeravanja transakcija u Bitcoin mreži kako bi se suprotstavilo raznim oblicima napada. Njegov glavni cilj je sakriti izvorni čvor koji je inicijalno emitovao transakciju na mreži. Otkrivanje ovog čvora moglo bi omogućiti povezivanje Bitcoin transakcije sa specifičnim IP adrese (ako čvor radi na clearnet-u), što bi moglo pružiti ulaznu tačku za analizu lanca.
 
 
-Ova povezanost između aktivnosti na Bitcoin i IP Address predstavlja značajan rizik za poverljivost korisnika. Zaista, mnogi subjekti su u mogućnosti da lako povežu IP Address sa ličnim identitetom. Ovo uključuje vlade i provajdere internet usluga. Štaviše, ove informacije mogu postati javno dostupne, na primer, ako vaš IP Address i lični podaci procure kada je baza podataka neke veb stranice hakovana.
+Ova povezanost između aktivnosti na Bitcoin-u i IP adrese predstavlja značajan rizik za poverljivost korisnika. Zaista, mnogi subjekti su u mogućnosti da lako povežu IP adresu sa ličnim identitetom. Ovo uključuje vlade i provajdere internet usluga. Štaviše, ove informacije mogu postati javno dostupne, na primer, ako vaša IP adresa i lični podaci procure kada je baza podataka neke veb stranice hakovana.
 
 
-U klasičnoj operaciji Bitcoin, transakcije koje korisnik izgradi na svom Wallet softveru prenose se na njegov lični čvor. Ovaj čvor će odmah emitovati novu transakciju svim povezanim vršnjacima.
+U klasičnoj Bitcoin operaciji, transakcije koje korisnik izgradi na svom softveru novčaniku prenose se na njegov lični čvor. Ovaj čvor će odmah emitovati novu transakciju svim čvorovima na koje je povezan.
 
 
 ![BTC204](assets/fr/202.webp)
@@ -4199,8 +4199,7 @@ Ova distribucija transakcija koje čekaju integraciju u blok je prilično uravno
 ![BTC204](assets/fr/204.webp)
 
 
-Cilj BIP156 je da Address ovaj problem. Da bi to postigao, uvodi dodatnu fazu u širenju nove transakcije kako bi se očuvala anonimnost pre široke javne propagacije. Dandelion prvo koristi fazu "stem" gde se transakcija šalje kroz nasumičan put čvorova.
-
+Cilj BIP156 je da adresira ovaj problem. Da bi to postigao, uvodi dodatnu fazu u distribuciji nove transakcije kako bi se očuvala anonimnost pre široke javne propagacije. Dandelion najpre koristi fazu „stabljike“ (stem), tokom koje se transakcija šalje kroz nasumično izabran lanac čvorova.
 
 ![BTC204](assets/fr/205.webp)
 
@@ -4226,7 +4225,7 @@ Dakle, špijunski čvorovi potencijalno mogu pratiti transakciju nazad do čvora
 ![BTC204](assets/fr/208.webp)
 
 
-Ova metoda rutiranja zamagljuje trag koji vodi nazad do izvornog čvora, otežavajući praćenje transakcije kroz mrežu do njenog porekla. Dandelion tako poboljšava poverljivost ograničavanjem sposobnosti protivnika da deanonimizuju mrežu. Ova metoda je još efikasnija kada, tokom faze "stemenja", transakcija pređe čvor koji šifrira svoje mrežne komunikacije, kao što su Tor ili P2P Transport V2.
+Ova metoda rutiranja zamagljuje trag koji vodi nazad do izvornog čvora, otežavajući praćenje transakcije kroz mrežu do njenog porekla. Dandelion tako poboljšava poverljivost ograničavanjem sposobnosti protivnika da deanonimizuju mrežu. Ova metoda je još efikasnija kada, tokom "stem" faze, transakcija pređe čvor koji šifrira svoje mrežne komunikacije, kao što su Tor ili P2P Transport V2.
 
 
 BIP156 nije integrisan u Bitcoin Core i trenutno je klasifikovan kao "odbijen". Jedna od glavnih zabrinutosti u vezi sa ovim protokolom je da, tokom faze stabljike, transakcije moraju biti prosleđene kroz posredničke čvorove pre nego što budu verifikovane. Kao što smo videli, u normalnom Bitcoin modelu, svaki čvor prvo verifikuje transakciju pre nego što je emituje svojim partnerima. Ako transakcija ne ispunjava konsenzusna pravila čvora ili lokalna pravila standardizacije, čvor je ignoriše i ne distribuira. Ovaj proces je važan za suzbijanje DoS napada, jer se samo validne transakcije emituju celokupnoj mreži. Nevalidne transakcije, potencijalno generisane masovno da preopterete mrežu, zaustavljaju se na prvom čvoru na koji naiđu i ne propagiraju se. Glavni rizik sa Dandelion-om je da bi ovaj novi protokol mogao uvesti nove vektore za DoS napade omogućavajući da nevalidne transakcije budu emitovane kroz deo mreže.
