@@ -4237,13 +4237,13 @@ BIP156 nije integrisan u Bitcoin Core i trenutno je klasifikovan kao "odbijen". 
 P2P transport V2 je još jedan mrežni protokol predstavljen u BIP324. To je nova verzija Bitcoin P2P transportnog protokola koja uključuje oportunističku enkripciju kako bi se poboljšala poverljivost i sigurnost komunikacija između čvorova.
 
 
-Ovo poboljšanje je dizajnirano da reši nekoliko problema sa osnovnom verzijom P2P protokola. S jedne strane, čini podatke koji se razmenjuju neprepoznatljivim od drugih tipova podataka koji kruže Internetom za pasivnog posmatrača. Glavni cilj je sprečiti vlade, ISP-ove i VPN provajdere da masovno nadgledaju korisnike Bitcoin. Ovo takođe otežava ovim entitetima da utvrde da li je korisnik Interneta takođe korisnik Bitcoin, tj. da li upravlja kompletnim čvorom.
+Ovo poboljšanje je dizajnirano da reši nekoliko problema sa osnovnom verzijom P2P protokola. S jedne strane, čini podatke koji se razmenjuju neprepoznatljivim od drugih tipova podataka koji kruže Internetom za pasivnog posmatrača. Glavni cilj je sprečiti vlade, ISP-ove i VPN provajdere da masovno nadgledaju korisnike Bitcoin-a. Ovo takođe otežava ovim entitetima da utvrde da li je korisnik Interneta takođe korisnik Bitcoin-a, tj. da li upravlja kompletnim čvorom.
 
 
 P2P V2 takođe pomaže u smanjenju rizika od cenzure i napada detektovanjem specifičnih obrazaca u paketima podataka. To komplikuje i čini skupljim izvršenje različitih tipova Sybil napada na nivou mreže. Sybil napad se dešava kada akter kreira više lažnih identiteta kako bi stekao nepravednu prednost. U kontekstu Bitcoin mreže, ovo se često manifestuje kao akter koji kontroliše veliki broj kompletnih čvorova i agresivno ih koristi za umnožavanje konekcija. Sybil napadi mogu biti pasivni, za prikupljanje informacija i kompromitovanje korisničke poverljivosti, ili aktivni, u obliku Eclipse napada. Ovi poslednji izoluju specifičan čvor od ostatka mreže, bilo cenzurišući korisnika ili menjajući podatke koje prima. Na kraju, P2P V2 takođe čini *Man-In-The-Middle* (MITM) napade skupljim i lakšim za detekciju.
 
 
-Šifrovanje implementirano od strane P2P V2 ne uključuje autentifikaciju, kako ne bi dodalo nepotrebnu složenost ili ugrozilo činjenicu da veza sa mrežom ostaje bez dozvole. Ipak, ovaj novi P2P transportni protokol nudi bolju sigurnost protiv pasivnih napada i čini aktivne napade znatno skupljim i lakše uočljivim. Uvođenje pseudo-slučajnog toka podataka u mrežne poruke otežava napadačima cenzurisanje ili manipulaciju komunikacijama.
+Šifrovanje koje koristi P2P V2 ne uključuje autentifikaciju, kako bi se izbegla nepotrebna složenost i sačuvala činjenica da je povezivanje na mrežu i dalje moguće bez dozvole (permissionless). Ipak, ovaj novi P2P transportni protokol nudi bolju sigurnost protiv pasivnih napada i čini aktivne napade znatno skupljim i lakše uočljivim. Uvođenje pseudo-slučajnog toka podataka u mrežne poruke otežava napadačima cenzurisanje ili manipulaciju komunikacijama.
 
 
 P2P V2 transport je uključen kao opcija (podrazumevano onemogućena) u Bitcoin Core verziji 26.0, implementiranoj u decembru 2023. Zatim je podrazumevano omogućena u verziji 27.0 iz aprila 2024. Može se modifikovati sa opcijom `v2transport=` u konfiguracionoj datoteci.
@@ -4255,22 +4255,22 @@ P2P V2 transport je uključen kao opcija (podrazumevano onemogućena) u Bitcoin 
 Još jedno jednostavno rešenje za izbegavanje rizika od gubitka poverljivosti za mrežni čvor je da ga u potpunosti pokrenete pod Tor-om.
 
 
-Tor je mreža relej servera (čvorova) koja anonimizuje poreklo TCP konekcija na Internetu. Radi tako što enkapsulira podatke u nekoliko slojeva enkripcije. Svaki relej čvor uklanja Layer kako bi otkrio Address sledećeg čvora, sve dok se ne dostigne konačno odredište. Tor mreža obezbeđuje anonimnost sprečavanjem posredničkih čvorova da znaju i poreklo i odredište podataka, što posmatraču čini veoma teškim praćenje aktivnosti korisnika.
+Tor je mreža relej servera (čvorova) koja anonimizuje poreklo TCP konekcija na Internetu. Radi tako što enkapsulira podatke u nekoliko slojeva enkripcije. Svaki relej čvor uklanja sloj kako bi otkrio adresu sledećeg čvora, sve dok se ne dostigne konačno odredište. Tor mreža obezbeđuje anonimnost sprečavanjem posredničkih čvorova da znaju i poreklo i odredište podataka, što posmatraču čini veoma teškim praćenje aktivnosti korisnika.
 
 
 ![BTC204](assets/fr/209.webp)
 
 
-Tor ne samo da šifrira podatke, već i maskira poreklo i odredište komunikacija. Korišćenjem Tor-a za komunikacije sa vašeg ličnog čvora, jačate poverljivost vaših transakcija: vaš ISP ne može dešifrovati komunikacije, a drugi čvorovi u Bitcoin mreži ne mogu identifikovati IP izvornog čvora Address. Štaviše, Tor takođe skriva vašu samu upotrebu Bitcoin od vašeg ISP-a.
+Tor ne samo da šifrira podatke, već i maskira poreklo i odredište komunikacija. Korišćenjem Tor-a za komunikacije sa vašeg ličnog čvora, jačate poverljivost vaših transakcija: vaš ISP ne može dešifrovati komunikacije, a drugi čvorovi u Bitcoin mreži ne mogu identifikovati IP izvornog čvora adrese. Štaviše, Tor takođe skriva vašu samu Bitcoin upotrebu od vašeg ISP-a.
 
 
-Glavni rizik kod ove metode je što je Tor protokol nezavisan od Bitcoin. Ako imate Bitcoin čvor koji radi pod Tor-om i Tor prestane da radi, vaš Bitcoin čvor više neće moći da komunicira.
+Glavni rizik kod ove metode je što je Tor protokol nezavisan od Bitcoin-a. Ako imate Bitcoin čvor koji radi pod Tor-om i Tor prestane da radi, vaš Bitcoin čvor više neće moći da komunicira.
 
 
 Takođe, važno je napomenuti da su komunikacije na Toru sporije. Ovo kašnjenje je posebno iritantno tokom inicijalnog pokretanja čvora, jer IBD (*Initial Block Download*) zahteva mnogo komunikacije. Kao rezultat toga, vaša početna sinhronizacija sa Bitcoin mrežom mogla bi trajati znatno duže koristeći Tor. Takođe je moguće izvršiti IBD na clearnet-u, a zatim aktivirati Tor kao drugi korak. Iako ova metoda otkriva postojanje vašeg Bitcoin čvora vašem ISP-u, ona štiti vaše lične informacije o transakcijama kada se prebacite na Tor.
 
 
-Nakon što smo istražili različite metode poverljivosti na mrežnom nivou, u narednih nekoliko poglavlja želeo bih da vas upoznam sa dva elegantna rešenja za izbegavanje ponovne upotrebe Address: BIP47 i Silent Payments.
+Nakon što smo istražili različite metode poverljivosti na mrežnom nivou, u narednih nekoliko poglavlja želeo bih da vas upoznam sa dva elegantna rešenja za izbegavanje ponovne upotrebe adresa: BIP47 i Silent Payments.
 
 
 ## BIP47 i višekratno upotrebljivi kodovi za plaćanje
@@ -4280,31 +4280,31 @@ Nakon što smo istražili različite metode poverljivosti na mrežnom nivou, u n
 
 
 
-Kao što smo videli u delu 3, ponovna upotreba Address predstavlja ozbiljnu prepreku za poverljivost korisnika na protokolu Bitcoin. Da bi se ublažili ovi rizici, snažno se preporučuje da se generate prazan prijemni Address za svaku novu uplatu primljenu u Wallet. Iako je generisanje novog Address sada pojednostavljeno korišćenjem modernog softvera i hijerarhijski determinističkih novčanika, ova praksa može delovati kontraintuitivno.
+Kao što smo videli u delu 3, ponovna upotreba adresa predstavlja ozbiljnu prepreku za poverljivost korisnika na Bitcoin protokolu. Da bi se ublažili ovi rizici, snažno se preporučuje da se generiše prazna prijemna adresa za svaku novu uplatu primljenu u novčanik. Iako je generisanje nove adrese sada pojednostavljeno korišćenjem modernog softvera i hijerarhijski determinističkih novčanika, ova praksa može delovati kontraintuitivno.
 
 
 ![BTC204](assets/fr/210.webp)
 
 
-U tradicionalnom bankarskom sistemu, na primer, navikli smo da delimo naš IBAN, koji uvek ostaje isti. Kada ga jednom damo nekome, oni nam mogu poslati više uplata bez potrebe za daljom interakcijom sa nama. Neo-banke takođe nude modernije mogućnosti, kao što je korišćenje jedinstvenih email adresa na PayPal-u ili RevTags na Revolut-u. Čak i van finansijske sfere, naši svakodnevni identifikatori kao što su poštanski broj Address, telefonski broj i email Address su takođe jedinstveni i trajni. Ne moramo ih obnavljati za svaku novu interakciju.
+U tradicionalnom bankarskom sistemu, na primer, navikli smo da delimo naš IBAN, koji uvek ostaje isti. Kada ga jednom damo nekome, oni nam mogu poslati više uplata bez potrebe za daljom interakcijom sa nama. Neo-banke takođe nude modernije mogućnosti, kao što je korišćenje jedinstvenih email adresa na PayPal-u ili RevTags na Revolut-u. Čak i van finansijske sfere, naši svakodnevni identifikatori kao što su poštanski broj adrese, telefonski broj i email adresa su takođe jedinstveni i trajni. Ne moramo ih obnavljati za svaku novu interakciju.
 
 
 ![BTC204](assets/fr/211.webp)
 
 
-Međutim, Bitcoin radi drugačije: novi prijemni Address mora biti generisan za svaku dolaznu transakciju. Ovaj kompromis između jednostavnosti korišćenja i poverljivosti vraća se na same početke Bitcoin-ovog Belog papira. Još od objavljivanja prve verzije njegovog dokumenta krajem 2008. godine, Satoshi Nakamoto nas je već upozoravao na ovaj rizik:
+Međutim, Bitcoin radi drugačije: nova prijemna adresa mora biti generisana za svaku dolaznu transakciju. Ovaj kompromis između jednostavnosti korišćenja i poverljivosti vraća se na same početke Bitcoin-ovog White paper-a. Još od objavljivanja prve verzije njegovog dokumenta krajem 2008. godine, Satoshi Nakamoto nas je već upozoravao na ovaj rizik:
 
 
-**Kao dodatni firewall, novi par ključeva mogao bi se koristiti za svaku transakciju kako bi ostali nepovezani sa zajedničkim vlasnikom
+**Kao dodatna zaštita, novi par ključeva mogao bi se koristiti za svaku transakciju kako bi ostali nepovezani sa zajedničkim vlasnikom**
 
 
-Postoji mnogo načina da se primi više uplata na jedan identifikator bez potrebe za ponovnim korišćenjem Address. Svaki od njih ima svoje kompromise i nedostatke. Među ovim metodama je BIP47, predlog koji je razvio Justus Ranvier i objavio 2015. godine. Ovaj predlog ima za cilj kreiranje ponovo upotrebljivih kodova za plaćanje koji omogućavaju obavljanje više transakcija prema istoj osobi, dok se izbegava ponovna upotreba Address. Ukratko, BIP47 ima za cilj da ponudi sistem plaćanja koji je intuitivan kao jedinstveni identifikator, uz očuvanje poverljivosti transakcija.
+Postoji mnogo načina da se primi više uplata na jedan identifikator bez potrebe za ponovnim korišćenjem adrese. Svaki od njih ima svoje kompromise i nedostatke. Među ovim metodama je BIP47, predlog koji je razvio Justus Ranvier i objavio 2015. godine. Ovaj predlog ima za cilj kreiranje ponovo upotrebljivih kodova za plaćanje koji omogućavaju obavljanje više transakcija prema istoj osobi, dok se izbegava ponovna upotreba adresa. Ukratko, BIP47 ima za cilj da ponudi sistem plaćanja koji je intuitivan kao jedinstveni identifikator, uz očuvanje poverljivosti transakcija.
 
 
 ![BTC204](assets/fr/212.webp)
 
 
-BIP47 ne poboljšava direktno poverljivost korisnika, jer BIP47 uplata nudi isti nivo poverljivosti kao klasična Bitcoin transakcija koristeći prazne adrese. Međutim, čini korišćenje Bitcoin pogodnijim i intuitivnijim, lakoću koja bi inače ugrozila poverljivost. Zahvaljujući BIP47, ova lakoća korišćenja postiže isti nivo poverljivosti kao klasična transakcija. Zato je BIP47 tako vredan alat za očuvanje privatnosti.
+BIP47 ne poboljšava direktno poverljivost korisnika, jer BIP47 uplata nudi isti nivo poverljivosti kao klasična Bitcoin transakcija koristeći prazne adrese. Međutim, čini korišćenje Bitcoin pogodnijim i intuitivnijim, lakoća koja bi inače ugrozila poverljivost. Zahvaljujući BIP47, ova lakoća korišćenja postiže isti nivo poverljivosti kao klasična transakcija. Zato je BIP47 tako vredan alat za očuvanje privatnosti.
 
 
 U početku, BIP47 je bio predložen za integraciju u Bitcoin Core, ali nikada nije zapravo implementiran. Međutim, neke softverske aplikacije su odlučile da ga implementiraju samostalno. Na primer, timovi Samourai Wallet su razvili sopstvenu implementaciju BIP47 pod nazivom "PayNym".
@@ -4313,22 +4313,22 @@ U početku, BIP47 je bio predložen za integraciju u Bitcoin Core, ali nikada ni
 ### Opšti princip BIP47 i PayNym
 
 
-Cilj BIP47 je omogućiti primanje velikog broja uplata bez ponovnog korišćenja adresa. Zasniva se na upotrebi ponovljivog koda za plaćanje, koji omogućava različitim izdavaocima da pošalju nekoliko uplata na jedan kod koji pripada drugom korisniku. Kao rezultat toga, primalac ne mora da obezbedi novi, prazni Address za svaku transakciju, što u velikoj meri olakšava razmene uz očuvanje poverljivosti.
+Cilj BIP47 je omogućiti primanje velikog broja uplata bez ponovnog korišćenja adresa. Zasniva se na upotrebi ponovljivog koda za plaćanje, što omogućava različitim pošiljaocima da upute više uplata na jedan isti kod koji pripada drugom korisniku. Kao rezultat toga, primalac ne mora da obezbedi novi, praznu adresu za svaku transakciju, što u velikoj meri olakšava razmene uz očuvanje poverljivosti.
 
 
 ![BTC204](assets/fr/213.webp)
 
 
-Korisnik stoga može deliti svoj platni kod u potpunoj slobodi, bilo na društvenim mrežama ili na svojoj veb stranici, bez rizika od gubitka poverljivosti, za razliku od konvencionalnog primaoca Address ili javnog ključa.
+Korisnik stoga može deliti svoj platni kod u potpunoj slobodi, bilo na društvenim mrežama ili na svojoj veb stranici, bez rizika od gubitka poverljivosti, za razliku od konvencionalne adrese za primanje ili javnog ključa.
 
 
-Da bi se izvršila transakcija, obe strane treba da imaju Bitcoin Wallet sa BIP47 implementacijom, kao što je PayNym na Samurai Wallet ili Sparrow Wallet. Zajednička upotreba njihovih platnih kodova stvara tajni kanal između njih. Da bi se ovaj kanal efikasno uspostavio, izdavalac mora izvršiti specifičnu transakciju na Bitcoin Blockchain, poznatu kao "notifikaciona transakcija" (više o tome kasnije).
+Da bi se izvršila transakcija, obe strane treba da imaju Bitcoin novčanik sa BIP47 implementacijom, kao što je PayNym na Samurai Wallet-u ili Sparrow Wallet. Zajednička upotreba njihovih platnih kodova stvara tajni kanal između njih. Da bi se ovaj kanal efikasno uspostavio, izdavalac mora izvršiti specifičnu transakciju na Bitcoin blokčejnu, poznatu kao "notifikaciona transakcija" (više o tome kasnije).
 
 
 Kombinovanjem kodova plaćanja dva korisnika generišu se zajedničke tajne, koje zauzvrat stvaraju veliki broj jedinstvenih Bitcoin adresa za primanje (tačno 2^32, ili oko 4 milijarde). Na ovaj način, uplate izvršene putem BIP47 nisu zapravo adresirane na sam kod plaćanja, već na klasične adrese za prijem izvedene iz kodova plaćanja uključenih korisnika.
 
 
-Kod plaćanja tako služi kao virtuelni identifikator izveden iz portfolija seed. U hijerarhijskoj strukturi derivacije portfolija, kod plaćanja je pozicioniran na nivou 3, tj. na nivou računa.
+Kod plaćanja tako služi kao virtuelni identifikator izveden iz seed novčanika. U hijerarhijskoj strukturi derivacije novčanika, kod plaćanja je pozicioniran na nivou 3, tj. na nivou računa.
 
 
 ![BTC204](assets/fr/214.webp)
@@ -4350,10 +4350,10 @@ PM8TJSBiQmNQDwTogMAbyqJe2PE2kQXjtgh88MRTxsrnHC8zpEtJ8j7Aj628oUFk8X6P5rJ7P5qDudE4
 ```
 
 
-Ovaj kod se takođe može kodirati kao QR kod, kako bi se olakšala komunikacija, baš kao konvencionalni prijem Address.
+Ovaj kod se takođe može kodirati kao QR kod, kako bi se olakšala komunikacija, baš kao konvencionalna prijemna adresa.
 
 
-Što se tiče PayNym Botova, robota koji se ponekad viđaju na Twitteru, oni su vizuelne reprezentacije koda za plaćanje, kreiranog od strane Samourai Wallet. Generišu se korišćenjem Hash funkcije, što im daje skoro jedinstvenost. Imaju oblik malog niza karaktera koji počinje sa `+` :
+Što se tiče PayNym Botova, robota koji se ponekad viđaju na Twitteru, oni su vizuelne reprezentacije koda za plaćanje, kreiranog od strane Samourai Wallet-a. Generišu se korišćenjem Hash funkcije, što im daje skoro jedinstvenost. Imaju oblik malog niza karaktera koji počinje sa `+` :
 
 
 ```plaintext
@@ -4369,7 +4369,7 @@ Ovi avatari mogu biti predstavljeni i kao slike:
 ![BTC204](assets/fr/215.webp)
 
 
-Iako ovi roboti nemaju specifičnu tehničku funkcionalnost unutar BIP47 okvira, oni igraju ulogu u olakšavanju interakcije s korisnicima pružajući lako prepoznatljiv vizuelni identitet.
+Iako ovi roboti nemaju specifičnu tehničku funkcionalnost unutar BIP47 okvira, oni igraju ulogu u olakšavanju interakcije korisnicima pružajući lako prepoznatljiv vizuelni identitet.
 
 
 ---
@@ -4385,7 +4385,7 @@ https://planb.network/courses/46b0ced2-9028-4a61-8fbc-3b005ee8d70f
 ### Ponovno upotrebljivi kod za plaćanje
 
 
-Kao što je ranije pomenuto, višekratni kod za plaćanje se nalazi na dubini 3 HD Wallet, što ga čini uporedivim sa `xpub`, kako u smislu njegove pozicije u strukturi Wallet, tako i u smislu njegove uloge.
+Kao što je ranije pomenuto, višekratni kod za plaćanje se nalazi na dubini 3 HD novčanika, što ga čini uporedivim sa `xpub`, kako u smislu njegove pozicije u strukturi novčanika, tako i u smislu njegove uloge.
 
 
 Kod plaćanja od 80 bajtova se razlaže na sledeći način:
@@ -4393,15 +4393,15 @@ Kod plaćanja od 80 bajtova se razlaže na sledeći način:
 
 
 
-- Bajt `0`: Verzija**. Za prvu verziju BIP47, ovaj bajt je postavljen na `0x01` ;
-- Bajt `1`: Polje bita**. Ovaj prostor je rezervisan za integrisanje dodatnih indikacija za specifične namene. Za klasičnu upotrebu PayNym-a, ovaj bajt je postavljen na `0x00` ;
-- Bajt `2`: Paritet `y`**. Ovaj bajt je `0x02` ili `0x03`, što označava da li je ordinata javnog ključa parna ili neparna, jer se koristi kompresovani javni ključ;
-- Od bajta `3` do bajta `34`: Vrednost `x`**. Ovi bajtovi predstavljaju apscisu javnog ključa. Konkatenacija `x` i pariteta `y` formira kompletan komprimovani javni ključ;
-- Od bajta `35` do bajta `66`: Kod stringa**. Ovaj prostor sadrži kod stringa povezan sa javnim ključem;
-- Od bajta `67` do bajta `79`: Popunjavanje**. Ovaj prostor je namenjen za moguće buduće evolucije. Za trenutnu verziju, jednostavno postavljamo nule ovde kako bismo dostigli veličinu od 80 bajtova potrebnu za izlaz `OP_RETURN`.
+- **Bajt `0`: Verzija**. Za prvu verziju BIP47, ovaj bajt je postavljen na `0x01` ;
+- **Bajt `1`: Polje bita**. Ovaj prostor je rezervisan za integrisanje dodatnih indikacija za specifične namene. Za klasičnu upotrebu PayNym-a, ovaj bajt je postavljen na `0x00` ;
+- **Bajt `2`: Paritet `y`**. Ovaj bajt je `0x02` ili `0x03`, što označava da li je ordinata javnog ključa parna ili neparna, jer se koristi kompresovani javni ključ;
+- **Od bajta `3` do bajta `34`: Vrednost `x`**. Ovi bajtovi predstavljaju apscisu javnog ključa. Konkatenacija `x` i pariteta `y` formira kompletan kompresovani javni ključ;
+- **Od bajta `35` do bajta `66`: Kod stringa**. Ovaj prostor sadrži kod stringa povezan sa javnim ključem;
+- **Od bajta `67` do bajta `79`: popuna (padding)**. Ovaj prostor je namenjen mogućim budućim razvojnim pravcima. U trenutnoj verziji jednostavno se popunjava nulama kako bi se dostigla veličina od 80 bajtova, koja je potrebna za OP_RETURN izlaz.
 
 
-Evo heksadecimalna reprezentacija mog višekratnog koda za plaćanje već predstavljena u prethodnom odeljku:
+Ovo je heksadecimalna reprezentacija mog višekratnog koda za plaćanje već predstavljen u prethodnom odeljku:
 
 
 ```plaintext
@@ -4420,7 +4420,7 @@ Zatim, `P` prefiks bajt mora biti dodat na početku kako bi jasno označio da je
 ```
 
 
-Na kraju, kako bi se osigurala integritet platnog koda, vrši se izračunavanje kontrolne sume koristeći `HASH256`, koji se sastoji od dvostrukog Hash koristeći funkciju `SHA256`. Prva četiri bajta ovog Hash se zatim konkateniraju na kraj platnog koda:
+Na kraju, kako bi se osigurala integritet platnog koda, vrši se izračunavanje kontrolne sume koristeći `HASH256`, koji se sastoji od dvostrukog Hash-a koristeći funkciju `SHA256`. Prva četiri bajta ovog Hash se zatim konkateniraju na kraj platnog koda:
 
 
 ```plaintext
@@ -4439,7 +4439,7 @@ PM8TJSBiQmNQDwTogMAbyqJe2PE2kQXjtgh88MRTxsrnHC8zpEtJ8j7Aj628oUFk8X6P5rJ7P5qDudE4
 ```
 
 
-U procesu kreiranja koda za plaćanje koristimo kompresovani javni ključ i string kod. Oboje se deterministički i hijerarhijski izvode iz Wallet seed. Putanja derivacije koja se koristi za postizanje ovoga je :
+U procesu kreiranja koda za plaćanje koristimo kompresovani javni ključ i string kod. Oboje se deterministički i hijerarhijski izvode iz seed-a novčanika. Putanja derivacije koja se koristi za postizanje ovoga je :
 
 
 ```plaintext
@@ -4447,13 +4447,13 @@ m/47'/0'/0'/
 ```
 
 
-U konkretnim terminima, za generate kompresovani javni ključ i string kod povezan sa višekratnim kodom plaćanja, počinjemo izračunavanjem glavnog privatnog ključa iz Wallet seed. Zatim nastavljamo sa izvođenjem para kćerki ključeva koristeći indeks `47 + 2^31` (ojačano izvođenje). Ovo je praćeno sa dva dalja uzastopna izvođenja parova kćerki, svaki koristeći indeks `2^31` (ojačano izvođenje).
+U konkretnim terminima, za generisanje kompresovanog javnog ključa i string koda koji je povezan sa višekratnim kodom plaćanja, počinjemo sa izračunavanjem glavnog privatnog ključa iz seed novčanika. Zatim nastavljamo sa izvođenjem para pod-ključeva koristeći indeks `47 + 2^31` (ojačano izvođenje). Ovo je praćeno sa dva dalja uzastopna izvođenja parova pod-ključeva, svaki koristeći indeks `2^31` (ojačano izvođenje).
 
 
 ![BTC204](assets/fr/218.webp)
 
 
-### Diffie-Hellman ključ Exchange na eliptičkim krivama (ECDH)
+### Diffie-Hellman razmena ključeva na eliptičkim krivama (ECDH)
 
 
 Kriptografski protokol u srcu BIP47 poznat je pod akronimom ECDH, za *Elliptic-Curve Diffie-Hellman*. Ova metoda je varijanta originalnog Diffie-Hellman ključa Exchange.
