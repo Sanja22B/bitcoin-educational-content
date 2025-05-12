@@ -17,7 +17,7 @@ objectives:
 U svetu gde poverljivost finansijskih transakcija postaje luksuz, razumevanje i ovladavanje principima zaštite privatnosti pri korišćenju Bitcoin-a je od suštinskog značaja. Ovaj kurs obuke vam pruža sve ključeve, kako teorijske tako i praktične, da to postignete samostalno.
 
 
-Danas, na Bitcoin-u, kompanije se specijalizuju za analizu blokčejna. Njihovo osnovno poslovanje upravo se sastoji u zadiranju u vašu privatnu sferu, s ciljem da naruše poverljivost vaših transakcija. U stvarnosti, ne postoji nešto kao "pravo na privatnost" na Bitcoin-u. Dakle, na vama je, korisniku, da ostvarite svoja prirodna prava i zaštitite poverljivost svojih transakcija, jer to niko drugi neće učiniti za vas.
+Danas, na Bitcoin-u, postoje kompanije se specijalizuju za analizu blokčejna. Njihovo osnovno poslovanje upravo se sastoji u zadiranju u vašu privatnu sferu, s ciljem da naruše poverljivost vaših transakcija. U stvarnosti, ne postoji nešto kao "pravo na privatnost" na Bitcoin-u. Dakle, na vama je, korisniku, da ostvarite svoja prirodna prava i zaštitite poverljivost svojih transakcija, jer to niko drugi neće učiniti za vas.
 
 
 Kurs je dizajniran da bude sveobuhvatan i opšti. Svaki tehnički koncept je detaljno obrađen i podržan objašnjavajućim dijagramima. Cilj je učiniti znanje dostupnim svima. BTC204 je stoga pristupačan za početnike i korisnike srednjeg nivoa. Kurs takođe nudi dodatnu vrednost za iskusnije bitkoinere, jer ulazimo detaljnije u određene tehničke koncepte koji su često pogrešno shvaćeni.
@@ -63,13 +63,13 @@ Kao što ćemo videti, iako protokol nudi određene zaštite poverljivosti sam p
 Ovaj kurs obuke je osmišljen da pruži sveobuhvatan, opšti pregled pitanja koja se tiču poverljivosti Bitcoin-a. Svaki tehnički koncept je detaljno obrađen, uz podršku objašnjavajućih dijagrama. Cilj je da ovo znanje bude dostupno svima, čak i početnicima i korisnicima srednjeg nivoa. Za iskusnije Bitcoinere, takođe pokrivamo visoko tehničke i ponekad malo poznate koncepte tokom kursa, kako bismo unapredili razumevanje svake teme.
 
 
-Cilj ovog kursa obuke nije da vas učini potpuno anonimnim u korišćenju Bitcoin-a, već da vam pruži osnovne alate kako biste znali kako da zaštitite svoju poverljivost u skladu sa vašim ličnim ciljevima. Imaćete slobodu da birate između predstavljenih koncepata i alata kako biste razvili sopstvene strategije, prilagođene vašim specifičnim ciljevima i potrebama.
+Cilj ovog kursa obuke nije da vas učini potpuno anonimnim u korišćenju Bitcoin-a, već da vam pruži osnovne alate kako biste znali kako da zaštitite svoju privatnost u skladu sa vašim ličnim ciljevima. Imaćete slobodu da birate između predstavljenih koncepata i alata kako biste razvili sopstvene strategije, prilagođene vašim specifičnim ciljevima i potrebama.
 
 
 **Sekcija 1: Definicije i ključni koncepti**
 
 
-Za početak, razmotrićemp osnovne principe koji regulišu rad Bitcoin-a, kako bismo zatim mogli mirno pristupiti pojmovima koji se odnose na poverljivost. Neophodno je savladati nekoliko osnovnih koncepata, kao što su UTXO, adrese za prijem i programiranje skripti, pre nego što u potpunosti možete razumeti koncepte koje ćemo obraditi u narednim odeljcima. Takođe ćemo predstaviti Bitcoin-ov opšti model poverljivosti, kako ga je zamislio Satoshi Nakamoto, što će nam omogućiti da shvatimo povezane uloge i rizike.
+Za početak, razmotrićemp osnovne principe koji regulišu rad Bitcoin-a, kako bismo mirno zatim mogli pristupiti pojmovima koji se odnose na poverljivost. Neophodno je savladati nekoliko osnovnih koncepata, kao što su UTXO, adrese za prijem i programiranje skripti, pre nego što u potpunosti možete razumeti koncepte koje ćemo obraditi u narednim odeljcima. Takođe ćemo predstaviti Bitcoin-ov opšti model poverljivosti, kako ga je zamislio Satoshi Nakamoto, što će nam omogućiti da shvatimo povezane uloge i rizike.
 
 
 ![BTC204](assets/fr/001.webp)
@@ -78,7 +78,7 @@ Za početak, razmotrićemp osnovne principe koji regulišu rad Bitcoin-a, kako b
 **Sekcija 2: Razumevanje i zaštita od analize lanca**
 
 
-U drugom delu, razmatramo tehnike koje koriste kompanije za analizu blokčejna kako bi pratili vašu aktivnost na Bitcoin-u. Razumevanje ovih metoda je ključno za jačanje zaštite vaše privatnosti. Cilj ovog dela je ispitivanje strategija napadača kako bismo bolje razumeli rizike i pripremili teren za tehnike koje ćemo proučavati u narednim delovima. Analiziraćemo obrasce transakcija, interne i eksterne heuristike, i verovatne interpretacije ovih obrazaca. Pored teorije, naučićemo kako da koristimo Block explorer za analizu lanca, kroz praktične primere i vežbe.
+U drugom delu, razmatramo tehnike koje koriste kompanije za analizu blokčejna kako bi pratili vašu aktivnost na Bitcoin-u. Razumevanje ovih metoda je od suštinskog značaja za bolju zaštitu vaše privatnosti. Cilj ovog dela je ispitivanje strategija napadača kako bismo bolje razumeli rizike i pripremili teren za tehnike koje ćemo proučavati u narednim delovima. Analiziraćemo obrasce transakcija, interne i eksterne heuristike, i verovatne interpretacije ovih obrazaca. Pored teorije, naučićemo kako da koristimo Block explorer za analizu lanca, kroz praktične primere i vežbe.
 
 
 ![BTC204](assets/fr/002.webp)
@@ -87,7 +87,7 @@ U drugom delu, razmatramo tehnike koje koriste kompanije za analizu blokčejna k
 **Sekcija 3: Ovladavanje najboljim praksama za zaštitu vaše privatnosti**
 
 
-U trećem delu našeg kursa obuke, prelazimo na suštinu: praksu! Cilj je da se savladaju sve osnovne najbolje prakse koje bi trebalo da postanu prirodni refleksi za svakog korisnika Bitcoin-a. Obradićemo upotrebu praznih adresa, označavanje (eng. tagging), konsolidaciju, upotrebu kompletnih čvorova, kao i KYC i metode akvizicije. Cilj je da vam pružimo sveobuhvatan pregled zamki koje trebate izbeći kako bismo uspostavili čvrste temelje u našoj potrazi za zaštitom privatnosti. Za neke od ovih praksi, bićete upućeni na specifičan vodič o tome kako ih implementirati.
+U trećem delu našeg kursa obuke, prelazimo na suštinu: praksu! Cilj je da se savladaju sve osnovne i najbolje prakse koje bi trebalo da postanu prirodni refleksi za svakog korisnika Bitcoin-a. Obradićemo upotrebu praznih adresa, označavanje (eng. tagging), konsolidaciju, upotrebu kompletnih čvorova, kao i KYC i metode akvizicije. Cilj je da vam pružimo sveobuhvatan pregled zamki koje trebate izbeći kako bismo uspostavili čvrste temelje u našoj potrazi za zaštitom privatnosti. Za neke od ovih praksi, bićete upućeni na specifičan vodič o tome kako ih implementirati.
 
 
 ![BTC204](assets/fr/003.webp)
@@ -96,7 +96,7 @@ U trećem delu našeg kursa obuke, prelazimo na suštinu: praksu! Cilj je da se 
 **Sekcija 4: Razumevanje CoinJoin transakcija**
 
 
-Kako možemo govoriti o privatnosti na Bitcoin-u bez spominjanja coinjoin-a? U odeljku 4, saznaćete sve što treba da znate o ovoj metodi mešanja. Naučićete šta su coinjoin-i, njihovu istoriju i ciljeve, kao i različite tipove CoinJoin-a koji postoje. Na kraju, za iskusnije korisnike, pogledaćemo šta su anonset-i i entropija, i kako ih izračunati.
+Kako možemo govoriti o privatnosti na Bitcoin-u bez spominjanja coinjoin-a? U odeljku 4, saznaćete sve što treba da znate o ovoj metodi mešanja UTXO-a. Naučićete šta su coinjoin-i, njihovu istoriju i ciljeve, kao i različite tipove CoinJoin-a koji postoje. Na kraju, za iskusnije korisnike, pogledaćemo šta su anonset-i i entropija, i kako ih izračunati.
 
 
 ![BTC204](assets/fr/004.webp)
@@ -108,12 +108,12 @@ Kako možemo govoriti o privatnosti na Bitcoin-u bez spominjanja coinjoin-a? U o
 U petom delu, pogledaćemo sve druge tehnike dostupne za zaštitu vaše privatnosti na Bitcoin-u, osim CoinJoin-a. Tokom godina, programeri su pokazali izuzetnu kreativnost u dizajniranju alata posvećenih privatnosti. Pogledaćemo sve ove metode, kao što su PayJoin, kolaborativne transakcije, Coin Swap i Atomic Swap, detaljno objašnjavajući kako funkcionišu, njihove ciljeve i eventualne slabosti.
 
 
-Takođe ćemo razmotriti privatnost na nivou mreže čvorova i distribucija transakcija. Takođe ćemo diskutovati o raznim protokolima koji su predloženi tokom godina kako bi se poboljšala privatnost korisnika na Bitcoin-u, uključujući statičke adrese protokola.
+Takođe ćemo razmotriti privatnost na nivou mreže čvorova i distribuciju transakcija. Takođe ćemo diskutovati o raznim protokolima koji su predloženi tokom godina kako bi se poboljšala privatnost korisnika na Bitcoin-u, uključujući protokol statičkih adresa.
 
 
 ![BTC204](assets/fr/005.webp)
 
-Spremni da istražimo složenosti privatnosti na Bitcoin-u? Hajde da krenemo!
+Spremni da istražimo kompleksnosti privatnosti na Bitcoin-u? Hajde da krenemo!
 
 
 # Definicije i ključni koncepti
@@ -135,7 +135,7 @@ Bitcoin je pre svega valuta, ali da li zaista znate kako su BTC predstavljeni un
 ### UTXO-i na Bitcoin-u: šta su oni?
 
 
-Bitcoin protokol je zasnovan na modelu UTXO, koji označava "Neutrošeni Izlaz Transakcije".
+Bitcoin protokol je zasnovan na UTXO modelu, koji označava "Neutrošeni Izlaz Transakcije".
 
 
 Ovaj model se duboko razlikuje od tradicionalnih bankarskih sistema, koji se oslanjaju na mehanizam računa i bilansa za praćenje finansijskih tokova. Zaista, u bankarskom sistemu, pojedinačna stanja se održavaju na računima vezanim za identitet. Na primer, kada kupite baget od pekara, vaša banka jednostavno zadužuje iznos kupovine sa vašeg računa, smanjujući vaše stanje, dok se pekarov račun odobrava za isti iznos, povećavajući njegovo stanje. U ovom sistemu, ne postoji pojam veze između novca koji ulazi na vaš račun i novca koji ga napušta, osim evidencije transakcija.
@@ -147,7 +147,7 @@ Ovaj model se duboko razlikuje od tradicionalnih bankarskih sistema, koji se osl
 Bitcoin funkcioniše drugačije. Koncept računa ne postoji, a monetarne jedinice se ne upravljaju putem stanja, već kroz UTXO-e. UTXO predstavlja određenu količinu bitkoina koja još nije potrošena, čime se formira "deo Bitcoina", koji može biti veliki ili mali. Na primer, jedan UTXO može vredeti `500 BTC` ili jednostavno `700 Sats`.
 
 
-**> Satoši, često skraćeno na sat, je najmanja jedinica Bitcoin-a, uporediva sa centimom u fiat valutama.
+**> Satoši, često skraćeno na sat, je najmanja jedinica Bitcoin-a, uporediva sa centimom u fiat valutama.**
 
 
 ```plaintext
@@ -155,22 +155,22 @@ Bitcoin funkcioniše drugačije. Koncept računa ne postoji, a monetarne jedinic
 ```
 
 
-Teoretski, jedan UTXO može predstavljati bilo koju vrednost u bitkoinima, u rasponu od jednog sata do teoretskog maksimuma od oko 21 milion BTC. Međutim, logički je nemoguće posedovati svih 21 milion bitkoina, i postoji niži ekonomski prag nazvan "Dust", ispod kojeg se UTXO smatra ekonomski neisplativim za trošenje.
+Teoretski, jedan UTXO može predstavljati bilo koju vrednost u bitkoinima, u rasponu od jednog sata do teoretskog maksimuma od oko 21 milion BTC. Međutim, logički je nemoguće posedovati svih 21 milion bitkoina, i postoji niži ekonomski prag nazvan prašina (eng. Dust), ispod kojeg se UTXO smatra ekonomski neisplativim za trošenje.
 
 
-**> Najveći UTXO ikada kreiran na Bitcoin imao je vrednost od `500,000 BTC`. Kreirala ga je MtGox platforma tokom konsolidacione operacije u novembru 2011: [29a3efd3ef04f9153d47a990bd7b048a4b2d213daaa5fb8ed670fb85f13bdbcf](https://Mempool.space/fr/tx/29a3efd3ef04f9153d47a990bd7b048a4b2d213daaa5fb8ed670fb85f13bdbcf)
+**> Najveći UTXO ikada kreiran na Bitcoin imao je vrednost od `500,000 BTC`. Kreirala ga je MtGox platforma tokom konsolidacione operacije u novembru 2011: [29a3efd3ef04f9153d47a990bd7b048a4b2d213daaa5fb8ed670fb85f13bdbcf](https://Mempool.space/fr/tx/29a3efd3ef04f9153d47a990bd7b048a4b2d213daaa5fb8ed670fb85f13bdbcf)**
 
 
 ### UTXO-i uslovi trošenja
 
 
-UTXO-i su instrumenti razmene na Bitcoin-u. Svaka transakcija rezultira potrošnjom UTXO-a kao ulaza i kreiranjem novih UTXO-a kao izlaza. Kada je transakcija završena, UTXO-i korišćeni kao ulazi se smatraju "potrošenim", a novi UTXO-i se generišu i dodeljuju primaocima navedenim u izlazima transakcije. Tako, UTXO jednostavno predstavlja nepotrošeni izlaz transakcije, i samim tim količinu bitkoina koja pripada korisniku u datom trenutku.
+UTXO-i su instrumenti razmene na Bitcoin-u. Svaka transakcija rezultira potrošnjom UTXO-a kao ulaza i kreiranjem novih UTXO-a kao izlaza. Kada je transakcija završena, UTXO-i korišćeni kao ulazi se smatraju "potrošenim", a novi UTXO-i se generišu i dodeljuju primaocima navedenim u izlazima transakcije. Tako, UTXO jednostavno predstavlja nepotrošeni izlaz transakcije, a samim tim i količinu bitkoina koja pripadaju korisniku u datom trenutku.
 
 
 ![BTC204](assets/fr/007.webp)
 
 
-Svi UTXO-i su osigurani skriptama koje definišu uslove pod kojima se mogu potrošiti. Da bi se potrošio UTXO, korisnik mora pokazati mreži da ispunjava uslove koje je postavila skripta koja osigurava taj UTXO. Tipično, UTXO-i su zaštićeni javnim ključem (ili adresom za primanjem koji predstavlja ovaj javni ključ). Da bi potrošio UTXO povezan s ovim javnim ključem, korisnik mora dokazati da poseduje odgovarajući privatni ključ, pružajući digitalni potpis napravljen ovim ključem. Zato kažemo da vaš Bitcoin novčanik zapravo ne sadrži bitkoine, već čuva vaše privatne ključeve, koji vam zauzvrat daju pristup vašim UTXO-ima, a samim tim i bitkoinima koje oni predstavljaju.
+Svi UTXO-i su osigurani skriptama koje definišu uslove pod kojima se mogu potrošiti. Da bi se potrošio UTXO, korisnik mora pokazati mreži da ispunjava uslove koje je postavila skripta koja osigurava taj UTXO. Tipično, UTXO-i su zaštićeni javnim ključem (ili adresom za primanjem koja predstavlja ovaj javni ključ). Da bi potrošio UTXO povezan s ovim javnim ključem, korisnik mora dokazati da poseduje odgovarajući privatni ključ, pružajući digitalni potpis napravljen ovim ključem. Zato kažemo da vaš Bitcoin novčanik zapravo ne sadrži bitkoine, već da čuva vaše privatne ključeve, koji vam zauzvrat daju pristup vašim UTXO-vima, a samim tim i bitkoinima koje oni predstavljaju.
 
 
 ![BTC204](assets/fr/008.webp)
@@ -187,7 +187,7 @@ Pošto ne postoji koncept računa u Bitcoin-u, saldo novčanika je jednostavno z
 ```
 
 
-Ukupni saldo vašeg portfolija bi bio `17 BTC`.
+Ukupni saldo na vašem novčaniku bi bio `17 BTC`.
 
 
 ![BTC204](assets/fr/009.webp)
@@ -203,19 +203,19 @@ Ukupni saldo vašeg portfolija bi bio `17 BTC`.
 ### Ulazi i izlazi transakcije
 
 
-Bitcoin transakcija je operacija zabeležena na blokčejnu koja prenosi vlasništvo bitkoina sa jedne osobe na drugu. Tačnije, pošto smo na modelu UTXO i ne postoje nalozi, transakcija ispunjava uslove potrošnje koji su obezbedili jedan ili više UTXO-a, troši ih i ekvivalentno stvara nove UTXO-e sa novim uslovima potrošnje. Ukratko, transakcija pomera bitkoine iz zadovoljenog skripta u novi skript napravljen da ih obezbedi.
+Bitcoin transakcija je operacija zabeležena na blokčejnu koja prenosi vlasništvo bitkoina sa jedne osobe na drugu. Tačnije, pošto smo na modelu UTXO i ne postoje računi, transakcija ispunjava uslove potrošnje koji obezbeđiki jedan ili više UTXO-a, troši ih i ekvivalentno stvara nove UTXO-e sa novim uslovima potrošnje. Ukratko, transakcija pomera bitkoine iz zadovoljenog skripta u novi skript napravljenu da ih obezbedi.
 
 
 ![BTC204](assets/fr/010.webp)
 
 
-Svaka Bitcoin transakcija se stoga sastoji od jednog ili više ulaza i jednog ili više izlaza. Ulazi su UTXO-i koje transakcija troši na bi generisala izlaze. Izlazi su novi UTXO-i koji se mogu koristiti kao ulazi za buduće transakcije.
+Svaka Bitcoin transakcija se stoga sastoji od jednog ili više ulaza i jednog ili više izlaza. Ulazi su UTXO-i koje transakcija troši kako bi generisala izlaze. Izlazi su novi UTXO-i koji se mogu koristiti kao ulazi za buduće transakcije.
 
 
 ![BTC204](assets/fr/011.webp)
 
 
-**> Teoretski, Bitcoin transakcija može imati beskonačan broj ulaza i izlaza. Jedino ograničenje je maksimalna veličina bloka.
+**> Teoretski, Bitcoin transakcija može imati beskonačan broj ulaza i izlaza. Jedino ograničenje je maksimalna veličina bloka.**
 
 
 Svaki ulaz u Bitcoin transakciji odnosi se na prethodni neutrošeni UTXO. Da bi se UTXO koristio kao ulaz, njegov vlasnik mora dokazati da je zakoniti vlasnik validacijom pridružene skripte, tj. ispunjavanjem nametnutog uslova trošenja. Generalno govoreći, to znači pružanje digitalnog potpisa proizvedenog privatnim ključem koji odgovara javnom ključu koji je prvobitno osigurao ovaj UTXO. Skript se stoga sastoji u verifikaciji da potpis odgovara javnom ključu korišćenom kada su sredstva primljena.
@@ -224,7 +224,7 @@ Svaki ulaz u Bitcoin transakciji odnosi se na prethodni neutrošeni UTXO. Da bi 
 ![BTC204](assets/fr/012.webp)
 
 
-Svaki izlaz, zauzvrat, određuje količinu bitkoina koja će biti preneta, kao i primaoca. Potonji je definisan novom skriptom, koja obično blokira novo kreirani UTXO sa prijemajućom adresom ili novim javnim ključem.
+Svaki izlaz, zauzvrat, određuje količinu bitkoina koja će biti preneta, kao i primaoca. Potonji je definisan novom skriptom, koja obično blokira novo kreirani UTXO sa primajućom adresom ili novim javnim ključem.
 
 
 Da bi transakcija bila smatrana validnom prema pravilima konsenzusa, ukupni izlazi moraju biti manji ili jednaki ukupnim ulazima. Drugim rečima, suma novih UTXO-a generisanih transakcijom ne sme premašiti sumu UTXO-a korišćenih kao ulazi. Ovaj princip je logičan: ako imate samo `500,000 Sats`, ne možete obaviti kupovinu od `700,000 Sats`.
@@ -233,13 +233,13 @@ Da bi transakcija bila smatrana validnom prema pravilima konsenzusa, ukupni izla
 ### Kusur i spajanje u Bitcoin transakciji
 
 
-Akcija Bitcoin transakcije na UTXO može se uporediti sa pretopljavanjem zlatnog novčića. Zaista, UTXO nije deljiv, već samo topiv. To znači da korisnik ne može jednostavno podeliti UTXO koji predstavlja određeni iznos u bitkoinima na nekoliko manjih UTXO-a. On mora u potpunosti da ga potroši u transakciji kako bi kreirao jedan ili više novih UTXO-a proizvoljnih vrednosti u izlazima, koje moraju biti manje ili jednake početnoj vrednosti.
+Akcija Bitcoin transakcije na UTXO može se uporediti sa pretopljavanjem zlatnog novčića. Zaista, UTXO nije deljiv, već samo topiv. To znači da korisnik ne može jednostavno podeliti UTXO koji predstavlja određeni iznos u bitkoinima na nekoliko manjih UTXO-a. On mora u potpunosti da ga potroši u transakciji kako bi kreirao jedan ili više novih UTXO-a proizvoljnih vrednosti u izlazima, koji moraju biti manji ili jednaki početnoj vrednosti.
 
 
 Ovaj mehanizam je sličan onom kod zlatnog novčića. Recimo da posedujete novčić od 2 unce i želite da izvršite uplatu od 1 unce, pod pretpostavkom da prodavac ne može da vam vrati kusur. Morali biste da istopite svoj novčić i izlivate 2 nova od po 1 uncu.
 
 
-Bitcoin radi na sličan način. Zamislimo da Alisa ima UTXO od `10,000 Sats` i želi da kupi baget koji košta `4,000 Sats`. Alisa će izvršiti transakciju sa 1 UTXO od `10,000 Sats` kao ulaz, koji će u potpunosti potrošiti, i 2 UTXO-a od `4,000 Sats` i `6,000 Sats` kao izlaz. UTXO od `4,000 Sats` će biti poslat pekaru kao plaćanje za baget, dok će se UTXO od `6,000 Sats` vratiti Alisi u obliku kusura. Ovaj UTXO, koji se vraća originalnom izdavaocu transakcije, poznat je kao "Exchange" u Bitcoin žargonu.
+Bitcoin radi na sličan način. Zamislimo da Alisa ima UTXO od `10,000 Sats` i želi da kupi baget koji košta `4,000 Sats`. Alisa će izvršiti transakciju sa 1 UTXO od `10,000 Sats` kao ulaz, koji će u potpunosti potrošiti, i 2 UTXO-a od `4,000 Sats` i `6,000 Sats` kao izlaz. UTXO od `4,000 Sats` će biti poslat pekaru kao plaćanje za baget, dok će se UTXO od `6,000 Sats` vratiti Alisi u obliku kusura. Ovaj UTXO, koji se vraća originalnom izdavaocu transakcije, poznat je kao "change" u Bitcoin žargonu.
 
 
 ![BTC204](assets/fr/013.webp)
@@ -291,10 +291,10 @@ Ako ste pažljivo pratili prethodne pasuse, sada ćete znati da se UTXO-i mogu k
 Odgovor je u **coinbase transakciji**.
 
 
-Coinbase je specifična vrsta Bitcoin transakcije, koja je jedinstvena za svaki blok i uvek je prva od svih transakcija unutar bloka. Omogućava rudaru koji je pronašao važeći Proof of Work da primi svoju Block nagradu. Ova nagrada se sastoji od dva elementa: **blok nagrada** i **transakciona naknada**, o čemu je bilo reči u prethodnom odeljku.
+Coinbase je specifična vrsta Bitcoin transakcije, koja je jedinstvena za svaki blok i uvek je prva od svih transakcija unutar bloka. Omogućava rudaru koji je pronašao važeći Proof of Work da primi svoju nagradu za izrudareni blok. Ova nagrada se sastoji od dva elementa: **blok nagrada** i **transakcionih naknada**, o čemu je bilo reči u prethodnom odeljku.
 
 
-Coinbase transakcija je jedinstvena po tome što je jedina sposoban da stvara bitkoine ex nihilo, bez potrebe za trošenjem ulaza da bi se generisali izlazi. Ovi novostvoreni bitkoini su ono što bismo mogli nazvati "originalni UTXO-i".
+Coinbase transakcija je jedinstvena po tome što je jedina sposobna da stvara bitkoine ex nihilo, bez potrebe za trošenjem ulaza da bi se generisali izlazi. Ovi novostvoreni bitkoini su ono što bismo mogli nazvati "originalni UTXO-i".
 
 
 ![BTC204](assets/fr/016.webp)
@@ -306,16 +306,16 @@ Bitkoini subvencionisani blokom su novi BTC stvoreni od nule, prema unapred utvr
 Što se tiče naknada za transakcije, iako one takođe predstavljaju novo kreirane BTC, ne smeju premašiti razliku između ukupnih ulaza i izlaza svih transakcija u bloku. Ranije smo videli da ove naknade predstavljaju deo ulaza koji nije iskorišćen u izlazima transakcija. Ovaj deo je tehnički "izgubljen" tokom transakcije, a rudar ima pravo da rekreira ovu vrednost u obliku jednog ili više novih UTXO-a. Ovo je transfer vrednosti između izdavaoca transakcije i rudara koji ga dodaje blokčejnu.
 
 
-**> Bitcoini generisani od strane Coinbase transakcije podležu periodu zrelosti od 100 blokova, tokom kojeg ih rudar ne može potrošiti. Ovo pravilo je osmišljeno kako bi se izbegle komplikacije povezane sa korišćenjem novokreiranih bitcoina na lancu koji bi kasnije mogao postati zastareo.
+**> Bitcoini generisani od strane Coinbase transakcije podležu periodu zrelosti od 100 blokova, tokom kojeg ih rudar ne može potrošiti. Ovo pravilo je osmišljeno kako bi se izbegle komplikacije povezane sa korišćenjem novokreiranih bitcoina na lancu koji bi kasnije mogao postati zastareo.**
 
 
 ### Implikacije UTXO modela 
 
 
-Prvo i najvažnije, model UTXO direktno utiče na transakcione naknade unutar Bitcoin-a. Pošto je kapacitet svakog bloka ograničen, rudari favorizuju transakcije koje nude najbolje naknade u odnosu na prostor koji će zauzeti u bloku. Zaista, što više UTXO-a transakcija uključuje u svojim ulazima i izlazima, to je teža, i stoga zahteva veće naknade. Ovo je jedan od razloga zašto često pokušavamo da smanjimo broj UTXO-a u našem portfoliju, što takođe može uticati na poverljivost, temu kojom ćemo se detaljno baviti u trećem delu ovog kursa.
+Prvo i najvažnije, UTXO model direktno utiče na transakcione naknade unutar Bitcoin-a. Pošto je kapacitet svakog bloka ograničen, rudari favorizuju transakcije koje nude najbolje naknade u odnosu na prostor koji će transakcija zauzeti u bloku. Zaista, što više UTXO-a transakcija uključuje u svojim ulazima i izlazima, to je teža, i stoga zahteva veće naknade. Ovo je jedan od razloga zašto često pokušavamo da smanjimo broj UTXO-a u našem novčaniku, što takođe može uticati na poverljivost, temu kojom ćemo se detaljno baviti u trećem delu ovog kursa.
 
 
-Drugo, kao što je pomenuto u prethodnim odeljcima, Bitcoin novčići su u suštini lanac UTXO-a. Svaka transakcija tako stvara vezu između prošlog UTXO i budućeg UTXO. UTXO-i stoga omogućavaju eksplicitno praćenje puta Bitcoina od njihovog stvaranja do trenutne potrošnje. Ova transparentnost može biti pozitivno shvaćena, jer omogućava svakom korisniku da utvrdi autentičnost primljenih bitcoina. Međutim, upravo na ovom principu sledljivosti i revizorske sposobnosti se zasniva blokčejn analiza, praksa osmišljena da ugrozi vašu poverljivost. Detaljno ćemo razmotriti ovu praksu u drugom delu kursa.
+Drugo, kao što je pomenuto u prethodnim odeljcima, Bitcoin novčići su u suštini lanac UTXO-a. Svaka transakcija tako stvara vezu između prošlog UTXO i budućeg UTXO. UTXO-i stoga omogućavaju eksplicitno praćenje puta bitkoina od njegovog stvaranja do trenutne potrošnje. Ova transparentnost može biti pozitivno shvaćena, jer omogućava svakom korisniku da utvrdi autentičnost primljenih bitkoina. Međutim, upravo na ovom principu sledljivosti i revizorske sposobnosti se zasniva blokčejn analiza, praksa osmišljena da ugrozi vašu poverljivost. Detaljno ćemo razmotriti ovu praksu u drugom delu kursa.
 
 
 ## Bitcoin-ov model privatnosti
@@ -325,10 +325,10 @@ Drugo, kao što je pomenuto u prethodnim odeljcima, Bitcoin novčići su u sušt
 
 
 
-### Novac: autentičnost, integritet i dvostruko trošenje
+### Novac: autentičnost, integritet i dvostruka potrošnja
 
 
-Jedna od funkcija novca je rešavanje problema dvostruke podudarnosti potreba. U sistemu zasnovanom na trampi, završetak razmene zahteva ne samo pronalaženje osobe koja daje robu koja odgovara mojoj potrebi, već i obezbeđivanje robe jednake vrednosti koja zadovoljava njegovu sopstvenu potrebu. Postizanje ove ravnoteže je složena stvar.
+Jedna od funkcija novca je rešavanje problema dvostruke podudarnosti potreba. U sistemu zasnovanom na trampi, završetak razmene zahteva ne samo pronalaženje osobe koja daje robu koja odgovara mojoj potrebi, već i obezbeđivanje robe jednake vrednosti koja zadovoljava njihovu sopstvenu potrebu. Postizanje ove ravnoteže je složena stvar.
 
 
 ![BTC204](assets/fr/017.webp)
@@ -340,13 +340,13 @@ Zato koristimo novac da premestimo vrednost u prostoru i vremenu.
 ![BTC204](assets/fr/018.webp)
 
 
-Da bi kovanice rešile ovaj problem, neophodno je da strana koja pruža robu ili uslugu bude uverena u svoju sposobnost da taj iznos potroši kasnije. Stoga će svaka racionalna osoba koja želi da prihvati kovanicu, bilo digitalnu ili fizičku, osigurati da ispunjava dva osnovna kriterijuma:
+Da bi kovanice rešile ovaj problem, neophodno je da strana koja pruža robu ili uslugu bude uverena u sposobnost da iznos koji primi može da potroši kasnije. Stoga će svaka racionalna osoba koja želi da prihvati kovanicu, bilo digitalnu ili fizičku, osigurati da ispunjava dva osnovna kriterijuma:
 
 
 
 
 - **Komad mora imati integritet i autentičnost ;**
-- **i ne sme biti dvostruko potrošeni.**
+- **i ne sme doći do duple potrošnje.**
 
 
 Ako koristite fizičku valutu, prva karakteristika je najkompleksnija za potvrditi. U različitim periodima istorije, integritet metalnih novčića često je bio narušen praksama kao što su obrezivanje ili bušenje. U starom Rimu, na primer, bilo je uobičajeno da građani stružu ivice zlatnih novčića kako bi sakupili malo plemenitog metala, dok su ih čuvali za buduće transakcije. Intrinzična vrednost novčića je tako bila smanjena, ali je njegova nominalna vrednost ostala ista. Ovo je jedan od razloga zašto je ivica novčića kasnije bila nazubljena.
@@ -361,7 +361,7 @@ S druge strane, zbog svoje prirode, dvostruko trošenje nije problem za fizičke
 ![BTC204](assets/fr/019.webp)
 
 
-Za digitalnu valutu, teškoća je drugačija. Osiguravanje autentičnosti i integriteta novčića je često jednostavnije. Kao što smo videli u prethodnom odeljku, model Bitcoin UTXO-a omogućava praćenje novčića do njegovog porekla, i na taj način verifikaciju da je zaista kreiran od strane rudara u skladu sa pravilima konsenzusa.
+Za digitalnu valutu, teškoća je drugačija. Osiguravanje autentičnosti i integriteta novčića je često jednostavnije. Kao što smo videli u prethodnom odeljku, UTXO model na Bitcoin-u omogućava praćenje novčića do njegovog porekla, i na taj način verifikaciju da je zaista kreiran od strane rudara u skladu sa pravilima konsenzusa.
 
 
 S druge strane, osiguravanje da nema duplog trošenja je složenije, jer su sva digitalna dobra u suštini informacije. Za razliku od fizičkih dobara, informacije se ne dele kada se razmenjuju, već se šire množenjem. Na primer, ako vam pošaljem dokument putem e-pošte, on će biti dupliran. Ne možete biti sigurni da sam obrisao originalni dokument.
@@ -379,7 +379,7 @@ Jedini način da se izbegne ovo dupliranje digitalnog sredstva je da budemo sves
 ![BTC204](assets/fr/021.webp)
 
 
-Na Bitcoin-u, duplo trošenje je sprečeno na isti način. Nastojimo da potvrdimo odsustvo transakcije koja je već potrošila predmetne novčiće. Ako novčići nikada nisu korišćeni, onda možemo biti sigurni da neće doći do dvostrukog trošenja. Ovaj princip je opisao Satoshi Nakamoto u Belom Papiru sa čuvenom frazom:
+Na Bitcoin-u, duplo trošenje je sprečeno na isti način. Nastojimo da potvrdimo odsustvo transakcije koja je već potrošila predmetne novčiće. Ako novčići nikada nisu korišćeni, onda možemo biti sigurni da neće doći do dvostrukog trošenja. Ovaj princip je opisao Satoshi Nakamoto u White Paper-u sa čuvenom frazom:
 
 
 **Jedini način da potvrdite odsustvo transakcije je da budete svesni svih transakcija**
