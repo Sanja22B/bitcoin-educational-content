@@ -1020,7 +1020,7 @@ Da vam dam primer, evo transakcije na koju verovatno možemo primeniti CIOH:
 Izvor : [Mempool.space](https://Mempool.space/tx/20618e63b6eed056263fa52a2282c8897ab2ee71604c7faccfe748e1a202d712)
 
 
-### Off-chain podaci
+### Off-chain podaci (podaci izvan blokčejna)
 
 
 Naravno, analiza lanca nije ograničena isključivo na podatke unutar blokčejna. Bilo koji podaci iz prethodne analize ili su dostupni na Internetu takođe se mogu koristiti za preciziranje analize.
@@ -1029,7 +1029,7 @@ Naravno, analiza lanca nije ograničena isključivo na podatke unutar blokčejna
 Na primer, ako primetimo da se praćene transakcije sistematski emituju sa istog Bitcoin čvora, i uspemo da identifikujemo njegovu IP adresu, možda ćemo moći da identifikujemo druge transakcije od istog entiteta, kao i da odredimo deo identiteta izdavaoca. Iako ova praksa nije lako ostvariva, jer zahteva rad brojnih čvorova, može biti korišćena od strane nekih kompanija koje se bave analizom blokčejna.
 
 
-Analitičar takođe ima opciju da se osloni na analize koje su prethodno postale open-source, ili na svoje prethodne analize. Možda ćemo moći da pronađemo rezultat koji ukazuje na klaster adresa koje smo već identifikovali. Ponekad je takođe moguće osloniti se na rezultate koji ukazuju na platformu za trgovinu, jer su adrese ovih kompanija generalno poznate.
+Analitičar takođe ima opciju da se osloni na analize koje su prethodno postale otvorene (eng. open-source), ili na svoje prethodne analize. Možda ćemo moći da pronađemo rezultat koji ukazuje na klaster adresa koje smo već identifikovali. Ponekad je takođe moguće osloniti se na rezultate koji ukazuju na platformu za trgovinu, jer su adrese ovih kompanija generalno poznate.
 
 
 Na isti način, možete izvršiti analizu eliminacijom. Na primer, ako prilikom analize transakcije sa dva izlaza, i ako se jedan od njih odnosi na već poznatu klaster adresu, ali je različita od entiteta koji pratimo, onda možemo interpretirati da drugi izlaz verovatno predstavlja kusur.
@@ -1056,7 +1056,7 @@ Na primer, [prepoznao sam ovaj obrazac pre nekoliko meseci](https://twitter.com/
 Zaista, nekoliko dana kasnije, otkriveno je da sredstva pripadaju PayPalu, putem Paxos platforme za razmenu kriptovaluta.
 
 
-Naprotiv, ako možemo videti da je vremenski obrazac prilično raspoređen preko 16 specifičnih sati, onda možemo proceniti da imamo posla sa individualnim korisnikom, ili možda lokalnom kompanijom u zavisnosti od razmenjenih količina.
+Naprotiv, ako možemo videti da je vremenski obrazac prilično raspoređen preko 16 specifičnih sati, onda možemo proceniti da imamo posla sa individualnim korisnikom, ili možda lokalnom kompanijom u zavisnosti od razmenjenih iznosa.
 
 
 Pored prirode posmatranog entiteta, vremenski obrazac nam takođe može približno reći gde se korisnik nalazi, zahvaljujući vremenskim zonama. Na ovaj način, možemo uskladiti druge transakcije i koristiti njihove vremenske oznake kao dodatnu heuristiku koja se može dodati našoj analizi.
@@ -1179,7 +1179,7 @@ bc1qja0hycrv7g9ww00jcqanhfpqmzx7luqalum3vu
 Na osnovu ovih informacija i koristeći **samo heuristiku ponovne upotrebe adrese**, koje Bitcoin transakcije se mogu povezati sa Loïc-ovim identitetom?
 
 
-*Očigledno, nisam pravi vlasnik ove prijemnde adrese i nisam je postavio na društvene mreže. To je adresa koji sam nasumično uzeo iz blokčejna*
+*Očigledno, nisam pravi vlasnik ove prijemne adrese i nisam je postavio na društvene mreže. To je adresa koji sam nasumično uzeo iz blokčejna*
 
 
 ### Vežba 6
@@ -1225,7 +1225,7 @@ Gledajući samo ovu transakciju, koje informacije možemo protumačiti?
 ***Vežba 1:***
 
 
-Model za ovu transakciju je jednostavan obrazac plaćanja. Ako proučavamo samo njegovu strukturu, možemo interpretirati da jedan izlaz predstavlja kusur, a drugi izlaz predstavlja stvarnu uplatu. Stoga znamo da posmatrani korisnik verovatno više nije u posedu jednog od dva UTXO-a u izlazu (onog za uplatu), ali je i dalje u posedu drugog UTXO (onog za kusur).
+Model za ovu transakciju je jednostavan obrazac plaćanja. Ako proučavamo samo njenu strukturu, možemo interpretirati da jedan izlaz predstavlja kusur, a drugi izlaz predstavlja stvarnu uplatu. Stoga znamo da posmatrani korisnik verovatno više nije u posedu jednog od dva UTXO-a u izlazu (onog za uplatu), ali je i dalje u posedu drugog UTXO (onog za kusur).
 
 
 ***Vežba 2:***
@@ -1454,13 +1454,13 @@ Ove informacije sugerišu da Loïc verovatno živi na zapadnoj obali Sjedinjenih
 ***Vežba 8:***
 
 
-Analiza ove transakcije otkriva 5 ulaza i jedan izlaz, što sugeriše konsolidaciju. Primjenom CIOH heuristike, možemo pretpostaviti da svi ulazni UTXO-ovi pripadaju jednom entitetu, i da izlaz UTXO takođe pripada tom entitetu. Izgleda da je korisnik odlučio da spoji nekoliko UTXO-ova koje je posedovao, kako bi formirao jedan UTXO u izlazu, sa ciljem konsolidacije svojih delova. Ovaj potez je verovatno bio motivisan željom da iskoristi niske troškove transakcija u to vreme, kako bi smanjio buduće troškove.
+Analiza ove transakcije otkriva 5 ulaza i jedan izlaz, što sugeriše konsolidaciju. Primenom CIOH heuristike, možemo pretpostaviti da svi ulazni UTXO-ovi pripadaju jednom entitetu, i da izlaz UTXO-a takođe pripada tom entitetu. Izgleda da je korisnik odlučio da spoji nekoliko UTXO-ova koje je posedovao, kako bi formirao jedan UTXO u izlazu, sa ciljem konsolidacije svojih delova. Ovaj potez je verovatno bio motivisan željom da iskoristi niske troškove transakcija u to vreme, kako bi smanjio buduće troškove.
 
 
 ___
 
 
-*Da napišem treći odeljak o on chain analizi, koristio sam sledeće resurse:*
+*Da napišem treći odeljak o analizi lanca, koristio sam sledeće resurse:*
 
 
 
@@ -1480,7 +1480,7 @@ ___
 - [Ludovic Lars](https://viresinnumeris.fr/)
 
 
-# Ovladavanje najboljim praksama za zaštitu vaše privatnosti
+# Ovladavanje najboljim praksama za zaštitu privatnosti
 
 
 <partId>9bd04b63-f1af-4e50-9061-6bc90009df68</partId>
@@ -1544,14 +1544,14 @@ Konstrukcija adresa za prijem takođe zavisi od izabranog modela skripte:
 
 
 - Za `P2PKH` i `P2WPKH` adrese, payload, tj. sadržaj adrese, predstavlja heš javnog ključa;
-- Za `P2SH` i `P2WSH` adrese, sadržaj adrese predstavlja heš od ;
-- Što se tiče `P2TR` adresa, payload je prilagođeni javni ključ. P2TR izlazi kombinuju aspekte _Pay-to-PubKey_ i _Pay-to-Script_. Prilagođeni javni ključ je rezultat dodavanja klasičnog javnog ključa za trošenje sa "prilagođavanjem", izvedenim iz Merkle Root skupa skripti koje se takođe mogu koristiti za trošenje bitkoina.
+- Za `P2SH` i `P2WSH` adrese, sadržaj adrese predstavlja heš od programa svedoka (eng. witness program, što predstavlja skriptu koja će biti zadovoljena u witness delu transakcije);
+- Što se tiče `P2TR` adresa, payload je prilagođeni javni ključ. P2TR izlazi kombinuju aspekte _Pay-to-PubKey_ i _Pay-to-Script_. Prilagođeni javni ključ je rezultat dodavanja klasičnog javnog ključa za trošenje sa "prilagođavanjem", koji je izveden iz Merkle Root skupa skripti koje se takođe mogu koristiti za trošenje bitkoina.
 
 
 ![BTC204](assets/fr/068.webp)
 
 
-Adrese prikazane na vašem portfolijskom softveru takođe uključuju HRP (*Human-Readable Part*), obično `bc` za post-SegWit adrese, separator `1`, i broj verzije `q` za SegWit V0 i `p` za Taproot/SegWit V1. Takođe se dodaje kontrolni zbir kako bi se garantovala integritet i validnost adrese tokom prenosa.
+Adrese prikazane na vašem softver novčaniku takođe uključuju HRP (*Human-Readable Part*), obično `bc` za post-SegWit adrese, separator `1`, i broj verzije `q` za SegWit V0 i `p` za Taproot/SegWit V1. Takođe se dodaje kontrolni zbir kako bi se garantovala integritet i validnost adrese tokom prenosa.
 
 
 Konačno, adrese se stavljaju u standardni format:
@@ -1564,7 +1564,7 @@ Konačno, adrese se stavljaju u standardni format:
 - Bech32m za Taproot adrese.
 
 
-Evo matrica sabiranja za formate bech32 i bech32m (SegWit i Taproot) iz baze 10:
+Evo matrica sabiranja za formate bech32 i bech32m (SegWit i Taproot) iz dekadnog (baznog 10) sistema:
 
 
 | + | 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 |
@@ -1644,20 +1644,20 @@ Ova stopa je ogromna, ali dolazi pretežno sa platformi za trgovinu, a ne od poj
 Izbegavanje ponovne upotrebe adrese je prilično jednostavno: **jednostavno koristite novu, praznu adresu za sve nove uplate vašim novčanikom**.
 
 
-Zahvaljujući BIP32, moderni novčanici su sada deterministički i hijerarhijski. To znači da korisnik može generisati veliki broj adresa iz jednog početnog podatka: seed. Čuvanjem ovog jednog podatka, moguće je obnoviti sve privatne ključeve u novčaniku, omogućavajući pristup sredstvima osiguranim odgovarajućim adresama.
+Zahvaljujući BIP32, moderni novčanici su sada deterministički i hijerarhijski. To znači da korisnik može generisati veliki broj adresa iz jednog početnog podatka: seed-a. Čuvanjem ovog jednog podatka, moguće je obnoviti sve privatne ključeve u novčaniku, omogućavajući pristup sredstvima osiguranim odgovarajućim adresama.
 
 
 ![BTC204](assets/fr/070.webp)
 
 
-Zato se, kada pritisnete dugme "*receive*" u vašem softveru novčanika, svaki put predlaže neiskorišćena prijemna adresa. Nakon primanja bitkoina na ovoj adresi, softver automatski predlaže novu.
+Zato se, kada pritisnete dugme "*uplata (eng. receive)*" u vašem softveru novčanika, svaki put novačnik predlaže neiskorišćenu prijemnu adresu. Nakon primanja bitkoina na ovoj adresi, softver automatski predlaže novu.
 
 
 > *PS: Nedavno su neki softverski programi najavili svoju nameru da prestanu sa generisanjem praznih adresa, plašeći se da će vlasti to percipirati kao oblik pranja novca. Ako je vaš softver jedan od ovih, toplo vam savetujem da ga odmah zamenite, jer ovo nije prihvatljivo za korisnika.*
 Ako vam je potreban statički identifikator za primanje uplata, kao što su donacije, nije preporučljivo koristiti klasične Bitcoin adrese zbog rizika od ponovne upotrebe. Umesto toga, koristite Lightning adresu, ili se odlučite za statički onchain identifikator plaćanja, kao što su BIP47 ili Silent Payments. Ovi protokoli su detaljno objašnjeni u 6. delu ovog kursa obuke.
 
 
-## Označavanje i proveravanje delova
+## Označavanje i proveravanje UTXO-a
 
 
 <chapterId>fbdb07cd-c025-48f2-97b0-bd1bc21c68a8</chapterId>
@@ -1673,10 +1673,10 @@ Ovo uključuje rigorozno upravljanje vašim novčanikom koji se nalazi u samosta
 U ovom poglavlju ćemo pogledati ove funkcije i videti kako ih možete inteligentno koristiti, bez dodavanja previše posla, kako biste značajno optimizovali svoju privatnost na Bitcoin-u.
 
 
-### Šta je etiketiranje?
+### Šta je označavanje?
 
 
-Označavanje je praksa dodeljivanja anotacije ili oznake specifičnom UTXO u Bitcoin novčaniku. Ove anotacije se čuvaju lokalno od strane softvera novčanika i nikada se ne prenose preko Bitcoin mreže. Označavanje je stoga alat za lično upravljanje.
+Označavanje je praksa dodeljivanja anotacije ili oznake specifičnom UTXO-u u Bitcoin novčaniku. Ove anotacije se čuvaju lokalno od strane softvera novčanika i nikada se ne prenose preko Bitcoin mreže. Označavanje je stoga alat za lično upravljanje.
 
 
 Na primer, ako imam UTXO iz kupovine P2P na Bisq sa Charlesom, mogao bih ga označiti kao "`Non-KYC Bisq Charles`".
@@ -1688,7 +1688,7 @@ Označavanje je dobra praksa koja pomaže da se zapamti poreklo ili predviđena 
 ### Šta je kontrola novčića?
 
 
-Aktivna upotreba etiketiranja postaje još zanimljivija kada se kombinuje sa opcijom kontrole novčića na vašem softver novčaniku.
+Aktivna upotreba označavanja postaje još zanimljivija kada se kombinuje sa opcijom kontrole novčića na vašem softver novčaniku.
 
 
 Kontrola novčića je funkcija koja se nalazi u dobrom Bitcoin softver novčaniku, omogućavajući vam da ručno odaberete specifične UTXO-e koje ćete koristiti kao ulaze za dovršavanje transakcije. Zapravo, da biste zadovoljili izlazno plaćanje, potrebno je da zauzvrat potrošite ulazni UTXO. Iz više razloga, koje ćemo kasnije razmotriti, možda ćete želeti da precizno odaberete koje delove ćete potrošiti kao ulaze da biste zadovoljili određeno plaćanje. Ovo je upravo ono što vam kontrola novčića omogućava da uradite. Da vam dam analogiju, ova funkcija je slična biranju specifičnog novčića iz vašeg novčanika kada plaćate svoj baget.
@@ -1714,9 +1714,9 @@ Najvažnija stvar koju treba primetiti na etiketi je izvor UTXO. Trebalo bi jedn
 
 
 
-- povlačenje sa Exchange.com` ;
-- plaćanje kupca David` ;
-- kupovina P2P Charles` ;
+- `povlačenje sa Exchange.com` ;
+- `plaćanje kupca David` ;
+- `kupovina P2P Charles` ;
 - `kusur od kupovinu sofe`
 
 
@@ -1737,13 +1737,13 @@ Da biste fino podesili upravljanje vašim UTXO-vima i poštovali strategije segr
 ![BTC204](assets/fr/073.webp)
 
 
-Takođe je preporučljivo da se obeležavanje dela nastavi tokom transakcija. Na primer, kada konsolidujete UTXO no-KYC, obavezno označite rezultat ne samo kao `consolidation`, već specifično kao `consolidation no-KYC` kako biste zadržali jasan zapis o poreklu novčića.
+Takođe je preporučljivo da se obeležavanje UTXO-a nastavi tokom transakcija. Na primer, kada konsolidujete UTXO no-KYC, obavezno označite rezultat ne samo kao `consolidation`, već specifično kao `consolidation no-KYC` kako biste zadržali jasan zapis o poreklu novčića.
 
 
 Konačno, nije obavezno staviti datum na etiketu. Većina softver novčanika već prikazuje datum transakcije, i uvek je moguće pronaći ovu informaciju na Block explorer-u zahvaljujući txid.
 
 
-### Kako odabrati prave delove?
+### Kako odabrati prave UTXO-ove?
 
 
 Kada izvršavate transakciju, kontrola novčića vam omogućava da specifično izaberete koje UTXO-ove ćete koristiti kao ulaze da biste zadovoljili izlaz plaćanja. Postoje dva aspekta ovog izbora:
@@ -1830,7 +1830,7 @@ U praktičnom smislu, KYC uključuje prikupljanje različitih ličnih podataka o
 Ovaj postupak je postao obavezan za sve regulisane platforme za trgovinu u većini zapadnih zemalja. To znači da svako ko želi da razmenjuje državne valute za Bitcoin putem ovih platformi mora da se pridržava KYC zahteva.
 
 
-Ovaj postupak nije bez rizika za privatnost i sigurnost korisnika. U ovom poglavlju ćemo detaljno ispitati ove rizike i analizirati specifične uticaje KYC i procesa identifikacije na privatnost Bitcoin korisnika.
+Ovaj postupak nije bez rizika za privatnost i sigurnost korisnika. U ovom poglavlju ćemo detaljno ispitati ove rizike i analizirati specifične uticaje KYC-ija i procesa identifikacije na privatnost Bitcoin korisnika.
 
 
 ### Olakšavanje praćenja na blokčejnu
@@ -1875,7 +1875,7 @@ Možda mislite da ovo nije problem, jer su vaši bitkoini pomešani i stoga ne m
 Dakle, važno je uzeti u obzir rizik da država sazna da ste posedovali BTC, ma koliko taj rizik danas delovao udaljeno.
 
 
-Još jedan problem koji KYC postavlja u smislu državnog nadzora je obavezno izveštavanje od strane regulisanih platformi. Iako nisam upoznat sa propisima u drugim jurisdikcijama, u Francuskoj, *Prestataires de Services sur Actifs Numériques* (PSAN) su obavezni da prijave finansijskim nadzornim organima svaki pokret sredstava koji smatraju sumnjivim.
+Još jedan problem koji KYC postavlja u smislu državnog nadzora je obavezno izveštavanje od strane regulisanih platformi. Iako nisam upoznat sa propisima u drugim jurisdikcijama, u Francuskoj, *Prestataires de Services sur Actifs Numériques* (PSAN) su obavezni da prijave finansijskim nadzornim organima svaki transfer sredstava koji smatraju sumnjivim.
 
 
 U Francuskoj 2023. godine, PSAN-i su prijavili 1.449 sumnjivih radnji. Za sada je većina tih radnji povezana sa kriminalom. Međutim, vlasti takođe traže od regulisanih platformi da prijave sve sumnjive Bitcoin transakcije isključivo na osnovu njihove strukture. Ako obavite kolaborativnu transakciju, ili čak samo transakciju sa malo atipičnim obrascem, i ta transakcija se dogodi ne tako daleko od povlačenja vaših Bitcoina sa tih platformi, mogli biste biti prijavljeni vlastima. Čak i u odsustvu bilo kakve zloupotrebe i u legitimnom ostvarivanju vaših prava, takvo prijavljivanje moglo bi dovesti do pojačanih provera i nadzora, neprijatnosti koje biste mogli izbeći kada ne bi bilo KYC-a.
@@ -1914,7 +1914,7 @@ Prvo, netačno je misliti da je zaštita privatnosti za bitkoine stečene putem 
 ![BTC204](assets/fr/080.webp)
 
 
-Poverljivost na Bitcoin-u ne treba posmatrati na binaran način, kao razliku između "anonimnih" bitkoina i onih koji to nisu. Posedovanje Bitkoina stečenih putem KYC ne znači da je sve izgubljeno; naprotiv, korišćenje alata za poverljivost može se pokazati još korisnijim.
+Poverljivost na Bitcoin-u ne treba posmatrati na binaran način, kao razliku između "anonimnih" bitkoina i onih koji to nisu. Posedovanje Bitkoina stečenih putem KYC-ija ne znači da je sve izgubljeno; naprotiv, korišćenje alata za poverljivost može se pokazati još korisnijim.
 
 
 Suprotno tome, sticanje Bitcoin-a putem metode bez KYC ne garantuje savršenu poverljivost, niti vas oslobađa potrebe za preduzimanjem drugih zaštitnih mera. Ako posedujete Bitcoin bez KYC-ija, ali više puta koristite iste adrese za primanje, vaše transakcije mogu biti praćene i objedinjene. Najmanja veza sa svetom van Bitcoin-a mogla bi ugroziti jedini sloj poverljivosti koji imate. Zato je važno razmotriti sve alate i metode za poboljšanje privatnosti na Bitcoin-u kao komplementarne. Svaka tehnika rešava specifičan rizik i može dodati dodatni sloj zaštite. Dakle, posedovanje Bitcoin-a bez KYC ne znači da ne treba da preduzimate druge mere predostrožnosti.
@@ -1944,13 +1944,13 @@ Ponekad, neki bitkoineri imaju tendenciju da prošire pojam "KYC" na bilo koju B
 KYC se posebno odnosi na regulatorni postupak koji sprovode određene kompanije kako bi verifikovale i registrovale identitet svojih klijenata. To je binarna stvar: prilikom sticanja bitkoina, ili radite KYC, ili ne. Međutim, identifikacija ključa, koja se tiče veze između identiteta korisnika i aktivnosti na lancu, nije tako binarna, već predstavlja kontinuum. Zaista, u kontekstu sticanja ili prenosa bitkoina, takva identifikacija je uvek moguća u različitim stepenima.
 
 
-Na primer, ako kupite bitkoine na regulisanoj platformi u Švajcarskoj, KYC nije potreban. Međutim, vaši ključevi mogu biti identifikovani, jer je kupovina obavljena putem vašeg bankovnog računa. Ovde se prva dva rizika povezana sa KYC - olakšavanje praćenja na lancu i izloženost državnom nadzoru - takođe mogu manifestovati i kod platforme za trgovinu BTC bez KYC. Ako švajcarski entitet prijavi sumnjive transakcije vlastima u vašoj zemlji, oni mogu jednostavno proveriti bankovni račun korišćen za kupovinu kako bi otkrili vaš identitet. Dakle, kupovina bez KYC na regulisanim platformama je prilično visoko na skali rizika za identifikaciju ključeva.
+Na primer, ako kupite bitkoine na regulisanoj platformi u Švajcarskoj, KYC nije potreban. Međutim, vaši ključevi mogu biti identifikovani, jer je kupovina obavljena putem vašeg bankovnog računa. Ovde se prva dva rizika povezana sa KYC-ijem - olakšavanje praćenja na lancu i izloženost državnom nadzoru - takođe mogu manifestovati i kod platforme za trgovinu BTC-ija bez KYC-ija. Ako švajcarski entitet prijavi sumnjive transakcije vlastima u vašoj zemlji, oni mogu jednostavno proveriti bankovni račun korišćen za kupovinu kako bi otkrili vaš identitet. Dakle, kupovina bez KYC-ija na regulisanim platformama je prilično visoko na skali rizika za identifikaciju ključeva.
 
 
 ![BTC204](assets/fr/081.webp)
 
 
-Međutim, izbegavanje regulisanih platformi i odlučivanje za metode nabavke P2P ne eliminiše u potpunosti rizik od identifikacije ključa, već ga samo smanjuje. Uzmimo za primer kupovinu na Bisq ili nekoj drugoj P2P platformi. Da biste platili svojoj suprotnoj strani, verovatno ćete koristiti svoj bankovni račun. Ako vlasti ispitaju osobu sa kojom ste trgovali i zatraže vaše ime, vraćamo se na rizike 1 i 2. Iako su ovi rizici mnogo manji nego kada kupujete na platformi bez KYC-ija, i još manji nego kada kupujete sa KYC-ijem, oni su i dalje prisutni u manjoj meri.
+Međutim, izbegavanje regulisanih platformi i odlučivanje za P2P metode nabavke ne eliminiše u potpunosti rizik od identifikacije ključa, već ga samo smanjuje. Uzmimo za primer kupovinu na Bisq-u ili nekoj drugoj P2P platformi. Da biste platili svojoj suprotnoj strani, verovatno ćete koristiti svoj bankovni račun. Ako vlasti ispitaju osobu sa kojom ste trgovali i zatraže vaše ime, vraćamo se na rizike 1 i 2. Iako su ovi rizici mnogo manji nego kada kupujete na platformi bez KYC-ija, i još manji nego kada kupujete sa KYC-ijem, oni su i dalje prisutni u manjoj meri.
 
 
 ![BTC204](assets/fr/082.webp)
@@ -1962,7 +1962,7 @@ Konačno, čak i ako nabavite svoje bitkoine putem fizičke razmene za gotovinu,
 ![BTC204](assets/fr/083.webp)
 
 
-U zaključku, kada se bitkoini razmenjuju za druge asete, bilo da je to kupovina u državnoj valuti ili prodaja za stvarnu robu, uvek postoji neki oblik identifikacije ključa. U zavisnosti od izabrane metode za razmenu, ova identifikacija može varirati u intenzitetu. Važno je ne mešati ovu identifikaciju sa KYC, koji je jasno definisan regulatorni proces. Međutim, postoji veza između KYC i spektra identifikacije, jer se KYC nalazi na višem kraju spektra, pošto sistematski olakšava identifikaciju korisničkih ključeva od strane vlasti.
+U zaključku, kada se bitkoini razmenjuju za druga sredstva, bilo da je to kupovina u državnoj valuti ili prodaja za stvarnu robu, uvek postoji neki oblik identifikacije ključa. U zavisnosti od izabrane metode za razmenu, ova identifikacija može varirati u intenzitetu. Važno je ne mešati ovu identifikaciju sa KYC-ijem, koji je jasno definisan regulatorni proces. Međutim, postoji veza između KYC-ija i spektra identifikacije, jer se KYC nalazi na višem kraju spektra, pošto sistematski olakšava identifikaciju korisničkih ključeva od strane vlasti.
 
 
 ## Metode prodaje i akvizicije
@@ -1978,7 +1978,7 @@ Nakon čitanja prethodnog poglavlja, možda se pitate kako možete kupiti ili pr
 ### P2P razmene gotovine
 
 
-Kao što smo videli, najbolja metoda u smislu poverljivosti ostaje P2P (osoba-osoba) razmena sa gotovinskim poravnanjem. Ova metoda vam omogućava da minimizirate tragove koji ostaju, i znatno smanjuje mogućnost identifikacije ključa, bilo da kupujete ili prodajete.
+Kao što smo videli, najbolja metoda u smislu poverljivosti ostaje P2P (direktna razmena) razmena sa gotovinskim poravnanjem. Ova metoda vam omogućava da minimizirate tragove koji ostaju, i znatno smanjuje mogućnost identifikacije ključa, bilo da kupujete ili prodajete.
 
 
 ![BTC204](assets/fr/084.webp)
@@ -1999,7 +1999,7 @@ Da biste ograničili ovaj rizik, savetovao bih vam da favorizujete gotovinske tr
 Razmena gotovine takođe može predstavljati pravne rizike u slučaju policijskih ili drugih provera. Iako u većini zemalja ne postoje ograničenja u pogledu količine gotovine koju možete nositi sa sobom, prekomerne količine mogu izazvati sumnju. Zato budite oprezni, posebno ako morate putovati na velike udaljenosti, i izbegavajte obavljanje previše velikih transakcija odjednom, kako ne biste morali da opravdavate posedovanje velikih suma.
 
 
-Konačno, još jedan nedostatak kupovine P2P je što je cena često viša nego na regulisanim platformama. Prodavci često naplaćuju maržu koja se kreće od 1% do ponekad više od 10%. Postoji nekoliko razloga za ovu razliku u ceni. Prvo, ovo je uobičajena praksa među prodavcima P2P koja se vremenom ustalila. Drugo, prodavci imaju naknade povezane sa transakcijom za slanje sredstava kupcu. Takođe, postoji povećan rizik od krađe u prodaji P2P u poređenju sa transakcijama na platformama, što opravdava kompenzaciju za preuzeti rizik. Na kraju, dodatni trošak može biti povezan sa potražnjom i kvalitetom razmene u smislu poverljivosti. Kao kupac, dobitak u poverljivosti ima cenu koja se odražava u marži koju primenjuje prodavac. Neki bitkoineri takođe veruju da cena marže BTC kupljenog na P2P odražava njegovu pravu cenu, i tvrde da su niže cene na regulisanim platformama rezultat kompromisa u vezi sa poverljivošću vaših ličnih podataka.
+Konačno, još jedan nedostatak kupovine P2P je što je cena često viša nego na regulisanim platformama. Prodavci često naplaćuju maržu koja se kreće od 1% do ponekad više od 10%. Postoji nekoliko razloga za ovu razliku u ceni. Prvo, ovo je uobičajena praksa među prodavcima P2P koja se vremenom ustalila. Drugo, prodavci imaju naknade povezane sa transakcijom za slanje sredstava kupcu. Takođe, postoji povećan rizik od krađe u prodaji P2P u poređenju sa transakcijama na platformama, što opravdava kompenzaciju za preuzeti rizik. Na kraju, dodatni trošak može biti povezan sa potražnjom i kvalitetom razmene u smislu poverljivosti. Kao kupac, dobitak u poverljivosti ima cenu koja se odražava u marži koju primenjuje prodavac. Neki bitkoineri takođe veruju da cena marže BTC-ija kupljenog P2P metodom odražava njegovu pravu cenu, i tvrde da su niže cene na regulisanim platformama rezultat kompromisa u vezi sa poverljivošću vaših ličnih podataka.
 
 
 ![BTC204](assets/fr/086.webp)
@@ -2026,7 +2026,7 @@ Da bi se ublažio ovaj rizik, moguće je koristiti specijalizovane platforme za 
 ![BTC204](assets/fr/089.webp)
 
 
-U smislu lične bezbednosti, ovaj metod kupovine je znatno sigurniji od fizičke razmene keša. Međutim, kao što je gore pomenuto, online P2P razmene ostavljaju više tragova nego fizičke razmene, što može biti štetno za privatnost na Bitcoin-u. Korišćenjem online fiat metode plaćanja kao što je banka, izlažete više informacija koje bi mogle olakšati ključnu identifikaciju.
+U smislu lične bezbednosti, ovaj metod kupovine je znatno sigurniji od fizičke razmene keša. Međutim, kao što je gore pomenuto, online P2P razmene ostavljaju više tragova nego fizičke razmene, što može biti štetno za privatnost na Bitcoin-u. Korišćenjem online fiat metode plaćanja kao što je banka, izlažete više informacija koje bi mogle olakšati identifikaciju ključa.
 
 
 ![BTC204](assets/fr/090.webp)
@@ -2035,13 +2035,13 @@ U smislu lične bezbednosti, ovaj metod kupovine je znatno sigurniji od fizičke
 Još jednom, ne bih preporučio pravljenje previše velikih trgovina u jednoj transakciji na ovim platformama. Deljenjem vaših transakcija, širite rizik od krađe od strane druge strane.
 
 
-Još jednom, još jedan nedostatak kupovine P2P je taj što je cena često viša nego ona koja se primenjuje na regulisanim platformama. Prodavci često naplaćuju maržu koja se kreće od 1% a ponekad i više od 10%. Postoji nekoliko razloga za ovu razliku u ceni. Prvo, ovo je uobičajena praksa među P2P prodavcima koja se vremenom ustalila. Drugo, prodavci imaju naknade povezane sa transakcijom za slanje sredstava kupcu. Takođe postoji povećan rizik od krađe u P2P prodaji u poređenju sa transakcijama na platformama, što opravdava kompenzaciju za preuzeti rizik. Na kraju, dodatni trošak može biti povezan sa potražnjom i kvalitetom razmene u smislu poverljivosti. Kao kupac, dobitak u poverljivosti ima cenu koja se odražava u marži koju primenjuje prodavac. Neki bitkoineri takođe veruju da cena marže kupljenog BTC na P2P odražava njegovu pravu cenu, i tvrde da su niže cene na regulisanim platformama rezultat kompromisa po pitanju poverljivosti vaših ličnih podataka.
+Još jednom, još jedan nedostatak P2P kupovine je taj što je cena često viša nego ona koja se primenjuje na regulisanim platformama. Prodavci često naplaćuju maržu koja se kreće od 1% a ponekad i više od 10%. Postoji nekoliko razloga za ovu razliku u ceni. Prvo, ovo je uobičajena praksa među P2P prodavcima koja se vremenom ustalila. Drugo, prodavci imaju naknade povezane sa transakcijom za slanje sredstava kupcu. Takođe postoji povećan rizik od krađe u P2P prodaji u poređenju sa transakcijama na platformama, što opravdava kompenzaciju za preuzeti rizik. Na kraju, dodatni trošak može biti povezan sa potražnjom i kvalitetom razmene u smislu poverljivosti. Kao kupac, dobitak u poverljivosti ima cenu koja se odražava u marži koju primenjuje prodavac. Neki bitkoineri takođe veruju da cena marže kupljenog BTC-ija P2P metodom odražava njegovu pravu cenu, i tvrde da su niže cene na regulisanim platformama rezultat kompromisa po pitanju poverljivosti vaših ličnih podataka.
 
 
 ![BTC204](assets/fr/086.webp)
 
 
-Što se tiče rešenja, lično sam uvek koristio [Bisq](https://bisq.network/) i veoma sam zadovoljan njime. Njihov sistem je proveren i čini se pouzdanim. Međutim, Bisq je dostupan samo na PC-ju i njegov korisnički interfejs može biti previše složen za početnike. Još jedan nedostatak je što Bisq radi samo sa onchain transakcijama, koje mogu postati skupe tokom perioda visokih Bitcoin naknada za transakcije.
+Što se tiče rešenja, lično sam uvek koristio [Bisq](https://bisq.network/) i veoma sam zadovoljan njime. Njihov sistem je proveren i čini se pouzdanim. Međutim, Bisq je dostupan samo na PC-ju i njegov korisnički interfejs može biti previše složen za početnike. Još jedan nedostatak je što Bisq radi samo sa onchain transakcijama, koje mogu postati skupe tokom perioda visokih naknada za transakcije.
 
 
 -> Pogledajte naš Bisq vodič.
