@@ -2092,7 +2092,7 @@ U zavisnosti od zemlje u kojoj živite, možda imate pristup regulisanim platfor
 
 https://planb.network/tutorials/exchange/centralized/relai-v2-30a9671d-e407-459d-9203-4c3eae15b30e
 
-Kao što smo videli u prethodnom poglavlju, ovaj tip platforme vas štiti od rizika povezanih sa KYC procedurama, ali istovremeno nosi viši nivo rizika za identifikaciju ključeva. Što se tiče poverljivosti Bitcoin-a, ove platforme nude bolju zaštitu od metoda kupovine sa KYC, ali su i dalje manje privlačne od P2P razmene.
+Kao što smo videli u prethodnom poglavlju, ovaj tip platforme vas štiti od rizika povezanih sa KYC procedurama, ali istovremeno nosi viši nivo rizika za identifikaciju ključeva. Što se tiče poverljivosti Bitcoin-a, ove platforme nude bolju zaštitu od metoda kupovine sa KYC-ijem, ali su i dalje manje privlačne od P2P razmene.
 
 
 Međutim, u pogledu lične sigurnosti, korišćenje ovih platformi je daleko manje rizično nego P2P razmene. Takođe su često jednostavnije za korišćenje od P2P platformi.
@@ -2107,7 +2107,7 @@ Još jedna opcija za kupovinu ili prodaju bitcoina bez KYC-ija su kripto bankoma
 ![BTC204](assets/fr/092.webp)
 
 
-Problem sa bankomatima je što su ili zabranjeni u nekim zemljama, ili strogo regulisani u drugim. Ako bankomat zahteva proceduru verifikacije identiteta, onda je nosi iste rizike kao i platforme koje su regulisane KYC-om. S druge strane, ako bankomat omogućava transakcije bez verifikacije identiteta za male iznose, onda njegova upotreba može ponuditi nivo poverljivosti uporediv sa onim kod P2P gotovinske razmene, dok se izbegava većina rizika povezanih sa ovom vrstom trgovine.
+Problem sa bankomatima je što su ili zabranjeni u nekim zemljama, ili strogo regulisani u drugim. Ako bankomat zahteva proceduru verifikacije identiteta, onda  nosi iste rizike kao i platforme koje su regulisane KYC-om. S druge strane, ako bankomat omogućava transakcije bez verifikacije identiteta za male iznose, onda njegova upotreba može ponuditi nivo poverljivosti uporediv sa onim kod P2P gotovinske razmene, dok se izbegava većina rizika povezanih sa ovom vrstom trgovine.
 
 
 Glavni nedostatak bankomata je često visoka naknada, koja se kreće od nekoliko procenata do ponekad 15% od iznosa koji se menja.
@@ -2133,7 +2133,7 @@ https://planb.network/tutorials/exchange/centralized/bitrefill-8c588412-1bfc-465
 ### Ostale metode akvizicije
 
 
-Drugi načini za sticanje bitkoina uz zaštitu vaše privatnosti uključuju, naravno, rudarenje. Da biste pokrenuli rudarenje Sats-a, ne morate otkriti svoj identitet; jednostavno pronađite važeći Proof of Work i pošaljite ga mreži. Ako se odlučite za udruženo rudarenje (eng. pool mining), neka udruženja zahtevaju neku vrstu identifikacije, poput KYC-a, dok drugi to ne traže.
+Drugi načini za sticanje bitkoina uz zaštitu vaše privatnosti uključuju, naravno, rudarenje. Da biste pokrenuli rudarenje Sats-a, ne morate otkriti svoj identitet; jednostavno pronađite važeći Proof of Work i pošaljite ga mreži. Ako se odlučite za udruženo rudarenje (eng. pool mining), neka udruženja zahtevaju neku vrstu identifikacije, poput KYC-ija, dok drugi to ne traže.
 
 Drugi metod je da radite u zamenu za bitkoine. Ovaj metod sticanja može biti zanimljiv, ali stepen potrebne identifikacije znatno varira u zavisnosti od okolnosti.
 
@@ -2171,7 +2171,7 @@ Nisu sve Bitcoin transakcije iste težine. One sa više ulaza i izlaza će imati
 ![BTC204](assets/fr/094.webp)
 
 
-U ovom primeru, iako transakcija B nudi višu ukupnu naknadu, rudari će preferirati transakciju A, jer nudi bolji odnos između naknade i težine. Evo izračuna za svaku transakciju, izraženog u Sats po virtualnom bajtu (sat/vB):
+U ovom primeru, iako transakcija B nudi višu ukupnu naknadu, rudari će preferirati transakciju A, jer nudi bolji odnos između naknade i težine. Evo izračuna za svaku transakciju, izraženog u Sats-ima po virtualnom bajtu (sat/vB):
 
 
 ```text
@@ -2216,7 +2216,7 @@ Gde:
 
 - p$ je težina transakcije;
 - $F$ predstavlja maksimalnu stopu naplate u satoshijima po vbyte-u (Sats/vB) protiv koje se osiguravate;
-- t$ je procenat naknade za transakciju koji ste spremni da platite u odnosu na ukupnu vrednost UTXO ;
+- t$ je procenat naknade za transakciju koji ste spremni da platite u odnosu na ukupnu vrednost UTXO-a ;
 - m$ je minimalni iznos u satoshima za svaki UTXO.
 
 
@@ -2228,7 +2228,7 @@ $$
 $$
 
 
-U ovom primeru, stoga bi bilo pametno zadržati minimalnu vrednost od 940,000 Sats za UTXO-e u vašem portfoliju.
+U ovom primeru, stoga bi bilo pametno zadržati minimalnu vrednost od 940,000 Sats za UTXO-e u vašem novčaniku.
 
 
 ### Konsolidacija i CIOH
@@ -2325,7 +2325,7 @@ Generalno govoreći, mudrije je odlučiti se za najnoviji standard skriptovanja,
 Izvor : [txstats.com](https://txstats.com/d/000000054/UTXO-set-repartition-by-output-type)
 
 
-Još jedan savet za očuvanje vaše poverljivosti je pokušaj zaobilaženja internih heuristika transakcija. Na primer, prilikom plaćanja, možete pokušati da izbegnete kreiranje izlaza sa okruglim iznosom, jer to može signalizirati da drugi izlaz predstavlja kusur. Ako treba da pošaljete 100 k Sats-a prijatelju, razmislite o prenosu nešto većeg iznosa kako biste izbegli ovu heuristiku. Slično tome, pokušajte da ne kreirate kusur izlaze koji su nesrazmerno visoki u odnosu na izvršeno plaćanje, jer to takođe može otkriti koji od izlaza je kusur.
+Još jedan savet za očuvanje vaše poverljivosti je pokušaj zaobilaženja internih heuristika transakcija. Na primer, prilikom plaćanja, možete pokušati da izbegnete kreiranje izlaza sa okruglim iznosom, jer to može signalizirati da drugi izlaz predstavlja kusur. Ako treba da pošaljete 100k Sats-a prijatelju, razmislite o prenosu nešto većeg iznosa kako biste izbegli ovu heuristiku. Slično tome, pokušajte da ne kreirate kusur izlaze koji su nesrazmerno visoki u odnosu na izvršeno plaćanje, jer to takođe može otkriti koji od izlaza je kusur.
 
 
 ![BTC204](assets/fr/102.webp)
@@ -2362,7 +2362,7 @@ CoinJoin se često smatra najefikasnijom metodom zaštite privatnosti Bitcoin ko
 CoinJoin je tehnika za razbijanje praćenja bitkoina na blokčejnu. Zasniva se na kolaborativnoj transakciji sa specifičnom strukturom istog imena: CoinJoin transakcija.
 
 
-Kao što smo videli u prvim delovima ovog kursa, Bitcoin transakcije su poznate svim korisnicima putem njihovog čvora. Stoga je lako proveriti lanac elektronskih potpisa svakog novčića i posmatrati njegovu istoriju. To znači da svi korisnici mogu pokušati da analiziraju transakcije drugih korisnika. Kao rezultat, anonimnost na nivou transakcija je nemoguća. Međutim, anonimnost je sačuvana na nivou identifikacije pojedinca. Za razliku od konvencionalnog bankarskog sistema, gde je svaki račun povezan sa ličnim identitetom, na Bitcoin-u, sredstva su povezana sa kriptografskim parovima ključeva (ili skriptama), nudeći korisnicima oblik pseudonimnosti iza kriptografskih identifikatora.
+Kao što smo videli u prvim delovima ovog kursa, Bitcoin transakcije su poznate svim korisnicima putem njihovog čvora. Stoga je lako proveriti lanac elektronskih potpisa svakog novčića i posmatrati njegovu istoriju. To znači da svi korisnici mogu pokušati da analiziraju transakcije drugih korisnika. Kao rezultat, anonimnost na nivou transakcija je nemoguća. Međutim, anonimnost je sačuvana na nivou identifikacije pojedinca. Za razliku od konvencionalnog bankarskog sistema, gde je svaki račun povezan sa ličnim identitetom, na Bitcoin-u, sredstva su povezana sa kriptografskim parovima ključeva (ili skriptama), nudeći korisnicima oblik pseudoanonimnosti iza kriptografskih identifikatora.
 
 
 ![BTC204](assets/fr/103.webp)
@@ -2430,7 +2430,7 @@ Hajde da uzmemo Alisin primer. Ona želi da pošalje oko 100,000 Sats-a svojoj s
 ![BTC204](assets/fr/110.webp)
 
 
-U ovom slučaju, Alisa je koristila tehniku CoinJoin kako bi povećala poverljivost u vezi sa retrospektivnom analizom. U suštini, Alisa se štiti od moguće analize od strane Eve, koja bi počela od određene transakcije i radila unazad kroz istoriju UTXO-a. Ova zaštita od analize od sadašnjosti ka prošlosti poznata je kao retrospektivni anonset. O ovom konceptu ćemo detaljnije govoriti u završnim poglavljima ovog odeljka.
+U ovom slučaju, Alisa je koristila CoinJoin tehniku kako bi povećala poverljivost u vezi sa retrospektivnom analizom. U suštini, Alisa se štiti od moguće analize od strane Eve, koja bi počela od određene transakcije i radila unazad kroz istoriju UTXO-a. Ova zaštita od analize od sadašnjosti ka prošlosti poznata je kao retrospektivni anonset. O ovom konceptu ćemo detaljnije govoriti u završnim poglavljima ovog odeljka.
 
 
 Međutim, CoinJoin takođe nudi mogućnost jačanja poverljivosti u svetlu analize od prošlosti ka sadašnjosti, poznate kao prospektivni anonset. Vratimo se našem primeru gde je Alisa poslala Evi 98,000 Sats za njen rođendan, ali sa obrnutim ulogama. Sada zamislimo da je Eva ta koja je zabrinuta za svoju privatnost. Zaista, Alisa bi mogla biti u iskušenju da prati novčić koji je poslala Evi kako bi iz njega izvukla informacije. Eva bi mogla konsolidovati ovaj UTXO koji je upravo primila sa svim svojim drugim UTXO-ima, što bi Alisi moglo otkriti količinu bitkoina koje ima u svom novčaniku. Da bi to izbegla, Eva takođe može prekinuti istoriju novčića koji je upravo primila:
@@ -2469,10 +2469,10 @@ U prvom primeru, videli smo kako CoinJoin može zaštititi privatnost osobe u od
 ### Mikser, CoinJoin, mikser... Koja je razlika?
 
 
-Coinjoins se ponekad opisuju kao "mikseri", termin koji neki bitkoineri odbacuju, plašeći se da bi mogao biti pomešan sa kustodijalnim mikserima. Verujem, međutim, da je ovaj strah neosnovan, jer, u matematičkom kontekstu, CoinJoin upravo oličava koncept mešanja.
+Coinjoins se ponekad opisuju kao "mikseri", termin koji neki bitkoineri odbacuju, plašeći se da bi mogao biti pomešan sa kastodijalnim mikserima. Verujem, međutim, da je ovaj strah neosnovan, jer, u matematičkom kontekstu, CoinJoin upravo oličava koncept mešanja.
 
 
-U oblasti matematike uopšte, mešanje se odnosi na osobinu dinamičkog sistema gde, nakon određenog vremenskog perioda, svi delovi početnog prostora mogu teoretski postati pomešani sa bilo kojim drugim delom. Mešanje implicira da se položaj čestice ili stanje sistema razvija na takav način da je njegova buduća distribucija nezavisna od početne distribucije, dostižući tako stanje u kojem su karakteristike početnog stanja ravnomerno raspoređene kroz prostor sistema. Ovo je tačno ono što se dešava u CoinJoin sa bitcoinima. Dakle, po mom mišljenju, CoinJoin je zaista metoda mešanja novčića.
+U oblasti matematike uopšte, mešanje se odnosi na osobinu dinamičkog sistema gde, nakon određenog vremenskog perioda, svi delovi početnog prostora mogu teoretski postati pomešani sa bilo kojim drugim delom. Mešanje implicira da se položaj čestice ili stanje sistema razvija na takav način da je njegova buduća distribucija nezavisna od početne distribucije, dostižući tako stanje u kojem su karakteristike početnog stanja ravnomerno raspoređene kroz prostor sistema. Ovo je tačno ono što se dešava u CoinJoin-u sa bitcoinima. Dakle, po mom mišljenju, CoinJoin je zaista metoda mešanja novčića.
 
 
 ![BTC204](assets/fr/114.webp)
@@ -2490,7 +2490,7 @@ S druge strane, važno je razlikovati CoinJoin od shufflera. Shuffler je usluga 
 ![BTC204](assets/fr/115.webp)
 
 
-Današnji korisnici stoga preferiraju CoinJoin, jer im omogućava da zadrže potpunu kontrolu nad svojim sredstvima tokom celog procesa. Učesnici CoinJoin ne rizikuju da im drugi učesnici ukradu bitkoine. Pogledajmo kako je sve to moguće u narednom poglavlju.
+Današnji korisnici stoga preferiraju CoinJoin, jer im omogućava da zadrže potpunu kontrolu nad svojim sredstvima tokom celog procesa. CoinJoin učesnici ne rizikuju da im drugi učesnici ukradu bitkoine. Pogledajmo kako je sve to moguće u narednom poglavlju.
 
 
 ## Zerolink i chaumian coinjoins
@@ -2509,10 +2509,10 @@ Zato su koordinatori CoinJoin-a razvijeni na Bitcoin-u. Njihova uloga je da pove
 ![BTC204](assets/fr/116.webp)
 
 
-Ali kako možemo osigurati da koordinator nikada nema pristup korisničkim bitcoinima, i uprkos činjenici da je on osoba koja gradi CoinJoin transakciju, kako možemo osigurati da ne može povezati korisničke ulaze i izlaze, što bi moglo predstavljati curenje poverljivih informacija?
+Ali kako možemo osigurati da koordinator nikada nema pristup korisničkim bitcoinima, i uprkos činjenici da je koordinator osoba koja gradi CoinJoin transakciju, kako možemo osigurati da ne može povezati korisničke ulaze i izlaze, što bi moglo predstavljati curenje poverljivih informacija?
 
 
-### Chaumovi slepi potpisi
+### Chaumijan slepi potpisi
 
 
 Moderne implementacije CoinJoin-a koriste slepe potpise Davida Chauma kako bi izbegle curenje informacija. Hajde da brzo pogledamo kako ovi slepi potpisi funkcionišu.
@@ -2530,7 +2530,7 @@ Uzmimo primer kompanije koja želi da autentifikuje poverljivi dokument, kao št
 Chaumovi slepi potpisi stoga mogu potvrditi autentičnost dokumenta bez poznavanja njegovog sadržaja, čime se garantuje i poverljivost korisničkih podataka i integritet potpisanog dokumenta.
 
 
-### Chaumian coinjoins
+### Chaumijan coinjoins
 
 
 Takozvani "Chaumian" coinjoini kombinuju upotrebu Tor-a i slepih potpisa Davida Chauma kako bi se osiguralo da koordinator ne može znati koji izlaz pripada kojem korisniku.
