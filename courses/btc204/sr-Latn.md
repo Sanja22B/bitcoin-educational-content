@@ -2544,7 +2544,7 @@ Proces konstruisanja transakcije CoinJoin uključuje 3 glavne faze: registraciju
 
 
 
-- Alis prenosi koordinatoru UTXO koji želi da koristi kao ulaz u transakciju, kao i maskiranu prijemnu adresu koju želi da koristi kao izlaz za primanje svojih bitkoina. Koordinator stoga nema način da sazna Alisin adresu. On vidi samo njenu maskiranu verziju:
+- Alisa prenosi koordinatoru UTXO koji želi da koristi kao ulaz u transakciju, kao i maskiranu prijemnu adresu koju želi da koristi kao izlaz za primanje svojih bitkoina. Koordinator stoga nema način da sazna Alisin adresu. On vidi samo njenu maskiranu verziju:
 
 
 ![BTC204](assets/fr/118.webp)
@@ -2604,7 +2604,7 @@ Proces konstruisanja transakcije CoinJoin uključuje 3 glavne faze: registraciju
 U ovom sistemu, koordinator nije u mogućnosti da poveže ulaz sa specifičnim izlazom. Štaviše, on ne može prisvojiti sredstva učesnika, jer nikada nema pristup privatnim ključevima potrebnim za otključavanje njihovih UTXO-a. Tokom celog procesa, do kraja koraka 3, on takođe nema pristup potpisima. Kada Alisa i ostali učesnici potpišu globalnu transakciju, nakon provere da je sve ispravno, koordinator više ne može da izmeni transakciju, uključujući izlaze, a da je ne učini nevažećom. Ovo sprečava koordinatora da ukrade bitkoine.
 
 
-Konačno, kada registruje svoj izlaz u transakciji, korisnik CoinJoin-a želi da ima garancije slične onima koje ima građanin prilikom glasanja na izborima. Postoji dualnost između javnih i privatnih aspekata ovih radnji. S jedne strane, tu je ono što želite da zadržite privatnim: za glasača, on ne želi da njegov glasački listić bude povezan sa njegovim identitetom; za korisnika CoinJoin, on ne želi da njegov izlaz bude povezan sa njegovim ulazom. Zaista, ako koordinator, ili bilo koja druga strana, uspe da uspostavi vezu između ulaza i izlaza, CoinJoin gubi svaki smisao. Kao što je gore objašnjeno, CoinJoin mora funkcionisati kao prekid u istoriji novčića. Ovaj prekid se dešava upravo zbog nemogućnosti povezivanja određenog ulaza sa određenim izlazom u CoinJoin transakciji (prospektivni anonset) i obrnuto (retrospektivni anonset).
+Konačno, kada registruje svoj izlaz u transakciji, korisnik CoinJoin-a želi da ima garancije slične onima koje ima građanin prilikom glasanja na izborima. Postoji dualnost između javnih i privatnih aspekata ovih radnji. S jedne strane, tu je ono što želite da zadržite privatnim: za glasača, on ne želi da njegov glasački listić bude povezan sa njegovim identitetom; za CoinJoin korisnika, on ne želi da njegov izlaz bude povezan sa njegovim ulazom. Zaista, ako koordinator, ili bilo koja druga strana, uspe da uspostavi vezu između ulaza i izlaza, CoinJoin gubi svaki smisao. Kao što je gore objašnjeno, CoinJoin mora funkcionisati kao prekid u istoriji novčića. Ovaj prekid se dešava upravo zbog nemogućnosti povezivanja određenog ulaza sa određenim izlazom u CoinJoin transakciji (prospektivni anonset) i obrnuto (retrospektivni anonset).
 
 
 S druge strane, tu je javni aspekt: birač želi da bude siguran da je njegov glasački listić ubačen u glasačku kutiju; slično tome, korisnik CoinJoin želi da bude siguran da je njegov izlaz uključen u CoinJoin transakciju. Zaista, učesnici CoinJoin-a apsolutno moraju biti u mogućnosti da verifikuju prisustvo svog izlaza pre potpisivanja transakcije, inače bi koordinator mogao da ukrade sredstva.
@@ -2613,20 +2613,20 @@ S druge strane, tu je javni aspekt: birač želi da bude siguran da je njegov gl
 Upravo ova 2 javna i privatna aspekta, omogućena korišćenjem slepih potpisa Davida Chauma, garantuju učesnicima u Chaumian coinjoin-ima da njihovi bitkoini neće biti ukradeni i da njihova sredstva ne mogu biti praćena.
 
 
-### Ko je izumeo koncept CoinJoin?
+### Ko je izumeo CoinJoin koncept?
 
 
 Teško je reći ko je prvi predstavio ideju korišćena CoinJoin-a unutar Bitcoin-a, i ko je došao na ideju korišćenja slepih potpisa Davida Chauma u ovom kontekstu. Često se misli da je to bio Gregory Maxwell koji je prvi pomenuo u [poruci na BitcoinTalk-u 2013](https://bitcointalk.org/index.php?topic=279249.0) :
 
 
-> *"Korišćenje Chaumovih slepih potpisa: Korisnici se prijavljuju i predstavljaju ulaze (i kusur adrese) kao i kriptografski maskiranu verziju adrese na koju žele da pošalju svoje privatne UTXO-ve; server potpisuje tokene i šalje ih nazad. Korisnici se anonimno ponovo povezuju, otkrivaju svoje izlazne adrese i šalju ih nazad serveru. Server može videti da su svi izlazi potpisani od strane njega i da, shodno tome, svi izlazi dolaze od validnih učesnika. Kasnije, ljudi se ponovo povezuju i prijavljuju se
+> *"Korišćenje Chaumovih slepih potpisa: Korisnici se prijavljuju i predstavljaju ulaze (i kusur adrese) kao i kriptografski maskiranu verziju adrese na koju žele da pošalju svoje privatne UTXO-ve; server potpisuje tokene i šalje ih nazad. Korisnici se anonimno ponovo povezuju, otkrivaju svoje izlazne adrese i šalju ih nazad serveru. Server može videti da su svi izlazi potpisani od strane njega i da, shodno tome, svi izlazi dolaze od validnih učesnika. Kasnije, ljudi se ponovo povezuju i prijavljuju se*
 Maxwell, G. (2013, August 22). *CoinJoin: Bitcoin privacy for the real world*. BitcoinTalk Forum. https://bitcointalk.org/index.php?topic=279249.0
 
 
 ![BTC204](assets/fr/124.webp)
 
 
-Međutim, postoje i ranija pominjanja, kako za Chaum potpise kao deo mešanja, tako i za coinjoins. [U junu 2011, Duncan Townsend je predstavio na BitcoinTalk](https://bitcointalk.org/index.php?topic=12751.0) mikser koji koristi Chaum potpise na način vrlo sličan modernim Chaumian coinjoins.
+Međutim, postoje i ranija pominjanja, kako za Chaumian potpise kao deo mešanja, tako i za coinjoins. [U junu 2011, Duncan Townsend je predstavio na BitcoinTalk](https://bitcointalk.org/index.php?topic=12751.0) mikser koji koristi Chaumian potpise na način vrlo sličan modernim Chaumian coinjoins.
 
 
 U istoj temi možemo pronaći [poruku od hashcoin kao odgovor na Duncan Townsend](https://bitcointalk.org/index.php?topic=12751.msg315793#msg315793) kako bi poboljšao svoj mixer. Proces opisan u ovoj poruci je upravo ono o čemu se radi u coinjoins. Pominjanje sličnog sistema može se naći i u [poruci od Alex Mizrahi iz 2012](https://gist.github.com/killerstorm/6f843e1d3ffc38191aebca67d483bd88#file-laundry), kada je savetovao tvorce Tenebrix-a, jednog od prvih altcoina koji je poslužio kao osnova za kasnije kreiranje Litecoin-a. Čak se kaže da sam termin "CoinJoin" nije skovao Greg Maxwell, već da je potekao od ideje Petera Todda.
@@ -2650,13 +2650,13 @@ Kao što ime sugeriše, princip iza Zerolink-a je da kreira CoinJoin transakcije
 ![BTC204](assets/fr/127.webp)
 
 
-Važna preventivna mera koju preduzima Zerolink je da drži nemiksovane UTXO-ove potpuno odvojene od miksovanih UTXO-ova korišćenjem zasebnih kriptografskih ključeva, ili čak zasebnih novčanika. Ovo razlikuje "*pre-mix*" novčanik, namenjen za UTXO-ve pre mešanja, od "*post-mix*" novačanika, rezervisanog za UTXO-ve koji su miksovani.
+Važna preventivna mera koju preduzima Zerolink je da drži nemiksovane UTXO-ove potpuno odvojene od miksovanih UTXO-ova korišćenjem zasebnih kriptografskih ključeva, ili čak zasebnih novčanika. Ovo razlikuje "*pre-mix*" novčanik, namenjen za UTXO-ve pre mešanja, od "*post-mix*" novčanika, rezervisanog za UTXO-ve koji su miksovani.
 
 
 ![BTC204](assets/fr/128.webp)
 
 
-Ova rigorozna separacija UTXO-a služi pre svega da spreči slučajne asocijacije između mešanog UTXO i nemešanog UTXO. Zaista, ako se takve veze dogode, efikasnost CoinJoin-a na mešani UTXO se poništava bez da je korisnik toga svestan, čime se ugrožava poverljivost UTXO čiju istoriju je korisnik mislio da je prekinuo. Ove veze mogu nastati ili kroz ponovnu upotrebu adresa pri osiguravanju mešanog UTXO sa nemešanim, ili kroz primenu CIOH (_Common-Input-Ownership Heuristic_), ako korisnik koristi mešane i nemešane UTXO-e kao ulaze u istu transakciju. Separacijom UTXO-a pre-mešanja i nakon-mešanja, izbegavamo takve slučajne asocijacije i štitimo korisnika od nenamernih grešaka.
+Ova rigorozna separacija UTXO-a služi pre svega da spreči slučajne asocijacije između mešanog UTXO i nemešanog UTXO. Zaista, ako se takve veze dogode, efikasnost CoinJoin-a na mešani UTXO se poništava bez da je korisnik toga svestan, čime se ugrožava poverljivost UTXO-a čiju istoriju je korisnik mislio da je prekinuo. Ove veze mogu nastati ili kroz ponovnu upotrebu adresa pri osiguravanju mešanog UTXO sa nemešanim, ili kroz primenu CIOH (_Common-Input-Ownership Heuristic_), ako korisnik koristi mešane i nemešane UTXO-e kao ulaze u istu transakciju. Separacijom UTXO-a pre-mešanja i nakon-mešanja, izbegavamo takve slučajne asocijacije i štitimo korisnika od nenamernih grešaka.
 
 
 ![BTC204](assets/fr/129.webp)
@@ -2675,7 +2675,7 @@ Trenutno je Whirlpool jedina implementacija CoinJoin-a koja rigorozno primenjuje
 
 
 
-*U 2024. godini, svedočimo velikim promenama u alatima dostupnim korisnicima koji žele da prave coinjoin-ove na Bitcoin-u. Trenutno smo na prekretnici, a tržište CoinJoin-a prolazi kroz veliku restrukturaciju. Ovo poglavlje će sigurno biti ažurirano tokom vremena
+*U 2024. godini, svedočimo velikim promenama u alatima dostupnim korisnicima koji žele da prave coinjoin-ove na Bitcoin-u. Trenutno smo na prekretnici, a tržište CoinJoin-a prolazi kroz veliko restruktuiranje. Ovo poglavlje će sigurno biti ažurirano tokom vremena*
 
 
 Za sada postoje uglavnom 3 različite implementacije CoinJoin-a na Bitcoin-u:
@@ -2734,7 +2734,7 @@ Wabisabi je još jedna CoinJoin implementacija, sa pristupom koji centralizuje k
 Krajem 2010-ih, Wasabi je usvojio radikalno drugačiju strukturu CoinJoin transakcija u odnosu na Whirlpool. Wasabi je koristio veoma velike CoinJoin transakcije koje su uključivale desetine učesnika kako bi povećao anonset svojih učesnika. Nasuprot tome, Whirlpool se odlučio za više malih transakcija, omogućavajući da anonseti eksponencijalno rastu sa svakim ciklusom.
 
 
-Metode upravljanja kusurom takođe su se razlikovale izmešu ove dve implementacije. Sa Whirlpool-om, kusur je bio isključen i izolovan od UTXO-a pre CoinJoin ciklusa zahvaljujući TX0, konceptu koji ću dalje objasniti u sledećem poglavlju. Sa Wasabi, s druge strane, kusur je formirao jedan od izlaza CoinJoin transakcije, održavajući determinističke veze između određenih ulaza i izlaza.
+Metode upravljanja kusurom takođe su se razlikovale između ove dve implementacije. Sa Whirlpool-om, kusur je isključen i izolovan je od UTXO-a pre CoinJoin ciklusa zahvaljujući TX0, konceptu koji ću dalje objasniti u sledećem poglavlju. Sa Wasabi, s druge strane, kusur je formirao jedan od izlaza CoinJoin transakcije, održavajući determinističke veze između određenih ulaza i izlaza.
 
 
 ![BTC204](assets/fr/133.webp)
@@ -2762,7 +2762,7 @@ Lično smatram da upravljanje kusurom kompanije Wabisabi predstavlja nekoliko ri
 
 - Kada korisnik doprinese UTXO-em koji je značajno veći od onih drugih učesnika, on neizbežno završi sa iznosom kusura koji će biti povezan sa njegovim unosom. Ovo je u suprotnosti sa originalnim ciljem protokola, a koji je eliminisanje svih prepoznatljivih razmene;
 - Množenje denominacija s ciljem fragmentacije kusura može paradoksalno biti štetno za efikasnost mešanja. Ovaj proces može dovesti do smanjenja anonseta za određene izlaze, jer postaju lakše prepoznatljivi;
-- Ovaj metod takođe generiše UTXO-e niske vrednosti koji predstavljaju problem upravljanja za korisnika. Ovi mali UTXO-i, ako postanu preskupi za trošenje u odnosu na njihovu vrednost, mogu postati "Dust". Ovaj fenomen navodi korisnika da spoji nekoliko UTXO-a u ulaze za buduće transakcije, ili da ih konsoliduje. U oba slučaja, zbog CIOH-a, ovo može ili smanjiti dobijene anonsete, ili potpuno poništiti koristi od poverljivosti stečene inicijalnim CoinJoin.
+- Ovaj metod takođe generiše UTXO-e niske vrednosti koji predstavljaju problem upravljanja za korisnika. Ovi mali UTXO-i, ako postanu preskupi za trošenje u odnosu na njihovu vrednost, mogu postati "Dust". Ovaj fenomen navodi korisnika da spoji nekoliko UTXO-a u ulaze za buduće transakcije, ili da ih konsoliduje. U oba slučaja, zbog CIOH-a, ovo može ili smanjiti dobijene anonsete, ili potpuno poništiti koristi od poverljivosti stečene inicijalnim CoinJoin-om.
 
 
 Za razliku od Whirlpool-a, koji implementira ZeroLink protokol osiguravajući rigoroznu separaciju između pre-mix i post-mix UTXO-a, Wabisabi ne održava ovu strogu segregaciju. Takođe su postojali problemi sa ponovnom upotrebom adresa od strane nekih Wasabi korisnika, što je očigledno veoma štetno za korisnika.
@@ -2774,7 +2774,7 @@ U Wasabi verziji 2.0, implementirana je nova CoinJoin politika naknada. Od sada,
 Ovo je u suprotnosti sa politikom Whirlpool-a, gde naknade ostaju fiksne, bez obzira na veličinu dobijenih anonsetova. Sa Wasabi 2.0, iako su naknade koordinatora ukinute za male UTXO-e, korisnik i dalje mora da plati naknade rudaru na sve transakcije, uključujući remikse.
 
 
-Dok pišem ove redove, upotreba Wabisabi-ja postala je značajno složenija kao rezultat nedavnih događaja. Nakon hapšenja osnivača Samourai Wallet, zkSNACKs, kompanija koja finansira i upravlja razvojem Wasabi-ja, objavila je da će njen CoinJoin koordinator servis biti ukinut 1. juna 2024. Ovaj koordinator, koji je bio podešen kao podrazumevani na Wasabi-ju, bio je odgovoran za veliku većinu likvidnosti.
+Dok pišem ove redove, upotreba Wabisabi-ja postala je značajno složenija kao rezultat nedavnih događaja. Nakon hapšenja osnivača Samourai Wallet-a, zkSNACKs, kompanija koja finansira i upravlja razvojem Wasabi-ja, objavila je da će njen CoinJoin koordinator servis biti ukinut 1. juna 2024. Ovaj koordinator, koji je bio podešen kao podrazumevani na Wasabi-ju, bio je odgovoran za veliku većinu likvidnosti.
 
 
 Sa prekidom rada ovog glavnog koordinatora, korisnici sada moraju da se povežu sa novim, nezavisnim koordinatorima. Ova promena izaziva niz zabrinutosti: s jedne strane, novi koordinatori možda neće imati dovoljno likvidnosti, što smanjuje efikasnost coinjoin-a u smislu poverljivosti. S druge strane, postoji rizik od nailaženja na zlonamernog koordinatora. Ova situacija dodaje značajne nove rizike za one koji žele da koriste Wabisabi.
@@ -2846,13 +2846,13 @@ Dakle, Whirlpool transakcije karakteriše identičan broj ulaza i izlaza, koji m
 ![BTC204](assets/fr/140.webp)
 
 
-Model Whirlpool zasnovan je na malim iznosima CoinJoin transakcija. Za razliku od Wabisabi-ja i JoinMarket-a, gde se robusnost anonseta zasniva na obimu učesnika u jednom ciklusu (ili u nekoliko ciklusa), Whirlpool se oslanja na sekvencu nekoliko malih ciklusa.
+Model Whirlpool zasnovan je na malim iznosima CoinJoin transakcija. Za razliku od Wabisabi-ja i JoinMarket-a, gde se robusnost anonseta zasniva na broju učesnika u jednom ciklusu (ili u nekoliko ciklusa), Whirlpool se oslanja na sekvencu nekoliko malih ciklusa.
 
 
 U ovom modelu, korisnici plaćaju naknade samo kada se prvi put pridruže bazenu, što im omogućava učešće u mnoštvu remiksa bez dodatnih troškova. Novi učesnici plaćaju rudarske naknade za remiksere.
 
 
-Sa svakim dodatnim CoinJoin u kojem učestvuje neki UTXO, kao i sa njegovim vršnjacima susretanim u prošlosti, anonseti će eksponencijalno rasti. Cilj je iskoristiti ove besplatne remikse, koji, svaki put kada se dogode, doprinose jačanju gustine anonseta povezanih sa svakim pomešanim komadom.
+Sa svakim dodatnim CoinJoin-om u kojem učestvuje neki UTXO, kao i sa njegovim vršnjacima susretanim u prošlosti, anonseti će eksponencijalno rasti. Cilj je iskoristiti ove besplatne remikse, koji, svaki put kada se dogode, doprinose jačanju gustine anonseta povezanih sa svakim pomešanim UTXO-om.
 
 
 ![BTC204](assets/fr/141.webp)
@@ -2900,7 +2900,7 @@ Kada uđete u bazen sa svojim bitcoinima, oni će biti podeljeni na generisani U
 | 0,01 | 0,7 |
 | 0,001 | 0,025 |
 
-UTXO se smatra da pripada bazenu kada je spreman za integraciju u CoinJoin. Međutim, to ne znači da korisnik gubi vlasništvo nad njim. Kao što smo videli u prvim poglavljima ovog odeljka, kroz različite cikluse mešanja, zadržavate potpunu kontrolu nad svojim ključevima i, shodno tome, nad svojim bitcoinima. Ovo je ono što razlikuje tehniku CoinJoin od drugih centralizovanih tehnika mešanja.
+UTXO se smatra da pripada bazenu kada je spreman za integraciju u CoinJoin. Međutim, to ne znači da korisnik gubi vlasništvo nad njim. Kao što smo videli u prvim poglavljima ovog odeljka, kroz različite cikluse mešanja, zadržavate potpunu kontrolu nad svojim ključevima i, shodno tome, nad svojim bitcoinima. Ovo je ono što razlikuje CoinJoin tehniku od drugih centralizovanih tehnika mešanja.
 
 
 Da biste se pridružili CoinJoin bazenu, potrebno je da platite naknadu za uslugu i rudarsku naknadu. Naknade za uslugu su fiksne za svaki bazen i namenjene su za nadoknadu timovima odgovornim za razvoj i održavanje Whirlpool-a.
@@ -2916,7 +2916,7 @@ Naknada za korišćenje Whirlpool-a plaća se samo jednom kada se pridružite ba
 | 0.01 | 0.0005 (50,000 sats) |
 | 0.001 | 0.00005 (5,000 sats) |
 
-Ove naknade u suštini funkcionišu kao ulaznica za odabrani bazen, bez obzira na iznos koji ulažete u CoinJoin. Dakle, bilo da ulazite u 0.01 bazen sa tačno 0.01 BTC ili 0.5 BTC, naknade će ostati iste u apsolutnim iznosima.
+Ove naknade u suštini funkcionišu kao ulaznica za odabrani bazen, bez obzira na iznos koji ulažete u CoinJoin. Dakle, bilo da ulazite u 0.01 bazen sa tačno 0.01 BTC ulaza ili sa 0.5 BTC ulaza, naknade će biti iste u apsolutnim iznosima.
 
 
 Pre nego što nastavi sa Whirlpool coinjoins, korisnik može da bira između 2 strategije:
@@ -2924,8 +2924,8 @@ Pre nego što nastavi sa Whirlpool coinjoins, korisnik može da bira između 2 s
 
 
 
-- Odluči se za manji bazen kako bi smanjio troškove usluge, znajući da će zauzvrat dobiti nekoliko manjih UTXO-a;
-- Ili se odlučite za veći bazen, spremni da platite veće naknade, samo da biste završili sa manjim brojem UTXO-a veće vrednosti.
+- Opredeliće se za manji bazen kako bi smanjio troškove usluge, znajući da će zauzvrat dobiti više manjih UTXO jedinica;
+- Ili se odlučite za veći bazen, spreman da plati veće naknade, samo da bi završio sa manjim brojem UTXO-a veće vrednosti.
 
 
 Generalno nije preporučljivo spajati nekoliko mešanih UTXO-a nakon CoinJoin ciklusa, jer to može ugroziti stečenu poverljivost, posebno zbog heuristike zajedničkog vlasništva na ulazima (CIOH: *Common-Input-Ownership-Heuristic*). Shodno tome, može imati smisla odabrati veći bazen, čak i ako to znači plaćanje više, kako bi se izbeglo previše UTXO-a male vrednosti u izlazu. Korisnik mora proceniti ove kompromise kako bi odabrao bazen koji mu odgovara.
@@ -2946,7 +2946,7 @@ Zahvaljujući ovom sistemu naknada, Whirlpool se zaista izdvaja od drugih implem
 Važno je napomenuti da će korisnik takođe morati da plati rudarske naknade da bi povukao svoje UTXO-e iz bazena nakon završetka svojih višestrukih coinjoin-a, osim ako nije izabrao opciju `mix to`, koja obezbeđuje eksternu adresu koja će primiti sredstva direktno iz CoinJoin-a, bez dodatnih transakcija.
 
 
-### HD portfolio računi
+### Nalozi u HD novčanicima
 
 
 Da biste kreirali CoinJoin putem Whirlpool-a, novčanik mora generisati nekoliko odvojenih naloga. Ovo je princip iza ZeroLink protokola. Nalog, u kontekstu HD (*Hierarchical Deterministic*) novčanika, predstavlja deo potpuno izolovan od drugih, pri čemu se ovo razdvajanje dešava na trećem nivou hijerarhije novčanika, tj. na nivou xpub-a.
@@ -2963,8 +2963,8 @@ Za novčanike prilagođene Whirlpool-u, koriste se 4 naloga kako bi se zadovolji
 
 
 
-- Račun **depozita**, označen indeksom `0'` ;
-- Račun **loše banke** (ili "toksični kusur"), identifikovan indeksom `2,147,483,644'` ;
+- Nalog **depozita**, označen indeksom `0'` ;
+- Nalog **loše banke** (ili "toksični kusur"), identifikovan indeksom `2,147,483,644'` ;
 - Nalog **premix**, identifikovan indeksom `2 147 483 645'` ;
 - Nalog **postmix**, identifikovan indeksom `2 147 483 646'`.
 
@@ -2984,10 +2984,10 @@ Hajde da pogledamo različite faze Whirlpool CoinJoin-a unutar ovih naloga.
 Početna tačka svakog Whirlpool CoinJoin-a je **depozitni** račun. Ovo je račun koji automatski koristite kada kreirate novi Bitcoin novčanik. Ovaj račun će morati biti kreditiran bitcoinima koje želite da mešate.
 
 
-Tx0" je prvi korak u procesu Whirlpool mešanja. Njegova svrha je da pripremi i izjednači UTXO-ove za CoinJoin, deleći ih na jedinice koje odgovaraju iznosu odabranog bazena, kako bi se osiguralo homogeno mešanje. Tako izjednačeni UTXO-ovi se zatim šalju na **premix** nalog. Što se tiče razlike koja ne može ući u bazen, ona se odvaja u poseban nalog: **bad bank** (ili "doxxic change").
+"Tx0" je prvi korak u procesu Whirlpool mešanja. Njegova svrha je da pripremi i izjednači UTXO-ove za CoinJoin, deleći ih na jedinice koje odgovaraju iznosu odabranog bazena, kako bi se osiguralo homogeno mešanje. Tako izjednačeni UTXO-ovi se zatim šalju na **premix** nalog. Što se tiče razlike koja ne može ući u bazen, ona se odvaja u poseban nalog: **bad bank** (ili "toksični kusur").
 
 
-Ova početna transakcija `Tx0` se takođe koristi za plaćanje naknade za uslugu koja se duguje koordinatoru CoinJoin. Za razliku od sledećih koraka, ova transakcija nije kolaborativna, tako da korisnik mora snositi pun trošak prema rudarima:
+Ova početna transakcija `Tx0` se takođe koristi za plaćanje naknade za uslugu koja se duguje CoinJoin koordinatoru. Za razliku od sledećih koraka, ova transakcija nije kolaborativna, tako da korisnik mora snositi pun trošak prema rudarima:
 
 
 ![BTC204](assets/fr/144.webp)
@@ -3022,7 +3022,7 @@ Ovaj UTXO je opasan za poverljivost korisnika, jer ne samo da je još uvek vezan
 ![BTC204](assets/fr/146.webp)
 
 
-Ako se ovaj UTXO spoji sa izmiksovanim izlazima, potonji će izgubiti svu poverljivost stečenu tokom CoinJoin ciklusa, naročito zbog CIOH (*Common-Input-Ownership-Heuristic*). Ako se spoji sa drugim toksičnim kusurima, korisnik rizikuje gubitak poverljivosti, jer će povezati različite unose CoinJoin ciklusa. Stoga ga treba tretirati sa oprezom. Detaljnije ćemo razmotriti upravljanje ovim toksičnim UTXOs u poslednjem delu ovog poglavlja.
+Ako se ovaj UTXO spoji sa izmiksovanim izlazima, potonji će izgubiti svu poverljivost stečenu tokom CoinJoin ciklusa, naročito zbog CIOH (*Common-Input-Ownership-Heuristic*). Ako se spoji sa drugim toksičnim kusurima, korisnik rizikuje gubitak poverljivosti, jer će povezati različite unose CoinJoin ciklusa. Stoga ga treba tretirati sa oprezom. Detaljnije ćemo razmotriti upravljanje ovim toksičnim UTXO-vima u poslednjem delu ovog poglavlja.
 
 
 ### Inicijalni mix
@@ -3076,10 +3076,10 @@ Kao i kod svake Bitcoin transakcije, takođe je važno ne koristiti ponovo prije
 Najjednostavnije i najsigurnije rešenje je da ostavite svoje izmešane UTXO-ove u mirovanju na njihovom **postmix** računu, dopuštajući im da se ponovo mešaju i koristeći ih samo za trošenje. Samurai i Sparrow novčanici imaju dodatne zaštite protiv svih ovih rizika analize lanca. Ove zaštite vam pomažu da izbegnete pravljenje grešaka.
 
 
-### Kako upravljate toksičnim kusurima?
+### Kako upravljati toksičnim kusurima?
 
 
-Dalje, treba da budete pažljivi u vezi sa upravljanjem toksičnim kusurom, kusur koji nije ušao u CoinJoin bazen. Ovi toksični UTXO-i, koji su rezultat korišćenja Whirlpool-a, predstavljaju rizik za vašu privatnost, jer uspostavljaju vezu između vas i korisnika CoinJoin-a. Stoga je neophodno upravljati njima pažljivo i ne kombinovati ih sa drugim UTXO-ima, posebno sa izmešanim UTXO-ima.
+Dalje, treba da budete pažljivi u vezi sa upravljanjem toksičnim kusurom, kusur koji nije ušao u CoinJoin bazen. Ovi toksični UTXO-i, koji su rezultat korišćenja Whirlpool-a, predstavljaju rizik za vašu privatnost, jer uspostavljaju vezu između vas i korisnika CoinJoin-a. Stoga je neophodno upravljati njima pažljivo i ne kombinovati ih sa drugim UTXO-ima, posebno ne sa izmešanim UTXO-ima.
 
 
 Evo nekoliko strategija za njihovo korišćenje:
@@ -3092,19 +3092,19 @@ Evo nekoliko strategija za njihovo korišćenje:
 - **Donirajte:** Razmislite o donacijama, koliko god skromne bile, programerima koji rade na Bitcoin-u i srodnom softveru. Takođe možete donirati udruženjima koja prihvataju BTC. Ako vam se čini da je upravljanje vašim toksičnim UTXO-ima previše komplikovano, jednostavno ih se možete rešiti i napraviti donaciju;
 - **Kupite poklon kartice:** Platforme kao što je [Bitrefill](https://www.bitrefill.com/) omogućavaju vam da za razmenite bitkoine za poklon kartice koje se mogu koristiti kod različitih trgovaca. Ovo može biti način da se oslobodite svojih toksičnih UTXO-a bez gubitka povezane vrednosti;
 - **Konsolidujte ih na Monero:** Samourai novčanik nudi uslugu atomskih zamena između BTC i XMR. Ovo je idealno za upravljanje toksičnim UTXO-ima konsolidovanjem ih na Monero-u, bez ugrožavanja vaše poverljivosti putem CIOH, pre nego što ih pošaljete nazad na Bitcoin. Međutim, ova opcija može biti skupa u smislu rudarskih naknada i premije zbog ograničenja likvidnosti;
-- **Pošalji ih na Lightning Network:** Prebacivanje ovih UTXO-a na Lightning mrežu radi smanjenja troškova transakcija može biti privlačna opcija. Međutim, ova metoda može otkriti određene informacije u zavisnosti od toga kako koristite Lightning, te bi stoga trebalo da se koristi s oprezom.
+- **Pošalji ih na Lightning mrežu:** Prebacivanje ovih UTXO-a na Lightning mrežu radi smanjenja troškova transakcija može biti privlačna opcija. Međutim, ova metoda može otkriti određene informacije u zavisnosti od toga kako koristite Lightning, te bi stoga trebalo da se koristi s oprezom.
 
 
 ### Kako da koristim Whirlpool?
 
 
-Nakon hapšenja osnivača Samourai novčanika i zaplene njihovih servera 24. aprila 2024. godine, alat Whirlpool više ne radi, čak ni za one sa sopstvenim Dojo-om. Prethodno je bio dostupan na Samourai novčanik i Sparrow novčanik.
+Nakon hapšenja osnivača Samourai novčanika i zaplene njihovih servera 24. aprila 2024. godine, Whirlpool alat više ne radi, čak ni za one sa sopstvenim Dojo-om. Prethodno je bio dostupan za Samourai novčanik i Sparrow novčanik.
 
 
 ![BTC204](assets/fr/149.webp)
 
 
-Međutim, ostaje mogućnost da će ovaj alat biti ponovo aktiviran u narednim nedeljama, u zavisnosti od ishoda ispitivanja, ili ponovo pokrenut na drugačiji način. U svakom slučaju, ne mislim da će tržište Bitcoin CoinJoin dugo biti bez ponude, jer potražnja postoji. Štaviše, pošto je model Whirlpool najnapredniji u smislu poverljivosti, sigurno će biti model izbora za druge implementacije u budućnosti.
+Međutim, ostaje mogućnost da će ovaj alat biti ponovo aktiviran u narednim nedeljama, u zavisnosti od ishoda ispitivanja, ili ponovo pokrenut na drugačiji način. U svakom slučaju, ne mislim da će tržište Bitcoin CoinJoin-a dugo biti bez ponude, jer potražnja postoji. Štaviše, pošto je Whirlpool model najnapredniji u smislu poverljivosti, sigurno će biti model izbora za druge implementacije u budućnosti.
 
 
 Pažljivo pratimo ovaj slučaj i razvoj povezanih alata. Budite sigurni da ćemo ažurirati ovaj kurs obuke čim nove informacije budu dostupne.
@@ -3164,14 +3164,14 @@ Postoje 2 tipa anonseta:
 
 
 
-- **Proaktivni anonset ;**
+- **Potencijalni anonset ;**
 - **Retrospektivni anonset.**
 
 
-### Proaktivni anonset
+### Potencijalni anonset
 
 
-Proaktivni anonset označava veličinu grupe među kojom je proučavan UTXO na kraju ciklusa skriven, s obzirom na UTXO na početku, tj. broj međusobno nerazlučuvih delova prisutnih unutar ove grupe. Naziv ovog indikatora je "proaktivna metrika".
+Potencijalni anonset označava veličinu grupe među kojom je proučavan UTXO na kraju ciklusa skriven, s obzirom na UTXO na početku, tj. broj međusobno nerazlučuvih delova prisutnih unutar ove grupe. Naziv ovog indikatora je "metrika usmerena ka budućnosti".
 
 
 Ovaj indikator meri otpornost na ugrožavanje poverljivosti UTXO-a prilikom analize od prošlosti do sadašnjosti (od ulaza do izlaza).
@@ -3225,7 +3225,7 @@ Za manje grupe, anonseti se mogu izračunati ručno pomoću block explorer-a. Me
 ![BTC204](assets/fr/158.webp)
 
 
-Kao što smo videli u ovom poglavlju, anonseti se mogu izračunati samo ako postoji određena homogenost u strukturi CoinJoin. U sledećem poglavlju, saznaćemo kako kvantifikovati ovu homogenost na Bitcoin transakciji, bilo da je to CoinJoin ili tradicionalnija transakcija.
+Kao što smo videli u ovom poglavlju, anonseti se mogu izračunati samo ako postoji određena homogenost u CoinJoin strukturi. U sledećem poglavlju, saznaćemo kako kvantifikovati ovu homogenost na Bitcoin transakciji, bilo da je to CoinJoin ili tradicionalnija transakcija.
 
 
 https://planb.network/tutorials/privacy/analysis/wst-anonsets-0354b793-c301-48af-af75-f87569756375
@@ -3237,7 +3237,7 @@ https://planb.network/tutorials/privacy/analysis/wst-anonsets-0354b793-c301-48af
 
 
 
-Kao što smo videli u ovom odeljku o coinjoin-ovima, homogenost UTXO-a u ulazu i izlazu igra važnu ulogu u poboljšanju poverljivosti Bitcoin transakcije. Ovaj parametar stvara mogućnost uverljivog poricanja u suočavanju sa blokčejn analizom. Nekoliko metoda se može koristiti za merenje ove homogenosti, ali jedna od najefikasnijih, po mom mišljenju, je korišćenje indikatora koje pruža alat *Boltzmann*, razvijen od strane OXT i Samourai Wallet timova, a posebno entropija transakcije. Ovo ćemo detaljno razmotriti u ovom poglavlju.
+Kao što smo videli u ovom odeljku o coinjoin-ovima, homogenost UTXO-a u ulazu i izlazu igra važnu ulogu u poboljšanju poverljivosti Bitcoin transakcije. Ovaj parametar stvara mogućnost uverljivog poricanja u suočavanju sa blokčejn analizom. Nekoliko metoda se može koristiti za merenje ove homogenosti, ali jedna od najefikasnijih, po mom mišljenju, je korišćenje indikatora koje pruža *Boltzmann* alat, razvijen od strane OXT i Samourai Wallet timova, a posebno entropija transakcije. Ovo ćemo detaljno razmotriti u ovom poglavlju.
 
 
 Za razliku od anonsetova, koji se računaju na skupu transakcija, indikatori predstavljeni ovde fokusiraju se na jednu transakciju, bilo da je to CoinJoin ili tradicionalnija transakcija.
@@ -3246,7 +3246,7 @@ Za razliku od anonsetova, koji se računaju na skupu transakcija, indikatori pre
 ### Broj interpretacija
 
 
-Prvi indikator koji se može uočiti na Bitcoin transakciji je ukupan broj mogućih interpretacija sa kojima se suočava analiza spoljnog posmatrača. Uzimajući u obzir vrednosti UTXO-a uključenih u transakciju, ovaj indikator pokazuje broj načina na koje se ulazi mogu povezati sa izlazima. Drugim rečima, on određuje broj mogućih interpretacija koje transakcija može izazvati u Bitcoin tokovima sa stanovišta spoljnog posmatrača koji je analizira.
+Prvi indikator koji se može uočiti na Bitcoin transakciji je ukupan broj mogućih interpretacija sa kojima se suočava analiza spoljnog posmatrača. Uzimajući u obzir vrednosti UTXO-a uključenih u transakciju, ovaj indikator pokazuje broj načina na koje se ulazi mogu povezati sa izlazima. Drugim rečima, on određuje broj mogućih interpretacija koje transakcija može izazvati u tokovima bitcoina sa stanovišta spoljnog posmatrača koji je analizira.
 
 
 Na primer, jednostavna platna transakcija sa 1 ulazom i 2 izlaza imaće samo jedno tumačenje, naime da je ulaz #0 finansirao izlaz #0 i izlaz #1. Ne postoji drugo moguće tumačenje:
@@ -3355,8 +3355,8 @@ Formula koja se koristi je sledeća gde je:
 
 
 
-- e_R$: stvarna entropija transakcije izražena u bitovima;
-- e_M$: maksimalna moguća entropija za strukturu transakcije, takođe izražena u bitovima;
+- $e_R$: stvarna entropija transakcije izražena u bitovima;
+- $e_M$: maksimalna moguća entropija za strukturu transakcije, takođe izražena u bitovima;
 - $Ef$: efikasnost transakcije u bitovima :
 
 
@@ -3384,8 +3384,8 @@ Ovaj indikator je takođe izražen kao procenat. Formula koja se koristi je sled
 
 
 
-- c_R$ : broj mogućih realnih interpretacija ;
-- c_M$: maksimalan broj mogućih interpretacija iste strukture;
+- $c_R$ : broj mogućih realnih interpretacija ;
+- $c_M$: maksimalan broj mogućih interpretacija iste strukture;
 - $Ef$: efikasnost izražena kao procenat:
 
 
@@ -3412,9 +3412,9 @@ Da bismo to izračunali, jednostavno delimo ukupnu entropiju transakcije sa ukup
 
 
 
-- e_D$: gustina entropije izražena u bitovima;
-- e$: entropija transakcije izražena u bitovima;
-- t$: ukupan broj ulaza i izlaza u transakciji:
+- $e_D$: gustina entropije izražena u bitovima;
+- $e$: entropija transakcije izražena u bitovima;
+- $t$: ukupan broj ulaza i izlaza u transakciji:
 
 
 $$
