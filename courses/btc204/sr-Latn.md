@@ -5517,7 +5517,7 @@ Postoje dva glavna razloga za odluku da se Silent Payments ograniče isključivo
 
 
 - Prvo, to znatno olakšava implementaciju i buduće nadogradnje u softveru novčanika, jer je potrebno poštovati samo jedan standard;
-- Drugo, ovaj pristup pomaže u poboljšanju korisničkog anonseta podsticanjem da se ne dele između različitih tipova skripti, što generiše prepozntljive identifikatore novčanika u analizi lanca (za više informacija o ovom konceptu, molimo pogledajte poglavlje 4 dela 2).
+- Drugo, ovaj pristup pomaže u poboljšanju korisničkog anonseta podsticanjem da se ne dele između različitih tipova skripti, što generiše prepozantljive identifikatore novčanika u analizi lanca (za više informacija o ovom konceptu, molimo pogledajte poglavlje 4 dela 2).
 
 
 ### Naivna izvedba javnog ključa za Silent Payments
@@ -5529,7 +5529,7 @@ Hajde da počnemo sa jednostavnim primerom kako bismo došli do suštine kako SP
 
 
 - Alise mora biti sposobna da generiše praznu prijemnu adresu;
-- Bob mora biti u stanju da identifikuje uplatu poslatu na ovu specifičnu prijmenu adresu
+- Bob mora biti u stanju da identifikuje uplatu poslatu na ovu specifičnu prijemnu adresu
 - Bob treba da bude u mogućnosti da dobije privatni ključ povezan sa ovom adresom kako bi mogao da potroši svoja sredstva.
 
 
@@ -5585,7 +5585,7 @@ Odavde, Bob će moći da izračuna privatni ključ $p$ koji omogućava da se sre
 $$ p = (b + \text{Hash}(b \cdot A)) \bmod n $$
 
 
-Kao što možete videti, da biste izračunali ovaj privatni ključ $p$, morate imati privatni ključ $b$. Samo Bob ima ovaj privatni ključ $b$. Stoga će on biti jedini koji može potrošiti bitkoine poslate na njegov Silent Payments adresu.
+Kao što možete videti, da biste izračunali ovaj privatni ključ $p$, morate imati privatni ključ $b$. Samo Bob ima ovaj privatni ključ $b$. Stoga će on biti jedini koji može potrošiti bitkoine poslate na njegovu Silent Payments adresu.
 
 
 ![BTC204](assets/fr/236.webp)
