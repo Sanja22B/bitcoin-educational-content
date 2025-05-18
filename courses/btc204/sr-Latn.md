@@ -5666,7 +5666,7 @@ $$
 
 
 
-- $B$ : Javni ključ/statiča adresa koju je objavio Bob
+- $B$ : Javni ključ/statična adresa koju je objavio Bob
 - $b$ : Bobov privatni ključ
 - $A$ : Alisin UTXO javni ključ korišćen kao ulaz transakcije
 - $a$ : Alisin privatni ključ
@@ -5697,13 +5697,13 @@ Ono što želimo je da svaki UTXO koji Alisa koristi kao ulaz za plaćanje daje 
 $$ \text{inputHash} = \text{Hash}(\text{outpoint} \text{ ‖ } A) $$
 
 
-A Alise će dodati ovu referencu ulazu u njen proračun jedinstvene adrese $P_0$ :
+A Alisa će dodati ovu referencu ulazu u njen proračun jedinstvene adrese $P_0$ :
 
 
 $$ P_0 = B + \text{Hash}(\text{inputHash} \cdot a \cdot B \text{ ‖ } 0) \cdot G $$
 
 
-Kada skenira, Bob može takođe dodati $\text{inputHash}$, jer sve što treba da uradi je da posmatra transakciju kako bi zaključio $\text{outpoint}$ :
+Kada skenira, Bob može takođe dodati $\text{inputHash}$, jer sve što treba da uradi je da posmatra transakciju kako bi zaključio $\text{outpoint}$:
 
 
 $$ P_0 = B + \text{Hash}(\text{inputHash} \cdot b \cdot A \text{ ‖ } 0) \cdot G $$
@@ -5776,7 +5776,7 @@ $$ A = A_0 + A_1 + A_2 $$
 Ovim metodom, Bob treba samo da izračuna zbir javnih ključeva transakcije, a zatim da izračuna ECDH tajnu samo iz $A$, što u velikoj meri smanjuje broj potrebnih proračuna za fazu skeniranja.
 
 
-Međutim, setite se prethodnog odeljka. Dodali smo $\text{inputHash}$ Hash našoj kalkulaciji, koja se koristi kao Nonce da bi se izbegla ponovna upotreba adrese:
+Međutim, setite se prethodnog odeljka. Dodali smo $\text{inputHash}$ našoj kalkulaciji, koja se koristi kao Nonce da bi se izbegla ponovna upotreba adrese:
 
 
 $$ \text{inputHash} = \text{Hash}(\text{outpoint} \text{ ‖ } A) $$
@@ -5797,7 +5797,7 @@ Proračuni tada ostaju identični onima predstavljenim u prethodnom odeljku, osi
 Za sada smo statičnu adresu $B$ za tiho plaćanje označili kao jedinstveni javni ključ. Zapamtite, to je taj javni ključ $B$ koji Alisa koristi za kreiranje zajedničke tajne ECDH, koja zatim izračunava jedinstvenu adresu za uplatu $P$. Bob koristi ovaj javni ključ $B$ i odgovarajući privatni ključ $b$ za fazu skeniranja. Ali će takođe koristiti privatni ključ $b$ da izračuna privatni ključ $p$ koji omogućava trošenje sa adrese $P$.
 
 
-Nedostatak ove metode je što se privatni ključ $b$, koji se koristi za izračunavanje svih privatnih ključeva adresa koje su primile Silent Payments, takođe koristi od strane Boba za skeniranje transakcija. Ovaj korak zahteva da ključ $b$ bude dostupan na internetu povezanom novčanik softveru, što ga izlaže većem riziku od krađe nego kada bi bio čuvan na Cold Wallet-u. Idealno bi bilo korisno iskoristiti prednosti Silent Payments-a dok se privatni ključ $b$, koji kontroliše pristup svim ostalim privatnim ključevima, drži sigurnim na hardverskom novčaniku. Srećom, protokol je prilagođen da omogući upravo to.
+Nedostatak ove metode je što se privatni ključ $b$, koji se koristi za izračunavanje svih privatnih ključeva adresa koje su primile Silent Payments, takođe koristi od strane Boba za skeniranje transakcija. Ovaj korak zahteva da ključ $b$ bude dostupan na internetu povezanom novčanik softveru, što ga izlaže većem riziku od krađe nego kada bi bio čuvan na Cold Wallet-u (novčanik koji je offline, van mreže). Idealno bi bilo korisno iskoristiti prednosti Silent Payments-a dok se privatni ključ $b$, koji kontroliše pristup svim ostalim privatnim ključevima, drži sigurnim na hardverskom novčaniku. Srećom, protokol je prilagođen da omogući upravo to.
 
 
 Da bi se to uradilo, BIP352 zahteva da primalac koristi 2 različita para ključeva:
@@ -5805,11 +5805,11 @@ Da bi se to uradilo, BIP352 zahteva da primalac koristi 2 različita para ključ
 
 
 
-- b_{\text{spend}}$: za izračunavanje privatnih ključeva jedinstvenih adresa za plaćanje;
-- b_{\text{scan}}$: da pronađe jedinstvene adrese za plaćanje.
+- $b_{\text{spend}}$: za izračunavanje privatnih ključeva jedinstvenih adresa za plaćanje;
+- $b_{\text{scan}}$: da pronađe jedinstvene adrese za plaćanje.
 
 
-Na ovaj način, Bob može čuvati privatni ključ $b_{\text{spend}}$ na hardverskom novčaniku i koristiti privatni ključ $b_{\text{scan}}$ na online softveru da pronađe svoje Silent Payments-e, bez otkrivanja $b_{\text{spend}}$. S druge strane, javni ključevi $B_{\text{scan}}$ i $B_{\text{spend}}$ su oba javno otkrivena, pošto se nalaze u Bobovoj statičkoj adresi $B$ :
+Na ovaj način, Bob može čuvati privatni ključ $b_{\text{spend}}$ na hardverskom novčaniku i koristiti privatni ključ $b_{\text{scan}}$ na online softveru da pronađe svoje tiha plaćanja, bez otkrivanja $b_{\text{spend}}$. S druge strane, javni ključevi $B_{\text{scan}}$ i $B_{\text{spend}}$ su oba javno otkrivena, pošto se nalaze u Bobovoj statičkoj adresi $B$ :
 
 
 $$ B = B_{\text{scan}} \text{ ‖ } B_{\text{spend}} $$
@@ -5863,7 +5863,7 @@ Bob stoga ima statičku adresu $B$ za diskretna plaćanja kao:
 $$ B = B_{\text{scan}} \text{ ‖ } B_{\text{spend}} $$
 
 
-Problem sa ovom metodom je što ne omogućava segregaciju različitih uplata poslatih na ovu adresu. Na primer, ako Bob ima 2 različita klijenta za svoj posao i želi da razlikuje uplate svakog, biće mu potrebne 2 različite statične adrese. Naivno rešenje, sa trenutnim pristupom, bilo bi da Bob kreira dva odvojena novčanika, svaki sa sopstvenom statičkom adresom, ili čak da uspostavi dve različite statične adrese unutar istog novčanika. Međutim, ovo rešenje zahteva skeniranje celog blokčejan dva puta (jednom za svaku adresu) kako bi se detektovale uplate namenjene za svaku adresu posebno. Ovo dvostruko skeniranje nerazumno povećava Bobovo operativno opterećenje.
+Problem sa ovom metodom je što ne omogućava segregaciju različitih uplata poslatih na ovu adresu. Na primer, ako Bob ima 2 različita klijenta za svoj posao i želi da razlikuje uplate svakog, biće mu potrebne 2 različite statičke adrese. Naivno rešenje, sa trenutnim pristupom, bilo bi da Bob kreira dva odvojena novčanika, svaki sa sopstvenom statičkom adresom, ili čak da uspostavi dve različite statičke adrese unutar istog novčanika. Međutim, ovo rešenje zahteva skeniranje celog blokčejan dva puta (jednom za svaku adresu) kako bi se detektovale uplate namenjene za svaku adresu posebno. Ovo dvostruko skeniranje nerazumno povećava Bobovo operativno opterećenje.
 
 
 Da bi rešio ovaj problem, BIP352 koristi sistem oznaka koji omogućava različite statičke adrese, bez nerazumnog povećanja opterećenja pronalaženja Silent Payments na blokčejnu. Da bismo to uradili, dodajemo ceo broj $m$ javnom ključu trošenja $B_{\text{spend}}$. Ovaj ceo broj može imati vrednost $1$ za prvu statičku adresu, zatim $2$ za drugu, i tako dalje. Ključevi trošenja $B_{\text{spend}}$ će sada biti nazvani $B_m$ i biće konstruisani na sledeći način:
@@ -5872,20 +5872,20 @@ Da bi rešio ovaj problem, BIP352 koristi sistem oznaka koji omogućava različi
 $$ B_m = B_{\text{spend}} + \text{Hash}(b_{\text{scan}} \text{ ‖ } m) \cdot G $$
 
 
-Na primer, za prvi ključ troška sa oznakom $1$ :
+Na primer, za prvi troškovni ključ imao bi oznaku $1$ :
 
 
 $$ B_1 = B_{\text{spend}} + \text{Hash}(b_{\text{scan}} \text{ ‖ } 1) \cdot G $$
 
 
-Statična adresa koji je objavio Bob sada će se sastojati od $B_{\text{scan}}$ i $B_m$. Na primer, prva statična adresa sa oznakom $1$ biće :
+Statička adresa koji je objavio Bob sada će se sastojati od $B_{\text{scan}}$ i $B_m$. Na primer, prva statička adresa sa oznakom $1$ biće :
 
 
 $$ B = B_{\text{scan}} \text{ ‖ } B_1 $$
 
 
-> *Počinjemo samo od oznake 1 jer je oznaka 0 rezervisana za promenu.*
-Alisa će, sa svoje strane, izvesti jednokratnu uplatu adrese $P$ na isti način kao i ranije, ali koristeći novi $B_1$ umesto $B_{\text{spend}}$ :
+> *Počinjemo samo od oznake 1 jer je oznaka 0 rezervisana za promenu.
+Alisa će, sa svoje strane, izvesti jednokratnu uplatu $P$ adrese  na isti način kao i ranije, ali koristeći novi $B_1$ umesto $B_{\text{spend}}$ :* <
 
 
 $$ P_0 = B_1 + \text{Hash}(\text{inputHash} \cdot a \cdot B_{\text{scan}} \text{ ‖ } 0) \cdot G $$
@@ -5942,7 +5942,7 @@ Međutim, imajte na umu da je ovo razdvajanje statičkih adresa važeće samo sa
 - $X$ : Hash skeniranja privatnog ključa sa oznakom
 
 
-### Kako da napravim adrese za Silent Payments?
+### Kako da napravim adrese za tiha plaćanja?
 
 
 Da biste napravili adrese posvećene diskretnom plaćanju, prvo treba da izvedete 2 para ključeva iz vašeg Bitcoin HD novčanika:
@@ -5998,7 +5998,7 @@ Važna tačka u vezi sa statičkim adresama, koju ste možda shvatili u prethodn
 Kao i kod BIP47, nemoguće je uspostaviti vezu između statičke adrese $B$ i adrese za uplate $P$ izvedene iz $B$. Zaista, čak i ako Eva, potencijalni napadač, pokuša da skenira blokčejn sa Bobovim statičkom adresom $B$, neće moći da izvrši potrebne proračune da odredi $P$. Da bi to uradila, trebala bi joj ili Bobov privatni ključ $b_{\text{scan}}$, ili pošiljaočevi privatni ključevi $a$, ali oba su naravno privatna. Stoga je moguće eksplicitno povezati nečiju statičku adresu sa nekim oblikom ličnog identiteta.
 
 
-### Kako da koristim Silent Payments?
+### Kako da koristim tiha plaćanja?
 
 
 Predlog Silent Payments-a je relativno nov i trenutno ga je implementirao samo vrlo ograničen broj novčanika. Koliko je meni poznato, postoje samo 3 softverska proizvoda koji ih podržavaju:
@@ -6011,10 +6011,10 @@ Predlog Silent Payments-a je relativno nov i trenutno ga je implementirao samo v
 - [DonationWallet](https://github.com/Sosthene00/donationwallet)
 
 
-Uskoro ćemo vam dati detaljan vodič o tome kako postaviti svoj vlastiti Silent Payments statičku adresu.
+Uskoro ćemo vam dati detaljan vodič o tome kako postaviti svoj vlastitu Silent Payments statičku adresu.
 
 
-Pošto je ova funkcija nova, savetujemo vam da budete oprezni i izbegavate korišćenje Silent Payments za velike iznose na Mainnet-u.
+Pošto je ova funkcija nova, savetujemo vam da budete oprezni i izbegavate korišćenje diskretnih plaćanja za velike iznose na Mainnet-u.
 
 
 *Da bih kreirao ovo poglavlje o Silent Payments, koristio sam [sajt za objašnjenje Silent Payments](https://silentpayments.xyz/) i [dokument za objašnjenje BIP352](https://github.com/Bitcoin/bips/blob/master/bip-0352.mediawiki).*
