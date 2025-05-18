@@ -4204,7 +4204,7 @@ Cilj BIP156 je da adresira ovaj problem. Da bi to postigao, uvodi dodatnu fazu u
 ![BTC204](assets/fr/205.webp)
 
 
-Transakcija se zatim distribuira celokupnoj mreži u fazi "kapitulacije".
+Transakcija se zatim distribuira celokupnoj mreži u fazi "Fluff".
 
 
 ![BTC204](assets/fr/206.webp)
@@ -4213,7 +4213,7 @@ Transakcija se zatim distribuira celokupnoj mreži u fazi "kapitulacije".
 Stabljika i cvetna glava su reference na ponašanje propagacije transakcije kroz mrežu, što podseća na oblik maslačka.
 
 
-Dakle, špijunski čvorovi potencijalno mogu pratiti transakciju nazad do čvora koji je pokrenuo fazu kapitulacije (masovno emitovanje), ali taj čvor nije onaj koji je prvi emitovao transakciju, jer ju je primio od poslednjeg čvora na stablu. Ako špijunski čvorovi ne mogu pratiti stablo, ne mogu ni identifikovati izvorni čvor.
+Dakle, špijunski čvorovi potencijalno mogu pratiti transakciju nazad do čvora koji je pokrenuo fazu Fluff (masovno emitovanje), ali taj čvor nije onaj koji je prvi emitovao transakciju, jer ju je primio od poslednjeg čvora na stablu. Ako špijunski čvorovi ne mogu pratiti stablo, ne mogu ni identifikovati izvorni čvor.
 
 
 ![BTC204](assets/fr/207.webp)
