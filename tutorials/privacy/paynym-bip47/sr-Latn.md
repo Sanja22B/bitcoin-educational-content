@@ -3,7 +3,7 @@ name: BIP47 - PayNym
 
 description: Kako PayNyms funkcionišu
 ---
-***UPOZORENJE:** Nakon hapšenja osnivača Samourai Wallet i zaplene njihovih servera 24. aprila, aplikacija više ne može biti korišćena od strane korisnika koji nemaju svoj Dojo. BIP47 ostaje upotrebljiv na Sparrow Wallet za sve korisnike i **na Samourai Wallet samo za korisnike koji imaju Dojo**.*
+***UPOZORENJE:** Nakon hapšenja osnivača Samourai Wallet-a i zaplene njihovih servera 24. aprila, aplikacija više ne može biti korišćena od strane korisnika koji nemaju svoj Dojo. BIP47 ostaje upotrebljiv na Sparrow Wallet-u za sve korisnike i **na Samourai Wallet-u samo za korisnike koji imaju Dojo**.*
 
 
 _Pažljivo pratimo razvoj ovog slučaja kao i razvoj povezanih alata. Budite sigurni da ćemo ažurirati ovaj vodič čim nove informacije budu dostupne._
@@ -14,56 +14,56 @@ _Ovaj vodič je pružen isključivo u obrazovne i informativne svrhe. Ne podrža
 
 ---
 
-> "Suvviše je veliki," svi su rekli, a ćuran, koji je rođen sa ostrugama i mislio da je car, naduo se kao brod sa svim jedrima podignutim, i krenuo pravo prema njemu u velikom besu, oči su mu bile crvene kao vatra. Jadno malo pače nije znalo da li da ostane ili da pobegne, i bilo je veoma nesrećno jer su ga sve patke u dvorištu prezirale.
+> "Suviše je veliki," svi su rekli, a ćuran, koji je rođen sa ostrugama i mislio da je car, naduo se kao brod sa svim jedrima podignutim, i krenuo pravo prema njemu u velikom besu, oči su mu bile crvene kao vatra. Jadno malo pače nije znalo da li da ostane ili da pobegne, i bilo je veoma nesrećno jer su ga sve patke u dvorištu prezirale. 
 
 ![BIP47, the ugly duckling illustration](assets/1.webp)
 
 
-Jedno od najznačajnijih pitanja na Bitcoin protokolu je ponovna upotreba Address. Transparentnost i distribucija mreže čine ovu praksu opasnom za privatnost korisnika. Da bi se izbegli problemi vezani za ovo, preporučuje se korišćenje novog praznog prijemnog Address za svaku novu dolaznu uplatu na Wallet, što može biti komplikovano postići u nekim slučajevima.
+Jedno od najznačajnijih pitanja na Bitcoin protokolu je ponovna upotreba adrese. Transparentnost i distribucija mreže čine ovu praksu opasnom za privatnost korisnika. Da bi se izbegli problemi vezani za ovo, preporučuje se korišćenje nove prazne prijemne adrese za svaku novu dolaznu uplatu u novčanik, što može biti komplikovano postići u nekim slučajevima.
 
 
-Ovaj kompromis je star koliko i Bela knjiga. Satoshi nas je već upozorio na ovaj rizik u svom radu objavljenom krajem 2008:
+Ovaj kompromis je star koliko i [Beli papir (eng. White Paper)](https://planb.network/resources/glossary/white-paper). Satoshi nas je već upozorio na ovaj rizik u svom radu objavljenom krajem 2008:
 
 
-> Kao dodatni firewall, novi par ključeva treba koristiti za svaku transakciju kako bi se sprečilo njihovo povezivanje sa zajedničkim vlasnikom.
+> Kao dodatna zaštita, novi par ključeva treba koristiti za svaku transakciju kako bi se sprečilo njihovo povezivanje sa zajedničkim vlasnikom. 
 
-Postoji mnogo rešenja dostupnih za primanje više uplata bez ponovne upotrebe Address. Svako od njih ima svoje kompromise i nedostatke. Među svim tim rešenjima, tu je [BIP47](https://github.com/Bitcoin/bips/blob/master/bip-0047.mediawiki), predlog koji je razvio Justus Ranvier i objavio 2015. godine, koji omogućava generisanje ponovo upotrebljivih kodova za plaćanje. Njegov cilj je omogućiti više transakcija istoj osobi bez ponovne upotrebe Address.
-
-
-U početku, ovaj predlog je naišao na prezir od strane dela zajednice i nikada nije dodat u Bitcoin Core. Međutim, neki softveri su ipak odlučili da ga implementiraju na svoj način. Na primer, Samourai Wallet je razvio sopstvenu implementaciju BIP47: PayNym. Danas je ova implementacija dostupna na Samourai Wallet za pametne telefone, kao i na [Sparrow Wallet](https://sparrowwallet.com/) za računare.
+Postoji mnogo rešenja dostupnih za primanje više uplata bez ponovne upotrebe adrese. Svako od njih ima svoje kompromise i nedostatke. Među svim tim rešenjima, je i [BIP47](https://github.com/Bitcoin/bips/blob/master/bip-0047.mediawiki), predlog koji je razvio Justus Ranvier i objavio 2015. godine, koji omogućava generisanje ponovo upotrebljivih kodova za plaćanje. Njegov cilj je omogućiti više transakcija istoj osobi bez ponovne upotrebe adrese.
 
 
-Tokom vremena, Samourai je programirao nove funkcije direktno povezane sa PayNym. Sada postoji čitav ekosistem alata dostupan za optimizaciju privatnosti korisnika zasnovan na PayNym i BIP47.
-
-U ovom članku ćete otkriti princip BIP47 i PayNym, mehanizme ovih protokola i praktične primene koje iz njih proizlaze. Ja ću samo Address prvu verziju BIP47, koja se trenutno koristi za PayNym, ali verzije 2, 3 i 4 funkcionišu praktično na isti način.
+U početku, ovaj predlog je naišao na prezir od strane dela zajednice i nikada nije dodat u Bitcoin Core. Međutim, neki softveri su ipak odlučili da ga implementiraju na svoj način. Na primer, Samourai Wallet je razvio sopstvenu implementaciju BIP47: PayNym. Danas je ova implementacija dostupna na Samourai Wallet-u za pametne telefone, kao i na [Sparrow Wallet](https://sparrowwallet.com/) za računare.
 
 
-**Napomena** da se jedina velika razlika nalazi u transakciji obaveštenja:
+Tokom vremena, Samourai je programirao nove funkcije direktno povezane sa PayNym. Sada postoji čitav ekosistem alata dostupan za optimizaciju privatnosti korisnika zasnovan na PayNym-u i BIP47.
+
+U ovom članku ćete otkriti princip BIP47 i PayNym-a, mehanizme ovih protokola i praktične primene koje iz njih proizlaze. Osvrnuću se samo na prvu verziju BIP47, koja se trenutno koristi za PayNym, ali verzije 2, 3 i 4 funkcionišu praktično na isti način.
 
 
-- Verzija 1 koristi jednostavan Address sa OP_RETURN za obaveštenje,
-- Verzija 2 koristi Multisig skriptu (bloom-Multisig) sa OP_RETURN,
+**Imajte na umu** da se jedina velika razlika nalazi u transakciji obaveštenja:
+
+
+- Verzija 1 koristi jednostavnu adresu sa OP_RETURN za obaveštenje,
+- Verzija 2 koristi Multisig skriptu (bloom-Multisig) sa OP_RETURN-om,
 - A verzije 3 i 4 jednostavno koriste Multisig skriptu (cfilter-Multisig).
 
 
-Mehanizmi razmotreni u ovom članku, uključujući proučavane kriptografske metode, stoga su primenljivi na sve četiri verzije. Do danas, implementacija PayNym na Samourai Wallet i Sparrow koristi prvu verziju BIP47.
+Mehanizmi razmotreni u ovom članku, uključujući proučavane kriptografske metode, su primenjivi na sve četiri verzije. Do danas, implementacija PayNym na Samourai Wallet i Sparrow koristi prvu verziju BIP47.
 
 
 ## Rezime:
 
 
-1- Problem ponovne upotrebe Address.
+1- Problem ponovne upotrebe adrese.
 
 
-2- Principi BIP47 i PayNym.
+2- Principi BIP47 i PayNym-a.
 
 
-3- Tutorijali: Korišćenje PayNym.
+3- Tutorijali: Korišćenje PayNym-a.
 
 
 
-- Izgradnja BIP47 transakcije sa Samourai Wallet.
-- Izgradnja BIP47 transakcije sa Sparrow Wallet.
+- Kreiranje BIP47 transakcije sa Samourai novčanik.
+- Kreiranje BIP47 transakcije sa Sparrow novčanik.
 
 
 4- Funkcionisanje BIP47.
@@ -71,60 +71,60 @@ Mehanizmi razmotreni u ovom članku, uključujući proučavane kriptografske met
 
 
 - Ponovno upotrebljiv kod za plaćanje.
-- Kriptografska metoda: Diffie-Hellman ključ Exchange uspostavljen na eliptičkim krivama (ECDH).
-- Obaveštenje o transakciji.
+- Kriptografska metoda: Diffie-Hellman razmena ključa uspostavljena na eliptičkim krivama (ECDH).
+- Transakcija obaveštenja.
 - Kreiranje transakcije obaveštenja.
-- Primanje obaveštenja o transakciji.
+- Primanje transakcije obaveštenja.
 - BIP47 transakcija plaćanja.
 - Primanje BIP47 uplate i izvođenje privatnog ključa.
 - Vraćanje BIP47 uplate.
 
 
-5- Izvedene upotrebe PayNym.
+5- Izvedene upotrebe PayNym-a.
 
 
 6- Moje lično mišljenje o BIP47.
 
 
-## Problem ponovne upotrebe Address.
+## Problem ponovne upotrebe adrese.
 
 
-Prijemni Address se koristi za primanje bitkoina. Generiše se iz javnog ključa heširanjem i primenom specifičnog formata. Tako omogućava kreiranje novog uslova trošenja na novčiću kako bi se promenio njegov vlasnik.
+Prijemna adresa se koristi za primanje bitkoina. Generiše se iz javnog ključa heširanjem i primenom specifičnog formata. Tako omogućava kreiranje novog uslova trošenja na novčiću kako bi se promenio njegov vlasnik.
 
 
-Da biste saznali više o generisanju prijemnog Address, preporučujem da pročitate poslednji deo ovog članka: **The Bitcoin Wallet - excerpt from** [ebook Bitcoin Démocratisé 2](https://www.pandul.fr/post/le-portefeuille-Bitcoin-extrait-ebook-Bitcoin-d%C3%A9mocratis%C3%A9-2#viewer-epio7).
+Da biste saznali više o generisanju prijemne adrese, preporučujem da pročitate poslednji deo ovog članka: **The Bitcoin Wallet - excerpt from** [ebook Bitcoin Démocratisé 2](https://www.pandul.fr/post/le-portefeuille-Bitcoin-extrait-ebook-Bitcoin-d%C3%A9mocratis%C3%A9-2#viewer-epio7).
 
 
-Štaviše, verovatno ste već čuli od upućenog bitkoinera da su adrese za primanje za jednokratnu upotrebu i da bi trebalo da generate novu za svaku novu dolaznu uplatu na vaš Wallet. U redu, ali zašto?
+Štaviše, verovatno ste već čuli od upućenog bitkoinera da su adrese za primanje za jednokratnu upotrebu i da bi trebalo da generišete novu za svaku novu dolaznu uplatu u vaš novčanik. U redu, ali zašto?
 
 
-U suštini, ponovna upotreba Address direktno ne ugrožava vaša sredstva. Korišćenje kriptografije na eliptičnim krivama omogućava vam da dokažete mreži da posedujete privatni ključ bez otkrivanja tog ključa. Stoga, možete zaključati više različitih UTXO-a (nepotrošenih izlaza transakcija) na istom Address i trošiti ih u različito vreme. Ako ne otkrijete privatni ključ povezan sa tim Address, niko ne može pristupiti vašim sredstvima. Problem sa ponovnom upotrebom Address više je povezan sa privatnošću.
+U suštini, ponovna upotreba adrese direktno ne ugrožava vaša sredstva. Korišćenje kriptografije na eliptičnim krivama omogućava vam da dokažete mreži da posedujete privatni ključ bez otkrivanja tog ključa. Stoga, možete zaključati više različitih UTXO-a (nepotrošenih izlaza transakcija) na istoj adresi i trošiti ih u različito vreme. Ako ne otkrijete privatni ključ povezan sa tom adresom, niko ne može pristupiti vašim sredstvima. Problem sa ponovnom upotrebom adrese više je povezan sa privatnošću.
 
 
-Kao što je pomenuto u uvodu, transparentnost i distribucija Bitcoin mreže znače da bilo koji korisnik sa pristupom čvoru može posmatrati transakcije platnog sistema. Kao rezultat, mogu videti različite bilanse adresa. Satoshi Nakamoto je zatim pomenuo mogućnost generisanja novih parova ključeva, a samim tim i novih adresa, za svaku novu dolaznu uplatu na Wallet. Cilj bi bio imati dodatni firewall u slučaju povezivanja identiteta korisnika sa jednim od njihovih parova ključeva.
+Kao što je pomenuto u uvodu, transparentnost i distribucija Bitcoin mreže znače da bilo koji korisnik sa pristupom čvoru može posmatrati transakcije platnog sistema. Kao rezultat, mogu videti različite bilanse adresa. Satoshi Nakamoto je zatim pomenuo mogućnost generisanja novih parova ključeva, a samim tim i novih adresa, za svaku novu dolaznu uplatu u novčanik. Cilj bi bio imati dodatnu zaštitu u slučaju povezivanja identiteta korisnika sa jednim od njihovih parova ključeva.
 
 
-Danas, uz prisustvo kompanija za analizu lanca i razvoj KYC (Upoznaj Svog Kupca), korišćenje praznih adresa više nije dodatni zaštitni zid, već obaveza za svakoga ko iole brine o svojoj privatnosti.
+Danas, uz prisustvo kompanija za analizu lanca i razvoj KYC-ija (Upoznaj Svog Kupca), korišćenje praznih adresa više nije dodatni zaštitni zid, već obaveza za svakoga ko iole brine o svojoj privatnosti.
 
 
-Potraga za privatnošću nije komfor ili fantazija Maximalist Bitcoinera. To je specifičan parametar koji direktno utiče na vašu ličnu sigurnost i sigurnost vaših sredstava. Da bismo vam pomogli da ovo razumete, evo vrlo konkretnog primera:
+Potraga za privatnošću nije komfor ili fantazija bitcoiner maksimalista. To je specifičan parametar koji direktno utiče na vašu ličnu sigurnost i sigurnost vaših sredstava. Da bismo vam pomogli da ovo razumete, evo vrlo konkretnog primera:
 
 
 
-- Bob kupuje Bitcoin kroz Dollar Cost Averaging (DCA), što znači da stiče malu količinu Bitcoin u redovnim intervalima kako bi prosečno izračunao cenu ulaska. Bob sistematski šalje kupljena sredstva na isti prijemni Address. On kupuje 0.01 Bitcoin svake nedelje i šalje ga na ovaj isti Address. Nakon dve godine, Bob je akumulirao ceo Bitcoin na ovom Address.
-- Pekar na uglu prihvata Bitcoin uplate. Uzbuđen što može da troši Bitcoin, Bob odlazi da kupi svoj baget u satoshijima. Da bi platio, koristi sredstva zaključana sa svojim Address. Njegov pekar sada zna da on poseduje Bitcoin. Ova značajna suma mogla bi privući zavist, i Bob potencijalno rizikuje fizički napad u budućnosti.
+- Bob kupuje Bitcoin kroz [Dollar Cost Averaging (DCA)](https://planb.network/resources/glossary/dollar-cost-averaging-dca), što znači da stiče malu količinu bitcoina u redovnim intervalima kako bi prosečno izračunao cenu ulaska. Bob sistematski šalje kupljena sredstva na isti prijemnu adresu. On kupuje 0.01 Bitcoin svake nedelje i šalje ga na ovu istu adresu. Nakon dve godine, Bob je akumulirao ceo Bitcoin na ovoj adresi.
+- Pekar na uglu prihvata Bitcoin uplate. Uzbuđen što može da troši Bitcoin, Bob odlazi da kupi svoj baget u satoshijima. Da bi platio, koristi sredstva zaključana na svojoj adresi. Njegov pekar sada zna da on poseduje Bitcoin. Ova značajna suma mogla bi privući zavist, i Bob potencijalno rizikuje fizički napad u budućnosti.
 
 
-Address ponovna upotreba omogućava posmatraču da napravi neosporivu vezu između vaših različitih UTXO-a, a ponekad i između vašeg identiteta i celog vašeg Wallet.
+Ponovna upotreba adrese omogućava posmatraču da napravi neosporivu vezu između vaših različitih UTXO-a, a ponekad i između vašeg identiteta i celog vašeg novčanika.
 
-Zato većina Bitcoin Wallet softvera automatski generiše novi prijemni Address kada kliknete na dugme "Primi". Za obične korisnike, navikavanje na korišćenje novih adresa nije velika neprijatnost. Međutim, za online poslovanje, Exchange ili kampanju donacija, ovo ograničenje može brzo postati neizvodljivo.
+Zato većina Bitcoin softver novčanika automatski generiše novu prijemnu adresu kada kliknete na dugme "Primi". Za obične korisnike, navikavanje na korišćenje novih adresa nije velika neprijatnost. Međutim, za online poslovanje, menjačnice ili kampanju donacija, ovo ograničenje može brzo postati neizvodljivo.
 
 Postoji mnogo rešenja za ove organizacije. Svako od njih ima svoje prednosti i nedostatke, ali do danas, i kao što ćemo kasnije videti, BIP47 se zaista izdvaja od ostalih.
 
 
-Ovo pitanje ponovne upotrebe Address nije zanemarljivo u Bitcoin. Kao što možete videti na grafikonu ispod preuzetom sa sajta oxt.me, ukupna stopa ponovne upotrebe Address od strane korisnika Bitcoin trenutno iznosi 52%:
+Ovo pitanje ponovne upotrebe adrese nije zanemarljivo u Bitcoin-u. Kao što možete videti na grafikonu ispod preuzetom sa sajta oxt.me, ukupna stopa ponovne upotrebe adresa od strane Bitcoin korisnika trenutno iznosi 52%:
 
-Grafikon sa OXT.me koji prikazuje evoluciju ukupne stope ponovne upotrebe Address na mreži Bitcoin.
+Grafikon sa OXT.me koji prikazuje evoluciju ukupne stope ponovne upotrebe adrese na Bitcoin mreži.
 
 
 ![image](assets/2.webp)
@@ -132,30 +132,30 @@ Grafikon sa OXT.me koji prikazuje evoluciju ukupne stope ponovne upotrebe Addres
 _Kredit: OXT_
 
 
-Većina ovih ponovnih korišćenja dolazi iz razmena, koje, iz razloga efikasnosti i pogodnosti, ponovo koriste isti Address mnogo puta. Do danas, BIP47 bi bio najbolje rešenje za suzbijanje ovog fenomena među razmenama. Ovo bi pomoglo da se smanji ukupna stopa ponovnog korišćenja Address bez izazivanja prevelikog trenja za ove entitete.
+Većina ovih ponovnih korišćenja dolazi iz menjačnica ili berzi, koje, iz razloga efikasnosti i pogodnosti, ponovo koriste istu adresu mnogo puta. Do danas, BIP47 bi bio najbolje rešenje za suzbijanje ovog fenomena među platformama za trgovinu. Ovo bi pomoglo da se smanji ukupna stopa ponovnog korišćenja adresa bez izazivanja prevelikog trenja za ove entitete.
 
 
-Ova globalna mera preko cele mreže je posebno relevantna u ovom slučaju. Zaista, ponovna upotreba Address nije problem samo za osobu koja se bavi ovom praksom, već i za svakoga ko sa njima posluje. Gubitak privatnosti na Bitcoin deluje kao virus, šireći se od korisnika do korisnika. Proučavanje globalne mere na svim mrežnim transakcijama omogućava nam da razumemo obim ovog fenomena.
+Ova globalna metrika koja obuhvata celu mrežu je posebno relevantna u ovom slučaju. Zaista, ponovna upotreba adresa nije problem samo za osobu koja se bavi ovom praksom, već i za svakoga ko sa njima posluje. Gubitak privatnosti na Bitcoin-u deluje kao virus, šireći se od korisnika do korisnika. Proučavanje globalne metrike na svim mrežnim transakcijama omogućava nam da razumemo obim ovog fenomena.
 
 
-## Principi BIP47 i PayNym.
+## Principi BIP47 i PayNym-a.
 
 
-BIP47 ima za cilj da obezbedi jednostavan način za primanje više uplata bez ponovne upotrebe Address. Njegovo funkcionisanje zasniva se na korišćenju ponovljivo upotrebljivog koda za plaćanje.
+BIP47 ima za cilj da obezbedi jednostavan način za primanje više uplata bez ponovne upotrebe adrese. Njegovo funkcionisanje zasniva se na korišćenju ponovo upotrebljivog koda za plaćanje.
 
 
-Dakle, više pošiljalaca može poslati više uplata na jedan višekratno upotrebljiv platni kod drugog korisnika, bez potrebe da primalac obezbedi novi prazan Address za svaku novu transakciju.
+Dakle, više pošiljalaca može poslati više uplata na jedan višekratno upotrebljiv platni kod drugog korisnika, bez potrebe da primalac obezbedi novu praznu adresu za svaku novu transakciju.
 
 
-Korisnik može slobodno deliti svoj platni kod (na društvenim mrežama, na svojoj veb stranici...) bez rizika od gubitka privatnosti, za razliku od uobičajenog primanja Address ili javnog ključa.
+Korisnik može slobodno deliti svoj platni kod (na društvenim mrežama, na svojoj veb stranici...) bez rizika od gubitka privatnosti, za razliku od uobičajene adrese za primanje ili javnog ključa.
 
-Da bi se izvršio Exchange, oba korisnika moraju imati Bitcoin Wallet sa implementacijom BIP47, kao što je PayNym na Samourai Wallet ili Sparrow Wallet. Asocijacija kodova plaćanja dva korisnika uspostaviće tajni kanal između njih. Da bi se pravilno uspostavio ovaj kanal, pošiljalac mora izvršiti transakciju na Bitcoin Blockchain: transakciju obaveštenja (objasniću više o tome kasnije).
-
-
-Udruženje kodova plaćanja dva korisnika generiše zajedničke tajne koje same po sebi generate veliki broj jedinstvenih Bitcoin adresa za primanje (tačno 2^32). Dakle, u stvarnosti, plaćanje sa BIP47 nije poslato na kod plaćanja, već na potpuno normalne adrese, izvedene iz kodova plaćanja uključenih strana.
+Da bi se izvršila razmena, oba korisnika moraju imati Bitcoin novčanik sa implementacijom BIP47, kao što je PayNym na Samourai novčaniku ili Sparrow novčaniku. Povezivanje platnih kodova dva korisnika uspostavlja se tajni kanal između njih. Da bi se pravilno uspostavio ovaj kanal, pošiljalac mora izvršiti transakciju na Bitcoin Blockchain-u: transakciju obaveštenja (objasniću više o tome kasnije).
 
 
-Kod plaćanja deluje kao virtuelni identifikator, izveden iz Wallet seed. U strukturi derivacije HD Wallet, kod plaćanja se nalazi na dubini 3, na nivou Wallet naloga.
+Udruženje kodova plaćanja dva korisnika generiše zajedničke tajne koje same po sebi generišu veliki broj jedinstvenih Bitcoin adresa za primanje (tačno 2^32). Dakle, u stvarnosti, plaćanje sa BIP47 nije poslato na kod plaćanja, već na potpuno normalne adrese, izvedene iz kodova plaćanja uključenih strana.
+
+
+Platni kod deluje kao virtuelni identifikator, izveden iz seed-a novčanika. U strukturi derivacije HD novčanika, kod plaćanja se nalazi na dubini 3, na nivou naloga novčanika.
 
 
 ![image](assets/3.webp)
@@ -173,7 +173,7 @@ Može se takođe kodirati kao QR kod radi olakšavanja komunikacije:
 ![image](assets/4.webp)
 
 
-Što se tiče PayNym Botova, ti roboti koje vidite na Twitteru su jednostavno vizuelne reprezentacije vašeg koda za plaćanje, kreirane od strane Samourai Wallet. Oni se generišu korišćenjem Hash funkcije, što ih čini skoro jedinstvenim. Evo mog sa njegovim identifikatorom: **+throbbingpond8B1**
+Što se tiče PayNym Botova, ti roboti koje vidite na Twitteru su jednostavno vizuelne reprezentacije vašeg koda za plaćanje, kreirane od strane Samourai novčanika. Oni se generišu korišćenjem heš funkcije, što ih čini skoro jedinstvenim. Evo mog sa njegovim identifikatorom: **+throbbingpond8B1**
 
 
 ![image](assets/5.webp)
@@ -187,19 +187,19 @@ Za korisnika, proces izvršavanja BIP47 uplate sa PayNym implementacijom je izuz
 
 1. Bob deli svoj QR kod ili direktno svoj višekratni kod za plaćanje. On ga može postaviti na svoj vebsajt, na svoje razne javne društvene mreže, ili ga poslati Alisi putem drugog sredstva komunikacije.
 
-2. Alisa otvara svoj Samourai ili Sparrow softver i skenira ili lepi Bobov kod za plaćanje.
+2. Alisa otvara svoj Samourai ili Sparrow softver i skenira ili prekopira Bobov kod za plaćanje.
 
-3. Alis povezuje svoj PayNym sa Bobovim ("Follow" na engleskom). Ova operacija se obavlja off-chain i ostaje potpuno besplatna.
+3. Alisa povezuje svoj PayNym sa Bobovim ("Follow" na engleskom). Ova operacija se obavlja off-chain i ostaje potpuno besplatna.
 
-4. Alis povezuje svoj PayNym sa Bobovim ("Connect" na engleskom). Ova operacija se obavlja "On-Chain". Alis mora platiti transakcione Mining naknade kao i fiksnu naknadu od 15,000 Sats za uslugu na Samourai. Naknade za uslugu su oslobođene na Sparrow. Ovaj korak nazivamo transakcijom obaveštenja.
+4. Alisa povezuje svoj PayNym sa Bobovim ("Connect" na engleskom). Ova operacija se obavlja "On-Chain". Alis mora platiti transakcione naknande za rudarenje kao i fiksnu naknadu od 15,000 Sats za uslugu korišćenja Samourai novčanika. Naknade za uslugu su oslobođene na Sparrow novčaniku. Ovaj korak nazivamo transakcijom obaveštenja.
 
-5. Kada je transakcija obaveštenja potvrđena, Alisa može kreirati BIP47 transakciju plaćanja Bobu. Njen Wallet će automatski generate novi prazan prijemni Address za koji samo Bob ima privatni ključ.
+5. Kada je transakcija obaveštenja potvrđena, Alisa može kreirati BIP47 transakciju plaćanja Bobu. Njen novčanik će automatski generisati novu praznu prijemnu adresu za koju samo Bob ima privatni ključ.
 
 
 Izvođenje transakcije obaveštenja, tj. povezivanje njenog PayNym-a, je obavezni preduslov za obavljanje BIP47 plaćanja. Međutim, kada se to uradi, pošiljalac može izvršiti više uplata primaocu (tačno 2^32) bez potrebe za novom transakcijom obaveštenja.
 
 
-Možda ste primetili da postoje dve različite operacije za povezivanje PayNyms-a: "prati" i "poveži". Operacija povezivanja ("connecter") odgovara BIP47 notifikacionoj transakciji, koja je jednostavno Bitcoin transakcija sa određenim informacijama prenetim kroz OP_RETURN izlaz. Tako pomaže uspostavljanju šifrovane komunikacije između dva korisnika kako bi se proizvele deljene tajne neophodne za generisanje novih praznih adresa za primanje.
+Možda ste primetili da postoje dve različite operacije za povezivanje PayNyms-a: "prati" i "poveži". Operacija povezivanja ("connect") odgovara BIP47 notifikacionoj transakciji, koja je jednostavno Bitcoin transakcija sa određenim informacijama prenetim kroz OP_RETURN izlaz. Tako pomaže uspostavljanju šifrovane komunikacije između dva korisnika kako bi se proizvele deljene tajne neophodne za generisanje novih praznih adresa za primanje.
 
 
 S druge strane, operacija povezivanja ("follow" ili "relier") omogućava vezu na Soroban, šifrovanom komunikacionom protokolu zasnovanom na Toru, posebno razvijenom od strane Samourai timova.
@@ -210,61 +210,61 @@ Da rezimiramo:
 
 
 - Povezivanje dva PayNyma ("praćenje") je potpuno besplatno. Pomaže u uspostavljanju off-chain šifrovane komunikacije, posebno za korišćenje Samourai-jevih alata za kolaborativne transakcije (Stowaway ili StonewallX2). Ova operacija je specifična za PayNym i nije opisana u BIP47.
-- Povezivanje dva PayNyma podrazumeva trošak. Ovo uključuje obavljanje transakcije obaveštenja za iniciranje veze. Trošak se sastoji od bilo kojih naknada za uslugu, naknada za transakciju Mining, i 546 Sats poslatih na obaveštenje primaoca Address kako bi ih obavestili o otvaranju tunela. Ova operacija je povezana sa BIP47. Kada se završi, pošiljalac može izvršiti više BIP47 uplata primaocu.
+- Povezivanje dva PayNyma podrazumeva trošak. Ovo podrazumeva izvršavanje transakcije obaveštenja za uspostavljanje veze. Trošak se sastoji od bilo kojih naknada za uslugu, naknada rudarima za transakciju, i 546 Sats poslatih na adresu obaveštenja primaoca kako bi ih obavestili o otvaranju tunela. Ova operacija je povezana sa BIP47. Kada se završi, pošiljalac može izvršiti više BIP47 uplata primaocu.
 
 
 Da bi se povezala dva PayNyma, moraju već biti povezani.
 
 
-## Uputstva: Korišćenje PayNym.
+## Uputstva: Korišćenje PayNym-a.
 
 
-Sada kada smo videli teoriju, hajde da zajedno proučimo praksu. Ideja tutorijala ispod je da povežem svoj PayNym na mom Sparrow Wallet sa mojim PayNym na mom Samourai Wallet. Prvi tutorijal vam pokazuje kako da izvršite transakciju koristeći višekratni kod za plaćanje sa Samourai na Sparrow, a drugi tutorijal opisuje isti mehanizam sa Sparrow na Samourai.
+Sada kada smo videli teoriju, hajde da zajedno proučimo praksu. Ideja tutorijala ispod je da povežem svoj PayNym na mom Sparrow novčaniku sa mojim PayNym na mom Samourai novčaniku. Prvi tutorijal vam pokazuje kako da izvršite transakciju koristeći višekratni kod za plaćanje sa Samourai novčanika na Sparrow, a drugi tutorijal opisuje isti mehanizam sa Sparrow novčanika na Samourai.
 
 
-**Napomena:** Izveo sam ove tutorijale na Testnet. Ovo nisu pravi bitkoini.
+**Napomena:** Ove tutorijale sam radio na Testnetu. Ovo nisu pravi bitkoini.
 
 
-### Izgradnja BIP47 transakcije sa Samourai Wallet.
+### Izgradnja BIP47 transakcije sa Samourai novčanikom.
 
 
-Za početak, očigledno vam je potrebna aplikacija Samourai Wallet. Možete je direktno preuzeti sa Google Play Store-a ili putem APK fajla dostupnog na zvaničnom Samourai sajtu.
+Za početak, očigledno vam je potrebna aplikacija Samourai novčanik. Možete je direktno preuzeti sa Google Play Store-a ili putem APK fajla dostupnog na zvaničnom Samourai sajtu.
 
 
-Jednom kada je Wallet inicijalizovan, ako već niste, zatražite svoj PayNym klikom na plus (+) u donjem desnom uglu, zatim na "PayNym".
+Jednom kada je novčanik inicijalizovan, ako već niste, zatražite svoj PayNym klikom na plus (+) u donjem desnom uglu, zatim na "PayNym".
 
 
-Prvi korak za izvršenje BIP47 uplate je preuzimanje ponovljivog koda za plaćanje od našeg primaoca. Zatim ćemo moći da se povežemo sa njima i potom povežemo:
+Prvi korak za izvršenje BIP47 uplate je preuzimanje ponovljivog platnog koda od našeg primaoca. Tada ćemo moći da se povežemo sa njima i naknadno uspostavimo vezu:
 
 
 ![video](assets/6.mp4)
 
 
-Jednom kada je transakcija obaveštenja potvrđena, mogu poslati više uplata svom primaocu. Svaka transakcija će automatski biti izvršena sa novim praznim Address za koji primalac ima ključeve. Primalac ne mora preduzimati nikakve radnje, sve se izračunava sa moje strane.
+Jednom kada je transakcija obaveštenja potvrđena, mogu poslati više uplata svom primaocu. Svaka transakcija će automatski biti izvršena sa novom praznom adresom za koji primalac ima ključeve. Primalac ne mora preduzimati nikakve radnje, sve se izračunava sa moje strane.
 
 
-Evo kako napraviti BIP47 transakciju na Samourai Wallet:
+Evo kako napraviti BIP47 transakciju na Samourai novčaniku:
 
 
 ![video](assets/7.mp4)
 
 
-### Izgradnja BIP47 transakcije sa Sparrow Wallet.
+### Izgradnja BIP47 transakcije sa Sparrow novčanikom.
 
 
-Baš kao i sa Samourai, očigledno je da treba da imate Sparrow softver. Ovo je dostupno na vašem računaru. Možete ga preuzeti sa njihove [zvanične veb stranice](https://sparrowwallet.com/).
+Baš kao i sa Samourai, očigledno je da treba da imate Sparrow softver. On je dostupan na vašem računaru. Možete ga preuzeti sa njihove [zvanične veb stranice](https://sparrowwallet.com/).
 
 
 Obavezno proverite potpis programera i integritet preuzetog softvera pre nego što ga instalirate na svoj računar.
 
 
-Kreirajte Wallet i zatražite svoj PayNym klikom na "Prikaži PayNym" iz menija "Alat" u gornjoj traci:
+Kreirajte novčanik i zatražite svoj PayNym klikom na "Show PayNym" iz menija "Tools" u gornjoj traci:
 
 
 ![image](assets/8.webp)
 
 
-Zatim ćete morati povezati i spojiti svoj PayNym sa onim vašeg primaoca. Da biste to uradili, unesite njihov višekratni kod za plaćanje u prozor "Pronađi kontakt", pratite ih, a zatim izvršite transakciju obaveštavanja klikom na "Poveži kontakt":
+Zatim ćete morati povezati i spojiti svoj PayNym sa onim vašeg primaoca. Da biste to uradili, unesite njihov višekratni kod za plaćanje u prozor "Find Contact", zapratite ih, a zatim izvršite transakciju obaveštavanja klikom na "Link Contact":
 
 
 ![image](assets/9.webp)
@@ -279,10 +279,10 @@ Jednom kada je transakcija obaveštenja potvrđena, možete poslati uplate na vi
 Sada kada smo bili u mogućnosti da proučimo praktični aspekt PayNym implementacije BIP47, hajde da vidimo kako svi ovi mehanizmi funkcionišu i koje kriptografske metode se koriste.
 
 
-## Unutrašnji rad BIP47.
+## Unutrašnji mehanizam BIP47.
 
 
-Da biste proučili mehanizme BIP47, neophodno je razumeti strukturu hijerarhijski determinističkog (HD) Wallet, mehanizme za izvođenje parova ključeva potomaka, kao i principe eliptičke kriptografije. Srećom, sve potrebne informacije za razumevanje ovog dela možete pronaći na mom blogu:
+Da biste proučili mehanizme BIP47, neophodno je razumeti strukturu [hijerarhijski determinističkog (HD) novčanika](https://planb.network/resources/glossary/hd-hierarchicaldeterministic), mehanizme za izvođenje parova ključeva potomaka, kao i principe eliptičke kriptografije. Srećom, sve potrebne informacije za razumevanje ovog dela možete pronaći na mom blogu:
 
 
 
@@ -296,7 +296,7 @@ Da biste proučili mehanizme BIP47, neophodno je razumeti strukturu hijerarhijsk
 ### Ponovno upotrebljiv kod za plaćanje.
 
 
-Kao što je objašnjeno u drugom delu ovog rada, višekratno upotrebljivi platni kod se nalazi na dubini tri HD Wallet. Donekle je uporediv sa xpub, kako u svom položaju i strukturi, tako i u svojoj ulozi.
+Kao što je objašnjeno u drugom delu ovog rada, višekratno upotrebljivi platni kod se nalazi na dubini tri HD novčanika. Donekle je uporediv sa xpub, kako u svom položaju i strukturi, tako i u svojoj ulozi.
 
 
 Evo različitih delova koji čine 80-bajtni kod za plaćanje:
