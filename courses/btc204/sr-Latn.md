@@ -4530,7 +4530,7 @@ $$
 
 
 
-- Vrednosti $A$ (ekvivalentne **boji narandžasta**) i $B$ (ekvivalentne **boji Green**) se razmenjuju između dve strane. Ova razmena može se odvijati u čistom tekstu na nesigurnoj mreži;
+- Vrednosti $A$ (ekvivalentne **boji narandžasta**) i $B$ (ekvivalentne **zelenoj boji**) se razmenjuju između dve strane. Ova razmena može se odvijati u čistom tekstu na nesigurnoj mreži;
 - Alisa, nakon što je primila $B$, izračunava vrednost $z$ na sledeći način:
 
 
@@ -4616,7 +4616,7 @@ Zahvaljujući distributivnosti operatora modulo, Alisa i Bob dobijaju potpuno is
 ![BTC204](assets/fr/222.webp)
 
 
-Napadač, čak i ako poseduje $p$, $g$, $A$ i $B$ (javne vrednosti), neće biti u mogućnosti da izračuna $a$, $b$ ili $z$ (privatne vrednosti). Da bi se to postiglo, eksponencijacija bi morala biti obrnuta, operacija koja je nemoguća bez pokušaja svih mogućnosti jednu po jednu, jer to predstalja računanje diskretnog logaritma, tj. obrnuta funkcija eksponenciranja u konačnoj cikličnoj grupi.
+Napadač, čak i ako poseduje $p$, $g$, $A$ i $B$ (javne vrednosti), neće biti u mogućnosti da izračuna $a$, $b$ ili $z$ (privatne vrednosti). Da bi se to postiglo, eksponencijacija bi morala biti obrnuta, operacija koja je nemoguća bez pokušaja svih mogućnosti jednu po jednu, jer to predstavlja računanje diskretnog logaritma, tj. obrnuta funkcija eksponenciranja u konačnoj cikličnoj grupi.
 
 
 Dakle, sve dok su vrednosti $a$, $b$ i $p$ dovoljno velike, Diffie-Hellman protokol je siguran. Tipično, sa parametrima od 2048 bita (600-cifreni decimalni broj), testiranje svih mogućnosti za $a$ i $b$ bilo bi nepraktično. Do danas, sa takvim brojevima, ovaj algoritam se smatra sigurnim.
@@ -4647,7 +4647,7 @@ Koristićemo ovo svojstvo da prilagodimo naš Diffie-Hellman algoritam. **Princi
 
 
 
-- Alice i Bob se slažu oko kriptografski sigurne eliptičke krive i njenih parametara. Ove informacije su javne;
+- Alisa i Bob se slažu oko kriptografski sigurne eliptičke krive i njenih parametara. Ove informacije su javne;
 - Alisa generiše nasumičan broj $ka$ koji će biti njen privatni ključ. Ovaj privatni ključ mora ostati tajan. Ona određuje svoj javni ključ $Ka$ dodavanjem i udvostručavanjem tačaka na odabranoj eliptičnoj krivi:
 
 
@@ -4668,7 +4668,7 @@ $$
 
 
 
-- Alice i Bob razmene svoje javne ključeve $Ka$ i $Kb$ na nesigurnoj javnoj mreži.
+- Alisa i Bob razmenjuju svoje javne ključeve $Ka$ i $Kb$ na nesigurnoj javnoj mreži.
 - Alisa izračunava tačku $(x,y)$ na krivi primenjujući svoj privatni ključ $ka$ na Bobov javni ključ $Kb$ :
 
 
@@ -4706,7 +4706,7 @@ Potencijalni napadač koji posmatra nezaštićenu javnu mrežu moći će da dobi
 ECDH je stoga algoritam za razmenu ključa. Često se koristi u kombinaciji sa drugim kriptografskim metodama za uspostavljanje kompletnog protokola. Na primer, ECDH je u srcu TLS-a (*Transport Layer Security*), protokol za šifrovanje i autentifikaciju koji se koristi na transportnom sloju Interneta. TLS koristi ECDHE za razmenu ključa, varijantu ECDH gde su ključevi efemerni, kako bi obezbedio trajnu poverljivost. Pored toga, TLS koristi algoritme za autentifikaciju kao što je ECDSA, algoritme za šifrovanje kao što je AES, i Hash funkcije kao što je SHA256.
 
 
-TLS je odgovoran za `s` u `https` i katanćić koji vidiš u adresnoj traci pregledača - simboli šifrovane komunikacije. Pohađanjem ovog kursa koristićete ECDH, i vrlo je verovatno da ćete ga koristiti svakodnevno, a da toga niste ni svesni.
+TLS je odgovoran za `s` u `https` i katanćić koji vidiš u adresnoj traci pregledača - simbol šifrovane komunikacije. Pohađanjem ovog kursa koristićete ECDH, i vrlo je verovatno da ćete ga koristiti svakodnevno, a da toga niste ni svesni.
 
 
 ### Obaveštenje o transakciji
@@ -4780,10 +4780,10 @@ Na dijagramu ispod, narandžaste linije označavaju tačke gde protok informacij
 U stvarnosti, u tradicionalnom modelu Bitcoin poverljivosti, često je složeno potpuno razdvojiti tok informacija između para ključeva i korisnika, posebno u udaljenim transakcijama. Na primer, u kontekstu kampanje za donacije, primalac mora neizbežno otkriti adresu ili javni ključ putem svoje veb stranice ili društvenih mreža. Ispravna upotreba BIP47, posebno sa transakcijom obaveštenja, omogućava zaobilaženje ovog problema zahvaljujući ECDHE i sloju enkripcije o kojem ćemo kasnije govoriti.
 
 
-Naravno, klasični model Bitcoin poverljivosti i dalje se primenjuje na efemerne javne ključeve, koji su izvedeni iz kombinacije dva platna koda. Dva modela su zapravo komplementarna. Ono što želim da naglasim ovde je da, za razliku od uobičajene upotrebe javnog ključa za primanje bitcoina, platni kod može biti povezan sa specifičnim identitetom, jer je informacija "_Alice trguje sa Bobom_" prekinuta na drugom nivou. Platni kod se koristi za generisanje platne adrese, ali samo na osnovu posmatranja blokčejna, nemoguće je povezati BIP47 platnu transakciju sa platnim kodovima korišćenim za njeno izvršenje, osim ako UTXO-ovi uključeni nisu već bili povezani sa identitetom ranije i korisnici su povezali svoje platne kodove sa svojim odgovarajućim identitetima.
+Naravno, klasični model Bitcoin poverljivosti i dalje se primenjuje na efemerne javne ključeve, koji su izvedeni iz kombinacije dva platna koda. Dva modela su zapravo komplementarna. Ono što želim da naglasim ovde je da, za razliku od uobičajene upotrebe javnog ključa za primanje bitcoina, platni kod može biti povezan sa specifičnim identitetom, jer je informacija "_Alisa trguje sa Bobom_" prekinuta na drugom nivou. Platni kod se koristi za generisanje platne adrese, ali samo na osnovu posmatranja blokčejna, nemoguće je povezati BIP47 platnu transakciju sa platnim kodovima korišćenim za njeno izvršenje, osim ako UTXO-ovi uključeni nisu već bili povezani sa identitetom ranije i korisnici su povezali svoje platne kodove sa svojim odgovarajućim identitetima.
 
 
-Da sumiramo, model poverljivosti koji nudi BIP47 plaćanja mogao bi se smatrati superiornijim u odnosu na osnovniBitcoin model, iako to ne znači da je magičan.
+Da sumiramo, model poverljivosti koji nudi BIP47 plaćanja mogao bi se smatrati superiornijim u odnosu na osnovni Bitcoin model, iako to ne znači da je magičan.
 
 
 ### Izgradnja transakcije obaveštenja
@@ -4792,7 +4792,7 @@ Da sumiramo, model poverljivosti koji nudi BIP47 plaćanja mogao bi se smatrati 
 Sada da vidimo kako ova transakcija obaveštenja funkcioniše. Zamislimo da Alisa želi da pošalje sredstva Bobu koristeći BIP47. U mom primeru, Alisa deluje kao pošiljalac, a Bob kao primalac. Bob je objavio svoj platni kod na svom sajtu. Alisa stoga već zna Bobov platni kod.
 
 
-**1- Alisa izračunava zajedničku tajnu sa ECDH :**
+**1-** Alisa izračunava zajedničku tajnu sa ECDH :
 
 
 
@@ -4830,10 +4830,10 @@ $$ S = a \cdot B $$
 $$ f = \text{HMAC-SHA512}(o, x) $$
 
 
-**2 - Alice konvertuje svoj lični platni kod u bazu 2 (binarni) **
+**2-** Alice enkoduje svoj lični platni kod koristeći bazu 2 (binarni)
 
 
-**3- Koristi ovaj faktor zaslepljivanja kao ključ za izvođenje simetrične enkripcije na sadržaju svog platnog koda.** Algoritam enkripcije koji se koristi je jednostavno `XOR`. Izvedena operacija uporediva je sa Vernamovom šifrom, poznatom i kao „One-Time Pad“ (šifra za jednokratnu upotrebu).
+**3-** Koristi ovaj faktor zaslepljivanja kao ključ za izvođenje simetrične enkripcije na sadržaju svog platnog koda. Algoritam enkripcije koji se koristi je jednostavno `XOR`. Izvedena operacija uporediva je sa Vernamovom šifrom, poznatom i kao „One-Time Pad“ (šifra za jednokratnu upotrebu).
 
 
 
@@ -4846,7 +4846,7 @@ $$ f = f1 || f2 $$
 
 
 
-- Alisa izračunava šifru $x'$ apscise javnog ključa $x$ njenog platnog koda, i šifru $c'$ njenog string koda $c$ zasebno. $f1$ i $f2$ deluju kao ključevi šifre respektivno. Operacija koja se koristi je `XOR` (ili isključivo).
+- Alisa izračunava šifru $x'$ apscise javnog ključa $x$ njenog platnog koda, i šifru $c'$ njenog lanca koda $c$ zasebno. $f1$ i $f2$ deluju kao ključevi šifre respektivno. Operacija koja se koristi je `XOR` (isključivo ili).
 
 
 $$ x' = x \oplus f1 $$
@@ -4857,13 +4857,13 @@ $$ c' = c \oplus f2 $$
 
 
 
-- Alisa zamenjuje stvarne vrednosti apscise javnog ključa $x$ i kodnog niza $c$ u svom kodu za plaćanje sa šifrovanim vrednostima $x'$ i $c'$.
+- Alisa zamenjuje stvarne vrednosti apscise javnog ključa $x$ i lanca koda $c$ u svom kodu za plaćanje sa šifrovanim vrednostima $x'$ i $c'$.
 
 
-**4-** Alisa trenutno ima svoj platni kod sa šifrovanim sadržajem. Ona će konstruisati i emitovati transakciju koja uključuje njen javni ključ $A$ kao ulaz, izlaz ka Bobovoj adresi notifikacije, i izlaz `OP_RETURN` koji se sastoji od njenog platnog koda sa šifrovanim sadržajem. **Ova transakcija je transakcija notifikacije**.
+**4-** Alisa trenutno ima svoj platni kod sa šifrovanim sadržajem. Ona će konstruisati i emitovati transakciju koja uključuje njen javni ključ $A$ kao ulaz, izlaz ka Bobovoj adresi notifikacije, i `OP_RETURN` izlaz koji se sastoji od njenog platnog koda sa šifrovanim sadržajem. **Ova transakcija je transakcija notifikacije**.
 
 
-`OP_RETURN` je operativni kod koji označava izlaz Bitcoin transakcije kao nevažeći. Danas se koristi za emitovanje ili usidravanje informacija na Bitcoin blokčejnu. Može da skladišti do 80 bajtova podataka, koji se zatim upisuju u lanac i vidljivi su svim ostalim korisnicima.
+[`OP_RETURN`](https://planb.network/resources/glossary/op-return-0x6a) je operativni kod koji označava izlaz Bitcoin transakcije kao nevažeći. Danas se koristi za emitovanje ili usidravanje informacija na Bitcoin blokčejnu. Može da skladišti do 80 bajtova podataka, koji se zatim upisuju u lanac i vidljivi su svim ostalim korisnicima.
 
 
 Kao što smo videli u prethodnim odeljcima, ECDH se koristi za generisanje zajedničke tajne između dva korisnika koji komuniciraju preko nesigurne mreže, i potencijalno su posmatrani od strane napadača. U BIP47, ECDH se koristi za komunikaciju na Bitcoin mreži, koja je po svojoj prirodi transparentna komunikaciona mreža, i posmatrana je od strane mnogih napadača. Zajednička tajna izračunata putem ECDH razmene ključa se zatim koristi za šifrovanje tajnih informacija koje treba preneti: kod plaćanja pošiljaoca (Alise).
@@ -4900,7 +4900,7 @@ Gledajući ovu transakciju, već možemo videti da ima jedan ulaz i 4 izlaza:
 
 
 - Prvi izlaz je `OP_RETURN` koji sadrži moj skriveni kod za plaćanje;
-- Drugi izlaz 546 Sats ukazuje na adresu obaveštenja mog primaoca;
+- Drugi izlaz od 546 Sats ukazuje na adresu obaveštenja mog primaoca;
 - Treći izlaz od 15,000 Sats predstavlja naknadu za uslugu, jer sam koristio Samourai Wallet za izradu ove transakcije;
 - Četvrti izlaz od 2 miliona Sats predstavlja kusur, tj. preostalu razliku u mom unosu koja se vraća na drugu adresu koja mi pripada.
 
@@ -4913,7 +4913,7 @@ Najzanimljivije za proučavanje je očigledno izlaz 0 koristeći `OP_RETURN`. Ha
 ```
 
 
-Postoji nekoliko delova ovog skripta. Prvo, :
+Postoji nekoliko delova ove skripte. Prvo, :
 
 
 ```text
@@ -4948,7 +4948,7 @@ b13b2911719409d704ecc69f74fa315a6cb20fdd6ee39bc9874667703d67b164
 ```
 
 
-Šifrovani niz mog koda za plaćanje:
+Šifrovani lanac koda mog koda za plaćanje:
 
 
 ```text
@@ -4986,7 +4986,7 @@ Ako uporedimo moj običan tekstualni kod plaćanja sa `OP_RETURN`, možemo videt
 Zatim, možemo prepoznati verziju (`0x01`), bit polje (`0x00`) i paritet javnog ključa (`0x02`). I, na kraju koda za plaćanje, prazni bajtovi (`0x000000000000000000000000000000`) koji omogućavaju popunjavanje do ukupno 80 bajtova. Svi ovi metapodaci se prenose nešifrovano.
 
 
-Konačno, možemo primetiti da su apscisa javnog ključa (`0x77507c9c17a89cfca2d3af554745d6c2db0e7f6b2721a3941a504933103cc42a`) i kod niza (`0xdd94881210d6e752a9abc8a9fa0070e85184993c4f643f1121dd807dd556d1dc`) enkriptovani. Ovo je sadržaj koda za plaćanje.
+Konačno, možemo primetiti da su apscisa javnog ključa (`0x77507c9c17a89cfca2d3af554745d6c2db0e7f6b2721a3941a504933103cc42a`) i lanac koda (`0xdd94881210d6e752a9abc8a9fa0070e85184993c4f643f1121dd807dd556d1dc`) enkriptovani. Ovo je sadržaj koda za plaćanje.
 
 
 ### Šta je XOR?
@@ -5076,7 +5076,7 @@ D \oplus L = D \oplus (D \oplus E) = D \oplus D \oplus E = 0 \oplus E = E \\
 $$
 
 
-Drugo, ovaj metod enkripcije je veoma sličan Vernam (One-Time Pad) šifri, jedinom algoritmu za enkripciju poznatom do danas koji ima bezuslovnu (ili apsolutnu) sigurnost. Da bi Vernamova šifra imala ovu karakteristiku, ključ za enkripciju mora biti savršeno nasumičan, iste veličine kao poruka i korišćen samo jednom. U metodu enkripcije korišćenom ovde za BIP47, ključ je zaista iste veličine kao poruka, a faktor zaslepljivanja je tačno iste veličine kao konkatenacija apscise javnog ključa sa string kodom platnog koda. Ovaj ključ za enkripciju se koristi samo jednom. S druge strane, ovaj ključ nije izveden iz savršene nasumičnosti, pošto je HMAC. Umesto toga, on je pseudo-nasumičan. Dakle, nije Vernamova šifra, ali metoda je bliska.
+Drugo, ovaj metod enkripcije je veoma sličan Vernam (One-Time Pad) šifri, jedinom algoritmu za enkripciju poznatom do danas koji ima bezuslovnu (ili apsolutnu) sigurnost. Da bi Vernamova šifra imala ovu karakteristiku, ključ za enkripciju mora biti savršeno nasumičan, iste veličine kao poruka i korišćen samo jednom. U metodu enkripcije korišćenom ovde za BIP47, ključ je zaista iste veličine kao poruka, a faktor zaslepljivanja je tačno iste veličine kao konkatenacija apscise javnog ključa sa lancem kodom platnog koda. Ovaj ključ za enkripciju se koristi samo jednom. S druge strane, ovaj ključ nije izveden iz savršene nasumičnosti, pošto je HMAC. Tačnije on je pseudo-nasumičan. Dakle, nije Vernamova šifra, ali metoda je bliska.
 
 
 ### Prijem transakcije obaveštenja
@@ -5085,13 +5085,13 @@ Drugo, ovaj metod enkripcije je veoma sličan Vernam (One-Time Pad) šifri, jedi
 Sada kada je Alisa poslala transakciju obaveštenja Bobu, da vidimo kako je Bob tumači. Kao podsetnik, Bob mora imati pristup Alisinom kodu plaćanja. Bez ove informacije, kao što ćemo videti u sledećem odeljku, neće moći da izvede parove ključeva koje je Alisa kreirala, i stoga neće moći da pristupi svojim bitkoinima primljenim putem BIP47. Za sada, Alisin kod plaćanja je šifrovan. Da vidimo kako ga Bob dešifruje.
 
 
-**1-** Bob nadzire transakcije koje stvaraju izlaze sa njegovom adresom obaveštenja.
+**1-** Bob nadzire transakcije koje stvaraju izlaze ka njegovoj adresi obaveštenja.
 
 
 **2-** Kada transakcija ima izlaz sa njegovom adresom za notifikaciju, Bob je analizira da vidi da li sadrži izlaz OP_RETURN koji je u skladu sa BIP47 standardom.
 
 
-**3-** Ako je prvi bajt OP_RETURN sadržaja `0x01`, Bob započinje svoju potragu za tajnom deljenom sa ECDH :
+**3-** Ako je prvi bajt OP_RETURN sadrži `0x01`, Bob započinje svoju potragu za tajnom deljenom koristeći ECDH :
 
 
 
@@ -5112,7 +5112,7 @@ $$ b $$
 
 
 
-- Bob izračunava tajnu tačku $S$ (zajednička tajna ECDH) na eliptičnoj krivoj dodavanjem i udvostručavanjem tačaka, primenjujući svoj privatni ključ $b$ na Alisin javni ključ $A$ :
+- Bob izračunava tajnu tačku $S$ (zajednička tajna ECDH) na eliptičnoj krivoj dodavanjem i udvostručavanjem tačaka, primenjujući svoj privatni ključ $b$ na Alisin javni ključ $A$:
 
 
 $$ S = b \cdot A $$
@@ -5126,7 +5126,7 @@ $$ S = b \cdot A $$
 $$ f = \text{HMAC-SHA512}(o, x) $$
 
 
-**4-** Bob tumači podatke OP_RETURN u transakciji obaveštenja kao kod za plaćanje. On će jednostavno dešifrovati sadržaj ovog potencijalnog koda za plaćanje koristeći $f$ faktor zaslepljivanja:
+**4-** Bob tumači OP_RETURN podatke u transakciji obaveštenja kao kod za plaćanje. On će jednostavno dešifrovati sadržaj ovog potencijalnog koda za plaćanje koristeći $f$ faktor zaslepljivanja:
 
 
 
@@ -5140,7 +5140,7 @@ $$ x = x' \oplus f1 $$
 
 
 
-- Bob dešifruje vrednost šifrovanog string koda $c'$ iz Alisinog koda za plaćanje:
+- Bob dešifruje vrednost šifrovanog lanca koda $c'$ iz Alisinog koda za plaćanje:
 
 
 $$ c = c' \oplus f2 $$
@@ -5170,7 +5170,7 @@ Alisa i Bob moraju stoga dobiti istu vrednost za $f$, bez direktnog prenosa, jer
 - i UTXO potrošen na ulazu transakcije.
 
 
-Bob stoga treba obe ove informacije da dešifruje Alisin kod za plaćanje. Za unos UTXO, Bob ga može jednostavno preuzeti posmatranjem transakcije obaveštenja. Za tajnu tačku, Bob će morati da koristi ECDH. Kao što je viđeno u prethodnom odeljku o Diffie-Hellmanu, jednostavno razmenom svojih javnih ključeva i tajnom primenom svojih privatnih ključeva na javni ključ onog drugog, Alisa i Bob mogu pronaći preciznu tajnu tačku na eliptičnoj krivi. Transakcija obaveštenja je zasnovana na ovom mehanizmu:
+Bob stoga treba da ima obe ove informacije da dešifruje Alisin kod za plaćanje. Za UTXO unosa, Bob ga može jednostavno preuzeti posmatranjem transakcije obaveštenja. Za tajnu tačku, Bob će morati da koristi ECDH. Kao što je viđeno u prethodnom odeljku o Diffie-Hellmanu, jednostavno razmenom svojih javnih ključeva i tajnom primenom svojih privatnih ključeva na javni ključ onog drugog, Alisa i Bob mogu pronaći preciznu tajnu tačku na eliptičnoj krivi. Transakcija obaveštenja je zasnovana na ovom mehanizmu:
 
 
 
@@ -5208,7 +5208,7 @@ Sažeću korake koje smo upravo zajedno videli za primanje i tumačenje transak
 
 
 
-- Bob prati transakcioni izlaz za svoju adresu za notifikaciju;
+- Bob prati izlaze transakcija na blokečejnu ka svojoj adresi za notifikaciju;
 - Kada ga detektuje, preuzima informacije sadržane u OP_RETURN ;
 - Bob bira javni ključ kao ulaz i izračunava tajnu tačku koristeći ECDH ;
 - Koristi ovu tajnu tačku za izračunavanje HMAC-a, koji je faktor zaslepljivanja;
@@ -5241,7 +5241,7 @@ Pre nego što objasnim ovaj proces, mislim da je važno setiti se na kojim indek
 - Ojačani parovi pod-ključeva su efemerni kodovi za plaćanje: od `m/47'/0'/0'/0'` do `m/47'/0'/0'/2,147,483,647'`.
 
 
-Svaki put kada Alisa želi da pošalje uplatu Bobu, ona izvodi novi, jedinstvenu, praznu adresu, ponovo koristeći ECDH protokol:
+Svaki put kada Alisa želi da pošalje uplatu Bobu, ona izvodi novu, jedinstvenu, praznu adresu, ponovo koristeći ECDH protokol:
 
 
 
@@ -5282,7 +5282,7 @@ $$ s = \text{SHA256}(Sx) $$
 
 
 - Alisa koristi ovu zajedničku tajnu $s$ da izračuna Bitcoin adresu za prijem plaćanja. Prvo, ona proverava da li je $s$ sadržano u redosledu krive secp256k1. Ako to nije slučaj, ona povećava indeks javnog ključa Boba da bi izvela drugu zajedničku tajnu ;
-- U drugom koraku, ona izračunava javni ključ $K0$ dodavanjem tačaka $B$ i $s-G$ na eliptičnoj krivoj. Drugim rečima, Alisa dodaje javni ključ izveden iz Bobovog koda za plaćanje $B$ drugoj tački izračunatoj na eliptičnoj krivoj dodavanjem i udvostručavanjem tačaka sa deljenom tajnom $s$ od generatora tačke $G$ krive secp256k1. Ova nova tačka predstavlja javni ključ, i nazivamo je $K0$ :
+- U drugom koraku, ona izračunava javni ključ $K0$ dodavanjem tačaka $B$ i $s \cdot G$ na eliptičnoj krivoj. Drugim rečima, Alisa dodaje javni ključ izveden iz Bobovog koda za plaćanje $B$ drugoj tački izračunatoj na eliptičnoj krivoj dodavanjem i udvostručavanjem tačaka sa deljenom tajnom $s$ od generatora tačke $G$ krive secp256k1. Ova nova tačka predstavlja javni ključ, i nazivamo je $K0$ :
 
 
 $$ K0 = B + s \cdot G $$
@@ -5290,10 +5290,10 @@ $$ K0 = B + s \cdot G $$
 
 
 
-- Sa ovim javnim ključem $K0$, Alisa može izvesti prazanu adresu za prijem na standardni način (npr. SegWit V0 u bech32).
+- Sa ovim javnim ključem $K0$, Alisa može izvesti praznu adresu za prijem na standardni način (npr. SegWit V0 u bech32).
 
 
-Jednom kada je Alisa dobila Bobov $K0$ primajuću adresu, može izvršiti Bitcoin transakciju na standardni način. Da bi to uradila, bira UTXO koji poseduje, osiguran parom ključeva iz druge grane njenog HD novačnika, i koristi ga da zadovolji izlaz ka Bobovoj $K0$ adresi. Važno je napomenuti da ova uplata, kada je adresa izvedena, prati klasičan proces i više ne zavisi od ključeva povezanih sa BIP47.
+Jednom kada je Alisa dobila Bobovu $K0$ primajuću adresu, može izvršiti Bitcoin transakciju na standardni način. Da bi to uradila, bira UTXO koji poseduje, osiguran parom ključeva iz druge grane njenog HD novčanika, i koristi ga da zadovolji izlaz ka Bobovoj $K0$ adresi. Važno je napomenuti da ova uplata, kada je adresa izvedena, prati klasičan proces i više ne zavisi od ključeva povezanih sa BIP47.
 
 
 Sažeću korake koje smo upravo videli zajedno za slanje BIP47 uplate:
@@ -5379,7 +5379,7 @@ $$ s = \text{SHA256}(Sx) $$
 
 
 
-- Na isti način kao i Alisa, Bob izračunava $s-G$ tačku na eliptičnoj krivi. Zatim dodaje ovu tajnu tačku svom javnom ključu $B$. On tada dobija novu tačku na eliptičnoj krivi, koju tumači kao javni ključ $K0$ :
+- Na isti način kao i Alisa, Bob izračunava $s \cdot G$ tačku na eliptičnoj krivi. Zatim dodaje ovu tajnu tačku svom javnom ključu $B$. On tada dobija novu tačku na eliptičnoj krivi, koju tumači kao javni ključ $K0$ :
 
 
 $$ K0 = B + s \cdot G $$
@@ -5446,7 +5446,7 @@ Bob može tada nadoknaditi Alisi na isti način na koji mu je ona slala uplate. 
 ![BTC204](assets/fr/235.webp)
 
 
-*Mnogo hvala [Fanis Michalakis](https://x.com/FanisMichalakis) za lekturu i stručne savete o članku koji je inspirisao pisanje ovog poglavlja!
+*Mnogo hvala [Fanis Michalakis](https://x.com/FanisMichalakis) za lekturu i stručne savete o članku koji je inspirisao pisanje ovog poglavlja!*
 
 
 https://planb.network/tutorials/privacy/on-chain/paynym-bip47-a492a70b-50eb-4f95-a766-bae2c5535093
