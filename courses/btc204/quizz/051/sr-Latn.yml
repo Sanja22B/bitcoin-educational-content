@@ -5,5 +5,5 @@ wrong_answers:
   - Oraničavaju broj mogućih transakcija.
   - Manje su anonimni.
 explanation: |
-  U razmeni za odricanje od obaveštenja o transakciji, primalac mora skenirati sve Bitcoin transakcije koje su u skladu sa standardom u pokušaju da pronađe uplate namenjene njima.
+  U zamenu za odustajanje od obaveštavajuće transakcije, primalac mora da skenira sve Bitcoin transakcije koje su u skladu sa standardom u pokušaju da pronađe uplate namenjene njima.
 reviewed: false
