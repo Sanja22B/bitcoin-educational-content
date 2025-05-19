@@ -5,5 +5,5 @@ wrong_answers:
   - Da se čuvaju promenjeni UTXO-ovi.
   - Da se skladište konsolidacioni UTXO-ovi.
 explanation: |
-  Post-mix novčanik je rezervisan za kovanice koje su bile mešane.
+  Post-mix novčanik je rezervisan za kovanice koje su bile izmešane.
 reviewed: false
