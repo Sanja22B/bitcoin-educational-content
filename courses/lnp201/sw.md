@@ -21,7 +21,7 @@ Iwe wewe ni mwanzilishi wa Bitcoin au mtumiaji mwenye uzoefu zaidi, kozi hii ita
 Furahia ugunduzi wako!
 
 +++
-#Utangulizi
+# Utangulizi
 <partId>9da7290a-3895-49a2-93ea-2a6272ca4af4</partId>
 
 ## Muhtasari wa Kozi
