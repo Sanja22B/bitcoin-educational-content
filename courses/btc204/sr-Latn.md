@@ -2955,6 +2955,7 @@ Da biste kreirali CoinJoin putem Whirlpool-a, novčanik mora generisati nekoliko
 ![BTC204](assets/fr/143.webp)
 
 
+
 HD novčanik može teoretski izvesti do `2^(32/2)` različitih naloga. Početni nalog, koji se koristi podrazumevano na svim Bitcoin novčanicima, odgovara `0'` indeksu.
 
 
@@ -3573,7 +3574,9 @@ Međutim, bilo bi zanimljivo imati strukture transakcija koje omogućavaju plać
 PayJoin je specifična struktura Bitcoin transakcije koja poboljšava privatnost korisnika prilikom trošenja kroz saradnju sa primaocem plaćanja.
 
 
+
 LaurentMT je prvi put nazvao ovu metodu "*steganografske transakcije*" 2015. godine, prema dokumentu dostupnom [ovde](https://gist.githubusercontent.com/LaurentMT/e758767ca4038ac40aaf/raw/c8125f6a3c3d0e90246dc96d3b603690ab6f1dcc/gistfile1.txt). Tehniku je kasnije usvojio Samourai Wallet, koji je 2018. postao prvi korisnik koji ju je implementirao sa alatom Stowaway. Koncept PayJoin se takođe može pronaći u [BIP79](https://github.com/Bitcoin/bips/blob/master/bip-0079.mediawiki) i [BIP78](https://github.com/Bitcoin/bips/blob/master/bip-0078.mediawiki). Nekoliko termina se koristi za označavanje PayJoin-a:
+
 
 
 
