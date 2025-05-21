@@ -2186,7 +2186,7 @@ To znači da za svaku jedinicu težine, transakcija A nudi više naknada nego tr
 ![BTC204](assets/fr/095.webp)
 
 
-Stoga je korisniku uvek zanimljivije da troši što manje ulaza u svojim transakcijama. Međutim, potrebno je potrošiti dovoljne količine kako bi se moglo zadovoljiti izlazno plaćanje. Kada upravljate svojim portfoliom, potrebno je da imate dovoljno velike UTXO-e.
+Stoga je korisniku uvek zanimljivije da troši što manje ulaza u svojim transakcijama. Međutim, potrebno je potrošiti dovoljne količine kako bi se moglo zadovoljiti izlazno plaćanje. Kada upravljate svojim setom UTXO-a, potrebno je da imate dovoljno velike UTXO-e.
 
 
 Princip konsolidacije je upravo da se iskoriste periodi kada su naknade niske na Bitcoin-u kako bi se spojili manji UTXO-ovi u jedan veći. Na ovaj način, kada naknade porastu na Bitcoin-u, moći ćete da obavljate transakcije sa minimalnim brojem ulaza, i stoga trošite manje na naknade u apsolutnim iznosima. Cilj je, dakle, predvideti obavezne transakcije koje će se obavljati tokom perioda visokih naknada.
@@ -2638,7 +2638,7 @@ U istoj temi možemo pronaći [poruku od hashcoin kao odgovor na Duncan Townsend
 ### Zerolink
 
 
-Zerolink je sveobuhvatan protokol za mešanje koji uključuje Chaumian coinjoin-ove i razne strategije za zaštitu anonimnosti korisnika protiv različitih oblika analize lanca, posebno minimiziranjem grešaka povezanih sa upravljanjem portfoliom UTXO-va. Ovaj protokol [su predstavili nopara73 i TDevD 2017. godine](https://github.com/nopara73/ZeroLink/blob/master/README.md).
+Zerolink je sveobuhvatan protokol za mešanje koji uključuje Chaumian coinjoin-ove i razne strategije za zaštitu anonimnosti korisnika protiv različitih oblika analize lanca, posebno minimiziranjem grešaka povezanih sa upravljanjem setom UTXO-a. Ovaj protokol [su predstavili nopara73 i TDevD 2017. godine](https://github.com/nopara73/ZeroLink/blob/master/README.md).
 
 
 ![BTC204](assets/fr/126.webp)
