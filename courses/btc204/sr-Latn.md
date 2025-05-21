@@ -3120,14 +3120,14 @@ https://planb.network/tutorials/privacy/on-chain/coinjoin-samourai-wallet-e56680
 
 https://planb.network/tutorials/privacy/on-chain/coinjoin-dojo-c4b20263-5b30-4c74-ae59-dc8d0f8715c2
 
-## [Skupovi anonimnosti](https://planb.network/resources/glossary/anonsets-anonymity-sets)
+## Skupovi anonimnosti
 
 
 <chapterId>be1093dc-1a74-40e5-9545-2b97a7d7d431</chapterId>
 
 
 
-Proučivši kako coinjoin-ovi funkcionišu i probleme koji su uključeni u efikasno mešanje, sada ćemo saznati kako meriti njihovu efikasnost. Kako možemo odrediti da li je coinjoining proces bio efikasan i koji stepen anonimnosti je UTXO deo stekao? To je ono što ćemo saznati u ovom poglavlju sa skupovima anonimnosti ili "anonsetovima".
+Proučivši kako coinjoin-ovi funkcionišu i probleme koji su uključeni u efikasno mešanje, sada ćemo saznati kako meriti njihovu efikasnost. Kako možemo odrediti da li je coinjoining proces bio efikasan i koji stepen anonimnosti je UTXO deo stekao? To je ono što ćemo saznati u ovom poglavlju sa skupovima anonimnosti ili ["anonsetovima"](https://planb.network/resources/glossary/anonsets-anonymity-sets).
 
 
 ### Podsetnik o korisnosti CoinJoin-a
@@ -3366,7 +3366,7 @@ Ef = E_R - E_M
 $$
 
 
-Na primer, za strukturu Whirlpool CoinJoin 5x5, maksimalna entropija je $10.5469$ :
+Na primer, za strukturu Whirlpool CoinJoin 5x5, maksimalna entropija je $10.5469$:
 
 
 $$
@@ -3380,7 +3380,7 @@ Ef &= 0 \text{ bits}
 $$
 
 
-Ovaj indikator je takođe izražen kao procenat. Formula koja se koristi je sledeća: :
+Ovaj indikator je takođe izražen kao procenat. Formula koja se koristi je sledeća:
 
 
 
@@ -3890,10 +3890,10 @@ Ono što nam je potrebno da bismo to izbegli jeste alat sposoban da zamagli trag
 ![BTC204](assets/fr/185.webp)
 
 
-### Šta je [rikošet](https://planb.network/resources/glossary/ricochet)?
+### Šta je (Rikošet)?
 
 
-Rikošet je tehnika koja se sastoji od izvođenja nekoliko fiktivnih transakcija prema sebi (sweep) kako bi se simulirao transfer Bitcoin vlasništva. Ovaj alat se razlikuje od drugih struktura transakcija o kojima smo razgovarali, jer se ne dobija buduća anonimnost, već oblik retrospektivne anonimnosti. U stvari, rikošet zamagljuje specifičnosti koje mogu ugroziti zamenljivost Bitcoin novčića zbog njegove prošlosti.
+[Rikošet](https://planb.network/resources/glossary/ricochet) je tehnika koja se sastoji od izvođenja nekoliko fiktivnih transakcija prema sebi (sweep) kako bi se simulirao transfer Bitcoin vlasništva. Ovaj alat se razlikuje od drugih struktura transakcija o kojima smo razgovarali, jer se ne dobija buduća anonimnost, već oblik retrospektivne anonimnosti. U stvari, rikošet zamagljuje specifičnosti koje mogu ugroziti zamenljivost Bitcoin novčića zbog njegove prošlosti.
 
 
 Da bi se ublažio trag koji je prethodni događaj ostavio na novčiću, kao što su CoinJoin ciklusi, rikošet izvršava četiri uzastopne transakcije u kojima korisnik prenosi sredstva sebi na različite adrese.
@@ -4105,10 +4105,10 @@ Hajde da rezimiramo kako funkcioniše Adaptor Signature u coinswap-u. U početku
 Imajte na umu da je coinswaps prvi predložio [Gregory Maxwell u oktobru 2013. na BitcoinTalk-u](https://bitcointalk.org/index.php?topic=321228.0).
 
 
-### Atomska razmena ([eng. atomic swap](https://planb.network/resources/glossary/atomic-swap))
+### Atomska razmena
 
 
-Na sličan način kao coinswap, i koristeći iste tipove pametnih ugovora, moguće je izvršiti i atomske razmene. Atomska razmena omogućava direktnu razmenu različitih kriptovaluta, kao što su BTC i XMR, između dva korisnika bez potrebe za poverenjem ili intervencijom posrednika. Ove razmene se nazivaju "atomske" jer imaju samo dva moguća ishoda: ili je zamena uspešna i obe strane su zadovoljne, ili ne uspe i svaka zadržava svoje originalne kriptovalute, eliminišući potrebu za poverenjem drugoj strani.
+Na sličan način kao coinswap, i koristeći iste tipove pametnih ugovora, moguće je izvršiti i atomske razmene. Atomska razmena ([eng. atomic swap](https://planb.network/resources/glossary/atomic-swap)) omogućava direktnu razmenu različitih kriptovaluta, kao što su BTC i XMR, između dva korisnika bez potrebe za poverenjem ili intervencijom posrednika. Ove razmene se nazivaju "atomske" jer imaju samo dva moguća ishoda: ili je zamena uspešna i obe strane su zadovoljne, ili ne uspe i svaka zadržava svoje originalne kriptovalute, eliminišući potrebu za poverenjem drugoj strani.
 
 
 ![BTC204](assets/fr/197.webp)
@@ -4172,10 +4172,10 @@ Do sada smo uglavnom proučavali metode poverljivosti na nivou samih transakcija
 U Delu 4, razgovarali smo o važnosti korišćenja kompletnog čvora za zaštitu poverljivosti vaših transakcija. Međutim, važno je razumeti da i vaš čvor može biti podložan napadima koji pokušavaju da izvuku informacije o vašim aktivnostima. Stoga ćemo u ovom poglavlju razmotriti različite mere koje možete preduzeti za zaštitu vaše privatnosti, ne na nivou samih transakcija ili Bitcoin tokova, već na nivou mreže.
 
 
-### [Maslačak (eng. Dandelion)](https://planb.network/resources/glossary/dandelion)
+### Maslačak (eng. Dandelion)
 
 
-Jedan od načina da se izbegnu razni napadi de-anonimizacije je korišćenje Dandelion predloga. Ovaj protokol emitovanja je formalizovan u BIP156, ali nikada nije implementiran na Bitcoin-u.
+Jedan od načina da se izbegnu razni napadi de-anonimizacije je korišćenje [Dandelion]((https://planb.network/resources/glossary/dandelion) predloga. Ovaj protokol emitovanja je formalizovan u BIP156, ali nikada nije implementiran na Bitcoin-u.
 
 
 Ideja iza Dandelion-a je poboljšanje poverljivosti usmeravanja transakcija u Bitcoin mreži kako bi se suprotstavilo raznim oblicima napada. Njegov glavni cilj je sakriti izvorni čvor koji je inicijalno emitovao transakciju na mreži. Otkrivanje ovog čvora moglo bi omogućiti povezivanje Bitcoin transakcije sa specifičnim IP adrese (ako čvor radi na clearnet-u), što bi moglo pružiti ulaznu tačku za analizu lanca.
@@ -4255,10 +4255,10 @@ P2P V2 takođe pomaže u smanjenju rizika od cenzure i napada detektovanjem spec
 P2P V2 transport je uključen kao opcija (podrazumevano onemogućena) u Bitcoin Core verziji 26.0, implementiranoj u decembru 2023. Zatim je podrazumevano omogućena u verziji 27.0 iz aprila 2024. Može se modifikovati sa opcijom `v2transport=` u konfiguracionoj datoteci.
 
 
-### [Tor](https://planb.network/resources/glossary/tor-the-onion-router)
+### Tor
 
 
-Još jedno jednostavno rešenje za izbegavanje rizika od gubitka poverljivosti za mrežni čvor je da ga u potpunosti pokrenete pod Tor-om.
+Još jedno jednostavno rešenje za izbegavanje rizika od gubitka poverljivosti za mrežni čvor je da ga u potpunosti pokrenete pod [Tor-om](https://planb.network/resources/glossary/tor-the-onion-router).
 
 
 Tor je mreža relej servera (čvorova) koja anonimizuje poreklo TCP konekcija na Internetu. Radi tako što enkapsulira podatke u nekoliko slojeva enkripcije. Svaki relej čvor uklanja sloj kako bi otkrio adresu sledećeg čvora, sve dok se ne dostigne konačno odredište. Tor mreža obezbeđuje anonimnost sprečavanjem posredničkih čvorova da znaju i poreklo i odredište podataka, što posmatraču čini veoma teškim praćenje aktivnosti korisnika.
@@ -4388,16 +4388,12 @@ https://planb.network/courses/46b0ced2-9028-4a61-8fbc-3b005ee8d70f
 
 
 ---
-### [Ponovno upotrebljivi kod za plaćanje](https://planb.network/resources/glossary/reusable-payment-code)
+### [Ponovno upotrebljivi kod za plaćanje]
 
 
-Kao što je ranije pomenuto, višekratni kod za plaćanje se nalazi na dubini 3 HD novčanika, što ga čini uporedivim sa `xpub`, kako u smislu njegove pozicije u strukturi novčanika, tako i u smislu njegove uloge.
-
+Kao što je ranije pomenuto, višekratni kod za plaćanje ([eng. reusable payment code] (https://planb.network/resources/glossary/reusable-payment-code) se nalazi na dubini 3 HD novčanika, što ga čini uporedivim sa `xpub`, kako u smislu njegove pozicije u strukturi novčanika, tako i u smislu njegove uloge.
 
 Kod za plaćanje od 80 bajtova se može razlažiti na sledeći način:
-
-
-
 
 - **Bajt `0`: Verzija**. Za prvu verziju BIP47, ovaj bajt je postavljen na `0x01` ;
 - **Bajt `1`: Polje bita**. Ovaj prostor je rezervisan za integrisanje dodatnih indikacija za specifične namene. Za klasičnu upotrebu PayNym-a, ovaj bajt je postavljen na `0x00` ;
@@ -5385,7 +5381,7 @@ $$ s = \text{SHA256}(Sx) $$
 
 
 
-- Na isti način kao i Alisa, Bob izračunava $s \cdot G$ tačku na eliptičnoj krivi. Zatim dodaje ovu tajnu tačku svom javnom ključu $B$. On tada dobija novu tačku na eliptičnoj krivi, koju tumači kao javni ključ $K0$ :
+- Na isti način kao i Alisa, Bob izračunava $s$ tačku na eliptičnoj krivi. Zatim dodaje ovu tajnu tačku svom javnom ključu $B$. On tada dobija novu tačku na eliptičnoj krivi, koju tumači kao javni ključ $K0$ :
 
 
 $$ K0 = B + s \cdot G $$
@@ -5848,9 +5844,9 @@ $$ p_0 = (b_{\text{spend}} + \text{Hash}(\text{inputHash} \cdot b_{\text{scan}} 
 
 
 - $B_{\text{scan}}$: Bobov javni ključ za skeniranje (statička adresa)
-- $b_{\text{scan}}$ : Bobov privatni ključ skeniranja
-- $B_{\text{spend}}$ : Bobov javni ključ za trošenje (statička adresa)
-- $b_{\text{spend}}$ : Bobov privatni ključ za trošenje
+- $b_{\text{scan}}$: Bobov privatni ključ skeniranja
+- $B_{\text{spend}}$: Bobov javni ključ za trošenje (statička adresa)
+- $b_{\text{spend}}$: Bobov privatni ključ za trošenje
 - $A$ : Zbir ulaza javnih ključeva (tweak)
 - $a$ : Privatni ključ koji odgovara prilagođenom javnom ključu
 - $H$ : Najmanji UTXO (leksikografski) korišćen kao ulaz za Hash
@@ -5890,8 +5886,8 @@ Statička adresa koji je objavio Bob sada će se sastojati od $B_{\text{scan}}$ 
 $$ B = B_{\text{scan}} \text{ ‖ } B_1 $$
 
 
-> *Počinjemo samo od oznake 1 jer je oznaka 0 rezervisana za promenu.
-Alisa će, sa svoje strane, izvesti jednokratnu uplatu $P$ adrese  na isti način kao i ranije, ali koristeći novi $B_1$ umesto $B_{\text{spend}}$ :* <
+> *Počinjemo samo od oznake 1 jer je oznaka 0 rezervisana za promenu.*
+Alisa će, sa svoje strane, izvesti jednokratnu uplatu $P$ adrese  na isti način kao i ranije, ali koristeći novi $B_1$ umesto $B_{\text{spend}}$ : <
 
 
 $$ P_0 = B_1 + \text{Hash}(\text{inputHash} \cdot a \cdot B_{\text{scan}} \text{ ‖ } 0) \cdot G $$
