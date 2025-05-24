@@ -99,7 +99,7 @@ Sada ste na webu interfejsu vašeg menadžera lozinki.
 ## Kako postaviti Bitwarden?
 
 
-Da bismo počeli, potvrdićemo naš email. Kliknite na "*Pošalji Email*".
+Da bismo počeli, potvrdićemo naš email. Kliknite na "*Send Email*".
 
 ![BITWARDEN](assets/notext/11.webp)
 
@@ -125,7 +125,7 @@ Da biste to uradili, idite na karticu "*Security*" u meniju "*Settings*".
 
 ![BITWARDEN](assets/notext/14.webp)
 
-Zatim kliknite na karticu "*Dvofaktorska prijava*".
+Zatim kliknite na karticu "*Two-step login*".
 
 ![BITWARDEN](assets/notext/15.webp)
 
@@ -141,7 +141,7 @@ Zatim skenirajte QR kod sa vašom 2FA aplikacijom.
 
 ![BITWARDEN](assets/notext/18.webp)
 
-Unesite 6-cifreni kod zabeležen u vašoj 2FA aplikaciji, zatim kliknite na dugme "*Uključi*". ![BITWARDEN](assets/notext/19.webp)
+Unesite 6-cifreni kod zabeležen u vašoj 2FA aplikaciji, zatim kliknite na dugme "*Turn on*". ![BITWARDEN](assets/notext/19.webp)
 
 Dvofaktorska autentifikacija je uspešno postavljena na vašem nalogu.
 
@@ -199,11 +199,11 @@ U polje "*URI 1*" možete uneti naziv domena veb-sajta.
 
 ![BITWARDEN](assets/notext/32.webp)
 
-I konačno, u polju "*Beleške*", možete dodati dodatne detalje ako je potrebno.
+I konačno, u polju "*Notes*", možete dodati dodatne detalje ako je potrebno.
 
 ![BITWARDEN](assets/notext/33.webp)
 
-Kada završite sa popunjavanjem svih ovih polja, kliknite na dugme "*Sačuvaj*".
+Kada završite sa popunjavanjem svih ovih polja, kliknite na dugme "*Save*".
 
 ![BITWARDEN](assets/notext/34.webp)
 
@@ -268,7 +268,7 @@ Izaberite svoj pregledač sa liste koja je pružena. Za ovaj primer, koristim Fi
 ![BITWARDEN](assets/notext/45.webp)
 
 
-Kliknite na dugme "*Dodaj u Firefox*".
+Kliknite na dugme "*Add to Firefox*".
 
 
 ![BITWARDEN](assets/notext/46.webp)
@@ -380,7 +380,7 @@ Međutim, u slučaju problema, možete koristiti lozinku i eksterni medijum da p
 Stoga vam savetujem da redovno pravite ove rezervne kopije kako bi uvek uključivale vaše najnovije kredencijale. Da ne biste uznemiravali svog prijatelja, koji ima kopiju lozinke za šifrovanje, sa svakom novom rezervnom kopijom, možete sačuvati ovu lozinku u svom menadžeru lozinki. Ovo nije zamišljeno kao rezervna kopija, pošto vaš prijatelj već ima fizičku kopiju, već da bi se pojednostavili vaši budući postupci izvoza.
 
 
-Da biste nastavili sa izvozom, prilično je jednostavno: idite na odeljak "*Alati*" vašeg Bitwarden menadžera, zatim izaberite "*Izvezi trezor*".
+Da biste nastavili sa izvozom, prilično je jednostavno: idite na odeljak "*Tools*" vašeg Bitwarden menadžera, zatim izaberite "*Export vault*".
 
 ![BITWARDEN](assets/notext/65.webp)
 
@@ -396,7 +396,7 @@ Ovde je važno izabrati jaku, jedinstvenu i nasumično generisanu lozinku za ši
 
 ![BITWARDEN](assets/notext/68.webp)
 
-Kliknite na "*Potvrdi format*" i unesite svoju glavnu lozinku da biste nastavili sa izvozom.
+Kliknite na "*Confirm format*" i unesite svoju glavnu lozinku da biste nastavili sa izvozom.
 
 ![BITWARDEN](assets/notext/69.webp)
 
