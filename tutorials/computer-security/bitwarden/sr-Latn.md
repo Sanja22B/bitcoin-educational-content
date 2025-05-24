@@ -8,13 +8,13 @@ description: Kako postaviti menadžer lozinki?
 U digitalnom dobu, moramo upravljati mnoštvom online naloga koji pokrivaju različite aspekte naših svakodnevnih života, uključujući bankarstvo, finansijske platforme, emailove, skladištenje fajlova, zdravlje, administraciju, društvene mreže, video igre, itd.
 
 
-Da bismo se autentifikovali na svakom od ovih naloga, koristimo identifikator, često email Address, u pratnji lozinke. Suočeni sa nemogućnošću pamćenja velikog broja jedinstvenih lozinki, neko bi mogao biti u iskušenju da ponovo koristi istu lozinku ili da malo modifikuje zajedničku osnovu kako bi je lako zapamtio. Međutim, ove prakse ozbiljno ugrožavaju sigurnost vaših naloga.
+Da bismo se autentifikovali na svakom od ovih naloga, koristimo identifikator, često email adresu, u pratnji lozinke. Suočeni sa nemogućnošću pamćenja velikog broja jedinstvenih lozinki, neko bi mogao biti u iskušenju da ponovo koristi istu lozinku ili da malo modifikuje zajedničku osnovu kako bi je lako zapamtio. Međutim, ove prakse ozbiljno ugrožavaju sigurnost vaših naloga.
 
 
 Prvi princip koji treba slediti za lozinke je da ih ne koristite ponovo. Svaki online nalog treba da bude zaštićen jedinstvenom lozinkom koja je potpuno različita od ostalih. Ovo je važno jer, ako napadač uspe da kompromituje jednu od vaših lozinki, ne želite da ima pristup svim vašim nalozima. Imati jedinstvenu lozinku za svaki nalog izoluje potencijalne napade i ograničava njihov obim. Na primer, ako koristite istu lozinku za platformu za video igre i za vaš email, i ta lozinka bude kompromitovana putem phishing sajta povezanog sa platformom za igre, napadač bi tada lako mogao da pristupi vašem emailu i preuzme kontrolu nad svim vašim drugim online nalozima.
 
 
-Drugi suštinski princip je jačina lozinke. Ložinka se smatra jakom ako je teško probiti je metodom grube sile, odnosno pogoditi je kroz pokušaje i greške. To znači da vaše lozinke moraju biti što nasumičnije, duge i uključivati raznovrsne karaktere (mala slova, velika slova, brojeve i simbole).
+Drugi suštinski princip je jačina lozinke. Lozinka se smatra jakom ako je teško probiti je metodom grube sile, odnosno pogoditi je kroz mnoštvo pokušaja i grešaka. To znači da vaše lozinke moraju biti što nasumičnije, duge i uključivati raznovrsne karaktere (mala slova, velika slova, brojeve i simbole).
 
 
 Primena ova dva principa bezbednosti lozinki (jedinstvenost i robusnost) može biti teška u svakodnevnom životu, jer je gotovo nemoguće zapamtiti jedinstvenu, nasumičnu i jaku lozinku za sve naše naloge. Tu na scenu stupa menadžer lozinki.
@@ -26,7 +26,7 @@ U ovom vodiču ćemo istražiti kako postaviti i koristiti menadžer lozinki da 
 
 https://planb.network/tutorials/computer-security/authentication/keepass-f8073bb7-5b4a-4664-9246-228e307be246
 
-Upozorenje: Menadžer lozinki je odličan za čuvanje lozinki, ali **nikada ne bi trebalo da čuvate svoju Bitcoin Wallet's Mnemonic frazu u njemu!** Zapamtite, Mnemonic fraza treba da bude isključivo sačuvana u fizičkom formatu, kao što je papir ili metal.
+Upozorenje: Menadžer lozinki je odličan za čuvanje lozinki, ali **nikada ne bi trebalo da čuvate svoju Bitcoin Wallet's bezbednosnu frazu u njemu!** Zapamtite, bezbednosna fraza treba da bude isključivo sačuvana u fizičkom formatu, kao što je papir ili metal.
 
 
 ## Uvod u Bitwarden
@@ -36,7 +36,7 @@ Bitwarden je menadžer lozinki pogodan za početnike i napredne korisnike. Nudi 
 
 ![BITWARDEN](assets/notext/01.webp)
 
-Bitwarden vam omogućava da sačuvate svoje lozinke online i sinhronizujete ih na svim svojim uređajima, uz osiguranje end-to-end enkripcije sa vašom glavnom lozinkom. Ovo vam omogućava, na primer, pristup vašim lozinkama i na računaru i na pametnom telefonu, uz sinhronizaciju između njih. Pošto su vaše lozinke enkriptovane, ostaju nedostupne bilo kome, uključujući Bitwarden, bez ključa za dekripciju koji je vaša glavna lozinka.
+Bitwarden vam omogućava da sačuvate svoje lozinke online i sinhronizujete ih na svim svojim uređajima, uz osiguranje end-to-end enkripcije sa vašom glavnom lozinkom. Ovo vam omogućava, na primer, pristup vašim lozinkama i na računaru i na pametnom telefonu, uz sinhronizaciju između njih. Pošto su vaše lozinke enkriptovane, ostaju nedostupne bilo kome, uključujući Bitwarden-u, bez ključa za dekripciju koji je vaša glavna lozinka.
 
 
 Štaviše, Bitwarden je open-source, što znači da softver može biti revidiran od strane nezavisnih stručnjaka. Što se tiče cena, Bitwarden nudi tri plana:
@@ -50,7 +50,7 @@ Bitwarden vam omogućava da sačuvate svoje lozinke online i sinhronizujete ih n
 
 Po mom mišljenju, ove cene su fer. Besplatna verzija je odlična opcija za početnike, a premium verzija nudi veoma dobru vrednost za novac u poređenju sa drugim menadžerima lozinki na tržištu, dok nudi više funkcija. Pored toga, činjenica da je Bitwarden open-source je velika prednost. Stoga, to je zanimljiv kompromis, posebno za početnike.
 
-Još jedna funkcija Bitwardena je mogućnost samostalnog hostovanja vašeg menadžera lozinki ako posedujete, na primer, NAS kod kuće. Postavljanjem ove konfiguracije, vaše lozinke nisu smeštene na Bitwardenovim serverima, već na vašim sopstvenim serverima. Ovo vam daje potpunu kontrolu nad dostupnošću vaših lozinki. Međutim, ova opcija zahteva rigorozno upravljanje rezervnim kopijama kako bi se izbegao gubitak pristupa. Stoga je Bitwardenovo samostalno hostovanje više prilagođeno naprednim korisnicima, i o tome ćemo razgovarati u drugom vodiču.
+Još jedna funkcija Bitwarden-a je mogućnost samostalnog hostovanja vašeg menadžera lozinki ako posedujete, na primer, NAS kod kuće. Postavljanjem ove konfiguracije, vaše lozinke nisu smeštene na Bitwardenovim serverima, već na vašim sopstvenim serverima. Ovo vam daje potpunu kontrolu nad dostupnošću vaših lozinki. Međutim, ova opcija zahteva rigorozno upravljanje rezervnim kopijama kako bi se izbegao gubitak pristupa. Stoga je Bitwardenovo samostalno hostovanje više prilagođeno naprednim korisnicima, i o tome ćemo razgovarati u drugom vodiču.
 
 ## Kako kreirati Bitwarden nalog?
 
@@ -59,14 +59,14 @@ Posetite [Bitwarden vebsajt](https://bitwarden.com/) i kliknite na "*Get Started
 
 ![BITWARDEN](assets/notext/03.webp)
 
-Počnite unosom svoje email adrese Address kao i svog imena ili nadimka.
+Počnite unosom svoje email adrese kao i svog imena ili nadimka.
 
 ![BITWARDEN](assets/notext/04.webp)
 
 Zatim, treba da postavite svoju glavnu lozinku. Kao što smo videli u uvodu, ova lozinka je veoma važna jer vam omogućava pristup svim ostalim sačuvanim lozinkama u menadžeru. Ona predstavlja dva glavna rizika: gubitak i kompromitovanje. Ako izgubite pristup ovoj lozinci, više nećete moći da pristupite svim svojim akreditivima. Ako vaša lozinka bude ukradena, napadač će moći da pristupi svim vašim nalozima.
 
 
-Da biste minimizirali rizik od gubitka, preporučujem da napravite fizičku rezervnu kopiju vaše glavne lozinke na papiru i da je čuvate na sigurnom mestu. Ako je moguće, Seal ovu rezervnu kopiju u sigurnoj koverti kako biste redovno osigurali da joj niko drugi nije pristupio.
+Da biste minimizirali rizik od gubitka, preporučujem da napravite fizičku rezervnu kopiju vaše glavne lozinke na papiru i da je čuvate na sigurnom mestu. Ako je moguće, zatvorite ovu rezervnu kopiju u sigurnoj koverti kako biste redovno osigurali da joj niko drugi nije pristupio.
 
 
 Da biste sprečili kompromitovanje vaše glavne lozinke, ona mora biti izuzetno robusna. Trebalo bi da bude što duža, koristi širok spektar karaktera i bude izabrana nasumično. U 2024. godini, minimalne preporuke za sigurnu lozinku su 13 karaktera uključujući brojeve, mala i velika slova, kao i simbole, pod uslovom da je lozinka zaista nasumična. Međutim, preporučujem da se odlučite za lozinku od najmanje 20 karaktera, uključujući sve moguće tipove karaktera, kako biste osigurali njenu sigurnost na duži period.
@@ -84,7 +84,7 @@ Zatim kliknite na dugme "*Create an account*".
 
 ![BITWARDEN](assets/notext/07.webp)
 
-Sada se možete prijaviti na svoj novi Bitwarden nalog. Unesite svoj email Address.
+Sada se možete prijaviti na svoj novi Bitwarden nalog. Unesite svoj email.
 
 ![BITWARDEN](assets/notext/08.webp)
 
@@ -92,14 +92,14 @@ Zatim unesite svoju glavnu lozinku.
 
 ![BITWARDEN](assets/notext/09.webp)
 
-Sada ste na webu Interface vašeg menadžera lozinki.
+Sada ste na webu interfejsu vašeg menadžera lozinki.
 
 ![BITWARDEN](assets/notext/10.webp)
 
 ## Kako postaviti Bitwarden?
 
 
-Da bismo počeli, potvrdićemo naš email Address. Kliknite na "*Pošalji Email*".
+Da bismo počeli, potvrdićemo naš email. Kliknite na "*Pošalji Email*".
 
 ![BITWARDEN](assets/notext/11.webp)
 
@@ -111,7 +111,7 @@ Konačno, prijavite se ponovo.
 
 ![BITWARDEN](assets/notext/13.webp)
 
-Prvo i najvažnije, toplo vam savetujem da postavite dvofaktorsku autentifikaciju (2FA) kako biste osigurali svoj menadžer lozinki. Imate izbor između korišćenja TOTP aplikacije ili fizičkog sigurnosnog ključa. Aktiviranjem 2FA, svaki put kada se prijavite na svoj Bitwarden nalog, bićete upitani ne samo za svoju glavnu lozinku već i za dokaz vašeg drugog faktora autentifikacije. Ovo je dodatni Layer nivo sigurnosti, posebno koristan u slučaju da je vaš papirni bekap glavne lozinke kompromitovan.
+Prvo i najvažnije, toplo vam savetujem da postavite dvofaktorsku autentifikaciju (2FA) kako biste osigurali svoj menadžer lozinki. Imate izbor između korišćenja TOTP aplikacije ili fizičkog sigurnosnog ključa. Aktiviranjem 2FA, svaki put kada se prijavite na svoj Bitwarden nalog, bićete upitani ne samo za svoju glavnu lozinku već i za dokaz vašeg drugog faktora autentifikacije. Ovo je dodatni nivo sigurnosti, posebno koristan u slučaju da je vaš papirni bekap (rezervna kopija) glavne lozinke kompromitovan.
 
 
 Ako niste sigurni kako da postavite i koristite ove 2FA uređaje, preporučujem da pratite ova 2 druga uputstva:
@@ -151,7 +151,7 @@ Sada, ako pokušate ponovo da se prijavite u svoj menadžer, prvo ćete morati d
 
 ![BITWARDEN](assets/notext/21.webp)
 
-U postavkama, takođe imate opciju da prilagodite svog menadžera u kartici "*Preferences*". Ovde možete promeniti trajanje pre nego što se vaš menadžer automatski zaključa, kao i jezik i temu Interface.
+U postavkama, takođe imate opciju da prilagodite svog menadžera u kartici "*Preferences*". Ovde možete promeniti trajanje pre nego što se vaš menadžer automatski zaključa, kao i jezik i temu korisničkog interfejsa.
 
 ![BITWARDEN](assets/notext/22.webp)
 
@@ -185,9 +185,9 @@ Opcija "*Folder*" omogućava vam da klasifikujete svoje akreditive u foldere. Za
 
 ![BITWARDEN](assets/notext/28.webp)
 
-U polje "*Username*" unesite svoje korisničko ime, koje je obično vaša email adresa Address. ![BITWARDEN](assets/notext/29.webp)
+U polje "*Username*" unesite svoje korisničko ime, koje je obično vaša email adresa. ![BITWARDEN](assets/notext/29.webp)
 
-Zatim, u polje "*Password*" možete uneti svoju lozinku. Međutim, toplo preporučujem da dozvolite Bitwarden generate da generiše dugu, nasumičnu i jedinstvenu lozinku za vas. Ovo osigurava da imate jaku lozinku. Da biste koristili ovu funkciju, kliknite na ikonu sa dvostrukom strelicom iznad polja koje treba popuniti.
+Zatim, u polje "*Password*" možete uneti svoju lozinku. Međutim, toplo preporučujem da dozvolite Bitwarden da generiše dugu, nasumičnu i jedinstvenu lozinku za vas. Ovo osigurava da imate jaku lozinku. Da biste koristili ovu funkciju, kliknite na ikonu sa dvostrukom strelicom iznad polja koje treba popuniti.
 
 ![BITWARDEN](assets/notext/30.webp)
 
@@ -227,7 +227,7 @@ Unesite ime za vašu fasciklu.
 
 ![BITWARDEN](assets/notext/39.webp)
 
-Zatim kliknite na "*Sačuvaj*".
+Zatim kliknite na "*Save*".
 
 ![BITWARDEN](assets/notext/40.webp)
 
@@ -250,7 +250,7 @@ Ako više volite da koristite samo veb verziju Bitwardena, potpuno je moguće os
 ## Kako koristiti Bitwarden ekstenziju za pregledač?
 
 
-Prvo, možete postaviti ekstenziju za pregledač ako želite. Ova ekstenzija radi kao smanjena verzija vašeg menadžera i nudi vam mogućnost automatskog čuvanja novih lozinki, generate sugestija za sigurne lozinke, i automatsko popunjavanje vaših kredencijala na stranicama za prijavu na web sajtove.
+Prvo, možete postaviti ekstenziju za pregledač ako želite. Ova ekstenzija radi kao smanjena verzija vašeg menadžera i nudi vam mogućnost automatskog čuvanja novih lozinki, generisanje sugestija za sigurne lozinke, i automatsko popunjavanje vaših kredencijala na stranicama za prijavu na web sajtove.
 
 
 Svakodnevna upotreba ovog dodatka je izuzetno praktična, ali može otvoriti i nove vektore napada. Neki stručnjaci za sajber bezbednost, stoga, savetuju protiv korišćenja dodataka za pregledače za upravljanje lozinkama. Međutim, ako odlučite da koristite Bitwarden dodatak, evo kako da nastavite:
@@ -280,7 +280,7 @@ Zatim možete prikačiti Bitwarden na traku ekstenzija za lakši pristup. Klikni
 ![BITWARDEN](assets/notext/47.webp)
 
 
-Unesite svoj email Address.
+Unesite svoj email.
 
 
 ![BITWARDEN](assets/notext/48.webp)
@@ -317,15 +317,15 @@ Ekstenzija je takođe dizajnirana da detektuje kreiranje novih naloga. Na primer
 
 ![BITWARDEN](assets/notext/54.webp)
 
-Klikom na ovaj predlog koji se pojavljuje, ekstenzija se otvara. Omogućava mi da unesem detalje novog identifikatora i generate jaku, jedinstvenu lozinku.
+Klikom na ovaj predlog koji se pojavljuje, ekstenzija se otvara. Omogućava mi da unesem detalje novog identifikatora i generišem jaku, jedinstvenu lozinku.
 
 ![BITWARDEN](assets/notext/55.webp)
 
-Nakon što popunite informacije i kliknete na "*Save*", ekstenzija čuva akreditive.
+Nakon što popunite informacije i kliknete na "*Save*", ekstenzija čuva kredencijale.
 
 ![BITWARDEN](assets/notext/56.webp)
 
-Zatim ekstenzija automatski popunjava naše akreditive u odgovarajuća polja na vebsajtu.
+Zatim ekstenzija automatski popunjava naše kredencijale u odgovarajuća polja na vebsajtu.
 
 ![BITWARDEN](assets/notext/57.webp)
 
@@ -336,11 +336,11 @@ Da biste instalirali Bitwarden desktop softver, počnite tako što ćete otići 
 
 ![BITWARDEN](assets/notext/58.webp)
 
-Kada se preuzimanje završi, nastavite sa instalacijom softvera na vašem računaru. Prilikom prvog pokretanja Bitwarden softvera, biće potrebno da unesete svoje akreditive kako biste otključali vaš menadžer lozinki.
+Kada se preuzimanje završi, nastavite sa instalacijom softvera na vašem računaru. Prilikom prvog pokretanja Bitwarden softvera, biće potrebno da unesete svoje kredencijale kako biste otključali vaš menadžer lozinki.
 
 ![BITWARDEN](assets/notext/59.webp)
 
-Zatim ćete stići na početnu stranicu vašeg menadžera. Interface je skoro isti kao na veb aplikaciji.
+Zatim ćete stići na početnu stranicu vašeg menadžera. Korisnički interfejs je skoro isti kao na veb aplikaciji.
 
 ![BITWARDEN](assets/notext/60.webp)
 
@@ -359,25 +359,25 @@ Kada se povežete, moći ćete da konsultujete i upravljate svim svojim lozinkam
 
 ![BITWARDEN](assets/notext/63.webp)
 
-Da biste poboljšali sigurnost vaše aplikacije, savetujem vam da uđete u postavke i aktivirate zaštitu PIN-om. Ovo će dodati dodatni Layer nivo sigurnosti u slučaju gubitka ili krađe vašeg telefona.
+Da biste poboljšali sigurnost vaše aplikacije, savetujem vam da uđete u postavke i aktivirate zaštitu PIN-om. Ovo će dodati dodatni nivo sigurnosti u slučaju gubitka ili krađe vašeg telefona.
 
 ![BITWARDEN](assets/notext/64.webp)
 
 ## Kako napraviti rezervnu kopiju Bitwardena?
 
-Da biste osigurali da nikada ne izgubite pristup svojim lozinkama, čak i u slučaju gubitka glavne lozinke ili katastrofe koja utiče na Bitwarden servere, savetujem vam da redovno vršite šifrovanu rezervnu kopiju svog menadžera na eksternom mediju.
+Da biste osigurali da nikada ne izgubite pristup svojim lozinkama, čak i u slučaju gubitka glavne lozinke ili katastrofe koja utiče na Bitwarden servere, savetujem vam da redovno uradite šifrovanu rezervnu kopiju svog menadžera na eksternom mediju.
 
 
-Ideja je da šifrujete sve vaše Bitwarden akreditive sa lozinkom koja je različita od vaše glavne lozinke i da sačuvate ovu šifrovanu rezervnu kopiju na USB memoriji ili Hard disku koji čuvate kod kuće, na primer. Zatim možete čuvati fizičku kopiju lozinke za dešifrovanje na odvojenoj lokaciji od mesta gde je medijum za rezervnu kopiju uskladišten. Na primer, možete čuvati USB memoriju kod kuće i poveriti fizičku kopiju lozinke za šifrovanje pouzdanom prijatelju.
+Ideja je da šifrujete sve vaše Bitwarden kredencijale sa lozinkom koja je različita od vaše glavne lozinke i da sačuvate ovu šifrovanu rezervnu kopiju na USB memoriji ili Hard disku koji čuvate kod kuće, na primer. Zatim možete čuvati fizičku kopiju lozinke za dešifrovanje na odvojenoj lokaciji od mesta gde je medijum za rezervnu kopiju uskladišten. Na primer, možete čuvati USB memoriju kod kuće i poveriti fizičku kopiju lozinke za šifrovanje pouzdanom prijatelju.
 
 
 Ova metoda osigurava da čak i ako vaš medij za bekap bude ukraden, vaši podaci će ostati nedostupni bez lozinke za dešifrovanje. Slično, vaš prijatelj neće moći pristupiti vašim podacima bez fizičkog medija.
 
 
-Međutim, u slučaju problema, možete koristiti lozinku i eksterni medijum da ponovo dobijete pristup svojim akreditivima, nezavisno od Bitwardena. Dakle, čak i ako bi Bitwardenovi serveri bili uništeni, i dalje biste imali mogućnost da povratite svoje lozinke.
+Međutim, u slučaju problema, možete koristiti lozinku i eksterni medijum da ponovo dobijete pristup svojim kredencijalima, nezavisno od Bitwardena. Dakle, čak i ako bi Bitwardenovi serveri bili uništeni, i dalje biste imali mogućnost da povratite svoje lozinke.
 
 
-Stoga vam savetujem da redovno pravite ove rezervne kopije kako bi uvek uključivale vaše najnovije akreditive. Da ne biste uznemiravali svog prijatelja, koji ima kopiju lozinke za šifrovanje, sa svakom novom rezervnom kopijom, možete sačuvati ovu lozinku u svom menadžeru lozinki. Ovo nije zamišljeno kao rezervna kopija, pošto vaš prijatelj već ima fizičku kopiju, već da bi se pojednostavili vaši budući postupci izvoza.
+Stoga vam savetujem da redovno pravite ove rezervne kopije kako bi uvek uključivale vaše najnovije kredencijale. Da ne biste uznemiravali svog prijatelja, koji ima kopiju lozinke za šifrovanje, sa svakom novom rezervnom kopijom, možete sačuvati ovu lozinku u svom menadžeru lozinki. Ovo nije zamišljeno kao rezervna kopija, pošto vaš prijatelj već ima fizičku kopiju, već da bi se pojednostavili vaši budući postupci izvoza.
 
 
 Da biste nastavili sa izvozom, prilično je jednostavno: idite na odeljak "*Alati*" vašeg Bitwarden menadžera, zatim izaberite "*Izvezi trezor*".
@@ -392,7 +392,7 @@ Zatim izaberite opciju "*Zaštićeno lozinkom*".
 
 ![BITWARDEN](assets/notext/67.webp)
 
-Ovde je važno izabrati jaku, jedinstvenu i nasumično generisanu lozinku za šifrovanje bekapa. Ovo osigurava da, čak i u slučaju krađe vašeg šifrovanog bekapa, napadač neće moći da ga dešifruje metodom grube sile.
+Ovde je važno izabrati jaku, jedinstvenu i nasumično generisanu lozinku za šifrovanje bekapa. Ovo osigurava da, čak i u slučaju krađe vašeg šifrovanog bekapa, napadač neće moći da ga dešifruje metodom silovite pretrage.
 
 ![BITWARDEN](assets/notext/68.webp)
 
