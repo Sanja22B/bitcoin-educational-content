@@ -18,7 +18,7 @@ Keet šifrira sve komunikacije od kraja do kraja i ne traži lične podatke. Reg
 
 
 
-Trenutno (april 2025), Keet nije u potpunosti open-source. Deo izvornog koda je dostupan na [Holepunch-ovom GitHub repozitorijumu](https://github.com/holepunchto), posebno kriptografske i mrežne komponente, ali klijent Interface još uvek nije. Holepunch je, međutim, najavio svoju nameru da celu aplikaciju učini open-source u budućnosti. U zavisnosti od toga kada otkrijete ovaj vodič, ovo je možda već urađeno.
+Trenutno (april 2025), Keet nije u potpunosti open-source. Deo izvornog koda je dostupan na [Holepunch-ovom GitHub repozitorijumu](https://github.com/holepunchto), posebno kriptografske i mrežne komponente, ali klijentski interfejs još uvek nije. Holepunch je, međutim, najavio svoju nameru da celu aplikaciju učini open-source u budućnosti. U zavisnosti od toga kada otkrijete ovaj vodič, ovo je možda već urađeno.
 
 
 
@@ -69,7 +69,7 @@ U ovom vodiču ćemo se koncentrisati na mobilnu verziju, ali imajte na umu da s
 
 
 
-## Kreiraj nalog na Keet
+## Kreirajte nalog na Keet-u
 
 
 
@@ -97,7 +97,7 @@ Prihvatite uslove korišćenja, zatim kliknite na "*Quick setup*".
 
 
 
-Izaberite ime ili nadimak, zatim kliknite na "*Završi podešavanje*".
+Izaberite ime ili nadimak, zatim kliknite na "*Finish setup*".
 
 
 
@@ -125,7 +125,7 @@ Prva stvar koju treba da uradite sa svojim novim Keet nalogom je da sačuvate sv
 
 
 
-Da biste to uradili, kliknite na karticu "*Profil*" u donjem desnom uglu Interface.
+Da biste to uradili, kliknite na karticu "*Profil*" u donjem desnom uglu prozora.
 
 
 
@@ -165,11 +165,11 @@ Pritisnite dugme "*View phrase*" da biste prikazali svoju frazu za oporavak. Pa�
 
 
 
-## Slanje poruka sa Keet
+## Slanje poruka sa Keet-a
 
 
 
-Da biste komunicirali na Keet-u, potrebno je da kreirate "*Rooms*". Da biste to uradili, kliknite na ikonu olovke u gornjem desnom uglu Interface.
+Da biste komunicirali na Keet-u, potrebno je da kreirate "*Rooms*". Da biste to uradili, kliknite na ikonu olovke u gornjem desnom uglu prozora.
 
 
 
@@ -177,7 +177,7 @@ Da biste komunicirali na Keet-u, potrebno je da kreirate "*Rooms*". Da biste to 
 
 
 
-Odaberite "*Nova grupna ćaskanja*".
+Odaberite "*New group chat*".
 
 
 
@@ -185,7 +185,7 @@ Odaberite "*Nova grupna ćaskanja*".
 
 
 
-Izaberite ime i opis za vašu "*Sobu*", zatim kliknite na "*Kreiraj grupni čet*".
+Izaberite ime i opis za vaš "*Room*", zatim kliknite na "*Create group chat*".
 
 
 
@@ -193,7 +193,7 @@ Izaberite ime i opis za vašu "*Sobu*", zatim kliknite na "*Kreiraj grupni čet*
 
 
 
-Vaša "*Soba*" je sada kreirana. Kliknite na ikonu "*+*" u gornjem desnom uglu da pozovete učesnike.
+Vaš "*Room*" je sada kreirana. Kliknite na ikonu "*+*" u gornjem desnom uglu da pozovete učesnike.
 
 
 
@@ -209,7 +209,7 @@ Definišite prava koja dodeljujete novim članovima putem pozivnog linka, kao i 
 
 
 
-Keet će generate link za pridruživanje vašoj "*Sobi*". Možete ga kopirati i podeliti, ili omogućiti ljudima koje želite da pozovete da skeniraju njegov QR kod.
+Keet će generisati link za pridruživanje vašoj "*Room*". Možete ga kopirati i podeliti, ili omogućiti ljudima koje želite da pozovete da skeniraju njegov QR kod.
 
 
 
@@ -225,7 +225,7 @@ Sada možete početi razmenjivati poruke i multimedijalne datoteke. Da biste pok
 
 
 
-Iz ove grupe možete slati privatne poruke određenom članu. Kliknite na profilnu sliku grupe, a zatim izaberite željenog člana u odeljku "*Članovi*".
+Iz ove grupe možete slati privatne poruke određenom članu. Kliknite na profilnu sliku grupe, a zatim izaberite željenog člana u odeljku "*Members*".
 
 
 
@@ -233,7 +233,7 @@ Iz ove grupe možete slati privatne poruke određenom članu. Kliknite na profil
 
 
 
-Kliknite na dugme "*Pošalji zahtev za DM*" i unesite svoju poruku.
+Kliknite na dugme "*Send DM request*" i unesite svoju poruku.
 
 
 
@@ -253,7 +253,7 @@ Kada zahtev za DM bude prihvaćen, naći ćete ovaj kontakt na početnoj stranic
 
 
 
-Sada kada znate kako da koristite Keet i imate nalog, možete ga sinhronizovati i na drugom uređaju, kao što je računar. Da biste to uradili, otvorite aplikaciju na svom mobilnom telefonu, zatim kliknite na "*Profil*" i pristupite "*Podešavanjima*".
+Sada kada znate kako da koristite Keet i imate nalog, možete ga sinhronizovati i na drugom uređaju, kao što je računar. Da biste to uradili, otvorite aplikaciju na svom mobilnom telefonu, zatim kliknite na "*Profil*" i pristupite "*Settings*".
 
 
 
@@ -261,7 +261,7 @@ Sada kada znate kako da koristite Keet i imate nalog, možete ga sinhronizovati 
 
 
 
-Zatim idite na meni "*Moji uređaji*".
+Zatim idite na meni "*My devices*".
 
 
 
@@ -269,7 +269,7 @@ Zatim idite na meni "*Moji uređaji*".
 
 
 
-Kliknite na "*Add device*". Keet će generate link za sinhronizaciju novog uređaja. Kopirajte ovaj link.
+Kliknite na "*Add device*". Keet će generisati link za sinhronizaciju novog uređaja. Kopirajte ovaj link.
 
 
 
@@ -301,7 +301,7 @@ Nalepite vezu koju je obezbedio vaš prvi uređaj, a zatim kliknite na "*Start s
 
 
 
-Na svom prvom uređaju kliknite na "*Potvrdi povezivanje uređaja*" da biste autorizovali vezu.
+Na svom prvom uređaju kliknite na "*Confirm link devices*" da biste autorizovali vezu.
 
 
 
@@ -325,7 +325,7 @@ Sada možete pristupiti svim svojim "*Room*" i razgovorima sa ovog novog uređaj
 
 
 
-Čestitamo, sada ste u toku sa korišćenjem Keet poruka, odlične alternative za WathsApp! Ako vam je ovaj vodič bio koristan, bio bih veoma zahvalan ako biste ostavili Green palac ispod. Slobodno podelite ovaj vodič na vašim društvenim mrežama. Hvala vam puno!
+Čestitamo, sada ste u toku sa korišćenjem Keet poruka, odlične alternative za WathsApp! Ako vam je ovaj vodič bio koristan, bio bih veoma zahvalan ako biste kliknuli na zeleni palac ispod. Slobodno podelite ovaj vodič na vašim društvenim mrežama. Hvala vam puno!
 
 
 
