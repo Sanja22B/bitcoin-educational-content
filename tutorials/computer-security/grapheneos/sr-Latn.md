@@ -6,7 +6,7 @@ description: Grafen OS vodič
 
 > [GrapheneOS](https://grapheneos.org/) je mobilni operativni sistem fokusiran na privatnost i sigurnost sa kompatibilnošću za Android aplikacije, razvijen kao neprofitni open source projekat.
 
-GrapheneOS, originally founded in 2014 as 'CopperheadOS' is based on the traditional Android Code (AOSP), but with many changes and improvements aimed at improving user privacy and security. GrapheneOS puts the user in control of their phone, not the big tech companies.
+GrapheneOS, koji je prvobitno osnovan 2014. godine pod imenom 'CopperheadOS', zasniva se na standardnom Android kodu (AOSP), ali s brojnim izmenama i poboljšanjima usmerenim ka unapređenju privatnosti i bezbednosti korisnika. GrapheneOS stavlja korisnika u kontrolu nad svojim telefonom, a ne velike tehnološke kompanije.
 
 
 ### Rezime:
@@ -39,7 +39,7 @@ GrapheneOS pruža dodatnu sigurnost vašem Android iskustvu kroz neke jednostavn
 
 2. **Prevencija izloženosti ranjivostima** - Omogućite korisniku dovoljno granularnosti da izabere kompromise sa kojima je zadovoljan.
 
-3. **Sandbox containment** - GrapheneOS dodatno učvršćuje postojeće Android sandbox okruženje, dodatno ograničavajući sposobnost svake aplikacije da komunicira sa ostatkom vašeg telefona.
+3. **Sandbox izolacija** - GrapheneOS dodatno učvršćuje postojeće Android sandbox okruženje, dodatno ograničavajući sposobnost svake aplikacije da komunicira sa ostatkom vašeg telefona.
 
 
 Saznajte više o tehničkim detaljima skupa funkcija GrapheneOS [ovde](https://grapheneos.org/features).
@@ -57,7 +57,7 @@ Koliko god da alternative postaju dobre, pomisao na takvu promenu i dalje može 
 Ako se odlučiš za ovaj pristup, budi strog prema sebi i prekini oslanjanje na nadzirane alternative što je brže moguće. Mi ljudi smo lenji i često biramo put najmanjeg otpora. Seti se zašto si uopšte napravio promenu.
 
 
-**Umesto da plaćate svojim ličnim podacima, odlučili ste da plaćate svojim vremenom, a ponekad i svojim Hard zarađenim novcem (u zavisnosti od alternativnih aplikacija koje instalirate).**
+**Umesto da plaćate svojim ličnim podacima, odlučili ste da plaćate svojim vremenom, a ponekad i svojim teško zarađenim novcem (u zavisnosti od alternativnih aplikacija koje instalirate).**
 
 
 ## Početak
@@ -116,7 +116,7 @@ Hajde da zaronimo u to:
 
 9. Na kraju, pređite na sledeći korak veb instalatera i kliknite na **Lock Bootloader**. Moraćete da promenite izbor i potvrdite pomoću dugmeta za napajanje na isti način kao što ste to uradili ranije u procesu.
 
-10. Kada vidite reč `Start`, potvrdite to dugmetom za napajanje i uređaj će se pokrenuti u vaš novi operativni sistem bez Google-a.
+10. Kada vidite reč `Start`, potvrdite to dugmetom za napajanje i uređaj će se pokrenuti u vašem novom operativnom sistemu bez Google-a.
 
 
 ![image](assets/2.webp)
@@ -141,7 +141,7 @@ Video koji detaljno prikazuje jednostavne korake navedene iznad
 Ako ti jednostavni koraci deluju kao previše, možete razmisliti o kupovini Pixel telefona sa GrapheneOS softverom [pre-instaliranim](https://ronindojo.io/en/roninmobile). Samo budite svesni da time ukazujete malu količinu poverenja dobavljaču.
 
 
-### Pre Installed Apps
+### Unapred instalirane aplikacije
 
 
 Sada kada ste postavili, možda ćete primetiti koliko GrapheneOS izgleda osnovno pri prvoj instalaciji. Podrazumevano ćete imati instalirane ove aplikacije:
@@ -203,7 +203,7 @@ Personalizovani početni ekran
 
 
 
-## Alternativne Aplikacije
+## Alternativne aplikacije
 
 
 Da bi vaš telefon bio koristan, želećete da instalirate neke aplikacije! Opcije koje slede su uključene jer sam ih sve lično koristio ili zato što dobijaju snažne preporuke od šire zajednice koja se bavi privatnošću. Postoje mnoge druge sjajne alternative koje nisu pomenute, a [Awesome Privacy](https://awesome-privacy.xyz) nudi neverovatno opsežnu listu aplikacija koje čuvaju privatnost za sve vrste uređaja.
@@ -291,7 +291,7 @@ Jedina mana ovog pristupa je što, pošto je ovo samo obeležena veb stranica, n
 Twitter PWA
 
 
-### Web Pregledači
+### Web pregledači
 
 
 Ne možete stvarno pogrešiti sa unapred upakovanom opcijom, Vanadium. Aplikacija se ponaša identično kao bilo koji drugi mobilni pregledač koji sam probao i nikada nisam imao problema sa kompatibilnošću.
@@ -455,10 +455,10 @@ Međutim, kada prelazite na GrapheneOS, postoje određene pogodnosti kojih se mo
 
 
 
-- Apple CarPlay/Android Auto** - Moraćete da se držite dobrog starog Bluetooth-a, USB-a ili Aux-a.
-- Apple/Google Pay** - Gotovo svi ionako nose svoj Wallet sa sobom!
-- Banking apps** - Nije da ove aplikacije uopšte ne rade. Neke rade savršeno. Druge rade samo kada su omogućene Google Play usluge (pročitajte više o tome ispod), a neke jednostavno ne rade uopšte. Pročitajte izveštaj o vašoj banci [ovde](https://privsec.dev/posts/android/banking-applications-compatibility-with-grapheneos/) da biste videli trenutno stanje. Ne brinite ako je vaša banka na listi onih koje ne rade, zapamtite da jednostavno možete sačuvati URL kao veb aplikaciju na vašem početnom ekranu.
-- Push Notifications** - Većina aplikacija koje vam šalju obaveštenja kada ne koristite određenu aplikaciju to će učiniti putem Google Play Services. Ove usluge nisu instalirane po defaultu sa GrapheneOS, tako da ako ne dobijate obaveštenja odmah kada vam prijatelj pošalje email, verovatno je to razlog. Dobra vest je da su neke od gore pomenutih aplikacija implementirale sopstvenu pozadinsku vezu kako bi periodično proveravale za ažuriranja i zatim vam dale obaveštenje kada je to potrebno.
+- **Apple CarPlay/Android Auto** - Moraćete da se držite dobrog starog Bluetooth-a, USB-a ili Aux-a.
+- **Apple/Google Pay** - Gotovo svi ionako nose svoj Wallet sa sobom!
+- **Banking apps** - Nije da ove aplikacije uopšte ne rade. Neke rade savršeno. Druge rade samo kada su omogućene Google Play usluge (pročitajte više o tome ispod), a neke jednostavno ne rade uopšte. Pročitajte izveštaj o vašoj banci [ovde](https://privsec.dev/posts/android/banking-applications-compatibility-with-grapheneos/) da biste videli trenutno stanje. Ne brinite ako je vaša banka na listi onih koje ne rade, zapamtite da jednostavno možete sačuvati URL kao veb aplikaciju na vašem početnom ekranu.
+- **Push Notifications** - Većina aplikacija koje vam šalju obaveštenja kada ne koristite određenu aplikaciju to će učiniti putem Google Play Services. Ove usluge nisu instalirane po defaultu sa GrapheneOS, tako da ako ne dobijate obaveštenja odmah kada vam prijatelj pošalje email, verovatno je to razlog. Dobra vest je da su neke od gore pomenutih aplikacija implementirale sopstvenu pozadinsku vezu kako bi periodično proveravale za ažuriranja i zatim vam dale obaveštenje kada je to potrebno.
 
 
 ### Sandboxed Google Play
