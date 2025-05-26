@@ -22,7 +22,7 @@ Olvid je sertifikovan od strane ANSSI (francuske agencije za sajber bezbednost).
 
 
 
-| Aplikacija           | E2EE 1:1       | E2EE grupe     | Inscription anonyme | Licencirani klijent otvoreong koda | Licence server open-source | Server decentralizovan | Godina proizvodnje |
+| Aplikacija           | E2EE 1:1       | E2EE grupe     | Anonimna prijava | Licencirani klijent otvorenog koda | Licencirani server otvorenog koda | Server decentralizovan | Godina proizvodnje |
 | -------------------- | -------------- | -------------- | ------------------- | -------------------------- | --------------------------- | -------------------- | ----------------- |
 | WhatsApp             | ✅              | ✅              | ❌                   | ❌                          | ❌                           | ❌                    | 2009              |
 | WeChat               | ❌              | ❌              | ❌                   | ❌                          | ❌                           | ❌                    | 2011              |
@@ -46,7 +46,7 @@ Olvid je sertifikovan od strane ANSSI (francuske agencije za sajber bezbednost).
 
 
 
-## Instalirajte aplikaciju Olvid
+## Instalirajte Olvid aplikaciju
 
 
 
@@ -72,11 +72,11 @@ U ovom vodiču, fokusiraćemo se na mobilnu verziju, ali imajte na umu da su [ve
 
 
 
-## Kreiraj nalog na Olvid
+## Kreiraj Olvid nalog 
 
 
 
-Kada pokrenete aplikaciju prvi put, kliknite na dugme "*Ja sam novi korisnik*".
+Kada pokrenete aplikaciju prvi put, kliknite na dugme "*I am a new user*".
 
 
 
@@ -108,7 +108,7 @@ Vaš nalog je sada kreiran.
 
 
 
-Da biste sprečili gubitak pristupa vašem Olvid nalogu, preporučujemo podešavanje automatskih rezervnih kopija. Da biste to uradili, otvorite podešavanja klikom na tri tačke u gornjem desnom uglu Interface, zatim izaberite "*Settings*".
+Da biste sprečili gubitak pristupa vašem Olvid nalogu, preporučujemo podešavanje automatskih rezervnih kopija. Da biste to uradili, otvorite podešavanja klikom na tri tačke u gornjem desnom uglu prozora, zatim izaberite "*Settings*".
 
 
 
@@ -124,7 +124,7 @@ Idite na meni "*Save keys and contacts*".
 
 
 
-Zatim kliknite na "*generate a backup key*". Ovaj ključ će šifrovati vaše rezervne kopije. Ako trebate da povratite svoj nalog na drugom uređaju i više nemate pristup njemu, biće vam potrebni i rezervna kopija i ovaj ključ da biste ga dešifrovali.
+Zatim kliknite na "*Generate a backup key*". Ovaj ključ će šifrovati vaše rezervne kopije. Ako trebate da povratite svoj nalog na drugom uređaju i više nemate pristup njemu, biće vam potrebni i rezervna kopija i ovaj ključ da biste ga dešifrovali.
 
 
 
@@ -164,7 +164,7 @@ Takođe možete istražiti i ostala podešavanja dostupna za prilagođavanje apl
 
 
 
-## Slanje poruka sa Olvid
+## Slanje poruka sa Olvid-a
 
 
 
@@ -236,7 +236,7 @@ Takođe možete kreirati grupne diskusije.
 
 
 
-Čestitamo, sada ste u toku sa korišćenjem Olvid poruka, odlične alternative za WathsApp! Ako vam je ovaj vodič bio koristan, bio bih veoma zahvalan ako biste ostavili Green palac ispod. Slobodno podelite ovaj vodič na vašim društvenim mrežama. Hvala vam puno!
+Čestitamo, sada ste u toku sa korišćenjem Olvid poruka, odlične alternative za WathsApp! Ako vam je ovaj vodič bio koristan, bio bih veoma zahvalan ako biste pritisnuli zeleni palac ispod. Slobodno podelite ovaj vodič na vašim društvenim mrežama. Hvala vam puno!
 
 
 
