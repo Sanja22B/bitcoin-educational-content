@@ -1,12 +1,12 @@
 ---
-name: Zaboravi
+name: Olvid
 description: Privatno dopisivanje za sve
 ---
 ![cover](assets/cover.webp)
 
 
 
-Olvid je francuska aplikacija za instant poruke pokrenuta 2019. godine, dizajnirana da ponudi visok nivo sigurnosti, bez kompromitovanja privatnosti. Za razliku od WhatsApp-a ili Signal-a, Olvid ne traži nikakve lične podatke prilikom registracije: ni broj telefona, ni email, ništa. Identifikacija između korisnika zasniva se na Exchange ključeva, bez serverskog imenika ili deljene Address knjige.
+Olvid je francuska aplikacija za instant poruke pokrenuta 2019. godine, dizajnirana da ponudi visok nivo sigurnosti, bez kompromitovanja privatnosti. Za razliku od WhatsApp-a ili Signal-a, Olvid ne traži nikakve lične podatke prilikom registracije: ni broj telefona, ni email, ništa. Identifikacija između korisnika zasniva se na razmeni ključeva, bez serverskog imenika ili deljene knjige adresa.
 
 
 
@@ -22,7 +22,7 @@ Olvid je sertifikovan od strane ANSSI (francuske agencije za sajber bezbednost).
 
 
 
-| Application          | E2EE 1:1       | E2EE groupes   | Inscription anonyme | Licence client open-source | Licence serveur open-source | Serveur décentralisé | Année de création |
+| Aplikacija           | E2EE 1:1       | E2EE grupe     | Inscription anonyme | Licencirani klijent otvoreong koda | Licence server open-source | Server decentralizovan | Godina proizvodnje |
 | -------------------- | -------------- | -------------- | ------------------- | -------------------------- | --------------------------- | -------------------- | ----------------- |
 | WhatsApp             | ✅              | ✅              | ❌                   | ❌                          | ❌                           | ❌                    | 2009              |
 | WeChat               | ❌              | ❌              | ❌                   | ❌                          | ❌                           | ❌                    | 2011              |
