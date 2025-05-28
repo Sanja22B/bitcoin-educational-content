@@ -5466,7 +5466,7 @@ BIP47 je naširoko kritikovan zbog svoje neefikasnosti na lancu. Kao što je obj
 Međutim, u određenim situacijama, transakcija obaveštenja može biti prepreka za korisnika. Uzmimo primer jednokratne donacije primaocu: sa klasičnim Bitcoin adresom, jedna transakcija je dovoljna da se donacija završi. Ali sa BIP47, potrebne su dve transakcije: jedna za obaveštenje i druga za stvarno plaćanje. Kada je potražnja za prostorom u bloku niska i naknade za transakcije su niske, ovaj dodatni korak obično nije problem. Međutim, u vremenima zagušenja, naknade za transakcije mogu postati prekomerne za jedno plaćanje, potencijalno udvostručujući trošak za korisnika u poređenju sa standardnom Bitcoin transakcijom, što može biti neprihvatljivo za korisnika.
 
 
-Za situacije u kojima korisnik planira da izvrši samo nekoliko uplata na statični identifikator, razvijena su druga rešenja. To uključuje Silent Payments, opisane u [BIP352](https://github.com/Bitcoin/bips/blob/master/bip-0352.mediawiki). Ovaj protokol omogućava korišćenje statičnog identifikatora za primanje uplata bez ponovnih korišćenja adrese, i bez potrebe za korišćenjem transakcija obaveštenja. Pogledajmo kako ovaj protokol funkcioniše.
+Za situacije u kojima korisnik planira da izvrši samo nekoliko uplata na statični identifikator, razvijena su druga rešenja. To uključuje Silent Payments (tiha plaćanja), opisane u [BIP352](https://github.com/Bitcoin/bips/blob/master/bip-0352.mediawiki). Ovaj protokol omogućava korišćenje statičnog identifikatora za primanje uplata bez ponovnih korišćenja adrese, i bez potrebe za korišćenjem transakcija obaveštenja. Pogledajmo kako ovaj protokol funkcioniše.
 
 
 ---
@@ -5495,25 +5495,25 @@ Kao što je diskutovano u poglavlju BIP47, transakcija obaveštenja ima dve glav
 - Drugo, ovo bi predstavljalo problem oporavka. Sa BIP47, primalac mora znati platne kodove pošiljalaca kako bi pristupio sredstvima. Ovo važi prilikom prijema, ali i u slučaju oporavka sredstava putem seed-a ako je novčanik izgubljen. Sa onchain obaveštenjima, ovaj rizik se izbegava, jer korisnik može preuzeti i dešifrovati transakcije obaveštenja jednostavno znajući svoj seed. Međutim, ako se obaveštenje vrši van blokčejna, korisnik bi morao održavati dinamičku rezervnu kopiju svih primljenih platnih kodova, što je nepraktično za prosečnog korisnika.
 
 
-Sva ova ograničenja čine upotrebu onchain obaveštenja neophodnom za BIP47. Međutim, Silent Payments nastoje da izbegnu ovaj korak onchain obaveštenja upravo zbog njegovih troškova. Usvojeno rešenje je stoga ne premestiti obaveštenje, već ga potpuno eliminisati. Da bi se to postiglo, mora se prihvatiti kompromis: skeniranje. Za razliku od BIP47, gde korisnik tačno zna gde da pronađe svoja sredstva zahvaljujući transakcijama obaveštenja, sa tihim plaćanjima korisnik mora da pregleda sve postojeće Bitcoin transakcije kako bi otkrio bilo kakve uplate namenjene njemu. Da bi se smanjilo ovo operativno opterećenje, pretraga Silent Payments je ograničena samo na transakcije koje verovatno sadrže takve uplate, tj. one sa najmanje jednim Taproot P2TR izlazom. Skeniranje se takođe fokusira isključivo na transakcije od datuma kreiranja novčanika (nema potrebe skenirati transakcije koje datiraju iz 2009. ako je novčanik kreiran 2024).
+Sva ova ograničenja čine upotrebu onchain obaveštenja neophodnom za BIP47. Međutim, Silent Payments (tiha plaćanja) nastoje da izbegnu ovaj korak onchain obaveštenja upravo zbog njegovih troškova. Usvojeno rešenje je stoga ne premestiti obaveštenje, već ga potpuno eliminisati. Da bi se to postiglo, mora se prihvatiti kompromis: skeniranje. Za razliku od BIP47, gde korisnik tačno zna gde da pronađe svoja sredstva zahvaljujući transakcijama obaveštenja, sa tihim plaćanjima korisnik mora da pregleda sve postojeće Bitcoin transakcije kako bi otkrio bilo kakve uplate namenjene njemu. Da bi se smanjilo ovo operativno opterećenje, pretraga Silent Payments (diskretnih plaćanja) je ograničena samo na transakcije koje verovatno sadrže takve uplate, tj. one sa najmanje jednim Taproot P2TR izlazom. Skeniranje se takođe fokusira isključivo na transakcije od datuma kreiranja novčanika (nema potrebe skenirati transakcije koje datiraju iz 2009. ako je novčanik kreiran 2024).
 
 
-Dakle, možete videti zašto BIP47 i Silent Payments, iako usmereni ka sličnom cilju, uključuju različite kompromise i stoga **zapravo ispunjavaju različite slučajeve upotrebe**. Za jednokratna plaćanja, kao što su jednokratne donacije, Silent Payments su prikladniji zbog nižih troškova. S druge strane, za redovne transakcije istom primaocu, kao u slučaju platformi za trgovinu ili mining pool-ova, BIP47 može biti preferiran.
+Dakle, možete videti zašto BIP47 i Silent Payments (tiha plaćanja), iako usmereni ka sličnom cilju, uključuju različite kompromise i stoga **zapravo ispunjavaju različite slučajeve upotrebe**. Za jednokratna plaćanja, kao što su jednokratne donacije, Silent Payments (tiha plaćanja) su prikladniji zbog nižih troškova. S druge strane, za redovne transakcije istom primaocu, kao u slučaju platformi za trgovinu ili mining pool-ova, BIP47 može biti preferiran.
 
 
-Hajde da pogledamo tehnički rad Silent Payments-a kako bismo bolje razumeli šta je u pitanju. Da bismo to uradili, predlažem da primenimo isti pristup kao u BIP352 objašnjavajućem dokumentu. Postepeno ćemo razložiti proračune koje treba izvršiti, element po element, opravdavajući svako novo dodavanje.
+Hajde da pogledamo tehnički rad Silent Payments-a (diskretnih plaćanja) kako bismo bolje razumeli šta je u pitanju. Da bismo to uradili, predlažem da primenimo isti pristup kao u BIP352 objašnjavajućem dokumentu. Postepeno ćemo razložiti proračune koje treba izvršiti, element po element, opravdavajući svako novo dodavanje.
 
 
 ### Nekoliko pojmova za razumevanje
 
 
-Pre nego što počnete, važno je napomenuti da se Silent Payments oslanjaju isključivo na upotrebu P2TR (*Pay to Taproot*) tipova skripti. Za razliku od BIP47, nije potrebno izvoditi adrese za primanje iz javnih ključeva potomaka putem heširanja. U P2TR standardu, prilagođeni javni ključ se koristi direktno i nešifrovano u adresi. Dakle, Taproot adresa za primanje je suštinski javni ključ sa nekim metapodacima. Ovaj prilagođeni javni ključ je agregacija dva druga javna ključa: jedan omogućava direktno, tradicionalno trošenje putem jednostavnog potpisa, a drugi predstavlja Merkle Root MAST-a, koji ovlašćuje trošenje pod uslovom da je ispunjen jedan od uslova potencijalno upisanih u Merkle Tree.
+Pre nego što počnete, važno je napomenuti da se Silent Payments (tiha plaćanja) oslanjaju isključivo na upotrebu P2TR (*Pay to Taproot*) tipova skripti. Za razliku od BIP47, nije potrebno izvoditi adrese za primanje iz javnih ključeva potomaka putem heširanja. U P2TR standardu, prilagođeni javni ključ se koristi direktno i nešifrovano u adresi. Dakle, Taproot adresa za primanje je suštinski javni ključ sa nekim metapodacima. Ovaj prilagođeni javni ključ je agregacija dva druga javna ključa: jedan omogućava direktno, tradicionalno trošenje putem jednostavnog potpisa, a drugi predstavlja Merkle Root MAST-a, koji ovlašćuje trošenje pod uslovom da je ispunjen jedan od uslova potencijalno upisanih u Merkle Tree.
 
 
 ![BTC204](assets/fr/068.webp)
 
 
-Postoje dva glavna razloga za odluku da se Silent Payments ograniče isključivo na Taproot:
+Postoje dva glavna razloga za odluku da se Silent Payments (tiha plaćanja) ograniče isključivo na Taproot:
 
 
 
@@ -5522,7 +5522,7 @@ Postoje dva glavna razloga za odluku da se Silent Payments ograniče isključivo
 - Drugo, ovaj pristup pomaže u poboljšanju korisničkog anonseta podsticanjem da se ne dele između različitih tipova skripti, što generiše prepozantljive identifikatore novčanika u analizi lanca (za više informacija o ovom konceptu, molimo pogledajte poglavlje 4 dela 2).
 
 
-### Naivna izvedba javnog ključa za Silent Payments
+### Naivna izvedba javnog ključa za Silent Payments (diskretna plaćanja)
 
 
 Hajde da počnemo sa jednostavnim primerom kako bismo došli do suštine kako SPs (Silent Payments) funkcionišu. Uzmimo Alisu i Boba, dva Bitcoin korisnika. Alisa želi da pošalje bitcoine Bobu na praznu prijemnu adresu. Postoje tri cilja ovog procesa:
@@ -5562,14 +5562,14 @@ $$ P = B + \text{Hash}(a \cdot B) \cdot G $$
 U ovoj jednačini, Alisa je jednostavno izračunala skalarni proizvod svog privatnog ključa $a$ i Bobovog javnog ključa $B$. Ona je prosledila ovaj rezultat u Hash funkciju poznatu svima. Dobijena vrednost se zatim skalirano množi sa generišućom tačkom $G$ eliptičke krive `secp256k1`. Na kraju, Alisa dodaje dobijenu tačku Bobovom javnom ključu $B$. Kada Alisa ima ovu adresu $P$, koristi ga kao izlaz u transakciji, tj. šalje bitkoine na njega.
 
 
-> *U kontekstu Silent Payments-a, funkcija "Hash" odgovara SHA256 Hash funkciji specifično označenoj sa `BIP0352/SharedSecret`, što osigurava da su heševi generisani jedinstveni za ovaj protokol i ne mogu biti ponovo korišćeni u drugim kontekstima, dok pružaju dodatnu zaštitu protiv ponovne upotrebe nonci u potpisima. Ovaj standard odgovara onom [specifikovanom u BIP340 za Schnorr potpise](https://github.com/Bitcoin/bips/blob/master/bip-0340.mediawiki) na `secp256k1`.*
+> *U kontekstu Silent Payments-a (diskretnih plaćanja), funkcija "Hash" odgovara SHA256 Hash funkciji specifično označenoj sa `BIP0352/SharedSecret`, što osigurava da su heševi generisani jedinstveni za ovaj protokol i ne mogu biti ponovo korišćeni u drugim kontekstima, dok pružaju dodatnu zaštitu protiv ponovne upotrebe nonci u potpisima. Ovaj standard odgovara onom [specifikovanom u BIP340 za Schnorr potpise](https://github.com/Bitcoin/bips/blob/master/bip-0340.mediawiki) na `secp256k1`.*
 Zahvaljujući svojstvima eliptičke krive na kojoj se zasniva ECDH, znamo da:
 
 
 $$ a \cdot B = b \cdot A $$
 
 
-Bob će stoga moći da izračuna primajući adresu na koju je Alisa poslala bitkoine. Da bi to uradio, on prati sve Bitcoin transakcije koje ispunjavaju kriterijume za Silent Payments i primenjuje sledeći proračun na svaku od njih da vidi da li je uplata namenjena njemu (*skeniranje*):
+Bob će stoga moći da izračuna primajući adresu na koju je Alisa poslala bitkoine. Da bi to uradio, on prati sve Bitcoin transakcije koje ispunjavaju kriterijume za Silent Payments (tiha plaćanja) i primenjuje sledeći proračun na svaku od njih da vidi da li je uplata namenjena njemu (*skeniranje*):
 
 
 $$ P' = B + \text{Hash}(b \cdot A) \cdot G $$
@@ -5587,7 +5587,7 @@ Odavde, Bob će moći da izračuna privatni ključ $p$ koji omogućava da se sre
 $$ p = (b + \text{Hash}(b \cdot A)) \bmod n $$
 
 
-Kao što možete videti, da biste izračunali ovaj privatni ključ $p$, morate imati privatni ključ $b$. Samo Bob ima ovaj privatni ključ $b$. Stoga će on biti jedini koji može potrošiti bitkoine poslate na njegovu Silent Payments adresu.
+Kao što možete videti, da biste izračunali ovaj privatni ključ $p$, morate imati privatni ključ $b$. Samo Bob ima ovaj privatni ključ $b$. Stoga će on biti jedini koji može potrošiti bitkoine poslate na njegovu Silent Payments adresu (za diskretna plaćanja).
 
 
 ![BTC204](assets/fr/236.webp)
@@ -5690,7 +5690,7 @@ Kao što smo videli u prethodnim odeljcima, Alisa koristi par ključeva koji obe
 
 
 > *Ponovno korišćenje adrese je veoma loša praksa u smislu poverljivosti korisnika. Da biste saznali zašto, savetujem vam da pregledate prve delove ovog kursa obuke.*
-Zaista, pošto je jedinstvena adresa $P_0$ izvedena iz $A$ i $B$, ako Alisa izvede drugu adresu za drugu uplatu $B$, sa istim ključem $A$, završiće sa potpuno istom adresom $P_0$. Da bismo izbegli ovaj rizik i sprečili ponovnu upotrebu adrese unutar Silent Payments-a, moraćemo malo da modifikujemo naše proračune.
+Zaista, pošto je jedinstvena adresa $P_0$ izvedena iz $A$ i $B$, ako Alisa izvede drugu adresu za drugu uplatu $B$, sa istim ključem $A$, završiće sa potpuno istom adresom $P_0$. Da bismo izbegli ovaj rizik i sprečili ponovnu upotrebu adrese unutar Silent Payments-a (diskretnih plaćanja), moraćemo malo da modifikujemo naše proračune.
 
 
 Ono što želimo je da svaki UTXO koji Alisa koristi kao ulaz za plaćanje daje jedinstvenu adresu na Bobovoj strani, čak i ako je nekoliko UTXO-a osigurano istim parom ključeva. Dakle, sve što treba da uradimo je da dodamo referencu na UTXO prilikom izračunavanja jedinstvene adrese $P_0$. Ova referenca će jednostavno biti Hash od UTXO koji se koristi kao ulaz:
@@ -5799,7 +5799,7 @@ Proračuni tada ostaju identični onima predstavljenim u prethodnom odeljku, osi
 Za sada smo statičnu adresu $B$ za tiho plaćanje označili kao jedinstveni javni ključ. Zapamtite, to je taj javni ključ $B$ koji Alisa koristi za kreiranje zajedničke tajne ECDH, koja zatim izračunava jedinstvenu adresu za uplatu $P$. Bob koristi ovaj javni ključ $B$ i odgovarajući privatni ključ $b$ za fazu skeniranja. Ali će takođe koristiti privatni ključ $b$ da izračuna privatni ključ $p$ koji omogućava trošenje sa adrese $P$.
 
 
-Nedostatak ove metode je što se privatni ključ $b$, koji se koristi za izračunavanje svih privatnih ključeva adresa koje su primile Silent Payments, takođe koristi od strane Boba za skeniranje transakcija. Ovaj korak zahteva da ključ $b$ bude dostupan na internetu povezanom novčanik softveru, što ga izlaže većem riziku od krađe nego kada bi bio čuvan na Cold Wallet-u (novčanik koji je offline, van mreže). Idealno bi bilo korisno iskoristiti prednosti Silent Payments-a dok se privatni ključ $b$, koji kontroliše pristup svim ostalim privatnim ključevima, drži sigurnim na hardverskom novčaniku. Srećom, protokol je prilagođen da omogući upravo to.
+Nedostatak ove metode je što se privatni ključ $b$, koji se koristi za izračunavanje svih privatnih ključeva adresa koje su primile Silent Payments (tiha plaćanja), takođe koristi od strane Boba za skeniranje transakcija. Ovaj korak zahteva da ključ $b$ bude dostupan na internetu povezanom novčanik softveru, što ga izlaže većem riziku od krađe nego kada bi bio čuvan na Cold Wallet-u (novčanik koji je offline, van mreže). Idealno bi bilo korisno iskoristiti prednosti Silent Payments-a (diskretnih plaćanja) dok se privatni ključ $b$, koji kontroliše pristup svim ostalim privatnim ključevima, drži sigurnim na hardverskom novčaniku. Srećom, protokol je prilagođen da omogući upravo to.
 
 
 Da bi se to uradilo, BIP352 zahteva da primalac koristi 2 različita para ključeva:
@@ -5811,7 +5811,7 @@ Da bi se to uradilo, BIP352 zahteva da primalac koristi 2 različita para ključ
 - $b_{\text{scan}}$: da pronađe jedinstvene adrese za plaćanje.
 
 
-Na ovaj način, Bob može čuvati privatni ključ $b_{\text{spend}}$ na hardverskom novčaniku i koristiti privatni ključ $b_{\text{scan}}$ na online softveru da pronađe svoje tiha plaćanja, bez otkrivanja $b_{\text{spend}}$. S druge strane, javni ključevi $B_{\text{scan}}$ i $B_{\text{spend}}$ su oba javno otkrivena, pošto se nalaze u Bobovoj statičkoj adresi $B$:
+Na ovaj način, Bob može čuvati privatni ključ $b_{\text{spend}}$ na hardverskom novčaniku i koristiti privatni ključ $b_{\text{scan}}$ na online softveru da pronađe svoja Silent Payments (tiha plaćanja), bez otkrivanja $b_{\text{spend}}$. S druge strane, javni ključevi $B_{\text{scan}}$ i $B_{\text{spend}}$ su oba javno otkrivena, pošto se nalaze u Bobovoj statičkoj adresi $B$:
 
 
 $$ B = B_{\text{scan}} \text{ ‖ } B_{\text{spend}} $$
@@ -5859,7 +5859,7 @@ $$ p_0 = (b_{\text{spend}} + \text{Hash}(\text{inputHash} \cdot b_{\text{scan}} 
 ### Korišćenje SP adresa sa oznakom
 
 
-Bob stoga ima statičku adresu $B$ za diskretna plaćanja kao:
+Bob stoga ima statičku adresu $B$ za Silent Payments (diskretna plaćanja) kao:
 
 
 $$ B = B_{\text{scan}} \text{ ‖ } B_{\text{spend}} $$
@@ -5944,7 +5944,7 @@ Međutim, imajte na umu da je ovo razdvajanje statičkih adresa važeće samo sa
 - $X$: Hash skeniranja privatnog ključa sa oznakom
 
 
-### Kako da napravim adrese za tiha plaćanja?
+### Kako da napravim adrese za Silent Payments (tiha plaćanja)?
 
 
 Da biste napravili adrese posvećene diskretnom plaćanju, prvo treba da izvedete 2 para ključeva iz vašeg Bitcoin HD novčanika:
@@ -5986,7 +5986,7 @@ $$ B_m = B_{\text{spend}} + \text{Hash}(b_{\text{scan}} \text{ ‖ } m) \cdot G 
 Jednom kada imamo ovaj sadržaj, dodajemo HRP (*Human-Readable Part*) `sp` i verziju `q` (= verzija 0). Takođe dodajemo kontrolni zbir i formatiramo adresu kao bech32m.
 
 
-Na primer, evo moje adrese za diskretna plaćanja:
+Na primer, evo moje adrese za Silent Payments (diskretna plaćanja):
 
 
 ```text
@@ -6000,10 +6000,10 @@ Važna tačka u vezi sa statičkim adresama, koju ste možda shvatili u prethodn
 Kao i kod BIP47, nemoguće je uspostaviti vezu između statičke adrese $B$ i adrese za uplate $P$ izvedene iz $B$. Zaista, čak i ako Eva, potencijalni napadač, pokuša da skenira blokčejn sa Bobovim statičkom adresom $B$, neće moći da izvrši potrebne proračune da odredi $P$. Da bi to uradila, trebala bi joj ili Bobov privatni ključ $b_{\text{scan}}$, ili pošiljaočevi privatni ključevi $a$, ali oba su naravno privatna. Stoga je moguće eksplicitno povezati nečiju statičku adresu sa nekim oblikom ličnog identiteta.
 
 
-### Kako da koristim tiha plaćanja?
+### Kako da koristim Silent Payments (tiha plaćanja)?
 
 
-Predlog Silent Payments-a je relativno nov i trenutno ga je implementirao samo vrlo ograničen broj novčanika. Koliko je meni poznato, postoje samo 3 softverska proizvoda koji ih podržavaju:
+Predlog Silent Payments-a (diskretnih plaćanja) je relativno nov i trenutno ga je implementirao samo vrlo ograničen broj novčanika. Koliko je meni poznato, postoje samo 3 softverska proizvoda koji ih podržavaju:
 
 
 
@@ -6013,13 +6013,13 @@ Predlog Silent Payments-a je relativno nov i trenutno ga je implementirao samo v
 - [DonationWallet](https://github.com/Sosthene00/donationwallet)
 
 
-Uskoro ćemo vam dati detaljan vodič o tome kako postaviti svoj vlastitu Silent Payments statičku adresu.
+Uskoro ćemo vam dati detaljan vodič o tome kako postaviti svoj vlastitu Silent Payments statičku adresu (za tiha plaćanja).
 
 
 Pošto je ova funkcija nova, savetujemo vam da budete oprezni i izbegavate korišćenje diskretnih plaćanja za velike iznose na Mainnet-u.
 
 
-*Da bih kreirao ovo poglavlje o Silent Payments, koristio sam [sajt za objašnjenje Silent Payments](https://silentpayments.xyz/) i [dokument za objašnjenje BIP352](https://github.com/Bitcoin/bips/blob/master/bip-0352.mediawiki).*
+*Da bih kreirao ovo poglavlje o Silent Payments (diskretnih plaćanjima), koristio sam [sajt za objašnjenje Silent Payments](https://silentpayments.xyz/) i [dokument za objašnjenje BIP352](https://github.com/Bitcoin/bips/blob/master/bip-0352.mediawiki).*
 
 
 # Final Section
