@@ -3,7 +3,7 @@ answer: Da identifikujete kusur.
 wrong_answers:
   - Da identifikujete lažne transakcije u realnom vremenu.
   - Da identifikujete obrasce transakcija.
-  - Da identifikujete klaster koji pripada istoj entitetu.
+  - Da identifikujete klaster koji pripada istom entitetu.
 explanation: |
   Unutrašnje heuristike nam omogućavaju da identifikujemo kusur s ciljem posmatranja korisnika u narednim transakcijama.
 reviewed: false
