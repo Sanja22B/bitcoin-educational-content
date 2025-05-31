@@ -1,4 +1,4 @@
-question: Koja je mana Silent Payments-a u poređenju sa BIP47?
+question: Koja je mana diskretnih plaćanja (eng. Silent Payments-a) u poređenju sa BIP47?
 answer: Prijemnik mora skenirati gotovo čitav Blockchain.
 wrong_answers:
   - Generišu veće naknade za transakcije za pošiljaoca.
