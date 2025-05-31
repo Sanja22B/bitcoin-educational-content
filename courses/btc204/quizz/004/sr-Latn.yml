@@ -1,7 +1,7 @@
 question: Šta obezbeđuje UTXO-ove na Bitcoin-u?
 answer: Skripte koje definišu uslove trošenja.
 wrong_answers:
-  - Periodičnu verifikaciju od strane rudara.
+  - Periodična verifikaciju od strane rudara.
   - Centralizovana baza podataka.
   - Verifikacija identiteta korisnika.
 explanation: |
