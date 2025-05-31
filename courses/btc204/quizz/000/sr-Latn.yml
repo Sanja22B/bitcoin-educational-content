@@ -5,5 +5,5 @@ wrong_answers:
   - Samo korisnička transakcija
   - Opcija razmene utility tokena
 explanation: |
-  UTXO je izlaz transakcije koja još nije potrošena.
+  UTXO je izlaz transakcije koji još nije potrošen.
 reviewed: false
