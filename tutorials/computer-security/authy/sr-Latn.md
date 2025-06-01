@@ -69,7 +69,7 @@ Zatim kliknite na "*Settings*".
 
 ![AUTHY 2FA](assets/notext/09.webp)
 
-U kartici "*Moj nalog*", imate opciju da izmenite svoj nalog. Preporučujem dodavanje PIN koda aplikaciji odabirom opcije "*Zaštita aplikacije*". Ovo dodaje dodatni nivo sigurnosti za pristup vašoj aplikaciji.
+U kartici "*My Account (prevod: Moj nalog)*", imate opciju da izmenite svoj nalog. Preporučujem dodavanje PIN koda aplikaciji odabirom opcije "*App protection (prevod: Zaštita aplikacije)*". Ovo dodaje dodatni nivo sigurnosti za pristup vašoj aplikaciji.
 
 ![AUTHY 2FA](assets/notext/10.webp)
 
@@ -83,7 +83,7 @@ Ako želite da omogućite dodavanje drugih uređaja, savetujem vam da aktivirate
 
 ![AUTHY 2FA](assets/notext/12.webp)
 
-Da biste dodali novi uređaj, jednostavno ponovite proces instalacije prikazan u prethodnom delu koristeći iste akreditive. Zatim će vam biti zatraženo da potvrdite ovaj novi pristup sa vašeg glavnog uređaja.
+Da biste dodali novi uređaj, jednostavno ponovite proces instalacije prikazan u prethodnom delu koristeći iste kredencijale. Zatim će vam biti zatraženo da potvrdite ovaj novi pristup sa vašeg glavnog uređaja.
 
 
 ## Kako postaviti 2FA na nalog?
@@ -96,7 +96,7 @@ https://planb.network/tutorials/computer-security/communication/proton-mail-c3b0
 
 ![AUTHY 2FA](assets/notext/13.webp)
 
-Ovu opciju 2FA obično ćete pronaći u postavkama vašeg naloga, često pod odeljkom "*Lozinka*" ili "*Bezbednost*".
+Ovu opciju 2FA obično ćete pronaći u postavkama vašeg naloga, često pod odeljkom "*Lozinka (eng. Password)*" ili "*Bezbednost (eng. Security)*".
 
 ![AUTHY 2FA](assets/notext/14.webp)
 
