@@ -23,7 +23,7 @@ Obnavljanje koda svakih 30 sekundi čini veoma teškim za napadača da pristupi 
 
 Postoji mnogo aplikacija za postavljanje 2FA, među kojima su Google Authenticator i Microsoft Authenticator najpoznatije. Međutim, u ovom vodiču želim da vas upoznam sa drugim, manje poznatim rešenjem pod nazivom Authy. Sve ove aplikacije rade koristeći isti TOTP (*Time based One Time Password*) protokol, što čini njihovu upotrebu prilično sličnom.
 
-Authy nudi nekoliko prednosti u odnosu na druga rešenja velikih tehnoloških kompanija. Prvo i najvažnije, omogućava vam da sinhronizujete svoje 2FA tokene na više uređaja, što može biti korisno u slučaju gubitka ili promene telefona. Authy vam takođe omogućava da generišete šifrovanu rezervnu kopiju i skladištite je online, osiguravajući da nikada ne izgubite pristup svojim tokenima, čak i ako izgubite svoj primarni uređaj. Iz korisničke perspektive, lično smatram da Authy nudi prijatnije i intuitivnije iskustvo od svojih alternativa.
+Authy nudi nekoliko prednosti u odnosu na druga rešenja velikih tehnoloških kompanija. Prvo i najvažnije, omogućava vam da sinhronizujete svoje 2FA tokene na više uređaja, što može biti korisno u slučaju gubitka ili promene telefona. Authy vam takođe omogućava da generišete šifrovanu rezervnu kopiju i sačuvate je online, osiguravajući da nikada ne izgubite pristup svojim tokenima, čak i ako izgubite svoj primarni uređaj. Iz korisničke perspektive, lično smatram da Authy nudi prijatnije i intuitivnije iskustvo od svojih alternativa.
 
 
 ## Kako instalirati Authy?
