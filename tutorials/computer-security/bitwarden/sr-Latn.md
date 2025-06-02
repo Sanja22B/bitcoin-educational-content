@@ -43,7 +43,7 @@ Bitwarden vam omogućava da sačuvate svoje lozinke online i sinhronizujete ih n
 
 
 - Besplatna verzija koju ćemo istražiti u ovom vodiču. Iako je besplatna, pruža nivo sigurnosti ekvivalentan onom kod plaćenih verzija. Možete čuvati neograničen broj lozinki i sinhronizovati onoliko uređaja koliko želite;
-- Premium verzija za $10 godišnje koja uključuje dodatne funkcije kao što su skladištenje datoteka, backup bankovne kartice, mogućnost postavljanja 2FA sa fizičkim sigurnosnim ključem i pristup TOTP 2FA autentifikaciji direktno sa Bitwarden-om;
+- Premium verzija za $10 godišnje koja uključuje dodatne funkcije kao što su skladištenje datoteka, backup bankovne kartice, mogućnost postavljanja 2FA sa fizičkim sigurnosnim ključem i pristup TOTP 2FA autentifikaciji direktno putem Bitwarden-a;
 - I porodični plan za 40 dolara godišnje koji proširuje pogodnosti premium verzije na šest različitih korisnika.
 
 ![BITWARDEN](assets/notext/02.webp)
