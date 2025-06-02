@@ -92,7 +92,7 @@ Zatim unesite svoju glavnu lozinku.
 
 ![BITWARDEN](assets/notext/09.webp)
 
-Sada ste na webu interfejsu vašeg menadžera lozinki.
+Sada ste na web interfejsu vašeg menadžera lozinki.
 
 ![BITWARDEN](assets/notext/10.webp)
 
