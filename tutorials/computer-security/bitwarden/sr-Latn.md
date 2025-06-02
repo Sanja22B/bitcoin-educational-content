@@ -63,7 +63,7 @@ Počnite unosom svoje email adrese kao i svog imena ili nadimka.
 
 ![BITWARDEN](assets/notext/04.webp)
 
-Zatim, treba da postavite svoju glavnu lozinku. Kao što smo videli u uvodu, ova lozinka je veoma važna jer vam omogućava pristup svim ostalim sačuvanim lozinkama u menadžeru. Ona predstavlja dva glavna rizika: gubitak i kompromitovanje. Ako izgubite pristup ovoj lozinci, više nećete moći da pristupite svim svojim akreditivima. Ako vaša lozinka bude ukradena, napadač će moći da pristupi svim vašim nalozima.
+Zatim, treba da postavite svoju glavnu lozinku. Kao što smo videli u uvodu, ova lozinka je veoma važna jer vam omogućava pristup svim ostalim sačuvanim lozinkama u menadžeru. Ona predstavlja dva glavna rizika: gubitak i kompromitovanje. Ako izgubite pristup ovoj lozinci, više nećete moći da pristupite svim svojim kredencijalima. Ako vaša lozinka bude ukradena, napadač će moći da pristupi svim vašim nalozima.
 
 
 Da biste minimizirali rizik od gubitka, preporučujem da napravite fizičku rezervnu kopiju vaše glavne lozinke na papiru i da je čuvate na sigurnom mestu. Ako je moguće, zatvorite ovu rezervnu kopiju u sigurnoj koverti kako biste redovno osigurali da joj niko drugi nije pristupio.
