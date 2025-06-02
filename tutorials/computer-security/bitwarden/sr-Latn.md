@@ -151,14 +151,14 @@ Sada, ako pokušate ponovo da se prijavite u svoj menadžer, prvo ćete morati d
 
 ![BITWARDEN](assets/notext/21.webp)
 
-U postavkama, takođe imate opciju da prilagodite svog menadžera u kartici "*Preferences*". Ovde možete promeniti trajanje pre nego što se vaš menadžer automatski zaključa, kao i jezik i temu korisničkog interfejsa.
+U postavkama, takođe imate opciju da prilagodite svog menadžera u kartici "*Preferences*". Ovde možete promeniti trajanje pre nego što se vaš menadžer automatski zaključa, kao i jezik (postoji srpski jezik među opcijama) i temu korisničkog interfejsa.
 
 ![BITWARDEN](assets/notext/22.webp)
 
 Preporučujem da prilagodite dužinu lozinki koje generiše Bitwarden. Podrazumevana dužina je postavljena na 14 karaktera, što može biti nedovoljno za optimalnu sigurnost. S obzirom da sada imate menadžer koji pamti sve vaše lozinke, možete iskoristiti tu prednost da koristite veoma jake lozinke.
 
 
-Za ovo, idite na meni "*Generator*".
+Za ovo, idite na meni "*Generator (srpski: Generator)*".
 
 ![BITWARDEN](assets/notext/23.webp)
 
@@ -177,11 +177,11 @@ U obrascu koji se otvori, započnite određivanjem prirode stavke koju treba sa�
 
 ![BITWARDEN](assets/notext/26.webp)
 
-U polje "*Name*" unesite opisni naziv za vaše akreditive. Ovo će olakšati pretragu i organizaciju vaših lozinki, posebno ako ih imate veliki broj. Na primer, ako želite da sačuvate vaše akreditive za PlanB Network sajt, možete imenovati ovu stavku na način koji će je učiniti odmah prepoznatljivom tokom vaših budućih pretraga.
+U polje "*Name*" unesite opisni naziv za vaše kredencijale. Ovo će olakšati pretragu i organizaciju vaših lozinki, posebno ako ih imate veliki broj. Na primer, ako želite da sačuvate vaše kredencijale za PlanB Network sajt, možete imenovati ovu stavku na način koji će je učiniti odmah prepoznatljivom tokom vaših budućih pretraga.
 
 ![BITWARDEN](assets/notext/27.webp)
 
-Opcija "*Folder*" omogućava vam da klasifikujete svoje akreditive u foldere. Za sada, još nismo kreirali nijedan, ali pokazaću vam kako to da uradite kasnije.
+Opcija "*Folder*" omogućava vam da klasifikujete svoje kredencijale u foldere. Za sada, još nismo kreirali nijedan, ali pokazaću vam kako to da uradite kasnije.
 
 ![BITWARDEN](assets/notext/28.webp)
 
@@ -309,7 +309,7 @@ Na primer, ako se vratim na sajt PlanB Network i pokušam da se prijavim na svoj
 
 ![BITWARDEN](assets/notext/52.webp)
 
-Ako izaberem ovaj identifikator, Bitwarden popunjava polja za prijavu umesto mene. Ova funkcija ekstenzije omogućava brzo povezivanje sa veb sajtovima, bez potrebe za kopiranjem i lepljenjem akreditiva iz Bitwarden veb aplikacije ili softvera.
+Ako izaberem ovaj identifikator, Bitwarden popunjava polja za prijavu umesto mene. Ova funkcija ekstenzije omogućava brzo povezivanje sa veb sajtovima, bez potrebe za kopiranjem i lepljenjem kredencijala iz Bitwarden veb aplikacije ili softvera.
 
 ![BITWARDEN](assets/notext/53.webp)
 
@@ -351,7 +351,7 @@ Da biste pristupili svojim lozinkama sa telefona, možete instalirati Bitwarden 
 
 ![BITWARDEN](assets/notext/61.webp)
 
-Preuzmite i instalirajte zvaničnu Bitwarden mobilnu aplikaciju. Prilikom prvog otvaranja aplikacije unesite svoje akreditive kako biste otključali pristup svom menadžeru lozinki.
+Preuzmite i instalirajte zvaničnu Bitwarden mobilnu aplikaciju. Prilikom prvog otvaranja aplikacije unesite svoje kredencijale kako biste otključali pristup svom menadžeru lozinki.
 
 ![BITWARDEN](assets/notext/62.webp)
 
