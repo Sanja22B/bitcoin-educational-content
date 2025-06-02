@@ -26,7 +26,7 @@ U ovom vodiču ćemo istražiti kako postaviti i koristiti menadžer lozinki da 
 
 https://planb.network/tutorials/computer-security/authentication/keepass-f8073bb7-5b4a-4664-9246-228e307be246
 
-Upozorenje: Menadžer lozinki je odličan za čuvanje lozinki, ali **nikada ne bi trebalo da čuvate svoju Bitcoin Wallet's bezbednosnu frazu u njemu!** Zapamtite, bezbednosna fraza treba da bude isključivo sačuvana u fizičkom formatu, kao što je papir ili metal.
+Upozorenje: Menadžer lozinki je odličan za čuvanje lozinki, ali **nikada ne bi trebalo da čuvate svoju bezbednosnu frazu Bitcoin novčanika u njemu!** Zapamtite, bezbednosna fraza treba da bude isključivo sačuvana u fizičkom formatu, kao što je papir ili metal.
 
 
 ## Uvod u Bitwarden
