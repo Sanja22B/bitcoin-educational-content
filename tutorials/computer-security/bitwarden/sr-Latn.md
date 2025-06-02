@@ -304,7 +304,7 @@ Sada ste povezani sa svojim Bitwarden menadžerom putem ekstenzije za pregledač
 ![BITWARDEN](assets/notext/51.webp)
 
 
-Na primer, ako se vratim na sajt PlanB Network i pokušam da se prijavim na svoj nalog, možete videti da Bitwarden ekstenzija integrisana u pregledač prepoznaje polja za prijavu i automatski mi nudi da izaberem identifikator koji sam prethodno sačuvao.
+Na primer, ako se vratim na PlanB Network sajt i pokušam da se prijavim na svoj nalog, možete videti da Bitwarden ekstenzija integrisana u pregledač prepoznaje polja za prijavu i automatski mi nudi da izaberem identifikator koji sam prethodno sačuvao.
 
 
 ![BITWARDEN](assets/notext/52.webp)
