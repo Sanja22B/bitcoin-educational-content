@@ -36,7 +36,7 @@ Bitwarden je menadžer lozinki pogodan za početnike i napredne korisnike. Nudi 
 
 ![BITWARDEN](assets/notext/01.webp)
 
-Bitwarden vam omogućava da sačuvate svoje lozinke online i sinhronizujete ih na svim svojim uređajima, uz osiguranje end-to-end enkripcije sa vašom glavnom lozinkom. Ovo vam omogućava, na primer, pristup vašim lozinkama i na računaru i na pametnom telefonu, uz sinhronizaciju između njih. Pošto su vaše lozinke enkriptovane, ostaju nedostupne bilo kome, uključujući Bitwarden-u, bez ključa za dekripciju koji je vaša glavna lozinka.
+Bitwarden vam omogućava da sačuvate svoje lozinke online i sinhronizujete ih na svim svojim uređajima, uz osiguranje end-to-end enkripcije pomoću vaše glavne lozinke. Ovo vam omogućava, na primer, pristup vašim lozinkama i na računaru i na pametnom telefonu, uz sinhronizaciju između njih. Pošto su vaše lozinke enkriptovane, ostaju nedostupne bilo kome, uključujući Bitwarden-u, bez ključa za dekripciju koji je vaša glavna lozinka.
 
 
 Štaviše, Bitwarden je open-source, što znači da softver može biti revidiran od strane nezavisnih stručnjaka. Što se tiče cena, Bitwarden nudi tri plana:
