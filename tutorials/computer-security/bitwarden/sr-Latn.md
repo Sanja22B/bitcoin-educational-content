@@ -235,7 +235,7 @@ Vaša fascikla se sada pojavljuje u vašem menadžeru.
 
 ![BITWARDEN](assets/notext/41.webp)
 
-Možete dodeliti fasciklu identifikatoru prilikom njegovog kreiranja, kao što smo to ranije uradili, ili izmenom postojećeg identifikatora. Na primer, klikom na moj identifikator za PlanB Network, zatim mogu odabrati da ga klasifikujem u fasciklu "*Bitcoin*".
+Možete dodeliti fasciklu identifikatoru prilikom njegovog kreiranja, kao što smo to ranije uradili, ili izmenom postojećeg identifikatora. Na primer, klikom na moj identifikator za PlanB Network, mogu odabrati da ga klasifikujem u fasciklu "*Bitcoin*".
 
 ![BITWARDEN](assets/notext/42.webp)
 
