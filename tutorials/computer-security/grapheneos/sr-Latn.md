@@ -157,7 +157,7 @@ Jedine dve sa kojima možda niste upoznati su 'Auditor' i 'Vanadium'.
 
 
 
-- [Auditor aplikacija](https://play.google.com/store/apps/details?id=app.attestation.auditor) koristi sigurnosne funkcije zasnovane na hardveru za verifikaciju identiteta uređaja zajedno sa autentičnošću i integritetom operativnog sistema. Ona će proveriti da li uređaj koristi fabrički operativni sistem sa zaključanim bootloader-om i da li nije došlo do neovlašćenog menjanja operativnog sistema.
+- [Auditor aplikacija](https://play.google.com/store/apps/details?id=app.attestation.auditor) koristi sigurnosne funkcije zasnovane na hardveru za verifikaciju identiteta uređaja zajedno sa autentičnošću i integritetom operativnog sistema. Ona će proveriti da li uređaj koristi fabrički operativni sistem sa zaključanim bootloader-om i da nije došlo do neovlašćenog menjanja operativnog sistema.
 - [Vanadium](https://github.com/GrapheneOS/Vanadium) je varijanta Chromium veb pregledača sa pojačanom privatnošću i sigurnošću.
 
 
