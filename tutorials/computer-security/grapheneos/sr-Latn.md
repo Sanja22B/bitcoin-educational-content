@@ -153,7 +153,7 @@ Sada kada ste postavili, možda ćete primetiti koliko GrapheneOS izgleda osnovn
 Podrazumevane aplikacije
 
 
-Jedina dva sa kojima možda niste upoznati su 'Auditor' i 'Vanadium'.
+Jedine dve sa kojima možda niste upoznati su 'Auditor' i 'Vanadium'.
 
 
 
