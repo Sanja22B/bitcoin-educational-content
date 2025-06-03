@@ -69,7 +69,7 @@ GrapheneOS je trenutno u proizvodnji samo za _(prilično ironično)_ [Google Pix
 ### Odabir uređaja
 
 
-Kada birate Pixel na koji želite instalirati GrapheneOS, osigurajte da proverite koliko dugo će uređaj nastaviti da prima podrazumevane [bezbednosne ažuriranja](https://support.google.com/pixelphone/answer/4457705?hl=en#zippy=%2Cpixel-xl-a-a-g-a-g).
+Kada birate Pixel na koji želite instalirati GrapheneOS, osigurajte da proverite koliko dugo će uređaj nastaviti da prima podrazumevana [bezbednosna ažuriranja](https://support.google.com/pixelphone/answer/4457705?hl=en#zippy=%2Cpixel-xl-a-a-g-a-g).
 
 
 U vreme pisanja, Pixel 6a je najjeftiniji dostupni model sa dobrom dugoročnom podrškom, garantovanom do jula 2027. Ako se odlučite za ovaj model, otključavanje OEM-a neće raditi sa verzijom fabričkog OS-a. Potrebno je da ga ažurirate na izdanje iz juna 2022. ili kasnije putem ažuriranja preko mreže. Nakon što ga ažurirate, takođe ćete morati da vratite uređaj na fabrička podešavanja da biste popravili otključavanje OEM-a. Svi ostali modeli koji su otključani od strane operatera biće spremni za GrapheneOS odmah iz kutije.
