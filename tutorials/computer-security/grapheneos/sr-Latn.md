@@ -75,7 +75,7 @@ Kada birate Pixel na koji želite instalirati GrapheneOS, osigurajte da proverit
 U vreme pisanja, Pixel 6a je najjeftiniji dostupni model sa dobrom dugoročnom podrškom, garantovanom do jula 2027. Ako se odlučite za ovaj model, otključavanje OEM-a neće raditi sa verzijom fabričkog OS-a. Potrebno je da ga ažurirate na izdanje iz juna 2022. ili kasnije putem ažuriranja preko mreže. Nakon što ga ažurirate, takođe ćete morati da vratite uređaj na fabrička podešavanja da biste popravili otključavanje OEM-a. Svi ostali modeli koji su otključani od strane operatera biće spremni za GrapheneOS odmah iz kutije.
 
 
-Kada birate uređaj, takođe ćete želeti da osigurate da kupite otključanu verziju. Određeni operateri kao što je Verizon isporučuju svoje jedinice sa zaključanim bootloader-om, što potpuno sprečava sledeći proces.
+Kada birate uređaj, takođe ćete želeti da osigurate da kupite otključanu verziju. Određeni operateri kao što je Verizon isporučuju svoje uređaje sa zaključanim bootloader-om, što potpuno sprečava sledeći proces.
 
 
 ### Instaliranje GrapheneOS-a
