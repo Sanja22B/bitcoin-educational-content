@@ -82,7 +82,7 @@ Preuzmite instalacioni program za softver koji odgovara vašem operativnom siste
 ![GnuPG](assets/notext/04.webp)
 
 
-Trebaće vam i Hash datoteka, često nazvan "*SHA256SUMS*" ili "*MANIFEST*".
+Trebaće vam i Hash datoteka, često nazvana "*SHA256SUMS*" ili "*MANIFEST*".
 
 
 ![GnuPG](assets/notext/05.webp)
