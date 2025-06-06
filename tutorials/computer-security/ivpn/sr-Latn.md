@@ -116,7 +116,7 @@ Proverite da li vam sve odgovara, a zatim kliknite na dugme "*Pay with Lightning
 
 ![IVPN](assets/notext/12.webp)
 
-Lightning faktura će vam biti predstavljen na njihovom BTCPay Serveru. Skenirajte QR kod sa vašim Lightning novčanikom i nastavite sa plaćanjem.
+Lightning faktura će vam biti predstavljena na njihovom BTCPay Serveru. Skenirajte QR kod sa vašim Lightning novčanikom i nastavite sa plaćanjem.
 
 ![IVPN](assets/notext/13.webp) 
 
