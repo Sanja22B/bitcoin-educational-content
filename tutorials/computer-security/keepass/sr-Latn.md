@@ -94,7 +94,8 @@ Otvorite preuzetu `.pkg` datoteku i pratite uputstva kako biste instalirali Mono
 ![KEEPASS](assets/notext/04.webp)
 Zatim idite na zvaničnu KeePass veb stranicu i preuzmite najnoviju prenosivu verziju u `.zip` formatu.
 ![KEEPASS](assets/notext/05.webp)
-Nakon preuzimanja `.zip` datoteke, dvaput kliknite da biste je raspakovali. Dobićete fasciklu koja sadrži više datoteka, uključujući `KeePass.exe`. Otvorite terminal i pređite u KeePass fasciklu (zamenite `xx` odgovarajućim brojem verzije):
+Nakon preuzimanja `.zip` datoteke, dvaput kliknite da biste je raspakovali. Dobićete folder
+koja sadrži više datoteka, uključujući `KeePass.exe`. Otvorite terminal i pređite u KeePass folder (zamenite `xx` odgovarajućim brojem verzije):
 
 
 ```
