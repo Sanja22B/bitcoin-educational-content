@@ -18,11 +18,11 @@ Ova metoda se zasniva na asimetričnoj kriptografiji: nikakvi tajni podaci se ne
 
 
 
-Pored U2F, koji omogućava dvofaktorsku autentifikaciju, Trezori takođe podržavaju FIDO2 (*Fast IDentity Online 2.0*), evoluciju U2F-a. Ovo je standardizovani protokol autentifikacije iz 2018. godine, koji proširuje logiku U2F-a i ima za cilj da potpuno zameni lozinke. Zasniva se na dve komponente: *WebAuthn* (strana pregledača) i *CTAP2* (strana fizičkog ključa). FIDO2 omogućava autentifikaciju bez lozinki: korisnici se identifikuju isključivo putem svog Trezor uređaja, koji deluje kao jedinstveni kriptografski token, bez dodatne lozinke. Ovaj protokol je sada kompatibilan sa brojnim onlajn servisima, posebno onima usmerenim ka preduzećima.
+Pored U2F, koji omogućava dvofaktorsku autentifikaciju, Trezori takođe podržavaju FIDO2 (*Fast IDentity Online 2.0*), evoluciju U2F-a. Ovo je standardizovani protokol autentifikacije iz 2018. godine, koji proširuje logiku U2F-a i ima za cilj da potpuno zameni lozinke. Bazira se na dva sastavna dela: WebAuthn (sa strane pregledača) i CTAP2 (sa strane fizičkog ključa). FIDO2 omogućava autentifikaciju bez lozinke: korisnici se identifikuju isključivo putem svog Trezor uređaja, koji deluje kao jedinstveni kriptografski token, bez dodatne lozinke. Ovaj protokol je sada kompatibilan sa brojnim onlajn servisima, posebno onima usmerenim ka preduzećima.
 
 
 
-Pored funkcionalnosti "passwordless*", FIDO2 takođe omogućava dvofaktorsku autentifikaciju na sličan način kao U2F.
+Pored funkcionalnosti "*passwordless* (prevod: bez lozinke)", FIDO2 takođe omogućava dvofaktorsku autentifikaciju na sličan način kao U2F.
 
 
 
