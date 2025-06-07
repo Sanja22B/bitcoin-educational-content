@@ -236,7 +236,7 @@ Bićete povezani sa svojim nalogom bez potrebe da unosite lozinku.
 
 
 
-## Sačuvaj svoje FIDO2 kredencijale (rezidente kredencijale)
+## Sačuvaj svoje FIDO2 kredencijale (rezidentne kredencijale)
 
 
 
