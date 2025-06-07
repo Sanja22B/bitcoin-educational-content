@@ -81,19 +81,21 @@ sudo pacman -S keepass
 
 ```
 
-If you are on a Windows computer, go to the [official KeePass download page](https://keepass.info/download.html), and download the latest version of the installer:
+Ako koristite Windows računar, [idite na zvaničnu stranicu za preuzimanje KeePass-a](https://keepass.info/download.html), i preuzmite najnoviju verziju instalacionog programa:
 ![KEEPASS](assets/notext/02.webp)
-Click on the downloaded file to run it, then follow the instructions of the setup wizard to complete the installation (see next section).
+Kliknite na preuzetu datoteku da biste je pokrenuli, a zatim sledite uputstva čarobnjaka za instalaciju kako biste dovršili instalaciju (pogledajte naredno poglavlje).
 
-For macOS users, the installation is a bit more complex. If you wish to use the original version of KeePass as on Windows, follow the instructions below. Otherwise, you can opt for [KeePassXC](https://keepassxc.org/), an alternative version compatible with macOS, which offers a slightly different interface.
+Za korisnike macOS-a, instalacija je nešto složenija. Ako želite da koristite originalnu verziju KeePass-a kao na Windowsu, pratite uputstva u nastavku. 
+U suprotnom, možete se opredeliti za [KeePassXC](https://keepassxc.org/), alternativnu verziju kompatibilnu sa macOS-om, koja nudi nešto drugačiji interfejs.
 
-To use KeePass, you will need a runtime environment for .NET applications. I recommend installing Mono for this. Go to the [official Mono page](https://www.mono-project.com/download/stable/#download-mac) in the "*macOS*" section, and click on the link to download the installation package (`.pkg`).
+Da biste koristili KeePass, biće vam potrebno izvršno okruženje za .NET aplikacije. Preporučujem da instalirate Mono u tu svrhu. Idite na [zvaničnu Mono stranicu](https://www.mono-project.com/download/stable/#download-mac) i u odeljku "macOS" i kliknite na link za preuzimanje instalacionog paketa (.pkg).
 ![KEEPASS](assets/notext/03.webp)
-Open the downloaded `.pkg` file and follow the instructions to install Mono on your Mac.
+Otvorite preuzetu `.pkg` datoteku i pratite uputstva kako biste instalirali Mono na svom Mac-u.
 ![KEEPASS](assets/notext/04.webp)
-Next, go to the official KeePass website and download the latest portable version in `.zip` format.
+Zatim idite na zvaničnu KeePass veb stranicu i preuzmite najnoviju prenosivu verziju u `.zip` formatu.
 ![KEEPASS](assets/notext/05.webp)
-After downloading the `.zip` file, double-click to extract it. You will get a folder containing several files, including `KeePass.exe`. Open a terminal, navigate to the KeePass folder (replace `xx` with the version number):
+Nakon preuzimanja `.zip` datoteke, dvaput kliknite da biste je raspakovali. Dobićete fasciklu koja sadrži više datoteka, uključujući `KeePass.exe`. Otvorite terminal i pređite u KeePass fasciklu (zamenite `xx` odgovarajućim brojem verzije):
+
 
 ```
 
@@ -101,7 +103,7 @@ cd ~/Downloads/KeePass-2.xx
 
 ```
 
-And finally, run KeePass with Mono:
+I na kraju, pokrenite KeePass pomoću Mono okruženja:
 
 ```
 
