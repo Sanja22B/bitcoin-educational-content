@@ -42,7 +42,7 @@ U ovom vodiču ćemo otkriti kako aktivirati U2F ili FIDO2 za dvofaktorsku auten
 
 
 
-Pre nego što počnete, uverite se da ste podesili svoj Bitcoin novčanik na vašem Trezoru. Važno je da pravilno sačuvate vašu Mnemonic (bezbednosnu) frazu, jer se ključevi korišćeni za U2F i FIDO2 u dvofaktorskoj autentifikaciji izvode iz ove Mnemonic fraze. Ako vaš Trezor bude izgubljen ili oštećen, možete povratiti pristup vašim ključevima unosom vaše Mnemonic fraze na drugom Trezor uređaju (imajte na umu da za FIDO2 akreditive u "*passwordless*" režimu, samo seed nije dovoljan, kao što ćemo videti u narednim odeljcima).
+Pre nego što počnete, uverite se da ste podesili svoj Bitcoin novčanik na vašem Trezoru. Važno je da pravilno sačuvate vašu Mnemonic (bezbednosnu) frazu, jer se ključevi korišćeni za U2F i FIDO2 u dvofaktorskoj autentifikaciji izvode iz ove Mnemonic fraze. Ako vaš Trezor bude izgubljen ili oštećen, možete povratiti pristup vašim ključevima unosom vaše Mnemonic fraze na drugom Trezor uređaju (imajte na umu da za FIDO2 kredencijali u režimu "*bez lozinke*", samo seed nije dovoljan, kao što ćemo videti u narednim odeljcima).
 
 
 
@@ -208,7 +208,7 @@ Zatim će vam biti zatraženo da se identifikujete kako biste proverili da li kl
 
 
 
-Od sada, kada se prijavljujete na svoj nalog, više neće biti potrebno unositi vašu email adresu Address ili prijavu. Jednostavno kliknite na dugme da se autentifikujete fizičkim ključem na obrascu za prijavu.
+Od sada, kada se prijavljujete na svoj nalog, više neće biti potrebno unositi vašu email adresu ili prijavu. Jednostavno kliknite na dugme da se autentifikujete fizičkim ključem na obrascu za prijavu.
 
 
 
@@ -236,11 +236,11 @@ Bićete povezani sa svojim nalogom bez potrebe da unosite lozinku.
 
 
 
-## Sačuvaj svoje FIDO2 akreditive (rezidente akreditiva)
+## Sačuvaj svoje FIDO2 kredencijale (rezidente kredencijale)
 
 
 
-Ako koristite FIDO2 ili U2F za dvofaktorsku autentifikaciju, tj. za prijavljivanje na naloge koji zahtevaju lozinku pored 2FA validacije putem vašeg Trezora, tada će sama Mnemonic fraza omogućiti pristup vašim ključevima. Međutim, ako koristite FIDO2 u "*bezlozinkskom*" režimu kao što je opisano u prethodnom odeljku, biće potrebno napraviti kopiju vaših FIDO akreditiva pored pravljenja rezervne kopije vaše Mnemonic fraze koja šifruje te akreditive.
+Ako koristite FIDO2 ili U2F za dvofaktorsku autentifikaciju, tj. za prijavljivanje na naloge koji zahtevaju lozinku pored 2FA validacije putem vašeg Trezora, tada će sama Mnemonic fraza omogućiti pristup vašim ključevima. Međutim, ako koristite FIDO2 u "*bezlozinskom*" režimu kao što je opisano u prethodnom odeljku, biće potrebno napraviti kopiju vaših FIDO kredencijala pored pravljenja rezervne kopije vaše Mnemonic fraze koja šifruje te kredencijale.
 
 
 
@@ -301,7 +301,7 @@ Credential ID:          f1d00200a020a736356d0ceb7ce8b7655b39c399d8111b620bbbbfc7
 
 
 
-Kopiraj i sačuvaj sve ove informacije u tekstualnu datoteku. Ne postoji značajan rizik povezan sa ovom rezervnom kopijom, osim otkrivanja da koristite ove usluge sa FIDO2. "*ID akreditiva*" je šifrovan korišćenjem vašeg Wallet-ovog seed, što znači da napadač koji dobije ovu rezervnu kopiju ne bi mogao da se poveže na vaše naloge, već samo da primeti da koristite ove naloge. Da biste dešifrovali ove ID-ove, potreban vam je seed u vašem novčaniku.
+Kopiraj i sačuvaj sve ove informacije u tekstualnu datoteku. Ne postoji značajan rizik povezan sa ovom rezervnom kopijom, osim otkrivanja da koristite ove usluge sa FIDO2. "*ID kredencijala*" je šifrovan korišćenjem vašeg seed-a novčanika, što znači da napadač koji dobije ovu rezervnu kopiju ne bi mogao da se poveže na vaše naloge, već samo da primeti da koristite ove naloge. Da biste dešifrovali ove ID-ove, potreban vam je seed u vašem novčaniku.
 
 
 
@@ -309,7 +309,7 @@ Stoga možete kreirati nekoliko kopija ovog tekstualnog fajla i čuvati ih na ra
 
 
 
-Sada zamislimo da ste pokvarili svoj Trezor. Da biste povratili svoje FIDO2 akreditive, prvo ćete morati da povratite svoj novčanik koristeći svoju Mnemonic frazu na novom FIDO2-kompatibilnom Trezor uređaju.
+Sada zamislimo da ste pokvarili svoj Trezor. Da biste povratili svoje FIDO2 kredencijale, prvo ćete morati da povratite svoj novčanik koristeći svoju Mnemonic frazu na novom FIDO2-kompatibilnom Trezor uređaju.
 
 
 
