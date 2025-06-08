@@ -16,7 +16,7 @@ Postoji mnogo kvalitetnih provajdera VPN usluga, a mi smo sproveli sveobuhvatan 
 Većina provajdera VPN usluga kao što su ProtonVPN i Mullvad nude opciju plaćanja bitcoinima, ali zahtevaju kreiranje naloga i kupovinu plana na duži ili kraći rok, što možda ne odgovara svačijem budžetu.
 
 
-LN VPN omogućava korišćenje VPN-a na zahtev, u trajanju od samo jednog sata, zahvaljujući implementaciji Bitcoin plaćanja putem Lightning mreže (eng. Lightning Network). Instantna i anonimna, lightning plaćanja otvaraju svet mogućnosti za mikroplaćanja.
+LN VPN omogućava korišćenje VPN-a na zahtev, u trajanju od samo jednog sata, zahvaljujući implementaciji Bitcoin plaćanja putem Lightning mreže (eng. Lightning Network). Instant i anonimna, lightning plaćanja otvaraju svet mogućnosti za mikroplaćanja.
 
 
 Napomena💡: **Ovaj vodič opisuje kako koristiti LN VPN sa sistema Linux Ubuntu 22.04 LTS.**
