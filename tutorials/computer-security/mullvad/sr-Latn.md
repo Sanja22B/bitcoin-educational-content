@@ -166,7 +166,7 @@ Da biste pristupili podešavanjima, kliknite na zupčanik.
 
 ![MULLVAD VPN](assets/notext/32.webp) 
 
-U meniju "*User Interface settings*", možete prilagoditi podešavanja vašeg softvera, uključujući jezik na kojem se prikazuje interfjes i njegovo ponašanje na vašem sistemu. 
+U meniju "*User Interface settings*", možete prilagoditi podešavanja vašeg softvera, uključujući jezik na kojem se prikazuje interfejs i njegovo ponašanje na vašem sistemu. 
 
 ![MULLVAD VPN](assets/notext/33.webp) 
 
