@@ -33,7 +33,7 @@ Trenutno (april 2025), Keet nije u potpunosti open-source. Deo izvornog koda je 
 | Signal               | ✅              | ✅              | ❌                   | ✅                          | ✅                           | ❌                    | 2014              |
 | Threema              | ✅              | ✅              | ✅                   | ✅                          | ❌                           | ❌                    | 2012              |
 | Element (Matrix)     | ✅              | ✅              | ✅                   | ✅                          | ✅                           | 🟡 (fédéré)          | 2016              |
-| Delta Chat           | ✅              | ✅              | ✅                   | ✅                          | N/A                         | 🟡 (via email)       | 2017              |
+| Delta Chat           | ✅              | ✅              | ✅                   | ✅                          | N/A                         | 🟡 (preko emaila)       | 2017              |
 | Conversations (XMPP) | ✅              | ✅              | ✅                   | ✅                          | ✅                           | 🟡 (fédéré)          | 2014              |
 | Session              | ✅              | ✅              | ✅                   | ✅                          | ✅                           | ✅                    | 2020              |
 | SimpleX              | ✅              | ✅              | ✅                   | ✅                          | ✅                           | ✅                    | 2021              |
@@ -47,7 +47,7 @@ Trenutno (april 2025), Keet nije u potpunosti open-source. Deo izvornog koda je 
 
 
 
-## Instaliraj Keet
+## Instaliraj Keet aplikaciju
 
 
 
