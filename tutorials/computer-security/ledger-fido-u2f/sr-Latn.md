@@ -34,7 +34,7 @@ Ako koristite Ledger uređaj, verovatno znate da sam firmver ne sadrži sve funk
 
 
 
-Pre nego što počnete, uverite se da ste postavili svoj Bitcoin Wallet na svoj Ledger. Važno je da pravilno sačuvate svoju bezbednosnu frazu, jer se ključevi korišćeni za 2FA izvode iz ove fraze. Ako vaš Ledger bude izgubljen ili oštećen, možete povratiti pristup svojim ključevima unosom vaše bezbednosne fraze na drugi Ledger uređaj (za sada, FIDO2 identifikatori u "*passwordless*" režimu još uvek nisu podržani na Ledgerima, tako da nema rezidentnih identifikatora).
+Pre nego što počnete, uverite se da ste postavili svoj Bitcoin novčanik na svoj Ledger. Važno je da pravilno sačuvate svoju bezbednosnu frazu, jer se ključevi korišćeni za 2FA izvode iz ove fraze. Ako vaš Ledger bude izgubljen ili oštećen, možete povratiti pristup svojim ključevima unosom vaše bezbednosne fraze na drugi Ledger uređaj (za sada, FIDO2 identifikatori u "*passwordless*" režimu još uvek nisu podržani na Ledgerima, tako da nema rezidentnih identifikatora).
 
 
 
@@ -146,7 +146,7 @@ Zatim možete pritisnuti dugme "*Log in*" na vašem Ledger ekranu da potvrdite a
 
 
 
-Prednost korišćenja Hardware Ledger Wallet za dvofaktorsku autentifikaciju je što možete lako povratiti svoje ključeve zahvaljujući Mnemonic (bezbednosnoj) frazi. Pored ove osnovne rezervne kopije, možete koristiti i hitni kod koji obezbeđuje svaka usluga gde ste aktivirali 2FA. Ovaj hitni kod vam omogućava da se povežete na svoj nalog ako izgubite sigurnosni ključ. Stoga zamenjuje 2FA za povezivanje ako je potrebno.
+Prednost korišćenja Hardware Ledger novčanik za dvofaktorsku autentifikaciju je što možete lako povratiti svoje ključeve zahvaljujući Mnemonic (bezbednosnoj) frazi. Pored ove osnovne rezervne kopije, možete koristiti i hitni kod koji obezbeđuje svaka usluga gde ste aktivirali 2FA. Ovaj hitni kod vam omogućava da se povežete na svoj nalog ako izgubite sigurnosni ključ. Stoga zamenjuje 2FA za povezivanje ako je potrebno.
 
 
 
