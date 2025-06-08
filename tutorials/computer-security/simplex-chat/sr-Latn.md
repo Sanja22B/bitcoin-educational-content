@@ -1,5 +1,5 @@
 ---
-name: SimpleX četovanje
+name: SimpleX Chat
 description: Prvo poštansko sanduče bez korisničkog ID-a
 ---
 ![cover](assets/cover.webp)
@@ -30,17 +30,17 @@ SimpleX integriše sve klasične funkcije aplikacija za razmenu poruka. Međutim
 
 
 
-| Application          | E2EE 1:1       | E2EE grupe    | Inscription anonyme | Licenca otvorenog koda klijenta | Licenca otvorenog koda servera | Decentralizovani server|Godina kreiranja |
+| Aplikacija          | E2EE 1:1       | E2EE grupe    | Anonimna prijava | Licenca otvorenog koda klijenta | Licenca otvorenog koda servera | Decentralizovani server|Godina kreiranja |
 | -------------------- | -------------- | -------------- | ------------------- | -------------------------- | --------------------------- | -------------------- | ----------------- |
 | WhatsApp             | ✅              | ✅              | ❌                   | ❌                          | ❌                           | ❌                    | 2009              |
 | WeChat               | ❌              | ❌              | ❌                   | ❌                          | ❌                           | ❌                    | 2011              |
-| Facebook Messenger   | ✅              | 🟡 (optionnel) | ❌                   | ❌                          | ❌                           | ❌                    | 2011              |
-| Telegram             | 🟡 (optionnel) | ❌              | 🟡                  | ✅                          | ❌                           | ❌                    | 2013              |
+| Facebook Messenger   | ✅              | 🟡 (opciono) | ❌                   | ❌                          | ❌                           | ❌                    | 2011              |
+| Telegram             | 🟡 (opciono) | ❌              | 🟡                  | ✅                          | ❌                           | ❌                    | 2013              |
 | LINE                 | ✅              | ✅              | ❌                   | ❌                          | ❌                           | ❌                    | 2011              |
 | Signal               | ✅              | ✅              | ❌                   | ✅                          | ✅                           | ❌                    | 2014              |
 | Threema              | ✅              | ✅              | ✅                   | ✅                          | ❌                           | ❌                    | 2012              |
 | Element (Matrix)     | ✅              | ✅              | ✅                   | ✅                          | ✅                           | 🟡 (fédéré)          | 2016              |
-| Delta Chat           | ✅              | ✅              | ✅                   | ✅                          | N/A                         | 🟡 (via email)       | 2017              |
+| Delta Chat           | ✅              | ✅              | ✅                   | ✅                          | N/A                         | 🟡 (preko emaila)       | 2017              |
 | Conversations (XMPP) | ✅              | ✅              | ✅                   | ✅                          | ✅                           | 🟡 (fédéré)          | 2014              |
 | Session              | ✅              | ✅              | ✅                   | ✅                          | ✅                           | ✅                    | 2020              |
 | **SimpleX**          | ✅              | ✅              | ✅                   | ✅                          | ✅                           | ✅                    | 2021              |
