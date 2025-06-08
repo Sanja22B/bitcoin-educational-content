@@ -78,7 +78,7 @@ Telegram je sada potpuno funkcionalan na mobilnom, možemo preći na prva osnovn
 ## Konfiguracija korisničkog imena
 
 
-Telegram korisničko ime - ponekad se naziva i `handle` - mnogo je više od puke pomodarstva. Handle je zaista **jedinstven za svakog korisnika**.
+Telegram korisničko ime - ponekad se naziva i `handle` - mnogo je više od pukog pomodarstva. Handle je zaista **jedinstven za svakog korisnika**.
 
 Na Telegramu je lako naići na prevarante koji pišu privatno, pretvarajući se da su neko ko nisu. Svaki korisnik može upasti u zamku i otkriti lične informacije verujući da razgovara sa kontaktom kojem potpuno veruje. **Videćemo da je korisničko ime najbolja odbrana za ublažavanje ovakvih opasnosti**.
 
