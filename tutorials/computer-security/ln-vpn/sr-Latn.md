@@ -25,7 +25,7 @@ Napomena💡: **Ovaj vodič opisuje kako koristiti LN VPN sa sistema Linux Ubunt
 ## Preduslovi: Wireguard
 
 
-U jednostavnim terminima, Wireguard se koristi za kreiranje sigurnog tunela između vašeg računara i udaljenog servera preko kojeg ćete pretraživati Internet. To je IP adresa ovog servera koji će se pojaviti kao vaš za vreme trajanja zakupa koji ćete ugovoriti prateći ovaj vodič.
+Pojednostavljeno rečeno, Wireguard se koristi za kreiranje sigurnog tunela između vašeg računara i udaljenog servera preko kojeg ćete pretraživati internet. IP adresa tog servera će se prikazivati kao vaša tokom trajanja zakupa koji ćete uspostaviti prateći ovo uputstvo.
 
 
 Službeni vodič za instalaciju Wireguarda: https://www.wireguard.com/install/
