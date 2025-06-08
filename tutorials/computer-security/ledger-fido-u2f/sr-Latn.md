@@ -30,7 +30,7 @@ U ovom vodiču pokazaćemo vam kako da aktivirate U2F i FIDO2 za dvofaktorsku au
 
 
 
-Ako koristite Ledger uređaj, verovatno znate da sam firmver ne sadrži sve funkcije potrebne za upravljanje kripto novčanicima. Na primer, da biste koristili Bitcoin Wallet, potrebno je da instalirate aplikaciju "*Bitcoin*". Slično tome, za upravljanje MFA ključevima, potrebno je da instalirate aplikaciju "*Security Key*".
+Ako koristite Ledger uređaj, verovatno znate da sam firmver ne sadrži sve funkcije potrebne za upravljanje kripto novčanicima. Na primer, da biste koristili Bitcoin novčanik, potrebno je da instalirate aplikaciju "*Bitcoin*". Slično tome, za upravljanje MFA ključevima, potrebno je da instalirate aplikaciju "*Security Key*".
 
 
 
