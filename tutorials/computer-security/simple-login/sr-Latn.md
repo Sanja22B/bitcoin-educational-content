@@ -184,7 +184,7 @@ Ako promenite mišljenje i više ne želite da koristite pseudonim, samo kliknit
 Kreiranje pseudonima je jednostavno, kao i njihovo upravljanje, što zahteva samo malo pažnje i discipline. Sav saobraćaj će, zapravo, i dalje prolaziti kroz email inbox koji smo na početku definisali kao zvanični. Obaveštenja i važne komunikacije sa platformi će nastaviti da stižu na Gmail, Proton, ili koji god email provajder da je u pitanju.
 
 
-Rezultat je, međutim, da smo sačuvali glavnu adresu koji, od trenutka kreiranja pseudonima, možemo slobodno odlučiti kome ćemo ga otkriti, a kome ne.
+Rezultat je, međutim, da smo sačuvali glavnu adresu, o kojoj od trenutka kreiranja pseudonima možemo slobodno odlučiti — kome ćemo je otkriti, a kome ne.
 
 
 Alias funkcioniše i za primanje i za slanje: drugi korisnik će zaista primiti odgovor sa alias.preoccupy789@8shield.net, ako je ovo pseudonim izabran za tog određenog primaoca.
