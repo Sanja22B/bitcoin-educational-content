@@ -22,7 +22,7 @@ Olvid je sertifikovan od strane ANSSI (francuske agencije za sajber bezbednost).
 
 
 
-| Aplikacija           | E2EE 1:1       | E2EE grupe     | Anonimna prijava | Licencirani klijent otvorenog koda | Licencirani server otvorenog koda | Server decentralizovan | Godina proizvodnje |
+| Aplikacija           | E2EE 1:1       | E2EE grupe     | Anonimna prijava | Licencirani klijent otvorenog koda | Licencirani server otvorenog koda | Decentralizovani server | Godina kreiranja |
 | -------------------- | -------------- | -------------- | ------------------- | -------------------------- | --------------------------- | -------------------- | ----------------- |
 | WhatsApp             | ✅              | ✅              | ❌                   | ❌                          | ❌                           | ❌                    | 2009              |
 | WeChat               | ❌              | ❌              | ❌                   | ❌                          | ❌                           | ❌                    | 2011              |
