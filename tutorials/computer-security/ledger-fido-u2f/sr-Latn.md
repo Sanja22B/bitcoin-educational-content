@@ -146,7 +146,7 @@ Zatim možete pritisnuti dugme "*Log in*" na vašem Ledger ekranu da potvrdite a
 
 
 
-Prednost korišćenja Hardware Ledger novčanik za dvofaktorsku autentifikaciju je što možete lako povratiti svoje ključeve zahvaljujući Mnemonic (bezbednosnoj) frazi. Pored ove osnovne rezervne kopije, možete koristiti i hitni kod koji obezbeđuje svaka usluga gde ste aktivirali 2FA. Ovaj hitni kod vam omogućava da se povežete na svoj nalog ako izgubite sigurnosni ključ. Stoga zamenjuje 2FA za povezivanje ako je potrebno.
+Prednost korišćenja Hardware Ledger novčanika za dvofaktorsku autentifikaciju je što možete lako povratiti svoje ključeve zahvaljujući Mnemonic (bezbednosnoj) frazi. Pored ove osnovne rezervne kopije, možete koristiti i hitni kod koji obezbeđuje svaka usluga gde ste aktivirali 2FA. Ovaj hitni kod vam omogućava da se povežete na svoj nalog ako izgubite sigurnosni ključ. Stoga zamenjuje 2FA za povezivanje ako je potrebno.
 
 
 
