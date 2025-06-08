@@ -54,7 +54,7 @@ Postoji i posebna poslovna verzija pod nazivom "*Threema Work*". U ovom vodiču,
 
 
 
-## Instalirajte aplikaciju Threema
+## Instalirajte Threema aplikaciju
 
 
 
