@@ -179,7 +179,7 @@ Da biste se povezali sa drugom osobom na SimpleX-u, imate dve opcije:
 
 
 
-Statična adresa omogućava svakome ko ga zna da vas kontaktira na SimpleX-u. To je postojana adresa, koja može biti korišćen više puta, od strane različitih ljudi, bez vremenskog ograničenja. Upravo ta postojanost ga čini podložnijim spamu. Međutim, za razliku od drugih aplikacija za razmenu poruka, brisanjem vaše SimpleX adrese je dovoljno da zaustavi sav spam, bez uticaja na postojeće razgovore. Zapravo, ova adresa se koristi samo za uspostavljanje početne veze, i više nije potreban kada razmena započne.
+Statička adresa omogućava svakome ko ga zna da vas kontaktira na SimpleX-u. To je postojana adresa, koja može biti korišćen više puta, od strane različitih ljudi, bez vremenskog ograničenja. Upravo ta postojanost ga čini podložnijim spamu. Međutim, za razliku od drugih aplikacija za razmenu poruka, brisanjem vaše SimpleX adrese je dovoljno da zaustavi sav spam, bez uticaja na postojeće razgovore. Zapravo, ova adresa se koristi samo za uspostavljanje početne veze, i više nije potreban kada razmena započne.
 
 
 
