@@ -8,7 +8,7 @@ description: Postavljanje VPN-a plaćenog bitcoinima
 VPN ("*Virtualna Privatna Mreža*") je usluga koja uspostavlja sigurnu i šifrovanu vezu između vašeg telefona ili računara i udaljenog servera kojim upravlja VPN provajder.
 
 
-Tehnički, kada se povezujete na VPN, vaš internet saobraćaj se preusmerava kroz šifrovani tunel do VPN servera. Ovaj proces otežava trećim stranama, kao što su Internet provajderi (ISP) ili zlonamerni akteri, da presretnu ili pročitaju vaše podatke. VPN server tada deluje kao posrednik koji se povezuje na uslugu koju želite da koristite u vaše ime. Dodeljuje novu IP adresu vašoj vezi, što pomaže da sakrijete vašu pravu IP adresu od sajtova koje posećujete. Međutim, suprotno onome što neki online oglasi mogu sugerisati, korišćenje VPN-a ne omogućava vam anonimno pretraživanje interneta, jer zahteva nivo poverenja u VPN provajdera koji može videti sav vaš saobraćaj.
+Tehnički, kada se povezujete na VPN, vaš internet saobraćaj se preusmerava kroz šifrovani tunel do VPN servera. Ovaj proces otežava trećim stranama, kao što su Internet provajderi (ISP) ili zlonamerni akteri, da presretnu ili pročitaju vaše podatke. VPN server tada funkcioniše kao posrednik koji se u vaše ime povezuje na uslugu koju želite da koristite. Dodeljuje novu IP adresu vašoj vezi, što pomaže da sakrijete vašu pravu IP adresu od sajtova koje posećujete. Međutim, suprotno onome što neki online oglasi mogu sugerisati, korišćenje VPN-a ne omogućava vam anonimno pretraživanje interneta, jer zahteva nivo poverenja u VPN provajdera koji može videti sav vaš saobraćaj.
 
 ![MULLVAD VPN](assets/fr/01.webp)
 
