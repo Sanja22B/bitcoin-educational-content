@@ -293,7 +293,7 @@ Ako radite na daljinu, uporedite kodove na drugom sigurnom sistemu za razmenu po
 
 
 
-Ako je verifikacija uspešna, ikonica štita sa oznakom za proveru će se pojaviti pored imena vašeg kontakta. Ovo je vaša garancija da razmenjujete sa Bobom. Ako verifikacija nije uspešna, pojaviće se upozorenje "*Incorrect security code! (prevod: Pogrešan sigurnosni kod!)*".
+Ako je verifikacija uspešna, ikonica štita sa oznakom za proveru će se pojaviti pored imena vašeg kontakta. Ovo je vaša garancija da razmenjujete poruke sa Bobom. Ako verifikacija nije uspešna, pojaviće se upozorenje "*Incorrect security code! (prevod: Pogrešan sigurnosni kod!)*".
 
 
 
