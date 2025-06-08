@@ -86,7 +86,7 @@ Jednom kada instalirate aplikaciju, ako ste išli direktno preko prodavnice apli
 
 
 
-[Idite na "*Threema Shop*"(https://shop.threema.ch/)] i kliknite na dugme "*Buy Threema for Android*".
+[Idite na "*Threema Shop*"](https://shop.threema.ch/) i kliknite na dugme "*Buy Threema for Android*".
 
 
 
