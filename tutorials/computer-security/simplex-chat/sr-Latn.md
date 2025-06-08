@@ -1,5 +1,5 @@
 ---
-name: SimpleX Chat
+name: SimpleX četovanje
 description: Prvo poštansko sanduče bez korisničkog ID-a
 ---
 ![cover](assets/cover.webp)
