@@ -156,9 +156,9 @@ Ovde ćete pronaći čitav niz važnih parametara koje možete prilagoditi prema
 Obavezno postavite:
 
 
-- _Broj telefona_ za "Nikoga"
-- _Pozivi_ ka "Mojim kontaktima"
-- _Pozivnice_ za "Niko"
+- _Broj telefona_ za "Nikoga" (eng. Nobody)
+- _Pozivi_ ka "Mojim kontaktima" (eng. My contacts)
+- _Pozivnice_ za "Nikoga" (eng. Nobody)
 
 Ovo su mere koje će sprečiti izlaganje vašeg broja telefona, tako da nećete primati neželjene pozive ili biti nesvesno dodati u grupe sumnjivog porekla. Kasnije, možete prilagoditi sve ostale parametre kako želite.
 
