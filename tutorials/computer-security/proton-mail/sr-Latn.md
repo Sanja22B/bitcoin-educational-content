@@ -14,7 +14,7 @@ Da biste osigurali bezbednost vašeg email sandučeta, važno je usvojiti neke j
 ## Zašto koristiti ProtonMail?
 
 
-ProtonMail je prilično sigurno rešenje za razmenu poruka zahvaljujući nekoliko karakteristika. Prvo, ProtonMail obezbeđuje end-to-end enkripciju vaših emailova, što znači da samo pošiljalac i primalac mogu čitati njihov sadržaj. U teoriji, čak ni ProtonMail ne može pristupiti emailovima svojih korisnika. Ova enkripcija se primenjuje automatski, bez potrebe za bilo kakvim specifičnim tehničkim veštinama od strane korisnika.
+ProtonMail je veoma bezbedno rešenje za razmenu poruka, i to zahvaljujući brojnim sigurnosnim funkcijama. Prvo, ProtonMail obezbeđuje end-to-end enkripciju vaših emailova, što znači da samo pošiljalac i primalac mogu čitati njihov sadržaj. U teoriji, čak ni ProtonMail ne može pristupiti emailovima svojih korisnika. Ova enkripcija se primenjuje automatski, bez potrebe za bilo kakvim specifičnim tehničkim veštinama od strane korisnika.
 
 
 Štaviše, ProtonMail integriše napredne tehnologije za zaštitu vaše privatnosti, uključujući blokiranje određenih sistema za praćenje i maskiranje vaše IP adrese. Budući da je bazirana u Švajcarskoj, kompanija Proton ima koristi od nekih zakona o zaštiti podataka koji se ne nalaze u drugim zemljama. Pored toga, ProtonMail je otvorenog koda, što omogućava nezavisnim stručnjacima da slobodno revidiraju softverski kod.
