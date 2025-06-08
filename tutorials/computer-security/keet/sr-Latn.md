@@ -23,7 +23,7 @@ Trenutno (april 2025), Keet nije u potpunosti open-source. Deo izvornog koda je 
 
 
 
-| Application          | E2EE 1:1       | E2EE groupes   | Inscription anonyme | Licence client open-source | Licence serveur open-source | Serveur décentralisé | Année de création |
+| Aplikacija          | E2EE 1:1       | E2EE grupe   | Anonimna prijava | Licencirani klijent otvorenog koda | Licencirani server otvorenog koda | Decentralizovani server | Godina kreiranja |
 | -------------------- | -------------- | -------------- | ------------------- | -------------------------- | --------------------------- | -------------------- | ----------------- |
 | WhatsApp             | ✅              | ✅              | ❌                   | ❌                          | ❌                           | ❌                    | 2009              |
 | WeChat               | ❌              | ❌              | ❌                   | ❌                          | ❌                           | ❌                    | 2011              |
