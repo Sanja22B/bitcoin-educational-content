@@ -98,7 +98,7 @@ Možete koristiti nekoliko alata, kao što je Balena Etcher :
  - Sačuvaj i ponovo pokreni
 
 
-**4.2 Pokretanje instalacije** (na francuskom)
+**4.2 Pokretanje instalacije** 
 
 
 **Ekran za pokretanje**
