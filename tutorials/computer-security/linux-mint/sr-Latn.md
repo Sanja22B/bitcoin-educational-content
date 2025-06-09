@@ -157,7 +157,7 @@ Na sledećoj stranici, možete se pomeriti nadole da vidite ogledala (Ogledala s
 ![image](assets/8.webp)
 
 
-Izaberite ogledalo koje vam je najbliže i kliknite na njegov link (tekst Green u koloni ogledala). Datoteka će početi sa preuzimanjem – verzija koju preuzimam je 2.1 gigabajta.
+Izaberite ogledalo koje vam je najbliže i kliknite na njegov link (zeleni tekst u koloni ogledala (eng. Mirrors). Datoteka će početi sa preuzimanjem – verzija koju preuzimam je 2.1 gigabajta.
 
 
 Jednom kada se preuzme, možete flešovati fajl na prenosivi memorijski uređaj i učiniti ga butabilnim. Da biste to uradili, najlakši način je da koristite Balena Etcher. Preuzmite i instalirajte ga ako ga nemate.
