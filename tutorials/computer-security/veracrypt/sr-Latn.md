@@ -78,7 +78,7 @@ Odaberite "*Install*".
 
 ![VeraCrypt](assets/notext/09.webp)
 
-Na kraju, izaberite fasciklu u koju će softver biti instaliran, zatim kliknite na dugme "*Install*".
+Na kraju, izaberite folder u koju će softver biti instaliran, zatim kliknite na dugme "*Install*".
 
 ![VeraCrypt](assets/notext/10.webp)
 
