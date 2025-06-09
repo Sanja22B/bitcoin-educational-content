@@ -161,7 +161,7 @@ Izaberite lokalne datoteke koje želite da sinhronizujete sa svojim Proton Drive
 
 ![PROTON DRIVE](assets/notext/27.webp)
 
-Na primer, izabrao sam samo fasciklu "*Proton Backup*". Zatim kliknite na dugme "*Continue*".
+Na primer, izabrao sam samo folder "*Proton Backup*". Zatim kliknite na dugme "*Continue*".
 
 ![PROTON DRIVE](assets/notext/28.webp)
 
@@ -169,7 +169,7 @@ Zatim ćete stići do softver interfejsa, koji je sličan veb aplikaciji.
 
 ![PROTON DRIVE](assets/notext/29.webp)
 
-Od sada ćete imati fasciklu pod nazivom "*Proton Drive*" lokalno na vašem računaru, koja će prikupljati sve vaše dokumente sačuvane na Proton online. Ako dodate fajl u ovu fasciklu sa vašeg računara, automatski ćete ga pronaći na početnoj stranici web aplikacije Proton Drive, i obrnuto. Za fascikle koje ste odabrali da sinhronizujete tokom instalacije softvera, možete ih pronaći online tako što ćete otići u sekciju "*Computers*" Proton Drive-a i zatim odabrati vaš računar.
+Od sada ćete imati folder pod nazivom "*Proton Drive*" lokalno na vašem računaru, koja će prikupljati sve vaše dokumente sačuvane na Proton online. Ako dodate fajl u ovaj folder sa vašeg računara, automatski ćete ga pronaći na početnoj stranici web aplikacije Proton Drive, i obrnuto. Za foldere koje ste odabrali da sinhronizujete tokom instalacije softvera, možete ih pronaći online tako što ćete otići u sekciju "*Computers*" Proton Drive-a i zatim odabrati vaš računar.
 
 ![PROTON DRIVE](assets/notext/30.webp)
 
@@ -179,7 +179,7 @@ Dakle, sve vaše datoteke su rezervisane i sinhronizovane kako lokalno na vašem
 ## Kako napraviti rezervnu kopiju Proton Drive-a?
 
 
-Ako ste pratili prethodne korake, sada imate 2 različite lokacije za bekap vaših važnih fajlova. Da bismo kompletirali našu 3-2-1 strategiju bekapa, potrebno je dodati treću kopiju.
+Ako ste pratili prethodne korake, sada imate 2 različite lokacije za rezervne kopije vaših važnih fajlova. Da bismo kompletirali našu 3-2-1 strategiju bekapa, potrebno je dodati treću kopiju.
 
 Predlažem da izvršite ovu dodatnu rezervnu kopiju na eksternom mediju, kao što je eksterni hard disk ili USB stik, na primer. U zavisnosti od intenziteta vaše upotrebe, postavite odgovarajuću učestalost ažuriranja rezervne kopije (nedeljno, mesečno, polugodišnje...). U svakom izabranom intervalu, potrebno je da preuzmete celokupan sadržaj vašeg Proton Drive-a kako biste napravili rezervnu kopiju podataka na izabranom eksternom mediju. Na taj način, čak i u slučaju krađe vašeg računara i istovremenog uništenja Proton-ovih servera, i dalje ćete imati siguran pristup vašim fajlovima zahvaljujući kopiji na USB stiku.
 
@@ -207,7 +207,7 @@ Zatim ćete pronaći .zip datoteke u svojim preuzimanjima. Jednostavno povežite
 Ako ste zabrinuti da bi ovaj USB stik mogao biti ukraden, razmislite o enkripciji pomoću softvera kao što je VeraCrypt (uskoro ćemo napraviti tutorijal o ovom softveru).
 
 
-Čestitamo, sada imate veoma robustnu 3-2-1 strategiju bekapa, koja vam omogućava da drastično smanjite rizik od gubitka pristupa vašim ličnim dokumentima, bez obzira na okolnosti. Odabirom Proton Drive-a za vaše onlajn bekape, takođe imate koristi od end-to-end enkripcije, koja garantuje zaštitu vaše privatnosti.
+Čestitamo, sada imate veoma robustnu 3-2-1 strategiju bekapa, koja vam omogućava da drastično smanjite rizik od gubitka pristupa vašim ličnim dokumentima, bez obzira na okolnosti. Odabirom Proton Drive-a za vaše onlajn rezervne kopije, takođe imate koristi od end-to-end enkripcije, koja garantuje zaštitu vaše privatnosti.
 
 
 Da biste saznali više o zaštiti vašeg online prisustva i izbegavanju hakovanja, takođe preporučujem da pogledate naš detaljni vodič o Bitwarden menadžeru lozinki:
