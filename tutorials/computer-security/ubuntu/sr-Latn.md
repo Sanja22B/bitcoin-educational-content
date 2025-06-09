@@ -20,7 +20,7 @@ Operativni sistem (OS) je glavni softver koji upravlja svim resursima vašeg ra�
 - **Nulta cena**: Ubuntu i većina Linux distribucija su besplatni
 - **Velika zajednica**: Zajednica korisnika spremna da pomogne putem foruma i tutorijala
 - **Poštovanje privatnosti**: Otvoreni sistem za veću transparentnost
-- **Jednostavnost**: Korisnički prijatan interfesj i lakoća korišćenja
+- **Jednostavnost**: Korisnički prijatan interfejs i lakoća korišćenja
 - **Bogat ekosistem** : Opsežan katalog softvera otvorenog koda
 - **Redovna podrška**: Sigurna ažuriranja od Canonical-a
 
