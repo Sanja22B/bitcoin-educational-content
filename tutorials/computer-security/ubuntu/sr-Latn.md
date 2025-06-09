@@ -224,7 +224,7 @@ Proverite sve svoje izbore pre nego što započnete konačnu instalaciju. Kada k
 ![Résumé de l'installation](assets/fr/18.webp)
 
 
-**4.3 Nadogradnja Ubuntu-a nakon instalacije** (na francuskom)
+**4.3 Nadogradnja Ubuntu-a nakon instalacije** 
 
 
 Ažuriranje vašeg sistema je važan korak nakon nove instalacije. Imate dve opcije:
