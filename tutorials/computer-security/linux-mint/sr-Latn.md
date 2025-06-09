@@ -145,19 +145,19 @@ Pređite mišem preko menija Download na vrhu, a zatim kliknite na link, „Linu
 ![image](assets/6.webp)
 
 
-Postojaće nekoliko „ukusa“ za izbor. Izaberite „Cimet“ da biste pratili ovaj vodič. Kliknite na dugme Preuzmi.
+Postojaće nekoliko „ukusa“ za izbor. Izaberite „Cimet“ da biste pratili ovaj vodič. Kliknite na dugme Download (prevod: Preuzmi).
 
 
 ![image](assets/7.webp)
 
 
-Na sledećoj stranici, možete se pomeriti nadole da vidite ogledala (Ogledala su različiti serveri koji drže kopiju fajla koji želimo). Možete verifikovati preuzimanje koristeći SHA256 i gpg (preporučeno), ali ću preskočiti objašnjavanje toga ovde jer sam već napisao vodiče o tome.
+Na sledećoj stranici, možete se pomeriti nadole da vidite Mirrors (prevod: ogledala) (Ogledala su različiti serveri koji drže kopiju fajla koji želimo). Možete verifikovati preuzimanje koristeći SHA256 i gpg (preporučeno), ali ću preskočiti objašnjavanje toga ovde jer sam već napisao vodiče o tome.
 
 
 ![image](assets/8.webp)
 
 
-Izaberite ogledalo koje vam je najbliže i kliknite na njegov link (zeleni tekst u koloni ogledala (eng. Mirrors). Datoteka će početi sa preuzimanjem – verzija koju preuzimam je 2.1 gigabajta.
+Izaberite ogledalo koje vam je najbliže i kliknite na njegov link (zeleni tekst u koloni Mirrors). Datoteka će početi sa preuzimanjem – verzija koju preuzimam je 2.1 gigabajta.
 
 
 Jednom kada se preuzme, možete flešovati fajl na prenosivi memorijski uređaj i učiniti ga butabilnim. Da biste to uradili, najlakši način je da koristite Balena Etcher. Preuzmite i instalirajte ga ako ga nemate.
@@ -169,10 +169,10 @@ Zatim ga pokreni:
 ![image](assets/9.webp)
 
 
-Kliknite na flash iz datoteke i izaberite LinuxMint datoteku koju ste preuzeli.
+Kliknite na Flash from file (prevod: flash iz datoteke) i izaberite LinuxMint datoteku koju ste preuzeli.
 
 
-Zatim kliknite na Izaberi cilj. Uverite se da je memorijski uređaj priključen i da birate ispravan disk, inače možete uništiti sadržaj pogrešnog diska!
+Zatim kliknite na Select target (prevod: izaberi cilj). Uverite se da je memorijski uređaj priključen i da birate ispravan disk, inače možete uništiti sadržaj pogrešnog diska!
 
 
 Nakon toga, izaberite Flash! Možda ćete morati uneti svoju lozinku. Kada se završi, verovatno neće biti moguće čitati drajv na vašem Windows ili Mac računaru jer je pretvoren u Linux uređaj. Samo ga izvucite.
