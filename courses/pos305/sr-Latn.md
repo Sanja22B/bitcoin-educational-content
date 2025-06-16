@@ -46,17 +46,17 @@ Cilj ove obuke je da vas nauči kako da instalirate, konfigurišete i koristite 
 
 **Sekcija 1: Uvod u BTCPay Server**
 
-Počećemo sa opštom prezentacijom BTCPay Server-a, uključujući ekran za prijavu, upravljanje korisničkim nalozima i kreiranje nove prodavnice. Ovaj uvod će vam pomoći da razumete BTCPay Server Interface i shvatite osnovne funkcije potrebne za početak korišćenja ovog alata.
+Počećemo sa opštom prezentacijom BTCPay Server-a, uključujući ekran za prijavu, upravljanje korisničkim nalozima i kreiranje nove prodavnice. Ovaj uvod će vam pomoći da razumete BTCPay Server interfejs i shvatite osnovne funkcije potrebne za početak korišćenja ovog alata.
 
 
-**Sekcija 2: Uvod u Obezbeđivanje Bitcoin Ključeva**
+**Sekcija 2: Uvod u obezbeđivanje Bitcoin ključeva**
 
-Bezbednost vaših Bitcoin sredstava je veoma važna. U ovom odeljku ćemo istražiti generisanje kriptografskih ključeva, korišćenje hardverskih novčanika za zaštitu ovih ključeva, i kako da komunicirate sa vašim ključevima putem BTCPay Server-a. Takođe ćete naučiti kako da konfigurišete BTCPay Server Lightning Wallet kako biste optimizovali vaše transakcije.
+Bezbednost vaših Bitcoin sredstava je veoma važna. U ovom odeljku ćemo istražiti generisanje kriptografskih ključeva, korišćenje hardverskih novčanika za zaštitu ovih ključeva, i kako da komunicirate sa vašim ključevima putem BTCPay Server-a. Takođe ćete naučiti kako da konfigurišete BTCPay Server Lightning novčanik kako biste optimizovali vaše transakcije.
 
 
-**Sekcija 3: BTCPay Server Interface**
+**Sekcija 3: BTCPay Server interfejs**
 
-Ovaj deo će vas voditi kroz korisnički Interface BTCPay Server-a. Naučićete kako da se krećete kroz kontrolnu tablu, konfigurišete podešavanja prodavnice i servera, upravljate plaćanjima i iskoristite integrisane dodatke. Cilj je da vas upozna sa alatima potrebnim za prilagođavanje vaše instalacije prema vašim potrebama.
+Ovaj deo će vas voditi kroz korisnički interfejs BTCPay Server-a. Naučićete kako da se krećete kroz kontrolnu tablu, konfigurišete podešavanja prodavnice i servera, upravljate plaćanjima i iskoristite integrisane dodatke. Cilj je da vas upozna sa alatima potrebnim za prilagođavanje vaše instalacije prema vašim potrebama.
 
 
 **Sekcija 4: Konfigurisanje BTCPay Servera**
@@ -73,15 +73,13 @@ Spremni da savladate BTCPay Server i unapredite svoje poslovanje? Krenimo!
 <chapterId>e1fe6294-3c82-5203-9537-779f9087c35a</chapterId>
 
 
-Hajde da počnemo sa tim šta je BTCPay Server i odakle potiče. Cenimo transparentnost i određene standarde kako bismo formirali poverenje u Bitcoin prostoru.
-
-Projekat u svemiru je narušio ove vrednosti. Glavni programer BTCPay Server-a, Nicolas Dorier, shvatio je ovo lično i obećao da će ih učiniti zastarelim. Evo nas mnogo godina kasnije, svakodnevno radimo ka ovoj budućnosti, potpuno otvorenog koda.
+Hajde da počnemo sa tim šta je BTCPay Server i odakle potiče. Cenimo transparentnost i određene standarde kako bismo izgradili poverenje u Bitcoin okruženju. Jedan projekat u tom okruženju prekršio je te vrednosti. Glavni programer BTCPay Server-a, Nicolas Dorier, shvatio je ovo lično i obećao da će ih učiniti zastarelim. Evo nas mnogo godina kasnije, svakodnevno radimo ka ovoj budućnosti, potpuno otvorenog koda.
 
 
 > Ovo su laži, moje poverenje u tebe je slomljeno, učiniću te zastarelim.
 > Nicolas Dorier
 
-Nakon reči koje je izgovorio Nicolas, bilo je vreme da se počne sa izgradnjom. Mnogo rada je uloženo u ono što danas zovemo BTCPay Server. Više ljudi je želelo da pomogne u ovom poduhvatu. Najprepoznatljiviji su r0ckstardev, MrKukks, Pavlenex, i prvi trgovac koji je koristio softver, astupidmoose.
+Nakon ovih reči koje je izgovorio Nicolas, bilo je vreme da se počne sa izgradnjom. Mnogo rada je uloženo u ono što danas zovemo BTCPay Server. Više ljudi je želelo da pomogne u ovom poduhvatu. Najprepoznatljiviji su r0ckstardev, MrKukks, Pavlenex, i prvi trgovac koji je koristio softver, astupidmoose.
 
 
 Šta znači open source i šta je potrebno za takav projekat?
@@ -89,18 +87,18 @@ Nakon reči koje je izgovorio Nicolas, bilo je vreme da se počne sa izgradnjom.
 
 FOSS označava Free & Open-Source Software. Prvi deo se odnosi na uslove koji omogućavaju svakome da kopira, modifikuje i čak distribuira verzije (čak i za profit) softvera. Drugi deo se odnosi na otvoreno deljenje izvornog koda, podstičući javnost da doprinese i poboljša ga.
 
-Ovo privlači iskusne korisnike koji su entuzijastični u vezi sa doprinosom softveru koji već koriste i od kojeg imaju koristi, što se vremenom pokazuje kao uspešnije u usvajanju u odnosu na vlasnički softver. To je u skladu sa etosom Bitcoin da „informacije žele biti slobodne.“ Okuplja strastvene ljude koji formiraju zajednicu i jednostavno je zabavnije. Kao i Bitcoin, FOSS je neizbežan.
+Ovo privlači iskusne korisnike koji su entuzijastični da doprinosu softveru koji već koriste i od kojeg imaju koristi, što se vremenom pokazuje kao uspešnije u usvajanju u odnosu na vlasnički softver. To je u skladu sa Bitcoin etosom da „informacije žele biti slobodne.“ Okuplja strastvene ljude koji formiraju zajednicu i jednostavno je zabavnije. Kao i Bitcoin, FOSS je neizbežan.
 
 
 ### Pre nego što počnemo
 
 
-Ovaj kurs se sastoji od više delova. Mnoge će obraditi vaš učitelj u učionici, Demo okruženja kojima dobijate pristup, server koji je hostovan za vas, i moguće ime domena. Ako završavate ovaj kurs samostalno, imajte na umu da okruženja označena kao DEMO neće biti dostupna za vas.
+Ovaj kurs se sastoji od više delova. Mnoge će obraditi vaš učitelj u učionici, Demo okruženja kojima dobijate pristup, je server koji je hostovan za vas, i moguće ime domena. Ako završavate ovaj kurs samostalno, imajte na umu da okruženja označena kao DEMO neće biti dostupna za vas.
 
 NB. Ako pratite ovaj kurs u učionici, imena servera mogu se razlikovati u zavisnosti od postavke vaše učionice. Varijable u imenima servera mogu biti različite zbog toga.
 
 
-### Struktura Kursa
+### Struktura kursa
 
 
 Svako poglavlje ima ciljeve i procene znanja. U ovom kursu, pokrićemo svaki od njih i imati rezime ključnih karakteristika na svakom bloku lekcije (tj. poglavlju). Ilustracije su prikazane kako bi pružile vizuelne povratne informacije i ojačale ključne koncepte u vizuelnom aspektu. Ciljevi su postavljeni na početku svakog bloka lekcije. Ovi ciljevi prevazilaze kontrolnu listu. Oni vam pružaju vodič ka novom skupu veština. Procene znanja postaju progresivno izazovnije postavljanje vašeg BTCPay Server-a.
@@ -109,10 +107,10 @@ Svako poglavlje ima ciljeve i procene znanja. U ovom kursu, pokrićemo svaki od 
 ### Šta studenti dobijaju uz kurs?
 
 
-Sa kursom BTCPay Server, student može razumeti osnovne principe, tehničke i netehničke, Bitcoin. Opsežna obuka u korišćenju Bitcoin putem BTCPay Server-a omogućiće studentima da upravljaju sopstvenom Bitcoin infrastrukturom.
+Sa kursom BTCPay Server, student može razumeti osnovne Bitcoin principe, tehničke i netehničke. Opsežna obuka u korišćenju Bitcoin-a putem BTCPay Server-a omogućiće studentima da upravljaju sopstvenom Bitcoin infrastrukturom.
 
 
-### Važne Web adrese ili Mogućnosti kontakta
+### Važne Web adrese ili mogućnosti kontakta
 
 
 Fondacija BTCPay Server, koja je omogućila Alekosu i Basu da napišu ovaj kurs, nalazi se u Tokiju, Japan. Fondacija BTCPay Server može se kontaktirati putem navedene veb stranice;
