@@ -157,7 +157,7 @@ Uloge su :
 **Postavka je sledeća:**
 
 
-Kupci kupuju proizvod iz prodavnice sa Bitcoin.
+Kupci kupuju proizvod iz prodavnice za Bitcoin.
 
 
 **Scenario 1 - Tradicionalni bankarski sistem**
@@ -166,17 +166,17 @@ Kupci kupuju proizvod iz prodavnice sa Bitcoin.
 
 - Postavljanje:
   - Pogledajte dijagrame/objašnjenja u priloženom Figjam-u - [Šematski prikaz aktivnosti](https://www.figma.com/file/ckmvMq02Jm2MegSsVCDFhc/Day-1-Classroom-Activity?type=whiteboard&node-id=0-1&t=KR31ofMaJX6S95UL-0).
-  - Dobijte tri studenta volontera da igraju uloge Kupca (Alice), Trgovca (Bob) i Banke.
-- Izvedi redosled događaja:
-  - Kupac - pretražuje prodavnicu online i pronalazi artikal za $25 koji želi, i obaveštava Prodavca da bi želeo da ga kupi.
+  - Izaberite tri studenta volontera da igraju uloge Kupca (Alice), Trgovca (Bob) i Banke.
+- Izvedi sledeći redosled događaja:
+  - Kupac - pretražuje online prodavnicu i pronalazi artikal za $25 koji želi, i obaveštava Prodavca da bi želeo da ga kupi.
   - Trgovac- traži uplatu.
   - Kupac- šalje informacije o kartici Trgovcu
-  - Trgovac - prosleđuje informacije Banci (identifikujući i svoj i identitet/informacije) zahtevajući plaćanje od
+  - Trgovac - prosleđuje informacije Banci (identifikujući i svoj identitet/informacije) zahtevajući plaćanje
   - Banka prikuplja informacije o Kupcu i Trgovcu (Alice i Bob) i proverava da li je stanje na računu kupca dovoljno.
   - Oduzima $25 sa Alisinog računa, dodaje $24 na Bobov račun, uzima $1 za uslugu
   - Trgovac dobija odobrenje od Banke i šalje proizvod kupcu.
 - Komentari:
-  - Bob i Alice moraju imati odnos sa bankom.
+  - Bob i Alisa moraju imati odnos sa bankom.
   - Banka prikuplja identifikacione informacije o Bobu i Alisi.
   - Banka uzima deo.
   - Banka mora biti poverena za čuvanje novca svakog učesnika sve vreme.
@@ -188,23 +188,23 @@ Kupci kupuju proizvod iz prodavnice sa Bitcoin.
 
 - Postavljanje:
   - Pogledajte dijagrame/objašnjenje u priloženom Figjam - [Šema Aktivnosti](https://www.figma.com/file/ckmvMq02Jm2MegSsVCDFhc/Day-1-Classroom-Activity?type=whiteboard&node-id=0-1&t=KR31ofMaJX6S95UL-0).
-  - Zamenite Bank sa devet studenata koji će igrati ulogu Računara (Bitcoin Čvorovi/Rudari) u mreži kako bi zamenili Banku.
+  - Zamenite Banku sa devet studenata koji će igrati ulogu Računara (Bitcoin Čvorovi/Rudari) u mreži kako bi zamenili Banku.
 - Svaki od 9 računara ima potpun istorijski zapis svih prošlih transakcija ikada napravljenih (tako tačni saldi bez falsifikata), kao i skup pravila:
   - Potvrdite da je transakcija ispravno potpisana (thekeyfitsthelock)
   - Emitujte i primajte validne transakcije ka vršnjacima u mreži, odbacite nevalidne (uključujući one koje pokušavaju da potroše ista sredstva dvaput)
 - Periodično ažurirajte/dodajte zapise sa novim transakcijama primljenim od “nasumičnog” računara pod uslovom da su svi sadržaji validni (napomena: za sada zanemarujemo komponentu Proof of Work radi jednostavnosti), u suprotnom ih odbacite i nastavite kao i pre dok sledeći “nasumični” računar ne pošalje ažuriranje.
   - Odgovarajući iznos je nagrađen ako je sadržaj bio važeći.
-- Izvedi redosled događaja:
-  - Kupac - pretražuje prodavnicu online i pronalazi artikal za $25 koji želi, i obaveštava trgovca da bi želeo da ga kupi.
-  - Trgovac- traži uplatu slanjem kupcu Invoice/Address sa njihovog Wallet.
-  - Kupac - konstruira transakciju (šalje $25 vrednosti BTC na Address koji je obezbedio Trgovac) i emituje je na Bitcoin Mrežu.
+- Izvedite sledeći redosled događaja:
+  - Kupac - pretražuje online prodavnicu i pronalazi artikal za $25 koji želi, i obaveštava trgovca da bi želeo da ga kupi.
+  - Trgovac- traži uplatu slanjem kupcu Fakture/adrese sa njihovog novčanika.
+  - Kupac - konstruira transakciju (šalje $25 vrednosti BTC na adresu koji je obezbedio Trgovac) i emituje je na Bitcoin Mrežu.
 - Računari- primaju transakciju i verifikuju:
-  - U Address se šalje najmanje $25 BTC-a iz
+  - Na adresi sa koje se šalje imanajmanje $25 BTC-a
   - Transakcija je ispravno potpisana („otključana“ od strane kupca)
   - Ako nije slučaj, transakcija neće biti propagirana kroz mrežu, a ako jeste, onda se propagira i drži na čekanju.
   - Trgovci mogu proveriti da je transakcija na čekanju i u procesu čekanja.
 - Jedan računar je „nasumično“ izabran da predloži finalizaciju predložene transakcije emitovanjem „bloka“ koji je sadrži; ako je ispravan, dobiće BTC nagradu.
-  - OPCIONALNO/NAPREDNO - umesto nasumičnog odabira računara, simulirajte Mining tako što će računari bacati kockice dok se ne dogodi neki unapred određeni ishod (npr. prvi koji baci dve šestice zaredom je odabran)
+  - OPCIONALNO/NAPREDNO - umesto nasumičnog odabira računara, simulirajte Mining (rudarenje) tako što će računari bacati kockice dok se ne dogodi neki unapred određeni ishod (npr. prvi koji baci dve šestice zaredom je odabran)
   - Takođe može simulirati šta bi se desilo ako dva računara pobede približno istovremeno, što bi rezultiralo podelom lanca.
   - Računari proveravaju validnost, ažuriraju/dodaju zapise u svoje knjige ako su pravila ispunjena, i emituju blok ka vršnjacima.
   - Nasumično odabrani računar dobija nagradu za predlaganje važećeg bloka.
@@ -212,17 +212,17 @@ Kupci kupuju proizvod iz prodavnice sa Bitcoin.
 - Komentari:
   - Primetite da nije bilo potrebe za prethodnim bankarskim odnosom.
   - Nema potrebe za trećom stranom da posreduje; zamenjeno kodom/podsticajima.
-  - Nema prikupljanja podataka od strane bilo koga van direktnog Exchange i samo neophodna količina mora biti razmenjena između učesnika (npr. slanje Address).
+  - Nema prikupljanja podataka od strane bilo koga van direktne razmene i samo neophodna količina mora biti razmenjena između učesnika (npr. adresa za slanje).
   - Nije potrebno poverenje između ljudi (osim što Trgovac šalje predmet), slično kao kupovina gotovinom na mnogo načina.
   - Novac je u vlasništvu pojedinaca.
-  - Bitcoin Ledger je prikazan u dolarima radi jednostavnosti, ali u stvarnosti, to je BTC.
+  - Bitcoin Ledger (dnevnik) je prikazan u dolarima radi jednostavnosti, ali u stvarnosti, to je BTC.
   - Simuliramo jednu transakciju koja se emituje, ali u stvarnosti, više transakcija čeka u mreži, a blokovi uključuju hiljade transakcija odjednom. Čvorovi takođe proveravaju da nema transakcija sa dvostrukim trošenjem na čekanju (odbacio bih sve osim jedne ako bi to bio slučaj).
 - Scenariji varanja:
   - Šta ako kupac nije imao $25 BTC?
-    - Ne bi mogli da kreiraju transakciju jer su „otključavanje“ i „Ownership“ ista stvar, a računari proveravaju da li je transakcija ispravno potpisana; u suprotnom, odbijaju je.
-  - Šta ako nasumično odabrani računar pokuša da „promeni Ledger“?
+    - Ne bi mogli da kreiraju transakciju jer su „otključavanje“ i „vlasništvo“ ista stvar, a računari proveravaju da li je transakcija ispravno potpisana; u suprotnom, odbijaju je.
+  - Šta ako nasumično odabrani računar pokuša da „promeni Ledger (dnevnik unosa)“?
     - Blok bi bio odbijen, jer svaki drugi računar ima kompletnu istoriju i primetio bi promenu, kršeći jedno od njihovih pravila.
-    - Random Computer ne bi dobio nagradu, a nijedna transakcija iz njihovog bloka ne bi bila finalizovana.
+    - Nasumičan node ne bi dobio nagradu, a nijedna transakcija iz njihovog bloka ne bi bila finalizovana.
 
 
 ## Procena znanja
@@ -253,7 +253,7 @@ Definišite sledeće ključne pojmove predstavljene u prethodnom delu:
 **Razgovarajte o značenju nekih dodatnih pojmova kao grupa:**
 
 
-Blockchain, Transakcija, Dvostruko trošenje, Problem vizantijskih generala, Mining, Proof of Work (PoW), Hash Funkcija, Block reward, Blockchain, Najduži lanac, 51% Napad, Izlaz, Zaključavanje izlaza, Kusur, Satošiji, Javni/Privatni ključ, Address, Kriptografija javnog ključa, Digitalni potpis, Wallet
+Blockchain, Transakcija, Dvostruko trošenje, Problem vizantijskog generala, Mining, Proof of Work (PoW), Hash Funkcija, Block nagrada, Blockchain, Najduži lanac, 51% Napad, Izlaz, Zaključavanje izlaza, Kusur, Satošiji, Javni/Privatni ključ, adresa, Kriptografija javnog ključa, Digitalni potpis, novčanik
 
 
 # Predstavljamo BTCPay Server
@@ -271,7 +271,7 @@ Blockchain, Transakcija, Dvostruko trošenje, Problem vizantijskih generala, Min
 ### Rad sa BTCPay Serverom
 
 
-Cilj ovog kursnog bloka biće sticanje opšteg razumevanja BTCPay Server softvera. U deljenom okruženju, preporučuje se da pratite demonstraciju instruktora i pratite BTCPay Server priručnik kako biste pratili predavača. Naučićete kako da kreirate Wallet kroz više metoda. Primeri uključuju Hot Wallet postavke i hardverske novčanike povezane putem BTCPay Server Vault-a. Ovi ciljevi se ostvaruju u Demo okruženju, koje prikazuje i omogućava pristup vaš instruktor kursa.
+Cilj ovog poglavlja biće sticanje opšteg razumevanja BTCPay Server softvera. U deljenom okruženju, preporučuje se da pratite demonstraciju instruktora i pratite BTCPay Server priručnik kako biste pratili predavača. Naučićete kako da kreirate Wallet kroz više metoda. Primeri uključuju Hot Wallet postavke i hardverske novčanike povezane putem BTCPay Server Vault-a. Ovi ciljevi se ostvaruju u Demo okruženju, koje prikazuje i omogućava pristup vaš instruktor kursa.
 
 
 Ako pratite ovaj kurs sami, možete pronaći listu trećih strana domaćina za demo svrhe na https://directory.btcpayserver.org/filter/hosts. Snažno savetujemo protiv korišćenja ovih opcija trećih strana kao produkcionih okruženja, ali one služe pravoj svrsi za uvod u korišćenje Bitcoin i BTCPay Server-a.
