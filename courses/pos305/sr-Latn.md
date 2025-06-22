@@ -745,28 +745,28 @@ Administratori mogu videti dolazne i odlazne transakcije za On-Chain novčanik p
 | payjoin          | Plaćanje još nije obavljeno – vreme za uplatu još uvek traje        |
 | payjoin-exposed  | UTXO je otkriven putem predloga za Payjoin u fakturi |
 | payment-request  | Uplata je primljena putem zahteva za plaćanje       |
-| payout           | splata je izvršena putem isplate ili povraćaja novca          |
+| payout           | isplata je izvršena putem isplate ili povraćaja novca          |
 
 ### Kako poslati
 
 
-Funkcija slanja BTCPay servera šalje transakcije sa vašeg BTCPay Server On-Chain Wallet. BTCPay Server omogućava više načina potpisivanja vaših transakcija za trošenje sredstava. Transakcija može biti potpisana sa;
+Funkcija slanja BTCPay servera šalje transakcije sa vašeg BTCPay Server On-Chain novčanika. BTCPay Server omogućava više načina potpisivanja vaših transakcija za trošenje sredstava. Transakcija može biti potpisana sa;
 
 
 
-- Hardware Wallet
+- Hardware novčanikom
 - Novčanici koji podržavaju PSBT
 - HD privatni ključ ili fraze za oporavak.
-- Hot Wallet
+- vruć (online) novčanik
 
 
-#### Hardware Wallet
+#### Hardware novčanik
 
 
-BTCPay Server ima ugrađenu podršku za Hardware Wallet koja vam omogućava da koristite vaš Hardware Wallet sa BTCPay Vault-om bez curenja informacija ka aplikacijama ili serverima trećih strana. Integracija Hardware Wallet unutar BTCPay Server-a omogućava vam da uvezete vaš Hardware Wallet i trošite dolazna sredstva jednostavnom potvrdom na vašem uređaju. Vaši privatni ključevi nikada ne napuštaju uređaj, a sva sredstva se validiraju u odnosu na vaš Full node tako da nema curenja podataka.
+BTCPay Server ima ugrađenu podršku za Hardware novčanik koja vam omogućava da koristite vaš Hardware novčanik sa BTCPay Vault-om bez curenja informacija ka aplikacijama ili serverima trećih strana. Integracija Hardware novčanika unutar BTCPay Server-a omogućava vam da uvezete vaš Hardware novčanik i trošite dolazna sredstva jednostavnom potvrdom na vašem uređaju. Vaši privatni ključevi nikada ne napuštaju uređaj, a sva sredstva se validiraju u odnosu na vaš Full node tako da nema curenja podataka.
 
 
-#### Potpisivanje sa Wallet podržava PSBT
+#### Potpisivanje sa novčanikom koji podržava PSBT
 
 
 PSBT (Delimično potpisane Bitcoin transakcije) je format za razmenu Bitcoin transakcija koje još uvek nisu u potpunosti potpisane. PSBT je podržan u BTCPay Server-u i može se potpisati kompatibilnim hardverskim i softverskim novčanicima.
@@ -777,29 +777,29 @@ Izgradnja potpuno potpisane Bitcoin transakcije prolazi kroz sledeće korake:
 
 
 - PSBT se konstruira sa specifičnim ulazima i izlazima, ali bez potpisa
-- Izvezeni PSBT može biti uvezen od strane Wallet koji podržava ovaj format
-- Podaci o transakciji mogu se pregledati i potpisati pomoću Wallet
-- Potpisana datoteka PSBT se izvozi iz Wallet i uvozi sa BTCPay Server
+- Izvezeni PSBT može biti uvezen od strane novčanika koji podržava ovaj format
+- Podaci o transakciji mogu se pregledati i potpisati pomoću novčanika
+- Potpisana datoteka PSBT se izvozi iz novčanika i uvozi sa BTCPay Server
 - BTCPay Server proizvodi konačnu Bitcoin transakciju
 - Verifikujete rezultat i emitujete ga na mrežu.
 
 
-#### Potpisivanje sa HD privatnim ključem ili Mnemonic seed
+#### Potpisivanje sa HD privatnim ključem ili bezbednosnom frazom
 
 
-Ako ste ranije kreirali Wallet koristeći BTCPay Server, možete potrošiti sredstva unosom vašeg privatnog ključa u odgovarajuće polje. Postavite odgovarajući "AccountKeyPath" u Wallet> Postavke; u suprotnom, ne možete potrošiti.
+Ako ste ranije kreirali novčanik koristeći BTCPay Server, možete potrošiti sredstva unosom vašeg privatnog ključa u odgovarajuće polje. Postavite odgovarajući "AccountKeyPath" u Wallet> Settings; u suprotnom, ne možete potrošiti.
 
 
-#### Potpisivanje sa Hot Wallet
+#### Potpisivanje sa vrućim novčanikom
 
 
-Ako ste kreirali novi Wallet prilikom postavljanja vaše prodavnice i omogućili ga kao Hot Wallet, automatski će koristiti seed sačuvan na serveru za potpisivanje.
+Ako ste kreirali novi novčanik prilikom postavljanja vaše prodavnice i omogućili ga kao vruć novčanik, automatski će koristiti seed sačuvan na serveru za potpisivanje.
 
 
 ### RBF (Replace-by-fee)
 
 
-Replace-by-fee (RBF) je funkcija protokola Bitcoin koja vam omogućava da zamenite prethodno emitovanu transakciju (dok je još nepotvrđena). Ovo omogućava nasumično menjanje otiska transakcije vašeg Wallet ili njenu zamenu sa višom stopom naknade kako bi se transakcija pomerila više u redu prioriteta za potvrdu (Mining). Ovo će efikasno zameniti originalnu transakciju jer će viša stopa naknade biti prioritetizovana, i kada bude potvrđena, poništiće originalnu (nema dvostruke potrošnje).
+Replace-by-fee (RBF) je funkcija Bitcoin protokola koja vam omogućava da zamenite prethodno emitovanu transakciju (dok je još nepotvrđena). Ovo omogućava nasumično menjanje otiska transakcije vašeg novčanika ili njenu zamenu sa višom stopom naknade kako bi se transakcija pomerila više u redu prioriteta za potvrdu (Mining, u prevodu rudarenje). Ovo će efikasno zameniti originalnu transakciju jer će viša stopa naknade biti prioritetizovana, i kada bude potvrđena, poništiće originalnu (nema dvostruke potrošnje).
 
 
 Pritisnite dugme "Advanced Settings" da biste videli opcije RBF;
@@ -809,30 +809,29 @@ Pritisnite dugme "Advanced Settings" da biste videli opcije RBF;
 
 
 
-- Nasumično za veću privatnost, Omogućava da se transakcija automatski zameni za nasumično menjanje otiska prsta transakcije.
-- Da, označi transakciju za RBF i zameni je eksplicitno (Ne zamenjuje se podrazumevano, samo unosom)
+- Nasumično za veću privatnost (eng. Randomize for higher privacy), omogućava da se transakcija automatski zameni za nasumično menjanje otiska transakcije.
+- Da, označi transakciju za RBF i zameni je eksplicitno (nije zamenjena po difoltu, već samo na osnovu ulaza).
 - Ne, ne dozvoli da transakcija bude zamenjena.
 
 
 ### Izbor novčića
 
 
-Izbor novčića je napredna funkcija za poboljšanje privatnosti koja vam omogućava da izaberete novčiće koje želite da potrošite prilikom kreiranja transakcije. Na primer, plaćanje novčićima koji su sveže iz mešavine.
+Izbor novčića (coin selection) je napredna funkcija koja poboljšava privatnost i omogućava vam da izaberete koje novčiće želite da potrošite prilikom sastavljanja transakcije. Na primer, možete platiti novčićima koji su upravo izašli iz CoinJoin mešanja.
 
 
-Izbor novčića radi prirodno sa funkcijom Wallet oznaka. Ovo vam omogućava da označite dolazna sredstva za lakše upravljanje i trošenje UTXO.
+Izbor novčića (coin selection) funkcioniše prirodno uz funkciju označavanja u novčaniku (eng. wallet labels). Ovo vam omogućava da označite pristigla sredstva radi lakšeg upravljanja UTXO-ima i trošenja.
 
-
-BTCpay Server takođe podržava BIP-329 za upravljanje etiketama. BIP-329 omogućava etikete na; ako prenesete sa Wallet koji podržava ovaj određeni BIP i postavite etikete, BTCPay Server će ih prepoznati i uvesti. Kada migrirate servere, ove informacije se takođe mogu izvesti i uvesti u novo okruženje.
+BTCPay Server podržava BIP-329 za upravljanje oznakama. Ako sredstva prebacujete iz novčanika koji podržava BIP-329 i prethodno ste postavili oznake, BTCPay Server će ih automatski prepoznati i uvesti. Prilikom migracije servera, ove informacije se takođe mogu izvesti i uvesti u novo okruženje.
 
 
 ### Kako primiti
 
 
-Kada kliknete na dugme za primanje u BTCPay Server-u, generiše se neiskorišćeni Address koji se može koristiti za primanje uplata. Administratori takođe mogu generate novi Address generisanjem novog „Invoice.“
+Kada kliknete na dugme za primanje u BTCPay Server-u, generiše se neiskorišćena adresa koja se može koristiti za primanje uplata. Administratori takođe mogu generisati novu adresu generisanjem nove fakture, eng. „Invoice.“
 
 
-BTCPay Server će uvek tražiti da generate sledeći dostupni Address kako bi se izbegla ponovna upotreba Address. Nakon klika na “generate next available BTC Address,” BTCPay Server je generisao novi Address i QR. Takođe vam omogućava da direktno postavite Oznaku na Address za bolje upravljanje vašim adresama.
+BTCPay Server će uvek tražiti da generišete sledeću dostupnu adresu kako bi se izbegla ponovna upotreba adresa. Nakon klika na “generate next available BTC Address,” BTCPay Server je generisao novu adresu i QR. Takođe vam omogućava da direktno postavite Oznaku, eng. label, na adresu za bolje upravljanje vašim adresama.
 
 
 ![image](assets/en/17.webp)
@@ -844,18 +843,20 @@ BTCPay Server će uvek tražiti da generate sledeći dostupni Address kako bi se
 #### Ponovno skeniraj
 
 
-Funkcija ponovnog skeniranja oslanja se na Bitcoin Core 0.17.0 “Scantxoutset” kako bi skenirala trenutno stanje Blockchain (nazvanog UTXO Set) za novčiće koji pripadaju konfigurisanom derivacionom šemu. Wallet ponovni sken rešava dva problema sa kojima se korisnici BTCPay Server-a suočavaju.
+Funkcija ponovnog skeniranja (Rescan) se oslanja na opciju „Scantxoutset“ uvedenu u Bitcoin Core verziji 0.17.0 kako bi pretražila trenutno stanje blokčejna (tzv. UTXO skup) u potrazi za novčićima koji pripadaju podešenoj šemi derivacije. Ponovno skeniranje novčanika (wallet rescan) rešava dva uobičajena problema sa kojima se korisnici BTCPay Server-a često susreću.
 
 
-1. Problem sa ograničenjem praznina - Većina novčanika trećih strana su laki novčanici koji dele čvor između mnogih korisnika. Laki i Full node-zavisni novčanici ograničavaju broj (obično 20) adresa bez salda koje prate na Blockchain kako bi sprečili probleme sa performansama. BTCPay Server generiše novi Address za svaki Invoice. Imajući u vidu navedeno, nakon što BTCPay Server generiše 20 uzastopnih neplaćenih faktura, eksterni Wallet prestaje da preuzima transakcije, pretpostavljajući da nije bilo novih transakcija. Vaš eksterni Wallet ih neće prikazati kada fakture budu plaćene na 21., 22., itd. S druge strane, interno, BTCPay Server Wallet prati svaki Address koji generiše zajedno sa mnogo većim ograničenjem praznina. Ne oslanja se na treću stranu i uvek može prikazati tačan saldo.
+1. Problem sa "gap limit"-om - Većina eksternih novčanika su tzv. "laki" novčanici koji dele jedan node između više korisnika. I laki novčanici i oni koji zavise od punog node-a ograničavaju broj adresa bez stanja koje prate na blokčejnu (obično na 20) kako bi se izbegli problemi sa performansama. BTCPay Server generiše novu adresu za svaku fakturu. Uzimajući sve to u obzir, nakon što BTCPay Server generiše 20 uzastopnih neplaćenih faktura, eksterni novčanik prestaje da preuzima nove transakcije, pod pretpostavkom da se ništa novo nije dogodilo. Kada se zatim fakture na 21., 22. i narednim adresama ipak plate, vaš eksterni novčanik ih neće prikazati.
+Sa druge strane, interni novčanik BTCPay Server-a prati svaku adresu koju sam generiše i koristi znatno veći "gap limit". Ne oslanja se na treće strane i uvek prikazuje tačan balans.
+2. Rešenje za gap limit - Ako vaš [eksterni/postojeći novčanik](https://docs.btcpayserver.org/WalletSetup/#use-an-existing-Wallet) omogućava podešavanje "gap limit"-a, jednostavno rešenje je da ga povećate. Međutim, većina novčanika tu opciju ne pruža. Trenutno, jedini novčanici za koje znamo da podržavaju podešavanje "gap limit"-a su Electrum, Wasabi i Sparrow Wallet.
 
-2. Rešenje za gap limit - Ako vaš [eksterni/postojeći Wallet](https://docs.btcpayserver.org/WalletSetup/#use-an-existing-Wallet) omogućava konfiguraciju gap limita, jednostavno rešenje je da ga povećate. Međutim, većina novčanika to ne dozvoljava. Jedini novčanici za koje znamo da omogućavaju konfiguraciju gap limita su Electrum, Wasabi i Sparrow Wallet. Nažalost, verovatno ćete naići na problem sa mnogim drugim novčanicima. Za najbolje korisničko iskustvo i privatnost, razmislite o napuštanju eksternih novčanika i korišćenju internog BTCPay Server Wallet.
+Nažalost, verovatno ćete naići na problem sa mnogim drugim novčanicima. Zbog toga, radi najboljeg korisničkog iskustva i veće privatnosti, preporučuje se korišćenje internog novčanika BTCPay Server-a umesto eksternih rešenja.
 
 
 #### BTCPay Server koristi “mempoolfullrbf=1”
 
 
-BTCPay Server koristi “mempoolfullrbf=1”; dodali smo ovo kao podrazumevanu opciju u vašu BTCPay Server postavku. Međutim, takođe smo napravili fragment koji možete sami onemogućiti. Bez “mempoolfullrbf=1,” ako kupac dvostruko potroši uplatu transakcijom koja ne signalizira RBF, Trgovac bi to saznao tek nakon potvrde.
+BTCPay Server koristi “mempoolfullrbf=1”; dodali smo ovo kao podrazumevanu opciju u vašu BTCPay Server postavku. Međutim, takođe smo napravili fragment koji možete sami onemogućiti. Bez “mempoolfullrbf=1,” ako kupac dvostruko potroši uplatu transakcijom koja ne signalizira RBF, trgovac bi to saznao tek nakon potvrde.
 
 
 Administrator može želeti da isključi ovu postavku. Pomoću sledećeg niza možete promeniti podrazumevanu postavku.
@@ -867,16 +868,16 @@ BTCPAYGEN_EXCLUDE_FRAGMENTS="$BTCPAYGEN_EXCL UDE_FRAGMENTS;opt-mempoolfullrbf"
 ```
 
 
-### Postavke BTCPay Server Wallet
+### Postavke BTCPay Server novčanika
 
 
-Postavke Wallet unutar BTCPay Server-a pružaju jasan i brz pregled opštih postavki vašeg Wallet. Sve ove postavke su unapred popunjene ako je Wallet kreiran sa BTCPay Server-om.
+Postavke novčanika unutar BTCPay Server-a pružaju jasan i brz pregled opštih postavki vašeg novčanika. Sve ove postavke su unapred popunjene ako je novčanik kreiran sa BTCPay Server-om.
 
 
 ![image](assets/en/19.webp)
 
 
-Postavke Wallet unutar BTCPay Server-a pružaju jasan i brz pregled opštih postavki vašeg Wallet. Sve ove postavke su unapred popunjene ako je Wallet kreiran sa BTCPay Server-om. Postavke Wallet u BTCPay Server-u počinju sa statusom Wallet. Da li je to samo za gledanje ili Hot Wallet? U zavisnosti od tipa Wallet, akcije mogu varirati od ponovnog skeniranja Wallet za nedostajuće transakcije, obrezivanja starih transakcija iz istorije, registracije Wallet za platne linkove, ili zamene i brisanja trenutnog Wallet povezanog sa prodavnicom. U postavkama Wallet BTCPay Server-a, administratori mogu postaviti Oznaku za Wallet radi boljeg upravljanja Wallet. Ovde će Administrator takođe moći da vidi Šemu Derivacije, ključ naloga (xpub), Otisak prsta i Putanju ključa. Plaćanja u postavkama Wallet imaju samo 2 glavne postavke. Plaćanje je nevažeće ako transakcija ne uspe da se potvrdi u (postavljenim minutima) nakon isteka Invoice. Smatrajte Invoice potvrđenim kada transakcija plaćanja ima X broj potvrda. Administratori takođe mogu postaviti prekidač za prikaz preporučenih naknada pri plaćanjima ili postaviti ručni cilj potvrde u broju blokova.
+Postavke novčanika u BTCPay Server-u počinju sa statusom novčanik. Da li je to samo za gledanje ili vruć novčanik? U zavisnosti od tipa novčanika, akcije mogu varirati od ponovnog skeniranja novčanika za nedostajuće transakcije, obrezivanja starih transakcija iz istorije, registracije novčanika za platne linkove, ili zamene i brisanja trenutnog novčanika povezanog sa prodavnicom. U postavkama novčanik BTCPay Server-a, administratori mogu postaviti oznaku za novčanik radi boljeg upravljanja novčanikom. Ovde će Administrator takođe moći da vidi Šemu Derivacije, ključ naloga (xpub), Otisak prsta i Putanju ključa. Plaćanja u postavkama novčanika imaju samo 2 glavne postavke. Plaćanje je nevažeće ako transakcija ne uspe da se potvrdi u (postavljenim minutima) nakon isteka fakture. Smatrajte fakturu potvrđenom kada transakcija plaćanja ima X broj potvrda. Administratori takođe mogu postaviti prekidač za prikaz preporučenih naknada pri plaćanjima ili postaviti ručni cilj potvrde u broju blokova.
 
 
 ![image](assets/en/20.webp)
@@ -891,7 +892,7 @@ Ako pratite ovaj kurs samostalno, kreiranje ovog naloga bi moglo biti nešto št
 ### Primer
 
 
-#### Postavljanje Bitcoin Wallet u BTCPay Server
+#### Postavljanje Bitcoin novčanika u BTCPay Server
 
 
 BTCPay Server omogućava dva načina postavljanja Wallet. Jedan način je uvoz već postojećeg Bitcoin Wallet. Uvoz se može izvršiti povezivanjem Hardware Wallet, uvozom Wallet datoteke, unosom proširenog javnog ključa, skeniranjem QR koda Wallet, ili najmanje poželjno, ručnim unosom prethodno kreiranog Wallet oporavka seed. U BTCPay Server-u je takođe moguće kreirati novi Wallet. Postoje dva moguća načina konfiguracije BTCPay Server-a prilikom generisanja novog Wallet.
