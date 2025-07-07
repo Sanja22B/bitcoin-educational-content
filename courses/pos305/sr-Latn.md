@@ -3,9 +3,9 @@ name: Bitcoin i BTC Pay Server
 goal: Instalirajte BTC Pay Server za vaše poslovanje
 objectives: 
 
-  - Razumeti šta je btcpayserver.
+  - Razumeti šta je BTC Pay Server.
   - Samostalno hostujte i konfigurišite BTC Pay Server.
-  - Koristite btcpayserver u svom svakodnevnom poslovanju.
+  - Koristite BTC Pay Server u svom svakodnevnom poslovanju.
 
 ---
 
