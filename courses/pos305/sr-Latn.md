@@ -67,7 +67,7 @@ Konačno, fokusiraćemo se na praktičnu instalaciju BTCPay Server-a u različit
 Spremni da savladate BTCPay Server i unapredite svoje poslovanje? Krenimo!
 
 
-## Kritičke pohvale za Autorov Bitcoin i BTCPay Server
+## Kritičko priznanje za autorov rad na Bitkoinu i BTCPay Serveru
 
 
 <chapterId>e1fe6294-3c82-5203-9537-779f9087c35a</chapterId>
@@ -93,7 +93,7 @@ Ovo privlači iskusne korisnike koji su entuzijastični da doprinosu softveru ko
 ### Pre nego što počnemo
 
 
-Ovaj kurs se sastoji od više delova. Mnoge će obraditi vaš učitelj u učionici, Demo okruženja kojima dobijate pristup, je server koji je hostovan za vas, i moguće ime domena. Ako završavate ovaj kurs samostalno, imajte na umu da okruženja označena kao DEMO neće biti dostupna za vas.
+Ovaj kurs se sastoji od više delova. O mnogim stvarima će se pobrinuti vaš nastavnik, uključujući demo okruženja kojem ćete imati pristup, hostovani server za vas i moguće čak i domen. Ako završavate ovaj kurs samostalno, imajte na umu da okruženja označena kao DEMO neće biti dostupna za vas.
 
 NB. Ako pratite ovaj kurs u učionici, imena servera mogu se razlikovati u zavisnosti od postavke vaše učionice. Varijable u imenima servera mogu biti različite zbog toga.
 
@@ -101,7 +101,7 @@ NB. Ako pratite ovaj kurs u učionici, imena servera mogu se razlikovati u zavis
 ### Struktura kursa
 
 
-Svako poglavlje ima ciljeve i procene znanja. U ovom kursu, pokrićemo svaki od njih i imati rezime ključnih karakteristika na svakom bloku lekcije (tj. poglavlju). Ilustracije su prikazane kako bi pružile vizuelne povratne informacije i ojačale ključne koncepte u vizuelnom aspektu. Ciljevi su postavljeni na početku svakog bloka lekcije. Ovi ciljevi prevazilaze kontrolnu listu. Oni vam pružaju vodič ka novom skupu veština. Procene znanja postaju progresivno izazovnije postavljanje vašeg BTCPay Server-a.
+Svako poglavlje ima ciljeve i procene znanja. U ovom kursu, pokrićemo svaki od njih i imati rezime ključnih karakteristika na svakom bloku lekcije (tj. poglavlju). Ilustracije su prikazane kako bi pružile vizuelne povratne informacije i ojačale ključne koncepte u vizuelnom aspektu. Ciljevi su postavljeni na početku svakog poglavlja. Ovi ciljevi prevazilaze kontrolnu listu. Oni vam pružaju vodič ka novom skupu veština. Procene znanja postaju progresivno izazovnije sa završetkom postavljanja vašeg BTCPay Server-a.
 
 
 ### Šta studenti dobijaju uz kurs?
@@ -110,7 +110,7 @@ Svako poglavlje ima ciljeve i procene znanja. U ovom kursu, pokrićemo svaki od 
 Sa kursom BTCPay Server, student može razumeti osnovne Bitcoin principe, tehničke i netehničke. Opsežna obuka u korišćenju Bitcoin-a putem BTCPay Server-a omogućiće studentima da upravljaju sopstvenom Bitcoin infrastrukturom.
 
 
-### Važne Web adrese ili mogućnosti kontakta
+### Važne veb adrese ili mogućnosti kontakta
 
 
 Fondacija BTCPay Server, koja je omogućila Alekosu i Basu da napišu ovaj kurs, nalazi se u Tokiju, Japan. Fondacija BTCPay Server može se kontaktirati putem navedene veb stranice;
@@ -127,22 +127,22 @@ Fondacija BTCPay Server, koja je omogućila Alekosu i Basu da napišu ovaj kurs,
 <chapterId>5c0bc234-c188-5b4a-94d5-adee87a120e2</chapterId>
 
 
-### Razumevanje Bitcoin putem vežbe u učionici
+### Razumevanje Bitcoin-a putem vežbe u učionici
 
 
 Ovo je vežba u učionici, tako da ako sami pohađate ovaj kurs, ne možete je izvesti, ali i dalje možete proći kroz ovu vežbu. Da biste završili ovaj zadatak, minimalan broj ljudi je između 9 i 11.
 
 
-Vežba počinje nakon gledanja uvoda „Kako Bitcoin i Blockchain rade“ od strane BBC-a.
+Vežba počinje nakon gledanja uvodnog videa „Kako Bitcoin i Blockchain rade“ od strane BBC-a.
 
 
 :::video id=c20b6df7-0c3a-4785-94b9-42ef59093acc:::
 
 
-Ova vežba zahteva učešće najmanje devet osoba. Ova vežba ima za cilj da fizički pruži ideju o tome kako Bitcoin funkcioniše. Igrajući svaku ulogu u mreži, imaćete interaktivan i zabavan način učenja. Ova vežba ne uključuje Lightning Network.
+Ova vežba zahteva učešće najmanje devet osoba. Ova vežba ima za cilj da fizički pruži ideju o tome kako Bitcoin funkcioniše. Igrajući svaku ulogu u mreži, imaćete interaktivan i zabavan način učenja. Ova vežba ne uključuje Lightning mrežu.
 
 
-### Primer; Zahteva 9 / 11 osoba
+### Primer: Zahteva 9 / 11 osoba
 
 
 Uloge su :
@@ -166,15 +166,15 @@ Kupci kupuju proizvod iz prodavnice za Bitcoin.
 
 - Postavljanje:
   - Pogledajte dijagrame/objašnjenja u priloženom Figjam-u - [Šematski prikaz aktivnosti](https://www.figma.com/file/ckmvMq02Jm2MegSsVCDFhc/Day-1-Classroom-Activity?type=whiteboard&node-id=0-1&t=KR31ofMaJX6S95UL-0).
-  - Izaberite tri studenta volontera da igraju uloge Kupca (Alice), Trgovca (Bob) i Banke.
+  - Izaberite tri studenta volontera da igraju uloge kupca (Alisa), trgovca (Bob) i banke.
 - Izvedi sledeći redosled događaja:
-  - Kupac - pretražuje online prodavnicu i pronalazi artikal za $25 koji želi, i obaveštava Prodavca da bi želeo da ga kupi.
+  - Kupac - pretražuje online prodavnicu i pronalazi artikal za $25 koji želi, i obaveštava prodavca da bi želeo da ga kupi.
   - Trgovac- traži uplatu.
-  - Kupac- šalje informacije o kartici Trgovcu
-  - Trgovac - prosleđuje informacije Banci (identifikujući i svoj identitet/informacije) zahtevajući plaćanje
-  - Banka prikuplja informacije o Kupcu i Trgovcu (Alice i Bob) i proverava da li je stanje na računu kupca dovoljno.
+  - Kupac- šalje informacije o kartici trgovcu
+  - Trgovac - prosleđuje informacije banci (identifikujući i svoj identitet/informacije) zahtevajući plaćanje
+  - Banka prikuplja informacije o kupcu i trgovcu (Alisa i Bob) i proverava da li je stanje na računu kupca dovoljno.
   - Oduzima $25 sa Alisinog računa, dodaje $24 na Bobov račun, uzima $1 za uslugu
-  - Trgovac dobija odobrenje od Banke i šalje proizvod kupcu.
+  - Trgovac dobija odobrenje od banke i šalje proizvod kupcu.
 - Komentari:
   - Bob i Alisa moraju imati odnos sa bankom.
   - Banka prikuplja identifikacione informacije o Bobu i Alisi.
@@ -188,23 +188,23 @@ Kupci kupuju proizvod iz prodavnice za Bitcoin.
 
 - Postavljanje:
   - Pogledajte dijagrame/objašnjenje u priloženom Figjam - [Šema Aktivnosti](https://www.figma.com/file/ckmvMq02Jm2MegSsVCDFhc/Day-1-Classroom-Activity?type=whiteboard&node-id=0-1&t=KR31ofMaJX6S95UL-0).
-  - Zamenite Banku sa devet studenata koji će igrati ulogu Računara (Bitcoin Čvorovi/Rudari) u mreži kako bi zamenili Banku.
-- Svaki od 9 računara ima potpun istorijski zapis svih prošlih transakcija ikada napravljenih (tako tačni saldi bez falsifikata), kao i skup pravila:
-  - Potvrdite da je transakcija ispravno potpisana (thekeyfitsthelock)
+  - Zamenite Banku sa devet studenata koji će igrati ulogu računara (Bitcoin čvorovi/rudari) u mreži kako bi zamenili banku.
+- Svaki od 9 računara ima potpun istorijski zapis svih prošlih transakcija ikada napravljenih (tačni saldo bez falsifikata), kao i skup pravila:
+  - Potvrdite da je transakcija ispravno potpisana (thekeyfitsthelock, prevod: ključ koji odgovara kvaki)
   - Emitujte i primajte validne transakcije ka vršnjacima u mreži, odbacite nevalidne (uključujući one koje pokušavaju da potroše ista sredstva dvaput)
 - Periodično ažurirajte/dodajte zapise sa novim transakcijama primljenim od “nasumičnog” računara pod uslovom da su svi sadržaji validni (napomena: za sada zanemarujemo komponentu Proof of Work radi jednostavnosti), u suprotnom ih odbacite i nastavite kao i pre dok sledeći “nasumični” računar ne pošalje ažuriranje.
   - Odgovarajući iznos je nagrađen ako je sadržaj bio važeći.
 - Izvedite sledeći redosled događaja:
   - Kupac - pretražuje online prodavnicu i pronalazi artikal za $25 koji želi, i obaveštava trgovca da bi želeo da ga kupi.
-  - Trgovac- traži uplatu slanjem kupcu Fakture/adrese sa njihovog novčanika.
-  - Kupac - konstruira transakciju (šalje $25 vrednosti BTC na adresu koji je obezbedio Trgovac) i emituje je na Bitcoin Mrežu.
+  - Trgovac- traži uplatu slanjem kupcu fakture/adrese sa njihovog novčanika.
+  - Kupac - konstruira transakciju (šalje $25 vrednosti BTC na adresu koji je obezbedio trgovac) i emituje je na Bitcoin mreži.
 - Računari- primaju transakciju i verifikuju:
-  - Na adresi sa koje se šalje imanajmanje $25 BTC-a
+  - Na adresi sa koje se šalje ima najmanje $25 BTC-a
   - Transakcija je ispravno potpisana („otključana“ od strane kupca)
   - Ako nije slučaj, transakcija neće biti propagirana kroz mrežu, a ako jeste, onda se propagira i drži na čekanju.
   - Trgovci mogu proveriti da je transakcija na čekanju i u procesu čekanja.
 - Jedan računar je „nasumično“ izabran da predloži finalizaciju predložene transakcije emitovanjem „bloka“ koji je sadrži; ako je ispravan, dobiće BTC nagradu.
-  - OPCIONALNO/NAPREDNO - umesto nasumičnog odabira računara, simulirajte Mining (rudarenje) tako što će računari bacati kockice dok se ne dogodi neki unapred određeni ishod (npr. prvi koji baci dve šestice zaredom je odabran)
+  - OPCIONALNO/NAPREDNO - umesto nasumičnog odabira računara, simulirajte rudarenje, eng. mining  tako što će računari bacati kockice dok se ne dogodi neki unapred određeni ishod (npr. prvi koji baci dve šestice zaredom je odabran)
   - Takođe može simulirati šta bi se desilo ako dva računara pobede približno istovremeno, što bi rezultiralo podelom lanca.
   - Računari proveravaju validnost, ažuriraju/dodaju zapise u svoje knjige ako su pravila ispunjena, i emituju blok ka vršnjacima.
   - Nasumično odabrani računar dobija nagradu za predlaganje važećeg bloka.
@@ -213,7 +213,7 @@ Kupci kupuju proizvod iz prodavnice za Bitcoin.
   - Primetite da nije bilo potrebe za prethodnim bankarskim odnosom.
   - Nema potrebe za trećom stranom da posreduje; zamenjeno kodom/podsticajima.
   - Nema prikupljanja podataka od strane bilo koga van direktne razmene i samo neophodna količina mora biti razmenjena između učesnika (npr. adresa za slanje).
-  - Nije potrebno poverenje između ljudi (osim što Trgovac šalje predmet), slično kao kupovina gotovinom na mnogo načina.
+  - Nije potrebno poverenje između ljudi (osim što trgovac šalje predmet), slično kao kupovina gotovinom na mnogo načina.
   - Novac je u vlasništvu pojedinaca.
   - Bitcoin Ledger (dnevnik) je prikazan u dolarima radi jednostavnosti, ali u stvarnosti, to je BTC.
   - Simuliramo jednu transakciju koja se emituje, ali u stvarnosti, više transakcija čeka u mreži, a blokovi uključuju hiljade transakcija odjednom. Čvorovi takođe proveravaju da nema transakcija sa dvostrukim trošenjem na čekanju (odbacio bih sve osim jedne ako bi to bio slučaj).
@@ -246,7 +246,7 @@ Definišite sledeće ključne pojmove predstavljene u prethodnom delu:
 
 - Čvor
 - Mempool
-- Ciljna Težina
+- Ciljna težina
 - Blok
 
 
@@ -277,16 +277,16 @@ Cilj ovog poglavlja biće sticanje opšteg razumevanja BTCPay Server softvera. U
 Ako pratite ovaj kurs sami, možete pronaći listu trećih strana domaćina za demo svrhe na https://directory.btcpayserver.org/filter/hosts. Snažno savetujemo protiv korišćenja ovih opcija trećih strana kao produkcionih okruženja, ali one služe pravoj svrsi za uvod u korišćenje Bitcoin i BTCPay Server-a.
 
 
-Kao BTCPay Server rockstar pripravnik, možda imate prethodno iskustvo sa postavljanjem Bitcoin čvora. Ovaj kurs će govoriti specifično prilagođen BTCPay Server softverskom paketu.
+Kao BTCPay Server rockstar pripravnik, možda imate prethodno iskustvo sa postavljanjem Bitcoin čvora. Ovaj kurs je posebno prilagođen softverskom paketu BTCPay Server-a.
 
 
-Mnoge opcije u BTCPay Serveru postoje u jednom ili drugom obliku u drugom softveru povezanim sa Bitcoin novčanikom.
+Mnoge opcije u BTCPay Server-u postoje u nekom obliku i u drugim softverima koji su povezani sa Bitkoin novčanicima.
 
 
 ### BTCPay Server ekran za prijavu
 
 
-Kada uđete u Demo okruženje, od vas se traži da se ‘Prijavite’ ili ‘Kreirate svoj nalog.’ Administratori servera mogu isključiti opciju kreiranja novih naloga iz bezbednosnih razloga. BTCPay Server logotipi i boje dugmadi mogu se promeniti jer je BTCPay Server softver otvorenog koda. Treća strana domaćin može da White-label-uje softver i promeni ceo izgled.
+Kada uđete u Demo okruženje, od vas se traži da se ‘Prijavite’ ili ‘Kreirate svoj nalog.’ Administratori servera mogu isključiti opciju kreiranja novih naloga iz bezbednosnih razloga. BTCPay Server logotipi i boje dugmadi mogu se promeniti jer je BTCPay Server softver otvorenog koda. Treća strana može rebrendirati softver (white-label) i u potpunosti izmeniti njegov izgled.
 
 
 ![image](assets/en/0.webp)
@@ -301,7 +301,7 @@ Kreiranje naloga na BTCPay Server-u zahteva validnu email adresu; example@email.
 Lozinka mora imati najmanje 8 karaktera, uključujući slova, brojeve i specijalne karaktere. Nakon što postavite lozinku, moraćete da potvrdite unetu lozinku kako biste bili sigurni da je ista kao ona uneta u prvo polje za lozinku.
 
 
-Kada su oba polja, Email i Lozinka, ispravno popunjena, kliknite na dugme 'Kreiraj nalog'. Ovo će sačuvati Email i lozinku na instanci BTCPay Server-a instruktora.
+Kada su oba polja, email i lozinka, ispravno popunjena, kliknite na dugme 'Kreiraj nalog'. Ovo će sačuvati email i lozinku na instanci BTCPay Server-a instruktora.
 
 
 ![image](assets/en/1.webp)
@@ -357,10 +357,10 @@ U ovom odeljku ste naučili sledeće:
 ### Procena znanja
 
 
-#### KA Konceptualni Pregled
+#### KA konceptualni pregled
 
 
-Navedite razloge zašto korišćenje Demo Servera nije dobra ideja za produkcijske svrhe.
+Navedite razloge zašto korišćenje Demo servera nije dobra ideja za produkcijske svrhe.
 
 
 ## Upravljanje korisničkim nalogom/nalozima
@@ -376,7 +376,7 @@ Nakon što vlasnik prodavnice kreira svoj nalog, može ga upravljati u donjem le
 
 
 
-- Tamni/Svetli režim.
+- Tamni/Svetli režim rada.
 - Sakrij osetljive informacije.
 - Upravljaj nalogom.
 
@@ -384,10 +384,10 @@ Nakon što vlasnik prodavnice kreira svoj nalog, može ga upravljati u donjem le
 ![image](assets/en/3.webp)
 
 
-### Tamni i svetli režim
+### Tamni i svetli režim rada
 
 
-Korisnici BTCPay Server-a mogu birati između Light ili Dark moda verzije korisničkog interfejsa. Stranice okrenute ka korisnicima neće se menjati. One koriste postavke koje preferiraju korisnici u vezi sa tamnim ili svetlim modom.
+Korisnici BTCPay Server-a mogu birati između svetlog ili tamnog moda verzije korisničkog interfejsa. Stranice okrenute ka korisnicima neće se menjati. One koriste postavke koje preferiraju korisnici u vezi sa tamnim ili svetlim modom.
 
 
 ### Sakrij osetljive informacije
