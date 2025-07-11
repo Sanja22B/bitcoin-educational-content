@@ -393,10 +393,10 @@ Korisnici BTCPay Server-a mogu birati između svetlog ili tamnog moda verzije ko
 ### Sakrij osetljive informacije
 
 
-Dugme za skrivanje osetljivih informacija donosi brz i jednostavan nivo sigurnosti. Kad god treba da koristite svoj BTCPay Server, a postoji mogućnost da neko viri preko vašeg ramena u javnom prostoru, uključite Skrivanje osetljivih informacija, i sve vrednosti u BTCPay Server-u će biti skrivene. Neko može da pogleda preko vašeg ramena, ali više ne može da vidi vrednosti sa kojima radite.
+Dugme za sakrivanje osetljivih informacija donosi brz i jednostavan nivo sigurnosti. Kad god treba da koristite svoj BTCPay Server, a postoji mogućnost da neko viri preko vašeg ramena u javnom prostoru, uključite Skrivanje osetljivih informacija (eng. Hide Sensitive Info), i sve vrednosti u BTCPay Server-u će biti skrivene. Neko može da pogleda preko vašeg ramena, ali više ne može da vidi vrednosti sa kojima radite.
 
 
-### Upravljaj nalogom
+### Upravljaj nalogom (eng.Manage Account)
 
 
 Kada je korisnički nalog kreiran, ovde možete upravljati lozinkama, 2fa ili API ključevima.
@@ -432,7 +432,7 @@ Student može želeti da promeni svoju lozinku. To može učiniti odlaskom na ka
 ### Dvofaktorska autentifikacija (2fa)
 
 
-Da biste ograničili posledice ukradene lozinke, možete koristiti dvofaktorsku autentifikaciju (2fa), relativno novi metod zaštite. Možete aktivirati dvofaktorsku autentifikaciju putem Upravljanja nalogom i kartice za dvofaktorsku autentifikaciju. Morate završiti drugi korak nakon prijavljivanja sa svojim korisničkim imenom i lozinkom.
+Da biste ograničili posledice ukradene lozinke, možete koristiti dvofaktorsku autentifikaciju (2fa), relativno novi metod zaštite. Možete aktivirati dvofaktorsku autentifikaciju putem upravljanja nalogom i kartice za dvofaktorsku autentifikaciju. Morate uraditi i drugi korak nakon prijavljivanja sa svojim korisničkim imenom i lozinkom.
 
 
 BTCPay Server omogućava dva načina aktiviranja 2FA, 2FA zasnovan na aplikaciji (Authy, Google, Microsoft autentifikatori) ili putem sigurnosnih uređaja (FIDO2 ili LNURL Auth).
@@ -451,13 +451,13 @@ Na osnovu operativnog sistema vašeg mobilnog telefona (Android ili iOS), korisn
    - Microsoft Authenticator za [Android](https://play.google.com/store/apps/details?id=com.azure.authenticator) ili [iOS](https://apps.apple.com/us/app/microsoft-authenticator/id983156458)
    - Google Authenticator za [Android](https://play.google.com/store/apps/details?id=com.google.android.apps.authenticator2&hl=e%C2%80) ili [iOS](https://apps.apple.com/us/app/google-authenticator/id388497605)
 
-2. Nakon preuzimanja i instaliranja Authenticator aplikacije.
+2. Nakon preuzimanja i instaliranja authenticator aplikacije.
 
 
    - Skenirajte QR kod koji je obezbedio BTCPay Server
-   - Ili ručno unesite generisani ključ od strane BTCPay Server-a u vašu Authenticator aplikaciju.
+   - Ili ručno unesite generisani ključ od strane BTCPay Server-a u vašu authenticator aplikaciju.
 
-3. Aplikacija Authenticator će vam pružiti jedinstveni kod. Unesite jedinstveni kod u BTCPay Server da biste verifikovali postavku, i kliknite na verifikuj da biste završili proces.
+3. Authenticator aplikacija  će vam pružiti jedinstveni kod. Unesite jedinstveni kod u BTCPay Server da biste verifikovali postavku, i kliknite na verifikuj da biste završili proces.
 
 
 ![image](assets/en/6.webp)
@@ -477,7 +477,7 @@ U ovom odeljku ste naučili sledeće:
 ### Procena znanja
 
 
-#### KA Konceptualni Pregled
+#### KA Konceptualni pregled
 
 
 Opišite kako aplikacija za dvofaktorsku autentifikaciju (2FA) pomaže u zaštiti vašeg naloga.
@@ -492,7 +492,7 @@ Opišite kako aplikacija za dvofaktorsku autentifikaciju (2FA) pomaže u zaštit
 ### Čarobnjak za kreiranje prodavnice
 
 
-Kada se novi korisnik prijavi na BTCPay Server, okruženje je prazno i potrebno je kreirati prvu prodavnicu. Uvodni čarobnjak BTCPay Server-a će korisniku dati opciju da ‘Kreirajte svoju prodavnicu (eng. Create your store)’ (1). Prodavnica se može posmatrati kao dom za vaše Bitcoin potrebe. Novi BTCPay Server čvor će započeti sa sinhronizacijom Bitcoin Blockchain (2). U zavisnosti od infrastrukture na kojoj pokrećete BTCPay Server, ovo može trajati od nekoliko sati do nekoliko dana. Trenutna verzija instance prikazana je u donjem desnom uglu vašeg BTCPay Server korisničkog interfejsa. Ovo je korisno za referencu prilikom rešavanja problema.
+Kada se novi korisnik prijavi na BTCPay Server, okruženje je prazno i potrebno je kreirati prvu prodavnicu. Uvodni čarobnjak BTCPay Server-a će korisniku dati opciju da ‘Kreirajte svoju prodavnicu (eng. Create your store)’ (1). Prodavnica se može posmatrati kao dom za vaše Bitcoin potrebe. Novi BTCPay Server čvor će započeti sa sinhronizacijom Bitcoin Blockchain-a (2). U zavisnosti od infrastrukture na kojoj pokrećete BTCPay Server, ovo može trajati od nekoliko sati do nekoliko dana. Trenutna verzija instance prikazana je u donjem desnom uglu vašeg BTCPay Server korisničkog interfejsa. Ovo je korisno za referencu prilikom rešavanja problema.
 
 
 ![image](assets/en/7.webp)
@@ -584,7 +584,7 @@ U ovom odeljku ste naučili:
 ### Šta je uključeno u generisanje Bitcoin ključeva?
 
 
-Bitcoin novčanici, kada se kreiraju, kreiraju takozvani "seed". U prethodnom poglavlju, kreirali ste "seed". Niz reči generisanih ranije takođe je poznat kao Mnemonic fraze ili bezbednosna fraza. Seed se koristi za izvođenje pojedinačnih Bitcoin ključeva i koristi se za Bitcoin slanje ili primanje. Seed fraze nikada ne bi trebalo deliti sa trećim stranama ili nepouzdanim osobama.
+Bitcoin novčanici, kada se kreiraju, kreiraju takozvani "seed". U prethodnom poglavlju, kreirali ste "seed". Niz reči generisanih ranije takođe je poznat kao mnemonic fraza ili bezbednosna fraza. Seed se koristi za izvođenje pojedinačnih Bitcoin ključeva i koristi se za slanje ili primanje bitcoina. Seed fraze nikada ne bi trebalo deliti sa trećim stranama ili nepouzdanim osobama.
 
 
 Generisanje seed-a je urađeno prema industrijskom standardu poznatom kao "Hijerarhijski Deterministički" (HD) okvir.
@@ -596,7 +596,7 @@ Generisanje seed-a je urađeno prema industrijskom standardu poznatom kao "Hijer
 ### Adrese
 
 
-BTCPay Server je napravljen da generiše nove adrese. Ovo ublažava problem ponovne upotrebe javnog ključa ili adrese. Korišćenje istog javnog ključa čini praćenje vaše celokupne istorije plaćanja veoma lakim. Razmišljanje o ključevima kao o vaučerima za jednokratnu upotrebu značajno bi poboljšalo vašu privatnost. Takođe koristimo Bitcoin adrese, nemojte ih mešati sa javnim ključevima.
+BTCPay Server je napravljen da generiše nove adrese. Ovo ublažava problem ponovne upotrebe javnog ključa ili adrese. Korišćenje istog javnog ključa čini praćenje vaše celokupne istorije plaćanja veoma lakim. Razmišljanje o ključevima kao o vaučerima za jednokratnu upotrebu značajno bi poboljšalo vašu privatnost. Takođe koristimo Bitcoin adrese — nemojte ih mešati sa javnim ključevima.
 
 
 Adresa se dobija iz javnog ključa putem „algoritma heširanja“. Većina novčanika i transakcija, međutim, prikazuje adrese umesto tih javnih ključeva. Adrese su, uopšteno, kraće od javnih ključeva i obično počinju sa `1`, `3` ili `bc1`, dok javni ključevi počinju sa `02`, `03` ili `04`.
@@ -611,11 +611,11 @@ Adresa se dobija iz javnog ključa putem „algoritma heširanja“. Većina nov
 
 
 
-- Adrese koje počinju sa `3...` i dalje se često koriste od strane menjačnica za adrese depozita. Ove adrese su pomenute u poglavlju "Kreiranje nove prodavnice", obavijene ili ugnježdene SegWit adrese. Međutim, one takođe mogu funkcionisati kao "Multisig adrese". Kada se koriste kao SegWit adrese, ponovo dolazi do uštede na troškovima transakcija, ali manje nego kod Native SegWit. P2SH adrese koriste Base58 kodiranje. Ovo ih čini osetljivim na velika i mala slova, kao i nasleđene adrese.
+- Adrese koje počinju sa `3...` i dalje se često koriste od strane menjačnica za adrese depozita. Ove adrese su pomenute u poglavlju "Kreiranje nove prodavnice", obavijene ili ugnježdene SegWit adrese. Međutim, one takođe mogu funkcionisati kao "Multisig adrese". Kada se koriste kao SegWit adrese, ponovo dolazi do uštede na troškovima transakcija, ali manje nego kod Native SegWit. P2SH adrese koriste Base58 kodiranje. Ovo ih čini osetljivim na velika i mala slova, slično kao i nasleđene adrese.
 
 
 
-- Adrese koje počinju sa `2...` su Testnet adrese. One su namenjene za primanje Testnet Bitcoin-a (tBTC). Nikada ne bi trebalo da pomešate ovo i pošaljete Bitcoin na ove adrese. Za potrebe razvoja, možete generisati Testnet novčanik. Postoji više "slavina" na mreži za dobijanje Testnet Bitcoin-a. Nikada ne kupujte Testnet Bitcoin. Testnet Bitcoin se rudari. Ovo može biti razlog da programer koristi Regtest umesto toga. Ovo je okruženje za igru za programere, koje nedostaje određenim mrežnim komponentama. Bitcoin je, međutim, za razvojne svrhe, veoma koristan.
+- Adrese koje počinju sa `2...` su Testnet adrese. One su namenjene za primanje Testnet Bitcoin-a (tBTC). Nikada ne bi trebalo da pomešate ovo i pošaljete Bitcoin na ove adrese. Za potrebe razvoja, možete generisati testnet novčanik. Postoji više "slavina eng. faucets" na mreži za dobijanje testnet Bitcoin-a. Nikada ne kupujte testnet Bitcoin. Testnet Bitcoin se rudari. Ovo može biti razlog da programer koristi Regtest umesto toga. Ovo je okruženje za igru za programere, koje nedostaje određenim mrežnim komponentama. Bitcoin je, međutim, za razvojne svrhe, veoma koristan.
 
 
 ### Javni ključevi
@@ -657,8 +657,7 @@ Opiši prednost korišćenja svežih adresa za svaku transakciju u poređenju sa
 ### Čuvanje Bitcoin ključeva
 
 
-Nakon generisanja seed fraze, lista od 12 - 24 reči generisanih u ovoj knjizi zahteva odgovarajuće bekapove i sigurnost, jer su ove reči jedini način za povratak pristupa novčaniku. Struktura HD novčanika i kako generiše adrese deterministički koristeći taj jedan seed, znači da će sve vaše kreirane adrese biti bekapovane koristeći ovu jednu listu Mnemonic reči koje predstavljaju vaš seed ili frazu za oporavak.
-
+Nakon generisanja seed fraze, lista od 12 - 24 reči generisanih u ovoj knjizi zahteva odgovarajuće bekapove i sigurnost, jer su ove reči jedini način za povratak pristupa novčaniku. Struktura HD novčanika i način na koji deterministički generiše adrese pomoću jedinstvenog seed-a znači da će sve adrese koje kreirate biti obuhvaćene jedinstvenom listom mnemoničkih reči, koje predstavljaju vaš seed ili frazu za oporavak.
 
 Čuvajte svoju frazu za oporavak na sigurnom mestu. Ako neko, posebno sa zlonamernim namerama, dođe do nje, može da premesti vaša sredstva. Čuvanje seed-a na sigurnom i bezbednom mestu, ali i pamćenje iste, međusobno su povezani. Postoji nekoliko metoda za čuvanje Bitcoin privatnih ključeva, od kojih svaka ima svoje prednosti i nedostatke, bilo u pogledu sigurnosti, privatnosti, praktičnosti ili fizičkih sredstava. Zbog važnosti privatnih ključeva, Bitcoin korisnici obično čuvaju i bezbedno drže te ključeve u "samostalnom staranju" umesto korišćenja "starateljskih" usluga poput banaka. U zavisnosti od korisnika, on mora koristiti ili offline rešenje za skladištenje ili online novčanik.
 
@@ -666,22 +665,22 @@ Nakon generisanja seed fraze, lista od 12 - 24 reči generisanih u ovoj knjizi z
 ### Offline i online skladištenje Bitcoin ključeva 
 
 
-Obično su Bitcoin novčanici denominovani u Hot Wallet ili Cold Wallet. Većina kompromisa leži u pogodnosti, jednostavnosti korišćenja i bezbednosnim rizicima. Svaka od ovih metoda može se videti i u rešenju sa starateljom. Međutim, kompromisi ovde su uglavnom zasnovani na bezbednosti i privatnosti i prevazilaze okvire ovog kursa.
+Bitcoin novčanici se obično dele na tople (Hot Wallet) i hladne (Cold Wallet) novčanike. Većina kompromisa odnosi se na pogodnost, jednostavnost korišćenja i bezbednosne rizike. Svaka od ovih metoda može se videti i u rešenju sa starateljom. Međutim, kompromisi ovde su uglavnom zasnovani na bezbednosti i privatnosti i prevazilaze okvire ovog kursa.
 
 
 ### Online novčanik
 
 
-Online novčanici su najprikladniji način za interakciju sa Bitcoin putem mobilnog, web ili desktop softvera. Novčanik je uvek povezan na internet, omogućavajući korisnicima Bitcoin slanje ili primanje. Međutim, to je ujedno i njegova slabost, jer je novčanik, budući da je uvek online, sada podložniji napadima hakera ili zlonamernog softvera na vašem uređaju. U BTCPay Server-u, online novčanici čuvaju privatne ključeve na instanci. Svako ko pristupi vašoj BTCPay Server prodavnici mogao bi ukrasti sredstva sa ove adrse ako je zlonameran. Kada BTCPay Server radi u hostovanom okruženju, uvek bi trebalo da uzmete ovo u obzir u svom bezbednosnom profilu i po mogućstvu ne koristiti Hot-novčanik iliti online novčanik u takvom slučaju. Kada je BTCPay Server instaliran na sopstvenom hardveru, osiguranom i pouzdanom od strane vas, profil rizika se značajno smanjuje, ali nikada ne nestaje!
+Online novčanici su najprikladniji način za interakciju sa Bitcoin-om putem mobilnog, web ili desktop softvera. Novčanik je uvek povezan na internet, omogućavajući korisnicima slanje ili primanje bitcoina. Međutim, to je ujedno i njegova slabost, jer je novčanik, budući da je uvek online, sada podložniji napadima hakera ili zlonamernog softvera na vašem uređaju. U BTCPay Server-u, online novčanici čuvaju privatne ključeve na instanci. Svako ko pristupi vašoj BTCPay Server prodavnici mogao bi ukrasti sredstva sa ove adrse ako je zlonameran. Kada BTCPay Server radi u hostovanom okruženju, uvek bi trebalo da uzmete ovo u obzir u svom bezbednosnom profilu i po mogućstvu ne koristiti Hot-novčanik iliti online novčanik u takvom slučaju. Kada je BTCPay Server instaliran na sopstvenom hardveru, osiguranom i pouzdanom od strane vas, profil rizika se značajno smanjuje, ali nikada ne nestaje!
 
 
 ### Offline novčanik
 
 
-Pojedinci prebacuju svoj Bitcoin u offline novčanik jer može izolovati privatne ključeve od interneta. Uklanjanje internet konekcije iz jednačine smanjuje rizik od malvera, špijunskog softvera i zamene SIM kartica. Veruje se da je offline skladištenje superiornije od online skladištenja u pogledu sigurnosti i autonomije, pod uslovom da se preduzmu adekvatne mere predostrožnosti kako bi se izbegao gubitak Bitcoin privatnih ključeva. Offline skladištenje je najpogodnije za velike količine Bitcoin-a, koje nisu namenjene za čestu potrošnju zbog složenosti postavke novčanika.
+Pojedinci premeštaju svoj Bitcoin u hladni novčanik jer on može izolovati privatne ključeve od interneta, čime ih štiti od potencijalnih pretnji sa mreže. Uklanjanje internet konekcije iz jednačine smanjuje rizik od malvera, špijunskog softvera i zamene SIM kartica. Veruje se da je offline skladištenje superiornije od online skladištenja u pogledu sigurnosti i autonomije, pod uslovom da se preduzmu adekvatne mere predostrožnosti kako bi se izbegao gubitak Bitcoin privatnih ključeva. Offline skladištenje je najpogodnije za velike količine Bitcoin-a, koje nisu namenjene za čestu potrošnju zbog složenosti postavke novčanika.
 
 
-Postoji više metoda kako sačuvati Bitcoin ključeve u offline skladištu, od papirnih novčanika do memorijskih novčanika, hardverskih novčanika, ili, od početka, datoteke. Većina novčanika koristi BIP 39 za generisanje seed fraze. Međutim, unutar Bitcoin osnovnog softvera, konsenzus još nije postignut o njegovoj korišćenju. Bitcoin osnovni softver će i dalje generisati Wallet.dat datoteku koju treba da čuvate na sigurnom offline mestu.
+Postoje različite metode čuvanja Bitcoin ključeva u hladnom skladištu, od papirnih novčanika i mentalnih (brain) novčanika, preko hardverskih novčanika, pa sve do početnih datoteka novčanika. Većina novčanika koristi BIP 39 za generisanje seed fraze. Međutim, unutar Bitcoin osnovnog softvera, konsenzus još nije postignut o njegovom korišćenju. Bitcoin osnovni softver će i dalje generisati Wallet.dat datoteku koju treba da čuvate na sigurnom offline mestu.
 
 
 ### Sažetak veština
@@ -726,7 +725,7 @@ BTCPay Server se sastoji od sledećih standardnih funkcija novčanika:
 - Slanje
 - Uplata
 - Ponovno skeniraj
-- Povuci plaćanje
+- Povuci plaćanje (eng. Pull Payments)
 - Isplate
 - PSBT
 - Opšta podešavanja
@@ -743,9 +742,9 @@ Administratori mogu videti dolazne i odlazne transakcije za On-Chain novčanik p
 | App              | Uplata je primljena putem fakture kreirane u aplikaciji |
 | invoice          | Uplata je primljena putem fakture                    |
 | payjoin          | Plaćanje još nije obavljeno – vreme za uplatu još uvek traje        |
-| payjoin-exposed  | UTXO je otkriven putem predloga za Payjoin u fakturi |
+| payjoin-exposed  | UTXO je otkriven putem Payjoin predloga u fakturi |
 | payment-request  | Uplata je primljena putem zahteva za plaćanje       |
-| payout           | isplata je izvršena putem isplate ili povraćaja novca          |
+| payout           | Isplata je izvršena putem isplate ili povraćaja novca          |
 
 ### Kako poslati
 
