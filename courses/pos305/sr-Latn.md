@@ -749,20 +749,20 @@ Administratori mogu videti dolazne i odlazne transakcije za On-Chain novčanik p
 ### Kako poslati
 
 
-Funkcija slanja BTCPay servera šalje transakcije sa vašeg BTCPay Server On-Chain novčanika. BTCPay Server omogućava više načina potpisivanja vaših transakcija za trošenje sredstava. Transakcija može biti potpisana sa;
+Funkcija slanja BTCPay servera šalje transakcije sa vašeg BTCPay Server on-chain novčanika. BTCPay Server omogućava više načina potpisivanja vaših transakcija za trošenje sredstava. Transakcija može biti potpisana sa;
 
 
 
-- Hardware novčanikom
-- Novčanici koji podržavaju PSBT
-- HD privatni ključ ili fraze za oporavak.
-- vruć (online) novčanik
+- Hardverskim novčanikom
+- Novčanicima koji podržavaju PSBT
+- HD privatnim ključem ili frazom za oporavak.
+- vrućim (online) novčanikom
 
 
-#### Hardware novčanik
+#### Hardverski novčanik
 
 
-BTCPay Server ima ugrađenu podršku za Hardware novčanik koja vam omogućava da koristite vaš Hardware novčanik sa BTCPay Vault-om bez curenja informacija ka aplikacijama ili serverima trećih strana. Integracija Hardware novčanika unutar BTCPay Server-a omogućava vam da uvezete vaš Hardware novčanik i trošite dolazna sredstva jednostavnom potvrdom na vašem uređaju. Vaši privatni ključevi nikada ne napuštaju uređaj, a sva sredstva se validiraju u odnosu na vaš Full node tako da nema curenja podataka.
+BTCPay Server ima ugrađenu podršku za hardverski novčanik koja vam omogućava da koristite vaš hardverski novčanik sa BTCPay Vault-om bez curenja informacija ka aplikacijama ili serverima trećih strana. Integracija hardverskog novčanika unutar BTCPay Server-a omogućava vam da uvezete vaš hardverski novčanik i trošite dolazna sredstva jednostavnom potvrdom na vašem uređaju. Vaši privatni ključevi nikada ne napuštaju uređaj, a sva sredstva se validiraju u odnosu na vaš Full node tako da nema curenja podataka.
 
 
 #### Potpisivanje sa novčanikom koji podržava PSBT
@@ -830,7 +830,7 @@ BTCPay Server podržava BIP-329 za upravljanje oznakama. Ako sredstva prebacujet
 Kada kliknete na dugme za primanje u BTCPay Server-u, generiše se neiskorišćena adresa koja se može koristiti za primanje uplata. Administratori takođe mogu generisati novu adresu generisanjem nove fakture, eng. „Invoice.“
 
 
-BTCPay Server će uvek tražiti da generišete sledeću dostupnu adresu kako bi se izbegla ponovna upotreba adresa. Nakon klika na “generate next available BTC Address,” BTCPay Server je generisao novu adresu i QR. Takođe vam omogućava da direktno postavite Oznaku, eng. label, na adresu za bolje upravljanje vašim adresama.
+BTCPay Server će uvek tražiti da generišete sledeću dostupnu adresu kako bi se izbegla ponovna upotreba adresa. Nakon klika na “generate next available BTC Address,” BTCPay Server je generisao novu adresu i QR. Takođe vam omogućava da direktno postavite oznaku, eng. label, na adresu za bolje upravljanje vašim adresama.
 
 
 ![image](assets/en/17.webp)
@@ -876,7 +876,7 @@ Postavke novčanika unutar BTCPay Server-a pružaju jasan i brz pregled opštih 
 ![image](assets/en/19.webp)
 
 
-Postavke novčanika u BTCPay Server-u počinju sa statusom novčanik. Da li je to samo za gledanje ili vruć novčanik? U zavisnosti od tipa novčanika, akcije mogu varirati od ponovnog skeniranja novčanika za nedostajuće transakcije, obrezivanja starih transakcija iz istorije, registracije novčanika za platne linkove, ili zamene i brisanja trenutnog novčanika povezanog sa prodavnicom. U postavkama novčanik BTCPay Server-a, administratori mogu postaviti oznaku za novčanik radi boljeg upravljanja novčanikom. Ovde će Administrator takođe moći da vidi Šemu Derivacije, ključ naloga (xpub), Otisak prsta i Putanju ključa. Plaćanja u postavkama novčanika imaju samo 2 glavne postavke. Plaćanje je nevažeće ako transakcija ne uspe da se potvrdi u (postavljenim minutima) nakon isteka fakture. Smatrajte fakturu potvrđenom kada transakcija plaćanja ima X broj potvrda. Administratori takođe mogu postaviti prekidač za prikaz preporučenih naknada pri plaćanjima ili postaviti ručni cilj potvrde u broju blokova.
+Postavke novčanika u BTCPay Server-u počinju sa statusom novčanika. Da li je to samo za gledanje ili vruć novčanik? U zavisnosti od tipa novčanika, akcije mogu varirati od ponovnog skeniranja novčanika za nedostajuće transakcije, obrezivanja starih transakcija iz istorije, registracije novčanika za platne linkove, ili zamene i brisanja trenutnog novčanika povezanog sa prodavnicom. U postavkama novčanik BTCPay Server-a, administratori mogu postaviti oznaku za novčanik radi boljeg upravljanja novčanikom. vde će administrator takođe moći da vidi šemu izvođenja (Derivation Scheme), ključ naloga (xpub), otisak (Fingerprint) i putanju ključa (Keypath). Plaćanja u postavkama novčanika imaju samo 2 glavne postavke. Plaćanje je nevažeće ako transakcija ne uspe da se potvrdi u (postavljenim minutima) nakon isteka fakture. Smatrajte fakturu potvrđenom kada transakcija uplate ima X potvrda. Administratori takođe mogu da uključe opciju za prikaz preporučenih provizija na ekranu za plaćanje ili da ručno postave cilj za potvrdu u broju blokova.
 
 
 ![image](assets/en/20.webp)
@@ -894,7 +894,7 @@ Ako pratite ovaj kurs samostalno, kreiranje ovog naloga bi moglo biti nešto št
 #### Postavljanje Bitcoin novčanika unutar BTCPay Server-a
 
 
-BTCPay Server omogućava dva načina postavljanja novčanika. Jedan način je uvoz već postojećeg Bitcoin novčanika. Uvoz se može izvršiti povezivanjem Hardware novčanika, uvozom datoteke novčanika, unosom proširenog javnog ključa, skeniranjem QR koda novčanika, ili najmanje poželjno, ručnim unosom prethodno kreiranog seed-a za oporavak. U BTCPay Server-u je takođe moguće kreirati novi novčanik. Postoje dva moguća načina konfiguracije BTCPay Server-a prilikom generisanja novog novčanika.
+BTCPay Server omogućava dva načina postavljanja novčanika. Jedan način je uvoz već postojećeg Bitcoin novčanika. Uvoz se može izvršiti povezivanjem hardverskog novčanika, uvozom datoteke novčanika, unosom proširenog javnog ključa, skeniranjem QR koda novčanika, ili najmanje poželjno, ručnim unosom prethodno kreiranog seed-a za oporavak. U BTCPay Server-u je takođe moguće kreirati novi novčanik. Postoje dva moguća načina konfiguracije BTCPay Server-a prilikom generisanja novog novčanika.
 
 
 Opcija vrućeg novćanika u BTCPay Server-u omogućava funkcije poput 'PayJoin' ili 'Liquid'. Međutim, postoji nedostatak, seed za oporavak generisan za ovaj novčanik biće sačuvan na serveru, gde bilo ko ko ima Admin kontrolu može dohvatiti ovaj seed. Kako je vaš privatni ključ izveden iz vašeg seed-a za oporavak, zlonamerni akter bi mogao dobiti pristup vašim trenutnim i budućim sredstvima!
@@ -903,7 +903,7 @@ Opcija vrućeg novćanika u BTCPay Server-u omogućava funkcije poput 'PayJoin' 
 Da bi se smanjio takav rizik u BTCPay Server-u, administrator može postaviti u podešavanja servera > Politike > "Dozvoli ne-administratorima da kreiraju vruće novčanike za svoje prodavnice" (eng. Server Settings > Policies > "Allow non-admins to create hot wallets for their stores") na ne, što je podrazumevano. Da bi se poboljšala sigurnost tih vrućih novčanika, administrator servera treba da omogući 2FA autentifikaciju na nalozima kojima je dozvoljeno da imaju vruće novčanike. Čuvanje privatnih ključeva na javnom serveru je opasno i nosi rizike. Neki su slični rizicima Lightning mreže (pogledajte sledeće poglavlje za rizike Lightning mreže).
 
 
-Druga opcija koju BTCPay Server nudi prilikom kreiranja novog novčanika jeste pravljenje novčanika samo za praćenje (Watch-Only wallet). BTCPay Server će generisati vaše privatne ključeve jednom. Nakon što korisnik potvrdi da je zapisao svoju seed frazu, BTCPay Server će obrisati privatne ključeve sa servera. Kao rezultat, vaša prodavnica sada ima novčanik samo za praćenje povezan sa njom. Da biste potrošili sredstva primljena na vašem novčaniku za praćenje, pogledajte poglavlje Kako poslati, bilo korišćenjem BTCPay Server Vault-a, PSBT (Partially Signed Bitcoin Transaction), ili, najmanje preporučeno, ručnim unosom vaše seed fraze.
+Druga opcija koju BTCPay Server nudi prilikom kreiranja novog novčanika jeste pravljenje novčanika samo za praćenje (eng. Watch-Only wallet). BTCPay Server će generisati vaše privatne ključeve jednom. Nakon što korisnik potvrdi da je zapisao svoju seed frazu, BTCPay Server će obrisati privatne ključeve sa servera. Kao rezultat, vaša prodavnica sada ima novčanik samo za praćenje povezan sa njom. Da biste potrošili sredstva primljena na vašem novčaniku za praćenje, pogledajte poglavlje Kako poslati, bilo korišćenjem BTCPay Server Vault-a, PSBT (Partially Signed Bitcoin Transaction), ili, najmanje preporučeno, ručnim unosom vaše seed fraze.
 
 
 Kreirali ste novu 'Prodavnicu' u poslednjem delu. Čarobnjak za instalaciju će nastaviti tako što će vas pitati da "Postavite nočanik" ili "Postavite Lightning čvor". U ovom primeru, pratićete proces čarobnjaka "Postavite nočanik" (1).
@@ -912,7 +912,7 @@ Kreirali ste novu 'Prodavnicu' u poslednjem delu. Čarobnjak za instalaciju će 
 ![image](assets/en/21.webp)
 
 
-Nakon što kliknete na "Set up a Wallet", čarobnjak će nastaviti tako što će vas pitati kako želite da nastavite; BTCPay Server sada nudi opciju povezivanja postojećeg Bitcoin novčanika sa vašom novom prodavnicom. Ako nemate novčanik, BTCPay Server predlaže kreiranje novog. Ovaj primer će pratiti korake za “create a new Wallet” (2). Pratite korake da naučite kako da "Connect an existing Wallet (1).
+Nakon što kliknete na "Set up a Wallet", čarobnjak će nastaviti tako što će vas pitati kako želite da nastavite; BTCPay Server sada nudi opciju povezivanja postojećeg Bitcoin novčanika sa vašom novom prodavnicom. Ako nemate novčanik, BTCPay Server predlaže kreiranje novog. Ovaj primer će pratiti korake za “create a new Wallet” (2). Pratite korake da naučite kako da povežete postoječi novčanik, eng. "Connect an existing Wallet" (1).
 
 
 ![image](assets/en/22.webp)
@@ -1038,7 +1038,7 @@ U ovom odeljku ste naučili sledeće:
 - Kako generisati novi Bitcoin novčanik unutar BTCPay Server-a, uključujući čuvanje ključeva u hardverskom novčaniku i pravljenje rezervne kopije fraze za oporavak.
 
 
-U ovom cilju, naučili ste kako da generišete novi Bitcoin novčanik unutar BTCPay Server-a. Još nismo prešli na to kako obezbediti ili koristiti te ključeve. U brzom pregledu ovog cilja, naučili ste kako da postavite prvu prodavnicu. Naučili ste kako da generišete Bitcoin seed frazu za oporavak.
+U ovom poglqvlju, naučili ste kako da generišete novi Bitcoin novčanik unutar BTCPay Server-a. Još nismo prešli na to kako obezbediti ili koristiti te ključeve. U brzom pregledu ovog poglavlja, naučili ste kako da postavite prvu prodavnicu. Naučili ste kako da generišete Bitcoin seed frazu za oporavak.
 
 
 ### Praktični pregled procene znanja
@@ -1053,7 +1053,7 @@ Opiši metodu za generisanje ključeva i šemu za njihovo osiguranje, zajedno sa
 <chapterId>1bbece7e-0197-57e6-a93a-561cf384d946</chapterId>
 
 
-Kada administrator servera obezbedi novu BTCPay Server instancu, može postaviti implementaciju Lightning mreže , LND, Core Lightning, ili Eclair; pogledajte deo Konfigurisanje BTCPay Server-a za detaljnija uputstva za instalaciju.
+Kada administrator servera obezbedi novu BTCPay Server instancu, može postaviti implementaciju Lightning mreže, LND, Core Lightning, ili Eclair; pogledajte deo Konfigurisanje BTCPay Server-a za detaljnija uputstva za instalaciju.
 
 
 Ako se prati u učionici, povezivanje Lightning čvora sa vašim BTCPay Serverom funkcioniše preko Custom čvora. Korisnik koji nije administrator servera na BTCPay Serveru neće moći da koristi interni Lightning čvor po defaultu. Ovo je da bi se zaštitio vlasnik servera od gubitka sredstava. Administratori servera mogu instalirati Plugin kako bi omogućili pristup svom Lightning čvoru preko LNBank; ovo je van okvira ove knjige; pročitajte više o LNBank na zvaničnoj stranici plugina.
@@ -1071,7 +1071,7 @@ Vratite se na prethodno podešenu prodavnicu i kliknite na stavku „Lightning n
 ### Povežite eksterni čvor (server korisnik/vlasnik prodavnice)
 
 
-Po podrazumevanoj vrednosti, vlasnicima prodavnica nije dozvoljeno da koriste Lightning Node server administratora. Potrebno je uspostaviti vezu sa eksternim čvorom, bilo sa čvorom koji je u vlasništvu vlasnika prodavnice pre postavljanja BTCPay Server-a, LNBank dodatkom ako ga obezbedi server administrator, ili sa kustodijalnim rešenjem kao što je Alby.
+Podrazumevano, vlasnicima prodavnica nije dozvoljeno da koriste Lightning čvor administratora servera. Veza treba da se uspostavi sa eksternim čvorom — bilo da je to čvor u vlasništvu vlasnika prodavnice pre postavljanja BTCPay Server-a, LNBank dodatak ako ga je administrator servera omogućio, ili kustodijalno rešenje poput Alby-ja.
 
 
 Idite u prethodno podešenu prodavnicu i kliknite na "Lightning" ispod novčanika u levom meniju. Pošto vlasnicima prodavnica nije dozvoljeno da koriste interni čvor po defaultu, ova opcija je zasivljena. Korišćenje prilagođenog čvora je jedina opcija koja je po defaultu dostupna vlasnicima prodavnica.
@@ -1101,7 +1101,7 @@ Nakon povezivanja internog Lightning čvora, administratori servera će primetit
 
 
 
-- Lightning Balance
+- Lightning balans
 - BTC u kanalima
   - BTC otvaranje kanala
   - BTC lokalni balans
@@ -1111,7 +1111,7 @@ Nakon povezivanja internog Lightning čvora, administratori servera će primetit
   - BTC potvrđeno
   - BTC nepotvrđeno
   - BTC rezervisano
-- Lightning Services
+- Lightning servisi
   - Ride the Lightning (RTL).
 
 
@@ -1147,7 +1147,7 @@ Administratori servera mogu kliknuti na informacije o internom čvoru i baciti p
 ![image](assets/en/32.webp)
 
 
-#### Promeni vezu
+#### Promeni konekciju
 
 
 Da biste promenili eksterni Lightning nod, idite na „Lightning podešavanja (eng.Lightning Settings)“ i kliknite na „Promeni konekciju (eng.Change connection)“ (pored stavke „Informacije o javnom nodu (eng.Public Node info)“). Ovo će resetovati postojeće podešavanje. Unesite podatke novog noda, kliknite na „Save“, i prodavnica će se ažurirati u skladu s tim.
@@ -1174,7 +1174,7 @@ Nakon dodavanja Lightning čvora u prodavnicu u prethodnom koraku, unutar postav
 #### Opcije Lightning plaćanja
 
 
-Vlasnici prodavnica mogu postaviti parametre za sledeće kako bi poboljšali Lightning iskustvo za svoje kupce.
+Vlasnici prodavnica mogu postaviti sledeće parametre kako bi poboljšali Lightning iskustvo za svoje kupce.
 
 
 
@@ -1187,13 +1187,13 @@ Vlasnici prodavnica mogu postaviti parametre za sledeće kako bi poboljšali Lig
 #### LNURL
 
 
-Vlasnici prodavnica mogu da izaberu da li će koristiti ili ne koristiti LNURL. Lightning Network URL, ili LNURL, je predloženi standard za interakcije između Lightning platioca i primaoca. Ukratko, LNURL je bech32 kodiran URL sa prefiksom lnurl. Očekuje se da Lightning novčanik dekodira URL, kontaktira URL i sačeka JSON objekat sa daljim instrukcijama, najznačajnije tag koji definiše ponašanje LNURL-a.
+Vlasnici prodavnica mogu da izaberu da li će koristiti ili ne koristiti LNURL. Lightning Network URL, ili LNURL, je predloženi standard za interakcije između Lightning platioca i primaoca. Ukratko, LNURL je bech32 kodiran URL sa prefiksom lnurl. Očekuje se da Lightning novčanik dekodira URL, uspostavi kontakt sa URL-om i sačeka JSON objekat sa daljim instrukcijama — pre svega oznakom (tag) koja definiše ponašanje LNURL-a.
 
 
 
 - Omogući LNURL
 - LNURL klasični režim
-  - Za kompatibilnost sa novčanikom, Bech32 kodirano (klasično) naspram čistog URL-a (nadolazeće)
+  - Radi kompatibilnosti novčanika, koristi se Bech32 kodirani URL (klasičan) ili URL u čistom tekstu (novi/priprema se).
 - Dozvoli primaocu da ostavi komentar.
 
 
@@ -1238,7 +1238,7 @@ Svo upravljanje lightning čvorovima se standardno obavlja sa RTL (pod pretposta
 ### Primer 2
 
 
-#### Poveži se sa lightning-om pomoću Alby
+#### Poveži se sa lightning-om pomoću Alby-ja
 
 
 Kada se povezujete sa trećeom stranom kao što je Alby, vlasnici prodavnica prvo treba da kreiraju nalog, posetite: https://getalby.com/
@@ -1256,7 +1256,7 @@ Korak 1: Kliknite na 'Set up a Lightning node' na kontrolnoj tabli ili 'Lightnin
 ![image](assets/en/36.webp)
 
 
-Korak 2: Unesite svoje akreditive za novčanik za povezivanje koje je obezbedio Alby. Na kontrolnoj tabli Alby, kliknite na Wallet. Ovde ćete pronaći "Wallet Connection Credentials". Kopirajte ove kredencijale. Nalepite kredencijale iz Alby u polje za konfiguraciju povezivanja u BTCPay Server.
+Korak 2: Unesite svoje kredencijale za novčanik za povezivanje koje je obezbedio Alby. Na Alby kontrolnoj tabli, kliknite na Wallet. Ovde ćete pronaći "Wallet Connection Credentials". Kopirajte ove kredencijale. Nalepite kredencijale iz Alby-ja u polje za konfiguraciju povezivanja u BTCPay Server.
 
 
 ![image](assets/en/37.webp)
@@ -1268,7 +1268,7 @@ Korak 3: Nakon što obezbedite BTCPay Server-u detalje za povezivanje, kliknite 
 ![image](assets/en/38.webp)
 
 
-Korak 4: Kliknite na sačuvaj, i vaša prodavnica je sada povezana sa lightning nodom od strane Alby.
+Korak 4: Kliknite na sačuvaj, i vaša prodavnica je sada povezana sa lightning nodom od strane Alby-ja.
 
 
 ![image](assets/en/39.webp)
