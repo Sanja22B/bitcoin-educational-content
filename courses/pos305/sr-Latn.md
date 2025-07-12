@@ -2477,21 +2477,21 @@ Osim ako ne koristite ugrađeni [novčanik](https://docs.btcpayserver.org/Wallet
 Tabela ispod navodi i opisuje standardne statuse faktura u BTCPay-u i predlaže uobičajene akcije. Akcije su samo preporuke. Na korisnicima je da definišu najbolji tok akcije za njihov slučaj upotrebe i poslovanje.
 
 
-| Status fakture             | Opois                                                                                                                             | Akcija                                                                                                                      |
+| Status fakture             | Opis                                                                                                                             | Akcija                                                                                                                      |
 | -------------------------- | --------------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------- |
-| New                        | Not paid, invoice timer still has not expired                                                                                           | None                                                                                                                        |
-| New (paidPartial)          | Paid, not in full, invoice timer still has not expired                                                                                  | None                                                                                                                        |
-| Expired                    | Not paid, invoice timer expired                                                                                                         | None                                                                                                                        |
-| Expired (paidPartial) \*\* | Paid, not in full amount, and expired                                                                                                   | Contact buyer to arrange a refund or ask for them to pay their due. Optionally mark invoice as settled or invalid           |
-| Expired (paidLate)         | Paid, in full amount, after the invoice timer has expired                                                                               | Contact buyer to arrange a refund or process order if late confirmations are acceptable.                                    |
-| Settled (paidOver)         | Paid more than the invoice amount, settled, received sufficient amount of confirmations                                                 | Contact buyer to arrange a refund for the extra amount, or optionally wait for buyer to contact you                         |
-| Processing                 | Paid in full, but has not received sufficient amount of confirmations specified in the store settings                                   | Contact buyer to arrange a refund for the extra amount, or optionally wait for buyer to contact you                         |
-| Processing (paidOver)      | Paid more than the invoice amount, not received sufficient amount of confirmations                                                      | Wait to be settled then contact buyer to arrange a refund for the extra amount, or optionally wait for buyer to contact you |
-| Settled                    | Paid, in full, received sufficient amount of confirmations in store                                                                     | Fulfil the order                                                                                                            |
-| Settled (marked)           | Status was manually changed to settled from an processing or invalid status                                                             | Store admin has marked the payment as settled                                                                               |
-| Invalid\*                  | Paid, but failed to receive sufficient amount of confirmations within the time specified in store settings                              | Check the transaction on a blockchain explorer, if it received sufficient confirmations, mark as settled                    |
-| Invalid (marked)           | Status was manually changed to invalid from a settled or expired status                                                                 | Store admin has marked the payment as invalid                                                                               |
-| Invalid (paidOver)         | Paid more than the invoice amount, but failed to receive sufficient amount of confirmations within the time specified in store settings | Check the transaction on a blockchain explorer, if it received sufficient confirmations, mark as settled                    |
+| New                        | Nije plaćeno, tajmer fakture još uvek nije istekao.                                                                                           | Nije potrebna                                                                                                                        |
+| New (paidPartial)          | Plaćeno, ali ne u celosti, tajmer fakture još uvek nije istekao.                                                                                  | Nije potrebna                                                                                                                        |
+| Expired                    | Nije plaćeno, tajmer fakture je istekao                                                                                                        | Nije potrebna                                                                                                                        |
+| Expired (paidPartial) \*\* | Delimično plaćeno, tajmer istekao                                                                                                   | "Kontaktirajte kupca radi dogovora o povraćaju sredstava ili da biste zatražili uplatu preostalog iznosa. Po potrebi označite fakturu kao razrešenu ili nevažeću           |
+| Expired (paidLate)         |Plaćeno u celosti, nakon što je tajmer fakture istekao                                                                               | Kontaktirajte kupca radi dogovora o povraćaju sredstava ili obradite porudžbinu ako su zakašnjele potvrde prihvatljive.                                    |
+| Settled (paidOver)         | Plaćeno više od iznosa na fakturi, razrešeno, primljen dovoljan broj potvrda.                                                 | Kontaktirajte kupca radi dogovora o povraćaju viška iznosa, ili po želji sačekajte da vas kupac kontaktira.                        |
+| Processing                 | Plaćeno u celosti, ali nije primljen dovoljan broj potvrda definisan u podešavanjima prodavnice.                                   | Kontaktirajte kupca radi dogovora o povraćaju viška iznosa, ili po želji sačekajte da vas kupac kontaktira.                         |
+| Processing (paidOver)      | Plaćeno više od iznosa fakture, ali nije primljen dovoljan broj potvrda.                                                      | Sačekajte da bude razrešeno, zatim kontaktirajte kupca radi dogovora o povraćaju viška iznosa, ili po želji sačekajte da vas kupac kontaktira. |
+| Settled                    | Plaćeno u celosti, primljen dovoljan broj potvrda u prodavnici.                                                                     | Obradite porudžbinu                                                                                                            |
+| Settled (marked)           | Status je ručno promenjen u ‘razrešeno’ sa statusa ‘u obradi’ ili ‘nevažeće’.                                                             | Administrator prodavnice je označio uplatu kao razrešenu.                                                                               |
+| Invalid\*                  | Plaćeno, ali nije primljen dovoljan broj potvrda u okviru vremena definisanog u podešavanjima prodavnice                              | Proverite transakciju na blockchain pregledaču, a ako je primila dovoljan broj potvrda, označite je kao razrešenu.                    |
+| Invalid (marked)           | Status je ručno promenjen u nevažeći sa statusa razrešen ili istekao.                                                                 | Administrator prodavnice je označio uplatu kao nevažeću.                                                                               |
+| Invalid (paidOver)         | Plaćeno više od iznosa fakture, ali nije primljen dovoljan broj potvrda u roku definisanom u podešavanjima prodavnice. | Proverite transakciju na blockchain pregledaču; ako je primila dovoljan broj potvrda, označite je kao razrešenu.                    |
 
 #### Detalji fakture
 
@@ -2505,7 +2505,7 @@ Informacije o fakturi se automatski kreiraju na osnovu statusa fakture, kursa, i
 #### Filtriranje faktura
 
 
-Fakture se mogu filtrirati putem brzih filtera koji se nalaze pored dugmeta za pretragu ili naprednih filtera, koji se mogu uključiti klikom na link (Pomoć eng. Help) na vrhu. Korisnici mogu filtrirati fakture po prodavnici, ID-u narudžbine, ID-u artikla, statusu ili datumu.
+Fakture se mogu filtrirati putem brzih filtera koji se nalaze pored dugmeta za pretragu ili naprednih filtera, koji se mogu uključiti klikom na link Pomoć (eng. Help) na vrhu. Korisnici mogu filtrirati fakture po prodavnici, ID-u narudžbine, ID-u artikla, statusu ili datumu.
 
 
 #### Izvoz fakture
@@ -2514,7 +2514,7 @@ Fakture se mogu filtrirati putem brzih filtera koji se nalaze pored dugmeta za p
 BTCPay Server fakture mogu se izvesti u CSV ili JSON formatu. Kako bi se dobilo više informacija o izvozu fakture i računovodstvu.
 
 
-#### Vraćanje fakture
+#### Refundacija fakture
 
 
 Ako, iz bilo kog razloga, želite da izvršite povraćaj novca, možete lako kreirati povraćaj iz pregleda faktura.
@@ -2550,7 +2550,7 @@ Trebalo bi da omogućite ovu opciju ako želite da dozvolite spoljnjem svetu da 
 #### Faktura ističe ako ceo iznos nije plaćen nakon .. minuta.
 
 
-Tajmer za fakturu je po podrazumevanoj vrednosti podešen na 15 minuta. Tajmer služi kao mehanizam zaštite od volatilnosti, jer zaključava iznos kriptovalute na osnovu kursa između kriptovalute i fiat valute. Ako kupac ne plati fakturu u definisanom periodu, faktura se smatra isteklom. Faktura se smatra "plaćenom" čim je transakcija vidljiva na Blockchain-u (o-potvrda), ali se smatra "završenom" kada dostigne broj potvrda koji je trgovac definisao (obično, 1-6). Tajmer je prilagodljiv.
+Tajmer za fakturu je po podrazumevanoj vrednosti podešen na 15 minuta. Tajmer služi kao mehanizam zaštite od volatilnosti, jer zaključava iznos kriptovalute na osnovu kursa između kriptovalute i fiat valute. Ako kupac ne plati fakturu u definisanom periodu, faktura se smatra isteklom. Faktura se smatra "plaćenom" čim je transakcija vidljiva na Blockchain-u (0-potvrda), ali se smatra "završenom" kada dostigne broj potvrda koji je trgovac definisao (obično, 1-6). Tajmer je prilagodljiv.
 
 
 #### Razmotrite da je faktura plaćena čak i ako je plaćeni iznos ..% manji od očekivanog.
@@ -2589,22 +2589,22 @@ Vlasnici prodavnica mogu štampati zahteve za plaćanje (ili izvesti podatke o f
 #### Kreiraj Zahtev za Plaćanje
 
 
-U levom meniju idite na Zahtev za plaćanje (eng. Payment Request) i kliknite "Kreiraj zahtjev za plaćanje" (eng. Create Payment Request).
+U levom meniju idite na Zahtev za plaćanje (eng. Payment Request) i kliknite "Kreiraj zahtev za plaćanje" (eng. Create Payment Request).
 
 
 ![image](assets/en/94.webp)
 
 
-Obezbedite Ime Zahteva, Iznos, Prikaz Valute, Povezanu Prodavnicu, Vreme Isteka i Opis (Opcionalno)
+Popunite ime zahteva, iznos, prikaz valute, povezanu prodavnicu, vreme isteka i opis (opcionalno)
 
 
-Izaberite opciju „Dozvoli primaocu da kreira fakture u svojoj valuti” ako želite da omogućite delimična plaćanja.
+Izaberite opciju „Dozvoli primaocu da kreira fakture u svojoj valuti” (eng. Allow payee to create invoices in their denomination) ako želite da omogućite delimična plaćanja.
 
 
 Kliknite Sačuvaj i Pregledaj da biste pregledali vaš zahtev za plaćanje.
 
 
-BTCPay kreira URL za zahtev za plaćanje. Podelite ovaj URL da biste videli svoj zahtev za plaćanje. Trebate više istih zahteva? Možete duplicirati zahteve za plaćanje koristeći opciju Kloniraj u glavnom meniju.
+BTCPay kreira URL za zahtev za plaćanje. Podelite ovaj URL da biste videli svoj zahtev za plaćanje. Trebate više istih zahteva? Možete duplirati zahteve za plaćanje koristeći opciju Kloniraj u glavnom meniju.
 
 
 ![image](assets/en/95.webp)
@@ -2619,13 +2619,13 @@ Zahtevi za plaćanje zavise od prodavnice, što znači da je svaki zahtev za pla
 #### Plaćeni zahtev
 
 
-Platilac i podnosilac zahteva mogu videti status zahteva za plaćanje nakon slanja uplate. Status će se prikazati kao Izmireno ako je uplata primljena u celosti. Ako su izvršene samo delimične uplate, Iznos Duga će prikazati preostali dug.
+Platilac i podnosilac zahteva mogu videti status zahteva za plaćanje nakon slanja uplate. Status će se prikazati kao Izmireno (eng. Settled) ako je uplata primljena u celosti. Ako su izvršene samo delimične uplate, u polju "Iznos duga" (eng. Amount Due) će prikazati preostali dug.
 
 
 ![image](assets/en/96.webp)
 
 
-#### Prilagodite Zahteve za Plaćanje
+#### Prilagodite zahteve za plaćanje
 
 
 Opis sadržaja može se urediti pomoću uređivača teksta zahteva za plaćanje. Oba izbora su dostupna ako želite da koristite dodatne teme boja ili prilagođeni CSS stil.
@@ -2656,7 +2656,7 @@ color: white;
 ```
 
 
-### Povuci plaćanja
+### Pull plaćanja
 
 
 Tradicionalno, primalac deli svoju Bitcoin adresu kako bi izvršio Bitcoin uplatu, a pošiljalac kasnije šalje novac na tu adresu. Takav sistem se naziva Push uplata, jer pošiljalac inicira uplatu dok primalac može biti nedostupan, gurajući uplatu ka primaocu.
@@ -2671,7 +2671,7 @@ Međutim, šta je sa obrtanjem uloga?
 
 - Pretplatnička usluga (gde pretplatnik dozvoljava usluzi da povlači novac svakih x vremenskih perioda)
 - Povraćaji (gde trgovac dozvoljava kupcu da povuče novac od povraćaja na svoj novčanik kada smatraju da je to prikladno)
-- Obračunavanje na osnovu vremena za frilensere (gde osoba koja angažuje dozvoljava frilenseru da povlači novac na njegov novčanik kako se vreme prijavljuje)
+- Obračunavanje na osnovu prijavljenog vremena frilensera (gde osoba koja angažuje dozvoljava frilenseru da povlači novac na njegov novčanik kako se vreme prijavljuje)
 - Patronat (gde patron omogućava primaocu da povlači novac svakog meseca kako bi nastavio da podržava njihov rad)
 - Automatska prodaja (gde bi korisnik berze dozvolio berzi da povlači novac sa njihovog novčanika kako bi prodavao svakog meseca automatski)
 - Sistem povlačenja stanja (gde usluga sa velikim obimom omogućava korisnicima da zatraže povlačenja sa svog stanja, usluga zatim može lako grupisati sve isplate mnogim korisnicima u fiksnim intervalima)
@@ -2680,7 +2680,7 @@ Međutim, šta je sa obrtanjem uloga?
 ### Isplate
 
 
-Funkcionalnost isplate je povezana sa [Pull isplatama](https://docs.btcpayserver.org/PullPayments/). Ova funkcija vam omogućava da kreirate isplate unutar vašeg BTCPay. Ova funkcija vam omogućava da obradite pull payment (povraćaj novca, isplate plata ili povlačenja).
+Funkcionalnost isplate je povezana sa [Pull isplatama](https://docs.btcpayserver.org/PullPayments/). Ova funkcija vam omogućava da kreirate isplate unutar vašeg BTCPay. Ova funkcija vam omogućava da obradite pull plaćanja (povraćaj novca, isplate plata ili povlačenja).
 
 
 #### Primer 1: Povraćaj
@@ -2689,7 +2689,7 @@ Funkcionalnost isplate je povezana sa [Pull isplatama](https://docs.btcpayserver
 Hajde da počnemo sa primerom povraćaja novca. Kupac je kupio artikal u vašoj prodavnici, ali nažalost mora da ga vrati. Oni žele povraćaj novca. Unutar BTCPay-a, možete kreirati [Povraćaj novca](https://docs.btcpayserver.org/Refund/) i obezbediti kupcu link da preuzme svoja sredstva. Kada god kupac unese svoju adresu i preuzme sredstva, to će biti prikazano u Isplatama.
 
 
-Prvi status koji ima je Čeka odobrenje. Prodavci mogu proveriti da li više njih čeka, a nakon odabira koristite dugme Radnje.
+Prvi status koji ima je "Čeka odobrenje" (eng. Awaiting Approval). Prodavci mogu proveriti da li više njih čeka, a nakon odabira koristite dugme Actions.
 
 
 Opcije na dugmetu za akciju
@@ -2701,10 +2701,10 @@ Opcije na dugmetu za akciju
 - Otkaži izabrane isplate
 
 
-Sledeći korak je da odobrite i pošaljete odabrane isplate jer želimo da refundiramo kupca. Proverite adresu kupca, prikazuje iznos i da li želimo da naknade budu oduzete od refundacije ili ne. Kada završite provere, ostaje samo potpisivanje transakcije.
+Sledeći korak je da odobrite i pošaljete odabrane isplate jer želimo da refundiramo kupca. Proverite adresu kupca, prikazani iznos i da li želimo da naknade budu oduzete od refundacije ili ne. Kada završite provere, ostaje samo potpisivanje transakcije.
 
 
-Kupac sada dobija ažuriranja na stranici za potraživanje. Može pratiti transakciju jer mu je obezbeđen link ka Block explorer-u i njegovoj transakciji. Kada transakcija bude potvrđena, status se menja u Završeno.
+Kupac sada dobija ažuriranja na stranici za potraživanje. Može pratiti transakciju jer mu je obezbeđen link ka Block explorer-u i njegovoj transakciji. Kada transakcija bude potvrđena, status se menja u Završeno, eng 'Completed'.
 
 
 #### Primer 2: Plata
@@ -2716,13 +2716,13 @@ Sada ćemo preći na isplatu plata, jer se ovo pokreće iznutra iz prodavnice, a
 Idite na karticu Pull Payments u vašem BTCPay serveru. U gornjem desnom uglu, kliknite na dugme Create Pull Payment.
 
 
-Sada smo u kreiranju Isplate, dajte joj ime i željeni iznos u željenoj valuti, popunite Opis, kako bi zaposleni znao o čemu se radi. Sledeći deo je sličan povraćajima. Zaposleni popunjava odredišnu adresu i iznos koji želi da potražuje iz ove Isplate. Može odlučiti da napravi 2 odvojena potraživanja, na različite adrese, ili čak delimično potražuje preko lightning-a.
+Sada smo u kreiranju isplate, dajte joj ime i željeni iznos u željenoj valuti, popunite opis, kako bi zaposleni znao o čemu se radi. Sledeći deo je sličan povraćajima. Zaposleni popunjava odredišnu adresu i iznos koji želi da potražuje iz ove isplate. Može odlučiti da napravi 2 odvojena potraživanja, na različite adrese, ili čak delimično potražuje preko lightning-a.
 
 
-Ako postoji više čekajućih Isplata, možete ih grupisati za potpisivanje i slanje. Kada budu potpisane, isplate prelaze na karticu U toku i prikazuju Transakciju. Kada ih mreža prihvati, isplata prelazi na karticu Završeno. Kartica završeno služi isključivo u istorijske svrhe. Sadrži obrađene Isplate i transakciju koja im pripada.
+Ako postoji više čekajućih isplata, možete ih grupisati za potpisivanje i slanje. Kada budu potpisane, isplate plata prelaze na karticu U toku i prikazuju transakciju. Kada ih mreža prihvati, isplata prelazi na karticu Završeno. Kartica završeno služi isključivo u istorijske svrhe. Sadrži obrađene isplate i transakciju koja im pripada.
 
 
-### Povuci plaćanja
+### Pull plaćanja
 
 
 #### Koncept
@@ -2732,7 +2732,7 @@ Kada pošiljalac konfiguriše Pull plaćanje, može konfigurisati brojna svojstv
 
 
 
-- Ime zahteva za povlačenje
+- Ime pull plaćanja
 - Ograničena količina
 - Jedinica (kao što su BTC, SAT, USD)
 - Metode Plaćanja
@@ -2754,7 +2754,7 @@ Nakon toga, pošiljalac može podeliti pull uplatu koristeći link sa primaocem,
 Jednom kada se isplata kreira, ona će se računati prema ograničenju povlačenja za tekući period. Pošiljalac će zatim odobriti isplatu postavljanjem stope po kojoj će isplata biti poslata i nastaviti sa plaćanjem.
 
 
-Za pošiljaoca, pružamo jednostavan način za grupisanje plaćanja nekoliko isplata iz [BTCPay Internal Wallet](https://docs.btcpayserver.org/Wallet/).
+Za pošiljaoca, pružamo jednostavan način za grupisanje plaćanja nekoliko isplata iz [BTCPay unutrašnji novčanik](https://docs.btcpayserver.org/Wallet/).
 
 
 #### Greenfield API
@@ -2774,7 +2774,7 @@ U ovom odeljku ste naučili sledeće:
 
 
 - Detaljno razumevanje BTCPay Server-ovih statusa faktura kao i radnji koje se mogu izvršiti nad njima
-- Prilagodite i upravljajte mehanizmima produženog veka fakture poznatim kao Zahtevi.
+- Prilagodite i upravljajte mehanizmima produženog veka fakture poznatim kao zahtevi.
 - Dodatne fleksibilne mogućnosti plaćanja otvorene su jedinstvenom funkcijom Pull isplate na BTCPay Server-u, posebno kako rukovati povratima i isplatama plata.
 
 
@@ -2802,16 +2802,16 @@ Kako pull plaćanja proširuju ono što se obično može uraditi On-Chain? Opiš
 ### Podrazumevani Pluginovi i Aplikacije
 
 
-BTCPay server dolazi sa standardnim setom Pluginova (Aplikacija) koji mogu pretvoriti BTCPay Server u e-commerce platni prolaz. Sa dodatkom Point Of Sale, Crowdfund platforme i jednostavnog Pay dugmeta, BTCPay Server postaje lako rešenje za implementaciju.
+BTCPay server dolazi sa standardnim setom pluginova (Aplikacija) koji mogu pretvoriti BTCPay Server u e-commerce platni gateway. Sa dodatkom Point Of Sale, Crowdfund platforme i jednostavnog Pay dugmeta, BTCPay Server postaje lako rešenje za implementaciju.
 
 
 ### Point Of Sale
 
 
-Jedan od standardnih dodataka BTCPay Server-a je Point of Sale (PoS). Sa PoS dodatkom, vlasnik prodavnice može kreirati Webshop direktno iz BTCPay Server-a, vlasniku prodavnice nisu potrebna rešenja trećih strana za e-trgovinu da bi vodio Webshop. Web-bazirana PoS aplikacija omogućava korisnicima sa fizičkim prodavnicama da lako prihvate Bitcoin, bez naknada ili treće strane, direktno na njihov Wallet. PoS se može lako prikazati na tabletima ili drugim uređajima koji podržavaju pretraživanje interneta. Korisnici mogu lako kreirati prečicu na početnom ekranu kako bi brzo pristupili web aplikaciji.
+Jedan od standardnih dodataka BTCPay Server-a je Point of Sale (PoS). Sa PoS dodatkom, vlasnik prodavnice može kreirati webshop direktno iz BTCPay Server-a, vlasniku prodavnice nisu potrebna rešenja trećih strana za e-trgovinu da bi vodio webshop. Web-bazirana PoS aplikacija omogućava korisnicima sa fizičkim prodavnicama da lako prihvate Bitcoin, bez naknada ili treće strane, direktno na njihov novčanik. PoS se može lako prikazati na tabletima ili drugim uređajima koji podržavaju pretraživanje interneta. Korisnici mogu lako kreirati prečicu na početnom ekranu kako bi brzo pristupili web aplikaciji.
 
 
-#### Kako kreirati novu prodajnu tačku
+#### Kako kreirati nov POS
 
 
 BTCPay Server omogućava vlasnicima prodavnica da brzo kreiraju prodajno mesto u više rasporeda. BTCPay Server prepoznaje da nije svaka prodavnica e-trgovina, i da nije svaka prodavnica bar ili restoran, te dolazi sa više standardnih podešavanja za vaš PoS.
@@ -2826,7 +2826,7 @@ Kada vlasnik prodavnice klikne na "Point of Sale" u svojoj levoj traci menija, B
 #### Ažuriraj novo kreirani Point of Sale
 
 
-Nakon kreiranja novog PoS-a, sledeći ekran će biti za ažuriranje vaše prodajne tačke i dodavanje artikala za vašu prodavnicu.
+Nakon kreiranja novog PoS-a, sledeći ekran će biti za ažuriranje vaše prodajnog mesta i dodavanje artikala za vašu prodavnicu.
 
 
 ##### Ime aplikacije
@@ -2835,7 +2835,7 @@ Nakon kreiranja novog PoS-a, sledeći ekran će biti za ažuriranje vaše prodaj
 Naziv koji ovde date vašem prodajnom mestu biće vidljiv u glavnom meniju BTCPay Servera.
 
 
-##### Prikaži Naslov
+##### Prikaži naslov
 
 
 Javnost će videti javni naslov ili ime kada poseti vašu prodavnicu. BTCPay Server standardno imenuje vašu prodavnicu „Tea shop“. Zamenite ovo imenom vaše prodavnice.
@@ -2858,7 +2858,7 @@ BTCPay Server je sposoban prikazati svoj Point Of Sale na više načina.
 - Samo tastatura
   - Nema liste proizvoda, samo tastatura za direktno fakturisanje.
 - Štampaj prikaz (Štampaj lista proizvoda sa QR)
-  - Ako ne možete uvek prikazati svoju listu proizvoda digitalno, potrebna vam je "offline" rešenje za proizvode; BTCPay Server ima opciju štampanja za prikazivanje kao Offline prodavnica.
+  - Ako ne možete uvek prikazati svoju listu proizvoda digitalno, potrebna vam je "offline" rešenje za proizvode; BTCPay Server ima opciju štampanja za prikazivanje kao offline prodavnica.
 
 
 ![image](assets/en/99.webp)
@@ -2919,7 +2919,7 @@ Kreiranje novog proizvoda u vašoj prodavnici sastoji se od sledećih polja;
 - Opis
 - Inventar
 - ID
-- Tekst Dugmeta za Kupovinu.
+- Tekst dugmeta za kupovinu.
 - Omogući/Onemogući
 
 
@@ -2947,25 +2947,25 @@ Samo nekim prodavnicama je potrebna opcija za napojnice na njihovim prodajama. V
 #### Popusti
 
 
-Kao vlasnik prodavnice, možda ćete želeti da kupcu date prilagođeni popust na kasi; prekidač za Popuste postaje dostupan na kasi vaše prodavnice. Međutim, ovo se veoma ne preporučuje kod sistema za samoposlugu.
+Kao vlasnik prodavnice, možda ćete želeti da kupcu date prilagođeni popust na kasi; prekidač za popuste postaje dostupan na kasi vaše prodavnice. Međutim, ovo se veoma ne preporučuje kod sistema za samoposlugu.
 
 
 #### Prilagođena Plaćanja
 
 
-Kada je opcija Prilagođena Plaćanja uključena, kupac može uneti svoju cenu koja je jednaka ili veća od originalne Invoice generisane od strane prodavnice.
+Kada je opcija Prilagođena Plaćanja uključena, kupac može uneti svoju cenu koja je jednaka ili veća od originalne fakture generisane od strane prodavnice.
 
 
 #### Dodatne opcije
 
 
-Nakon što postavite sve za vašu prodajnu tačku, ostaju neke dodatne opcije. Vlasnici prodavnica mogu lako ugraditi svoju prodajnu tačku putem Iframe-a ili ugraditi dugme za plaćanje koje vodi do određenog artikla u prodavnici. Da bi stilizovali upravo kreiranu prodavnicu, vlasnici mogu dodati prilagođeni CSS na dnu dodatnih opcija.
+Nakon što postavite sve za vašu prodajno mesto, ostaju neke dodatne opcije. Vlasnici prodavnica mogu lako ugraditi svoj POS putem Iframe-a ili ugraditi dugme za plaćanje koje vodi do određenog artikla u prodavnici. Da bi stilizovali upravo kreiranu prodavnicu, vlasnici mogu dodati prilagođeni CSS na dnu dodatnih opcija.
 
 
 #### Izbriši ovu aplikaciju
 
 
-Ako vlasnik prodavnice želi potpuno obrisati Point of Sale sa svog BTCPay Server-a, na dnu ažuriranja PoS-a, vlasnici prodavnica mogu kliknuti na dugme Delete this app kako bi potpuno uništili svoju PoS aplikaciju. Kada kliknu na "Delete this app", BTCPay Server će tražiti potvrdu unosom `DELETE` i potvrdom klikom na dugme Delete. Nakon brisanja, vlasnik prodavnice se vraća na BTCPay Server kontrolnu tablu.
+Ako vlasnik prodavnice želi potpuno obrisati Point of Sale sa svog BTCPay Server-a, na dnu ažuriranja PoS-a, vlasnici prodavnica mogu kliknuti na dugme "Delete this app" kako bi potpuno uništili svoju PoS aplikaciju. Kada kliknu na "Delete this app", BTCPay Server će tražiti potvrdu unosom `DELETE` i potvrdom klikom na dugme Delete. Nakon brisanja, vlasnik prodavnice se vraća na BTCPay Server kontrolnu tablu.
 
 
 ### BTCPay Server - Crowdfund
@@ -2977,16 +2977,16 @@ Pored dodatka za prodajno mesto, BTCPay Server ima opciju za kreiranje crowdfund
 #### Kako postaviti novi crowdfund
 
 
-Kliknite na Crowdfund dodatak kroz glavni meni sa leve strane vašeg BTCPay Server-a, ispod sekcije Dodataka. BTCPay Server će sada zatražiti ime za Crowdfund; ovo ime će takođe biti prikazano u levoj traci menija.
+Kliknite na Crowdfund dodatak kroz glavni meni sa leve strane vašeg BTCPay Server-a, ispod sekcije Plugins. BTCPay Server će sada zatražiti ime za Crowdfund; ovo ime će takođe biti prikazano u levoj traci menija.
 
 
 ![image](assets/en/106.webp)
 
 
-#### Ažuriraj novo kreirani Point of Sale
+#### Ažuriraj novo kreirani Crowdfund
 
 
-Kada se Aplikaciji dodeli ime, njen sledeći ekran će biti ažuriranje Aplikacije kako bi imala kontekst.
+Kada se aplikaciji dodeli ime, njen sledeći ekran će biti ažuriranje aplikacije kako bi imala kontekst.
 
 
 #### Ime aplikacije
@@ -2995,7 +2995,7 @@ Kada se Aplikaciji dodeli ime, njen sledeći ekran će biti ažuriranje Aplikaci
 Ime koje date vašem Crowdfund-u biće vidljivo u glavnom meniju BTCPay Server-a.
 
 
-#### Prikaži Naslov
+#### Prikaži naslov
 
 
 Naslov je dat za Crowdfund za javnost.
@@ -3010,10 +3010,10 @@ Dajte crowdfundu kratak opis koji prepoznaje svrhu prikupljanja sredstava.
 ![image](assets/en/107.webp)
 
 
-#### Istaknuta URL adresa slike
+#### Istaknuta URL adresu slike
 
 
-Svaki crowdfund ima svoju glavnu sliku, onu baner sliku koju odmah prepoznajete. Ova slika može biti sačuvana na vašem serveru ako imate Administratorska prava, Admini mogu da otpremaju pod BTCPay Server Server podešavanjima - Fajlovi. Kada ste vlasnik Prodavnice, slika mora biti otpremljena na web putem treće strane hosta (na primer imgur).
+Svaki crowdfund ima svoju glavnu sliku, onu baner sliku koju odmah prepoznajete. Ova slika može biti sačuvana na vašem serveru ako imate administratorska prava, Admini mogu da otpremaju pod BTCPay Server Server podešavanjima - Fajlovi. Kada ste vlasnik prodavnice, slika mora biti otpremljena na web putem treće strane hosta (na primer imgur).
 
 
 #### Objavi Crowdfund
@@ -3034,7 +3034,7 @@ Recite svetu o svom Crowdfund-u, za šta prikupljate sredstva? Sve što objašnj
 #### Cilj grupnog finansiranja
 
 
-Postavite ciljanu sumu koju bi prikupljanje sredstava trebalo da prikupi za projekat i u kojoj valuti bi cilj trebalo da bude izražen. Ukoliko su vaši ciljevi postavljeni između određenih datuma, uključite ove početne i krajnje datume ispod Ciljeva u crowdfund-u.
+Postavite ciljanu sumu koju bi prikupljanje sredstava trebalo da prikupi za projekat i u kojoj valuti bi cilj trebalo da bude izražen. Ukoliko su vaši ciljevi postavljeni između određenih datuma, uključite ove početne i krajnje datume ispod ciljeva u crowdfund-u.
 
 
 ![image](assets/en/109.webp)
@@ -3056,7 +3056,7 @@ Kreiranje nove pogodnosti sastoji se od sledećih polja ;
 - Opis
 - Inventar
 - ID
-- Tekst Dugmeta za Kupovinu.
+- Tekst dugmeta za kupovinu.
 - Omogući/Onemogući
 
 
@@ -3072,7 +3072,7 @@ Kada vlasnik prodavnice popuni sva polja za novu pogodnost koju treba kreirati, 
 #### Doprinosi
 
 
-Vlasnici prodavnica mogu izabrati kako će prikazati pogodnosti, kako su sortirane ili čak rangirane u odnosu na druge pogodnosti. Međutim, kada se ciljevi Crowdfund-a postignu, vlasnici prodavnica možda žele da zaustave prilive donacija ka ovom prikupljanju sredstava. Stoga, on može uključiti opciju "Ne dozvoli dodatne doprinose nakon dostizanja cilja". Ovo će zaustaviti Crowdfund od prihvatanja donacija.
+Vlasnici prodavnica mogu izabrati kako će prikazati pogodnosti, kako su sortirane ili čak rangirane u odnosu na druge pogodnosti. Međutim, kada se ciljevi Crowdfund-a postignu, vlasnici prodavnica možda žele da zaustave prilive donacija ka ovom prikupljanju sredstava. Stoga, on može uključiti opciju "Ne dozvoli dodatne doprinose nakon dostizanja cilja" (eng. "Do not allow additional contributions after reaching the target"). Ovo će zaustaviti Crowdfund od prihvatanja donacija.
 
 
 ##### Ponašanje u crowdfundingu
@@ -3084,7 +3084,7 @@ Crowdfund-ov standard računa samo fakture kreirane putem Crowdfund-a prema cilj
 #### Dodatne opcije za prilagođavanje
 
 
-BTCpay Server nudi nekoliko dodatnih prilagođavanja. Dodajte zvukove, animacije ili čak diskusione niti u Crowdfund. Vlasnici prodavnica takođe mogu promeniti izgled i doživljaj Crowdfund-a unosom sopstvenog prilagođenog CSS-a.
+BTCpay Server nudi nekoliko dodatnih prilagođavanja. Dodajte zvuke, animacije ili čak forume za diskusiju na Crowdfund. Vlasnici prodavnica takođe mogu promeniti izgled i doživljaj Crowdfund-a unosom sopstvenog prilagođenog CSS-a.
 
 
 #### Izbriši ovu aplikaciju
@@ -3102,7 +3102,7 @@ HTML koji se lako ugrađuje i visoko prilagodljivi dugmići za plaćanje omoguć
 #### Opšta podešavanja
 
 
-U okviru Opštih Postavki za Dugme za Plaćanje, vlasnici prodavnica mogu postaviti
+U okviru opštih postavki za dugme za plaćanje, vlasnici prodavnica mogu postaviti
 
 
 
@@ -3123,7 +3123,7 @@ U okviru Opštih Postavki za Dugme za Plaćanje, vlasnici prodavnica mogu postav
 BTCPay Server-ovo dugme za plaćanje može se konfigurisati da odgovara različitim stilovima. Dugmad mogu imati fiksni ili prilagođeni iznos, prikazan sa klizačem ili plus i minus prekidačima.
 
 
-#### Koristi Modal
+#### Koristi modal
 
 
 Kada kreiraju dugme za plaćanje, vlasnici prodavnica mogu izabrati njegovo ponašanje kada ga kupac klikne i prikazati ga u modalnom prozoru ili kao novu stranicu.
@@ -3141,7 +3141,7 @@ Korišćenje dugmeta za plaćanje za e-commerce integracije se ne preporučuje j
 #### Prilagodi tekst dugmeta za plaćanje
 
 
-Podrazumevano, BTCPay Server-ovo dugme za plaćanje navodi "Plati sa BTCPay". Vlasnici prodavnica mogu postaviti ovaj tekst po svojoj želji i promeniti BTCPay Server logo u svoj. Postavite tekst koristeći "Tekst Dugmeta za Plaćanje" i nalepite URL slike ispod "URL Slike Dugmeta za Plaćanje".
+Podrazumevano, BTCPay Server-ovo dugme za plaćanje navodi "Plati sa BTCPay". Vlasnici prodavnica mogu postaviti ovaj tekst po svojoj želji i promeniti BTCPay Server logo u svoj. Postavite tekst koristeći "Tekst dugmeta za plaćanje" i nalepite URL slike ispod "URL slike dugmeta za plaćanje".
 
 
 ##### Veličina slike
@@ -3156,7 +3156,7 @@ Veličina slike na dugmetu može biti postavljena samo na tri podrazumevane vred
 - 209x57px
 
 
-#### Tipka Tip
+#### Tip dugmeta
 
 
 BTCPay Server zna za tri stanja za dugme za plaćanje.
@@ -3202,10 +3202,10 @@ Kada kupac završi kupovinu, biće preusmeren na ovaj link ako ga je postavio vl
 #### Opcije za unapred plaćanje
 
 
-Navedite dodatne parametre niza upita koji bi trebalo da budu dodati na stranicu za naplatu kada se kreira Invoice. Na primer, `lang=da-DK` bi učitao stranicu za naplatu na danskom jeziku po defaultu.
+Navedite dodatne parametre niza upita koji bi trebalo da budu dodati na stranicu za naplatu kada se kreira faktura. Na primer, `lang=da-DK` bi učitao stranicu za naplatu na danskom jeziku po defaultu.
 
 
-#### Koristite aplikaciju kao krajnju tačku
+#### Koristite aplikaciju kao endpoint
 
 
 Direktno povežite dugme za plaćanje sa stavkom u jednoj od PoS ili Crowdfund aplikacija od ranije.
@@ -3214,7 +3214,7 @@ Direktno povežite dugme za plaćanje sa stavkom u jednoj od PoS ili Crowdfund a
 Vlasnici prodavnica mogu kliknuti na padajući meni i odabrati željenu aplikaciju; kada je aplikacija odabrana, vlasnik prodavnice može dodati stavku koju treba povezati.
 
 
-#### Generisani Kod
+#### Generisani kod
 
 
 Kako je BTCPay Server-ovo dugme za plaćanje lako-ugradivi HTML, BTCPay Server prikazuje generisani kod za kopiranje na vebsajt na dnu nakon konfigurisanja dugmeta za plaćanje.
@@ -3222,41 +3222,6 @@ Kako je BTCPay Server-ovo dugme za plaćanje lako-ugradivi HTML, BTCPay Server p
 
 Vlasnici prodavnica mogu kopirati generisani kod na svoj vebsajt, i dugme za plaćanje sa BTCPay Server-a je direktno aktivno na njihovom vebsajtu.
 
-
-#### Obaveštenja o uplati
-
-
-IPN server (Instant Payment Notification) je namenjen za webhooks i može biti popunjen URL-om za postavljanje podataka o kupovini.
-
-
-#### Obaveštenja putem e-pošte
-
-
-Kad god se izvrši plaćanje, BTCPay Server može obavestiti vlasnika prodavnice.
-
-
-#### Preusmeravanje pregledača
-
-
-Kada kupac završi kupovinu, biće preusmeren na ovaj link ako ga je postavio vlasnik prodavnice.
-
-
-#### Opcije za unapred plaćanje
-
-
-Navedite dodatne parametre niza upita koji bi trebalo da budu dodati na stranicu za naplatu kada se Invoice kreira. Na primer, `lang=da-DK` bi učitao stranicu za naplatu na danskom jeziku po defaultu.
-
-
-#### Koristite aplikaciju kao krajnju tačku
-
-
-Direktno povežite dugme za plaćanje sa stavkom u jednoj od PoS ili Crowdfund aplikacija od ranije. Vlasnici prodavnica mogu kliknuti na padajući meni i izabrati željenu aplikaciju, kada je aplikacija izabrana, vlasnik prodavnice može dodati stavku koja treba da bude povezana.
-
-
-#### Generisani kod
-
-
-Kako je BTCPay Server-ovo dugme za plaćanje lako-ugradivi HTML, BTCPay Server prikazuje generisani kod za kopiranje na vebsajt na dnu nakon konfigurisanja dugmeta za plaćanje. Vlasnici prodavnica mogu kopirati generisani kod na svoj vebsajt i dugme za plaćanje sa BTCPay Server-a je direktno aktivno na njihovom vebsajtu.
 
 
 ### Sažetak veština
@@ -3274,7 +3239,7 @@ U ovom odeljku ste naučili:
 ### Procena znanja
 
 
-#### KA Review
+#### KA pregled
 
 
 Koja su tri ugrađena dodatka koja dolaze standardno sa BTCPay Serverom? U nekoliko reči, opišite kako se svaki može koristiti.
