@@ -1310,7 +1310,7 @@ Opišite neke od različitih opcija za povezivanje Lightning novčanika sa vašo
 <chapterId>410ff28b-a272-5c91-93e0-48d5b28c53ab</chapterId>
 
 
-BTCPay Server je modularni softverski paket. Međutim, postoje standardi koje će svaki BTCPay Server imati i sa kojima će Administrator/korisnici komunicirati. Počevši od Kontrolne table. Glavna ulazna tačka svakog BTCPay Server-a nakon prijavljivanja. Kontrolna tabla daje pregled kako vaša prodavnica posluje, trenutnog stanja novčanika i poslednjih tx-a u proteklih 7 dana. Kako je to modularni prikaz, dodaci mogu koristiti ovaj prikaz za svoju korist i kreirati svoje pločice na Kontrolnoj tabli. Za ovaj kurs, govorićemo samo o standardnim dodacima/aplikacijama i njihovim odgovarajućim prikazima kroz BTCPay Server.
+BTCPay Server je modularni softverski paket. Međutim, postoje standardi koje će svaki BTCPay Server imati i sa kojima će administrator/korisnici komunicirati. Počevši od kontrolne table. Glavna ulazna tačka svakog BTCPay Server-a nakon prijavljivanja. Kontrolna tabla daje pregled kako vaša prodavnica posluje, trenutnog stanja novčanika i poslednjih tx-a u proteklih 7 dana. Kako je to modularni prikaz, dodaci mogu koristiti ovaj prikaz za svoju korist i kreirati svoje pločice na kontrolnoj tabli. Za ovaj kurs, govorićemo samo o standardnim dodacima/aplikacijama i njihovim odgovarajućim prikazima kroz BTCPay Server.
 
 
 ### Pločice na kontrolnoj tabli
@@ -1321,10 +1321,10 @@ Unutar glavnog prikaza BTCPay Server kontrolne table dostupno je nekoliko standa
 
 
 - Balans na novčaniku
-- Aktivnost transakcije
+- Transakciona aktivnost
 - Lightning balans (ako je Lightning omogućen u prodavnici)
 - Lightning servisi (ako je Lightning omogućen u prodavnici)
-- Nedavne transakcije.
+- Nedavne transakcije
 - Nedavne fakture
 - Trenutno aktivni Crowdfund-ovi
 - Performanse prodavnice / najprodavaniji artikli.
@@ -1333,13 +1333,13 @@ Unutar glavnog prikaza BTCPay Server kontrolne table dostupno je nekoliko standa
 ### Saldo na novčaniku
 
 
-"Wallet Balance" pločica pruža brz pregled sredstava i performansi vašeg novčanika. Može se prikazati u BTC ili Fiat valuti na nedeljnom, mesečnom ili godišnjem grafikonu.
+"Wallet Balance" pločica pruža brz pregled sredstava i performansi vašeg novčanika. Može se prikazati u BTC ili fiat valuti na nedeljnom, mesečnom ili godišnjem grafikonu.
 
 
 ![image](assets/en/40.webp)
 
 
-### Aktivnost transakcije
+### Transakciona aktivnost
 
 
 Pored pločice "Wallet Balance", BTCPay Server prikazuje brzi pregled čekajućih isplata, broj transakcija u poslednjih 7 dana i da li je vaša prodavnica izdala bilo kakve povrate. Klikom na dugme "Manage" ulazite u upravljanje čekajućim isplatama (saznajte više o isplatama u BTCPay Server - Poglavlje o plaćanjima).
@@ -1354,7 +1354,7 @@ Pored pločice "Wallet Balance", BTCPay Server prikazuje brzi pregled čekajući
 Ovo je vidljivo samo kada je Lightning aktiviran.
 
 
-Kada je Administrator omogućio pristup Lightning mreži, BTCPay Server kontrolna tabla sada ima novu pločicu sa informacijama o vašem Lightning čvoru. Koliko BTC-a je u kanalima, kako je ovo balansirano lokalno ili udaljeno (prilivna ili odlazna likvidnost) ako se kanali zatvaraju ili otvaraju, i koliko Bitcoin drži On-Chain na lightning čvoru.
+Kada je administrator omogućio pristup Lightning mreži, BTCPay Server kontrolna tabla sada ima novu pločicu sa informacijama o vašem Lightning čvoru. Koliko BTC-a je u kanalima, kako je ovo balansirano lokalno ili udaljeno (prilivna ili odlazna likvidnost) ako se kanali zatvaraju ili otvaraju, i koliko Bitcoin-a drži on-chain na Lightning čvoru.
 
 
 ![image](assets/en/42.webp)
@@ -1375,7 +1375,7 @@ Pored prikaza stanja vašeg Lightning računa na BTCPay Server kontrolnoj tabli,
 ### Nedavne transakcije
 
 
-Pločica nedavnih transakcija će prikazati najnovije transakcije vaše prodavnice. Jednim klikom, Administrator instance BTCPay Server-a sada može videti najnoviju transakciju i proveriti da li zahteva pažnju.
+Pločica nedavnih transakcija će prikazati najnovije transakcije vaše prodavnice. Jednim klikom, administrator instance BTCPay Server-a sada može videti najnoviju transakciju i proveriti da li zahteva pažnju.
 
 
 ![image](assets/en/44.webp)
@@ -1384,7 +1384,7 @@ Pločica nedavnih transakcija će prikazati najnovije transakcije vaše prodavni
 ### Nedavne fakture
 
 
-Pločica sa nedavnim fakturama prikazuje 6 najnovijih faktura generisanih od strane vašeg BTCPay Server-a, uključujući Status i iznos fakture. Pločica takođe uključuje dugme "View all" kako bi se prikazalo sve za lak pristup kompletnom pregledu fakture.
+Pločica sa nedavnim fakturama prikazuje 6 najnovijih faktura generisanih od strane vašeg BTCPay Server-a, uključujući status i iznos fakture. Pločica takođe uključuje dugme "View all" za lak pristup kompletnom pregledu faktura.
 
 
 ![image](assets/en/45.webp)
@@ -1408,7 +1408,7 @@ Primetite blagu razliku između pločice Point of Sale i Crowdfund. Administrato
 **!?Napomena!?**
 
 
-Grafikoni stanja i nedavne transakcije dostupni su samo za On-Chain način plaćanja. Informacije o Lightning Network stanjima i transakcijama su na listi zadataka. Od BTCPay Server verzije 1.6.0, osnovna Lightning Network stanja su dostupna.
+Grafikoni stanja i nedavne transakcije dostupni su samo za On-Chain način plaćanja. Informacije o stanjima na Lightning mreži i transakcijama su na listi zadataka. Od BTCPay Server verzije 1.6.0, osnovna stanja na Lightning mreži su dostupna.
 
 
 ### Sažetak veština
@@ -1418,7 +1418,7 @@ U ovom odeljku ste naučili sledeće:
 
 
 
-- Osnovni raspored pločica na glavnoj odredišnoj stranici poznat je kao Kontrolna tabla.
+- Osnovni raspored pločica na glavnoj odredišnoj stranici poznat je kao kontrolna tabla.
 - Osnovno razumevanje sadržaja svake pločice.
 
 
@@ -1434,7 +1434,7 @@ Nabroj što više pločica sa kontrolne table koliko možeš iz memorije.
 <chapterId>e8faef7b-278d-550e-a511-bc3a442daf64</chapterId>
 
 
-U okviru BTCPay Server softvera, znamo za 2 tipa podešavanja. BTCPay Server podešavanja specifična za prodavnicu, dugme za podešavanja koje se nalazi u levom meniju ispod Kontrolne table, i BTCPay Server podešavanja, koja se nalaze na dnu menija odmah iznad Account iliti naloga. BTCPay Server podešavanja specifična za server mogu videti samo administratori servera.
+U okviru BTCPay Server softvera, znamo za 2 tipa podešavanja. BTCPay Server podešavanja specifična za prodavnicu, dugme za podešavanja koje se nalazi u levom meniju ispod kontrolne table, i BTCPay Server podešavanja, koja se nalaze na dnu menija odmah iznad Account iliti naloga. BTCPay Server podešavanja specifična za server mogu videti samo administratori servera.
 
 
 Postavke prodavnice sastoje se od mnogih kartica za kategorizaciju svakog skupa postavki.
@@ -1442,7 +1442,7 @@ Postavke prodavnice sastoje se od mnogih kartica za kategorizaciju svakog skupa 
 
 
 - Opšte
-- Stope
+- Kurs bitkoina
 - Izgled naplate
 - Pristupni tokeni
 - Korisnici
@@ -1453,22 +1453,22 @@ Postavke prodavnice sastoje se od mnogih kartica za kategorizaciju svakog skupa 
 - Forme
 
 
-### General
+### Opšte
 
 
-U kartici Opšta podešavanja (eng. General Settings), vlasnici prodavnica postavljaju podrazumevane vrednosti za brendiranje i plaćanje. Prilikom početnog podešavanja prodavnice, dat je naziv prodavnice; ovo će biti prikazano u Opštim podešavanjima pod "Store Name" ili u prevodu naziv prodavnice. Ovde vlasnik prodavnice takođe može podesiti izgled sajta u skladu sa brendom i ID prodavnice koji Administrator može prepoznati u bazi podataka.
+U kartici Opšta podešavanja (eng. General Settings), vlasnici prodavnica postavljaju podrazumevane vrednosti za brendiranje i plaćanje. Prilikom početnog podešavanja prodavnice, dat je naziv prodavnice; ovo će biti prikazano u opštim podešavanjima pod "Store Name" ili u prevodu naziv prodavnice. Ovde vlasnik prodavnice takođe može podesiti izgled sajta u skladu sa brendom i ID prodavnice koji administrator može prepoznati u bazi podataka.
 
 
 #### Brendiranje
 
 
-Pošto je BTCPay Server slobodan i otvoren softver (FOSS), vlasnik prodavnice može prilagoditi izgled sajta kako bi odgovarao njegovom brendu. Postavite boju brenda, sačuvajte logotipe vašeg brenda i dodajte prilagođeni CSS za stranice koje su okrenute javnosti/klijentima (fakture, Zahtevi za plaćanje, Povlačenje uplata).
+Pošto je BTCPay Server slobodan i otvoren softver (FOSS), vlasnik prodavnice može prilagoditi izgled sajta kako bi odgovarao njegovom brendu. Postavite boju brenda, sačuvajte logotipe vašeg brenda i dodajte prilagođeni CSS za stranice koje su okrenute javnosti/klijentima (fakture, zahtevi za plaćanje, povlačenje uplata, eng. pull payments).
 
 
 #### Plaćanje
 
 
-U postavkama plaćanja, vlasnici prodavnica mogu da postave podrazumevanu valutu svoje prodavnice (bilo u Bitcoin ili u bilo kojoj fiat valuti).
+U postavkama plaćanja, vlasnici prodavnica mogu da postave podrazumevanu valutu svoje prodavnice (bilo u Bitcoin-u ili u bilo kojoj fiat valuti).
 
 
 #### Dozvoli bilo kome da kreira fakture
@@ -1480,7 +1480,7 @@ Ovo podešavanje je namenjeno programerima ili kreatorima na BTCPay Server-u. Ka
 #### Dodajte dodatnu naknadu (mrežna naknada) na fakture.
 
 
-Jedna funkcija unutar BTCPay-a za zaštitu trgovaca od Dust napada ili klijenata da kasnije izazovu visoke troškove naknada kada trgovac treba da premesti mnogo Bitcoin odjednom. Na primer, kupac je kreirao faktruru u iznosu od 20$ i platio ga delimično, plaćajući 1$ 20 puta dok faktura nije bila u potpunosti plaćena. Trgovac sada ima veću transakciju, povećavajući Mining trošak u slučaju da trgovac odluči da premesti ta sredstva kasnije. Podrazumevano, BTCPay primenjuje dodatni trošak mreže na ukupan iznos fakture kako bi pokrio taj trošak za trgovca kada je faktura plaćena u više transakcija. BTCPay nudi nekoliko opcija za prilagođavanje ove funkcije zaštite. Možete primeniti mrežnu naknadu:
+Jedna funkcija unutar BTCPay-a za zaštitu trgovaca od Dust napada ili klijenata da kasnije izazovu visoke troškove naknada kada trgovac treba da premesti mnogo Bitcoin odjednom. Na primer, kupac je kreirao fakturu u iznosu od 20$ i platio ga delimično, plaćajući 1$ 20 puta dok faktura nije bila u potpunosti plaćena. Trgovac sada ima veću transakciju, povećavajući mining trošak u slučaju da trgovac odluči da premesti ta sredstva kasnije. Podrazumevano, BTCPay primenjuje dodatni trošak mreže na ukupan iznos fakture kako bi pokrio taj trošak za trgovca kada je faktura plaćena u više transakcija. BTCPay nudi nekoliko opcija za prilagođavanje ove funkcije zaštite. Možete primeniti mrežnu naknadu:
 
 
 
@@ -1495,7 +1495,7 @@ Iako štiti od Dust transakcija, takođe može negativno uticati na poslovanje a
 #### Faktura ističe ako ceo iznos nije plaćen nakon određenog perioda?
 
 
-Tajmer za fakturu je po defaultu postavljen na 15 minuta. Tajmer je mehanizam zaštite protiv volatilnosti jer zaključava iznos u Bitcoinu prema kursu između Bitcoina i fiat valute. Ako kupac ne plati fakturu u definisanom periodu, faktura se smatra isteklom. Faktura se smatra "plaćenom" čim je transakcija vidljiva na Blockchain (0-potvrda), ali se smatra "završenom" kada dostigne broj potvrda koji je trgovac definisao (obično, 1-6). Tajmer je prilagodljiv po minutima.
+Tajmer za fakturu je po defaultu postavljen na 15 minuta. Tajmer je mehanizam zaštite protiv volatilnosti jer zaključava iznos u Bitcoinu prema kursu između Bitcoina i fiat valute. Ako kupac ne plati fakturu u definisanom periodu, faktura se smatra isteklom. Faktura se smatra "plaćenom" čim je transakcija vidljiva na Blockchain-u (0-potvrda), ali se smatra "završenom" kada dostigne broj potvrda koji je trgovac definisao (obično, 1-6). Tajmer je prilagodljiv po minutima.
 
 
 #### Da li smatrati fakturu plaćenom čak i ako je uplaćeni iznos za X% manji od očekivanog?
@@ -1525,10 +1525,10 @@ Brzo mesto za testiranje vaših preferiranih valutnih parova. Ovo takođe uklju�
 ### Izgled naplate
 
 
-Kartica Izgled naplate počinje sa postavkama specifičnim za fakture i podrazumevanim načinom plaćanja i omogućava specifične načine plaćanja kada su ispunjeni postavljeni zahtevi.
+Kartica "Izgled naplate", eng. "Checkout Appearance" počinje sa postavkama specifičnim za fakture i podrazumevanim načinom plaćanja i omogućava specifične načine plaćanja kada su ispunjeni postavljeni zahtevi.
 
 
-#### Postavke fakture
+#### Postavke faktura
 
 
 Podrazumevani načini plaćanja. BTCPay Server u standardnoj konfiguraciji ima tri opcije.
@@ -1546,16 +1546,16 @@ Možemo postaviti parametre za našu prodavnicu, gde će kupac komunicirati sa L
 ![image](assets/en/48.webp)
 
 
-#### Plaćanje
+#### Plaćanje (eng. Checkout)
 
 
-Od 1.7 izdanja BTCPay Server, uveden je novi Checkout Interface, nazvan Checkout V2. Od izdanja 1.9 je standardizovan, administratori i vlasnici prodavnica i dalje mogu postaviti naplatu na prethodno izdanje. Korišćenjem prekidača "Koristi klasičnu naplatu", vlasnik prodavnice može vratiti prodavnicu na prethodno iskustvo naplate. BTCPay Server takođe ima odabrani set unapred podešenih opcija za online trgovinu ili iskustvo u prodavnici.
+Od 1.7 izdanja BTCPay Server, uveden je novi Checkout interfejs, nazvan Checkout V2. Od izdanja 1.9 je standardizovan, administratori i vlasnici prodavnica i dalje mogu postaviti plaćanje na prethodno izdanje. Korišćenjem prekidača "Koristi klasičnu naplatu", vlasnik prodavnice može vratiti prodavnicu na prethodno iskustvo naplate. BTCPay Server takođe ima odabrani set unapred podešenih opcija za online trgovinu ili iskustvo u prodavnici.
 
 
 ![image](assets/en/49.webp)
 
 
-Kada kupac stupi u interakciju sa prodavnicom i generiše fakturu, postoji vreme isteka fakture. Podrazumevano, BTCPay Server postavlja ovo na 5 minuta, a Administrator može postaviti ovo na vreme koje smatra prikladnim. Stranica za naplatu može se dodatno prilagoditi proverom sledećih parametara:
+Kada kupac stupi u interakciju sa prodavnicom i generiše fakturu, postoji vreme isteka fakture. Podrazumevano, BTCPay Server postavlja ovo na 5 minuta, a administrator može postaviti ovo na vreme koje smatra prikladnim. Stranica za naplatu može se dodatno prilagoditi izmenom sledećih parametara:
 
 
 
@@ -1582,16 +1582,16 @@ Kliknite na padajući meni i vlasnici prodavnica mogu postaviti prilagođeni HTM
 ![image](assets/en/52.webp)
 
 
-Da bi se osiguralo da kupac zna svoj način plaćanja, vlasnik prodavnice može eksplicitno postaviti svoju naplatu da uvek zahteva od korisnika da izaberu svoj preferirani način plaćanja. Kada je faktura plaćena, BTCPay Server omogućava kupcu da se vrati u webshop. Vlasnici prodavnica mogu postaviti ovo preusmeravanje nakon što je kupac automatski platio.
+Da bi se osiguralo da kupac zna svoj način plaćanja, vlasnik prodavnice može eksplicitno postaviti svoju naplatu da uvek zahteva od korisnika da izaberu svoj preferirani način plaćanja. Kada je faktura plaćena, BTCPay Server omogućava kupcu da se vrati u webshop. Vlasnici prodavnica mogu podesiti da se ovo preusmerenje automatski primeni nakon što kupac izvrši uplatu.
 
 
 ![image](assets/en/53.webp)
 
 
-#### Javni račun
+#### Javne priznanice
 
 
-U okviru postavki javnog računa, vlasnik prodavnice može postaviti stranice računa na javno i prikazati listu plaćanja na stranici računa i QR kod računa kako bi ga kupac lako digitalno pristupio.
+U okviru podešavanja javne priznanice, vlasnik prodavnice može podesiti da stranice priznanica budu javne, prikazujući listu uplata na stranici priznanice, kao i QR kod kako bi kupac lako mogao da joj pristupi.
 
 
 ![image](assets/en/54.webp)
@@ -1637,25 +1637,25 @@ Vlasnik prodavnice možda neće smatrati standardne uloge korisnika dovoljno zna
 
 
 
-- Izmenite svoje prodavnice.
+- Izmenite prodavnice.
 - Upravljajte nalozima na berzi povezanim sa vašim prodavnicama.
-  - Prikaži Exchange naloge povezane sa vašim prodavnicama.
+  - Prikaži naloge na berzi povezane sa vašim prodavnicama.
 - Upravljajte svojim povratnim (pull) plaćanjima.
 - Kreiraj pull plaćanja.
   - Kreiraj neodobrene pull uplate.
 - Izmeni fakture.
   - Pregledaj fakture.
   - Kreiraj fakturu.
-  - Kreiraj fakture sa lightning čvorova povezanim sa vašim prodavnicama.
+  - Kreiraj fakture sa Lightning čvorova povezanih sa vašim prodavnicama.
 - Pogledajte vaše prodavnice.
   - Pregledaj fakture.
   - Pregledaj svoje zahteve za plaćanje.
   - Izmenite webhook-ove prodavnica.
 - Izmenite svoje zahteve za plaćanje.
   - Pregledaj svoje zahteve za plaćanje.
-- Koristite lightning čvorove povezane sa vašim prodavnicama.
-  - Pregledajte lightning fakture povezane sa vašim prodavnicama.
-  - Kreirajte fakture sa lightning čvorova povezanih sa vašim prodavnicama.
+- Koristite Lightning čvorove povezane sa vašim prodavnicama.
+  - Pregledajte Lightning fakture povezane sa vašim prodavnicama.
+  - Kreirajte fakture sa Lightning čvorova povezanih sa vašim prodavnicama.
 - Depozitujte sredstva na račune na berzi povezane sa vašim prodavnicama.
 - Povucite sredstva sa računa na berzi u vašu prodavnicu.
 - Trgujte sredstvima na računima na berzi vaše prodavnice.
@@ -1676,7 +1676,7 @@ U okviru BTCPay Server-a, relativno je lako napraviti novi "Webhook". U postavka
 ![image](assets/en/60.webp)
 
 
-Sada ste u prikazu za kreiranje Webhook-a. Uverite se da znate svoj Payload URL i nalepite ga u svoj BTCPay Server. Dok ste nalepili payload URL, ispod se prikazuje tajna za webhook. Kopirajte tajnu za webhook i obezbedite je na krajnjoj tački. Kada je sve postavljeno, možete uključiti u BTCPay Server-u Automatsko ponovno slanje, na engleskom "Automatic redelivery." BTCPay Server  će pokušati ponovo da pošaljemo svaku neuspelu isporuku nakon 10 sekundi, 1 minuta, i do 6 puta nakon 10 minuta. Možete se prebacivati između svakog događaja ili specificirati događaje prema vašim potrebama. Obavezno omogućite webhook i pritisnite dugme "Add webhook" kako biste dodati webhook sačuvali.
+Sada ste u prikazu za kreiranje Webhook-a. Uverite se da znate svoj Payload URL i nalepite ga u svoj BTCPay Server. Kada nalepite URL nosioca podataka (payload URL), ispod se prikazuje tajna vebhuka (webhook secret). Kopirajte tu tajnu i navedite je na krajnjoj tački (endpointu). Kada je sve postavljeno, možete uključiti u BTCPay Server-u Automatsko ponovno slanje, na engleskom "Automatic redelivery." BTCPay Server  će pokušati ponovo da pošaljemo svaku neuspelu isporuku nakon 10 sekundi, 1 minuta, i do 6 puta nakon 10 minuta. Možete se prebacivati između svakog događaja ili specificirati događaje prema vašim potrebama. Obavezno omogućite webhook i pritisnite dugme "Add webhook" kako biste dodati webhook sačuvali.
 
 
 ![image](assets/en/61.webp)
@@ -1731,7 +1731,7 @@ BTCPay Server može koristiti e-poštu za obaveštenja ili, kada je pravilno pos
 ![image](assets/en/65.webp)
 
 
-Pre nego što vlasnik prodavnice može postaviti pravila za Email koja će se aktivirati na specifične događaje u njegovoj prodavnici, moramo postaviti osnovna podešavanja email-a. BTCPay Server zahteva ova podešavanja kako bi slao email-ove za događaje vezane za vašu prodavnicu ili za resetovanje lozinke.
+Pre nego što vlasnik prodavnice može da postavi pravila za slanje e-pošte kako bi se određeni događaji u prodavnici automatski pokrenuli, najpre mora da podesi osnovna podešavanja e-pošte. BTCPay Server zahteva ova podešavanja kako bi mogao da šalje e-poruke povezane sa događajima u vašoj prodavnici ili za resetovanje lozinke.
 
 
 BTCPay Server je olakšao popunjavanje ovih informacija korišćenjem opcije "Quick Fill":
@@ -1800,7 +1800,7 @@ Svaki obrazac počinje sa najmanje jednim novim poljem. Vlasnik prodavnice može
 - Telefonski brojevi
 - Datum
 - Skrivena polja
-- Polje
+- Grupa polja za unos podataka (eng. fieldset)
 - Oblast za unos otvorenih komentara.
 - Selektor opcija
 
@@ -1814,23 +1814,23 @@ Svaka vrsta dolazi sa svojim parametrima za popunjavanje. Vlasnik prodavnice mo�
 #### Napredni prilagođeni obrasci
 
 
-BTCPay Server takođe omogućava kreiranje Formi u kodu. Posebno u JSON formatu. Umesto da gledaju u editor, vlasnici prodavnica mogu kliknuti na dugme CODE odmah pored editora i ući u kod svojih Formi. U definiciji polja, mogu se postaviti samo sledeća polja; vrednosti polja se čuvaju u metapodacima fakture:
+BTCPay Server takođe omogućava kreiranje obrazaca u kodu. Posebno u JSON formatu. Umesto da gledaju u editor, vlasnici prodavnica mogu kliknuti na dugme CODE odmah pored editora i ući u kod svojih obrazaca. U definiciji polja, mogu se postaviti samo sledeća polja; vrednosti polja se čuvaju u metapodacima fakture:
 
 
 | Field                 | Description                                                                                                                                                                                                                                                                                                                                                                                                                                                        |
 | --------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| .fields.constant      | If true, the .value must be set in the form definition, and the user will not be able to change the field's value. ( example: the form definition's version)                                                                                                                                                                                                                                                                                                       |
-| .fields.type          | The HTML input type text, radio, checkbox, password, hidden, button, color, date, datetime-local, month, week, time, email, number, range, search, url, select, tel                                                                                                                                                                                                                                                                                                |
-| .fields.options       | If .fields.type is select, the list of selectable values                                                                                                                                                                                                                                                                                                                                                                                                           |
-| .fields.options.text  | The text displayed for this option                                                                                                                                                                                                                                                                                                                                                                                                                                 |
-| .fields.options.value | The value of the field if this option is selected                                                                                                                                                                                                                                                                                                                                                                                                                  |
-| .fields.type=fieldset | Create a HTML fieldset around the children .fields.fields (see below)                                                                                                                                                                                                                                                                                                                                                                                              |
-| .fields.name          | The JSON property name of the field as it will appear in the invoice's metadata                                                                                                                                                                                                                                                                                                                                                                                    |
-| .fields.value         | The default value of the field                                                                                                                                                                                                                                                                                                                                                                                                                                     |
-| .fields.required      | if true, the field will be required                                                                                                                                                                                                                                                                                                                                                                                                                                |
-| .fields.label         | The label of the field                                                                                                                                                                                                                                                                                                                                                                                                                                             |
-| .fields.helpText      | Additional text to provide an explanation for the field.                                                                                                                                                                                                                                                                                                                                                                                                           |
-| .fields.fields        | You can organize your fields in a hierarchy, allowing child fields to be nested within the invoice’s metadata. This structure can help you better organize and manage the collected information, making it easier to access and interpret. For example, if you have a form that collects customer information, you can group the fields under a parent field called customer. Within this parent field, you might have child fields like name, Email, and address. |
+| .fields.constant      | Ako je podešeno na tačno (true), vrednost polja .value mora biti definisana u definiciji forme, a korisnik neće moći da menja vrednost tog polja.(primer: verzija definicije forme)                                                                                                                                                                                                                                                                                 |
+| .fields.type          | HTML tipovi input polja su: text, radio, checkbox, password, hidden, button, color, date, datetime-local, month, week, time, email, number, range, search, url, select, tel.                                                                                                                                                                                                                                                                                               |
+| .fields.options       | Ako je .fields.type postavljeno na select, to predstavlja listu dostupnih opcija za izbor                                                                                                                                                                                                                                                                                                                                                                          |
+| .fields.options.text  | Tekst koji se prikazuje za ovu opciju                                                                                                                                                                                                                                                                                                                                                                                                                                 |
+| .fields.options.value | Vrednost polja ako je ova opcija izabrana.                                                                                                                                                                                                                                                                                                                                                                                                                  |
+| .fields.type=fieldset | Kreirajte HTML fieldset oko podređenih polja .fields.fields (pogledajte dole).                                                                                                                                                                                                                                                                                                                                                                                  |
+| .fields.name          | Naziv JSON svojstva polja kako će se pojaviti u metapodacima fakture.                                                                                                                                                                                                                                                                                                                                                                                    |
+| .fields.value         | Podrazumevana vrednost polja                                                                                                                                                                                                                                                                                                                                                                                                                                     |
+| .fields.required      | Ako je tačno (true), polje će biti obavezno.                                                                                                                                                                                                                                                                                                                                                                                                                       |
+| .fields.label         | Oznaka polja                                                                                                                                                                                                                                                                                                                                                                                                                                             |
+| .fields.helpText      | Dodatni tekst koji pruža objašnjenje za polje.                                                                                                                                                                                                                                                                                                                                                                                                           |
+| .fields.fields        | Možete organizovati svoja polja u hijerarhiju, omogućavajući da podređena polja budu ugnježdena unutar metapodataka fakture. Ova struktura vam može pomoći da bolje organizujete i upravljate prikupljenim informacijama, olakšavajući pristup i tumačenje podataka. Na primer, ako imate formu koja prikuplja informacije o kupcu, možete grupisati polja pod glavnim poljem nazvanim „kupac“. Unutar ovog glavnog polja mogu se nalaziti podređena polja kao što su ime, e-pošta i adresa. |
 
 Naziv polja predstavlja naziv JSON svojstva koje čuva vrednost koju je korisnik uneo u metapodacima fakture. Neka dobro poznata imena mogu se interpretirati i modifikovati postavke fakture.
 
@@ -1861,7 +1861,7 @@ U ovom odeljku ste naučili sledeće:
 
 
 - Izgled i funkcije kartica u podešavanjima prodavnice
-- Mnoštvo opcija za precizno podešavanje načina obrade osnovnih kurseva, delimičnih uplata, manjih nepodmirenih iznosa i još mnogo toga.
+- Mnogo opcija za precizno podešavanje rukovanja osnovnim kursnim vrednostima, delimičnim uplatama, manjim nedoplatama i još mnogo toga.
 - Prilagodite izgled stranice za plaćanje, uključujući omogućavanje glavnog lanca ili Lightning mreže na fakturama u zavisnosti od iznosa.
 - Upravljajte nivoima pristupa prodavnici i dozvolama za različite uloge.
 - Konfigurišite automatske e-poruke i njihove okidače
@@ -1915,24 +1915,24 @@ Dozvola za prilagođene uloge na nivou servera;
 
 
 - Izmenite svoje prodavnice.
-- Upravljajte nalozima na beri povezanim sa vašim prodavnicama.
+- Upravljajte nalozima na berzi povezanim sa vašim prodavnicama.
   - Prikaži naloge na berzi povezane sa vašim prodavnicama.
 - Upravljajte svojim pull plaćanjima.
 - Kreiraj pull plaćanja.
-  - Kreirajte neodobrene pull plaćanja.
+  - Kreirajte neodobrena pull plaćanja.
 - Izmeni fakture.
   - Pregledaj fakture.
   - Kreiraj fakture.
-  - Kreirajte fakture sa čvorova za plaćanje povezanim sa vašim prodavnicama.
+  - Kreirajte fakture sa Lightning čvorova za plaćanje povezanim sa vašim prodavnicama.
 - Pogledajte vaše prodavnice.
   - Pregledaj fakture.
   - Pregledajte vaše zahteve za plaćanje.
   - Izmeni webhookove prodavnica.
 - Izmenite svoje zahteve za plaćanje.
   - Pregledaj svoje zahteve za plaćanje.
-- Koristite lightning čvorove povezane sa vašim prodavnicama.
-  - Pregledajte lightning fakture povezane sa vašim prodavnicama.
-  - Kreirajte fakture sa lightning čvorova povezanih sa vašim prodavnicama.
+- Koristite Lightning čvorove povezane sa vašim prodavnicama.
+  - Pregledajte Lightning fakture povezane sa vašim prodavnicama.
+  - Kreirajte fakture sa Lightning čvorova povezanih sa vašim prodavnicama.
 - Depozitujte sredstva na račune na berzi povezane sa vašim prodavnicama.
 - Povucite sredstva sa računa na berzi u vašu prodavnicu.
 - Trgujte sredstvima na računima na berzi vaše prodavnice.
@@ -1947,8 +1947,7 @@ Kada se uloga kreira, ime je fiksno i ne može se promeniti kasnije u režimu ur
 ### Email
 
 
-Postavke e-pošte za ceo server izgledaju slično onima u postavkama e-pošte specifičnim za prodavnicu. Međutim, ova konfiguracija ne upravlja samo okidačima za prodavnice ili administratorima logova. Ova postavka e-pošte takođe omogućava oporavak lozinke na BTCPay Serveru pri prijavi. Radi slično kao postavke specifične za prodavnicu; administratori mogu brzo popuniti svoje parametre e-pošte i uneti svoje e-mail kredencijale, i server sada može slati e-poštu.
-
+Podešavanja e-pošte za ceo server su slična onima u podešavanjima e-pošte specifičnim za prodavnicu. Međutim, ova konfiguracija ne upravlja samo okidačima za prodavnice ili administratorske zapise, već i okidačima za druge događaje. Takođe, ova podešavanja e-pošte omogućavaju opciju vraćanja lozinke na BTCPay Server-u prilikom prijavljivanja. Funkcioniše slično kao podešavanja za pojedinačne prodavnice — administratori brzo mogu uneti parametre e-pošte i pristupne podatke, što omogućava serveru da šalje e-poruke.
 
 ![image](assets/en/72.webp)
 
@@ -1970,9 +1969,9 @@ Opcije dostupne ovde su odvojene od prilagođenih uloga. Ove dodatne dozvole mog
 
 
 - Dozvoli ne-administratorima da koriste interni Lightning čvor u svojim prodavnicama.
-  - Ovo bi omogućilo vlasnicima prodavnica da koriste Administratorov Lightning čvor na serveru i, prema tome, njegova sredstva! Oprez, ovo nije rešenje za davanje pristupa Lightning-u.
+  - Ovo bi omogućilo vlasnicima prodavnica da koriste administratorov Lightning čvor na serveru i, prema tome, njegova sredstva! Oprez, ovo nije rešenje za davanje pristupa Lightning-u.
 - Dozvoli ne-administratorima da kreiraju vruć novčanike za svoje prodavnice.
-  - Ovo bi omogućilo svakome ko ima nalog na vašoj BTCPay Server instanci da kreira vruće novčanike i čuva njihov seed za oporavak na serveru Administratora. Ovo bi moglo učiniti Administratora odgovornim za držanje sredstava treće strane!
+  - Ovo bi omogućilo svakome ko ima nalog na vašoj BTCPay Server instanci da kreira vruće novčanike i čuva njihov seed za oporavak na serveru administratora. Ovo bi moglo učiniti administratora odgovornim za držanje sredstava treće strane!
 - Dozvoli ne-administratorima da uvoze vruće novčanike za svoje prodavnice.
   - Slično prethodnoj temi kreiranja vrućih novčanika, ova politika omogućava uvoz vrućih novčanika, sa istim opasnostima pomenutim u odeljku o kreiranju vrućih novčanika.
 
@@ -1980,7 +1979,7 @@ Opcije dostupne ovde su odvojene od prilagođenih uloga. Ove dodatne dozvole mog
 ![image](assets/en/74.webp)
 
 
-#### Nove postavke korisnika
+#### Postavke za nove korisnike
 
 
 Možemo postaviti neka važna podešavanja za upravljanje novim korisnicima koji dolaze na server. Možemo postaviti email za potvrdu novih registracija, onemogućiti kreiranje novih korisnika putem ekrana za prijavu i ograničiti pristup kreiranju korisnika preko API-ja za korisnike koji nisu administratori.
@@ -1993,7 +1992,7 @@ Možemo postaviti neka važna podešavanja za upravljanje novim korisnicima koji
 - Onemogući pristup API-aju za kreiranje korisnika za korisnike koji nisu administratori.
 
 
-Podrazumevano, BTCPay Server ima uključenu opciju da se onemogući registraciju novih korisnika (eng."Disable new user registration on the server") i isključen pristup API-aju za kreiranje korisnika za ne-administratore. Ovo je iz bezbednosnih razloga kako nijedna nasumična osoba koja bi mogla pronaći BTCPay prijavu vašeg servera ne bi mogla početi sa kreiranjem naloga.
+Podrazumevano, BTCPay Server ima uključenu opciju da se onemogući registraciju novih korisnika (eng."Disable new user registration on the server") i isključen pristup API-iju za kreiranje korisnika za ne-administratore. Ovo je iz bezbednosnih razloga kako nijedna nasumična osoba koja bi mogla pronaći BTCPay prijavu vašeg servera ne bi mogla početi sa kreiranjem naloga.
 
 
 ![image](assets/en/75.webp)
