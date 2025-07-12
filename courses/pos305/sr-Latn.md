@@ -3396,7 +3396,7 @@ Opiši neke od razlika između pokretanja instance BTCPay Servera na VPS-u i kre
 <chapterId>11c7d284-b4d2-5542-872c-df9bd9c1491b</chapterId>
 
 
-Upoznaćete se sa Voltage.cloud kao provajderom hostinga, naučiti o prvim koracima korišćenja vašeg BTCPay Server-a, i naučiti kako da koristite Lightning Network. Nakon što prođemo kroz sve korake, možete pokrenuti veb prodavnicu ili platformu za crowdfunding koja prihvata Bitcoin!
+Upoznaćete se sa Voltage.cloud kao provajderom hostinga, naučiti o prvim koracima korišćenja vašeg BTCPay Server-a, i naučiti kako da koristite Lightning mrežu. Nakon što prođemo kroz sve korake, moći ćete pokrenuti veb prodavnicu ili platformu za crowdfunding koja prihvata Bitcoin!
 
 
 Ovo je jedan od mnogih načina za implementaciju BTCPay Servera. Pročitajte našu dokumentaciju za više detalja,
@@ -3404,7 +3404,7 @@ Ovo je jedan od mnogih načina za implementaciju BTCPay Servera. Pročitajte na�
 https://docs.btcpayserver.org.
 
 
-### BTCPay Server - Voltage.cloud deployment
+### BTCPay Server - Voltage.cloud implementacija
 
 
 Prvo, idite na vebsajt Voltage.cloud i registrujte se za novi nalog. Kada kreirate nalog, možete se prijaviti za besplatni probni period od 7 dana. Ili kliknite na "Sign Up" u gornjem desnom uglu ili koristite opciju "Try a free 7 day trial" na njihovoj početnoj stranici.
@@ -3413,25 +3413,25 @@ Prvo, idite na vebsajt Voltage.cloud i registrujte se za novi nalog. Kada kreira
 ![image](assets/en/117.webp)
 
 
-Nakon što ste napravili nalog, kliknite na dugme `NODES` na vašoj kontrolnoj tabli. Kada odaberemo Nodes i kreiramo novi čvor, biće nam prikazane moguće ponude napona čvora. Kako će ovaj vodič takođe pokriti LightningNetwork, na Voltage-u prvo moramo izabrati našu Lightning implementaciju pre nego što kreiramo BTCPay Server. Kliknite na LightningNode.
+Nakon što ste napravili nalog, kliknite na dugme `NODES` na vašoj kontrolnoj tabli. Kada odaberemo Nodes i kreiramo novi čvor, biće nam prikazane moguće ponude Lightning čvorova. Kako će ovaj vodič takođe pokriti Lightning mrežu, na Voltage-u prvo moramo izabrati našu Lightning implementaciju pre nego što kreiramo BTCPay Server. Kliknite na Lightning Node.
 
 
 ![image](assets/en/118.webp)
 
 
-Ovde ćete morati da izaberete kakvu vrstu Lightning čvora želite. Voltage ima razne opcije za vašu rasvetu. Ovo je drugačije kada se koristi, na primer, LunaNode. Za svrhe ovog vodiča, Lite Node će biti dovoljan. Pročitajte više o razlikama na Voltage.cloud.
+Ovde ćete morati da izaberete kakvu vrstu Lightning čvora želite. Voltage ima razne opcije za vaš Lightning. Ovo je drugačije kada se koristi, na primer, Luna Node. Za svrhe ovog vodiča, Lite Node će biti dovoljan. Pročitajte više o razlikama na Voltage.cloud.
 
 
 ![image](assets/en/119.webp)
 
 
-Dajte svom čvoru Ime, postavite lozinku i osigurajte ovu lozinku. Ako se ova lozinka izgubi, gubite pristup svojim rezervnim kopijama, a Voltage je ne može povratiti. Kreirajte čvor, a Voltage vam prikazuje napredak. Voltage je kreirao vaš Lightning čvor. Sada možemo kreirati BTCPay Server instancu i direktno pristupiti Lightning Network.
+Dajte svom čvoru ime, postavite lozinku i osigurajte ovu lozinku. Ako se ova lozinka izgubi, gubite pristup svojim rezervnim kopijama, a Voltage je ne može povratiti. Kreirajte čvor, a Voltage vam prikazuje napredak. Voltage je kreirao vaš Lightning čvor. Sada možemo kreirati BTCPay Server instancu i direktno pristupiti Lightning mreži.
 
 
 Kliknite na Nodes u gornjem levom uglu vaše kontrolne table. Ovde možete postaviti sledeći deo vaše BTCPay Server instance. Kliknite na "create new" kada ste u pregledu čvorova. Dobijate sličan ekran kao ranije. Sada umesto Lightning Node, biramo BTCPay Server.
 
 
-Napon vam pokazuje geolokaciju vašeg BTCPay Server-a, napon hostuje u regionu zapadnog dela SAD-a. Ovde ćete takođe videti trošak hostovanja servera. Kliknite na Kreiraj i dajte svom BTCPay Server-u ime. Omogućite Lightning i napon vam pokazuje Lightning čvor kreiran u prethodnom koraku. Kliknite na Kreiraj, i napon će kreirati instance BTCPay Server-a.
+Voltage vam pokazuje geolokaciju vašeg BTCPay Server-a, Voltage hostuje u regionu zapadnog dela SAD-a. Ovde ćete takođe videti trošak hostovanja servera. Kliknite na Kreiraj i dajte svom BTCPay Server-u ime. Omogućite Lightning i Voltage vam pokazuje Lightning čvor kreiran u prethodnom koraku. Kliknite na Kreiraj, i Voltage će kreirati instance BTCPay Server-a.
 
 
 ![image](assets/en/120.webp)
@@ -3440,7 +3440,7 @@ Napon vam pokazuje geolokaciju vašeg BTCPay Server-a, napon hostuje u regionu z
 Nakon što kliknete na kreiranje, Voltage vam prikazuje podrazumevano korisničko ime i lozinku. Oni su slični vašoj prethodnoj postavljenoj lozinci u Voltage. Kliknite na dugme Prijava na nalog da biste bili preusmereni na vaš BTCPay Server.
 
 
-Dobrodošli u vašu novu BTCPay Server instance. Kako smo već postavili Lightning u procesu kreiranja, pokazuje vam da je Lightning već omogućen!
+Dobrodošli u vašu novu BTCPay Server instancu. Kako smo već postavili Lightning u procesu kreiranja, pokazuje vam da je Lightning već omogućen!
 
 
 ### Sažetak veština
@@ -3457,19 +3457,19 @@ U ovom poglavlju ste naučili:
 ### Procena znanja
 
 
-#### KA Konceptualni Pregled
+#### KA konceptualni pregled
 
 
 Koje su neke ključne razlike između Voltage i LunaNode postavki?
 
 
-## Instaliranje BTCPay Servera na Umbrel čvor
+## Instaliranje BTCPay Servera na Umbrel čvoru
 
 
 <chapterId>3298e292-6476-5fe0-836c-7fa021348799</chapterId>
 
 
-Na kraju ovih koraka, možete prihvatati lightning uplate u vašoj BTCPay prodavnici na vašoj lokalnoj mreži. Ovaj proces će se takođe primeniti ako pokrećete umbrel čvor u restoranu ili poslovanju. Ako želite da povežete ovu prodavnicu sa javnim veb-sajtom, pratite Naprednu vežbu da izložite vaš umbrel čvor javnosti.
+Na kraju ovih koraka, možete prihvatati lightning uplate u vašoj BTCPay prodavnici na vašoj lokalnoj mreži. Ovaj proces će se takođe primeniti ako pokrećete umbrel čvor u restoranu ili poslovanju. Ako želite da povežete ovu prodavnicu sa javnim veb-sajtom, pratite naprednu vežbu da izložite vaš umbrel čvor javnosti.
 
 
 https://umbrel.com/
@@ -3478,10 +3478,10 @@ https://umbrel.com/
 ![image](assets/en/121.webp)
 
 
-### BTCPay Server - Umbrel deployment
+### BTCPay Server - Umbrel implementacija
 
 
-Nakon što se vaš Umbrel čvor potpuno sinhronizuje sa Bitcoin Blockchain, idite u Umbrel App Store i potražite BTCPay Server ispod Aplikacija.
+Nakon što se vaš Umbrel čvor potpuno sinhronizuje sa Bitcoin Blockchain-om, idite u Umbrel App Store i potražite BTCPay Server ispod Aplikacija.
 
 
 ![image](assets/en/122.webp)
@@ -3496,11 +3496,11 @@ Kliknite na BTCPay Server da biste videli detalje aplikacije. Kada su detalji ot
 Nakon instalacije vašeg lightning čvora:
 
 
-1. Kliknite na otvori u detaljima aplikacije ili na Aplikaciju na Umbrels kontrolnoj tabli.
+1. Kliknite na otvori u detaljima aplikacije ili na aplikaciju na Umbrels kontrolnoj tabli.
 
 2. Kliknite na postavljanje novog čvora; biće vam prikazane 24 reči za oporavak vašeg lightning čvora.
 
-3. Zapiši ovo.
+3. Zapišite reči.
 
 
 ![image](assets/en/124.webp)
@@ -3546,7 +3546,7 @@ U ovom odeljku ste naučili:
 ### Procena znanja
 
 
-#### KA Konceptualni Pregled
+#### KA konceptualni pregled
 
 
 Kako se postavljanje na Umbrel razlikuje od prethodne dve hostovane opcije?
