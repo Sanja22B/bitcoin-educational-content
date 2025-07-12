@@ -2044,7 +2044,7 @@ Standardna BTCPay Server implementacija biće dostupna putem domena postavljenog
 
 
 - Mapirajte specifične domene na specifične aplikacije.
-  - Kada kliknete da postavite određeni domen za određene aplikacije, Administrator može postaviti onoliko domena usmerenih na određene aplikacije koliko je potrebno.
+  - Kada kliknete da postavite određeni domen za određene aplikacije, administrator može postaviti onoliko domena usmerenih na određene aplikacije koliko je potrebno.
 
 
 ![image](assets/en/80.webp)
@@ -2134,7 +2134,7 @@ Ova stranica izlaže informacije za daljinsko povezivanje sa vašim Full node-om
 #### SSH
 
 
-SSH se koristi za svrhe održavanja. BTCPay Server prikazuje početnu komandu za povezivanje sa vašim Serverom i SSH javne ključeve ovlašćene za povezivanje sa vašim Serverom. Administratori Servera možda žele da isključe izmene SSH-a putem korisničkog interfejsa BTCPay Servera.
+SSH se koristi za svrhe održavanja. BTCPay Server prikazuje početnu komandu za povezivanje sa vašim Serverom i SSH javne ključeve ovlašćene za povezivanje sa vašim Serverom. Administratori Servera možda žele da isključe izmene putem SSH-a koristeći korisnički interfejs BTCPay Servera.
 
 
 #### Dinamički DNS
@@ -2152,7 +2152,7 @@ Imajte na umu da morate pravilno konfigurisati vašu NAT i BTCPay Server instala
 BTCPay Server, kao standard, dolazi sa dva režima rada: svetli i tamni režim. Oni se mogu promeniti klikom na Nalog u donjem levom uglu i prebacivanjem između tamne ili svetle teme. Administratori BTCPay Server-a mogu dodati svoju temu pružanjem prilagođene CSS teme.
 
 
-Administratori mogu proširiti svetlu/tamnu temu dodavanjem sopstvenog prilagođenog CSS-a ili postavljanjem svoje prilagođene teme kao potpuno prilagođene.
+Administratori mogu prilagoditi svetlu/tamnu temu ubacivanjem sopstvenog CSS-a ili definisanjem potpuno prilagođene teme.
 
 
 ![image](assets/en/83.webp)
@@ -2267,10 +2267,10 @@ Logovi mogu pružiti ključne informacije. U narednim pasusima, opisaćemo kako 
 ##### BTCPay logovi
 
 
-Od verzije v1.0.3.8, možete lako pristupiti logovima BTCPay Server-a preko korisničkog interfejsa. Ako ste administrator servera, idite na Podešavanja Servera > Logovi i otvorite datoteku logova. Ako ne znate šta određena greška u logovima znači, pomenite je prilikom rešavanja problema.
+Od verzije v1.0.3.8, možete lako pristupiti logovima BTCPay Server-a preko korisničkog interfejsa. Ako ste administrator servera, idite na Podešavanja Servera > Logovi (eng. Server Settings > Logs) i otvorite datoteku logova. Ako ne znate šta određena greška u logovima znači, pomenite je prilikom rešavanja problema.
 
 
-Ako želite detaljnije logove i koristite Docker implementaciju, možete pregledati logove specifičnih Docker kontejnera koristeći komandnu liniju. Pogledajte ova [uputstva za ssh](https://docs.btcpayserver.org/FAQ/ServerSettings/#how-to-ssh-into-my-btcpay-running-on-vp%C2%80) u instancu BTCPay koja radi na VPS-u.
+Ako želite detaljnije logove i koristite Docker implementaciju, možete pregledati logove specifičnih Docker kontejnera koristeći komandnu liniju. Pogledajte ova [uputstva za ssh](https://docs.btcpayserver.org/FAQ/ServerSettings/#how-to-ssh-into-my-btcpay-running-on-vp%C2%80) u instanci BTCPay koja radi na VPS-u.
 
 
 Na sledećoj stranici, opšta lista imena kontejnera korišćenih za BTCPay Server.
@@ -2364,7 +2364,7 @@ docker logs 'dodajte kontejner ID ovde'
 ```
 
 
-alternativno, koristi ovo
+alternativno, koristite ovo
 
 
 ```bash
@@ -2389,7 +2389,7 @@ Pored [pregleda logova](https://docs.btcpayserver.org/Troubleshooting/#2-looking
 [(otvara se novi prozor)](https://developer.Bitcoin.org/reference/RPC/index.html) da biste dobili informacije sa vašeg Bitcoin čvora. BTCPay uključuje skriptu koja vam omogućava da lako komunicirate sa vašim Bitcoin čvorom.
 
 
-Unutar btcpayserver-docker fascikle, dobij informacije o Blockchain koristeći svoj čvor:
+Unutar btcpayserver-docker fascikle, dobijte informacije o Blockchain-u koristeći svoj čvor:
 
 
 ```bash
@@ -2402,8 +2402,7 @@ bitcoin-cli.sh getblockchaininfo
 
 BTCPay Server koristi lokalni fajl sistem, što omogućava otpremanje sredstava prodavnice (proizvoda), logotipa i brendiranog sadržaja direktno na server. Fajl sistem servera je dostupan samo administratorima servera; vlasnici prodavnica mogu otpremati svoje logotipe/brendiranje na nivou prodavnice.
 
-
-Kada je administrator servera na kartici za skladištenje datoteka (eng.  File Storage), moguće je direktno otpremiti na vaš server ili promeniti provajdera skladištenja datoteka na lokalni sistem datoteka ili Azure Blob Storage.
+Kada se administrator servera nalazi na kartici za skladištenje fajlova (eng.  File Storage), moguće je direktno otpremiti fajlove na server ili promeniti provajdera skladišta fajlova u lokalni fajl sistem ili Azure Blob Storage.
 
 
 ![image](assets/en/90.webp)
@@ -2420,8 +2419,8 @@ U ovom odeljku, naučili ste sledeće:
 
 
 - Razlika između podešavanja prodavnice i servera, posebno u vezi sa korisnicima, ulogama i emailovima
-- Postavite pravila za ceo server za korišćenje i kreiranje Lightning ili Bitcoin  vrućeg novčanika, registraciju novih korisnika i obaveštenja putem e-pošte.
-- Kako dodati prilagođene teme (umesto jednostavnih opcija svetlo/tamno koje su dostupne) kao i kreirati prilagođene logotipe
+- Postavite pravila za korišćenje celog servera i kreiranje Lightning ili Bitcoin vrućeg novčanika, registraciju novih korisnika i obaveštenja putem e-pošte.
+- Kako dodati prilagođene teme (umesto jednostavnih opcija svetlo/tamno koje su dostupne) kao i kreiranje prilagođenih logotipa
 - Izvršite jednostavne zadatke održavanja servera putem pruženog GUI-ja.
 - Otklonite probleme, uključujući preuzimanje detalja za bilo koji od Docker kontejnera ili vašeg čvora.
 - Upravljanje skladištenjem datoteka
