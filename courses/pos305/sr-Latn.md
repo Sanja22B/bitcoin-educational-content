@@ -3268,7 +3268,7 @@ Možete pronaći sve detalje o BTCPay Server-u na https://docs.btcpayserver.org.
 #### Gde da počnemo?
 
 
-U ovom delu, upoznaćete se sa LunaNode kao provajderom hostinga, naučiti o prvim koracima korišćenja vašeg BTCPay Server-a, i naučiti kako da radite sa Lightning Network. Nakon što prođemo kroz sve korake, možete pokrenuti veb prodavnicu ili platformu za crowdfunding koja prihvata Bitcoin!
+U ovom delu, upoznaćete se sa LunaNode kao provajderom hostinga, naučiti o prvim koracima korišćenja vašeg BTCPay Server-a, i naučiti kako da radite sa Lightning mrežom. Nakon što prođemo kroz sve korake, možete pokrenuti veb prodavnicu ili platformu za crowdfunding koja prihvata Bitcoin!
 
 
 Ovo je jedan od mnogih načina za implementaciju BTCPay Servera. Pročitajte našu dokumentaciju za više detalja,
@@ -3277,7 +3277,7 @@ Ovo je jedan od mnogih načina za implementaciju BTCPay Servera. Pročitajte na�
 https://docs.btcpayserver.org.
 
 
-### BTCPay Server - LunaNode deployment
+### BTCPay Server - LunaNode implementacija
 
 
 #### LunaNode implementacija
@@ -3311,9 +3311,9 @@ Jednom kada verifikujete nalog, u poređenju sa Voltage, sada vam se odmah nudi 
 U ovom vodiču ćemo proći kroz postavljanje kreiranjem skupa API ključeva i korišćenjem BTCPay Server pokretača koji je napravio LunaNode.
 
 
-U vašem LunaNode kontrolnom panelu, kliknite na API u gornjem desnom uglu. Ovo će otvoriti novu stranicu. Potrebno je samo da postavite Ime za API ključ. Ostalo će biti rešeno od strane LunaNode i neće biti pokriveno u ovom vodiču. Kliknite na dugme Create API Credential.
+U vašem LunaNode kontrolnom panelu, kliknite na API u gornjem desnom uglu. Ovo će otvoriti novu stranicu. Potrebno je samo da postavite ime za API ključ. Ostalo će biti rešeno od strane LunaNode i neće biti pokriveno u ovom vodiču. Kliknite na dugme Create API Credential.
 
-Nakon kreiranja API akreditiva, dobićete dugačak niz slova i karaktera. Ovo je vaš API ključ.
+Nakon kreiranja API kredencijala, dobićete dugačak niz slova i karaktera. Ovo je vaš API ključ.
 
 
 ![image](assets/en/113.webp)
@@ -3322,13 +3322,13 @@ Nakon kreiranja API akreditiva, dobićete dugačak niz slova i karaktera. Ovo je
 #### Kako postaviti novi server?
 
 
-Postoje 2 dela ovih akreditiva, API ključ i API ID; biće nam potrebna oba. Pre nego što pređemo na sledeći korak, hajde da otvorimo drugu karticu u pregledaču i odemo na https://launchbtcpay.lunanode.com/
+Postoje 2 dela ovih kredencijala, API ključ i API ID; biće nam potrebna oba. Pre nego što pređemo na sledeći korak, hajde da otvorimo drugu karticu u pregledaču i odemo na https://launchbtcpay.lunanode.com/
 
 
 Ovde će vam biti zatraženo da unesete svoj API ključ i API ID. Ovo je da bi se verifikovalo da ste vi taj koji obezbeđuje ovaj novi server. API ključ bi trebalo da bude otvoren u vašem prethodnom tabu; ako se pomerite naniže u tabeli ispod, pronaći ćete API ID.
 
 
-Vratite se na stranicu sa Pokretačem, popunite polja sa vašim API ključem i ID-om, i kliknite na nastavi.
+Vratite se na stranicu sa pokretačem, popunite polja sa vašim API ključem i ID-om, i kliknite na nastavi.
 
 
 ![image](assets/en/114.webp)
@@ -3343,10 +3343,10 @@ Pročitajte više o postavljanju ili promeni DNS zapisa za BTCPay Server; https:
 #### Pokreni BTCPay Server na LunaNode
 
 
-Nakon što preduzmemo prethodne korake, možemo postaviti sve opcije za naš novi server. Ovde ćemo izabrati Bitcoin (BTC) kao našu Podržanu valutu; možemo postaviti email za obaveštenja o enkripcijskim sertifikatima za potrebe obnove; ovo nije obavezno.
+Nakon što preduzmemo prethodne korake, možemo postaviti sve opcije za naš novi server. Ovde ćemo izabrati Bitcoin (BTC) kao našu podržanu valutu; možemo postaviti email za obaveštenja o enkripcijskim sertifikatima za potrebe obnove; ovo nije obavezno.
 
 
-Ovaj vodič ima za cilj postavljanje Mainnet okruženja (stvarni svet Bitcoin); međutim, LunaNode takođe omogućava da ovo postavite na Testnet ili Regtest za potrebe razvoja. Ostavićemo ga na Mainnet opciji za ovaj vodič.
+Ovaj vodič ima za cilj postavljanje Mainnet okruženja (stvarni svet Bitcoin-a); međutim, LunaNode takođe omogućava da ovo postavite na Testnet ili Regtest za potrebe razvoja. Ostavićemo ga na Mainnet opciji za ovaj vodič.
 
 
 Izaberite svoju Lightning implementaciju. LunaNode nudi dve različite implementacije, LND i Core Lightning. Za ovaj vodič, uzećemo LND. Postoje male, ali stvarne razlike u obe implementacije; za više o tome, preporučujemo čitanje opsežne dokumentacije; https://docs.btcpayserver.org/LightningNetwork#getting-started-with-btcpay-server-and-core-lightning-cln
@@ -3378,13 +3378,13 @@ U ovom odeljku ste naučili:
 
 
 - Kreiranje i finansiranje naloga na LunaNode
-- Korišćenje BTCPay Server Launchera za kreiranje sopstvenog servera
+- Korišćenje BTCPay Server pokretača za kreiranje sopstvenog servera
 
 
 ### Procena znanja
 
 
-#### KA Konceptualni Pregled
+#### KA konceptualni pregled
 
 
 Opiši neke od razlika između pokretanja instance BTCPay Servera na VPS-u i kreiranja naloga na hostovanoj instanci.
