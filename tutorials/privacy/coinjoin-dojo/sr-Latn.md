@@ -167,27 +167,27 @@ Pre nego što pređe na coinjoins, korisnik stoga ima izbor između 2 strategije
 Opšte se savetuje da se ne spajaju nekoliko mešanih UTXO-a nakon CoinJoin ciklusa, jer to može ugroziti stečenu poverljivost, posebno zbog Common-Input-Ownership Heuristike (CIOH). Stoga, može biti mudro izabrati veći bazen, čak i ako to znači plaćanje više, kako bi se izbeglo previše UTXO-a male vrednosti na izlazu. Korisnik mora odmeriti ove kompromise kako bi izabrao bazen koji preferira.
 
 
-Pored naknada za uslugu, mora se uzeti u obzir i Mining naknada svojstvena svakoj Bitcoin transakciji. Kao korisnik Whirlpool, bićete obavezni da platite Mining naknade za pripremnu transakciju (`Tx0`) kao i za prvi CoinJoin. Svi naredni remiksi će biti besplatni, zahvaljujući Whirlpool modelu koji se oslanja na plaćanje novih učesnika.
+Pored naknada za uslugu, mora se uzeti u obzir i naknada rudarima svojstvena svakoj Bitcoin transakciji. Kao korisnik Whirlpool-a, bićete obavezni da platite rudarske naknade za pripremnu transakciju (`Tx0`) kao i za prvi CoinJoin. Svi naredni remiksi biće besplatni, zahvaljujući Whirlpool modelu koji se finansira iz uplata novih korisnika.
 
 
-Zaista, u svakom Whirlpool CoinJoin, dva korisnika među unosima su novi učesnici. Ostali unosi dolaze od remiksera. Kao rezultat toga, Mining naknade za sve učesnike u transakciji pokrivaju ova dva nova učesnika, koji će zatim takođe imati koristi od besplatnih remiksa:
+Zaista, u svakom Whirlpool CoinJoin-u, dva korisnika među unosima su novi učesnici. Ostali unosi dolaze od remiksera. Kao rezultat toga, rudarske naknade za sve učesnike u transakciji pokrivaju ova dva nova učesnika, koji će zatim takođe imati koristi od besplatnih remiksa:
 
 ![coinjoin](assets/en/6.webp)
 
-Zahvaljujući ovom sistemu naknada, Whirlpool se zaista razlikuje od drugih CoinJoin usluga jer anonsetovi UTXO-a nisu proporcionalni ceni koju plaća korisnik. Tako je moguće postići znatno visoke nivoe anonimnosti plaćanjem samo ulazne naknade za bazen i Mining naknade za dve transakcije (`Tx0` i početno mešanje).
+Zahvaljujući ovom sistemu naknada, Whirlpool se zaista razlikuje od drugih CoinJoin usluga jer UTXO anonsetovi nisu proporcionalni ceni koju plaća korisnik. Tako je moguće postići znatno visoke nivoe anonimnosti plaćanjem samo ulazne naknade za bazen i rudarske naknade za dve transakcije (`Tx0` i početno mešanje).
 
-Važno je napomenuti da će korisnik takođe morati da pokrije Mining naknade za povlačenje svojih UTXO-a iz bazena nakon završetka njihovih višestrukih coinjoin-a, osim ako nisu odabrali opciju `mix to`, koju ćemo razmotriti u tutorijalu ispod.
-
-
-### HD Wallet nalozi korišćeni od strane Whirlpool
-
-Da bi se izvršio CoinJoin putem Whirlpool, Wallet mora generate nekoliko različitih naloga. Nalog, u kontekstu HD (*Hierarchical Deterministic*) Wallet, predstavlja deo potpuno izolovan od ostalih, pri čemu se ova separacija dešava na trećem nivou dubine hijerarhije Wallet, odnosno na nivou `xpub`.
+Važno je napomenuti da će korisnik takođe morati da pokrije rudarske naknade za povlačenje svojih UTXO-a iz bazena nakon završetka njihovih višestrukih coinjoin-a, osim ako nisu odabrali opciju `mix to`, koju ćemo razmotriti u tutorijalu ispod.
 
 
-HD Wallet može teoretski izvesti do `2^(32/2)` različitih naloga. Početni nalog, koji se koristi podrazumevano na svim Bitcoin novčanicima, odgovara indeksu `0'`.
+### Nalozi unutar HD novčanika koje koristi Whirlpool
+
+Da bi se izvršio CoinJoin putem Whirlpool-a, novčanik mora generisati nekoliko različitih naloga. Nalog, u kontekstu HD (*Hierarchical Deterministic*) novčanika, predstavlja deo potpuno izolovan od ostalih, pri čemu se ova separacija dešava na trećem nivou dubine hijerarhije novčanika, odnosno na nivou `xpub`.
 
 
-Za novčanike prilagođene Whirlpool, kao što su Samourai ili Sparrow, koriste se 4 naloga kako bi se zadovoljile potrebe CoinJoin procesa:
+HD novčanik može teoretski izvesti do `2^(32/2)` različitih naloga. Početni nalog, koji se koristi podrazumevano na svim Bitcoin novčanicima, odgovara indeksu `0'`.
+
+
+Za novčanike prilagođene Whirlpool-u, kao što su Samourai ili Sparrow, koriste se 4 naloga kako bi se zadovoljile potrebe CoinJoin procesa:
 
 
 - Račun **depozita**, označen indeksom `0'`;
@@ -196,56 +196,56 @@ Za novčanike prilagođene Whirlpool, kao što su Samourai ili Sparrow, koriste 
 - Nalog **postmix**, identifikovan indeksom `2 147 483 646'`.
 
 
-Svaki od ovih naloga ispunjava specifičnu funkciju unutar CoinJoin.
+Svaki od ovih naloga ispunjava specifičnu funkciju unutar CoinJoin-a.
 
 
-Svi ovi nalozi su povezani sa jednim seed, što omogućava korisniku da povrati pristup svim svojim bitcoinima koristeći svoju frazu za oporavak i, ako je potrebno, svoj passphrase. Međutim, potrebno je specificirati softveru, tokom ove operacije oporavka, različite indekse naloga koji su korišćeni.
+Svi ovi nalozi su povezani sa jednim seed-om, što omogućava korisniku da povrati pristup svim svojim bitcoinima koristeći svoju frazu za oporavak i, ako je potrebno, svoj passphrase. Međutim, potrebno je specificirati softveru, tokom ove operacije oporavka, različite indekse naloga koji su korišćeni.
 
 
-Hajde sada da pogledamo različite faze Whirlpool CoinJoin unutar ovih naloga.
+Hajde sada da pogledamo različite faze Whirlpool CoinJoin-a unutar ovih naloga.
 
 
-### Različite faze coinjoin-a na Whirlpool
+### Različite faze coinjoin-a na Whirlpool-u
 
 **Faza 1: Tx0**
 
-Polazna tačka svakog Whirlpool CoinJoin je **depozitni** račun. Ovaj račun je onaj koji automatski koristite kada kreirate novi Bitcoin Wallet. Ovaj račun mora biti kreditiran bitcoinima koje neko želi da meša.
+Polazna tačka svakog Whirlpool CoinJoin-a je **depozitni** račun. Ovaj račun je onaj koji automatski koristite kada kreirate novi Bitcoin novčanik. Ovaj račun mora biti kreditiran bitcoinima koje neko želi da meša.
 
-`Tx0` predstavlja prvi korak u procesu mešanja Whirlpool. Cilj mu je da pripremi i izjednači UTXO za CoinJoin, tako što ih deli na jedinice koje odgovaraju količini odabranog bazena, kako bi se osigurala homogenost mešanja. Izjednačeni UTXO se zatim šalju na **premix** nalog. Što se tiče razlike koja ne može ući u bazen, ona se odvaja na poseban nalog: **bad bank** (ili "doxxic change").
+`Tx0` predstavlja prvi korak u procesu Whirlpool mešanja. Cilj mu je da pripremi i izjednači UTXO za CoinJoin, tako što ih deli na jedinice koje odgovaraju količini odabranog bazena, kako bi se osigurala homogenost mešanja. Izjednačeni UTXO se zatim šalju na **premix** nalog. Što se tiče razlike koja ne može ući u bazen, ona se odvaja na poseban nalog: **bad bank** (ili "doxxic change").
 
-Ova početna transakcija `Tx0` takođe služi za podmirivanje naknada za usluge koje duguje koordinatoru mešanja. Za razliku od sledećih koraka, ova transakcija nije kolaborativna; korisnik stoga mora snositi sve Mining naknade:
+Ova početna transakcija Tx0 takođe služi za plaćanje servisnih naknada koordinatoru mešanja. Za razliku od sledećih koraka, ova transakcija nije kolaborativna; korisnik stoga mora snositi sve rudarske naknade:
 
 ![coinjoin](assets/en/7.webp)
 
 
-U ovom primeru transakcije `Tx0`, ulaz od `372,000 Sats` sa našeg **depozitnog** računa je podeljen na nekoliko izlaznih UTXO, koji su raspoređeni na sledeći način:
+U ovom primeru transakcije `Tx0`, ulaz od `372,000 Sats` sa našeg **depozitnog** računa je podeljen na nekoliko izlaznih UTXO-a, koji su raspoređeni na sledeći način:
 
 
-- Iznos od `5,000 Sats` namenjen koordinatoru za naknade za usluge, što odgovara ulasku u bazen od `100,000 Sats`;
-- Tri UTXO pripremljena za mešanje, preusmerena na naš **premix** nalog i registrovana kod koordinatora. Ovi UTXO su izjednačeni na `108,000 Sats` svaki, da pokriju Mining naknade za njihovo buduće početno mešanje;
-- Višak koji ne može ući u bazen, jer je premali, smatra se toksičnom promenom. On se šalje na svoj specifičan račun. Ovde, ova promena iznosi `40,000 Sats`;
-- Konačno, postoji `3,000 Sats` koji ne predstavljaju izlaz, već su Mining naknade neophodne za potvrdu `Tx0`.
+- Iznos od `5,000 Sats` namenjen koordinatoru kao naknada za usluge, što odgovara ulasku u bazen od `100,000 Sats`;
+- Tri UTXO-a pripremljena za mešanje, preusmerena na naš **premix** nalog i registrovana kod koordinatora. Ovi UTXO su izjednačeni na `108,000 Sats` svaki, da pokriju rudarske naknade za njihovo buduće početno mešanje;
+- Višak koji ne može ući u bazen, jer je premali, smatra se toksičnim kusurom. On se šalje na svoj specifičan račun. Ovde, ova promena iznosi `40,000 Sats`;
+- Konačno, postoji `3,000 Sats` koji ne predstavljaju izlaz, već su rudarske naknade neophodne za potvrdu `Tx0`.
 
 
 Na primer, ovde je pravi Whirlpool Tx0 (nije od mene): [edef60744f539483d868caff49d4848e5cc6e805d6cdc8d0f9bdbbaedcb5fc46](https://Mempool.space/en/tx/edef60744f539483d868caff49d4848e5cc6e805d6cdc8d0f9bdbbaedcb5fc46)
 
 
-**Korak 2: Doksik promena**
+**Korak 2: Doxxic kusur**
 
-Višak koji nije mogao biti integrisan u bazen, ovde ekvivalentan `40,000 Sats`, preusmeren je na račun **loše banke**, takođe nazvan "doxxic change", kako bi se osigurala stroga odvojenost od ostalih UTXO u Wallet.
+Višak koji nije mogao biti integrisan u bazen, ovde ekvivalentan `40,000 Sats`, preusmeren je na račun **bad bank**, takođe nazvan "doxxic kusur", kako bi se osigurala stroga odvojenost od ostalih UTXO-a u novčaniku.
 
 
 Ovaj UTXO je opasan za privatnost korisnika jer ne samo da je još uvek povezan sa svojom prošlošću, i stoga moguće sa identitetom svog vlasnika, već je dodatno zabeleženo da pripada korisniku koji je izvršio CoinJoin.
 
-Ako se ovaj UTXO spoji sa mešovitim izlazima, izgubiće svu poverljivost stečenu tokom CoinJoin ciklusa, naročito zbog Common-Input-Ownership-Heuristic (CIOH). Ako se spoji sa drugim doxxic promenama, korisnik rizikuje gubitak poverljivosti jer će to povezati različite ulaze CoinJoin ciklusa. Stoga se mora pažljivo rukovati. Način upravljanja ovim toksičnim UTXO biće detaljno opisan u poslednjem delu ovog članka, a budući tutorijali će detaljnije pokriti ove metode na PlanB Network.
+Ako se ovaj UTXO spoji sa mešovitim izlazima, izgubićete svu poverljivost stečenu tokom CoinJoin ciklusa, naročito zbog Common-Input-Ownership-Heuristic (CIOH). Ako se spoji sa drugim doxxic kusurima, korisnik rizikuje gubitak poverljivosti jer će to povezati različite ulaze CoinJoin ciklusa. Stoga se mora pažljivo rukovati. Način upravljanja ovim toksičnim UTXO biće detaljno opisan u poslednjem delu ovog članka, a budući tutorijali će detaljnije pokriti ove metode na PlanB Network-u.
 
 
-**Korak 3: Početno Mešanje**
+**Korak 3: Početno mešanje**
 
-Nakon što je `Tx0` završen, izjednačeni UTXO-i se šalju na **premix** nalog našeg Wallet, spremni da budu uvedeni u njihov prvi CoinJoin ciklus, koji se takođe naziva "početno mešanje". Ako, kao u našem primeru, `Tx0` generiše nekoliko UTXO-a namenjenih za mešanje, svaki od njih će biti integrisan u zaseban početni CoinJoin.
+Nakon što je `Tx0` završen, izjednačeni UTXO-i se šalju na **premix** nalog našeg novčanika, spremni da budu uvedeni u njihov prvi CoinJoin ciklus, koji se takođe naziva "početno mešanje". Ako, kao u našem primeru, `Tx0` generiše nekoliko UTXO-a namenjenih za mešanje, svaki od njih će biti integrisan u zaseban početni CoinJoin.
 
 
-Na kraju ovih prvih mešanja, **premix** račun će biti prazan, dok će naši novčići, nakon plaćanja Mining naknada za ovaj prvi CoinJoin, biti prilagođeni tačno na iznos definisan od strane izabranog bazena. U našem primeru, naši početni UTXO-i od `108 000 Sats` će biti smanjeni tačno na `100 000 Sats`.
+Na kraju ovih prvih mešanja, **premix** račun će biti prazan, dok će naši novčići, nakon plaćanja rudarske naknada za ovaj prvi CoinJoin, biti prilagođeni tačno na iznos definisan od strane izabranog bazena. U našem primeru, naši početni UTXO-i od `108 000 Sats` će biti smanjeni tačno na `100 000 Sats`.
 
 ![coinjoin](assets/en/8.webp)
 
@@ -254,25 +254,25 @@ Na kraju ovih prvih mešanja, **premix** račun će biti prazan, dok će naši n
 Nakon početnog mešanja, UTXO-i se prenose na **postmix** nalog. Ovaj nalog prikuplja već pomešane UTXO-e i one koji čekaju na ponovno mešanje. Kada je Whirlpool klijent aktivan, UTXO-i koji se nalaze na **postmix** nalogu automatski su dostupni za ponovno mešanje i biće nasumično odabrani za učešće u ovim novim ciklusima.
 
 
-Kao podsetnik, remiksi su tada 100% besplatni: nisu potrebne dodatne naknade za uslugu ili Mining naknade. Održavanje UTXO-a na **postmix** računu tako održava njihovu vrednost netaknutom i istovremeno poboljšava njihove anonsete. Zato je važno omogućiti ovim kovanicama da učestvuju u više CoinJoin ciklusa. To vas strogo ništa ne košta, a povećava nivoe njihove anonimnosti.
+Kao podsetnik, remiksi su tada 100% besplatni: nisu potrebne dodatne naknade za uslugu ili rudarske naknade. Održavanje UTXO-a na **postmix** računu tako održava njihovu vrednost netaknutom i istovremeno poboljšava njihove anonsete. Zato je važno omogućiti ovim kovanicama da učestvuju u više CoinJoin ciklusa. To vas strogo ništa ne košta, a povećava nivoe njihove anonimnosti.
 
 
-Kada odlučite da potrošite mešane UTXO-e, možete to učiniti direktno sa ovog **postmix** naloga. Preporučljivo je da mešane UTXO-e držite na ovom nalogu kako biste iskoristili besplatne remikse i izbegli njihovo napuštanje Whirlpool kruga, što bi moglo smanjiti njihovu poverljivost.
+Kada odlučite da potrošite mešane UTXO-e, možete to učiniti direktno sa ovog **postmix** naloga. Preporučljivo je da mešane UTXO-e držite na ovom nalogu kako biste iskoristili besplatne remikse i izbegli njihovo napuštanje Whirlpool-a, što bi moglo smanjiti njihovu poverljivost.
 
 
-Kao što ćemo videti u sledećem vodiču, postoji i opcija `mix to` koja nudi mogućnost automatskog slanja vaših mešanih novčića na drugi Wallet, kao što je Cold Wallet, nakon definisanog broja coinjoin-a.
+Kao što ćemo videti u sledećem vodiču, postoji i opcija `mix to` koja nudi mogućnost automatskog slanja vaših mešanih novčića na drugi novčanik, kao što je hladni, offline novčanik, nakon definisanog broja coinjoin-a.
 
-Nakon što smo pokrili teoriju, zaronimo u praksu uz vodič o korišćenju Whirlpool putem Samourai Wallet Android aplikacije, sinhronizovane sa Whirlpool CLI i GUI na vašem sopstvenom Dojo-u!
+Nakon što smo pokrili teoriju, zaronimo u praksu uz vodič o korišćenju Whirlpool-a putem Android aplikacije Samourai novčanika, sinhronizovane sa Whirlpool CLI i GUI na vašem sopstvenom Dojo-u!
 
-## Uputstvo: CoinJoin Whirlpool sa Vašim Sopstvenim Dojo
+## Uputstvo: CoinJoin Whirlpool sa Vašim sopstvenim Dojo-om
 
-Postoji mnogo opcija za korišćenje Whirlpool. Ona koju želim da predstavim ovde je opcija Samourai Wallet, open-source aplikacija za upravljanje Bitcoin Wallet na Androidu, ali ovaj put **sa sopstvenim Dojo-om**.
-
-
-Izvođenje coinjoin-a putem Samourai Wallet koristeći sopstveni Dojo je, po mom mišljenju, najefikasnija strategija za izvođenje coinjoin-a na Bitcoin do danas. Ovaj pristup zahteva početno ulaganje u smislu postavljanja, ali kada je jednom uspostavljen, nudi mogućnost kontinuiranog mešanja i ponovnog mešanja vaših bitcoina, 24 sata dnevno, 7 dana u nedelji, bez potrebe da vaša Samourai aplikacija bude stalno aktivna. Zaista, zahvaljujući Whirlpool CLI koji rade na Bitcoin čvoru, uvek ste spremni da učestvujete u coinjoin-ima. Samourai aplikacija vam zatim pruža priliku da trošite svoja pomešana sredstva u bilo koje vreme, gde god se nalazili, direktno sa vašeg pametnog telefona. Štaviše, ova metoda ima prednost što vas nikada ne povezuje sa serverima koje upravljaju Samourai timovi, čime se vaš `xpub` čuva od bilo kakvog spoljnog izlaganja.
+Postoji mnogo opcija za korišćenje Whirlpool-a. Ona koju želim da predstavim ovde je opcija Samourai novčanika, open-source aplikacija za upravljanje Bitcoin novčanikom na Androidu, ali ovaj put **sa sopstvenim Dojo-om**.
 
 
-Ova tehnika je stoga idealna za one koji traže maksimalnu privatnost i najviši kvalitet CoinJoin ciklusa. Međutim, zahteva da imate Bitcoin čvor na raspolaganju i, kao što ćemo kasnije videti, zahteva određeno podešavanje. Stoga je pogodnija za korisnike srednjeg do naprednog nivoa. Za početnike preporučujem da se upoznaju sa CoinJoin kroz ova dva druga tutorijala, koji pokazuju kako to uraditi iz Sparrow Wallet ili Samourai Wallet (bez Dojo):
+Izvođenje coinjoin-a putem Samourai novčanika koristeći sopstveni Dojo je, po mom mišljenju, najefikasnija strategija za izvođenje coinjoin-a na Bitcoin-u do danas. Ovaj pristup zahteva početno ulaganje u smislu postavljanja, ali kada je jednom uspostavljen, nudi mogućnost kontinuiranog mešanja i ponovnog mešanja vaših bitcoina, 24 sata dnevno, 7 dana u nedelji, bez potrebe da vaša Samourai aplikacija bude stalno aktivna. Zaista, zahvaljujući Whirlpool CLI koji rade na Bitcoin čvoru, uvek ste spremni da učestvujete u coinjoin-ima. Samourai aplikacija vam zatim pruža priliku da trošite svoja pomešana sredstva u bilo koje vreme, gde god se nalazili, direktno sa vašeg pametnog telefona. Štaviše, ova metoda ima prednost što vas nikada ne povezuje sa serverima koje upravljaju Samourai timovi, čime se vaš `xpub` čuva od bilo kakvog spoljnog izlaganja.
+
+
+Ova tehnika je stoga idealna za one koji traže maksimalnu privatnost i najviši kvalitet CoinJoin ciklusa. Međutim, zahteva da imate Bitcoin čvor na raspolaganju i, kao što ćemo kasnije videti, zahteva određeno podešavanje. Stoga je pogodnija za korisnike srednjeg do naprednog nivoa. Za početnike preporučujem da se upoznaju sa CoinJoin kroz ova dva druga tutorijala, koji pokazuju kako to uraditi iz Sparrow novčanika ili Samourai novčanika (bez Dojo):
 
 
 - [Tutorial za Sparrow Wallet CoinJoin](https://planb.network/tutorials/privacy/on-chain/coinjoin-sparrow-wallet-84def86d-faf5-4589-807a-83be60720c8b)**;
@@ -281,10 +281,10 @@ Ova tehnika je stoga idealna za one koji traže maksimalnu privatnost i najviši
 
 ### Razumevanje postavke
 
-Za početak, trebat će vam Dojo! Dojo je implementacija Bitcoin čvora zasnovana na Bitcoin Core, koju su razvili timovi Samourai.
+Za početak, trebat će vam Dojo! Dojo je implementacija Bitcoin čvora zasnovana na Bitcoin Core-u, koju su razvili timovi Samourai.
 
 
-Da biste pokrenuli sopstveni Dojo, imate opciju da instalirate Dojo čvor autonomno ili da iskoristite Dojo na vrhu drugog "node-in-box" Bitcoin čvor rešenja. Trenutno, dostupne opcije su:
+Da biste pokrenuli sopstveni Dojo, imate dve opcije: možete samostalno instalirati Dojo čvor ili iskoristiti Dojo kao dodatak uz neko drugo „čvor-u-kutiji (eng.node-in-box)“ rešenje za Bitcoin čvor.Trenutno, dostupne opcije su:
 
 
 - [RoninDojo](https://ronindojo.io/), koji je Dojo obogaćen dodatnim alatima, uključujući asistenta za instalaciju i asistenta za administraciju. Detaljno opisujem proceduru za postavljanje i korišćenje RoninDojo-a u ovom drugom vodiču: [RONINDOJO V2](https://planb.network/tutorials/node/bitcoin/ronin-dojo-v2-0ddb3854-6f38-4466-b4e2-f66c028e0dd8);
@@ -295,20 +295,20 @@ Da biste pokrenuli sopstveni Dojo, imate opciju da instalirate Dojo čvor autono
 
 ![coinjoin](assets/notext/9.webp)
 
-U našem podešavanju, interagovaćemo sa tri različita interfejsa:
+U našem okruženju koristićemo tri različita interfejsa:
 
 
-- Samourai Wallet**, koji će ugostiti naš Bitcoin Wallet posvećen coinjoins. Dostupan besplatno na Androidu, ova FOSS aplikacija vam omogućava da kontrolišete vaše mešanje Wallet, posebno za trošenje vašeg postmix-a sa vašeg pametnog telefona;
-- Whirlpool CLI** (_Command Line Interface_), koji će raditi na čvoru koji hostuje Dojo. Ovaj softver će imati pristup ključevima vašeg Samourai Wallet. On je odgovoran za komunikaciju sa koordinatorom i kontinuirano upravljanje coinjoin-ima. Djeluje kao kopija vašeg Samourai Wallet na vašem čvoru, spreman da učestvuje u coinjoin-ima u bilo kojem trenutku;
-- Whirlpool GUI** (_Graphical User Interface_), grafički korisnički Interface koji ćemo koristiti za praćenje aktivnosti Whirlpool CLI i pokretanje mešanja na daljinu. Whirlpool GUI pruža vizuelni prikaz operacija koje sprovode Whirlpool CLI. Ovaj softver mora biti instaliran na računaru odvojenom od Dojo-a. Za korisnike Umbrel, MyNode, Nodl i Citadel, Whirlpool GUI je obavezan. Međutim, sa RoninDojo, Whirlpool GUI Interface je već integrisan u web Interface vašeg čvora putem aplikacije `Whirlpool`. Stoga, neće biti potrebno da ga instalirate na zaseban računar.
+- **Samourai novčanik**, u kojem će se nalaziti naš Bitcoin novčanik posebno namenjen za coinjoin-e Dostupan besplatno na Androidu, ova FOSS aplikacija vam omogućava da kontrolišete vaše mešanje UTXO-a unutar novčanika, posebno za trošenje vašeg postmix-a sa vašeg pametnog telefona;
+- **Whirlpool CLI** (_Command Line Interface_), koji će raditi na čvoru koji hostuje Dojo. Ovaj softver će imati pristup ključevima vašeg Samourai novčanika. On je odgovoran za komunikaciju sa koordinatorom i kontinuirano upravljanje coinjoin-ima. Djeluje kao kopija vašeg Samourai novčanika na vašem čvoru, spreman da učestvuje u coinjoin-ima u bilo kojem trenutku;
+- **Whirlpool GUI** (_Graphical User Interface_), grafički korisnički interfejs koji ćemo koristiti za praćenje aktivnosti Whirlpool CLI i pokretanje mešanja na daljinu. Whirlpool GUI pruža vizuelni prikaz operacija koje sprovode Whirlpool CLI. Ovaj softver mora biti instaliran na računaru odvojenom od Dojo-a. Za korisnike Umbrel, MyNode, Nodl i Citadel, Whirlpool GUI je obavezan. Međutim, sa RoninDojo, Whirlpool GUI interfejsa je već integrisan u web interfejs vašeg čvora putem aplikacije `Whirlpool`. Stoga, neće biti potrebno da ga instalirate na zaseban računar.
 
 
-Po mom mišljenju, korišćenje RoninDojo predstavlja najbolje rešenje za izvođenje coinjoin-a sa Dojo-om. Pošto je ovaj softver za node-in-box u direktnom partnerstvu sa Samourai timovima, RoninDojo je mnogo više optimizovan za ovo. Štaviše, integracija Whirlpool GUI u web Interface značajno pojednostavljuje proces podešavanja. U ovom vodiču, ipak ću objasniti kako to uraditi sa drugim rešenjima koja integrišu Dojo (Umbrel, Nodl, MyNode i Citadel).
+Po mom mišljenju, korišćenje RoninDojo-a predstavlja najbolje rešenje za izvođenje coinjoin-a sa Dojo-om. Pošto je ovaj softver za node-in-box u direktnom partnerstvu sa Samourai timovima, RoninDojo je mnogo više optimizovan za ovo. Štaviše, integracija Whirlpool GUI u web interfejs značajno pojednostavljuje proces podešavanja. U ovom vodiču, ipak ću objasniti kako to uraditi sa drugim rešenjima koja integrišu Dojo (Umbrel, Nodl, MyNode i Citadel).
 
 
-### Priprema vašeg dođoa
+### Priprema vašeg dojo-a
 
-Da biste započeli, potrebno je da instalirate Dojo i dobijete QR kod ili link koji će vam omogućiti da se povežete sa njim na daljinu. Ovaj link je Tor Address koji se završava sa `.onion`. Ako koristite RoninDojo, jednostavno idite na meni `Pairing` da biste pristupili ovim informacijama.
+Da biste započeli, potrebno je da instalirate Dojo i dobijete QR kod ili link koji će vam omogućiti da se povežete sa njim na daljinu. Ovaj link je Tor adresa koja se završava sa `.onion`. Ako koristite RoninDojo, jednostavno idite na meni `Pairing` da biste pristupili ovim informacijama.
 
 ![coinjoin](assets/notext/10.webp)
 
@@ -349,24 +349,24 @@ Ako koristite drugi node-in-box softver kao što su MyNode, Citadel ili Nodl, pr
 ![coinjoin](assets/notext/16.webp)
 
 
-### Priprema vašeg Samourai Wallet
+### Priprema vašeg Samourai novčanika
 
-Nakon što preuzmete informacije o povezivanju sa vašim Dojo-om, sada je vreme da postavite vaš Wallet za coinjoins. Postoje dva scenarija: ako još uvek nemate Samourai Wallet na vašem pametnom telefonu, proces je jednostavan, samo kreirajte novi.
+Nakon što preuzmete informacije o povezivanju sa vašim Dojo-om, sada je vreme da postavite vaš novčanik za coinjoins. Postoje dva scenarija: ako još uvek nemate Samourai novčanik na vašem pametnom telefonu, proces je jednostavan, samo kreirajte novi.
 
 
-S druge strane, ako već imate Samourai Wallet, moraćete ponovo instalirati aplikaciju da biste je povezali sa novim Dojo-om. Ovaj korak je neophodan jer se veza sa Dojo-om može uspostaviti samo pri prvom pokretanju aplikacije. Međutim, zahvaljujući automatski generisanom šifrovanom rezervnom fajlu od strane Samouraia na vašem telefonu, ova procedura je jednostavna i brza.
+S druge strane, ako već imate Samourai novčanik, moraćete ponovo instalirati aplikaciju da biste je povezali sa novim Dojo-om. Ovaj korak je neophodan jer se veza sa Dojo-om može uspostaviti samo pri prvom pokretanju aplikacije. Međutim, zahvaljujući automatski generisanom šifrovanom rezervnom fajlu od strane Samouraia na vašem telefonu, ova procedura je jednostavna i brza.
 
 
 *Ako nikada niste koristili Samourai, možete preskočiti ove preliminarne korake i preći direktno na instalaciju aplikacije.*
 
 
-Prvo i najvažnije, uverite se da je vaša Samourai Wallet aplikacija ažurirana. Da biste to uradili, proverite Google Play Store ili uporedite verziju vaše aplikacije u `Settings > Other` sa onom dostupnom na Samourai vebsajtu.
+Prvo i najvažnije, uverite se da je vaša Samourai novčanik aplikacija ažurirana. Da biste to uradili, proverite Google Play Store ili uporedite verziju vaše aplikacije u `Settings > Other` sa onom dostupnom na Samourai vebsajtu.
 
 
 ![coinjoin](assets/notext/17.webp)
 
 
-Uverite se da imate svoju Samourai Wallet frazu za oporavak i da je čitljiva. Zatim, sprovedite test vašeg BIP39 passphrase tako što ćete otići na `Settings > Troubleshoot > passphrase/Backup test` da potvrdite njegovu tačnost.
+Uverite se da imate svoju Samourai novčanik frazu za oporavak i da je čitljiva. Zatim, sprovedite test vašeg BIP39 passphrase tako što ćete otići na `Settings > Troubleshoot > passphrase/Backup test` da potvrdite njegovu tačnost.
 
 
 ![coinjoin](assets/notext/18.webp)
@@ -376,19 +376,19 @@ Unesite svoj passphrase, zatim proverite da li Samourai potvrđuje njegovu valid
 ![coinjoin](assets/notext/19.webp)
 
 
-Ako je vaš passphrase nevažeći, ili ako nemate svoju frazu za oporavak, neophodno je odmah zaustaviti proceduru! **Rizikujete da izgubite svoje bitkoine tokom ove operacije.** U tom slučaju, savetuje se da prebacite svoja sredstva na drugi Wallet i započnete sa novim praznim Samourai Wallet. Sledeće korake treba pratiti samo ako ste sigurni da imate sve potrebne informacije za rezervnu kopiju i da je vaš passphrase važeći.
+Ako je vaš passphrase nevažeći, ili ako nemate svoju frazu za oporavak, neophodno je odmah zaustaviti proceduru! **Rizikujete da izgubite svoje bitkoine tokom ove operacije.** U tom slučaju, savetuje se da prebacite svoja sredstva na drugi novčanik i započnete sa novim praznim Samourai novčanikom. Sledeće korake treba pratiti samo ako ste sigurni da imate sve potrebne informacije za rezervnu kopiju i da je vaš passphrase važeći.
 
 
-Zatim nastavite sa kreiranjem šifrovane rezervne kopije vašeg Wallet i kopirajte je u svoj clipboard. Da biste izvršili ovu operaciju, kliknite na tri male tačke koje se nalaze u gornjem desnom uglu ekrana, zatim izaberite `Export Wallet backup`.
+Zatim nastavite sa kreiranjem šifrovane rezervne kopije vašeg novčanika i kopirajte je u svoj clipboard. Da biste izvršili ovu operaciju, kliknite na tri male tačke koje se nalaze u gornjem desnom uglu ekrana, zatim izaberite `Export Wallet backup`.
 
 
 ![coinjoin](assets/notext/20.webp)
 
 
-**Od ovog koraka nadalje, nemojte kopirati ništa drugo u svoj međuspremnik!** Apsolutno je neophodno da zadržite svoju kopiranu rezervnu kopiju.
+**Od ovog koraka nadalje, nemojte kopirati ništa drugo u svoj clipboard!** Apsolutno je neophodno da zadržite svoju kopiranu rezervnu kopiju.
 
 
-Ako ste pravilno izvršili prethodne korake, sada možete bezbedno obrisati svoj Samourai Wallet. Da biste to uradili, idite na: `Settings > Wallet > Secure erase the Wallet`.
+Ako ste pravilno izvršili prethodne korake, sada možete bezbedno obrisati svoj Samourai novčanik. Da biste to uradili, idite na: `Settings > Wallet > Secure erase the Wallet`.
 
 
 ![coinjoin](assets/notext/21.webp)
@@ -412,20 +412,20 @@ U sledećem koraku, pristupićete stranici posvećenoj konfigurisanju vašeg Doj
 ![coinjoin](assets/notext/24.webp)
 
 
-*Za nove korisnike Samouraia, biće potrebno da kreiraju Wallet od nule. Ako vam je potrebna pomoć, možete se konsultovati sa uputstvima za postavljanje novog Samourai Wallet [u ovom vodiču, posebno u odeljku "Kreiranje Software Wallet"](https://planb.network/tutorials/privacy/on-chain/coinjoin-samourai-wallet-e566803d-ab3f-4d98-9136-5462009262ef)*
+*Za nove korisnike Samourai-a, biće potrebno da kreiraju novčanik od nule. Ako vam je potrebna pomoć, možete se konsultovati sa uputstvima za postavljanje novog Samourai novčanika [u ovom vodiču, posebno u odeljku "Kreiranje softverskog novčanika"](https://planb.network/tutorials/privacy/on-chain/coinjoin-samourai-wallet-e566803d-ab3f-4d98-9136-5462009262ef)*
 
 
-Ako nastavljate sa restauracijom već postojećeg Samourai Wallet, izaberite `Restore existing Wallet`, zatim odaberite `I have a Samourai backup file`.
+Ako nastavljate sa restauracijom već postojećeg Samourai novčanika, izaberite `Restore existing Wallet`, zatim odaberite `I have a Samourai backup file`.
 
 
 ![coinjoin](assets/notext/25.webp)
 
-Normalno, uvek bi trebalo da imate vašu datoteku za oporavak u clipboard-u. Zatim kliknite na `PASTE` da ubacite vašu datoteku u određenu lokaciju. Da biste je dešifrovali, biće potrebno da unesete BIP39 passphrase vašeg Wallet u odgovarajuće polje, koje se nalazi odmah ispod. Da završite, kliknite na `FINISH`.
+Normalno, uvek bi trebalo da imate vašu datoteku za oporavak u clipboard-u. Zatim kliknite na `PASTE` da ubacite vašu datoteku u određenu lokaciju. Da biste je dešifrovali, biće potrebno da unesete BIP39 passphrase vašeg novčanika u odgovarajuće polje, koje se nalazi odmah ispod. Da završite, kliknite na `FINISH`.
 
 ![coinjoin](assets/notext/26.webp)
 
 
-Bićete preusmereni na vaš Samourai Wallet koji će, ovog puta, biti povezan sa vašim sopstvenim Dojo-om.
+Bićete preusmereni na vaš Samourai novčanik koji će, ovog puta, biti povezan sa vašim sopstvenim Dojo-om.
 
 
 ![coinjoin](assets/notext/27.webp)
@@ -433,7 +433,7 @@ Bićete preusmereni na vaš Samourai Wallet koji će, ovog puta, biti povezan sa
 
 ### Instaliranje Whirlpool GUI
 
-Sada je vreme da instalirate Whirlpool GUI, grafički korisnički Interface koji će vam omogućiti da upravljate svojim CoinJoin ciklusima sa vašeg uobičajenog računara. Za korisnike RoninDojo-a, ovaj korak nije neophodan jer se upravljanje coinjoin-ima može obaviti direktno putem web Interface u `Apps > Whirlpool`. Međutim, ako koristite drugo Bitcoin "node-in-box" rešenje, neophodno je da nastavite sa ovom instalacijom.
+Sada je vreme da instalirate Whirlpool GUI, grafički korisnički interfej koji će vam omogućiti da upravljate svojim CoinJoin ciklusima sa vašeg uobičajenog računara. Za korisnike RoninDojo-a, ovaj korak nije neophodan jer se upravljanje coinjoin-ima može obaviti direktno putem web interfejsa u `Apps > Whirlpool`. Međutim, ako koristite drugo Bitcoin "node-in-box" rešenje, neophodno je da nastavite sa ovom instalacijom.
 
 ![coinjoin](assets/notext/28.webp)
 
@@ -459,22 +459,22 @@ Kada je JDK instaliran na vašem sistemu i Tor pokrenut u pozadini, možete pokr
 ![coinjoin](assets/notext/32.webp)
 
 
-Iz Whirlpool GUI, kliknite na `Advanced: Remote CLI` da povežete vaš Whirlpool CLI koji je na vašem Dojo-u. Biće vam potreban Tor Address vašeg Whirlpool CLI.
+Iz Whirlpool GUI, kliknite na `Advanced: Remote CLI` da povežete vaš Whirlpool CLI koji je na vašem Dojo-u. Biće vam potreban Tor adresa vašeg Whirlpool CLI.
 
 
 ![coinjoin](assets/notext/33.webp)
 
 
-Da biste locirali svoj Tor Address na Umbrel i drugim "node-in-box" rešenjima, jednostavno pokrenite Samourai Server ili Dojo aplikaciju (naziv može varirati u zavisnosti od korišćenog softvera). Tor Address će biti direktno vidljiv na stranici aplikacije.
+Da biste locirali svoju Tor adresu na Umbrel-u i drugim "node-in-box" rešenjima, jednostavno pokrenite Samourai Server ili Dojo aplikaciju (naziv može varirati u zavisnosti od korišćenog softvera). Tor adresa će biti direktno vidljiv na stranici aplikacije.
 
 ![coinjoin](assets/notext/34.webp)
 
-U Whirlpool GUI unesite Tor Address koji ste ranije dobili u polje `CLI Address`. Zadržite prefiks `http://`, ali nemojte dodavati port `:8899` na kraju. Zalepite samo Address kako vam je dostavljen.
+U Whirlpool GUI unesite Tor adresu koji ste ranije dobili u polje `CLI Address`. Zadržite prefiks `http://`, ali nemojte dodavati port `:8899` na kraju. Zalepite samo adresu kako vam je dostavljena.
 
 ![coinjoin](assets/notext/35.webp)
 
 
-U polje Tor Proxy unesite `socks5://127.0.0.1:9050` ako koristite Tor daemon, ili `socks5://127.0.0.1:9150` ako je u pitanju Tor Browser. Kada se prvi put povezujete na Whirlpool CLI putem Whirlpool GUI, moguće je ostaviti polje za API ključ prazno. Ako ovo nije vaša prva konekcija, molimo unesite vaš API ključ u predviđeni prostor. Ovaj ključ se može pronaći na istoj stranici kao i vaš Tor Address.
+U polje Tor Proxy unesite `socks5://127.0.0.1:9050` ako koristite Tor daemon, ili `socks5://127.0.0.1:9150` ako je u pitanju Tor pregledač. Kada se prvi put povezujete na Whirlpool CLI putem Whirlpool GUI, moguće je ostaviti polje za API ključ prazno. Ako ovo nije vaša prva konekcija, molimo unesite vaš API ključ u predviđeni prostor. Ovaj ključ se može pronaći na istoj stranici kao i vaša Tor adresa.
 
 
 ![coinjoin](assets/notext/36.webp)
@@ -486,18 +486,18 @@ Kada popunite sve, kliknite na dugme `Connect`. Molimo sačekajte, povezivanje m
 ![coinjoin](assets/notext/37.webp)
 
 
-### Uparivanje vašeg Samourai Wallet sa Whirlpool GUI
+### Uparivanje vašeg Samourai novčanika sa Whirlpool GUI-em
 
 *Za korisnike RoninDojo-a, možete nastaviti tutorijal ovde.*
 
 
-Sada ćemo upariti Samourai Wallet koji smo ranije konfigurisali sa Whirlpool GUI softverom, ili direktno sa RoninDojo za one koji koriste ovaj softver. Bilo da koristite Whirlpool GUI ili RoninDojo, bićete zamoljeni da nalepite ili skenirate informacije za uparivanje vašeg Samourai Wallet.
+Sada ćemo upariti Samourai novčanik koji smo ranije konfigurisali sa Whirlpool GUI softverom, ili direktno sa RoninDojo za one koji koriste ovaj softver. Bilo da koristite Whirlpool GUI ili RoninDojo, bićete zamoljeni da nalepite ili skenirate informacije za uparivanje vašeg Samourai novčanika.
 
 
 ![coinjoin](assets/notext/38.webp)
 
 
-Da biste pronašli ove informacije, idite na postavke vašeg Wallet.
+Da biste pronašli ove informacije, idite na postavke vašeg novčanika.
 
 
 ![coinjoin](assets/notext/39.webp)
@@ -521,7 +521,7 @@ Nakon izvođenja ove operacije, u Whirlpool GUI, izaberite `Initialize GUI`. Mol
 ![coinjoin](assets/notext/42.webp)
 
 
-Bilo da koristite Whirlpool GUI ili RoninDojo, bićete upitani da unesete passphrase vašeg Samourai Wallet. Unesite ga u predviđeno polje, zatim pritisnite dugme `Login` da nastavite.
+Bilo da koristite Whirlpool GUI ili RoninDojo, bićete upitani da unesete passphrase vašeg Samourai novčanika. Unesite ga u predviđeno polje, zatim pritisnite dugme `Login` da nastavite.
 
 
 ![coinjoin](assets/notext/43.webp)
@@ -535,15 +535,15 @@ Zatim ćete stići na početnu stranicu Whirlpool CLI
 
 ### Pokretanje coinjoin-a iz Whirlpool GUI
 
-*Za korisnike RoninDojo-a, proces koji treba pratiti je identičan. Aplikacija Whirlpool Interface integrisana u RoninDojo nudi iste opcije i funkcionalnosti kao Whirlpool GUI softver na desktopu. Stoga, možete pratiti ova uputstva na isti način.*
+*Za korisnike RoninDojo-a, proces koji treba pratiti je identičan. Interfejs Whirlpool aplikacije integrisane u RoninDojo nudi iste opcije i funkcionalnosti kao Whirlpool GUI softver na desktopu. Stoga, možete pratiti ova uputstva na isti način.*
 
-Sada kada je sve postavljeno, spremni ste da počnete sa mešanjem vaših bitkoina. Da biste to uradili, prebacite bitkoine koje želite da mešate na **Deposit** račun vašeg Samourai Wallet. Ova operacija se može izvesti direktno putem Samourai Wallet aplikacije ili na Whirlpool GUI. Sa glavne stranice, kliknite na dugme `+ Deposit` koje se nalazi u gornjem levom uglu.
+Sada kada je sve postavljeno, spremni ste da počnete sa mešanjem vaših bitkoina. Da biste to uradili, prebacite bitkoine koje želite da mešate na **Deposit** račun vašeg Samourai novčanika. Ova operacija se može izvesti direktno putem aplikacije Samourai novčanika ili na Whirlpool GUI. Sa glavne stranice, kliknite na dugme `+ Deposit` koje se nalazi u gornjem levom uglu.
 
 
 ![coinjoin](assets/notext/45.webp)
 
 
-Whirlpool GUI će generate primanje Address. Takođe će prikazati minimalni iznos potreban za učešće u svakom CoinJoin bazenu. Ovaj iznos varira u zavisnosti od tržišta naknada. Preporučljivo je uplatiti iznos nešto veći od minimalno potrebnog, jer ako se Mining naknade ne smanje, vaš UTXO možda neće biti prihvaćen u željenom bazenu. Stoga, pošaljite svoje bitkoine na navedeni Address. Da biste dobili novi Address, jednostavno kliknite na dugme `Obnovi Address`.
+Whirlpool GUI će generate adresu za primanje. Takođe će prikazati minimalni iznos potreban za učešće u svakom CoinJoin bazenu. Ovaj iznos varira u zavisnosti od tržišnih naknada. Preporučljivo je uplatiti iznos nešto veći od minimalno potrebnog, jer ako se rudarske naknade ne smanje, vaš UTXO možda neće biti prihvaćen u željenom bazenu. Stoga, pošaljite svoje bitkoine na navedenu adresu. Da biste dobili novu adresu, jednostavno kliknite na dugme `Renew address`.
 
 
 ![coinjoin](assets/notext/46.webp)
@@ -561,31 +561,31 @@ Da biste započeli CoinJoin cikluse, izaberite UTXO-ove koje želite da mešate 
 ![coinjoin](assets/notext/48.webp)
 
 
-Stranica za konfiguraciju Whirlpool se otvara. Možete izabrati bazen u koji želite da uđete. Takođe izaberite Mining naknade posvećene `TX0` i prvim coinjoins. Na dnu ove stranice, rezime će vam prikazati količinu doxxic promene kao i količinu i broj UTXO-a koji će biti izjednačeni i uključeni u CoinJoin cikluse. Ako ste zadovoljni ovom konfiguracijom, pritisnite dugme `Premix` da započnete CoinJoin cikluse.
+Stranica za konfiguraciju Whirlpool se otvara. Možete izabrati bazen u koji želite da uđete. Takođe izaberite rudarske naknade za `TX0` i prve coinjoins. Na dnu ove stranice, rezime će vam prikazati količinu doxxic kusura kao i količinu i broj UTXO-a koji će biti izjednačeni i uključeni u CoinJoin cikluse. Ako ste zadovoljni ovom konfiguracijom, pritisnite dugme `Premix` da započnete CoinJoin cikluse.
 
 ![coinjoin](assets/notext/49.webp)
 
 
-Jednom kada je `TX0` kreiran, moći ćete da vidite svoje izjednačene UTXO-e u nalogu **Premix**, čekajući potvrdu. Da biste omogućili da se vaši novčići automatski mešaju 24 sata dnevno, 7 dana u nedelji, preporučujem aktiviranje opcije `Automatically mix premix & postmix`. Ovu funkciju ćete pronaći u kartici `Configuration`, koja se nalazi levo od vašeg Whirlpool GUI prozora.
+Jednom kada je `TX0` kreirana, moći ćete da vidite svoje izjednačene UTXO-e u nalogu **Premix**, čekajući potvrdu. Da biste omogućili da se vaši novčići automatski mešaju 24 sata dnevno, 7 dana u nedelji, preporučujem aktiviranje opcije `Automatically mix premix & postmix`. Ovu funkciju ćete pronaći u kartici `Configuration`, koja se nalazi levo od vašeg Whirlpool GUI prozora.
 
 ![coinjoin](assets/notext/50.webp)
 
-Nakon pokretanja coinjoin-a, možete izaći iz Whirlpool GUI kao i iz Samourai Wallet. Samo vaš čvor treba ostati povezan kako biste mogli učestvovati u kontinuiranim coinjoin-ima. Međutim, preporučljivo je periodično proveravati napredak vaših CoinJoin ciklusa. Ako primetite da vaši UTXO-i više nisu birani za CoinJoin neko vreme, to može ukazivati na grešku. U tom slučaju, idite na Whirlpool CLI i izaberite `Start` da ponovo pokrenete vašu dostupnost za coinjoin-e.
+Nakon pokretanja coinjoin-a, možete izaći iz Whirlpool GUI kao i iz Samourai novčanika. Samo vaš čvor treba ostati povezan kako biste mogli učestvovati u kontinuiranim coinjoin-ima. Međutim, preporučljivo je periodično proveravati napredak vaših CoinJoin ciklusa. Ako primetite da vaši UTXO-i više nisu birani za CoinJoin neko vreme, to može ukazivati na grešku. U tom slučaju, idite na Whirlpool CLI i izaberite `Start` da ponovo pokrenete vašu dostupnost za coinjoin-e.
 
 
 ![coinjoin](assets/notext/51.webp)
 
 
-Vaši mešani UTXO-i su vidljivi sa **Postmix** naloga na Whirlpool GUI. Pored toga, imate opciju da ih direktno pregledate i potrošite putem Whirlpool Interface na vašem Samourai Wallet. Da biste pristupili ovom meniju, kliknite na plavi `+` na dnu ekrana, a zatim izaberite `Whirlpool`.
+Vaši mešani UTXO-i su vidljivi sa **Postmix** naloga na Whirlpool GUI. Pored toga, imate opciju da ih direktno pregledate i potrošite putem Whirlpool interfejsa na vašem Samourai novčaniku. Da biste pristupili ovom meniju, kliknite na plavi `+` na dnu ekrana, a zatim izaberite `Whirlpool`.
 
 
 ![coinjoin](assets/notext/52.webp)
 
 
-Whirlpool nalozi su lako prepoznatljivi na Samourai Wallet po svojoj plavoj boji. Ovo vam omogućava da trošite svoje mešane UTXO-ove sa bilo kog mesta i u bilo koje vreme, direktno sa vašeg pametnog telefona.
+Whirlpool nalozi su lako prepoznatljivi na Samourai novčaniku po svojoj plavoj boji. Ovo vam omogućava da trošite svoje mešane UTXO-ove sa bilo kog mesta i u bilo koje vreme, direktno sa vašeg pametnog telefona.
 
 
 ![coinjoin](assets/notext/53.webp)
 
 
-Da biste pratili svoje automatske coinjoin-e, takođe preporučujem postavljanje Watch-only wallet putem aplikacije Sentinel. Dodajte ZPUB vašeg **Postmix** naloga i pratite napredak vaših CoinJoin ciklusa u realnom vremenu. Ako želite da razumete kako koristiti Sentinel, preporučujem da pogledate ovaj drugi vodič na PlanB Network: [**SENTINEL WATCH-ONLY**](https://planb.network/tutorials/wallet/mobile/sentinel-9876f960-e964-4d20-8a6e-36231de1f4d9)
+Da biste pratili svoje automatske coinjoin-e, takođe preporučujem postavljanje watch-only novčanika putem aplikacije Sentinel. Dodajte ZPUB vašeg **Postmix** naloga i pratite napredak vaših CoinJoin ciklusa u realnom vremenu. Ako želite da razumete kako koristiti Sentinel, preporučujem da pogledate ovaj drugi vodič na PlanB Network: [**SENTINEL WATCH-ONLY**](https://planb.network/tutorials/wallet/mobile/sentinel-9876f960-e964-4d20-8a6e-36231de1f4d9)
