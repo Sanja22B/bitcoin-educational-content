@@ -16,20 +16,20 @@ _Ovaj vodič je pružen isključivo u obrazovne i informativne svrhe. Ne podrža
 
 ---
 
-> *a Bitcoin Wallet za ulice*
+> *Bitcoin novčanik za ulice*
 
-U ovom vodiču ćete naučiti šta je CoinJoin i kako ga izvršiti koristeći Samourai Wallet softver i Whirlpool implementaciju.
+U ovom vodiču ćete naučiti šta je CoinJoin i kako ga izvršiti koristeći softver Samourai novčanika i Whirlpool implementaciju.
 
 
-## Šta je CoinJoin na Bitcoin?
+## Šta je CoinJoin na Bitcoin-u?
 
-**CoinJoin je tehnika koja prekida mogućnost praćenja bitcoina na Blockchain**. Oslanja se na kolaborativnu transakciju sa specifičnom strukturom istog imena: CoinJoin transakcija.
+**CoinJoin je tehnika koja prekida mogućnost praćenja bitcoina na Blockchain-u**. Oslanja se na kolaborativnu transakciju sa specifičnom strukturom istog imena: CoinJoin transakcija.
 
 
 Coinjoins poboljšavaju privatnost Bitcoin korisnika komplikovanjem analize lanca za spoljne posmatrače. Njihova struktura omogućava spajanje više novčića od različitih korisnika u jednu transakciju, čime se zamagljuju tragovi i otežava određivanje veza između ulaznih i izlaznih adresa.
 
 
-Princip je CoinJoin zasnovan na kolaborativnom pristupu: nekoliko korisnika koji žele da mešaju svoje bitkoine deponuju identične iznose kao ulaze iste transakcije. Ti iznosi se zatim redistribuiraju kao izlazi jednake vrednosti svakom korisniku. Na kraju transakcije, postaje nemoguće povezati određeni izlaz sa poznatim korisnikom u ulazu. Ne postoji direktna veza između ulaza i izlaza, čime se prekida asocijacija između korisnika i njihovog UTXO, kao i istorija svake kovanice.
+CoinJoin princip je zasnovan na kolaborativnom pristupu: nekoliko korisnika koji žele da mešaju svoje bitkoine deponuju identične iznose kao ulaze iste transakcije. Ti iznosi se zatim redistribuiraju kao izlazi jednake vrednosti svakom korisniku. Na kraju transakcije, postaje nemoguće povezati određeni izlaz sa poznatim korisnikom u ulazu. Ne postoji direktna veza između ulaza i izlaza, čime se prekida asocijacija između korisnika i njihovog UTXO, kao i istorija svakog "novčića".
 
 ![coinjoin](assets/notext/1.webp)
 
@@ -40,12 +40,12 @@ Primer CoinJoin transakcije (nije od mene): [323df21f0b0756f98336437aa3d2fb87e0
 Da bi se izveo CoinJoin uz osiguranje da svaki korisnik u svakom trenutku zadrži kontrolu nad svojim sredstvima, proces počinje konstrukcijom transakcije od strane koordinatora, koji je zatim prenosi učesnicima. Svaki korisnik zatim potpisuje transakciju nakon što proveri da mu odgovara. Svi prikupljeni potpisi se konačno integrišu u transakciju. Ako korisnik ili koordinator pokuša da preusmeri sredstva, menjajući izlaze CoinJoin transakcije, potpisi će biti nevažeći, što će dovesti do odbijanja transakcije od strane čvorova.
 
 
-Postoji nekoliko implementacija CoinJoin, kao što su Whirlpool, JoinMarket ili Wabisabi, od kojih svaka ima za cilj upravljanje koordinacijom među učesnicima i povećanje efikasnosti CoinJoin transakcija.
+Postoji nekoliko CoinJoin implementacija, kao što su Whirlpool, JoinMarket ili Wabisabi, od kojih svaka ima za cilj upravljanje koordinacijom među učesnicima i povećanje efikasnosti CoinJoin transakcija.
 
-U ovom vodiču, bavićemo se implementacijom **Whirlpool**, koju smatram najefikasnijim rešenjem za izvođenje coinjoin-a na Bitcoin. Iako je dostupna na nekoliko novčanika, u ovom vodiču ćemo isključivo istražiti njenu upotrebu sa Samourai Wallet mobilnom aplikacijom, bez Dojo-a.
+U ovom vodiču, bavićemo se **Whirlpool** implementacijom, koju smatram najefikasnijim rešenjem za izvođenje coinjoin-a na Bitcoin. Iako je dostupna na nekoliko novčanika, u ovom vodiču ćemo isključivo istražiti njenu upotrebu sa mobilnom aplikacijom Samourai novčanika, bez Dojo-a.
 
 
-## Zašto izvoditi coinjoins na Bitcoin?
+## Zašto izvoditi coinjoins na Bitcoin-u?
 
 Jedan od početnih problema sa bilo kojim peer-to-peer sistemom plaćanja je dvostruko trošenje: kako sprečiti zlonamerne pojedince da iste monetarne jedinice troše više puta bez pribegavanja centralnom autoritetu za arbitražu?
 
@@ -53,22 +53,22 @@ Jedan od početnih problema sa bilo kojim peer-to-peer sistemom plaćanja je dvo
 Satoshi Nakamoto je pružio rešenje za ovu dilemu putem Bitcoin protokola, peer-to-peer elektronskog sistema plaćanja koji funkcioniše nezavisno od bilo koje centralne vlasti. U svom white paper-u, on ističe da je jedini način da se potvrdi odsustvo dvostrukog trošenja osiguravanje vidljivosti svih transakcija unutar sistema plaćanja.
 
 
-Da bi se garantovalo da je svaki učesnik svestan transakcija, one moraju biti javno objavljene. Stoga, rad Bitcoin se oslanja na transparentnu i distribuiranu infrastrukturu, omogućavajući svakom operateru čvora da verifikuje celokupnost lanaca elektronskih potpisa i istoriju svake kovanice, od njenog stvaranja od strane Miner.
+Da bi se garantovalo da je svaki učesnik svestan transakcija, one moraju biti javno objavljene. Stoga, rad Bitcoin-a se oslanja na transparentnu i distribuiranu infrastrukturu, omogućavajući svakom operateru čvora da verifikuje celokupnost lanaca elektronskih potpisa i istoriju svake kovanice, od njenog stvaranja od strane rudara (eng. Miner).
 
 
-Transparentna i distribuirana priroda Bitcoin-ovog Blockchain znači da bilo koji korisnik mreže može pratiti i analizirati transakcije svih drugih učesnika. Kao rezultat toga, anonimnost na nivou transakcija je nemoguća. Međutim, anonimnost se čuva na nivou individualne identifikacije. Za razliku od tradicionalnog bankarskog sistema gde je svaki račun povezan sa ličnim identitetom, na Bitcoin, sredstva su povezana sa parovima kriptografskih ključeva, čime se korisnicima nudi oblik pseudonimnosti iza kriptografskih identifikatora.
+Transparentna i distribuirana priroda Bitcoin-ovog Blockchain-a znači da bilo koji korisnik mreže može pratiti i analizirati transakcije svih drugih učesnika. Kao rezultat toga, anonimnost na nivou transakcija je nemoguća. Međutim, anonimnost se čuva na nivou individualne identifikacije. Za razliku od tradicionalnog bankarskog sistema gde je svaki račun povezan sa ličnim identitetom, na Bitcoin-u, sredstva su povezana sa parovima kriptografskih ključeva, čime se korisnicima nudi oblik pseudonimnosti iza kriptografskih identifikatora.
 
 
-Dakle, poverljivost na Bitcoin je ugrožena kada spoljni posmatrači uspeju da povežu određene UTXO-e sa identifikovanim korisnicima. Kada se ova povezanost uspostavi, postaje moguće pratiti njihove transakcije i analizirati istoriju njihovih bitkoina. CoinJoin je upravo tehnika razvijena da prekine sledljivost UTXO-a, čime se korisnicima Bitcoin na nivou transakcija nudi određeni Layer poverljivosti.
+Dakle, poverljivost na Bitcoin-u je ugrožena kada spoljni posmatrači uspeju da povežu određene UTXO-e sa identifikovanim korisnicima. Kada se ova povezanost uspostavi, postaje moguće pratiti njihove transakcije i analizirati istoriju njihovih bitkoina. CoinJoin je upravo tehnika razvijena da prekine sledljivost UTXO-a, čime se Bitcoin korisnicima na nivou transakcija nudi određeni nivo poverljivosti.
 
 
 ## Kako funkcioniše Whirlpool?
 
-Whirlpool se izdvaja od drugih CoinJoin metoda korišćenjem "_ZeroLink_" transakcija, koje osiguravaju da ne postoji tehnička mogućnost povezivanja između svih ulaza i svih izlaza. Ovo savršeno mešanje se postiže kroz strukturu gde svaki učesnik doprinosi identičnim iznosom u ulazu (osim za Mining naknade), čime se generišu izlazi savršeno jednakih iznosa.
+Whirlpool se izdvaja od drugih CoinJoin metoda korišćenjem "_ZeroLink_" transakcija, koje osiguravaju da ne postoji tehnička mogućnost povezivanja između svih ulaza i svih izlaza. Ovo savršeno mešanje se postiže kroz strukturu gde svaki učesnik doprinosi identičnim iznosom u ulazu (osim za rudarske naknade), čime se generišu izlazi savršeno jednakih iznosa.
 
-Ovaj restriktivni pristup unosima daje transakcijama Whirlpool CoinJoin jedinstvenu karakteristiku: potpuni izostanak determinističkih veza između unosa i izlaza. Drugim rečima, svaki izlaz ima jednaku verovatnoću da bude pripisan bilo kojem učesniku, u poređenju sa svim ostalim izlazima u transakciji.
+Ovaj restriktivni pristup unosima daje Whirlpool CoinJoin transakcijama jedinstvenu karakteristiku: potpuni izostanak determinističkih veza između unosa i izlaza. Drugim rečima, svaki izlaz ima jednaku verovatnoću da bude pripisan bilo kojem učesniku, u poređenju sa svim ostalim izlazima u transakciji.
 
-U početku, broj učesnika u svakom Whirlpool CoinJoin bio je ograničen na 5, sa 2 nova učesnika i 3 remiksera (ove pojmove ćemo objasniti kasnije). Međutim, povećanje naknada za transakcije On-Chain primećeno 2023. godine podstaklo je Samourai timove da preispitaju svoj model kako bi poboljšali privatnost uz smanjenje troškova. Tako, uzimajući u obzir tržišnu situaciju naknada i broj učesnika, koordinator sada može organizovati coinjoin-ove koji uključuju 6, 7 ili 8 učesnika. Ove unapređene sesije nazivaju se "_Surge Cycles_". Važno je napomenuti da, bez obzira na konfiguraciju, uvek postoje samo 2 nova učesnika u Whirlpool coinjoin-ovima.
+U početku, broj učesnika u svakom Whirlpool CoinJoin-u bio je ograničen na 5, sa 2 nova učesnika i 3 remiksera (ove pojmove ćemo objasniti kasnije). Međutim, povećanje naknada za on-chain transakcije primećeno 2023. godine podstaklo je Samourai timove da preispitaju svoj model kako bi poboljšali privatnost uz smanjenje troškova. Tako, uzimajući u obzir tržišnu situaciju naknada i broj učesnika, koordinator sada može organizovati coinjoin-ove koji uključuju 6, 7 ili 8 učesnika. Ove unapređene sesije nazivaju se "_Surge Cycles_". Važno je napomenuti da, bez obzira na konfiguraciju, uvek postoje samo 2 nova učesnika u Whirlpool coinjoin-ovima.
 
 
 Dakle, Whirlpool transakcije karakteriše identičan broj ulaza i izlaza, koji mogu biti:
@@ -96,7 +96,7 @@ Dakle, Whirlpool transakcije karakteriše identičan broj ulaza i izlaza, koji m
 Model koji predlaže Whirlpool zasniva se na malim CoinJoin transakcijama. Za razliku od Wasabi i JoinMarket, gde robusnost anonseta zavisi od broja učesnika u jednom ciklusu, Whirlpool se oslanja na povezivanje nekoliko ciklusa male veličine.
 
 
-U ovom modelu, korisnik plaća naknade samo prilikom svog prvog ulaska u bazen, što mu omogućava da učestvuje u mnoštvu remiksa bez dodatnih naknada. Novi učesnici su ti koji pokrivaju Mining naknade za remiksere.
+U ovom modelu, korisnik plaća naknade samo prilikom svog prvog ulaska u bazen, što mu omogućava da učestvuje u mnoštvu remiksa bez dodatnih naknada. Novi učesnici su ti koji pokrivaju rudarske naknade za remiksere.
 
 
 Sa svakim dodatnim CoinJoin u kojem novčić učestvuje, zajedno sa svojim vršnjacima susretanim u prošlosti, anonseti će eksponencijalno rasti. Cilj je stoga iskoristiti ove besplatne remikse koji, sa svakim pojavljivanjem, doprinose jačanju gustine anonseta povezanih sa svakim mešanim novčićem.
