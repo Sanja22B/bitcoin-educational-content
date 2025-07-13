@@ -5,7 +5,7 @@ description: Kako izvesti CoinJoin sa sopstvenim Dojo-om?
 ![cover](assets/cover.webp)
 
 
-***UPOZORENJE:** Nakon hapšenja osnivača Samourai Wallet i zaplene njihovih servera 24. aprila, alat Whirlpool više ne funkcioniše, čak ni za pojedince koji imaju sopstveni Dojo ili koriste Sparrow Wallet. Ipak, moguće je da bi ovaj alat mogao biti ponovo uspostavljen u narednim nedeljama ili ponovo pokrenut na drugačiji način. Štaviše, teoretski deo ovog članka ostaje relevantan za razumevanje principa i ciljeva coinjoin-a uopšte (ne samo Whirlpool), kao i za razumevanje efikasnosti modela Whirlpool.*
+***UPOZORENJE:** Nakon hapšenja osnivača Samourai novčanika i zaplene njihovih servera 24. aprila, alat Whirlpool više ne funkcioniše, čak ni za pojedince koji imaju sopstveni Dojo ili koriste Sparrow novčanik. Ipak, moguće je da bi ovaj alat mogao biti ponovo uspostavljen u narednim nedeljama ili ponovo pokrenut na drugačiji način. Štaviše, teoretski deo ovog članka ostaje relevantan za razumevanje principa i ciljeva coinjoin-a uopšte (ne samo Whirlpool-a), kao i za razumevanje efikasnosti Whirlpool modela.*
 
 
 _Pažljivo pratimo razvoj ovog slučaja kao i razvoj povezanih alata. Budite sigurni da ćemo ažurirati ovaj vodič čim nove informacije budu dostupne._
@@ -16,18 +16,18 @@ _Ovaj vodič je namenjen isključivo za obrazovne i informativne svrhe. Ne podr�
 
 ---
 
-U ovom vodiču ćete naučiti šta je CoinJoin i kako ga izvesti koristeći Samourai Wallet softver i Whirlpool implementaciju, koristeći sopstveni Dojo. Po mom mišljenju, ova metoda je trenutno najbolja za mešanje vaših bitkoina.
+U ovom vodiču ćete naučiti šta je CoinJoin i kako ga izvesti koristeći Samourai novčanik softver i Whirlpool implementaciju, koristeći sopstveni Dojo. Po mom mišljenju, ova metoda je trenutno najbolja za mešanje vaših bitkoina.
 
 
-## Šta je CoinJoin na Bitcoin?
+## Šta je CoinJoin na Bitcoin-u?
 
-**CoinJoin je tehnika koja prekida mogućnost praćenja bitcoina na Blockchain**. Oslanja se na kolaborativnu transakciju sa specifičnom strukturom istog imena: CoinJoin transakcija.
+**CoinJoin je tehnika koja prekida mogućnost praćenja bitcoina na Blockchain-u**. Oslanja se na kolaborativnu transakciju sa specifičnom strukturom istog imena: CoinJoin transakcija.
 
 
 Coinjoins poboljšavaju privatnost Bitcoin korisnika komplikovanjem analize lanca za spoljne posmatrače. Njihova struktura omogućava spajanje više novčića od različitih korisnika u jednu transakciju, čime se zamagljuju tragovi i otežava određivanje veza između ulaznih i izlaznih adresa.
 
 
-Princip CoinJoin zasniva se na kolaborativnom pristupu: nekoliko korisnika koji žele da mešaju svoje bitkoine deponuju identične iznose kao ulaze iste transakcije. Ti iznosi se zatim preraspodeljuju kao izlazi jednake vrednosti svakom korisniku. Na kraju transakcije, postaje nemoguće povezati određeni izlaz sa poznatim korisnikom na ulazu. Ne postoji direktna veza između ulaza i izlaza, što prekida asocijaciju između korisnika i njihovog UTXO, kao i istoriju svake kovanice.
+Princip CoinJoin-a zasniva se na kolaborativnom pristupu: nekoliko korisnika koji žele da mešaju svoje bitkoine deponuju identične iznose kao ulaze iste transakcije. Ti iznosi se zatim preraspodeljuju kao izlazi jednake vrednosti svakom korisniku. Na kraju transakcije, postaje nemoguće povezati određeni izlaz sa poznatim korisnikom na ulazu. Ne postoji direktna veza između ulaza i izlaza, što prekida asocijaciju između korisnika i njihovog UTXO-a, kao i istoriju svake "novčića".
 
 ![coinjoin](assets/notext/1.webp)
 
@@ -38,12 +38,12 @@ Primer CoinJoin transakcije (nije od mene): [323df21f0b0756f98336437aa3d2fb87e02
 Da bi se izvršio CoinJoin uz osiguranje da svaki korisnik u svakom trenutku zadrži kontrolu nad svojim sredstvima, proces počinje tako što koordinator konstruira transakciju, a zatim je prenosi učesnicima. Svaki korisnik zatim potpisuje transakciju nakon što potvrdi da mu odgovara. Svi prikupljeni potpisi se konačno integrišu u transakciju. Ako korisnik ili koordinator pokuša da preusmeri sredstva, kroz modifikaciju izlaza CoinJoin transakcije, potpisi će biti nevažeći, što će dovesti do odbijanja transakcije od strane čvorova.
 
 
-Postoji nekoliko implementacija CoinJoin, kao što su Whirlpool, JoinMarket ili Wabisabi, od kojih svaka ima za cilj upravljanje koordinacijom među učesnicima i povećanje efikasnosti CoinJoin transakcija.
+Postoji nekoliko CoinJoin implementacija, kao što su Whirlpool, JoinMarket ili Wabisabi, od kojih svaka ima za cilj upravljanje koordinacijom među učesnicima i povećanje efikasnosti CoinJoin transakcija.
 
-U ovom vodiču, bavićemo se implementacijom **Whirlpool**, koju smatram najefikasnijim rešenjem za izvođenje coinjoin-a na Bitcoin. Iako je dostupna na nekoliko novčanika, u ovom vodiču ćemo isključivo istražiti njenu upotrebu sa Samourai Wallet mobilnom aplikacijom, bez Dojo-a.
+U ovom vodiču, bavićemo se **Whirlpool** implementacijom, koju smatram najefikasnijim rešenjem za izvođenje coinjoin-a na Bitcoin-u. Iako je dostupno na nekoliko novčanika, u ovom vodiču ćemo se isključivo fokusirati na upotrebu sa mobilnom aplikacijom Samourai Wallet, bez Dojo servisa.
 
 
-## Zašto izvoditi coinjoinse na Bitcoin?
+## Zašto raditi coinjoin na Bitkoin-u?
 
 Jedan od početnih problema sa bilo kojim peer-to-peer sistemom plaćanja je dvostruko trošenje: kako sprečiti zlonamerne pojedince da iste monetarne jedinice troše više puta bez pribegavanja centralnom autoritetu za arbitražu?
 
@@ -51,22 +51,22 @@ Jedan od početnih problema sa bilo kojim peer-to-peer sistemom plaćanja je dvo
 Satoshi Nakamoto je pružio rešenje za ovu dilemu kroz Bitcoin protokol, peer-to-peer elektronski platni sistem koji funkcioniše nezavisno od bilo koje centralne vlasti. U svom white paper-u, on naglašava da je jedini način da se potvrdi odsustvo dvostrukog trošenja osiguravanje vidljivosti svih transakcija unutar platnog sistema.
 
 
-Kako bi se osiguralo da je svaki učesnik svestan transakcija, one moraju biti javno objavljene. Stoga, rad Bitcoin se oslanja na transparentnu i distribuiranu infrastrukturu, omogućavajući svakom operateru čvora da verifikuje celokupne lance elektronskih potpisa i istoriju svake kovanice, od njenog stvaranja od strane Miner.
+Kako bi se osiguralo da je svaki učesnik svestan transakcija, one moraju biti javno objavljene. Stoga, rad Bitcoin-a se oslanja na transparentnu i distribuiranu infrastrukturu, omogućavajući svakom operateru čvora da verifikuje celokupne lance elektronskih potpisa i istoriju svake kovanice, od njenog stvaranja od strane rudara (eng. miner).
 
 
-Transparentna i distribuirana priroda Bitcoin-ovog Blockchain znači da svaki korisnik mreže može pratiti i analizirati transakcije svih drugih učesnika. Kao rezultat toga, anonimnost na nivou transakcija je nemoguća. Međutim, anonimnost je očuvana na nivou individualne identifikacije. Za razliku od tradicionalnog bankarskog sistema gde je svaki račun povezan sa ličnim identitetom, na Bitcoin, sredstva su povezana sa parovima kriptografskih ključeva, čime se korisnicima nudi oblik pseudonimnosti iza kriptografskih identifikatora.
+Transparentna i distribuirana priroda Bitcoin-ovog blockchain-a znači da svaki korisnik mreže može pratiti i analizirati transakcije svih drugih učesnika. Kao rezultat toga, anonimnost na nivou transakcija je nemoguća. Međutim, anonimnost je očuvana na nivou individualne identifikacije. Za razliku od tradicionalnog bankarskog sistema gde je svaki račun povezan sa ličnim identitetom, na Bitcoin-u, sredstva su povezana sa parovima kriptografskih ključeva, čime se korisnicima nudi oblik pseudonimnosti iza kriptografskih identifikatora.
 
 
-Dakle, poverljivost na Bitcoin je ugrožena kada spoljašnji posmatrači uspeju da povežu specifične UTXO-e sa identifikovanim korisnicima. Kada se ova veza uspostavi, postaje moguće pratiti njihove transakcije i analizirati istoriju njihovih bitkoina. CoinJoin je upravo tehnika razvijena da prekine sledljivost UTXO-a, čime se pruža određeni Layer poverljivosti korisnicima Bitcoin na nivou transakcija.
+Dakle, poverljivost na Bitcoin-u je ugrožena kada spoljašnji posmatrači uspeju da povežu specifične UTXO-e sa identifikovanim korisnicima. Kada se ova veza uspostavi, postaje moguće pratiti njihove transakcije i analizirati istoriju njihovih bitkoina. CoinJoin je upravo tehnika razvijena da prekine sledljivost UTXO-a, čime se pruža određeni nivo poverljivosti korisnicima Bitcoin-a na nivou transakcija.
 
 
 ## Kako funkcioniše Whirlpool?
 
-Whirlpool se izdvaja od drugih CoinJoin metoda korišćenjem "_ZeroLink_" transakcija, koje osiguravaju da ne postoji tehnička mogućnost povezivanja između svih ulaza i svih izlaza. Ovo savršeno mešanje se postiže kroz strukturu gde svaki učesnik doprinosi identičan iznos u ulazu (osim za Mining naknade), čime se generišu izlazi savršeno jednakih iznosa.
+Whirlpool se izdvaja od drugih CoinJoin metoda korišćenjem "_ZeroLink_" transakcija, koje osiguravaju da ne postoji tehnička mogućnost povezivanja između svih ulaza i svih izlaza. Ovo savršeno mešanje se postiže kroz strukturu gde svaki učesnik doprinosi identičan iznos u ulazu (osim za rudarske naknade), čime se generišu izlazi savršeno jednakih iznosa.
 
-Ovaj restriktivni pristup unosima daje transakcijama Whirlpool CoinJoin jedinstvenu karakteristiku: potpuni izostanak determinističkih veza između ulaza i izlaza. Drugim rečima, svaki izlaz ima jednaku verovatnoću da bude pripisan bilo kojem učesniku, u poređenju sa svim ostalim izlazima u transakciji.
+Ovaj restriktivni pristup unosima daje transakcijama Whirlpool CoinJoin-a jedinstvenu karakteristiku: potpuni izostanak determinističkih veza između ulaza i izlaza. Drugim rečima, svaki izlaz ima jednaku verovatnoću da bude pripisan bilo kojem učesniku, u poređenju sa svim ostalim izlazima u transakciji.
 
-U početku je broj učesnika u svakom Whirlpool CoinJoin bio ograničen na 5, sa 2 nova učesnika i 3 remiksera (ove pojmove ćemo objasniti kasnije). Međutim, povećanje naknada za transakcije On-Chain primećeno 2023. godine podstaklo je Samourai timove da preispitaju svoj model kako bi poboljšali privatnost uz smanjenje troškova. Tako, uzimajući u obzir tržišnu situaciju naknada i broj učesnika, koordinator sada može organizovati coinjoin-e uključujući 6, 7 ili 8 učesnika. Ove unapređene sesije nazivaju se "_Surge Cycles_". Važno je napomenuti da, bez obzira na postavku, uvek postoje samo 2 nova učesnika u Whirlpool coinjoin-ima.
+U početku je broj učesnika u svakom Whirlpool CoinJoin-u bio ograničen na 5, sa 2 nova učesnika i 3 remiksera (ove pojmove ćemo objasniti kasnije). Međutim, povećanje naknada za on-chain transakcije primećeno 2023. godine podstaklo je Samourai timove da preispitaju svoj model kako bi poboljšali privatnost uz smanjenje troškova. Tako, uzimajući u obzir tržišnu situaciju naknada i broj učesnika, koordinator sada može organizovati coinjoin-e uključujući 6, 7 ili 8 učesnika. Ove unapređene sesije nazivaju se "_Surge Cycles_". Važno je napomenuti da, bez obzira na postavku, uvek postoje samo 2 nova učesnika u Whirlpool coinjoin-ima.
 
 
 Dakle, Whirlpool transakcije karakteriše identičan broj ulaza i izlaza, koji mogu biti:
@@ -91,10 +91,10 @@ Dakle, Whirlpool transakcije karakteriše identičan broj ulaza i izlaza, koji m
 
 ![coinjoin](assets/notext/5.webp)
 
-Model koji predlaže Whirlpool je stoga zasnovan na malim CoinJoin transakcijama. Za razliku od Wasabi i JoinMarket, gde robusnost anonseta zavisi od broja učesnika u jednom ciklusu, Whirlpool se oslanja na povezivanje više malih ciklusa.
+Model koji predlaže Whirlpool je stoga zasnovan na malim CoinJoin transakcijama. Za razliku od Wasabi i JoinMarket-a, gde robusnost anonseta zavisi od broja učesnika u jednom ciklusu, Whirlpool se oslanja na povezivanje više malih ciklusa.
 
 
-U ovom modelu, korisnik plaća naknade samo prilikom prvog ulaska u bazen, što mu omogućava učešće u mnoštvu remiksa bez dodatnih naknada. Novi učesnici su ti koji pokrivaju Mining naknade za remiksere.
+U ovom modelu, korisnik plaća naknade samo prilikom prvog ulaska u bazen (eng. pool), što mu omogućava učešće u mnoštvu remiksa bez dodatnih naknada. Novi učesnici su ti koji pokrivaju rudarske naknade za remiksere.
 
 
 Sa svakim dodatnim CoinJoin u kojem novčić učestvuje, zajedno sa svojim prethodno susretnutim parnjacima, anonsetovi će eksponencijalno rasti. Cilj je stoga iskoristiti ove besplatne remikse koji, sa svakim pojavljivanjem, doprinose poboljšanju gustine anonsetova povezanih sa svakim mešanim novčićem.
@@ -103,12 +103,12 @@ Sa svakim dodatnim CoinJoin u kojem novčić učestvuje, zajedno sa svojim preth
 Whirlpool je dizajniran uzimajući u obzir dva važna zahteva:
 
 
-- Pristupačnost implementacije na mobilnim uređajima, s obzirom na to da je Samourai Wallet prvenstveno aplikacija za pametne telefone;
+- Pristupačnost implementacije na mobilnim uređajima, s obzirom na to da je Samourai novčanik prvenstveno aplikacija za pametne telefone;
 - Brzina ciklusa remiksovanja za promovisanje značajnog povećanja anonseta.
 
-Ove imperative su usmeravale izbore programera Samourai Wallet u dizajnu Whirlpool, navodeći ih da ograniče broj učesnika po ciklusu. Premalo učesnika bi ugrozilo efikasnost CoinJoin, drastično smanjujući broj anonsetova generisanih svakog ciklusa, dok bi previše učesnika izazvalo probleme u upravljanju na mobilnim aplikacijama i ometalo tok ciklusa.
+Ove imperative su usmeravale izbore programera Samourai novčanika u dizajnu Whirlpool-a, navodeći ih da ograniče broj učesnika po ciklusu. Premalo učesnika bi ugrozilo efikasnost CoinJoin-a, drastično smanjujući broj anonsetova generisanih svakog ciklusa, dok bi previše učesnika izazvalo probleme u upravljanju na mobilnim aplikacijama i ometalo tok ciklusa.
 
-**U konačnici, nema potrebe imati veliki broj učesnika po CoinJoin na Whirlpool jer se anonseti postižu akumulacijom nekoliko ciklusa CoinJoin.**
+**Na kraju, nema potrebe za velikim brojem učesnika po coinjoin-u na Whirlpool-u, jer se anonseti postižu kroz akumulaciju više Coinjoin ciklusa.**
 
 
 [-> Saznajte više o Whirlpool anonsetima.](https://planb.network/tutorials/privacy/analysis/wst-anonsets-0354b793-c301-48af-af75-f87569756375)
@@ -116,10 +116,10 @@ Ove imperative su usmeravale izbore programera Samourai Wallet u dizajnu Whirlpo
 
 ### Bazeni i CoinJoin naknade
 
-Da bi ovi višestruki ciklusi efikasno povećali anonsetse mešanih novčića, mora se uspostaviti određeni okvir kako bi se ograničile količine UTXO koje se koriste. Whirlpool tako definiše različite bazene.
+Da bi ovi višestruki ciklusi efikasno povećali anonsetse mešanih novčića, mora se uspostaviti određeni okvir kako bi se ograničile količine UTXO-a koje se koriste. Whirlpool tako definiše različite bazene.
 
 
-Bazen predstavlja grupu korisnika koji žele da se mešaju zajedno, koji se slažu oko količine UTXO koju će koristiti da optimizuju CoinJoin proces. Svaki bazen određuje fiksnu količinu za UTXO, koju korisnik mora poštovati da bi učestvovao. Dakle, da biste izvršili coinjoins sa Whirlpool, potrebno je da izaberete bazen. Trenutno dostupni bazeni su sledeći:
+Bazen predstavlja grupu korisnika koji žele da se mešaju zajedno, koji se slažu oko količine UTXO koju će koristiti da optimizuju CoinJoin proces. Svaki bazen određuje fiksnu količinu za UTXO, koju korisnik mora poštovati da bi učestvovao. Dakle, da biste izvršili coinjoins sa Whirlpool-om, potrebno je da izaberete bazen. Trenutno dostupni bazeni su sledeći:
 
 
 - 0.5 bitcoina;
@@ -128,10 +128,10 @@ Bazen predstavlja grupu korisnika koji žele da se mešaju zajedno, koji se sla�
 - 0.001 Bitcoin (= 100,000 Sats).
 
 
-Pridruživanjem bazenu sa svojim bitcoinima, oni će biti podeljeni na generate UTXO-e koji su savršeno homogeni sa onima drugih učesnika u bazenu. Svaki bazen ima maksimalno ograničenje; stoga, za iznose koji prelaze ovo ograničenje, bićete primorani ili da napravite dva odvojena unosa unutar istog bazena ili da pređete u drugi bazen sa većim iznosom:
+Pridruživanjem grupi sa svojim bitkoinima, oni će biti podeljeni tako da se generišu UTXO-ovi koji su potpuno homogeni sa onima ostalih učesnika u grupi. Svaki bazen ima maksimalno ograničenje; stoga, za iznose koji prelaze ovo ograničenje, bićete primorani ili da napravite dva odvojena unosa unutar istog bazena ili da pređete u drugi bazen sa većim iznosom:
 
 
-| Pool (bitcoin) | Maximum amount per entry (bitcoin) |
+| Bazen (bitcoin) | najveći dozvoljeni iznos po ulazu (bitcoin) |
 |----------------|------------------------------------|
 | 0.5            | 35                                 |
 | 0.05           | 3.5                                |
@@ -141,12 +141,12 @@ Pridruživanjem bazenu sa svojim bitcoinima, oni će biti podeljeni na generate 
 Kao što je ranije pomenuto, UTXO se smatra da pripada pool-u kada je spreman da bude integrisan u CoinJoin. Međutim, to ne znači da korisnik gubi posed nad njim. **Kroz različite cikluse mešanja, zadržavate potpunu kontrolu nad vašim ključevima i, samim tim, vašim bitcoin-ima.** Ovo je ono što razlikuje CoinJoin tehniku od drugih centralizovanih tehnika mešanja.
 
 
-Da biste ušli u CoinJoin bazen, moraju se platiti naknade za uslugu kao i Mining naknade. Naknade za uslugu su fiksne za svaki bazen i namenjene su za kompenzaciju timova odgovornih za razvoj i održavanje Whirlpool.
+Da biste ušli u CoinJoin bazen, moraju platiti naknade za uslugu kao i rudarske naknade. Naknade za uslugu su fiksne za svaki bazen i namenjene su za kompenzaciju timova odgovornih za razvoj i održavanje Whirlpool-a.
 
-Naknade za korišćenje Whirlpool plaćaju se samo jednom prilikom ulaska u bazen. Nakon ovog koraka, imate priliku da učestvujete u neograničenom broju remiksa bez dodatnih naknada. Ovde su trenutne fiksne naknade za svaki bazen:
+Naknade za korišćenje Whirlpool-a plaćaju se samo jednom prilikom ulaska u bazen. Nakon ovog koraka, imate priliku da učestvujete u neograničenom broju remiksa bez dodatnih naknada. Ovde su trenutne fiksne naknade za svaki bazen:
 
 
-| Pool (bitcoin) | Entry Fee (bitcoin)        |
+| Bazen (bitcoin) | Naknade (bitcoin)        |
 |----------------|---------------------------|
 | 0.5            | 0.0175                    |
 | 0.05           | 0.00175                   |
