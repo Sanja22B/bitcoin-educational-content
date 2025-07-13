@@ -1,11 +1,11 @@
 ---
-name: CoinJoin - Samourai Wallet
-description: Kako izvršiti CoinJoin na Samourai Wallet?
+name: CoinJoin - Samourai novčanik
+description: Kako izvršiti CoinJoin na Samourai novčaniku?
 ---
 ![cover](assets/cover.webp)
 
 
-***UPOZORENJE:** Nakon hapšenja osnivača Samourai Wallet i zaplene njihovih servera 24. aprila, alat Whirlpool više ne funkcioniše, čak ni za pojedince koji imaju sopstveni Dojo ili koriste Sparrow Wallet. Ipak, postoji mogućnost da bi ovaj alat mogao biti ponovo uspostavljen u narednim nedeljama ili pokrenut na drugačiji način. Štaviše, teorijski deo ovog članka ostaje relevantan za razumevanje principa i ciljeva coinjoin-a uopšte (ne samo Whirlpool), kao i za razumevanje efikasnosti modela Whirlpool.*
+***UPOZORENJE:** Nakon hapšenja osnivača Samourai novčanika i zaplene njihovih servera 24. aprila, alat Whirlpool više ne funkcioniše, čak ni za pojedince koji imaju sopstveni Dojo ili koriste Sparrow novčanik. Ipak, postoji mogućnost da bi ovaj alat mogao biti ponovo uspostavljen u narednim nedeljama ili pokrenut na drugačiji način. Štaviše, teorijski deo ovog članka ostaje relevantan za razumevanje principa i ciljeva coinjoin-a uopšte (ne samo Whirlpool-a), kao i za razumevanje efikasnosti Whirlpool modela.*
 
 
 _Pažljivo pratimo razvoj ovog slučaja kao i razvoj povezanih alata. Budite sigurni da ćemo ažurirati ovaj vodič čim nove informacije budu dostupne._
