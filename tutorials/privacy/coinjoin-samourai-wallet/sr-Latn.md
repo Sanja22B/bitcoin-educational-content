@@ -99,18 +99,18 @@ Model koji predlaže Whirlpool zasniva se na malim CoinJoin transakcijama. Za ra
 U ovom modelu, korisnik plaća naknade samo prilikom svog prvog ulaska u bazen, što mu omogućava da učestvuje u mnoštvu remiksa bez dodatnih naknada. Novi učesnici su ti koji pokrivaju rudarske naknade za remiksere.
 
 
-Sa svakim dodatnim CoinJoin u kojem novčić učestvuje, zajedno sa svojim vršnjacima susretanim u prošlosti, anonseti će eksponencijalno rasti. Cilj je stoga iskoristiti ove besplatne remikse koji, sa svakim pojavljivanjem, doprinose jačanju gustine anonseta povezanih sa svakim mešanim novčićem.
+Sa svakim dodatnim coinjoin-om u kojem novčić učestvuje, zajedno sa svojim prethodno susretnutim parnjacima, skup anonimnosti (anonset) eksponencijalno raste. Cilj je, dakle, iskoristiti ove besplatne remikse koji, pri svakom pojavljivanju, doprinose jačanju gustine skupova anonimnosti (anonsetova) povezanih sa svakim pomešanim novčićem.
 
 
 Whirlpool je dizajniran uzimajući u obzir dva važna zahteva:
 
 
-- Pristupačnost implementacije na mobilnim uređajima, s obzirom na to da je Samourai Wallet prvenstveno aplikacija za pametne telefone;
+- Pristupačnost implementacije na mobilnim uređajima, s obzirom na to da je Samourai novčanik prvenstveno aplikacija za pametne telefone;
 - Brzina ciklusa remiksovanja za promovisanje značajnog povećanja anonseta.
 
-Ove imperative su vodile programere Samourai Wallet u dizajnu Whirlpool, navodeći ih da ograniče broj učesnika po ciklusu. Premalo učesnika bi ugrozilo efikasnost CoinJoin, drastično smanjujući broj anonsetova generisanih svakim ciklusom, dok bi previše učesnika izazvalo probleme u upravljanju na mobilnim aplikacijama i ometalo tok ciklusa.
+Ove imperative su vodile programere Samourai novčanika u dizajnu Whirlpool-u, navodeći ih da ograniče broj učesnika po ciklusu. Premalo učesnika bi ugrozilo efikasnost CoinJoin-a, drastično smanjujući broj anonsetova generisanih svakim ciklusom, dok bi previše učesnika izazvalo probleme u upravljanju na mobilnim aplikacijama i ometalo tok ciklusa.
 
-**U konačnici, nema potrebe imati veliki broj učesnika po CoinJoin na Whirlpool jer se anonseti postižu akumulacijom nekoliko ciklusa CoinJoin.**
+**Na kraju, nema potrebe imati veliki broj učesnika po CoinJoin-u na Whirlpool jer se anonseti postižu akumulacijom nekoliko ciklusa CoinJoin.**
 
 
 [-> Saznajte više o Whirlpool anonsetima.](https://planb.network/tutorials/privacy/analysis/wst-anonsets-0354b793-c301-48af-af75-f87569756375)
@@ -121,19 +121,19 @@ Ove imperative su vodile programere Samourai Wallet u dizajnu Whirlpool, navode�
 Da bi ovi višestruki ciklusi efikasno povećali anonsetove mešanih kovanica, mora se uspostaviti određeni okvir kako bi se ograničile količine UTXO koje se koriste. Whirlpool tako definiše različite bazene.
 
 
-Bazen predstavlja grupu korisnika koji žele da se mešaju zajedno, koji se slažu oko količine UTXO koju će koristiti za optimizaciju CoinJoin procesa. Svaki bazen određuje fiksnu količinu za UTXO, koju korisnik mora poštovati da bi učestvovao. Dakle, da biste izvršili coinjoins sa Whirlpool, potrebno je da izaberete bazen. Trenutno dostupni bazeni su sledeći:
+Bazen predstavlja grupu korisnika koji žele da mešaju UTXO-e zajedno, koji se slažu oko količine UTXO-a koju će koristiti za optimizaciju CoinJoin procesa. Svaki bazen određuje fiksnu količinu za UTXO, koju korisnik mora poštovati da bi učestvovao. Dakle, da biste izvršili coinjoins sa Whirlpool-om, potrebno je da izaberete bazen. Trenutno dostupni bazeni su sledeći:
 
 
 - 0.5 bitcoina;
-- 0.05 Bitcoin;
-- 0.01 Bitcoin;
-- 0.001 Bitcoin (= 100,000 Sats).
+- 0.05 bitcoina;
+- 0.01 bitcoina;
+- 0.001 bitcoina (= 100,000 Sats).
 
 
-Pridruživanjem bazenu sa svojim bitcoinima, oni će biti podeljeni na generate UTXO-e koji su savršeno homogeni sa onima drugih učesnika u bazenu. Svaki bazen ima maksimalno ograničenje; stoga, za iznose koji prelaze ovo ograničenje, bićete primorani ili da napravite dva odvojena unosa unutar istog bazena ili da se usmerite ka drugom bazenu sa većim iznosom:
+Uključivanjem svojih bitkoina u pool, oni će biti podeljeni kako bi se generisali UTXO-i koji su potpuno homogeni sa onima drugih učesnika u pool-u. Svaki bazen ima maksimalno ograničenje; stoga, za iznose koji prelaze ovo ograničenje, bićete primorani ili da napravite dva odvojena unosa unutar istog bazena ili da se usmerite ka drugom bazenu sa većim iznosom:
 
 
-| Pool (bitcoin) | Maximum amount per entry (bitcoin) |
+| Bazen (bitcoin)| Maksimalan iznos po ulazu (bitcoin)|
 |----------------|------------------------------------|
 | 0.5            | 35                                 |
 | 0.05           | 3.5                                |
@@ -143,12 +143,12 @@ Pridruživanjem bazenu sa svojim bitcoinima, oni će biti podeljeni na generate 
 Kao što je ranije pomenuto, UTXO se smatra da pripada bazenu kada je spreman za integraciju u CoinJoin. Međutim, to ne znači da korisnik gubi vlasništvo nad njim. **Kroz različite cikluse mešanja, zadržavate potpunu kontrolu nad vašim ključevima i, samim tim, vašim bitcoinima.** Ovo je ono što razlikuje tehniku CoinJoin od drugih centralizovanih tehnika mešanja.
 
 
-Da biste ušli u CoinJoin bazen, moraju se platiti naknade za uslugu kao i Mining naknade. Naknade za uslugu su fiksne za svaki bazen i namenjene su za kompenzaciju timova odgovornih za razvoj i održavanje Whirlpool.
+Da biste ušli u CoinJoin bazen, moraju se platiti naknade za uslugu kao i rudarske naknade. Naknade za uslugu su fiksne za svaki bazen i namenjene su za kompenzaciju timova odgovornih za razvoj i održavanje Whirlpool-a.
 
-Naknade za korišćenje Whirlpool plaćaju se samo jednom prilikom ulaska u bazen. Nakon ovog koraka, imate priliku da učestvujete u neograničenom broju remiksa bez dodatnih naknada. Ovde su trenutne fiksne naknade za svaki bazen:
+Naknade za korišćenje Whirlpool-a plaćaju se samo jednom prilikom ulaska u bazen. Nakon ovog koraka, imate priliku da učestvujete u neograničenom broju remiksa bez dodatnih naknada. Ovde su trenutne fiksne naknade za svaki bazen:
 
 
-| Pool (bitcoin) | Entry Fee (bitcoin)        |
+| Bazen (bitcoin)| Ulazna naknada (bitcoin)  |
 |----------------|---------------------------|
 | 0.5            | 0.0175                    |
 | 0.05           | 0.00175                   |
@@ -163,37 +163,37 @@ Pre nego što pređe na coinjoin-e, korisnik ima izbor između 2 strategije:
 
 
 - Odlučite se za manji bazen kako biste minimizirali naknade za uslugu, znajući da će zauzvrat dobiti nekoliko malih UTXO-a;
-- Ili preferirajte veći bazen, pristajući da platite veće naknade kako biste završili sa smanjenim brojem UTXO-a veće vrednosti.
+- Ili preferirate veći bazen, pristajući da platite veće naknade kako biste završili sa smanjenim brojem UTXO-a veće vrednosti.
 
 
 Opšte se savetuje da se ne spajaju različiti mešani UTXO-ovi nakon CoinJoin ciklusa, jer to može ugroziti stečenu poverljivost, posebno zbog Common-Input-Ownership Heuristike (CIOH). Stoga, može biti mudro izabrati veći bazen, čak i ako to znači plaćanje više, kako bi se izbeglo previše izlaza sa malom vrednošću UTXO-a. Korisnik mora odvagati ove kompromise kako bi izabrao bazen koji mu odgovara.
 
 
-Pored naknada za uslugu, mora se uzeti u obzir i Mining naknada svojstvena svakoj Bitcoin transakciji. Kao korisnik Whirlpool, bićete obavezni da platite Mining naknade za pripremnu transakciju (`Tx0`) kao i za prvi CoinJoin. Svi naredni remiksi će biti besplatni, zahvaljujući Whirlpool modelu koji se oslanja na plaćanje novih učesnika.
+Pored naknada za uslugu, mora se uzeti u obzir i rudarska naknada svojstvena svakoj Bitcoin transakciji. Kao korisnik Whirlpool-a, bićete obavezni da platite rudarsku naknade za pripremnu transakciju (`Tx0`) kao i za prvi CoinJoin. Svi naredni remiksi će biti besplatni, zahvaljujući Whirlpool modelu koji se oslanja na plaćanje novih učesnika.
 
 
-Zaista, u svakom Whirlpool CoinJoin, dva korisnika među unosima su novi učesnici. Ostali unosi dolaze od remiksera. Kao rezultat toga, Mining naknade za sve učesnike u transakciji pokrivaju ova dva nova učesnika, koji će zatim takođe imati koristi od besplatnih remiksa:
+Zaista, u svakom Whirlpool CoinJoin-u, dva korisnika među unosima su novi učesnici. Ostali unosi dolaze od remiksera. Kao rezultat toga, rudarske naknade za sve učesnike u transakciji pokrivaju ova dva nova učesnika, koji će zatim takođe imati koristi od besplatnih remiksa:
 
 ![coinjoin](assets/en/6.webp)
 
-Zahvaljujući ovom sistemu naknada, Whirlpool se zaista razlikuje od drugih CoinJoin usluga jer anonseti UTXO-a nisu proporcionalni ceni koju plaća korisnik. Tako je moguće postići znatno visoke nivoe anonimnosti plaćanjem samo ulazne naknade za bazen i Mining naknada za dve transakcije (`Tx0` i početno mešanje).
+Zahvaljujući ovom sistemu naknada, Whirlpool se zaista razlikuje od drugih CoinJoin usluga jer anonseti UTXO-a nisu proporcionalni ceni koju plaća korisnik. Tako je moguće postići znatno visoke nivoe anonimnosti plaćanjem samo ulazne naknade za bazen i rudarske naknada za dve transakcije (`Tx0` i početno mešanje).
 
-Važno je napomenuti da će korisnik takođe morati da pokrije Mining naknade za povlačenje svojih UTXO-a iz bazena nakon završetka njihovih višestrukih coinjoin-a, osim ako nisu odabrali opciju `mix to`, koju ćemo razmotriti u tutorijalu ispod.
-
-
-### HD Wallet nalozi koje koristi Whirlpool
-
-Da biste izvršili CoinJoin putem Whirlpool, Wallet mora generate nekoliko različitih naloga. Nalog, u kontekstu HD (*Hijerarhijski Deterministički*) Wallet, predstavlja deo potpuno izolovan od drugih, pri čemu se ova separacija dešava na trećem nivou dubine hijerarhije Wallet, odnosno na nivou `xpub`.
+Važno je napomenuti da će korisnik takođe morati da pokrije rudarske naknade za povlačenje svojih UTXO-a iz bazena nakon završetka njihovih višestrukih coinjoin-a, osim ako nisu odabrali opciju `mix to`, koju ćemo razmotriti u tutorijalu ispod.
 
 
-HD Wallet može teoretski da izvede do `2^(32/2)` različitih naloga. Početni nalog, koji se koristi podrazumevano na svim Bitcoin novčanicima, odgovara indeksu `0'`.
+### Nalozi unutar HD novčanika koje koristi Whirlpool
+
+Da biste izvršili CoinJoin putem Whirlpool-a, novčanik mora generisati nekoliko različitih naloga. Nalog, u kontekstu HD (*Hijerarhijski Deterministički*) novčanika, predstavlja deo potpuno izolovan od drugih, pri čemu se ova separacija dešava na trećem nivou dubine hijerarhije novčanika, odnosno na nivou `xpub`.
 
 
-Za novčanike prilagođene Whirlpool, kao što su Samourai ili Sparrow, koriste se 4 naloga kako bi se zadovoljile potrebe procesa CoinJoin:
+HD novčanik može teoretski da izvede do `2^(32/2)` različitih naloga. Početni nalog, koji se koristi podrazumevano na svim Bitcoin novčanicima, odgovara indeksu `0'`.
+
+
+Za novčanike prilagođene Whirlpool-u, kao što su Samourai ili Sparrow, koriste se 4 naloga kako bi se zadovoljile potrebe CoinJoin procesa:
 
 
 - Račun **depozita**, identifikovan indeksom `0'`;
-- Račun **bad bank** (ili doxxic change), identifikovan indeksom `2 147 483 644'`;
+- Račun **bad bank ili loša banka** (ili doxxic kusur), identifikovan indeksom `2 147 483 644'`;
 - Nalog **premix**, identifikovan indeksom `2 147 483 645'`;
 - Nalog **postmix**, identifikovan indeksom `2 147 483 646'`.
 
@@ -201,21 +201,21 @@ Za novčanike prilagođene Whirlpool, kao što su Samourai ili Sparrow, koriste 
 Svaki od ovih naloga ispunjava specifičnu funkciju unutar CoinJoin procesa.
 
 
-Svi ovi nalozi su povezani sa jednim seed, što omogućava korisniku da povrati pristup svim svojim bitcoinima koristeći svoju frazu za oporavak i, ako je primenljivo, svoj passphrase. Međutim, neophodno je specificirati softveru, tokom ove operacije oporavka, različite indekse naloga koji su korišćeni.
+Svi ovi nalozi su povezani sa jednim seed-om, što omogućava korisniku da povrati pristup svim svojim bitcoinima koristeći svoju frazu za oporavak i, ako je primenljivo, svoj passphrase. Međutim, neophodno je specificirati softveru, tokom ove operacije oporavka, različite indekse naloga koji su korišćeni.
 
 
-Hajde sada da pogledamo različite faze Whirlpool CoinJoin unutar ovih naloga.
+Hajde sada da pogledamo različite faze Whirlpool CoinJoin-a unutar ovih naloga.
 
 
-### Različite faze coinjoin-a na Whirlpool
+### Različite faze coinjoin-a na Whirlpool-u
 
 **Faza 1: Tx0**
 
-Polazna tačka svakog Whirlpool CoinJoin je **depozit** račun. Ovaj račun je onaj koji automatski koristite kada kreirate novi Bitcoin Wallet. Ovaj račun mora biti kreditiran bitcoinima koje neko želi da meša.
+Polazna tačka svakog Whirlpool CoinJoin-a je **depozitni** račun. Ovaj račun je onaj koji automatski koristite kada kreirate novi Bitcoin novčanik. Ovaj račun mora biti kreditiran bitcoinima koje neko želi da meša.
 
-`Tx0` predstavlja prvi korak u Whirlpool procesu mešanja. Cilj mu je da pripremi i izjednači UTXO za CoinJoin, tako što ih deli na jedinice koje odgovaraju količini odabranog bazena, kako bi se osigurala homogenost mešavine. Izjednačeni UTXO se zatim šalju na **premix** nalog. Što se tiče razlike koja ne može ući u bazen, ona se odvaja na poseban nalog: **bad bank** (ili "doxxic change").
+`Tx0` predstavlja prvi korak u Whirlpool procesu mešanja. Cilj mu je da pripremi i izjednači UTXO za CoinJoin, tako što ih deli na jedinice koje odgovaraju količini odabranog bazena, kako bi se osigurala homogenost mešavine. Izjednačeni UTXO se zatim šalju na **premix** nalog. Što se tiče razlike koja ne može ući u bazen, ona se odvaja na poseban nalog: **bad bank** (ili "doxxic kusur").
 
-Ova početna transakcija `Tx0` takođe služi za podmirivanje naknada za usluge koje duguje koordinator miksa. Za razliku od sledećih koraka, ova transakcija nije kolaborativna; korisnik stoga mora preuzeti sve Mining naknade:
+Ova početna transakcija Tx0 takođe služi za plaćanje servisnih naknada koje se duguju koordinatoru mešanja. Za razliku od sledećih koraka, ova transakcija nije kolaborativna; korisnik stoga mora preuzeti sve rudarske naknade:
 
 ![coinjoin](assets/en/7.webp)
 
@@ -224,22 +224,22 @@ U ovom primeru transakcije `Tx0`, ulaz od `372,000 Sats` sa našeg **depozitnog*
 
 
 - Iznos od `5,000 Sats` namenjen koordinatoru za usluge, koji odgovara ulasku u fond od `100,000 Sats`;
-- Tri UTXO pripremljena za mešanje, preusmerena na naš **premix** nalog i registrovana kod koordinatora. Ovi UTXO su izjednačeni na `108,000 Sats` svaki, da pokriju Mining naknade za njihovo buduće početno mešanje;
-- Višak koji ne može ući u bazen, jer je premali, smatra se toksičnom promenom. On se šalje na svoj specifičan račun. Ovde, ova promena iznosi `40,000 Sats`;
-- Konačno, postoji `3,000 Sats` koji ne predstavljaju izlaz, već su Mining naknade neophodne za potvrdu `Tx0`.
+- Tri UTXO-a pripremljena za mešanje, preusmerena na naš **premix** nalog i registrovana kod koordinatora. Ovi UTXO-i su izjednačeni na `108,000 Sats` svaki, da pokriju rudarsku naknade za njihovo buduće početno mešanje;
+- Višak koji ne može ući u bazen, jer je premali, smatra se toksičnim kusurom. On se šalje na svoj specifičan račun. Ovde, ova promena iznosi `40,000 Sats`;
+- Konačno, postoji `3,000 Sats` koji ne predstavljaju izlaz, već su rudarske naknade neophodne za potvrdu `Tx0`.
 
 
 Na primer, ovde je pravi Whirlpool Tx0 (nije od mene): [edef60744f539483d868caff49d4848e5cc6e805d6cdc8d0f9bdbbaedcb5fc46](https://Mempool.space/en/tx/edef60744f539483d868caff49d4848e5cc6e805d6cdc8d0f9bdbbaedcb5fc46)
 
 
-**Korak 2: Doksik promena**
+**Korak 2: Doxxic kusur**
 
-Višak koji nije mogao biti integrisan u bazen, ovde ekvivalentan `40,000 Sats`, preusmeren je na račun **loše banke**, takođe nazvan "doxxic change", kako bi se osigurala stroga odvojenost od ostalih UTXO u Wallet.
+Višak koji nije mogao biti integrisan u bazen, ovde ekvivalentan `40,000 Sats`, preusmeren je na račun **loše banke**, takođe nazvan "doxxic kusur", kako bi se osigurala stroga odvojenost od ostalih UTXO-a unutar novčanika.
 
 
 Ovaj UTXO je opasan za privatnost korisnika, jer ne samo da je još uvek povezan sa svojom prošlošću, i stoga moguće sa identitetom svog vlasnika, već je dodatno zabeleženo da pripada korisniku koji je izvršio CoinJoin.
 
-Ako se ovaj UTXO spoji sa mešovitim izlazima, izgubiće svu poverljivost stečenu tokom CoinJoin ciklusa, naročito zbog Common-Input-Ownership-Heuristic (CIOH). Ako se spoji sa drugim doxxic promenama, korisnik rizikuje gubitak poverljivosti jer će to povezati različite ulaze CoinJoin ciklusa. Stoga se mora pažljivo rukovati. Način upravljanja ovim toksičnim UTXO biće detaljno opisan u poslednjem delu ovog članka, a budući tutorijali će pokriti ove metode detaljnije na PlanB Network.
+Ako se ovaj UTXO spoji sa mešovitim izlazima, izgubiće svu poverljivost stečenu tokom CoinJoin ciklusa, naročito zbog Common-Input-Ownership-Heuristic (CIOH). Ako se spoji sa drugim doxxic kusurima, korisnik rizikuje gubitak poverljivosti jer će to povezati različite ulaze CoinJoin ciklusa. Stoga se mora pažljivo rukovati. Način upravljanja ovim toksičnim UTXO biće detaljno opisan u poslednjem delu ovog članka, a budući tutorijali će pokriti ove metode detaljnije na PlanB Network.
 
 
 **Korak 3: Početno mešanje**
