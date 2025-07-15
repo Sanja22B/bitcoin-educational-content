@@ -6,7 +6,7 @@ description: Razumevanje i korišćenje JoinBot
 ![DALL·E – samurai robot in a red forest, 3D render](assets/cover.webp)
 
 
-***UPOZORENJE:** Nakon hapšenja osnivača Samourai Wallet i zaplene njihovih servera 24. aprila, **usluga JoinBot više nije dostupna**. Od sada, nije moguće koristiti ovaj alat. Međutim, i dalje možete izvršiti Stonewall X2, ali morate pronaći saradnika i ručno Exchange PSBT-ove. Ova usluga može biti ponovo pokrenuta u narednim mesecima u zavisnosti od napretka slučaja.*
+***UPOZORENJE:** Nakon hapšenja osnivača Samourai novčanika i zaplene njihovih servera 24. aprila, **usluga JoinBot više nije dostupna**. Od sada, nije moguće koristiti ovaj alat. Međutim, i dalje možete izvršiti Stonewall X2, ali morate pronaći saradnika i ručno razmeniti PSBT-ove. Ova usluga može biti ponovo pokrenuta u narednim mesecima u zavisnosti od napretka slučaja.*
 
 
 _Pažljivo pratimo razvoj ovog slučaja kao i razvoj povezanih alata. Budite sigurni da ćemo ažurirati ovaj vodič čim nove informacije budu dostupne._
@@ -17,10 +17,10 @@ _Ovaj vodič je pružen isključivo u obrazovne i informativne svrhe. Ne podrža
 
 ---
 
-JoinBot je novi alat koji je dodat u Samourai Wallet paket sa najnovijim ažuriranjem 0.99.98f poznatog Bitcoin Wallet softvera. Omogućava vam da lako napravite kolaborativnu transakciju kako biste optimizovali svoju privatnost, bez potrebe da tražite partnera.
+JoinBot je novi alat koji je dodat u paket Samourai novčanika sa najnovijim ažuriranjem 0.99.98f poznatog Bitcoin Wallet softvera. Omogućava vam da lako napravite kolaborativnu transakciju kako biste optimizovali svoju privatnost, bez potrebe da tražite partnera.
 
 
-*Zahvaljujući izvrsnom Fanisu Mihalakisu za ideju korišćenja DALL-E za sličicu!*
+*Zahvaljujujem sjajnom Fanisu Mihalakisu na ideji da se za naslovnu sliku iskoristi DALL-E!*
 
 
 ## Šta je kolaborativna transakcija na Bitcoin?
