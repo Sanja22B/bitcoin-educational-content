@@ -269,8 +269,8 @@ Na primer, Whirlpool tip coinjoin transakcije nema determinističke veze, te zat
 
 
 - Boltzmann kod na Samourai
-- [Bitcoin Transakcije i Privatnost (Deo I) od Laurent MT](https://gist.github.com/LaurentMT/e758767ca4038ac40aaf)
-- [Bitcoin Transakcije i Privatnost (Deo II) od Laurent MT](https://gist.github.com/LaurentMT/d361bca6dc52868573a2)
-- [Bitcoin Transakcije i Privatnost (Deo III) od Laurent MT](https://gist.github.com/LaurentMT/e8644d5bc903f02613c6)
+- [Bitcoin transakcije i privatnost (Deo I) od Laurent MT](https://gist.github.com/LaurentMT/e758767ca4038ac40aaf)
+- [Bitcoin transakcije i privatnost (Deo II) od Laurent MT](https://gist.github.com/LaurentMT/d361bca6dc52868573a2)
+- [Bitcoin transakcije i privatnost (Deo III) od Laurent MT](https://gist.github.com/LaurentMT/e8644d5bc903f02613c6)
 - KYCP Vebsajt
-- [Medium Članak o Uvodu u Boltzmann Skriptu autora Laurent MT](https://medium.com/@laurentmt/introducing-boltzmann-85930984a159)
+- [Medium članak o uvodu u boltzmann skriptu autora Laurent MT](https://medium.com/@laurentmt/introducing-boltzmann-85930984a159)
