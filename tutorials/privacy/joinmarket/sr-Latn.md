@@ -1,7 +1,7 @@
 ---
 name: JoinMarket
 
-description: Vodič i uputstvo kako koristiti JoinMarket za CoinJoin preko Bitcoin putem komandne linije
+description: Vodič i uputstvo za korišćenje JoinMarket-a za CoinJoin transakcije na Bitcoinu putem komandne linije.
 ---
 
 ![cover](assets/cover.webp)
@@ -18,19 +18,18 @@ Cilj ovog tutorijala je da ilustruje teorijski i praktični rad JoinMarket-a, pu
 
 
 
-## JoinMarket Teorijska Definicija
+## Teorijska definicija JoinMarket-a
 
 
 
-Možemo definisati JoinMarket kao alat, ili Wallet, koji omogućava CoinJoin sa drugim korisnicima na potpuno Trustless način i bez ikakvog centralnog koordinatora.
+JoinMarket možemo definisati kao alat ili novčanik koji omogućava CoinJoin sa drugim korisnicima, bez potrebe za poverenjem i bez centralnog posrednika.
+
+
+Pošto je ceo teorijski deo ovog alata izuzetno širok, odlučio sam da ga adresiramo u specifičnoj epizodi mog podkasta. Za one koji razumeju italijanski, toplo preporučujem da nastavite sa čitanjem nakon slušanja epizode, kako biste bolje usvojili osnovne koncepte za pravilno korišćenje ovog programa.
 
 
 
-Pošto je ceo teorijski deo ovog alata izuzetno širok, odlučio sam da ga Address u specifičnoj epizodi mog podkasta. Za one koji razumeju italijanski, toplo preporučujem da nastavite sa čitanjem nakon slušanja epizode, kako biste bolje usvojili osnovne koncepte za pravilno korišćenje ovog programa.
-
-
-
-Možete nadoknaditi epizodu na ovim direktnim linkovima:
+Epizodu možete pogledati putem sledećih direktnih linkova:
 
 
 
@@ -60,7 +59,7 @@ Operativni sistemi:
 
 
 
-## Konfiguracione Datoteke
+## Konfiguracione datoteke
 
 
 
@@ -81,7 +80,7 @@ python wallet-tool.py generate
 ```
 
 
-U ovom trenutku bismo trebali dobiti grešku, ali to će uzrokovati da softver generate unapred postavljenu datoteku sa podešavanjima za nas. Možemo otići i urediti datoteku sa podešavanjima iz terminala sa:
+U ovom trenutku bismo trebali dobiti grešku, ali to će uzrokovati da softver generiše unapred postavljenu datoteku sa podešavanjima za nas. Možemo otići i urediti datoteku sa podešavanjima iz terminala sa:
 
 
 
