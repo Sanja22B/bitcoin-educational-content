@@ -1,16 +1,16 @@
 ---
 name: Mempool
-description: Istražite čitav ekosistem Bitcoin.
+description: Istražite čitav Bitcoin ekosistem.
 ---
 
 ![cover](assets/cover.webp)
 
 
 
-Protokol Bitcoin je pseudoniman, decentralizovan mreža otvorena za konsultacije. Članovi (čvorovi), tj. računari sa instancom Bitcoin softvera, imaju neograničen pristup svim podacima objavljenim na Bitcoin. Međutim, u ranim godinama Bitcoin, protokol nije bio tako široko dostupan kao što je danas.
+Bitcoin protokol predstavlja pseudonimnu i decentralizovanu mrežu kojoj svako može pristupiti i pregledati je. Članovi (čvorovi), tj. računari sa instancom Bitcoin softvera, imaju neograničen pristup svim podacima objavljenim na Bitcoin-u. Međutim, u ranim godinama Bitcoin-a, protokol nije bio tako široko dostupan kao što je danas.
 
 
-U ranim danima Bitcoin, bilo je neophodno pokrenuti Bitcoin čvor kako bi se pristupilo odgovarajućim alatima (bitcoin-cli) za ispitivanje mreže putem komandnih linija.
+U ranim Bitcoin danima, bilo je neophodno pokrenuti Bitcoin čvor kako bi se pristupilo odgovarajućim alatima (bitcoin-cli) za ispitivanje mreže putem komandnih linija.
 
 
 
@@ -22,7 +22,7 @@ Pokrenuti su projekti za proširenje Bitcoin zajednice, čineći je dostupnijom 
 
 
 
-U ovom vodiču ćemo pogledati projekat **Mempool.space**, njegove karakteristike i uticaj koji je imao na ekosistem Bitcoin.
+U ovom vodiču ćemo pogledati projekat **Mempool.space**, njegove karakteristike i uticaj koji je imao na Bitcoin ekosistem.
 
 
 
