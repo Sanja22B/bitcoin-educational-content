@@ -430,26 +430,26 @@ Ova heuristika je očigledno prilično slaba, ali može pomoći u smanjenju nesi
 
 ## Kako se zaštititi od analize lanca?
 
-Kao korisnik Bitcoin, imate pravo da zaštitite svoju privatnost. Ovo proizlazi iz vaših prirodnih prava da posedujete i raspolažete sobom, koja su svojstvena svakom pojedincu, bez obzira na bilo kakva zakonodavna ograničenja.
+Kao Bitcoin korisnik, imate pravo da zaštitite svoju privatnost. Ovo proizlazi iz vaših prirodnih prava da posedujete i raspolažete sobom, koja su svojstvena svakom pojedincu, bez obzira na bilo kakva zakonodavna ograničenja.
 
 
 Ovo prirodno pravo na zaštitu privatnosti takođe se pretvara u pravo-potraživanje, utvrđeno u članu 12 Univerzalne deklaracije o ljudskim pravima, koje navodi da "*Niko ne sme biti podvrgnut proizvoljnom mešanju u njegovu privatnost, porodicu, dom ili prepisku, niti napadima na njegovu čast i ugled. Svi imaju pravo na zakonsku zaštitu protiv takvog mešanja ili napada.*".
 
 
-Međutim, osnovna delatnost kompanija koje se bave analizom lanaca upravo se sastoji u upadanju u vašu privatnu sferu, čime se ugrožava poverljivost vaše prepiske. Iako bi se moglo nadati da će, u skladu sa prethodno pomenutim pravom na zahtev, države energično braniti našu privatnost, ne samo da to zanemaruju, već i značajno finansiraju finansiranje ovih analitičkih kompanija. Takođe bi bilo uzaludno nadati se podršci od strane sektorskih udruženja, koja izgleda spremna da učine sve ustupke pred zakonodavcem.
+Međutim, osnovna delatnost kompanija koje se bave analizom lanaca upravo se sastoji u upadanju u vašu privatnu sferu, čime se ugrožava poverljivost vaše prepiske. Iako bi se moglo nadati da će, u skladu sa prethodno pomenutim pravu na zaštitu, države energično braniti našu privatnost, ne samo da to zanemaruju, već i značajno finansiraju finansiranje ovih analitičkih kompanija. Bilo bi uzaludno i nadati se podršci strukovnih udruženja, koja deluju spremno da pristanu na sve ustupke pred zakonodavcem.
 
 
-De facto, this claim-right to privacy on Bitcoin does not exist. It is therefore up to you, the user, to assert your natural right and protect the confidentiality of your correspondence. This involves adopting various techniques and usage practices, which will allow you to prevent or deceive the heuristics used for chain analysis.
+De fakto, ovo pravo na privatnost u okviru Bitcoina ne postoji. Stoga je na vama, korisniku, da afirmišete svoje prirodno pravo i zaštitite poverljivost svoje prepiske. To podrazumeva usvajanje različitih tehnika i načina upotrebe, koji će vam omogućiti da sprečite ili zavarate heuristike koje se koriste u analizi lanca.
 
 
 ### Izbegavanje upadanja u heuristike
 
-Prvo i najvažnije, pre nego što razmotrimo radikalnije metode, preporučljivo je da ograničimo našu izloženost heuristikama koje se koriste za analizu lanaca koliko god je to moguće. Kao što je ranije pomenuto, dve najmoćnije heuristike su Address ponovna upotreba i CoinJoin.
+Prvo i najvažnije, pre nego što razmotrimo radikalnije metode, preporučljivo je da ograničimo našu izloženost heuristikama koje se koriste za analizu lanaca koliko god je to moguće. Kao što je ranije pomenuto, dve najmoćnije heuristike su ponovna upotreba adresa i CoinJoin.
 
 
-Osnovni princip za osiguranje vaše privatnosti na Bitcoin leži u korišćenju novog, čistog Address za svaku dolaznu transakciju na vaš Wallet. Ponovna upotreba Address je zaista glavna pretnja poverljivosti na Bitcoin.
+Osnovni princip za osiguranje vaše privatnosti na Bitcoin-u leži u korišćenju nove, čiste adrese za svaku dolaznu transakciju na vašem nov;aniku. Ponovna upotreba adrese je zaista glavna pretnja poverljivosti na Bitcoin-u.
 
-Za pojedinačnog korisnika, generisanje novog Address za svaku dolaznu uplatu je veoma jednostavno. Moderni novčanici to rade automatski čim kliknete na "Primi". Dakle, ako pridajete i najmanji značaj privatnosti vaših transakcija, korišćenje novih adresa predstavlja apsolutni minimum. Ako vam ikada zatreba statična tačka kontakta na internetu, umesto da stavite primajući Address, možete koristiti rešenja [poput PayNym koja implementiraju BIP47](https://planb.network/tutorials/privacy/on-chain/paynym-bip47-a492a70b-50eb-4f95-a766-bae2c5535093).
+Za pojedinačnog korisnika, generisanje nove adrese za svaku dolaznu uplatu je veoma jednostavno. Moderni novčanici to rade automatski čim kliknete na "Primi" (eng. Receive). Dakle, ako pridajete i najmanji značaj privatnosti vaših transakcija, korišćenje novih adresa predstavlja apsolutni minimum. Ako vam ikada zatreba statična tačka kontakta na internetu, umesto da stavite primajuću adresu, možete koristiti rešenja [poput PayNym koja implementiraju BIP47](https://planb.network/tutorials/privacy/on-chain/paynym-bip47-a492a70b-50eb-4f95-a766-bae2c5535093).
 
 Dalje, ako želite da se suprotstavite analizi lanca, izbegavajte spajanje UTXO-a na ulazu transakcije. U najmanju ruku, ako zaista morate da spojite, preferirajte UTXO-e koji imaju isti izvor. Ova preporuka podrazumeva dobro upravljanje vašim UTXO-ima. Kada kupujete svoje bitkoine, preferirajte transfere koji uključuju velike iznose kako biste maksimizirali broj plaćanja koja možete izvršiti bez potrebe za spajanjem. Takođe vam savetujem da označite svoje UTXO-e u svom softveru kako biste identifikovali njihovo poreklo i izbegli spajanje iz različitih izvora.
 
@@ -467,32 +467,32 @@ Dalje, ako želite da se suprotstavite analizi lanca, izbegavajte spajanje UTXO-
 
 ### Korišćenje alata za privatnost
 
-Takođe možete koristiti metode koje čine vašu upotrebu Bitcoin dvosmislenom kako biste sprečili ili zavarali analizu lanca.
+Takođe možete koristiti metode koje čine vašu upotrebu Bitcoin-a dvosmislenom kako biste sprečili ili zavarali analizu lanca.
 
 
 Najpopularnija tehnika je sigurno CoinJoin, kolaborativna struktura transakcija koja mobilizuje nekoliko UTXO-a istih iznosa. Cilj ovde je razbijanje determinističkih veza, čime se sprečavaju analize od sadašnjosti ka prošlosti i od prošlosti ka sadašnjosti. CoinJoin omogućava verodostojno poricanje skrivajući vaše kovanice unutar velike grupe neprepoznatljivih kovanica. Ako želite da saznate više o CoinJoin, kako tehnički tako i praktično, predlažem da pročitate ove druge članke i tutorijale:
 
 
-- [CoinJoin - SAMOURAI Wallet](https://planb.network/tutorials/privacy/on-chain/coinjoin-samourai-wallet-e566803d-ab3f-4d98-9136-5462009262ef);
-- [CoinJoin - SPARROW Wallet](https://planb.network/tutorials/privacy/on-chain/coinjoin-sparrow-wallet-84def86d-faf5-4589-807a-83be60720c8b);
+- [CoinJoin - SAMOURAI novčanik](https://planb.network/tutorials/privacy/on-chain/coinjoin-samourai-wallet-e566803d-ab3f-4d98-9136-5462009262ef);
+- [CoinJoin - SPARROW novčanik](https://planb.network/tutorials/privacy/on-chain/coinjoin-sparrow-wallet-84def86d-faf5-4589-807a-83be60720c8b);
 - [Whirlpool STATS TOOLS - ANONSETS](https://planb.network/tutorials/privacy/analysis/wst-anonsets-0354b793-c301-48af-af75-f87569756375).
 
 ![analysis](assets/en/13.webp)
 
 
-CoinJoin je odličan alat za stvaranje uverljive poricljivosti za novčiće, ali nije optimizovan za sve potrebe korisničke privatnosti. Konkretno, CoinJoin nije dizajniran da postane alat za plaćanje. Veoma je rigidan u pogledu iznosa koji se razmenjuju kako bi se usavršila proizvodnja uverljive poricljivosti. Pošto se ne može slobodno birati iznos transakcijskih izlaza, CoinJoin se ne može koristiti za plaćanja u bitkoinima.
+CoinJoin je odličan alat za stvaranje uverljive poricljivosti za novčiće, ali nije optimizovan za sve potrebe korisničke privatnosti. Konkretno, CoinJoin nije dizajniran da postane alat za plaćanje. Veoma je rigidan kada je reč o iznosima koji se razmenjuju, kako bi se postigla maksimalna verodostojnost u mogućnosti poricanja (plausible deniability). Pošto se ne može slobodno birati iznos transakcijskih izlaza, CoinJoin se ne može koristiti za plaćanja u bitkoinima.
 
 
-Na primer, zamislite da želim da platim svoj baget u bitkoinima dok optimizujem svoju privatnost. S obzirom na nemogućnost odabira iznosa rezultujućeg UTXO iz CoinJoin, našao bih se u situaciji da ne mogu prilagoditi iznos svoje potrošnje ceni koju je postavio pekar. Stoga, CoinJoin se pokazuje kao neadekvatan za platne transakcije.
+Na primer, zamislite da želim da platim svoj baget u bitkoinima dok optimizujem svoju privatnost. S obzirom na nemogućnost odabira iznosa rezultujućeg UTXO-a iz CoinJoin-a, našao bih se u situaciji da ne mogu prilagoditi iznos svoje potrošnje ceni koju je postavio pekar. Stoga, CoinJoin se pokazuje kao neadekvatan za platne transakcije.
 
 
-Drugi alati su osmišljeni kako bi zadovoljili potrebe privatnosti u specifičnijim slučajevima upotrebe. Na primer, imamo [PayJoin](https://planb.network/tutorials/privacy/on-chain/payjoin-848b6a23-deb2-4c5f-a27e-93e2f842140f), vrstu mini-CoinJoin, koja uključuje samo dva učesnika i zasniva se na strukturi koja omogućava plaćanje.
+Drugi alati su osmišljeni kako bi zadovoljili potrebe privatnosti u specifičnijim slučajevima upotrebe. Na primer, imamo [PayJoin](https://planb.network/tutorials/privacy/on-chain/payjoin-848b6a23-deb2-4c5f-a27e-93e2f842140f), vrstu mini-CoinJoin-a, koja uključuje samo dva učesnika i zasniva se na strukturi koja omogućava plaćanje.
 
 
-Jedinstvenost PayJoin leži u njegovoj sposobnosti da proizvede transakciju koja izgleda obično, dok je zapravo mini-CoinJoin između dva korisnika. U ovoj strukturi, primalac transakcije učestvuje među ulazima zajedno sa stvarnim pošiljaocem. Tako primalac ubacuje uplatu sebi unutar transakcije koja omogućava stvarnu uplatu.
+Jedinstvenost PayJoin-a leži u njegovoj sposobnosti da proizvede transakciju koja izgleda obično, dok je zapravo mini-CoinJoin između dva korisnika. U ovoj strukturi, primalac transakcije učestvuje među ulazima zajedno sa stvarnim pošiljaocem. Tako primalac ubacuje uplatu sebi unutar transakcije koja omogućava stvarnu uplatu.
 
 
-Na primer, ako kupite baget od svog pekara za 6,000 Sats od UTXO od 10,000 Sats, i želite da uradite PayJoin, vaš pekar će dodati UTXO od 15,000 Sats koji pripada njima kao ulaz u vašu originalnu transakciju, koji će u potpunosti povratiti kao izlaz, kako bi prevarili heuristike:
+Na primer, ako kupite baget od svog pekara za 6,000 satošija koristeći UTXO od 10,000 satošija, i želite da uradite PayJoin, vaš pekar će dodati UTXO od 15,000 satošija koji pripada njima kao ulaz u vašu originalnu transakciju, koji će u potpunosti povratiti kao izlaz, kako bi prevarili heuristike:
 
 
 ![analysis](assets/en/14.webp)
@@ -501,18 +501,18 @@ Na primer, ako kupite baget od svog pekara za 6,000 Sats od UTXO od 10,000 Sats,
 Naknade za transakcije su zanemarene kako bi se pojednostavilo razumevanje šeme.
 
 
-Ciljevi PayJoin su dvostruki. Prvo, ima za cilj da prevari spoljnog posmatrača stvaranjem mamca kroz COH. Zaista, kada analitičar posmatra ovu transakciju, pomisliće da može primeniti COH, i tako pretpostaviti zajednički Ownership različitih ulaza. U stvarnosti, ova pretpostavka je netačna, jer jedan ulaz pripada pošiljaocu, dok drugi pripada primaocu. Stoga, PayJoin kvari analizu lanca vodeći analitičara pogrešnim putem.
+Ciljevi PayJoin-a su dvostruki. Prvo, ima za cilj da prevari spoljnog posmatrača stvaranjem mamca kroz COH. Zaista, kada analitičar posmatra ovu transakciju, pomisliće da može primeniti COH, i tako pretpostaviti zajedničko vlasništvo nad različitim ulazima. U stvarnosti, ova pretpostavka je netačna, jer jedan ulaz pripada pošiljaocu, dok drugi pripada primaocu. Stoga, PayJoin kvari analizu lanca vodeći analitičara pogrešnim putem.
 
-Drugi cilj PayJoin je da prevari analitičara o stvarnom iznosu transakcije, zahvaljujući specifičnoj strukturi svojih izlaza. Tako PayJoin spada u oblast steganografije. Omogućava da se stvarni iznos transakcije sakrije unutar obmanjujuće transakcije.
-
-
-Zaista, ako ponovo razmotrimo naš primer korišćenja PayJoin za kupovinu bageta, spoljašnji posmatrač bi mogao pomisliti da se bavimo uplatom od 4,000 Sats ili 21,000 Sats. U stvarnosti, uplata za baget je 6,000 Sats: 21,000 - 15,000 = 6,000. Prava vrednost uplate je stoga skrivena unutar lažne uplate koja služi kao mamac za analizu lanca.
+Drugi cilj PayJoin-a je da prevari analitičara o stvarnom iznosu transakcije, zahvaljujući specifičnoj strukturi svojih izlaza. Tako PayJoin spada u oblast steganografije. Omogućava da se stvarni iznos transakcije sakrije unutar obmanjujuće transakcije.
 
 
-Iza PayJoin i CoinJoin, postoje mnoge druge Bitcoin strukture transakcija koje ili blokiraju analizu lanca ili je obmanjuju. Među njima, mogao bih pomenuti [Stonewall](https://planb.network/tutorials/privacy/on-chain/stonewall-033daa45-d42c-40e1-9511-cea89751c3d4) i [StonewallX2](https://planb.network/tutorials/privacy/on-chain/stonewall-x2-05120280-f6f9-4e14-9fb8-c9e603f73e5b) transakcije, koje omogućavaju ili pravljenje fleksibilnog mini CoinJoin ili imitaciju fleksibilnog mini CoinJoin. Tu su i [Ricochet](https://planb.network/tutorials/privacy/on-chain/ricochet-e0bb1afe-becd-44a6-a940-88a463756589) transakcije koje simuliraju promenu Ownership bitkoina pravljenjem mnoštva lažnih transfera sebi.
+Zaista, ako ponovo razmotrimo naš primer korišćenja PayJoin-a za kupovinu bageta, spoljašnji posmatrač bi mogao pomisliti da se bavimo uplatom od 4,000 satošija ili 21,000 satošija. U stvarnosti, uplata za baget je 6,000 satošija: 21,000 - 15,000 = 6,000. Prava vrednost uplate je stoga skrivena unutar lažne uplate koja služi kao mamac za analizu lanca.
 
 
-Svi ovi alati su dostupni na Samourai Wallet na mobilnom uređaju i Sparrow Wallet na računaru. Ako želite da saznate više o ovim specifičnim strukturama transakcija, savetujem vam da pogledate moje tutorijale:
+Iza PayJoin-a i CoinJoin-a, postoje mnoge druge Bitcoin strukture transakcija koje ili blokiraju analizu lanca ili je obmanjuju. Među njima, mogao bih pomenuti [Stonewall](https://planb.network/tutorials/privacy/on-chain/stonewall-033daa45-d42c-40e1-9511-cea89751c3d4) i [StonewallX2](https://planb.network/tutorials/privacy/on-chain/stonewall-x2-05120280-f6f9-4e14-9fb8-c9e603f73e5b) transakcije, koje omogućavaju ili pravljenje fleksibilnog mini CoinJoin-a ili imitaciju fleksibilnog mini CoinJoin-a. Tu su i [Ricochet](https://planb.network/tutorials/privacy/on-chain/ricochet-e0bb1afe-becd-44a6-a940-88a463756589) transakcije koje simuliraju promenu vlasništva nad bitkoinima pravljenjem mnoštva lažnih transfera sebi.
+
+
+Svi ovi alati su dostupni na Samourai novčaniku na mobilnom uređaju i Sparrow novčaniku na računaru. Ako želite da saznate više o ovim specifičnim strukturama transakcija, savetujem vam da pogledate moje tutorijale:
 
 
 - [PayJoin](https://planb.network/tutorials/privacy/on-chain/payjoin-848b6a23-deb2-4c5f-a27e-93e2f842140f);
@@ -525,7 +525,7 @@ Svi ovi alati su dostupni na Samourai Wallet na mobilnom uređaju i Sparrow Wall
 
 ## Zaključak
 
-Analiza lanca je praksa koja uključuje pokušaj praćenja toka bitkoina On-Chain. Da bi to uradili, analitičari traže obrasce i karakteristike kako bi izveli manje ili više plauzibilne hipoteze i interpretacije.
+Analiza lanca je praksa koja uključuje pokušaj praćenja toka bitkoina na on-chain-u. Da bi to uradili, analitičari traže obrasce i karakteristike kako bi izveli manje ili više verovatne hipoteze i interpretacije.
 
 
 Tačnost ovih heuristika varira: neke pružaju viši stepen sigurnosti od drugih, ali nijedna ne može tvrditi da je nepogrešiva. Međutim, akumulacija nekoliko konvergentnih heuristika može ublažiti ovu inherentnu sumnju, iako je nemoguće potpuno je eliminisati.
@@ -538,16 +538,16 @@ Možemo kategorizovati ove metode u tri različite glavne kategorije:
 - Eksterne heuristike, koje obuhvataju analizu transakcije u njenom okruženju, kao i sve spoljašnje podatke koji mogu pružiti uvid.
 
 
-Kao korisnik Bitcoin, neophodno je savladati osnovne principe analize lanca kako biste je efikasno suzbili i time zaštitili svoju privatnost.
+Kao Bitcoin korisnik, neophodno je savladati osnovne principe analize lanca kako biste je efikasno suzbili i time zaštitili svoju privatnost.
 
 
 ## Tehnički Mini-Rečnik:
 
-**P2PKH:** akronim za Pay to Public Key Hash. To je standardni skript model koji se koristi za uspostavljanje uslova trošenja na UTXO. Omogućava zaključavanje bitkoina na Hash javnog ključa, odnosno na primajućem Address. Ovaj skript je povezan sa Legacy standardom i uveden je u prvim verzijama Bitcoin od strane Satoshi Nakamoto. Za razliku od P2PK, gde je javni ključ eksplicitno uključen u skript, P2PKH koristi kriptografski otisak javnog ključa, sa nekim metapodacima, koji se takođe naziva "primajući Address". Ovaj skript uključuje RIPEMD160 Hash SHA256 javnog ključa i propisuje da, kako bi pristupio sredstvima, primalac mora obezbediti javni ključ koji odgovara ovom Hash, kao i važeći digitalni potpis generisan iz povezanog privatnog ključa. P2PKH adrese su kodirane koristeći Base58Check format, koji im daje otpornost na tipografske greške kroz upotrebu kontrolne sume. Ove adrese uvek počinju sa brojem 1.
+**P2PKH:** akronim za Pay to Public Key Hash. To je standardni skript model koji se koristi za uspostavljanje uslova trošenja nad UTXO-em. Omogućava zaključavanje bitkoina na heš javnog ključa, odnosno na primajućoj adresi. Ovaj skript je povezan sa Legacy standardom i uveden je u prvim verzijama Bitcoin-a od strane Satoshi Nakamoto-a. Za razliku od P2PK, gde je javni ključ eksplicitno uključen u skript, P2PKH koristi kriptografski otisak javnog ključa, sa nekim metapodacima, koji se takođe naziva "primajuća adresa". Ovaj skript uključuje RIPEMD160 Hash SHA256 javnog ključa i propisuje da, kako bi pristupio sredstvima, primalac mora obezbediti javni ključ koji odgovara ovom hešu, kao i važeći digitalni potpis generisan iz povezanog privatnog ključa. P2PKH adrese su kodirane koristeći Base58Check format, koji im daje otpornost na tipografske greške kroz upotrebu kontrolne sume. Ove adrese uvek počinju sa brojem 1.
 
-**P2TR:** akronim za Pay to Taproot ("plati korenu"). To je standardni model skripte koji se koristi za uspostavljanje uslova trošenja na UTXO. P2TR je uveden implementacijom Taproot u novembru 2021. Koristi Schnorr protokol za agregaciju kriptografskih ključeva, kao i Merkle stabla za alternativne skripte, poznate kao MAST (Merkelized Alternative Script Tree). Za razliku od tradicionalnih transakcija gde su uslovi trošenja javno izloženi (ponekad pri prijemu, ponekad pri trošenju), P2TR omogućava skrivanje složenih skripti iza jednog očiglednog javnog ključa. Tehnički, P2TR skripta zaključava bitkoine na jedinstveni Schnorr javni ključ, označen kao K. Međutim, ovaj K ključ je zapravo agregat javnog ključa P i javnog ključa M, pri čemu se potonji izračunava iz Merkle Root liste ScriptPubKeys. Agregacija ključeva se vrši korišćenjem Schnorr protokola potpisa. Bitkoini zaključani sa P2TR skriptom mogu se potrošiti na dva različita načina: ili objavljivanjem potpisa za javni ključ P, ili ispunjavanjem jedne od skripti sadržanih u Merkle Tree. Prva opcija se zove "put ključa", a druga "put skripte". Tako P2TR omogućava korisnicima da šalju bitkoine ili na javni ključ ili na više skripti po svom izboru. Još jedna prednost ove skripte je što, iako postoji više načina za trošenje P2TR izlaza, samo onaj koji se koristi treba da bude otkriven pri trošenju, omogućavajući da neiskorišćene alternative ostanu privatne. Na primer, zahvaljujući Schnorr agregaciji ključeva, javni ključ P može sam po sebi biti agregirani ključ, potencijalno predstavljajući Multisig. P2TR je verzija 1 SegWit izlaza, što znači da se potpisi za P2TR ulaze čuvaju u svedoku transakcije, a ne u ScriptSig. P2TR adrese koriste Bech32m kodiranje i počinju sa bc1p.
+**P2TR:** akronim za Pay to Taproot ("plati korenu"). To je standardni model skripte koji se koristi za uspostavljanje uslova trošenja na UTXO-u. P2TR je uveden implementacijom Taproot-a u novembru 2021. Koristi Schnorr protokol za agregaciju kriptografskih ključeva, kao i Merkle stabla za alternativne skripte, poznate kao MAST (Merkelized Alternative Script Tree). Za razliku od tradicionalnih transakcija gde su uslovi trošenja javno izloženi (ponekad pri prijemu, ponekad pri trošenju), P2TR omogućava skrivanje složenih skripti iza jednog očiglednog javnog ključa. Tehnički, P2TR skripta zaključava bitkoine na jedinstveni Schnorr javni ključ, označen kao K. Međutim, ovaj K ključ je zapravo agregat javnog ključa P i javnog ključa M, pri čemu se potonji izračunava iz Merkle Root liste ScriptPubKeys. Agregacija ključeva se vrši korišćenjem Schnorr protokola potpisa. Bitkoini zaključani sa P2TR skriptom mogu se potrošiti na dva različita načina: ili objavljivanjem potpisa za javni ključ P, ili ispunjavanjem jedne od skripti sadržanih u Merkle Tree. Prva opcija se zove "put ključa", a druga "put skripte". Tako P2TR omogućava korisnicima da šalju bitkoine ili na javni ključ ili na više skripti po svom izboru. Još jedna prednost ove skripte je što, iako postoji više načina za trošenje P2TR izlaza, samo onaj koji se koristi treba da bude otkriven pri trošenju, omogućavajući da neiskorišćene alternative ostanu privatne. Na primer, zahvaljujući Schnorr agregaciji ključeva, javni ključ P može sam po sebi biti agregirani ključ, potencijalno predstavljajući Multisig. P2TR je verzija 1 SegWit izlaza, što znači da se potpisi za P2TR ulaze čuvaju u svedoku transakcije, a ne u ScriptSig. P2TR adrese koriste Bech32m kodiranje i počinju sa bc1p.
 
-**P2WPKH:** Akronim za Pay to Witness Public Key Hash. To je standardni model skripte koji se koristi za uspostavljanje uslova trošenja na UTXO. P2WPKH je uveden implementacijom SegWit u avgustu 2017. Ova skripta je slična P2PKH (Pay to Public Key Hash), jer takođe zaključava bitkoine na osnovu Hash javnog ključa, odnosno, primajućeg Address. Razlika leži u načinu na koji se potpisi i skripte uključuju u transakciju. U slučaju P2WPKH, informacija o skripti potpisa (ScriptSig) se premješta iz tradicionalne strukture transakcije u poseban odeljak nazvan Witness. Ovo premještanje je karakteristika SegWit (Segregated Witness) ažuriranja. Ova tehnika ima prednost smanjenja veličine podataka transakcije u glavnom telu, dok zadržava neophodnu skriptu za validaciju u posebnom odeljku. Kao rezultat, P2WPKH transakcije su generalno manje skupe u smislu naknada u poređenju sa Legacy transakcijama. P2WPKH adrese su napisane koristeći Bech32 kodiranje, što doprinosi konciznijem i manje sklonom greškama pisanju zahvaljujući BCH kontrolnoj sumi. Ove adrese uvek počinju sa bc1q, što ih čini lako prepoznatljivim od Legacy primajućih adresa. P2WPKH je verzija 0 SegWit izlaza.
+**P2WPKH:** Akronim za Pay to Witness Public Key Hash. To je standardni model skripte koji se koristi za uspostavljanje uslova trošenja na UTXO. P2WPKH je uveden implementacijom SegWit u avgustu 2017. Ova skripta je slična P2PKH (Pay to Public Key Hash), jer takođe zaključava bitkoine na osnovu heša javnog ključa, odnosno, na primajućoj adresi. Razlika leži u načinu na koji se potpisi i skripte uključuju u transakciju. U slučaju P2WPKH, informacija o skripti potpisa (ScriptSig) se premješta iz tradicionalne strukture transakcije u poseban odeljak nazvan Witness. Ovo premještanje je karakteristika SegWit (Segregated Witness) ažuriranja. Ova tehnika ima prednost smanjenja veličine podataka transakcije u glavnom delu, dok zadržava neophodnu skriptu za validaciju u posebnom odeljku. Kao rezultat, P2WPKH transakcije su generalno manje skupe u smislu naknada u poređenju sa Legacy transakcijama. P2WPKH adrese su napisane koristeći Bech32 kodiranje, što doprinosi konciznijem i manje sklonom greškama pisanju zahvaljujući BCH kontrolnoj sumi. Ove adrese uvek počinju sa bc1q, što ih čini lako prepoznatljivim od Legacy primajućih adresa. P2WPKH je verzija 0 SegWit izlaza.
 
 
-**UTXO:** Akronim za Neutrošeni Izlaz Transakcije. UTXO je izlaz transakcije koji još nije potrošen ili korišćen kao ulaz za novu transakciju. UTXO-i predstavljaju deo bitkoina koji korisnik poseduje i koji su trenutno dostupni za trošenje. Svaki UTXO je povezan sa specifičnim izlaznim skriptom, koji definiše neophodne uslove za trošenje bitkoina. Transakcije u Bitcoin koriste ove UTXO-e kao ulaze i kreiraju nove UTXO-e kao izlaze. Model UTXO je fundamentalni za Bitcoin, jer omogućava laku verifikaciju da transakcije ne pokušavaju da potroše bitkoine koji ne postoje ili su već potrošeni. U suštini, UTXO je deo Bitcoin.
+**UTXO:** Akronim za Neutrošeni Izlaz Transakcije. UTXO je izlaz transakcije koji još nije potrošen ili korišćen kao ulaz za novu transakciju. UTXO-i predstavljaju deo bitkoina koji korisnik poseduje i koji su trenutno dostupni za trošenje. Svaki UTXO je povezan sa specifičnim izlaznim skriptom, koji definiše neophodne uslove za trošenje bitkoina. Transakcije u Bitcoin-u koriste ove UTXO-e kao ulaze i kreiraju nove UTXO-e kao izlaze. Model UTXO-a je fundamentalni za Bitcoin, jer omogućava laku verifikaciju da transakcije ne pokušavaju da potroše bitkoine koji ne postoje ili su već potrošeni. U suštini, UTXO je deo bitcoina.
