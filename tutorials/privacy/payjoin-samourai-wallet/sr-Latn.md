@@ -1,14 +1,14 @@
 ---
-name: PayJoin - Samourai Wallet
-description: Kako izvršiti PayJoin transakciju na Samourai Wallet?
+name: PayJoin - Samourai novčanik
+description: Kako izvršiti PayJoin transakciju na Samourai novčaniku?
 ---
 ![samourai payjoin cover](assets/cover.webp)
 
 
-***PAŽNJA:** Nakon hapšenja osnivača Samourai Wallet i zaplene njihovih servera 24. aprila, Payjoins Stowaway na Samourai Wallet funkcioniše samo ručnom razmenom PSBT između uključenih strana, pod uslovom da su oba korisnika povezana na svoj Dojo. Što se tiče Sparrow-a, Payjoins putem BIP78 i dalje rade. Međutim, moguće je da će ovi alati biti ponovo pokrenuti u narednim nedeljama. U međuvremenu, možete pročitati ovaj članak da biste razumeli teorijsko funkcionisanje Stowaway.*
+***PAŽNJA:** Nakon hapšenja osnivača Samourai novčanika i zaplene njihovih servera 24. aprila, Payjoins Stowaway na Samourai novčaniku funkcioniše samo ručnom razmenom PSBT između uključenih strana, pod uslovom da su oba korisnika povezana na svoj Dojo. Što se tiče Sparrow-a, Payjoins putem BIP78 i dalje rade. Međutim, moguće je da će ovi alati biti ponovo pokrenuti u narednim nedeljama. U međuvremenu, možete pročitati ovaj članak da biste razumeli teorijsko funkcionisanje Stowaway.*
 
 
-_Ako planirate da ručno izvršite Stowaway, procedura je veoma slična onoj opisanoj u ovom vodiču. Glavna razlika je u izboru tipa Stowaway transakcije: umesto da izaberete `Online`, kliknite na `In Person / Manual`. Zatim ćete morati ručno da Exchange PSBT-ove kako biste konstruisali Stowaway transakciju. Ako ste fizički blizu svog saradnika, možete skenirati QR kodove uzastopno. Ako ste na udaljenosti, JSON fajlovi se mogu razmeniti putem sigurnog komunikacionog kanala. Ostatak vodiča ostaje nepromenjen._
+_Ako planirate da ručno izvršite Stowaway, procedura je veoma slična onoj opisanoj u ovom vodiču. Glavna razlika je u izboru tipa Stowaway transakcije: umesto da izaberete `Online`, kliknite na `In Person / Manual`. Zatim ćete morati ručno da razmenite PSBT-ove kako biste konstruisali Stowaway transakciju. Ako ste fizički blizu svog saradnika, možete skenirati QR kodove uzastopno. Ako ste na udaljenosti, JSON fajlovi se mogu razmeniti putem sigurnog komunikacionog kanala. Ostatak vodiča ostaje nepromenjen._
 
 
 _Pažljivo pratimo razvoj ovog slučaja kao i razvoj povezanih alata. Budite sigurni da ćemo ažurirati ovaj vodič čim nove informacije postanu dostupne._
@@ -19,9 +19,9 @@ _Ovaj vodič je pružen isključivo u obrazovne i informativne svrhe. Ne podrža
 
 ---
 
-> *Naterajte špijune Blockchain da preispitaju sve što misle da znaju.*
+> *Naterajte špijune Blockchain-a da preispitaju sve što misle da znaju.*
 
-PayJoin je specifična struktura transakcije Bitcoin koja poboljšava privatnost korisnika tokom trošenja kroz saradnju sa primaocem plaćanja. Postoji nekoliko implementacija koje olakšavaju postavljanje i automatizaciju PayJoin. Među tim implementacijama, najpoznatija je Stowaway, koju su razvili timovi u Samourai Wallet. Ovaj vodič objašnjava kako izvršiti Stowaway PayJoin transakciju koristeći Samourai Wallet aplikaciju.
+PayJoin je specifična struktura Bitcoin transakcije koja poboljšava privatnost korisnika tokom trošenja kroz saradnju sa primaocem plaćanja. Postoji nekoliko implementacija koje olakšavaju postavljanje i automatizaciju PayJoin-a. Među tim implementacijama, najpoznatija je Stowaway, koju su razvili timovi Samourai novčanika. Ovaj vodič objašnjava kako izvršiti Stowaway PayJoin transakciju koristeći aplikaciju Samourai novčanika .
 
 
 ## Kako funkcioniše Stowaway?
