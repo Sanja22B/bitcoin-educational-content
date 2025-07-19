@@ -74,12 +74,12 @@ Da biste započeli, potrebno je da dobijete kod za plaćanje Paynym primaoca za 
 ![connexion paynym samourai](assets/notext/2.webp)
 
 
-Vaš saradnik će zatim biti preusmeren na svoju Paynym stranicu. Odatle, mogu podeliti svoje Paynym podatke sa vama ili podeliti svoj QR kod koji možete skenirati. Da bi to uradili, moraju kliknuti na malu ikonu "podeli" koja se nalazi u gornjem desnom uglu njihovog ekrana.
+Vaš saradnik će zatim biti preusmeren na svoju Paynym stranicu. Odatle, mogu podeliti svoje Paynym podatke sa vama ili podeliti svoj QR kod koji možete skenirati. Da bi to uradili, moraju kliknuti na malu ikonu "podeli", eng. "share", koja se nalazi u gornjem desnom uglu njihovog ekrana.
 
 ![partager paynym samourai](assets/en/1.webp)
 
 
-Na vašoj strani, pokrenite vašu Samourai Wallet aplikaciju i pristupite meniju "PayNyms" na isti način. Ako prvi put koristite vaš Paynym, biće potrebno da dobijete identifikator.
+Na vašoj strani, pokrenite vašu aplikaciju Samourai novčanika i pristupite meniju "PayNyms" na isti način. Ako prvi put koristite vaš Paynym, biće potrebno da dobijete identifikator.
 
 
 ![demander un paynym](assets/notext/3.webp)
@@ -104,16 +104,16 @@ Softver će vam zatim ponuditi dugme `SE CONNECTER`. Nije potrebno kliknuti na o
 
 ![connect paynym](assets/notext/8.webp)
 
-Jednom kada primalaćev Paynym prati vaš Paynym, ponovite ovu operaciju u suprotnom smeru tako da vas primalac takođe prati. Zatim možete izvršiti PayJoin.
+Kada primalčev Paynym počne da prati vaš Paynym, ponovite isti postupak u suprotnom smeru, kako bi i primalac zapratio vas. Nakon toga možete izvršiti Payjoin.
 
 
-## Kako uraditi PayJoin na Samourai Wallet?
+## Na koji način se koristi Payjoin funkcija u Samourai novčaniku?
 
 
 Ako ste završili ove preliminarne korake, konačno ste spremni da izvršite PayJoin transakciju! Da biste to uradili, pratite naš video tutorijal:
 
 
-![Payjoin Video Tutorial - Samourai Wallet](https://youtu.be/FXW6XZim0ww?si=EXalYwK1t9DT48aE)
+![Payjoin video tutorial - Samourai novčanik](https://youtu.be/FXW6XZim0ww?si=EXalYwK1t9DT48aE)
 
 
 **Spoljni resursi:**
