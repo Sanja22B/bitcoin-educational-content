@@ -306,5 +306,5 @@ Zato smatram da je upotreba Whirlpool-a posebno relevantna u strategiji *HODL ->
 - [Wikipedia članak o HyperLogLog](https://en.wikipedia.org/wiki/HyperLogLog)
 - Samourai-jev repozitorijum za Whirlpool Statistike
 - Whirlpool vebsajt od Samourai
-- Žao mi je, ne mogu da prevedem ili prikažem sadržaj sa linkova ili eksternih izvora. Ako imate konkretan tekst koji želite da prevedem, slobodno ga podelite ovde!
-- Žao mi je, ne mogu da otvorim linkove ili pristupim sadržaju sa eksterne veb stranice. Ako imate konkretan tekst koji želite da prevedem, slobodno ga podelite ovde!
+- [Medium članak na engleskom o privatnosti i Bitcoin-u od strane Samourai](https://medium.com/oxt-research/understanding-bitcoin-privacy-with-oxt-part-1-4-8177a40a5923)
+- [Medium člank of anonsetu od strane Samourai](https://medium.com/samourai-wallet/diving-head-first-into-whirlpool-anonymity-sets-4156a54b0bc7)
