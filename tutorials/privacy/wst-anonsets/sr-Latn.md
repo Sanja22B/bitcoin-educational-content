@@ -307,4 +307,4 @@ Zato smatram da je upotreba Whirlpool-a posebno relevantna u strategiji *HODL ->
 - Samourai-jev repozitorijum za Whirlpool Statistike
 - Whirlpool vebsajt od Samourai
 - [Medium članak na engleskom o privatnosti i Bitcoin-u od strane Samourai](https://medium.com/oxt-research/understanding-bitcoin-privacy-with-oxt-part-1-4-8177a40a5923)
-- [Medium člank of anonsetu od strane Samourai](https://medium.com/samourai-wallet/diving-head-first-into-whirlpool-anonymity-sets-4156a54b0bc7)
+- [Medium članak na engleskom o anonsetu od strane Samourai](https://medium.com/samourai-wallet/diving-head-first-into-whirlpool-anonymity-sets-4156a54b0bc7)
