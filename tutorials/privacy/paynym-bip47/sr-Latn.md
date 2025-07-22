@@ -900,7 +900,7 @@ Za tajnu tačku S (x,y): **S = a·B = a·b·G = b·a·G = b·A**
 
 ![Diagram of generating a shared secret with ECDHE](assets/19.webp)
 
-Sada kada Bob zna Alisin kod za plaćanje, moći će da detektuje njene BIP47 uplate i izvede privatne ključeve blokirajući primljene bitkoine.
+Sada kada Bob zna Alisin kod za plaćanje, moći će da detektuje njene BIP47 uplate i izvede privatne ključeve koji otključavaju primljene bitkoine.
 
 ![Bob interprets Alice's notification transaction](assets/20.webp)
 
@@ -923,7 +923,7 @@ Dozvolite mi da rezimiram korake koje smo upravo zajedno videli za primanje i in
 
 
 
-- Bob prati nadzire izlaze transakcija na svojoj notifikaciji Address.
+- Bob prati da li se pojavljuju transakcioni izlazi namenjeni njegovoj notifikacionoj adresi.
 - Kada ga otkrije, preuzima informacije sadržane u OP_RETURN.
 - Bob bira ulazni javni ključ i izračunava tajnu tačku koristeći ECDH.
 - On koristi ovu tajnu tačku za izračunavanje HMAC-a, koji je faktor zaslepljivanja.
@@ -941,11 +941,11 @@ Hajde sada da proučimo proces plaćanja sa BIP47. Da vas podsetimo na trenutno 
 
 
 
-- Bob je svestan Alisinog koda za plaćanje zahvaljujući obaveštenju o transakciji.
+- Bob je svestan Alisinog koda za plaćanje zahvaljujući transakciji obaveštenja.
 
 
 
-- Alice će izvršiti početnu uplatu Bobu. Može ih izvršiti još mnogo na isti način.
+- Alisa će izvršiti početnu uplatu Bobu. Može ih izvršiti još mnogo na isti način.
 
 
 Pre nego što vam objasnim ovaj proces, mislim da je važno da vas podsetim na kojim indeksima trenutno radimo:
@@ -958,24 +958,24 @@ Sledeća dubina raspoređuje indekse na sledeći način:
 
 
 
-- Prvi normalni (neotvrdnuti) par deteta koristi se za generate obaveštenje Address o kojem smo diskutovali u prethodnom odeljku: m/47'/0'/0'/0/.
+- Prvi normalni (neojačani) par podključeva koristi se za generisanje adrese obaveštenja o kojoj smo diskutovali u prethodnom odeljku: m/47'/0'/0'/0/.
 
 
 
-- Normalni parovi ključeva za decu koriste se unutar ECDH za generate BIP47 adrese za primanje uplata, kao što ćemo videti u ovom odeljku: m/47'/0'/0'/ od 0 do 2,147,483,647/.
+- Normalni parovi podključeva koriste se unutar ECDH za generisanje BIP47 adrese za primanje uplata, kao što ćemo videti u ovom odeljku: m/47'/0'/0'/ od 0 do 2,147,483,647/.
 
 
 
-- Ojačani parovi ključeva za decu su efemerni kodovi za plaćanje: m/47'/0'/0'/ od 0' do 2,147,483,647'/.
+- Ojačani parovi podključeva su efemerni kodovi za plaćanje: m/47'/0'/0'/ od 0' do 2,147,483,647'/.
 
-Svaki put kada Alisa želi da pošalje uplatu Bobu, ona izvodi novi jedinstveni prazan Address, još jednom zahvaljujući ECDH protokolu:
+Svaki put kada Alisa želi da pošalje uplatu Bobu, ona izvodi novu jedinstvenu praznu adresu, još jednom zahvaljujući ECDH protokolu:
 
 
 - Alisa bira prvi privatni ključ izveden iz njenog ličnog višekratnog koda za plaćanje: **a**
 
 
 
-- Alice bira prvi neiskorišćeni javni ključ izveden iz Bobovog koda za plaćanje. Ovaj javni ključ nazvaćemo "B". On je povezan sa privatnim ključem "b" koji samo Bob zna.
+- Alisa bira prvi neiskorišćeni javni ključ izveden iz Bobovog koda za plaćanje. Ovaj javni ključ nazvaćemo "B". On je povezan sa privatnim ključem "b" koji samo Bob zna.
 
 **B = b·G**
 
@@ -987,16 +987,16 @@ Svaki put kada Alisa želi da pošalje uplatu Bobu, ona izvodi novi jedinstveni 
 
 
 
-- Sa ove tajne tačke, Alisa će izračunati zajedničku tajnu "s" (malim slovom). Da bi to uradila, ona bira x-koordinatu tajne tačke "S" koja se zove "Sx", i prosleđuje ovu vrednost u SHA256 Hash funkciju.
+- Pomoću ove tajne tačke, Alisa će izračunati zajedničku tajnu "s" (malim slovom). Da bi to uradila, ona bira x-koordinatu tajne tačke "S" koja se zove "Sx", i prosleđuje ovu vrednost u SHA256 heš funkciju.
 
 **s = SHA256(Sx)**
 
 
-Ne veruj. Proveri! Ako želiš da razumeš osnovne principe funkcije Hash, naći ćeš šta ti treba u ovom članku. A ako ne veruješ NIST-u (u pravu si), i želiš da možeš da razumeš detaljno kako SHA256 funkcioniše, objašnjavam sve u ovom članku na francuskom.
+Ne veruj. Proveri! Ako želiš da razumeš osnovne principe heš funkcije, naći ćeš šta ti treba u ovom članku. A ako ne veruješ NIST-u (u pravu si), i želiš da možeš da razumeš detaljno kako SHA256 funkcioniše, objašnjavam sve u ovom članku na francuskom.
 
 
 
-- Alice koristi ovu zajedničku tajnu "s" da izračuna Bitcoin uplatu primajući Address. Prvo, ona proverava da li je "s" unutar reda secp256k1 krive. Ako nije, ona povećava indeks Bobovog javnog ključa da bi izvela drugu zajedničku tajnu.
+- Alisa koristi ovu zajedničku tajnu "s" da izračuna Bitcoin primajuću  adresu za uplatu. Prvo, ona proverava da li je "s" unutar reda secp256k1 krive. Ako nije, ona povećava indeks Bobovog javnog ključa da bi izvela drugu zajedničku tajnu.
 
 
 
@@ -1006,10 +1006,10 @@ Ne veruj. Proveri! Ako želiš da razumeš osnovne principe funkcije Hash, naći
 
 
 
-- Sa ovim javnim ključem "K0", Alisa može izvesti prazno primanje Address na standardni način (na primer, SegWit V0 u Bech32).
+-Pomoću ovog javnog ključa „K0“, Alisa može na standardan način da izvede praznu (neiskorišćenu) adresu za primanje (na primer, SegWit V0 u Bech32 formatu).
 
 
-Jednom kada Alisa ima ovaj primajući Address "K0" koji pripada Bobu, može konstruisati standardnu Bitcoin transakciju odabirom UTXO koji pripada njoj na drugoj grani njenog HD Wallet, i potrošiti ga na Bobov "K0" Address.
+Jednom kada Alisa ima ovu primajuću adresu "K0" koja pripada Bobu, može konstruisati standardnu Bitcoin transakciju odabirom UTXO koji pripada njoj na drugoj grani njenog HD novčanika, i potrošiti ga na Bobovu "K0" adresu.
 
 
 ![Alice sends bitcoins with BIP47 to Bob](assets/21.webp)
@@ -1031,7 +1031,7 @@ Dozvoli mi da rezimiram korake kroz koje smo upravo prošli zajedno kako bismo p
 
 
 
-- Alice odabire prvi izvedeni privatni ključ deteta iz svog ličnog koda za plaćanje.
+- Alisa odabire prvi izvedeni privatni ključ deteta iz svog ličnog koda za plaćanje.
 - Ona izračunava tajnu tačku na eliptičnoj krivoj koristeći ECDH iz prvog neiskorišćenog izvedenog javnog ključa deteta iz Bobovog koda za plaćanje.
 - Ona koristi ovu tajnu tačku da izračuna zajedničku tajnu sa SHA256.
 - Ona koristi ovu zajedničku tajnu za izračunavanje nove tajne tačke na eliptičnoj krivoj.
