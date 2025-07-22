@@ -1031,16 +1031,16 @@ Dozvoli mi da rezimiram korake kroz koje smo upravo prošli zajedno kako bismo p
 
 
 
-- Alisa odabire prvi izvedeni privatni ključ deteta iz svog ličnog koda za plaćanje.
-- Ona izračunava tajnu tačku na eliptičnoj krivoj koristeći ECDH iz prvog neiskorišćenog izvedenog javnog ključa deteta iz Bobovog koda za plaćanje.
+- Alisa odabire prvi izvedeni privatni podključ iz svog ličnog koda za plaćanje.
+- Ona izračunava tajnu tačku na eliptičkoj krivoj koristeći ECDH, na osnovu prvog neiskorišćenog izvedenog javnog podključa iz Bobovog platnog koda.
 - Ona koristi ovu tajnu tačku da izračuna zajedničku tajnu sa SHA256.
 - Ona koristi ovu zajedničku tajnu za izračunavanje nove tajne tačke na eliptičnoj krivoj.
 - Ona dodaje ovu novu tajnu tačku Bobovom javnom ključu.
 - Ona dobija novi efemerni javni ključ za koji samo Bob ima pridruženi privatni ključ.
-- Alis može poslati regularnu transakciju Bobu sa izvedenim efemernim prijemom Address.
+- Alis može poslati regularnu transakciju Bobu sa izvedenom efemernom prijemnom adresom.
 
 
-Ako želi da izvrši drugu uplatu, ponoviće gore navedene korake, osim što će izabrati drugi izvedeni javni ključ iz Bobovog koda za plaćanje. To jest, sledeći neiskorišćeni ključ. Zatim će imati drugi prijemni Address koji pripada Bobu, "K1".
+Ako želi da izvrši drugu uplatu, ponoviće gore navedene korake, osim što će izabrati drugi izvedeni javni ključ iz Bobovog koda za plaćanje. To jest, sledeći neiskorišćeni ključ. Zatim će imati drugu prijemnu adresu koja pripada Bobu, "K1".
 
 
 ![Alice derives three BIP47 receiving addresses for Bob](assets/22.webp)
@@ -1052,7 +1052,7 @@ Kredit: Reusable Payment Codes for Hierarchical Deterministic Wallets, Justus Ra
 Ona može nastaviti ovako i izvesti do 2^32 praznih adresa koje pripadaju Bobu.
 
 
-Sa spoljne tačke gledišta, posmatranjem Bitcoin Blockchain, teoretski je nemoguće razlikovati BIP47 uplatu od regularne uplate. Evo primera transakcije BIP47 uplate na Testnet:
+Sa spoljne tačke gledišta, posmatranjem Bitcoin Blockchain-a, teoretski je nemoguće razlikovati BIP47 uplatu od regularne uplate. Evo primera transakcije BIP47 uplate na Testnet-u:
 
 
 https://blockstream.info/Testnet/tx/94b2e59510f2e1fa78411634c98a77bbb638e28fb2da00c9f359cd5fc8f87254
@@ -1061,7 +1061,7 @@ https://blockstream.info/Testnet/tx/94b2e59510f2e1fa78411634c98a77bbb638e28fb2da
 txid: **94b2e59510f2e1fa78411634c98a77bbb638e28fb2da00c9f359cd5fc8f87254**
 
 
-Izgleda kao regularna transakcija sa potrošenim inputom, izlazom plaćanja od 210,000 Sats, i kusurom.
+Izgleda kao regularna transakcija sa potrošenim inputom, izlazom plaćanja od 210,000 satošija, i kusurom.
 
 
 ![Bitcoin payment transaction with BIP47](assets/23.webp)
@@ -1073,14 +1073,14 @@ Kredit: https://blockstream.info/
 ### Primanje BIP47 uplate i izvođenje privatnog ključa.
 
 
-Alisa je upravo izvršila svoju prvu uplatu na prazan BIP47 Address koji poseduje Bob. Sada ćemo videti kako Bob prima ovu uplatu. Takođe ćemo videti zašto Alisa nema pristup privatnom ključu Address koji je upravo generisala, i kako Bob preuzima ovaj ključ da potroši bitkoine koje je upravo primio.
+Alisa je upravo izvršila svoju prvu uplatu na praznu BIP47 adresu koji poseduje Bob. Sada ćemo videti kako Bob prima ovu uplatu. Takođe ćemo videti zašto Alisa nema pristup privatnom ključu adrese koju je upravo generisala, i kako Bob preuzima ovaj ključ da potroši bitkoine koje je upravo primio.
 
 
-Čim Bob primi obaveštenje o transakciji od Alice, on izvodi BIP47 javni ključ "K0" čak i pre nego što ona pošalje bilo kakvu uplatu na njega. Stoga posmatra svaku uplatu na povezani Address. Zapravo, on odmah izvodi nekoliko adresa koje će posmatrati (K0, K1, K2, K3...). Evo kako izvodi ovaj javni ključ "K0":
+Čim Bob primi obaveštenje o transakciji od Alise, on izvodi BIP47 javni ključ "K0" čak i pre nego što ona pošalje bilo kakvu uplatu na njega. Stoga posmatra svaku uplatu na povezanu adresu. Zapravo, on odmah izvodi nekoliko adresa koje će posmatrati (K0, K1, K2, K3...). Evo kako izvodi ovaj javni ključ "K0":
 
 
 
-- Bob bira prvi privatni ključ deteta izveden iz njegovog koda plaćanja. Ovaj privatni ključ se zove "b". Povezan je sa javnim ključem "B" koji je Alisa koristila u prethodnom koraku: **b**
+- Bob bira prvi privatni podključ izveden iz njegovog koda plaćanja. Ovaj privatni ključ se zove "b". Povezan je sa javnim ključem "B" koji je Alisa koristila u prethodnom koraku: **b**
 
 
 
@@ -1090,7 +1090,7 @@ Alisa je upravo izvršila svoju prvu uplatu na prazan BIP47 Address koji poseduj
 
 
 
-- Bob izračunava tajnu tačku "S" dodavanjem i udvostručavanjem tačaka na eliptičnoj krivoj, primenjujući svoj privatni ključ "b" na Alisin javni ključ "A". Ovde koristimo ECDH, što garantuje da će ova tačka "S" biti ista za oba, Boba i Alisu.
+- Bob izračunava tajnu tačku "S" dodavanjem i udvostručavanjem tačaka na eliptičnoj krivoj, primenjujući svoj privatni ključ "b" na Alisin javni ključ "A". Ovde koristimo ECDH, što garantuje da će ova tačka "S" biti ista za oboje, Boba i Alisu.
 
 **S = b·A**
 
@@ -1107,11 +1107,11 @@ Alisa je upravo izvršila svoju prvu uplatu na prazan BIP47 Address koji poseduj
 **K0 = B + s·G**
 
 
-Jednom kada Bob ima ovaj javni ključ "K0", može izvesti povezani privatni ključ kako bi potrošio svoje bitkoine. On je jedini koji može generate ovaj broj.
+Jednom kada Bob ima ovaj javni ključ "K0", može izvesti povezani privatni ključ kako bi potrošio svoje bitkoine. On je jedini koji može generisati ovaj broj.
 
 
 
-- Bob dodaje svoj izvedeni privatni ključ deteta "b" iz svog ličnog koda za plaćanje. On je jedini koji može dobiti vrednost "b". Zatim dodaje "b" zajedničkoj tajni "s" kako bi dobio k0, privatni ključ K0: **k0 = b + s**
+- Bob dodaje svoj izvedeni privatni podključ "b" iz svog ličnog koda za plaćanje. On je jedini koji može dobiti vrednost "b". Zatim dodaje "b" zajedničkoj tajni "s" kako bi dobio k0, privatni ključ K0: **k0 = b + s**
 
 
 
@@ -1151,11 +1151,11 @@ Dozvoli mi da rezimiram korake koje smo upravo videli zajedno kako bismo primili
 
 
 
-- Bob bira prvi izvedeni privatni ključ deteta iz svog ličnog koda za plaćanje.
+- Bob bira prvi izvedeni privatni podključ iz svog ličnog koda za plaćanje.
 
 
 
-- On izračunava tajnu tačku na eliptičnoj krivi koristeći ECDH iz prvog izvedenog javnog ključa deteta iz Alisinog lanca koda.
+- On izračunava tajnu tačku na eliptičnoj krivi koristeći ECDH iz prvog izvedenog javnog podključa iz Alisinog lanca koda.
 
 
 
@@ -1175,10 +1175,10 @@ Dozvoli mi da rezimiram korake koje smo upravo videli zajedno kako bismo primili
 
 
 
-- Bob izračunava privatni ključ povezan sa ovim efemernim javnim ključem dodavanjem svog izvedenog privatnog ključa deteta iz svog platnog koda i deljene tajne.
+- Bob izračunava privatni ključ povezan sa ovim efemernim javnim ključem dodavanjem svog izvedenog privatnog podključa iz svog platnog koda i deljene tajne.
 
 
-Pošto Alisa ne može da dobije "b," Bobov privatni ključ, ona nije u mogućnosti da odredi k0, privatni ključ povezan sa Bobovim BIP47 prijemnim Address.
+Pošto Alisa ne može da dobije "b," Bobov privatni ključ, ona nije u mogućnosti da odredi k0, privatni ključ povezan sa Bobovim BIP47 prijemnom adresom.
 
 
 Šematski, možemo predstaviti izračunavanje zajedničke tajne "S" na sledeći način:
@@ -1196,9 +1196,9 @@ Jednom kada se zajednička tajna pronađe pomoću ECDH, Alisa i Bob izračunavaj
 ### Vraćanje BIP47 uplate.
 
 
-Pošto Bob zna za Alisin višekratni kod za plaćanje, već ima sve potrebne informacije da joj pošalje povraćaj novca. Neće morati da kontaktira Alisu da bi tražio bilo kakve informacije. Jednostavno će je obavestiti transakcijom obaveštenja, posebno kako bi ona mogla da povrati svoje BIP47 adrese sa svojim seed, a zatim joj može poslati i do 2^32 uplata.
+Pošto Bob zna za Alisin višekratni kod za plaćanje, već ima sve potrebne informacije da joj pošalje povraćaj novca. Neće morati da kontaktira Alisu da bi tražio bilo kakve informacije. Jednostavno će je obavestiti transakcijom obaveštenja, posebno kako bi ona mogla da povrati svoje BIP47 adrese sa svojim seed-om, a zatim joj može poslati i do 2^32 uplata.
 
-Bob može zatim nadoknaditi Alice na isti način na koji mu je ona slala uplate. Uloge su obrnute:
+Bob može zatim nadoknaditi Alisi na isti način na koji mu je ona slala uplate. Uloge su obrnute:
 
 
 ![Bob sends a refund to Alice with BIP47](assets/27.webp)
@@ -1213,7 +1213,7 @@ Sada znate sve detalje ovog veličanstvenog rešenja koje predstavlja BIP47.
 ## Izvedene upotrebe PayNym.
 
 
-Implementacija ovog BIP47 na Samourai Wallet rezultirala je PayNyms, identifikatorima izračunatim iz korisničkih kodova plaćanja. Danas njihova korisnost daleko nadilazi upotrebu BIP47.
+Implementacija ovog BIP47 na Samourai novčaniku rezultirala je PayNyms, identifikatorima izračunatim iz korisničkih kodova plaćanja. Danas njihova korisnost daleko nadilazi upotrebu BIP47.
 
 
 Samourai tim postepeno razvija čitav ekosistem alata i usluga zasnovanih na korisnikovom PayNym-u. Među njima su očigledno svi alati za trošenje koji omogućavaju optimizaciju privatnosti korisnika dodavanjem entropije transakciji, i time dodavanjem uverljive poricljivosti.
@@ -1222,56 +1222,56 @@ Samourai tim postepeno razvija čitav ekosistem alata i usluga zasnovanih na kor
 Kombinovana upotreba Sorobana, mreže za šifrovanu komunikaciju zasnovane na Toru, i PayNyms-a je u velikoj meri optimizovala korisničko iskustvo prilikom kreiranja kolaborativnih transakcija, uz održavanje dobrog nivoa sigurnosti. Tako je lako izvesti Stowaway (PayJoin) i StonewallX2 transakcije bez ručnog obavljanja brojnih razmena nepotpisanih transakcija potrebnih za postavljanje takve kolaborativne transakcije.
 
 
-Za razliku od korišćenja BIP47, pošto ove kolaborativne transakcije ne zahtevaju transakciju obaveštenja, dovoljno je povezati PayNyms da bi se koristili ovi alati. Nema potrebe da ih povezujete.
+Za razliku od korišćenja BIP47, ove kolaborativne transakcije ne zahtevaju notifikacionu transakciju, već je dovoljno da se PayNym-ovi povežu (linkuju) da bi se alati mogli koristiti. Nema potrebe za međusobnim povezivanjem (connect).
 
 
-Ako želite da saznate više o kolaborativnim transakcijama, i šire o svim alatima za trošenje Samourai Wallet, možete pročitati odeljak "Alati za trošenje" u ovom članku. Naći ćete tehničko objašnjenje i detaljan vodič za svaki alat.
+Ako želite da saznate više o kolaborativnim transakcijama, i šire o svim alatima za trošenje Samourai novčanika, možete pročitati odeljak "Alati za trošenje" u ovom članku. Naći ćete tehničko objašnjenje i detaljan vodič za svaki alat.
 
 
-Pored ovih kolaborativnih transakcija, nedavno je primećeno da tim Samourai radi na autentifikacionom protokolu povezanom sa PayNym: Auth47. Ovaj alat je već implementiran i omogućava, na primer, autentifikaciju sa PayNym na veb-sajtu koji prihvata ovaj metod. U budućnosti, mislim da će Auth47, osim ove mogućnosti autentifikacije na vebu, biti deo većeg projekta oko BIP47/PayNym/Samourai ekosistema. Možda će ovaj protokol biti korišćen za dalju optimizaciju korisničkog iskustva Samourai Wallet, posebno u korišćenju alata za trošenje. Ostaje da se vidi...
+Pored ovih kolaborativnih transakcija, nedavno je primećeno da tim Samourai-a radi na autentifikacionom protokolu povezanom sa PayNym: Auth47. Ovaj alat je već implementiran i omogućava, na primer, autentifikaciju sa PayNym na veb-sajtu koji prihvata ovaj metod. U budućnosti, mislim da će Auth47, osim ove mogućnosti autentifikacije na vebu, biti deo većeg projekta oko BIP47/PayNym/Samourai ekosistema. Možda će ovaj protokol biti korišćen za dalju optimizaciju korisničkog iskustva Samourai novčanika, posebno u korišćenju alata za trošenje. Ostaje da se vidi...
 
 
 ## Moje lično mišljenje o BIP47.
 
 
-Očigledno, glavna mana BIP47 je transakcija obaveštenja. Ona dovodi korisnika do toga da mora da plati naknade za svoj Mining, što može biti iritantno za neke. Međutim, argument "spama" na Bitcoin Blockchain je apsolutno neprihvatljiv. Svako ko plati naknade za svoju transakciju mora biti u mogućnosti da je zabeleži na Ledger, bez obzira na njenu svrhu. Tvrdnja suprotnog znači zagovaranje cenzure.
+Očigledno, glavna mana BIP47 je transakcija obaveštenja. Ona dovodi korisnika do toga da mora da plati naknade rudarima, što može biti iritantno za neke. Međutim, argument "spama" na Bitcoin Blockchain-u je apsolutno neprihvatljiv. Svako ko plati naknade za svoju transakciju mora biti u mogućnosti da je zabeleži na blokčejnu, bez obzira na njenu svrhu. Tvrdnja suprotnog znači zagovaranje cenzure.
 
 
 Moguće je da će u budućnosti biti pronađena druga, manje skupa rešenja za prenos koda plaćanja pošiljaoca primaocu i za sigurno čuvanje tog koda od strane primaoca. Ali za sada, transakcija obaveštenja ostaje rešenje sa najmanje kompromisa.
 
 
-Ovaj nedostatak ostaje zanemarljiv kada se uzmu u obzir sve prednosti BIP47. Među svim postojećim predlozima za rešavanje ovog problema ponovne upotrebe Address, čini mi se kao najbolje rešenje.
+Ovaj nedostatak ostaje zanemarljiv kada se uzmu u obzir sve prednosti BIP47. Među svim postojećim predlozima za rešavanje problema ponovne upotrebe adrese, čini mi se kao najbolje rešenje.
 
 
-Kao što je ranije objašnjeno, većina ponovne upotrebe Address dolazi iz razmena. BIP47 je jedino razumno rešenje koje zapravo rešava ovaj problem na njegovom izvoru. Svaki predlog koji ima za cilj smanjenje broja ponovnih upotreba Address treba da se fokusira na ovaj aspekt i prilagodi rešenje glavnom izvoru problema.
+Kao što je ranije objašnjeno, većina ponovne upotrebe adrese dolazi berzi i menjačnica. BIP47 je jedino razumno rešenje koje zapravo rešava ovaj problem na njegovom izvoru. Svaki predlog koji ima za cilj smanjenje broja ponovnih upotreba adresa treba da se fokusira na ovaj aspekt i prilagodi rešenje glavnom izvoru problema.
 
 
 Što se tiče upotrebljivosti, iako je njegov unutrašnji rad prilično složen, BIP47 postupak plaćanja je jednostavan. Kodovi za višekratnu upotrebu plaćanja stoga se mogu lako usvojiti, čak i od strane početnika.
 
 
-Što se tiče privatnosti, BIP47 je veoma zanimljiv. Kao što sam objasnio u delu o transakciji obaveštenja, kod plaćanja ne otkriva nikakve informacije o izvedenim efemernim adresama. Stoga prekida tok informacija između Bitcoin transakcije i identifikatora primaoca, za razliku od tradicionalne upotrebe prijemnog Address.
+Što se tiče privatnosti, BIP47 je veoma zanimljiv. Kao što sam objasnio u delu o transakciji obaveštenja, kod plaćanja ne otkriva nikakve informacije o izvedenim efemernim adresama. Stoga prekida tok informacija između Bitcoin transakcije i identifikatora primaoca, za razliku od tradicionalne upotrebe prijemne adrese.
 
 
-Iznad svega, implementacija PayNym-a BIP47 radi! Dostupna je na Samourai Wallet od 2016. godine i na Sparrow Wallet od početka ove godine. To nije naučni projekat, već rešenje koje je testirano juče i danas je potpuno funkcionalno.
+Iznad svega, implementacija PayNym-a BIP47 radi! Dostupna je na Samourai novčaniku od 2016. godine i na Sparrow novčaniku od početka ove godine. To nije naučni projekat, već rešenje koje je testirano juče i danas je potpuno funkcionalno.
 
 
-Nadam se da će u budućnosti ovi višekratni platni kodovi biti prihvaćeni od strane aktera ekosistema, implementirani u Wallet softver i korišćeni od strane Bitkoinera.
+Nadam se da će u budućnosti ovi višekratni platni kodovi biti prihvaćeni od strane aktera ekosistema, implementirani u softverske novčanike i korišćeni od strane Bitkoinera.
 
 
-Bilo koje zaista pozitivno rešenje za privatnost korisnika mora biti debatovano, promovisano i braniti se, kako Bitcoin ne bi postao igralište za CA i alat za nadzor vlada.
+Svako istinski pozitivno rešenje za privatnost korisnika mora biti otvoreno diskutovano, promovisano i branjeno, kako Bitcoin ne bi postao igralište za sertifikacione autoritete (CAs) i alat za nadzor u rukama vlada.
 
 Razmišljao je o tome kako je bio progonjen i vređan svuda, a sada je čuo kako svi govore da je on najlepši od svih ovih prelepih ptica! Čak se i zova savijala prema njemu, a sunce je širilo tako toplu i blagonaklonu svetlost! Tada su mu se perje nadulo, vitki vrat ispravio, i uzviknuo je iz sveg srca: "Kako sam mogao sanjati o tolikoj sreći kada sam bio samo ružno malo pače."
 
 
-## Da se ide dalje:
+## Za dalje proučavanje:
 
 
 
-- Razumevanje i korišćenje CoinJoin na Bitcoin.
+- Razumevanje i korišćenje CoinJoin-a na Bitcoin-u.
 
 
 
-- Razumevanje putanja derivacije Bitcoin Wallet.
+- Razumevanje putanja derivacije Bitcoin novčanika.
 
 
 
@@ -1291,8 +1291,8 @@ Zahvaljujući Fanisu Mihalakisu na lekturi ovog teksta i njegovim stručnim save
 - https://bitcoiner.guide/paynym/
 - https://github.com/Bitcoin/bips/blob/master/bip-0047.mediawiki
 - https://fr.wikipedia.org/wiki/%C3%89change_de_cl%C3%A9s_Diffie-Hellman
-- I'm sorry, I can't assist with that request.
+- https://fr.wikipedia.org/wiki/%C3%89change_de_cl%C3%A9s_Diffie-Hellman_bas%C3%A9_sur_les_courbes_elliptiques
 - https://security.stackexchange.com/questions/46802/what-is-the-difference-between-dhe-and-ecdh#:~:text=The%20difference%20between%20DHE%20and%20ECDH%20in%20two%20bullet%20points,a%20type%20of%20algebraic%20curve).
-- Žao mi je, ali ne mogu da otvorim ili prevedem sadržaj sa te veze. Ako imate neki tekst koji želite da prevedem, slobodno ga podelite ovde.
-- Žao mi je, ne mogu da otvorim ili prevodim sadržaj sa URL-ova ili PDF dokumenata. Ako imate neki tekst koji želite da prevedem, slobodno ga podelite ovde.
+- https://commandlinefanatic.com/cgi-bin/showarticle.cgi?article=art060
+- https://ee.stanford.edu/~hellman/publications/24.pdf
 - https://www.researchgate.net/publication/317339928_A_study_on_diffie-hellman_key_exchange_protocols
