@@ -5,10 +5,10 @@ description: Kako lako pokrenuti svoj Lightning čvor?
 ![cover](assets/cover.webp)
 
 
-Alby Hub je najnoviji softver otvorenog koda od Alby-ja, kompanije koja stoji iza popularnog Lightning web ekstenzije. Alby Hub je samostalni Wallet sa najlakšim za korišćenje Lightning čvorom, dostupan sa bilo kog mesta za integraciju sa desetinama aplikacija. Alby Hub je jednostavan za korišćenje Interface za upravljanje Lightning čvorovima.
+Alby Hub je najnoviji softver otvorenog koda od Alby-ja, kompanije koja stoji iza popularne Lightning web ekstenzije. Alby Hub je samostalni novčanik sa Lightning čvorom koji je najlakši za korišćenje, dostupan sa bilo kog mesta za integraciju sa desetinama aplikacija. Alby Hub je jednostavan interfejs za korišćenje za upravljanje Lightning čvorovima.
 
 
-U ovom vodiču ćemo pogledati različite načine korišćenja Alby Hub-a kako bismo ga povezali sa Alby Go, Alby-jevom mobilnom aplikacijom ili Alby Browser Extension-om. Ovo će vam omogućiti da trošite svoj Sats u pokretu dok ste autonomni u upravljanju vašim čvorom.
+U ovom vodiču ćemo pogledati različite načine korišćenja Alby Hub-a kako bismo ga povezali sa Alby Go, Alby-jevom mobilnom aplikacijom ili Alby web ekstenzijom. Ovo će vam omogućiti da trošite svoj satošije u pokretu dok ste autonomni u upravljanju vašim čvorom.
 
 
 ![ALBY HUB](assets/fr/01.webp)
