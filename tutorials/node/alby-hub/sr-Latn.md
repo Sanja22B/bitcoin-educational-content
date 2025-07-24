@@ -17,10 +17,10 @@ U ovom vodiču ćemo pogledati različite načine korišćenja Alby Hub-a kako b
 ## Šta je Alby Hub?
 
 
-Alby Hub je postavljen da bude novi vodeći alat u Alby ekosistemu. Ovaj softver omogućava korisnicima da lako upravljaju svojim sopstvenim samostalnim čuvanjem Wallet sa integrisanim Lightning čvorom, dok zadržavaju Ownership svojih ključeva (samostalno čuvanje).
+Alby Hub je postavljen da bude novi vodeći alat u Alby ekosistemu. Ovaj softver omogućava korisnicima da lako upravljaju sopstvenim novčanikom u samostalnom vlasništvu (self-custodial), uz integrisani Lightning čvor, pri čemu zadržavaju kontrolu nad svojim ključevima (samostalno čuvanje).
 
 
-Alby Hub je veoma prilagodljiv alat. Može zadovoljiti potrebe i početnika i naprednih korisnika. Početnici će ga koristiti za jednostavno upravljanje pravim Lightning čvorom sami, bez potrebe da se bave osnovnom složenošću. Za iskusnije korisnike, Alby Hub se može koristiti kao kompletan Interface za napredno upravljanje postojećim Lightning čvorom.
+Alby Hub je veoma prilagodljiv alat. Može zadovoljiti potrebe i početnika i naprednih korisnika. Početnici će ga koristiti za jednostavno upravljanje pravim Lightning čvorom, bez potrebe da se suočavaju sa složenošću u pozadini. Za iskusnije korisnike, Alby Hub može služiti kao kompletan interfejs za napredno upravljanje postojećim Lightning čvorom.
 
 
 U zavisnosti od vaših potreba, Alby Hub je dostupan u 4 konfiguracije:
@@ -28,30 +28,30 @@ U zavisnosti od vaših potreba, Alby Hub je dostupan u 4 konfiguracije:
 
 
 
-- Alby Hub Cloud :**
+- **Alby Hub Cloud :**
 
 
-Idealno za početnike, ova prva opcija je Alby cloud opcija. Omogućava vam da postavite Hub direktno na server koji upravlja Alby, dostupan putem vašeg Alby Hub Interface. Iako Alby upravlja serverom, zadržavate suverenitet nad vašim sredstvima, jer su vaši ključevi šifrovani pomoću lozinke poznate samo vama. Međutim, vaši ključevi moraju ostati dešifrovani u RAM-u kako bi čvor mogao da funkcioniše, što ih teoretski izlaže riziku ako neko fizički pristupi serveru. To je zanimljiv kompromis za početnike, ali je važno biti svestan rizika.
+Ova prva opcija – Alby cloud – idealna je za početnike. Omogućava vam da postavite Hub direktno na server koji održava Alby, kojem pristupate putem Alby Hub interfejsa. Iako Alby upravlja serverom, zadržavate suverenitet nad vašim sredstvima, jer su vaši ključevi šifrovani pomoću lozinke poznate samo vama. Međutim, vaši ključevi moraju ostati dešifrovani u RAM-u kako bi čvor mogao da funkcioniše, što ih teoretski izlaže riziku ako neko fizički pristupi serveru. To je zanimljiv kompromis za početnike, ali je važno biti svestan rizika.
 
 
 Glavna prednost ove opcije je što dobijate Lightning čvor koji radi 24/7, bez potrebe da sami upravljate hostingom. Štaviše, bekapi vašeg Lightning čvora su pojednostavljeni i automatizovani, u poređenju sa opcijama samostalnog hostovanja gde morate sami upravljati bekapima kanala.
 
 
-Alby Cloud je plaćena usluga [Pogledajte njihove cene](https://albyhub.com/#pricing) za više detalja. Naknada se automatski odbija sa vašeg Wallet putem Lightning Invoice koji izdaje Alby. Ovo se obavlja putem NWC veze koja konfiguriše vaš čvor da automatski plaća Alby fakture vezane za vašu pretplatu.
+Alby Cloud je plaćena usluga [Pogledajte njihove cene](https://albyhub.com/#pricing) za više detalja. Naknada se automatski oduzima iz vašeg novčanika putem Lightning fakture koju izdaje Alby. Ovo se vrši preko NWC konekcije koja konfiguriše vaš čvor da automatski plaća Alby fakture vezane za vašu pretplatu.
 
 
 
 
 
-- Alby Hub sa postojećim čvorom :**
+- **Alby Hub sa postojećim čvorom :**
 
 
-Ako već imate hostovan čvor, na primer na Umbrel ili Start9, Alby Hub se može koristiti kao napredni menadžment Interface, na isti način kao ThunderHub ili RTL.
+Ako već imate hostovan čvor, na primer na Umbrel-u ili Start9, Alby Hub se može koristiti kao napredni interfejs za upravljanje, na isti način kao ThunderHub ili RTL.
 
 
 
 
-- Alby Hub lokal :**
+- **Alby Hub lokal :**
 
 
 Moguće je instalirati Alby Hub direktno na vaš PC, iako je ova opcija manje praktična, jer vaš PC mora ostati aktivan sve vreme kako biste daljinski pristupili Lightning čvoru. Međutim, ova alternativa može biti pogodna za vaše specifične potrebe.
@@ -59,19 +59,19 @@ Moguće je instalirati Alby Hub direktno na vaš PC, iako je ova opcija manje pr
 
 
 
-- Alby Hub na ličnom serveru :**
+- **Alby Hub na ličnom serveru :**
 
 
 Za napredne korisnike, Alby Hub se može implementirati na ličnom serveru jednostavnom komandom. Ova opcija nije pokrivena u ovom vodiču, ali možete pronaći posebna uputstva [na Alby-jevom GitHub-u](https://github.com/getAlby/hub?tab=readme-ov-file#docker).
 
 
-Ovaj vodič se uglavnom fokusira na Interface, koji će biti isti bez obzira na izabranu opciju. Takođe ćemo pogledati kako da implementiramo Alby Hub sa plaćenom cloud opcijom, a zatim sa opcijom node-in-box (Umbrel ili Start9).
+Ovaj vodič se uglavnom fokusira na interfejs, koji će biti isti bez obzira na izabranu opciju. Takođe ćemo pogledati kako da implementiramo Alby Hub sa plaćenom cloud opcijom, a zatim sa opcijom node-in-box (Umbrel ili Start9).
 
 
 ![ALBY HUB](assets/fr/02.webp)
 
 
-Za lokalnu instalaciju na vašem računaru, [preuzmite i instalirajte softver prema vašem operativnom sistemu](https://github.com/getAlby/hub/releases), zatim pratite iste instrukcije na Interface.
+Za lokalnu instalaciju na vašem računaru, [preuzmite i instalirajte softver prema vašem operativnom sistemu](https://github.com/getAlby/hub/releases), zatim pratite iste instrukcije na interfejsu.
 
 
 ![ALBY HUB](assets/fr/03.webp)
@@ -80,7 +80,7 @@ Za lokalnu instalaciju na vašem računaru, [preuzmite i instalirajte softver pr
 ## Kreiraj Alby nalog
 
 
-Prvi korak je kreiranje Alby naloga. Iako ovo nije neophodno za korišćenje Alby Hub-a, omogućava vam da u potpunosti iskoristite dostupne opcije, uključujući mogućnost dobijanja Lightning Address.
+Prvi korak je kreiranje Alby naloga. Iako ovo nije neophodno za korišćenje Alby Hub-a, omogućava vam da u potpunosti iskoristite dostupne opcije, uključujući mogućnost dobijanja Lightning adrese.
 
 
 Idite na [zvaničnu Alby veb stranicu](https://getalby.com/) i kliknite na dugme "*Create Account*".
@@ -89,7 +89,7 @@ Idite na [zvaničnu Alby veb stranicu](https://getalby.com/) i kliknite na dugme
 ![ALBY HUB](assets/fr/04.webp)
 
 
-Unesite nadimak i email Address, zatim kliknite na "*Sign up*". Ovaj email Address će se kasnije koristiti za prijavu na vaš nalog.
+Unesite nadimak i email adresu, zatim kliknite na "*Sign up*". Ovaj email će se kasnije koristiti za prijavu na vaš nalog.
 
 
 ![ALBY HUB](assets/fr/05.webp)
@@ -101,7 +101,7 @@ Unesite verifikacioni kod koji ste primili putem e-pošte.
 ![ALBY HUB](assets/fr/06.webp)
 
 
-Kada se prijavite na svoj online nalog, kliknite na dugme "*Nastavi*".
+Kada se prijavite na svoj online nalog, kliknite na dugme "*Nastavi*", engleski "*Continue*".
 
 
 ![ALBY HUB](assets/fr/07.webp)
@@ -143,7 +143,7 @@ Sačekajte nekoliko trenutaka dok se vaš čvor kreira.
 ![ALBY HUB](assets/fr/12.webp)
 
 
-I to je to, vaš Alby Hub je sada konfigurisan. U sledećem delu pokazaću vam kako da instalirate Alby Hub na postojeći čvor. Ako već nemate lightning čvor, možete preskočiti na sledeći deo da konfigurišete Alby Hub na Alby Cloud.
+I to je to, vaš Alby Hub je sada konfigurisan. U sledećem delu pokazaću vam kako da instalirate Alby Hub na postojeći čvor. Ako još uvek nemate Lightning čvor, možete preći na sledeći odeljak da biste konfigurisali Alby Hub na Alby Cloud-u.
 
 
 ![ALBY HUB](assets/fr/13.webp)
@@ -152,13 +152,13 @@ I to je to, vaš Alby Hub je sada konfigurisan. U sledećem delu pokazaću vam k
 ## Opcija samostalnog hostovanja
 
 
-Ako više volite da koristite Alby Hub kao Interface za vaš postojeći Lightning čvor, imate nekoliko opcija: instalirajte ga na server, lokalno na vašem računaru, ili putem node-in-box (Umbrel ili Start9). Korišćenje Alby Hub-a u ovim konfiguracijama je besplatno. Fokusiraćemo se na opciju node-in-box, jer smatram da opcija servera, bez fizičkog pristupa, predstavlja slične rizike kao i verzija u oblaku, a lokalna instalacija na PC-u je često neprikladna.
+Ako više volite da koristite Alby Hub kao interfejs za vaš postojeći Lightning čvor, imate nekoliko opcija: instalirajte ga na server, lokalno na vašem računaru, ili putem node-in-box (Umbrel ili Start9). Korišćenje Alby Hub-a u ovim konfiguracijama je besplatno. Fokusiraćemo se na opciju node-in-box, jer smatram da opcija servera, bez fizičkog pristupa, predstavlja slične rizike kao i verzija u oblaku, a lokalna instalacija na PC-u je često neprikladna.
 
 
 Da biste ovo postavili na Umbrel (koraci za Start9 su identični), prvo morate imati već konfigurisan LND čvor.
 
 
-Prijavite se na svoj Umbrel Interface i idite u prodavnicu aplikacija.
+Prijavite se na svoj Umbrel interfjes i idite u prodavnicu aplikacija.
 
 
 ![ALBY HUB](assets/fr/14.webp)
@@ -176,7 +176,7 @@ Instalirajte ga na vaš čvor.
 ![ALBY HUB](assets/fr/16.webp)
 
 
-Vaš Alby Hub Interface je sada spreman. Možete pratiti ostatak tutorijala kao da koristite cloud Interface, ali bez opcija plaćene verzije. Štaviše, za razliku od cloud verzije, vaši ključevi su sačuvani lokalno na vašem čvoru, a ne na Albyjevim serverima.
+Vaš Alby Hub interfejs je sada spreman. Možete pratiti ostatak tutorijala kao da koristite cloud interfejs, ali bez opcija plaćene verzije. Štaviše, za razliku od cloud verzije, vaši ključevi su sačuvani lokalno na vašem čvoru, a ne na Albyjevim serverima.
 
 
 ![ALBY HUB](assets/fr/17.webp)
@@ -191,7 +191,7 @@ Kliknite na dugme "*Get Started*".
 ![ALBY HUB](assets/fr/18.webp)
 
 
-Alby Hub će vas zatim zatražiti da izaberete lozinku. Ova lozinka je veoma važna, jer će se koristiti za šifrovanje vašeg Wallet. U plaćenoj verziji u oblaku, vaši ključevi se čuvaju na Alby serveru, šifrovani ovom lozinkom koju samo vi znate, zatim dešifrovani i čuvani samo u RAM-u za potpisivanje transakcija kada je to potrebno.
+Alby Hub će vas zatim zatražiti da izaberete lozinku. Ova lozinka je veoma važna, jer će se koristiti za šifrovanje vašeg novčanika. U plaćenoj verziji u oblaku, vaši ključevi se čuvaju na Alby serveru, šifrovani ovom lozinkom koju samo vi znate, zatim dešifrovani i čuvani samo u RAM-u za potpisivanje transakcija kada je to potrebno.
 
 
 Stoga je neophodno odabrati jaku lozinku. Svako ko ima ovu lozinku mogao bi potencijalno dobiti pristup vašem čvoru. Uverite se da ste napravili jednu ili više fizičkih kopija ove lozinke na papiru, ili još bolje, na komadu metala radi dodatne sigurnosti.
