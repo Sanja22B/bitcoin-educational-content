@@ -209,7 +209,7 @@ Sada imate pristup svom Lightning čvoru.
 ![ALBY HUB](assets/fr/20.webp)
 
 
-Prva akcija koju treba preduzeti je da sačuvate svoju frazu za oporavak, iz koje se izvode vaši ključevi. Da biste to uradili, kliknite na "Settings". Ova fraza vam omogućava da povratite pristup vašem Wallet ako ste omogućili automatske rezervne kopije.
+Prva akcija koju treba preduzeti je da sačuvate svoju frazu za oporavak, iz koje se izvode vaši ključevi. Da biste to uradili, kliknite na "Settings". Ova fraza vam omogućava da povratite pristup vašem novčaniku ako ste omogućili automatske rezervne kopije.
 
 
 ![ALBY HUB](assets/fr/21.webp)
@@ -227,7 +227,7 @@ Zatim ćete imati pristup svojoj frazi za oporavak od 12 reči. Napravite jednu 
 ![ALBY HUB](assets/fr/23.webp)
 
 
-Kada sačuvate frazu, označite polje da potvrdite da ste je sačuvali i kliknite na "*Nastavi*".
+Kada sačuvate frazu, označite polje da potvrdite da ste je sačuvali i kliknite na "*Continue*".
 
 
 ![ALBY HUB](assets/fr/24.webp)
@@ -239,7 +239,7 @@ Kada sačuvate frazu, označite polje da potvrdite da ste je sačuvali i kliknit
 Pre nego što pošaljete sredstva na vaš Alby Hub, važno je razumeti kako ih povratiti u slučaju problema, kao i koje su informacije potrebne za ovaj povratak. Proces se razlikuje u zavisnosti od prirode sredstava koja treba povratiti i načina hostovanja vašeg čvora.
 
 
-Za korisnike plaćenog oblaka, potpuni oporavak vaših bitkoina zahteva tri osnovna Elements:
+Za korisnike plaćenog clouda, potpuni oporavak vaših bitkoina zahteva tri osnovna elementa:
 
 
 
@@ -271,13 +271,13 @@ Odaberite "*Open Channel*". Ako ne nameravate da postanete čvor za rutiranje i 
 ![ALBY HUB](assets/fr/26.webp)
 
 
-Alby Hub će generate i Invoice za vas platiti. Ova uplata pokriva troškove transakcije potrebne za otvaranje vašeg kanala, kao i naknade za uslugu LSP-a (*Lightning Service Provider*) koji će otvoriti kanal prema vašem čvoru, omogućavajući vam da odmah primate uplate.
+Alby Hub će generisati fakturu za vas koju trebati platiti. Ova uplata pokriva troškove transakcije potrebne za otvaranje vašeg kanala, kao i naknade za uslugu LSP-a (*Lightning Service Provider*) koji će otvoriti kanal prema vašem čvoru, omogućavajući vam da odmah primate uplate.
 
 
 ![ALBY HUB](assets/fr/27.webp)
 
 
-Kada je Invoice plaćen i transakcija potvrđena, vaš prvi Lightning kanal je uspostavljen.
+Kada je faktura plaćena i transakcija potvrđena, vaš prvi Lightning kanal je uspostavljen.
 
 
 ![ALBY HUB](assets/fr/28.webp)
@@ -301,22 +301,22 @@ Unesite iznos i dodajte opis ako je potrebno, zatim kliknite na "*Create Invoice
 ![ALBY HUB](assets/fr/31.webp)
 
 
-Primio sam svoju prvu uplatu od 120,000 Sats.
+Primio sam svoju prvu uplatu od 120,000 satošija.
 
 
 ![ALBY HUB](assets/fr/32.webp)
 
 
-Vraćanjem na karticu "*Wallet*" možete proveriti svoj Wallet saldo. Imajte na umu da Alby Hub automatski izdvaja 354 Sats kada izvršite svoju prvu uplatu. Za svaki Lightning kanal koji otvorite nakon toga, Alby Hub će automatski izdvojiti rezervu ekvivalentnu 1% kapaciteta kanala. Ova rezerva je sigurnosna mera koja omogućava vašem čvoru da povrati sredstva kanala u slučaju pokušaja prevare od strane vašeg partnera. Zato, iako sam poslao 120,000 Sats, na mom saldu je prikazano samo 119,646 Sats.
+Vraćanjem na karticu "*Wallet*" možete proveriti svoj saldo na novčaniku. Imajte na umu da Alby Hub automatski izdvaja 354 satošija kada izvršite svoju prvu uplatu. Za svaki Lightning kanal koji otvorite nakon toga, Alby Hub će automatski izdvojiti rezervu ekvivalentnu 1% kapaciteta kanala. Ova rezerva je sigurnosna mera koja omogućava vašem čvoru da povrati sredstva iz kanala u slučaju pokušaja prevare od strane vašeg partnera. Zato, iako sam poslao 120,000 satošija, na mom saldu je prikazano samo 119,646 Sats (satošija).
 
 
 ![ALBY HUB](assets/fr/33.webp)
 
 
-## Polaganje bitkoina na lancu
+## Uplata bitkoina na blokčejn/on-chain
 
 
-Ako želite da imate odlazni novac za plaćanja, možete i sami otvoriti kanal. Da biste to uradili, trebaju vam onchain bitcoini u vašem Wallet.
+Ako želite da imate odlazni novac za plaćanja, možete i sami otvoriti kanal. Da biste to uradili, trebaju vam onchain bitcoini u vašem novčaniku.
 
 
 Sa kartice "*Node*", kliknite na "*Deposit*".
@@ -325,13 +325,13 @@ Sa kartice "*Node*", kliknite na "*Deposit*".
 ![ALBY HUB](assets/fr/34.webp)
 
 
-Pošaljite bitkoine na prikazani Address. Ovaj Address je izveden iz vaše prethodno sačuvane fraze za oporavak.
+Pošaljite bitkoine na prikazanu adresu. Ova adresa je izvedena iz vaše prethodno sačuvane fraze za oporavak.
 
 
 ![ALBY HUB](assets/fr/35.webp)
 
 
-Poslao sam 72.000 Sats. Sada su vidljivi u "*Stanje štednje*", koje uključuje sva sredstva koja posedujem na lancu, a ne na Lightning-u.
+Poslao sam 72.000 Sats. Sada su vidljivi u "*Savings Balance*", koje uključuje sva sredstva koja posedujem na lancu, a ne na Lightning-u.
 
 
 ![ALBY HUB](assets/fr/36.webp)
@@ -349,7 +349,7 @@ U kartici "*Node*", kliknite na "*Open Channel*".
 ![ALBY HUB](assets/fr/37.webp)
 
 
-Odaberite veličinu vašeg kanala. Preporučujem da ne otvarate kanale koji su previše mali, imajući na umu da je ovo Lightning čvor i da mašina koja hostuje vaše ključeve ne nudi isti nivo sigurnosti kao Hardware Wallet. Zato budite pažljivi sa iznosima koje odlučite da blokirate.
+Odaberite veličinu vašeg kanala. Preporučujem da ne otvarate kanale koji su previše mali, imajući na umu da je ovo Lightning čvor i da mašina koja hostuje vaše ključeve ne nudi isti nivo sigurnosti kao hardverski novčanici. Zato budite pažljivi sa iznosima koje odlučite da blokirate.
 
 
 ![ALBY HUB](assets/fr/38.webp)
@@ -391,7 +391,7 @@ Upravljanje vašim Lightning kanalima je lakše nego što mislite. Alby Hub vam 
 ## Povežite aplikaciju za troškove
 
 
-Sada kada imate funkcionalan Lightning čvor, možete ga koristiti za primanje i trošenje Sats na dnevnoj bazi. Iako je Alby Hub-ov web Interface zgodan za upravljanje vašim čvorom, nije idealan za brzo obavljanje transakcija u pokretu. Za ovo ćemo koristiti Lightning Wallet aplikaciju instaliranu na našem pametnom telefonu.
+Sada kada imate funkcionalan Lightning čvor, možete ga koristiti za primanje i trošenje satošija na dnevnoj bazi. Iako je veb interfejs Alby Hub-a zgodan za upravljanje vašim čvorom, nije idealan za brzo obavljanje transakcija u pokretu. Za ovo ćemo koristiti aplikaciju Lightning novčanik instaliran na našem pametnom telefonu.
 
 
 U ovom vodiču preporučujem da se odlučite za Alby Go, koji je vrlo jednostavan za korišćenje, ali možete koristiti i druge kompatibilne aplikacije kao što je Zeus.
@@ -434,7 +434,7 @@ Kliknite na „Connect with One-Tab Connections“. Ovo će vam omogućiti da po
 ![ALBY HUB](assets/fr/48.webp)
 
 
-Alby Hub će zatim generate tajnu da uspostavi vezu sa Alby Go.
+Alby Hub će zatim generisati tajnu da uspostavi vezu sa Alby Go.
 
 
 ![ALBY HUB](assets/fr/49.webp)
@@ -446,13 +446,13 @@ Vratite se na aplikaciju Alby Go, skenirajte QR kod ili nalepite tajnu.
 ![ALBY HUB](assets/fr/50.webp)
 
 
-Kliknite na "Finish*".
+Kliknite na "*Finish*".
 
 
 ![ALBY HUB](assets/fr/51.webp)
 
 
-Sada imate daljinski pristup svom Lightning čvoru pokretanom Alby Hub-om sa svog pametnog telefona, što olakšava trošenje i primanje Sats u pokretu svaki dan.
+Sada imate daljinski pristup svom Lightning čvoru putem Alby Hub-a sa svog pametnog telefona, što vam omogućava da lako trošite i primate satošije u pokretu, svakog dana.
 
 
 ![ALBY HUB](assets/fr/52.webp)
@@ -470,14 +470,13 @@ Da biste primili Sats, jednostavno kliknite na "*Receive*".
 ![ALBY HUB](assets/fr/54.webp)
 
 
-Izmenite iznos i opis za Invoice klikom na "*Invoice*".
+Izmenite iznos i opis za fakturu klikom na "*Invoice*".
 
 
 ![ALBY HUB](assets/fr/55.webp)
 
 
-Napunite Invoice da biste primili Sats.
-
+Naplatite fakturu da biste primili satošije.
 
 ![ALBY HUB](assets/fr/56.webp)
 
@@ -488,7 +487,7 @@ Da biste poslali Sats, kliknite na "*Send*".
 ![ALBY HUB](assets/fr/57.webp)
 
 
-Skenirajte Invoice koji želite platiti.
+Skenirajte fakturu koji želite platiti.
 
 
 ![ALBY HUB](assets/fr/58.webp)
@@ -518,10 +517,10 @@ Ove transakcije su takođe vidljive na vašem Alby Hub-u.
 ![ALBY HUB](assets/fr/62.webp)
 
 
-## Prilagodite svoj Lightning Address
+## Prilagodite svoju Lightning adresu
 
 
-Alby vam nudi opciju Lightning Address. Ovo vam omogućava da primate uplate na vaš čvor bez potrebe da ručno generate i Invoice svaki put. Po defaultu, Alby vam dodeljuje Lightning Address, ali ga možete prilagoditi. Prijavite se na vaš Alby online nalog, kliknite na vaše ime u gornjem desnom uglu, zatim izaberite "*Settings*".
+Alby vam nudi opciju Lightning adrese. Ovo vam omogućava da primate uplate na vaš čvor bez potrebe da ručno generišete i fakturu svaki put. Po defaultu, Alby vam dodeljuje Lightning adresu, ali je možete prilagoditi. Prijavite se na vaš Alby online nalog, kliknite na vaše ime u gornjem desnom uglu, zatim izaberite "*Settings*".
 
 
 ![ALBY HUB](assets/fr/63.webp)
@@ -533,19 +532,19 @@ Idite na meni "*Lightning Address*".
 ![ALBY HUB](assets/fr/64.webp)
 
 
-Izmenite svoj Address, zatim potvrdite klikom na "*Update your lightning Address*".
+Izmenite svoju adresu, zatim potvrdite klikom na "*Update your lightning Address*".
 
 
 ![ALBY HUB](assets/fr/65.webp)
 
 
-Imajte na umu da kada vaš Address bude promenjen, više vam ne pripada. Zato se postarajte da mu nikada više ne šaljete Sats.
+Imajte na umu da kada vaš adresa bude promenjena, više vam ne pripada. Zato se postarajte da nikada više ne šaljete satošije na tu adresu.
 
 
-I to je to, sada znate kako da koristite Lightning sa svojim čvorom koristeći Alby Hub alat. Ako ste smatrali da je ovaj vodič koristan, bio bih veoma zahvalan ako biste stavili Green palac dole. Slobodno podelite ovaj članak na svojim društvenim mrežama. Hvala vam puno!
+I to je to, sada znate kako da koristite Lightning sa svojim čvorom koristeći Alby Hub alat. Ako ste smatrali da je ovaj vodič koristan, bio bih veoma zahvalan ako biste kliknuli na zeleni palac dole. Slobodno podelite ovaj članak na svojim društvenim mrežama. Hvala vam puno!
 
 
-Da biste detaljno razumeli sve Lightning mehanizme koje smo manipulisali u ovom vodiču, toplo vam preporučujem da otkrijete naš besplatni trening na tu temu :
+Da biste detaljno razumeli sve Lightning mehanizme koje smo koristili u ovom vodiču, toplo vam preporučujem da otkrijete naš besplatni trening na tu temu :
 
 
 https://planb.network/courses/34bd43ef-6683-4a5c-b239-7cb1e40a4aeb
