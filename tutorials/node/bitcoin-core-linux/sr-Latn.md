@@ -1,21 +1,22 @@
 ---
 name: Bitcoin Core (Linux)
-description: Pokretanje sopstvenog čvora sa Bitcoin Core
+description: Pokretanje sopstvenog čvora sa Bitcoin Core-om
 ---
 
 ![cover](assets/cover.webp)
 
 
-# Pokretanje sopstvenog čvora sa Bitcoin Core
+# Pokretanje sopstvenog Bitcoin Core čvora 
 
 
 Uvod u Bitcoin i koncept čvora, dopunjen sveobuhvatnim vodičem za instalaciju na Linuxu.
 
 
-Jedan od najuzbudljivijih predloga Bitcoin je mogućnost da sami pokrenete program i tako učestvujete na detaljnom nivou u mreži i verifikaciji javne transakcije Ledger.
+Jedna od najuzbudljivijih mogućnosti koje Bitcoin nudi jeste mogućnost da sami pokrenete program i na taj način učestvujete na detaljnom nivou u mreži i verifikaciji javne knjige transakcija.
 
 
-Bitcoin, an open-source project, has been publicly distributed and available for free since 2009. Nearly 15 years after its inception, Bitcoin is now a robust and unstoppable digital monetary network, benefiting from a powerful organic network effect. For their efforts and vision, Satoshi Nakamoto deserves our gratitude. By the way, we host the Bitcoin whitepaper here on Agora 256 (note: also on the university).
+Bitcoin, projekat otvorenog koda, javno je distribuiran i dostupan besplatno od 2009. godine. Skoro 15 godina nakon svog nastanka, Bitcoin je danas snažna i nezaustavljiva digitalna monetarna mreža, koja koristi moćan organski mrežni efekat. Za svoju viziju i trud, Satoshi Nakamoto zaslužuje našu zahvalnost.
+Usput, Bitcoin whitepaper hostujemo ovde na Agora 256 (napomena: nalazi se i na sajtu univerziteta).
 
 
 ## Postati sopstvena banka
@@ -24,10 +25,10 @@ Bitcoin, an open-source project, has been publicly distributed and available for
 Pokretanje sopstvenog čvora postalo je ključno za pristalice Bitcoin aksioma. Bez traženja dozvole od bilo koga, moguće je preuzeti Blockchain od početka i tako verifikovati sve transakcije od A do Š prema Bitcoin protokolu.
 
 
-Program takođe uključuje sopstveni Wallet. Tako, imamo kontrolu nad transakcijama koje šaljemo ostatku mreže, bez ikakvog posrednika ili treće strane. Vi ste vaša sopstvena banka.
+Program takođe uključuje sopstveni novčanik. Tako, dobijamo kontrolu nad transakcijama koje šaljemo ostatku mreže, bez ikakvog posrednika ili treće strane. Vi ste vaša sopstvena banka.
 
 
-Ostatak ovog članka je stoga vodič za instalaciju Bitcoin Core — najčešće korišćene verzije Bitcoin softvera — posebno na Linux distribucijama kompatibilnim sa Debianom kao što su Ubuntu i Pop!/\_OS. Pratite ovaj vodič kako biste se približili svojoj individualnoj suverenosti.
+Ostatak ovog članka je stoga vodič za instalaciju Bitcoin Core-a — najčešće korišćene verzije Bitcoin softvera — posebno na Linux distribucijama kompatibilnim sa Debianom kao što su Ubuntu i Pop!/_OS. Pratite ovaj vodič kako biste se približili svojoj individualnoj suverenosti.
 
 
 ## Vodič za instalaciju Bitcoin Core za Debian/Ubuntu
@@ -36,8 +37,8 @@ Ostatak ovog članka je stoga vodič za instalaciju Bitcoin Core — najčešće
 **Preduslovi**
 
 
-- Minimum 6GB of data storage (pruned node) — 1TB of data storage (Full node)
-- Dozvolite najmanje 24 sata za završetak početnog preuzimanja blokova (IBD). Ova operacija je obavezna čak i za orezani čvor.
+- Minimum 6 GB prostora za skladištenje podataka ([pruned čvor](https://planb.network/resources/glossary/pruned-node)) — 1 TB prostora za skladištenje podataka (puni čvor)
+- Dozvolite najmanje 24 sata za završetak početnog preuzimanja blokova (IBD). Ova operacija je obavezna čak i za pruned čvor.
 - Dozvoli ~600GB protoka za IBD, čak i za pruned čvor.
 
 
