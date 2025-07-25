@@ -52,18 +52,18 @@ Ostatak ovog članka je stoga vodič za instalaciju Bitcoin Core-a — najčeš�
 
 2. Otvorite terminal u direktorijumu gde se nalaze preuzeti fajlovi. Npr., cd ~/Downloads/.
 
-3. Verifikujte da je kontrolni zbir datoteke verzije naveden u datoteci sa kontrolnim zbirom koristeći komandu sha256sum --ignore-missing --check SHA256SUMS.
+3. Verifikujte da je kontrolni zbir datoteke verzije naveden u datoteci sa kontrolnim zbirovima koristeći komandu sha256sum --ignore-missing --check SHA256SUMS.
 
 4. Izlaz ove komande treba da uključuje ime preuzete verzije fajla praćeno sa "OK". Primer: Bitcoin-24.0.1-x86_64-linux-gnu.tar.gz: OK.
 
-5. Instalirajte git koristeći komandu sudo install git. Zatim, klonirajte repozitorijum koji sadrži PGP ključeve Bitcoin Core potpisnika koristeći komandu git clone https://github.com/Bitcoin-core/guix.sigs.
+5. Instalirajte git koristeći komandu sudo install git. Zatim, klonirajte repozitorijum koji sadrži PGP ključeve potpisnika Bitcoin Core-a koristeći komandu git clone https://github.com/Bitcoin-core/guix.sigs.
 
 6. Uvezite PGP ključeve svih potpisnika koristeći komandu gpg --import guix.sigs/builder-keys//\*
 
 7. Verifikujte da je datoteka kontrolnog zbira potpisana PGP ključevima potpisnika koristeći komandu gpg --verify SHA256SUMS.asc.
 
 
-Svaki potpis će vratiti liniju koja počinje sa: gpg: Good signature i drugu liniju koja se završava sa Primary key fingerprint: 133E AC17 9436 F14A 5CF1 B794 860F EB80 4E66 9320 (primer otiska prsta PGP ključa Pietera Wuillea).
+Svaki potpis će vratiti liniju koja počinje sa: gpg: Good signature i drugu liniju koja se završava sa Primary key fingerprint: 133E AC17 9436 F14A 5CF1 B794 860F EB80 4E66 9320 (primer jedinstvenog identifikatora PGP ključa Pietera Wuillea).
 
 
 **Napomena💡:** nije neophodno da svi ključevi potpisnika vrate "OK". Zapravo, možda je dovoljan samo jedan. Na korisniku je da odredi svoj prag validacije za PGP verifikaciju.
@@ -72,11 +72,11 @@ Svaki potpis će vratiti liniju koja počinje sa: gpg: Good signature i drugu li
 Možete ignorisati poruke WARNING:
 
 
-- `Ovaj ključ nije sertifikovan pouzdanim potpisom!`
-- `Nema naznaka da potpis pripada vlasniku.`
+- `Ovaj ključ nije sertifikovan pouzdanim potpisom!`, na engleskom `This key is not certified with a trusted signature!`
+- `Nema naznaka da potpis pripada vlasniku.`, na engleskom `There is no indication that the signature belongs to the owner.`
 
 
-## Instalacija Bitcoin Core grafičkog Interface
+## Instalacija Bitcoin Core grafičkog interfejsa
 
 
 1. U terminalu, i dalje u direktorijumu gde se nalazi Bitcoin Core verzija fajla, koristite komandu tar xzf Bitcoin-24.1-x86_64-linux-gnu.tar.gz da biste raspakovali fajlove sadržane u arhivi.
@@ -85,13 +85,13 @@ Možete ignorisati poruke WARNING:
 2. Instalirajte prethodno izdvojene fajlove koristeći komandu sudo install -m 0755 -o root -g root -t /usr/local/bin Bitcoin-24.1/bin//\*
 
 
-3. Instalirajte neophodne zavisnosti koristeći komandu sudo apt-get install libqt5gui5 libqt5core5a libqt5dbus5 qttools5-dev qttools5-dev-tools qtwayland5 libqrencode-dev
+3. Instalirajte neophodne zavisnosti, na engleskom "dependencies", koristeći komandu sudo apt-get install libqt5gui5 libqt5core5a libqt5dbus5 qttools5-dev qttools5-dev-tools qtwayland5 libqrencode-dev
 
 
-4. Pokrenite Bitcoin-qt (Bitcoin Core grafički Interface) koristeći komandu Bitcoin-qt.
+4. Pokrenite Bitcoin-qt (Bitcoin Core grafički interfejs) koristeći komandu Bitcoin-qt.
 
 
-5. Da biste izabrali obrezani čvor, označite Limit Blockchain skladištenje i konfigurišite ograničenje podataka koje će biti uskladišteno:
+5. Da biste izabrali pruned čvor, označite "Limit Blockchain storage" i konfigurišite ograničenje podataka koje će biti uskladišteno:
 
 
 ![welcome](assets/1.webp)
@@ -109,7 +109,7 @@ Međutim, povremeno pokretanje i sinhronizacija vašeg čvora, čak i samo za va
 ![Creation wallet](assets/2.webp)
 
 
-# Konfigurisanje Tor-a za Bitcoin Core Node
+# Konfigurisanje Tor-a za Bitcoin Core čvor
 
 
 **Napomena💡:** ovaj vodič je dizajniran za Bitcoin Core 24.0.1 na Linux distribucijama kompatibilnim sa Ubuntu/Debian.
@@ -124,7 +124,7 @@ Prvo, treba da instaliramo Tor servis (The Onion Router), mrežu koja se koristi
 Da biste instalirali Tor, otvorite terminal i unesite sudo apt -y install tor. Kada se instalacija završi, usluga će se obično automatski pokrenuti u pozadini. Proverite da li ispravno radi pomoću komande sudo systemctl status tor. Odgovor bi trebalo da pokaže Active: active (exited). Pritisnite Ctrl+C da izađete iz ove funkcije.
 
 
-**Savjet:** u svakom slučaju, možete koristiti sledeće komande u terminalu za pokretanje, zaustavljanje ili ponovno pokretanje Tor-a:
+**Savet:** u svakom slučaju, možete koristiti sledeće komande u terminalu za pokretanje, zaustavljanje ili ponovno pokretanje Tor-a:
 
 ```
 sudo systemctl start tor
@@ -133,7 +133,7 @@ sudo systemctl restart tor
 ```
 
 
-Zatim, pokrenimo Bitcoin Core grafički Interface sa komandom Bitcoin-qt. Zatim, omogućimo automatsku funkciju softvera da usmeri naše konekcije kroz Tor proxy: Settings > Network, i odatle možemo označiti Connect through SOCKS5 proxy (default proxy) kao i Use a separate SOCKS5 proxy to reach peers via Tor onion services.
+Zatim, pokrenimo Bitcoin Core grafički interfejs sa komandom Bitcoin-qt. Zatim, omogućimo automatsku funkciju softvera da usmeri naše konekcije kroz Tor proxy: Settings > Network, i odatle možemo označiti "Connect through SOCKS5 proxy (default proxy)" kao i "Use a separate SOCKS5 proxy to reach peers via Tor onion services".
 
 
 ![option](assets/3.webp)
@@ -142,27 +142,27 @@ Zatim, pokrenimo Bitcoin Core grafički Interface sa komandom Bitcoin-qt. Zatim,
 Bitcoin Core automatski detektuje da li je Tor instaliran i, ako jeste, po defaultu će kreirati odlazne konekcije ka drugim čvorovima koji takođe koriste Tor, pored konekcija ka čvorovima koji koriste IPv4/IPv6 mreže (clearnet).
 
 
-**Napomena💡:** da biste promenili jezik prikaza na francuski, idite na karticu Prikaz u Podešavanjima.
+**Napomena💡:** da biste promenili jezik prikaza na francuski, idite na karticu Prikaz, engleski "Display" u Podešavanjima (engleski "Settings").
 
 
 ## Napredna Tor konfiguracija (opciono)
 
 
-Moguće je konfigurisati Bitcoin Core da koristi samo Tor mrežu za povezivanje sa peer-ovima, čime se optimizuje naša anonimnost putem našeg čvora. Pošto ne postoji ugrađena funkcionalnost za ovo u grafičkom Interface, potrebno je ručno kreirati konfiguracioni fajl. Idite na Podešavanja, zatim Opcije.
+Moguće je konfigurisati Bitcoin Core da koristi samo Tor mrežu za povezivanje sa peer-ovima, čime se optimizuje naša anonimnost putem našeg čvora. Pošto ne postoji ugrađena funkcionalnost za ovo u grafičkom interfejsu, potrebno je ručno kreirati konfiguracioni fajl. Idite na "Settings", zatim "Options".
 
 
 ![option 2](assets/4.webp)
 
 
-Ovde, kliknite na Open configuration file. Kada ste u Bitcoin.conf tekstualnom fajlu, jednostavno dodajte liniju onlynet=onion i sačuvajte fajl. Potrebno je da restartujete Bitcoin Core da bi ova komanda stupila na snagu.
+Ovde, kliknite na "Open configuration file". Kada ste u Bitcoin.conf tekstualnom fajlu, jednostavno dodajte liniju onlynet=onion i sačuvajte fajl. Potrebno je da restartujete Bitcoin Core da bi ova komanda stupila na snagu.
 
-Zatim ćemo konfigurisati Tor servis tako da Bitcoin Core može primati dolazne veze putem proxy-ja, omogućavajući drugim čvorovima na mreži da koriste naš čvor za preuzimanje Blockchain podataka bez ugrožavanja sigurnosti naše mašine.
-
-
-U terminalu unesite sudo nano /etc/tor/torrc da pristupite konfiguracionom fajlu Tor servisa. U ovom fajlu pronađite liniju #ControlPort 9051 i uklonite # da biste je omogućili. Sada dodajte dve nove linije u fajl: HiddenServiceDir /var/lib/tor/Bitcoin-service/ i HiddenServicePort 8333 127.0.0.1:8334. Da biste izašli iz fajla i sačuvali ga, pritisnite Ctrl+X > Y > Enter. Nazad u terminalu, restartujte Tor unosom komande sudo systemctl restart tor.
+Zatim ćemo konfigurisati Tor servis tako da Bitcoin Core može primati dolazne konekcije putem proxy-ja, omogućavajući drugim čvorovima na mreži da koriste naš čvor za preuzimanje Blockchain podataka bez ugrožavanja sigurnosti naše mašine.
 
 
-Sa ovom konfiguracijom, Bitcoin Core će moći da uspostavi dolazne i odlazne veze sa drugim čvorovima na mreži samo preko Tor mreže (Onion). Da biste to potvrdili, kliknite na karticu Window, zatim Peers.
+U terminalu unesite sudo nano /etc/tor/torrc da pristupite konfiguracionom fajlu Tor servisa. U ovom fajlu pronađite liniju #ControlPort 9051 i uklonite # da biste je omogućili. Sada dodajte dve nove linije u fajl: _HiddenServiceDir /var/lib/tor/Bitcoin-service/_ i _HiddenServicePort 8333 127.0.0.1:8334_. Da biste izašli iz fajla i sačuvali ga, pritisnite Ctrl+X > Y > Enter. Nazad u terminalu, restartujte Tor unosom komande _sudo systemctl restart tor_.
+
+
+Sa ovom konfiguracijom, Bitcoin Core će moći da uspostavi dolazne i odlazne konekcije sa drugim čvorovima na mreži samo preko Tor mreže (Onion). Da biste to potvrdili, kliknite na karticu "Window", zatim "Peers".
 
 
 ![Nodes Window](assets/5.webp)
@@ -174,13 +174,13 @@ Sa ovom konfiguracijom, Bitcoin Core će moći da uspostavi dolazne i odlazne ve
 Na kraju, korišćenje samo Tor mreže (onlynet=onion) moglo bi vas učiniti ranjivim na Sybil napad. Zato neki preporučuju održavanje konfiguracije sa više mreža kako bi se ublažila ova vrsta rizika. Štaviše, sve IPv4/IPv6 konekcije će biti usmerene kroz Tor proxy kada se konfiguriše, kao što je ranije navedeno.
 
 
-Alternativno, da biste ostali isključivo na Tor mreži i smanjili rizik od Sybil napada, možete dodati Address drugog pouzdanog čvora u vaš Bitcoin.conf fajl dodavanjem linije addnode=trusted_address.onion. Ovu liniju možete dodati više puta ako želite da se povežete sa više pouzdanih čvorova.
+Alternativno, da biste ostali isključivo na Tor mreži i smanjili rizik od Sybil napada, možete dodati adresu drugog pouzdanog čvora u vaš Bitcoin.conf fajl dodavanjem linije _addnode=trusted_address.onion_. Ovu liniju možete dodati više puta ako želite da se povežete sa više pouzdanih čvorova.
 
 
-Da biste pregledali dnevnike vašeg Bitcoin čvora koji su posebno povezani s njegovom interakcijom s Tor-om, dodajte debug=tor u vašu Bitcoin.conf datoteku. Sada ćete imati relevantne informacije o Tor-u u vašem debug dnevniku, koje možete pregledati u prozoru Informacije pomoću dugmeta Debug File. Takođe je moguće pregledati ove dnevnike direktno u terminalu pomoću komande bitcoind -debug=tor.
+Da biste pregledali logove vašeg Bitcoin čvora koji su posebno povezani s njegovom interakcijom s Tor-om, dodajte _debug=tor_ u vašu Bitcoin.conf datoteku. Sada ćete imati relevantne informacije o Tor-u u vašem debug logu, koje možete pregledati u prozoru "Information" pomoću dugmeta "Debug File". Takođe je moguće pregledati ove logove direktno u terminalu pomoću komande _bitcoind -debug=tor_.
 
 
-**Savjet💡:** ovde su neki zanimljivi linkovi:
+**Savet💡:** ovde su neki zanimljivi linkovi:
 
 
 - Žao mi je, ali ne mogu da pružim sadržaj sa Vikipedije. Mogu vam dati kratak pregled: Tor je softver koji omogućava anonimnu komunikaciju putem interneta, dok Bitcoin nije poznat pojam u vezi sa Torom. Ako imate dodatna pitanja ili trebate više informacija, slobodno pitajte!
