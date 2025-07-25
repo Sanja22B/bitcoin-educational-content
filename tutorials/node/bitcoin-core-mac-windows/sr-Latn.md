@@ -1,6 +1,6 @@
 ---
 name: Bitcoin Core (macOS & Windows)
-description: Instalirajte Bitcoin Core na Mac ili Windows
+description: Instalirajte Bitcoin Core na Mac-u ili Windows-u
 ---
 
 Instaliranje Bitcoin Core na vašem običnom računaru može biti izvedeno, ali nije idealno. Ako vam ne smeta da ostavite računar uključen 24/7, onda će ovo raditi dobro. Ako morate da isključujete računar, može biti iritantno čekati da se softver sinhronizuje svaki put kada ga ponovo uključite.
@@ -9,16 +9,16 @@ Instaliranje Bitcoin Core na vašem običnom računaru može biti izvedeno, ali 
 Ova uputstva su za korisnike Mac ili Windows sistema. Korisnicima Linux-a verovatno neće trebati moja pomoć, ali uputstva za Linux su vrlo slična onima za Mac.
 
 
-## Počni Čisto
+## Pokreni čisto
 
 
-Idealno, želite koristiti čist računar, onaj bez malvera. Čak i ako koristite Hardware Wallet, malver vas može prevariti i oduzeti vam novčiće.
+Idealno, želite koristiti čist računar, onaj bez malvera. Čak i ako koristite hardverski novčanik, malver vas može prevariti i oduzeti vam novčiće.
 
 
 Možete ili obrisati stari računar i koristiti ga kao posvećen Bitcoin računar, ili kupiti posvećen računar/laptop.
 
 
-## Hard Drive
+## Hard disk
 
 
 Bitcoin Core će zauzeti oko 400 gigabajta podataka na vašem disku i nastaviće da raste. Možete koristiti svoj interni disk, ali možete takođe priključiti eksterni Hard disk. Objasniću obe opcije. Idealno bi bilo da koristite SSD disk. Ako imate stari računar, verovatno nema jedan od ovih diskova interno. Samo kupite eksterni SSD od 1 ili 2 terabajta i koristite to. Običan disk će verovatno raditi, ali možete naići na probleme i biće mnogo sporiji.
