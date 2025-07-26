@@ -17,10 +17,10 @@ Zahtevi:
 NodeJs se može preuzeti sa njegove zvanične veb stranice.
 
 
-Umesto preuzimanja i postavljanja LND čvora, koristićemo alat polar, koji će obaviti ovaj zadatak za nas.
+Umesto preuzimanja i postavljanja LND čvora, koristićemo Polar alat, koji će obaviti ovaj zadatak za nas.
 
 
-Da bismo izgradili našu Lightning aplikaciju, koristićemo sledeće tehnologije:
+Da bismo napravili našu Lightning aplikaciju, koristićemo sledeće tehnologije:
 
 
 
@@ -36,7 +36,7 @@ Preporučuje se korišćenje Linux-a, ako ste na Windows 10 možete imati Linux 
 Priprema baze
 
 
-Koristite alat za generisanje aplikacija, express, da brzo kreirate skelet aplikacije.
+Koristite alat za generisanje aplikacija, Express, kako biste brzo kreirali kostur aplikacije.
 
 
 ```
@@ -69,7 +69,7 @@ $ npm start
 ```
 
 
-Zatim, idite na ovaj Address http://localhost:3000 u pregledaču da pristupite aplikaciji.
+Zatim, idite na ovu adresu http://localhost:3000 u pregledaču da pristupite aplikaciji.
 
 
 Generisana aplikacija ima sledeću strukturu direktorijuma:
@@ -99,10 +99,10 @@ Generisana aplikacija ima sledeću strukturu direktorijuma:
 ## Polar
 
 
-Preuzmite Polar, instalirajte ga i kreirajte mrežu sa 2 LND čvora (Alice i Bob) i 1 bitcoind. Kada vidimo grafikon u aplikaciji koji prikazuje naše čvorove, kliknite na dugme Start i sačekajte nekoliko sekundi dok indikator svakog čvora ne promeni boju u Green.
+Preuzmite Polar, instalirajte ga i kreirajte mrežu sa 2 LND čvora (Alisa i Bob) i 1 bitcoind. Kada vidimo grafikon u aplikaciji koji prikazuje naše čvorove, kliknite na dugme Start i sačekajte nekoliko sekundi dok indikator svakog čvora ne promeni boju u zelenu.
 
 
-Da bi se slala plaćanja na Lightning mreži, neophodno je da čvorovi budu međusobno povezani kroz kanale. Kreiranje kanala sa Polar-om je veoma jednostavno, samo treba da kliknemo mišem na jedno od ušiju Alice čvora i prevučemo ga na jedno od ušiju Bob čvora. Odmah će se pojaviti modalni prozor pod nazivom Otvori novi kanal, ostavljamo podrazumevane vrednosti i pritisnemo dugme za otvaranje kanala. Sada ponavljamo akciju, ali ovaj put od Boba ka Alice, na taj način oba čvora mogu slati i primati novac.
+Da bi se slala plaćanja na Lightning mreži, neophodno je da čvorovi budu međusobno povezani kroz kanale. Kreiranje kanala sa Polar-om je veoma jednostavno, samo treba da kliknemo mišem na jedno od ušiju Alisinog čvora i prevučemo ga na jedno od ušiju Bobovog čvora. Odmah će se pojaviti modalni prozor pod nazivom Otvori novi kanal, ostavljamo podrazumevane vrednosti i pritisnemo dugme za otvaranje kanala. Sada ponavljamo akciju, ali ovaj put od Boba ka Alisi, na taj način oba čvora mogu slati i primati novac.
 
 
 ## Nodemon
