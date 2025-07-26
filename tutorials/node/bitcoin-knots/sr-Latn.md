@@ -1,6 +1,6 @@
 ---
 name: Bitcoin Čvorovi
-description: Kako da pokrenem čvor sa alternativnim klijentom Bitcoin Knots?
+description: Kako da pokrenem čvor sa alternativnim Bitcoin Knots klijentom?
 ---
 ![cover](assets/cover.webp)
 
@@ -282,13 +282,13 @@ Vaša transakcija koja čeka potvrdu sada se pojavljuje na kartici "*Transakcije
 ## Povezivanje vašeg čvora sa drugim programom
 
 
-Bitcoin Knots' integrisani Interface za upravljanje vašim Bitcoin Wallet nije nužno najintuitivniji, a njegova funkcionalnost ostaje relativno ograničena. Međutim, možete povezati vaš Bitcoin Knots čvor sa specijalizovanim Wallet softverom za upravljanje kako biste lako pristupili Blockchain Bitcoin podacima i emitovali vaše transakcije.
+Integrisani interfejs za upravljanje Bitcoin novčanikom u okviru Bitcoin Knots-a nije nužno najintuitivniji, a njegova funkcionalnost ostaje relativno ograničena. Ipak, možete povezati svoj Bitcoin Knots čvor sa specijalizovanim softverom za upravljanje novčanikom kako biste lakše pristupili Bitcoin podacima iz blokčejna i emitovali svoje transakcije.
 
 
-Procedura će zavisiti od korišćenog softvera, ali postoje dva glavna scenarija: ili je Bitcoin Knots instaliran na istom računaru kao vaš Wallet softver, ili radi na zasebnoj mašini.
+Procedura će zavisiti od korišćenog softvera, ali postoje dva glavna scenarija: ili je Bitcoin Knots instaliran na istom računaru kao vaš softver novčanika, ili radi na zasebnoj mašini.
 
 
-### Sa lokalnim Bitcoin Čvorovima :
+### Sa lokalnim Bitcoin Knots čvorom:
 
 
 Ako je Bitcoin Knots instaliran na vašem računaru, pronađite datoteku `Bitcoin.conf` među softverskim datotekama. Ako ova datoteka ne postoji, možete je kreirati. Otvorite je pomoću uređivača teksta i umetnite sledeći red:
@@ -301,8 +301,8 @@ server=1
 
 Zatim sačuvaj svoje izmene.
 
+Ovo takođe možete uraditi putem grafičkog interfejsa Bitcoin-QT-a tako što ćete otići na "*Settings*" > "*Options...*" i uključiti opciju "*Enable RPC server*".
 
-Takođe možete to uraditi putem Bitcoin-QT-ove Interface grafike tako što ćete otići na "*Settings*" > "*Options...*" i omogućiti opciju "*Enable RPC server*".
 
 
 Ne zaboravite da restartujete softver nakon što napravite ove promene.
@@ -311,7 +311,7 @@ Ne zaboravite da restartujete softver nakon što napravite ove promene.
 ![Image](assets/fr/34.webp)
 
 
-Zatim idite na svoj Wallet softver za upravljanje (npr. Sparrow Wallet ili Liana) i unesite putanju do vaše cookie datoteke, koja se obično nalazi u istom folderu kao i `Bitcoin.conf`, u zavisnosti od vašeg operativnog sistema:
+Zatim otvorite svoj softver za upravljanje novčanikom (npr. Sparrow Wallet ili Liana) i unesite putanju do cookie fajla, koji se obično nalazi u istom folderu kao i `Bitcoin.conf`, u zavisnosti od operativnog sistema:
 
 
 |**macOS**|~/Library/Application Support/Bitcoin|
@@ -328,7 +328,7 @@ Ostavite ostale parametre kao podrazumevane, URL `127.0.0.1` i port `8332`, zati
 ![Image](assets/fr/36.webp)
 
 
-### Sa daljinskim Bitcoin Čvorovi :
+### Sa udaljenim Bitcoin Knots čvorom:
 
 
 Ako je Bitcoin Knots instaliran na drugoj mašini povezanoj na istu mrežu, prvo pronađite datoteku `Bitcoin.conf` među softverskim datotekama. Ako ova datoteka još ne postoji, možete je kreirati. Otvorite ovu datoteku pomoću uređivača teksta i dodajte sledeći red:
@@ -347,16 +347,16 @@ Nakon uređivanja datoteke, obavezno je sačuvajte u odgovarajućem folderu za v
 |**Windows**|%APPDATA%\Bitcoin|
 |**Linux**|~/.Bitcoin|
 
-Ova operacija se takođe može izvesti putem Bitcoin-QT-ove Interface grafike. Idite na meni "*Settings*", zatim "*Options...*", i aktivirajte opciju "*Enable RPC server*" označavanjem odgovarajućeg polja. Ako `Bitcoin.conf` datoteka ne postoji, možete je kreirati direktno iz ovog Interface klikom na "*Open Configuration File*".
+Ova operacija se takođe može izvesti putem Bitcoin-QT korisničkog interfejsa. Idite na meni "*Settings*", zatim "*Options...*", i aktivirajte opciju "*Enable RPC server*" označavanjem odgovarajućeg polja. Ako `Bitcoin.conf` datoteka ne postoji, možete je kreirati direktno iz ovog Interface klikom na "*Open Configuration File*".
 
 
 ![Image](assets/fr/37.webp)
 
 
-Pronađite IP Address mašine koja hostuje Bitcoin Knots na vašoj lokalnoj mreži. Da biste to uradili, možete koristiti alat kao što je [Angry IP Scanner](https://angryip.org/). Pretpostavimo, radi argumentacije, da je IP Address vašeg čvora `192.168.1.18`.
+Pronađite IP adresu mašine koja hostuje Bitcoin Knots na vašoj lokalnoj mreži. Da biste to uradili, možete koristiti alat kao što je [Angry IP Scanner](https://angryip.org/). Pretpostavimo, radi argumentacije, da je IP adresa vašeg čvora `192.168.1.18`.
 
 
-U datoteku `Bitcoin.conf` dodajte sledeće linije, postavljajući `rpcbind=192.168.1.18` da odgovara IP adresi Address vašeg čvora.
+U datoteku `Bitcoin.conf` dodajte sledeće linije, postavljajući `rpcbind=192.168.1.18` da odgovara IP adresi vašeg čvora.
 
 
 ```ini
@@ -386,7 +386,7 @@ rpcpassword=my_password
 Nakon izmene i čuvanja datoteke, ponovo pokrenite Bitcoin Knots.
 
 
-Sada možete otići na vaš Wallet softver za upravljanje (npr. Sparrow Wallet ili Liana). Na Sparrow-u, idite na karticu "*User / Pass*". Unesite korisničko ime i lozinku koje ste konfigurisali u `Bitcoin.conf` fajlu. Ostavite ostale parametre kao podrazumevane, tj. URL `127.0.0.1` i port `8332`. Zatim kliknite na "*Test Connection*".
+Sada možete otići na vaš softverski novčanik (npr. Sparrow novčanik ili Liana). Na Sparrow-u, idite na karticu "*User / Pass*". Unesite korisničko ime i lozinku koje ste konfigurisali u `Bitcoin.conf` fajlu. Ostavite ostale parametre kao podrazumevane, tj. URL `127.0.0.1` i port `8332`. Zatim kliknite na "*Test Connection*".
 
 
 ![Image](assets/fr/40.webp)
@@ -398,7 +398,7 @@ Veza je uspostavljena.
 Sada znate sve o alternativnoj implementaciji Bitcoin Knots.
 
 
-Ako ste našli ovaj vodič korisnim, bio bih veoma zahvalan ako biste ostavili Green palac ispod. Slobodno ga podelite na vašim društvenim mrežama. Hvala vam puno!
+Ako ste našli ovaj vodič korisnim, bio bih veoma zahvalan ako biste klinuli na zeleni palac ispod. Slobodno ga podelite na vašim društvenim mrežama. Hvala vam puno!
 
 
 Takođe preporučujem ovaj drugi vodič u kojem objašnjavam kako da postavite svoj sopstveni Lightning čvor:
