@@ -204,10 +204,10 @@ console.log(e);
 ```
 
 
-Sada idi na ovaj Address http://localhost:3000/info
+Sada idi na ovu adresu http://localhost:3000/info
 
 
-Ako vidite JSON sa informacijama o čvoru LND, čestitamo!!! vaša aplikacija sada može komunicirati sa Lightning Network.
+Ako vidite JSON sa informacijama o LND čvoru, čestitamo!!! vaša aplikacija sada može komunicirati sa Lightning mrežom.
 
 Kreiranje lažnog modela
 
@@ -435,10 +435,10 @@ app.use('/api', apiRouter);
 Hajde da ponovo pritisnemo dugme za slanje i trebalo bi da odgovori sa istim podacima koje smo uneli u formu.
 
 
-## Kreiraj Invoice
+## Kreiraj fakturu
 
 
-Metod koji se izvršava kada korisnik kreira objavu treba da generate i Invoice, zatim kreira zapis u bazi podataka povezujući ga sa Invoice, i vrati Invoice korisniku kako bi ga mogli platiti.
+Metod koji se izvršava kada korisnik kreira objavu treba da generate i fakturu, zatim kreira zapis u bazi podataka povezujući ga sa fakturom, i vrati fakturu korisniku kako bi ga mogli platiti.
 
 
 ```markdown
@@ -495,8 +495,7 @@ Ako primimo objekat posta kao odgovor nakon pritiska na dugme za slanje, kao št
 ```
 
 
-## Novi Invoice pogled
-
+## Prikaz nove fakture
 
 U direktorijumu views, potrebno je kreirati datoteku pod nazivom Invoice.pug sa sledećim sadržajem:
 
@@ -554,7 +553,7 @@ $('#invoice').val(response.data.request);
 ## Primanje uplate
 
 
-Moramo znati kada primimo uplatu, za to ćemo koristiti metodu subscribeToInvoices() iz lnservice, ova metoda nam omogućava da izvršimo kod kada je status Invoice ažuriran, da bismo je koristili dodajemo ove linije u app.js.
+Moramo znati kada primimo uplatu, za to ćemo koristiti metodu subscribeToInvoices() iz lnservice, ova metoda nam omogućava da izvršimo kod kada je status fakture ažuriran, da bismo je koristili dodajemo ove linije u app.js.
 
 
 ```
@@ -591,7 +590,7 @@ subscribeInvoices();
 ```
 
 
-Kreirajte HTTP GET metodu u našem API-ju kako bi korisnik mogao proveriti da li je Hash plaćen.
+Kreirajte HTTP GET metodu u našem API-ju kako bi korisnik mogao proveriti da li je heš plaćen.
 
 
 ````
@@ -616,7 +615,7 @@ data: null,
 });
 ````
 
-Now, from main.js, we create a function called App.waitPayment() that queries the API if the payment has been made.
+Sada, iz fajla main.js, kreiramo funkciju pod nazivom App.waitPayment() koja upućuje upit ka API-ju kako bi proverila da li je uplata izvršena.
 
 ```
 
@@ -638,9 +637,11 @@ console.log("Plaćanje izvršeno");
 
 ```
 
-Now we encounter a problem, the function App.waitPayment() is only executed once, the user may have made the payment and we have not been able to indicate that their payment has been received. For this, we use a JavaScript function called setInterval() that allows us to execute a function indefinitely at the interval of time we have indicated.
+Sada nailazimo na problem — funkcija App.waitPayment() se izvršava samo jednom, dok korisnik možda izvrši uplatu kasnije, a mi nismo u mogućnosti da označimo da je uplata primljena.
 
-Let's modify the functions App.waitPayment() and App.sendBtn() including setInterval() and clearInterval()
+Zbog toga koristimo JavaScript funkciju setInterval(), koja nam omogućava da funkciju izvršavamo neprekidno u vremenskim intervalima koje odredimo.
+
+Hajde da modifikujemo funkcije App.waitPayment() i App.sendBtn() tako da uključuju setInterval() i clearInterval().
 
 ```
 
@@ -701,7 +702,7 @@ App.interval = setInterval(App.waitPayment, 1000, response.data.Hash);
 
 ```
 
-And we create a view to indicate that the payment has been successfully received, we create the file success.pug in views with the following content:
+I kreiramo prikaz koji označava da je uplata uspešno primljena — pravimo fajl success.pug u folderu views, sa sledećim sadržajem:
 
 ```
 
@@ -715,21 +716,20 @@ div Dokaz o uplati:
 
 ```
 
-We include it in index.pug.
+Uključujemo ga u index.pug.
+
 
 ```
 
-proširuje raspored
+extends layout
 
 
-blok sadržaj
-
-h1 Lightning App
-
-uključiti form.pug
-
-uključiti Invoice.pug
-
-uključiti success.pug
+block content
+  h1 Lightning App
+  include form.pug
+  include invoice.pug
+  include success.pug
 
 ```
+
+Ako nakon plaćanja fakture vidiš poruku „Uplata uspešna“ i dokaz o uplati — čestitamo!!! Uspeo/la si, završio/la si svoju prvu LApp aplikaciju.
