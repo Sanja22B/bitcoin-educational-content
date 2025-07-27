@@ -7,7 +7,7 @@ description: Instaliranje i pokretanje Lightning Network Daemon na Linuxu
 
 
 
-Lightning Network je drugi Layer od Bitcoin, omogućavajući mu da preuzme dimenzije munje, zahvaljujući posebno brzini i niskoj ceni transakcija koje nudi.
+Lightning mreža je drugi sloj Bitcoina koji mu omogućava da dobije „munjevite“ dimenzije, zahvaljujući posebno brzini i niskim troškovima transakcija koje pruža.
 
 
 
@@ -19,7 +19,7 @@ U ovom vodiču, instaliraćemo Lightning Network Daemon implementaciju na naš L
 
 
 
-Lightning Network Daemon je kompletna Go implementacija Lightning Network. Kreirala ga je Lightning Labs i omogućava vam da pokrenete punu instancu Lightning čvora na vašem računaru.
+Lightning Network Daemon je kompletna Go implementacija Lightning mreže. Kreirala ga je Lightning Labs i omogućava vam da pokrenete punu instancu Lightning čvora na vašem računaru.
 
 
 Drugim rečima, sa ovom implementacijom, možete :
@@ -28,8 +28,8 @@ Drugim rečima, sa ovom implementacijom, možete :
 
 
 
-- Interaktujte sa Lightning Network**: Možete koristiti komandne linije za kreiranje Lightning portfolija, upravljanje kanalima plaćanja i rutama, i još mnogo toga, direktno iz vašeg terminala na mašini.
-- Povezivanje udaljenog Bitcoin čvora ili vaše sopstvene Bitcoin Core instance**: LND vam omogućava da povežete Bitcoin instancu i koristite je kao vaš backend. Da biste koristili ovu implementaciju, nije potrebno da pokrećete Bitcoin Core instancu na vašem računaru.
+- **Interaktujte sa Lightning Network**: Možete koristiti komandne linije za kreiranje Lightning portfolija, upravljanje kanalima plaćanja i rutama, i još mnogo toga, direktno iz vašeg terminala na mašini.
+- **Povezivanje udaljenog Bitcoin čvora ili vaše sopstvene Bitcoin Core instance**: LND vam omogućava da povežete Bitcoin instancu i koristite je kao vaš backend. Da biste koristili ovu implementaciju, nije potrebno da pokrećete Bitcoin Core instancu na vašem računaru.
 
 
 
