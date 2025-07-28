@@ -1,12 +1,12 @@
 ---
-name: Moj Čvor
+name: MyNode
 description: Postavite svoj Bitcoin MyNode
 ---
 
 ![image](assets/0.webp)
 
 
-[Moj Node](https://mynodebtc.com/) je najlakši, najmoćniji način za pokretanje Bitcoin i Lightning čvora! Kombinujemo najbolji open source softver sa našim Interface, upravljanjem i podrškom kako biste mogli lako, privatno i sigurno koristiti Bitcoin i Lightning.
+[MyNode](https://mynodebtc.com/) je najlakši, najmoćniji način za pokretanje Bitcoin-a i Lightning čvora! Kombinujemo najbolji open-source softver sa našim interfejsom, upravljanjem i podrškom, kako biste mogli lako, privatno i bezbedno da koristite Bitcoin i Lightning.
 
 
 ## Tipovi Node postavki
