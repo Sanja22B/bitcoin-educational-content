@@ -26,8 +26,8 @@ Pre nego što pokrenemo Raspberry Pi sa formatiranom memorijom, moramo je umetnu
 
 
 ```
-# NOTE: If the microSD card has been mounted at /media/microSD, the command
-# should be $ sudo touch /media/microSD/boot/ssh
+# NAPOMENA: Ako je microSD kartica montirana na /media/microSD, komanda treba da bude
+# $ sudo touch /media/microSD/boot/ssh
 $ touch /boot/ssh
 ```
 
