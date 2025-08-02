@@ -134,7 +134,6 @@ Que ces moyens soient d’ordre philosophiques ou technologiques, comme l’est 
 
 :::video id=065c5091-69e1-412f-acce-c763ec31d3b1:::
 
-
 Je vous propose dans ce chapitre de découvrir à présent l’œuvre majeure de Spinoza, intitulée Éthique, publiée à titre posthume, en 1677.
 
 ![image](./assets/fr/2.1.1.webp)
@@ -243,7 +242,6 @@ C’est pourquoi le 18e siècle des Lumières, grâce à l’exercice de la rais
 <chapterId>3e6599e3-5b29-50a8-a67d-d0386da5d65d</chapterId>
 
 :::video id=b6d2c035-8848-4da6-9da9-be3b70be0f38:::
-
 
 Je vous propose à présent dans ce chapitre de faire un peu d’histoire des idées et de comprendre pourquoi le spinozisme est considéré comme une véritable révolution copernicienne des idées.
 
@@ -405,7 +403,6 @@ Merci de votre attention et je vous retrouve dans le prochain chapitre.
 <chapterId>93554156-5e62-526d-9b71-49c47be916af</chapterId>
 
 :::video id=9c490cc1-3d29-4ca7-9464-1a701bb91ba7:::
-
 
 Dans ce dernier chapitre sur la nouvelle vision copernicienne des idées que nous offre le spinozisme, nous allons enfin évoquer la troisième illusion que présente Spinoza (1632-1677) dans son œuvre, l’Éthique.
 
