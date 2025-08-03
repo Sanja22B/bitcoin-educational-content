@@ -3,7 +3,7 @@ name: RoninDojo
 
 description: Instaliranje i korišćenje vašeg RoninDojo Bitcoin čvora.
 ---
-***UPOZORENJE:** Nakon hapšenja osnivača Samourai Wallet i zaplene njihovih servera 24. aprila, određene funkcije RoninDojo-a, kao što je Whirlpool, više nisu operativne. Međutim, moguće je da bi ovi alati mogli biti ponovo uspostavljeni ili pokrenuti na drugačiji način u narednim nedeljama. Takođe, pošto je RoninDojo kod bio hostovan na Samourai-ovom GitLab-u, koji je takođe zaplenjen, trenutno nije moguće preuzeti kod na daljinu. Timovi RoninDojo-a verovatno rade na ponovnom objavljivanju koda.*
+***UPOZORENJE:** Nakon hapšenja osnivača Samourai novčanika i zaplene njihovih servera 24. aprila, određene funkcije RoninDojo-a, kao što je Whirlpool, više nisu operativne. Međutim, moguće je da bi ovi alati mogli biti ponovo uspostavljeni ili pokrenuti na drugačiji način u narednim nedeljama. Takođe, pošto je RoninDojo kod bio hostovan na Samourai-ovom GitLab-u, koji je takođe zaplenjen, nije moguće preuzeti kod sa interneta. Timovi RoninDojo-a verovatno rade na ponovnom objavljivanju koda.*
 
 
 _Pažljivo pratimo razvoj ovog slučaja kao i razvoj povezanih alata. Budite sigurni da ćemo ažurirati ovaj vodič čim nove informacije budu dostupne._
@@ -18,7 +18,8 @@ https://planb.network/tutorials/node/bitcoin/ronin-dojo-v2-0ddb3854-6f38-4466-b4
 
 ---
 
-Pokretanje i korišćenje sopstvenog čvora je ključno za istinsko učešće u Bitcoin mreži. Iako pokretanje Bitcoin čvora ne donosi nikakve finansijske koristi korisniku, omogućava im da sačuvaju svoju privatnost, deluju nezavisno i imaju kontrolu nad svojim poverenjem u mrežu.
+Pokretanje i korišćenje sopstvenog čvora je ključno za istinsko učešće u Bitcoin mreži.Iako vođenje Bitcoin čvora ne donosi korisniku finansijsku korist, ali sa druge strane omogućava da sačuva svoju privatnost, deluje nezavisno i ima kontrolu nad poverenjem u mrežu.
+
 
 
 U ovom članku, detaljno ćemo razmotriti RoninDojo, odlično rešenje za pokretanje sopstvenog Bitcoin čvora.
@@ -44,7 +45,7 @@ Ako niste upoznati sa načinom rada Bitcoin čvora i njegovom ulogom, preporuču
 ## Šta je RoninDojo?
 
 
-Dojo je pun Bitcoin čvor server razvijen od strane Samourai Wallet tima. Možete ga slobodno instalirati na bilo koji uređaj.
+Dojo je potpuni Bitcoin čvor server razvijen od strane Samourai Wallet tima. Možete ga slobodno instalirati na bilo koji uređaj.
 
 
 RoninDojo je asistent za instalaciju i alat za administraciju Dojo-a i raznih drugih alata. RoninDojo preuzima originalnu implementaciju Dojo-a i dodaje mnoge druge alate, dok istovremeno olakšava instalaciju i upravljanje.
@@ -59,9 +60,9 @@ Kod za RoninDojo je otvorenog koda, tako da je moguće instalirati ovo rešenje 
 RoninDojo je Dojo, tako da omogućava laku integraciju Whirlpool CLI u vaš Bitcoin čvor kako biste imali najbolje moguće CoinJoin iskustvo. Sa Whirlpool CLI, ne samo da možete dozvoliti vašim bitcoinima da se remixuju 24/7 bez potrebe da držite vaš lični računar uključenim, već možete i značajno poboljšati vašu privatnost.
 
 
-RoninDojo integriše mnoge druge alate koji se oslanjaju na vaš Dojo, kao što je Boltzmann kalkulator, koji određuje nivo privatnosti transakcije, Electrum server za povezivanje vaših različitih Bitcoin novčanika sa vašim čvorom, ili Mempool server za privatno praćenje vaših transakcija.
+RoninDojo integriše mnoge druge alate koji se oslanjaju na vaš Dojo, kao što je Boltzmann kalkulator, koji određuje nivo privatnosti transakcije, Electrum server za povezivanje vaših različitih Bitcoin novčanika sa vašim čvorom, ili [Mempool](https://planb.network/resources/glossary/mempool) server za privatno praćenje vaših transakcija.
 
-U poređenju sa drugim rešenjem za node kao što je Umbrel, koje sam vam predstavio u ovom članku, RoninDojo je duboko fokusiran na "on chain" rešenja i alate koji optimizuju privatnost korisnika. Stoga, RoninDojo ne dozvoljava interakciju sa Lightning Network.
+U poređenju sa drugim rešenjem za node kao što je Umbrel, koje sam vam predstavio u ovom članku, RoninDojo je duboko fokusiran na "on chain" rešenja i alate koji optimizuju privatnost korisnika. Stoga, RoninDojo ne dozvoljava interakciju sa Lightning mrežom.
 
 RoninDojo nudi manje alata u poređenju sa Umbrelom, ali nekoliko osnovnih funkcija za Bitkoinere prisutnih na Roninu su izuzetno stabilne.
 
@@ -69,7 +70,7 @@ RoninDojo nudi manje alata u poređenju sa Umbrelom, ali nekoliko osnovnih funkc
 Dakle, ako vam nisu potrebne sve funkcije Umbrel servera i želite samo jednostavan i stabilan čvor sa nekoliko osnovnih alata kao što su Whirlpool ili Mempool, onda je RoninDojo verovatno dobro rešenje za vas.
 
 
-Po mom mišljenju, razvojni fokus Umbrela je snažno usmeren na Lightning Network i svestrane alate. I dalje je Bitcoin čvor, ali cilj je da postane multitasking mini-server. Nasuprot tome, razvojni fokus RoninDojo-a je više usklađen sa timovima u Samourai Wallet i fokusira se na osnovne alate za Bitcoinere, omogućavajući potpunu nezavisnost i optimizovano upravljanje privatnošću na Bitcoin.
+Po mom mišljenju, razvojni fokus Umbrela je snažno usmeren na Lightning mrežu i svestrane alate. I dalje je Bitcoin čvor, ali cilj je da postane multitasking mini-server. Nasuprot tome, razvojni fokus RoninDojo-a je više usklađen sa timovima u Samourai Wallet-u i fokusira se na osnovne alate za bitkojnere, omogućavajući potpunu nezavisnost i optimizovano upravljanje privatnošću na Bitcoin-u.
 
 
 Imajte na umu da je postavljanje RoninDojo čvora nešto složenije od Umbrel čvora.
