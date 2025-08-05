@@ -1,23 +1,50 @@
 ---
-name: Blockstream App - Onchain
-description: Configurer Blockstream App sur mobile et gérer les transactions onchain
+name: Blockstream App - Liquid
+description: Comment configurer Blockstream App et utiliser le réseau Liquid
 ---
 ![cover](assets/cover.webp)
 ## 1. Introduction
 ### 1.1 Objectif du tutoriel
 
-- Ce tutoriel explique comment utiliser l'application mobile **Blockstream App** pour gérer un portefeuille Bitcoin **onchain**, c'est-à-dire des transactions directement enregistrées sur la blockchain Bitcoin principale.
-- Il couvre les étapes d'installation, de configuration initiale, de création d'un portefeuille logiciel, et les opérations de réception et d'envoi de bitcoins.
-- Note : D'autres tutoriels fournis en Annexes couvrent les fonctionnalités Liquid, Watch-Only, et la version desktop.
-
-![image](assets/fr/01.webp)
+- Ce tutoriel explique comment utiliser l'application mobile **Blockstream App** pour gérer un portefeuille **Bitcoin Liquid**, c'est-à-dire des transactions directement enregistrées sur la side chain "Liquid" de Bitcoin.
+- Il couvre les étapes d'installation, de configuration initiale, de création d'un portefeuille logiciel, et les opérations de réception et d'envoi de bitcoins sur Liquid.
+- Note : D'autres tutoriels fournis en Annexes couvrent les fonctionnalités Onchain, Watch-Only, et la version desktop.
 
 ### 1.2 Public cible
 
-- **Débutants** : Utilisateurs souhaitant gérer leurs bitcoins avec une application mobile intuitive.
+- **Débutants** : Utilisateurs souhaitant gérer leurs bitcoins avec une application mobile intuitive, intégrant le réseau Liquid.
 - **Utilisateurs intermédiaires** : Personnes cherchant à comprendre les fonctionnalités onchain et les options de confidentialité comme Tor ou SPV.
 
-### 1.3. Rappels sur les hot wallets
+### 1.3 Présentation de Liquid
+
+**Liquid** est une **sidechain** de Bitcoin, développée par **[Blockstream](https://blockstream.com/liquid/)**, conçue pour offrir des transactions plus rapides, plus confidentielles et des fonctionnalités avancées, tout en restant connectée à la blockchain Bitcoin principale.
+
+Une sidechain est une blockchain indépendante qui fonctionne en parallèle de Bitcoin, utilisant un mécanisme appelé **two-way peg** (ancrage bilatéral). Ce système permet de verrouiller des bitcoins sur la blockchain principale pour créer des **Liquid-Bitcoins (L-BTC)**, des tokens qui circulent sur le réseau Liquid tout en conservant une parité de valeur avec les bitcoins d'origine. Les fonds peuvent être ramenés sur la blockchain Bitcoin à tout moment.
+
+![image](assets/fr/17.webp)
+
+
+- **(1) Peg-in** : Les bitcoins (BTC) sont verrouillés sur la blockchain principale par la fédération Liquid. En contrepartie, un montant équivalent de Liquid-Bitcoins (L-BTC), assurant la parité entre les deux chaînes, est émis sur la blockchain Liquid et envoyé à l'utilisateur.
+
+- **(2) Transactions indépendantes** : Les transactions peuvent se dérouler simultanément et indépendamment sur la blockchain principale (BTC) et la sidechain Liquid (L-BTC), selon les besoins de l'utilisateur.
+
+- **(3) Peg-out** : L'utilisateur renvoie des Liquid-Bitcoins (L-BTC) à la fédération Liquid. La fédération déverrouille alors un montant équivalent de bitcoins (BTC) sur la blockchain principale et les transfère à l'utilisateur.
+
+Liquid repose sur une **fédération** de participants de confiance (exchanges, entreprises Bitcoin reconnues) qui gèrent la validation des blocs et l'ancrage bilatéral. Contrairement à la blockchain Bitcoin, qui est décentralisée et repose sur des mineurs, Liquid est un réseau **fédéré**, ce qui signifie que sa sécurité et sa gouvernance dépendent de ces participants. Bien que cela implique un compromis sur la décentralisation, cela permet des performances optimisées et des fonctionnalités avancées.
+
+![image](assets/fr/18.webp)
+
+##### Pourquoi utiliser Liquid ?
+
+- **Vitesse** : Les transactions sur Liquid sont confirmées en environ **1 minute**, contre 10 minutes ou plus pour les transactions onchain, grâce à des blocs générés toutes les minutes par une fédération de validateurs.
+- **Confidentialité renforcée** : Liquid utilise des **Confidential Transactions**, qui masquent le montant et le type d'actif transféré, rendant les transactions plus privées (bien que les adresses restent visibles).
+- **Frais réduits** : Les transactions sur Liquid sont généralement moins coûteuses, ce qui les rend idéales pour les transferts fréquents ou de petits montants.
+- **Actifs multiples** : En plus des L-BTC, Liquid prend en charge l'émission d'autres actifs numériques, comme des stablecoins ou des tokens, utilisables dans des applications spécifiques.
+- **Cas d'usage** : Liquid est particulièrement adapté pour les échanges entre plateformes, les paiements rapides, ou les applications nécessitant des contrats intelligents, tout en restant lié à la sécurité de Bitcoin.
+
+**Note** : Ce tutoriel se concentre sur l'utilisation de Liquid via Blockstream App. Vous trouverez des ressources en annexe pour une compréhension approfondie du réseau Liquid.
+
+### 1.4. Rappels sur les hot wallets
 
 - **Hot wallet**, **software wallet**, **wallet mobile**, **portefeuille logiciel** : autant d'appellations pour une application installée sur un smartphone, un ordinateur ou tout appareil connecté à Internet, permettant de gérer et sécuriser les clés privées d’un portefeuille Bitcoin.
 - Contrairement aux **hardware wallets** appelés aussi **cold wallets**, qui isolent les clés hors ligne, les portefeuilles logiciels opèrent dans un environnement connecté, ce qui les expose davantage aux cyberattaques.
@@ -40,7 +67,8 @@ description: Configurer Blockstream App sur mobile et gérer les transactions on
     - Fonctions **Replace-by-Fee (RBF)** pour accélérer les transactions non confirmées.
 - **Compatibilité** : Intègre des hardware wallets comme **Blockstream Jade**.
 - **Interface** : Intuitive pour les débutants, avec des options avancées pour les experts.
-- **Note** : Ce guide se concentre sur l'utilisation onchain. D'autres tutoriels fournis en Annexes couvrent les fonctionnalités Liquid, Watch-Only, et la version desktop.
+- **Note** : Ce guide se concentre sur l'utilisation onchain. D'autres tutoriels fournis en Annexes couvrent les fonctionnalités Onchain, Watch-Only, et la version desktop.
+
 
 ## 3. Installer et paramétrer l'application Blockstream App
 
@@ -67,18 +95,21 @@ description: Configurer Blockstream App sur mobile et gérer les transactions on
 
 - **Fonction** : Désactive les captures d'écran, masque les aperçus d'application dans le gestionnaire de tâches, et verrouille l’accès dès que le téléphone est verrouillé.
 - **Pourquoi ?** : Protège vos données contre les accès physiques non autorisés ou les malwares capturant l’écran.
+
 #### 3.2.2. Connexion via Tor
 
 - **Fonction** : Route le trafic réseau via **Tor**, un réseau anonyme qui chiffre vos connexions.
 - **Pourquoi ?** : Masque votre adresse IP et protège votre vie privée, idéal si vous ne faites pas confiance à votre réseau (Wi-Fi public, par exemple).
 - **Inconvénient** : Peut ralentir l’application en raison du chiffrement.
 - **Recommandation** : Activez Tor si la confidentialité est une priorité, mais testez la vitesse de connexion.
+
 #### 3.2.3. Connexion à un nœud personnel
 
 - **Fonction** : Connecte l’application à votre propre **nœud Bitcoin complet** via un serveur **Electrum**.
 - **Pourquoi ?** : Offre un contrôle total sur les données blockchain, éliminant la dépendance aux serveurs de Blockstream.
 - **Prérequis** : Un nœud Bitcoin configuré.
 - **Recommandation** : Utilisateurs avancés souhaitant une souveraineté maximale.
+
 #### 3.2.4. Vérification SPV
 
 - **Fonction** : Utilise la **Simplified Payment Verification (SPV)** pour vérifier directement certaines données blockchain sans télécharger l’intégralité de la chaîne.
@@ -101,13 +132,15 @@ description: Configurer Blockstream App sur mobile et gérer les transactions on
 
 ![image](assets/fr/05.webp)
 
-- Vous arrivez à l'écran suivant : 
+
+- Vous arrivez à l'écran suivant :
 
 ![image](assets/fr/06.webp)
 
+
 - (1) **"Setup Mobile Wallet"** : Créer un nouveau portefeuille chaud (hot wallet).
 - (2) **"Restore from Backup"** : Importer un portefeuille existant via une phrase mnémonique (12 ou 24 mots). Attention : N’importez pas la phrase d’un cold wallet, car elle serait exposée sur un appareil connecté, annulant sa sécurité.
-- (3) **"Watch-Only"** : Importer un portefeuille existant en lecture seule, afin de consulter le solde (par exemple de votre cold wallet) sans exposer la phrase mnémonique. Voir en annexe le tutoriel Watch Only.
+- (3) **"Watch-Only"** : Importer un portefeuille existant en lecture seule, afin de consulter le solde (par exemple de votre cold wallet) sans exposer la phrase mnémonique. Voir en annexe le tutoriel "Watch Only".
 
 **Dans ce tutoriel** : Cliquez sur **"Setup Mobile Wallet"** pour créer un hot wallet. 
 Votre wallet est automatiquement créé et la page d'accueil du wallet, ici appelé "My Wallet 5", s'affiche :
@@ -136,13 +169,12 @@ https://planb.network/tutorials/wallet/backup/backup-mnemonic-22c0ddfa-fb9f-4e3a
 
 https://planb.network/courses/46b0ced2-9028-4a61-8fbc-3b005ee8d70f
 
-### 4.3. Confirmer la seed phrase
+### 4.3. Vérifier la seed phrase
 
-Avant d'envoyer des fonds sur une adresse associée à cette seed phrase, vous devez impérativement tester la sauvegarde de vos 12 mots.
-
+Avant d'envoyer des fonds sur une adresse associée à cette seed phrase, vous devez impérativement tester la sauvegarde de vos 12 mots. 
 Pour cela nous allons noter une référence, supprimer le wallet, le restaurer avec la sauvegarde, et vérifier que la référence est inchangée.
 
-- Sur l'écran d'accueil du wallet, cliquez sur l'onglet "Paramètres", puis sur "Wallet Details", et copiez la zPub ([clé publique étendue](https://planb.network/courses/46b0ced2-9028-4a61-8fbc-3b005ee8d70f/8dcffce1-31bd-5e0b-965b-735f5f9e4602)) :
+- Sur l'écran d'accueil du wallet, cliquez sur l'onglet "Paramètres", puis sur "Wallet Details", et copiez la zPub ([clé publique étendue](https://planb.network/fr/courses/46b0ced2-9028-4a61-8fbc-3b005ee8d70f/8dcffce1-31bd-5e0b-965b-735f5f9e4602)) :
 
 ![image](assets/fr/09.webp)
 
@@ -154,7 +186,7 @@ Nota : une adresse zpub peut être importée dans votre application Blockstream 
 
 https://planb.network/tutorials/wallet/backup/recovery-test-5a75db51-a6a1-4338-a02a-164a8d91b895
 
-### 4.5. Sécuriser l'accès à l'application
+### 4.4. Sécuriser l'accès à l'application
 
 Verrouillez l'accès à l'application par un code PIN robuste :
 - Depuis l’écran d’accueil du wallet, allez dans **"Sécurité"** puis cliquez sur **"PIN"**
@@ -166,24 +198,28 @@ Verrouillez l'accès à l'application par un code PIN robuste :
 
 
 
-## 5. Utiliser le portefeuille onchain
+## 5. Utiliser le portefeuille Liquid
 
-### 5.1. Recevoir des bitcoins
+### 5.1. Recevoir des bitcoins "L-BTC"
+
+Pour recevoir des Liquid-Bitcoins (L-BTC), plusieurs options sont disponibles. Vous pouvez demander à quelqu’un de vous en envoyer directement en partageant une adresse de réception Liquid, ce qui est détaillé ci-dessous.
+
+Alternativement, échangez vos bitcoins onchain ou via le réseau Lightning contre des L-BTC en utilisant [un bridge tel que Boltz](https://boltz.exchange/) : entrez votre adresse de réception Liquid, effectuez le paiement selon votre préférence, et recevez vos L-BTC.
 
 - Depuis l’écran d’accueil du portefeuille, cliquez sur '"**Transact**" puis **"Recevoir"**.
 
-![image](assets/fr/10.webp)
+![image](assets/fr/19.webp)
 
-- L’application affiche une **adresse de réception vierge** (format SegWit v0, commençant par `bc1q...`). Utiliser une nouvelle adresse pour chaque réception de Bitcoin améliore votre confidentialité.
+- L’application affiche par défaut une **adresse de réception vierge, onchain** (format SegWit v0, commençant par `bc1q...`). Cliquez sur "Bitcoin" pour sélectionner des **Liquid bitcoin** :
+
+![image](assets/fr/20.webp)
 
 - **Options** :
-    - (1) "Bitcoin" : cliquez pour sélectionner un envoi onchain ou via Liquid, et choisir l'actif.
-    - (2) Cliquez sur les flèches pour choisir une autre nouvelle adresse liée à cette seed phrase. 
-    - (3) Vous pouvez aussi choisir une adresse parmi celles déjà utilisées / affichées, en cliquant sur les trois points en haut à droite puis sur "List of Adresses"
-    - (4) Pour demander un montant spécifique, cliquez sur les trois points en haut à droite, sélectionnez "Montant de la demande", et saisissez le montant souhaité. Le QR sera mis à jour, et l'adresse sera remplacée par un URI de paiement Bitcoin.
+	- (1) Cliquez sur les flèches pour choisir une autre nouvelle adresse liée à cette seed phrase. 
+    - (2) Vous pouvez aussi choisir une adresse parmi celles déjà utilisées / affichées, en cliquant sur les trois points en haut à droite puis sur "List of Adresses"
+    - (3) Pour demander un montant spécifique, cliquez sur les trois points en haut à droite, sélectionnez "Montant de la demande", et saisissez le montant souhaité. Le QR sera mis à jour, et l'adresse sera remplacée par un URI de paiement Bitcoin. 
 
-
-![image](assets/fr/11.webp)
+![image](assets/fr/21.webp)
 
 - Partagez l’adresse/l'URI en cliquant sur "**Partager**", en copiant le texte ou en scannant le QR code.
 - **Vérification** : Vérifiez autant que possible l'adresse partagée au destinataire pour éviter les erreurs ou attaques (ex. : malwares modifiant le presse-papiers).
@@ -192,43 +228,36 @@ Verrouillez l'accès à l'application par un code PIN robuste :
 
 - Depuis l’écran d’accueil du portefeuille, cliquez sur "**Transact**" puis **"Envoyer"** :
 
-![image](assets/fr/12.webp)
+![image](assets/fr/22.webp)
 
 - **Saisir les détails** :
     - (1) Entrez l’**adresse du destinataire** en la collant ou en scannant un QR code.
     - (2) Vérifiez l'actif et le compte à partir duquel les fonds sont envoyés.
-    - (3) Indiquez le **montant** à envoyer. Vous pouvez choisir l'unité : BTC, satoshis, USD, ...
-      Le montant minimal (dush limit) au 03/08/2025 est 546 sats.
-    - (4) Sélectionnez les **frais de transaction** :
-        - Choisissez parmi les options suggérées (ex. : rapide, moyen, lent) selon l’urgence, une durée de transfert approximative sera affichée.
-        - Pour des frais personnalisés, ajustez manuellement le nombre de satoshi par vbytes (consultez [Mempool.space](https://mempool.space/) pour les taux du marché).
+    - (3) Indiquez le **montant** à envoyer. Vous pouvez choisir l'unité : L-BTC, L-satoshis, USD, ...
 
-
-![image](assets/fr/13.webp)
+![image](assets/fr/23.webp)
 
 - **Vérification** :
     - Vérifiez l’adresse, le montant, et les frais sur l’écran de récapitulatif.
     - Une erreur d’adresse peut entraîner une perte irréversible des fonds. Méfiez-vous des malwares modifiant le presse-papiers.
-
-![image](assets/fr/14.webp)
+    
+![image](assets/fr/24.webp)
 
 - **Confirmation** : Faites glisser le bouton "Envoyer" pour signer et diffuser la transaction.
-- **Suivi** : Dans l'onglet "Transact" du wallet, la transaction apparaît comme "en attente" jusqu’à confirmation (1 à 6 confirmations) :
+- **Suivi** : Dans l'onglet "Transact" du wallet, la transaction apparaît comme "Non confirmée", puis "Confirmée", puis "Complétée" :
 
-![image](assets/fr/15.webp)
+![image](assets/fr/25.webp)
 
-- Tant que la transaction n'est pas confirmée, la fonction "Replace by fee" (voir Annexe) vous permet d'accélérer sa prise en charge en augmentant les fees de transaction :
-
-![image](assets/fr/16.webp)
+- Le temps entre 2 blocks est de 1 minute sur Liquid, la transaction est donc être rapidement confirmée puis complétée.
 
 
 ## Annexes
 
-### A1. Autres tutoriels Blockstream
+### A1. Autres tutoriels Blockstream App
 
-Utilisation du réseau Liquid
+Utilisation du réseau Onchain
 
-https://planb.network/tutorials/wallet/mobile/blockstream-app-liquid-b3e4fb82-902e-4782-ad2b-a61ab05a543a
+https://planb.network/tutorials/wallet/mobile/blockstream-app-onchain-e84edaa9-fb65-48c1-a357-8a5f27996143
 
 Importer et suivre un wallet en "Watch Only"
 
@@ -239,19 +268,8 @@ Version Desktop (ordinateur)
 https://planb.network/tutorials/wallet/desktop/blockstream-app-desktop-c1503adf-1404-4328-b814-aa97fcf0d5da
 
 
-### A2. Explication de Replace-by-Fee (RBF)
 
-**Définition** : Replace-by-Fee (RBF) est une fonctionnalité du réseau Bitcoin qui permet à l'expéditeur d'accélérer la confirmation d'une transaction **onchain** en acceptant de payer des frais plus élevés.
-
-**Limites** :
-- RBF n’est pas disponible pour les transactions Liquid ou Lightning.
-* La transaction initiale doit être marquée comme RBF-compatible lors de sa création, ce que Blockstream App fait automatiquement.
-
-**Plus d'info :** 
-- [Glossaire](https://planb.network/fr/resources/glossary/rbf-replacebyfee)
-
-
-### A3. Bonnes pratiques
+### A2. Bonnes pratiques
 
 Pour utiliser **Blockstream App** de manière sécurisée et efficace, suivez ces recommandations. Elles vous aideront à protéger vos fonds, optimiser vos transactions, et préserver votre confidentialité sur les réseaux **Bitcoin (onchain)**, **Liquid**, et **Lightning**.
 
@@ -287,7 +305,7 @@ https://planb.network/courses/46b0ced2-9028-4a61-8fbc-3b005ee8d70f
 * **Tenez l'application à jour**
 
 
-### A4. Ressources supplémentaires
+### A3. Ressources supplémentaires
 
 * **Liens officiels :** 
 	* **[Site officiel](https://blockstream.com/)**
@@ -309,6 +327,7 @@ https://planb.network/courses/46b0ced2-9028-4a61-8fbc-3b005ee8d70f
 
 - **Liquid Network** :
 	- **[Glossaire](https://planb.network/fr/resources/glossary/liquid-network)**
+
 
 https://planb.network/courses/6d26bcff-51a3-405f-bcdd-9af8297ce727
 
