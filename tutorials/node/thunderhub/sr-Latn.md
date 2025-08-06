@@ -1,6 +1,6 @@
 ---
 name: ThunderHub
-description: Interface Lightning node management web LND
+description: Interfejs za upravljanje LND Lightning node-om
 ---
 ![cover](assets/cover.webp)
 
@@ -10,7 +10,7 @@ description: Interface Lightning node management web LND
 
 
 
-ThunderHub je **menadžer otvorenog koda za Lightning čvorove (LND)**, koji nudi intuitivni Interface dostupan sa bilo kog uređaja ili pretraživača.
+ThunderHub je **menadžer otvorenog koda za Lightning čvorove (LND)**, koji nudi intuitivni interfejs dostupan sa bilo kog uređaja ili pretraživača.
 
 
 
@@ -19,10 +19,10 @@ ThunderHub je **menadžer otvorenog koda za Lightning čvorove (LND)**, koji nud
 
 
 
-- Nadzor**: Globalni pregled stanja, kanala, transakcija, statistike usmeravanja
-- Menadžment**: Otvaranje/zatvaranje kanala, dolazna/odlazna plaćanja, balansiranje kanala
-- Integracije**: LNURL podrška, zamene putem Boltz, Amboss rezervna kopija
-- Interface responsive**: Kompatibilan sa mobilnim, tablet i desktop uređajima sa tamnim/svetlim temama
+- **Nadzor**: Globalni pregled stanja, kanala, transakcija, statistike usmeravanja
+- **Menadžment**: Otvaranje/zatvaranje kanala, dolazna/odlazna plaćanja, balansiranje kanala
+- **Integracije**: LNURL podrška, swaps putem Boltz-a, Amboss rezervna kopija
+- **Responzivni interfejs**: Kompatibilan sa mobilnim, tablet i desktop uređajima sa tamnim/svetlim režimom rada
 
 
 
@@ -30,7 +30,7 @@ ThunderHub se lako integriše sa **Umbrel**, **Voltage**, **RaspiBlitz** i **MyN
 
 
 
-**ThunderHub je posebno pogodan za operatere koji traže ergonomski Interface za upravljanje svojim kanalima, kontrolu likvidnosti (rebalansiranje), praćenje transakcija i integraciju usluga trećih strana kao što je Amboss. Sigurnost je osigurana putem lokalne ili Tor veze.
+**ThunderHub je posebno pogodan za operatere koji traže ergonomski interfejs za upravljanje svojim kanalima, kontrolu likvidnosti (rebalansiranje), praćenje transakcija i integraciju usluga trećih strana kao što je Amboss. Sigurnost je osigurana putem lokalne ili Tor veze.**
 
 
 
@@ -44,22 +44,22 @@ https://planb.network/tutorials/node/lightning-network/umbrel-lnd-b12e0b5b-12ff-
 
 
 
-ThunderHub se može instalirati na više različitih načina, u zavisnosti od vašeg okruženja za hosting Lightning čvora. Bilo da koristite turnkey rešenje (Umbrel, Voltage, RaspiBlitz, MyNode, Start9, itd.) ili ručnu instalaciju, ThunderHub je često dostupan bez većih napora. U nastavku opisujemo dva uobičajena pristupa: putem Umbrel App Store-a i putem ručne instalacije (primenljivo na server ili samostalno hostovanu distribuciju).
+ThunderHub se može instalirati na više različitih načina, u zavisnosti od vašeg okruženja za hosting Lightning čvora. Bilo da koristite turnkey rešenje, tj. rešenje koje je već spremno za upotrebu (Umbrel, Voltage, RaspiBlitz, MyNode, Start9, itd.) ili ručnu instalaciju, ThunderHub je često dostupan bez većih napora. U nastavku opisujemo dva uobičajena pristupa: putem Umbrel App Store-a i putem ručne instalacije (primenljivo na server ili samostalno hostovanu distribuciju).
 
 
 
-### Instalacija putem Umbrel
+### Instalacija putem Umbrel-a
 
 
 
-Umbrel integriše ThunderHub u svoju **App Store**, čineći instalaciju izuzetno jednostavnom. Nema potrebe za komandnom linijom ili ručnom konfiguracijom: sve se obavlja putem Interface Umbrel. Samo pratite ove korake:
+Umbrel integriše ThunderHub u svoj **App Store**, čineći instalaciju izuzetno jednostavnom. Nema potrebe za komandnom linijom ili ručnom konfiguracijom: sve se obavlja putem Umbrel korisničkog interfejsa. Samo pratite ove korake:
 
 
 
 
 
-- Otvorite Umbrel kontrolnu tablu**: Povežite se sa Interface web interfejsom vašeg Umbrel čvora (npr. `http://umbrel.local` na vašoj lokalnoj mreži, ili putem njegovog `.onion` Address ako koristite Tor).
-- Pristupite App Store-u**: U glavnom meniju Umbrel-a, kliknite na "App Store" (ili "App"). Potražite **ThunderHub** na listi dostupnih aplikacija.
+- **Otvorite Umbrel kontrolnu tablu**: Povežite se sa web interfejsom vašeg Umbrel čvora (npr. `http://umbrel.local` na vašoj lokalnoj mreži, ili putem njegove `.onion` adrese ako koristite Tor).
+- **Pristupite App Store-u**: U glavnom meniju Umbrel-a, kliknite na "App Store" (ili "App"). Potražite **ThunderHub** na listi dostupnih aplikacija.
 
 
 
@@ -69,13 +69,13 @@ Umbrel integriše ThunderHub u svoju **App Store**, čineći instalaciju izuzetn
 
 
 
-- Instaliraj ThunderHub**: Klikni na aplikaciju ThunderHub, zatim na dugme za instalaciju. Potvrdi ako je potrebno. Umbrel će automatski preuzeti i implementirati ThunderHub na tvoj čvor.
+- **Instaliraj ThunderHub**: Klikni na aplikaciju ThunderHub, zatim na dugme za instalaciju. Potvrdi ako je potrebno. Umbrel će automatski preuzeti i implementirati ThunderHub na tvoj čvor.
 
 
 
 
 
-- Pokrenite aplikaciju**: Kada je instalacija završena (nekoliko desetina sekundi), ThunderHub se pojavljuje na vašoj početnoj stranici. Kliknite na ikonu da je otvorite. ThunderHub se pokreće u vašem pregledaču.
+- **Pokrenite aplikaciju**: Kada je instalacija završena (nekoliko desetina sekundi), ThunderHub se pojavljuje na vašoj početnoj stranici. Kliknite na ikonu da je otvorite. ThunderHub se pokreće u vašem pregledaču.
 
 
 
@@ -83,14 +83,14 @@ Umbrel integriše ThunderHub u svoju **App Store**, čineći instalaciju izuzetn
 
 
 
-**Važno:** Kada se ThunderHub prvi put otvori, automatski prikazuje **podrazumevanu lozinku** potrebnu za prijavu. Opcija "Ne prikazuj ovo ponovo" omogućava vam da sakrijete ovaj prikaz za buduće konekcije. **Snažno vam savetujemo da:**
+**Važno:** Kada se ThunderHub prvi put otvori, automatski prikazuje **podrazumevana lozinka** potrebnu za prijavu. Opcija "Ne prikazuj ovo ponovo" (na engleskom Don't show this again) omogućava vam da sakrijete ovaj prikaz za buduće konekcije. **Snažno vam savetujemo da:**
 
 
 
 
-- Odmah sačuvaj ovu lozinku** u svom menadžeru lozinki
-- Kopiraj** za upotrebu u sledećem koraku
-- Označi "Ne prikazuj ovo ponovo" kada je lozinka sačuvana
+- **Odmah sačuvate ovu lozinku** u svom menadžeru lozinki
+- **Kopirate** za upotrebu u sledećem koraku
+- Označite "Ne prikazuj ovo ponovo" kada je lozinka sačuvana
 
 
 
@@ -98,7 +98,7 @@ Umbrel integriše ThunderHub u svoju **App Store**, čineći instalaciju izuzetn
 
 
 
-Bićete preusmereni na stranicu za prijavu, gde morate uneti lozinku koju ste kopirali u prethodnom koraku da biste otključali Interface.
+Bićete preusmereni na stranicu za prijavu, gde morate uneti lozinku koju ste kopirali u prethodnom koraku da biste otključali interfejs.
 
 
 
@@ -106,7 +106,7 @@ Bićete preusmereni na stranicu za prijavu, gde morate uneti lozinku koju ste ko
 
 
 
-Umbrel se brine o pružanju ThunderHub-u LND informacija o vezi (TLS sertifikat, administrativni macaroon, itd.) u pozadini, tako da ne morate da radite nikakvu dodatnu konfiguraciju. U samo nekoliko klikova, imaćete ThunderHub pokrenut na vašem Umbrel čvoru.
+Umbrel se brine o pružanju LND informacija o vezi (TLS sertifikat, administrativni macaroon, itd.) ThunderHub-u u pozadini, tako da ne morate da radite nikakvu dodatnu konfiguraciju. U samo nekoliko klikova, imaćete ThunderHub pokrenut na vašem Umbrel čvoru.
 
 
 
@@ -127,12 +127,12 @@ Za korisnike van Umbrel-a (npr. na ličnom serveru, Raspberry Pi sa RaspiBlitz-o
 
 
 
-- Node.js** verzija 18 ili viša
-- npm** instaliran
+- **Node.js** verzija 18 ili viša
+- **npm** instaliran
 - Pristup LND autentifikacionim fajlovima :
   - LND TLS sertifikat (`tls.cert`)
   - LND administracija macaroon (`admin.macaroon`)
-  - LND gRPC servis Address (hostname:port) (podrazumevano `127.0.0.1:10009` lokalno)
+  - LND gRPC servis adresa (hostname:port) (podrazumevano `127.0.0.1:10009` lokalno)
 
 
 
