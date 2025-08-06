@@ -167,10 +167,10 @@ Ove komande instaliraju sve potrebne module, a zatim kompajliraju aplikaciju (Th
 
 
 ```bash
-# Méthode rapide
+# Brzi način
 npm run update
 
-# Ou méthode manuelle
+# Ručna metoda
 git pull
 npm install
 npm run build
@@ -188,35 +188,35 @@ npm run build
 
 ```bash
 # -----------
-# Server Configs
+# Konfiguracija servera
 # -----------
 LOG_LEVEL='info' # 'error' | 'warn' | 'info' | 'http' | 'verbose' | 'debug' | 'silly'
 PORT=3000
 NODE_ENV=production
 
 # -----------
-# Interface Configs
+# Konfiguracija interfejsa
 # -----------
 THEME='dark' # 'dark' | 'light' | 'night'
 CURRENCY='sat' # 'sat' | 'btc' | 'fiat'
 
 # -----------
-# Privacy Configs
+# Konfiguracija za privatnost
 # -----------
-FETCH_PRICES=true # Récupération des prix BTC/fiat depuis Blockchain.com
-FETCH_FEES=true # Récupération des frais on-chain depuis Earn.com
-DISABLE_LINKS=false # Liens vers 1ml.com et Blockchain.com
-NO_VERSION_CHECK=false # Vérification de version depuis GitHub
+FETCH_PRICES=true # Preuzimanje BTC/fiat cena sa sajta Blockchain.com
+FETCH_FEES=true # Preuzimanje on-chain naknada sa sajta Earn.com
+DISABLE_LINKS=false # Linkovi ka sajtovima 1ml.com i Blockchain.com
+NO_VERSION_CHECK=false # Provera verzije sa GitHub-a
 
 # -----------
-# TOR (optionnel)
+# TOR (opciono)
 # -----------
-TOR_PROXY_SERVER='socks://127.0.0.1:9050' # Pour proxifier via TOR
+TOR_PROXY_SERVER='socks://127.0.0.1:9050' # Za prosleđivanje saobraćaja preko TOR-a
 
 # -----------
-# Account Configs
+# Konfiguracija naloga
 # -----------
-ACCOUNT_CONFIG_PATH='/chemin/vers/thubConfig.yaml' # Fichier de comptes
+ACCOUNT_CONFIG_PATH='/chemin/vers/thubConfig.yaml' # Datoteka sa nalozima
 ```
 
 
@@ -226,33 +226,33 @@ ACCOUNT_CONFIG_PATH='/chemin/vers/thubConfig.yaml' # Fichier de comptes
 
 
 ```yaml
-masterPassword: 'votre_mot_de_passe_principal'
+masterPassword: 'vaša_glavna_lozinka'
 accounts:
 - name: 'Mon Nœud LND'
 serverUrl: '127.0.0.1:10009'
 macaroonPath: '/home/user/.lnd/data/chain/bitcoin/mainnet/admin.macaroon'
 certificatePath: '/home/user/.lnd/tls.cert'
-password: 'mot_de_passe_compte_specifique'
-# Optionnel : compte avec macaroon en hexadécimal
+password: 'lozinka_za_određeni_nalog'
+# Opcionalno: nalog sa macaroon-om u heksadecimalnom obliku
 - name: 'Nœud Distant'
 serverUrl: 'ip.distante:10009'
-macaroon: '0201056c6e6402f8...' # Macaroon en HEX ou Base64
-certificate: '0202045c7365...' # Certificat en HEX ou Base64
+macaroon: '0201056c6e6402f8...' # Macaroon u HEX ili Base64 formatu
+certificate: '0202045c7365...' # Sertifikat u HEX ili Base64 formatu
 ```
 
 
 
-**3. Remote Access:** Da biste se povezali sa udaljenim LND čvorom, dodajte u `LND.conf` :
+**3. Daljinski pristup:** Da biste se povezali sa udaljenim LND čvorom, dodajte u `LND.conf` :
 
 
 
 ```bash
-# Option 1 : accès par IP
-tlsextraip=<ip-externe-accessible>
+# Option 1 : pristup preko IP adrese
+tlsextraip=<pristupacna_spoljna_ip>
 rpclisten=0.0.0.0:10009
 
-# Option 2 : accès par domaine
-tlsextradomain=<domaine-externe-accessible>
+# Option 2 : pristup preko domena
+tlsextradomain=<pristupacan_spoljni_domen>
 rpclisten=0.0.0.0:10009
 ```
 
@@ -276,7 +276,7 @@ Podrazumevano, server sluša na portu 3000. Pristupite `http://localhost:3000` (
 
 
 
-**6. Docker alternativa:** ThunderHub pruža zvanične Docker slike:
+**6. Docker alternativa:** ThunderHub nudi zvanične Docker slike:
 
 
 
@@ -285,17 +285,17 @@ Podrazumevano, server sluša na portu 3000. Pristupite `http://localhost:3000` (
 docker pull apotdevin/thunderhub:latest
 docker run --rm -it -p 3000:3000/tcp apotdevin/thunderhub:latest
 
-# Image avec base path /thub
+# Slika sa osnovnom putanjom /thub
 docker pull apotdevin/thunderhub:base-v0.11.1
 ```
 
 
 
-Na stranici za prijavu na ThunderHub se pojavljuje. Izaberite konfigurisani nalog i unesite lozinku da biste pristupili kontrolnoj tabli.
+Pojavljuje se stranica za prijavu u ThunderHub. Izaberite podešeni nalog i unesite lozinku da biste pristupili kontrolnoj tabli.
 
 
 
-**Instalacija na drugim distribucijama:** Unapred pripremljene node distribucije (RaspiBlitz, MyNode, Start9, itd.) obično nude nativnu podršku za ThunderHub putem svojih odgovarajućih administrativnih interfejsa.
+**Instalacija na drugim distribucijama:** Unapred pripremljene distribucije čvorova (RaspiBlitz, MyNode, Start9 i dr.) uglavnom nude ugrađenu podršku za ThunderHub preko svojih odgovarajućih administrativnih interfejsa.
 
 
 
@@ -304,8 +304,8 @@ Na stranici za prijavu na ThunderHub se pojavljuje. Izaberite konfigurisani nalo
 
 
 
-- Instalacija:** [docs.thunderhub.io/installation](https://docs.thunderhub.io/installation)
-- Konfiguracija:** [docs.thunderhub.io/setup](https://docs.thunderhub.io/setup)
+- **Instalacija:** [docs.thunderhub.io/installation](https://docs.thunderhub.io/installation)
+- **Konfiguracija:** [docs.thunderhub.io/setup](https://docs.thunderhub.io/setup)
 
 
 
@@ -313,32 +313,32 @@ Ovi resursi detaljno opisuju napredne opcije kao što su SSO nalozi, šifrovani 
 
 
 
-Kada je ThunderHub instaliran i dostupan, spremni ste da iskoristite sve njegove funkcije. U sledećem odeljku, pogledaćemo Interface ThunderHub i njegove različite kartice, kako bismo vas vodili kroz njegovo korišćenje.
+Kada je ThunderHub instaliran i dostupan, spremni ste da iskoristite sve njegove funkcije. U sledećem odeljku, pogledaćemo ThunderHub interfejs i njegove različite kartice, kako bismo vas vodili kroz njegovo korišćenje.
 
 
 
-## Interface prezentacija
+## Predstavljanje interfejsa
 
 
 
-Interface ThunderHub je strukturiran oko glavnog menija (obično prikazan u koloni sa leve strane) koji se sastoji od nekoliko ključnih sekcija. Svaka od njih odgovara određenom aspektu upravljanja vašim Lightning čvorom. Hajde da ih prođemo jednu po jednu:
+ThunderHub interfejs je strukturiran oko glavnog menija (obično prikazan u koloni sa leve strane) koji se sastoji od nekoliko ključnih sekcija. Svaka od njih odgovara određenom aspektu upravljanja vašim Lightning čvorom. Hajde da ih prođemo jednu po jednu:
 
 
 
 
 
-- Početna** - Kartica Početna sa opštom komandnom tablom (pregled vašeg čvora i brze radnje).
-- Kontrolna tabla** - Prilagodljiva kontrolna tabla sa vidžetima i naprednim metrima.
-- Vr�njaci** - Upravljanje vr�njacima u Lightning mre�i (povezivanje sa drugim �vorovima).
-- Kanali** - Detaljno upravljanje Lightning kanalima.
-- Rebalance** - Alat za balansiranje kanala (kružna plaćanja).
-- Transakcije** - Istorija Lightning plaćanja (LN transakcije).
-- Forwards** - Statistika rutiranja (uplate prosleđene preko vašeg čvora).
-- Chain** - Node's On-Chain portfolio (On-Chain BTC: UTXO-i, transakcije).
-- Amboss** - Integracija sa Amboss (praćenje čvorova, bekapovi, itd.).
-- Alati** - Razni alati (bekapi, potpisane poruke, makaruni, izveštaji, itd.).
-- Swap** - On-Chain/Lightning swap funkcije putem Boltz.
-- Stats** - Napredna statistika i metrički podaci o performansama čvorova.
+- **Home** - Kartica Početna sa opštom komandnom tablom (pregled vašeg čvora i brze radnje).
+- **Dashboard** - Prilagodljiva kontrolna tabla sa vidžetima i naprednim metrima.
+- **Peers** - Upravljanje povezanim čvorovima u Lightning mreži (povezivanje sa drugim čvorovima).
+- **Channels** - Detaljno upravljanje Lightning kanalima.
+- **Rebalance** - Alat za balansiranje kanala (kružna plaćanja).
+- **Transactions** - Istorija Lightning plaćanja (LN transakcije).
+- **Forwards** - Statistika rutiranja (uplate prosleđene preko vašeg čvora).
+- **Chain** - Node's On-Chain portfolio (On-Chain BTC: UTXO-i, transakcije).
+- **Amboss** - Integracija sa Amboss-om (praćenje čvorova, bekapovi, itd.).
+- **Alati** - Razni alati (bekapi, potpisane poruke, makaruni, izveštaji, itd.).
+- **Swap** - On-Chain/Lightning swap funkcije putem Boltz-a.
+- **Stats** - Napredna statistika i metrički podaci o performansama čvorova.
 
 
 
@@ -360,32 +360,32 @@ ThunderHub-ova kartica **Home** je početna stranica koja se pojavljuje nakon š
 
 
 
-- Stanja i kapaciteti:** Na vrhu stranice, ThunderHub prikazuje vaše dostupne bilanse. Ovde ćete obično videti On-Chain bilans (Bitcoin On-Chain u čvoru Wallet, simbolizovan sa Anchor ⚓) i Lightning bilans (kapaciteti vaših kanala, simbolizovani sa munjom Bolt ⚡). Ovo vam daje trenutni uvid u sredstva koja imate u On-Chain i Lightning. Ako imate nekoliko naloga ili kanala, proverite da li ste na pravom (npr. Mainnet vs Testnet).
+- **Stanja i kapaciteti:** Na vrhu stranice, ThunderHub prikazuje vaše dostupne bilanse. Ovde ćete obično videti On-Chain bilans (Bitcoin On-Chain u čvoru Wallet, simbolizovan sa Anchor ⚓) i Lightning bilans (kapaciteti vaših kanala, simbolizovani sa munjom Bolt ⚡). Ovo vam daje trenutni uvid u sredstva koja imate u On-Chain i Lightning. Ako imate nekoliko naloga ili kanala, proverite da li ste na pravom (npr. Mainnet vs Testnet).
 
 
 
 
 
-- Ključne statistike:** Kontrolna tabla može prikazati neke globalne metrike za vaš čvor - na primer, broj otvorenih kanala, broj povezanih partnera, zarađene naknade za usmeravanje (ako je primenljivo), itd. To je rezime nedavne aktivnosti i zdravlja čvora.
+- **Ključne statistike:** Kontrolna tabla može prikazati neke globalne metrike za vaš čvor - na primer, broj otvorenih kanala, broj povezanih partnera, zarađene naknade za usmeravanje (ako je primenljivo), itd. To je rezime nedavne aktivnosti i zdravlja čvora.
 
 
 
 
 
-- Brze radnje:** Kontrolna tabla sadrži dugmad za brzo izvršavanje najčešćih zadataka, bez potrebe za navigacijom kroz menije. Ove brze radnje uključuju :
+- **Brze radnje:** Kontrolna tabla sadrži dugmad za brzo izvršavanje najčešćih zadataka, bez potrebe za navigacijom kroz menije. Ove brze radnje uključuju :
 
 
 
 
 
-  - Ghost**: Postavi prilagođeni Lightning Address putem Ambossa.
-  - Doniraj**: Doniraj putem Lightning-a.
-  - Login/Go To**: Povežite se sa svojim Amboss nalogom (Quick Connect) i idite direktno na Amboss.space da biste videli informacije o svom čvoru.
-  - Address** : Unesite Lightning Address da izvršite plaćanje.
-  - Open**: Otvorite novi Lightning kanal. Klikom se otvara obrazac za unos URI-ja udaljenog čvora s kojim želite otvoriti kanal, iznos i, ako je primenljivo, maksimalnu On-Chain naknadu koja će se koristiti.
-  - Decode**: Dekodiraj Lightning Invoice ili LNURL da bi video detalje pre plaćanja.
-  - LNURL**: Procesuiraj LNURL-ove za Lightning uplate ili isplate.
-  - LnMarkets Login**: Prijavite se na LnMarkets za trgovanje.
+  - **Ghost**: Postavi prilagođenu Lightning adresu putem Ambossa.
+  - **Doniraj**: Doniraj putem Lightning-a.
+  - **Login/Go To**: Povežite se sa svojim Amboss nalogom (Quick Connect) i idite direktno na Amboss.space da biste videli informacije o svom čvoru.
+  - **Address** : Unesite Lightning Address da izvršite plaćanje.
+  - **Open**: Otvorite novi Lightning kanal. Klikom se otvara obrazac za unos URI-ja udaljenog čvora s kojim želite otvoriti kanal, iznos i, ako je primenljivo, maksimalnu On-Chain naknadu koja će se koristiti.
+  - **Decode**: Dekodiraj Lightning Invoice ili LNURL da bi video detalje pre plaćanja.
+  - **LNURL**: Procesuiraj LNURL-ove za Lightning uplate ili isplate.
+  - **LnMarkets Login**: Prijavite se na LnMarkets za trgovanje.
 
 
 
