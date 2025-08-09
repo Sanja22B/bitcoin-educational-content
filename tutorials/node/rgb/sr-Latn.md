@@ -9,22 +9,22 @@ description: Uvod i kreiranje sredstava na RGB
 ## uvod
 
 
-Dana 3. januara 2009. Satoshi Nakamoto je pokrenuo prvi Bitcoin čvor, od tog trenutka novi čvorovi su se pridružili i Bitcoin je počeo da se ponaša kao da je novi oblik života, oblik života koji nije prestao da evoluira, malo po malo postao je najsigurnija mreža na svetu kao rezultat svog jedinstvenog dizajna, veoma dobro osmišljenog od strane Satoshi jer, kroz ekonomske podsticaje, privlači korisnike koji se obično nazivaju rudarima da ulažu u energiju i računarsku snagu što doprinosi sigurnosti mreže.
+Dana 3. januara 2009. Satoshi Nakamoto je pokrenuo prvi Bitcoin čvor, od tog trenutka novi čvorovi su se pridružili i Bitcoin je počeo da se ponaša kao da je novi oblik života, oblik života koji nije prestao da evoluira, malo po malo postao je najsigurnija mreža na svetu kao rezultat svog jedinstvenog dizajna, veoma dobro osmišljenog od strane Satoshija jer, kroz ekonomske podsticaje, privlači korisnike koji se obično nazivaju rudarima da ulažu u energiju i računarsku snagu što doprinosi sigurnosti mreže.
 
 
-Kako Bitcoin nastavlja svoj rast i usvajanje, suočava se sa problemima skalabilnosti, Bitcoin mreža omogućava da se novi blok sa transakcijama iskopa za približno 10 minuta, pod pretpostavkom da imamo 144 bloka dnevno sa maksimalnim vrednostima od 2700 transakcija po bloku, Bitcoin bi omogućio samo 4,5 transakcija po sekundi, Satoshi je bio svestan ovog ograničenja, to možemo videti u emailu1 poslatom Mike Hearn-u u martu 2011. gde objašnjava kako ono što danas znamo kao platni kanal funkcioniše. mikroplaćanja brzo i sigurno bez čekanja na potvrde. Tu dolaze off-chain protokoli.
+Kako Bitcoin nastavlja svoj rast i usvajanje, suočava se sa problemima skalabilnosti, Bitcoin mreža omogućava da se novi blok sa transakcijama iskopa za približno 10 minuta, pod pretpostavkom da imamo 144 bloka dnevno sa maksimalnim vrednostima od 2700 transakcija po bloku, Bitcoin bi omogućio samo 4,5 transakcija po sekundi, Satoshi je bio svestan ovog ograničenja, to možemo videti u emailu poslatom Mike Hearn-u u martu 2011. gde objašnjava kako ono što danas znamo kao platni kanal funkcioniše. mikroplaćanja brzo i sigurno bez čekanja na potvrde. Tu dolaze [off-chain](https://planb.network/resources/glossary/offchain) protokoli.
 
 
-Prema Christian Decker2 off-chain protokoli su obično sistemi u kojima korisnici koriste podatke iz Blockchain i upravljaju njima bez dodirivanja samog Blockchain do poslednjeg trenutka. Na osnovu ovog koncepta, nastao je Lightning Network, mreža koja koristi off-chain protokole kako bi omogućila da se Bitcoin plaćanja izvrše gotovo trenutno i pošto sve ove operacije nisu zapisane na blokčejnu, omogućava hiljade transakcija po sekundi i skaliranje Bitcoin.
+Prema Christian Deckeru off-chain protokoli su obično sistemi u kojima korisnici koriste podatke iz Blockchain-a i upravljaju njima bez dodirivanja samog Blockchain-a do poslednjeg trenutka. Na osnovu ovog koncepta, nastala je Lightning mreža, mreža koja koristi off-chain protokole kako bi omogućila da se Bitcoin plaćanja izvrše gotovo trenutno i pošto sve ove operacije nisu zapisane na blokčejnu, omogućava hiljade transakcija po sekundi i Bitcoin skaliranje.
 
 
-Istraživanje i razvoj u oblasti off-chain protokola na Bitcoin otvorilo je Pandorinu kutiju, danas znamo da možemo postići mnogo više od prenosa vrednosti na decentralizovan način, neprofitna LNP/BP Standards Association fokusira se na razvoj Layer 2 i 3 protokola na Bitcoin i Lightning Network, među ovim projektima se ističe RGB.
+Istraživanje i razvoj u oblasti off-chain protokola na Bitcoinu otvorili su Pandorinu kutiju; danas znamo da možemo postići mnogo više od samog prenosa vrednosti na decentralizovan način. Neprofitna organizacija LNP/BP Standards Association fokusira se na razvoj protokola drugog i trećeg sloja na Bitcoinu i Lightning mreži, a među tim projektima posebno se izdvaja RGB.
 
 
 ## Šta je RGB?
 
 
-RGB je proizašao iz istraživanja Petera Todda3 o jednokratnim pečatima i validaciji na strani klijenta, koje su 2016-2019. skovali Giacomo Zucco i zajednica u bolji protokol za imovinu za Bitcoin i Lightning Network. Dalja evolucija ovih ideja dovela je do razvoja RGB u potpuno razvijen Smart contract sistem od strane Maxima Orlovskog, koji vodi njegovu implementaciju od 2019. uz učešće zajednice.
+RGB je proizašao iz istraživanja Petera Todda o jednokratnim pečatima i validaciji na strani klijenta, koje su 2016-2019. skovali Giacomo Zucco i zajednica u bolji protokol za imovinu za Bitcoin i Lightning Network. Dalja evolucija ovih ideja dovela je do razvoja RGB u potpuno razvijen Smart contract sistem od strane Maxima Orlovskog, koji vodi njegovu implementaciju od 2019. uz učešće zajednice.
 
 
 Možemo definisati RGB kao skup open source protokola koji nam omogućavaju izvršavanje složenih pametnih ugovora na skalabilan i poverljiv način. To nije posebna mreža (kao Bitcoin ili Lightning); svaki Smart contract je samo skup Contract učesnika koji mogu komunicirati koristeći različite komunikacione kanale (podrazumevano Lightning Network). RGB koristi Bitcoin Blockchain kao Layer stanja Commitment i održava kod Smart contract i podatke off-chain, što ga čini skalabilnim, koristeći Bitcoin transakcije (i Script) kao Ownership kontrolni sistem za pametne ugovore; dok je evolucija Smart contract definisana off-chain šemom, na kraju je važno napomenuti da se sve validira na strani klijenta.
