@@ -360,7 +360,7 @@ ThunderHub-ova kartica **Home** je početna stranica koja se pojavljuje nakon š
 
 
 
-- **Stanja i kapaciteti:** Na vrhu stranice, ThunderHub prikazuje vaše dostupne bilanse. Ovde ćete obično videti On-Chain bilans (Bitcoin On-Chain u čvoru Wallet, simbolizovan sa Anchor ⚓) i Lightning bilans (kapaciteti vaših kanala, simbolizovani sa munjom Bolt ⚡). Ovo vam daje trenutni uvid u sredstva koja imate u On-Chain i Lightning. Ako imate nekoliko naloga ili kanala, proverite da li ste na pravom (npr. Mainnet vs Testnet).
+- **Stanja i kapaciteti:** Na vrhu stranice, ThunderHub prikazuje vaše dostupne bilanse. Ovde ćete obično videti [on-chain](https://planb.network/resources/glossary/onchain) bilans (Bitcoin on-Chain u čvoru novčanika, simbolizovan sa sidrom ⚓) i Lightning bilans (kapaciteti vaših kanala, simbolizovani sa Bolt munjom ⚡). Ovo vam daje trenutni uvid u sredstva koja imate u On-Chain-u i Lightning-u. Ako imate nekoliko naloga ili kanala, proverite da li ste na pravom (npr. Mainnet vs Testnet).
 
 
 
@@ -379,17 +379,17 @@ ThunderHub-ova kartica **Home** je početna stranica koja se pojavljuje nakon š
 
 
   - **Ghost**: Postavi prilagođenu Lightning adresu putem Ambossa.
-  - **Doniraj**: Doniraj putem Lightning-a.
+  - **Donate**: Doniraj putem Lightning-a.
   - **Login/Go To**: Povežite se sa svojim Amboss nalogom (Quick Connect) i idite direktno na Amboss.space da biste videli informacije o svom čvoru.
-  - **Address** : Unesite Lightning Address da izvršite plaćanje.
+  - **Address** : Unesite Lightning adresu da izvršite plaćanje.
   - **Open**: Otvorite novi Lightning kanal. Klikom se otvara obrazac za unos URI-ja udaljenog čvora s kojim želite otvoriti kanal, iznos i, ako je primenljivo, maksimalnu On-Chain naknadu koja će se koristiti.
-  - **Decode**: Dekodiraj Lightning Invoice ili LNURL da bi video detalje pre plaćanja.
+  - **Decode**: Dekodiraj Lightning fakturu ili LNURL da bi ste videli detalje pre plaćanja.
   - **LNURL**: Procesuiraj LNURL-ove za Lightning uplate ili isplate.
   - **LnMarkets Login**: Prijavite se na LnMarkets za trgovanje.
 
 
 
-Ove brze radnje omogućavaju vam da izvršite najčešće operacije direktno sa početne stranice, bez potrebe da se krećete kroz različite kartice Interface.
+Ove brze radnje omogućavaju vam da izvršite najčešće operacije direktno sa početne stranice, bez potrebe da se krećete kroz različite kartice grafičkog interfejsa.
 
 
 
@@ -401,13 +401,13 @@ Ukratko, ThunderHub kontrolna tabla vam daje **brz pregled** vašeg čvora i omo
 
 
 
-Deo **Dashboard** je odvojen od kartice Početna i nudi napredniju, prilagodljivu kontrolnu tablu. Ovaj deo vam omogućava da kreirate prilagođeni prikaz sa specifičnim widget-ima prema vašim potrebama kao operatera čvora.
+Deo **Dashboard** je odvojen od "Home" kartice i nudi napredniju, prilagodljivu kontrolnu tablu. Ovaj deo vam omogućava da kreirate prilagođeni prikaz sa specifičnim widget-ima prema vašim potrebama kao operatera čvora.
 
 
 
 
 
-- Prilagodljivi widgeti:** Za razliku od početne stranice, koja ima fiksni raspored, kontrolna tabla vam omogućava da tačno izaberete koji Elements želite prikazati i kako da ih organizujete.
+- **Prilagodljivi widgeti:** Za razliku od početne stranice, koja ima fiksni raspored, kontrolna tabla vam omogućava da tačno izaberete koji elemente želite prikazati i kako da ih organizujete.
 
 
 
@@ -423,7 +423,7 @@ Ako nijedan widget nije omogućen, videćete poruku "No Widgets Enabled!" sa dug
 
 
 
-U podešavanjima možete birati iz širokog spektra widgeta organizovanih u kategorije: "Lightning - Info", "Lightning - Table", "Lightning - Graph", i tako dalje. Svaki widget može biti pojedinačno aktiviran ili deaktiviran pomoću dugmadi "Prikaži/Sakrij".
+U podešavanjima možete birati iz širokog spektra widgeta organizovanih u kategorije: "Lightning - Info", "Lightning - Table", "Lightning - Graph", i tako dalje. Svaki widget može biti pojedinačno aktiviran ili deaktiviran pomoću dugmadi "Show/Hide", u prevodu "Prikaži/Sakrij".
 
 
 
@@ -445,19 +445,19 @@ Jednom kada je konfigurisan, vaš kontrolni panel može prikazivati različite g
 
 
 
-- Napredne metrike:** Pristupite detaljnijim statistikama o performansama vašeg čvora, sa grafikonima i podacima u realnom vremenu.
+- **Napredne metrike:** Pristupite detaljnijim statistikama o performansama vašeg čvora, sa grafikonima i podacima u realnom vremenu.
 
 
 
 
 
-- Prilagodljiv pregled:** Prilagodite prikaz prema tome da li ste povremeni korisnik ili profesionalni operater koji upravlja višestrukim rutiranim kanalima.
+- **Prilagodljiv pregled:** Prilagodite prikaz prema tome da li ste povremeni korisnik ili profesionalni operater koji upravlja višestrukim rutiranim kanalima.
 
 
 
 
 
-- Modularni Interface:** Dodajte ili uklonite widgete po potrebi: grafikoni prosljeđivanja, metrički podaci o likvidnosti, upozorenja o zdravlju čvorova, itd.
+- **Modularni interfej:** Dodajte ili uklonite widgete po potrebi: grafikoni prosljeđivanja, metrički podaci o likvidnosti, upozorenja o zdravlju čvorova, itd.
 
 
 
@@ -469,7 +469,7 @@ Ovaj odeljak je posebno koristan za napredne korisnike koji žele da prate speci
 
 
 
-Deo **Peers** navodi sve Lightning čvorove koji su trenutno povezani sa vašim kao vršnjaci. **Vršnjak** je direktna veza čvor-do-čvor na Lightning Network. Vaš čvor može biti povezan sa vršnjacima čak i bez otvorenog kanala (npr. samo za Exchange razmenu informacija na mreži), ili naravno svaki otvoreni kanal automatski podrazumeva povezanog vršnjaka.
+Deo **Peers** navodi sve Lightning čvorove koji su trenutno povezani sa vašim kao vršnjaci. **Peer** je direktna veza između dva čvora na Lightning mreži. Vaš čvor može biti povezan sa vršnjacima čak i bez otvorenog kanala (npr. samo za razmenu informacija na mreži), ili naravno svaki otvoreni kanal automatski podrazumeva povezanog vršnjaka.
 
 
 
@@ -483,8 +483,8 @@ Na kartici Peers, videćete :
 
 
 
-- Informacione kolone:** Interface prikazuje korisne detalje kao što su status sinhronizacije, tip konekcije (clearnet ili Tor), ping, primljeni/poslati satoshi i obim razmenjenih podataka.
-- Dodaj vršnjaka:** ThunderHub vam omogućava ručno povezivanje sa novim vršnjakom putem dugmeta **"Dodaj "** u gornjem desnom uglu. Trebaće vam URI čvora (format `<public_key>@<socket>`). Kada se validira, ThunderHub šalje odgovarajuću `lncli connect` komandu. Ako je čvor online i dostupan, biće dodat na vašu listu vršnjaka.
+- **Informacione kolone:** Interfejs prikazuje korisne detalje kao što su status sinhronizacije, tip konekcije (clearnet ili Tor), ping, primljeni/poslati satoshiji i obim razmenjenih podataka.
+- **Add peer, u prevodu Dodaj vršnjaka:** ThunderHub vam omogućava ručno povezivanje sa novim vršnjakom putem dugmeta **"Add "** u gornjem desnom uglu. Trebaće vam URI čvora (format `<public_key>@<socket>`). Kada se validira, ThunderHub šalje odgovarajuću `lncli connect` komandu. Ako je čvor online i dostupan, biće dodat na vašu listu vršnjaka.
 
 
 
@@ -492,7 +492,7 @@ Na kartici Peers, videćete :
 
 
 
-Kartica **Kanali** je srce upravljanja Lightning kanalima. Verovatno je to deo koji ćete najčešće konsultovati. Prikazuje **sve vaše Lightning kanale** sa njihovim detaljima i omogućava vam da izvršavate upravljačke akcije na tim kanalima.
+Kartica **Channels** je srce upravljanja Lightning kanalima. Verovatno je to deo koji ćete najčešće konsultovati. Prikazuje **sve vaše Lightning kanale** sa njihovim detaljima i omogućava vam da izvršavate upravljačke akcije na tim kanalima.
 
 
 
@@ -500,37 +500,37 @@ Kartica **Kanali** je srce upravljanja Lightning kanalima. Verovatno je to deo k
 
 
 
-Evo šta ćete pronaći na stranici Kanali:
+Evo šta ćete pronaći na stranici Channels:
 
 
 
 
 
-- Prikaz liste kanala:** Svaki otvoreni (ili otvarajući/zatvarajući) kanal je naveden, obično sa alijasom udaljenog čvora, ukupnim kapacitetom kanala i obojenom trakom koja ilustruje raspodelu lokalne naspram udaljene likvidnosti. ThunderHub koristi kodiranje bojama (često plava/Green) ili procenat za označavanje balansa kanala: na primer, plava za vaš lokalni udeo, Green za udaljeni udeo. Ako je kanal savršeno balansiran (50/50), traka će biti polovina svake boje. Ovo vam omogućava da na prvi pogled identifikujete koji kanali su neuravnoteženi (sve plavo = skoro sve lokalno, sve Green = skoro sve udaljeno).
+- **Prikaz liste kanala:** Svaki otvoreni (ili otvarajući/zatvarajući) kanal je naveden, obično sa alijasom udaljenog čvora, ukupnim kapacitetom kanala i obojenom trakom koja ilustruje raspodelu lokalne naspram udaljene likvidnosti. ThunderHub koristi kodiranje bojama (često plava/zelena) ili procenat za označavanje balansa kanala: na primer, plava za vaš lokalni udeo, zelena za udaljeni udeo. Ako je kanal savršeno balansiran (50/50), traka će biti polovina svake boje. Ovo vam omogućava da na prvi pogled identifikujete koji kanali su neuravnoteženi (sve plavo = skoro sve lokalno, sve zeleno = skoro sve udaljeno).
 
 
 
 
 
-- Informacione kolone:** Interface prikazuje detaljne kolone uključujući Status, Dostupne Akcije, Informacije o Partneru, ID Kanala, Kapacitet, Aktivnost, Naknade i Stanje sa grafičkim prikazom likvidnosti.
+- **Informacione kolone:** Interfejs prikazuje detaljne kolone uključujući Status, Dostupne akcije, Informacije o partneru, ID kanala, Kapacitet, Aktivnost, Naknade i Stanje sa grafičkim prikazom likvidnosti.
 
 
 
 
 
-- Prikaz konfiguracije:** Zupčanik u gornjem desnom uglu omogućava vam da prilagodite prikaz kanala prema vašim željama.
+- **Prikaz konfiguracije:** Zupčanik u gornjem desnom uglu omogućava vam da prilagodite prikaz kanala prema vašim željama.
 
 
 
 
 
-- Status:** Videćete i indikatore statusa - npr. `Active` (kanal je otvoren i operativan), `Offline` (peer je isključen, tako da je kanal trenutno neupotrebljiv), `Pending` (za otvaranja ili zatvaranja koja čekaju On-Chain potvrdu).
+- **Status:** Videćete i indikatore statusa - npr. `Active` (kanal je otvoren i operativan), `Offline` (peer je isključen, tako da je kanal trenutno neupotrebljiv), `Pending` (za otvaranja ili zatvaranja koja čekaju On-Chain potvrdu).
 
 
 
 
 
-- Akcije na kanalu:** Za svaki kanal, ThunderHub pruža dugmad za akcije (često u obliku ikonica):
+- **Akcije na kanalu:** Za svaki kanal, ThunderHub pruža dugmad za akcije (često u obliku ikonica):
 
 
 
@@ -540,13 +540,13 @@ Evo šta ćete pronaći na stranici Kanali:
 
 
 
-  - Naknade za uređivanje:** Interface "Update Channel Policy" vam omogućava da prilagodite sve parametre kanala: Osnovna naknada, Stopa naknade (u ppm), CLTV Delta, Maksimalni HTLC i Minimalni HTLC. Ovo vam omogućava da prilagodite svoje politike naknada pojedinačno po kanalu, sa ciljem privlačenja (ili odvraćanja) saobraćaja rutiranja. *(Napomena: ThunderHub nije zamena za automatski alat za upravljanje naknadama, ali za ručno podešavanje je veoma efikasan)*
-  - Zatvori Kanal (*Close*)**: Interface "Zatvori Kanal" vam daje izbor između **kooperativnog zatvaranja** (podrazumevano) ili **prisilnog zatvaranja** (*Force Close*) definišući naknade (u Sats/vByte). **Važno:** uvek preferirajte kooperativno zatvaranje kada je moguće, kako biste izbegli kašnjenja u On-Chain poravnanju i veće naknade. ThunderHub će vam reći da li je peer online (kooperativno moguće) ili ne. U slučaju prisilnog zatvaranja, budite sigurni da potvrdite jer je ovo nepovratno i pokrenuće transakciju sa vremenskim zaključavanjem (obično 144 bloka ili ~1 dan na Bitcoin Mainnet).
-  - Otvorite novi kanal:** Da biste otvorili novi kanal, kliknite na ikonicu zupčanika u gornjem desnom uglu stranice Kanali, a zatim odaberite "Otvori". Zatim možete pokrenuti kanal ka novom ili postojećem partneru. Prednost korišćenja ove stranice je što imate listu vaših postojećih kanala ispred sebe, što vam može pomoći da odlučite gde da otvorite novi kanal.
+  - **Naknade za uređivanje:** Interfejs "Update Channel Policy" vam omogućava da prilagodite sve parametre kanala: Osnovna naknada, Stopa naknade (u ppm), CLTV Delta, Maksimalni HTLC i Minimalni HTLC. Ovo vam omogućava da prilagodite svoje politike naknada pojedinačno po kanalu, sa ciljem privlačenja (ili odvraćanja) saobraćaja rutiranja. *(Napomena: ThunderHub nije zamena za automatski alat za upravljanje naknadama, ali za ručno podešavanje je veoma efikasan)*
+  - **Zatvori Kanal (*Close*)**: Interfejs "Zatvori Kanal" vam daje izbor između **kooperativnog zatvaranja** (podrazumevano) ili **prisilnog zatvaranja** (*Force Close*) definišući naknade (u Sats/vByte). **Važno:** uvek preferirajte kooperativno zatvaranje kada je moguće, kako biste izbegli kašnjenja u On-Chain poravnanju i veće naknade. ThunderHub će vam reći da li je peer online (kooperativno moguće) ili ne. U slučaju prisilnog zatvaranja, budite sigurni da potvrdite jer je ovo nepovratno i pokrenuće transakciju sa vremenskim zaključavanjem (obično 144 bloka ili ~1 dan na Bitcoin Mainnet-u).
+  - **Otvorite novi kanal:** Da biste otvorili novi kanal, kliknite na ikonicu zupčanika u gornjem desnom uglu stranice Channels, a zatim odaberite "Open". Zatim možete pokrenuti kanal ka novom ili postojećem partneru. Prednost korišćenja ove stranice je što imate listu vaših postojećih kanala ispred sebe, što vam može pomoći da odlučite gde da otvorite novi kanal.
 
 
 
-Ukratko, odeljak Kanali vam daje **preciznu kontrolu nad svakim kanalom**. Ovde upravljate alokacijom likvidnosti, odlučujete koje kanale da zadržite ili zatvorite i postavljate parametre rutiranja po kanalu. ThunderHub nudi jasan Interface za ove ključne operacije upravljanja čvorovima.
+Ukratko, odeljak Channels vam daje **preciznu kontrolu nad svakim kanalom**. Ovde upravljate alokacijom likvidnosti, odlučujete koje kanale da zadržite ili zatvorite i postavljate parametre rutiranja po kanalu. ThunderHub nudi jasan interfejs za ove ključne operacije upravljanja čvorovima.
 
 
 
@@ -554,7 +554,7 @@ Ukratko, odeljak Kanali vam daje **preciznu kontrolu nad svakim kanalom**. Ovde 
 
 
 
-Kartica **Rebalance** je posvećena **balansiranju kanala**. Balansiranje (ili *rebalansiranje*) podrazumeva ponovno podešavanje raspodele sredstava između vaših odlaznih i dolaznih kanala, pravljenjem **kružnog plaćanja** sa jednog od vaših kanala na drugi vaš kanal, preko Lightning Network. Ovo vam omogućava, bez unošenja novih sredstava, da prebacite likvidnost iz kanala koji je prepun u kanal koji je previše prazan, čineći vaše kanale korisnijim (izbalansiran kanal može i slati i primati uplate).
+Kartica **Rebalance** je posvećena **balansiranju kanala**. Balansiranje (ili *rebalansiranje*) podrazumeva ponovno podešavanje raspodele sredstava između vaših odlaznih i dolaznih kanala, pravljenjem **kružnog plaćanja** sa jednog od vaših kanala na drugi vaš kanal, preko Lightning mreže. Ovo vam omogućava, bez unošenja novih sredstava, da prebacite likvidnost iz kanala koji je prepun u kanal koji je previše prazan, čineći vaše kanale korisnijim (izbalansiran kanal može i slati i primati uplate).
 
 
 
@@ -568,23 +568,23 @@ ThunderHub uveliko olakšava ovu operaciju, koja bi inače bila zamorna na koman
 
 
 
-- Početni prikaz kanala:** Prilikom ulaska u Rebalance, ThunderHub prikazuje listu vaših kanala, sa indikatorom balansa za svaki (slično kao na stranici Kanali). Odmah možete videti koji kanali su van balansa. ThunderHub može sortirati kanale po rastućem balansu, tako da najnebalansiraniji kanali budu na vrhu liste (0.0 znači potpuno lokalni ili udaljeni).
+- **Početni prikaz kanala:** Prilikom ulaska u Rebalance, ThunderHub prikazuje listu vaših kanala, sa indikatorom balansa za svaki (slično kao na stranici Channels). Odmah možete videti koji kanali su van balansa. ThunderHub može sortirati kanale po rastućem balansu, tako da najnebalansiraniji kanali budu na vrhu liste (0.0 znači potpuno lokalni ili udaljeni).
 
 
 
 
 
-- Izbor partnera:** Interface olakšava izbor odlaznih i dolaznih partnera za ponovno balansiranje.
+- **Izbor partnera:** Interfejs olakšava izbor odlaznih i dolaznih partnera za ponovno balansiranje.
 
 
 
 
 
-- Postavke parametara:** Možete postaviti :
+- **Postavke parametara:** Možete postaviti :
   - Maksimalna naknada (u Sats i ppm) koju ste spremni platiti
   - Iznos za ponovno balansiranje sa opcijom "Fiksno" ili "Ciljano"
-  - Čvorovi koje treba izbegavati** prilikom rutiranja
-  - Maksimalno vreme probe** za pronalaženje rute
+  - **Čvorovi koje treba izbegavati** prilikom rutiranja
+  - **Maksimalno vreme probe** za pronalaženje rute
 
 
 
@@ -602,7 +602,7 @@ ThunderHub uveliko olakšava ovu operaciju, koja bi inače bila zamorna na koman
 
 
 
-- Postavite iznos naknade i toleranciju:** Obrazac vam omogućava unos:
+- **Postavite iznos naknade i toleranciju:** Obrazac vam omogućava unos:
 
 
 
@@ -615,19 +615,19 @@ ThunderHub uveliko olakšava ovu operaciju, koja bi inače bila zamorna na koman
 
 
 
-- Pronađi rutu:** Kliknite na dugme da pronađete rutu. ThunderHub upituje LND da izračuna rutu od vašeg izvornog kanala kroz mrežu do vašeg ciljanog kanala. Ako pronađe moguću rutu koja zadovoljava vaše kriterijume naknade, prikazuje je sa detaljima o skokovima i troškovima naknade. Na primer, može naznačiti da je pronašao putanju sa 3 skoka sa ukupno 2 Sats u troškovima.
+- **Pronađi rutu:** Kliknite na dugme da pronađete rutu. ThunderHub pita LND da izračuna rutu od vašeg izvornog kanala kroz mrežu do vašeg ciljanog kanala. Ako pronađe moguću rutu koja zadovoljava vaše kriterijume naknade, prikazuje je sa detaljima o skokovima i troškovima naknade. Na primer, može naznačiti da je pronašao putanju sa 3 skoka sa ukupno 2 Sats u troškovima.
 
 
 
 
 
-- Pokreni ponovno balansiranje:** Ako ste zadovoljni predloženom rutom, kliknite na **Balance Channel**. ThunderHub će tada pokrenuti kružno plaćanje putem LND. Ako plaćanje bude uspešno, videćete obaveštenje o uspehu, a balans kanala A i B će biti izmenjen u realnom vremenu. ThunderHub će ažurirati indikator balansa za ove kanale (idealno bi bilo da budu zeleniji nego pre, što ukazuje na bolji balans).
+- **Pokreni ponovno balansiranje:** Ako ste zadovoljni predloženom rutom, kliknite na **Balance Channel**. ThunderHub će tada pokrenuti kružno plaćanje putem LND. Ako plaćanje bude uspešno, videćete obaveštenje o uspehu, a balans kanala A i B će biti izmenjen u realnom vremenu. ThunderHub će ažurirati indikator balansa za ove kanale (idealno bi bilo da budu zeleniji nego pre, što ukazuje na bolji balans).
 
 
 
 
 
-- Prilagođavanja i iteracije:** Ako ruta nije pronađena pri prvom pokušaju (ili ako je preskupa), možete prilagoditi parametre :
+- **Prilagođavanja i iteracije:** Ako ruta nije pronađena pri prvom pokušaju (ili ako je preskupa), možete prilagoditi parametre :
 
 
 
@@ -644,7 +644,7 @@ ThunderHub čini proces veoma **intuitivnim i vizuelnim**. U samo 4 koraka (izab
 
 
 
-Konačno, imajte na umu da ponovno balansiranje troši troškove usmeravanja (plaćene posredničkim čvorovima), tako da je to **investicija** za učiniti vaš čvor fluidnijim. Koristite je mudro, na primer za podršku kanalu ka usluzi koju često koristite (dolazna likvidnost) ili za balansiranje velikog kanala za usmeravanje. ThunderHub vam omogućava da to uradite **jednostavno i efikasno**.
+Konačno, imajte na umu da ponovno balansiranje podrazumeva troškove usmeravanja (plaćene posredničkim čvorovima), tako da je to **investicija** za učiniti vaš čvor fluidnijim. Koristite je mudro, na primer za podršku kanalu ka usluzi koju često koristite (dolazna likvidnost) ili za balansiranje velikog kanala za usmeravanje. ThunderHub vam omogućava da to uradite **jednostavno i efikasno**.
 
 
 
@@ -652,7 +652,7 @@ Konačno, imajte na umu da ponovno balansiranje troši troškove usmeravanja (pl
 
 
 
-Sekcija **Transakcije** u ThunderHub-u odgovara istoriji **Lightning** transakcija vašeg čvora, tj. plaćanja i fakture plaćene ili primljene putem kanala. To je neka vrsta izveštaja o stanju računa za vaše LN operacije.
+Sekcija **Transactions** u ThunderHub-u odgovara istoriji **Lightning** transakcija vašeg čvora, tj. uplate i fakture plaćene ili primljene putem kanala. To je neka vrsta izveštaja o stanju računa za vaše LN operacije.
 
 
 
@@ -666,7 +666,7 @@ U ovoj kartici ćete pronaći :
 
 
 
-- Invoice grafikon:** U gornjem desnom uglu, grafikon prikazuje evoluciju primljenih faktura tokom vremena, omogućavajući vam da vizualizujete aktivnost vašeg čvora.
+- **Grafikon faktura:** U gornjem desnom uglu, grafikon prikazuje evoluciju primljenih faktura tokom vremena, omogućavajući vam da vizualizujete aktivnost vašeg čvora.
 
 
 
@@ -678,15 +678,15 @@ U ovoj kartici ćete pronaći :
 
 
 
-  - Tip operacije: **poslata uplata** (odlazna uplata) ili **primljena uplata** (dolazna, putem plaćenog Invoice).
+  - Tip operacije: **poslata uplata** (odlazna uplata) ili **primljena uplata** (dolazna, putem uplaćene fakture).
   - Iznos u Sats.
   - Datum/vreme.
-  - ID plaćanja (Hash ili RHash pre-image) ili komentar (ako ste dodali belešku uz Invoice).
+  - ID plaćanja (Hash ili RHash pre-image) ili komentar (ako ste dodali belešku uz fakturu).
   - Status: **završeno**, ili moguće **u toku**/*neuspešno* (npr. uplata koja čeka rešavanje, ali generalno LND ovo brzo obrađuje, tako da ovde ima malo "na čekanju" u poređenju sa On-Chain transakcijama).
 
 
 
-Ukratko, odeljak Transakcije služi kao vaš **LN dnevnik aktivnosti**. Veoma je koristan za proveru da li je uplata prošla, koliko je koštala naknada ili za praćenje istorije vaših Lightning razmena. U kombinaciji sa odeljkom Prosleđivanja (opisan sledeće), imaćete potpun pregled novca koji je prošao kroz vaš čvor.
+Ukratko, odeljak Transakcije služi kao vaš **LN dnevnik aktivnosti**. Veoma je koristan za proveru da li je uplata prošla, koliko je koštala naknada ili za praćenje istorije vaših Lightning razmena. U kombinaciji sa odeljkom Forwards (opisan sledeće), imaćete potpun pregled novca koji je prošao kroz vaš čvor.
 
 
 
@@ -694,7 +694,7 @@ Ukratko, odeljak Transakcije služi kao vaš **LN dnevnik aktivnosti**. Veoma je
 
 
 
-Kartica **Forwards** posvećena je **ruting** aktivnosti vašeg čvora, tj. plaćanjima koja **prolaze** kroz vaše kanale (kada delujete kao posrednički čvor na Lightning Network). Ako upravljate svojim čvorom kao ruting čvorom, ovo je važan deo za praćenje vašeg učinka.
+Kartica **Forwards** posvećena je aktivnosti **rutiranja** vašeg čvora, tj. plaćanjima koja **prolaze** kroz vaše kanale (kada delujete kao posrednički čvor na Lightning mreži). Ako upravljate svojim čvorom kao ruting čvorom, ovo je važan deo za praćenje vašeg učinka.
 
 
 
@@ -702,25 +702,25 @@ Kartica **Forwards** posvećena je **ruting** aktivnosti vašeg čvora, tj. pla�
 
 
 
-U Napred, ThunderHub predstavlja :
+U sekciji Forwards, ThunderHub predstavlja:
 
 
 
 
 
-- Filteri i opcije prikaza:** U gornjem desnom uglu, filteri vam omogućavaju da sortirate podatke po danu/nedelji/mesecu/godini, i da birate između grafičkog ili tabelarnog prikaza.
+- **Filteri i opcije prikaza:** U gornjem desnom uglu, filteri vam omogućavaju da sortirate podatke po danu/nedelji/mesecu/godini, i da birate između grafičkog ili tabelarnog prikaza.
 
 
 
 
 
-- Poruka aktivnosti:** Ako nije izvršeno rutiranje tokom izabranog perioda, Interface prikazuje "Nema prosleđivanja za ovaj period", kao što je prikazano u ovom primeru.
+- **Poruka aktivnosti:** Ako nije izvršeno rutiranje tokom izabranog perioda, Interface prikazuje "Nema prosleđivanja za ovaj period", kao što je prikazano u ovom primeru.
 
 
 
 
 
-- Tabela nedavnih prosleđivanja: svaki unos odgovara uplati koja je prosleđena kroz vaš čvor. Za svako prosleđivanje, obično vidimo:
+- **Tabela nedavnih prosleđivanja:** svaki unos odgovara uplati koja je prosleđena kroz vaš čvor. Za svako prosleđivanje, obično vidimo:
 
 
 
@@ -736,7 +736,7 @@ U Napred, ThunderHub predstavlja :
 
 
 
-- Prikupljene statistike**: ThunderHub izračunava i prikazuje na vrhu stranice ukupne vrednosti i statistike za dati period (npr. poslednjih 24 sata, ili 7 dana, itd., ponekad podesivo).
+- **Prikupljene statistike**: ThunderHub izračunava i prikazuje na vrhu stranice ukupne vrednosti i statistike za dati period (npr. poslednjih 24 sata, ili 7 dana, itd., ponekad podesivo).
 
 
 
@@ -744,7 +744,7 @@ Ukratko, odeljak Forwards nudi **pregled u realnom vremenu aktivnosti rutiranja 
 
 
 
-### Lanac
+### Chain
 
 
 
@@ -921,13 +921,13 @@ Ovaj odeljak je ključan za optimizaciju vaših troškova, identifikaciju uspeš
 
 
 
-- Interface elegantan i intuitivan
-- Snažni alati (ponovno balansiranje, Boltz zamene, automatske sigurnosne kopije)
+- Elegantan i intuitivan interfejs
+- Snažni alati (ponovno balansiranje, Boltz swaps, automatske sigurnosne kopije)
 - Kompatibilan sa Umbrel, Voltage, RaspiBlitz i drugim distribucijama
 
 
 
-ThunderHub demokratizuje napredno upravljanje Lightning čvorovima, čineći dostupnim ono što je ranije zahtevalo složene tehničke komande. Bilo da ste početnik ili iskusni operater, ThunderHub vam omogućava efikasno upravljanje vašim Lightning čvorom putem modernog, sveobuhvatnog Interface.
+ThunderHub demokratizuje napredno upravljanje Lightning čvorovima, čineći dostupnim ono što je ranije zahtevalo složene tehničke komande. Bilo da ste početnik ili iskusni operater, ThunderHub vam omogućava efikasno upravljanje vašim Lightning čvorom putem modernog, sveobuhvatnog korisničkog interfejsa.
 
 
 
