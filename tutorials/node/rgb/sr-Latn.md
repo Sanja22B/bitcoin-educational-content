@@ -23,38 +23,36 @@ Istraživanje i razvoj u oblasti off-chain protokola na Bitcoinu otvorili su Pan
 
 ## Šta je RGB?
 
-
-RGB je proizašao iz istraživanja Petera Todda o jednokratnim pečatima i validaciji na strani klijenta, koje su 2016-2019. skovali Giacomo Zucco i zajednica u bolji protokol za imovinu za Bitcoin i Lightning Network. Dalja evolucija ovih ideja dovela je do razvoja RGB u potpuno razvijen Smart contract sistem od strane Maxima Orlovskog, koji vodi njegovu implementaciju od 2019. uz učešće zajednice.
-
-
-Možemo definisati RGB kao skup open source protokola koji nam omogućavaju izvršavanje složenih pametnih ugovora na skalabilan i poverljiv način. To nije posebna mreža (kao Bitcoin ili Lightning); svaki Smart contract je samo skup Contract učesnika koji mogu komunicirati koristeći različite komunikacione kanale (podrazumevano Lightning Network). RGB koristi Bitcoin Blockchain kao Layer stanja Commitment i održava kod Smart contract i podatke off-chain, što ga čini skalabilnim, koristeći Bitcoin transakcije (i Script) kao Ownership kontrolni sistem za pametne ugovore; dok je evolucija Smart contract definisana off-chain šemom, na kraju je važno napomenuti da se sve validira na strani klijenta.
+RGB je proizašao iz istraživanja Petera Todda o jednokratnim pečatima (single-use seals) i proveri na strani klijenta (client-side validation), koje su u periodu 2016–2019. Giacomo Zucco i zajednica razvili u napredniji protokol za tokene na Bitcoinu i Lightning mreži. Dalja evolucija ovih ideja dovela je do razvoja RGB-a u potpuno funkcionalan sistem pametnih ugovora, čiju implementaciju od 2019. predvodi Maksim Orlovski uz učešće zajednice.
 
 
-U jednostavnim terminima, RGB je sistem koji omogućava korisniku da revidira Smart contract, izvrši ga i verifikuje pojedinačno u bilo kom trenutku bez dodatnih troškova, jer za to ne koristi Blockchain kao što to rade "tradicionalni" sistemi. Kompleksni sistemi pametnih ugovora su pionirski razvijeni od strane Ethereuma, ali zbog toga što zahtevaju od korisnika da troši značajne količine gasa za svaku operaciju, nikada nisu postigli skalabilnost koju su obećavali, te stoga nikada nisu bili opcija za bankarstvo korisnika isključenih iz trenutnog finansijskog sistema.
+RGB možemo definisati kao skup open-source protokola koji nam omogućavaju izvršavanje složenih pametnih ugovora na skalabilan i poverljiv način. To nije posebna mreža (poput Bitcoina ili Lightning mreže); svaki pametni ugovor je samo skup učesnika ugovora koji mogu međusobno komunicirati putem različitih komunikacionih kanala (podrazumevano preko Lightning mreže). RGB koristi Bitcoin blokčejn kao sloj za potvrdu stanja i održava kod pametnog ugovora i podatke van lanca (off-chain), što ga čini skalabilnim, koristeći Bitcoin transakcije (i Script) kao sistem kontrole vlasništva nad pametnim ugovorima; dok se evolucija pametnog ugovora definiše van lanca, na kraju je važno napomenuti da se sve proverava na strani klijenta.
 
 
-Trenutno, industrija Blockchain promoviše da i kod pametnih ugovora i podaci moraju biti smešteni u Blockchain i izvršavani od strane svakog čvora mreže, bez obzira na prekomerno povećanje veličine ili zloupotrebu računarskih resursa. Šema koju predlaže RGB je mnogo inteligentnija i efikasnija jer prekida sa paradigmom Blockchain tako što odvaja pametne ugovore i podatke od Blockchain i na taj način izbegava zasićenje mreže viđeno na drugim platformama, a pritom ne primorava svaki čvor da izvršava svaki Contract već samo uključene strane, što dodaje poverljivost na nivou nikada ranije viđenom.
+Pojednostavljeno rečeno, RGB je sistem koji korisniku omogućava da u bilo kom trenutku pregleda pametni ugovor, izvrši ga i samostalno ga verifikuje, bez dodatnog troška, jer za to ne koristi blokčejn kao što to rade „tradicionalni“ sistemi. Ethereum je bio pionir složenih sistema pametnih ugovora, ali pošto zahteva da korisnik potroši značajne količine gasa za svaku operaciju, nikada nije postigao obećanu skalabilnost, pa samim tim nikada nije bio opcija za uključivanje korisnika isključenih iz postojećeg finansijskog sistema.
+
+
+Trenutno blockchain industrija promoviše ideju da i kod pametnih ugovora i podaci moraju biti čuvani na blokčejnu i izvršavani od strane svakog čvora u mreži, bez obzira na prekomerno povećanje veličine ili neadekvatno korišćenje računarskih resursa. Šema koju predlaže RGB je znatno inteligentnija i efikasnija, jer prekida sa blokčejn paradigmom time što pametne ugovore i podatke odvaja od blokčejna i tako izbegava zagušenje mreže kakvo viđamo na drugim platformama. Istovremeno, ne primorava svaki čvor da izvršava svaki ugovor, već to rade samo uključene strane, čime se dodaje nivo poverljivosti kakav do sada nije postojao.
 
 
 ![RGB vs Ethereum](assets/1.webp)
 
 
-## Pametni ugovori u RGB
+## Pametni ugovori na RGB-u
 
 
-U RGB Smart contract developer definiše šemu koja specificira pravila kako se Contract razvija tokom vremena. Šema je standard za izgradnju pametnih ugovora u RGB, i kako izdavalac prilikom definisanja Contract za izdavanje, tako i Wallet ili Exchange moraju se pridržavati određene šeme prema kojoj moraju validirati Contract. Samo ako je validacija ispravna, svaka strana može prihvatiti zahteve i raditi sa sredstvom.
+U RGB pametnom ugovoru, programer definiše šemu koja određuje pravila po kojima se ugovor razvija tokom vremena. Šema predstavlja standard za izradu pametnih ugovora u RGB-u, i kako izdavalac prilikom definisanja ugovora za emisiju, tako i novčanik ili menjačnica moraju se pridržavati određene šeme prema kojoj validiraju ugovor. Samo ako je validacija ispravna, svaka strana može prihvatiti zahteve i raditi sa sredstvom.
+
+Pametni ugovor u RGB-u je usmeren aciklični graf (DAG) promena stanja, pri čemu je uvek poznat samo deo grafa, dok ostatak nije dostupan. RGB šema je osnovni skup pravila od kojih pametni ugovor započinje svoj razvoj. Svaki učesnik ugovora može dodati ta pravila (ako je to dozvoljeno šemom), a nastali graf se gradi iterativnom primenom tih pravila.
 
 
-Smart contract u RGB je Directed Acyclic Graph (DAG) promena stanja, gde je samo deo grafa uvek poznat i nema pristupa ostatku. RGB šema je osnovni skup pravila za evoluciju ovog grafa sa kojim Smart contract počinje. Svaki Contract Participant može dodati ta pravila (ako je to dozvoljeno od strane Schema) i rezultujući graf se gradi iz iterativne primene tih pravila.
+## Zamenljiva sredstva
 
 
-## Fungibilna imovina
+[Zamenljiva sredstva](https://planb.network/resources/glossary/fungibility) u RGB-u prate specifikaciju LNPBP RGB-20, kada je RGB-20 definisan, podaci o sredstvima poznati kao "početni podaci (genesis)" distribuiraju se kroz Lightning mrežu, koji sadrže ono što je potrebno za korišćenje sredstva. Najosnovniji oblik sredstava ne dozvoljava sekundarno izdavanje, spaljivanje tokena, preimenovanje ili zamenu.
 
 
-Fungibilna sredstva u RGB prate specifikaciju LNPBP RGB-20 specification4, kada je RGB-20 definisan, podaci o sredstvima poznati kao "Genesis podaci'' distribuiraju se kroz Lightning Network, koji sadrži ono što je potrebno za korišćenje sredstva. Najosnovniji oblik sredstava ne dozvoljava sekundarno izdavanje, spaljivanje tokena, preimenovanje ili zamenu.
-
-
-Ponekad će izdavalac morati da izda više tokena u budućnosti, tj. stablecoins kao što je USDT, koji održava vrednost svakog tokena vezanu za vrednost inflatorne valute kao što je USD. Da bi se to postiglo, postoje složenije RGB-20 sheme, i pored Genesis podataka zahtevaju od izdavaoca da proizvede pošiljke, koje će takođe cirkulisati u Lightning Network; sa ovim informacijama možemo znati ukupnu cirkulaciju Supply imovine. Isto važi i za spaljivanje imovine, ili promenu njenog imena.
+Ponekad će izdavalac morati da izda više tokena u budućnosti, tj. stablecoins kao što je USDT, koji održava vrednost svakog tokena vezanu za vrednost inflatorne valute kao što je USD. Da bi se postigla ova složenija RGB-20 šema, pored početnih (genesis) podataka, zahtevaju se od izdavaoca da kreira consignmente (pošiljke), koji će takođe cirkulisati na Lightning mreži; sa ovim informacijama možemo znati ukupnu količinu sredstava u opticaju. Isto važi i za uništavanje (burning) sredstava ili promenu njihovog imena.
 
 
 Informacije vezane za imovinu mogu biti javne ili privatne: ako izdavalac zahteva poverljivost, on/ona može odlučiti da ne deli informacije o tokenu i obavlja operacije u potpunoj privatnosti, ali imamo i suprotan slučaj u kojem izdavalac i vlasnici trebaju da ceo proces bude transparentan. Ovo se postiže deljenjem podataka o tokenu.
