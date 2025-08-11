@@ -1,6 +1,6 @@
 ---
 name: RGB CLI
-description: Kako da kreiram i Exchange pametne ugovore na RGB?
+description: Kako da kreiram i razmenim pametne ugovore na RGB-u?
 ---
 ![cover](assets/cover.webp)
 
