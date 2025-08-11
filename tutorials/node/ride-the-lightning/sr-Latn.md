@@ -1,5 +1,5 @@
 ---
-name: Vozi Munju (RTL)
+name: Ride The Lightning (RTL)
 description: Koristite Ride The Lightning (RTL) za upravljanje vašim Lightning čvorom
 ---
 ![cover](assets/cover.webp)
