@@ -714,7 +714,7 @@ U sekciji Forwards, ThunderHub predstavlja:
 
 
 
-- **Poruka aktivnosti:** Ako nije izvršeno rutiranje tokom izabranog perioda, Interface prikazuje "Nema prosleđivanja za ovaj period", kao što je prikazano u ovom primeru.
+- **Poruka aktivnosti:** Ako nije izvršeno rutiranje tokom izabranog perioda, interfejs prikazuje poruku "Nema prosleđivanja za ovaj period", na engleskom "No forwards for this period", kao što je prikazano u ovom primeru.
 
 
 
@@ -726,11 +726,11 @@ U sekciji Forwards, ThunderHub predstavlja:
 
 
 
-  - Timestamp,
-  - količina usmerena (u Sats),
-  - naknada zarađena na ovom forwardu (u Sats, ovo je razlika između onoga što ste primili na dolaznom kanalu i poslali na odlaznom),
-  - dolazni i odlazni kanali korišćeni (često identifikovani po aliasu partnera ili ID-u kanala).
-  - status (normalno *completed*, ili failure ako je prosleđivanje neuspešno na putu).
+  - Vremensku oznaku,
+  - iznos koji je rutiran (u satoshijima),
+  - naknada zarađena na ovom prosleđivanju (u Sats, ovo je razlika između onoga što ste primili na dolaznom kanalu i poslali na odlaznom),
+  - korišćeni dolazni i odlazni kanali (često identifikovani po aliasu partnera ili ID-u kanala).
+  - status (uobičajeno završen ("completed") ili neuspeh ("failure") ako prosleđivanje nije uspelo tokom rute).
 
 
 
@@ -740,15 +740,15 @@ U sekciji Forwards, ThunderHub predstavlja:
 
 
 
-Ukratko, odeljak Forwards nudi **pregled u realnom vremenu aktivnosti rutiranja vašeg Lightning čvora**. U kombinaciji sa odeljcima Channels i Rebalance, ovo čini kompletan paket za optimizaciju vašeg čvora: Channels/Rebalance za likvidnost, Forwards za posmatranje rezultata (tokova i profita).
+Ukratko, odeljak Forwards (u prevodu prosleđivanje) nudi **pregled u realnom vremenu aktivnosti rutiranja vašeg Lightning čvora**. U kombinaciji sa odeljcima Kanali i Rebalansiranje, ovo čini kompletan paket za optimizaciju vašeg čvora: Kanali/Rebalans za likvidnost, Prosleđivanje za posmatranje rezultata (tokova i profita).
 
 
 
-### Chain
+### Lanac (eng. Chain)
 
 
 
-Sekcija **Chain** odgovara upravljanju portfoliom Bitcoin On-Chain vašeg LND čvora. Ovaj Interface vam omogućava da pregledate i upravljate Bitcoin fondovima, koji se koriste za otvaranje kanala ili primanje sredstava iz zatvorenih kanala.
+Sekcija **Chain** odgovara upravljanju portfoliom on-chain bitcoina vašeg LND čvora. Ovaj interfejs vam omogućava da pregledate i upravljate Bitcoin fondovima, koji se koriste za otvaranje kanala ili primanje sredstava iz zatvorenih kanala.
 
 
 
@@ -762,19 +762,19 @@ U Chainu, naći ćete :
 
 
 
-- Stanje On-Chain :** Prikazuje ukupno BTC stanje dostupno u Wallet LND.
+- **On-Chain stanje:** Prikazuje ukupno BTC stanje dostupno u LND novčaniku.
 
 
 
 
 
-- Lista UTXO-a:** Pogledaj sve nepotrošene izlaze (UTXO) sa iznosom, potvrde, Address i format za svaki izlaz.
+- **Lista UTXO-a:** Pogledaj sve nepotrošene izlaze (UTXO) sa iznosom, potvrde, adrese i format za svaki izlaz.
 
 
 
 
 
-- Istorija transakcija:** Detaljna tabela svih Bitcoin transakcija sa tipom (ulaz/izlaz), datumom, iznosom, naknadama, potvrdama, blokom uključivanja, adresama i txid.
+- **Istorija transakcija:** Detaljna tabela svih Bitcoin transakcija sa tipom (ulaz/izlaz), datumom, iznosom, naknadama, potvrdama, blokom uključivanja, adresama i txid.
 
 
 
@@ -782,7 +782,7 @@ U Chainu, naći ćete :
 
 
 
-ThunderHub se integriše sa platformom **Amboss** (amboss.space), koja nudi detaljne informacije o Lightning čvorovima, tržište likvidnosti i korisne funkcije kao što su šifrovana rezervna kopija kanala i praćenje dostupnosti.
+ThunderHub se integriše sa platformom **Amboss** (amboss.space), koja nudi detaljne informacije o Lightning čvorovima, tržištu likvidnosti i korisne funkcije kao što su šifrovana rezervna kopija kanala i praćenje dostupnosti.
 
 
 
@@ -796,29 +796,29 @@ U ThunderHub-u, odeljak Amboss omogućava vam da **povežete** vaš čvor sa va�
 
 
 
-- Ghost Address:** Postavite **personalizovani Lightning Address** za vaš čvor, olakšavajući dolazne uplate.
+- **Ghost adresa:** Postavite **personalizovanu Lightning adresu** za vaš čvor, čime se olakšava primanje uplata.
 
 
 
 
 
-- Automatske rezervne kopije kanala:** Vodeća funkcija za šifrovane rezervne kopije kanala** (SCB datoteke) na Amboss-u. Aktivirajte **Amboss Auto Backup = Yes** u podešavanjima da automatski šaljete ažuriranja šifrovanih rezervnih kopija svaki put kada promenite kanale. U slučaju kvara, moći ćete da povratite svoja sredstva zahvaljujući ovoj eksternoj rezervnoj kopiji.
+- **Automatske rezervne kopije kanala:** Vodeća funkcija za **šifrovane rezervne kopije kanala** (SCB datoteke) na Amboss-u. Aktivirajte **Amboss Auto Backup = Yes** u podešavanjima da automatski šaljete ažuriranja šifrovanih rezervnih kopija svaki put kada promenite kanale. U slučaju kvara, moći ćete da povratite svoja sredstva zahvaljujući ovoj eksternoj rezervnoj kopiji.
 
 
 
 
 
-- Provere zdravlja:** Aktiviraj **Amboss Healthcheck = Da** kako bi tvoj čvor slao redovne pingove Amboss-u. Dobijaćeš obaveštenja ako tvoj čvor izgleda kao da je van mreže.
+- **Provere zdravlja:** Aktiviraj **Amboss Healthcheck = Da** kako bi tvoj čvor slao redovne pingove Amboss-u. Dobijaćeš obaveštenja ako tvoj čvor izgleda kao da je van mreže.
 
 
 
 
 
-- Ostale funkcije:** Automatsko slanje stanja, **Magma/Hydro** integracija (tržište likvidnosti), i pristup detaljnim statističkim podacima o performansama.
+- **Ostale funkcije:** Automatsko slanje stanja, **Magma/Hydro** integracija (tržište likvidnosti), i pristup detaljnim statističkim podacima o performansama.
 
 
 
-Integracija Amboss dodaje esencijalni **security Layer** sa automatskim eksternim backup-om i praćenjem dostupnosti, dostupno direktno iz ThunderHub-a.
+Amboss integracija dodaje esencijalni **nivo zaštite** sa automatskim eksternim backup-om i praćenjem dostupnosti, dostupno direktno iz ThunderHub-a.
 
 
 
@@ -826,7 +826,7 @@ Integracija Amboss dodaje esencijalni **security Layer** sa automatskim eksterni
 
 
 
-Sekcija **Alati** okuplja razne napredne alate za upravljanje vašim čvorom. Evo glavnih Elements:
+Sekcija **Alati** okuplja razne napredne alate za upravljanje vašim čvorom. Evo glavnih elemenata:
 
 
 
@@ -836,29 +836,28 @@ Sekcija **Alati** okuplja razne napredne alate za upravljanje vašim čvorom. Ev
 
 
 
-- Backups:** Ručno upravljajte rezervnim kopijama vaših kanala (SCB). ThunderHub vam omogućava da **preuzmete kompletnu rezervnu kopiju** vaših kanala (opcija "Backup all channels -> Download"). Čuvajte ovu datoteku `channel-all.bak` na sigurnom mestu - ona je ključna za povrat vaših sredstava u slučaju pada sistema. Takođe možete **uvesti** rezervnu kopiju prilikom ponovnog postavljanja čvora.
+- **Backups (rezervne kopije):** Ručno upravljajte rezervnim kopijama vaših kanala (SCB). ThunderHub vam omogućava da **preuzmete kompletnu rezervnu kopiju** vaših kanala (opcija "Backup all channels -> Download"). Čuvajte ovu datoteku `channel-all.bak` na sigurnom mestu - ona je ključna za povrat vaših sredstava u slučaju pada sistema. Takođe možete **uvesti** rezervnu kopiju prilikom ponovnog postavljanja čvora.
 
 
 
 
 
-- Računovodstvo:** Alat za izvoz finansijskih izveštaja uključujući zarađene/plaćene naknade i obime usmerene tokom datog perioda.
-- Potpisane poruke:** **Potpišite ili verifikujte poruke** sa svojim čvorom kako biste dokazali Ownership vašeg Lightning čvora putem kriptografske potpise.
-- Makroni (Pekara sekcija):** Upravljajte LND** makronima kako biste kreirali prilagođeni pristup. Interface "Pekara" vam omogućava da precizno odaberete svaku dozvolu: "Dodaj ili ukloni Peers", "Kreiraj Lančane Adrese", "Kreiraj Fakture", "Kreiraj Makrone", "Izvedi Ključeve", "Dobij Pristupne Ključeve", "Dobij Lančane Transakcije", "Dobij Fakture", "Dobij Wallet Info", "Dobij Uplate", "Dobij Peers", "Plati Fakture", "Poništi Pristupne Id-ove", "Pošalji na Lančane Adrese", "Potpiši bajtove", "Potpiši Poruke", "Zaustavi daemon", "Verifikuj potpis bajtova", "Verifikuj poruke", i tako dalje. Svaka dozvola može biti aktivirana pojedinačno sa "Da/Ne" dugmadima kako bi se kreirao makron po meri.
-- Informacije o sistemu:** Prikaz verzije Wallet i aktiviranih RPC-ova.
+- **Računovodstvo:** Alat za izvoz finansijskih izveštaja uključujući zarađene/plaćene naknade i obime usmerene tokom datog perioda.
+- **Potpisane poruke:** **Potpišite ili verifikujte poruke** sa svojim čvorom kako biste dokazali Ownership vašeg Lightning čvora putem kriptografske potpise.
+- **Makroni (Pekara sekcija):** Upravljajte LND** makronima kako biste kreirali prilagođeni pristup. Interface "Pekara" vam omogućava da precizno odaberete svaku dozvolu: "Dodaj ili ukloni Peers", "Kreiraj Lančane Adrese", "Kreiraj Fakture", "Kreiraj Makrone", "Izvedi Ključeve", "Dobij Pristupne Ključeve", "Dobij Lančane Transakcije", "Dobij Fakture", "Dobij Wallet Info", "Dobij Uplate", "Dobij Peers", "Plati Fakture", "Poništi Pristupne Id-ove", "Pošalji na Lančane Adrese", "Potpiši bajtove", "Potpiši Poruke", "Zaustavi daemon", "Verifikuj potpis bajtova", "Verifikuj poruke", i tako dalje. Svaka dozvola može biti aktivirana pojedinačno sa "Da/Ne" dugmadima kako bi se kreirao makron po meri.
+- **Informacije o sistemu:** Prikaz verzije novčanika i aktiviranih RPC-ova.
 
 
 
-Ukratko, odeljak Alati objedinjuje napredne administrativne funkcije - bekapove, računovodstvo, bezbednost i upravljanje pristupom - u jedinstvenom Interface.
+Ukratko, odeljak Alati objedinjuje napredne administrativne funkcije - bekapove, računovodstvo, bezbednost i upravljanje pristupom - u jedinstvenom interfejsu.
 
 
 
-### Zameni
+### Swap (zamena)
 
 
 
-ThunderHub-ova kartica **Swap** omogućava vam zamenu Lightning satoshija u Bitcoin On-Chain putem Boltz servisa. Ova funkcija je korisna za "izbacivanje" viška Lightning likvidnosti u kanal bez zatvaranja kanala.
-
+ThunderHub-ova kartica **Swap** omogućava vam zamenu Lightning satoshija za on-chain bitcoine putem Boltz servisa. Ova funkcija je korisna za „prebacivanje” viška Lightning likvidnosti u kanal bez njegovog zatvaranja.
 
 
 ![Interface de swap via Boltz](assets/fr/19.webp)
@@ -871,9 +870,9 @@ Proces je jednostavan:
 
 
 
-- Iznos**: Definišite iznos za razmenu
-- Address** : Unesite Bitcoin prijem Address
-- Izvršenje**: ThunderHub komunicira sa Boltz kako bi automatski obradio Exchange
+- **Iznos**: Definišite iznos za razmenu
+- **Adresa** : Unesite Bitcoin prijemnu adresu
+- **Izvršenje**: ThunderHub komunicira sa Boltz-om kako bi automatski izvršila razmena
 
 
 
@@ -882,13 +881,13 @@ Proces je jednostavan:
 
 
 
-- Usluga bez starateljstva (bez čuvanja gotovine)
+- Bez posredničkog držanja sredstava 
 - Sačuvajte svoje postojeće kanale
-- Jednostavan za korišćenje integrisani Interface
+- Jednostavan integrisani interfejs za korišćenje
 
 
 
-Boltz naplaćuje malu proviziju i plaćate standardnu Bitcoin naknadu za transakciju. ThunderHub prikazuje sve troškove pre potvrde.
+Boltz naplaćuje malu proviziju, ali plaćate i standardnu Bitcoin naknadu za transakciju. ThunderHub prikazuje sve troškove pre potvrde.
 
 
 
@@ -912,7 +911,7 @@ Ovaj odeljak je ključan za optimizaciju vaših troškova, identifikaciju uspeš
 
 
 
-**ThunderHub** se etablirao kao neophodan alat za jednostavnu administraciju Lightning čvora **LND**. Ovaj moderni Interface nudi sve osnovne funkcije: upravljanje kanalima, plaćanja, nadgledanje, sa naprednim funkcijama kao što su automatsko balansiranje i integracija sa Amboss-om.
+**ThunderHub** se etablirao kao neophodan alat za jednostavnu administraciju Lightning čvora **LND**. Ovaj moderni interfejs nudi sve osnovne funkcije: upravljanje kanalima, plaćanja, nadgledanje, sa naprednim funkcijama kao što su automatsko balansiranje i integracija sa Amboss-om.
 
 
 
@@ -923,7 +922,7 @@ Ovaj odeljak je ključan za optimizaciju vaših troškova, identifikaciju uspeš
 
 - Elegantan i intuitivan interfejs
 - Snažni alati (ponovno balansiranje, Boltz swaps, automatske sigurnosne kopije)
-- Kompatibilan sa Umbrel, Voltage, RaspiBlitz i drugim distribucijama
+- Kompatibilan sa Umbrel-om, Voltage-om, RaspiBlitz-om i drugim distribucijama
 
 
 
