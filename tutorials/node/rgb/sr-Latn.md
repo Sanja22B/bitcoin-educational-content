@@ -374,7 +374,7 @@ Da bismo mogli prihvatiti transfere vezane za ovaj UTXO, biće nam potrebni orig
 ## Prenos
 
 
-Da bismo preneli određeni iznos imovine na RGB-node-1, potrebno je poslati ga na blinded UTXO, RGB-node-0 treba da kreira Consignment i objavu, i da je unese u Bitcoin transakciju. Zatim će nam biti potreban PSBT koji ćemo modifikovati da uključuje unos. Pored toga, opcije -i i -a omogućavaju nam da obezbedimo ulaznu tačku koja bi bila poreklo imovine i alokaciju gde ćemo primiti kusur, moramo to naznačiti na sledeći način @<change_utxo>.
+Da bismo preneli određeni iznos imovine na RGB-node-1, potrebno je poslati ga na zaslepljeni UTXO, RGB-node-0 treba da kreira Consignment i objavu, i da je unese u Bitcoin transakciju. Zatim će nam biti potreban PSBT koji ćemo modifikovati da uključuje unos. Pored toga, opcije -i i -a omogućavaju nam da obezbedimo ulaznu tačku koja bi bila poreklo imovine i alokaciju gde ćemo primiti kusur, moramo to naznačiti na sledeći način @<change_utxo>.
 
 
 ```
@@ -385,13 +385,13 @@ Consignment data to share:consignment1qxz4g7ec6da33llaxe97u9hx8p9wcgp2yv46ycudwy
 ```
 
 
-Ovo će napisati tri nove datoteke, Consignment, disclosure i PSBT uključujući izmene, ovaj PSBT se zove Witness Transaction, Consignment se šalje na RGB-node-1.
+Ovo će upisati tri nova fajla: consignment, disclosure i psbt koji uključuje izmenu (tweak). Ovaj psbt se naziva witness transakcija, a consignment se šalje ka rgb-node-1.
 
 
-## Svedok
+## Svedok transakcija (eng. witness transaction)
 
 
-Witness Transaction treba potpisati i emitovati, za to ga moramo ponovo kodirati u base64.
+Witness Transaction treba potpisati i emitovati, za to je moramo ponovo kodirati u base64.
 
 
 ```
@@ -428,7 +428,7 @@ $ bcli finalizepsbt "cHNidP8BAHECAAAAAe2pydT0BqfK5nBCdBSbm3W/vNKE/QxTr4eJcjwjDLD
 ## Emitovanje
 
 
-Emitujte to koristeći podkomandu sendrawtransaction da bi bilo potvrđeno u Blockchain.
+Emitujte to koristeći podkomandu sendrawtransaction da bi bilo potvrđeno u Blockchain-u.
 
 
 ```
@@ -440,7 +440,7 @@ $ bcli sendrawtransaction "02000000000101eda9c9d4f406a7cae6704274149b9b75bfbcd28
 ## Prihvati
 
 
-Da bi prihvatio dolazni transfer RGB-node-1 trebalo bi da je primio Consignment fajl od RGB-node-0, da ima receive_utxo i odgovarajući blinding_factor generisan tokom blinding UTXO generacije.
+Da bi prihvatio dolazni transfer, rgb-node-1 treba da je dobio fajl consignment od rgb-node-0, kao i receive_utxo i odgovarajući blinding_factor koji su generisani tokom procesa zaslepljivanja (eng. blinding) UTXO-a.
 
 
 ```
@@ -488,7 +488,7 @@ blinding: 224561f10229eb9ebbdf05f497132d2b8344d70971c80510eddc607d615ee2a0
 ```
 
 
-Pošto je receive_utxo bio blinded kada je transfer izvršen, platiša RGB-node-0 nema informacije o tome gde je 100 USDT poslato, tako da lokacija nije prikazana u knownAllocations.
+Pošto je receive_utxo bio zaslepljen (blinded) prilikom obavljanja transfera, platilac rgb-node-0 nema informaciju o tome gde je poslato 100 USDT, pa se lokacija ne prikazuje u knownAllocations.
 
 
 ```
@@ -520,7 +520,7 @@ blinding: "0000000000000000000000000000000000000000000000000000000000000001"
 ```
 
 
-Ali kao što možete videti, RGB-node-0 ne može da vidi promenu od 900 sredstava koju smo dostavili komandi za prenos sa argumentom -a. Da bi registrovao promenu, RGB-node-0 treba da prihvati otkrivanje.
+Ali, kao što možete videti, rgb-node-0 ne može da vidi 900 jedinica promene sredstva (asset change) koje smo prosledili komandi za transfer pomoću argumenta -a. Da bi registrovao tu promenu, rgb-node-0 mora da prihvati disclosure.
 
 
 ```
@@ -571,7 +571,7 @@ blinding: ddba9e0efdd614614420fa0b68ecd2d3376a05dd3d809b2ad1f5fe0f6ed75ea2
 ## Zaključci
 
 
-Uspeli smo da kreiramo fungibilnu imovinu i premestimo je iz jedne transakcije u drugu na privatan način, ako proverimo potvrđenu transakciju u Block explorer ne bismo našli ništa drugačije od regularne transakcije, ovo je zahvaljujući činjenici da RGB koristi jednokratne pečate za prilagođavanje transakcija. U ovom postu, radim uvod u to kako RGB funkcioniše.
+Uspešno smo kreirali potpuno zamenljivo sredstvo i premestili ga iz jedne transakcije u drugu na privatan način. Ako proverimo potvrđenu transakciju u block explorer-u, ne bismo primetili ništa drugačije u odnosu na običnu transakciju, zahvaljujući tome što RGB koristi jednokratne pečate (single-use seals) za izmenu (tweak) transakcija. U ovom tekstu dajem uvod u način na koji RGB funkcioniše.
 
 
 Ovaj post može imati greške, ako pronađete nešto molim vas da mi javite kako bih poboljšao ovaj vodič, sugestije i kritike su takođe dobrodošle, srećno hakovanje! 🖖
