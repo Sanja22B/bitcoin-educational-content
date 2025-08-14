@@ -466,7 +466,7 @@ Upravljanje samostalno hostovanim Lightning čvorom zahteva posebnu pažnju prem
 
 
 
-### Bekap i sigurnost za vaš čvor
+### Rezervna kopija i sigurnost za vaš čvor
 
 
 
@@ -478,29 +478,29 @@ Vašem Lightning Umbrel čvoru su potrebne dve vrste rezervnih kopija:
 
 
 
-**Rečenica seed (24 reči)**
+**Seed fraza (24 reči)**
 
 
 
 
 - Obnavlja On-Chain sredstva
-- Potrebno je ponovo kreirati vaš Wallet Lightning
+- Neophodna za ponovno kreiranje vašeg Lightning novčanika
 - Za ultra-sigurno skladištenje (offline, na papiru)
 
 
 
-**Static Channel Backup (SCB)** fajl
+**Fajl statičnog bekapa kanala (SCB)** 
 
 
 
 
 - Sadrži informacije o Lightning kanalu
 - Omogućava prisilno zatvaranje kanala u slučaju pada sistema
-- Važno:** Nikada ručno ne čuvajte datoteku `channel.db` (rizik od kazni)
+- **Važno:** Nikada ručno ne čuvajte datoteku `channel.db` (rizik od kaznenih penala)
 
 
 
-**Ručna procedura za pravljenje rezervne kopije
+**Ručna procedura za pravljenje rezervne kopije**
 
 
 
@@ -528,7 +528,7 @@ Umbrel ima sofisticirani automatski sistem za pravljenje rezervnih kopija koji o
 
 
 
-*Zaštita podataka:*
+*Zaštitu podataka:*
 
 
 
@@ -536,7 +536,7 @@ Umbrel ima sofisticirani automatski sistem za pravljenje rezervnih kopija koji o
 - Šifrovanje na strani klijenta pre prenosa
 - Slanje putem Tor mreže
 - Podaci dopunjeni nasumičnim popunjavanjem
-- Ključ za šifrovanje jedinstven za vaš uređaj
+- Jedinstven ključ za šifrovanje za vaš uređaj
 
 
 
@@ -546,7 +546,7 @@ Umbrel ima sofisticirani automatski sistem za pravljenje rezervnih kopija koji o
 
 
 - Trenutne sigurnosne kopije pri promenama statusa
-- Lažni" rezervni podaci u nasumičnim intervalima
+- "Lažni" rezervni podaci u nasumičnim intervalima
 - Sakrij promene veličine rezervne kopije
 - Zaštita protiv vremenske analize
 
@@ -557,8 +557,8 @@ Umbrel ima sofisticirani automatski sistem za pravljenje rezervnih kopija koji o
 
 
 
-- Identifikator i ključ izvedeni iz vašeg seed Umbrel
-- Potpuna restauracija moguća samo sa frazom Mnemonic
+- Identifikator i ključ izvedeni iz vašeg Umbrel seed-a
+- Potpuna restauracija moguća samo sa Mnemonic frazom 
 - Automatski oporavak najnovijih rezervnih kopija
 - Vratite postavke kanala i podatke
 
@@ -574,12 +574,12 @@ Ako je vaš čvor izgubljen (kvar hardvera, oštećena SD kartica) :
 
 
 - Ponovo instaliraj Umbrel
-- Unesite vaš 24-reči seed u aplikaciju Lightning
+- Unesite vašs seed od 24-reči u Lightning aplikaciju 
 - Uvezite SCB datoteku tokom restauracije
 
 
 
-LND će kontaktirati svakog partnera vaših starih kanala kako bi ih zatvorio i povratio vaš deo sredstava On-Chain. Kanali će biti trajno zatvoreni (da bi se ponovo otvorili ako bude potrebno).
+LND će kontaktirati svakog partnera vaših starih kanala kako bi ih zatvorio i povratio vaš deo On-Chain sredstava. Kanali će biti trajno zatvoreni (da bi se ponovo otvorili ako bude potrebno).
 
 
 
@@ -593,7 +593,7 @@ Idealno, ostavite svoj čvor online što je češće moguće. U slučaju dužeg 
 
 
 - Zlonamerni čvor mogao bi pokušati emitovati staro stanje kanala
-- Munja omogućava "period protesta" (oko 2 nedelje na LND)
+- Lightning omogućava „period žalbe“ (oko 2 nedelje na LND-u).
 - Ako ćete biti odsutni duže vreme, postavite Watchtower
 
 
@@ -603,7 +603,7 @@ Idealno, ostavite svoj čvor online što je češće moguće. U slučaju dužeg 
 
 
 
-- U naprednim postavkama LND, dodajte URL pouzdanog Watchtower servera
+- U naprednim LND postavkama, dodajte URL pouzdanog Watchtower servera
 - Možete koristiti javnu uslugu ili instalirati svoj vlastiti Watchtower
 
 
@@ -620,10 +620,10 @@ https://planb.network/tutorials/node/lightning-network/watch-tower-26937006-dfe5
 
 
 
-- Ažuriranja softvera:** Održavajte Umbrel i LND ažurnim (bezbednosne ispravke)
-- Zaštita hardvera:** Koristite stabilan sistem (Raspberry Pi sa SSD-om, mini-PC) i UPS
-- Mreža sigurnost:** Zadrži podrazumevanu Tor konfiguraciju, promeni Umbrel administratorsku lozinku (podrazumevano: "moneyprintergobrrr")
-- Šifrovanje:** Omogućite šifrovanje diska ako je moguće
+- **Ažuriranja softvera:** Održavajte Umbrel i LND ažurnim (bezbednosne ispravke)
+- **Zaštita hardvera:** Koristite stabilan sistem (Raspberry Pi sa SSD-om, mini-PC) i UPS
+- **Mreža sigurnost:** Zadrži podrazumevanu Tor konfiguraciju, promeni Umbrel administratorsku lozinku (podrazumevano: "moneyprintergobrrr")
+- **Šifrovanje:** Omogućite šifrovanje diska ako je moguće
 
 
 
@@ -639,7 +639,7 @@ Umbrelova aplikacija Lightning Node pruža osnovne funkcije za upravljanje vaši
 
 
 
-Interface moderan veb-zasnovan sistem za upravljanje Lightning čvorovima koji se može instalirati putem Umbrel App Store-a.
+Moderni web interfejs za upravljanje Lightning čvorom, koji se može instalirati putem Umbrel App Store-a.
 
 
 
@@ -652,19 +652,19 @@ Interface moderan veb-zasnovan sistem za upravljanje Lightning čvorovima koji s
 - Integrisani alati za rebalansiranje
 - Podrška za naplatu putem više puteva (MPP)
 - Generisanje QR koda LNURL
-- Upravljanje transakcijama On-Chain
+- Upravljanje On-Chain transakcijama 
 
 
 
-ThunderHub je idealan za praćenje aktivnog ruting čvora i izvođenje jednostavnog balansiranja.
+ThunderHub je idealan za praćenje aktivnog čvora za rutiranje i obavljanje jednostavnog balansiranja kanala.
 
 
 
-### Vozi munju (RTL)
+### Ride The Lightning (RTL)
 
 
 
-Interface web kompatibilan sa nekoliko Lightning implementacija (LND, Core Lightning, Eclair).
+Web kompatibilan interfejs sa nekoliko Lightning implementacija (LND, Core Lightning, Eclair).
 
 
 
@@ -673,9 +673,9 @@ Interface web kompatibilan sa nekoliko Lightning implementacija (LND, Core Light
 
 
 
-- Upravljanje više čvorova
+- Upravljanje sa više čvorova
 - Kontrolne table osetljive na kontekst
-- Podrška za zamene podmornica (Lightning Loop)
+- Podrška za submarine swaps putem Lightning Loop-a
 - dvofaktorska autentifikacija
 - Izvoz/uvoz rezervnih kopija kanala
 
@@ -691,10 +691,10 @@ RTL je kompletan "švajcarski nož" za administriranje Lightning čvora sa prist
 
 
 
-- Lightning Shell** : Komandna linija (lncli) putem pregledača
-- BTC RPC Explorer & Mempool** : Monitoring Blockchain
-- LNmetrics & Torq**: Analiza performansi rutiranja
-- Amboss & 1ML**: "Socijalno" upravljanje vašim čvorom (aliasi, kontakti, analiza mreže)
+- **Lightning Shell**: Komandna linija (lncli) putem pregledača
+- **BTC RPC Explorer & Mempool** : Monitoring Blockchain-a
+- **LNmetrics & Torq**: Analiza performansi rutiranja
+- **Amboss & 1ML**: Upravljanje čvorom sa socijalnim funkcijama (aliasi, kontakti, analiza mreže)
 
 
 
