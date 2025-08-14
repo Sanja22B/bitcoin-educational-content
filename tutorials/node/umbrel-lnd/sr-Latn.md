@@ -1,6 +1,6 @@
 ---
 name: Umbrel LND
-description: Napredni vodič za instalaciju i konfiguraciju Lightning Network Daemon (LND) na Umbrel
+description: Napredni vodič za instalaciju i konfiguraciju Lightning Network Daemon (LND) na Umbrel-u
 ---
 ![cover](assets/cover.webp)
 
@@ -19,7 +19,7 @@ Ovaj napredni vodič vas vodi korak-po-korak kroz instalaciju, konfiguraciju i k
 
 
 
-Pre nego što implementirate Lightning, potrebno je da imate potpuno operativan Bitcoin čvor na Umbrel-u. Ovo uključuje instalaciju Umbrel-a (na Raspberry Pi, NAS ili drugoj mašini) i potpunu sinhronizaciju Blockchain Bitcoin.
+Pre nego što implementirate Lightning, potrebno je da imate potpuno operativan Bitcoin čvor na Umbrel-u. Ovo uključuje instalaciju Umbrel-a (na Raspberry Pi, NAS ili drugoj mašini) i potpunu sinhronizaciju Bitcoin Blockchain-a .
 
 
 
@@ -33,19 +33,19 @@ Proverite da je vaš Bitcoin čvor ažuriran i ispravno radi, jer Lightning Netw
 
 
 
-## 2. Uvod u Lightning Network
+## 2. Uvod u Lightning mrežu
 
 
 
-Lightning Network je drugi Layer protokol dizajniran da ubrza i smanji troškove Bitcoin transakcija tako što ih obavlja izvan glavnog Blockchain.
+Lightning mreža je protokol drugog sloja, osmišljen da ubrza i smanji troškove Bitcoin transakcija tako što ih obavlja van glavnog blokčejna.
 
 
 
-U konkretnim terminima, Lightning koristi mrežu platnih kanala između čvorova: dva korisnika otvaraju kanal blokiranjem On-Chain BTC (inicijalna transakcija), zatim mogu trenutno Exchange plaćanja unutar ovog kanala. Ove off-chain transakcije nisu zabeležene na Blockchain, otuda njihova brzina i praktično nulti trošak.
+U konkretnim terminima, Lightning koristi mrežu platnih kanala između čvorova: dva korisnika otvaraju kanal blokiranjem on-chain BTC-a (inicijalna transakcija), zatim mogu trenutno razmenjivati plaćanja unutar ovog kanala. Ove off-chain transakcije nisu zabeležene na Blockchain-u, otuda njihova brzina i praktično nulti trošak.
 
 
 
-Plaćanja se mogu usmeravati kroz više kanala (zahvaljujući posredničkim čvorovima) kako bi stigla do bilo kog primaoca na mreži, omogućavajući gotovo neograničenu skalu trenutnih transakcija. Lightning tako nudi veoma brze, niskotarifne transakcije, idealne za svakodnevna plaćanja ili mikro-transakcije, dok smanjuje opterećenje na Blockchain Bitcoin.
+Plaćanja se mogu usmeravati kroz više kanala (zahvaljujući posredničkim čvorovima) kako bi stigla do bilo kog primaoca na mreži, omogućavajući gotovo neograničen broj trenutnih transakcija. Lightning tako nudi veoma brze, niskotarifne transakcije, idealne za svakodnevna plaćanja ili mikro-transakcije, dok smanjuje opterećenje na Bitcoin Blockchain-u.
 
 
 
