@@ -5,7 +5,7 @@ description: Kako da kreiram i razmenim pametne ugovore na RGB-u?
 ![cover](assets/cover.webp)
 
 
-U ovom vodiču, pratićemo korak-po-korak proces pisanja ugovora, koristeći alatku komandne linije `RGB` koju je kreirala LNP/BP asocijacija. Cilj je pokazati kako instalirati i manipulisati CLI, kompajlirati Schema, uvesti Interface i Interface Implementation, a zatim izdati RGB imovinu. Takođe ćemo pogledati osnovnu logiku, uključujući kompajlaciju i validaciju stanja. Na kraju ovog vodiča, trebali biste biti u mogućnosti da reprodukujete proces i kreirate svoje RGB ugovore.
+U ovom vodiču, pratićemo korak-po-korak proces pisanja ugovora, koristeći alatku `RGB komandne linije` koju je kreirala LNP/BP asocijacija. Cilj je da se pokaže kako da se instalira i koristi CLI, kompajlira šema, uveze interfejs i implementacija interfejsa, a zatim izda RGB sredstvo (asset). Takođe ćemo pogledati osnovnu logiku, uključujući kompajlaciju i validaciju stanja. Na kraju ovog vodiča, trebali biste biti u mogućnosti da reprodukujete proces i kreirate svoje RGB ugovore.
 
 
 ## Podsetnik za RGB protokol
