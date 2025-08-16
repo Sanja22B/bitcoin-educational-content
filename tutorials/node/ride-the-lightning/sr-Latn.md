@@ -634,14 +634,14 @@ Da biste nadgledali svoj čvor, možete izvesti RTL podatke (logove, CSV) i preg
 
 
 
-Nikada ne izlažite RTL direktno na Internetu. Dajte prednost:
+Nikada ne izlažite RTL direktno na internetu. Dajte prednost:
 
 
 
 
-- VPN** (npr. Tailscale) za privatni, šifrovani pristup
-- Tor** za siguran, anoniman pristup
-- Reverse proxy HTTPS** (Nginx/Caddy) samo ako znate kako da ga konfigurišete
+- **VPN-u** (npr. Tailscale) za privatni, šifrovani pristup
+- **Tor-u** za siguran, anoniman pristup
+- **Reverse proxy HTTPS** (Nginx/Caddy) samo ako znate kako da ga konfigurišete
 
 
 
@@ -653,15 +653,15 @@ https://planb.network/tutorials/computer-security/communication/tailscale-9acbd7
 
 
 
-- Zaštitite svoj pristup**: nikada ne delite admin.macaroon ili vašu RTL lozinku. Ograničite dozvole na osetljivim fajlovima.
-- Redovni bekapovi**: eksportujte fajl bekapa kanala (SCB) nakon svake izmene i čuvajte ga van čvora.
-- Ažuriranja**: održavajte RTL, vaš čvor i Umbrel ažurnim sa najnovijim sigurnosnim ispravkama.
-- Poverljivost**: anonimizujte dnevnike i snimke ekrana pre nego što ih podelite. Nikada javno ne delite svoje bilanse ili liste partnera.
-- Jedinstveni pristup**: RTL nije za više korisnika. Ne delite administratorski pristup. Za pristup samo za čitanje, koristite posvećeni macaroon ako je potrebno.
+- **Zaštitite svoj pristup**: nikada ne delite admin.macaroon ili vašu RTL lozinku. Ograničite dozvole na osetljivim fajlovima.
+- **Redovni bekapovi**: eksportujte fajl bekapa kanala (SCB) nakon svake izmene i čuvajte ga van čvora.
+- **Ažuriranja**: održavajte RTL, vaš čvor i Umbrel ažurnim sa najnovijim sigurnosnim ispravkama.
+- **Poverljivost**: anonimizujte dnevnike i snimke ekrana pre nego što ih podelite. Nikada javno ne delite svoje bilanse ili liste partnera.
+- **Jedinstveni pristup**: RTL nije za više korisnika. Ne delite administratorski pristup. U slučaju da je potreban pristup samo za čitanje, koristite odgovarajući macaroon.
 
 
 
-Primjenom ovih principa, u velikoj meri ograničavate rizike i zadržavate kontrolu nad svojim Lightning čvorom.
+Primenom ovih principa, u velikoj meri ograničavate rizike i zadržavate kontrolu nad svojim Lightning čvorom.
 
 
 
@@ -669,11 +669,11 @@ Primjenom ovih principa, u velikoj meri ograničavate rizike i zadržavate kontr
 
 
 
-**Ride The Lightning** je esencijalni alat za efikasno upravljanje Bitcoin/Lightning čvorom, bilo da ste početnik ili napredni korisnik. Pruža jasan Interface za kontrolu vaših kanala, plaćanja i zdravlja čvora, dok produbljuje vaše razumevanje Lightning Network.
+**Ride The Lightning** je esencijalni alat za efikasno upravljanje Bitcoin/Lightning čvorom, bilo da ste početnik ili napredni korisnik. Pruža jasan korisnički interfejs za kontrolu vaših kanala, plaćanja i zdravlja čvora, dok produbljuje vaše razumevanje Lightning mreže.
 
 
 
-RTL se izdvaja po svojoj kompatibilnosti sa više implementacija, naprednim funkcijama (rebalansiranje, zamene, izveštaji) i pedagoškom pristupu. Za jednostavne potrebe, Interface Umbrel ili Wallet mobilni će biti dovoljni, ali RTL ima savršenog smisla za aktivno, optimizovano upravljanje čvorovima.
+RTL se izdvaja po svojoj kompatibilnosti sa više implementacija, naprednim funkcijama (rebalansiranje, zamene, izveštaji) i pedagoškom pristupu. Za jednostavne potrebe, Umbrel interfejs ili mobilni novčanik će biti dovoljni, ali RTL ima savršenog smisla za aktivno, optimizovano upravljanje čvorovima.
 
 
 
@@ -684,22 +684,22 @@ Da saznate više :
 
 - Zvanična RTL veb stranica: https://www.ridethelightning.info/
 - GitHub RTL: https://github.com/Ride-The-Lightning/RTL
-- Reddit r/lightningnetwork**: [r/lightningnetwork](https://www.reddit.com/r/lightningnetwork) - Tehničke diskusije, najave projekata, povratne informacije i obrazovni resursi
-- Umbrel Community Forum**: [community.getumbrel.com](https://community.getumbrel.com) - Zvanični forum sa posvećenim Bitcoin/Lightning odeljkom, vodičima i rešenjima za uobičajene probleme
-- Lightning Network Developers**: [github.com/lightning](https://github.com/lightning) - Zvanični GitHub repozitorijum za praćenje razvoja i doprinos izvornom kodu
-- Stack Exchange Bitcoin** : [Bitcoin.stackexchange.com](https://Bitcoin.stackexchange.com) - Tehnička pitanja i odgovori sa programerima i naprednim korisnicima
+- Reddit r/lightningnetwork: [r/lightningnetwork](https://www.reddit.com/r/lightningnetwork) - Tehničke diskusije, najave projekata, povratne informacije i obrazovni resursi
+- Umbrel Community Forum: [community.getumbrel.com](https://community.getumbrel.com) - Zvanični forum sa posvećenim Bitcoin/Lightning odeljkom, vodičima i rešenjima za uobičajene probleme
+- Lightning Network Developers: [github.com/lightning](https://github.com/lightning) - Zvanični GitHub repozitorijum za praćenje razvoja i doprinos izvornom kodu
+- Stack Exchange Bitcoin: [Bitcoin.stackexchange.com](https://Bitcoin.stackexchange.com) - Tehnička pitanja i odgovori sa programerima i naprednim korisnicima
 
 
 
-Ukratko, RTL vam daje potpunu kontrolu nad vašim Lightning čvorom, u modernom, potpuno opremljenom Interface.
+Ukratko, RTL vam daje potpunu kontrolu nad vašim Lightning čvorom, u modernom, potpuno opremljenom interfejsu.
 
 
 
-**Izvori :** RTL zvanična veb stranica; RTL GitHub; Umbrel App Store; Umbrel zajednica; Plan B Network resursi.
+**Izvori:** RTL zvanična veb stranica; RTL GitHub; Umbrel App Store; Umbrel zajednica; Plan B Network resursi.
 
 
 
-Da biste produbili svoje razumevanje o tome kako Lightning Network funkcioniše, takođe vam preporučujem da pohađate ovaj besplatni kurs:
+Da biste produbili svoje razumevanje o tome kako Lightning mreža funkcioniše, takođe vam preporučujem da pohađate ovaj besplatni kurs:
 
 
 
