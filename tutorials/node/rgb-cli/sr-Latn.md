@@ -8,13 +8,13 @@ description: Kako da kreiram i razmenim pametne ugovore na RGB-u?
 U ovom vodiču, pratićemo korak-po-korak proces pisanja ugovora, koristeći alatku `RGB komandne linije` koju je kreirala LNP/BP asocijacija. Cilj je da se pokaže kako da se instalira i koristi CLI, kompajlira šema, uveze interfejs i implementacija interfejsa, a zatim izda RGB sredstvo (asset). Takođe ćemo pogledati osnovnu logiku, uključujući kompajlaciju i validaciju stanja. Na kraju ovog vodiča, trebali biste biti u mogućnosti da reprodukujete proces i kreirate svoje RGB ugovore.
 
 
-## Podsetnik za RGB protokol
+## Podsetnik RGB protokola
 
 
-RGB je protokol koji radi na vrhu Bitcoin i emulira funkcionalnost Smart contract i upravljanje digitalnim sredstvima, bez preopterećenja Blockchain na kojem se zasniva. Za razliku od konvencionalnih On-Chain pametnih ugovora (kao na primer na Ethereumu), RGB se oslanja na "*Client-side Validation*" sistem: većina podataka i istorija statusa razmenjuju se i skladište isključivo od strane uključenih učesnika, dok Bitcoin Blockchain samo hostuje male kriptografske obaveze (putem mehanizama kao što su *Tapret* ili *Opret*). U RGB protokolu, Bitcoin Blockchain stoga služi samo kao server za vremensko označavanje i sistem zaštite Double-spending.
+RGB je protokol koji se nadograđuje na Bitcoin i oponaša funkcionalnost pametnih ugovora i upravljanje digitalnom imovinom, bez preopterećivanja blokčejna na kojem je zasnovan. Za razliku od konvencionalnih on-chain pametnih ugovora (kao na primer na Ethereumu), RGB se oslanja na "*Client-side Validation*" sistem: većina podataka i istorija statusa razmenjuju se i skladište isključivo od strane uključenih učesnika, dok Bitcoin Blockchain samo hostuje male kriptografske obaveze (putem mehanizama kao što su *Tapret* ili *Opret*). U RGB protokolu, Bitcoin Blockchain stoga služi samo kao server za vremensko označavanje i sistem zaštite od duple potrošnje (eng. double-spending).
 
 
-An RGB Contract je strukturiran kao evoluciona mašina stanja. Počinje sa Genesis koji definiše početno stanje (opisujući, na primer, Supply, oznaku ili druge metapodatke) prema strogo tipiziranom i kompajliranom Schema. Prelazi stanja i, ako je potrebno, proširenja stanja se zatim primenjuju kako bi se modifikovalo ili proširilo ovo stanje. Svaka operacija, bilo da se radi o prenosu fungibilnih sredstava (RGB20) ili kreiranju jedinstvenih sredstava (RGB21), uključuje *Jednokratne Pečate*. Oni povezuju Bitcoin UTXO-e sa off-chain stanjima i sprečavaju dvostruko trošenje, dok obezbeđuju poverljivost i skalabilnost.
+RGB ugovor je strukturiran kao evoluciona mašina stanja. Počinje sa Genesis koji definiše početno stanje (opisujući, na primer, ponudu, oznaku ili druge metapodatke) prema strogo tipiziranom i kompajliranom šemom. Prelazi stanja i, ako je potrebno, proširenja stanja se zatim primenjuju kako bi se modifikovalo ili proširilo ovo stanje. Svaka operacija, bilo da se radi o prenosu zamenjivih sredstava (RGB20) ili kreiranju jedinstvenih sredstava (RGB21), uključuje *Jednokratne Pečate (eng. Single-use Seals)*. Oni povezuju Bitcoin UTXO-e sa off-chain stanjima i sprečavaju dvostruko trošenje, dok obezbeđuju poverljivost i skalabilnost.
 
 
 Da biste saznali više o tome kako funkcioniše RGB protokol, preporučujem da pohađate ovaj sveobuhvatni kurs obuke:
@@ -25,16 +25,16 @@ https://planb.network/courses/3ce1d37c-05ba-4f54-aa15-7586d37b2bb7
 Interna logika RGB zasnovana je na Rust bibliotekama koje vi, kao programeri, možete uvesti u svoje projekte kako biste upravljali *Client-side Validation* delom. Pored toga, LNP/BP tim radi na povezivanju za druge jezike, ali to još nije završeno. Pored toga, druge entitete kao što je Bitfinex razvijaju svoje sopstvene integracione stekove, ali o njima ćemo govoriti u nekom drugom tutorijalu. Za sada, `RGB` CLI je zvanična referenca, čak i ako ostaje relativno neizbrušena.
 
 
-## Instalacija i prezentacija alata RGB CLI
+## Instalacija i prezentacija RGB CLI alata 
 
 
-Glavna komanda se jednostavno zove `RGB`. Dizajnirana je da podseća na `git`, sa skupom podkomandi za manipulaciju ugovorima, njihovo pokretanje, izdavanje sredstava i slično. Bitcoin Wallet trenutno nije integrisan, ali će biti u predstojećoj verziji (0.11). Ova sledeća verzija će omogućiti korisnicima da kreiraju i upravljaju svojim novčanicima (putem deskriptora) direktno iz `RGB`, uključujući generisanje PSBT, kompatibilnost sa eksternim hardverom (npr. Hardware Wallet) za potpisivanje, i interoperabilnost sa softverom kao što je Sparrow. Ovo će pojednostaviti čitav scenario izdavanja i prenosa sredstava.
+Glavna komanda se jednostavno zove `RGB`. Dizajnirana je da podseća na `git`, sa skupom podkomandi za manipulaciju ugovorima, njihovo pokretanje, izdavanje sredstava i slično. Bitcoin novčsnik trenutno nije integrisan, ali će biti u predstojećoj verziji (0.11). Ova sledeća verzija će omogućiti korisnicima da kreiraju i upravljaju svojim novčanicima (putem deskriptora) direktno iz `RGB`, uključujući generisanje PSBT, kompatibilnost sa eksternim hardverom (npr. hardverskim novčanikom) za potpisivanje, i interoperabilnost sa softverom kao što je Sparrow. Ovo će pojednostaviti čitav scenario izdavanja i prenosa sredstava.
 
 
 ### Instalacija putem Cargo-a
 
 
-Alat instaliramo u Rust sa :
+Alat instaliramo u Rust sa:
 
 
 ```bash
