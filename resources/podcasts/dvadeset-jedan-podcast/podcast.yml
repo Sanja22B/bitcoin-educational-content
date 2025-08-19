@@ -1,45 +1,26 @@
 # generate a random uuid v4
-id: 574fefe7-c787-4ed7-a36e-3203bad80f22
+id: 470384e7-d06d-4941-a295-94d1233a5d88
 
 ## Characteristics of the podcast
 
-# Name
-# Write podcast's complete name
 name: DvadesetJedan - Bitcoin Zajednica
 
-# Host
-# Write the names of all hosts
 host: Pavao, Arvin, Stefan
 
-# Language
-# Insert 2-digits ISO 639 language code (e.g. en for English, es for Spanish, th for Thai, etc...)
-language: sr, hr, bs
+language: sr-Latn
 
-# Links
-# Please, specify the following complete links (including https://):
-# - podcast: direct link to audio feed via the streaming service platform used (E.g.: apple podcast, spotify, fountain, etc...)
-# - twitter: link to twitter profile
-# - website: link to podcast's website if any
 links:
   podcast: https://www.youtube.com/@dvadesetjedan
   twitter: https://x.com/dvadesetjedan21
   website: https://dvadesetjedan.com/
 
-# Description
-# Write the main description of the content
 description: |
   Podcast za sve koji žele da čuju najnovije vesti, događaje i diskusije o Bitcoinu. Svako je dobrodošao da postavi pitanje, učestvuje u dijalogu ili predloži temu. 
 
-# Tags
-# Choose from the list the associated tags to this content
-# The list of tags is composed of 51 items that can be found here (https://github.com/PlanB-Network/bitcoin-educational-content/blob/dev/docs/50-planb-tags.md)
 tags:
   - easy-explain
   - user-friendly
   - finance
 
-# Contributor section
-# List all the contributors who help format, review and translate the content.
-# They are identified by their Github usernames
 contributor_names:
   - Sanja22B
