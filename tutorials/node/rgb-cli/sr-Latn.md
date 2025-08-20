@@ -160,20 +160,20 @@ Postoje dva pristupa kreiranju nove imovine:
 
 
 
-- Ili koristimo skriptu ili kod u Rust koji gradi Contract popunjavanjem Schema polja (Global State, Owned States, itd.) i proizvodi `.RGB` ili `.rgba` fajl;
+- Ili koristimo skriptu ili kod u Rustu koji gradi ugovor (eng. Contract) popunjavanjem šema (eng. Schema) polja (Global State, Owned States, itd.) i proizvodi `.RGB` ili `.rgba` fajl;
 - Ili direktno koristite podkomandu `issue`, sa YAML (ili TOML) fajlom koji opisuje svojstva tokena.
 
 
-Možete pronaći primere u Rust u fascikli `examples`, koji ilustruju kako izgraditi `ContractBuilder`, popuniti `Global State` (ime imovine, oznaka, Supply, datum, itd.), definisati Owned State (kojima je dodeljen UTXO), zatim sve to kompajlirati u *Contract Consignment* koji možete izvesti, validirati i uvesti u Stash.
+Možete pronaći primere u Rustu u fascikli `examples`, koji ilustruju kako izgraditi `ContractBuilder`, popuniti `Global State` (ime imovine, oznaka, Supply (ukupna ponuda), datum, itd.), odrediti [vlasničko stanje (eng. Owned State)](https://planb.network/resources/glossary/owned-state) (kojem UTXO-u pripada), zatim sve to kompajlirati u *Contract Consignment* koji možete izvesti, validirati i uvesti u stash.
 
 
-Drugi način je ručno uređivanje YAML datoteke za prilagođavanje `ticker`, `name`, `Supply`, i tako dalje. Pretpostavimo da se datoteka zove `RGB20-demo.yaml`. Možete navesti :
+Drugi način je ručno uređivanje YAML datoteke izmenom `ticker`, `name`, `Supply`, i tako dalje. Pretpostavimo da se datoteka zove `RGB20-demo.yaml`. Možete navesti :
 
 
 
 
 - `spec`: oznaka, ime, preciznost ;
-- `terms`: polje za pravne obavesti ;
+- `terms`: polje za pravna obaveštenja ;
 - `issuedSupply` : iznos izdatog tokena ;
 - `assignments`: označava Single-Use Seal (*Seal Definition*) i količinu koja je otključana.
 
@@ -215,7 +215,7 @@ rgb issue '<SchemaID>' ssi:<Issuer> rgb20-demo.yaml
 ![RGB-CLI](assets/fr/06.webp)
 
 
-U mom slučaju, jedinstveni identifikator Schema (koji treba staviti u jednostruke navodnike) je `RDYhMTR!9gv8Y2GLv9UNBEK1hcrCmdLDFk9Qd5fnO8k` i nisam naveo izdavaoca. Dakle, moja narudžba je :
+U mom slučaju, jedinstveni Schema identifikator (koji treba staviti u jednostruke navodnike) je `RDYhMTR!9gv8Y2GLv9UNBEK1hcrCmdLDFk9Qd5fnO8k` i nisam naveo izdavaoca. Dakle, moja narudžba je :
 
 
 ```txt
@@ -231,7 +231,7 @@ rgb schemata
 ```
 
 
-CLI odgovara da je novi Contract izdat i dodat na Stash. Ako unesemo sledeću komandu, vidimo da sada postoji dodatni Contract, koji odgovara upravo izdatom:
+CLI odgovara da je novi [Contract](https://planb.network/resources/glossary/contrat-rgb) izdat i dodat u stash. Ako unesemo sledeću komandu, vidimo da sada postoji dodatni Contract, koji odgovara upravo izdatom:
 
 
 ```bash
@@ -242,7 +242,7 @@ rgb contracts
 ![RGB-CLI](assets/fr/07.webp)
 
 
-Zatim, sledeća komanda prikazuje globalna stanja (ime, oznaka, Supply...) i listu Posedovanih Stanja, tj. alokacije (na primer, 1 milion `PBN` tokena definisanih u UTXO `b449f7eaa3f98c145b27ad0eeb7b5679ceb567faef7a52479bc995792b65f804:1`).
+Zatim, sledeća komanda prikazuje globalna stanja (ime, oznaka, Supply...) i listu [Owned States](https://planb.network/resources/glossary/owned-state), tj. alokacije (na primer, 1 milion `PBN` tokena definisanih UTXO-om `b449f7eaa3f98c145b27ad0eeb7b5679ceb567faef7a52479bc995792b65f804:1`).
 
 
 ```bash
@@ -256,7 +256,7 @@ rgb state '<ContractId>'
 ## Izvoz, uvoz i validacija
 
 
-Da biste podelili ovaj Contract sa drugim korisnicima, može se izvesti iz Stash u:
+Da biste podelili ovaj Contract sa drugim korisnicima, može se izvesti iz stasha:
 
 
 ```bash
@@ -267,7 +267,7 @@ rgb export '<ContractId>' myContractPBN.rgb
 ![RGB-CLI](assets/fr/09.webp)
 
 
-Datoteku `myContractPBN.RGB` može proslediti drugom korisniku, koji je može dodati svom Stash sa komandom :
+Datoteku `myContractPBN.RGB` može proslediti drugom korisniku, koji je može dodati svom stashu sa komandom :
 
 
 ```bash
@@ -286,7 +286,7 @@ rgb validate myContract.rgb
 ```
 
 
-### Korišćenje, verifikacija i prikaz Stash
+### Korišćenje, verifikacija i prikaz Stash-a
 
 
 Kao podsetnik, Stash je lokalni inventar šema, interfejsa, implementacija i ugovora (Genesis + tranzicije). Svaki put kada pokrenete "import", dodajete element u Stash. Ovaj Stash se može detaljno pregledati komandom :
@@ -306,10 +306,10 @@ Ovo će generate fasciklu sa detaljima celog Stash.
 ## Transfer i PSBT
 
 
-Da biste izvršili transfer, potrebno je manipulisati lokalnim Bitcoin Wallet da biste upravljali obavezama `Tapret` ili `Opret`.
+Da biste izvršili transfer, potrebno je manipulisati lokalnim Bitcoin novčanikom da biste upravljali obavezama `Tapret` ili `Opret`.
 
 
-### generate an Invoice
+### Generisanje fakture
 
 
 U većini slučajeva, interakcija između učesnika u Contract (npr. Alice i Bob) odvija se putem generisanja Invoice. Ako Alice želi da Bob izvrši nešto (prenos tokena, ponovno izdavanje, akciju u DAO, itd.), Alice kreira Invoice sa detaljima svojih instrukcija za Boba. Tako imamo :
