@@ -34,7 +34,7 @@ Glavna komanda se jednostavno zove `RGB`. Dizajnirana je da podseća na `git`, s
 ### Instalacija putem Cargo-a
 
 
-Alat instaliramo u Rust sa:
+Alat instaliramo u Rustu pomoću:
 
 
 ```bash
@@ -42,10 +42,10 @@ cargo install rgb-contracts --all-features
 ```
 
 
-(Napomena: sanduk se zove `RGB-contracts`, a instalirana komanda će biti nazvana `RGB`. Ako je sanduk pod imenom `RGB` već postojao, moglo je doći do kolizije, stoga je naziv takav)
+(Napomena: Biblioteka (crate) se zove `RGB-contracts`, a instalirana komanda će biti nazvana `RGB`. Ako je biblioteka pod imenom `RGB` već postojala, moglo je doći do kolizije, stoga je naziv takav)
 
 
-Instalacija kompajlira veliki broj zavisnosti (npr. parsiranje komandi, integracija sa Electrum-om, upravljanje dokazima bez znanja, itd.).
+Instalacija kompajlira veliki broj zavisnosti (npr. parsiranje komandi, integracija sa Electrum-om, upravljanje zero-knowledge dokazima, itd.).
 
 
 Kada je instalacija završena, :
@@ -56,7 +56,7 @@ rgb
 ```
 
 
-Pokretanje `RGB` (bez argumenata) prikazuje listu dostupnih pod-komandi, kao što su `interfaces`, `Schema`, `import`, `export`, `issue`, `Invoice`, `transfer`, itd. Možete promeniti lokalni direktorijum za skladištenje (Stash koji sadrži sve logove, šeme i implementacije), izabrati mrežu (Testnet, Mainnet) ili konfigurisati vaš Electrum server.
+Pokretanje `RGB` (bez argumenata) prikazuje listu dostupnih pod-komandi, kao što su `interfaces`, `Schema`, `import`, `export`, `issue`, `Invoice`, `transfer`, itd. Možete promeniti lokalni direktorijum za skladištenje (stash koji sadrži sve logove, šeme i implementacije), izabrati mrežu (Testnet, Mainnet) ili konfigurisati vaš Electrum server.
 
 
 ![RGB-CLI](assets/fr/01.webp)
@@ -65,7 +65,7 @@ Pokretanje `RGB` (bez argumenata) prikazuje listu dostupnih pod-komandi, kao št
 ### Prvi pregled kontrola
 
 
-Kada pokrenete sledeću komandu, videćete da je `RGB20` Interface već integrisan po defaultu:
+Kada pokrenete sledeću komandu, videćete da je `RGB20` interfejs već integrisan po defaultu:
 
 
 ```bash
@@ -73,7 +73,7 @@ rgb interfaces
 ```
 
 
-Ako ovaj Interface nije integrisan, kloniraj :
+Ako ovaj interfejs nije integrisan, kloniraj :
 
 
 ```bash
@@ -89,7 +89,7 @@ cargo run
 ```
 
 
-Zatim uvezite Interface po vašem izboru:
+Zatim uvezite interfejs po vašem izboru:
 
 
 ```bash
@@ -100,8 +100,7 @@ rgb import interfaces/RGB20.rgb
 ![RGB-CLI](assets/fr/02.webp)
 
 
-Međutim, rečeno nam je da nijedan Schema još nije uvezen u softver. Takođe, nema Contract u Stash. Da biste to videli, pokrenite komandu :
-
+Međutim, obavešteni smo da nijedna šema još nije uvezena u softver. Takođe, u stash-u nema ugovora. Da biste to proverili, pokrenite komandu:
 
 ```bash
 rgb schemata
@@ -119,7 +118,7 @@ git clone https://github.com/RGB-WG/rgb-schemata
 ![RGB-CLI](assets/fr/03.webp)
 
 
-Ovo spremište sadrži, u svom direktorijumu `src/`, nekoliko Rust datoteka (na primer `nia.rs`) koje definišu šeme (NIA za "*Non Inflatable Asset*", UDA za "*Unique Digital Asset*", itd.). Da biste kompajlirali, možete zatim pokrenuti:
+Ovaj repozitorijum sadrži, u svom src/ direktorijumu, nekoliko Rust fajlova (na primer nia.rs) koji definišu šeme (NIA – Non Inflatable Asset, UDA – Unique Digital Asset, itd.). Za kompajliranje, zatim možete pokrenuti:
 
 
 ```bash
@@ -131,10 +130,10 @@ cargo run
 Ovo generiše nekoliko `.RGB` i `.rgba` fajlova koji odgovaraju kompajliranim šemama. Na primer, naći ćete `NonInflatableAsset.RGB`.
 
 
-### Uvoz Schema i Interface Implementation
+### Uvoz šeme i implementacije interfejsa
 
 
-Sada možete uvesti šemu u `RGB` :
+Sada možete uvesti šemu u `RGB`:
 
 
 ```bash
@@ -145,7 +144,7 @@ rgb import schemata/NonInflatableAssets.rgb
 ![RGB-CLI](assets/fr/04.webp)
 
 
-Ovo ga dodaje lokalnom Stash. Ako pokrenemo sledeću komandu, vidimo da se sada pojavljuje Schema:
+Ovo ga dodaje lokalnom stash-u. Ako pokrenemo sledeću komandu, vidimo da se sada pojavljuje Schema:
 
 
 ```bash
@@ -153,7 +152,7 @@ rgb schemata
 ```
 
 
-## Contract kreiranje (izdavanje)
+## Kreiranje ugovora (izdavanje)
 
 
 Postoje dva pristupa kreiranju nove imovine:
