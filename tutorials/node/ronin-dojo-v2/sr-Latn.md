@@ -127,7 +127,7 @@ Na kraju, instalirajte vaš Raspberry Pi u njegovo kućište. Imajte na umu da �
 ## Kako instalirati RoninDojo v2 na Raspberry Pi 4?
 
 
-### Korak 1: Pripremite butabilnu micro SD karticu
+### Korak 1: Pripremi microSD karticu za pokretanje
 
 Nakon sastavljanja vašeg hardvera, sledeći korak je instalacija RoninDojo. Za ovo ćemo pripremiti butabilnu micro SD karticu sa vašeg računara, tako što ćemo na nju snimiti odgovarajuću sliku diska.
 
@@ -139,7 +139,7 @@ Trebaće vam softver _**Raspberry Pi Imager**_, dizajniran da olakša preuzimanj
 - Za Mac: https://downloads.raspberrypi.org/imager/imager_latest.dmg
 
 
-Jednom kada je softver instaliran, otvorite ga i ubacite vašu micro SD karticu u lični računar. Iz Raspberry Pi Imager Interface, izaberite `CHOOSE OS`:
+Jednom kada je softver instaliran, otvorite ga i ubacite vašu micro SD karticu u lični računar. Iz Raspberry Pi Imager interfejsa, izaberite `CHOOSE OS`:
 
 
 ![choose OS](assets/notext/9.webp)
@@ -185,15 +185,15 @@ U ovom prozoru idite na karticu `GENERAL` i napravite sledeća podešavanja (koj
 
 
 - Omogući opciju i dodeli `RoninDojo` kao ime hosta;
-- Omogući `Postavi korisničko ime i lozinku`, unesi `pi` kao korisničko ime, izaberi lozinku i zabeleži ove informacije, jer će biti potrebne kasnije. Ove akreditive su privremene i biće obrisane nakon toga;
+- Omogući `Set username and password`, u prevodu `Postavi korisničko ime i lozinku`, unesi `pi` kao korisničko ime, izaberi lozinku i zabeleži ove informacije, jer će biti potrebne kasnije. Ovi kredencijali su privremeni i biće obrisani nakon toga;
 - Onemogući `Configure Wi-Fi`;
-- Omogući `Postavi postavke lokaliteta` i izaberi svoju vremensku zonu kao i tip tastature koji odgovara tvom računaru;
+- Omogući `Set locale settings` i izaberi svoju vremensku zonu kao i tip tastature koji odgovara tvom računaru;
 
 
 ![general settings](assets/notext/16.webp)
 
 
-U kartici USLUGE kliknite na polje `Omogući SSH` i izaberite `Koristi lozinku za autentifikaciju`:
+U kartici USLUGE kliknite na polje `Enable SSH` i izaberite `Use a password for authentication`:
 
 
 ![services settings](assets/notext/17.webp)
@@ -246,13 +246,13 @@ Zatim povežite svoj Raspberry Pi sa ruterom koristeći Ethernet kabl. Na kraju,
 
 ### Korak 3: Uspostavite SSH vezu sa čvorom
 
-Prvo, potrebno je pronaći IP Address vašeg čvora. Imate opciju da koristite alat kao što je _[Advanced IP Scanner](https://www.advanced-ip-scanner.com/)_ ili _[Angry IP Scanner](https://angryip.org/)_, ili proverite administraciju Interface vašeg rutera. IP Address treba da bude u formi `192.168.1.??`. **Za sve naredne komande, zamenite `[IP]` sa stvarnim IP Address vašeg čvora**, (uklanjajući zagrade).
+Prvo, potrebno je pronaći IP adresu vašeg čvora. Imate opciju da koristite alat kao što je _[Advanced IP Scanner](https://www.advanced-ip-scanner.com/)_ ili _[Angry IP Scanner](https://angryip.org/)_, ili proverite administratorski interfejs vašeg rutera.. IP adresa treba da bude u formi `192.168.1.??`. **Za sve naredne komande, zamenite `[IP]` sa stvarnom IP adresom vašeg čvora**, (uklanjajući zagrade).
 
 
 Pokreni terminal.
 
 
-Da biste uklonili mogući ključ koji je već povezan sa IP Address vašeg čvora, izvršite komandu:
+Da biste uklonili mogući ključ koji je već povezan sa IP adresom vašeg čvora, izvršite komandu:
 
 `ssh-keygen -R [IP]`.
 
@@ -264,9 +264,9 @@ Zatim uspostavite SSH vezu sa svojim čvorom izvršavanjem komande:
 
 `ssh pi@[IP]`.
 
-Pojaviće se poruka u vezi sa autentičnošću hosta: `The authenticity of host '[IP]' can't be established.` Ovo ukazuje da autentičnost uređaja sa kojim pokušavate da se povežete ne može biti verifikovana zbog nedostatka poznatog javnog ključa. Kada se prvi put povezujete putem SSH na novog hosta, ova poruka će se uvek pojaviti. Morate odgovoriti sa `yes` da biste dodali njegov javni ključ u vaš lokalni direktorijum, što će sprečiti da se ova poruka upozorenja pojavljuje tokom budućih SSH konekcija na ovaj čvor. Dakle, otkucajte `yes` i pritisnite `enter` da biste potvrdili.
+Pojaviće se poruka u vezi sa autentičnošću hosta: `The authenticity of host '[IP]' can't be established.` Ovo ukazuje da autentičnost uređaja sa kojim pokušavate da se povežete ne može biti verifikovana zbog nedostatka poznatog javnog ključa. Kada se prvi put povezujete putem SSH-ja na novog hosta, ova poruka će se uvek pojaviti. Morate odgovoriti sa `yes` da biste dodali njegov javni ključ u vaš lokalni direktorijum, što će sprečiti da se ova poruka upozorenja pojavljuje tokom budućih SSH konekcija na ovaj čvor. Dakle, otkucajte `yes` i pritisnite `enter` da biste potvrdili.
 
-Bićete zatim upitani da unesete svoju lozinku, onu koja je prethodno postavljena kao privremena u koraku 1. Potvrdite sa `enter`. Zatim ćete biti povezani sa svojim čvorom putem SSH.
+Bićete zatim upitani da unesete svoju lozinku, onu koja je prethodno postavljena kao privremena u koraku 1. Potvrdite sa `enter`. Zatim ćete biti povezani sa svojim čvorom putem SSH-a.
 
 
 Ukratko, evo komandi za izvršavanje:
@@ -274,11 +274,11 @@ Ukratko, evo komandi za izvršavanje:
 
 - `ssh-keygen -R [IP]`
 - `ssh pi@[IP]`
-- `da`
+- `yes`
 - Unesite privremenu lozinku i potvrdite.
 
 
-### Korak 4: Ažuriranje i Priprema
+### Korak 4: Ažuriranje i priprema
 
 Sada ste povezani sa svojim čvorom putem SSH sesije. Na vašem terminalu, komandna linija bi trebala biti: `pi@RoninDojo:~ $`. Za početak, ažurirajte listu dostupnih paketa i instalirajte ažuriranja za postojeće pakete sledećom komandom:
 
@@ -310,20 +310,19 @@ Pokrenite RoninOS komandom:
 `sudo systemctl start ronin-setup`
 
 
-Prikaži linije log datoteke sa komandom:
-
+Za prikaz linija log fajla koristi komandu:
 `tail -f /home/ronindojo/.logs/setup.logs`
 
 
 U ovoj fazi, **važno je pustiti RoninOS da se pokrene i sačekati da završi sa radom.** Ovo traje oko 40 minuta. Kada se pojavi `All RoninDojo feature installations complete!`, možete preći na korak 6.
 
 
-### Korak 6: Pristupanje RoninUI i Promena Akreditiva
+### Korak 6: Pristupanje RoninUI i promena kredencijala
 
-Nakon završetka instalacije, da biste se povezali sa svojim čvorom putem pregledača, osigurajte da je vaš lični računar povezan na istu lokalnu mrežu kao i vaš čvor. Ako koristite VPN na svom računaru, privremeno ga onemogućite. Da biste pristupili čvoru Interface u svom pregledaču, unesite u URL traku:
+Nakon završetka instalacije, da biste se povezali sa svojim čvorom putem pregledača, osigurajte da je vaš lični računar povezan na istu lokalnu mrežu kao i vaš čvor. Ako koristite VPN na svom računaru, privremeno ga onemogućite. Da biste pristupili interfjesu čvoru u svom pregledaču, unesite u URL traku:
 
 
-- Direktno IP Address vašeg čvora, na primer, `192.168.1.??`;
+- Direktno IP adresu vašeg čvora, na primer, `192.168.1.??`;
 - Ili, otkucajte `ronindojo.local`.
 
 
@@ -345,34 +344,34 @@ Nakon što sačuvate lozinku `root`, označite polje `I have backed up Root user
 ![confirm root password](assets/notext/27.webp)
 
 
-Sledeći korak uključuje kreiranje korisničke lozinke, koja će se koristiti i za pristup RoninUI web Interface i za uspostavljanje SSH sesija sa vašim čvorom. Izaberite jaku lozinku i obavezno je sačuvajte na sigurnom mestu. Biće potrebno da unesete ovu lozinku dva puta pre nego što kliknete na `Finish` za potvrdu. Što se tiče korisničkog imena, preporučuje se da zadržite podrazumevani izbor, `ronindojo`. Ako odlučite da ga promenite, zapamtite da u skladu s tim prilagodite komande u narednim koracima.
+Sledeći korak uključuje kreiranje korisničke lozinke, koja će se koristiti i za pristup RoninUI web interfejsu i za uspostavljanje SSH sesija sa vašim čvorom. Izaberite jaku lozinku i obavezno je sačuvajte na sigurnom mestu. Biće potrebno da unesete ovu lozinku dva puta pre nego što kliknete na `Finish` za potvrdu. Što se tiče korisničkog imena, preporučuje se da zadržite podrazumevani izbor, `ronindojo`. Ako odlučite da ga promenite, zapamtite da u skladu s tim prilagodite komande u narednim koracima.
 
 
 ![user credentials](assets/notext/28.webp)
 
 
-Kada se ove radnje završe, sačekajte da se vaš čvor inicijalizuje. Zatim ćete pristupiti RoninUI web Interface. Skoro ste na kraju procesa, ostalo je još samo nekoliko malih koraka!
+Kada se ove radnje završe, sačekajte da se vaš čvor inicijalizuje. Zatim ćete pristupiti RoninUI web interfejsu. Skoro ste na kraju procesa, ostalo je još samo nekoliko malih koraka!
 
 ![Ronin UI](assets/notext/29.webp)
 
 
-### Korak 7: Uklonite Privremene Akreditive
+### Korak 7: Uklonite privremene kredencijale
 
 Otvorite novi terminal na svom ličnom računaru i uspostavite SSH vezu sa svojim čvorom koristeći sledeću komandu:
 
 `SSH ronindojo@[IP]`
 
 
-Ako je, na primer, IP Address vašeg čvora `192.168.1.40`, odgovarajuća komanda će biti:
+Ako je, na primer, IP adresa vašeg čvora `192.168.1.40`, odgovarajuća komanda će biti:
 
 `SSH ronindojo@192.168.1.40`
 
 
-Ako ste promenili svoje korisničko ime tokom prethodnog koraka, zamenjujući podrazumevano korisničko ime (`ronindojo`) sa drugim, obavezno koristite ovo novo ime u komandi. Na primer, ako ste izabrali `planb` kao korisničko ime i IP Address je `192.168.1.40`, komanda koju treba uneti će biti:
+Ako ste promenili svoje korisničko ime tokom prethodnog koraka, zamenjujući podrazumevano korisničko ime (`ronindojo`) sa drugim, obavezno koristite ovo novo ime u komandi. Na primer, ako ste izabrali `planb` kao korisničko ime i IP adresa je `192.168.1.40`, komanda koju treba uneti će biti:
 
 `SSH planb@192.168.1.40`
 
-Bićete zamoljeni da unesete korisničku lozinku. Unesite je i zatim pritisnite `enter` da biste potvrdili. Zatim ćete pristupiti RoninCLI Interface. Koristite strelice na tastaturi da biste se pomerili do opcije `Exit RoninDojo` i pritisnite `enter` da biste je izabrali.
+Bićete zamoljeni da unesete korisničku lozinku. Unesite je i zatim pritisnite `enter` da biste potvrdili. Zatim ćete pristupiti RoninCLI interfejsu. Koristite strelice na tastaturi da biste se pomerili do opcije `Exit RoninDojo` i pritisnite `enter` da biste je izabrali.
 
 ![RoninCLI](assets/notext/30.webp)
 
@@ -385,7 +384,7 @@ U ovom trenutku, nalazite se u terminalu vašeg čvora, sa komandnom linijom sli
 Bićete upitani da potvrdite svoju korisničku lozinku. Unesite je i potvrdite pritiskom na `enter`. Sačekajte da se operacija završi, zatim koristite komandu `exit` da napustite terminal.
 
 
-Čestitamo! Vaš RoninDojo v2 čvor je sada konfigurisan i spreman za korišćenje. Počeće svoj IBD (*Initial Block Download*), nastavljajući sa preuzimanjem i verifikacijom Bitcoin Blockchain od Genesis bloka. Ovaj korak uključuje preuzimanje svih Bitcoin transakcija napravljenih od 3. januara 2009. godine i može potrajati neko vreme. Kada se Blockchain u potpunosti preuzme, indeksator će nastaviti sa kompresovanjem baze podataka. Trajanje IBD-a može značajno varirati. Vaš RoninDojo čvor će biti potpuno operativan kada se ovaj proces završi.
+Čestitamo! Vaš RoninDojo v2 čvor je sada konfigurisan i spreman za korišćenje. Počeće svoj IBD (*Initial Block Download*), nastavljajući sa preuzimanjem i verifikacijom Bitcoin blockchain-a od Genesis bloka. Ovaj korak uključuje preuzimanje svih Bitcoin transakcija napravljenih od 3. januara 2009. godine i može potrajati neko vreme. Kada se blockchain u potpunosti preuzme, indeksator će nastaviti sa kompresovanjem baze podataka. Trajanje IBD-a može značajno varirati. Vaš RoninDojo čvor će biti potpuno operativan kada se ovaj proces završi.
 
 
 **Ako prelazite sa starog RoninDojo v1 čvora** na ovu novu verziju uz pomoć ovog vodiča, a pritom zadržavate isti SSD, vaš čvor bi automatski trebalo da detektuje i ponovo iskoristi postojeće podatke na disku, čime ćete biti pošteđeni potrebe za ponovnim izvođenjem IBD-a. U tom slučaju, samo ćete morati da sačekate da se vaš čvor ponovo sinhronizuje sa najnovijim blokovima.
@@ -401,12 +400,12 @@ Otvorite novi terminal na vašem ličnom računaru i uspostavite SSH vezu sa va�
 `SSH ronindojo@[IP]`
 
 
-Ako je, na primer, IP vašeg čvora Address `192.168.1.40`, odgovarajuća komanda bi bila:
+Ako je, na primer, IP adresavašeg čvora `192.168.1.40`, odgovarajuća komanda bi bila:
 
 `SSH ronindojo@192.168.1.40`
 
 
-Bićete upitani da unesete korisničku lozinku. Unesite je i pritisnite `enter` da biste potvrdili. Zatim ćete pristupiti RoninCLI Interface. Koristite strelice na tastaturi da biste se pomerili do opcije `Exit RoninDojo` i pritisnite `enter` da biste je izabrali.
+Bićete upitani da unesete korisničku lozinku. Unesite je i pritisnite `enter` da biste potvrdili. Zatim ćete pristupiti RoninCLI interfejsu. Koristite strelice na tastaturi da biste se pomerili do opcije `Exit RoninDojo` i pritisnite `enter` da biste je izabrali.
 
 
 U ovom trenutku, nalazite se na terminalu vašeg čvora, sa komandnom linijom sličnom: `ronindojo@RoninDojo:~ $`. Da biste primenili veth* popravku, ukucajte sledeću komandu i pritisnite `enter`:
@@ -433,67 +432,67 @@ Da biste dovršili primenu popravke, ponovo pokrenite svoj čvor izvršavanjem:
 `sudo reboot now`
 
 
-U ovom trenutku, možete zatvoriti svoj terminal. Dozvolite potrebno vreme da se vaš RoninDojo ponovo pokrene, nakon čega bi trebalo da se ponovo povežete putem grafičkog Interface u vašem pregledaču. Ovaj proces bi trebalo da reši naiđeni bag.
+U ovom trenutku, možete zatvoriti svoj terminal. Dozvolite potrebno vreme da se vaš RoninDojo ponovo pokrene, nakon čega bi trebalo da se ponovo povežete putem grafičkog interfejsa u vašem pregledaču. Ovaj proces bi trebalo da reši naiđeni problem.
 
 
 ## Kako koristiti svoj RoninDojo v2 čvor?
 
 
-### Povezivanje vašeg Wallet softvera sa Electrs
+### Povezivanje vašeg softverskog novčanika sa Electrs
 
-Prva upotreba vašeg sveže instaliranog i sinhronizovanog čvora biće emitovanje vaših transakcija na Bitcoin mrežu. Verovatno ćete želeti da povežete vaše različite novčanike sa vašim čvorom kako biste emitovali vaše transakcije poverljivo. To možete učiniti putem Electrum Rust Servera (electrs). Ova aplikacija je obično unapred instalirana na vašem RoninDojo čvoru. Ako nije, možete je ručno instalirati putem RoninCLI Interface u `Applications > Manage Applications > Install Electrum Server`.
+Prva upotreba vašeg sveže instaliranog i sinhronizovanog čvora biće emitovanje vaših transakcija na Bitcoin mrežu. Verovatno ćete želeti da povežete vaše različite novčanike sa vašim čvorom kako biste emitovali vaše transakcije poverljivo. To možete učiniti putem Electrum Rust Servera (electrs). Ova aplikacija je obično unapred instalirana na vašem RoninDojo čvoru. Ako nije, možete je ručno instalirati putem RoninCLI interfejsa u `Applications > Manage Applications > Install Electrum Server`.
 
 
-Da biste dobili Tor Address vašeg Electrum Servera, sa RoninUI web Interface, idite na:
+Da biste dobili Tor adresu vašeg Electrum Servera, sa RoninUI web interfejsom, idite na:
 
-`Uparivanje > Electrum server > Upari sada`
+`Pairing > Electrum server > Pair now`
 
 ![Pairing](assets/notext/31.webp)
 
 ![Electrs](assets/notext/32.webp)
 
-Trebaće da unesete `Hostname` Address koji se završava sa `.onion` u vaš Wallet softver, zajedno sa portom `50001`. ![hostname](assets/notext/33.webp)
+Trebaće da unesete `Hostname` adresu koja se završava sa `.onion` iz vašeg softverskog novčanika, zajedno sa portom `50001`. ![hostname](assets/notext/33.webp)
 
-Na primer, na Sparrow Wallet, jednostavno idite na karticu:
+Na primer, za Sparrow novčanika, jednostavno idite na karticu:
 
-`Datoteka > Postavke > Server > Privatni Electrum`
+`File > Preferences > Server > Private Electrum`
 
 
 ![Sparrow](assets/notext/34.webp)
 
 
-### Povezivanje vašeg Wallet softvera sa Samourai Dojo
+### Povezivanje vašeg softverskog novčanika sa Samourai Dojo
 
-Kao alternativu korišćenju Electrs-a, Dojo omogućava da povežete vaš kompatibilni Software Wallet direktno na vaš RoninDojo čvor. Novčanici kao što su Samourai Wallet i Sentinel nude ovu funkcionalnost.
+Kao alternativu korišćenju Electrs-a, Dojo omogućava da povežete vaš kompatibilni softverski novčanik direktno na vaš RoninDojo čvor. Novčanici kao što su Samourai novčanik i Sentinel nude ovu funkcionalnost.
 
 
 Da biste uspostavili vezu, samo ćete trebati skenirati QR kod vašeg Dojo-a. Da biste pristupili ovom QR kodu putem RoninUI, idite na:
 
-`Uparivanje > Samourai Dojo > Upari sada`
+`Pairing > Samourai Dojo > Pair now`
 
 ![Samourai Dojo](assets/notext/35.webp)
 
-Da biste povezali svoj Samourai Wallet sa svojim Dojo-om, jednostavno skenirajte ovaj QR kod tokom instalacije aplikacije:
+Da biste povezali svoj Samourai novčanik sa svojim Dojo-om, jednostavno skenirajte ovaj QR kod tokom instalacije aplikacije:
 
 
 ![Samourai Wallet connection](assets/notext/36.webp)
 
 
-Ako ste već imali Samourai Wallet pre nego što ste postavili svoj Ronin Dojo, potrebno je da napravite rezervnu kopiju svog Wallet, deinstalirate i zatim ponovo instalirate Samourai Wallet aplikaciju, pre nego što obnovite svoj Wallet. Kada pokrenete ponovo instaliranu aplikaciju, imaćete opciju da se povežete sa novim Dojo-om. **Budite oprezni, ovaj proces nosi rizik od gubitka vaših bitcoina ako nije pravilno izvršen!** Uverite se da imate rezervnu kopiju svog Samourai Wallet u svojim fajlovima i proverite validnost svog passphrase putem `Settings > Troubleshoot > passphrase`. Takođe je važno da imate čitljivu rezervnu kopiju svoje fraze za oporavak i svog passphrase. Za više preciznosti u ovoj operaciji, preporučuje se da pratite ovaj detaljni vodič: [https://wiki.ronindojo.io/en/setup/v2_0_0-upgrade/reconnectsamourai](https://wiki.ronindojo.io/en/setup/v2_0_0-upgrade/reconnectsamourai).
+Ako ste već imali Samourai novčanik pre nego što ste postavili svoj Ronin Dojo, potrebno je da napravite rezervnu kopiju svog novčanika, deinstalirate i zatim ponovo instalirate Samourai novčanik aplikaciju, pre nego što obnovite svoj novčanik. Kada pokrenete ponovo instaliranu aplikaciju, imaćete opciju da se povežete sa novim Dojo-om. **Budite oprezni, ovaj proces nosi rizik od gubitka vaših bitcoina ako nije pravilno izvršen!** Uverite se da imate rezervnu kopiju svog Samourai novčanika u svojim fajlovima i proverite validnost svog passphrase-a putem `Settings > Troubleshoot > passphrase`. Takođe je važno da imate čitljivu rezervnu kopiju svoje fraze za oporavak i svog passphrase. Za više preciznosti u ovoj operaciji, preporučuje se da pratite ovaj detaljni vodič: [https://wiki.ronindojo.io/en/setup/v2_0_0-upgrade/reconnectsamourai](https://wiki.ronindojo.io/en/setup/v2_0_0-upgrade/reconnectsamourai).
 
 
-### Koristeći svoj Mempool.space Block explorer
+### Korišćenje sopstvenog Mempool.space blok-istraživača
 
-Block explorer transformiše sirove informacije iz Bitcoin Blockchain u strukturirani i lako čitljiv format. Sa alatima kao što je *Mempool.space*, moguće je analizirati transakcije, pretraživati specifične adrese ili čak konsultovati prosečne stope naknada mempool-ova mreže u realnom vremenu.
+Block explorer (istraživač blokova) transformiše sirove informacije iz Bitcoin blockchain-a u strukturirani i lako čitljiv format. Sa alatima kao što je *Mempool.space*, moguće je analizirati transakcije, pretraživati specifične adrese ili čak konsultovati prosečne stope naknada mempool-ova mreže u realnom vremenu.
 
 
 Međutim, korišćenje online blok istraživača predstavlja rizike za vašu privatnost i uključuje poverenje u podatke koje pružaju treće strane. Zaista, korišćenjem ovih usluga bez prolaska kroz sopstveni čvor, mogli biste nenamerno otkriti informacije o vašim transakcijama i morate se osloniti na tačnost informacija koje pruža vlasnik sajta.
 
 Da biste ublažili ove rizike, preporučuje se korišćenje sopstvene instance *Mempool.space* putem Tor mreže, direktno hostovane na vašem čvoru. Ovo rešenje osigurava očuvanje vaše privatnosti i autonomiju vaših podataka.
 
-Da biste to uradili, počnite instaliranjem *Mempool Space Visualizer* iz RoninUI. Na web Interface, idite na karticu `Dashboard` i kliknite na `Manage` ispod `Mempool Space`:
+Da biste to uradili, počnite instaliranjem *Mempool Space Visualizer* iz RoninUI. Na web interfejsu, idite na karticu `Dashboard` i kliknite na `Manage` ispod `Mempool Space`:
 
-`Kontrolna tabla > Mempool Prostor > Upravljanje`
+`Dashboard > Mempool Space > Manage`
 
 ![Manage mempool](assets/notext/37.webp)
 
@@ -518,18 +517,18 @@ Preporučujem vam da sačuvate ovaj link u svojim omiljenim stranicama na Tor pr
 ![Mempool Tor](assets/notext/42.webp)
 
 
-### Korišćenje Whirlpool za mešanje vaših bitkoina
+### Korišćenje Whirlpool-a za mešanje vaših bitkoina
 
-Vaš RoninDojo čvor takođe integriše _WhirlpoolCLI_, komandno-linijski Interface koji omogućava automatizaciju Whirlpool coinjoin-a, i _WhirlpoolGUI_, grafički Interface dizajniran za interakciju sa _WhirlpoolCLI_.
-
-
-Izvođenje CoinJoin putem Whirlpool zahteva da aplikacija koja se koristi bude aktivna za izvođenje remiksa. Ovaj uslov može biti restriktivan za one koji žele postići visoke nivoe anonseta. Naime, uređaj koji hostuje aplikaciju koja integriše Whirlpool mora ostati uključen neprekidno. To znači da, kako biste učestvovali u remiksima 24 sata dnevno, vaš računar ili pametni telefon mora ostati uključen sa Samourai ili Sparrow aplikacijom otvorenom neprekidno. Rešenje za ovo ograničenje je korišćenje _WhirlpoolCLI_ na mašini koja je uvek uključena, kao što je Bitcoin čvor, omogućavajući vašim koinima da se remiksuju bez prekida, i bez potrebe da drugi uređaj ostane uključen.
+Vaš RoninDojo čvor takođe integriše _WhirlpoolCLI_, komandno-linijski interfejs koji omogućava automatizaciju Whirlpool coinjoin-a, i _WhirlpoolGUI_, grafički interfejs dizajniran za interakciju sa _WhirlpoolCLI_.
 
 
-Detaljno uputstvo je u pripremi kako bi vas korak po korak vodilo kroz proces coinjoining-a sa Samourai Wallet i RoninDojo v2, od A do Š.
+Izvođenje CoinJoin-a putem Whirlpool-a zahteva da aplikacija koja se koristi bude aktivna za izvođenje remiksa. Ovaj uslov može biti restriktivan za one koji žele postići visoke nivoe anonseta. Naime, uređaj koji hostuje aplikaciju koja integriše Whirlpool mora ostati uključen neprekidno. To znači da, kako biste učestvovali u remiksima 24 sata dnevno, vaš računar ili pametni telefon mora ostati uključen sa Samourai ili Sparrow aplikacijom otvorenom neprekidno. Rešenje za ovo ograničenje je korišćenje _WhirlpoolCLI_ na mašini koja je uvek uključena, kao što je Bitcoin čvor, omogućavajući vašim novčićima da se remiksuju bez prekida, i bez potrebe da drugi uređaj ostane uključen.
 
 
-Za dublje razumevanje CoinJoin i njegove upotrebe na Bitcoin, takođe vas pozivam da pogledate ovaj drugi članak: Razumevanje i korišćenje CoinJoin na Bitcoin, gde detaljno opisujem sve što treba da znate o ovoj tehnici.
+Detaljno uputstvo je u pripremi kako bi vas korak po korak vodilo kroz proces coinjoining-a sa Samourai novčanikom i RoninDojo v2, od A do Š.
+
+
+Za dublje razumevanje CoinJoin-a i njegove upotrebe na Bitcoin-u, takođe vas pozivam da pogledate ovaj drugi članak: Razumevanje i korišćenje CoinJoin na Bitcoin-u, gde detaljno opisujem sve što treba da znate o ovoj tehnici.
 
 
 https://planb.network/tutorials/privacy/on-chain/coinjoin-dojo-c4b20263-5b30-4c74-ae59-dc8d0f8715c2
@@ -537,10 +536,10 @@ https://planb.network/tutorials/privacy/on-chain/coinjoin-dojo-c4b20263-5b30-4c7
 ### Korišćenje Whirlpool Stat Alata (WST)
 
 
-Nakon obavljanja coinjoin-a sa Whirlpool, korisno je precizno proceniti nivo privatnosti postignut za vaše mešane UTXO-e. Da biste to uradili, možete koristiti Python alat *Whirlpool Stat Tool*. Ovaj alat vam omogućava da izmerite i perspektivne i retrospektivne ocene vaših UTXO-a, dok analizirate njihov stepen difuzije u bazenu.
+Nakon obavljanja coinjoin-a sa Whirlpool-om, korisno je precizno proceniti nivo privatnosti postignut za vaše mešane UTXO-e. Da biste to uradili, možete koristiti Python alat *Whirlpool Stat Tool*. Ovaj alat vam omogućava da izmerite i prospektivne i retrospektivne rezultate svojih UTXO-a, dok analizirate njihovu stopu širenja u pool-u.
 
 
-Da biste produbili svoje razumevanje mehanizama izračunavanja ovih anonseta, preporučujem čitanje članka: REMIX - Whirlpool, koji detaljno opisuje funkcionisanje ovih indeksa.
+Da biste produbili svoje razumevanje mehanizama izračunavanja ovih anonseta, preporučujem čitanje članka: REMIX - Whirlpool, koji detaljno opisuje funkcionisanje ovih pokazatelja.
 
 
 https://planb.network/tutorials/privacy/analysis/remix-whirlpool-2b887bd9-8a6a-4dca-8aa9-a1c33682b0aa
@@ -552,17 +551,17 @@ Da biste pristupili WST alatu, idite na RoninCLI. Da biste to učinili, otvorite
 `SSH ronindojo@[IP]`
 
 
-Ako je, na primer, IP vašeg čvora Address `192.168.1.40`, odgovarajuća komanda bi bila:
+Ako je, na primer, IP adresa vašeg čvora `192.168.1.40`, odgovarajuća komanda bi bila:
 
 `SSH ronindojo@192.168.1.40`
 
 
-Ako ste promenili svoje korisničko ime tokom koraka 6, zamenjujući podrazumevano korisničko ime (`ronindojo`) sa drugim, obavezno koristite ovo novo ime u komandi. Na primer, ako ste izabrali `planb` kao svoje korisničko ime i IP Address je `192.168.1.40`, komanda koju treba uneti bi bila:
+Ako ste promenili svoje korisničko ime tokom koraka 6, zamenjujući podrazumevano korisničko ime (`ronindojo`) sa drugim, obavezno koristite ovo novo ime u komandi. Na primer, ako ste izabrali `planb` kao svoje korisničko ime i IP adresa je `192.168.1.40`, komanda koju treba uneti bi bila:
 
 `SSH planb@192.168.1.40`
 
 
-Bićete zamoljeni da unesete korisničku lozinku. Unesite je i pritisnite `enter` da biste potvrdili. Zatim ćete pristupiti RoninCLI Interface. Koristite strelice na tastaturi da biste se kretali do menija `Samourai Toolkit` i pritisnite `enter` da biste ga odabrali:
+Bićete zamoljeni da unesete korisničku lozinku. Unesite je i pritisnite `enter` da biste potvrdili. Zatim ćete pristupiti RoninCLI interfejsu. Koristite strelice na tastaturi da biste se kretali do menija `Samourai Toolkit` i pritisnite `enter` da biste ga odabrali:
 
 
 ![Samourai Toolkit](assets/notext/43.webp)
@@ -585,19 +584,19 @@ Sledeći komandni prompt će biti prikazan:
 `wst#/tmp>`
 
 
-Ako želite da izađete iz ovog Interface i vratite se u RoninCLI meni, jednostavno unesite:
+Ako želite da izađete iz ovog interfejsa i vratite se u RoninCLI meni, jednostavno unesite:
 
 `quit`
 
 
-Prvo, potrebno je konfigurisati proxy za korišćenje Tor-a, kako bi se obezbedila poverljivost prilikom ekstrakcije podataka iz OXT. Unesite komandu:
+Prvo, potrebno je konfigurisati proxy za korišćenje Tor-a, kako bi se obezbedila poverljivost prilikom izvlačenja podataka iz OXT. Unesite komandu:
 
 `socks5 127.0.0.1:9050`
 
 
-Nakon toga, nastavite sa preuzimanjem informacija o bazenu koje sadrže vašu transakciju:
+Nakon toga, nastavite sa preuzimanjem informacija o poolu koje sadrže vašu transakciju:
 
-`preuzimanje 0001`
+`download 0001`
 
 Zamenite `0001` sa kodom denominacije bazena koji vas interesuje. Kodovi denominacija su sledeći na WST:
 
