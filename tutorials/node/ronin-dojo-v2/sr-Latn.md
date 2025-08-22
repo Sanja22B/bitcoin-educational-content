@@ -629,13 +629,13 @@ WST će zatim prikazati retrospektivni skor (_Backward-looking metrics_), praće
 
 ### Korišćenje Boltzmann kalkulatora
 
-Boltzmann kalkulator je alat za analizu Bitcoin transakcije, koji nudi mogućnost merenja nivoa entropije među ostalim naprednim metrima. Ovi podaci pružaju kvantifikovanu procenu privatnosti transakcije i pomažu u identifikaciji potencijalnih nedostataka. Ovaj alat je već integrisan u vaš RoninDojo čvor, što ga čini lakim za pristup i korišćenje.
+Boltzmann kalkulator je alat za analizu Bitcoin transakcije, koji nudi mogućnost merenja nivoa entropije među ostalim naprednim metrikama. Ovi podaci pružaju kvantifikovanu procenu privatnosti transakcije i pomažu u identifikaciji potencijalnih nedostataka. Ovaj alat je već integrisan u vaš RoninDojo čvor, što ga čini lakim za pristup i korišćenje.
 
 
-Pre nego što detaljno opišemo proceduru korišćenja Boltzmann kalkulatora, važno je razumeti značenje ovih indikatora, njihov metod izračunavanja i njihovu korisnost. Iako su primenljivi na bilo koju Bitcoin transakciju, ovi indikatori su posebno korisni za procenu kvaliteta CoinJoin transakcije.
+Pre nego što detaljno opišemo proceduru korišćenja Boltzmann kalkulatora, važno je razumeti značenje ovih indikatora, metodu njihovog izračunavanja i njihovu korisnost. Iako su primenljivi na bilo koju Bitcoin transakciju, ovi indikatori su posebno korisni za procenu kvaliteta CoinJoin transakcije.
 
 
-**Prvi indikator** koji softver izračunava je ukupan broj mogućih kombinacija, označen pod `nb combinations` u alatu. Na osnovu vrednosti uključenih UTXO-a, ovaj indikator kvantifikuje broj načina na koje se ulazi mogu povezati sa izlazima. Drugim rečima, određuje broj mogućih interpretacija koje transakcija može generate. Na primer, CoinJoin strukturiran prema Whirlpool modelu 5x5 prikazuje `1496` mogućih kombinacija:
+**Prvi indikator** koji softver izračunava je ukupan broj mogućih kombinacija, označen pod `nb combinations` u alatu. Na osnovu vrednosti uključenih UTXO-a, ovaj indikator kvantifikuje broj načina na koje se ulazi mogu povezati sa izlazima. Drugim rečima, određuje broj mogućih interpretacija koje transakcija može generisati. Na primer, CoinJoin strukturiran prema Whirlpool modelu 5x5 prikazuje `1496` mogućih kombinacija:
 
 ![combinations](assets/notext/50.webp)
 
@@ -673,7 +673,7 @@ $$ E = \log_2(1) $$
 
 $$ E \approx 0 \text{ bits}$$
 
-**Treći indikator** koji pruža Boltzmann kalkulator naziva se `Wallet Efikasnost`. Ovaj indikator procenjuje efikasnost transakcije poredeći je sa optimalnom transakcijom koja se može zamisliti u identičnom okruženju. Ovo nas vodi do diskusije o konceptu maksimalne entropije, koja odgovara najvećoj entropiji koju određena struktura transakcije teoretski može postići. Dakle, za Whirlpool 5x5 CoinJoin strukturu, maksimalna entropija je postavljena na `10.5469`. Efikasnost transakcije se zatim izračunava suočavanjem ove maksimalne entropije sa stvarnom entropijom analizirane transakcije. Formula koja se koristi je sledeća:
+**Treći indikator** koji pruža Boltzmann kalkulator naziva se `Efikasnost novčanika`, ili na engleskom `Wallet Efficiency`. Ovaj indikator procenjuje efikasnost transakcije poredeći je sa optimalnom transakcijom koja se može zamisliti u identičnom okruženju. Ovo nas vodi do diskusije o konceptu maksimalne entropije, koja odgovara najvećoj entropiji koju određena struktura transakcije teoretski može postići. Dakle, za Whirlpool 5x5 CoinJoin strukturu, maksimalna entropija je postavljena na `10.5469`. Efikasnost transakcije se zatim izračunava suočavanjem ove maksimalne entropije sa stvarnom entropijom analizirane transakcije. Formula koja se koristi je sledeća:
 
 
 - $ER$: stvarna entropija transakcije, izražena u bitovima;
@@ -717,7 +717,7 @@ $$ED = \frac{10.5469}{10}$$
 
 $$ED = 1.054 \text{ bits}$$
 
-**Peti podatak** koji pruža Boltzmann kalkulator je tabela verovatnoća podudaranja između ulaza i izlaza. Ova tabela pokazuje, kroz `Boltzmann skor`, verovatnoću da je određeni ulaz povezan sa datim izlazom. Uzimajući primer Whirlpool CoinJoin, tabela verovatnoća bi istakla šanse povezivanja između svakog ulaza i izlaza, pružajući kvantitativnu meru nejasnoće ili predvidljivosti asocijacija u transakciji:
+**Peti podatak** koji pruža Boltzmann kalkulator je tabela verovatnoća podudaranja između ulaza i izlaza. Ova tabela pokazuje, kroz `Boltzmann score`, verovatnoću da je određeni ulaz povezan sa datim izlazom. Uzimajući primer Whirlpool CoinJoin, tabela verovatnoća bi istakla šanse povezivanja između svakog ulaza i izlaza, pružajući kvantitativnu meru nejasnoće ili predvidljivosti asocijacija u transakciji:
 
 
 | %       | Output 0 | Output 1 | Output 2 | Output 3 | Output 4 |
@@ -750,17 +750,17 @@ Na primer, transakcija tipa Whirlpool-CoinJoin ne prikazuje determinističke vez
 Da biste pristupili alatu *Boltzmann Calculator*, idite na RoninCLI. Da biste to uradili, otvorite terminal na vašem ličnom računaru i uspostavite SSH vezu sa vašim čvorom koristeći sledeću komandu: `SSH ronindojo@[IP]`
 
 
-Ako je, na primer, IP vašeg čvora Address `192.168.1.40`, odgovarajuća komanda bi bila:
+Ako je, na primer, IP adresa vašeg čvora `192.168.1.40`, odgovarajuća komanda bi bila:
 
 `SSH ronindojo@192.168.1.40`
 
 
-Ako ste promenili svoje korisničko ime tokom koraka 6, zamenjujući podrazumevano korisničko ime (`ronindojo`) sa drugim, obavezno koristite ovo novo ime u komandi. Na primer, ako ste izabrali `planb` kao svoje korisničko ime i IP Address je `192.168.1.40`, komanda koju treba uneti bi bila:
+Ako ste promenili svoje korisničko ime tokom koraka 6, zamenjujući podrazumevano korisničko ime (`ronindojo`) sa drugim, obavezno koristite ovo novo ime u komandi. Na primer, ako ste izabrali `planb` kao svoje korisničko ime i IP adresa je `192.168.1.40`, komanda koju treba uneti bi bila:
 
 `SSH planb@192.168.1.40`
 
 
-Bićete zamoljeni da unesete korisničku lozinku. Unesite je i zatim pritisnite `enter` da biste potvrdili. Zatim ćete pristupiti RoninCLI Interface. Koristite strelice na tastaturi da biste se pomerili do menija `Samourai Toolkit` i pritisnite `enter` da biste ga izabrali:
+Bićete zamoljeni da unesete korisničku lozinku. Unesite je i zatim pritisnite `enter` da biste potvrdili. Zatim ćete pristupiti RoninCLI interfejsu. Koristite strelice na tastaturi da biste se pomerili do menija `Samourai Toolkit` i pritisnite `enter` da biste ga izabrali:
 
 
 ![Samourai Toolkit](assets/notext/43.webp)
@@ -792,23 +792,23 @@ Kalkulator vam zatim pruža sve indikatore o kojima smo prethodno razgovarali:
 
 ### Ostale funkcije vašeg RoninDojo v2
 
-Vaš RoninDojo čvor integriše razne druge funkcije. Konkretno, imate mogućnost skeniranja specifičnih informacija kako biste ih uzeli u obzir. Na primer, ponekad vaš Samourai Wallet, povezan sa RoninDojo, možda neće prikazivati bitkoine koje zapravo posedujete. Ako saldo pokazuje 0 dok ste sigurni da imate bitkoine u ovom Wallet, nekoliko razloga može objasniti ovu situaciju, kao što je greška u putanjama derivacije. Ali jedan od uzroka može biti i to što vaš čvor ne prati pravilno vaše adrese. Da biste rešili ovaj problem, možete se uveriti da vaš čvor zaista prati vaš `xpub` koristeći _xpub alat_. Da biste pristupili ovom alatu putem RoninUI, pratite putanju:
+Vaš RoninDojo čvor integriše razne druge funkcije. Konkretno, imate mogućnost skeniranja specifičnih informacija kako biste ih uzeli u obzir. Na primer, ponekad vaš Samourai novčanik, povezan sa RoninDojo, možda neće prikazivati bitkoine koje zapravo posedujete. Ako saldo pokazuje 0 dok ste sigurni da imate bitkoine u ovom novčaniku, nekoliko razloga može objasniti ovu situaciju, kao što je greška u putanjama derivacije. Ali jedan od uzroka može biti i to što vaš čvor ne prati pravilno vaše adrese. Da biste rešili ovaj problem, možete se uveriti da vaš čvor zaista prati vaš `xpub` koristeći _xpub alat_. Da biste pristupili ovom alatu putem RoninUI, pratite putanju:
 
-`Održavanje > XPUB Alat`
+`Maintenance > XPUB Tool`
 
 
 Unesite `xpub` koji izaziva problem i kliknite na dugme `Check` da biste proverili ove informacije:
 
 ![xpub tool](assets/notext/54.webp)
 
-Osigurajte da su sve transakcije pravilno navedene. Takođe je važno proveriti da li tip derivacije koji se koristi odgovara onom na vašem Wallet. Ako to nije slučaj, kliknite na `Retype`, zatim izaberite između `BIP44`, `BIP49` ili `BIP84` prema vašim potrebama.
+Osigurajte da su sve transakcije pravilno navedene. Takođe je važno proveriti da li tip derivacije koji se koristi odgovara onom na vašem novčaniku. Ako to nije slučaj, kliknite na `Retype`, zatim izaberite između `BIP44`, `BIP49` ili `BIP84` prema vašim potrebama.
 
 Pored ovog alata, kartica `Maintenance` u RoninUI je puna drugih korisnih funkcija:
 
 
-- Alat za transakcije*: Omogućava pregled detalja date transakcije;
-- Address Alat*: Omogućava potvrdu praćenja datog Address od strane vašeg Dojo-a;
-- Ponovno skeniraj blokove*: Prisiljava vaš čvor da izvrši novo skeniranje određenog raspona blokova.
+- *Alat za transakcije*: Omogućava pregled detalja date transakcije;
+- *Alat za adrese*: Omogućava potvrdu praćenja date adrese od strane vašeg Dojo-a;
+- *Ponovno skeniraj blokove*: Prisiljava vaš čvor da izvrši novo skeniranje određenog raspona blokova.
 
 
 Kartica `Push Tx` je još jedna zanimljiva funkcija RoninUI, koja omogućava emitovanje potpisane transakcije na Bitcoin mreži. Transakcija mora biti uneta u heksadecimalnom obliku.
@@ -818,12 +818,12 @@ Kartica `Push Tx` je još jedna zanimljiva funkcija RoninUI, koja omogućava emi
 
 
 - `Apps`: Hostuje Whirlpool aplikaciju i sigurno će se koristiti za integraciju novih aplikacija u budućnosti;
-- `Dnevnici`: Nudi pristup dnevnicima događaja vašeg softvera u realnom vremenu;
+- `Logs`: Nudi pristup logvima događaja vašeg softvera u realnom vremenu;
 - `System Info`: Pruža opšte informacije o vašem čvoru, kao što su temperatura CPU-a, iskorišćenost prostora za skladištenje ili podaci o RAM-u. Takođe ćete pronaći opcije `Reboot` i `Shut down` za ponovno pokretanje ili isključivanje vašeg čvora;
-- `Postavke`: Omogućava vam da promenite korisničku lozinku.
+- `Settings`: Omogućava vam da promenite korisničku lozinku.
 
 
-Tu imate! Hvala što ste pratili ovaj vodič do kraja. Ako vam se dopao, ohrabrujem vas da ga podelite na društvenim mrežama. Štaviše, ako imate priliku, razmislite o podršci programerima koji omogućavaju da ovaj besplatni i open-source softver bude dostupan našoj zajednici donacijom: [https://donate.ronindojo.io/](https://donate.ronindojo.io/). Da biste produbili svoje znanje o RoninDojo i otkrili više resursa, toplo preporučujem da konsultujete linkove ka spoljnim resursima pomenutim u nastavku.
+Eto! Hvala što ste pratili ovaj vodič do kraja. Ako vam se dopao, ohrabrujem vas da ga podelite na društvenim mrežama. Štaviše, ako imate priliku, razmislite o podršci programerima koji omogućavaju da ovaj besplatni i open-source softver bude dostupan našoj zajednici donacijom: [https://donate.ronindojo.io/](https://donate.ronindojo.io/). Da biste produbili svoje znanje o RoninDojo i otkrili više resursa, toplo preporučujem da konsultujete linkove ka spoljnim resursima pomenutim u nastavku.
 
 
 **Spoljni resursi:**
