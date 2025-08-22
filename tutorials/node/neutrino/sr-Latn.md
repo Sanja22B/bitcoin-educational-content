@@ -8,7 +8,7 @@ description: Vodič za instalaciju LND Neutrino
 
 #### 1. Preuzmite Raspberry Pi OS Lite
 
-Uputstva za preuzimanje i instalaciju slike na micro SD karticu u Windows, Mac i Linux operativnim sistemima možete pronaći na [ovoj stranici](https://www.raspberrypi.org/software/operating-systems/).
+Uputstva za preuzimanje i instalaciju slike na micro SD karticu za Windows, Mac i Linux operativne sisteme možete pronaći na [ovoj stranici](https://www.raspberrypi.org/software/operating-systems/).
 
 
 #### 2. Formatiraj SD karticu
