@@ -312,19 +312,19 @@ Da biste izvršili transfer, potrebno je manipulisati lokalnim Bitcoin novčanik
 ### Generisanje fakture
 
 
-U većini slučajeva, interakcija između učesnika u Contract (npr. Alice i Bob) odvija se putem generisanja Invoice. Ako Alice želi da Bob izvrši nešto (prenos tokena, ponovno izdavanje, akciju u DAO, itd.), Alice kreira Invoice sa detaljima svojih instrukcija za Boba. Tako imamo :
+U većini slučajeva, interakcija između učesnika u ugovoru (npr. Alice i Bob) odvija se putem generisanja fakture. Ako Alisa želi da Bob izvrši nešto (prenos tokena, ponovno izdavanje, akciju u DAO, itd.), Alisa kreira fakturu sa detaljima svojih instrukcija za Boba. Tako imamo :
 
 
 
 
-- Alice** (izdavalac Invoice) ;
-- Bob** (koji prima i izvršava Invoice).
+- **Alisa** (izdavalac fakture) ;
+- **Bob** (koji prima i izvršava fakturu).
 
 
-Za razliku od drugih ekosistema, RGB Invoice nije ograničen na pojam plaćanja. Može ugraditi bilo koji zahtev povezan sa Contract: opozvati ključ, glasati, kreirati gravuru (*gravura*) na NFT-u, itd. Odgovarajuća operacija može biti opisana u Contract Interface. Odgovarajuća operacija može biti opisana u Contract Interface.
+Za razliku od drugih ekosistema, RGB faktura nije ograničena na pojam plaćanja. Može ugraditi bilo koji zahtev povezan sa ugovorom: opozvati ključ, glasati, kreirati gravuru (*gravura*) na NFT-u, itd. Odgovarajuća operacija može biti opisana u interfejsu ugovora.
 
 
-Sledeća komanda generiše RGB Invoice:
+Sledeća komanda generiše RGB fakturu:
 
 
 ```bash
@@ -332,16 +332,16 @@ $ rgb invoice $CONTRACT -i $INTERFACE $ACTION $STATE $SEAL
 ```
 
 
-Sa :
+Gde je:
 
 
 
 
-- `$Contract`: Contract identifikator (*ContractId*) ;
-- `$Interface`: Interface da se koristi (npr. `RGB20`) ;
-- `$ACTION`: naziv operacije naveden u Interface (za jednostavan prenos fungibilnog tokena, to može biti "Transfer"). Ako Interface već pruža podrazumevanu akciju, ne morate je ponovo unositi ovde;
-- `$STATE`: status podataka koji treba preneti (na primer, količina tokena ako se prenosi fungibilni token);
-- `$Seal`: korisnikov (Alicein) Single-Use Seal, tj. eksplicitna referenca na UTXO. Bob će koristiti ove informacije da izgradi Witness Transaction, a odgovarajući izlaz će zatim pripadati Alice (u *blinded UTXO* ili nešifrovanom obliku).
+- `$Contract`: Identifikator ugovora(*ContractId*) ;
+- `$Interface`: Interface koji se koristi (npr. `RGB20`) ;
+- `$ACTION`: naziv operacije navedene u interfjesu (za jednostavan prenos zamenljivog tokena, to može biti "Transfer"). Ako interfejs već pruža podrazumevanu akciju, ne morate je ponovo unositi ovde;
+- `$STATE`: status podataka koji treba preneti (na primer, količina tokena ako se prenosi zamenljivi token);
+- `$Seal`: korisnikov (Alisin) Single-Use Seal, tj. eksplicitna referenca na UTXO. Bob će koristiti ove informacije da izgradi Witness Transaction, a odgovarajući izlaz će zatim pripadati Alisi (u *blinded UTXO* ili nešifrovanom obliku).
 
 
 Na primer, sa sledećim komandama
@@ -354,7 +354,7 @@ alice$ rgb invoice $CONTRACT -i RGB20 --amount 100 $MY_UTXO
 ```
 
 
-CLI će generate i Invoice kao :
+CLI će generate i fakturu kao:
 
 
 ```bash
@@ -368,12 +368,12 @@ Može se preneti Bobu putem bilo kog kanala (tekst, QR kod, itd.).
 ### Pravljenje transfera
 
 
-Da biste prešli sa ovog Invoice :
+Da biste izvršili transfer uz pomoć ove fakture:
 
 
 
 
-- Bob (koji drži tokene u svom Stash) ima Bitcoin Wallet. On treba da pripremi Bitcoin transakciju (u obliku PSBT, npr. `tx.PSBT`) koja troši UTXO-e gde se nalaze potrebni RGB tokeni, plus jedan UTXO za valutu (Exchange) ;
+- Bob (koji drži tokene u svom Stash) ima Bitcoin novčanik. On treba da pripremi Bitcoin transakciju (u obliku PSBT, npr. `tx.PSBT`) koja troši UTXO-e gde se nalaze potrebni RGB tokeni, plus jedan UTXO za valutu (Exchange) ;
 - Bob izvršava sledeću komandu:
 
 
@@ -389,7 +389,7 @@ bob$ rgb transfer tx.psbt $INVOICE consignment.rgb
  - Nova tranzicija koja prenosi tokene na Alisin Single-Use Seal ;
  - Witness Transaction (nepotpisan).
 - Bob šalje ovu datoteku `Consignment.RGB` Alisi (putem e-maila, servera za deljenje ili protokola RGB-RPC, Storm, itd.);
-- Alisa prima `Consignment.RGB` i prihvata ga u svom Stash :
+- Alisa prima `Consignment.RGB` i prihvata ga u svom Stash-u:
 
 
 ```bash
@@ -399,8 +399,8 @@ alice$ rgb accept consignment.rgb
 
 
 
-- CLI proverava validnost tranzicije i dodaje je na Alisin Stash. Ako je nevažeća, komanda ne uspeva sa detaljnim porukama o grešci. U suprotnom, uspeva i izveštava da uzorak transakcije još nije emitovan na Bitcoin mreži (Bob čeka Alisino Green svetlo);
-- Kao potvrdu, komanda `accept` vraća potpis (*payslip*) koji Alisa može poslati Bobu da mu pokaže da je verifikovala *Consignment* ;
+- CLI proverava validnost tranzicije i dodaje je na Alisin Stash. Ako je nevažeća, komanda ne uspeva sa detaljnim porukama o grešci. U suprotnom, uspeva i izveštava da uzorak transakcije još nije emitovan na Bitcoin mreži (Bob čeka Alisino zeleno svetlo);
+- Kao potvrdu, komanda `accept` vraća potpis (*payslip*) koji Alisa može poslati Bobu da mu pokaže da je verifikovala *Consignment*;
 - Bob zatim može potpisati i objaviti (`--publish`) svoju Bitcoin transakciju:
 
 
@@ -411,13 +411,13 @@ bob$ rgb check <sig> && wallet sign --publish tx.psbt
 
 
 
-- Čim se ova transakcija potvrdi On-Chain, Ownership sredstva se smatra prenetim na Alisu. Alisin Wallet, prateći Mining transakcije, vidi novi Owned State kako se pojavljuje u svom Stash.
+- Čim se ova transakcija potvrdi On-Chain, vlasništvo nad sredstvima se smatra prenetim na Alisu. Alisin novčanik, prateći izmajnovane transakcije, vidi novi Owned State kako se pojavljuje u njenom Stash-u.
 
 
-Sada znate kako da izdate i prenesete RGB Contract. Ako vam je ovaj vodič bio koristan, bio bih veoma zahvalan ako biste stavili Green palac ispod. Slobodno podelite ovaj članak na vašim društvenim mrežama. Hvala vam puno!
+Sada znate kako da izdate i prenesete RGB ugovor. Ako vam je ovaj vodič bio koristan, bio bih veoma zahvalan ako biste kliknuli na zeleni palac ispod. Slobodno podelite ovaj članak na vašim društvenim mrežama. Hvala vam puno!
 
 
-Takođe preporučujem ovaj drugi vodič u kojem objašnjavam kako pokrenuti Lightning čvor kompatibilan sa RGB za Exchange tokene gotovo trenutno:
+Takođe preporučujem ovaj drugi vodič u kojem objašnjavam kako pokrenuti Lightning čvor kompatibilan sa RGB za razmenu tokena gotovo trenutno:
 
 
 https://planb.network/tutorials/node/others/rln-ffc02528-329b-4e16-bd83-873d0299feea
