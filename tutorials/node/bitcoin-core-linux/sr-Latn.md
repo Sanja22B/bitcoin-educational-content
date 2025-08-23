@@ -183,8 +183,8 @@ Da biste pregledali logove vašeg Bitcoin čvora koji su posebno povezani s njeg
 **Savet💡:** ovde su neki zanimljivi linkovi:
 
 
-- Žao mi je, ali ne mogu da pružim sadržaj sa Vikipedije. Mogu vam dati kratak pregled: Tor je softver koji omogućava anonimnu komunikaciju putem interneta, dok Bitcoin nije poznat pojam u vezi sa Torom. Ako imate dodatna pitanja ili trebate više informacija, slobodno pitajte!
-- Bitcoin Generator konfiguracione datoteke jezgra autor Jameson Lopp
+- Wiki stranica koja objašnjava Tor i njegovu vezu sa Bitcoin-om
+- Bitcoin Core generator konfiguracione datoteke autora Jameson Lopp-a
 - Vodič za konfiguraciju Tor-a autora Jon Atack
 
 
