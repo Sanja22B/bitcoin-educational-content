@@ -11,7 +11,7 @@ U ovom vodiču korak po korak, naučićete kako da postavite Lightning RGB čvor
 ## Projekat RLN
 
 
-Bitfinexov RGB tim radi od 2022. godine na obogaćivanju RGB ekosistema razvijanjem kompletne tehnološke platforme. Umesto da teži ka jednom komercijalnom proizvodu, njegovi napori su usmereni na omogućavanje dostupnosti open-source softverskih komponenti, doprinos specifikacijama RGB protokola i kreiranje referenci za implementaciju.
+Bitfinexov RGB tim radi od 2022. godine na obogaćivanju RGB ekosistema razvijanjem kompletne tehnološke platforme. Umesto da teži ka jednom komercijalnom proizvodu, njegovi napori su usmereni na omogućavanje dostupnosti softverskih komponenti otvorenog koda, doprinosi specifikacijama RGB protokola i kreiranje referenci za implementaciju.
 
 
 Među značajnim doprinosima Bitfinexa RGB ekosistemu nalazi se [*RGBlib* biblioteka](https://github.com/RGB-Tools/RGB-lib), napisana u Rust-u i dostupna putem veza u Kotlinu i Pythonu, koja uveliko pojednostavljuje razvoj RGB aplikacija enkapsulirajući složene mehanizme validacije i angažovanja.
@@ -30,16 +30,16 @@ Bitfinex je takođe razvio projekat `RGB-lightning-node` (RLN). Ovo je Rust daem
 - Iskoristite Lightning-ovu kaznenu i timelock logiku bez modifikacije: jednostavno Anchor tranziciju u dodatnom izlazu Commitment transakcije.
 
 
-RLN kod je još uvek u alfa fazi: preporučujemo da ga koristite samo u **regtest** ili na **Testnet**.
+RLN kod je još uvek u alfa fazi: preporučujemo da ga koristite samo u **regtest** ili na **Testnetu**.
 
 
 ## RGB protokol podsetnik
 
 
-RGB je protokol koji radi na vrhu Bitcoin i emulira funkcionalnost Smart contract i upravljanje digitalnim sredstvima, bez preopterećenja Blockchain na kojem se zasniva. Za razliku od konvencionalnih On-Chain pametnih ugovora (kao na primer na Ethereum-u), RGB se oslanja na "*Client-side Validation*" sistem: većina podataka i istorija statusa se razmenjuje i skladišti isključivo od strane učesnika koji su uključeni, dok Bitcoin Blockchain samo hostuje male kriptografske obaveze (putem mehanizama kao što su *Tapret* ili *Opret*). U RGB protokolu, Bitcoin Blockchain stoga služi samo kao server za vremensko označavanje i sistem zaštite od dvostruke potrošnje.
+RGB je protokol koji radi na vrhu Bitcoin i emulira funkcionalnost pametnih ugovora i upravljanje digitalnim sredstvima, bez preopterećenja Blockchain na kojem se zasniva. Za razliku od konvencionalnih On-Chain pametnih ugovora (kao na primer na Ethereum-u), RGB se oslanja na "*Client-side Validation*" sistem: većina podataka i istorija statusa se razmenjuje i skladišti isključivo od strane učesnika koji su uključeni, dok Bitcoin Blockchain samo hostuje male kriptografske obaveze (putem mehanizama kao što su *Tapret* ili *Opret*). U RGB protokolu, Bitcoin Blockchain stoga služi samo kao server za vremensko označavanje i sistem zaštite od dvostruke potrošnje.
 
 
-RGB ugovor je strukturiran kao evoluciona mašina stanja. Počinje sa Genesis koji definiše početno stanje (opisujući, na primer, Supply, oznaku ili druge metapodatke) prema strogo tipiziranom i kompajliranoj šemi. Prelazi stanja i, ako je potrebno, proširenja stanja se zatim primenjuju da modifikuju ili prošire ovo stanje. Svaka operacija, bilo da se radi o prenosu fungibilnih sredstava (RGB20) ili kreiranju jedinstvenih sredstava (RGB21), uključuje *Jednokratne Pečate*. Oni povezuju Bitcoin UTXO-e sa off-chain stanjima i sprečavaju dvostruko trošenje, dok obezbeđuju poverljivost i skalabilnost.
+RGB ugovor je strukturiran kao evoluciona mašina stanja. Počinje sa Genesis koji definiše početno stanje (opisujući, na primer, ponudu, oznaku ili druge metapodatke) prema strogo tipiziranom i kompajliranoj šemi. Prelazi stanja i, ako je potrebno, proširenja stanja se zatim primenjuju da modifikuju ili prošire ovo stanje. Svaka operacija, bilo da se radi o prenosu zamenjivih sredstava (RGB20) ili kreiranju jedinstvenih sredstava (RGB21), uključuje *Jednokratne Pečate*. Oni povezuju Bitcoin UTXO-e sa off-chain stanjima i sprečavaju dvostruko trošenje, dok obezbeđuju poverljivost i skalabilnost.
 
 
 Da biste saznali više o tome kako funkcioniše RGB protokol, preporučujem da pohađate ovaj sveobuhvatan kurs obuke:
