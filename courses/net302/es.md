@@ -1,5 +1,5 @@
 ---
-name: Redes IP: de la teoría a la práctica
+name: Redes IP, de la teoría a la práctica
 goal: Domine los fundamentos de las redes IP para configurarlas mejor y solucionar sus problemas.
 objectives: 
 

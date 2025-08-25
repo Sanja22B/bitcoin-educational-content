@@ -2,8 +2,6 @@
 name: 從理論到實踐的 IP 網路
 goal: 掌握 IP 網路的基本原理，以便更好地設定 IP 網路並排除故障。
 objectives: 
-
-
   - 瞭解 TCP/IP 通訊協定的架構與運作
   - 解釋 IPv4 與 IPv6 的差異、優點與限制
   - 識別和區分不同類型的 IP Address
