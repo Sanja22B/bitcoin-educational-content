@@ -1,16 +1,16 @@
 ---
-name: Uvod u formalnu Kriptografiju
-goal: Duboko uranjanje u nauku i praksu kriptografije.
+name: Uvod u formalnu kriptografiju
+goal: Detaljan uvod u nauku i praksu kriptografije
 objectives: 
 
   - Istražite Beale šifre i moderne kriptografske metode kako biste razumeli osnovne i istorijske koncepte kriptografije.
-  - Uronite se u teoriju brojeva, grupe i polja kako biste savladali ključne matematičke pojmove koji su osnova kriptografije.
+  - Uronite u teoriju brojeva, grupe i polja kako biste savladali ključne matematičke pojmove koji se nalaze u osnovi kriptografije.
   - Proučite RC4 stream šifru i AES sa 128-bitnim ključem da biste saznali više o simetričnim kriptografskim algoritmima.
-  - Istražite RSA kriptosistem, distribuciju ključeva i Hash funkcije kako biste istražili asimetričnu kriptografiju.
+  - Istražite RSA kriptosistem, distribuciju ključeva i heš funkcije kako biste istražili asimetričnu kriptografiju.
 
 
 ---
-# Duboko zaronite u kriptografiju
+# Detaljan uvod u kriptografiju
 
 
 Teško je pronaći mnogo materijala koji nude dobru sredinu u obrazovanju o kriptografiji.
@@ -19,7 +19,7 @@ Teško je pronaći mnogo materijala koji nude dobru sredinu u obrazovanju o krip
 S jedne strane, postoje dugački, formalni traktati, zaista dostupni samo onima sa jakom pozadinom u matematici, logici ili nekoj drugoj formalnoj disciplini. S druge strane, postoje veoma uvodne prezentacije koje zaista skrivaju previše detalja za svakoga ko je makar malo radoznao.
 
 
-Ovaj uvod u kriptografiju nastoji da zauzme srednji put. Iako bi trebalo da bude relativno izazovan i detaljan za svakoga ko je nov u kriptografiji, nije zečja rupa tipičnog osnovnog traktata.
+Ovaj uvod u kriptografiju nastoji da zauzme srednji put. Iako bi trebalo da bude relativno izazovan i detaljan za svakoga ko je nov u kriptografiji, nije „zečja rupa“ tipičnog temeljno-osnovnog traktata.
 
 
 +++
@@ -36,7 +36,7 @@ Ovaj uvod u kriptografiju nastoji da zauzme srednji put. Iako bi trebalo da bude
 Dobrodošli na kurs CYP302!
 
 
-Ova knjiga nudi dubinsko uvodno proučavanje nauke i prakse kriptografije. Gde god je moguće, fokusira se na konceptualno, a ne formalno izlaganje materijala.
+Ova knjiga nudi detaljno uvodno proučavanje nauke i prakse kriptografije. Gde god je moguće, fokusira se na konceptualno, a ne formalno izlaganje materijala.
 
 
 
@@ -62,13 +62,13 @@ Od programera do intelektualno radoznalih, ova knjiga je korisna za svakoga ko �
 
 
 
-**Uputstva za čitanje**
+**Uputstvo za čitanje**
 
 
-Knjiga trenutno sadrži sedam poglavlja: "Šta je kriptografija?" (Poglavlje 1), "Matematičke osnove kriptografije I" (Poglavlje 2), "Matematičke osnove kriptografije II" (Poglavlje 3), "Simetrična kriptografija" (Poglavlje 4), "RC4 i AES" (Poglavlje 5), "Asimetrična kriptografija" (Poglavlje 6) i "RSA kriptosistem" (Poglavlje 7). Završno poglavlje, "Kriptografija u praksi," će još biti dodato. Ono se fokusira na razne kriptografske primene, uključujući sigurnost transporta Layer, onion routing i Bitcoin-ov sistem vrednosti Exchange.
+Knjiga trenutno sadrži sedam poglavlja: "Šta je kriptografija?" (Poglavlje 1), "Matematičke osnove kriptografije I" (Poglavlje 2), "Matematičke osnove kriptografije II" (Poglavlje 3), "Simetrična kriptografija" (Poglavlje 4), "RC4 i AES" (Poglavlje 5), "Asimetrična kriptografija" (Poglavlje 6) i "RSA kriptosistem" (Poglavlje 7). Završno poglavlje, "Kriptografija u praksi," će još biti dodato. Ono se fokusira na razne kriptografske primene, uključujući sigurnost transportnog sloja, onion routing i Bitcoin-ov sistem razmene vrednosti.
 
 
-Osim ako nemate snažnu pozadinu u matematici, teorija brojeva je verovatno najteža tema u ovoj knjizi. Nudim pregled u Poglavlju 3, a pojavljuje se i u izlaganju AES-a u Poglavlju 5 i RSA kriptosistema u Poglavlju 7.
+Osim ako nemate snažnu pozadinu u matematici, teorija brojeva je verovatno najteža tema u ovoj knjizi. Nudim pregled u Poglavlju 3, a pojavljuje se i u izlaganju o AES-a u Poglavlju 5 i o RSA kriptosistema u Poglavlju 7.
 
 
 Ako se zaista mučite sa formalnim detaljima u ovim delovima knjige, preporučujem da se prvi put zadovoljite čitanjem na visokom nivou.
@@ -94,7 +94,7 @@ Za one čitaoce koji žele da potraže naprednije znanje o kriptografiji nakon o
 **Doprinosi**
 
 
-Molimo pogledajte [datoteku sa doprinosima u spremištu](https://github.com/JWBurgers/An_Introduction_to_Cryptography/blob/master/Contributions.md) za neke smernice o tome kako podržati projekat.
+Molimo pogledajte [datoteku sa doprinosima u repozitorijumu](https://github.com/JWBurgers/An_Introduction_to_Cryptography/blob/master/Contributions.md) za neke smernice o tome kako podržati projekat.
 
 
 
@@ -104,7 +104,7 @@ Molimo pogledajte [datoteku sa doprinosima u spremištu](https://github.com/JWBu
 **Ključni pojmovi:**
 
 
-Ključni pojmovi u priručnicima se uvode tako što se podebljavaju. Na primer, uvođenje šifre Rijndael kao ključnog pojma bi izgledalo ovako: **šifra Rijndael**.
+Ključni pojmovi u priručnicima se uvode tako što se podebljavaju. Na primer, uvođenje Rijndael šifre kao ključnog pojma bi izgledalo ovako: **Rijndael šifra**.
 
 
 Ključni pojmovi su eksplicitno definisani, osim ako su vlastita imena ili je njihovo značenje očigledno iz diskusije.
@@ -117,7 +117,7 @@ Bilo koja definicija se obično daje prilikom uvođenja ključnog pojma, iako je
 **Naglašene reči i fraze:**
 
 
-Reči i fraze su naglašene putem italika. Na primer, fraza "Remember your password" bi izgledala ovako: *Remember your password*.
+Reči i fraze su naglašene putem italika. Na primer, fraza "Remember your password" bi izgledala ovako: *Remember your password* (prevod: "Zapamtite svoju šifru).
 
 
 
@@ -152,7 +152,7 @@ Hajde da započnemo naše istraživanje u oblasti kriptografije jednim od šarma
 Priča o Beale šiframa je, po mom mišljenju, verovatnije fikcija nego stvarnost. Ali navodno se dogodila ovako.
 
 
-I tokom zime 1820. i 1822. godine, čovek po imenu Thomas J. Beale boravio je u gostionici koju je posedovao Robert Morriss u Lynchburgu (Virginia). Na kraju Bealeovog drugog boravka, predao je Morrissu gvozdenu kutiju sa vrednim dokumentima na čuvanje.
+Tokom zime 1820. i 1822. godine, čovek po imenu Thomas J. Beale boravio je u gostionici koju je posedovao Robert Morriss u Lynchburgu (Virginia). Na kraju Bealeovog drugog boravka, predao je Morrissu gvozdenu kutiju sa vrednim dokumentima na čuvanje.
 
 
 Nekoliko meseci kasnije, Morriss je primio pismo od Bealea datirano na 9. maj 1822. U njemu je naglašena velika vrednost sadržaja gvozdene kutije i navedena su neka uputstva za Morrissa: ako ni Beale ni bilo koji od njegovih saradnika nikada ne dođu da preuzmu kutiju, trebalo bi da je otvori tačno deset godina od datuma pisma (to jest, 9. maja 1832). Neki od papira unutra biće napisani u običnom tekstu. Nekoliko drugih, međutim, biće „nerazumljivi bez pomoći ključa.“ Taj „ključ“ bi, zatim, trebalo da bude dostavljen Morrissu od strane neimenovanog Bealeovog prijatelja u junu 1832.
@@ -208,19 +208,19 @@ Nakon dešifrovanja, druga poruka pruža detaljan sadržaj blaga (zlato, srebro 
 <chapterId>d07d576f-8a4b-5890-b182-2e5763f550f4</chapterId>
 
 
-Šarene priče poput one o Beale šiframa su ono što većina nas povezuje sa kriptografijom. Ipak, moderna kriptografija se razlikuje na najmanje četiri važna načina od ovih tipova istorijskih primera.
+Šarene priče poput one o Beale šiframa su ono što većina nas povezuje sa kriptografijom. Ipak, moderna kriptografija se u najmanje četiri važna aspekta razlikuje od ovih istorijskih primera.
 
 
 Prvo, istorijski gledano, kriptografija se bavila samo **tajnošću** (ili poverljivošću). [3] Šifrovani tekstovi bi bili kreirani kako bi se osiguralo da samo određene strane mogu imati pristup informacijama u otvorenim tekstovima, kao u slučaju Beale-ovih šifara. Da bi šema enkripcije dobro služila ovoj svrsi, dešifrovanje šifrovanog teksta trebalo bi da bude izvodljivo samo ako imate ključ.
 
 
-Moderna kriptografija se bavi širim spektrom tema od same tajnosti. Ove teme uključuju prvenstveno (1) **integritet poruke**—odnosno, osiguranje da poruka nije izmenjena; (2) **autentičnost poruke**—odnosno, osiguranje da poruka zaista dolazi od određenog pošiljaoca; i (3) **neporecivost**—odnosno, osiguranje da pošiljalac kasnije ne može lažno poreći da je poslao poruku. [4]
+Moderna kriptografija se bavi širim spektrom tema od same tajnosti. Ove teme uključuju prvenstveno (1) **integritet poruke**—odnosno, osiguranje da poruka nije izmenjena; (2) **autentičnost poruke**—odnosno, osiguranje da poruka zaista dolazi od određenog pošiljaoca; i (3) **neporecivost**—odnosno, obezbeđivanje da pošiljalac kasnije ne može lažno poreći da je poslao poruku. [4]
 
 
 Važno je imati na umu razliku između **šeme enkripcije** i **kriptografske šeme**. Šema enkripcije se bavi samo tajnošću. Iako je šema enkripcije kriptografska šema, obrnuto nije tačno. Kriptografska šema može služiti i drugim glavnim temama kriptografije, uključujući integritet, autentičnost i neporecivost.
 
 
-Teme integriteta i autentičnosti su jednako važne kao i tajnost. Naši moderni komunikacioni sistemi ne bi mogli da funkcionišu bez garancija u vezi sa integritetom i autentičnošću komunikacija. Neporecivost je takođe važna briga, kao na primer za digitalne ugovore, ali je manje sveprisutno potrebna u kriptografskim aplikacijama nego tajnost, integritet i autentičnost.
+Teme integriteta i autentičnosti su jednako važne kao i tajnost. Naši moderni komunikacioni sistemi ne bi mogli da funkcionišu bez garancija u vezi sa integritetom i autentičnošću komunikacija. Neporecivost ili neopozivost je takođe važna, kao na primer za digitalne ugovore, ali je manje univerzalno potrebna u kriptografskim aplikacijama u poređenju sa tajnošću, integritetom i autentičnošću.
 
 
 Drugo, klasične šeme šifrovanja kao što su Beale šifre uvek uključuju jedan ključ koji je deljen među svim relevantnim stranama. Međutim, mnoge moderne kriptografske šeme uključuju ne samo jedan, već dva ključa: **privatni** i **javni ključ**. Dok prvi treba da ostane privatan u svim aplikacijama, drugi je obično javno poznat (otuda i njihova imena). U okviru šifrovanja, javni ključ može biti korišćen za šifrovanje poruke, dok se privatni ključ može koristiti za dešifrovanje.
@@ -232,7 +232,7 @@ Grana kriptografije koja se bavi šemama gde sve strane dele jedan ključ poznat
 Pojava asimetrične kriptografije krajem 1970-ih bila je jedan od najvažnijih događaja u istoriji kriptografije. Bez nje, većina naših modernih komunikacionih sistema, uključujući Bitcoin, ne bi bila moguća, ili bi barem bila veoma nepraktična.
 
 
-Važno je napomenuti da moderna kriptografija nije isključivo proučavanje simetričnih i asimetričnih kriptografskih šema (iako to pokriva veći deo oblasti). Na primer, kriptografija se takođe bavi Hash funkcijama i generatorima pseudorandom brojeva, i možete izgraditi aplikacije na ovim primitivima koje nisu povezane sa simetričnom ili asimetričnom kriptografijom ključeva.
+Važno je napomenuti da moderna kriptografija nije isključivo proučavanje simetričnih i asimetričnih kriptografskih šema (iako to pokriva veći deo oblasti). Na primer, kriptografija se takođe bavi heš funkcijama i generatorima pseudorandom brojeva, i možete izgraditi aplikacije na ovim primitivima koje nisu povezane sa simetričnom ili asimetričnom kriptografijom ključeva.
 
 
 Treće, klasične šeme šifrovanja, poput onih korišćenih u Beale šiframa, bile su više umetnost nego nauka. Njihova percipirana sigurnost uglavnom se zasnivala na intuicijama u vezi sa njihovom složenošću. Obično bi bile zakrpljene kada bi se saznalo za novi napad na njih, ili bi bile potpuno odbačene ako je napad bio posebno ozbiljan. Međutim, moderna kriptografija je rigorozna nauka sa formalnim, matematičkim pristupom kako razvoju, tako i analizi kriptografskih šema. [5]
@@ -248,7 +248,7 @@ Specifično, moderna kriptografija se fokusira na formalne **dokaze sigurnosti**
 3.	Izlaganje matematičkog **dokaza sigurnosti** šeme na osnovu formalnog pojma sigurnosti i bilo kojih matematičkih pretpostavki.
 
 
-Četvrto, dok se istorijski kriptografija prvenstveno koristila u vojnim okruženjima, ona je prožela naše svakodnevne aktivnosti u digitalnom dobu. Bilo da obavljate bankarske poslove putem interneta, objavljujete na društvenim mrežama, kupujete proizvod na Amazonu sa svojom kreditnom karticom ili dajete napojnicu prijatelju Bitcoin, kriptografija je sine qua non našeg digitalnog doba.
+Četvrto, dok se istorijski kriptografija prvenstveno koristila u vojnim okruženjima, ona je prožela naše svakodnevne aktivnosti u digitalnom dobu. Bilo da obavljate bankarske poslove putem interneta, objavljujete na društvenim mrežama, kupujete proizvod na Amazonu sa svojom kreditnom karticom ili dajete Bitcoinnapojnicu prijatelju, kriptografija je sine qua non našeg digitalnog doba.
 
 
 S obzirom na ova četiri aspekta moderne kriptografije, mogli bismo okarakterisati modernu **kriptografiju** kao nauku koja se bavi formalnim razvojem i analizom kriptografskih šema za zaštitu digitalnih informacija od napada protivnika. [6] Bezbednost ovde treba široko shvatiti kao sprečavanje napada koji narušavaju tajnost, integritet, autentifikaciju i/ili neporecivost u komunikacijama.
@@ -260,14 +260,14 @@ Kriptografija se najbolje posmatra kao poddisciplina **kibernetičke sigurnosti*
 Na primer, ako kompanija lokalno smešta skupe servere, možda će biti zabrinuta za obezbeđivanje ovog hardvera od krađe i oštećenja. Iako je ovo pitanje sajber bezbednosti, ima malo veze sa kriptografijom.
 
 
-Za još jedan primer, **phishing napadi** su čest problem u našem modernom dobu. Ovi napadi pokušavaju da prevare ljude putem e-maila ili nekog drugog medija za poruke kako bi otkrili osetljive informacije kao što su lozinke ili brojevi kreditnih kartica. Iako kriptografija može pomoći Address phishing napadima do određenog stepena, sveobuhvatan pristup zahteva više od samog korišćenja neke kriptografije.
+Za još jedan primer, **phishing napadi** su čest problem u našem modernom dobu. Ovi napadi pokušavaju da prevare ljude putem e-maila ili nekog drugog medija za poruke kako bi otkrili osetljive informacije kao što su lozinke ili brojevi kreditnih kartica. Iako kriptografija može pomoći rešavanju phishing napada do određenog stepena, sveobuhvatan pristup zahteva više od samog korišćenja neke kriptografije.
 
 
 
 **Beleške:**
 
 
-[3] Da budemo precizni, važne primene kriptografskih šema su bile povezane sa tajnošću. Deca, na primer, često koriste jednostavne kriptografske šeme za „zabavu“. Tajnost zapravo nije zabrinutost u tim slučajevima.
+[3] Da budemo precizni, važne primene kriptografskih šema su bile povezane sa tajnošću. Deca, na primer, često koriste jednostavne kriptografske šeme za „zabavu“. Tajnost u tim slučajevima zapravo nije od značaja.
 
 
 [4] Bruce Schneier, *Applied Cryptography*, 2nd edn, 2015 (Indianapolis, IN: John Wiley & Sons), str. 2.
