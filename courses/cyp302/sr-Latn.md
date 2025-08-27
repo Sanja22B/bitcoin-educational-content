@@ -285,10 +285,10 @@ Za još jedan primer, **phishing napadi** su čest problem u našem modernom dob
 <chapterId>cb23d0a6-ba9a-5dc6-a55a-258405ae4117</chapterId>
 
 
-Moderna kriptografija je dizajnirana da pruži sigurnosne garancije u **otvorenom komunikacionom** okruženju. Ako je naš komunikacioni kanal toliko dobro zaštićen da prisluškivači nemaju šanse da manipulišu ili čak samo posmatraju naše poruke, onda je kriptografija suvišna. Većina naših komunikacionih kanala, međutim, nije ovako dobro čuvana.
+Moderna kriptografija je dizajnirana da pruži sigurnosne garancije u **otvorenom komunikacionom** okruženju. Ako je naš komunikacioni kanal toliko dobro zaštićen da prisluškivači nemaju šanse da manipulišu ili čak da samo posmatraju naše poruke, onda je kriptografija suvišna. Većina naših komunikacionih kanala, međutim, nije ovako dobro čuvana.
 
 
-Kičma komunikacije u modernom svetu je ogromna mreža optičkih kablova. Obavljanje telefonskih poziva, gledanje televizije i pretraživanje interneta u modernom domaćinstvu uglavnom se oslanja na ovu mrežu optičkih kablova (mali procenat može se oslanjati isključivo na satelite). Istina je da možete imati različite podatkovne veze u svom domu, kao što su koaksijalni kabl, (asimetrična) digitalna pretplatnička linija i optički kabl. Ali, barem u razvijenom svetu, ovi različiti mediji za prenos podataka brzo se spajaju izvan vaše kuće na čvor u ogromnoj mreži optičkih kablova koja povezuje ceo svet. Izuzeci su neka udaljena područja razvijenog sveta, kao što su Sjedinjene Američke Države i Australija, gde podatkovni saobraćaj može i dalje prelaziti značajne udaljenosti preko tradicionalnih bakarnih telefonskih žica.
+Kičma komunikacije u modernom svetu je ogromna mreža optičkih kablova. Obavljanje telefonskih poziva, gledanje televizije i pretraživanje interneta u modernom domaćinstvu uglavnom se oslanja na ovu mrežu optičkih kablova (mali procenat može se oslanjati isključivo na satelite). Istina je da možete imati različite veze za prenos podataka u svom domu, kao što su koaksijalni kabl, (asimetrična) digitalna pretplatnička linija i optički kabl. Ali, barem u razvijenom svetu, ovi različiti mediji za prenos podataka brzo se spajaju izvan vaše kuće na čvor u ogromnoj mreži optičkih kablova koja povezuje ceo svet. Izuzeci su neka udaljena područja razvijenog sveta, kao što su Sjedinjene Američke Države i Australija, gde saobraćaj podataka može i dalje prelaziti značajne udaljenosti preko tradicionalnih bakarnih telefonskih žica.
 
 
 Bilo bi nemoguće sprečiti potencijalne napadače da fizički pristupe ovoj mreži kablova i njenoj pratećoj infrastrukturi. Zapravo, već znamo da većinu naših podataka presreću razne nacionalne obaveštajne agencije na ključnim tačkama preseka Interneta.[7] Ovo uključuje sve, od poruka na Facebook-u do adresa veb-sajtova koje posećujete.
@@ -325,7 +325,7 @@ Stoga, ideja o čuvanju komunikacija u tajnosti zaštitom komunikacionog kanala 
 Kriptografija se oslanja na matematiku. I ako želite da izgradite više od površnog razumevanja kriptografije, morate biti komforni sa tom matematikom.
 
 
-Ovo poglavlje uvodi većinu osnovne matematike s kojom ćete se susresti prilikom učenja kriptografije. Teme uključuju slučajne varijable, modulo operacije, XOR operacije i pseudonasumičnost. Trebalo bi da savladate materijal u ovim sekcijama za bilo kakvo nesuperficijalno razumevanje kriptografije.
+Ovo poglavlje uvodi većinu osnovne matematike s kojom ćete se susresti prilikom učenja kriptografije. Teme uključuju slučajne varijable, modulo operacije, XOR operacije i pseudonasumičnost. Trebalo bi da savladate materijal u ovim sekcijama za bilo kakvo nepovršno razumevanje kriptografije.
 
 
 Sledeći deo se bavi teorijom brojeva, što je mnogo izazovnije.
@@ -372,8 +372,7 @@ Promenljiva $X$ iznad je definisana apstraktno. Stoga, možete zamisliti uzorkov
 Alternativno, možete zamisliti uzorkovanje $X$, kao bacanje poštene kocke i dodeljivanje “2” u slučaju da kocka pokaže $1$, $3$, ili $4$, i dodeljivanje “1” u slučaju da kocka pokaže $2$, $5$, ili $6$. Svaki put kada uzorkujete $X$, ponovo bacate kocku.
 
 
-Zaista, bilo koji prirodni eksperiment koji bi vam omogućio da definišete verovatnoće mogućih vrednosti $X$ iznad može se zamisliti u vezi sa crtanjem.
-
+Zapravo, svaki prirodni eksperiment koji bi vam omogućio da odredite verovatnoće mogućih vrednosti gore navedenih može se zamisliti u odnosu na izvlačenje.
 
 Često, međutim, slučajne promenljive nisu samo apstraktno uvedene. Umesto toga, skup mogućih vrednosti ishoda ima eksplicitno značenje u stvarnom svetu (umesto samo kao brojevi). Pored toga, ove vrednosti ishoda mogu biti definisane u odnosu na neku specifičnu vrstu eksperimenta (umesto kao bilo koji prirodni eksperiment sa tim vrednostima).
 
@@ -382,7 +381,7 @@ Hajde sada da razmotrimo primer promenljive $X$ koja nije apstraktno definisana.
 
 
 
-- $X$ ima skup ishoda {red kicks off,blue kicks off}
+- $X$ ima skup ishoda {Crveni započinju utakmicu, plavi započinju utakmicu}
 - Bacite određeni novčić $C$: pismo = „crveni počinje“; glava = „plavi počinje“
 
 
@@ -415,10 +414,10 @@ Za kriptografske diskusije, potrebno je razumeti samo diskretne slučajne promen
 
 
 
-### Grafikovanje slučajnih varijabli
+### Grafički prikaz slučajnih varijabli
 
 
-Moguće vrednosti i pridružene verovatnoće za slučajnu promenljivu mogu se lako vizualizovati putem grafa. Na primer, razmotrimo slučajnu promenljivu $X$ iz prethodnog odeljka sa skupom ishoda $\{1, 2\}$, i $Pr [X = 1] = 0.5$ i $Pr [X = 2] = 0.5$. Takvu slučajnu promenljivu bismo obično prikazali u obliku stubičastog grafa kao u *Figure 1*.
+Moguće vrednosti i pridružene verovatnoće za slučajnu promenljivu mogu se lako vizualizovati putem grafa. Na primer, razmotrimo slučajnu promenljivu $X$ iz prethodnog odeljka sa skupom ishoda $\{1, 2\}$, i $Pr [X = 1] = 0.5$ i $Pr [X = 2] = 0.5$. Takvu slučajnu promenljivu bismo obično prikazali u obliku stubičastog grafa kao u *Slici 1*.
 
 
 *Slika 1: Slučajna promenljiva X*
@@ -427,7 +426,7 @@ Moguće vrednosti i pridružene verovatnoće za slučajnu promenljivu mogu se la
 ![Figure 1: Random variable X.](assets/Figure2-1.webp)
 
 
-Široke trake u *Figure 1* očigledno ne znače da nasumična varijabla $X$ zapravo ima kontinuiranu distribuciju. Umesto toga, trake su napravljene širokim kako bi bile vizuelno privlačnije (samo linija koja ide pravo gore pruža manje intuitivnu vizualizaciju).
+Široke stubovi u *Slici 1* očigledno ne znače da nasumična varijabla $X$ zapravo ima kontinuiranu distribuciju. Umesto toga, stubovi su napravljeni širokim kako bi bile vizuelno privlačnije (samo linija koja ide pravo gore pruža manje intuitivnu vizualizaciju).
 
 
 
@@ -509,7 +508,7 @@ $$
 $$
 
 
-Možete ga videti prikazanog na *Figure 3*. Nasumična promenljiva Z je, za razliku od Y, uniformna promenljiva, jer su sve verovatnoće za moguće vrednosti pri uzorkovanju jednake.
+Možete ga videti prikazanog na *Slici 3*. Nasumična promenljiva Z je, za razliku od Y, uniformna promenljiva, jer su sve verovatnoće za moguće vrednosti pri uzorkovanju jednake.
 
 
 
