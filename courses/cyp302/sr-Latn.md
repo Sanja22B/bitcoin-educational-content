@@ -625,7 +625,7 @@ Najosnovniji izraz sa **modulo operacijom** je sledećeg oblika: $x \mod y$.
 Promenljiva $x$ se naziva deljenik, a promenljiva $y$ delilac. Da biste izvršili modulo operaciju sa pozitivnim deljenikom i pozitivnim deliocem, jednostavno odredite ostatak deljenja.
 
 
-Na primer, razmotrimo izraz $25 \mod 4$. Broj 4 ide u broj 25 ukupno 6 puta. Ostatak te deljenja je 1. Dakle, $25 \mod 4$ je jednako 1. Na sličan način, možemo izračunati izraze ispod:
+Na primer, razmotrimo izraz $25 \mod 4$. Broj 4 ide u broj 25 ukupno 6 puta. Ostatak tog deljenja je 1. Dakle, $25 \mod 4$ je jednako 1. Na sličan način, možemo izračunati izraze ispod:
 
 
 
@@ -643,10 +643,10 @@ Definitivno ćete naići na slučajeve sa negativnim deliocem u kriptografiji. U
 
 
 - Prvo odredite najbližu vrednost *manju ili jednaku* deliocu u koju delilac deli sa ostatkom nula. Nazovite tu vrednost $p$.
-- Ako je dividenda $x$, onda je rezultat operacije modulo vrednost $x – p$.
+- Ako je deljenik $x$, onda je rezultat operacije modulo vrednost $x – p$.
 
 
-Na primer, pretpostavimo da je dividenda $–20$ a delilac 3. Najbliža vrednost manja ili jednaka $–20$ u koju 3 deli ravnomerno je $–21$. Vrednost $x – p$ u ovom slučaju je $–20 – (–21)$. Ovo je jednako 1 i, prema tome, $–20 \mod 3$ je jednako 1. Na sličan način, možemo izračunati izraze ispod:
+Na primer, pretpostavimo da je deljenik $–20$ a delilac 3. Najbliža vrednost manja ili jednaka $–20$ u koju 3 deli ravnomerno je $–21$. Vrednost $x – p$ u ovom slučaju je $–20 – (–21)$. Ovo je jednako 1 i, prema tome, $–20 \mod 3$ je jednako 1. Na sličan način, možemo izračunati izraze ispod:
 
 
 
@@ -658,7 +658,7 @@ Na primer, pretpostavimo da je dividenda $–20$ a delilac 3. Najbliža vrednost
 U vezi sa notacijom, obično ćete videti sledeće tipove izraza: $x = [y \mod z]$. Zbog zagrada, operacija modulo u ovom slučaju se primenjuje samo na desnu stranu izraza. Ako je $y$ jednako 25, a $z$ jednako 4, na primer, tada $x$ iznosi 1.
 
 
-Without brackets, the modulo operation acts on *both sides* of an expression. Suppose, for instance, the following expression: $x = y \mod z$. If $y$ equals 25 and $z$ equals 4, then all we know is that $x \mod 4$ evaluates to 1. This is consistent with any value for $x$ from the set $\{\ldots,–7, –3, 1, 5, 9,\ldots\}$.
+Bez uglastih zagrada, operacija modula deluje na *obe strane* izraza. Pretpostavite, na primer, sledeći izraz: $x = y \mod z$. Ako $y$ je jednako 25 i ako $z$ je jednako 4, onda znamo da  $x \mod 4$ je jedanko 1. Ovo odgovara bilo kojoj vrednosti $x$ iz seta $\{\ldots,–7, –3, 1, 5, 9,\ldots\}$.
 
 
 Grana matematike koja uključuje modulo operacije na brojevima i izrazima naziva se **modularna aritmetika**. Možete misliti na ovu granu kao na aritmetiku za slučajeve u kojima brojna linija nije beskonačno dugačka. Iako obično nailazimo na modulo operacije za (pozitivne) cele brojeve unutar kriptografije, možete takođe izvoditi modulo operacije koristeći bilo koje realne brojeve.
@@ -725,7 +725,7 @@ Pr[K = 1] = \frac{1}{26}
 $$
 
 
-...i tako dalje. Uzorak uniformne promenljive $K$ jednom da bi se dobio određeni ključ.
+...i tako dalje. Uzorkujte uniformnu promenljivu $K$ jednom da bi ste dobili određeni ključ.
 
 
 
