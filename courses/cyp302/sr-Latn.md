@@ -522,25 +522,25 @@ Možete ga videti prikazanog na *Slici 3*. Nasumična promenljiva Z je, za razli
 ### Uslovna verovatnoća
 
 
-Pretpostavimo da Bob namerava da ravnomerno izabere dan iz poslednje kalendarske godine. Šta treba da zaključimo da je verovatnoća da izabrani dan bude u letu?
+Pretpostavimo da Bob namerava da ravnomerno izabere dan iz poslednje kalendarske godine. Kakav bi trebalo da bude naš zaključak o verovatnoći da izabrani dan bude u leto?
 
 
-Sve dok mislimo da će Bobov proces zaista biti potpuno uniforman, trebali bismo zaključiti da postoji verovatnoća od 1/4 da Bob izabere dan u letu. Ovo je **bezuslovna verovatnoća** da nasumično izabrani dan bude u letu.
+Sve dok mislimo da će Bobov proces zaista biti potpuno uniforman, trebali bismo zaključiti da postoji verovatnoća od 1/4 da Bob izabere dan u leto. Ovo je **bezuslovna verovatnoća** da nasumično izabrani dan bude u leto.
 
 
-Pretpostavimo sada da Bob umesto da nasumično bira kalendarski dan, bira samo nasumično među onim danima kada je podnevna temperatura na Crystal Lake-u (New Jersey) bila 21 stepen Celzijusa ili viša. S obzirom na ove dodatne informacije, šta možemo zaključiti o verovatnoći da će Bob izabrati dan u letu?
+Pretpostavimo sada da Bob umesto da nasumično bira kalendarski dan, bira samo nasumično među onim danima kada je podnevna temperatura na Crystal Lake-u (New Jersey) bila 21 stepen celzijusa ili viša. S obzirom na ove dodatne informacije, šta možemo zaključiti o verovatnoći da će Bob izabrati dan u leto?
 
 
 Zaista bismo trebali izvući drugačiji zaključak nego ranije, čak i bez ikakvih dodatnih specifičnih informacija (npr., temperatura u podne svakog dana prošle kalendarske godine).
 
 
-Znajući da je Crystal Lake u New Jerseyju, sigurno ne bismo očekivali da temperatura u podne bude 21 stepen Celzijusa ili viša zimi. Umesto toga, mnogo je verovatnije da je to topao dan u proleće ili jesen, ili dan negde u leto. Dakle, znajući da je temperatura u podne na Crystal Lakeu na odabrani dan bila 21 stepen Celzijusa ili viša, verovatnoća da je dan koji je Bob odabrao u leto postaje mnogo veća. Ovo je **uslovna verovatnoća** da je nasumično odabrani dan u leto, s obzirom na to da je temperatura u podne na Crystal Lakeu bila 21 stepen Celzijusa ili viša.
+Znajući da je Crystal Lake u New Jerseyju, sigurno ne bismo očekivali da temperatura u podne bude 21 stepen celzijusa ili viša zimi. Umesto toga, mnogo je verovatnije da je to topao dan u proleće ili jesen, ili dan negde u leto. Dakle, znajući da je temperatura u podne na Crystal Lakeu na odabrani dan bila 21 stepen celzijusa ili viša, verovatnoća da je dan koji je Bob odabrao u leto postaje mnogo veća. Ovo je **uslovna verovatnoća** da je nasumično odabrani dan u leto, s obzirom na to da je temperatura u podne na Crystal Lakeu bila 21 stepen celzijusa ili viša.
 
 
 Za razliku od prethodnog primera, verovatnoće dva događaja takođe mogu biti potpuno nepovezane. U tom slučaju, kažemo da su **nezavisni**.
 
 
-Pretpostavimo, na primer, da je određeni pošten novčić pao na glavu. S obzirom na ovu činjenicu, kolika je, onda, verovatnoća da će sutra padati kiša? Uslovna verovatnoća u ovom slučaju treba da bude ista kao i bezuslovna verovatnoća da će sutra padati kiša, jer bacanje novčića generalno nema uticaja na vreme.
+Pretpostavimo, na primer, da je određeni regularan novčić pao na glavu. S obzirom na ovu činjenicu, kolika je, onda, verovatnoća da će sutra padati kiša? Uslovna verovatnoća u ovom slučaju treba da bude ista kao i bezuslovna verovatnoća da će sutra padati kiša, jer bacanje novčića generalno nema uticaja na vreme.
 
 
 Koristimo simbol "|" za pisanje izjava o uslovnoj verovatnoći. Na primer, verovatnoća događaja $A$ pod uslovom da se dogodio događaj $B$ može se napisati na sledeći način:
