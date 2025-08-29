@@ -734,7 +734,7 @@ $$
 <chapterId>22f185cc-c516-5b33-950b-0908f2f881fe</chapterId>
 
 
-Svi računarski podaci se obrađuju, skladište i šalju preko mreža na nivou bitova. Bilo koje šeme kriptografije koje se primenjuju na računarske podatke takođe funkcionišu na nivou bitova.
+Svi računarski podaci se obrađuju, skladište i šalju preko mreža na nivou bitova. Bilo koje kriptografske šeme koje se primenjuju na računarske podatke takođe funkcionišu na nivou bitova.
 
 
 Na primer, pretpostavimo da ste otkucali e-mail u svojoj e-mail aplikaciji. Bilo koje šifrovanje koje primenite ne dešava se direktno na ASCII karakterima vašeg e-maila. Umesto toga, primenjuje se na bit-reprezentaciju slova i drugih simbola u vašem e-mailu.
@@ -781,7 +781,7 @@ XOR operacija je ekvivalentna posebnom slučaju izvođenja modulo operacije na s
 <chapterId>20463fc5-3e92-581f-a1b7-3151279bd95e</chapterId>
 
 
-U našoj diskusiji o slučajnim i uniformnim varijablama, napravili smo specifičnu razliku između "slučajnih" i "uniformnih". Ta razlika se obično održava u praksi kada se opisuju slučajne varijable. Međutim, u našem trenutnom kontekstu, ova razlika treba biti zanemarena i "slučajno" i "uniformno" se koriste kao sinonimi. Objasniću zašto na kraju odeljka.
+U našoj diskusiji o slučajnim i uniformnim varijablama, napravili smo specifičnu razliku između "slučajnih" i "uniformnih". Ta razlika se obično zadržava  u praksi prilikom opisivanja slučajnih varijabli. Međutim, u našem trenutnom kontekstu, ova razlika treba biti zanemarena i "slučajno" i "uniformno" se koriste kao sinonimi. Objasniću zašto na kraju odeljka.
 
 
 Da bismo počeli, možemo nazvati binarni niz dužine $n$ **slučajnim** (ili **uniformnim**), ako je rezultat uzorkovanja uniformne varijable $S$ koja daje svakom binarnom nizu te dužine $n$ jednaku verovatnoću izbora.
@@ -802,7 +802,7 @@ Na primer, mnogi ljudi intuitivno imaju ideju da niz kao što je $1111\ 1111$ ni
 Definišući uniformnu varijablu $S$ preko svih binarnih nizova dužine 8, verovatnoća odabira $1111\ 1111$ iz skupa **$S_8$** je ista kao i za niz kao što je $0111\ 0100$. Dakle, ne možete ništa reći o nasumičnosti niza, samo analizirajući sam niz.
 
 
-Takođe možemo govoriti o nasumičnim nizovima bez specifičnog misljenja na binarne nizove. Na primer, možemo govoriti o nasumičnom heksadecimalnom nizu $AF\ 02\ 82$. U ovom slučaju, niz bi bio nasumično izabran iz skupa svih heksadecimalnih nizova dužine 6. Ovo je ekvivalentno nasumičnom izboru binarnog niza dužine 24, jer svaka heksadecimalna cifra predstavlja 4 bita.
+Možemo takođe govoriti o nasumičnim nizovima, ne misleći pri tom isključivo na binarne nizove. Na primer, možemo govoriti o nasumičnom heksadecimalnom nizu $AF\ 02\ 82$. U ovom slučaju, niz bi bio nasumično izabran iz skupa svih heksadecimalnih nizova dužine 6. Ovo je ekvivalentno nasumičnom izboru binarnog niza dužine 24, jer svaka heksadecimalna cifra predstavlja 4 bita.
 
 
 Tipično, izraz „nasumičan niz“, bez kvalifikacije, odnosi se na niz nasumično odabran iz skupa svih nizova iste dužine. Ovako sam ga opisao gore. Niz dužine $n$ može, naravno, biti nasumično odabran i iz drugog skupa. Na primer, iz skupa koji čini samo podskup svih nizova dužine $n$, ili možda iz skupa koji uključuje nizove različitih dužina. U tim slučajevima, međutim, ne bismo ga nazvali „nasumičnim nizom“, već „nizom koji je nasumično odabran iz nekog skupa **S**“.
@@ -811,25 +811,25 @@ Tipično, izraz „nasumičan niz“, bez kvalifikacije, odnosi se na niz nasumi
 Ključni koncept u kriptografiji je pseudonasumičnost. **Pseudonasumični niz** dužine $n$ izgleda *kao da* je rezultat uzorkovanja uniformne varijable $S$ koja svakom nizu u **$S_n$** daje jednaku verovatnoću izbora. Međutim, niz je zapravo rezultat uzorkovanja uniformne varijable $S'$ koja samo definiše raspodelu verovatnoće—ne nužno onu sa jednakim verovatnoćama za sve moguće ishode—na podskupu **$S_n$**. Ključna tačka ovde je da niko ne može zaista razlikovati uzorke iz $S$ i $S'$, čak i ako ih uzmete mnogo.
 
 
-Pretpostavimo, na primer, slučajnu promenljivu $S$. Njeno skup ishoda je **$S_{256}$**, to je skup svih binarnih nizova dužine 256. Ovaj skup ima $2^{256}$ Elements. Svaki element ima jednaku verovatnoću izbora, $1/2^{256}$, prilikom uzorkovanja.
+Pretpostavimo, na primer, slučajnu promenljivu $S$. Njen skup ishoda je **$S_{256}$**, to je skup svih binarnih nizova dužine 256. Ovaj skup ima $2^{256}$ elemenata. Svaki element ima jednaku verovatnoću izbora, $1/2^{256}$, prilikom uzorkovanja.
 
 
-Pored toga, pretpostavimo nasumičnu promenljivu $S'$. Njeno skup ishoda uključuje samo $2^{128}$ binarnih nizova dužine 256. Ona ima neku verovatnosnu distribuciju nad tim nizovima, ali ta distribucija nije nužno uniformna.
+Pored toga, pretpostavimo nasumičnu promenljivu $S'$. Njen skup ishoda uključuje samo $2^{128}$ binarnih nizova dužine 256. Ona ima neku verovatnosnu distribuciju nad tim nizovima, ali ta distribucija nije nužno uniformna.
 
 
-Pretpostavimo da sam sada uzeo 1000-e uzoraka iz $S$ i 1000-e uzoraka iz $S'$ i dao ti dva skupa ishoda. Kažem ti koji skup ishoda je povezan sa kojom slučajnom promenljivom. Zatim, uzimam uzorak iz jedne od dve slučajne promenljive. Ali ovaj put ti ne kažem iz koje slučajne promenljive uzimam uzorak. Ako je $S'$ pseudonasumičan, ideja je da je tvoja verovatnoća da tačno pogodiš iz koje slučajne promenljive sam uzeo uzorak praktično ne bolja od $1/2$.
+Pretpostavimo da sam sada uzeo 1000 uzoraka iz $S$ i 1000 uzoraka iz $S'$ i dao ti dva skupa ishoda. Kažem ti koji skup ishoda je povezan sa kojom slučajnom promenljivom. Zatim, uzimam uzorak iz jedne od dve slučajne promenljive. Ali ovaj put ti ne kažem iz koje slučajne promenljive uzimam uzorak. Ako je $S'$ pseudonasumičan, ideja je da je tvoja verovatnoća da tačno pogodiš iz koje slučajne promenljive sam uzeo uzorak praktično ne bolja od $1/2$.
 
 
 Tipično, pseudonasumičan niz dužine $n$ se proizvodi nasumičnim odabirom niza veličine $n – x$, gde je $x$ pozitivan ceo broj, i korišćenjem tog niza kao ulaza za ekspanzivni algoritam. Ovaj nasumičan niz veličine $n – x$ je poznat kao **seed**.
 
 
-Pseudorandom nizovi su ključni koncept za praktičnu primenu kriptografije. Razmotrite, na primer, strim šifre. Kod strim šifre, nasumično odabrani ključ se ubacuje u ekspanzivni algoritam kako bi se proizveo mnogo veći pseudorandom niz. Ovaj pseudorandom niz se zatim kombinuje sa otvorenim tekstom putem XOR operacije kako bi se proizveo šifrovani tekst.
+Pseudonasumični nizovi su ključni koncept za praktičnu primenu kriptografije. Razmotrite, na primer, tokovne šifre (eng. stream cipher). Kod tokovne šifre, nasumično odabrani ključ se ubacuje u ekspanzivni algoritam kako bi se proizveo mnogo veći pseudonasumičan niz. Ovaj pseudonasumičan niz se zatim kombinuje sa otvorenim tekstom putem XOR operacije kako bi se proizveo šifrovani tekst.
 
 
-Ako ne bismo mogli da proizvedemo ovu vrstu pseudonasumičnog niza za tok šifru, onda bismo trebali ključ koji je dug koliko i poruka za njenu sigurnost. Ovo nije baš praktična opcija u većini slučajeva.
+Ako ne bismo mogli da proizvedemo ovu vrstu pseudonasumičnog niza za tokovnu šifru, onda bismo trebali ključ koji je dug koliko i poruka za njenu sigurnost. Ovo nije baš praktična opcija u većini slučajeva.
 
 
-Pojam pseudonasumičnosti o kojem se raspravlja u ovom odeljku može se formalnije definisati. Takođe se proširuje na druge kontekste. Ali ne moramo ulaziti u tu raspravu ovde. Sve što zaista treba intuitivno da razumete za veći deo kriptografije je razlika između nasumičnog i pseudonasumičnog niza. [2]
+Pojam pseudonasumičnosti o kojem se raspravlja u ovom odeljku može se formalnije definisati. Takođe se proširuje na druge kontekste. Ali ne moramo ulaziti u tu raspravu ovde. Sve što zaista treba intuitivno da razumete za veliki deo kriptografije postoji razlika između nasumičnog i pseudonasumičnog niza. [2]
 
 
 Razlog za ukidanje razlike između "nasumičan" i "uniforman" u našoj diskusiji sada bi takođe trebalo da bude jasan. U praksi, svi koriste termin pseudonasumičan da označe niz koji izgleda **kao da** je rezultat uzorkovanja uniformne promenljive $S$. Strogo govoreći, takav niz bismo trebali nazvati "pseudo-uniforman," usvajajući naš raniji jezik. Pošto je termin "pseudo-uniforman" i nezgrapan i niko ga ne koristi, nećemo ga uvoditi ovde radi jasnoće. Umesto toga, jednostavno ćemo izostaviti razliku između "nasumičan" i "uniforman" u trenutnom kontekstu.
