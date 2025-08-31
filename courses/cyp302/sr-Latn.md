@@ -987,25 +987,25 @@ Bitcoin transakcije obično uključuju zaključavanje izlaza na jedan ili više 
 <chapterId>bfa5c714-7952-5fef-88b1-ca5b07edd886</chapterId>
 
 
-Glavna razlika koju možemo povući je između **konačne** i **beskonačne grupe**. Prva ima konačan broj Elements, dok druga ima beskonačan broj Elements. Broj Elements u bilo kojoj konačnoj grupi poznat je kao **red grupe**. Sva praktična kriptografija koja uključuje upotrebu grupa oslanja se na konačne (brojčano-teorijske) grupe.
+Glavna razlika koju možemo povući je između **konačne** i **beskonačne grupe**. Prva ima konačan broj elemenata, dok druga ima beskonačan broj elemenata. Broj elemenata u bilo kojoj konačnoj grupi poznat je kao **red grupe**. Sva praktična kriptografija koja uključuje upotrebu grupa oslanja se na konačne (brojčano-teorijske) grupe.
 
 
-U okviru kriptografije sa javnim ključem, određena klasa konačnih Abelovih grupa poznata kao ciklične grupe je posebno važna. Da bismo razumeli ciklične grupe, prvo moramo razumeti koncept potenciranja elemenata grupe.
+U okviru kriptografije sa javnim ključem, određena klasa konačnih Abelovih grupa poznata kao ciklične grupe je posebno važna. Da bismo razumeli ciklične grupe, najpre moramo da razumemo pojam stepenovanja elemenata grupe.
 
 
-Pretpostavimo da je $G$ grupa sa grupnom operacijom $\circ$, i da je $a$ element grupe $G$. Izraz $a^n$ treba, dakle, interpretirati kao element $a$ kombinovan sam sa sobom ukupno $n – 1$ puta. Na primer, $a^2$ znači $a \circ a$, $a^3$ znači $a \circ a \circ a$, i tako dalje. (Napomena: potenciranje ovde nije nužno potenciranje u standardnom aritmetičkom smislu.)
+Pretpostavimo da je $G$ grupa sa grupnom operacijom $\circ$, i da je $a$ element grupe $G$. Izraz $a^n$ treba, dakle, interpretirati kao element $a$ kombinovan sam sa sobom ukupno $n – 1$ puta. Na primer, $a^2$ znači $a \circ a$, $a^3$ znači $a \circ a \circ a$, i tako dalje. (Napomena: potenciranje ili stepenovanje ovde nije nužno potenciranje u standardnom aritmetičkom smislu.)
 
 
 Okrenimo se primeru. Pretpostavimo da je $G = \langle \mathbb{Z} \mod 7, + \rangle$, i da naša vrednost za $a$ iznosi 4. U ovom slučaju, $a^2 = [4 + 4 \mod 7] = [8 \mod 7] = 1 \mod 7$. Alternativno, $a^4$ bi predstavljao $[4 + 4 + 4 + 4 \mod 7] = [16 \mod 7] = 2 \mod 7$.
 
 
-Neke abelove grupe imaju jedan ili više Elements, koji mogu proizvesti sve druge grupe Elements kroz kontinuirano potenciranje. Ovi Elements se nazivaju **generatori** ili **primitivni Elements**.
+Neke abelove grupe imaju jedan ili više elemenata, koji mogu proizvesti sve druge grupe elemenata kroz kontinuirano potenciranje. Ovi elementi se nazivaju **generatori** ili **primitivni elementi**.
 
 
-Jedna važna klasa takvih grupa je $\langle \mathbb{Z}^* \mod N, \cdot \rangle$, gde je $N$ prost broj. Oznaka $\mathbb{Z}^*$ ovde znači da grupa sadrži sve nenulte, pozitivne cele brojeve manje od $N$. Takva grupa, dakle, uvek ima $N – 1$ Elements.
+Jedna važna klasa takvih grupa je $\langle \mathbb{Z}^* \mod N, \cdot \rangle$, gde je $N$ prost broj. Oznaka $\mathbb{Z}^*$ ovde znači da grupa sadrži sve nenulte, pozitivne cele brojeve manje od $N$. Takva grupa, dakle, uvek ima $N – 1$ elemenata.
 
 
-Razmotrimo, na primer, $G = \langle \mathbb{Z}^* \mod 11, \cdot \rangle$. Ova grupa ima sledeći Elements: $\{1, 2, 3, 4, 5, 6, 7, 8, 9, 10\}$. Red ove grupe je 10 (što je zaista jednako $11 – 1$).
+Razmotrimo, na primer, $G = \langle \mathbb{Z}^* \mod 11, \cdot \rangle$. Ova grupa ima sledeći elemente: $\{1, 2, 3, 4, 5, 6, 7, 8, 9, 10\}$. Red ove grupe je 10 (što je zaista jednako $11 – 1$).
 
 
 Hajde da istražimo potenciranje elementa 2 iz ove grupe. Izračunavanja do $2^{12}$ su prikazana ispod. Imajte na umu da se na levoj strani jednačine eksponent odnosi na potenciranje grupnog elementa. U našem konkretnom primeru, ovo zaista uključuje aritmetičko potenciranje na desnoj strani jednačine (ali je moglo uključivati, na primer, sabiranje). Da bih pojasnio, napisao sam ponovljenu operaciju, umesto eksponentnog oblika na desnoj strani.
@@ -1026,10 +1026,10 @@ Hajde da istražimo potenciranje elementa 2 iz ove grupe. Izračunavanja do $2^{
 - $2^{12} = 2 \cdot 2 \cdot 2 \cdot 2 \cdot 2 \cdot 2 \cdot 2 \cdot 2 \cdot 2 \cdot 2 \cdot 2 \cdot 2 \mod 11 = 4096 \mod 11 = 4 \mod 11$
 
 
-Ako pažljivo pogledaš, možeš videti da izvođenje eksponenciranja na elementu 2 prolazi kroz sve Elements od $\langle \mathbb{Z}^* \mod 11, \cdot \rangle$ u sledećem redosledu: 2, 4, 8, 5, 10, 9, 7, 3, 6, 1. Nakon $2^{10}$, nastavak eksponenciranja elementa 2 ponovo prolazi kroz sve Elements i to u istom redosledu. Dakle, element 2 je generator u $\langle \mathbb{Z}^* \mod 11, \cdot \rangle$.
+Ako pažljivo pogledaš, možeš videti da izvođenje eksponenciranja na elementu 2 prolazi kroz sve elemente od $\langle \mathbb{Z}^* \mod 11, \cdot \rangle$ u sledećem redosledu: 2, 4, 8, 5, 10, 9, 7, 3, 6, 1. Nakon $2^{10}$, nastavak eksponenciranja elementa 2 ponovo prolazi kroz sve elemente i to u istom redosledu. Dakle, element 2 je generator u $\langle \mathbb{Z}^* \mod 11, \cdot \rangle$.
 
 
-Iako $\langle \mathbb{Z}^* \mod 11, \cdot \rangle$ ima više generatora, nisu svi Elements ove grupe generatori. Razmotrimo, na primer, element 3. Prolazeći kroz prvih 10 eksponencijacija, bez prikazivanja zamornih proračuna, dobijamo sledeće rezultate:
+Iako $\langle \mathbb{Z}^* \mod 11, \cdot \rangle$ ima više generatora, nisu svi elementi ove grupe generatori. Razmotrimo, na primer, element 3. Prolazeći kroz prvih 10 eksponencijacija, bez prikazivanja zamornih proračuna, dobijamo sledeće rezultate:
 
 
 
@@ -1048,7 +1048,7 @@ Iako $\langle \mathbb{Z}^* \mod 11, \cdot \rangle$ ima više generatora, nisu sv
 Umesto da prolazi kroz sve vrednosti u $\langle \mathbb{Z}^* \mod 11, \cdot \rangle$, eksponenciranje elementa 3 vodi samo do podskupa tih vrednosti: 3, 9, 5, 4 i 1. Nakon petog eksponenciranja, ove vrednosti počinju da se ponavljaju.
 
 
-Sada možemo definisati **cikličnu grupu** kao bilo koju grupu sa barem jednim generatorom. To jest, postoji barem jedan element grupe iz kojeg možete proizvesti sve druge elemente grupe Elements kroz eksponenciranje.
+Sada možemo definisati **cikličnu grupu** kao bilo koju grupu sa barem jednim generatorom. To jest, postoji barem jedan element grupe iz kojeg možete proizvesti sve druge elemente grupe kroz eksponenciranje.
 
 
 Možda ste primetili u našem gornjem primeru da su i $2^{10}$ i $3^{10}$ jednaki $1 \mod 11$. U stvari, iako nećemo izvoditi proračune, potenciranje sa 10 bilo kog elementa u grupi $\langle \mathbb{Z}^* \mod 11, \cdot \rangle$ će dati $1 \mod 11$. Zašto je to slučaj?
