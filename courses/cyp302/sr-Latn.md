@@ -866,16 +866,16 @@ ___
 Možete okarakterisati **teoriju brojeva** kao proučavanje svojstava celih brojeva i matematičkih funkcija koje rade sa celim brojevima.
 
 
-Razmotrimo, na primer, da su bilo koja dva broja $a$ i $N$ **koprimi** (ili **relativno prosti**) ako je njihov najveći zajednički delilac jednak 1. Pretpostavimo sada određeni ceo broj $N$. Koliko je celih brojeva manjih od $N$ koji su koprimi sa $N$? Možemo li dati opšte izjave o odgovorima na ovo pitanje? Ovo su tipične vrste pitanja na koja teorija brojeva nastoji da odgovori.
+Razmotrimo, na primer, da su bilo koja dva broja $a$ i $N$ **koprajms** (ili **relativno prosti**) ako je njihov najveći zajednički delilac jednak 1. Pretpostavimo sada određeni ceo broj $N$. Koliko je celih brojeva manjih od $N$ koji su relativno prosti sa $N$? Možemo li dati opšte izjave o odgovorima na ovo pitanje? Ovo su tipične vrste pitanja na koja teorija brojeva nastoji da odgovori.
 
 
-Moderna teorija brojeva oslanja se na alate apstraktne algebre. Oblast **apstraktne algebre** je poddisciplina matematike gde su glavni objekti analize apstraktni objekti poznati kao algebarske strukture. **Algebarska struktura** je skup Elements povezan sa jednom ili više operacija, koji ispunjava određene aksiome. Kroz algebarske strukture, matematičari mogu steći uvid u specifične matematičke probleme, apstrahujući se od njihovih detalja.
+Moderna teorija brojeva oslanja se na alate apstraktne algebre. Oblast **apstraktne algebre** je poddisciplina matematike gde su glavni objekti analize apstraktni objekti poznati kao algebarske strukture. **Algebarska struktura** je skup elemenata povezanih sa jednom ili više operacija, koji ispunjava određene aksiome. Kroz algebarske strukture, matematičari mogu steći uvid u specifične matematičke probleme, apstrahujući se od njihovih detalja.
 
 
 Polje apstraktne algebre se ponekad naziva i modernom algebrom. Možete naići i na pojam **apstraktne matematike** (ili **čiste matematike**). Ovaj poslednji termin nije referenca na apstraktnu algebru, već označava proučavanje matematike radi nje same, a ne samo sa ciljem potencijalnih primena.
 
 
-Skupovi iz apstraktne algebre mogu se baviti mnogim tipovima objekata, od transformacija koje čuvaju oblik na jednakostraničnom trouglu do šara na tapetama. Za teoriju brojeva, razmatramo samo skupove Elements koji sadrže cele brojeve ili funkcije koje rade sa celim brojevima.
+Skupovi iz apstraktne algebre mogu se baviti mnogim tipovima objekata, od transformacija koje čuvaju oblik na jednakostraničnom trouglu do šara na tapetama. Za teoriju brojeva, razmatramo samo skupove elemenata koji sadrže cele brojeve ili funkcije koje rade sa celim brojevima.
 
 
 
@@ -884,86 +884,86 @@ Skupovi iz apstraktne algebre mogu se baviti mnogim tipovima objekata, od transf
 <chapterId>3209b270-f9cd-5224-803e-0ed19fbf7826</chapterId>
 
 
-Osnovni koncept u matematici je koncept skupa Elements. Skup se obično označava znakovima vitičastih zagrada sa Elements odvojenim zarezima.
+Osnovni koncept u matematici je koncept skupa elemenata. Skup se obično označava znakovima vitličastih zagrada sa elementima odvojenim zarezima.
 
 
 Na primer, skup svih celih brojeva je $\{…, -2, -1, 0, 1, 2, …\}$. Tri tačke ovde znače da se određeni obrazac nastavlja u određenom pravcu. Dakle, skup svih celih brojeva takođe uključuje $3, 4, 5, 6$ i tako dalje, kao i $-3, -4, -5, -6$ i tako dalje. Ovaj skup svih celih brojeva se obično označava sa $\mathbb{Z}$.
 
 
-Još jedan primer skupa je $\mathbb{Z} \mod 11$, ili skup svih celih brojeva modulo 11. Za razliku od celog skupa $\mathbb{Z}$, ovaj skup sadrži samo konačan broj Elements, naime $\{0, 1, \ldots, 9, 10\}$.
+Još jedan primer skupa je $\mathbb{Z} \mod 11$, ili skup svih celih brojeva modulo 11. Za razliku od celog skupa $\mathbb{Z}$, ovaj skup sadrži samo konačan broj elemenata, naime $\{0, 1, \ldots, 9, 10\}$.
 
 
-Uobičajena greška je misliti da skup $\mathbb{Z} \mod 11$ zapravo jeste $\{-10, -9, \ldots, 0, \ldots, 9, 10\}$. Ali to nije slučaj, s obzirom na način na koji smo ranije definisali operaciju modula. Bilo koji negativni celi brojevi smanjeni modulom 11 prelaze u skup $\{0, 1, \ldots, 9, 10\}$. Na primer, izraz $-2 \mod 11$ prelazi u $9$, dok izraz $-27 \mod 11$ prelazi u $5$.
+Uobičajena greška je misliti da skup $\mathbb{Z} \mod 11$ zapravo jeste $\{-10, -9, \ldots, 0, \ldots, 9, 10\}$. Ali to nije slučaj, s obzirom na način na koji smo ranije definisali operaciju modula. Bilo koji negativni celi brojevi redukovani po modulu 11 prelaze u skup $\{0, 1, \ldots, 9, 10\}$. Na primer, izraz $-2 \mod 11$ prelazi u $9$, dok izraz $-27 \mod 11$ prelazi u $5$.
 
 
-Još jedan osnovni koncept u matematici je koncept binarne operacije. Ovo je bilo koja operacija koja uzima dva Elements da bi proizvela treći. Na primer, iz osnovne aritmetike i algebre, bili biste upoznati sa četiri osnovne binarne operacije: sabiranje, oduzimanje, množenje i deljenje.
+Još jedan osnovni koncept u matematici je koncept binarne operacije. Ovo je bilo koja operacija koja uzima dva elementa da bi proizvela treći. Na primer, iz osnovne aritmetike i algebre poznata su vam četiri osnovna binarna operatora: sabiranje, oduzimanje, množenje i deljenje.
 
 
 Ova dva osnovna matematička koncepta, skupovi i binarne operacije, koriste se za definisanje pojma grupe, najosnovnije strukture u apstraktnoj algebri.
 
 
-Specifično, pretpostavimo neku binarnu operaciju $\circ$. Pored toga, pretpostavimo neki skup Elements **S** opremljen tom operacijom. Sve što "opremljen" ovde znači je da se operacija $\circ$ može izvršiti između bilo koja dva Elements u skupu **S**.
+Specifično, pretpostavimo neku binarnu operaciju $\circ$. Pored toga, pretpostavimo neki skup elemenata **S** sa definisanom tom operacijom. Sve što "definisan" ovde znači je da se operacija $\circ$ može izvršiti između bilo koja dva elementa u skupu **S**.
 
 
 Kombinacija $\langle \mathbf{S}, \circ \rangle$ je, dakle, **grupa** ako ispunjava četiri specifična uslova, poznata kao aksiomi grupe.
 
 
-1. Za bilo koje $a$ i $b$ koji su Elements od $\mathbf{S}$, $a \circ b$ je takođe element od $\mathbf{S}$. Ovo je poznato kao **uslov zatvorenosti**.
+1. Za bilo koje $a$ i $b$ koji su elementi od $\mathbf{S}$, $a \circ b$ je takođe element od $\mathbf{S}$. Ovo je poznato kao **uslov zatvorenosti**.
 
-2. Za bilo koje $a$, $b$ i $c$ koji su Elements od $\mathbf{S}$, važi da je $(a \circ b) \circ c = a \circ (b \circ c)$. Ovo je poznato kao **uslov asocijativnosti**.
+2. Za bilo koje $a$, $b$ i $c$ koji su elementi od $\mathbf{S}$, važi da je $(a \circ b) \circ c = a \circ (b \circ c)$. Ovo je poznato kao **uslov asocijativnosti**.
 
-3. Postoji jedinstveni element $e$ u $\mathbf{S}$, takav da za svaki element $a$ u $\mathbf{S}$, sledeća jednačina važi: $e \circ a = a \circ e = a$. Kako postoji samo jedan takav element $e$, on se naziva **neutralni element**. Ovaj uslov je poznat kao **uslov neutralnosti**.
+3. Postoji jedinstveni element $e$ u $\mathbf{S}$, takav da za svaki element $a$ u $\mathbf{S}$, sledeća jednačina važi: $e \circ a = a \circ e = a$. Kako postoji samo jedan takav element $e$, on se naziva **neutralni element** ili **jedinični element**. Ovaj uslov je poznat kao **uslov neutralnosti**.
 
 4. Za svaki element $a$ u $\mathbf{S}$, postoji element $b$ u $\mathbf{S}$, takav da važi sledeća jednačina: $a \circ b = b \circ a = e$, gde je $e$ identitetni element. Element $b$ ovde je poznat kao **inverzni element**, i obično se označava kao $a^{-1}$. Ovaj uslov je poznat kao **uslov inverznosti** ili **uslov invertibilnosti**.
 
 
-Hajde da dalje istražimo grupe. Označimo skup svih celih brojeva sa $\mathbb{Z}$. Ovaj skup u kombinaciji sa standardnim sabiranjem, ili $\langle \mathbb{Z}, + \rangle$, očigledno odgovara definiciji grupe, jer ispunjava četiri gore navedene aksiome.
+Hajde da dalje istražimo grupe. Označimo skup svih celih brojeva sa $\mathbb{Z}$. Ovaj skup u kombinaciji sa standardnim sabiranjem, ili $\langle \mathbb{Z}, + \rangle$, očigledno odgovara definiciji grupe, jer ispunjava četiri gore navedena aksioma.
 
 
-1. Za bilo koje $x$ i $y$ koji su Elements od $\mathbb{Z}$, $x + y$ je takođe element od $\mathbb{Z}$. Dakle, $\langle \mathbb{Z}, + \rangle$ ispunjava uslov zatvorenosti.
+1. Za bilo koje $x$ i $y$ koji su elementi od $\mathbb{Z}$, $x + y$ je takođe element od $\mathbb{Z}$. Dakle, $\langle \mathbb{Z}, + \rangle$ ispunjava uslov zatvorenosti.
 
-2. Za bilo koje $x$, $y$ i $z$ koji su Elements od $\mathbb{Z}$, $(x + y) + z = x + (y + z)$. Tako $\langle \mathbb{Z}, + \rangle$ ispunjava uslov asocijativnosti.
+2. Za bilo koje $x$, $y$ i $z$ koji su elementi od $\mathbb{Z}$, $(x + y) + z = x + (y + z)$. Tako $\langle \mathbb{Z}, + \rangle$ ispunjava uslov asocijativnosti.
 
 3. Postoji neutralni element u $\langle \mathbb{Z}, + \rangle$, naime 0. Za bilo koje $x$ u $\mathbb{Z}$, važi: $0 + x = x + 0 = x$. Dakle, $\langle \mathbb{Z}, + \rangle$ ispunjava uslov neutralnog elementa.
 
-4. Konačno, za svaki element $x$ u $\mathbb{Z}$, postoji $y$ tako da je $x + y = y + x = 0$. Ako je $x$ na primer 10, $y$ bi bio $-10$ (u slučaju da je $x$ 0, $y$ je takođe 0). Dakle, $\langle \mathbb{Z}, + \rangle$ ispunjava uslov inverza.
+4. Konačno, za svaki element $x$ u $\mathbb{Z}$, postoji $y$ tako da je $x + y = y + x = 0$. Ako je $x$ na primer 10, $y$ bi bio $-10$ (u slučaju da je $x$ 0, $y$ je takođe 0). Dakle, $\langle \mathbb{Z}, + \rangle$ ispunjava uslov inverznosti.
 
 
 Važno je napomenuti da činjenica da skup celih brojeva sa operacijom sabiranja čini grupu ne znači da on čini grupu sa operacijom množenja. Ovo možete proveriti testiranjem $\langle \mathbb{Z}, \cdot \rangle$ u odnosu na četiri aksioma grupe (gde $\cdot$ označava standardno množenje).
 
 
-Prva dva aksioma očigledno važe. Pored toga, pod množenjem element 1 može služiti kao identitetni element. Bilo koji ceo broj $x$ pomnožen sa 1, naime daje $x$. Međutim, $\langle \mathbb{Z}, \cdot \rangle$ ne ispunjava uslov inverza. To jest, ne postoji jedinstveni element $y$ u $\mathbb{Z}$ za svaki $x$ u $\mathbb{Z}$, tako da je $x \cdot y = 1$.
+Prva dva aksioma očigledno važe. Pored toga, pod množenjem element 1 može služiti kao identitetni element. Bilo koji ceo broj $x$ pomnožen sa 1, naime daje $x$. Međutim, $\langle \mathbb{Z}, \cdot \rangle$ ne ispunjava uslov inverznosti. To jest, ne postoji jedinstveni element $y$ u $\mathbb{Z}$ za svaki $x$ u $\mathbb{Z}$, tako da je $x \cdot y = 1$.
 
 
 Na primer, pretpostavimo da je $x = 22$. Koja vrednost $y$ iz skupa $\mathbb{Z}$ pomnožena sa $x$ bi dala neutralni element 1? Vrednost $1/22$ bi odgovarala, ali to nije u skupu $\mathbb{Z}$. Zapravo, nailazite na ovaj problem za bilo koji ceo broj $x$, osim za vrednosti 1 i -1 (gde bi $y$ morao biti 1 i -1 respektivno).
 
 
-Ako bismo dozvolili realne brojeve za naš skup, tada bi naši problemi uglavnom nestali. Za bilo koji element $x$ u skupu, množenje sa $1/x$ daje 1. Pošto su razlomci uključeni u skup realnih brojeva, inverz se može naći za svaki realni broj. Izuzetak je nula, jer bilo koje množenje sa nulom nikada neće dati identitetni element 1. Dakle, skup realnih brojeva različitih od nule opremljen množenjem zaista je grupa.
+Ako bismo dozvolili realne brojeve za naš skup, tada bi naši problemi uglavnom nestali. Za bilo koji element $x$ u skupu, množenje sa $1/x$ daje 1. Pošto su razlomci uključeni u skup realnih brojeva, inverznost se može naći za svaki realni broj. Izuzetak je nula, jer bilo koje množenje sa nulom nikada neće dati identitetni element 1. Dakle, skup realnih brojeva različitih od nule sa definisanom operacijom množenja zaista je grupa.
 
 
 Neke grupe ispunjavaju peti opšti uslov, poznat kao **uslov komutativnosti**. Ovaj uslov je sledeći:
 
 
 
-- Pretpostavimo da grupa $G$ sa skupom **S** i binarnim operatorom $\circ$. Pretpostavimo da su $a$ i $b$ Elements od **S**. Ako važi da je $a \circ b = b \circ a$ za bilo koja dva Elements $a$ i $b$ u **S**, onda $G$ ispunjava uslov komutativnosti.
+- Pretpostavimo da grupa $G$ sa skupom **S** i binarnim operatorom $\circ$. Pretpostavimo da su $a$ i $b$ elementi unutar **S**. Ako važi da je $a \circ b = b \circ a$ za bilo koja dva elementa $a$ i $b$ u **S**, onda $G$ ispunjava uslov komutativnosti.
 
 
 Bilo koja grupa koja ispunjava uslov komutativnosti poznata je kao **komutativna grupa**, ili **Abelova grupa** (po Nilsu Henriku Abelu). Lako je proveriti da su i skup realnih brojeva nad sabiranjem i skup celih brojeva nad sabiranjem Abelove grupe. Skup celih brojeva nad množenjem uopšte nije grupa, pa samim tim ne može biti Abelova grupa. Skup nenultih realnih brojeva nad množenjem, nasuprot tome, takođe je Abelova grupa.
 
 
-Trebalo bi da obratite pažnju na dve važne konvencije u vezi sa notacijom. Prvo, znakovi „+“ ili „×“ će često biti korišćeni da simbolizuju grupne operacije, čak i kada Elements nisu, zapravo, brojevi. U tim slučajevima, ne bi trebalo da tumačite ove znakove kao standardno aritmetičko sabiranje ili množenje. Umesto toga, to su operacije sa samo apstraktnom sličnošću sa ovim aritmetičkim operacijama.
+Trebalo bi da obratite pažnju na dve važne konvencije u vezi sa notacijom. Prvo, znakovi „+“ ili „×“ će često biti korišćeni da simbolizuju grupne operacije, čak i kada elementi nisu, zapravo, brojevi. U tim slučajevima, ne bi trebalo da tumačite ove znakove kao standardno aritmetičko sabiranje ili množenje. Umesto toga, to su operacije sa samo apstraktnom sličnošću sa ovim aritmetičkim operacijama.
 
 
-Osim ako se konkretno ne odnosiš na aritmetičko sabiranje ili množenje, lakše je koristiti simbole kao što su $\circ$ i $\diamond$ za grupne operacije, jer oni nemaju veoma ukorenjene kulturne konotacije.
+Osim ako se konkretno ne odnosi na aritmetičko sabiranje ili množenje, lakše je koristiti simbole kao što su $\circ$ i $\diamond$ za grupne operacije, jer oni nemaju veoma ukorenjene kulturne konotacije.
 
 
-Drugo, iz istog razloga zbog kojeg se “+” i “×” često koriste za označavanje ne-aritmetičkih operacija, identitet Elements grupa se često simbolizuje sa “0” i “1”, čak i kada Elements u tim grupama nisu brojevi. Osim ako se ne referišete na identitet elementa grupe sa brojevima, lakše je koristiti neutralniji simbol kao što je “$e$” za označavanje identitet elementa.
+Drugo, iz istog razloga zbog kojeg se “+” i “×” često koriste za označavanje ne-aritmetičkih operacija, identitetni element grupa se često simbolizuje sa “0” i “1”, čak i kada elementi u tim grupama nisu brojevi. Osim ako se ne referišete na identitettni elementa grupe sa brojevima, lakše je koristiti neutralniji simbol kao što je “$e$” za označavanje identitetnog elementa.
 
 
-Mnoge različite i veoma važne skupove vrednosti u matematici, opremljene određenim binarnim operacijama, čine grupe. Kriptografske aplikacije, međutim, rade samo sa skupovima celih brojeva ili barem Elements koji su opisani celim brojevima, to jest, unutar domena teorije brojeva. Stoga se skupovi sa realnim brojevima osim celih brojeva ne koriste u kriptografskim aplikacijama.
+Mnoge različite i veoma važne skupove vrednosti u matematici, opremljene određenim binarnim operacijama, čine grupe. Kriptografske aplikacije, međutim, rade samo sa skupovima celih brojeva ili barem elementima koji su opisani celim brojevima, to jest, unutar domena teorije brojeva. Stoga se skupovi sa realnim brojevima osim celih brojeva ne koriste u kriptografskim aplikacijama.
 
 
-Hajde da završimo pružanjem primera Elements koji može biti „opisan celim brojevima“, iako oni nisu celi brojevi. Dobar primer su tačke eliptičkih krivih. Iako bilo koja tačka na eliptičkoj krivoj očigledno nije ceo broj, takva tačka je zaista opisana sa dva cela broja.
+Hajde da završimo davanjem primera elemenata koji može biti „opisan celim brojevima“, iako oni nisu celi brojevi. Dobar primer su tačke eliptičkih krivih. Iako bilo koja tačka na eliptičkoj krivoj očigledno nije ceo broj, takva tačka je zaista opisana sa dva cela broja.
 
 
 Eliptičke krive su, na primer, ključne za Bitcoin. Bilo koji standardni Bitcoin privatni i javni par ključeva se bira iz skupa tačaka koje su definisane sledećom eliptičkom krivom:
@@ -977,7 +977,7 @@ $$
 (najveći prost broj manji od $2^{256}$). $x$-koordinata je privatni ključ, a $y$-koordinata je vaš javni ključ.
 
 
-Transakcije u Bitcoin obično uključuju zaključavanje izlaza na jedan ili više javnih ključeva na neki način. Vrednost iz ovih transakcija može se, zatim, otključati pravljenjem digitalnih potpisa sa odgovarajućim privatnim ključevima.
+Bitcoin transakcije obično uključuju zaključavanje izlaza na jedan ili više javnih ključeva na neki način. Vrednost iz ovih transakcija može se, zatim, otključati pravljenjem digitalnih potpisa sa odgovarajućim privatnim ključevima.
 
 
 
