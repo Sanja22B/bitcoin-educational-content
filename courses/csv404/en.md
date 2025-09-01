@@ -680,11 +680,11 @@ The RFQ system's flexibility in supporting both individual asset IDs and group k
 <partId>9469342a-870c-11f0-88da-ff4cff486fe3</partId>
 
 # Evaluate this course
-<chapterId>c9a8e3d7-5b6c-4f2d-8e9a-7d3b6c1f5a98</chapterId>
+<chapterId>3b7d7ed8-870d-11f0-8ed8-57007a61e039</chapterId>
 <isCourseReview>true</isCourseReview>
 
 ## Conclusion
-<chapterId>f6d3b8e5-7a9c-4e5b-8d2f-9c1e6a3b7d21</chapterId>
+<chapterId>43393838-870d-11f0-b490-cb9bbebd87d5</chapterId>
 <isCourseConclusion>true</isCourseConclusion>
 
 
