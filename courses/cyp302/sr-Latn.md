@@ -1079,13 +1079,13 @@ Zatim, funkcija $\phi(N)$ izračunava broj međusobno prostih brojeva do broja $
 Ovo ima važnu implikaciju za klasu grupa $\langle \mathbb{Z}^* \mod N, \cdot \rangle$ gde je $N$ prost broj. Za ove grupe, eksponenciranje elemenata grupe predstavlja aritmetičko eksponenciranje. To jest, $a^{\phi(N)} \mod N$ predstavlja aritmetičku operaciju $a^{\phi(N)} \mod N$. Kako je bilo koji element $a$ u ovim multiplikativnim grupama relativno prost sa $N$, to znači da je $a^{\phi(N)} \mod N = a^{N – 1} \mod N = 1 \mod N$.
 
 
-Eulerova teorema je zaista važan rezultat. Za početak, ona implicira da svi Elements u $\langle \mathbb{Z}^* \mod N, \cdot \rangle$ mogu ciklusirati samo kroz broj vrednosti eksponenciranjem koji deli $N – 1$. U slučaju $\langle \mathbb{Z}^* \mod 11, \cdot \rangle$, to znači da svaki element može ciklusirati samo kroz 2, 5, ili 10 Elements. Grupne vrednosti kroz koje bilo koji element ciklusira prilikom eksponenciranja poznate su kao **red elementa**. Element sa redom ekvivalentnim redu grupe je generator.
+Eulerova teorema je zaista važan rezultat. Za početak, ona implicira da svi Elements u $\langle \mathbb{Z}^* \mod N, \cdot \rangle$ mogu ciklusirati samo kroz broj vrednosti eksponenciranjem koji deli $N – 1$. U slučaju $\langle \mathbb{Z}^* \mod 11, \cdot \rangle$, to znači da svaki element može ciklusirati samo kroz 2, 5, ili 10 elemente. Grupne vrednosti kroz koje bilo koji element ciklusira prilikom eksponenciranja poznate su kao **red elementa**. Element sa redom ekvivalentnim redu grupe je generator.
 
 
 Štaviše, Eulerova teorema implicira da uvek možemo znati rezultat $a^{N – 1} \mod N$ za bilo koju grupu $\langle \mathbb{Z}^* \mod N, \cdot \rangle$ gde je $N$ prost. Ovo važi bez obzira na to koliko složene stvarne kalkulacije mogu biti.
 
 
-Na primer, pretpostavimo da je naša grupa $\mathbb{Z}^* \mod 160,481,182$ (gde je 160,481,182 zaista prost broj). Znamo da svi brojevi od 1 do 160,481,181 moraju biti Elements ove grupe, i da je $\phi(n) = 160,481,181$. Iako ne možemo napraviti sve korake u proračunima, znamo da izrazi kao što su $514^{160,481,181}$, $2,005^{160,481,181}$ i $256,212^{160,481,181}$ moraju svi evaluirati na $1 \mod 160,481,182$.
+Na primer, pretpostavimo da je naša grupa $\mathbb{Z}^* \mod 160,481,182$ (gde je 160,481,182 zaista prost broj). Znamo da svi brojevi od 1 do 160,481,181 moraju biti elementi ove grupe, i da je $\phi(n) = 160,481,181$. Iako ne možemo napraviti sve korake u proračunima, znamo da izrazi kao što su $514^{160,481,181}$, $2,005^{160,481,181}$ i $256,212^{160,481,181}$ moraju svi evaluirati na $1 \mod 160,481,182$.
 
 
 **Beleške:**
