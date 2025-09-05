@@ -1312,10 +1312,10 @@ Zašto bi proširena polja sa bazom 2 nad skupovima polinoma, kao u gornjem prim
 <chapterId>ed35b98d-18b4-5790-9911-1078e0f84f92</chapterId>
 
 
-Uprkos formalnom jeziku i apstraktnosti diskusije, koncept grupe ne bi trebalo da bude previše težak za razumevanje. To je samo skup Elements zajedno sa binarnom operacijom, gde izvršavanje te binarne operacije na tim Elements ispunjava četiri opšta uslova. Abelova grupa ima samo dodatni uslov poznat kao komutativnost. Ciklična grupa, zauzvrat, je posebna vrsta Abelove grupe, naime ona koja ima generator. Polje je samo složenija konstrukcija iz osnovnog pojma grupe.
+Uprkos formalnom jeziku i apstraktnosti diskusije, koncept grupe ne bi trebalo da bude previše težak za razumevanje. To je samo skup elemenata zajedno sa binarnom operacijom, gde izvršavanje te binarne operacije na tim elementima ispunjava četiri opšta uslova. Abelova grupa ima samo dodatni uslov poznat kao komutativnost. Ciklična grupa, zauzvrat, je posebna vrsta Abelove grupe, naime ona koja ima generator. Polje je samo složenija konstrukcija iz osnovnog pojma grupe.
 
 
-Ali ako ste praktično nastrojena osoba, mogli biste se zapitati u ovom trenutku: Koga briga? Da li poznavanje nekog skupa Elements sa operatorom kao grupe, ili čak Abelove ili ciklične grupe, ima ikakvu relevantnost u stvarnom svetu? Da li je važno znati da je nešto polje?
+Ali ako ste praktično nastrojena osoba, mogli biste se zapitati u ovom trenutku: Koga briga? Ima li ikakvog značaja u stvarnom svetu to što znamo da je neki skup elemenata sa zadatom operacijom grupa, ili čak Abelova ili ciklična grupa? Ima li značaja to što znamo da je nešto polje?
 
 
 Bez ulaženja u previše detalja, odgovor je „da“. Grupe su prvi put stvorene u 19. veku od strane francuskog matematičara Evarista Galoisa. On ih je koristio da donese zaključke o rešavanju polinomskih jednačina stepena višeg od pet.
@@ -1324,7 +1324,7 @@ Bez ulaženja u previše detalja, odgovor je „da“. Grupe su prvi put stvoren
 Od tada je koncept grupe pomogao da se rasvetli niz problema u matematici i drugim oblastima. Na njihovoj osnovi, na primer, fizičar Murray-Gellman je bio u stanju da predvidi postojanje čestice pre nego što je ona zapravo primećena u eksperimentima. [3] Za još jedan primer, hemičari koriste teoriju grupa za klasifikaciju oblika molekula. Matematičari su čak koristili koncept grupe da izvuku zaključke o nečemu tako konkretnom kao što je tapeta!
 
 
-U suštini, pokazivanje da je skup Elements sa nekim operatorom grupa znači da ono što opisujete ima određenu simetriju. Ne simetriju u uobičajenom smislu te reči, već u apstraktnijem obliku. I ovo može pružiti značajne uvide u određene sisteme i probleme. Složeniji pojmovi iz apstraktne algebre samo nam daju dodatne informacije.
+U suštini, pokazivanje da je skup elemenata sa nekim operatorom grupa znači da ono što opisujete ima određenu simetriju. Ne simetriju u uobičajenom smislu te reči, već u apstraktnijem obliku. I ovo može pružiti značajne uvide u određene sisteme i probleme. Složeniji pojmovi iz apstraktne algebre samo nam daju dodatne informacije.
 
 
 Najvažnije je da ćete videti značaj brojevnih teorijskih grupa i polja u praksi kroz njihovu primenu u kriptografiji, posebno u kriptografiji javnog ključa. Već smo videli u našoj diskusiji o poljima, na primer, kako se proširena polja koriste u Rijndael šifri. Taj primer ćemo razraditi u *Poglavlju 5*.
@@ -1356,7 +1356,7 @@ Za dalju diskusiju o modernoj teoriji brojeva, možete se konsultovati sa mnogim
 
 
 
-## Alice i Bob
+## Alisa i Bob
 
 <chapterId>47345330-be2d-5faf-afd0-d289a8d21bf1</chapterId>
 
@@ -1364,7 +1364,7 @@ Za dalju diskusiju o modernoj teoriji brojeva, možete se konsultovati sa mnogim
 Jedna od dve glavne grane kriptografije je simetrična kriptografija. Ona uključuje šeme šifrovanja, kao i šeme koje se bave autentifikacijom i integritetom. Do 1970-ih, cela kriptografija bi se sastojala od simetričnih šema šifrovanja.
 
 
-Glavna diskusija počinje razmatranjem simetričnih šema šifrovanja i pravljenjem ključne razlike između strujnih šifara i blok šifara. Zatim se okrećemo kodovima za autentifikaciju poruka, koji su šeme za osiguranje integriteta i autentičnosti poruka. Na kraju, istražujemo kako se simetrične šeme šifrovanja i kodovi za autentifikaciju poruka mogu kombinovati kako bi se osigurala sigurna komunikacija.
+Glavna diskusija započinje razmatranjem simetričnih šema šifrovanja i pravljenjem ključne razlike između strujnih šifara i blok šifara. Zatim se okrećemo kodovima za autentikaciju poruka, koji predstavljaju šeme za obezbeđivanje integriteta i autentičnosti poruka. Na kraju, istražujemo kako se simetrične šeme šifrovanja i kodovi za autentifikaciju poruka mogu kombinovati kako bi se osigurala sigurna komunikacija.
 
 
 Ovo poglavlje usputno razmatra različite simetrične kriptografske šeme iz prakse. Sledeće poglavlje nudi detaljno izlaganje enkripcije pomoću strujne šifre i blokovske šifre iz prakse, naime RC4 i AES respektivno.
@@ -1389,7 +1389,7 @@ Sledećih pet ključnih tačaka treba imati na umu kada su u pitanju primeri koj
 
 2. Oni se lako mogu proširiti da uključe tri ili više aktera.
 
-3. U primerima, Bob i Alice su obično aktivni učesnici u kreiranju svake poruke i u primeni kriptografskih šema na tu poruku. Ali u stvarnosti, elektronske komunikacije su uglavnom automatizovane. Kada posetite veb-sajt koristeći transportnu Layer sigurnost, na primer, kriptografija se obično u potpunosti obrađuje od strane vašeg računara i veb servera.
+3. U primerima, Bob i Alisa su obično aktivni učesnici u kreiranju svake poruke i u primeni kriptografskih šema na tu poruku. Ali u stvarnosti, elektronske komunikacije su uglavnom automatizovane. Kada posetite veb-sajt koristeći bezbednost transportnog sloja (TLS), na primer, kriptografijom se obično u potpunosti bave vaš računar i veb server.
 
 4. U kontekstu elektronske komunikacije, „poruke“ koje se šalju preko komunikacionog kanala obično su TCP/IP paketi. Oni mogu pripadati e-mailu, Facebook poruci, telefonskom razgovoru, prenosu fajlova, vebsajtu, otpremi softvera i slično. Oni nisu poruke u tradicionalnom smislu. Ipak, kriptografi će često pojednostaviti ovu stvarnost navodeći da je poruka, na primer, e-mail.
 
@@ -1424,10 +1424,10 @@ Ali ne bi se reklo da je korišćenje Salsa20 sa 128-bitnim ključem drugačija 
 Simetrične šeme šifrovanja su obično korisne u dve vrste slučajeva: (1) One u kojima dva ili više agenata komuniciraju na daljinu i žele da zadrže sadržaj svojih komunikacija tajnim; i (2) one u kojima jedan agent želi da zadrži sadržaj poruke tajnim kroz vreme.
 
 
-Možete videti prikaz situacije (1) u *Figure 1* ispod. Bob želi da pošalje poruku $M$ Alisi preko određene distance, ali ne želi da drugi mogu da pročitaju tu poruku.
+Možete videti prikaz situacije (1) u *Slici 1* ispod. Bob želi da pošalje poruku $M$ Alisi preko određene distance, ali ne želi da drugi mogu da pročitaju tu poruku.
 
 
-Bob prvo šifrira poruku $M$ privatnim ključem $K$. Zatim šalje šifrat $C$ Alisi. Kada Alisa primi šifrat, može ga dešifrovati koristeći ključ $K$ i pročitati otvoreni tekst. Sa dobrim šifarskim sistemom, svaki napadač koji presretne šifrat $C$ ne bi trebalo da može saznati ništa od stvarnog značaja o poruci $M$.
+Bob prvo šifrira poruku $M$ privatnim ključem $K$. Zatim šalje šifrat (eng. ciphertext) $C$ Alisi. Kada Alisa primi šifrat, može ga dešifrovati koristeći ključ $K$ i pročitati otvoreni tekst. Sa dobrim šifarskim sistemom, svaki napadač koji presretne šifrat $C$ ne bi trebalo da može saznati ništa od stvarnog značaja o poruci $M$.
 
 
 Možete videti prikaz situacije (2) na *Slici 2* ispod. Bob želi da spreči druge da vide određene informacije. Tipična situacija može biti da je Bob zaposleni koji čuva osetljive podatke na svom računaru, koje ni autsajderi ni njegove kolege ne bi trebalo da čitaju.
@@ -1482,16 +1482,16 @@ Pretpostavimo rečnik *D* koji izjednačava sva slova engleske abecede, redom, s
 Ono što čini šifru pomaka simetričnom šemom enkripcije je to što se isti ključ koristi i za proces enkripcije i za proces dekripcije. Na primer, pretpostavimo da želite da šifrujete poruku "DOG" koristeći šifru pomaka, i da ste nasumično odabrali "24" kao ključ. Šifrovanje poruke ovim ključem bi dalo "BME". Jedini način da se povrati originalna poruka je korišćenjem istog ključa, "24", za proces dekripcije.
 
 
-Ovaj Shift šifra je primer **monoalfabetske supstitucione šifre**: šema šifrovanja gde je alfabet šifrovanog teksta fiksiran (tj. koristi se samo jedan alfabet). Pod pretpostavkom da je algoritam dešifrovanja deterministički, svaki simbol u šifrovanom tekstu supstitucije može se odnositi na najviše jedan simbol u otvorenom tekstu.
+Ovo šifriranje pomakom je primer **monoalfabetske supstitucione šifre**: šema šifrovanja gde je alfabet šifrovanog teksta fiksiran (tj. koristi se samo jedan alfabet). Pod pretpostavkom da je algoritam dešifrovanja deterministički, svaki simbol u šifrovanom tekstu supstitucije može se odnositi na najviše jedan simbol u otvorenom tekstu.
 
 
-Sve do 1700-ih, mnoge primene enkripcije su se u velikoj meri oslanjale na monoalfabetske supstitucione šifre, iako su često bile mnogo složenije od Šifrove šifre. Mogli ste, na primer, nasumično izabrati slovo iz alfabeta za svako originalno slovo teksta pod uslovom da se svako slovo pojavljuje samo jednom u alfabetu šifrovanog teksta. To znači da biste imali faktorijel od 26 mogućih privatnih ključeva, što je bilo ogromno u doba pre računara.
+Sve do 1700-ih, mnoge primene enkripcije su se u velikoj meri oslanjale na monoalfabetske supstitucione šifre, iako su često bile mnogo složenije od navedenog primera šifriranja pomakom. Mogli ste, na primer, nasumično izabrati slovo iz alfabeta za svako originalno slovo teksta pod uslovom da se svako slovo pojavljuje samo jednom u alfabetu šifrovanog teksta. To znači da biste imali faktorijel od 26 mogućih privatnih ključeva, što je bilo ogromno u doba pre računara.
 
 
 Imajte na umu da ćete često naići na termin **cipher** u kriptografiji. Budite svesni da ovaj termin ima različita značenja. Zapravo, znam najmanje pet različitih značenja ovog termina unutar kriptografije.
 
 
-U nekim slučajevima se odnosi na šemu šifrovanja, kao što je to slučaj kod Shift šifre i monoalfabetske supstitucione šifre. Međutim, termin se takođe može odnositi specifično na algoritam šifrovanja, privatni ključ, ili samo na šifrat bilo koje takve šeme šifrovanja.
+U nekim slučajevima se odnosi na šemu šifrovanja, kao što je to slučaj kod šifriranja pomakom i monoalfabetske supstitucione šifre. Međutim, termin se takođe može odnositi specifično na algoritam šifrovanja, privatni ključ, ili samo na šifrat bilo koje takve šeme šifrovanja.
 
 
 Na kraju, termin šifra može se odnositi i na osnovni algoritam iz kojeg možete konstruisati kriptografske šeme. Ovo može uključivati različite algoritme za šifrovanje, ali i druge tipove kriptografskih šema. Ovaj smisao termina postaje relevantan u kontekstu blok šifara (pogledajte odeljak „Blok šifre“ ispod).
