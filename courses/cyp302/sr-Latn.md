@@ -1702,10 +1702,10 @@ Po mom mišljenju, šire definisanje uslova (1) pruža lakši način za organizo
 <chapterId>2df52d51-943d-5df7-9d49-333e4c5d97b7</chapterId>
 
 
-Prvi način na koji se **blok šifra** obično razume jeste kao nešto primitivnije od strim šifre: Osnovni algoritam koji izvodi transformaciju uz očuvanje dužine na nizu odgovarajuće dužine uz pomoć ključa. Ovaj algoritam se može koristiti za kreiranje šema enkripcije i možda drugih tipova kriptografskih šema.
+Prvi način na koji se **blok šifra** obično razume jeste kao nešto primitivnije od strim šifre: Osnovni algoritam koji, uz pomoć ključa, vrši transformaciju niza odgovarajuće dužine, pri čemu se dužina niza ne menja. Ovaj algoritam se može koristiti za kreiranje šema enkripcije i možda drugih tipova kriptografskih šema.
 
 
-Često, blok šifra može primati ulazne nizove različitih dužina kao što su 64, 128 ili 256 bita, kao i ključeve različitih dužina kao što su 128, 192 ili 256 bita. Iako se neki detalji algoritma mogu promeniti u zavisnosti od ovih varijabli, osnovni algoritam se ne menja. Ako bi se menjao, govorili bismo o dve različite blok šifre. Napomena da je upotreba termina osnovni algoritam ovde ista kao i za šeme šifrovanja.
+Često, blok šifra može primati ulazne nizove različitih dužina kao što su 64, 128 ili 256 bita, kao i ključeve različitih dužina kao što su 128, 192 ili 256 bita. Iako se neki detalji algoritma mogu promeniti u zavisnosti od ovih varijabli, osnovni algoritam se ne menja. Ako bi se menjao, govorili bismo o dve različite blok šifre. Primetite da je upotreba termina osnovni algoritam ovde ista kao i kod šema šifrovanja.
 
 
 Prikaz kako blok šifra funkcioniše može se videti na *Slici 4* ispod. Poruka $M$ dužine $L$ i ključ $K$ služe kao ulazi za blok šifru. Ona izlazno daje poruku $M'$ dužine $L$. Ključ ne mora nužno biti iste dužine kao $M$ i $M'$ za većinu blok šifara.
@@ -1723,7 +1723,7 @@ Blok šifra sama po sebi nije šema šifrovanja. Ali blok šifra se može korist
 Da bismo ilustrovali kako ovo funkcioniše, pretpostavimo blok šifru (BC) koja zahteva ulazni niz od 128 bita i privatni ključ od 128 bita. Slika 5 ispod prikazuje kako se ta blok šifra može koristiti sa **modom elektronske šifre knjige** (**ECB mod**) za kreiranje šeme enkripcije. (Elipse na desnoj strani ukazuju na to da možete ponavljati ovaj obrazac koliko god je potrebno).
 
 
-*Slika 5: Blok šifra sa ECB režimom*
+*Slika 5: Blok šifra u ECB režimu*
 
 
 ![Figure 5: A block cipher with ECB mode](assets/Figure4-5.webp "Figure 5: A block cipher with ECB mode")
@@ -1780,7 +1780,7 @@ Konačno, usmerimo našu pažnju na **output feedback mode** (**OFB mode**). Mo�
 Sa OFB režimom takođe birate vektor inicijalizacije. Ali ovde, za prvi blok, vektor inicijalizacije se direktno ubacuje u blok šifru sa vašim ključem. Rezultujućih 128-bitova se zatim tretira kao keystream. Ovaj keystream se XOR-uje sa otvorenim tekstom da bi se proizveo šifrovani tekst za blok. Za naredne blokove, koristite keystream iz prethodnog bloka kao ulaz u blok šifru i ponavljate korake.
 
 
-Ako pažljivo pogledaš, ono što je zapravo kreirano ovde iz blok šifre sa OFB režimom je strim šifra. Generišeš generate keystream delove od 128-bitova dok ne dobiješ dužinu otvorenog teksta (odbacujući bitove koji ti nisu potrebni iz poslednjeg 128-bitnog keystream dela). Zatim, XOR-uješ keystream sa svojim otvorenim tekstom da dobiješ šifrat.
+Ako pažljivo pogledaš, ono što je zapravo kreirano ovde iz blok šifre sa OFB režimom je strim šifra. Generišeš keystream delove od 128-bitova dok ne dobiješ dužinu otvorenog teksta (odbacujući bitove koji ti nisu potrebni iz poslednjeg 128-bitnog keystream dela). Zatim, XOR-uješ keystream sa svojim otvorenim tekstom da dobiješ šifrat.
 
 
 U prethodnom odeljku o strim šiframa, naveo sam da se generiše keystream uz pomoć privatnog ključa. Tačnije, ne mora biti kreiran samo sa privatnim ključem. Kao što možete videti u OFB modu, keystream se proizvodi uz podršku i privatnog ključa i inicijalizacionog vektora.
