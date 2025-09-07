@@ -1,10 +1,17 @@
 ---
 name: Histoire de la Monnaie
-goal:
+goal: Explorer l'évolution historique de la monnaie depuis le Néolithique jusqu'à nos jours
 objectives:
-  - 
+  - Comprendre l'émergence et l'évolution des différentes formes de monnaie à travers l'histoire
+  - Analyser les systèmes monétaires des grandes civilisations et empires
+  - Étudier la transition de la monnaie métallique vers la monnaie papier et le système fiat
+  - Examiner le rôle des banques et des banques centrales dans l'évolution monétaire
+  - Établir les liens entre l'histoire monétaire et les crises économiques contemporaines
 ---
 
+# Un voyage à travers l'histoire de la monnaie
+
+Ce cours captivant vous emmènera explorer l'évolution fascinante de la monnaie depuis les premières civilisations jusqu'à notre système monétaire actuel. Nous traverserons les époques, du Néolithique aux temps modernes, en découvrant comment la monnaie a façonné et été façonnée par les grandes civilisations humaines. De la proto-monnaie mésopotamienne aux cryptomonnaies, en passant par les pièces lydiennes, le florin de la Renaissance et l'avènement des banques centrales, ce cours offre une perspective complète sur l'un des piliers fondamentaux de nos sociétés.
 
 
 +++
