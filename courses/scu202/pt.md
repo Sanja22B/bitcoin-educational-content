@@ -972,11 +972,9 @@ A família Arch Linux distingue-se por uma filosofia radicalmente oposta à das 
 
 Esta abordagem baseia-se num modelo de *rolling release*, em que os pacotes são actualizados continuamente, sem necessidade de reinstalar o sistema a cada grande lançamento. O gestor de pacotes Pacman é rápido e leve, facilitando a instalação e atualização de software, e o AUR (*Arch User Repository*), um repositório da comunidade, dá acesso a uma vasta gama de pacotes não oficiais e de desenvolvimento.
 
-
-
 O Arch Linux destina-se sobretudo a utilizadores avançados que pretendem ter um controlo total sobre o seu ambiente, aceitando simultaneamente uma certa complexidade na instalação e manutenção. Esta exigência técnica levou ao aparecimento de várias distribuições derivadas com o objetivo de democratizar a sua utilização.
 
-
+https://planb.network/tutorials/computer-security/operating-system/arch-linux-7a3dc8a8-629b-4971-bb0d-4eab94f93973
 
 O mais conhecido é o Manjaro, que mantém a base técnica do Arch, oferecendo uma instalação simplificada, ambientes de trabalho pré-configurados e um ciclo de lançamento ligeiramente atrasado para estabilizar as actualizações.
 
@@ -1064,7 +1062,7 @@ Desenvolvido pela Canonical e lançado em 2004, o Ubuntu é uma das distribuiç�
 
 
 
-https://planb.network/tutorials/computer-security/operating%20system/ubuntu-78a3be56-5d51-4ec3-8629-0dd27c352ab5
+https://planb.network/tutorials/computer-security/operating-system/ubuntu-78a3be56-5d51-4ec3-8629-0dd27c352ab5
 
 
 
@@ -1076,7 +1074,7 @@ Lançado em 2006, o Linux Mint é uma distribuição derivada do Ubuntu, concebi
 
 
 
-https://planb.network/tutorials/computer-security/operating%20system/linux-mint-da44852e-513f-4004-949a-8fde60c1bca5
+https://planb.network/tutorials/computer-security/operating-system/linux-mint-da44852e-513f-4004-949a-8fde60c1bca5
 
 O Mint destaca-se pela sua simplicidade, a presença por defeito de codecs multimédia e uma ferramenta de atualização bem concebida. Por outro lado, depende fortemente da infraestrutura do Ubuntu, o que o torna dependente das escolhas técnicas do Ubuntu (particularmente ao nível do kernel e do repositório). O Mint é particularmente adequado para utilizadores não técnicos, ou para aqueles que querem um sistema pronto a usar que não requer muita aprendizagem.
 
@@ -1108,9 +1106,9 @@ A instalação é fácil, o software essencial está pré-instalado e a versão 
 
 - sO elementar**:
 
-
-
 Lançado em 2011, o elementary OS é uma distribuição baseada no Ubuntu que se centra sobretudo no design e na consistência do Interface. O seu ambiente de trabalho Pantheon, inspirado no macOS, é minimalista, elegante e fluido. No entanto, o sistema continua a ser menos personalizável do que outras distribuições, e alguns utilizadores avançados podem sentir-se limitados pelas escolhas do Interface e pela sua estrutura deliberadamente fechada. É bem adequado para utilizadores esteticamente sensíveis que procuram um sistema simples e coerente para uso diário.
+
+https://planb.network/tutorials/computer-security/operating-system/elementary-os-757a20be-22b5-484c-a032-2bdd909860ac
 
 
 
@@ -1210,15 +1208,11 @@ O Arch Linux é uma distribuição minimalista, continuamente atualizável, forn
 
 
 
+https://planb.network/tutorials/computer-security/operating-system/arch-linux-7a3dc8a8-629b-4971-bb0d-4eab94f93973
+
 #### Distribuição especializada
 
-
-
-
-
 - Kali Linux**:
-
-
 
 O Kali Linux é uma distribuição baseada em Debian concebida para testes de penetração e auditoria de segurança. Inclui centenas de ferramentas de pentest. Esta distribuição não é realmente adequada como um sistema principal para uso quotidiano.
 
@@ -1252,7 +1246,7 @@ Tails é uma distribuição live baseada em Debian, focada na privacidade. Tudo 
 
 
 
-https://planb.network/tutorials/computer-security/operating%20system/tails-15108901-f15d-4f7f-a001-b02b1dcd60c8
+https://planb.network/tutorials/computer-security/operating-system/tails-15108901-f15d-4f7f-a001-b02b1dcd60c8
 
 → Uma distribuição live é um sistema operativo Linux que pode ser utilizado diretamente a partir de uma pen USB ou CD, sem instalação no disco Hard.
 
@@ -1306,9 +1300,9 @@ PureOS é uma distribuição derivada do Debian desenvolvida pela Purism, totalm
 
 
 
+https://planb.network/tutorials/computer-security/operating-system/pureos-2b6d5fe8-62f8-4a62-b898-4e0530ed408a
+
 - Raspberry Pi OS**:
-
-
 
 Raspberry Pi OS (anteriormente Raspbian) é uma distribuição optimizada para os microcomputadores Raspberry Pi. É baseada em Debian, com pacotes recompilados para a arquitetura ARM. Pode ser utilizado para projectos educativos, testes electrónicos ou pequenos servidores pessoais.
 
@@ -1332,36 +1326,23 @@ O Whonix combina o Debian com a rede Tor em uma arquitetura de duas VMs (gateway
 
 
 
+https://planb.network/tutorials/computer-security/operating-system/whonix-06f9172c-2962-412e-9487-b665d8ca9f59
+
 Este panorama dá-lhe uma visão geral do atual ecossistema de distribuições Linux, permitindo-lhe selecionar a distribuição mais adequada ao seu perfil técnico e aos seus objectivos.
-
-
 
 No próximo capítulo do SCU202, vamos analisar mais de perto o ambiente prático do Linux, começando pelos ambientes gráficos que formam a base das suas interações diárias com o sistema.
 
-
-
 ## Ambientes de ambiente de trabalho Linux
-
 
 <chapterId>ecfac353-a31b-48fb-b2af-2abbeeac5f2b</chapterId>
 
-
-
 Num sistema GNU/Linux, o ambiente de trabalho desempenha um dos papéis mais importantes na sua experiência de utilizador. É o Layer gráfico que permite a interação com o sistema, baseado em representações visuais familiares: janelas, menus, ícones, painéis e aplicações pré-instaladas.
-
-
 
 Neste capítulo, vou explorar a estrutura e o papel de um ambiente de trabalho, os seus componentes típicos, as principais famílias disponíveis, os critérios de seleção e a sua integração nas distribuições Linux mais populares.
 
-
-
 ### O que é um ambiente de escritório?
 
-
-
 Um ambiente de trabalho (ou "*DE*" para *Desktop Environment*) refere-se ao conjunto de programas que constituem o Interface gráfico completo de um sistema operativo. No Windows e no macOS, um único ambiente de trabalho é oferecido por padrão, integrado ao sistema, sem possibilidade de modificá-lo totalmente (existem apenas alguns shells para modificar parcialmente o Interface). Os sistemas Linux, por outro lado, são muito mais modulares, tratando o ambiente de trabalho como um componente independente que pode ser livremente substituído.
-
-
 
 No Linux, é importante distinguir claramente entre todas as camadas: o kernel (que gere a interação com o hardware), o servidor de visualização (que actua como intermediário entre aplicações, controladores gráficos e hardware através do kernel) e, finalmente, o próprio ambiente de trabalho, que se baseia nesta infraestrutura para fornecer um Interface gráfico coerente ao utilizador. Esta distinção pode, por vezes, ser menos clara, uma vez que muitas distribuições Linux vêm com um ambiente de trabalho pré-instalado que, por vezes, inclui o seu próprio compositor Wayland, que actua como um servidor de visualização.
 
@@ -2996,6 +2977,7 @@ sudo apt install thunderbird
 
 
 
+https://planb.network/tutorials/computer-security/communication/thunderbird-91d02325-0361-4641-b152-8975890284a8
 #### Conjunto de escritório
 
 
@@ -4869,12 +4851,7 @@ No macOS, a encriptação do disco do sistema é baseada no *FileVault*, uma fun
 
 Assim que o FileVault tiver sido ativado, terá de escolher um método de recuperação em caso de perda da palavra-passe: utilizar a sua conta *iCloud* ou generate uma chave de cópia de segurança única. Esta chave deve ser guardada num local seguro, uma vez que a sua perda tornaria os seus dados permanentemente inacessíveis.
 
-
-
 Para suportes de armazenamento externos (discos Hard, pen drives USB, etc.), a encriptação é efectuada utilizando o utilitário de disco. Terá de reformatar completamente o volume:
-
-
-
 
 - Selecione o dispositivo e clique em "*Delete*"
 - Selecionar o esquema "Tabela de partição GUID*"
@@ -4882,41 +4859,25 @@ Para suportes de armazenamento externos (discos Hard, pen drives USB, etc.), a e
 - Escolha uma palavra-passe forte
 - Clique em "*Delete*" e depois em "*OK*" e a encriptação está concluída
 
-
-
 Quando a encriptação estiver implementada, a unidade externa só pode ser montada introduzindo esta palavra-passe. O sistema desencripta-a de imediato.
-
-
 
 #### Algumas recomendações para as suas cópias de segurança encriptadas
 
-
-
 Antes de encriptar um suporte, é necessário fazer uma cópia de segurança de todos os dados nele contidos (a não ser que esteja vazio, claro), uma vez que o procedimento de encriptação geralmente apaga o conteúdo inicial.
-
-
 
 A escolha da palavra-passe também é muito importante: deve ser longa, complexa e única, pois é a única proteção entre os seus dados e um terceiro mal-intencionado. Também é necessário fazer uma cópia de segurança, por exemplo, num gestor de senhas, porque, ao contrário dos serviços em linha, não existe qualquer mecanismo de recuperação. Se se esquecer da sua palavra-passe, os dados perdem-se para sempre.
 
-
-
 ### Encriptação selectiva de ficheiros
-
-
 
 Em alguns casos, não é necessário nem prático encriptar um disco Hard inteiro ou um suporte externo. Nesses casos, pode optar pela encriptação selectiva, que envolve a segurança de apenas determinados ficheiros ou diretórios que contenham dados sensíveis.
 
-
-
 Um dos métodos mais conhecidos para encriptar ficheiros é a utilização do GPG. Esta ferramenta baseia-se na criptografia assimétrica: tem um par de chaves, uma pública, que pode distribuir livremente aos seus correspondentes, e outra privada, que deve permanecer estritamente secreta. Os ficheiros são encriptados com a chave pública do destinatário, mas só podem ser desencriptados com a sua chave privada.
-
-
 
 Este protocolo é perfeito para trocar ficheiros sensíveis de forma segura com outras pessoas, sem partilhar uma palavra-passe. Para uso pessoal ou ocasional, o GPG também permite a encriptação simétrica: o ficheiro é então protegido por uma palavra-passe única que só o utilizador conhece.
 
-
-
 Uma excelente alternativa é o Cryptomator. Este software de código aberto permite-lhe criar um cofre: um diretório especial no qual todos os ficheiros depositados são automaticamente encriptados. Este cofre pode ser sincronizado com serviços na nuvem, como Dropbox, Google Drive ou Nextcloud, sem que o fornecedor tenha acesso aos dados não encriptados. A aplicação está disponível em todos os sistemas operativos, incluindo Android e iOS, e não requer competências técnicas especiais para ser utilizada.
+
+https://planb.network/tutorials/computer-security/data/cryptomator-84e52c76-2253-49fe-81da-e05e90c28d0d
 
 
 
@@ -4924,78 +4885,44 @@ Uma excelente alternativa é o Cryptomator. Este software de código aberto perm
 
 
 
+https://planb.network/tutorials/computer-security/data/picocrypt-98c213bd-9ace-425b-b012-bea71ce6b38f
+
 Finalmente, também é possível utilizar o VeraCrypt em modo contentor, que cria um ficheiro que funciona como um arquivo encriptado, montável como um disco.
-
-
 
 Agora que já aprendeu a proteger os seus dados pessoais contra perda e roubo, o próximo capítulo aborda outro aspeto importante: como evitar que os seus ficheiros pessoais se tornem vectores de ataque através dos seus metadados.
 
-
-
-
 ## Limpeza de metadados
-
 
 <chapterId>0869e92e-5488-4e8a-90e6-9b9d1c58a19b</chapterId>
 
-
-
 Sempre que se cria um ficheiro digital, seja uma fotografia, um documento de escritório, um ficheiro de áudio ou de vídeo, este contém metadados em segundo plano. Esta informação não é diretamente visível quando se abre o ficheiro, mas está lá e pode conter Elements extremamente sensível.
-
-
 
 ### Porque é que os metadados são um risco?
 
-
-
 Os metadados são dados anexados a um ficheiro, cuja função é fornecer informações contextuais sobre o conteúdo. Numa imagem, podem incluir a data e a hora em que a imagem foi tirada, as coordenadas GPS precisas, o modelo da câmara ou do smartphone utilizado e, por vezes, até as definições técnicas. Num documento de texto, pode incluir o nome do autor, o nome da empresa, o ID da sessão do utilizador, os carimbos de data/hora de criação e modificação ou mesmo comentários internos deixados durante a edição.
-
-
 
 Estes metadados podem parecer inofensivos, mas podem ser utilizados por agentes maliciosos para identificar o autor de um ficheiro, localizar fisicamente uma pessoa, reconstruir eventos ou hábitos, ou mesmo explorar falhas de software com base na versão do software utilizado.
 
-
-
 Vejamos um exemplo concreto: publica uma fotografia supostamente anónima num fórum. Se não tiver removido os metadados EXIF, um simples clique pode revelar as coordenadas GPS exactas da sua casa, o modelo do seu telemóvel e a data exacta em que a fotografia foi tirada. Da mesma forma, um documento PDF enviado anonimamente pode conter o seu nome completo nas suas propriedades.
-
-
 
 É por isso que algumas plataformas de publicação e comunicação de media removem automaticamente os metadados das suas fotografias. Estas incluem o X (Twitter), o Instagram, o Signal e a Session. Por outro lado, outras plataformas não removem os metadados de todo: é o caso da maioria dos fóruns em linha, de muitos clientes de correio eletrónico ou mesmo quando publica diretamente num sítio Web.
 
-
-
 É um reflexo essencial a adotar: assim que um ficheiro sai da sua esfera privada, é necessário pensar em limpar os seus metadados para evitar a divulgação de informações pessoais ou sensíveis sem o seu conhecimento. Vejamos como o fazer, consoante o seu sistema operativo.
-
-
 
 ### No Linux (Debian)
 
-
-
 #### Utilizar o ExifTool
-
-
 
 O meio mais completo e fiável de gerir e eliminar metadados é o ExifTool, desenvolvido por Phil Harvey. É compatível com um grande número de formatos de ficheiros (JPG, PNG, PDF, MP3, DOCX...) e permite tanto a visualização como a remoção de metadados.
 
-
-
-
-
 - Passo 1: Instalar o ExifTool
 
-
-
 Para instalá-lo em uma distribuição Debian (Ubuntu), abra um terminal e digite o comando:
-
-
 
 ```bash
 sudo apt update
 sudo apt install libimage-exiftool-perl
 ```
-
-
 
 Este pacote instala o `exiftool`, que pode ser utilizado diretamente a partir da linha de comandos.
 
@@ -5815,6 +5742,7 @@ O Firefox continua a ser uma referência em termos de segurança e privacidade, 
 
 
 
+https://planb.network/tutorials/computer-security/communication/firefox-11814cec-3415-4ed9-a06e-f6fda5c9510f
 #### Navegador Tor
 
 
@@ -5835,15 +5763,11 @@ A desvantagem é uma redução significativa do desempenho (alta latência) e um
 
 #### Navegador Mullvad
 
-
-
 o [Mullvad Browser](https://mullvad.net/en/browser) é o resultado da colaboração entre a Fundação Tor e a Mullvad VPN. É baseado no navegador Tor, que por sua vez é derivado do Firefox ESR. O Mullvad Browser foi concebido para maximizar a privacidade do utilizador. Por defeito, inclui proteção avançada contra impressões digitais, localizadores e scripts de terceiros.
 
-
+https://planb.network/tutorials/computer-security/communication/mullvad-browser-a16c13d6-8bf9-4cb5-9aa0-85411a9cda0e
 
 Tem a maioria das caraterísticas de segurança e privacidade oferecidas pelo Navegador Tor, com uma diferença: não redirecciona o tráfego através da rede Tor. Para evitar fugas de IP Address, pode utilizá-lo em combinação com uma VPN (idealmente, a VPN Mullvad).
-
-
 
 https://planb.network/tutorials/computer-security/communication/mullvad-968ec5f5-b3f0-4d23-a9e0-c07a3e85aaa8
 
@@ -5871,52 +5795,33 @@ Por defeito, o LibreWolf ativa as definições de segurança avançadas do Firef
 
 
 
+https://planb.network/tutorials/computer-security/communication/librewolf-1783e9dc-9d41-4449-a3cf-ed116849057c
+
 #### Navegador Zen
-
-
 
 o [Zen Browser](https://zen-browser.app/) é um navegador gratuito e de código aberto baseado no Firefox (motor Gecko), lançado em 2024. O seu objetivo é oferecer uma experiência de navegação moderna, elegante, altamente personalizável e, acima de tudo, centrada na privacidade, sem depender do Chromium.
 
-
-
 O Zen distingue-se pela sua abordagem radical ao Interface e à usabilidade, largamente inspirada no navegador Arc, mas emancipada deste pela sua natureza de código aberto e pelo motor Gecko. Inclui :
-
-
-
 
 - Um Interface minimalista e modular, com uma barra lateral vertical para separadores, uma vista dividida e um sistema de *espaço de trabalho* para agrupar conjuntos de separadores por projeto;
 - Um sistema de modelos Interface personalizáveis (*Zen Mods*) que podem ser usados para modificar profundamente a aparência do navegador;
 - Uma função original chamada *Glance*, que abre uma ligação numa janela temporária leve, evitando a confusão dos separadores...
 
-
-
 O Zen também suporta extensões do Firefox, bem como a sincronização através de uma conta Mozilla.
-
-
 
 Do ponto de vista da segurança e da privacidade, o Zen inclui o bloqueio nativo de rastreadores de terceiros. O navegador não recolhe quaisquer dados e também permite desativar a telemetria Mozilla. Também rejeita automaticamente certificados SSL obsoletos ou não conformes.
 
-
-
 O Zen Browser é uma alternativa interessante se estiver à procura de um ambiente de navegação Gecko que seja gratuito, inovador, organizado e que respeite a sua privacidade.
 
-
+https://planb.network/tutorials/computer-security/communication/zen-browser-f1afc500-1933-409a-a2b7-b6c1c43ec285
 
 ### Navegadores baseados no WebKit
 
-
-
 #### Safari
-
-
 
 O principal navegador que ainda utiliza o motor de renderização WebKit (e não um Fork como o Blink) é o Safari. o [Safari](https://www.apple.com/safari/) é o navegador exclusivo da Apple para o macOS. Oferece uma excelente integração com o ecossistema Apple, um elevado desempenho e inclui agora protecções mais fortes contra o rastreio e a recolha de impressões digitais.
 
-
-
 No entanto, o Safari continua fechado, limitado ao macOS para a sua versão desktop e dependente do ecossistema Apple. Embora a Apple tenha uma política de privacidade sólida, com o seu modelo de negócio baseado principalmente na venda de hardware e não em publicidade, continua a não ser clara relativamente a determinadas práticas internas.
-
-
 
 Aqui, concentramo-nos nos navegadores de computador, mas é importante notar que, no iOS, a Apple exige que todos os navegadores utilizem o motor de renderização WebKit (uma restrição que pode, no entanto, mudar em breve, em resultado de determinados regulamentos europeus). Isto significa que navegadores como o Chrome, o Firefox ou o Brave devem, no iOS, oferecer uma aplicação baseada no WebKit, e não no seu motor de renderização habitual.
 
@@ -5950,6 +5855,7 @@ O Orion é inteiramente desenvolvido pela equipa Kagi (conhecida pelo seu motor 
 
 
 
+https://planb.network/tutorials/computer-security/communication/orion-browser-a5f225d4-946f-425a-8d8e-3a3ec0174a76
 ### Browsers sem motores de renderização
 
 
@@ -6720,7 +6626,7 @@ GrapheneOS não integra nenhum componente proprietário. Você é livre para adi
 O Graphene só é compatível com os recentes Google Pixels (Pixel 6, 7, 8 e 9).
 
 
-https://planb.network/tutorials/computer-security/operating%20system/grapheneos-08d43d7a-0b22-4638-a151-578d48d32d88
+https://planb.network/tutorials/computer-security/operating-system/grapheneos-08d43d7a-0b22-4638-a151-578d48d32d88
 
 #### CalyxOS
 
@@ -7354,6 +7260,7 @@ O Thunderbird Mobile é a versão móvel do popular cliente de correio eletróni
 
 
 
+https://planb.network/tutorials/computer-security/communication/thunderbird-91d02325-0361-4641-b152-8975890284a8
 - [Tuta](https://tuta.com/)
 
 
@@ -7688,6 +7595,7 @@ O Aegis é uma aplicação abrangente de código aberto. Encripta a sua base de 
 O Ente Auth é uma solução moderna, de código aberto e multiplataforma com backups encriptados de ponta a ponta. Permite-lhe sincronizar os seus códigos 2FA de forma segura no telemóvel, no ambiente de trabalho e na Web. Também pode utilizá-lo offline, sem backup na nuvem ou criação de conta.
 
 
+https://planb.network/tutorials/computer-security/authentication/ente-auth-1928e65a-3b43-40f3-9efd-457ee2d79bb9
 O Ente Auth oferece muitas funcionalidades adicionais: Organização por etiquetas, ícones personalizados para cada serviço, notas, favoritos, pesquisa integrada, partilha segura de código de equipa.
 
 
@@ -7703,6 +7611,7 @@ O Authy oferece sincronização 2FA em vários dispositivos, o que pode ser úti
 
 https://planb.network/tutorials/computer-security/authentication/authy-a76ab26b-71b0-473c-aa7c-c49153705eb7
 
+https://planb.network/tutorials/computer-security/authentication/proton-authenticator-047ca2eb-a922-4e0e-8f75-1b89d23951ae
 Se quiser saber mais sobre gestores de palavras-passe, autenticação 2FA e VPNs, recomendo que leia os capítulos dedicados no curso SCU-101:
 
 
@@ -8096,6 +8005,7 @@ Disponível no F-Droid e totalmente de código aberto, o Chrono oferece um Inter
 A aplicação também integra um temporizador e um cronómetro, com registo de voltas, estatísticas, comparações de tempo e gestão de vários temporizadores. Pode configurar vários fusos horários, personalizar o tema (cores, estilos, animações) e até organizar os seus alarmes e temporizadores com etiquetas.
 
 
+Para aprofundar o assunto, recomendo visitar o site [*Awesome Privacy*](https://awesome-privacy.xyz/), que lista as melhores alternativas que respeitam a privacidade em relação aos softwares que você utiliza diariamente.
 ___
 
 
@@ -8587,6 +8497,7 @@ Em termos práticos, a encriptação do DNS e a comutação de servidores podem 
 
 
 
+https://planb.network/tutorials/computer-security/communication/firefox-11814cec-3415-4ed9-a06e-f6fda5c9510f
 - Ao nível do sistema operativo: Alguns sistemas operativos integram nativamente o suporte de DNS encriptado (DoT ou DoH), que protege todos os pedidos de DNS que passam pela pilha de rede do sistema. No entanto, isto não protege todo o computador ou telefone: As aplicações podem contornar esta definição se estiverem configuradas para utilizar um resolvedor ou protocolo DNS diferente.
 
 
@@ -8611,34 +8522,26 @@ Estas ferramentas funcionam como um pequeno servidor DNS dentro da sua rede, blo
 
 ### Acesso remoto seguro através de VPN
 
-
 Em alguns casos, é útil poder aceder à sua rede doméstica quando está em viagem: Consultar ficheiros num NAS, utilizar um nó Bitcoin e Lightning, aceder a um servidor auto-hospedado ou administrar a sua rede. No entanto, essa conexão remota deve ser segura.
-
 
 A primeira dica é nunca abrir diretamente uma porta no seu router para aceder a um dispositivo (por exemplo, através de RDP, SSH ou FTP), uma vez que isso expõe esse serviço a toda a Internet, o que constitui uma vulnerabilidade. Os ataques automatizados que visam portas abertas são numerosos.
 
-
 A solução que recomendo é a utilização de uma VPN (*Virtual Private Network*), ou seja, um túnel encriptado entre o seu dispositivo remoto (computador, smartphone, etc.) e a sua rede local. Uma vez ligado à VPN, pode aceder aos recursos da sua casa como se estivesse fisicamente lá, e de forma segura.
 
-
 As duas principais soluções para os clientes privados são:
-
-
 
 - WireGuard: Moderno, rápido e leve
 - OpenVPN: Mais antigo, mas muito maduro e configurável
 
+https://planb.network/tutorials/computer-security/communication/wireguard-81fdd0db-b2bd-4a6c-a082-2de269e26779
 
 Aqui está um tutorial completo sobre o Tailscale, uma solução VPN fácil de configurar que utiliza o WireGuard:
-
 
 https://planb.network/tutorials/computer-security/communication/tailscale-9acbd7de-04d9-40f6-ab80-35f0dfedb632
 
 Pode alojar esta VPN diretamente num router compatível, num pequeno computador (como um Raspberry Pi) ou num servidor dedicado em casa. Também pode instalá-la como cliente diretamente em qualquer dispositivo.
 
-
 Mas uma VPN não serve apenas para o acesso remoto. Também pode utilizar um cliente VPN clássico nos seus dispositivos para encriptar todo o seu tráfego de saída, mesmo quando está fora de casa (Wi-Fi público, hotel, universidade, etc.). Neste caso, o seu dispositivo liga-se a um servidor VPN de terceiros (comercial ou auto-hospedado), que depois retransmite as suas ligações à Internet. Deste modo, esconde o seu verdadeiro IP Address do ISP, protege os seus dados da espionagem local e evita certas formas de censura.
-
 
 https://planb.network/tutorials/computer-security/communication/mullvad-968ec5f5-b3f0-4d23-a9e0-c07a3e85aaa8
 
@@ -8646,70 +8549,53 @@ https://planb.network/tutorials/computer-security/communication/ivpn-5a0cd5df-29
 
 Por último, também é possível configurar uma VPN diretamente no seu router, o que lhe permite proteger todos os dispositivos da sua casa sem ter de instalar um cliente VPN em cada um deles.
 
-
 ### Monitorização e deteção
-
 
 Uma vez que sua rede tenha sido configurada e segmentada corretamente, é importante ir além da segurança passiva. A monitorização ativa da sua rede local pode detetar comportamentos anormais, ligações não autorizadas ou sinais de intrusão. O objetivo é detetar problemas atempadamente, antes que causem danos.
 
-
 O primeiro passo é centralizar os registos de segurança. Todos os dispositivos ligados à rede geram registos que contêm informações sobre ligações, erros ou actividades suspeitas. Em vez de consultar estes registos individualmente, recomendo que os envie para um servidor capaz de os agrupar, ordenar e analisar. Soluções como o Graylog ou o Elastic Stack (ELK) permitem agregar estes registos num Interface gráfico onde é possível procurar eventos específicos, criar alertas ou visualizar a atividade da rede.
 
+https://planb.network/tutorials/computer-security/data/graylog-3a7f0377-1d95-4446-abe0-d7866a551455
 
 Em seguida, faça análises activas regulares da sua rede local, por exemplo, com o Nmap. Isto dar-lhe-á uma visão geral de todos os dispositivos na sua rede e das portas que abriram. Se identificar um dispositivo desconhecido ou um serviço invulgar, isso pode ser sinal de um ataque.
 
-
+https://planb.network/tutorials/computer-security/communication/nmap-862300d7-6dfb-4660-970d-f56a9f58f60d
 
 Para ir ainda mais longe, pode instalar um IDS (*Intrusion Detection System*), ou mesmo um IPS (*Intrusion Prevention System*). Estas ferramentas, como o Suricata ou o Snort, monitorizam os fluxos de rede em tempo real e detectam assinaturas de ataques conhecidos (varreduras de portas, injecções, ligações suspeitas, etc.). O IDS avisa, enquanto o IPS pode bloquear automaticamente determinadas acções.
 
-
-
 Finalmente, a monitorização do consumo de largura de banda é também um bom indicador de atividade anormal. Se um dispositivo consumir repentinamente muitos dados sem motivo aparente, isso pode denunciar um download não autorizado, um vazamento de dados ou até mesmo um dispositivo comprometido. Ferramentas como o ntopng ou o vnStat permitem-lhe ver os fluxos de entrada e saída por dispositivo.
-
 
 https://planb.network/tutorials/computer-security/data/ntopng-77435bd3-674a-4f35-81d9-0a5325bbdcbd
 
 ### Cópia de segurança e resiliência
 
-
 Mesmo com uma rede perfeitamente segura, as falhas de hardware, os erros de configuração ou os imprevistos (falha de energia, picos de corrente, falha do disco Hard, etc.) podem causar a perda de dados ou interromper os seus serviços. Para garantir a continuidade do seu ambiente digital e evitar começar do zero em caso de problema, é importante implementar uma estratégia de backup e resiliência.
-
 
 Comece por fazer regularmente cópias de segurança da configuração do seu equipamento de rede, especialmente do router. Estes ficheiros de configuração podem muitas vezes ser exportados através do Interface de administração. Manter uma cópia permite-lhe restaurar rapidamente um sistema funcional em caso de reinicialização ou substituição de um dispositivo. Recomendo também que esta cópia de segurança seja encriptada.
 
-
 Por fim, para melhorar a resistência da sua rede em caso de falha de energia, invista numa UPS. Este dispositivo fornece energia de reserva durante alguns minutos em caso de falha de energia, permitindo-lhe continuar a utilizar a Internet ou assegurando que os dispositivos críticos (NAS, router, ponto de acesso Wi-Fi, etc.) se desligam sem problemas. Alguns modelos podem também enviar um comando de encerramento automático aos dispositivos ligados quando detectam que a bateria está fraca.
-
 
 Seguindo estes poucos passos, criará um ambiente de rede robusto e seguro que respeita a sua privacidade.
 
-
 # Parte final
-
 
 <partId>28fae323-cce7-405a-be8d-d15739ca74df</partId>
 
-
 ## Comentários e classificações
 
-
 <chapterId>9c71cd4c-ee07-422a-8cb0-757412e0202d</chapterId>
-
 
 <isCourseReview>true</isCourseReview>
 
 ## Exame final
 
-
 <chapterId>1eb4578e-024a-4430-a997-e9faaf96ab28</chapterId>
-
 
 <isCourseExam>true</isCourseExam>
 
 ## Conclusão
 
-
 <chapterId>4186cd39-6320-43a0-ba2c-ceaac42d2d37</chapterId>
 
-
 <isCourseConclusion>true</isCourseConclusion>
+

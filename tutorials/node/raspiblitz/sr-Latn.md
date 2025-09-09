@@ -20,16 +20,16 @@ RASPIBLITZ - Kako pokrenuti Lightning i Bitcoin kompletni node po BTC sesiji
 # Parmanov vodič za postavljanje Raspiblitz-a
 
 
-Raspiblitz je odličan sistem za pokretanje Bitcoin čvora i povezanih aplikacija. Preporučujem ovo i MyNode čvor većini korisnika (Idealno je imati dva čvora kao rezervni sistem.) Jedna od glavnih prednosti je da je Raspiblitz čvor „Besplatan softver otvorenog koda“, za razliku od MyNode-a ili Umbrel-a. Zašto je to važno? Vlad Costa objašnjava. Takođe možete pokrenuti RaspbiBlitz sa WiFi vezom umesto ethernet-a – ovde je dodatni vodič za to. (Nisam pronašao način da to uradim sa MyNode).
+Raspiblitz je odličan sistem za pokretanje Bitcoin noda i povezanih aplikacija. Preporučujem ovo i MyNode nod većini korisnika (idealno imati dva noda radi redundanse). Jedna velika prednost je to što je Raspiblitz nod „Free Open Source Software“, za razliku od MyNode ili Umbrel. [Zašto je to važno? Vlad Costa objašnjava.](https://bitcoin-takeover.com/why-bitcoin-free-open-source-software-matters/amp/?__twitter_impression=true) Takođe možete pokrenuti Raspiblitz preko WiFi veze umesto ethernet – evo [dopunskog vodiča](https://armantheparman.com/headless-wifi/) za to. (Nisam pronašao način da ovo uradim sa MyNode).
 
 
 Možete kupiti gotov čvor sa priloženim mini ekranom, ili ga možete sami napraviti (nije vam potreban ekran).
 
 
-Vodič na github stranici je odličan, ali možda previše detaljan za korisnika sa srednjim iskustvom. Moja uputstva će biti sažetija i nadam se lakša za praćenje.
+[Vodič na GitHub stranici](https://github.com/rootzoll/raspiblitz) je odličan, ali možda previše detaljan za korisnika sa srednjim iskustvom. Moja uputstva će biti sažetija i, nadam se, lakša za praćenje.
 
 
-U suštini, proces je veoma sličan procesu postavljanja MyNode čvora sa Raspberry Pi 4. Raspiblitz vodič predlaže da kupite monitor, ali vam zaista nije potreban, i ne bih ga preporučio. Čak vam nije potrebna dodatna tastatura ili miš. Samo pristupite terminal meniju uređaja putem računara na istoj kućnoj mreži, i koristite ssh komandu putem terminala. Ovo je moguće sa Linux/Mac (lako) i malo teže sa Windows-om.
+U suštini, proces je veoma sličan procesu postavljanja [MyNode noda](https://armantheparman.com/mynode-bitcoin-node-easy-setup-guide-raspberry-pi/) sa Raspberry Pi 4. Raspiblitz vodič predlaže da kupite monitor, ali vam zaista nije potreban i ja to ne bih preporučio. Ne treba vam čak ni dodatna tastatura ili miš. Samo pristupite terminal meniju uređaja preko računara na istoj kućnoj mreži i koristite ssh komandu u terminalu. Ovo je moguće sa Linux/Mac (lako) i malo teže sa Windowsom.
 
 
 ## Korak 1: Kupite opremu.
@@ -72,13 +72,13 @@ Ovo je brže, ali nepotrebno skupo:
 ## Korak 2: Preuzmite Raspiblitz sliku
 
 
-Idite na Raspiblitz github vebsajt i pronađite link za „preuzimanje slike“, engleski “download image”:
+Idite na [Raspiblitz GitHub veb stranicu](https://github.com/rootzoll/raspiblitz) i pronađite link „download image“:
 
 
 ![image](assets/4.webp)
 
 
-Heš Sha-256 preuzetog fajla je obezbeđen na vebsajtu. Menjaće se sa svakim ažuriranjem. Ako ne razumete o čemu se radi, trebalo bi, pa sam napisao vodič koji možete pročitati ovde.
+Sha-256 heš preuzetog fajla je dostupan na veb-sajtu. Menjaće se sa svakim ažuriranjem. Ako ne razumete o čemu se radi, trebalo bi, pa sam napisao [vodič koji možete pročitati ovde.](https://armantheparman.com/gpg/)
 
 
 ![image](assets/5.webp)
@@ -90,12 +90,13 @@ Heš Sha-256 preuzetog fajla je obezbeđen na vebsajtu. Menjaće se sa svakim a�
 Pre nego što nastavite, ako ne znate kako da se krećete kroz sistem datoteka u komandnoj liniji, lako je naučiti, i trebalo bi.
 
 
-Evo koristan video za Linux, ali važi i za Mac.
+Evo [korisnog videa za Linux, ali se odnosi i na Mac](https://youtu.be/id3DGvljhT4?list=PLtK75qxsQaMLZSo7KL-PmiRarU7hrpnwK).
 
 
-Za Windows, evo jednostavnog vodiča.
+Za Windows, evo [jednostavnog tutorijala](https://www.youtube.com/watch?v=MBBWVgE0ewk&t=1s).
 
 
+_AŽURIRANJE: pgp/gpg verifikacija je sada dostupna. Trebaće vam Openoms-ov javni ključ. [Ovde](http://parman.org/downloadable/openoms.txt) je (možda ćete morati da koristite inkognito režim da bi link radio – http, ne https)_
 Mac/Linux
 
 
@@ -131,7 +132,7 @@ Računar razmišlja oko 20 sekundi. Proverite da li izlazna hash datoteka odgova
 ## Korak 4: Flashujte SD karticu
 
 
-Možete koristiti Balena Etcher za ovo. Preuzmite ga ovde.
+Možete koristiti Balena Etcher da to uradite. [Preuzmite ga ovde](https://www.balena.io/etcher/).
 
 
 Etcher je sam po sebi jasan za korišćenje. Ubacite svoju micro SD karticu i flešujte Raspiblitz softver (.img fajl) na SD karticu.
@@ -214,7 +215,7 @@ ssh admin@You_Pi's_IP_address
 ```
 
 
-Za Windows, trebaće da instalirate putty da biste se ssh-ovali u Pi. Ukucajte istu komandu kao gore.
+Za Windows, moraćete da instalirate [putty](http://putty.org/) da biste se povezali na Pi putem ssh. Ukucajte istu komandu kao gore.
 
 
 Prvi put kada to uradite, ili kad god promenite OS Pi-a zamenom SD kartice, možete, ali i ne morate dobiti ovu grešku…
