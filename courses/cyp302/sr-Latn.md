@@ -1871,10 +1871,10 @@ U oba ova slučaja, napadač možda neće imati nikakve uvide u sadržaj šifrov
 Kodovi za autentifikaciju poruka su labavo definisani kao simetrične kriptografske šeme sa tri algoritma: algoritam za generisanje ključa, algoritam za generisanje oznake i algoritam za verifikaciju. Siguran MAC osigurava da su oznake **egzistencijalno nekrivotvorive** za bilo kog napadača—odnosno, oni ne mogu uspešno kreirati oznaku na poruci koja se verifikuje, osim ako nemaju privatni ključ.
 
 
-Bob i Alice mogu se boriti protiv manipulacije određenom porukom koristeći MAC. Pretpostavimo za trenutak da im nije stalo do tajnosti. Oni samo žele osigurati da je poruka koju je primila Alice zaista od Boba i da nije ni na koji način promenjena.
+Bob i Alisa mogu se boriti protiv manipulacije određenom porukom koristeći MAC. Pretpostavimo za trenutak da im nije stalo do tajnosti. Oni samo žele osigurati da je poruka koju je primila Alisa zaista od Boba i da nije ni na koji način promenjena.
 
 
-Proces je prikazan na *Figure 9*. Da bi koristili **MAC** (Message Authentication Code), prvo bi generate privatni ključ $K$ koji je deljen između njih dvoje. Bob kreira oznaku $T$ za poruku koristeći privatni ključ $K$. Zatim šalje poruku kao i oznaku poruke Alisi. Ona tada može verifikovati da je Bob zaista napravio oznaku, tako što će provući privatni ključ, poruku i oznaku kroz verifikacioni algoritam.
+Proces je prikazan na *Slici 9*. Da bi koristili **MAC** (Message Authentication Code), prvo bi generisali privatni ključ $K$ koji je deljen između njih dvoje. Bob kreira oznaku $T$ za poruku koristeći privatni ključ $K$. Zatim šalje poruku kao i oznaku poruke Alisi. Ona tada može verifikovati da je Bob zaista napravio oznaku, tako što će provući privatni ključ, poruku i oznaku kroz verifikacioni algoritam.
 
 
 *Slika 9: Pregled simetričnih šema šifrovanja*
@@ -1883,13 +1883,13 @@ Proces je prikazan na *Figure 9*. Da bi koristili **MAC** (Message Authenticatio
 ![Figure 9: Overview of symmetric encryption schemes](assets/Figure4-9.webp "Figure 9: Overview of symmetric encryption schemes")
 
 
-Zbog **egzistencijalne nekrivotvorivosti**, napadač ne može na bilo koji način izmeniti poruku $M$ niti kreirati svoju poruku sa važećom oznakom. Ovo važi čak i ako napadač posmatra oznake mnogih poruka između Boba i Alise koje koriste isti privatni ključ. U najgorem slučaju, napadač bi mogao blokirati Alisu da primi poruku $M$ (problem koji kriptografija ne može Address).
+Zbog **egzistencijalne nekrivotvorivosti**, napadač ne može na bilo koji način izmeniti poruku $M$ niti kreirati svoju poruku sa važećom oznakom. Ovo važi čak i ako napadač posmatra oznake mnogih poruka između Boba i Alise koje koriste isti privatni ključ. U najgorem slučaju, napadač bi mogao blokirati Alisu da primi poruku $M$ (problem koji kriptografija ne može rešiti).
 
 
 MAC garantuje da je poruku zaista kreirao Bob. Ova autentičnost automatski podrazumeva integritet poruke—odnosno, ako je Bob kreirao neku poruku, onda, ipso facto, ona nije bila izmenjena ni na koji način od strane napadača. Dakle, od sada nadalje, svaka briga za autentifikaciju treba automatski da podrazumeva brigu za integritet.
 
 
-Iako sam napravio razliku između autentičnosti i integriteta poruke u svojoj diskusiji, takođe je uobičajeno koristiti te termine kao sinonime. Oni se, dakle, odnose na ideju poruka koje su kreirane od strane određenog pošiljaoca i nisu ni na koji način izmenjene. U tom duhu, kodovi za autentifikaciju poruka se često nazivaju i **kodovi za integritet poruka**.
+Iako sam napravio razliku između autentičnosti i integriteta poruke u svojoj diskusiji, takođe je uobičajeno koristiti te termine kao sinonime. Oni se, dakle, odnose na ideju da poruke koje su kreirane od strane određenog pošiljaoca nisu ni na koji način izmenjene. U tom duhu, kodovi za autentifikaciju poruka se često nazivaju i **kodovi za integritet poruka**.
 
 
 
@@ -1901,13 +1901,13 @@ Iako sam napravio razliku između autentičnosti i integriteta poruke u svojoj d
 Tipično, želite da garantujete i tajnost i autentičnost u komunikaciji i, stoga, šeme šifrovanja i MAC šeme se obično koriste zajedno.
 
 
-Šema **autentifikovanog šifrovanja** je šema koja kombinuje šifrovanje sa MAC-om na veoma siguran način. Konkretno, mora da ispunjava standarde za egzistencijalnu nekrivotvorivost, kao i veoma snažan pojam tajnosti, odnosno onaj koji je otporan na **napade odabirom šifro-teksta**. [7]
+Šema **autentifikovanog šifrovanja** je šema koja kombinuje šifrovanje sa MAC-om na veoma siguran način. Konkretno, mora da ispunjava standarde za egzistencijalnu nekrivotvorivost, kao i veoma snažan pojam tajnosti, odnosno onaj koji je otporan na **napade sa izabranim šifratom**. [7]
 
 
 Da bi šema šifrovanja bila otporna na napade sa izabranim šifratom, mora ispunjavati standarde za **nepromenljivost**: to jest, svaka modifikacija šifrata od strane napadača treba da rezultira ili nevažećim šifratom ili šifratom koji se dešifruje u otvoreni tekst koji nema veze sa originalnim. [8]
 
 
-Kao što šema za autentifikovano šifrovanje osigurava da je šifrovani tekst koji je kreirao napadač uvek nevažeći (jer oznaka neće biti verifikovana), ona ispunjava standarde za otpornost na napade sa izabranim šifrovanim tekstom. Zanimljivo je da možete dokazati da se šema za autentifikovano šifrovanje uvek može kreirati kombinacijom egzistencijalno nekrivotvorivog MAC-a i šeme šifrovanja koja ispunjava manje jači pojam sigurnosti, poznat kao **sigurnost protiv napada sa izabranim otvorenim tekstom**.
+Kao što šema za autentifikovano šifrovanje osigurava da je šifrovani tekst koji je kreirao napadač uvek nevažeći (jer oznaka neće biti verifikovana), ispunjava standarde za otpornost na napade sa izabranim šifrovanim tekstom. Zanimljivo je da možete dokazati da se šema za autentifikovano šifrovanje uvek može kreirati kombinacijom egzistencijalno nekrivotvorivog MAC-a i šeme šifrovanja koja ispunjava manje jači pojam sigurnosti, poznat kao **sigurnost protiv napada sa izabranim otvorenim tekstom**.
 
 
 Nećemo ulaziti u sve detalje konstruisanja šema za autentifikovano šifrovanje. Ali je važno znati dva detalja njihove konstrukcije.
@@ -1931,16 +1931,16 @@ Alisa sada prvo proverava da li je oznaka važeća s obzirom na šifrat $C$ i kl
 ![Figure 10: An authenticated encryption scheme](assets/Figure4-10.webp "Figure 10: An authenticated encryption scheme")
 
 
-Kako se kreiraju MAC-ovi? Iako se MAC-ovi mogu kreirati na više načina, uobičajen i efikasan način za njihovo kreiranje je putem **kriptografskih Hash funkcija**.
+Kako se kreiraju MAC-ovi? Iako se MAC-ovi mogu kreirati na više načina, uobičajen i efikasan način za njihovo kreiranje je putem **kriptografskih heš funkcija**.
 
 
-Kriptografske funkcije Hash ćemo detaljnije predstaviti u *Poglavlju 6*. Za sada, samo znajte da je **Hash funkcija** funkcija koja se može efikasno izračunati, prima ulaze proizvoljne veličine i daje izlaze fiksne dužine. Na primer, popularna Hash funkcija **SHA-256** (sigurni Hash algoritam 256) uvek generiše izlaz od 256 bita bez obzira na veličinu ulaza. Neke Hash funkcije, kao što je SHA-256, imaju korisne primene u kriptografiji.
+Kriptografsku funkciju heš ćemo detaljnije predstaviti u *Poglavlju 6*. Za sada, samo znajte da je **heš funkcija** funkcija koja se može efikasno izračunati, prima ulaze proizvoljne veličine i daje izlaze fiksne dužine. Na primer, popularna heš funkcija **SHA-256** (sigurni heš algoritam 256) uvek generiše izlaz od 256 bita bez obzira na veličinu ulaza. Neke heš funkcije, kao što je SHA-256, imaju korisne primene u kriptografiji.
 
 
-Najčešći tip oznake proizveden kriptografskom funkcijom Hash je **Hash zasnovan kod za autentifikaciju poruka** (HMAC). Proces je prikazan na *Slici 11*. Strana proizvodi dva različita ključa iz privatnog ključa $K$, unutrašnji ključ $K_1$ i spoljašnji ključ $K_2$. Otvoreni tekst $M$ ili šifrovani tekst $C$ se zatim hešira zajedno sa unutrašnjim ključem. Rezultat $T'$ se zatim hešira sa spoljašnjim ključem kako bi se proizvela oznaka poruke $T$.
+Najčešći tip oznake proizveden kriptografskom funkcijom heš je **heš zasnovan kod za autentifikaciju poruka** (HMAC). Proces je prikazan na *Slici 11*. Strana proizvodi dva različita ključa iz privatnog ključa $K$, unutrašnji ključ $K_1$ i spoljašnji ključ $K_2$. Otvoreni tekst $M$ ili šifrovani tekst $C$ se zatim hešira zajedno sa unutrašnjim ključem. Rezultat $T'$ se zatim hešira sa spoljašnjim ključem kako bi se proizvela oznaka poruke $T$.
 
 
-Postoji paleta Hash funkcija koje se mogu koristiti za kreiranje HMAC-a. Najčešće korišćena Hash funkcija je SHA-256.
+Postoji paleta heš funkcija koje se mogu koristiti za kreiranje HMAC-a. Najčešće korišćena heš funkcija je SHA-256.
 
 
 
