@@ -1975,7 +1975,7 @@ Pretpostavimo da dve strane učestvuju u komunikacionoj sesiji, tako da šalju v
 Glavni razlog je taj što šema autentifikovane enkripcije ne pruža nikakve garancije da je poruku zaista poslao agent koji ju je kreirao unutar komunikacione sesije. Razmotrite sledeća tri vektora napada:
 
 
-1. **Napad ponovnim puštanjem (Replay attack)**: Napadač ponovo šalje šifrat i oznaku koje je presrela između dve strane u ranijem trenutku.
+1. **Napad ponovnim puštanjem (Replay attack)**: Napadač ponovo šalje šifrat i oznaku koju je presrela između dve strane u ranijem trenutku.
 
 2. **Napad preuređivanjem**: Napadač presreće dve poruke u različito vreme i šalje ih primaocu obrnutim redosledom.
 
@@ -1994,7 +1994,7 @@ Srećom, ove vrste napada mogu se lako ublažiti u komunikacionoj sesiji koriste
 Identifikatori se mogu dodati u običnu tekstualnu poruku pre enkripcije. Ovo bi sprečilo bilo kakve refleksione napade. Relativni vremenski indikator može, na primer, biti redni broj u određenoj komunikacionoj sesiji. Svaka strana dodaje redni broj poruci pre enkripcije, tako da primalac zna kojim redosledom su poruke poslate. Ovo eliminiše mogućnost napada preuređivanjem. Takođe eliminiše napade ponavljanjem. Bilo koja poruka koju napadač pošalje niz liniju imaće stari redni broj, i primalac će znati da ne procesuira poruku ponovo.
 
 
-Da ilustrujemo kako funkcionišu sesije sigurne komunikacije, pretpostavimo opet Alisu i Boba. Oni šalju ukupno četiri poruke napred-nazad. Možete videti kako bi šema autentifikovane enkripcije sa identifikatorima i rednim brojevima funkcionisala ispod u *Figure 11*.
+Da ilustrujemo kako funkcionišu sesije sigurne komunikacije, pretpostavimo opet Alisu i Boba. Oni šalju ukupno četiri poruke napred-nazad. Možete videti kako bi šema autentifikovane enkripcije sa identifikatorima i rednim brojevima funkcionisala ispod u *Slici 11*.
 
 
 Sesija komunikacije počinje tako što Bob šalje šifrat $C_{0,B}$ Alisi sa oznakom poruke $T_{0,B}$. Šifrat sadrži poruku, kao i identifikator (BOB) i redni broj (0). Oznaka $T_{0,B}$ je napravljena preko celog šifrata. U njihovim narednim komunikacijama, Alisa i Bob održavaju ovaj protokol, ažurirajući polja po potrebi.
@@ -2034,7 +2034,7 @@ ___
 Kako bismo stekli uvid u to kako moderni pseudonasumični strim šifri rade, fokusiraću se na RC4 strim šifru. To je pseudonasumična strim šifra koja je korišćena u WEP i WAP sigurnosnim protokolima za bežične pristupne tačke, kao i u TLS-u. Kako RC4 ima mnogo dokazanih slabosti, pao je u nemilost. Zapravo, Internet Engineering Task Force sada zabranjuje upotrebu RC4 paketa od strane klijentskih i serverskih aplikacija u svim instancama TLS-a. Ipak, dobro funkcioniše kao primer za ilustrovanje kako primitivna strim šifra radi.
 
 
-Da počnemo, prvo ću pokazati kako da šifrujemo običnu tekstualnu poruku pomoću baby RC4 šifre. Pretpostavimo da je naša obična tekstualna poruka "SOUP." Šifrovanje sa našom baby RC4 šifrom, zatim, odvija se u četiri koraka.
+Da počnemo, prvo ću pokazati kako da šifrujemo običnu tekstualnu poruku pomoću baby RC4 šifre. Pretpostavimo da je naša obična tekstualna poruka "SOUP." Šifrovanje pomoću naše jednostavne RC4 šifre zatim se odvija u četiri koraka.
 
 
 ### Korak 1
@@ -2066,7 +2066,7 @@ Pretpostavimo da izaberemo naš ključ **k** kao $[14, 48, 9]$, tako da ima duž
 ### Korak 3
 
 
-Treće, transformisaćemo niz **S** koristeći ključni niz **K**, u procesu poznatom kao **planiranje ključa**. Proces je sledeći u pseudokodu:
+Treće, transformisaćemo niz **S** koristeći ključni niz **K**, u procesu poznatom kao **planiranje ključa** (eng. key scheduling). Proces je sledeći u pseudokodu:
 
 
 
@@ -2083,7 +2083,7 @@ Transformacija niza **S** je prikazana u *Tabeli 1*.
 Da počnemo, možete videti početno stanje **S** kao $[0, 1, 2, 3, 4, 5, 6, 7]$ sa početnom vrednošću 0 za **j**. Ovo će biti transformisano koristeći ključni niz $[14, 48, 9, 14, 48, 9, 14, 48]$.
 
 
-The for loop starts with $i = 0$. According to our pseudocode above, the new value of **j** becomes 6 ($j = (j + S[0] + K[0]) \mod 8 = (0 + 0 + 14) \mod 8 = 6 \mod 8$). Swapping $S[0]$ and $S[6]$, the state of **S** after 1 round becomes $[6, 1, 2, 3, 4, 5, 0, 7]$.
+For petlja počinje sa $i = 0$. Prema našem gornjem pseudokodu, nova vrednost promenljive j postaje 6 ($j = (j + S[0] + K[0]) \mod 8 = (0 + 0 + 14) \mod 8 = 6 \mod 8$). Zamenjujući $S[0]$ i $S[6]$, stanje **S** posle prve runde postaje $[6, 1, 2, 3, 4, 5, 0, 7]$.
 
 
 U sledećem redu, $i = 1$. Prolazeći ponovo kroz for petlju, **j** dobija vrednost 7 ($j = (j + S[1] + K[1]) \mod 8 = (6 + 1 + 48) \mod 8 = 55 \mod 8 = 7 \mod 8$). Zamenom $S[1]$ i $S[7]$ iz trenutnog stanja **S**, $[6, 1, 2, 3, 4, 5, 0, 7]$, dobija se $[6, 7, 2, 3, 4, 5, 0, 1]$ nakon 2. runde.
@@ -2121,7 +2121,7 @@ Keystream se proizvodi sledećim pseudokodom:
 
 - Kreiraj promenljive **j**, **i**, i **t**.
 - Postavi $j = 0$.
-- Za svaki $i$ otvorenog teksta, počevši od $i = 1$ i idući do $i = 4$, svaki bajt toka ključeva se proizvodi na sledeći način:
+- Za svaki $i$ otvorenog teksta, počevši od $i = 1$ i idući do $i = 4$, svaki bajt keystrem-a se proizvodi na sledeći način:
     - $j = (j + S[i]) \mod 8$
     - Zameni $S[i]$ i $S[j]$.
     - $t = (S[i] + S[j]) \mod 8$
@@ -2156,16 +2156,16 @@ Da bismo počeli, koristeći ASCII tabelu, možemo videti da je “SOUP” kodir
 | 3   | 5   | 1   | 3         | 6    | 3    | 7    | 1    | 4    | 0    | 5    | 2    |
 | 4   | 1   | 7   | 2         | 6    | 4    | 7    | 1    | 3    | 0    | 5    | 2    |
 
-Primer koji smo upravo diskutovali je samo razblažena verzija **RC4 strim šifre**. Prava RC4 strim šifra ima **S** niz dužine 256 bajtova, a ne 8 bajtova, i ključ koji može biti između 1 i 256 bajtova, a ne između 1 i 8 bajtova. Niz ključeva i strimovi ključeva se zatim proizvode uzimajući u obzir dužinu od 256 bajtova **S** niza. Izračuni postaju izuzetno složeniji, ali principi ostaju isti. Koristeći isti ključ, [14,48,9], sa standardnom RC4 šifrom, otvorena poruka "SOUP" je enkriptovana kao 67 02 ed df u heksadecimalnom formatu.
+Primer koji smo upravo diskutovali je samo razblažena verzija **RC4 strim šifre**. Prava RC4 strim šifra ima **S** niz dužine 256 bajtova, a ne 8 bajtova, i ključ koji može biti između 1 i 256 bajtova, a ne između 1 i 8 bajtova. Niz ključeva i strimovi ključeva (keystreams) se zatim proizvode uzimajući u obzir dužinu od 256 bajtova **S** niza. Izračuni postaju izuzetno složeniji, ali principi ostaju isti. Koristeći isti ključ, [14,48,9], sa standardnom RC4 šifrom, otvorena poruka "SOUP" je enkriptovana kao 67 02 ed df u heksadecimalnom formatu.
 
 
-Šifarnik toka u kojem se tok ključeva ažurira nezavisno od otvorenog teksta ili šifrovanog teksta je **sinhroni šifarnik toka**. Tok ključeva zavisi samo od ključa. Jasno je da je RC4 primer sinhronog šifarnika toka, jer tok ključeva nema veze sa otvorenim tekstom ili šifrovanim tekstom. Svi naši primitivni šifarnici toka pomenuti u prethodnom poglavlju, uključujući šifru pomaka, Vigenèreovu šifru i jednokratnu podlogu, takođe su bili sinhronog tipa.
+Šifarnik toka (eng. stream cipher) u kojem se tok ključeva ažurira nezavisno od otvorenog teksta ili šifrovanog teksta je **sinhroni šifarnik toka**. Tok ključeva (eng. keystream) zavisi samo od ključa. Jasno je da je RC4 primer sinhronog šifarnika toka, jer tok ključeva nema veze sa otvorenim tekstom ili šifrovanim tekstom. Svi naši primitivni šifarnici toka pomenuti u prethodnom poglavlju, uključujući šifru pomaka, Vigenèreovu šifru i jednokratnu podlogu, takođe su bili sinhronog tipa.
 
 
-Nasuprot tome, **asinhroni strim šifra** ima keystream koji se proizvodi i pomoću ključa i prethodnog Elements šifrovanog teksta. Ova vrsta šifre se takođe naziva **samosinhronizujuća šifra**.
+Nasuprot tome, **asinhroni strim šifarnik** ima keystream koji se proizvodi i pomoću ključa i prethodnog elementa šifrovanog teksta. Ova vrsta šifre se takođe naziva **samosinhronizujuća šifra**.
 
 
-Važno je da se keystream proizveden sa RC4 tretira kao jednokratna šifra, i ne možete proizvesti keystream na potpuno isti način sledeći put. Umesto menjanja ključa svaki put, praktično rešenje je kombinovati ključ sa **Nonce** da bi se proizveo bytestream.
+Važno je da se keystream proizveden sa RC4 tretira kao jednokratna šifra, tako da ne možete proizvesti keystream na potpuno isti način sledeći put. Umesto menjanja ključa svaki put, praktično rešenje je kombinovati ključ sa **Nonce** da bi se proizveo bytestream.
 
 
 
