@@ -2175,22 +2175,21 @@ Važno je da se keystream proizveden sa RC4 tretira kao jednokratna šifra, tako
 <chapterId>0b30886f-e620-5b8d-807b-9d84685ca8ff</chapterId>
 
 
-Kao što je pomenuto u prethodnom poglavlju, Nacionalni institut za standarde i tehnologiju (NIST) održao je takmičenje između 1997. i 2000. godine kako bi odredio novi standard za simetrično šifrovanje. **Rijndael šifra** se pokazala kao pobednički unos. Ime je igra reči na osnovu imena belgijskih tvoraca, Vincent Rijmen i Joan Daemen.
+Kao što je pomenuto u prethodnom poglavlju, Nacionalni institut za standarde i tehnologiju (NIST) održao je takmičenje između 1997. i 2000. godine kako bi odredio novi standard za simetrično šifrovanje. **Rijndael šifra** se pokazala kao pobednička. Ime je igra reči na osnovu imena belgijskih tvoraca, Vincent Rijmen i Joan Daemen.
 
 
 Rijndael šifra je **blok šifra**, što znači da postoji osnovni algoritam koji se može koristiti sa različitim specifikacijama za dužine ključeva i veličine blokova. Možete je, zatim, koristiti sa različitim režimima rada za konstruisanje šema šifrovanja.
 
 
-Komitet za NIST takmičenje usvojio je ograničenu verziju Rijndael šifre—naime onu koja zahteva veličine blokova od 128 bita i dužine ključeva od 128 bita, 192 bita ili 256 bita—kao deo **Naprednog standarda za šifrovanje (AES)**. Ova ograničena verzija Rijndael šifre može se koristiti i u više režima rada. Specifikacija za standard je ono što je poznato kao **Napredni standard za šifrovanje (AES)**.
+Komitet za NIST takmičenje usvojio je ograničenu verziju Rijndael šifre — naime onu koja zahteva veličine blokova od 128 bita i dužine ključeva od 128 bita, 192 bita ili 256 bita — kao deo **Naprednog standarda za šifrovanje (AES)**. Ova ograničena verzija Rijndael šifre može se koristiti i u više režima rada. Specifikacija za taj standard je ono što je poznato kao **Napredni standard za šifrovanje (AES)**.
 
 
 Da bih pokazao kako funkcioniše Rijndael šifra, jezgro AES-a, ilustrovaću proces enkripcije sa 128-bitnim ključem. Veličina ključa utiče na broj rundi koje se sprovode za svaki blok enkripcije. Za 128-bitne ključeve, potrebno je 10 rundi. Sa 192 bita i 256 bita, bilo bi potrebno 12 i 14 rundi, respektivno.
 
 
-Pored toga, pretpostaviću da se AES koristi u **ECB-modu**. Ovo čini izlaganje malo lakšim i nije važno za Rijndael algoritam. Da budemo sigurni, ECB mod nije bezbedan u praksi jer dovodi do determinističkog šifrovanja. Najčešće korišćeni bezbedni mod sa AES-om je **CBC** (Cipher Block Chaining).
+Pored toga, pretpostaviću da se AES koristi u **ECB-modu**. Ovo čini izlaganje malo lakšim i nije važno za Rijndael algoritam. Da budemo jasni, ECB način u praksi nije siguran jer dovodi do determinističkog šifriranja. Najčešće korišteni siguran način rada s AES-om je **CBC** (Cipher Block Chaining, lančano povezivanje blokova šifre).
 
-
-Hajde da nazovemo ključ $K_0$. Konstrukcija sa gore navedenim parametrima, zatim, izgleda kao na *Slici 1*, gde $M_i$ označava deo otvorenog teksta od 128 bita, a $C_i$ deo šifrovanog teksta od 128 bita. Dodaje se popunjavanje otvorenom tekstu za poslednji blok, ako otvoreni tekst ne može biti ravnomerno podeljen veličinom bloka.
+Hajde da nazovemo ključ $K_0$. Konstrukcija sa gore navedenim parametrima, zatim, izgleda kao na *Slici 1*, gde $M_i$ označava deo otvorenog teksta od 128 bita, a $C_i$ deo šifrovanog teksta od 128 bita. Popunjavanje (padding) se dodaje otvorenom tekstu u posljednjem bloku, ako se otvoreni tekst ne može ravnomjerno podijeliti prema veličini bloka.
 
 
 
@@ -2203,7 +2202,7 @@ Hajde da nazovemo ključ $K_0$. Konstrukcija sa gore navedenim parametrima, zati
 Svaki 128-bitni blok teksta prolazi kroz deset rundi u Rijndael šemi šifrovanja. Ovo zahteva poseban ključ za svaku rundu ($K_1$ do $K_{10}$). Oni se proizvode za svaku rundu iz originalnog 128-bitnog ključa $K_0$ koristeći **algoritam za proširenje ključa**. Dakle, za svaki blok teksta koji treba da bude šifrovan, koristićemo originalni ključ $K_0$ kao i deset posebnih ključeva za runde. Imajte na umu da se ovih istih 11 ključeva koristi za svaki 128-bitni blok otvorenog teksta koji zahteva šifrovanje.
 
 
-Algoritam za proširenje ključa je dug i složen. Rad na njemu ima malo didaktičke koristi. Možete sami pregledati algoritam za proširenje ključa, ako želite. Kada se proizvedu ključevi rundi, Rijndael šifra će manipulisati prvim 128-bitnim blokom otvorenog teksta, $M_1$, kao što je prikazano na *Slici 2*. Sada ćemo proći kroz ove korake.
+Algoritam za proširenje ključa je dug i složen. Rad na njemu ima malo didaktičke koristi. Možete sami pogledati algoritam za proširenje ključa, ako želite. Kada se proizvedu ključevi rundi, Rijndael šifra će manipulisati prvim 128-bitnim blokom otvorenog teksta, $M_1$, kao što je prikazano na *Slici 2*. Sada ćemo proći kroz ove korake.
 
 
 *Slika 2: Manipulacija $M_1$ sa Rijndael šifrom:*
@@ -2221,9 +2220,9 @@ Algoritam za proširenje ključa je dug i složen. Rad na njemu ima malo didakti
 
 
 - XOR $S_{n-1}$ i $K_n$
-- Zamena bajtova
-- Shift Rows
-- Mešaj Kolone
+- Zamena bajtova (eng. Byte Substitution)
+- Pomeranje redova (eng. Shift Rows)
+- Mix kolona (eng. Mix Columns)
 - XOR $S$ i $K_n$ da bi se proizveo $S_n$
 
 
@@ -2233,8 +2232,8 @@ Algoritam za proširenje ključa je dug i složen. Rad na njemu ima malo didakti
 
 
 - XOR $S_9$ i $K_{10}$
-- Zamena bajtova
-- Pomeraj Redove
+- Zamena bajtova (eng. Byte Substitution)
+- Pomeranje redova (eng. Shift Rows)
 - XOR $S$ i $K_{10}$ da bi se proizveo $S_{10}$
 - $S_{10}$ = $C_1$
 
@@ -2282,7 +2281,7 @@ Drugo, operacija **zamene bajtova** se izvodi na trenutnom stanju $S$. Ona funkc
 | F0  | 8C  | A1  | 89  | 0D  | BF  | E6  | 42  | 68  | 41  | 99  | 2D  | 0F  | B0  | 54  | BB  | 16  |
 
 
-Ovaj S-Box je jedno mesto gde apstraktna algebra dolazi do izražaja u Rijndael šifri, konkretno **Galoisova polja**.
+Ova S-kutija je jedno mesto gde apstraktna algebra dolazi do izražaja u Rijndael šifri, konkretno **Galoisova polja**.
 
 
 Da biste započeli, definišete svaki mogući bajt element od 00 do FF kao 8-bitni vektor. Svaki takav vektor je element **Galoisovog polja GF(2^8)** gde je ireducibilni polinom za operaciju modula $x^8 + x^4 + x^3 + x + 1$. Galoisovo polje sa ovim specifikacijama se takođe naziva **Rijndaelovo konačno polje**.
@@ -2343,13 +2342,13 @@ $$
 Kao sledeći korak, svi termini u matrici bi morali biti pretvoreni u polinome. Na primer, F1 predstavlja 1 bajt i postao bi $x^7 + x^6 + x^5 + x^4 + 1$, a 03 predstavlja 1 bajt i postao bi $x + 1$.
 
 
-Sve množenje se zatim izvodi **modulo** $x^8 + x^4 + x^3 + x + 1$. Ovo rezultira sabiranjem četiri polinoma u svakoj od četiri ćelije kolone. Nakon izvođenja tih sabiranja **modulo 2**, dobićete četiri polinoma. Svaki od ovih polinoma predstavlja 8-bitni niz, ili 1 bajt, **S**. Nećemo ovde izvoditi sve ove proračune na matrici u *Figure 6* jer su opsežni.
+Sve množenje se zatim izvodi **modulo** $x^8 + x^4 + x^3 + x + 1$. Ovo rezultira sabiranjem četiri polinoma u svakoj od četiri ćelije kolone. Nakon izvođenja tih sabiranja **modulo 2**, dobićete četiri polinoma. Svaki od ovih polinoma predstavlja 8-bitni niz, ili 1 bajt, **S**. Nećemo ovde izvoditi sve ove proračune na matrici u *Slici 6* jer su opsežni.
 
 
 Kada je prva kolona obrađena, ostale tri kolone matrice **S** obrađuju se na isti način. Na kraju, to će dati matricu sa šesnaest bajtova koja se može transformisati u niz.
 
 
-Kao poslednji korak, niz **S** se ponovo kombinuje sa rund ključem u **XOR** operaciji. Ovo proizvodi stanje $S_1$. To jest,
+Kao poslednji korak, niz **S** se ponovo kombinuje sa ključem runde u **XOR** operaciji. Ovo proizvodi stanje $S_1$. To jest,
 
 
 
@@ -2365,11 +2364,11 @@ Runde 2 do 9 su samo ponavljanje runde 1, *mutatis mutandis*. Završna runda izg
 
 - $S_9 \oplus K_{10}$
 - Zamena bajtova
-- Shift Rows
+- Pomeranje kolona
 - $S_{10} = S \oplus K_{10}$
 
 
-Država $S_{10}$ je sada postavljena na $C_1$, prvih 128 bita šifrovanog teksta. Prolazeći kroz preostale blokove otvorenog teksta od 128 bita dobija se kompletan šifrovani tekst **C**.
+Stanej $S_{10}$ je sada postavljeno na $C_1$, prvih 128 bita šifrovanog teksta. Prolazeći kroz preostale blokove otvorenog teksta od 128 bita dobija se kompletan šifrovani tekst **C**.
 
 
 ### Operacije Rijndael šifre
@@ -2398,17 +2397,17 @@ Razlog za operacije iza Rijndael šifre je što one proizvode visok stepen konfu
 Kao i kod simetrične kriptografije, asimetrične šeme mogu se koristiti za obezbeđivanje tajnosti i autentifikacije. Međutim, za razliku od simetričnih, ove šeme koriste dva ključa umesto jednog: privatni i javni ključ.
 
 
-Počinjemo našu istragu otkrićem asimetrične kriptografije, posebno problema koji su je podstakli. Zatim, raspravljamo o tome kako asimetrične šeme za enkripciju i autentifikaciju funkcionišu na visokom nivou. Potom, uvodimo Hash funkcije, koje su ključne za razumevanje asimetričnih šema autentifikacije, a takođe imaju značaj u drugim kriptografskim kontekstima, kao što su Hash zasnovani kodovi za autentifikaciju poruka koje smo diskutovali u Poglavlju 4.
+Počinjemo našu istragu otkrićem asimetrične kriptografije, posebno problema koji su je podstakli. Zatim, raspravljamo o tome kako asimetrične šeme za enkripciju i autentifikaciju funkcionišu na visokom nivou. Potom, uvodimo heš funkcije, koje su ključne za razumevanje asimetričnih šema autentifikacije, a takođe imaju značaj u drugim kriptografskim kontekstima, kao što su kodovi zasnovani na heš funkciji za autentifikaciju poruka koje smo diskutovali u Poglavlju 4.
 
 
 ___
 
 
 
-Pretpostavimo da Bob želi da kupi novi kišni mantil od Jim’s Sporting Goods, online prodavnice sportske opreme sa milionima kupaca u Severnoj Americi. Ovo će biti njegova prva kupovina od njih i želi da koristi svoju kreditnu karticu. Dakle, Bob će prvo morati da kreira nalog kod Jim’s Sporting Goods, što zahteva slanje ličnih podataka kao što su njegov Address i informacije o kreditnoj kartici. Zatim može proći kroz potrebne korake za kupovinu kišnog mantila.
+Pretpostavimo da Bob želi da kupi novi kišni mantil od Jim’s Sporting Goods, online prodavnice sportske opreme sa milionima kupaca u Severnoj Americi. Ovo će biti njegova prva kupovina od njih i želi da koristi svoju kreditnu karticu. Dakle, Bob će prvo morati da kreira nalog kod Jim’s Sporting Goods, što zahteva slanje ličnih podataka kao što su njegov adresa i informacije o kreditnoj kartici. Zatim može proći kroz potrebne korake za kupovinu kišnog mantila.
 
 
-Bob i Jim’s Sporting Goods će želeti da osiguraju da njihove komunikacije budu bezbedne tokom ovog procesa, s obzirom na to da je Internet otvoren komunikacioni sistem. Oni će želeti da osiguraju, na primer, da nijedan potencijalni napadač ne može saznati Bobove podatke o kreditnoj kartici i Address, i da nijedan potencijalni napadač ne može ponoviti njegove kupovine ili kreirati lažne u njegovo ime.
+Bob i Jim’s Sporting Goods će želeti da osiguraju da njihove komunikacije budu bezbedne tokom ovog procesa, s obzirom na to da je Internet otvoren komunikacioni sistem. Oni će želeti da osiguraju, na primer, da nijedan potencijalni napadač ne može saznati Bobove podatke o kreditnoj kartici i adresi, i da nijedan potencijalni napadač ne može ponoviti njegove kupovine ili kreirati lažne u njegovo ime.
 
 
 Napredna šema autentifikovane enkripcije, kao što je diskutovano u prethodnom poglavlju, svakako bi mogla učiniti komunikaciju između Boba i Jim's Sporting Goods sigurnom. Ali očigledno postoje praktične prepreke za implementaciju takve šeme.
@@ -2417,13 +2416,13 @@ Napredna šema autentifikovane enkripcije, kao što je diskutovano u prethodnom 
 Da bismo ilustrovali ove praktične prepreke, pretpostavimo da živimo u svetu u kojem postoje samo alati simetrične kriptografije. Šta bi tada Jim’s Sporting Goods i Bob mogli da urade kako bi osigurali sigurnu komunikaciju?
 
 
-U tim okolnostima, suočiće se sa značajnim troškovima za bezbednu komunikaciju. Kako je Internet otvoren komunikacioni sistem, ne mogu jednostavno Exchange skup ključeva preko njega. Stoga će Bob i predstavnik Jim's Sporting Goods morati da naprave ključ Exchange lično.
+U tim okolnostima, suočiće se sa značajnim troškovima za bezbednu komunikaciju. Kako je Internet otvoren komunikacioni sistem, ne mogu jednostavno razmeniti skup ključeva preko njega. Stoga će Bob i predstavnik Jim's Sporting Goods morati da naprave razmenu ključa lično.
 
 
-Jedna mogućnost je da Jim’s Sporting Goods kreira posebne lokacije za ključeve Exchange, gde Bob i drugi novi kupci mogu preuzeti set ključeva za sigurnu komunikaciju. Ovo bi očigledno došlo uz značajne organizacione troškove i znatno smanjilo efikasnost sa kojom novi kupci mogu obavljati kupovine.
+Jedna mogućnost je da Jim’s Sporting Goods kreira posebne lokacije za razmenu ključeva, gde Bob i drugi novi kupci mogu preuzeti set ključeva za sigurnu komunikaciju. Ovo bi očigledno došlo uz značajne organizacione troškove i znatno smanjilo efikasnost sa kojom novi kupci mogu obavljati kupovine.
 
 
-Alternativno, Jim’s Sporting Goods može poslati Bobu par ključeva putem visoko pouzdanog kurira. Ovo je verovatno efikasnije nego organizovanje lokacija ključeva Exchange. Ali to bi i dalje dolazilo uz značajne troškove, posebno ako mnogi kupci obave samo jednu ili nekoliko kupovina.
+Alternativno, Jim’s Sporting Goods može poslati Bobu par ključeva putem visoko pouzdanog kurira. Ovo je verovatno efikasnije nego organizovanje lokacija za razmenu ključeva. Ali to bi i dalje dolazilo uz značajne troškove, posebno ako mnogi kupci obave samo jednu ili nekoliko kupovina.
 
 
 Dalje, simetrična šema za autentifikovano šifrovanje takođe primorava Jim’s Sporting Goods da čuva odvojene skupove ključeva za sve svoje kupce. Ovo bi bio značajan praktičan izazov za hiljade kupaca, a kamoli za milione.
@@ -2440,7 +2439,7 @@ Dakle, Jim’s Sporting Goods bi morao da čuva par ključeva za svakog kupca, b
 
 
 - Jim’s Sporting Goods bi morao da skladišti milione parova ključeva, jedan set za svakog kupca.
-- Ovi ključevi bi morali biti propisno osigurani, jer bi bili sigurna meta za hakere. Svako narušavanje sigurnosti zahtevalo bi ponavljanje skupih razmena ključeva, bilo na posebnim lokacijama ključeva Exchange ili putem kurira.
+- Ovi ključevi bi morali biti propisno osigurani, jer bi bili sigurna meta za hakere. Svako narušavanje sigurnosti zahtevalo bi ponavljanje skupih razmena ključeva, bilo na posebnim lokacijama za razmenu ključeva ili putem kurira.
 - Bilo koji kupac Jim’s Sporting Goods morao bi bezbedno čuvati par ključeva kod kuće. Gubici i krađe će se dogoditi, što zahteva ponavljanje razmene ključeva. Kupci bi takođe morali proći kroz ovaj proces za bilo koje druge online prodavnice ili druge vrste entiteta sa kojima žele komunicirati i obavljati transakcije putem Interneta.
 
 
@@ -2468,24 +2467,24 @@ Do 1970-ih, problemi distribucije ključeva i upravljanja ključevima privukli s
 Barem jedna primarna motivacija za njihov poduhvat bila je predviđanje da će otvorene računarske komunikacije duboko uticati na naš svet. Kao što su Diffie i Helmann primetili 1976. godine,
 
 
-> Razvoj računarski kontrolisanih komunikacionih mreža obećava lak i jeftin kontakt između ljudi ili računara na suprotnim stranama sveta, zamenjujući većinu pošte i mnoge izlete telekomunikacijama. Za mnoge primene ovi kontakti moraju biti osigurani protiv prisluškivanja i ubacivanja nelegitimnih poruka. Međutim, trenutno rešenje problema bezbednosti zaostaje za drugim oblastima komunikacione tehnologije. *Suvremena kriptografija nije u stanju da ispuni zahteve, jer bi njena upotreba nametnula tako ozbiljne neugodnosti korisnicima sistema, da bi eliminisala mnoge prednosti teleprocesiranja.* [1]
+> Razvoj računarski kontrolisanih komunikacionih mreža obećava lak i jeftin kontakt između ljudi ili računara na suprotnim stranama sveta, zamenjujući većinu pošte i mnoge izlete telekomunikacijama. Za mnoge primene ovi kontakti moraju biti osigurani protiv prisluškivanja i ubacivanja nelegitimnih poruka. Međutim, trenutno rešenje problema bezbednosti zaostaje za drugim oblastima komunikacione tehnologije. *Savremena kriptografija nije u stanju da ispuni zahteve, jer bi njena upotreba nametnula tako ozbiljne neugodnosti korisnicima sistema, da bi eliminisala mnoge prednosti teleprocesiranja.* [1]
 
-Upornost Diffieja, Hellmana i Merklea se isplatila. Prva objava njihovih rezultata bila je rad Diffieja i Helmana iz 1976. godine pod nazivom „New Directions in Cryptography.” U njemu su predstavili dva originalna načina za Address probleme distribucije ključeva i upravljanja ključevima.
-
-
-Prvo rešenje koje su ponudili bilo je daljinsko *key-Exchange protokol*, odnosno skup pravila za Exchange jednog ili više simetričnih ključeva preko nesigurnog komunikacionog kanala. Ovaj protokol je sada poznat kao *Diffie-Helmann key Exchange* ili *Diffie-Helmann-Merkle key Exchange*. [2]
+Upornost Diffieja, Hellmana i Merklea se isplatila. Prva objava njihovih rezultata bila je rad Diffieja i Helmana iz 1976. godine pod nazivom „New Directions in Cryptography.” U njemu su predstavili dva originalna načina za rešavanje probleme distribucije ključeva i upravljanja ključevima.
 
 
-Sa Diffie-Helmann ključem Exchange, dve strane prvo Exchange neke informacije javno na nesigurnom kanalu kao što je Internet. Na osnovu tih informacija, zatim, nezavisno kreiraju simetrični ključ (ili par simetričnih ključeva) za sigurnu komunikaciju. Iako obe strane nezavisno kreiraju svoje ključeve, informacije koje su podelili javno osiguravaju da ovaj proces kreiranja ključa daje isti rezultat za obe strane.
+Prvo rešenje koje su ponudili bilo je daljinsko *key-Exchange protokol*, odnosno skup pravila za razmenu jednog ili više simetričnih ključeva preko nesigurnog komunikacionog kanala. Ovaj protokol je sada poznat kao *Diffie-Helmann key Exchange* ili *Diffie-Helmann-Merkle key Exchange*. [2]
 
 
-Važno je napomenuti da, iako svako može posmatrati informacije koje strane razmenjuju javno preko nesigurnog kanala, samo dve strane koje učestvuju u informacijama Exchange mogu kreirati simetrične ključeve iz njih.
+Sa Diffie-Helmann razmenom ključa, dve strane prvo razmene neke informacije javno na nesigurnom kanalu kao što je Internet. Na osnovu tih informacija, zatim, nezavisno kreiraju simetrični ključ (ili par simetričnih ključeva) za sigurnu komunikaciju. Iako obe strane nezavisno kreiraju svoje ključeve, informacije koje su podelili javno osiguravaju da ovaj proces kreiranja ključa daje isti rezultat za obe strane.
 
 
-Ovo, naravno, zvuči potpuno kontraintuitivno. Kako bi dve strane Exchange mogle javno da podele informacije koje bi im omogućile da samo one kreiraju simetrične ključeve iz njih? Zašto niko drugi ko posmatra informacije Exchange ne bi mogao da kreira iste ključeve?
+Važno je napomenuti da, iako svako može posmatrati informacije koje strane razmenjuju javno preko nesigurnog kanala, samo dve strane koje učestvuju u razmnei informacija mogu kreirati simetrične ključeve iz njih.
 
 
-Oslanja se naravno na neku lepu matematiku. Diffie-Helmann ključ Exchange radi putem jednosmerne funkcije sa skrivenim prolazom. Hajde da redom diskutujemo značenje ova dva termina.
+Ovo, naravno, zvuči potpuno kontraintuitivno. Kako bi dve strane mogle javno da podele informacije koje bi im omogućile da samo one kreiraju simetrične ključeve iz njih? Zašto niko drugi ko posmatra razmenu informacija ne bi mogao da kreira iste ključeve?
+
+
+Oslanja se naravno na neku lepu matematiku. Diffie-Helmann razmena ključa radi putem jednosmerne funkcije sa skrivenim prolazom. Hajde da redom diskutujemo značenje ova dva termina.
 
 
 Pretpostavimo da vam je data neka funkcija $f(x)$ i rezultat $f(a) = y$, gde je $a$ određena vrednost za $x$. Kažemo da je $f(x)$ **jednosmerna funkcija** ako je lako izračunati vrednost $y$ kada su dati $a$ i $f(x)$, ali je računarski neizvodljivo izračunati vrednost $a$ kada su dati $y$ i $f(x)$. Naziv **jednosmerna funkcija**, naravno, potiče iz činjenice da je takvu funkciju praktično izračunati samo u jednom smeru.
@@ -2494,28 +2493,28 @@ Pretpostavimo da vam je data neka funkcija $f(x)$ i rezultat $f(a) = y$, gde je 
 Neke jednosmerne funkcije imaju ono što je poznato kao **trapdoor**. Dok je praktično nemoguće izračunati $a$ samo na osnovu $y$ i $f(x)$, postoji određeni deo informacije $Z$ koji omogućava da se izračuna $a$ iz $y$ na računarski izvodljiv način. Ovaj deo informacije $Z$ je poznat kao **trapdoor**. Jednosmerne funkcije koje imaju trapdoor poznate su kao **trapdoor funkcije**.
 
 
-Nećemo ulaziti u detalje Diffie-Helmann ključa Exchange ovde. Ali u suštini, svaki učesnik kreira neke informacije, od kojih je jedan deo javno podeljen, dok neki ostaju tajni. Svaka strana zatim uzima svoj tajni deo informacija i javne informacije koje je podelila druga strana kako bi kreirala privatni ključ. I na neki način, oba učesnika će završiti sa istim privatnim ključem.
+Nećemo ulaziti u detalje Diffie-Helmann razmene ključa ovde. Ali u suštini, svaki učesnik kreira neke informacije, od kojih je jedan deo javno podeljen, dok neki ostaju tajni. Svaka strana zatim uzima svoj tajni deo informacija i javne informacije koje je podelila druga strana kako bi kreirala privatni ključ. I na neki način, oba učesnika će završiti sa istim privatnim ključem.
 
 
-Bilo koja strana koja posmatra samo javno deljene informacije između dve strane u Diffie Helmann ključu Exchange nije u mogućnosti da replicira ove proračune. Potrebne su im privatne informacije od jedne od dve strane da bi to uradili.
+Bilo koja strana koja posmatra samo javno deljene informacije između dve strane u Diffie Helmann razmenu ključa nije u mogućnosti da replicira ove proračune. Potrebne su im privatne informacije od jedne od dve strane da bi to uradili.
 
 
-Iako osnovna verzija Diffie-Helmann ključa Exchange predstavljena u radu iz 1976. godine nije veoma sigurna, sofisticirane verzije osnovnog protokola su svakako i dalje u upotrebi danas. Najvažnije je da je svaki ključ Exchange protokola u najnovijoj verziji transportnog Layer sigurnosnog protokola (verzija 1.3) suštinski obogaćena verzija protokola koju su predstavili Diffie i Hellman 1976. godine. Transportni Layer sigurnosni protokol je preovlađujući protokol za sigurno razmenjivanje informacija formatiranih prema hipertekstualnom transfer protokolu (http), standardu za razmenu Web sadržaja.
+Iako osnovna verzija Diffie-Helmann key exchange predstavljena u radu iz 1976. godine nije veoma sigurna, sofisticirane verzije osnovnog protokola su svakako i dalje u upotrebi danas. Najvažnije je to što je svaki protokol za razmenu ključeva u najnovijoj verziji protokola sigurnosnog sloja prenosa (verzija 1.3) u suštini obogaćena verzija protokola koji su predstavili Diffie i Hellman 1976. godine. Protokol sigurnosnog sloja prenosa (TLS) je pretežni protokol za sigurno razmenjivanje informacija koje su formatirane prema protokolu za prenos hiperteksta (HTTP), standardu za razmenu sadržaja na vebu.
 
 
-Važno je napomenuti da Diffie-Helmann ključ Exchange nije asimetrična šema. Strogo govoreći, može se tvrditi da pripada oblasti simetrične kriptografije ključa. Ali pošto se i Diffie-Helmann ključ Exchange i asimetrična kriptografija oslanjaju na jednosmerne brojevno-teorijske funkcije sa zamkama, obično se razmatraju zajedno.
+Važno je napomenuti da Diffie-Helmann razmena ključa nije asimetrična šema. Strogo govoreći, može se tvrditi da pripada oblasti simetrične kriptografije ključa. Ali pošto se i Diffie-Helmann razmena ključa i asimetrična kriptografija oslanjaju na jednosmerne brojevno-teorijske funkcije sa zamkama, obično se razmatraju zajedno.
 
 
-Drugi način koji su Diffie i Helmann ponudili Address za problem distribucije i upravljanja ključevima u svom radu iz 1976. godine bio je, naravno, putem asimetrične kriptografije.
+Drugi način koji su Diffie i Helmann ponudili rešenje za problem distribucije i upravljanja ključevima u svom radu iz 1976. godine bio je, naravno, putem asimetrične kriptografije.
 
 
-Nasuprot njihovoj prezentaciji Diffie-Hellman ključa Exchange, oni su pružili samo opšte konture kako bi asimetrične kriptografske šeme mogle biti konstruisane. Nisu ponudili nikakvu jednosmernu funkciju koja bi specifično mogla ispuniti uslove potrebne za razumnu sigurnost u takvim šemama.
+Nasuprot njihovoj prezentaciji Diffie-Hellman razmena ključa, oni su pružili samo opšte konture kako bi asimetrične kriptografske šeme mogle biti konstruisane. Nisu ponudili nikakvu jednosmernu funkciju koja bi specifično mogla ispuniti uslove potrebne za razumnu sigurnost u takvim šemama.
 
 
 Praktična implementacija asimetrične šeme je, međutim, pronađena godinu dana kasnije od strane tri različita akademska kriptografa i matematičara: Ronald Rivest, Adi Shamir i Leonard Adleman. [3] Kriptosistem koji su predstavili postao je poznat kao **RSA kriptosistem** (po njihovim prezimenima).
 
 
-Funkcije sa skrivenim vratima korišćene u asimetričnoj kriptografiji (i Diffie Helmann ključ Exchange) su sve povezane sa dva glavna **računska Hard problema**: faktorizacija prostih brojeva i izračunavanje diskretnih logaritama.
+Funkcije sa skrivenim vratima korišćene u asimetričnoj kriptografiji (i Diffie Helmann razmena ključa) su sve povezane sa dva glavna **računski teška problema**: faktorizacija prostih brojeva i izračunavanje diskretnih logaritama.
 
 
 **Faktorizacija prostih brojeva** zahteva, kao što ime implicira, razlaganje celog broja na njegove proste faktore. RSA problem je daleko najpoznatiji primer kriptosistema povezanog sa faktorizacijom prostih brojeva.
@@ -2524,7 +2523,7 @@ Funkcije sa skrivenim vratima korišćene u asimetričnoj kriptografiji (i Diffi
 **Problem diskretnog logaritma** je problem koji se javlja u cikličkim grupama. Dat je generator u određenoj cikličkoj grupi, i potrebno je izračunati jedinstveni eksponent potreban da se iz generatora proizvede drugi element u grupi.
 
 
-Šeme zasnovane na diskretnom logaritmu oslanjaju se na dve glavne vrste cikličnih grupa: multiplikativne grupe celih brojeva i grupe koje uključuju tačke na eliptičkim krivama. Originalni Diffie Helmann ključ Exchange, kako je predstavljen u “New Directions in Cryptography”, radi sa cikličnom multiplikativnom grupom celih brojeva. Bitcoin-ov algoritam digitalnog potpisa i nedavno uvedena Schnorr šema potpisa (2021) zasnovani su na problemu diskretnog logaritma za određenu cikličnu grupu eliptičke krive.
+Šeme zasnovane na diskretnom logaritmu oslanjaju se na dve glavne vrste cikličnih grupa: multiplikativne grupe celih brojeva i grupe koje uključuju tačke na eliptičkim krivama. Originalni Diffie Helmann razmena ključa, kako je predstavljen u “New Directions in Cryptography”, radi sa cikličnom multiplikativnom grupom celih brojeva. Bitcoin-ov algoritam digitalnog potpisa i nedavno uvedena Schnorr šema potpisa (2021) zasnovani su na problemu diskretnog logaritma za određenu cikličnu grupu eliptičke krive.
 
 
 Zatim ćemo preći na pregled tajnosti i autentifikacije na visokom nivou u asimetričnom okruženju. Međutim, pre nego što to učinimo, potrebno je da napravimo kratku istorijsku napomenu.
@@ -2533,7 +2532,7 @@ Zatim ćemo preći na pregled tajnosti i autentifikacije na visokom nivou u asim
 Sada se čini verovatnim da je grupa britanskih kriptografa i matematičara koji su radili za Vladin komunikacioni štab (GCHQ) nezavisno došla do gore pomenutih otkrića nekoliko godina ranije. Ova grupa se sastojala od Džejmsa Elisa, Kliforda Koksa i Malkolma Vilijamsona.
 
 
-Prema njihovim sopstvenim izveštajima i izveštaju GCHQ-a, Džejms Elis je prvi osmislio koncept kriptografije javnog ključa 1969. Navodno je Kliford Koks zatim otkrio RSA kriptografski sistem 1973. godine, a Malkolm Vilijamson koncept Diffie Helmann ključa Exchange 1974. godine. [4] Njihova otkrića, međutim, navodno nisu bila otkrivena sve do 1997. godine, s obzirom na tajnu prirodu rada u GCHQ-u.
+Prema njihovim sopstvenim izveštajima i izveštaju GCHQ-a, Džejms Elis je prvi osmislio koncept kriptografije javnog ključa 1969. Navodno je Kliford Koks zatim otkrio RSA kriptografski sistem 1973. godine, a Malkolm Vilijamson koncept Diffie Helmann razmenu ključa 1974. godine. [4] Njihova otkrića, međutim, navodno nisu bila otkrivena sve do 1997. godine, s obzirom na tajnu prirodu rada u GCHQ-u.
 
 
 
@@ -2543,7 +2542,7 @@ Prema njihovim sopstvenim izveštajima i izveštaju GCHQ-a, Džejms Elis je prvi
 [1] Whitfield Diffie i Martin Hellman, “New directions in cryptography,” _IEEE Transactions on Information Theory_ IT-22 (1976), pp. 644–654, at p. 644.
 
 
-[2] Ralph Merkle takođe diskutuje o ključnom Exchange protokolu u “Secure communications over insecure channels”, _Communications of the Association for Computing Machinery_, 21 (1978), 294–99. Iako je Merkle zapravo predao ovaj rad pre rada Diffieja i Hellmana, objavljen je kasnije. Merkleovo rešenje nije eksponencijalno sigurno, za razliku od Diffie-Hellmanovog.
+[2] Ralph Merkle takođe diskutuje o protokolu za razmenu ključa u “Secure communications over insecure channels”, _Communications of the Association for Computing Machinery_, 21 (1978), 294–99. Iako je Merkle zapravo predao ovaj rad pre rada Diffieja i Hellmana, objavljen je kasnije. Merkleovo rešenje nije eksponencijalno sigurno, za razliku od Diffie-Hellmanovog.
 
 
 [3] Ron Rivest, Adi Shamir, and Leonard Adleman, “A method for obtaining digital signatures and public-key cryptosystems”, _Communications of the Association for Computing Machinery_, 21 (1978), pp. 120–26.
