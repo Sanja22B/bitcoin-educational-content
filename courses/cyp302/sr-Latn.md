@@ -2602,7 +2602,7 @@ Bob prvo kreira par ključeva, koji se sastoje od javnog ključa ($K_P$) i priva
 Alisa ubacuje poruku, javni ključ i digitalni potpis u **algoritam za verifikaciju**. Ovaj algoritam proizvodi ili **tačno** za važeći potpis, ili **netačno** za nevažeći potpis.
 
 
-Digitalni potpis je, kao što naziv jasno implicira, digitalni ekvivalent pisanog potpisa na pismima, ugovorima i slično. U stvari, digitalni potpis je obično mnogo sigurniji. Uz malo truda, možete falsifikovati pisani potpis; proces koji je olakšan činjenicom da se pisani potpisi često ne proveravaju pažljivo. Međutim, siguran digitalni potpis je, baš kao i siguran kod za autentifikaciju poruka, **egzistencijalno nefalšljiv**: to jest, sa sigurnom šemom digitalnog potpisa, niko ne može izvodljivo kreirati potpis za poruku koji prolazi proceduru verifikacije, osim ako nema privatni ključ.
+Digitalni potpis je, kao što naziv jasno implicira, digitalni ekvivalent pisanog potpisa na pismima, ugovorima i slično. U stvari, digitalni potpis je obično mnogo sigurniji. Uz malo truda, možete falsifikovati pisani potpis; proces koji je olakšan činjenicom da se pisani potpisi često ne proveravaju pažljivo. Međutim, siguran digitalni potpis je, baš kao i siguran kod za autentifikaciju poruka, **egzistencijalno nekrivotvorljiv**: to jest, sa sigurnom šemom digitalnog potpisa, niko ne može izvodljivo kreirati potpis za poruku koji prolazi proceduru verifikacije, osim ako nema privatni ključ.
 
 
 *Slika 2: Asimetrična autentifikacija*
@@ -2615,46 +2615,46 @@ Digitalni potpis je, kao što naziv jasno implicira, digitalni ekvivalent pisano
 Kao i kod asimetrične enkripcije, vidimo zanimljiv kontrast između digitalnih potpisa i kodova za autentifikaciju poruka. Za ove poslednje, verifikacioni algoritam može koristiti samo jedna od strana koja je upoznata sa sigurnom komunikacijom. To je zato što zahteva privatni ključ. Međutim, u asimetričnom okruženju, bilo ko može verifikovati digitalni potpis $S$ koji je napravio Bob.
 
 
-Sve ovo čini digitalne potpise izuzetno moćnim alatom. Oni čine osnovu, na primer, za kreiranje potpisa na ugovorima koji se mogu verifikovati u pravne svrhe. Ako je Bob napravio potpis na Contract u gore navedenom Exchange, Alisa može pokazati poruku $M$, Contract i potpis $S$ sudu. Sud tada može verifikovati potpis koristeći Bobov javni ključ. [5]
+Sve ovo čini digitalne potpise izuzetno moćnim alatom. Oni čine osnovu, na primer, za kreiranje potpisa na ugovorima koji se mogu verifikovati u pravne svrhe. Ako je Bob napravio potpis na ugovoru u gore navedenoj razmeni, Alisa može pokazati poruku $M$, ugovor i potpis $S$ sudu. Sud tada može verifikovati potpis koristeći Bobov javni ključ. [5]
 
 
 Za još jedan primer, digitalni potpisi su važan aspekt bezbednog softvera i distribucije ažuriranja softvera. Ova vrsta javne proverljivosti nikada ne bi mogla biti kreirana korišćenjem samo kodova za autentifikaciju poruka.
 
 
-Kao poslednji primer moći digitalnih potpisa, razmotrite Bitcoin. Jedna od najčešćih zabluda o Bitcoin, posebno u medijima, jeste da su transakcije šifrovane: nisu. Umesto toga, Bitcoin transakcije rade sa digitalnim potpisima kako bi se osigurala bezbednost.
+Kao poslednji primer moći digitalnih potpisa, razmotrite Bitcoin. Jedna od najčešćih zabluda o Bitcoin-u, posebno u medijima, jeste da su transakcije šifrovane: nisu. Umesto toga, Bitcoin transakcije rade sa digitalnim potpisima kako bi se osigurala bezbednost.
 
 
-Bitcoini postoje u serijama koje se nazivaju neiskorišćeni izlazi transakcija (ili **UTXO**). Pretpostavimo da primite tri uplate na određenom Bitcoin Address za po 2 bitcoina. Tehnički, sada nemate 6 bitcoina na tom Address. Umesto toga, imate tri serije od po 2 bitcoina koje su zaključane kriptografskim problemom povezanim sa tim Address. Za svaku uplatu koju izvršite, možete koristiti jednu, dve ili sve tri od ovih serija, u zavisnosti od toga koliko vam je potrebno za transakciju.
+Bitkoini postoje u serijama koje se nazivaju neiskorišćeni izlazi transakcija (ili **UTXO**). Pretpostavimo da primite tri uplate na određenoj Bitcoin adresi za po 2 bitkoina. Tehnički, sada nemate 6 bitkoina na toj adresi. Umesto toga, imate tri serije od po 2 bitkoina koja su zaključana kriptografskim problemom povezanim sa tom adresom. Za svaku uplatu koju izvršite, možete koristiti jednu, dve ili sve tri od ovih serija, u zavisnosti od toga koliko vam je potrebno za transakciju.
 
 
-Dokaz Ownership nad neiskorišćenim izlazima transakcija obično se prikazuje putem jednog ili više digitalnih potpisa. Bitcoin funkcioniše upravo zato što je izrada važećih digitalnih potpisa na neiskorišćenim izlazima transakcija računski neizvodljiva, osim ako ne posedujete tajne informacije potrebne za njihovu izradu.
+Dokaz vlasništva nad neiskorišćenim izlazima transakcija obično se prikazuje putem jednog ili više digitalnih potpisa. Bitcoin funkcioniše upravo zato što je izrada važećih digitalnih potpisa na neiskorišćenim izlazima transakcija računski neizvodljiva, osim ako ne posedujete tajne informacije potrebne za njihovu izradu.
 
 
 Trenutno, Bitcoin transakcije transparentno uključuju sve informacije koje treba da budu verifikovane od strane učesnika u mreži, kao što su porekla neiskorišćenih izlaza transakcija korišćenih u transakciji. Iako je moguće sakriti neke od tih informacija i dalje omogućiti verifikaciju (kao što to čine neke alternativne kriptovalute poput Monera), ovo takođe stvara određene bezbednosne rizike.
 
 
-Zbunjenost ponekad nastaje oko digitalnih potpisa i pisanih potpisa uhvaćenih digitalno. U potonjem slučaju, uhvatite sliku svog pisanog potpisa i zalepite je na elektronski dokument kao što je zaposlenje Contract. Međutim, ovo nije digitalni potpis u kriptografskom smislu. Potonji je samo dugačak broj koji se može proizvesti samo posedovanjem privatnog ključa.
+Zbunjenost ponekad nastaje oko digitalnih potpisa i pisanih potpisa uhvaćenih digitalno. U potonjem slučaju, uhvatite sliku svog pisanog potpisa i zalepite je na elektronski dokument kao što je ugovor o zapošljavanju. Međutim, ovo nije digitalni potpis u kriptografskom smislu. Potonji je samo dugačak broj koji se može proizvesti samo posedovanjem privatnog ključa.
 
 
-Baš kao u simetričnom ključnom okruženju, možete koristiti i asimetrične šeme za šifrovanje i autentifikaciju zajedno. Slični principi se primenjuju. Pre svega, trebalo bi koristiti različite parove privatnih-javnih ključeva za šifrovanje i pravljenje digitalnih potpisa. Pored toga, prvo bi trebalo šifrovati poruku, a zatim je autentifikovati.
+Baš kao u okruženju sa simetričnim ključem, i u okruženju sa asimetričnim ključem možete zajedno koristiti šeme za šifriranje i autentifikaciju. Slični principi se primenjuju. Pre svega, trebalo bi koristiti različite parove privatnih-javnih ključeva za šifrovanje i pravljenje digitalnih potpisa. Pored toga, prvo bi trebalo šifrovati poruku, a zatim je autentifikovati.
 
 
-Važno je napomenuti da se u mnogim aplikacijama asimetrična kriptografija ne koristi tokom celog procesa komunikacije. Umesto toga, obično će se koristiti samo za *Exchange simetrične ključeve* između strana putem kojih će zapravo komunicirati.
+Važno je napomenuti da se u mnogim aplikacijama asimetrična kriptografija ne koristi tokom celog procesa komunikacije. Umesto toga, obično će se koristiti samo za *razmenu simetričnih ključeva* između strana putem kojih će zapravo komunicirati.
 
 
-Ovo je slučaj, na primer, kada kupujete robu putem interneta. Znajući javni ključ prodavca, ona vam može poslati digitalno potpisane poruke koje možete verifikovati radi njihove autentičnosti. Na osnovu toga, možete slediti jedan od više protokola za razmenu simetričnih ključeva kako biste bezbedno komunicirali.
+Ovo je slučaj, na primer, kada kupujete odeću putem interneta. Znajući javni ključ prodavca, ona vam može poslati digitalno potpisane poruke koje možete verifikovati radi njihove autentičnosti. Na osnovu toga, možete slediti jedan od više protokola za razmenu simetričnih ključeva kako biste bezbedno komunicirali.
 
 
 Glavni razlog za učestalost prethodno pomenutog pristupa je taj što je asimetrična kriptografija mnogo manje efikasna od simetrične kriptografije u postizanju određenog nivoa sigurnosti. Ovo je jedan od razloga zašto nam je i dalje potrebna simetrična kriptografija pored javne kriptografije. Pored toga, simetrična kriptografija je mnogo prirodnija u posebnim aplikacijama kao što je korisnik računara koji šifrira sopstvene podatke.
 
 
-Kako tačno digitalni potpisi i enkripcija javnim ključem Address rešavaju probleme distribucije ključeva i upravljanja ključevima?
+Kako tačno digitalni potpisi i enkripcija javnim ključem rešavaju probleme distribucije ključeva i upravljanja ključevima?
 
 
 Ne postoji samo jedan odgovor ovde. Asimetrična kriptografija je alat i ne postoji samo jedan način da se taj alat koristi. Ali hajde da uzmemo naš raniji primer iz Jim's Sporting Goods da pokažemo kako bi se problemi obično rešavali u ovom primeru.
 
 
-Da bi počeo, Jim’s Sporting Goods bi verovatno pristupio **autoritetu za sertifikate**, organizaciji koja podržava distribuciju javnih ključeva. Autoritet za sertifikate bi registrovao neke detalje o Jim’s Sporting Goods i dodelio mu javni ključ. Zatim bi poslao Jim’s Sporting Goods sertifikat, poznat kao **TLS/SSL sertifikat**, sa javnim ključem Jim’s Sporting Goods digitalno potpisanim koristeći sopstveni javni ključ autoriteta za sertifikate. Na ovaj način, autoritet za sertifikate potvrđuje da određeni javni ključ zaista pripada Jim’s Sporting Goods.
+Da bi počeo, Jim’s Sporting Goods bi verovatno pristupio **sertifikacionom telu** (eng. certificate authority CA), organizaciji koja podržava distribuciju javnih ključeva. Sertifikaciono telo bi registrovalo neke detalje o Jim’s Sporting Goods i dodelio mu javni ključ. CA zatim šalje Jim’s Sporting Goods sertifikat, poznat kao **TLS/SSL sertifikat** koji sadrži njihov javni ključ, digitalno potpisan pomoću privatnog ključa sertifikacionog tela. Na ovaj način, autoritet za sertifikate potvrđuje da određeni javni ključ zaista pripada Jim’s Sporting Goods.
 
 
 Ključ za razumevanje ovog procesa sa TLS/SSL sertifikatima je da, iako generalno nećete imati javni ključ Jim’s Sporting Goods-a sačuvan bilo gde na vašem računaru, javni ključevi priznatih sertifikacionih autoriteta su zaista sačuvani u vašem pregledaču ili u vašem operativnom sistemu. Oni su sačuvani u onome što se zove **root sertifikati**.
@@ -2663,7 +2663,7 @@ Ključ za razumevanje ovog procesa sa TLS/SSL sertifikatima je da, iako generaln
 Dakle, kada vam Jim’s Sporting Goods obezbedi svoj TLS/SSL sertifikat, možete verifikovati digitalni potpis sertifikacionog tela putem root sertifikata u vašem pregledaču ili operativnom sistemu. Ako je potpis validan, možete biti relativno sigurni da javni ključ na sertifikatu zaista pripada Jim’s Sporting Goods. Na ovoj osnovi, lako je uspostaviti protokol za sigurnu komunikaciju sa Jim’s Sporting Goods.
 
 
-Distribucija ključeva sada je postala znatno jednostavnija za Jim’s Sporting Goods. Nije Hard videti da je upravljanje ključevima takođe postalo znatno pojednostavljeno. Umesto da mora da skladišti hiljade ključeva, Jim’s Sporting Goods samo treba da skladišti privatni ključ koji mu omogućava da pravi potpise za javni ključ na svom SSL sertifikatu. Svaki put kada kupac poseti sajt Jim’s Sporting Goods, može uspostaviti sigurnu komunikacionu sesiju putem ovog javnog ključa. Kupci takođe ne moraju da skladište bilo kakve informacije (osim javnih ključeva priznatih sertifikacionih autoriteta u svom operativnom sistemu i pregledaču).
+Distribucija ključeva sada je postala znatno jednostavnija za Jim’s Sporting Goods. Nije teško videti da je upravljanje ključevima takođe postalo znatno pojednostavljeno. Umesto da mora da skladišti hiljade ključeva, Jim’s Sporting Goods samo treba da skladišti privatni ključ koji mu omogućava da pravi potpise za javni ključ na svom SSL sertifikatu. Svaki put kada kupac poseti sajt Jim’s Sporting Goods, može uspostaviti sigurnu komunikacionu sesiju putem ovog javnog ključa. Kupci takođe ne moraju da skladište bilo kakve informacije (osim javnih ključeva priznatih sertifikacionih autoriteta u svom operativnom sistemu i pregledaču).
 
 
 **Beleške:**
@@ -2674,12 +2674,12 @@ Distribucija ključeva sada je postala znatno jednostavnija za Jim’s Sporting 
 
 
 
-## Hash funkcije
+## Heš funkcije
 
 <chapterId>ea8327ab-b0e3-5635-941c-4b51f396a648</chapterId>
 
 
-Funkcije Hash su sveprisutne u kriptografiji. One nisu ni simetrične ni asimetrične šeme, već spadaju u kriptografsku kategoriju za sebe.
+Heš funkcije su sveprisutne u kriptografiji. One nisu ni simetrične ni asimetrične šeme, već spadaju u kriptografsku kategoriju za sebe.
 
 
 Već smo naišli na funkcije Hash u Poglavlju 4 prilikom kreiranja poruka za autentifikaciju zasnovanih na Hash. One su takođe važne u kontekstu digitalnih potpisa, ali iz nešto drugačijeg razloga: Digitalni potpisi se naime obično prave preko Hash vrednosti neke (šifrovane) poruke, a ne stvarne (šifrovane) poruke. U ovom delu, ponudiću detaljniji uvod u funkcije Hash.
