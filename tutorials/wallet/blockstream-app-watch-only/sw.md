@@ -89,7 +89,7 @@ description: Ninawezaje kusanidi Watch-only wallet kwenye Programu ya Blockstrea
 
 - Aina za funguo za umma zilizopanuliwa
  - **xpub**: Inatumika kwa jalada la Urithi (anwani zinazoanza na "1", BIP-44) na jalada la Taproot (anwani zinazoanza na "bc1p", BIP-86).
- - **ypub**: Imeundwa kwa pochi zinazooana za SegWit (anwani zinazoanza na "3", BIP-49).
+ - **ypub**: Imeundwa kwa wallet zinazooana za SegWit (anwani zinazoanza na "3", BIP-49).
  - **zpub**: Inahusishwa na jalada asili la SegWit (anwani zinazoanza na "bc1q", BIP-84).
  - **Nyingine (tpub, upub, vpub, n.k.)**: Inatumika kwa mitandao mbadala (kama vile Testnet) au viwango mahususi. Kwa mfano, tpub ni ya mtandao wa Testnet.
 
@@ -152,7 +152,7 @@ https://planb.network/courses/46b0ced2-9028-4a61-8fbc-3b005ee8d70f
     - **Watch only** kwingineko za ufuatiliaji wa fedha bila ufikiaji wa funguo.
     - Chaguzi za faragha: muunganisho kupitia **Tor**, unganisho kwa **nodi ya kibinafsi** kupitia Electrum, au uthibitishaji wa **SPV** ili kupunguza utegemezi kwenye nodi za watu wengine.
     - Hufanya kazi **Replace-by-fee (RBF)** ili kuharakisha miamala ambayo haijathibitishwa.
-- **Utangamano**: Huunganisha pochi za maunzi kama vile **Blockstream Jade**.
+- **Utangamano**: Huunganisha wallet za maunzi kama vile **Blockstream Jade**.
 - **Interface**: Intuitive kwa wanaoanza, na chaguo za kina kwa wataalam.
 - **Kumbuka**: Mwongozo huu unazingatia matumizi ya onchain. Mafunzo mengine katika Viambatisho yanashughulikia Onchain, Tazama Pekee na toleo la eneo-kazi.
 
@@ -526,7 +526,7 @@ https://planb.network/courses/46b0ced2-9028-4a61-8fbc-3b005ee8d70f
 - **Zuia Wachunguzi :**
  - Onchain: **[Mempool.space](https://Mempool.space/)**
  - Liquid : **[Maelezo ya Blockstream](https://blockstream.info/Liquid)**
- - Umeme: **[1ML (Lightning Network)](https://1ml.com/)**
+ - Lightning: **[1ML (Lightning Network)](https://1ml.com/)**
 
 
 
