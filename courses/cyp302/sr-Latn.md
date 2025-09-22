@@ -2682,19 +2682,19 @@ Distribucija ključeva sada je postala znatno jednostavnija za Jim’s Sporting 
 Heš funkcije su sveprisutne u kriptografiji. One nisu ni simetrične ni asimetrične šeme, već spadaju u kriptografsku kategoriju za sebe.
 
 
-Već smo naišli na funkcije Hash u Poglavlju 4 prilikom kreiranja poruka za autentifikaciju zasnovanih na Hash. One su takođe važne u kontekstu digitalnih potpisa, ali iz nešto drugačijeg razloga: Digitalni potpisi se naime obično prave preko Hash vrednosti neke (šifrovane) poruke, a ne stvarne (šifrovane) poruke. U ovom delu, ponudiću detaljniji uvod u funkcije Hash.
+Već smo naišli na heš funkcije u Poglavlju 4 prilikom kreiranja poruka za autentifikaciju zasnovanih na heš vrednosti. One su takođe važne u kontekstu digitalnih potpisa, ali iz nešto drugačijeg razloga: Digitalni potpisi se naime obično prave preko heš vrednosti neke (šifrovane) poruke, a ne stvarne (šifrovane) poruke. U ovom delu, ponudiću detaljniji uvod u heš funkcije.
 
 
-Hajde da počnemo sa definisanjem Hash funkcije. **Hash funkcija** je bilo koja efikasno izračunljiva funkcija koja prima ulaze proizvoljne veličine i daje izlaze fiksne dužine.
+Hajde da počnemo sa definisanjem heš funkcije. **Heš funkcija** je bilo koja efikasno izračunljiva funkcija koja prima ulaze proizvoljne veličine i daje izlaze fiksne dužine.
 
 
-**kriptografska Hash funkcija** je samo Hash funkcija koja je korisna za primene u kriptografiji. Izlaz kriptografske Hash funkcije se obično naziva **Hash**, **Hash-vrednost**, ili **sažetak poruke**.
+**Kriptografska heš funkcija** je samo heš funkcija koja je korisna za primene u kriptografiji. Izlaz kriptografske heš funkcije se obično naziva **heš**, **heš-vrednost**, ili **sažetak poruke**.
 
 
-U kontekstu kriptografije, "Hash funkcija" se obično odnosi na kriptografsku Hash funkciju. Usvojiću tu praksu od sada nadalje.
+U kontekstu kriptografije, "heš funkcija" se obično odnosi na kriptografsku heš funkciju. Usvojiću tu praksu od sada nadalje.
 
 
-Primer popularne funkcije Hash je **SHA-256** (sigurni Hash algoritam 256). Bez obzira na veličinu ulaza (npr. 15 bita, 100 bita, ili 10,000 bita), ova funkcija će dati 256-bitnu Hash vrednost. Ispod možete videti nekoliko primera izlaza funkcije SHA-256.
+Primer popularne heš funkcije je **SHA-256** (sigurni heš algoritam 256). Bez obzira na veličinu ulaza (npr. 15 bita, 100 bita, ili 10,000 bita), ova funkcija će dati 256-bitnu heš vrednost. Ispod možete videti nekoliko primera izlaza funkcije SHA-256.
 
 
 „Hello“: `185f8db32271fe25f561a6fc938b2e264306ec304eda518007d1764826381969`
@@ -2709,7 +2709,7 @@ Primer popularne funkcije Hash je **SHA-256** (sigurni Hash algoritam 256). Bez 
 Svi izlazi su tačno 256 bita zapisani u heksadecimalnom formatu (svaka heksadecimalna cifra može biti predstavljena sa četiri binarna broja). Dakle, čak i da ste ubacili Tolkinovu knjigu *Gospodar prstenova* u SHA-256 funkciju, izlaz bi i dalje bio 256 bita.
 
 
-Funkcije Hash kao što je SHA-256 koriste se u razne svrhe u kriptografiji. Koja svojstva su potrebna od funkcije Hash zaista zavisi od konteksta određene primene. Postoje dva glavna svojstva koja se generalno žele od funkcija Hash u kriptografiji: [6]
+Heš funkcija kao što je SHA-256 koriste se u razne svrhe u kriptografiji. Koja svojstva su potrebna od heš funkcije zaista zavisi od konteksta određene primene. Postoje dva glavna svojstva koja se generalno žele od heš funkcija u kriptografiji: [6]
 
 
 1.	Otpornost na sudar
@@ -2717,26 +2717,26 @@ Funkcije Hash kao što je SHA-256 koriste se u razne svrhe u kriptografiji. Koja
 2.	Skrivanje
 
 
-Funkcija $H$ tipa Hash se smatra **otporna na sudare** ako je neizvodljivo pronaći dve vrednosti, $x$ i $y$, takve da je $x \neq y$, a ipak $H(x) = H(y)$.
+Funkcija $H$ heš tipa se smatra **otporna na sudare** ako je neizvodljivo pronaći dve vrednosti, $x$ i $y$, takve da je $x \neq y$, a ipak $H(x) = H(y)$.
 
 
-Koliziono otporne Hash funkcije su važne, na primer, u verifikaciji softvera. Pretpostavimo da želite da preuzmete Windows izdanje Bitcoin Core 0.21.0 (serverska aplikacija za obradu Bitcoin mrežnog saobraćaja). Glavni koraci koje biste morali preduzeti, kako biste verifikovali legitimnost softvera, su sledeći:
+Koliziono otporne heš funkcije su važne, na primer, u verifikaciji softvera. Pretpostavimo da želite da preuzmete Windows izdanje Bitcoin Core 0.21.0 (serverska aplikacija za obradu Bitcoin mrežnog saobraćaja). Glavni koraci koje biste morali preduzeti, kako biste verifikovali legitimnost softvera, su sledeći:
 
 
-1.	Prvo treba da preuzmete i uvezete javne ključeve jednog ili više saradnika Bitcoin Core u softver koji može da verifikuje digitalne potpise (npr. Kleopetra). Te javne ključeve možete pronaći [ovde](https://github.com/Bitcoin/Bitcoin/blob/master/contrib/builder-keys/keys.txt). Preporučuje se da verifikujete Bitcoin Core softver sa javnim ključevima od više saradnika.
+1.	Prvo treba da preuzmete i uvezete javne ključeve jednog ili više saradnika Bitcoin Core-a u softver koji može da verifikuje digitalne potpise (npr. Kleopetra). Te javne ključeve možete pronaći [ovde](https://github.com/Bitcoin/Bitcoin/blob/master/contrib/builder-keys/keys.txt). Preporučuje se da verifikujete Bitcoin Core softver sa javnim ključevima od više saradnika.
 
-2.	Zatim, treba da verifikujete javne ključeve koje ste uvezli. Barem jedan korak koji treba da preduzmete je da proverite da li su javni ključevi koje ste pronašli isti kao oni objavljeni na raznim drugim mestima. Na primer, možete konsultovati lične veb stranice, Twitter stranice ili Github stranice osoba čije ste javne ključeve uvezli. Tipično se ovo poređenje javnih ključeva vrši poređenjem kratkog Hash javnog ključa poznatog kao otisak prsta.
+2.	Zatim, treba da verifikujete javne ključeve koje ste uvezli. Barem jedan korak koji treba da preduzmete je da proverite da li su javni ključevi koje ste pronašli isti kao oni objavljeni na raznim drugim mestima. Na primer, možete konsultovati lične veb stranice, Twitter stranice ili Github stranice osoba čije ste javne ključeve uvezli. Tipično se ovo poređenje javnih ključeva vrši poređenjem kratke heš vrednosti javnog ključa poznatog kao otisak prsta (eng. fingerprint).
 
 3.	Zatim, treba da preuzmete izvršni fajl za Bitcoin Core sa njihove [veb stranice](www.bitcoincore.org). Biće dostupni paketi za Linux, Windows i MAC operativne sisteme.
 
-4.	Zatim, morate pronaći dve datoteke izdanja. Prva sadrži zvanični SHA-256 Hash za izvršni fajl koji ste preuzeli zajedno sa hešovima svih ostalih paketa koji su objavljeni. Druga datoteka izdanja će sadržati potpise raznih saradnika preko datoteke izdanja sa hešovima paketa. Obe ove datoteke izdanja treba da se nalaze na Bitcoin Core vebsajtu.
+4.	Zatim, morate pronaći dve objavljene datoteke određenog izdanja. Prva sadrži zvanični SHA-256 heš vrednost za izvršni fajl koji ste preuzeli zajedno sa hešovima svih ostalih paketa koji su objavljeni. Još jedna datoteka izdanja sadržaće potpise različitih saradnika kojima je potpisana datoteka izdanja sa heš vrednostima paketa. Obe ove datoteke izdanja treba da se nalaze na Bitcoin Core vebsajtu.
 
-5.	 Next, you would need to calculate the SHA-256 Hash of the executable you downloaded from the Bitcoin Core website on your own computer. You, then, compare this result with that for the official package Hash for the executable. They should be the same.
+5.	 Zatim treba da izračunate SHA-256 heš izvršne datoteke koju ste preuzeli sa veb-sajta Bitcoin Core-a na svom računaru. Nakon toga uporedite taj rezultat sa zvaničnim hešom paketa za izvršnu datoteku. Vrednosti bi trebalo da budu iste.
+   
+7.	Konačno, morali biste da verifikujete da jedan ili više digitalnih potpisa nad datotekom izdanja sa zvaničnim hešovima paketa zaista odgovara jednom ili više javnih ključeva koje ste uvezli (izdanja Bitcoin Core nisu uvek potpisana od strane svih). To možete učiniti pomoću aplikacije kao što je Kleopetra.
 
-6.	Konačno, morali biste da verifikujete da jedan ili više digitalnih potpisa nad datotekom izdanja sa zvaničnim hešovima paketa zaista odgovara jednom ili više javnih ključeva koje ste uvezli (izdanja Bitcoin Core nisu uvek potpisana od strane svih). To možete učiniti pomoću aplikacije kao što je Kleopetra.
 
-
-Ovaj proces verifikacije softvera ima dve glavne prednosti. Prvo, osigurava da nije bilo grešaka u prenosu prilikom preuzimanja sa vebsajta Bitcoin Core. Drugo, osigurava da vas nijedan napadač nije mogao navesti da preuzmete izmenjeni, zlonamerni kod, bilo hakovanjem vebsajta Bitcoin Core ili presretanjem saobraćaja.
+Ovaj proces verifikacije softvera ima dve glavne prednosti. Prvo, osigurava da nije bilo grešaka u prenosu prilikom preuzimanja sa Bitcoin Core vebsajta. Drugo, osigurava da vas nijedan napadač nije mogao navesti da preuzmete izmenjeni, zlonamerni kod, bilo hakovanjem Bitcoin Core vebsajta ili presretanjem saobraćaja.
 
 
 Kako tačno proces verifikacije softvera gore štiti od ovih problema?
@@ -2745,10 +2745,10 @@ Kako tačno proces verifikacije softvera gore štiti od ovih problema?
 Ako ste marljivo verifikovali javne ključeve koje ste uvezli, onda možete biti prilično sigurni da su ovi ključevi zaista njihovi i da nisu kompromitovani. S obzirom na to da digitalni potpisi imaju egzistencijalnu nekrivotvorivost, znate da su samo ovi saradnici mogli napraviti digitalni potpis preko zvaničnih heševa paketa na fajlu izdanja.
 
 
-Pretpostavimo da su potpisi na datoteci za izdanje koju ste preuzeli ispravni. Sada možete uporediti Hash vrednost koju ste lokalno izračunali za Windows izvršnu datoteku koju ste preuzeli sa onom koja je uključena u pravilno potpisanu datoteku za izdanje. Kao što znate, SHA-256 Hash funkcija je otporna na kolizije, podudaranje znači da je vaša izvršna datoteka tačno ista kao zvanična izvršna datoteka.
+Pretpostavimo da su potpisi na datoteci za izdanje koju ste preuzeli ispravni. Sada možete uporediti heš vrednost koju ste lokalno izračunali za Windows izvršnu datoteku koju ste preuzeli sa onom koja je uključena u pravilno potpisanu datoteku za izdanje. Kao što znate, SHA-256 heš funkcija je otporna na kolizije, podudaranje znači da je vaša izvršna datoteka tačno ista kao zvanična izvršna datoteka.
 
 
-Sada se osvrnimo na drugo zajedničko svojstvo Hash funkcija: **skrivanje**. Za bilo koju Hash funkciju $H$ se kaže da ima svojstvo skrivanja ako, za bilo koji nasumično odabrani $x$ iz veoma velikog opsega, nije izvodljivo pronaći $x$ kada je dat samo $H(x)$.
+Sada se osvrnimo na drugo zajedničko svojstvo heš funkcija: **skrivanje**. Za bilo koju heš funkciju $H$ se kaže da ima svojstvo skrivanja ako, za bilo koji nasumično odabrani $x$ iz veoma velikog opsega, nije izvodljivo pronaći $x$ kada je dat samo $H(x)$.
 
 
 Ispod možete videti SHA-256 izlaz poruke koju sam napisao. Da bi se osigurala dovoljna nasumičnost, poruka je uključivala nasumično generisan niz karaktera na kraju. S obzirom na to da SHA-256 ima svojstvo skrivanja, niko ne bi mogao da dešifruje ovu poruku.
@@ -2758,23 +2758,23 @@ Ispod možete videti SHA-256 izlaz poruke koju sam napisao. Da bi se osigurala d
 - `b194221b37fa4cd1cfce15aaef90351d70de17a98ee6225088b523b586c32ded`
 
 
-Ali neću vas držati u neizvesnosti dok SHA-256 ne postane slabiji. Originalna poruka koju sam napisao bila je sledeća:
+Ali neću vas držati u neizvesnosti dok SHA-256 ne oslabi. Originalna poruka koju sam napisao bila je sledeća:
 
 
 
 - "Ovo je veoma nasumična poruka, ili pa donekle nasumična. Ovaj početni deo nije, ali ću završiti sa nekim relativno nasumičnim karakterima kako bih osigurao veoma nepredvidivu poruku. XLWz4dVG3BxUWm7zQ9qS".
 
 
-Uobičajen način na koji se funkcije Hash sa svojstvom skrivanja koriste jeste u upravljanju lozinkama (otpornost na koliziju je takođe važna za ovu primenu). Bilo koja pristojna onlajn usluga zasnovana na nalogu, kao što su Facebook ili Google, neće direktno čuvati vaše lozinke za upravljanje pristupom vašem nalogu. Umesto toga, oni će čuvati samo Hash te lozinke. Svaki put kada unesete svoju lozinku u pregledač, prvo se izračunava Hash. Samo taj Hash se šalje serveru provajdera usluge i poredi sa Hash koji je sačuvan u bazi podataka u pozadini. Svojstvo skrivanja može pomoći da se osigura da napadači ne mogu povratiti lozinku iz vrednosti Hash.
+Uobičajen način na koji se heš funkcije sa svojstvom skrivanja koriste jeste u upravljanju lozinkama (otpornost na koliziju je takođe važna za ovu primenu). Bilo koja pristojna onlajn usluga zasnovana na nalogu, kao što su Facebook ili Google, neće direktno čuvati vaše lozinke za upravljanje pristupom vašem nalogu. Umesto toga, oni će čuvati samo heš vrednost te lozinke. Svaki put kada unesete svoju lozinku u pregledač, prvo se izračunava heš. Samo taj heš se šalje serveru provajdera usluge i poredi sa hešom koji je sačuvan u bazi podataka u pozadini. Svojstvo skrivanja može pomoći da se osigura da napadači ne mogu povratiti lozinku iz heš vrednosti.
 
 
-Upravljanje lozinkama putem hešova, naravno, funkcioniše samo ako korisnici zaista biraju teške lozinke. Svojstvo skrivanja pretpostavlja da je x izabran nasumično iz veoma velikog opsega. Biranje lozinki kao što su "1234", "mojalozinka" ili vaš datum rođenja neće pružiti nikakvu stvarnu sigurnost. Postoje dugačke liste uobičajenih lozinki i njihovih hešova koje napadači mogu iskoristiti ako ikada dobiju Hash vaše lozinke. Ove vrste napada su poznate kao **napadi rečnikom**. Ako napadači znaju neke od vaših ličnih podataka, mogli bi takođe pokušati sa informisanim pretpostavkama. Stoga, uvek su vam potrebne duge, sigurne lozinke (po mogućstvu dugi, nasumični nizovi iz menadžera lozinki).
+Upravljanje lozinkama putem hešova, naravno, funkcioniše samo ako korisnici zaista biraju teške lozinke. Svojstvo skrivanja pretpostavlja da je x izabran nasumično iz veoma velikog opsega. Biranje lozinki kao što su "1234", "mojalozinka" ili vaš datum rođenja neće pružiti nikakvu stvarnu sigurnost. Postoje dugačke liste uobičajenih lozinki i njihovih hešova koje napadači mogu iskoristiti ako ikada dobiju heš vrednost vaše lozinke. Ove vrste napada su poznate kao **napadi rečnikom**. Ako napadači znaju neke od vaših ličnih podataka, mogli bi takođe pokušati sa informisanim pretpostavkama. Stoga, uvek su vam potrebne duge, sigurne lozinke (po mogućstvu dugi, nasumični nizovi iz menadžera lozinki).
 
 
-Ponekad aplikaciji može biti potrebna Hash funkcija koja ima i otpornost na koliziju i skrivanje. Ali svakako ne uvek. Proces verifikacije softvera o kojem smo diskutovali, na primer, zahteva samo da Hash funkcija pokazuje otpornost na koliziju, skrivanje nije važno.
+Ponekad aplikaciji može biti potrebna heš funkcija koja ima i otpornost na koliziju i skrivanje. Ali svakako ne uvek. Proces verifikacije softvera o kojem smo diskutovali, na primer, zahteva samo da heš funkcija pokazuje otpornost na koliziju, skrivanje nije važno.
 
 
-Iako su otpornost na koliziju i skrivanje glavna svojstva koja se traže kod Hash funkcija u kriptografiji, u određenim aplikacijama mogu biti poželjne i druge vrste svojstava.
+Iako su otpornost na koliziju i skrivanje glavna svojstva koja se traže kod heš funkcija u kriptografiji, u određenim aplikacijama mogu biti poželjne i druge vrste svojstava.
 
 
 
