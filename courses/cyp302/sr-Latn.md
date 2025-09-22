@@ -3117,10 +3117,10 @@ Sada imamo sve rezultate teorije brojeva potrebne da jasno formulišemo RSA prob
 <chapterId>0253c2f7-b8a4-5d0e-bd60-812ed6b6c7a9</chapterId>
 
 
-Sada smo spremni da navedemo RSA problem. Pretpostavimo da kreirate skup promenljivih koji se sastoji od $p$, $q$, $N$, $\phi(N)$, $e$, $d$, i $y$. Nazovite ovaj skup $\Pi$. Kreira se na sledeći način:
+Sada smo spremni da formulišemo RSA problem. Pretpostavimo da kreirate skup promenljivih koji se sastoji od $p$, $q$, $N$, $\phi(N)$, $e$, $d$, i $y$. Nazovite ovaj skup $\Pi$. Kreira se na sledeći način:
 
 
-1. generate dva nasumična prosta broja $p$ i $q$ jednake veličine i izračunaj njihov proizvod $N$.
+1. Generišite dva nasumična prosta broja $p$ i $q$ jednake veličine i izračunaj njihov proizvod $N$.
 
 2. Izračunajte red $N$, $\phi(N)$, pomoću sledećeg proizvoda: $(p - 1) \cdot (q - 1)$.
 
@@ -3131,7 +3131,7 @@ Sada smo spremni da navedemo RSA problem. Pretpostavimo da kreirate skup promenl
 5. Izaberite nasumičnu vrednost $y$ koja je manja i uzajamno prosta sa $N$.
 
 
-RSA problem se sastoji u pronalaženju $x$ takvog da je $x^e = y$, dok je dat samo podskup informacija u vezi sa $\Pi$, naime promenljive $N$, $e$ i $y$. Kada su $p$ i $q$ veoma veliki, obično se preporučuje da budu veličine 1024 bita, smatra se da je RSA problem Hard. Sada možete videti zašto je to slučaj s obzirom na prethodnu diskusiju.
+RSA problem se sastoji u pronalaženju $x$ takvog da je $x^e = y$, dok je dat samo podskup informacija u vezi sa $\Pi$, naime promenljive $N$, $e$ i $y$. Kada su $p$ i $q$ veoma veliki, obično se preporučuje da budu veličine 1024 bita, smatra se da je RSA problem težak. Sada možete videti zašto je to slučaj s obzirom na prethodnu diskusiju.
 
 
 Jednostavan način za izračunavanje $x$ kada je $x^e \mod N = y \mod N$ je jednostavno izračunavanje $y^d \mod N$. Znamo da je $y^d \mod N = x \mod N$ prema sledećim proračunima:
@@ -3149,13 +3149,13 @@ Međutim, možda ćemo moći indirektno izračunati $d$ iz reda $N$, $\phi(N)$, 
 Konačno, redosled bi mogao biti izračunat indirektno sa prostim faktorima $p$ i $q$, tako da na kraju možemo izračunati $d$. Ali prema pretpostavci, vrednosti $p$ i $q$ takođe nisu bile dostupne nama.
 
 
-Strogo govoreći, čak i ako je problem faktorizacije unutar RSA problema Hard, ne možemo dokazati da je i RSA problem takođe Hard. Naime, mogu postojati i drugi načini za rešavanje RSA problema osim faktorizacije. Međutim, generalno je prihvaćeno i pretpostavlja se da, ako je problem faktorizacije unutar RSA problema Hard, da je i sam RSA problem takođe Hard.
+Strogo govoreći, čak i ako je problem faktorizacije unutar RSA problema računarski težak, ne možemo dokazati da je i RSA problem takođe težak. Naime, mogu postojati i drugi načini za rešavanje RSA problema osim faktorizacije. Međutim, generalno je prihvaćeno i pretpostavlja se da, ako je problem faktorizacije unutar RSA problema težak, da je i sam RSA problem takođe težak.
 
 
-Ako je RSA problem zaista Hard, onda proizvodi jednosmernu funkciju sa zamkom. Funkcija ovde je $f(g) = g^e \mod N$. Sa znanjem o $f(g)$, svako bi lako mogao izračunati vrednost $y$ za određeni $g = x$. Međutim, praktično je nemoguće izračunati određenu vrednost $x$ samo na osnovu poznavanja vrednosti $y$ i funkcije $f(g)$. Izuzetak je kada vam je dat komad informacije $d$, zamka. U tom slučaju, možete jednostavno izračunati $y^d$ da biste dobili $x$.
+Ako je RSA problem zaista težak, onda proizvodi jednosmernu funkciju sa zamkom. Funkcija ovde je $f(g) = g^e \mod N$. Sa znanjem o $f(g)$, svako bi lako mogao izračunati vrednost $y$ za određeni $g = x$. Međutim, praktično je nemoguće izračunati određenu vrednost $x$ samo na osnovu poznavanja vrednosti $y$ i funkcije $f(g)$. Izuzetak je kada vam je dat komad informacije $d$, zamka. U tom slučaju, možete jednostavno izračunati $y^d$ da biste dobili $x$.
 
 
-Hajde da prođemo kroz konkretan primer kako bismo ilustrovali RSA problem. Ne mogu odabrati RSA problem koji bi se smatrao Hard pod gore navedenim uslovima, jer bi brojevi bili nezgrapni. Umesto toga, ovaj primer je samo da ilustruje kako RSA problem generalno funkcioniše.
+Hajde da prođemo kroz konkretan primer kako bismo ilustrovali RSA problem. Ne mogu odabrati RSA problem koji bi se smatrao teškim pod gore navedenim uslovima, jer bi brojevi bili nezgrapni. Umesto toga, ovaj primer je samo da ilustruje kako RSA problem generalno funkcioniše.
 
 
 Za početak, pretpostavimo da izaberete dva nasumična prosta broja 13 i 31. Dakle, $p = 13$ i $q = 31$. Proizvod $N$ ova dva prosta broja je jednak 403. Lako možemo izračunati red 403. On je ekvivalentan $(13 - 1) \cdot (31 - 1) = 360$.
@@ -3164,7 +3164,7 @@ Za početak, pretpostavimo da izaberete dva nasumična prosta broja 13 i 31. Dak
 Zatim, kako je navedeno u koraku 3 RSA problema, treba da izaberemo broj koji je relativno prost sa 360, veći od 2 i manji od 360. Ne moramo nasumično birati ovu vrednost. Pretpostavimo da izaberemo 103. Ovo je broj relativno prost sa 360 jer je njihov najveći zajednički delilac 1.
 
 
-Korak 4 sada zahteva da izračunamo vrednost $d$ takvu da $103 \cdot d \mod 360 = 1$. Ovo nije lak zadatak ručno kada je vrednost za $N$ velika. Zahteva da koristimo proceduru koja se zove **prošireni Euklidov algoritam**.
+Korak 4 sada zahteva da izračunamo vrednost $d$ takvu da $103 \cdot d \mod 360 = 1$. Ovo nije lak zadatak za ručno računanje kada je vrednost za $N$ velika. Zahteva da koristimo proceduru koja se zove **prošireni Euklidov algoritam**.
 
 
 Iako ovde ne prikazujem postupak, on daje vrednost 7 kada je $e = 103$. Možete proveriti da par vrednosti 103 i 7 zaista ispunjava opšti uslov $e \cdot d \mod \phi(n) = 1$ kroz proračune ispod.
@@ -3200,10 +3200,10 @@ Problem je što vam nije pružena informacija da je $d = 7$. Naravno, mogli bist
 Naravno, računar bi i dalje mogao relativno lako rešiti RSA problem za ovaj primer, jer uključeni prosti brojevi nisu veliki. Ali kada prosti brojevi postanu veoma veliki, suočava se sa praktično nemogućim zadatkom.
 
 
-Sada smo predstavili RSA problem, skup uslova pod kojima je to Hard, i osnovnu matematiku. Kako bilo šta od ovoga pomaže sa asimetričnom kriptografijom? Konkretno, kako možemo pretvoriti težinu RSA problema pod određenim uslovima u šemu šifrovanja ili šemu digitalnog potpisa?
+Sada smo predstavili RSA problem, skup uslova pod kojima je on težak, kao i matematiku na kojoj se zasniva. Kako bilo šta od ovoga pomaže sa asimetričnom kriptografijom? Konkretno, kako možemo pretvoriti težinu RSA problema pod određenim uslovima u šemu šifrovanja ili šemu digitalnog potpisa?
 
 
-Jedan pristup je uzeti RSA problem i izgraditi šeme na jednostavan način. Na primer, pretpostavimo da ste generisali skup promenljivih $\Pi$ kao što je opisano u RSA problemu, i osigurajte da su $p$ i $q$ dovoljno veliki. Postavite vaš javni ključ jednako $(N, e)$ i podelite ovu informaciju sa svetom. Kao što je gore opisano, držite vrednosti za $p$, $q$, $\phi(n)$, i $d$ tajnim. U stvari, $d$ je vaš privatni ključ.
+Jedan pristup je uzeti RSA problem i izgraditi šeme na jednostavan način. Na primer, pretpostavimo da ste generisali skup promenljivih $\Pi$ kao što je opisano u RSA problemu, i obezbedili da su $p$ i $q$ dovoljno veliki. Postavite vaš javni ključ jednako $(N, e)$ i podelite ovu informaciju sa svetom. Kao što je gore opisano, držite vrednosti za $p$, $q$, $\phi(n)$, i $d$ tajnim. U stvari, $d$ je vaš privatni ključ.
 
 
 Svako ko želi da vam pošalje poruku $m$ koja je element $C_N$ može je jednostavno enkriptovati na sledeći način: $c = m^e \mod N$. (Šifrat $c$ ovde je ekvivalentan vrednosti $y$ u RSA problemu.) Možete lako dekriptovati ovu poruku jednostavno izračunavanjem $c^d \mod N$.
@@ -3212,13 +3212,13 @@ Svako ko želi da vam pošalje poruku $m$ koja je element $C_N$ može je jednost
 Možda biste pokušali da kreirate šemu digitalnog potpisa na isti način. Pretpostavimo da želite da pošaljete nekome poruku $m$ sa digitalnim potpisom $S$. Mogli biste jednostavno postaviti $S = m^d \mod N$ i poslati par $(m,S)$ primaocu. Svako može verifikovati digitalni potpis samo proverom da li je $S^e \mod N = m \mod N$. Međutim, bilo kojem napadaču bi bilo veoma teško da kreira validan $S$ za poruku, s obzirom na to da ne poseduje $d$.
 
 
-Nažalost, pretvaranje onoga što je samo po sebi Hard problem, RSA problem, u kriptografski šem nije tako jednostavno. Za jednostavnu šemu enkripcije, možete odabrati samo brojeve koji su uzajamno prosti sa $N$ kao vaše poruke. To nam ne ostavlja mnogo mogućih poruka, svakako ne dovoljno za standardnu komunikaciju. Pored toga, ove poruke moraju biti odabrane nasumično. To se čini pomalo nepraktičnim. Konačno, svaka poruka koja je odabrana dva puta će dati potpuno isti šifrat. Ovo je izuzetno nepoželjno u bilo kojoj šemi enkripcije i ne ispunjava nijedan rigorozan moderan standard sigurnosti u enkripciji.
+Nažalost, pretvaranje samog po sebi teškog problema, RSA problema, u kriptografsku šemu nije tako jednostavno. Za jednostavnu šemu enkripcije, možete odabrati samo brojeve koji su uzajamno prosti sa $N$ kao vaše poruke. To nam ne ostavlja mnogo mogućih poruka, svakako ne dovoljno za standardnu komunikaciju. Pored toga, ove poruke moraju biti odabrane nasumično. To se čini pomalo nepraktičnim. Konačno, svaka poruka koja je odabrana dva puta će dati potpuno isti šifrat. Ovo je izuzetno nepoželjno u bilo kojoj šemi enkripcije i ne ispunjava nijedan rigorozan moderan standard sigurnosti u enkripciji.
 
 
-Problemi postaju još gori za naš jednostavan digitalni potpisni sistem. Kako sada stoje stvari, bilo koji napadač može lako falsifikovati digitalne potpise tako što prvo izabere broj koji je relativno prost sa $N$ kao potpis, a zatim izračuna odgovarajuću originalnu poruku. Ovo očigledno narušava zahtev za egzistencijalnom nefalzifikabilnošću.
+Problemi postaju još gori za naš jednostavan digitalni potpisni sistem. Kako sada stoje stvari, bilo koji napadač može lako falsifikovati digitalne potpise tako što prvo izabere broj koji je relativno prost sa $N$ kao potpis, a zatim izračuna odgovarajuću originalnu poruku. Ovo očigledno narušava zahtev egzistencijalne nekrivotvorljivosti.
 
 
-Ipak, dodavanjem malo pametne složenosti, RSA problem se može koristiti za kreiranje sigurnog šema za enkripciju javnim ključem, kao i sigurnog šema za digitalni potpis. Nećemo ulaziti u detalje takvih konstrukcija ovde. [4] Važno je, međutim, da ova dodatna složenost ne menja fundamentalni osnovni RSA problem na kojem se ove šeme zasnivaju.
+Ipak, dodavanjem malo pametne složenosti, RSA problem se može koristiti za kreiranje sigurne šeme za enkripciju javnim ključem, kao i sigurne šeme za digitalni potpis. Nećemo ulaziti u detalje takvih konstrukcija ovde. [4] Važno je, međutim, da ova dodatna složenost ne menja fundamentalni osnovni RSA problem na kojem se ove šeme zasnivaju.
 
 
 
