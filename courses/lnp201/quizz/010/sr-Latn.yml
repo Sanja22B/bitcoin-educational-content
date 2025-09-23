@@ -1,5 +1,5 @@
 question: Koji je prvi korak u otvaranju Lightning kanala između dva učesnika?
-answer: Razmena poruka koje sadrže iznose i javne ključeve
+answer: Razmenjivanje poruka koje sadrže iznose i javne ključeve
 wrong_answers:
   - Odmah objavljivanje transakciju depozita na Blockchain-u
   - Kreiranje 2/2 višepotpisne adrese bez prethodne razmene
