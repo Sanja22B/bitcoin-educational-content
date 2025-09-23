@@ -1,7 +1,7 @@
 question: Koji je glavni cilj Lightning mreže?
 answer: Poboljšanje Bitcoin skalabilnosti kako bi se omogućila brza i niskotroškovna plaćanja
 wrong_answers:
-  - Eliminisanje naknade za transakcije na Bitcoin Blockchain-u
+  - Eliminisanje transakcionih naknada na Bitcoin Blockchain-u
   - Kreiranje Bitcoin alternative za plaćanja visoke vrednosti.
   - Pojednostavljenje razmene između različitih kriptovaluta
 explanation: |
