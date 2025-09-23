@@ -1,5 +1,5 @@
 question: Koja je primarna uloga privatnog ključa u Bitcoin sistemu?
-answer: Potpisivanje transakcije radi ispunjavanja uslova skripte
+answer: Služi za potpisivanje transakcije radi ispunjavanja uslova skripte
 wrong_answers:
   - Služi kao identifikator za primanje bitkoina
   - Služi za čuvanje sredstva sigurno na Blockchain-u
