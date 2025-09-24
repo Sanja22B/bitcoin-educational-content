@@ -1,5 +1,5 @@
 question: Zašto bi prodavac izvršio fiktivno plaćanje u kanalu?
-answer: Radi premošćavanja likvidnost na suprotnu stranu
+answer: Radi premeštanja likvidnost na suprotnu stranu
 wrong_answers:
   - Zbog smanjivanja troškova rutiranja
   - Radi povećanja ukupnog kapaciteta svojih kanala
