@@ -19,7 +19,7 @@ Teško je pronaći mnogo materijala koji nude dobru sredinu u obrazovanju o krip
 S jedne strane, postoje dugački, formalni traktati, zaista dostupni samo onima sa jakom pozadinom u matematici, logici ili nekoj drugoj formalnoj disciplini. S druge strane, postoje veoma uvodne prezentacije koje zaista skrivaju previše detalja za svakoga ko je makar malo radoznao.
 
 
-Ovaj uvod u kriptografiju nastoji da zauzme srednji put. Iako bi trebalo da bude relativno izazovan i detaljan za svakoga ko je nov u kriptografiji, nije „zečja rupa“ tipičnog temeljno-osnovnog traktata.
+Ovaj uvod u kriptografiju nastoji da zauzme srednji put. Iako bi trebalo da bude relativno izazovan i detaljan za svakoga ko je nov u kriptografiji, nije „zečja rupa“ tipičnog osnovnog traktata.
 
 
 +++
@@ -40,7 +40,7 @@ Ova knjiga nudi detaljno uvodno proučavanje nauke i prakse kriptografije. Gde g
 
 
 
-Ovaj obrazovni sadržaj je adaptiran iz knjige i repo [JWBurgers](https://github.com/JWBurgers/An_Introduction_to_Cryptography). Iako je autor ljubazno dozvolio njegovu obrazovnu upotrebu, sva prava intelektualne svojine ostaju kod originalnog stvaraoca.
+Ovaj obrazovni sadržaj je adaptiran iz knjige i repozitorijuma [JWBurgers](https://github.com/JWBurgers/An_Introduction_to_Cryptography). Iako je autor ljubazno dozvolio njegovu obrazovnu upotrebu, sva prava intelektualne svojine ostaju kod originalnog stvaraoca.
 
 **Motivacija i ciljevi**
 
@@ -65,10 +65,10 @@ Od programera do intelektualno radoznalih, ova knjiga je korisna za svakoga ko �
 **Uputstvo za čitanje**
 
 
-Knjiga trenutno sadrži sedam poglavlja: "Šta je kriptografija?" (Poglavlje 1), "Matematičke osnove kriptografije I" (Poglavlje 2), "Matematičke osnove kriptografije II" (Poglavlje 3), "Simetrična kriptografija" (Poglavlje 4), "RC4 i AES" (Poglavlje 5), "Asimetrična kriptografija" (Poglavlje 6) i "RSA kriptosistem" (Poglavlje 7). Završno poglavlje, "Kriptografija u praksi," će još biti dodato. Ono se fokusira na razne kriptografske primene, uključujući sigurnost transportnog sloja, onion routing i Bitcoin-ov sistem razmene vrednosti.
+Knjiga trenutno sadrži sedam poglavlja: "Šta je kriptografija?" (Poglavlje 1), "Matematičke osnove kriptografije I" (Poglavlje 2), "Matematičke osnove kriptografije II" (Poglavlje 3), "Simetrična kriptografija" (Poglavlje 4), "RC4 i AES" (Poglavlje 5), "Asimetrična kriptografija" (Poglavlje 6) i "RSA kriptosistem" (Poglavlje 7). Završno poglavlje, "Kriptografija u praksi," će još biti dodato. Ono se fokusira na razne kriptografske primene, uključujući sigurnost transportnog sloja, onion rutiranje i Bitcoin-ov sistem razmene vrednosti.
 
 
-Osim ako nemate snažnu pozadinu u matematici, teorija brojeva je verovatno najteža tema u ovoj knjizi. Nudim pregled u Poglavlju 3, a pojavljuje se i u izlaganju o AES-a u Poglavlju 5 i o RSA kriptosistema u Poglavlju 7.
+Osim ako nemate snažnu pozadinu u matematici, teorija brojeva je verovatno najteža tema u ovoj knjizi. Nudim pregled u Poglavlju 3, a pojavljuje se i u izlaganju o AES-a u Poglavlju 5 i o RSA kriptosistemu u Poglavlju 7.
 
 
 Ako se zaista mučite sa formalnim detaljima u ovim delovima knjige, preporučujem da se prvi put zadovoljite čitanjem na visokom nivou.
@@ -81,7 +81,7 @@ Ako se zaista mučite sa formalnim detaljima u ovim delovima knjige, preporučuj
 Najuticajnija knjiga koja je oblikovala ovu je _Introduction to Modern Cryptography_ Jonathana Katza i Yehude Lindella, CRC Press (Boca Raton, FL), 2015. Prateći kurs je dostupan na Courseri pod nazivom "Cryptography."
 
 
-Glavni dodatni izvori koji su bili od pomoći u kreiranju pregleda u ovoj knjizi su Simon Singh, _The Code Book_, Fourth Estate (London, 1999); Christof Paar i Jan Pelzl, _Understanding Cryptography_, Springer (Heidelberg, 2010) i [kurs zasnovan na knjizi Paar pod nazivom “Introduction to Cryptography”](https://www.youtube.com/channel/UC1usFRN4LCMcfIV7UjHNuQg); i Bruce Schneier, Applied Cryptography, 2nd edn, 2015 (Indianapolis, IN: John Wiley & Sons).
+Glavni dodatni izvori koji su bili od pomoći u kreiranju poglavlja u ovoj knjizi su Simon Singh, _The Code Book_, Fourth Estate (London, 1999); Christof Paar i Jan Pelzl, _Understanding Cryptography_, Springer (Heidelberg, 2010) i [kurs zasnovan na knjizi Paar pod nazivom “Introduction to Cryptography”](https://www.youtube.com/channel/UC1usFRN4LCMcfIV7UjHNuQg); i Bruce Schneier, Applied Cryptography, 2nd edn, 2015 (Indianapolis, IN: John Wiley & Sons).
 
 
 Navešću samo vrlo specifične informacije i rezultate koje preuzimam iz ovih izvora, ali želim ovde da izrazim svoju opštu zahvalnost prema njima.
@@ -232,7 +232,7 @@ Grana kriptografije koja se bavi šemama gde sve strane dele jedan ključ poznat
 Pojava asimetrične kriptografije krajem 1970-ih bila je jedan od najvažnijih događaja u istoriji kriptografije. Bez nje, većina naših modernih komunikacionih sistema, uključujući Bitcoin, ne bi bila moguća, ili bi barem bila veoma nepraktična.
 
 
-Važno je napomenuti da moderna kriptografija nije isključivo proučavanje simetričnih i asimetričnih kriptografskih šema (iako to pokriva veći deo oblasti). Na primer, kriptografija se takođe bavi heš funkcijama i generatorima pseudorandom brojeva, i možete izgraditi aplikacije na ovim primitivima koje nisu povezane sa simetričnom ili asimetričnom kriptografijom ključeva.
+Važno je napomenuti da moderna kriptografija nije isključivo proučavanje simetričnih i asimetričnih kriptografskih šema (iako to pokriva veći deo oblasti). Na primer, kriptografija se takođe bavi heš funkcijama i generatorima pseudonasumičnih brojeva, i možete izgraditi aplikacije na ovim primitivima koje nisu povezane sa simetričnom ili asimetričnom kriptografijom ključeva.
 
 
 Treće, klasične šeme šifrovanja, poput onih korišćenih u Beale šiframa, bile su više umetnost nego nauka. Njihova percipirana sigurnost uglavnom se zasnivala na intuicijama u vezi sa njihovom složenošću. Obično bi bile zakrpljene kada bi se saznalo za novi napad na njih, ili bi bile potpuno odbačene ako je napad bio posebno ozbiljan. Međutim, moderna kriptografija je rigorozna nauka sa formalnim, matematičkim pristupom kako razvoju, tako i analizi kriptografskih šema. [5]
@@ -243,7 +243,7 @@ Specifično, moderna kriptografija se fokusira na formalne **dokaze sigurnosti**
 
 1.	Izjava o **kriptografskoj definiciji sigurnosti**, odnosno, skup sigurnosnih ciljeva i pretnja koju predstavlja napadač.
 
-2.	Izjava o bilo kojim matematičkim pretpostavkama u vezi sa računarskom složenošću šeme. Na primer, kriptografska šema može sadržati generator pseudorandom brojeva. Iako ne možemo dokazati da oni postoje, možemo pretpostaviti da postoje.
+2.	Izjava o bilo kojim matematičkim pretpostavkama u vezi sa računarskom složenošću šeme. Na primer, kriptografska šema može sadržati generator pseudonaumičnih brojeva. Iako ne možemo dokazati da oni postoje, možemo pretpostaviti da postoje.
 
 3.	Izlaganje matematičkog **dokaza sigurnosti** šeme na osnovu formalnog pojma sigurnosti i bilo kojih matematičkih pretpostavki.
 
