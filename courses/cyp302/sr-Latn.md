@@ -243,12 +243,12 @@ Specifično, moderna kriptografija se fokusira na formalne **dokaze sigurnosti**
 
 1.	Izjava o **kriptografskoj definiciji sigurnosti**, odnosno, skup sigurnosnih ciljeva i pretnja koju predstavlja napadač.
 
-2.	Izjava o bilo kojim matematičkim pretpostavkama u vezi sa računarskom složenošću šeme. Na primer, kriptografska šema može sadržati generator pseudonaumičnih brojeva. Iako ne možemo dokazati da oni postoje, možemo pretpostaviti da postoje.
+2.	Izjava o bilo kojim matematičkim pretpostavkama u vezi sa računarskom složenošću šeme. Na primer, kriptografska šema može sadržati generator pseudonasumičnih brojeva. Iako ne možemo dokazati da oni postoje, možemo pretpostaviti da postoje.
 
 3.	Izlaganje matematičkog **dokaza sigurnosti** šeme na osnovu formalnog pojma sigurnosti i bilo kojih matematičkih pretpostavki.
 
 
-Četvrto, dok se istorijski kriptografija prvenstveno koristila u vojnim okruženjima, ona je prožela naše svakodnevne aktivnosti u digitalnom dobu. Bilo da obavljate bankarske poslove putem interneta, objavljujete na društvenim mrežama, kupujete proizvod na Amazonu sa svojom kreditnom karticom ili dajete Bitcoinnapojnicu prijatelju, kriptografija je sine qua non našeg digitalnog doba.
+Četvrto, dok se istorijski kriptografija prvenstveno koristila u vojnim okruženjima, ona je prožela naše svakodnevne aktivnosti u digitalnom dobu. Bilo da obavljate bankarske poslove putem interneta, objavljujete na društvenim mrežama, kupujete proizvod na Amazonu sa svojom kreditnom karticom ili dajete Bitcoin napojnicu prijatelju, kriptografija je sine qua non našeg digitalnog doba.
 
 
 S obzirom na ova četiri aspekta moderne kriptografije, mogli bismo okarakterisati modernu **kriptografiju** kao nauku koja se bavi formalnim razvojem i analizom kriptografskih šema za zaštitu digitalnih informacija od napada protivnika. [6] Bezbednost ovde treba široko shvatiti kao sprečavanje napada koji narušavaju tajnost, integritet, autentifikaciju i/ili neporecivost u komunikacijama.
@@ -257,7 +257,7 @@ S obzirom na ova četiri aspekta moderne kriptografije, mogli bismo okarakterisa
 Kriptografija se najbolje posmatra kao poddisciplina **kibernetičke sigurnosti**, koja se bavi sprečavanjem krađe, oštećenja i zloupotrebe računarskih sistema. Imajte na umu da mnogi problemi kibernetičke sigurnosti imaju malo ili samo delimičnu vezu sa kriptografijom.
 
 
-Na primer, ako kompanija lokalno smešta skupe servere, možda će biti zabrinuta za obezbeđivanje ovog hardvera od krađe i oštećenja. Iako je ovo pitanje sajber bezbednosti, ima malo veze sa kriptografijom.
+Na primer, ako kompanija lokalno smešta skupe servere, možda će biti zabrinuta za obezbeđivanje ovog hardvera od krađe i oštećenja. Iako je ovo pitanje sajber iliti kibernetičke bezbednosti, ono ima malo veze sa kriptografijom.
 
 
 Za još jedan primer, **phishing napadi** su čest problem u našem modernom dobu. Ovi napadi pokušavaju da prevare ljude putem e-maila ili nekog drugog medija za poruke kako bi otkrili osetljive informacije kao što su lozinke ili brojevi kreditnih kartica. Iako kriptografija može pomoći rešavanju phishing napada do određenog stepena, sveobuhvatan pristup zahteva više od samog korišćenja neke kriptografije.
@@ -381,7 +381,7 @@ Hajde sada da razmotrimo primer promenljive $X$ koja nije apstraktno definisana.
 
 
 
-- $X$ ima skup ishoda {Crveni započinju utakmicu, plavi započinju utakmicu}
+- $X$ ima skup ishoda {crveni započinju utakmicu, plavi započinju utakmicu}
 - Bacite određeni novčić $C$: pismo = „crveni počinje“; glava = „plavi počinje“
 
 
@@ -410,7 +410,7 @@ Nasumične promenljive mogu imati diskretne ili kontinuirane raspodele verovatno
 **Kontinuirane slučajne promenljive** mogu umesto toga uzimati vrednosti u jednom ili više intervala. Možete reći, na primer, da će slučajna promenljiva, prilikom uzorkovanja, uzeti bilo koju realnu vrednost između 0 i 1, i da je svaki realan broj u ovom intervalu podjednako verovatan. Unutar ovog intervala, postoji beskonačno mnogo mogućih vrednosti.
 
 
-Za kriptografske diskusije, potrebno je razumeti samo diskretne slučajne promenljive. Svaka diskusija o slučajnim promenljivama od sada nadalje treba, dakle, da se razume kao da se odnosi na diskretne slučajne promenljive, osim ako nije izričito navedeno drugačije.
+Za kriptografske diskusije, potrebno je razumeti samo diskretne slučajne promenljive. Svaka diskusija o slučajnim promenljivama od sada pa na dalje treba, dakle, da se razume kao da se odnosi na diskretne slučajne promenljive, osim ako nije izričito navedeno drugačije.
 
 
 
@@ -433,7 +433,7 @@ Moguće vrednosti i pridružene verovatnoće za slučajnu promenljivu mogu se la
 ### Uniformne varijable
 
 
-U izrazu „slučajna varijabla“, termin „slučajna“ samo znači „verovatnosna“. Drugim rečima, to samo znači da se dva ili više mogućih ishoda varijable javljaju sa određenim verovatnoćama. Ovi ishodi, međutim, *ne moraju nužno* biti podjednako verovatni (iako termin „slučajna“ zaista može imati to značenje u drugim kontekstima).
+U izrazu „slučajna varijabla“, termin „slučajna“ samo znači „verovatna“. Drugim rečima, to samo znači da se dva ili više mogućih ishoda varijable javljaju sa određenim verovatnoćama. Ovi ishodi, međutim, *ne moraju nužno* biti podjednako verovatni (iako termin „slučajna“ zaista može imati to značenje u drugim kontekstima).
 
 
 **Uniformna promenljiva** je poseban slučaj slučajne promenljive. Može poprimiti dve ili više vrednosti, sve sa jednakom verovatnoćom. Slučajna promenljiva $X$ prikazana na *Slici 1* je očigledno uniformna promenljiva, jer se oba moguća ishoda javljaju sa verovatnoćom $0.5$. Međutim, postoji mnogo slučajnih promenljivih koje nisu primeri uniformnih promenljivih.
@@ -534,7 +534,7 @@ Pretpostavimo sada da Bob umesto da nasumično bira kalendarski dan, bira samo n
 Zaista bismo trebali izvući drugačiji zaključak nego ranije, čak i bez ikakvih dodatnih specifičnih informacija (npr., temperatura u podne svakog dana prošle kalendarske godine).
 
 
-Znajući da je Crystal Lake u New Jerseyju, sigurno ne bismo očekivali da temperatura u podne bude 21 stepen celzijusa ili viša zimi. Umesto toga, mnogo je verovatnije da je to topao dan u proleće ili jesen, ili dan negde u leto. Dakle, znajući da je temperatura u podne na Crystal Lakeu na odabrani dan bila 21 stepen celzijusa ili viša, verovatnoća da je dan koji je Bob odabrao u leto postaje mnogo veća. Ovo je **uslovna verovatnoća** da je nasumično odabrani dan u leto, s obzirom na to da je temperatura u podne na Crystal Lakeu bila 21 stepen celzijusa ili viša.
+Znajući da je Crystal Lake u New Jerseyju, sigurno ne bismo očekivali da temperatura u podne bude 21 stepen celzijusa ili viša zimi. Umesto toga, mnogo je verovatnije da je to topao dan u proleće ili jesen, ili dan negde u leto. Dakle, znajući da je temperatura u podne na Crystal Lakeu na odabrani dan bila 21 stepen celzijusa ili viša, verovatnoća da je dan koji je Bob odabrao bude u leto postaje mnogo veća. Ovo je **uslovna verovatnoća** da je nasumično odabrani dan u leto, s obzirom na to da je temperatura u podne na Crystal Lakeu bila 21 stepen celzijusa ili viša.
 
 
 Za razliku od prethodnog primera, verovatnoće dva događaja takođe mogu biti potpuno nepovezane. U tom slučaju, kažemo da su **nezavisni**.
@@ -642,7 +642,7 @@ Definitivno ćete naići na slučajeve sa negativnim deliocem u kriptografiji. U
 
 
 
-- Prvo odredite najbližu vrednost *manju ili jednaku* deliocu u koju delilac deli sa ostatkom nula. Nazovite tu vrednost $p$.
+- Prvo odredite najbližu vrednost *manju ili jednaku* deljeniku u koju se delilac deli bez ostatka. Nazovite tu vrednost $p$.
 - Ako je deljenik $x$, onda je rezultat operacije modulo vrednost $x – p$.
 
 
@@ -658,7 +658,7 @@ Na primer, pretpostavimo da je deljenik $–20$ a delilac 3. Najbliža vrednost 
 U vezi sa notacijom, obično ćete videti sledeće tipove izraza: $x = [y \mod z]$. Zbog zagrada, operacija modulo u ovom slučaju se primenjuje samo na desnu stranu izraza. Ako je $y$ jednako 25, a $z$ jednako 4, na primer, tada $x$ iznosi 1.
 
 
-Bez uglastih zagrada, operacija modula deluje na *obe strane* izraza. Pretpostavite, na primer, sledeći izraz: $x = y \mod z$. Ako $y$ je jednako 25 i ako $z$ je jednako 4, onda znamo da  $x \mod 4$ je jedanko 1. Ovo odgovara bilo kojoj vrednosti $x$ iz seta $\{\ldots,–7, –3, 1, 5, 9,\ldots\}$.
+Bez uglastih zagrada, operacija modulo deluje na *obe strane* izraza. Pretpostavite, na primer, sledeći izraz: $x = y \mod z$. Ako $y$ je jednako 25 i ako $z$ je jednako 4, onda znamo da  $x \mod 4$ je jednako 1. Ovo odgovara bilo kojoj vrednosti $x$ iz seta $\{\ldots,–7, –3, 1, 5, 9,\ldots\}$.
 
 
 Grana matematike koja uključuje modulo operacije na brojevima i izrazima naziva se **modularna aritmetika**. Možete misliti na ovu granu kao na aritmetiku za slučajeve u kojima brojna linija nije beskonačno dugačka. Iako obično nailazimo na modulo operacije za (pozitivne) cele brojeve unutar kriptografije, možete takođe izvoditi modulo operacije koristeći bilo koje realne brojeve.
@@ -670,7 +670,7 @@ Grana matematike koja uključuje modulo operacije na brojevima i izrazima naziva
 Operacija modulo se često sreće u kriptografiji. Da bismo ilustrovali, razmotrimo jednu od najpoznatijih istorijskih šema šifrovanja: šifru pomaka.
 
 
-Hajde prvo da ga definišemo. Pretpostavimo rečnik *D* koji izjednačava sva slova engleske abecede, redom, sa skupom brojeva $\{0, 1, 2, \ldots, 25\}$. Pretpostavimo prostor poruka **M**. **Šifriranje pomakom** je, dakle, šema šifrovanja definisana na sledeći način:
+Hajde prvo da je definišemo. Pretpostavimo rečnik *D* koji izjednačava sva slova engleske abecede, redom, sa skupom brojeva $\{0, 1, 2, \ldots, 25\}$. Pretpostavimo prostor poruka **M**. **Šifriranje pomakom** je, dakle, šema šifrovanja definisana na sledeći način:
 
 
 
@@ -694,7 +694,7 @@ Operator modulo u šifri pomaka osigurava da se slova rotiraju, tako da su sva �
 Pretpostavimo da ste ravnomerno odabrali ključ da ima vrednost 17. Slovo „O“ odgovara broju 15. Bez modulo operacije, zbir ovog broja iz otvorenog teksta sa ključem bi iznosio broj šifrovanog teksta 32. Međutim, taj broj šifrovanog teksta ne može biti pretvoren u slovo šifrovanog teksta, jer engleska abeceda ima samo 26 slova. Modulo operacija osigurava da broj šifrovanog teksta zapravo bude 6 (rezultat $32 \mod 26$), što odgovara slovu šifrovanog teksta „G“.
 
 
-Celaokupna enkripcija reči „DOG“ sa ključnom vrednošću 17 je sledeća:
+Celaokupna enkripcija reči „DOG“ sa vrednošću ključa 17 je sledeća:
 
 
 
