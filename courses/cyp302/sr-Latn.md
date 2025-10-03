@@ -750,7 +750,7 @@ Ključna matematička operacija koju treba razumeti za modernu kriptografiju, po
 - $1 \oplus 1 = 0$
 
 
-Na primer, pretpostavimo da imate poruku $m_1$ (01111001) i poruku $m_2$ (01011001). XOR operacija ovih dvaju poruka može se videti ispod.
+Na primer, pretpostavimo da imate poruku $m_1$ (01111001) i poruku $m_2$ (01011001). XOR operacija ovih dveju poruka može se videti ispod.
 
 
 
@@ -790,7 +790,7 @@ Da bismo počeli, možemo nazvati binarni niz dužine $n$ **slučajnim** (ili **
 Pretpostavimo, na primer, skup svih binarnih nizova dužine 8: $\{0000\ 0000, 0000\ 0001, \ldots, 1111\ 1111\}$. (Tipično je pisati 8-bitni niz u dva kvarteta, od kojih se svaki naziva **nibble**.) Nazovimo ovaj skup nizova **$S_8$**.
 
 
-Prema definiciji iznad, možemo, dakle, nazvati određeni binarni niz dužine 8 nasumičnim (ili uniformnim), ako je rezultat uzorkovanja uniformne varijable $S$ koja daje svakom nizu u **$S_8$** jednaku verovatnoću izbora. S obzirom da skup **$S_8$** uključuje $2^8$ Elements, verovatnoća izbora pri uzorkovanju bi morala biti $1/2^8$ za svaki niz u skupu.
+Prema definiciji iznad, možemo, dakle, nazvati određeni binarni niz dužine 8 nasumičnim (ili uniformnim), ako je rezultat uzorkovanja uniformne varijable $S$ koja daje svakom nizu u **$S_8$** jednaku verovatnoću izbora. S obzirom da skup **$S_8$** uključuje $2^8$ elemenata, verovatnoća izbora pri uzorkovanju bi morala biti $1/2^8$ za svaki niz u skupu.
 
 
 Ključni aspekt nasumičnosti binarnog niza je da je definisan u odnosu na proces kojim je izabran. Oblik bilo kog određenog binarnog niza sam po sebi, dakle, ne otkriva ništa o njegovoj nasumičnosti u izboru.
@@ -799,7 +799,7 @@ Ključni aspekt nasumičnosti binarnog niza je da je definisan u odnosu na proce
 Na primer, mnogi ljudi intuitivno imaju ideju da niz kao što je $1111\ 1111$ nije mogao biti izabran nasumično. Ali ovo je očigledno netačno.
 
 
-Definišući uniformnu varijablu $S$ preko svih binarnih nizova dužine 8, verovatnoća odabira $1111\ 1111$ iz skupa **$S_8$** je ista kao i za niz kao što je $0111\ 0100$. Dakle, ne možete ništa reći o nasumičnosti niza, samo analizirajući sam niz.
+Definišući uniformnu varijablu $S$ preko svih binarnih nizova dužine 8, verovatnoća odabira $1111\ 1111$ iz skupa **$S_8$** je ista kao i za niz $0111\ 0100$. Dakle, ne možete ništa reći o nasumičnosti niza, samo analizirajući sam niz.
 
 
 Možemo takođe govoriti o nasumičnim nizovima, ne misleći pri tom isključivo na binarne nizove. Na primer, možemo govoriti o nasumičnom heksadecimalnom nizu $AF\ 02\ 82$. U ovom slučaju, niz bi bio nasumično izabran iz skupa svih heksadecimalnih nizova dužine 6. Ovo je ekvivalentno nasumičnom izboru binarnog niza dužine 24, jer svaka heksadecimalna cifra predstavlja 4 bita.
@@ -960,7 +960,7 @@ Osim ako se konkretno ne odnosi na aritmetičko sabiranje ili množenje, lakše 
 Drugo, iz istog razloga zbog kojeg se “+” i “×” često koriste za označavanje ne-aritmetičkih operacija, identitetni element grupa se često simbolizuje sa “0” i “1”, čak i kada elementi u tim grupama nisu brojevi. Osim ako se ne referišete na identitettni elementa grupe sa brojevima, lakše je koristiti neutralniji simbol kao što je “$e$” za označavanje identitetnog elementa.
 
 
-Mnoge različite i veoma važne skupove vrednosti u matematici, opremljene određenim binarnim operacijama, čine grupe. Kriptografske aplikacije, međutim, rade samo sa skupovima celih brojeva ili barem elementima koji su opisani celim brojevima, to jest, unutar domena teorije brojeva. Stoga se skupovi sa realnim brojevima osim celih brojeva ne koriste u kriptografskim aplikacijama.
+Mnogi različiti i vrlo važni matematički skupovi, uz određene binarne operacije, čine grupe. Kriptografske aplikacije, međutim, rade samo sa skupovima celih brojeva ili barem elementima koji su opisani celim brojevima, to jest, unutar domena teorije brojeva. Stoga se skupovi sa realnim brojevima osim celih brojeva ne koriste u kriptografskim aplikacijama.
 
 
 Hajde da završimo davanjem primera elemenata koji može biti „opisan celim brojevima“, iako oni nisu celi brojevi. Dobar primer su tačke eliptičkih krivih. Iako bilo koja tačka na eliptičkoj krivoj očigledno nije ceo broj, takva tačka je zaista opisana sa dva cela broja.
@@ -974,7 +974,7 @@ x^3 + 7 = y^2 \mod 2^{256} – 2^{32} – 29 – 28 – 27 – 26 - 24 - 1
 $$
 
 
-(najveći prost broj manji od $2^{256}$). $x$-koordinata je privatni ključ, a $y$-koordinata je vaš javni ključ.
+(najveći prost broj manji od $2^{256}$).
 
 
 Bitcoin transakcije obično uključuju zaključavanje izlaza na jedan ili više javnih ključeva na neki način. Vrednost iz ovih transakcija može se, zatim, otključati pravljenjem digitalnih potpisa sa odgovarajućim privatnim ključevima.
