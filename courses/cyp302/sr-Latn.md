@@ -999,7 +999,7 @@ Pretpostavimo da je $G$ grupa sa grupnom operacijom $\circ$, i da je $a$ element
 Okrenimo se primeru. Pretpostavimo da je $G = \langle \mathbb{Z} \mod 7, + \rangle$, i da naša vrednost za $a$ iznosi 4. U ovom slučaju, $a^2 = [4 + 4 \mod 7] = [8 \mod 7] = 1 \mod 7$. Alternativno, $a^4$ bi predstavljao $[4 + 4 + 4 + 4 \mod 7] = [16 \mod 7] = 2 \mod 7$.
 
 
-Neke abelove grupe imaju jedan ili više elemenata, koji mogu proizvesti sve druge grupe elemenata kroz kontinuirano potenciranje. Ovi elementi se nazivaju **generatori** ili **primitivni elementi**.
+Neke abelove grupe imaju jedan ili više elemenata, koji mogu proizvesti sve druge elemente grupe kroz kontinuirano potenciranje. Ovi elementi se nazivaju **generatori** ili **primitivni elementi**.
 
 
 Jedna važna klasa takvih grupa je $\langle \mathbb{Z}^* \mod N, \cdot \rangle$, gde je $N$ prost broj. Oznaka $\mathbb{Z}^*$ ovde znači da grupa sadrži sve nenulte, pozitivne cele brojeve manje od $N$. Takva grupa, dakle, uvek ima $N – 1$ elemenata.
@@ -1026,7 +1026,7 @@ Hajde da istražimo potenciranje elementa 2 iz ove grupe. Izračunavanja do $2^{
 - $2^{12} = 2 \cdot 2 \cdot 2 \cdot 2 \cdot 2 \cdot 2 \cdot 2 \cdot 2 \cdot 2 \cdot 2 \cdot 2 \cdot 2 \mod 11 = 4096 \mod 11 = 4 \mod 11$
 
 
-Ako pažljivo pogledaš, možeš videti da izvođenje eksponenciranja na elementu 2 prolazi kroz sve elemente od $\langle \mathbb{Z}^* \mod 11, \cdot \rangle$ u sledećem redosledu: 2, 4, 8, 5, 10, 9, 7, 3, 6, 1. Nakon $2^{10}$, nastavak eksponenciranja elementa 2 ponovo prolazi kroz sve elemente i to u istom redosledu. Dakle, element 2 je generator u $\langle \mathbb{Z}^* \mod 11, \cdot \rangle$.
+Ako pažljivo pogledaš, možeš videti da izvođenje eksponenciranja na elementu 2 prolazi kroz sve elemente grupe $\langle \mathbb{Z}^* \mod 11, \cdot \rangle$ u sledećem redosledu: 2, 4, 8, 5, 10, 9, 7, 3, 6, 1. Nakon $2^{10}$, nastavak eksponenciranja elementa 2 ponovo prolazi kroz sve elemente i to u istom redosledu. Dakle, element 2 je generator za grupu $\langle \mathbb{Z}^* \mod 11, \cdot \rangle$.
 
 
 Iako $\langle \mathbb{Z}^* \mod 11, \cdot \rangle$ ima više generatora, nisu svi elementi ove grupe generatori. Razmotrimo, na primer, element 3. Prolazeći kroz prvih 10 eksponencijacija, bez prikazivanja zamornih proračuna, dobijamo sledeće rezultate:
@@ -1045,7 +1045,7 @@ Iako $\langle \mathbb{Z}^* \mod 11, \cdot \rangle$ ima više generatora, nisu sv
 - $3^{10} = 1 \mod 11$
 
 
-Umesto da prolazi kroz sve vrednosti u $\langle \mathbb{Z}^* \mod 11, \cdot \rangle$, eksponenciranje elementa 3 vodi samo do podskupa tih vrednosti: 3, 9, 5, 4 i 1. Nakon petog eksponenciranja, ove vrednosti počinju da se ponavljaju.
+Umesto da prolazi kroz sve vrednosti grupe $\langle \mathbb{Z}^* \mod 11, \cdot \rangle$, eksponenciranje elementa 3 vodi samo do podskupa tih vrednosti: 3, 9, 5, 4 i 1. Nakon petog eksponenciranja, ove vrednosti počinju da se ponavljaju.
 
 
 Sada možemo definisati **cikličnu grupu** kao bilo koju grupu sa barem jednim generatorom. To jest, postoji barem jedan element grupe iz kojeg možete proizvesti sve druge elemente grupe kroz eksponenciranje.
@@ -1060,10 +1060,10 @@ Ovo je važno pitanje, ali zahteva malo truda da se odgovori.
 Da počnemo, pretpostavimo dva pozitivna cela broja $a$ i $N$. Važna teorema u teoriji brojeva kaže da $a$ ima multiplikativni inverz modulo $N$ (to jest, ceo broj $b$ tako da $a \cdot b = 1 \mod N$) ako i samo ako je najveći zajednički delilac između $a$ i $N$ jednak 1. To jest, ako su $a$ i $N$ međusobno prosti.
 
 
-Dakle, za bilo koju grupu celih brojeva opremljenu množenjem po modulu $N$, samo manji brojevi koji su međusobno prosti sa $N$ su uključeni u skup. Ovaj skup možemo označiti sa $\mathbb{Z}^c \mod N$.
+Dakle, za bilo koju grupu celih brojeva sa operacijom množenja po modulu $N$, samo manji brojevi koji su međusobno prosti sa $N$ su uključeni u skup. Ovaj skup možemo označiti sa $\mathbb{Z}^c \mod N$.
 
 
-Na primer, pretpostavimo da je $N$ 10. Samo su celi brojevi 1, 3, 7 i 9 međusobno prosti sa 10. Tako skup $\mathbb{Z}^c \mod 10$ uključuje samo $\{1, 3, 7, 9\}$. Ne možete kreirati grupu sa celobrojnom multiplikacijom modulo 10 koristeći bilo koje druge cele brojeve između 1 i 10. Za ovu specifičnu grupu, inverzi su parovi 1 i 9, i 3 i 7.
+Na primer, pretpostavimo da je $N$ 10. Samo su celi brojevi 1, 3, 7 i 9 međusobno prosti sa 10. Tako skup $\mathbb{Z}^c \mod 10$ uključuje samo $\{1, 3, 7, 9\}$. Ne možete kreirati grupu sa celobrojnom multiplikacijom modulo 10 koristeći bilo koje druge cele brojeve između 1 i 10. Za ovu specifičnu grupu, inverzni su parovi 1 i 9, i 3 i 7.
 
 
 U slučaju kada je $N$ sam po sebi prost, svi celi brojevi od 1 do $N – 1$ su uzajamno prosti sa $N$. Takva grupa, dakle, ima red $N – 1$. Koristeći našu raniju notaciju, $\mathbb{Z}^c \mod N$ je jednako $\mathbb{Z}^* \mod N$ kada je $N$ prost. Grupa koju smo odabrali za naš raniji primer, $\langle \mathbb{Z}^* \mod 11, \cdot \rangle$, je poseban primer ove klase grupa.
@@ -1079,7 +1079,7 @@ Zatim, funkcija $\phi(N)$ izračunava broj međusobno prostih brojeva do broja $
 Ovo ima važnu implikaciju za klasu grupa $\langle \mathbb{Z}^* \mod N, \cdot \rangle$ gde je $N$ prost broj. Za ove grupe, eksponenciranje elemenata grupe predstavlja aritmetičko eksponenciranje. To jest, $a^{\phi(N)} \mod N$ predstavlja aritmetičku operaciju $a^{\phi(N)} \mod N$. Kako je bilo koji element $a$ u ovim multiplikativnim grupama relativno prost sa $N$, to znači da je $a^{\phi(N)} \mod N = a^{N – 1} \mod N = 1 \mod N$.
 
 
-Eulerova teorema je zaista važan rezultat. Za početak, ona implicira da svi Elements u $\langle \mathbb{Z}^* \mod N, \cdot \rangle$ mogu ciklusirati samo kroz broj vrednosti eksponenciranjem koji deli $N – 1$. U slučaju $\langle \mathbb{Z}^* \mod 11, \cdot \rangle$, to znači da svaki element može ciklusirati samo kroz 2, 5, ili 10 elemente. Grupne vrednosti kroz koje bilo koji element ciklusira prilikom eksponenciranja poznate su kao **red elementa**. Element sa redom ekvivalentnim redu grupe je generator.
+Eulerova teorema je zaista važan rezultat. Za početak, ona implicira da svi elementi u $\langle \mathbb{Z}^* \mod N, \cdot \rangle$ mogu ponavljati (kružiti) samo kroz ograničenti broj vrednosti eksponenciranjem koji deli $N – 1$. U slučaju $\langle \mathbb{Z}^* \mod 11, \cdot \rangle$, to znači da svaki element može kružiti samo kroz 2, 5, ili 10 elemente. Vrednosti grupe kroz koje bilo koji element ciklusira prilikom eksponenciranja poznate su kao **red elementa**. Element grupe sa redom ekvivalentnim redu grupe je generator.
 
 
 Štaviše, Eulerova teorema implicira da uvek možemo znati rezultat $a^{N – 1} \mod N$ za bilo koju grupu $\langle \mathbb{Z}^* \mod N, \cdot \rangle$ gde je $N$ prost. Ovo važi bez obzira na to koliko složene stvarne kalkulacije mogu biti.
