@@ -1108,7 +1108,7 @@ Formula Eulero-ve Phi funkcije za prostu faktorizaciju $N$.
 <chapterId>fad52d86-3a22-5c9f-979e-3bec9eaa008e</chapterId>
 
 
-Grupa je osnovna algebarska struktura u apstraktnoj algebri, ali postoji mnogo više. Jedina druga algebarska struktura sa kojom treba da budete upoznati je struktura **polja**, posebno **konačnog polja**. Ova vrsta algebarske strukture se često koristi u kriptografiji, kao što je u Advanced Encryption Standard-u. Potonji je glavni simetrični šifarski sistem sa kojim ćete se susresti u praksi.
+Grupa je osnovna algebarska struktura u apstraktnoj algebri, ali postoji mnogo više. Jedina druga algebarska struktura sa kojom treba da budete upoznati je struktura **polja**, posebno **konačnog polja**. Ova vrsta algebarske strukture se često koristi u kriptografiji, kao što je u Advanced Encryption Standard-u. Potonji je glavni simetrični sistem enkripcije (šifrovanja) sa kojim ćete se susresti u praksi.
 
 
 Polje je izvedeno iz pojma grupe. Konkretno, **polje** je skup elemenata **S** na kojem su definisana dve binarne operacije $\circ$ i $\diamond$, koje ispunjavaju sledeće uslove:
@@ -1116,7 +1116,7 @@ Polje je izvedeno iz pojma grupe. Konkretno, **polje** je skup elemenata **S** n
 
 1. Skup **S** sa zadatom operacijom $\circ$ je Abelova grupa.
 
-2. Skup **S** sa zadatom operacijom  $\diamond$ je Abelova grupa za „nenula“ elemenata.
+2. Skup **S** sa zadatom operacijom  $\diamond$ je Abelova grupa za „nenulte“ elemente.
 
 3. Skup **S** sa zadate dve operacije zadovoljava ono što je poznato kao distributivni uslov: Pretpostavimo da su $a$, $b$ i $c$ elementi od **S**. Tada **S** na kojem su definisane dve operacije ispunjava distributivno svojstvo kada je $a \circ (b \diamond c) = (a \circ b) \diamond (a \circ c)$.
 
@@ -1124,10 +1124,10 @@ Polje je izvedeno iz pojma grupe. Konkretno, **polje** je skup elemenata **S** n
 Imajte na umu da je, kao i kod grupa, definicija polja veoma apstraktna. Ona ne postavlja nikakve tvrdnje o tipovima elemenata u **S**, niti o operacijama $\circ$ i $\diamond$. Samo navodi da je polje bilo koji skup elemenata sa dve operacije za koje važe tri gore navedena uslova. („Nulti“ element u drugoj Abelovoj grupi može se apstraktno interpretirati.)
 
 
-Dakle, šta bi mogao biti primer polja? Dobar primer je skup $\mathbb{Z} \mod 7$, ili $\{0, 1, \ldots, 7\}$ definisan preko standardnog sabiranja (umesto $\circ$ gore) i standardnog množenja (umesto $\diamond$ gore).
+Dakle, šta bi mogao biti primer polja? Dobar primer je skup $\mathbb{Z} \mod 7$, ili $\{0, 1, \ldots, 7\}$ definisan operacijom standardnog sabiranja (umesto $\circ$ gore) i standardnog množenja (umesto $\diamond$ gore).
 
 
-Prvo, $\mathbb{Z} \mod 7$ ispunjava uslov da bude Abelova grupa preko sabiranja, i ispunjava uslov da bude Abelova grupa preko množenja ako uzmete u obzir samo nenulte elemente. Drugo, kombinacija skupa sa dva operatora ispunjava distributivni uslov.
+Prvo, $\mathbb{Z} \mod 7$ ispunjava uslov da bude Abelova grupa u odnosu na sabiranje, i ispunjava uslov da bude Abelova grupa u odnosu na množenje ako uzmete u obzir samo nenulte elemente. Drugo, kombinacija skupa sa dva operatora ispunjava distributivni uslov.
 
 
 Didaktički je korisno istražiti ove tvrdnje koristeći neke posebne vrednosti. Uzmimo eksperimentalne vrednosti 5, 2 i 3, neke nasumično odabrane elemente iz skupa $\mathbb{Z} \mod 7$, da bismo ispitali polje $\langle \mathbb{Z} \mod 7, +, \cdot \rangle$. Koristićemo ove tri vrednosti redom, prema potrebi, da istražimo posebne uslove.
@@ -1176,7 +1176,7 @@ Ključna razlika je između dve vrste polja: konačna i beskonačna polja.
 **Beskonačno polje** uključuje polje gde je skup **S** beskonačno velik. Skup realnih brojeva $\mathbb{R}$ sa definisanim operacijama sabiranja i množenja je primer beskonačnog polja. **Konačno polje**, takođe poznato kao **Galoisovo polje**, je polje gde je skup **S** konačan. Naš primer iznad $\langle \mathbb{Z} \mod 7, +, \cdot \rangle$ je konačno polje.
 
 
-U kriptografiji, prvenstveno smo zainteresovani za konačna polja. Generalno, može se pokazati da konačno polje postoji za neki skup elemenata **S** ako i samo ako ima $p^m$ elemenata, gde je $p$ prost broj i $m$ pozitivan ceo broj veći ili jednak jedan. Drugim rečima, ako je red nekog skupa **S** prost broj ($p^m$ gde je $m = 1$) ili neka stepena prostog broja ($p^m$ gde je $m > 1$), onda možete pronaći dva operatora $\circ$ i $\diamond$ takva da su ispunjeni uslovi za polje.
+U kriptografiji, prvenstveno smo zainteresovani za konačna polja. Generalno, može se pokazati da konačno polje postoji za neki skup elemenata **S** ako i samo ako ima $p^m$ elemenata, gde je $p$ prost broj i $m$ pozitivan ceo broj veći ili jednak od jedan. Drugim rečima, ako je red nekog skupa **S** prost broj ($p^m$ gde je $m = 1$) ili neka stepena prostog broja ($p^m$ gde je $m > 1$), onda možete pronaći dva operatora $\circ$ i $\diamond$ takva da su ispunjeni uslovi za polje.
 
 
 Ako neko konačno polje ima prost broj elemenata, onda se naziva **prostim poljem**. Ako je broj elemenata u konačnom polju stepen prostog broja, onda se polje naziva **proširenim poljem**. U kriptografiji, interesujemo se za oba, i prosta i proširena polja. [2]
@@ -1185,13 +1185,13 @@ Ako neko konačno polje ima prost broj elemenata, onda se naziva **prostim polje
 Glavna prosta polja od interesa u kriptografiji su ona gde je skup svih celih brojeva modulisan nekim prostim brojem, a operatori su standardno sabiranje i množenje. Ova klasa konačnih polja bi uključivala $\mathbb{Z} \mod 2$, $\mathbb{Z} \mod 3$, $\mathbb{Z} \mod 5$, $\mathbb{Z} \mod 7$, $\mathbb{Z} \mod 11$, $\mathbb{Z} \mod 13$, i tako dalje. Za bilo koje prosto polje $\mathbb{Z} \mod p$, skup celih brojeva polja je sledeći: $\{0, 1, \ldots, p – 2, p – 1\}$.
 
 
-U kriptografiji, takođe smo zainteresovani za proširena polja, posebno bilo koja polja sa $2^m$ Elements gde je $m > 1$. Takva konačna polja se, na primer, koriste u Rijndael šifri, koja čini osnovu za Advanced Encryption Standard. Dok su prosti brojevi relativno intuitivni, ova proširena polja baze 2 verovatno nisu za one koji nisu upoznati sa apstraktnom algebrom.
+U kriptografiji, takođe smo zainteresovani za proširena polja, posebno bilo koja polja sa $2^m$ elemenata gde je $m > 1$. Takva konačna polja se, na primer, koriste u Rijndael šifri, koja čini osnovu za Advanced Encryption Standard šemu enkripcije. Dok su prosti brojevi relativno intuitivni, ova proširena polja baze 2 verovatno nisu za one koji nisu upoznati sa apstraktnom algebrom.
 
 
-Za početak, zaista je tačno da bilo koji skup celih brojeva sa $2^m$ elemenata može biti dodeljen sa dva operatora koji bi njihovu kombinaciju učinili poljem (sve dok je $m$ pozitivan ceo broj). Ipak, samo zato što polje postoji ne znači nužno da ga je lako otkriti ili da je posebno praktično za određene primene.
+Za početak, zaista je tačno da bilo koji skup celih brojeva sa $2^m$ elemenata može biti definisan sa dva operatora koji bi njihovu kombinaciju učinili poljem (sve dok je $m$ pozitivan ceo broj). Ipak, samo zato što polje postoji ne znači nužno da ga je lako otkriti ili da je posebno praktično za određene primene.
 
 
-Ispostavlja se da su posebno primenljiva proširenja polja $2^m$ u kriptografiji ona definisana nad posebnim skupovima polinomskih izraza, a ne nekim skupom celih brojeva.
+Ispostavlja se da su posebno primenljiva proširenja polja $2^m$ u kriptografiji ona definisana nad posebnim skupovima polinomskih izraza, a ne nad nekim skupom celih brojeva.
 
 
 Na primer, pretpostavimo da želimo prošireno polje sa $2^3$ (tj. 8) elemenata u skupu. Iako može postojati mnogo različitih skupova koji se mogu koristiti za polja te veličine, jedan takav skup uključuje sve jedinstvene polinome oblika $a_2x^2 + a_1x + a_0$, gde je svaki koeficijent $a_i$ ili 0 ili 1. Dakle, ovaj skup **S** uključuje sledeće elemente:
@@ -1235,7 +1235,7 @@ Hajde prvo da se okrenemo ideji ireducibilnog polinoma. **Ireducibilni polinom**
 Na primer, razmotrite polinom $x^2 - 3x + 2$. Ovo se može prepisati kao $(x – 1)(x – 2)$. Dakle, ovo nije ireducibilno. Sada razmotrite polinom $x^2 + 1$. Koristeći samo cele brojeve, ne postoji način da se ovaj izraz dalje faktoriše. Dakle, ovo je ireducibilan polinom u odnosu na cele brojeve.
 
 
-Sledeće, okrenimo se konceptu množenja vektora. Nećemo detaljno istraživati ovu temu, ali treba da razumete osnovno pravilo: Bilo koja podela vektora može se izvršiti sve dok deljenik ima stepen viši ili jednak stepenu delioca. Ako deljenik ima niži stepen od delioca, tada deljenik više ne može biti podeljen deliocem.
+Sledeće, okrenimo se konceptu množenja vektora. Nećemo detaljno istraživati ovu temu, ali treba da razumete osnovno pravilo: Svako deljenje vektora može se izvršiti sve dok deljenik ima stepen viši ili jednak stepenu delioca. Ako deljenik ima niži stepen od delioca, tada deljenik više ne može biti podeljen deliocem.
 
 
 Na primer, razmotrite izraz $x^6 + x + 1 \mod x^5 + x^2$. Ovo se očigledno dalje redukuje jer je stepen delioca, 6, veći od stepena delitelja, 5. Sada razmotrite izraz $x^5 + x + 1 \mod x^5 + x^2$. Ovo se takođe dalje redukuje, jer su stepen delioca, 5, i delitelja, 5, jednaki.
@@ -1297,13 +1297,13 @@ Možda se pitate zašto $(x^3) - (x^3 + x + 1)$ daje $x + 1$ a ne $-x - 1$. Zapa
 Da sumiramo množenje $x^2 + 1$ i $x^2 + x$: Kada pomnožite ta dva člana, dobijate polinom stepena 4, $x^4 + x^3 + x^2 + x$, koji treba da se redukuje modulo $x^3 + x + 1$. Polinom stepena 4 je deljiv sa $x^3 + x + 1$ tačno $x + 1$ puta. Ostatak nakon deljenja $x^4 + x^3 + x^2 + x$ sa $x^3 + x + 1$ tačno $x + 1$ puta je $x + 1$. Ovo je zaista element u našem skupu $\{0, 1, x, x + 1, x^2, x^2 + 1, x^2 + x, x^2 + x + 1\}$.
 
 
-Zašto bi proširena polja sa bazom 2 nad skupovima polinoma, kao u gornjem primeru, bila korisna za kriptografiju? Razlog je taj što koeficijente u polinomima takvih skupova, bilo 0 ili 1, možete posmatrati kao elemente binarnih nizova određene dužine. Skup **S** u našem gornjem primeru, na primer, mogao bi se posmatrati kao skup **S** koji uključuje sve binarne nizove dužine 3 (000 do 111). Operacije na **S**, zatim, mogu se koristiti za izvođenje operacija na ovim binarnim nizovima i proizvodnju binarnog niza iste dužine.
+Zašto bi proširena polja sa bazom 2 nad skupovima polinoma, kao u gornjem primeru, bila korisna za kriptografiju? Razlog je taj što koeficijente u polinomima takvih skupova, bilo 0 ili 1, možete posmatrati kao elemente binarnih nizova određene dužine. Skup **S** u našem gornjem primeru, na primer, mogao bi se posmatrati kao skup **S** koji uključuje sve binarne nizove dužine 3 (000 do 111). Operacije nad skupom **S**, zatim, mogu se koristiti za izvođenje operacija na ovim binarnim nizovima i proizvodnju binarnog niza iste dužine.
 
 
 **Beleške:**
 
 
-[2] Proširena polja postaju veoma kontraintuitivna. Umesto da imaju elemente celih brojeva, ona imaju skupove polinoma. Pored toga, sve operacije se izvode modulo nekog neprelaznog polinoma.
+[2] Proširena polja postaju veoma kontraintuitivna. Umesto da imaju elemente celih brojeva, ona imaju skupove polinoma. Pored toga, sve operacije se izvode modulo nekog ireducibilnog polinoma.
 
 
 
