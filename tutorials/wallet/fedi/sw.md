@@ -43,7 +43,7 @@ https://planb.network/tutorials/wallet/mobile/speed-wallet-8715e454-1720-4a7f-8c
 
 
 
-- **Kujitunza** : Programu hukupa ufikiaji wa maneno ya urejeshi mara tu unapounda Wallet yako. Kwa hivyo unaweza kusafirisha bitcoins zako kwa uhuru kwa Wallet inayokufaa zaidi.
+- **Kujitunza**: Programu hukupa ufikiaji wa maneno ya urejeshi mara tu unapounda Wallet yako. Kwa hivyo unaweza kusafirisha bitcoins zako kwa uhuru kwa Wallet inayokufaa zaidi.
 
 
 
@@ -51,7 +51,7 @@ https://planb.network/tutorials/wallet/mobile/blue-wallet-2f4093da-6d03-4f26-837
 
 https://planb.network/tutorials/wallet/desktop/sparrow-c674e2ac-d46f-4c82-92a7-7d1b0e262f5d
 
-Badala yake, Fedi Wallet inatoa mbinu ya shirikisho, inayokuruhusu kujiunga na kikundi cha watu unaowaamini ili kudhibiti funguo zako za kwingineko. Unaweza kujiunga na shirikisho maarufu lililopendekezwa na Fedi, au ujiunge na shirikisho la ndani katika jumuiya yako kwa kuchanganua msimbo wa QR au kubandika msimbo wa mwaliko wa shirikisho hilo.
+Badala yake, Fedi Wallet inatoa mbinu ya shirikisho, ambayo hukuruhusu kujiunga na kikundi cha watu unaowaamini ili kudhibiti funguo zako za kwingineko. Unaweza kujiunga na shirikisho maarufu lililopendekezwa na Fedi, au ujiunge na shirikisho la ndani katika jumuiya yako kwa kuchanganua msimbo wa QR au kubandika msimbo wa mwaliko wa shirikisho hilo.
 
 
 
@@ -103,7 +103,7 @@ Katika menyu ya **Mashirikisho**, tembeza chini hadi kwenye shirikisho, kisha ub
 
 
 
-- Pokea bitcoins kwenye Fedi**: Kwenye ukurasa wa nyumbani, chagua shirikisho unalotaka kutumia kupokea bitcoins, kisha ubofye kitufe cha **Pokea** ili kuunda Lightning Invoice yenye kiasi cha kupokea.
+- **Pokea bitcoins kwenye Fedi**: Kwenye ukurasa wa nyumbani, chagua shirikisho unalotaka kutumia kupokea bitcoins, kisha ubofye kitufe cha **Pokea** ili kuunda Lightning Invoice yenye kiasi cha kupokea.
 
 
 
@@ -113,7 +113,7 @@ Katika menyu ya **Mashirikisho**, tembeza chini hadi kwenye shirikisho, kisha ub
 
 
 
-- Tuma bitcoins**: Kwenye ukurasa wa nyumbani, bofya kitufe cha **Tuma** ili kutuma bitcoins kwa Lightning Address, kulipa Invoice au kufanya malipo ya nje ya mtandao.
+- **Tuma bitcoins**: Kwenye ukurasa wa nyumbani, bofya kitufe cha **Tuma** ili kutuma bitcoins kwa Lightning Address, kulipa Invoice au kufanya malipo ya nje ya mtandao.
 
 
 
@@ -227,7 +227,7 @@ Bofya kwenye **Unda moduli ya Shirikisho**, kisha anza mchakato wa kuunda shirik
 
 
 
-Umechukua ziara ya Fedi Wallet, sasa uko katika nafasi ya kutumia uwezo kamili wa jalada hili katika jumuiya yako. Ikiwa ulifurahia mafunzo haya, tuna uhakika kwamba utafurahia mafunzo yetu kuhusu Blink (zamani Bitcoin Beach), mpango wa Bitcoin wa kwingineko ulioundwa awali ili kujenga na kuendeleza uchumi wa mduara kwenye Bitcoin nchini El Salvador.
+Umechukua ziara ya Fedi Wallet, sasa uko katika nafasi ya kutumia uwezo kamili wa jalada hili katika jumuiya yako. Ikiwa ulifurahia mafunzo haya, tuna uhakika kwamba utafurahia mafunzo yetu kuhusu Blink (zamani Bitcoin Beach), mpango wa Bitcoin wa kwingineko ulioundwa awali kujenga na kuendeleza uchumi wa mduara kwenye Bitcoin nchini El Salvador.
 
 
 

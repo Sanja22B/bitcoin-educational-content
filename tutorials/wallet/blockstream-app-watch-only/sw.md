@@ -1,5 +1,5 @@
 ---
-name: Blockstream-app-watch-only
+name: Programu ya Blockstream - Tazama Pekee
 description: Ninawezaje kusanidi Watch-only wallet kwenye Programu ya Blockstream?
 ---
 
@@ -15,7 +15,7 @@ description: Ninawezaje kusanidi Watch-only wallet kwenye Programu ya Blockstrea
 
 
 
-- Mafunzo haya yanafafanua jinsi ya kusanidi na kutumia element ya **watch only** cha programu ya simu ya **Blockstream** ili kufuatilia Bitcoin Wallet bila kufikia funguo zake za faragha.
+- Mafunzo haya yanafafanua jinsi ya kusanidi na kutumia kipengele cha **Kutazama Pekee** cha programu ya simu ya **Blockstream** ili kufuatilia Bitcoin Wallet bila kufikia funguo zake za faragha.
 - Inashughulikia usakinishaji, usanidi wa awali, kuleta ufunguo wa umma uliopanuliwa, na kuutumia kufuatilia salio na anwani za kupokea za generate.
 - Kumbuka: Mafunzo mengine, yaliyotolewa katika kiambatisho, yanashughulikia Onchain, Liquid na toleo la eneo-kazi.
 
@@ -42,7 +42,7 @@ description: Ninawezaje kusanidi Watch-only wallet kwenye Programu ya Blockstrea
 
 
 
- **watch only** Wallet hukuruhusu kufuatilia miamala na salio la Bitcoin Wallet bila kupata funguo za faragha. Tofauti na Wallet ya kawaida, huhifadhi data ya umma pekee, kama vile **ufunguo uliopanuliwa wa **umma** (uliotoa "**xpub**", kisha "zpub", "ypub", n.k.), ambayo huiwezesha kupata anwani za kupokea na kufuatilia historia ya muamala kwenye Blockchain Bitcoin. Kutokuwepo kwa funguo za kibinafsi hufanya iwezekane kutoa pesa kutoka kwa programu, kuhakikisha usalama ulioimarishwa.
+A **Saa Pekee** Wallet hukuruhusu kufuatilia miamala na salio la Bitcoin Wallet bila kupata funguo za faragha. Tofauti na Wallet ya kawaida, huhifadhi data ya umma pekee, kama vile **ufunguo uliopanuliwa wa umma** (uliotoa **xpub**, kisha "zpub", "ypub", n.k.), ambayo huiwezesha kupata anwani za kupokea na kufuatilia historia ya muamala kwenye Blockchain Bitcoin. Kutokuwepo kwa funguo za kibinafsi hufanya iwezekane kutoa pesa kutoka kwa programu, kuhakikisha usalama ulioimarishwa.
 
 
 
@@ -50,7 +50,7 @@ description: Ninawezaje kusanidi Watch-only wallet kwenye Programu ya Blockstrea
 
 
 
-**Kwa nini utumie Watch-only wallet?
+**Kwa nini utumie Watch-only wallet?**
 
 
 
@@ -71,13 +71,13 @@ description: Ninawezaje kusanidi Watch-only wallet kwenye Programu ya Blockstrea
 
 
 
-**ufunguo uliopanuliwa wa umma** (xpub, ypub, zpub, n.k.) ni kipande cha data inayotokana na Bitcoin Wallet ambayo hutengeneza funguo zote za umma za watoto na address zao zinazohusiana nazo, bila kutoa ufikiaji wa funguo za faragha.
+**ufunguo uliopanuliwa wa umma** (xpub, ypub, zpub, n.k.) ni kipande cha data inayotokana na Bitcoin Wallet ambayo hutengeneza funguo zote za umma za watoto na anwani zao zinazohusiana nazo, bila kutoa ufikiaji wa funguo za faragha.
 
 
 
 
 
-- **Jinsi inavyofanya kazi** : Ufunguo uliopanuliwa wa umma hutolewa kutoka kwa maneno ya seed kupitia mchakato wa kubainisha (BIP-32). Inaunda mti wa kiwango cha funguo za umma za watoto, ambayo kila moja inaweza kubadilishwa kuwa Address ya kupokea. Kwa kutumia njia ile ile ya utokaji (k.m. `m/44'/0'/0'`) kama Wallet inayotazamwa, Watch-only wallet hutengeneza anwani zile zile, kuwezesha fedha kufuatiliwa na anwani mpya za kupokea kuundwa.
+- Jinsi inavyofanya kazi: Ufunguo uliopanuliwa wa umma hutolewa kutoka kwa maneno ya seed kupitia mchakato wa kubainisha (BIP-32). Inaunda mti wa kiwango cha funguo za umma za watoto, ambayo kila moja inaweza kubadilishwa kuwa Address ya kupokea. Kwa kutumia njia ile ile ya utokaji (k.m. `m/44'/0'/0'`) kama Wallet inayotazamwa, Watch-only wallet hutengeneza anwani zile zile, kuwezesha fedha kufuatiliwa na anwani mpya za kupokea kuundwa.
 
 
 
@@ -88,22 +88,22 @@ description: Ninawezaje kusanidi Watch-only wallet kwenye Programu ya Blockstrea
 
 
 - Aina za funguo za umma zilizopanuliwa
- - **xpub**: Inatumika kwa jalada la Urithi (anwani zinazoanza na "1", BIP-44) na jalada la Taproot (anwani zinazoanza na "bc1p", BIP-86).
- - **ypub**: Imeundwa kwa wallet zinazooana za SegWit (anwani zinazoanza na "3", BIP-49).
- - **zpub**: Inahusishwa na jalada asili la SegWit (anwani zinazoanza na "bc1q", BIP-84).
- - **Nyingine (tpub, upub, vpub, n.k.)**: Inatumika kwa mitandao mbadala (kama vile Testnet) au viwango mahususi. Kwa mfano, tpub ni ya mtandao wa Testnet.
+- **xpub**: Inatumika kwa jalada la Urithi (anwani zinazoanza na "1", BIP-44) na jalada la Taproot (anwani zinazoanza na "bc1p", BIP-86).
+- **ypub**: Imeundwa kwa pochi zinazooana za SegWit (anwani zinazoanza na "3", BIP-49).
+- **zpub**: Inahusishwa na jalada asili la SegWit (anwani zinazoanza na "bc1q", BIP-84).
+- **Nyingine (tpub, upub, vpub, n.k.)**: Inatumika kwa mitandao mbadala (kama vile Testnet) au viwango mahususi. Kwa mfano, tpub ni ya mtandao wa Testnet.
 
 
 
 
 
-- **Tofauti** : Chaguo kati ya xpub, ypub, au zpub inategemea aina ya Address (zamani, SegWit, Taproot au SegWit iliyowekwa kwenye kiota) na kiwango cha BIP kinachotumiwa na Wallet. Angalia umbizo linalohitajika na jalada lako la chanzo ili kuhakikisha kuwa linatumika na Blockstream App.
+- **Tofauti**: Chaguo kati ya xpub, ypub, au zpub inategemea aina ya Address (zamani, SegWit, Taproot au SegWit iliyowekwa kwenye kiota) na kiwango cha BIP kinachotumiwa na Wallet. Angalia umbizo linalohitajika na jalada lako la chanzo ili kuhakikisha kuwa linatumika na Blockstream App.
 
 
 
 
 
-- **Usalama na usiri** : Ufunguo uliopanuliwa wa umma si nyeti katika masuala ya usalama, kwa kuwa hauruhusu pesa kutumika (hakuna ufikiaji wa funguo za kibinafsi). Hata hivyo, ni nyeti katika suala la usiri, kwani hufichua anwani zote za umma na historia ya shughuli zinazohusiana.
+- **Usalama na usiri**: Ufunguo uliopanuliwa wa umma si nyeti katika masuala ya usalama, kwa kuwa hauruhusu pesa kutumika (hakuna ufikiaji wa funguo za kibinafsi). Hata hivyo, ni nyeti katika suala la usiri, kwani hufichua anwani zote za umma na historia ya shughuli zinazohusiana.
 
 
 
@@ -120,13 +120,13 @@ https://planb.network/courses/46b0ced2-9028-4a61-8fbc-3b005ee8d70f
 
 
 - **Hot Wallet**, **Software Wallet**, **Wallet simu**, **Software Wallet**: majina yote ya programu iliyosakinishwa kwenye simu mahiri, kompyuta au kifaa chochote kilichounganishwa kwenye Mtandao, kuwezesha funguo za kibinafsi kutoka kwa Bitcoin Wallet kudhibitiwa na kulindwa.
-- Tofauti na **wallets za maunzi**, pia hujulikana kama **Cold wallet**, ambazo hutenga funguo nje ya mtandao,  hufanya kazi katika mazingira yaliyounganishwa, na kuzifanya ziwe hatarini zaidi kwa mashambulizi ya mtandaoni.
+- Tofauti na **pochi za maunzi**, pia hujulikana kama **Cold wallet**, ambazo hutenga funguo nje ya mtandao, pochi za programu hufanya kazi katika mazingira yaliyounganishwa, na kuzifanya ziwe hatarini zaidi kwa mashambulizi ya mtandaoni.
 
 
 
 
 
-- **Matumizi yanayopendekezwa** :
+- **Matumizi yanayopendekezwa**:
     - Inafaa kwa ajili ya kudhibiti kiasi cha wastani cha Bitcoin, hasa kwa shughuli za kila siku.
     - Inafaa kwa wanaoanza au watumiaji walio na mali chache, ambao Hardware Wallet inaweza kuonekana kuwa ya kupita kiasi.
 
@@ -134,7 +134,7 @@ https://planb.network/courses/46b0ced2-9028-4a61-8fbc-3b005ee8d70f
 
 
 
-- **Blocks**: Usalama mdogo kwa kuhifadhi pesa nyingi au akiba ya muda mrefu. Katika kesi hii, chagua Hardware Wallet.
+- **Vizuizi**: Usalama mdogo kwa kuhifadhi pesa nyingi au akiba ya muda mrefu. Katika kesi hii, chagua Hardware Wallet.
 
 
 
@@ -146,13 +146,13 @@ https://planb.network/courses/46b0ced2-9028-4a61-8fbc-3b005ee8d70f
 
 
 - **Blockstream App** ni programu ya simu (iOS, Android) na eneo-kazi kwa ajili ya kudhibiti jalada na mali za Bitcoin kwenye Liquid Network. Ilinunuliwa na [Blockstream](https://blockstream.com/) mwaka wa 2016, awali ilipewa jina *Green Address* na kisha *Blockstream Green*.
--**Vipengele muhimu** :
-    - **miamala ya Onchain** kwenye Blockchain Bitcoin.
-    - **Miamala kwenye mtandao wa **Liquid** (Sidechain kwa ubadilishanaji wa haraka na wa siri).
-    - **Watch only** kwingineko za ufuatiliaji wa fedha bila ufikiaji wa funguo.
+- Vipengele muhimu ** :
+- Shughuli za **Onchain** kwenye Blockchain Bitcoin.
+    - Shughuli kwenye mtandao wa **Liquid** (Sidechain kwa ubadilishanaji wa haraka na wa siri).
+- Kuangalia pekee **kwingineko** za ufuatiliaji wa fedha bila ufikiaji wa funguo.
     - Chaguzi za faragha: muunganisho kupitia **Tor**, unganisho kwa **nodi ya kibinafsi** kupitia Electrum, au uthibitishaji wa **SPV** ili kupunguza utegemezi kwenye nodi za watu wengine.
     - Hufanya kazi **Replace-by-fee (RBF)** ili kuharakisha miamala ambayo haijathibitishwa.
-- **Utangamano**: Huunganisha wallet za maunzi kama vile **Blockstream Jade**.
+- **Utangamano**: Huunganisha pochi za maunzi kama vile **Blockstream Jade**.
 - **Interface**: Intuitive kwa wanaoanza, na chaguo za kina kwa wataalam.
 - **Kumbuka**: Mwongozo huu unazingatia matumizi ya onchain. Mafunzo mengine katika Viambatisho yanashughulikia Onchain, Tazama Pekee na toleo la eneo-kazi.
 
@@ -169,12 +169,12 @@ https://planb.network/courses/46b0ced2-9028-4a61-8fbc-3b005ee8d70f
 
 
 
-- **Kwa Android** :
+- **Kwa Android**:
     - Pakua [Programu ya Blockstream](https://play.google.com/store/apps/details?id=com.greenaddress.greenbits_android_wallet) kutoka kwenye Duka la Google Play.
     - Mbadala: Sakinisha kupitia faili ya APK inayopatikana kwenye [GitHub rasmi ya Blockstream](https://github.com/Blockstream/green_android).
-- Kwa iOS** :
+- Kwa **iOS**:
     - Pakua [Programu ya Blockstream](https://apps.apple.com/us/app/Green-Bitcoin-Wallet/id1402243590) kutoka kwa App Store.
-- Kumbuka**: Hakikisha umepakua kutoka kwa vyanzo rasmi ili kuepuka programu za ulaghai.
+- **Kumbuka**: Hakikisha umepakua kutoka kwa vyanzo rasmi ili kuepuka programu za ulaghai.
 
 
 
@@ -184,7 +184,7 @@ https://planb.network/courses/46b0ced2-9028-4a61-8fbc-3b005ee8d70f
 
 
 
-- **Home screen**: Inapofunguliwa mara ya kwanza, programu inaonyesha skrini bila Wallet iliyosanidiwa. Kwingineko zilizoundwa au zilizoletwa zitaonekana hapa baadaye.
+- **Skrini ya nyumbani**: Inapofunguliwa mara ya kwanza, programu inaonyesha skrini bila Wallet iliyosanidiwa. Kwingineko zilizoundwa au zilizoletwa zitaonekana hapa baadaye.
 
 
 
@@ -208,8 +208,8 @@ https://planb.network/courses/46b0ced2-9028-4a61-8fbc-3b005ee8d70f
 
 
 
-- *&Kazi**: Huzima picha za skrini, huficha onyesho la kukagua programu kwenye kidhibiti cha kazi, na hufunga ufikiaji simu ikiwa imefungwa.
-- **Kwa nini?** : Hulinda data yako dhidi ya ufikiaji wa kimwili usioidhinishwa au programu hasidi ya kunasa skrini.
+- **Kazi**: Huzima picha za skrini, huficha onyesho la kukagua programu kwenye kidhibiti cha kazi, na hufunga ufikiaji simu ikiwa imefungwa.
+- **Kwa nini?**: Hulinda data yako dhidi ya ufikiaji wa kimwili usioidhinishwa au programu hasidi ya kunasa skrini.
 
 
 
@@ -232,7 +232,7 @@ https://planb.network/courses/46b0ced2-9028-4a61-8fbc-3b005ee8d70f
 
 
 
-- **Kazi**: Huunganisha programu kwa **Full node ya Bitcoin** kupitia **Seva ya Electrum**.
+- **Kazi**: Huunganisha programu kwa **nodi yako kamili ya Bitcoin** kupitia **Seva ya Electrum**.
 - **Kwa nini?**: Hutoa udhibiti kamili wa data ya Blockchain, ikiondoa utegemezi kwenye seva za Blockstream.
 - **Sharti**: Nodi ya Bitcoin iliyosanidiwa.
 - **Pendekezo**: Watumiaji mahiri wanaotaka uhuru wa juu zaidi.
@@ -245,8 +245,8 @@ https://planb.network/courses/46b0ced2-9028-4a61-8fbc-3b005ee8d70f
 
 
 
-- *&Kazi**: Hutumia **Uthibitishaji Rahisi wa Malipo (SPV)** ili kuthibitisha moja kwa moja data fulani ya Blockchain bila kupakua msururu mzima.
-- **Kwa nini?**: Hupunguza utegemezi wa node chaguomsingi ya Blockstream, huku ikisalia kuwa nyepesi kwa vifaa vya mkononi.
+- **Kazi**: Hutumia **Uthibitishaji Rahisi wa Malipo (SPV)** ili kuthibitisha moja kwa moja data fulani ya Blockchain bila kupakua msururu mzima.
+- **Kwa nini?**: Hupunguza utegemezi wa nodi chaguomsingi ya Blockstream, huku ikisalia kuwa nyepesi kwa vifaa vya mkononi.
 - **Hasara**: Ni salama kidogo kuliko Full node, kwani inategemea nodi za wahusika wengine kwa taarifa fulani.
 - **Pendekezo**: Washa SPV ikiwa huwezi kutumia nodi ya kibinafsi, lakini pendelea Full node kwa usalama bora zaidi.
 
@@ -358,7 +358,7 @@ Baada ya kuingizwa, Watch-only wallet huonyesha jumla ya salio na historia ya mi
 
 
 
-- **generate Address inayopokea**: Bofya "Transact", kisha "Pokea", ili kuunda onchain mpya ya Address. Ishiriki kupitia msimbo wa QR au nakala ili kupokea pesa:
+- generate inapokea **Address**: Bofya "Transact", kisha "Pokea", ili kuunda onchain mpya ya Address. Ishiriki kupitia msimbo wa QR au nakala ili kupokea pesa:
 
 
 
@@ -368,7 +368,7 @@ Baada ya kuingizwa, Watch-only wallet huonyesha jumla ya salio na historia ya mi
 
 
 
-- **Tuma pesa**: Bofya **"Shughuli "**, kisha **"Tuma "**. Unaweza kuingia:
+- **Tuma pesa**: Bofya **"Shughuli"**, kisha **"Tuma"**. Unaweza kuingia:
  - Address ya mpokeaji.
  - Kiasi cha muamala.
  - Ada za muamala.
@@ -444,13 +444,13 @@ https://planb.network/tutorials/wallet/desktop/blockstream-app-desktop-c1503adf-
 
 
 
-Ili kutumia **Blockstream App** kwa usalama na kwa ustadi, fuata mapendekezo haya. Watakusaidia kulinda pesa zako, kuboresha miamala yako, na kuhifadhi usiri wako kwenye mitandao ya **Bitcoin (onchain)**, **Liquid**, na **Lightning**.
+Ili kutumia **Blockstream App** kwa usalama na kwa ustadi, fuata mapendekezo haya. Watakusaidia kulinda pesa zako, kuboresha miamala yako, na kuhifadhi usiri wako kwenye mitandao ya **Bitcoin (onchain)**, **Liquid**, na **Umeme**.
 
 
 
 
 
-- **Linda maneno yako ya urejeshi** :
+- Linda maneno yako ya **urejeshi**:
  - Mafunzo: Inahifadhi maneno yako ya Mnemonic
 
 
@@ -470,8 +470,8 @@ https://planb.network/courses/46b0ced2-9028-4a61-8fbc-3b005ee8d70f
 
 
 
-- **Linda faragha yako** :
- - generate Address mpya  kwa kila onchain au Liquid mapokezi ili kupunguza ufuatiliaji kwenye Blockchain.
+- **Linda faragha yako**:
+ - generate mpya Address kwa kila onchain au Liquid mapokezi ili kupunguza ufuatiliaji kwenye Blockchain.
  - Washa vitendaji vya "Faragha Iliyoimarishwa", "Tor" na "SPV".
  - Kwa usiri wa hali ya juu, unganisha Wallet yako na nodi yako ya Bitcoin kupitia seva ya Electrum badala ya kutumia nodi ya umma.
 
@@ -479,16 +479,16 @@ https://planb.network/courses/46b0ced2-9028-4a61-8fbc-3b005ee8d70f
 
 
 
-- **Chagua mtandao unaofaa zaidi mahitaji yako** :
- - **Onchain**: Inapendekezwa kwa uangalizi wa muda mrefu au miamala ya thamani kubwa (ada hazizingatiwi kuhusiana na kiasi).
- - **Liquid**: Tumia kwa uhamisho wa haraka, wa gharama nafuu na usiri ulioimarishwa.
- - **Lightning**: Chagua uhamisho wa papo hapo, wa gharama nafuu kwa kiasi kidogo.
+- **Chagua mtandao unaofaa zaidi mahitaji yako**:
+- **Onchain**: Inapendekezwa kwa uangalizi wa muda mrefu au miamala ya thamani kubwa (ada hazizingatiwi kuhusiana na kiasi).
+- **Liquid**: Tumia kwa uhamisho wa haraka, wa gharama nafuu na usiri ulioimarishwa.
+- **Umeme**: Chagua uhamisho wa papo hapo, wa gharama nafuu kwa kiasi kidogo.
 
 
 
 
 
-- **Angalia address za usafirishaji kila wakati** :
+- **Angalia anwani za usafirishaji kila wakati**:
  - Kabla ya kutuma pesa, angalia Address kwa uangalifu. Fedha zilizotumwa kwa Address isiyo sahihi zinapotea milele. Tumia nakala/bandika au kuchanganua msimbo wa QR, usiwahi kunakili/urekebishe Address kwa mkono.
 
 
@@ -497,7 +497,7 @@ https://planb.network/courses/46b0ced2-9028-4a61-8fbc-3b005ee8d70f
 
 - **Boresha gharama** :
  - Kwa miamala ya onchain, chagua ada zinazofaa (polepole, kati, haraka) kulingana na dharura na msongamano wa mtandao.
- - Tumia Liquid, au Lightning kwa kiasi kidogo.
+ - Tumia Liquid, au Umeme kwa kiasi kidogo.
 
 
 
@@ -515,24 +515,24 @@ https://planb.network/courses/46b0ced2-9028-4a61-8fbc-3b005ee8d70f
 
 
 - **Viungo Rasmi vya Blockstream:**
- - [Tovuti rasmi](https://blockstream.com/)**
- - [Msaada wa programu ya simu](https://help.blockstream.com/hc/en-us/categories/900000056183-Blockstream-Green/)** : uwekaji kumbukumbu na gumzo
- - [GitHub](https://github.com/Blockstream/green_android)**
+- [Tovuti rasmi](https://blockstream.com/)
+- [Msaada wa programu ya simu](https://help.blockstream.com/hc/en-us/categories/900000056183-Blockstream-Green/) : uwekaji kumbukumbu na gumzo
+- [GitHub](https://github.com/Blockstream/green_android)
 
 
 
 
 
-- **Zuia Wachunguzi :**
+- Zuia Wachunguzi :**
  - Onchain: **[Mempool.space](https://Mempool.space/)**
  - Liquid : **[Maelezo ya Blockstream](https://blockstream.info/Liquid)**
- - Lightning: **[1ML (Lightning Network)](https://1ml.com/)**
+ - Umeme: **[1ML (Lightning Network)](https://1ml.com/)**
 
 
 
 
 
- - **Mafunzo na mafunzo:** **[Plan ₿ Network](https://planb.network/)** :
+- Mafunzo na mafunzo: **[Plan ₿ Network](https://planb.network/)**
   - Inalinda kifungu chako cha urejeshi
 
 
@@ -545,7 +545,7 @@ https://planb.network/courses/46b0ced2-9028-4a61-8fbc-3b005ee8d70f
 
 
 - **Liquid Network** :
- - [Kamusi](https://planb.network/fr/resources/glossary/liquid-network)**
+- [Kamusi](https://planb.network/fr/resources/glossary/liquid-network)
 
 
 
@@ -555,8 +555,8 @@ https://planb.network/courses/6d26bcff-51a3-405f-bcdd-9af8297ce727
 
 
 
-- **Lightning Network** :
- - [Kamusi](https://planb.network/fr/resources/glossary/lightning-network)**
+- **Lightning Network**:
+- [Kamusi](https://planb.network/fr/resources/glossary/lightning-network)
 
 
 

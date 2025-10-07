@@ -33,17 +33,17 @@ description: Jinsi ya kutumia Hardware Wallet yako na Blockstream App kwenye kom
 
 
 
-### 1.3. Asili kwenye Hardware Wallet 
+### 1.3. Asili kwenye pochi za vifaa
 
 
 
 
 
-- **Hardware Wallet**, **Cold Wallet**: Kifaa halisi ambacho huhifadhi funguo za faragha nje ya mtandao, kinachotoa usalama wa hali ya juu dhidi ya mashambulizi ya mtandaoni, tofauti na **Hot Wallet** (Wallet za programu kwenye vifaa vilivyounganishwa).
-- **Matumizi yanayopendekezwa** :
+- **Hardware Wallet**, **Cold Wallet**: Kifaa halisi ambacho huhifadhi funguo za faragha nje ya mtandao, kinachotoa usalama wa hali ya juu dhidi ya mashambulizi ya mtandaoni, tofauti na **pochi za Hot** (pochi za programu kwenye vifaa vilivyounganishwa).
+- **Matumizi yanayopendekezwa**:
     - Inafaa kwa kupata kiasi kikubwa au akiba ya muda mrefu.
     - Inafaa kwa watumiaji wanaozingatia usalama ambao wanataka kulinda pesa zao dhidi ya hatari zinazohusiana na vifaa vilivyounganishwa.
-- **Blocks**: Inahitaji programu kama vile Blockstream App ili kuona salio, adsress za generate na kutangaza miamala iliyotiwa saini na Hardware Wallet.
+- **Vizuizi**: Inahitaji programu kama vile Blockstream App ili kuona salio, anwani za generate na kutangaza miamala iliyotiwa saini na Hardware Wallet.
 
 
 
@@ -53,15 +53,15 @@ description: Jinsi ya kutumia Hardware Wallet yako na Blockstream App kwenye kom
 
 
 
-- **Blockstream App** ni programu ya simu (iOS, Android) na kompyuta ya mezani ya kudhibiti Wallet na mali za Bitcoin kwenye Liquid Network. Iliyopatikana na Blockstream mnamo 2016, iliitwa _GreenAddress_, ilibadilishwa jina _Blockstream Green_ (2019), na sasa inaitwa _Blockstream app_ (2025).
+- **Blockstream App** ni programu ya simu (iOS, Android) na kompyuta ya mezani ya kudhibiti pochi na mali za Bitcoin kwenye Liquid Network. Iliyopatikana na Blockstream mnamo 2016, iliitwa *GreenAddress*, ilibadilishwa jina *Blockstream Green* (2019), na sasa inaitwa *Blockstream app* (2025).
 - Vipengele muhimu ** :
-    - Shughuli za Onchain** kwenye Blockchain Bitcoin.
+- Shughuli za **Onchain** kwenye Blockchain Bitcoin.
     - Miamala kwenye mtandao wa **Liquid** (Sidechain kwa ubadilishanaji wa haraka na wa siri).
-    - **Watch-only** kwingineko za ufuatiliaji wa fedha bila ufikiaji wa funguo.
-    - Chaguzi za faragha: muunganisho kupitia **Tor**, unganisho kwa **node ya kibinafsi** kupitia Electrum, au uthibitishaji wa **SPV** ili kupunguza utegemezi kwa nodi za watu wengine.
+- Kuangalia pekee **kwingineko** za ufuatiliaji wa fedha bila ufikiaji wa funguo.
+    - Chaguzi za faragha: muunganisho kupitia **Tor**, unganisho kwa **nodi ya kibinafsi** kupitia Electrum, au uthibitishaji wa **SPV** ili kupunguza utegemezi kwa nodi za watu wengine.
     - Kazi **Replace-by-fee (RBF)** ili kuharakisha miamala ambayo haijathibitishwa.
 - **Utangamano**: Huunganisha pochi za maunzi kama vile **Blockstream Jade**.
-- *&Interface**: Intuitive kwa wanaoanza, na chaguo za kina kwa wataalam.
+- **Interface**: Intuitive kwa wanaoanza, na chaguo za kina kwa wataalam.
 - **Kumbuka**: Mwongozo huu unaangazia matumizi ya onchain na Hardware Wallet kwenye toleo la eneo-kazi. Mafunzo mengine yanayotolewa kama viambatisho vinashughulikia matumizi kwenye programu ya simu, kwa onchain, Liquid, na vipengele vya Kutazama Pekee.
 
 
@@ -87,7 +87,7 @@ description: Jinsi ya kutumia Hardware Wallet yako na Blockstream App kwenye kom
 
 
 
-- ***Skrini ya nyumbani**: Inapofunguliwa mara ya kwanza, programu inaonyesha skrini bila Wallet iliyosanidiwa. Kwingineko zilizoundwa au zilizoletwa zitaonekana hapa baadaye.
+- **Skrini ya nyumbani**: Inapofunguliwa mara ya kwanza, programu inaonyesha skrini bila Wallet iliyosanidiwa. Kwingineko zilizoundwa au zilizoletwa zitaonekana hapa baadaye.
 
 
 
@@ -130,7 +130,7 @@ description: Jinsi ya kutumia Hardware Wallet yako na Blockstream App kwenye kom
 - **Kazi**: Zuia trafiki ya mtandao kupitia **Tor**, mtandao usiojulikana ambao husimba miunganisho yako kwa njia fiche.
 - **Kwa nini?**: Ficha IP yako Address na ulinde faragha yako, vyema ikiwa huamini mtandao wako (kwa mfano, Wi-Fi ya umma).
 - **Hasara**: Inaweza kupunguza kasi ya programu kutokana na usimbaji fiche.
--**Pendekezo**: Washa Tor ikiwa usiri ni kipaumbele, lakini jaribu kasi ya muunganisho.
+- **Pendekezo**: Washa Tor ikiwa usiri ni kipaumbele, lakini jaribu kasi ya muunganisho.
 
 
 
@@ -145,9 +145,9 @@ description: Jinsi ya kutumia Hardware Wallet yako na Blockstream App kwenye kom
 
 
 - Katika menyu ya Mipangilio, bofya "**Seva maalum na uthibitishaji **".
-- **Kazi**: Huunganisha programu kwa **node yako kamili ya Bitcoin** kupitia **Seva ya Electrum**.
+- **Kazi**: Huunganisha programu kwa **nodi yako kamili ya Bitcoin** kupitia **Seva ya Electrum**.
 - **Kwa nini?**: Hutoa udhibiti kamili wa data ya Blockchain, ikiondoa utegemezi kwenye seva za Blockstream.
-- **Sharti**: Node ya Bitcoin iliyosanidiwa.
+- **Sharti**: Nodi ya Bitcoin iliyosanidiwa.
 - **Pendekezo**: Watumiaji mahiri wanaotaka uhuru wa juu zaidi.
 
 
@@ -166,7 +166,7 @@ https://planb.network/tutorials/node/bitcoin/umbrel-8b0e3b5b-d3cf-4a1e-8bb8-1ad2
 
 - Katika menyu ya Mipangilio, bofya "**Seva maalum na uthibitishaji **".
 - **Kazi**: Hutumia **Uthibitishaji Uliorahisishwa wa Malipo (SPV)** ambao hupakua vijajuu na kuthibitisha miamala yako kwa uthibitisho wa kujumuishwa (Merkle), bila kuhifadhi Blockchain kamili.
-- **Kwa nini?**: Hupunguza utegemezi kwenye node chaguomsingi ya Blockstream, huku ikisalia kuwa nyepesi kwa vifaa.
+- **Kwa nini?**: Hupunguza utegemezi kwenye nodi chaguomsingi ya Blockstream, huku ikisalia kuwa nyepesi kwa vifaa.
 - **Hasara**: Ni salama kidogo kuliko Full node, kwani inategemea nodi za wahusika wengine kwa taarifa fulani.
 - **Pendekezo**: Washa SPV ikiwa huwezi kutumia nodi ya kibinafsi, lakini pendelea Full node kwa usalama bora zaidi.
 
@@ -229,7 +229,7 @@ https://planb.network/tutorials/node/bitcoin/umbrel-8b0e3b5b-d3cf-4a1e-8bb8-1ad2
 
 
 
-- **Muhimu** : Maneno ya seed ndiyo njia yako pekee ya kurejesha pesa zako ikiwa kifaa kitapotea au hitilafu. Mtu yeyote aliye na ufikiaji anaweza kuiba bitcoins zako.
+- **Muhimu**: Maneno ya seed ndiyo njia yako pekee ya kurejesha pesa zako ikiwa kifaa kitapotea au hitilafu. Mtu yeyote aliye na ufikiaji anaweza kuiba bitcoins zako.
 - **Nyenzo** za kuhifadhi nakala na kuangalia sentensi ya seed :
 
 
@@ -385,7 +385,7 @@ https://planb.network/courses/46b0ced2-9028-4a61-8fbc-3b005ee8d70f
 
 
 
-- (3) Ili kutumia tena Address iliyopita, bofya "**Chaguo zaidi**" kisha kwenye "**Orodha ya address**" :
+- (3) Ili kutumia tena Address iliyopita, bofya "**Chaguo zaidi**" kisha kwenye "**Orodha ya anwani**" :
 
 
 
@@ -420,7 +420,7 @@ https://planb.network/courses/46b0ced2-9028-4a61-8fbc-3b005ee8d70f
 
 
 
-- **Ingiza maelezo** :
+- **Ingiza maelezo**:
     - (1) Hakikisha kuwa kipengee kilichochaguliwa ni **Bitcoin** (onchain).
     - (2) Weka **Address ya mpokeaji** kwa kuibandika au kuchanganua msimbo wa QR ukitumia kamera yako ya wavuti.
     - (3) Onyesha **kiasi** kitakachotumwa (katika BTC, satoshis, au vitengo vingine).
@@ -446,7 +446,7 @@ https://planb.network/courses/46b0ced2-9028-4a61-8fbc-3b005ee8d70f
 
 
 
-- **Uteuzi wenyewe wa UTXO** (si lazima): Bofya "**Uteuzi wa Coin kwa Mwongozo**" ili kuchagua UTXO mahususi zitakazotumika katika muamala.
+- Uteuzi wenyewe wa **UTXO** (si lazima): Bofya "**Uteuzi wa Coin kwa Mwongozo**" ili kuchagua UTXO mahususi zitakazotumika katika muamala.
 
 
 
@@ -544,7 +544,7 @@ https://planb.network/tutorials/wallet/mobile/blockstream-app-onchain-e84edaa9-f
 
 
 
-- Linda maneno yako ya urejeshi** :
+- Linda maneno yako ya **urejeshi**:
     - Hifadhi maneno yako ya Hardware Wallet ya Mnemonic kwenye nyenzo halisi (karatasi, chuma) mahali salama.
     - Usiwahi kuihifadhi kidijitali (wingu, barua pepe, picha ya skrini).
     - Mafunzo : Hifadhi maneno yako ya Mnemonic :
@@ -557,7 +557,7 @@ https://planb.network/courses/46b0ced2-9028-4a61-8fbc-3b005ee8d70f
 
 
 
-- Linda faragha yako** :
+- **Linda faragha yako**:
 
 
 
@@ -566,7 +566,7 @@ https://planb.network/courses/46b0ced2-9028-4a61-8fbc-3b005ee8d70f
     - generate Address mpya kwa kila mapokezi ya onchain.
     - Washa **Tor** au **SPV** ili kupunguza ufuatiliaji.
     - Unganisha kwenye nodi yako ya Bitcoin kupitia Electrum kwa uhuru wa juu zaidi.
-- Angalia anwani za usafirishaji kila wakati :
+- **Angalia anwani za usafirishaji kila wakati**:
 
 
 
@@ -598,7 +598,7 @@ https://planb.network/courses/46b0ced2-9028-4a61-8fbc-3b005ee8d70f
 
 
 
-- **Viungo rasmi** :
+- **Viungo rasmi**:
     - [Tovuti rasmi](https://blockstream.com/)
     - [Msaada kwa Programu ya Blockstream](https://help.blockstream.com/hc/en-us/categories/900000056183-Blockstream-Green/): uwekaji kumbukumbu na gumzo
     - [GitHub](https://github.com/Blockstream/green_qt)
@@ -607,7 +607,7 @@ https://planb.network/courses/46b0ced2-9028-4a61-8fbc-3b005ee8d70f
 
 
 
-- **Zuia Wachunguzi** :
+- **Zuia Wachunguzi**:
     - Onchain : [Mempool.space](https://Mempool.space/)
     - Liquid : [Maelezo ya Blockstream](https://blockstream.info/Liquid)
     - Umeme : [1ML (Lightning Network)](https://1ml.com/)
@@ -616,7 +616,7 @@ https://planb.network/courses/46b0ced2-9028-4a61-8fbc-3b005ee8d70f
 
 
 
-- **Inalinda kifungu chako cha urejeshi:**
+- Inalinda kifungu chako cha urejeshi:
 
 
 
@@ -638,7 +638,7 @@ https://planb.network/courses/6d26bcff-51a3-405f-bcdd-9af8297ce727
 
 
 
-- **Lightning Network** :
+- **Lightning Network**:
 
 
 

@@ -1,31 +1,33 @@
 ---
-name: zeus-embedded
-description: Jinsi ya kutumia Zeus ya Lightning Iliyopachikwa Wallet
+name: Zeus Iliyopachikwa
+description: Jinsi ya kutumia Zeus ya Umeme Iliyopachikwa Wallet
 ---
 ![cover-zeus-embedded](assets/cover.webp)
 
 
 
-ZEUS hapo awali ilikuwa programu ya rununu ya usimamizi wa mbali ya Lightning Network node, ikikuruhusu kudhibiti node yako iliyowekwa kwenye seva ya mbali.
+ZEUS hapo awali ni programu ya rununu ya usimamizi wa mbali wa nodi za umeme, hukuruhusu kudhibiti nodi yako iliyosanikishwa kwenye seva ya mbali.
 
 
-Lakini programu pia ina "node Iliyopachikwa".
+Lakini programu pia ina "nodi Iliyopachikwa".
 
 
 
-Ni kipengele hiki cha matumizi ambacho tutachunguza katika mafunzo haya. Hii inaruhusu mtu yeyote kuwa na Lightning Network node yake kwenye rununu, bila hitaji la seva iliyojitolea, kwa njia sawa na jinsi ACINQ inavyotoa Lightning Network yake ya ajabu kupitia Wallet Phoenix.
+**Ni kipengele hiki cha matumizi ambacho tutakuwa tukichunguza katika mafunzo haya.** Hii inaruhusu mtu yeyote kuwa na nodi yake ya umeme kwenye rununu, bila hitaji la seva iliyojitolea, kwa njia sawa na ACINQ inavyotoa umeme wake wa ajabu wa Wallet Phoenix.
+
 
 
 https://planb.network/tutorials/wallet/mobile/phoenix-0f681345-abff-4bdc-819c-4ae800129cdf
 
-*Kama ukumbusho, Lightning ni mtandao unaofanya kazi sambamba na Bitcoin, unaowezesha bitcoins kubadilishwa bila kulazimika kutekeleza miamala ya On-Chain kwa utaratibu. Matokeo yake ni shughuli za karibu za papo hapo, na hakuna haja ya kusubiri dakika 10 ili block kuthibitishwa. Hii ni muhimu hasa unapomlipa mfanyabiashara katika ulimwengu wa kimwili. Zaidi ya hayo, Lightning hutoa kiwango cha ajabu cha **usiri** ambacho mtandao wa Bitcoin hauna asili*.
+*Kama ukumbusho, Umeme ni mtandao unaofanya kazi sambamba na Bitcoin, unaowezesha bitcoins kubadilishwa bila kulazimika kutekeleza miamala ya On-Chain kwa utaratibu. Matokeo yake ni shughuli za karibu za papo hapo, na hakuna haja ya kusubiri dakika 10 ili kuzuia kuthibitishwa. Hii ni muhimu hasa unapomlipa mfanyabiashara katika ulimwengu wa kimwili. Zaidi ya hayo, Umeme hutoa kiwango cha ajabu cha **usiri** ambacho mtandao wa Bitcoin hauna asili*.
 
 
 
 **Zeus "Iliyounganishwa"** inalenga Bitcoiners ambao wanataka kuongeza faragha na uhuru wao.
 
 
-Kwa kifupi, ni Wallet ya simu ya mkononi ya ndoto za cypherpunks. Hata ingawa bado iko kwenye toleo la alpha na ina hitilafu chache, vipengele vyake ni imara kabisa, na hakuna shaka kwamba itawafurahisha wale jasiri zaidi kati yetu, ambao wanataka udhibiti mkubwa na chaguo.
+Kwa kifupi, **inawezekana** simu ya mkononi ya Wallet ya ndoto za cypherpunks. Hata kama bado ni changa (toleo la alpha) na chini ya hitilafu chache, vipengele vyake ni jeshi, na hakuna shaka kwamba itawafurahisha wale wasio na ujasiri kati yetu, ambao wanataka udhibiti wa juu na chaguo.
+
 
 
 Kwa upande mwingine, sidhani kama inafaa kwa sasa kwa wanaoanza ambao hawajui Bitcoin na wanataka tu njia rahisi ya kutuma/kupokea satoshi. Ingawa hii inaweza kubadilika katika siku zijazo, kwani kipengele cha ulinzi kupitia itifaki ya Cashu (chaumian Ecash) kinatekelezwa kwa wanaoanza...
@@ -66,7 +68,7 @@ Kisha mfululizo wa skrini za uanzishaji huonekana. Subiri kidogo, kisha subiri d
 
 
 
-Hii inaweza kuchukua dakika chache. Kwa habari neutrino ni njia ya wallet ya rununu kupata habari ya Blockchain Bitcoin, bila kuhitaji kuendesha Full node.
+Hii inaweza kuchukua dakika chache. Kwa habari neutrino ni njia ya pochi ya rununu kupata habari ya Blockchain Bitcoin, bila kuhitaji kuendesha Full node.
 
 
 
@@ -113,7 +115,7 @@ Bonyeza kwenye cogwheel, kisha juu ya "+" :
 
 
 
-Chagua picha nzuri zaidi ya Zeus ili kuwakilisha Wallet hii, kisha bofya kitufe cha **“CHOOSE PICTURE”** chini ya skrini. Kisha urudi nyuma kwa kubofya mshale uliopo kona ya juu kulia.
+Chagua picha nzuri zaidi ya Zeus ili kuwakilisha Wallet hii na ubofye "CHAGUA PICHA" chini ya skrini, kisha urudi nyuma kwa kubofya mshale ulio juu kulia.
 
 
 
@@ -123,7 +125,7 @@ Chagua picha nzuri zaidi ya Zeus ili kuwakilisha Wallet hii, kisha bofya kitufe 
 
 
 
-Hatimaye, ipe Wallet yako jina la utani, kisha ubofye kitufe cha **“SAVE WALLET CONFIG”** ili mabadiliko yaanze kutumika. Kisha bofya mshale wa nyuma uliopo kona ya juu kushoto ili kurudi kwenye skrini ya kwanza.
+Hatimaye, ipe Wallet yako jina la utani na ubofye "HIFADHI Wallet CONFIG" ili mabadiliko yaanze kutumika. Hatimaye, bofya kwenye mshale wa nyuma katika kona ya juu kushoto ili kurudi kwenye skrini ya kwanza.
 
 
 
@@ -145,7 +147,7 @@ Wakati huu tunaweza kuanza kweli.
 
 
 
-Ili kulinda ufikiaji wa Wallet yako, unaweza kuongeza PIN au nenosiri na kuwasha bayometriki.
+Ili kulinda ufikiaji wa Wallet yako, unaweza kuongeza PIN/nenosiri na kuwasha bayometriki.
 
 
 
@@ -159,7 +161,7 @@ Ili kufanya hivyo, nenda kwenye orodha kuu ya Wallet kwa kubofya kwenye dashi za
 
 
 
-Chagua kitufe cha **“Settings”**, kisha kitufe cha **“Security”**, na hatimaye kitufe cha **“Set/Change PIN”**.
+Chagua "Mipangilio", kisha "Usalama" na hatimaye "Weka/Badilisha PIN".
 
 
 
@@ -169,7 +171,7 @@ Chagua kitufe cha **“Settings”**, kisha kitufe cha **“Security”**, na ha
 
 
 
-Unda **PIN** yako, ithibitishe, na uwashe bayometriki kwa kubofya kitufe cha **“Biometriska”**. Rudi kwenye menyu kuu kwa kutumia mshale uliopo juu kushoto.
+Unda PIN yako, ithibitishe, na uwashe bayometriki kwa kubofya kitufe cha "Biometriska".  Rudi kwenye menyu kuu, kwa kutumia mshale ulio juu kushoto.
 
 
 
@@ -213,7 +215,7 @@ Mara baada ya kumaliza, bofya "NIMEHIFADHI MANENO YANGU 24" chini ya skrini, na 
 
 
 
-**Zeus Iliyopachikwa** imeundwa kimsingi kama node iliyopachikwa ya Lightning, lakini pia inaweza kutumika kama Wallet On-Chain.
+**Zeus Iliyopachikwa** imeundwa kimsingi kama nodi iliyopachikwa ya umeme, lakini pia inaweza kutumika kama Wallet On-Chain.
 
 
 
@@ -230,13 +232,14 @@ Hatimaye, changanua msimbo wa QR au nakili Bitcoin Address ili kuweka pesa.
 
 
 
-Pesa zikishathibitishwa na Lightning kwenye Wallet yako, unaweza kuzitumia kufungua **Lightning Hub**. Chaneli yako ya Lightning ndiyo lango lako la Lightning Network, kukuwezesha kutumia bitcoins za Exchange kwa njia ya siri na ya haraka zaidi.
+Pesa zikishathibitishwa na kuwekwa kwenye Wallet yako, unaweza kuzitumia kufungua **kituo cha umeme**. Chaneli yako ya Umeme ndiyo lango lako la Lightning Network, kukuwezesha kutumia bitcoins za Exchange kwa njia ya siri na ya haraka zaidi.
 
 
 
 
 
--Ili kufanya hivyo, bofya kitufe cha **“MOVE ON-CHAIN FUNDS TO LIGHTNING”**.
+- Ili kufanya hivyo, bofya "SOGEZA FEDHA ZA On-Chain KWENYE UMEME"
+
 
 
 Kwenye skrini inayofuata, unaombwa kufungua kituo kwa ushirikiano na **"Olympus by Zeus "**, LSP (Mtoa Huduma ya Umeme) inayopendelewa na Wallet.
@@ -245,7 +248,7 @@ Kwenye skrini inayofuata, unaombwa kufungua kituo kwa ushirikiano na **"Olympus 
 Kwa mafunzo haya, tutachagua chaguo hili kwa ajili ya unyenyekevu, lakini inawezekana kabisa kufungua vituo na nodi yoyote kwenye mtandao.
 
 
-Inawezekana hata kufungua chaneli kadhaa katika muamala mmoja kwa kuchagua "FUNGUA CHANNEL YA ZIADA". *Lakini tutaangalia hili katika toleo la "juu" la mafunzo ya **Zeus Embedded****.
+Inawezekana hata kufungua chaneli kadhaa katika muamala mmoja kwa kuchagua "FUNGUA CHANNEL YA ZIADA". *Lakini tutaangalia hili katika toleo la "juu" la mafunzo ya* **Zeus Embedded**.
 
 
 
@@ -257,7 +260,8 @@ Inawezekana hata kufungua chaneli kadhaa katika muamala mmoja kwa kuchagua "FUNG
 
 
 
-- Hatimaye, bofya kitufe cha **“OPEN CHANNEL”** kilicho chini ya skrini.
+- Hatimaye, chagua kitufe cha "FUNGUA CHANNEL" chini ya skrini.
+
 
 
 ![image](assets/fr/16.webp)
@@ -294,15 +298,15 @@ Hatimaye, ni lazima ieleweke kwamba mpenzi wetu Olympus ana haki ya kufunga kitu
 
 
 
-## Tuma bitcoins kupitia Lightning
+## Tuma bitcoins kupitia Umeme
 
 
 
-Sasa kwa kuwa tumeanzisha chaneli yetu, acheni tuone jinsi tunavyoweza kuitumia kulipa Lightning  Invoice (Invoice).
+Sasa kwa kuwa tumeanzisha chaneli yetu, acheni tuone jinsi tunavyoweza kuitumia kulipa umeme wa Invoice (Invoice).
 
 
 
-Ili kufanya hivyo, bofya kitufe cha "Lightning", kisha kwenye "SEND".
+Ili kufanya hivyo, bofya kitufe cha "Umeme", kisha kwenye "Tuma".
 
 
 
@@ -366,8 +370,8 @@ Badala ya kufungua chaneli kwa mikono, kama tulivyoona hivi punde, inawezekana k
 
 
 
-- Ili kufanya hivyo, bofya kitufe cha "Lightning" kwenye skrini ya nyumbani, kisha kwenye "RECEIVE".
-- Kisha chagua kiasi unachotaka kupokea kwenye kisanduku cha "Amount" na uchague kitufe cha "CREATE Invoice" kilicho chini ya skrini.
+- Ili kufanya hivyo, bofya kitufe cha "Umeme" kwenye skrini ya nyumbani, kisha kwenye "Pokea".
+- Kisha chagua kiasi unachotaka kupokea kwenye kisanduku cha "Kiasi" na uchague kitufe cha "CREATE Invoice" kilicho chini ya skrini.
 
 
 
@@ -391,13 +395,14 @@ Lipa Invoice au mtu mwingine alipe, na chaneli itafunguliwa kiotomatiki, lakini 
 
 
 
-Sasa tuko kwenye kichupo cha **“Lightning”**, ambacho kinaonyesha njia mbili za Lightning, hali ambayo unaweza kuangalia kwa kubofya kitufe kilichoonyeshwa na mshale mweupe chini ya skrini ya nyumbani.
+Sasa tuko kwenye kichwa cha njia 2 za umeme, ambazo hali yake inaweza kuangaliwa kwa kubofya kitufe kilichoonyeshwa na mshale mweupe chini ya skrini ya nyumbani.
 
 
-Tunaweza kuona kwamba, tofauti na kituo kilichofunguliwa kutoka kwa kiwango chetu cha On-Chain, kilichofunguliwa moja kwa moja kupitia Lightning hakionyeshi onyo.
+
+Tunaweza kuona kwamba, tofauti na kituo kilichofunguliwa kutoka kwa kiwango chetu cha On-Chain, kilichofunguliwa moja kwa moja kupitia umeme hakionyeshi onyo.
 
 
-Kwa vile umelipia ili kusanidi kituo hiki, Mtoa Huduma za Lightning (LSP) anajitolea kudumisha kituo kwa muda wa miezi 3, na kukupa "ukwasi unaoingia". Kwenye kituo cha chini, unaweza kuona kwamba uwezo wa mapokezi ni satoshi 96383. Kwa hivyo LSP imeunganisha mtaji ili kukuwezesha kupokea malipo moja kwa moja baada ya kufungua kituo.
+Kwa vile umelipia ili kusanidi kituo hiki, Mtoa Huduma za Umeme (LSP) anajitolea kudumisha kituo kwa muda wa miezi 3, na kukupa "ukwasi unaoingia". Kwenye kituo cha chini, unaweza kuona kwamba uwezo wa mapokezi ni satoshi 96383. Kwa hivyo LSP imeunganisha mtaji ili kukuwezesha kupokea malipo moja kwa moja baada ya kufungua kituo.
 
 
 

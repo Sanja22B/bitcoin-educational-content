@@ -1,5 +1,5 @@
 ---
-name: blockstream-app-liquid
+name: Programu ya Blockstream - Liquid
 description: Jinsi ya kusanidi Programu ya Blockstream na kutumia Liquid Network
 ---
 ![cover](assets/cover.webp)
@@ -15,7 +15,7 @@ description: Jinsi ya kusanidi Programu ya Blockstream na kutumia Liquid Network
 
 
 - Mafunzo haya yanafafanua jinsi ya kutumia **Blockstream App** programu ya simu ya mkononi ili kudhibiti **Bitcoin Liquid** kwingineko, yaani, miamala iliyorekodiwa moja kwa moja kwenye msururu wa upande wa Bitcoin "Liquid".
-- Inashughulikia usakinishaji, usanidi wa awali, uundaji wa Software Wallet, na miamala ya kupokea na kutuma bitcoins kwenye Liquid.
+- Inashughulikia usakinishaji, usanidi wa awali, uundaji wa Software Wallet, na shughuli za kupokea na kutuma bitcoins kwenye Liquid.
 - Kumbuka: Mafunzo mengine katika Viambatisho vinashughulikia Onchain, Tazama Pekee na toleo la eneo-kazi.
 
 
@@ -50,19 +50,19 @@ Sidechain ni Blockchain inayojitegemea inayofanya kazi sambamba na Bitcoin, kwa 
 
 
 
-- **(1) Peg-in**: Bitcoins (BTC) zimefungwa kwenye Blockchain kuu na shirikisho la Liquid. Kwa kurudi, kiasi sawa cha Liquid-Bitcoins (L-BTC), kuhakikisha usawa kati ya minyororo miwili, hutolewa kwenye Blockchain Liquid na kutumwa kwa mtumiaji.
+- (1) **Peg-in**: Bitcoins (BTC) zimefungwa kwenye Blockchain kuu na shirikisho la Liquid. Kwa kurudi, kiasi sawa cha Liquid-Bitcoins (L-BTC), kuhakikisha usawa kati ya minyororo miwili, hutolewa kwenye Blockchain Liquid na kutumwa kwa mtumiaji.
 
 
 
 
 
-- **(2) Miamala inayojitegemea** : Shughuli za malipo zinaweza kuendeshwa kwa wakati mmoja na kwa kujitegemea kwenye Blockchain (BTC) kuu na Sidechain Liquid (L-BTC), kulingana na mahitaji ya mtumiaji.
+- (2) **Miamala inayojitegemea**: Shughuli za malipo zinaweza kuendeshwa kwa wakati mmoja na kwa kujitegemea kwenye Blockchain (BTC) kuu na Sidechain Liquid (L-BTC), kulingana na mahitaji ya mtumiaji.
 
 
 
 
 
-- **:(3) Peg-out**: Mtumiaji anatuma Liquid-Bitcoins (L-BTC) nyuma kwa shirikisho la Liquid. Shirikisho kisha hufungua kiasi sawa cha bitcoins (BTC) kwenye Blockchain kuu na kuzihamisha kwa mtumiaji.
+- (3) **Peg-out**: Mtumiaji anatuma Liquid-Bitcoins (L-BTC) nyuma kwa shirikisho la Liquid. Shirikisho kisha hufungua kiasi sawa cha bitcoins (BTC) kwenye Blockchain kuu na kuzihamisha kwa mtumiaji.
 
 
 
@@ -80,15 +80,15 @@ Liquid inategemea **shirikisho** la washiriki wanaoaminika (mabadilishano, makam
 
 
 
-- **Kasi**: Miamala kwenye Liquid inathibitishwa katika muda wa **dakika 1**, ikilinganishwa na dakika 10 au zaidi kwa miamala ya mtandaoni, kutokana na blocks zinavyotolewa kila dakika na shirikisho la wathibitishaji.
-- **Usiri ulioimarishwa**: Liquid hutumia **Confidential Transactions**, ambayo huficha kiasi na aina ya mali iliyohamishwa, na kufanya miamala kuwa ya faragha zaidi (ingawa Address zinaendelea kuonekana).
-- **Ada za chini** : Miamala kwenye Liquid kwa ujumla ni ya bei nafuu, na kuifanya kuwa bora kwa uhamisho wa mara kwa mara au kiasi kidogo.
+- **Kasi**: Miamala kwenye Liquid inathibitishwa katika muda wa **dakika 1**, ikilinganishwa na dakika 10 au zaidi kwa miamala ya mtandaoni, kutokana na vizuizi vinavyotolewa kila dakika na shirikisho la wathibitishaji.
+- **Usiri ulioimarishwa**: Liquid hutumia **Confidential Transactions**, ambayo huficha kiasi na aina ya mali iliyohamishwa, na kufanya miamala kuwa ya faragha zaidi (ingawa anwani zinaendelea kuonekana).
+- **Ada za chini**: Miamala kwenye Liquid kwa ujumla ni ya bei nafuu, na kuifanya kuwa bora kwa uhamisho wa mara kwa mara au kiasi kidogo.
 - **Vipengee vingi**: Kando na L-BTCs, Liquid inasaidia utoaji wa vipengee vingine vya kidijitali, kama vile sarafu za sarafu au tokeni, kwa matumizi katika programu mahususi.
 - **Kesi za matumizi**: Liquid inafaa haswa kwa ubadilishanaji wa mifumo tofauti, malipo ya haraka, au programu zinazohitaji kandarasi mahiri, huku zikisalia kuhusishwa na usalama wa Bitcoin.
 
 
 
-**Kumbuka: Mafunzo haya yanalenga kutumia Liquid kupitia Programu ya Blockstream. Kwa ufahamu wa kina wa Liquid Network, utapata nyenzo kwenye kiambatisho.
+**Kumbuka: Mafunzo haya yanalenga kutumia Liquid kupitia Programu ya Blockstream. Kwa ufahamu wa kina wa Liquid Network, utapata nyenzo kwenye kiambatisho.**
 
 
 
@@ -99,13 +99,13 @@ Liquid inategemea **shirikisho** la washiriki wanaoaminika (mabadilishano, makam
 
 
 - **Hot Wallet**, **Software Wallet**, **Wallet simu**, **Software Wallet**: majina yote ya programu iliyosakinishwa kwenye simu mahiri, kompyuta au kifaa chochote kilichounganishwa kwenye Mtandao, kuwezesha funguo za kibinafsi kutoka kwa Bitcoin Wallet kudhibitiwa na kulindwa.
-- **Tofauti na **wallet za maunzi**, pia hujulikana kama **Cold wallet**, ambazo hutenga funguo nje ya mtandao, wallet za programu hufanya kazi katika mazingira yaliyounganishwa, na kuzifanya ziwe hatarini zaidi kwa mashambulizi ya mtandaoni.
+- Tofauti na **pochi za maunzi**, pia hujulikana kama **Cold wallet**, ambazo hutenga funguo nje ya mtandao, pochi za programu hufanya kazi katika mazingira yaliyounganishwa, na kuzifanya ziwe hatarini zaidi kwa mashambulizi ya mtandaoni.
 
 
 
 
 
-- **Matumizi yanayopendekezwa** :
+- **Matumizi yanayopendekezwa**:
     - Inafaa kwa ajili ya kudhibiti kiasi cha wastani cha Bitcoin, hasa kwa shughuli za kila siku.
     - Inafaa kwa wanaoanza au watumiaji walio na mali ndogo, ambao Hardware Wallet inaweza kuonekana kuwa ya juu sana.
 
@@ -113,7 +113,7 @@ Liquid inategemea **shirikisho** la washiriki wanaoaminika (mabadilishano, makam
 
 
 
-- **Blocks**: Usalama mdogo kwa kuhifadhi pesa nyingi au akiba ya muda mrefu. Katika kesi hii, chagua Hardware Wallet.
+- **Vizuizi**: Usalama mdogo kwa kuhifadhi pesa nyingi au akiba ya muda mrefu. Katika kesi hii, chagua Hardware Wallet.
 
 
 
@@ -124,14 +124,14 @@ Liquid inategemea **shirikisho** la washiriki wanaoaminika (mabadilishano, makam
 
 
 
-- **Blockstream App** ni programu ya simu (iOS, Android) na kompyuta ya mezani ya kudhibiti wallet na mali za Bitcoin kwenye Liquid Network. Ilinunuliwa na [Blockstream](https://blockstream.com/) mwaka wa 2016, awali ilipewa jina *Green Address* na kisha *Blockstream Green*.
-- **Vipengele muhimu ** :
-    - Shughuli za **Onchain** kwenye Blockchain Bitcoin.
+- **Blockstream App** ni programu ya simu (iOS, Android) na kompyuta ya mezani ya kudhibiti pochi na mali za Bitcoin kwenye Liquid Network. Ilinunuliwa na [Blockstream](https://blockstream.com/) mwaka wa 2016, awali ilipewa jina *Green Address* na kisha *Blockstream Green*.
+- Vipengele muhimu ** :
+- Shughuli za **Onchain** kwenye Blockchain Bitcoin.
     - Shughuli kwenye mtandao wa **Liquid** (Sidechain kwa ubadilishanaji wa haraka na wa siri).
-    - Kuangalia pekee** kwingineko za ufuatiliaji wa fedha bila ufikiaji wa funguo.
-    - Chaguzi za faragha: muunganisho kupitia **Tor**, unganisho kwa **node ya kibinafsi** kupitia Electrum, au uthibitishaji wa **SPV** ili kupunguza utegemezi kwa node za watu wengine.
+- Kuangalia pekee **kwingineko** za ufuatiliaji wa fedha bila ufikiaji wa funguo.
+    - Chaguzi za faragha: muunganisho kupitia **Tor**, unganisho kwa **nodi ya kibinafsi** kupitia Electrum, au uthibitishaji wa **SPV** ili kupunguza utegemezi kwa nodi za watu wengine.
     - Hufanya kazi **Replace-by-fee (RBF)** ili kuharakisha miamala ambayo haijathibitishwa.
-- **Utangamano**: Huunganisha wallet za maunzi kama vile **Blockstream Jade**.
+- **Utangamano**: Huunganisha pochi za maunzi kama vile **Blockstream Jade**.
 - **Interface**: Intuitive kwa wanaoanza, na chaguo za kina kwa wataalam.
 - **Kumbuka**: Mwongozo huu unazingatia matumizi ya onchain. Mafunzo mengine katika Viambatisho yanashughulikia Onchain, Tazama Pekee na toleo la eneo-kazi.
 
@@ -148,10 +148,10 @@ Liquid inategemea **shirikisho** la washiriki wanaoaminika (mabadilishano, makam
 
 
 
-- **Kwa Android** :
+- **Kwa Android**:
     - Pakua [Programu ya Blockstream](https://play.google.com/store/apps/details?id=com.greenaddress.greenbits_android_wallet) kutoka kwenye Duka la Google Play.
     - Mbadala: Sakinisha kupitia faili ya APK inayopatikana kwenye [GitHub rasmi ya Blockstream](https://github.com/Blockstream/green_android).
-- **Kwa iOS** :
+- **Kwa iOS**:
     - Pakua [Programu ya Blockstream](https://apps.apple.com/us/app/Green-Bitcoin-Wallet/id1402243590) kutoka kwa App Store.
 - **Kumbuka**: Hakikisha umepakua kutoka kwa vyanzo rasmi ili kuepuka programu za ulaghai.
 
@@ -188,7 +188,7 @@ Liquid inategemea **shirikisho** la washiriki wanaoaminika (mabadilishano, makam
 
 
 - **Kazi**: Huzima picha za skrini, huficha onyesho la kukagua programu kwenye kidhibiti cha kazi, na hufunga ufikiaji wakati simu imefungwa.
-- **Kwa nini?** : Hulinda data yako dhidi ya ufikiaji wa kimwili usioidhinishwa au programu hasidi ya kunasa skrini.
+- **Kwa nini?**: Hulinda data yako dhidi ya ufikiaji wa kimwili usioidhinishwa au programu hasidi ya kunasa skrini.
 
 
 
@@ -199,21 +199,21 @@ Liquid inategemea **shirikisho** la washiriki wanaoaminika (mabadilishano, makam
 
 
 - **Kazi**: Zuia trafiki ya mtandao kupitia **Tor**, mtandao usiojulikana ambao husimba miunganisho yako kwa njia fiche.
-- **Kwa nini?**: Ficha IP  Address yako na ulinde faragha yako, vyema ikiwa huamini mtandao wako (kwa mfano, Wi-Fi ya umma).
+- **Kwa nini?**: Ficha IP yako Address na ulinde faragha yako, vyema ikiwa huamini mtandao wako (kwa mfano, Wi-Fi ya umma).
 - **Hasara**: Inaweza kupunguza kasi ya programu kutokana na usimbaji fiche.
 - **Pendekezo**: Washa Tor ikiwa usiri ni kipaumbele, lakini jaribu kasi ya muunganisho.
 
 
 
-#### 3.2.3. Kuunganisha kwa node ya kibinafsi
+#### 3.2.3. Kuunganisha kwa nodi ya kibinafsi
 
 
 
 
 
-- **Kazi**: Huunganisha programu kwa **Full Node ya Bitcoin** kupitia **server ya Electrum**.
-- **Kwa nini?**: Hutoa udhibiti kamili wa data ya Blockchain, ikiondoa utegemezi kwenye server za Blockstream.
-- **Sharti**: node ya Bitcoin iliyosanidiwa.
+- **Kazi**: Huunganisha programu kwa **nodi yako kamili ya Bitcoin** kupitia **Seva ya Electrum**.
+- **Kwa nini?**: Hutoa udhibiti kamili wa data ya Blockchain, ikiondoa utegemezi kwenye seva za Blockstream.
+- **Sharti**: Nodi ya Bitcoin iliyosanidiwa.
 - **Pendekezo**: Watumiaji mahiri wanaotaka uhuru wa juu zaidi.
 
 
@@ -225,9 +225,9 @@ Liquid inategemea **shirikisho** la washiriki wanaoaminika (mabadilishano, makam
 
 
 - **Kazi**: Hutumia **Uthibitishaji Rahisi wa Malipo (SPV)** ili kuthibitisha moja kwa moja data fulani ya Blockchain bila kupakua msururu mzima.
-- **Kwa nini?**: Hupunguza utegemezi kwenye node chaguo-msingi ya Blockstream, huku ikisalia kuwa nyepesi kwa vifaa vya mkononi.
-- **Hasara**: Ni salama kidogo kuliko Full node, kwani inategemea node za wahusika wengine kwa taarifa fulani.
-- **Pendekezo**: Washa SPV ikiwa huwezi kutumia node ya kibinafsi, lakini pendelea Full node kwa usalama bora zaidi.
+- **Kwa nini?**: Hupunguza utegemezi kwenye nodi chaguo-msingi ya Blockstream, huku ikisalia kuwa nyepesi kwa vifaa vya mkononi.
+- **Hasara**: Ni salama kidogo kuliko Full node, kwani inategemea nodi za wahusika wengine kwa taarifa fulani.
+- **Pendekezo**: Washa SPV ikiwa huwezi kutumia nodi ya kibinafsi, lakini pendelea Full node kwa usalama bora zaidi.
 
 
 
@@ -254,7 +254,7 @@ Liquid inategemea **shirikisho** la washiriki wanaoaminika (mabadilishano, makam
 
 
 
-- Ikiwa ungependa kudhibiti **Cold Wallet** (Wallet ya nje ya mtandao): bofya **"Unganisha Jade "** ili kutumia Hardware Wallet Blockstream Jade au wallet zingine zinazooana za Cold.
+- Ikiwa ungependa kudhibiti **Cold Wallet** (Wallet ya nje ya mtandao): bofya **"Unganisha Jade "** ili kutumia Hardware Wallet Blockstream Jade au pochi zingine zinazooana za Cold.
 
 
 
@@ -354,7 +354,7 @@ Ili kufanya hivyo, tutaandika kumbukumbu, futa Wallet, uirejeshe kwa chelezo, na
 
 
 
-Kumbuka: zpub Address inaweza kuletwa kwenye programu yako ya Blockstream kwa kipengele cha "watch-only" (ona Kiambatisho).
+Kumbuka: zpub Address inaweza kuletwa kwenye programu yako ya Blockstream kwa kipengele cha "Kutazama Pekee" (ona Kiambatisho).
 
 
 
@@ -434,9 +434,9 @@ Vinginevyo, Exchange bitcoins zako kwenye mnyororo au kupitia Lightning Network 
 
 
 
-- Chaguzi** :
+- **Chaguzi** :
  - (1) Bofya kwenye mishale ili kuchagua Address nyingine mpya iliyounganishwa na sentensi hii ya seed.
-    - (2) Unaweza pia kuchagua Address kutoka miongoni mwa zile ambazo tayari zimetumika/zinazoonyeshwa, kwa kubofya vitone vitatu kwenye sehemu ya juu kulia na kisha kwenye "Orodha ya Address"
+    - (2) Unaweza pia kuchagua Address kutoka miongoni mwa zile ambazo tayari zimetumika/zinazoonyeshwa, kwa kubofya vitone vitatu kwenye sehemu ya juu kulia na kisha kwenye "Orodha ya Anwani"
     - (3) Ili kuomba kiasi mahususi, bofya vitone vitatu kwenye sehemu ya juu kulia, chagua "Omba kiasi", na uweke kiasi unachotaka. QR itasasishwa, na nafasi ya Address itachukuliwa na URI ya malipo ya Bitcoin.
 
 
@@ -468,7 +468,7 @@ Vinginevyo, Exchange bitcoins zako kwenye mnyororo au kupitia Lightning Network 
 
 
 
-- **Ingiza maelezo** :
+- **Ingiza maelezo**:
     - (1) Weka **Address ya mpokeaji** kwa kuibandika au kuchanganua msimbo wa QR.
     - (2) Angalia mali na akaunti ambayo fedha zinatumwa.
     - (3) Onyesha **kiasi** kitakachotumwa. Unaweza kuchagua kitengo: L-BTC, L-satoshis, USD, ...
@@ -504,7 +504,7 @@ Vinginevyo, Exchange bitcoins zako kwenye mnyororo au kupitia Lightning Network 
 
 
 
-- Muda kati ya vitalu 2 ni dakika 1 kwenye Liquid, kwa hivyo muamala huo unathibitishwa haraka na kukamilika.
+- Muda kati ya vitalu 2 ni dakika 1 kwenye Liquid, kwa hivyo shughuli hiyo inathibitishwa haraka na kukamilika.
 
 
 
@@ -523,7 +523,7 @@ Kwa kutumia mtandao wa Onchain
 
 https://planb.network/tutorials/wallet/mobile/blockstream-app-onchain-e84edaa9-fb65-48c1-a357-8a5f27996143
 
-Inaleta na kufuatilia Wallet katika hali ya "watch-only".
+Inaleta na kufuatilia Wallet katika hali ya "Kutazama Pekee".
 
 
 
@@ -541,13 +541,13 @@ https://planb.network/tutorials/wallet/desktop/blockstream-app-desktop-c1503adf-
 
 
 
-Ili kutumia **Blockstream App** kwa usalama na kwa ustadi, fuata mapendekezo haya. Watakusaidia kulinda pesa zako, kuboresha miamala yako, na kuhifadhi usiri wako kwenye mitandao ya **Bitcoin (onchain)**, **Liquid**, na **Lightning**.
+Ili kutumia **Blockstream App** kwa usalama na kwa ustadi, fuata mapendekezo haya. Watakusaidia kulinda pesa zako, kuboresha miamala yako, na kuhifadhi usiri wako kwenye mitandao ya **Bitcoin (onchain)**, **Liquid**, na **Umeme**.
 
 
 
 
 
-- **Linda maneno yako ya urejeshi** :
+- Linda maneno yako ya **urejeshi**:
  - Mafunzo: Inahifadhi maneno yako ya Mnemonic
 
 
@@ -567,25 +567,25 @@ https://planb.network/courses/46b0ced2-9028-4a61-8fbc-3b005ee8d70f
 
 
 
-- **Linda faragha yako** :
+- **Linda faragha yako**:
  - generate Address mpya kwa kila mapokezi ya onchain au Liquid ili kupunguza ufuatiliaji kwenye Blockchain.
  - Washa vitendaji vya "Faragha Iliyoimarishwa", "Tor" na "SPV".
- - Kwa usiri wa hali ya juu, unganisha Wallet yako na node yako ya Bitcoin kupitia server ya Electrum badala ya kutumia node ya umma.
+ - Kwa usiri wa hali ya juu, unganisha Wallet yako na nodi yako ya Bitcoin kupitia seva ya Electrum badala ya kutumia nodi ya umma.
 
 
 
 
 
-- **Chagua mtandao unaofaa zaidi mahitaji yako** :
- - **Onchain**: Inapendekezwa kwa uangalizi wa muda mrefu au miamala ya thamani kubwa (ada hazizingatiwi kuhusiana na kiasi).
- - **Liquid**: Tumia kwa uhamisho wa haraka, wa gharama nafuu na usiri ulioimarishwa.
- - **Lightning**: Chagua uhamisho wa papo hapo, wa gharama nafuu kwa kiasi kidogo.
+- **Chagua mtandao unaofaa zaidi mahitaji yako**:
+- **Onchain**: Inapendekezwa kwa uangalizi wa muda mrefu au miamala ya thamani kubwa (ada hazizingatiwi kuhusiana na kiasi).
+- **Liquid**: Tumia kwa uhamisho wa haraka, wa gharama nafuu na usiri ulioimarishwa.
+- **Umeme**: Chagua uhamisho wa papo hapo, wa gharama nafuu kwa kiasi kidogo.
 
 
 
 
 
-- **Angalia Address za usafirishaji kila wakati** :
+- **Angalia anwani za usafirishaji kila wakati**:
  - Kabla ya kutuma pesa, angalia Address kwa uangalifu. Fedha zilizotumwa kwa Address isiyo sahihi zinapotea milele. Tumia nakala/bandika au kuchanganua msimbo wa QR, usiwahi kunakili/urekebishe Address kwa mkono.
 
 
@@ -594,7 +594,7 @@ https://planb.network/courses/46b0ced2-9028-4a61-8fbc-3b005ee8d70f
 
 - **Boresha gharama** :
  - Kwa miamala ya mtandaoni, chagua ada zinazofaa (polepole, kati, haraka) kulingana na dharura na msongamano wa mtandao.
- - Tumia Liquid, au Lightning kwa kiasi kidogo.
+ - Tumia Liquid, au Umeme kwa kiasi kidogo.
 
 
 
@@ -611,25 +611,25 @@ https://planb.network/courses/46b0ced2-9028-4a61-8fbc-3b005ee8d70f
 
 
 
-- **Viungo rasmi:**
- - **[Tovuti rasmi](https://blockstream.com/)**
- - **[Msaada wa programu ya simu](https://help.blockstream.com/hc/en-us/categories/900000056183-Blockstream-Green/)** : uwekaji kumbukumbu na gumzo
- - [GitHub](https://github.com/Blockstream/green_android)**
+- Viungo rasmi:
+- [Tovuti rasmi](https://blockstream.com/)
+- [Msaada wa programu ya simu](https://help.blockstream.com/hc/en-us/categories/900000056183-Blockstream-Green/) : uwekaji kumbukumbu na gumzo
+- [GitHub](https://github.com/Blockstream/green_android)
 
 
 
 
 
-- **Zuia Wachunguzi :**
+- Zuia Wachunguzi :**
  - on chain : **[Mempool.space](https://Mempool.space/)**
  - Liquid : **[Maelezo ya Blockstream](https://blockstream.info/Liquid)**
- - Lightning: **[1ML (Lightning Network)](https://1ml.com/)**
+ - Umeme: **[1ML (Lightning Network)](https://1ml.com/)**
 
 
 
 
 
-- **Mafunzo na mafunzo:** **[Plan ₿ Network](https://planb.network/)** :
+- Mafunzo na mafunzo: **[Plan ₿ Network](https://planb.network/)**
  - Inalinda kifungu chako cha urejeshi
 
 
@@ -642,7 +642,7 @@ https://planb.network/courses/46b0ced2-9028-4a61-8fbc-3b005ee8d70f
 
 
 - **Liquid Network** :
- - **[Kamusi](https://planb.network/fr/resources/glossary/liquid-network)**
+- [Kamusi](https://planb.network/fr/resources/glossary/liquid-network)
 
 
 
@@ -652,8 +652,8 @@ https://planb.network/courses/6d26bcff-51a3-405f-bcdd-9af8297ce727
 
 
 
-- **Lightning Network** :
- - **[Kamusi](https://planb.network/fr/resources/glossary/lightning-network)**
+- **Lightning Network**:
+- [Kamusi](https://planb.network/fr/resources/glossary/lightning-network)
 
 
 

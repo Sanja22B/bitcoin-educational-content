@@ -93,19 +93,19 @@ Mojawapo ya sifa maalum za Blitz Wallet ni kwamba inasaidia mitandao na chaneli 
 
 
 
-- **Lightning Network** : Mojawapo ya viwekeleo vya Bitcoin ambavyo hukuwezesha kufanya shughuli ndogo ndogo papo hapo.
+- **Lightning Network**: Mojawapo ya viwekeleo vya Bitcoin ambavyo hukuwezesha kufanya shughuli ndogo ndogo papo hapo.
 
 
 
 
 
-- **Bitcoin Mainnet** : Msururu mkuu wa itifaki ya Bitcoin, inayofaa kwa shughuli za thamani kubwa.
+- **Bitcoin Mainnet**: Msururu mkuu wa itifaki ya Bitcoin, inayofaa kwa shughuli za thamani kubwa.
 
 
 
 
 
-**Liquid Network**: Msururu sambamba na Bitcoin Mainnet uliotengenezwa na BlockStream inayotumia Liquid Bitcoins kutekeleza haraka, Confidential Transactions.
+- **Liquid Network**: Msururu sambamba na Bitcoin Mainnet uliotengenezwa na BlockStream inayotumia Liquid Bitcoins kutekeleza haraka, Confidential Transactions.
 
 
 

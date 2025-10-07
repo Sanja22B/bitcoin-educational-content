@@ -274,7 +274,7 @@ Mtia saini wa pili wa Wallet, ikiwa yeye pia ni mtumiaji, anaweza kutia sahihi m
 
 
 
-- Nenda mbali zaidi na kwingineko ya Sahihi nyingi**:
+- Nenda mbali zaidi na kwingineko ya Sahihi nyingi:
 
 
 

@@ -16,8 +16,8 @@ description: Mwongozo wa programu ya simu ya Alby Go
 
 
 
-- [Alby Hub](https://albyhub.com/)** *(inapendekezwa)*
-- **Umbrel**, **Start9**, **RaspiBlitz** (kupitia **Alby Hub**)
+- [Alby Hub](https://albyhub.com/) **(inapendekezwa)**
+- **Mwavuli**, **Start9**, **RaspiBlitz** (kupitia **Alby Hub**)
 - **Sarafu** *(haijajaribiwa)*
 - **Ya kwanza** *(haijajaribiwa)*
 - **Minibits** *(haijajaribiwa)*
@@ -33,7 +33,7 @@ Inapatikana kwenye majukwaa makubwa:
 
 
 
--**iOS:** [Pakua kutoka App Store](https://apps.apple.com/us/app/alby-go/id6471335774)
+- **iOS:** [Pakua kutoka App Store](https://apps.apple.com/us/app/alby-go/id6471335774)
 - **Android:** [Pakua kutoka Google Play](https://play.google.com/store/apps/details?id=com.getalby.mobile)
 - **ZapStore**
 

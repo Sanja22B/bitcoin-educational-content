@@ -5,10 +5,10 @@ description: Kuweka na kutumia Lipa lightning mobile Wallet
 ![cover](assets/cover.webp)
 
 
-Bitcoin Lightning Wallet ni programu ya simu inayowezesha miamala ya papo hapo na ya gharama nafuu kwenye Lightning Network ya Bitcoin. Tofauti na miamala kwenye Blockchain kuu (On-Chain), malipo ya Lightning yanakaribia papo hapo na yanahitaji ada ndogo, na kuyafanya yanafaa zaidi kwa malipo madogo ya kila siku.
+Bitcoin Lightning Wallet ni programu ya simu inayowezesha miamala ya papo hapo na ya gharama nafuu kwenye Lightning Network ya Bitcoin. Tofauti na miamala kwenye Blockchain kuu (On-Chain), malipo ya umeme yanakaribia papo hapo na yanahitaji ada ndogo, na kuyafanya yanafaa zaidi kwa malipo madogo ya kila siku.
 
 
-Lightning wallet, kama vile wallet zote za rununu, huchukuliwa kuwa wallet za "Hot" kwa sababu zimeunganishwa kwenye Mtandao. Kwa hivyo zimekusudiwa kudhibiti kiasi kidogo cha pesa kwa matumizi yako ya kila siku. Kwa kiasi kikubwa, ni vyema kutumia suluhu salama zaidi za hifadhi kama vile hardware wallet.
+Pochi za umeme, kama vile pochi zote za rununu, huchukuliwa kuwa pochi za "Hot" kwa sababu zimeunganishwa kwenye Mtandao. Kwa hivyo zimekusudiwa kudhibiti kiasi kidogo cha pesa kwa matumizi yako ya kila siku. Kwa kiasi kikubwa, ni vyema kutumia ufumbuzi salama zaidi wa hifadhi kama vile pochi za maunzi.
 
 
 Ikiwa ungependa kujifunza zaidi kuhusu Lightning Network na kuelewa jinsi inavyofanya kazi kiufundi, ninapendekeza usome kozi hii:
@@ -31,7 +31,7 @@ Vipengele muhimu ni pamoja na:
 
 
 - Mtumiaji angavu Interface
-- Usimamizi wa chaneli ya lightning inayojiendesha
+- Usimamizi wa chaneli ya Umeme inayojiendesha
 - Usaidizi wa itifaki ya LNURL
 - Uwezekano wa kununua bitcoins moja kwa moja kwenye programu
 
@@ -77,8 +77,8 @@ Programu kisha inatoa kazi zake kuu kupitia safu ya skrini za utangulizi:
 
 
 - **Risiti ya malipo iliyofumwa**: Watumiaji wanaweza kupokea malipo ya Bitcoin hata wakati programu imefungwa, hivyo basi kuhakikishia kutegemewa na urahisi.
-- **Address zisizodhibitiwa za lightning**: Lipa sasa inaauni anwani za umeme zisizodhibitiwa, kuboresha faragha na usalama kwa kuwapa watumiaji udhibiti kamili wa bitcoins zao.
-- **Udhibiti wa data ya uchanganuzi** : Kwa uwazi na usiri kuu, watumiaji wanaweza kuangalia aina za data iliyokusanywa na kuchagua mapendeleo yao ya kushiriki.
+- **Anwani zisizodhibitiwa za Umeme**: Lipa sasa inaauni anwani za umeme zisizodhibitiwa, kuboresha faragha na usalama kwa kuwapa watumiaji udhibiti kamili wa bitcoins zao.
+- **Udhibiti wa data ya uchanganuzi**: Kwa uwazi na usiri kuu, watumiaji wanaweza kuangalia aina za data iliyokusanywa na kuchagua mapendeleo yao ya kushiriki.
 - **Tuma kupitia nambari ya simu**: Hakuna haja ya anwani changamano - chagua tu anwani, weka kiasi, na utume bitcoins moja kwa moja kwa nambari yao ya simu.
 
 
@@ -115,14 +115,14 @@ Ishara hii inaonyesha utendaji wa ziada kama vile:
 
 - Kununua bitcoins
 - amana ya On-Chain Bitcoin
-- Kuunda invoice za lightning ili kupokea bitcoins
-- Malipo ya  lightning Invoice 
+- Kuunda ankara za umeme ili kupokea bitcoins
+- Umeme Invoice malipo
 
 
 ## Okoa Wallet yako
 
 
-Ili kuhifadhi nakala ya wallet yako, nenda kwenye kichupo cha "Mipangilio" na uchague "Kifungu cha maneno ya urejeshaji". Lipa hutumia maneno ya urejeshaji ambayo ni muhimu kuyaandika kwa makini kwenye nyenzo ya kimwili (karatasi au chuma). Maneno haya ndiyo njia pekee ya kurejesha pesa zako ikiwa simu yako itapotea au kuibiwa. Ili kuthibitisha nakala yako, programu itakuuliza uthibitishe maneno matatu kwa nasibu kutoka kwenye kifungu chako.
+Ili kuhifadhi nakala ya Wallet yako, nenda kwenye kichupo cha "Mipangilio" na uchague "Kifungu cha maneno ya urejeshaji". Lipa hutumia maneno ya kurejesha ambayo ni muhimu kuandika kwa makini kwenye nyenzo ya kimwili (karatasi, chuma). Maneno haya ndiyo njia pekee ya kurejesha pesa zako ikiwa simu yako itapotea au kuibiwa. Ili kudhibitisha nakala yako, programu itakuuliza uthibitishe maneno 3 nasibu kutoka kwa kifungu chako.
 
 
 ![Backup](assets/fr/04.webp)
@@ -162,7 +162,7 @@ Ili kutuma bitcoins, nenda kwenye skrini ya nyumbani, futa skrini na uchague "Li
 
 
 
-- ingiza lightning LNURL Address
+- ingiza umeme LNURL Address
 - changanua msimbo wa QR ili kufanya malipo.
 
 
@@ -221,7 +221,7 @@ Unachohitajika kufanya ni kutumia benki yako kuhamisha kiasi unachotaka, kuweka 
 - Muda mrefu kidogo kuliko wastani wa malipo
 
 
-Lipa ni chaguo bora kwa kuanza kutumia Lightning Network, hasa kwa watumiaji wanaotafuta suluhisho rahisi la malipo ya kila siku. Urahisi wake wa matumizi na interface isiyo na vitu vingi huifanya kuwa wallet bora kwa wanaoanza, huku ikibaki na vipengele muhimu kwa matumizi ya kila siku ya umeme.
+Lipa ni chaguo bora kwa kuanza kutumia Lightning Network, hasa inafaa kwa watumiaji wanaotafuta suluhisho rahisi kwa malipo ya kila siku. Urahisi wake wa matumizi na Interface isiyo na vitu vingi huifanya kuwa Wallet bora kwa wanaoanza, huku ikitoa vipengele muhimu kwa matumizi ya kila siku ya Umeme.
 
 
 ## Rasilimali
