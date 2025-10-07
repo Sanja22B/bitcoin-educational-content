@@ -1361,13 +1361,13 @@ Za dalju diskusiju o modernoj teoriji brojeva, možete se konsultovati sa mnogim
 <chapterId>47345330-be2d-5faf-afd0-d289a8d21bf1</chapterId>
 
 
-Jedna od dve glavne grane kriptografije je simetrična kriptografija. Ona uključuje šeme šifrovanja, kao i šeme koje se bave autentifikacijom i integritetom. Do 1970-ih, cela kriptografija bi se sastojala od simetričnih šema šifrovanja.
+Jedna od dve glavne grane kriptografije je simetrična kriptografija. Ona uključuje šeme šifrovanja, kao i šeme koje se bave autentifikacijom i integritetom. Do 1970-ih, cela kriptografija se sastojala od simetričnih šema šifrovanja.
 
 
-Glavna diskusija započinje razmatranjem simetričnih šema šifrovanja i pravljenjem ključne razlike između strujnih šifara i blok šifara. Zatim se okrećemo kodovima za autentikaciju poruka, koji predstavljaju šeme za obezbeđivanje integriteta i autentičnosti poruka. Na kraju, istražujemo kako se simetrične šeme šifrovanja i kodovi za autentifikaciju poruka mogu kombinovati kako bi se osigurala sigurna komunikacija.
+Glavna diskusija započinje razmatranjem simetričnih šema šifrovanja i pravljenjem ključne razlike između šifara toka i blok šifara. Zatim se okrećemo kodovima za autentikaciju poruka, koji predstavljaju šeme za obezbeđivanje integriteta i autentičnosti poruka. Na kraju, istražujemo kako se simetrične šeme šifrovanja i kodovi za autentifikaciju poruka mogu kombinovati kako bi se osigurala sigurna komunikacija.
 
 
-Ovo poglavlje usputno razmatra različite simetrične kriptografske šeme iz prakse. Sledeće poglavlje nudi detaljno izlaganje enkripcije pomoću strujne šifre i blokovske šifre iz prakse, naime RC4 i AES respektivno.
+Ovo poglavlje usputno razmatra različite simetrične kriptografske šeme iz prakse. Sledeće poglavlje nudi detaljno izlaganje enkripcije pomoću šifre toka i blokovske šifre iz prakse, naime RC4 i AES respektivno.
 
 
 Pre nego što započnemo našu diskusiju o simetričnoj kriptografiji, želim ukratko da dam nekoliko napomena o ilustracijama Alise i Boba u ovom i narednim poglavljima.
@@ -1488,13 +1488,13 @@ Ovo šifriranje pomakom je primer **monoalfabetske supstitucione šifre**: šema
 Sve do 1700-ih, mnoge primene enkripcije su se u velikoj meri oslanjale na monoalfabetske supstitucione šifre, iako su često bile mnogo složenije od navedenog primera šifriranja pomakom. Mogli ste, na primer, nasumično izabrati slovo iz alfabeta za svako originalno slovo teksta pod uslovom da se svako slovo pojavljuje samo jednom u alfabetu šifrovanog teksta. To znači da biste imali faktorijel od 26 mogućih privatnih ključeva, što je bilo ogromno u doba pre računara.
 
 
-Imajte na umu da ćete često naići na termin **cipher** u kriptografiji. Budite svesni da ovaj termin ima različita značenja. Zapravo, znam najmanje pet različitih značenja ovog termina unutar kriptografije.
+Imajte na umu da ćete često naići na termin **cipher** na engleskom u kriptografiji. Budite svesni da ovaj termin ima različita značenja. Zapravo, znam najmanje pet različitih značenja ovog termina unutar kriptografije.
 
 
 U nekim slučajevima se odnosi na šemu šifrovanja, kao što je to slučaj kod šifriranja pomakom i monoalfabetske supstitucione šifre. Međutim, termin se takođe može odnositi specifično na algoritam šifrovanja, privatni ključ, ili samo na šifrat bilo koje takve šeme šifrovanja.
 
 
-Na kraju, termin šifra može se odnositi i na osnovni algoritam iz kojeg možete konstruisati kriptografske šeme. Ovo može uključivati različite algoritme za šifrovanje, ali i druge tipove kriptografskih šema. Ovaj smisao termina postaje relevantan u kontekstu blok šifara (pogledajte odeljak „Blok šifre“ ispod).
+Na kraju, termin cipher ili u prevodu šifrat može se odnositi i na osnovni algoritam iz kojeg možete konstruisati kriptografske šeme. Ovo može uključivati različite algoritme za šifrovanje, ali i druge tipove kriptografskih šema. Ovaj smisao termina postaje relevantan u kontekstu blok šifara (pogledajte odeljak „Blok šifre“ ispod).
 
 
 Možda ćete naići i na termine **encipher** ili **decipher**. Ovi termini su samo sinonimi za enkripciju i dekripciju.
@@ -1506,10 +1506,10 @@ Možda ćete naići i na termine **encipher** ili **decipher**. Ovi termini su s
 <chapterId>2d73ef97-26c5-5d11-8815-0ddbe89c8003</chapterId>
 
 
-Šifarska zamena je veoma nesigurna simetrična šema šifrovanja, barem u modernom svetu. [1] Napadač bi mogao jednostavno pokušati dešifrovanje bilo kog šifrovanog teksta sa svih 26 mogućih ključeva da vidi koji rezultat ima smisla. Ova vrsta napada, gde napadač samo prolazi kroz ključeve da vidi šta funkcioniše, poznata je kao **brute force napad** ili **iscrpna pretraga ključeva**.
+Šifriranje pomakom je veoma nesigurna simetrična šema šifrovanja, barem u modernom svetu. [1] Napadač bi mogao jednostavno pokušati dešifrovanje bilo kog šifrovanog teksta sa svih 26 mogućih ključeva da vidi koji rezultat ima smisla. Ova vrsta napada, gde napadač samo prolazi kroz ključeve da vidi šta funkcioniše, poznata je kao **brute force napad** ili **napad grubom silom** ili **iscrpna pretraga ključeva**.
 
 
-Da bi bilo koja šema enkripcije ispunila minimalni pojam sigurnosti, mora imati skup mogućih ključeva, ili **ključni prostor**, koji je toliko veliki da su napadi grubom silom neizvodljivi. Sve moderne šeme enkripcije ispunjavaju ovaj standard. To je poznato kao **princip dovoljnog ključnog prostora**. Sličan princip se obično primenjuje u različitim vrstama kriptografskih šema.
+Da bi bilo koja šema enkripcije ispunila minimalni pojam sigurnosti, mora imati skup mogućih ključeva, ili **prostor ključeva**, koji je toliko veliki da su napadi grubom silom neizvodljivi. Sve moderne šeme enkripcije ispunjavaju ovaj standard. To je poznato kao **princip dovoljnog prostora ključeva**. Sličan princip se obično primenjuje u različitim vrstama kriptografskih šema.
 
 
 Da biste stekli osećaj o veličini prostora ključeva u modernim šemama enkripcije, pretpostavimo da je fajl enkriptovan sa 128-bitnim ključem koristeći napredni standard enkripcije (AES). To znači da napadač ima skup od $2^{128}$ ključeva koje treba da prođe za napad grubom silom. Šansa od 0.78% uspeha sa ovom strategijom zahtevala bi da napadač prođe kroz otprilike $2.65 \times 10^{36}$ ključeva.
@@ -1539,7 +1539,7 @@ Drugo, lakše je zameniti neki niz informacija nego čitavu kriptografsku šemu.
 Treće, Kerckhoffsov princip omogućava standardizaciju i kompatibilnost između korisnika kriptografskih šema. Ovo ima ogromne prednosti za efikasnost. Na primer, teško je zamisliti kako bi milioni ljudi mogli sigurno da se povežu na Google-ove veb servere svakog dana, ako bi ta sigurnost zahtevala čuvanje kriptografskih šema u tajnosti.
 
 
-Četvrto, Kerckhoffov princip omogućava javnu proveru kriptografskih šema. Ova vrsta provere je apsolutno neophodna za postizanje sigurnih kriptografskih šema. Ilustrativno, glavni osnovni algoritam u simetričnoj kriptografiji, Rijndael šifra, bio je rezultat takmičenja organizovanog od strane Nacionalnog instituta za standarde i tehnologiju između 1997. i 2000. godine.
+Četvrto, Kerckhoffov princip omogućava javnu proveru kriptografskih šema. Ova vrsta provere je apsolutno neophodna za postizanje sigurnih kriptografskih šema. Ilustrativno, osnovni algoritam u simetričnoj kriptografiji, Rijndael šifra, bio je rezultat takmičenja organizovanog od strane Nacionalnog instituta za standarde i tehnologiju između 1997. i 2000. godine.
 
 
 Bilo koji sistem koji pokušava da postigne **sigurnost kroz skrivanje** je onaj koji se oslanja na čuvanje detalja svog dizajna i/ili implementacije u tajnosti. U kriptografiji, ovo bi bio specifično sistem koji se oslanja na čuvanje detalja dizajna kriptografske šeme u tajnosti. Dakle, sigurnost kroz skrivanje je u direktnom kontrastu sa Kerckhoffsovim principom.
@@ -1572,37 +1572,37 @@ Iako nećemo ulaziti u sve detalje različitih pojmova kriptografske sigurnosti,
 
 
 
-## Strim šifre
+## Šifre toka (eng. stream cipher)
 
 <chapterId>479aa6f4-45c4-59ca-8616-8cf8e61fc871</chapterId>
 
 
-Simetrične šeme šifrovanja standardno se dele na dva tipa: **strim šifre** i **blok šifre**. Ova razlika je donekle problematična, međutim, jer ljudi koriste ove termine na nedosledan način. U narednih nekoliko odeljaka, izložiću razliku na način za koji mislim da je najbolji. Trebalo bi da budete svesni, međutim, da će mnogi ljudi koristiti ove termine donekle drugačije nego što sam izložio.
+Simetrične šeme šifrovanja standardno se dele na dva tipa: **šifre toka** i **blok šifre**. Ova razlika je donekle problematična, međutim, jer ljudi koriste ove termine na nedosledan način. U narednih nekoliko odeljaka, izložiću razliku na način za koji mislim da je najbolji. Trebalo bi da budete svesni, međutim, da će mnogi ljudi koristiti ove termine donekle drugačije nego što sam izložio.
 
 
-Okrenimo se prvo ka stru šiframa. **Strim šifra** je simetrična šema šifrovanja gde se šifrovanje sastoji iz dva koraka.
+Okrenimo se prvo ka šiframa toka. **Šifra toka** je simetrična šema šifrovanja gde se šifrovanje sastoji iz dva koraka.
 
 
 Prvo, pomoću privatnog ključa se proizvodi niz dužine originalnog teksta. Ovaj niz se naziva **keystream**.
 
 
-Zatim se keystream matematički kombinuje sa otvorenim tekstom kako bi se proizveo šifrovani tekst. Ova kombinacija je obično XOR operacija. Za dešifrovanje, možete jednostavno obrnuti operaciju. (Napomena da $A \oplus B = B \oplus A$, u slučaju kada su $A$ i $B$ nizovi bitova. Dakle, redosled XOR operacije u strim šifri nije bitan za rezultat. Ovo svojstvo je poznato kao **komutativnost**.)
+Zatim se keystream matematički kombinuje sa otvorenim tekstom kako bi se proizveo šifrovani tekst. Ova kombinacija je obično XOR operacija. Za dešifrovanje, možete jednostavno obrnuti operaciju. (Napomena da $A \oplus B = B \oplus A$, u slučaju kada su $A$ i $B$ nizovi bitova. Dakle, redosled XOR operacije u šifri toka nije bitan za rezultat. Ovo svojstvo je poznato kao **komutativnost**.)
 
 
-Tipična XOR strim šifra prikazana je na *Slici 3*. Prvo uzimate privatni ključ $K$ i koristite ga za generisanje ključa toka (keystream). Ključ toka se zatim kombinuje sa otvorenim tekstom putem XOR operacije kako bi se proizveo šifrovani tekst. Bilo koji agent koji primi šifrovani tekst može ga lako dešifrovati ako ima ključ $K$. Sve što treba da uradi je da kreira ključ toka iste dužine kao šifrovani tekst prema specificiranoj proceduri šeme i primeni XOR sa šifrovani tekst.
+Tipična XOR šifra toka prikazana je na *Slici 3*. Prvo uzimate privatni ključ $K$ i koristite ga za generisanje ključa toka (keystream). Ključ toka se zatim kombinuje sa otvorenim tekstom putem XOR operacije kako bi se proizveo šifrovani tekst. Bilo koji agent koji primi šifrovani tekst može ga lako dešifrovati ako ima ključ $K$. Sve što treba da uradi je da kreira ključ toka iste dužine kao šifrovani tekst prema specificiranoj proceduri šeme i primeni XOR sa šifrovani tekst.
 
 
 
-*Slika 3: XOR tokovna šifra*
+*Slika 3: XOR operacija kod šifre toka*
 
 
 ![Figure 3: An XOR stream cipher](assets/Figure4-3.webp "Figure 3: An XOR stream cipher")
 
 
-Podsetite se da je šema šifrovanja obično šablon za šifrovanje sa istim osnovnim algoritmom, a ne tačna specifikacija. Po analogiji, strim šifra je obično šablon za šifrovanje u kojem možete koristiti ključeve različitih dužina. Iako dužina ključa može uticati na neke manje detalje šeme, neće uticati na njen suštinski oblik.
+Podsetite se da je šema šifrovanja obično šablon za šifrovanje sa istim osnovnim algoritmom, a ne tačna specifikacija. Po analogiji, šifra toka je obično šablon za šifrovanje u kojem možete koristiti ključeve različitih dužina. Iako dužina ključa može uticati na neke manje detalje šeme, neće uticati na njen suštinski oblik.
 
 
-Šifarski sistem pomaka je primer veoma jednostavne i nesigurne strim šifre. Koristeći jedno slovo (privatni ključ), možete proizvesti niz slova dužine poruke (keystream). Ovaj keystream se zatim kombinuje sa otvorenim tekstom putem modulo operacije kako bi se proizveo šifrovani tekst. (Ova modulo operacija može biti pojednostavljena u XOR operaciju kada se slova predstavljaju u bitovima).
+Šifarski sistem pomaka je primer veoma jednostavne i nesigurne šifre toka. Koristeći jedno slovo (privatni ključ), možete proizvesti niz slova dužine poruke (keystream). Ovaj keystream se zatim kombinuje sa otvorenim tekstom putem modulo operacije kako bi se proizveo šifrovani tekst. (Ova modulo operacija može biti pojednostavljena u XOR operaciju kada se slova predstavljaju u bitovima).
 
 
 Još jedan poznati primer toka šifre je **Viženerova šifra**, nazvana po Blaise de Vigenereu koji ju je u potpunosti razvio krajem 16. veka (iako su drugi uradili mnogo prethodnog rada). To je primer **polialfabetske supstitucione šifre**: šema šifrovanja gde se alfabet šifrovanog teksta za simbol otvorenog teksta menja u zavisnosti od njegove pozicije u tekstu. Za razliku od monoalfabetske supstitucione šifre, simboli šifrovanog teksta mogu biti povezani sa više od jednog simbola otvorenog teksta.
@@ -1644,13 +1644,13 @@ Na primer, pretpostavimo da je vaš privatni ključ "GOLD" i želite da šifruje
 Dakle, šifrat je $c$ = "IFJSZCRUGDSB".
 
 
-Još jedan poznati primer toka šifre je **one-time pad**. Sa one-time pad-om, jednostavno kreirate niz nasumičnih bitova iste dužine kao što je poruka u otvorenom tekstu i proizvodite šifrovani tekst putem XOR operacije. Dakle, privatni ključ i tok ključeva (keystream) su ekvivalentni sa one-time pad-om.
+Još jedan poznati primer toka šifre je **one-time pad** (u prevodu jednokratna šifra). Sa one-time pad-om, jednostavno kreirate niz nasumičnih bitova iste dužine kao što je poruka u otvorenom tekstu i proizvodite šifrovani tekst putem XOR operacije. Dakle, privatni ključ i tok ključeva (keystream) su ekvivalentni sa one-time pad-om.
 
 
 Iako su šifra pomaka i Viženerove šifre veoma nesigurne u modernom dobu, jednokratna šifra je veoma sigurna ako se pravilno koristi. Verovatno najpoznatija primena jednokratne šifre bila je, barem do 1980-ih, za **Vašington-Moskva vruću liniju**. [4]
 
 
-Vruća linija je direktna komunikaciona veza između Vašingtona i Moskve za hitna pitanja koja je instalirana nakon Kubanske raketne krize. Tehnologija za nju se transformisala tokom godina. Trenutno, uključuje direktni optički kabl kao i dve satelitske veze (za redundantnost), koje omogućavaju e-mail i slanje tekstualnih poruka. Veza se završava na raznim mestima u SAD. Pentagon, Bela kuća i Raven Rock Mountain su poznate krajnje tačke. Suprotno popularnom mišljenju, vruća linija nikada nije uključivao telefone.
+Vruća linija je direktna komunikaciona veza između Vašingtona i Moskve za hitna pitanja koja je instalirana nakon Kubanske raketne krize. Tehnologija za nju se transformisala tokom godina. Trenutno, uključuje direktni optički kabl kao i dve satelitske veze (za redundantnost), koje omogućavaju e-mail i slanje tekstualnih poruka. Veza se završava na raznim mestima u SAD. Pentagon, Bela kuća i Raven Rock Mountain su poznate krajnje tačke. Suprotno popularnom mišljenju, vruća linija nikada nije uključivala telefone.
 
 
 U suštini, šema jednokratnog bloka funkcionisala je na sledeći način. I Vašington i Moskva bi imali dva seta nasumičnih brojeva. Jedan set nasumičnih brojeva, kreiran od strane Rusa, odnosio se na šifrovanje i dešifrovanje bilo koje poruke na ruskom jeziku. Jedan set nasumičnih brojeva, kreiran od strane Amerikanaca, odnosio se na šifrovanje i dešifrovanje bilo koje poruke na engleskom jeziku. S vremena na vreme, više nasumičnih brojeva bi bilo dostavljeno drugoj strani putem poverljivih kurira.
@@ -1662,31 +1662,31 @@ Vašington i Moskva su, tada, mogli tajno komunicirati koristeći ove nasumične
 Iako veoma siguran, jednokratna šifra suočava se sa značajnim praktičnim ograničenjima: ključ mora biti dug koliko i poruka i nijedan deo jednokratne šifre ne sme se ponovo koristiti. To znači da morate pratiti gde se nalazite u jednokratnoj šifri, skladištiti ogroman broj bitova i povremeno razmenjivati nasumične bitove sa svojim partnerima. Kao posledica toga, jednokratna šifra se ne koristi često u praksi.
 
 
-Umesto toga, pretežno korišćene strim šifre u praksi su **pseudonasumične strim šifre**. Salsa20 i blisko povezana varijanta nazvana ChaCha su primeri često korišćenih pseudonasumičnih strim šifri.
+Umesto toga, pretežno korišćene šifre toka u praksi su **pseudonasumične šifre toka**. Salsa20 i blisko povezana varijanta nazvana ChaCha su primeri često korišćenih pseudonasumičnih šifri toka.
 
 
-Kod ovih pseudonasumičnih strim šifara, prvo nasumično birate ključ K koji je kraći od dužine otvorenog teksta. Takav nasumični ključ K obično kreira naš računar na osnovu nepredvidivih podataka koje prikuplja tokom vremena, kao što su vreme između mrežnih poruka, pokreti miša, i tako dalje.
+Kod ovih pseudonasumičnih šifara toka, prvo nasumično birate ključ K koji je kraći od dužine otvorenog teksta. Takav nasumični ključ K obično kreira naš računar na osnovu nepredvidivih podataka koje prikuplja tokom vremena, kao što su vreme između mrežnih poruka, pokreti miša, i tako dalje.
 
 
-Ovaj nasumični ključ $K$ se zatim ubacuje u algoritam ekspanzije koji stvara pseudonasumični tok ključeva dužine poruke. Možete precizno odrediti koliko dugo tok ključeva treba da bude (npr., 500 bita, 1000 bita, 1200 bita, 29,117 bita, itd.).
+Ovaj nasumični ključ $K$ se zatim ubacuje u algoritam ekspanzije koji stvara pseudonasumični tok ključa dužine poruke. Možete precizno odrediti koliko dugo tok ključa treba da bude (npr., 500 bita, 1000 bita, 1200 bita, 29,117 bita, itd.).
 
 
-Pseudonasumični tok ključeva izgleda *kao da* je izabran potpuno nasumično iz skupa svih nizova iste dužine. Stoga, šifrovanje sa pseudonasumičnim tokom ključeva izgleda kao da je urađeno sa jednokratnom podlogom. Ali to, naravno, nije slučaj.
+Pseudonasumični tok ključa izgleda *kao da* je izabran potpuno nasumično iz skupa svih nizova iste dužine. Stoga, šifrovanje sa pseudonasumičnim tokom ključa izgleda kao da je urađeno sa jednokratnom podlogom. Ali to, naravno, nije slučaj.
 
 
-Pošto je naš privatni ključ kraći od toka ključeva i naš algoritam za proširenje mora biti deterministički kako bi proces šifrovanja/dešifrovanja funkcionisao, nije svaki tok ključeva te određene dužine mogao biti rezultat operacije proširenja.
+Pošto je naš privatni ključ kraći od toka ključa i naš algoritam za proširenje mora biti deterministički kako bi proces šifrovanja/dešifrovanja funkcionisao, nije svaki tok ključa određene dužine mogao biti rezultat operacije proširenja.
 
 
-Pretpostavimo, na primer, da naš privatni ključ ima dužinu od 128 bita i da možemo da ga ubacimo u ekspanzivni algoritam kako bismo kreirali mnogo duži keystream, recimo od 2.500 bita. Pošto naš ekspanzivni algoritam mora biti deterministički, naš algoritam može najviše da izabere $1/2^{128}$ stringova sa dužinom od 2.500 bita. Dakle, takav keystream nikada ne bi mogao biti izabran potpuno nasumično iz svih stringova iste dužine.
+Pretpostavimo, na primer, da naš privatni ključ ima dužinu od 128 bita i da možemo da ga ubacimo u ekspanzivni algoritam kako bismo kreirali mnogo duži keystream (u prevodu tok ključa), recimo od 2.500 bita. Pošto naš ekspanzivni algoritam mora biti deterministički, naš algoritam može najviše da izabere $1/2^{128}$ stringova sa dužinom od 2.500 bita. Dakle, takav keystream nikada ne bi mogao biti izabran potpuno nasumično iz svih stringova iste dužine.
 
 
-Naša definicija strim šifre ima dva aspekta: (1) keystream dužine kao što je otvoreni tekst se generiše uz pomoć privatnog ključa; i (2) ovaj keystream se kombinuje sa otvorenim tekstom, obično putem XOR operacije, da bi se proizveo šifrovani tekst.
+Naša definicija šifre toka ima dva aspekta: (1) keystream dužine kao što je otvoreni tekst se generiše uz pomoć privatnog ključa; i (2) ovaj keystream se kombinuje sa otvorenim tekstom, obično putem XOR operacije, da bi se proizveo šifrovani tekst.
 
 
-Ponekad ljudi definišu uslov (1) strožije, tvrdeći da keystream mora biti specifično pseudonasumičan. To znači da ni shift šifra, ni one-time pad ne bi bili smatrani stream šiframa.
+Ponekad ljudi definišu uslov (1) strožije, tvrdeći da keystream mora biti specifično pseudonasumičan. To znači da ni šifrapomaka , ni one-time pad ne bi bili smatrani šiframa toka.
 
 
-Po mom mišljenju, šire definisanje uslova (1) pruža lakši način za organizovanje šema enkripcije. Pored toga, to znači da ne moramo prestati nazivati određenu šemu enkripcije strim šifrom samo zato što saznamo da se zapravo ne oslanja na pseudonasumične ključeve.
+Po mom mišljenju, šire definisanje uslova (1) pruža lakši način za organizovanje šema enkripcije. Pored toga, to znači da ne moramo prestati nazivati određenu šemu enkripcije šifrom toka samo zato što saznamo da se zapravo ne oslanja na pseudonasumične ključeve.
 
 
 **Beleške:**
@@ -1702,7 +1702,7 @@ Po mom mišljenju, šire definisanje uslova (1) pruža lakši način za organizo
 <chapterId>2df52d51-943d-5df7-9d49-333e4c5d97b7</chapterId>
 
 
-Prvi način na koji se **blok šifra** obično razume jeste kao nešto primitivnije od strim šifre: Osnovni algoritam koji, uz pomoć ključa, vrši transformaciju niza odgovarajuće dužine, pri čemu se dužina niza ne menja. Ovaj algoritam se može koristiti za kreiranje šema enkripcije i možda drugih tipova kriptografskih šema.
+Prvi način na koji se **blok šifra** obično razume jeste kao nešto primitivnije od šifre toka: osnovni algoritam koji, uz pomoć ključa, vrši transformaciju niza odgovarajuće dužine, pri čemu se dužina niza ne menja. Ovaj algoritam se može koristiti za kreiranje šema enkripcije i možda drugih tipova kriptografskih šema.
 
 
 Često, blok šifra može primati ulazne nizove različitih dužina kao što su 64, 128 ili 256 bita, kao i ključeve različitih dužina kao što su 128, 192 ili 256 bita. Iako se neki detalji algoritma mogu promeniti u zavisnosti od ovih varijabli, osnovni algoritam se ne menja. Ako bi se menjao, govorili bismo o dve različite blok šifre. Primetite da je upotreba termina osnovni algoritam ovde ista kao i kod šema šifrovanja.
@@ -1717,10 +1717,10 @@ Prikaz kako blok šifra funkcioniše može se videti na *Slici 4* ispod. Poruka 
 ![Figure 4: A block cipher](assets/Figure4-4.webp "Figure 4: A block cipher")
 
 
-Blok šifra sama po sebi nije šema šifrovanja. Ali blok šifra se može koristiti sa različitim **modovima rada** da bi se proizvele različite šeme šifrovanja. Mod rada jednostavno dodaje neke dodatne operacije izvan blok šifre.
+Blok šifra sama po sebi nije šema šifrovanja. Ali blok šifra se može koristiti sa različitim **modovima rada** da bi se proizvele različite šeme šifrovanja. Režim rada jednostavno dodaje neke dodatne operacije izvan blok šifre.
 
 
-Da bismo ilustrovali kako ovo funkcioniše, pretpostavimo blok šifru (BC) koja zahteva ulazni niz od 128 bita i privatni ključ od 128 bita. Slika 5 ispod prikazuje kako se ta blok šifra može koristiti sa **modom elektronske šifre knjige** (**ECB mod**) za kreiranje šeme enkripcije. (Elipse na desnoj strani ukazuju na to da možete ponavljati ovaj obrazac koliko god je potrebno).
+Da bismo ilustrovali kako ovo funkcioniše, pretpostavimo blok šifru (BC) koja zahteva ulazni niz od 128 bita i privatni ključ od 128 bita. Slika 5 ispod prikazuje kako se ta blok šifra može koristiti sa **režim elektronske kodne knjige** (**ECB mod**) za kreiranje šeme enkripcije. (Elipse na desnoj strani ukazuju na to da možete ponavljati ovaj obrazac koliko god je potrebno).
 
 
 *Slika 5: Blok šifra u ECB režimu*
@@ -1738,16 +1738,16 @@ Sada podelite podatke na delove od 128-bitnih nizova ($M_1$, $M_2$, $M_3$, i tak
 Dekriptovanje je samo obrnut proces, iako primalac treba da ima neki prepoznatljiv način da ukloni bilo kakvo popunjavanje iz dekriptovanih podataka kako bi proizveo originalnu tekstualnu poruku.
 
 
-Iako relativno jednostavan, blok šifrar sa režimom elektronske kodne knjige nedostaje sigurnost. Ovo je zato što dovodi do **determinističkog šifrovanja**. Bilo koja dva identična 128-bitna niza podataka su šifrovana na potpuno isti način. Te informacije se mogu iskoristiti.
+Iako relativno jednostavan, blok šifra u režimu elektronske kodne knjige nedostaje sigurnost. Ovo je zato što dovodi do **determinističkog šifrovanja**. Bilo koja dva identična 128-bitna niza podataka su šifrovana na potpuno isti način. Te informacije se mogu iskoristiti.
 
 
 Umesto toga, svaka šema šifrovanja konstruisana od blok šifre treba da bude **probabilistička**: to jest, šifrovanje bilo koje poruke $M$, ili bilo kog specifičnog dela $M$, generalno bi trebalo da daje različit ishod svaki put. [5]
 
 
-**Način ulančavanja šifarskih blokova** (**CBC način**) je verovatno najčešće korišćen način rada sa blokovskom šifrom. Kombinacija, ako se pravilno uradi, proizvodi verovatnosnu šemu šifrovanja. Prikaz ovog načina rada možete videti na *Slici 6* ispod.
+**Režim ulančavanja blok šifre** (**CBC način**) je verovatno najčešće korišćen način rada sa blokovskom šifrom. Kombinacija, ako se pravilno uradi, proizvodi verovatnosnu šemu šifrovanja. Prikaz ovog načina rada možete videti na *Slici 6* ispod.
 
 
-*Slika 6: Blok šifra sa CBC režimom*
+*Slika 6: Blok šifra u CBC režimu*
 
 
 ![Figure 6: A block cipher with CBC mode](assets/Figure4-6.webp "Figure 6: A block cipher with CBC mode")
@@ -1771,7 +1771,7 @@ Drugim rečima, vaš inicijalizacioni vektor treba da bude nasumičan ili pseudo
 Konačno, usmerimo našu pažnju na **output feedback mode** (**OFB mode**). Možete videti prikaz ovog režima na *Slici 7*.
 
 
-*Slika 7: Blok šifra sa OFB režimom*
+*Slika 7: Blok šifra u OFB režimu*
 
 
 ![Figure 7: A block cipher with OFB mode](assets/Figure4-7.webp "Figure 7: A block cipher with OFB mode")
@@ -1780,16 +1780,16 @@ Konačno, usmerimo našu pažnju na **output feedback mode** (**OFB mode**). Mo�
 Sa OFB režimom takođe birate vektor inicijalizacije. Ali ovde, za prvi blok, vektor inicijalizacije se direktno ubacuje u blok šifru sa vašim ključem. Rezultujućih 128-bitova se zatim tretira kao keystream. Ovaj keystream se XOR-uje sa otvorenim tekstom da bi se proizveo šifrovani tekst za blok. Za naredne blokove, koristite keystream iz prethodnog bloka kao ulaz u blok šifru i ponavljate korake.
 
 
-Ako pažljivo pogledaš, ono što je zapravo kreirano ovde iz blok šifre sa OFB režimom je strim šifra. Generišeš keystream delove od 128-bitova dok ne dobiješ dužinu otvorenog teksta (odbacujući bitove koji ti nisu potrebni iz poslednjeg 128-bitnog keystream dela). Zatim, XOR-uješ keystream sa svojim otvorenim tekstom da dobiješ šifrat.
+Ako pažljivo pogledaš, ono što je zapravo kreirano ovde iz blok šifre sa OFB režimom je šifra toka. Generišeš keystream delove od 128-bitova dok ne dobiješ dužinu otvorenog teksta (odbacujući bitove koji ti nisu potrebni iz poslednjeg 128-bitnog keystream dela). Zatim, XOR-uješ keystream sa svojim otvorenim tekstom da dobiješ šifrat.
 
 
-U prethodnom odeljku o strim šiframa, naveo sam da se generiše keystream uz pomoć privatnog ključa. Tačnije, ne mora biti kreiran samo sa privatnim ključem. Kao što možete videti u OFB modu, keystream se proizvodi uz podršku i privatnog ključa i inicijalizacionog vektora.
+U prethodnom odeljku o šiframa toka, naveo sam da se generiše keystream uz pomoć privatnog ključa. Tačnije, ne mora biti kreiran samo sa privatnim ključem. Kao što možete videti u OFB modu, keystream se proizvodi uz podršku i privatnog ključa i inicijalizacionog vektora.
 
 
-Imajte na umu da, kao i kod CBC režima, važno je odabrati pseudonasumičan ili nasumičan Nonce za inicijalizacioni vektor svaki put kada koristite blok šifru u OFB režimu. U suprotnom, isti 128-bitni niz poruka poslat u različitim komunikacijama biće enkriptovan na isti način. Ovo je jedan od načina da se kreira probabilistička enkripcija sa strim šifrom.
+Imajte na umu da, kao i kod CBC režima, važno je odabrati pseudonasumičan ili nasumičan nonce za inicijalizacioni vektor svaki put kada koristite blok šifru u OFB režimu. U suprotnom, isti 128-bitni niz poruka poslat u različitim komunikacijama biće enkriptovan na isti način. Ovo je jedan od načina da se kreira probabilistička enkripcija sa šifrom toka.
 
 
-Neki strim šifri koriste samo privatni ključ za kreiranje keystream-a. Za te strim šifre, važno je da koristite nasumični Nonce za odabir privatnog ključa za svaku instancu komunikacije. U suprotnom, rezultati enkripcije sa tim strim šiframa će takođe biti deterministički, što dovodi do sigurnosnih problema.
+Neke šifre toka koriste samo privatni ključ za kreiranje keystream-a. Za te šifre toka, važno je da koristite nasumični nonce za odabir privatnog ključa za svaku instancu komunikacije. U suprotnom, rezultati enkripcije sa tim šiframa toka će takođe biti deterministički, što dovodi do sigurnosnih problema.
 
 
 Najpopularnija moderna blok šifra je **Rijndael šifra**. Bila je pobednički rad od petnaest prijava na takmičenju koje je organizovao Nacionalni institut za standarde i tehnologiju (NIST) između 1997. i 2000. godine kako bi se zamenio stariji standard za šifrovanje, **standard za šifrovanje podataka** (**DES**).
@@ -1818,28 +1818,28 @@ AES blok šifra će biti detaljno objašnjena u *Poglavlju 5*.
 <chapterId>121c1858-27e3-5862-b0ce-4ff2f70f9f0f</chapterId>
 
 
-Zbrka oko razlike između blok šifara i strim šifara nastaje jer ponekad ljudi razumeju termin blok šifra kao da se odnosi specifično na *blok šifru sa blok režimom enkripcije*.
+Zbrka oko razlike između blok šifara i šifara toka nastaje jer ponekad ljudi razumeju termin blok šifra kao da se odnosi specifično na *blok šifru sa blok režimom enkripcije*.
 
 
 Razmotrite ECB i CBC režime u prethodnom odeljku. Ovi režimi specifično zahtevaju da podaci za šifrovanje budu deljivi veličinom bloka (što znači da ćete možda morati koristiti popunjavanje za originalnu poruku). Pored toga, podaci u ovim režimima se takođe direktno obrađuju blokovskom šifrom (a ne samo kombinovanjem sa rezultatom operacije blokovske šifre kao u OFB režimu).
 
 
-Stoga, alternativno, možete definisati **blok šifru** kao bilo koju šemu enkripcije koja operiše na blokovima fiksne dužine poruke u jednom trenutku (gde bilo koji blok mora biti duži od bajta, inače se pretvara u strim šifru). I podaci za enkripciju i šifrat moraju se ravnomerno deliti na ovu veličinu bloka. Tipično, veličina bloka je 64, 128, 192 ili 256 bita u dužini. Nasuprot tome, strim šifra može enkriptovati bilo koje poruke u delovima od jednog bita ili bajta u isto vreme.
+Stoga, alternativno, možete definisati **blok šifru** kao bilo koju šemu enkripcije koja operiše na blokovima fiksne dužine poruke u jednom trenutku (gde bilo koji blok mora biti duži od bajta, inače se pretvara u strim šifru). I podaci za enkripciju i šifrat moraju se ravnomerno deliti na ovu veličinu bloka. Tipično, veličina bloka je 64, 128, 192 ili 256 bita u dužini. Nasuprot tome, šifra toka može enkriptovati bilo koje poruke u delovima od jednog bita ili bajta u isto vreme.
 
 
-Sa ovim specifičnijim razumevanjem blok šifre, zaista možete tvrditi da su moderni šifarski sistemi ili strim ili blok šifre. Od sada nadalje, pod pojmom blok šifra misliću u opštijem smislu, osim ako nije drugačije navedeno.
+Sa ovim specifičnijim razumevanjem blok šifre, zaista možete tvrditi da su moderni šifarski sistemi ili tok ili blok šifre. Od sada nadalje, pod pojmom blok šifra misliću u opštijem smislu, osim ako nije drugačije navedeno.
 
 
-Diskusija o OFB modu u prethodnom odeljku takođe pokreće još jednu zanimljivu tačku. Neke strim šifre su izgrađene od blok šifre, kao što je Rijndael sa OFB. Neki, kao što su Salsa20 i ChaCha, nisu kreirane od blok šifri. Možete ih nazvati **primitivnim strim šiframa**. (Ne postoji zaista standardizovan termin za označavanje takvih strim šifri.)
+Diskusija o OFB modu u prethodnom odeljku takođe pokreće još jednu zanimljivu tačku. Neke šifre toka su izgrađene od blok šifre, kao što je Rijndael sa OFB. Neki, kao što su Salsa20 i ChaCha, nisu kreirane od blok šifri. Možete ih nazvati **primitivnim šiframa toka**. (Ne postoji zaista standardizovan termin za označavanje takvih šifri toka.)
 
 
-Kada ljudi govore o prednostima i nedostacima strim šifara i blok šifara, obično upoređuju primitivne strim šifre sa šemama šifrovanja zasnovanim na blok šiframa.
+Kada ljudi govore o prednostima i nedostacima šifara toka i blok šifara, obično upoređuju primitivne šifre toka sa šemama šifrovanja zasnovanim na blok šiframa.
 
 
-Iako uvek možete lako konstruisati strim šifru iz blok šifre, obično je veoma teško izgraditi neku vrstu konstrukta sa blok modom enkripcije (kao što je CBC mod) iz primitivne strim šifre.
+Iako uvek možete lako konstruisati šifru toka iz blok šifre, obično je veoma teško izgraditi neku vrstu konstrukta sa blok modom enkripcije (kao što je CBC mod) iz primitivne šifre toka.
 
 
-Iz ove diskusije, sada bi trebalo da razumete *Sliku 8*. Ona pruža pregled simetričnih šema šifrovanja. Koristimo tri vrste šema šifrovanja: primitivne strim šifre, blok šifre u strim režimu, i blok šifre u blok režimu (takođe nazvane „blok šifre“ na dijagramu).
+Iz ove diskusije, sada bi trebalo da razumete *Sliku 8*. Ona pruža pregled simetričnih šema šifrovanja. Koristimo tri vrste šema šifrovanja: primitivne šifre toka, blok šifre u režimu toka, i blok šifre u blok režimu (takođe nazvane „blok šifre“ na dijagramu).
 
 
 *Slika 8: Pregled simetričnih šema šifrovanja*
