@@ -1871,7 +1871,7 @@ U oba ova slučaja, napadač možda neće imati nikakve uvide u sadržaj šifrov
 Kodovi za autentifikaciju poruka su labavo definisani kao simetrične kriptografske šeme sa tri algoritma: algoritam za generisanje ključa, algoritam za generisanje oznake i algoritam za verifikaciju. Siguran MAC osigurava da su oznake **egzistencijalno nekrivotvorive** za bilo kog napadača—odnosno, oni ne mogu uspešno kreirati oznaku na poruci koja se verifikuje, osim ako nemaju privatni ključ.
 
 
-Bob i Alisa mogu se boriti protiv manipulacije određenom porukom koristeći MAC. Pretpostavimo za trenutak da im nije stalo do tajnosti. Oni samo žele osigurati da je poruka koju je primila Alisa zaista od Boba i da nije ni na koji način promenjena.
+Bob i Alisa mogu se boriti protiv manipulacije određene poruke koristeći MAC. Pretpostavimo za trenutak da im nije stalo do tajnosti. Oni samo žele osigurati da je poruka koju je primila Alisa zaista od Boba i da nije ni na koji način promenjena.
 
 
 Proces je prikazan na *Slici 9*. Da bi koristili **MAC** (Message Authentication Code), prvo bi generisali privatni ključ $K$ koji je deljen između njih dvoje. Bob kreira oznaku $T$ za poruku koristeći privatni ključ $K$. Zatim šalje poruku kao i oznaku poruke Alisi. Ona tada može verifikovati da je Bob zaista napravio oznaku, tako što će provući privatni ključ, poruku i oznaku kroz verifikacioni algoritam.
@@ -2025,16 +2025,16 @@ Sesija komunikacije počinje tako što Bob šalje šifrat $C_{0,B}$ Alisi sa ozn
 <chapterId>5caec5bd-5a77-56c9-b5e6-1e86f0d294aa</chapterId>
 
 
-U ovom poglavlju ćemo diskutovati o detaljima šeme enkripcije sa modernim primitivnim strim šifrom, RC4 (ili "Rivest šifra 4"), i modernom blok šifrom, AES. Iako je RC4 šifra pala u nemilost kao metoda enkripcije, AES je standard za modernu simetričnu enkripciju. Ova dva primera bi trebalo da pruže bolju ideju o tome kako simetrična enkripcija funkcioniše ispod haube.
+U ovom poglavlju ćemo diskutovati o detaljima šeme enkripcije sa savremenim osnovnim (kriptografskim) primitivom – tok šifra RC4, (ili "Rivest šifra 4"), i modernom blok šifrom, AES. Iako je RC4 šifra pala u nemilost kao metoda enkripcije, AES je standard za modernu simetričnu enkripciju. Ova dva primera bi trebalo da pruže bolju ideju o tome kako simetrična enkripcija funkcioniše ispod haube.
 
 
 ___
 
 
-Kako bismo stekli uvid u to kako moderni pseudonasumični strim šifri rade, fokusiraću se na RC4 strim šifru. To je pseudonasumična strim šifra koja je korišćena u WEP i WAP sigurnosnim protokolima za bežične pristupne tačke, kao i u TLS-u. Kako RC4 ima mnogo dokazanih slabosti, pao je u nemilost. Zapravo, Internet Engineering Task Force sada zabranjuje upotrebu RC4 paketa od strane klijentskih i serverskih aplikacija u svim instancama TLS-a. Ipak, dobro funkcioniše kao primer za ilustrovanje kako primitivna strim šifra radi.
+Kako bismo stekli uvid u to kako moderni pseudonasumične tok šifre rade, fokusiraću se na RC4 tok šifru. To je pseudonasumična tok šifra koja je korišćena u WEP i WAP sigurnosnim protokolima za bežične pristupne tačke, kao i u TLS-u. Kako RC4 ima mnogo dokazanih slabosti, pao je u nemilost. Zapravo, Internet Engineering Task Force sada zabranjuje upotrebu RC4 paketa od strane klijentskih i serverskih aplikacija u svim instancama TLS-a. Ipak, dobro funkcioniše kao primer za ilustrovanje kako primitivna šifra toka radi.
 
 
-Da počnemo, prvo ću pokazati kako da šifrujemo običnu tekstualnu poruku pomoću baby RC4 šifre. Pretpostavimo da je naša obična tekstualna poruka "SOUP." Šifrovanje pomoću naše jednostavne RC4 šifre zatim se odvija u četiri koraka.
+Za početak, prvo ću pokazati kako da šifrujemo tekstualnu poruku pomoću jednostavne (pojednostavljene) verzije RC4 šifre. Pretpostavimo da je naša obična tekstualna poruka "SOUP." Šifrovanje pomoću naše jednostavne RC4 šifre zatim se odvija u četiri koraka.
 
 
 ### Korak 1
@@ -2053,7 +2053,7 @@ Vrednosti ovde nisu ASCII brojevi, već decimalne vrednosti predstavljene kao 1-
 ### Korak 2
 
 
-Drugo, definišite ključni niz **K** dužine 8 bajtova tako što ćete izabrati ključ između 1 i 8 bajtova (bez dozvoljenih delova bajta). Pošto svaki bajt ima 8 bita, možete izabrati bilo koji broj između 0 i 255 za svaki bajt vašeg ključa.
+Drugo, definišite ključni niz **K** dužine 8 bajtova tako što ćete izabrati ključ između 1 i 8 bajtova (pri čemu delimični bajtovi nisu dozvoljeni). Pošto svaki bajt ima 8 bita, možete izabrati bilo koji broj između 0 i 255 za svaki bajt vašeg ključa.
 
 
 Pretpostavimo da izaberemo naš ključ **k** kao $[14, 48, 9]$, tako da ima dužinu od 3 bajta. Svaki indeks našeg niza ključeva je, zatim, postavljen prema decimalnoj vrednosti za taj određeni element ključa, redom. Ako prođete kroz ceo ključ, počnite ponovo od početka, dok ne popunite svih 8 slotova niza ključeva. Dakle, naš niz ključeva je sledeći:
@@ -2096,10 +2096,10 @@ Nastavljamo s ovim procesom sve dok ne proizvedemo poslednji red na dnu za niz *
 *Tabela 1: Ključna tabela rasporeda*
 
 
-| Round   | i   | j   |     | S[0] | S[1] | S[2] | S[3] | S[4] | S[5] | S[6] | S[7] |
+| Runda   | i   | j   |     | S[0] | S[1] | S[2] | S[3] | S[4] | S[5] | S[6] | S[7] |
 | ------- | --- | --- | --- | ---- | ---- | ---- | ---- | ---- | ---- | ---- | ---- |
 |         |     |     |     |      |      |      |      |      |      |      |      |
-| Initial |     | 0   |     | 0    | 1    | 2    | 3    | 4    | 5    | 6    | 7    |
+| Inicijalno |     | 0   |     | 0    | 1    | 2    | 3    | 4    | 5    | 6    | 7    |
 | 1       | 0   | 6   |     | 6    | 1    | 2    | 3    | 4    | 5    | 0    | 7    |
 | 2       | 1   | 7   |     | 6    | 7    | 2    | 3    | 4    | 5    | 0    | 1    |
 | 3       | 2   | 2   |     | 6    | 7    | 2    | 3    | 4    | 5    | 0    | 1    |
@@ -2156,16 +2156,16 @@ Da bismo počeli, koristeći ASCII tabelu, možemo videti da je “SOUP” kodir
 | 3   | 5   | 1   | 3         | 6    | 3    | 7    | 1    | 4    | 0    | 5    | 2    |
 | 4   | 1   | 7   | 2         | 6    | 4    | 7    | 1    | 3    | 0    | 5    | 2    |
 
-Primer koji smo upravo diskutovali je samo razblažena verzija **RC4 strim šifre**. Prava RC4 strim šifra ima **S** niz dužine 256 bajtova, a ne 8 bajtova, i ključ koji može biti između 1 i 256 bajtova, a ne između 1 i 8 bajtova. Niz ključeva i strimovi ključeva (keystreams) se zatim proizvode uzimajući u obzir dužinu od 256 bajtova **S** niza. Izračuni postaju izuzetno složeniji, ali principi ostaju isti. Koristeći isti ključ, [14,48,9], sa standardnom RC4 šifrom, otvorena poruka "SOUP" je enkriptovana kao 67 02 ed df u heksadecimalnom formatu.
+Primer koji smo upravo diskutovali je samo razblažena verzija **RC4 tok šifre**. Prava RC4 tok šifra ima **S** niz dužine 256 bajtova, a ne 8 bajtova, i ključ koji može biti između 1 i 256 bajtova, a ne između 1 i 8 bajtova. Niz ključeva i strimovi ključeva (keystreams) se zatim proizvode uzimajući u obzir dužinu od 256 bajtova **S** niza. Izračuni postaju izuzetno složeniji, ali principi ostaju isti. Koristeći isti ključ, [14,48,9], sa standardnom RC4 šifrom, otvorena poruka "SOUP" je enkriptovana kao 67 02 ed df u heksadecimalnom formatu.
 
 
-Šifarnik toka (eng. stream cipher) u kojem se tok ključeva ažurira nezavisno od otvorenog teksta ili šifrovanog teksta je **sinhroni šifarnik toka**. Tok ključeva (eng. keystream) zavisi samo od ključa. Jasno je da je RC4 primer sinhronog šifarnika toka, jer tok ključeva nema veze sa otvorenim tekstom ili šifrovanim tekstom. Svi naši primitivni šifarnici toka pomenuti u prethodnom poglavlju, uključujući šifru pomaka, Vigenèreovu šifru i jednokratnu podlogu, takođe su bili sinhronog tipa.
+Šifarnik toka (eng. stream cipher) u kojem se tok ključeva (keystream) ažurira nezavisno od otvorenog teksta ili šifrovanog teksta je **sinhroni šifarnik toka**. Tok ključeva (eng. keystream) zavisi samo od ključa. Jasno je da je RC4 primer sinhronog šifarnika toka, jer tok ključeva nema veze sa otvorenim tekstom ili šifrovanim tekstom. Svi naši primitivni šifarnici toka pomenuti u prethodnom poglavlju, uključujući šifru pomaka, Vigenèreovu šifru i jednokratnu podlogu, takođe su bili sinhronog tipa.
 
 
-Nasuprot tome, **asinhroni strim šifarnik** ima keystream koji se proizvodi i pomoću ključa i prethodnog elementa šifrovanog teksta. Ova vrsta šifre se takođe naziva **samosinhronizujuća šifra**.
+Nasuprot tome, **asinhrona strim šifra** ima keystream koji se proizvodi i pomoću ključa i prethodnog elementa šifrovanog teksta. Ova vrsta šifre se takođe naziva **samosinhronizujuća šifra**.
 
 
-Važno je da se keystream proizveden sa RC4 tretira kao jednokratna šifra, tako da ne možete proizvesti keystream na potpuno isti način sledeći put. Umesto menjanja ključa svaki put, praktično rešenje je kombinovati ključ sa **Nonce** da bi se proizveo bytestream.
+Važno je da se keystream proizveden sa RC4 tretira kao jednokratna šifra, tako da ne možete proizvesti keystream na potpuno isti način sledeći put. Umesto da se ključ menja svaki put, praktično rešenje je kombinovati ključ sa „nonce“-om kako bi se proizveo niz bajtova (bytestream).
 
 
 
