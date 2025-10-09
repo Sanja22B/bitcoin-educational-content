@@ -2252,10 +2252,10 @@ Runda 0 Rijndael šifre je jednostavna. Niz $S_0$ se proizvodi XOR operacijom iz
 ### Runda 1
 
 
-U rundi 1, niz $S_0$ se prvo kombinuje sa rundskim ključem $K_1$ koristeći XOR operaciju. Ovo proizvodi novo stanje $S$.
+U rundi 1, niz $S_0$ se prvo kombinuje sa ključem runde $K_1$ koristeći XOR operaciju. Ovo proizvodi novo stanje $S$.
 
 
-Drugo, operacija **zamene bajtova** se izvodi na trenutnom stanju $S$. Ona funkcioniše tako što uzima svaki bajt iz 16-bajtne $S$ niske i zamenjuje ga bajtom iz niske koja se zove **Rijndaelova S-kutija**. Svaki bajt ima jedinstvenu transformaciju, i kao rezultat se proizvodi novo stanje $S$. Rijndaelova S-kutija je prikazana na *Slici 3*.
+Drugo, operacija **zamene bajtova** se izvodi na trenutnom stanju $S$. Ona funkcioniše tako što uzima svaki bajt iz 16-bajtne $S$ niza i zamenjuje ga bajtom iz niza koja se zove **Rijndaelova S-kutija**. Svaki bajt ima jedinstvenu transformaciju, i kao rezultat se proizvodi novo stanje $S$. Rijndaelova S-kutija je prikazana na *Slici 3*.
 
 
 *Slika 3: Rijndaelova S-Kutija*
@@ -2290,7 +2290,7 @@ Da biste započeli, definišete svaki mogući bajt element od 00 do FF kao 8-bit
 Zatim, za svaki mogući element u polju, kreiramo ono što se zove **Nyberg S-Box**. U ovoj kutiji, svaki bajt se preslikava na svoj **multiplikativni inverz** (tj. tako da njihov proizvod bude jednak 1). Zatim te vrednosti iz Nyberg S-kutije preslikavamo u Rijndaelovu S-kutiju koristeći **afinu transformaciju**.
 
 
-Treća operacija na nizu **S** je operacija **shift rows**. Ona uzima stanje **S** i prikazuje svih šesnaest bajtova u matrici. Popunjavanje matrice počinje u gornjem levom uglu i nastavlja se tako što ide od vrha ka dnu, a zatim, svaki put kada se kolona popuni, pomera se jedna kolona udesno i na vrh.
+Treća operacija na nizu **S** je operacija **pomeranja redova** (eng. **shift rows**). Ona uzima stanje **S** i prikazuje svih šesnaest bajtova u matrici. Popunjavanje matrice počinje u gornjem levom uglu i nastavlja se tako što ide od vrha ka dnu, a zatim, svaki put kada se kolona popuni, pomera se jedna kolona udesno i na vrh.
 
 
 Kada je matrica **S** konstruisana, četiri reda se pomeraju. Prvi red ostaje isti. Drugi red se pomera za jedno mesto ulevo. Treći se pomera za dva mesta ulevo. Četvrti se pomera za tri mesta ulevo. Primer procesa je prikazan na *Slici 4*. Originalno stanje **S** je prikazano na vrhu, a rezultat stanja nakon operacije pomeranja redova je prikazan ispod njega.
@@ -2368,7 +2368,7 @@ Runde 2 do 9 su samo ponavljanje runde 1, *mutatis mutandis*. Završna runda izg
 - $S_{10} = S \oplus K_{10}$
 
 
-Stanej $S_{10}$ je sada postavljeno na $C_1$, prvih 128 bita šifrovanog teksta. Prolazeći kroz preostale blokove otvorenog teksta od 128 bita dobija se kompletan šifrovani tekst **C**.
+Stanje $S_{10}$ je sada postavljeno na $C_1$, prvih 128 bita šifrovanog teksta. Prolazeći kroz preostale blokove otvorenog teksta od 128 bita dobija se kompletan šifrovani tekst **C**.
 
 
 ### Operacije Rijndael šifre
@@ -2404,10 +2404,10 @@ ___
 
 
 
-Pretpostavimo da Bob želi da kupi novi kišni mantil od Jim’s Sporting Goods, online prodavnice sportske opreme sa milionima kupaca u Severnoj Americi. Ovo će biti njegova prva kupovina od njih i želi da koristi svoju kreditnu karticu. Dakle, Bob će prvo morati da kreira nalog kod Jim’s Sporting Goods, što zahteva slanje ličnih podataka kao što su njegov adresa i informacije o kreditnoj kartici. Zatim može proći kroz potrebne korake za kupovinu kišnog mantila.
+Pretpostavimo da Bob želi da kupi novi kišni mantil od Jim’s Sporting Goods, online prodavnice sportske opreme sa milionima kupaca u Severnoj Americi. Ovo će biti njegova prva kupovina od njih i želi da koristi svoju kreditnu karticu. Dakle, Bob će prvo morati da kreira nalog kod Jim’s Sporting Goods, što zahteva slanje ličnih podataka kao što su njegova adresa i informacije o kreditnoj kartici. Zatim može proći kroz potrebne korake za kupovinu kišnog mantila.
 
 
-Bob i Jim’s Sporting Goods će želeti da osiguraju da njihove komunikacije budu bezbedne tokom ovog procesa, s obzirom na to da je Internet otvoren komunikacioni sistem. Oni će želeti da osiguraju, na primer, da nijedan potencijalni napadač ne može saznati Bobove podatke o kreditnoj kartici i adresi, i da nijedan potencijalni napadač ne može ponoviti njegove kupovine ili kreirati lažne u njegovo ime.
+Bob i Jim’s Sporting Goods će želeti da osiguraju da njihove komunikacije budu bezbedne tokom ovog procesa, s obzirom na to da je internet otvoren komunikacioni sistem. Oni će želeti da osiguraju, na primer, da nijedan potencijalni napadač ne može saznati Bobove podatke o kreditnoj kartici i adresi, i da nijedan potencijalni napadač ne može ponoviti njegove kupovine ili kreirati lažne u njegovo ime.
 
 
 Napredna šema autentifikovane enkripcije, kao što je diskutovano u prethodnom poglavlju, svakako bi mogla učiniti komunikaciju između Boba i Jim's Sporting Goods sigurnom. Ali očigledno postoje praktične prepreke za implementaciju takve šeme.
@@ -2416,7 +2416,7 @@ Napredna šema autentifikovane enkripcije, kao što je diskutovano u prethodnom 
 Da bismo ilustrovali ove praktične prepreke, pretpostavimo da živimo u svetu u kojem postoje samo alati simetrične kriptografije. Šta bi tada Jim’s Sporting Goods i Bob mogli da urade kako bi osigurali sigurnu komunikaciju?
 
 
-U tim okolnostima, suočiće se sa značajnim troškovima za bezbednu komunikaciju. Kako je Internet otvoren komunikacioni sistem, ne mogu jednostavno razmeniti skup ključeva preko njega. Stoga će Bob i predstavnik Jim's Sporting Goods morati da naprave razmenu ključa lično.
+U tim okolnostima, suočiće se sa značajnim troškovima za bezbednu komunikaciju. Kako je internet otvoren komunikacioni sistem, ne mogu jednostavno razmeniti skup ključeva preko njega. Stoga će Bob i predstavnik Jim's Sporting Goods morati da naprave razmenu ključa lično.
 
 
 Jedna mogućnost je da Jim’s Sporting Goods kreira posebne lokacije za razmenu ključeva, gde Bob i drugi novi kupci mogu preuzeti set ključeva za sigurnu komunikaciju. Ovo bi očigledno došlo uz značajne organizacione troškove i znatno smanjilo efikasnost sa kojom novi kupci mogu obavljati kupovine.
@@ -2440,7 +2440,7 @@ Dakle, Jim’s Sporting Goods bi morao da čuva par ključeva za svakog kupca, b
 
 - Jim’s Sporting Goods bi morao da skladišti milione parova ključeva, jedan set za svakog kupca.
 - Ovi ključevi bi morali biti propisno osigurani, jer bi bili sigurna meta za hakere. Svako narušavanje sigurnosti zahtevalo bi ponavljanje skupih razmena ključeva, bilo na posebnim lokacijama za razmenu ključeva ili putem kurira.
-- Bilo koji kupac Jim’s Sporting Goods morao bi bezbedno čuvati par ključeva kod kuće. Gubici i krađe će se dogoditi, što zahteva ponavljanje razmene ključeva. Kupci bi takođe morali proći kroz ovaj proces za bilo koje druge online prodavnice ili druge vrste entiteta sa kojima žele komunicirati i obavljati transakcije putem Interneta.
+- Bilo koji kupac Jim’s Sporting Goods morao bi bezbedno čuvati par ključeva kod kuće. Gubici i krađe će se dogoditi, što zahteva ponavljanje razmene ključeva. Kupci bi takođe morali proći kroz ovaj proces za bilo koje druge online prodavnice ili druge vrste entiteta sa kojima žele komunicirati i obavljati transakcije putem interneta.
 
 
 Ova dva glavna izazova upravo opisana bila su veoma fundamentalna pitanja sve do kasnih 1970-ih. Bila su poznata kao **problem distribucije ključa** i **problem upravljanja ključem**, respektivno.
@@ -2461,7 +2461,7 @@ Dakle, šta se desilo 1970-ih? Kako je moguće da možemo trenutno obavljati kup
 <chapterId>7a9dd9a3-496e-5f9d-93e0-b5028a7dd0f1</chapterId>
 
 
-Do 1970-ih, problemi distribucije ključeva i upravljanja ključevima privukli su pažnju grupe američkih akademskih kriptografa: Whitfielda Diffieja, Martina Hellmana i Ralpha Merklea. Suočeni sa ozbiljnim skepticizmom većine svojih kolega, upustili su se u pronalaženje rešenja za to.
+Do 1970-ih, problemi distribucije ključeva i upravljanja ključevima privukli su pažnju grupe američkih akademskih kriptografa: Whitfielda Diffie-ja, Martina Hellmana i Ralpha Merklea. Suočeni sa ozbiljnim skepticizmom većine svojih kolega, upustili su se u pronalaženje rešenja za to.
 
 
 Barem jedna primarna motivacija za njihov poduhvat bila je predviđanje da će otvorene računarske komunikacije duboko uticati na naš svet. Kao što su Diffie i Helmann primetili 1976. godine,
@@ -2472,13 +2472,13 @@ Barem jedna primarna motivacija za njihov poduhvat bila je predviđanje da će o
 Upornost Diffieja, Hellmana i Merklea se isplatila. Prva objava njihovih rezultata bila je rad Diffieja i Helmana iz 1976. godine pod nazivom „New Directions in Cryptography.” U njemu su predstavili dva originalna načina za rešavanje probleme distribucije ključeva i upravljanja ključevima.
 
 
-Prvo rešenje koje su ponudili bilo je daljinsko *key-Exchange protokol*, odnosno skup pravila za razmenu jednog ili više simetričnih ključeva preko nesigurnog komunikacionog kanala. Ovaj protokol je sada poznat kao *Diffie-Helmann key Exchange* ili *Diffie-Helmann-Merkle key Exchange*. [2]
+Prvo rešenje koje su ponudili bilo je *protokol razmene ključs* na daljinu, odnosno skup pravila za razmenu jednog ili više simetričnih ključeva preko nesigurnog komunikacionog kanala. Ovaj protokol je sada poznat kao *Diffie-Helmann key Exchange* ili *Diffie-Helmann-Merkle key Exchange*. [2]
 
 
-Sa Diffie-Helmann razmenom ključa, dve strane prvo razmene neke informacije javno na nesigurnom kanalu kao što je Internet. Na osnovu tih informacija, zatim, nezavisno kreiraju simetrični ključ (ili par simetričnih ključeva) za sigurnu komunikaciju. Iako obe strane nezavisno kreiraju svoje ključeve, informacije koje su podelili javno osiguravaju da ovaj proces kreiranja ključa daje isti rezultat za obe strane.
+Sa Diffie-Helmann razmenom ključa, dve strane prvo razmene neke informacije javno na nesigurnom kanalu kao što je internet. Na osnovu tih informacija, zatim, nezavisno kreiraju simetrični ključ (ili par simetričnih ključeva) za sigurnu komunikaciju. Iako obe strane nezavisno kreiraju svoje ključeve, informacije koje su podelili javno osiguravaju da ovaj proces kreiranja ključa daje isti rezultat za obe strane.
 
 
-Važno je napomenuti da, iako svako može posmatrati informacije koje strane razmenjuju javno preko nesigurnog kanala, samo dve strane koje učestvuju u razmnei informacija mogu kreirati simetrične ključeve iz njih.
+Važno je napomenuti da, iako svako može posmatrati informacije koje strane razmenjuju javno preko nesigurnog kanala, samo dve strane koje učestvuju u razmneni informacija mogu kreirati simetrične ključeve iz njih.
 
 
 Ovo, naravno, zvuči potpuno kontraintuitivno. Kako bi dve strane mogle javno da podele informacije koje bi im omogućile da samo one kreiraju simetrične ključeve iz njih? Zašto niko drugi ko posmatra razmenu informacija ne bi mogao da kreira iste ključeve?
@@ -2496,10 +2496,10 @@ Neke jednosmerne funkcije imaju ono što je poznato kao **trapdoor**. Dok je pra
 Nećemo ulaziti u detalje Diffie-Helmann razmene ključa ovde. Ali u suštini, svaki učesnik kreira neke informacije, od kojih je jedan deo javno podeljen, dok neki ostaju tajni. Svaka strana zatim uzima svoj tajni deo informacija i javne informacije koje je podelila druga strana kako bi kreirala privatni ključ. I na neki način, oba učesnika će završiti sa istim privatnim ključem.
 
 
-Bilo koja strana koja posmatra samo javno deljene informacije između dve strane u Diffie Helmann razmenu ključa nije u mogućnosti da replicira ove proračune. Potrebne su im privatne informacije od jedne od dve strane da bi to uradili.
+Bilo koja strana koja posmatra samo javno deljene informacije između dve strane u Diffie Helmann razmeni ključa nije u mogućnosti da replicira ove proračune. Potrebne su im privatne informacije od jedne od dve strane da bi to uradili.
 
 
-Iako osnovna verzija Diffie-Helmann key exchange predstavljena u radu iz 1976. godine nije veoma sigurna, sofisticirane verzije osnovnog protokola su svakako i dalje u upotrebi danas. Najvažnije je to što je svaki protokol za razmenu ključeva u najnovijoj verziji protokola sigurnosnog sloja prenosa (verzija 1.3) u suštini obogaćena verzija protokola koji su predstavili Diffie i Hellman 1976. godine. Protokol sigurnosnog sloja prenosa (TLS) je pretežni protokol za sigurno razmenjivanje informacija koje su formatirane prema protokolu za prenos hiperteksta (HTTP), standardu za razmenu sadržaja na vebu.
+Iako osnovna verzija Diffie-Helmann protokola za razmenu ključa predstavljena u radu iz 1976. godine nije veoma sigurna, sofisticirane verzije osnovnog protokola su svakako i dalje u upotrebi danas. Najvažnije je to što je svaki protokol za razmenu ključeva u najnovijoj verziji protokola sigurnosnog sloja prenosa (verzija 1.3) u suštini obogaćena verzija protokola koji su predstavili Diffie i Hellman 1976. godine. Protokol sigurnosnog sloja prenosa (TLS) je pretežni protokol za sigurno razmenjivanje informacija koje su formatirane prema protokolu za prenos hiperteksta (HTTP), standardu za razmenu sadržaja na vebu.
 
 
 Važno je napomenuti da Diffie-Helmann razmena ključa nije asimetrična šema. Strogo govoreći, može se tvrditi da pripada oblasti simetrične kriptografije ključa. Ali pošto se i Diffie-Helmann razmena ključa i asimetrična kriptografija oslanjaju na jednosmerne brojevno-teorijske funkcije sa zamkama, obično se razmatraju zajedno.
@@ -2508,7 +2508,7 @@ Važno je napomenuti da Diffie-Helmann razmena ključa nije asimetrična šema. 
 Drugi način koji su Diffie i Helmann ponudili rešenje za problem distribucije i upravljanja ključevima u svom radu iz 1976. godine bio je, naravno, putem asimetrične kriptografije.
 
 
-Nasuprot njihovoj prezentaciji Diffie-Hellman razmena ključa, oni su pružili samo opšte konture kako bi asimetrične kriptografske šeme mogle biti konstruisane. Nisu ponudili nikakvu jednosmernu funkciju koja bi specifično mogla ispuniti uslove potrebne za razumnu sigurnost u takvim šemama.
+Nasuprot njihovoj prezentaciji Diffie-Hellman protokola za razmenu ključa, oni su pružili samo opšte konture kako bi asimetrične kriptografske šeme mogle biti konstruisane. Nisu ponudili nikakvu jednosmernu funkciju koja bi specifično mogla ispuniti uslove potrebne za razumnu sigurnost u takvim šemama.
 
 
 Praktična implementacija asimetrične šeme je, međutim, pronađena godinu dana kasnije od strane tri različita akademska kriptografa i matematičara: Ronald Rivest, Adi Shamir i Leonard Adleman. [3] Kriptosistem koji su predstavili postao je poznat kao **RSA kriptosistem** (po njihovim prezimenima).
@@ -2523,16 +2523,16 @@ Funkcije sa skrivenim vratima korišćene u asimetričnoj kriptografiji (i Diffi
 **Problem diskretnog logaritma** je problem koji se javlja u cikličkim grupama. Dat je generator u određenoj cikličkoj grupi, i potrebno je izračunati jedinstveni eksponent potreban da se iz generatora proizvede drugi element u grupi.
 
 
-Šeme zasnovane na diskretnom logaritmu oslanjaju se na dve glavne vrste cikličnih grupa: multiplikativne grupe celih brojeva i grupe koje uključuju tačke na eliptičkim krivama. Originalni Diffie Helmann razmena ključa, kako je predstavljen u “New Directions in Cryptography”, radi sa cikličnom multiplikativnom grupom celih brojeva. Bitcoin-ov algoritam digitalnog potpisa i nedavno uvedena Schnorr šema potpisa (2021) zasnovani su na problemu diskretnog logaritma za određenu cikličnu grupu eliptičke krive.
+Šeme zasnovane na diskretnom logaritmu oslanjaju se na dve glavne vrste cikličnih grupa: multiplikativne grupe celih brojeva i grupe koje uključuju tačke na eliptičkim krivama. Originalni Diffie Helmann protokol za razmenu ključa, kako je predstavljen u “New Directions in Cryptography”, radi sa cikličnom multiplikativnom grupom celih brojeva. Bitcoin-ov algoritam digitalnog potpisa i nedavno uvedena Schnorr šema potpisa (2021) zasnovani su na problemu diskretnog logaritma za određenu cikličnu grupu eliptičke krive.
 
 
 Zatim ćemo preći na pregled tajnosti i autentifikacije na visokom nivou u asimetričnom okruženju. Međutim, pre nego što to učinimo, potrebno je da napravimo kratku istorijsku napomenu.
 
 
-Sada se čini verovatnim da je grupa britanskih kriptografa i matematičara koji su radili za Vladin komunikacioni štab (GCHQ) nezavisno došla do gore pomenutih otkrića nekoliko godina ranije. Ova grupa se sastojala od Džejmsa Elisa, Kliforda Koksa i Malkolma Vilijamsona.
+Sada se čini verovatnim da je grupa britanskih kriptografa i matematičara koji su radili za vladin komunikacioni štab (GCHQ) nezavisno došla do gore pomenutih otkrića nekoliko godina ranije. Ova grupa se sastojala od Džejmsa Elisa, Kliforda Koksa i Malkolma Vilijamsona.
 
 
-Prema njihovim sopstvenim izveštajima i izveštaju GCHQ-a, Džejms Elis je prvi osmislio koncept kriptografije javnog ključa 1969. Navodno je Kliford Koks zatim otkrio RSA kriptografski sistem 1973. godine, a Malkolm Vilijamson koncept Diffie Helmann razmenu ključa 1974. godine. [4] Njihova otkrića, međutim, navodno nisu bila otkrivena sve do 1997. godine, s obzirom na tajnu prirodu rada u GCHQ-u.
+Prema njihovim sopstvenim izveštajima i izveštaju GCHQ-a, Džejms Elis je prvi osmislio koncept kriptografije javnog ključa 1969. Navodno je Kliford Koks zatim otkrio RSA kriptografski sistem 1973. godine, a Malkolm Vilijamson koncept Diffie Helmann razmene ključa 1974. godine. [4] Njihova otkrića, međutim, navodno nisu bila otkrivena sve do 1997. godine, s obzirom na tajnu prirodu rada u GCHQ-u.
 
 
 
@@ -2654,7 +2654,7 @@ Kako tačno digitalni potpisi i enkripcija javnim ključem rešavaju probleme di
 Ne postoji samo jedan odgovor ovde. Asimetrična kriptografija je alat i ne postoji samo jedan način da se taj alat koristi. Ali hajde da uzmemo naš raniji primer iz Jim's Sporting Goods da pokažemo kako bi se problemi obično rešavali u ovom primeru.
 
 
-Da bi počeo, Jim’s Sporting Goods bi verovatno pristupio **sertifikacionom telu** (eng. certificate authority CA), organizaciji koja podržava distribuciju javnih ključeva. Sertifikaciono telo bi registrovalo neke detalje o Jim’s Sporting Goods i dodelio mu javni ključ. CA zatim šalje Jim’s Sporting Goods sertifikat, poznat kao **TLS/SSL sertifikat** koji sadrži njihov javni ključ, digitalno potpisan pomoću privatnog ključa sertifikacionog tela. Na ovaj način, autoritet za sertifikate potvrđuje da određeni javni ključ zaista pripada Jim’s Sporting Goods.
+Da bi počeo, Jim’s Sporting Goods bi verovatno pristupio **sertifikacionom telu** (eng. certificate authority CA), organizaciji koja podržava distribuciju javnih ključeva. Sertifikaciono telo bi registrovalo neke detalje o Jim’s Sporting Goods i dodelilo mu javni ključ. CA zatim šalje sertifikat Jim’s Sporting Goods, poznat kao **TLS/SSL sertifikat** koji sadrži njihov javni ključ, digitalno potpisan pomoću privatnog ključa sertifikacionog tela. Na ovaj način, autoritet za sertifikate potvrđuje da određeni javni ključ zaista pripada Jim’s Sporting Goods.
 
 
 Ključ za razumevanje ovog procesa sa TLS/SSL sertifikatima je da, iako generalno nećete imati javni ključ Jim’s Sporting Goods-a sačuvan bilo gde na vašem računaru, javni ključevi priznatih sertifikacionih autoriteta su zaista sačuvani u vašem pregledaču ili u vašem operativnom sistemu. Oni su sačuvani u onome što se zove **root sertifikati**.
