@@ -2682,7 +2682,7 @@ Distribucija ključeva sada je postala znatno jednostavnija za Jim’s Sporting 
 Heš funkcije su sveprisutne u kriptografiji. One nisu ni simetrične ni asimetrične šeme, već spadaju u kriptografsku kategoriju za sebe.
 
 
-Već smo naišli na heš funkcije u Poglavlju 4 prilikom kreiranja poruka za autentifikaciju zasnovanih na heš vrednosti. One su takođe važne u kontekstu digitalnih potpisa, ali iz nešto drugačijeg razloga: Digitalni potpisi se naime obično prave preko heš vrednosti neke (šifrovane) poruke, a ne stvarne (šifrovane) poruke. U ovom delu, ponudiću detaljniji uvod u heš funkcije.
+Već smo naišli na heš funkcije u Poglavlju 4 prilikom kreiranja poruka za autentifikaciju zasnovanih na heš vrednosti. One su takođe važne u kontekstu digitalnih potpisa, ali iz nešto drugačijeg razloga: digitalni potpisi se naime obično prave preko heš vrednosti neke (šifrovane) poruke, a ne stvarne (šifrovane) poruke. U ovom delu, ponudiću detaljniji uvod u heš funkcije.
 
 
 Hajde da počnemo sa definisanjem heš funkcije. **Heš funkcija** je bilo koja efikasno izračunljiva funkcija koja prima ulaze proizvoljne veličine i daje izlaze fiksne dužine.
@@ -2731,7 +2731,7 @@ Koliziono otporne heš funkcije su važne, na primer, u verifikaciji softvera. P
 
 4.	Zatim, morate pronaći dve objavljene datoteke određenog izdanja. Prva sadrži zvanični SHA-256 heš vrednost za izvršni fajl koji ste preuzeli zajedno sa hešovima svih ostalih paketa koji su objavljeni. Još jedna datoteka izdanja sadržaće potpise različitih saradnika kojima je potpisana datoteka izdanja sa heš vrednostima paketa. Obe ove datoteke izdanja treba da se nalaze na Bitcoin Core vebsajtu.
 
-5.	 Zatim treba da izračunate SHA-256 heš izvršne datoteke koju ste preuzeli sa veb-sajta Bitcoin Core-a na svom računaru. Nakon toga uporedite taj rezultat sa zvaničnim hešom paketa za izvršnu datoteku. Vrednosti bi trebalo da budu iste.
+5.	 Zatim treba da izračunate SHA-256 heš vrednost izvršne datoteke koju ste preuzeli sa veb-sajta Bitcoin Core-a na svom računaru. Nakon toga uporedite taj rezultat sa zvaničnim hešom paketa za izvršnu datoteku. Vrednosti bi trebalo da budu iste.
    
 7.	Konačno, morali biste da verifikujete da jedan ili više digitalnih potpisa nad datotekom izdanja sa zvaničnim hešovima paketa zaista odgovara jednom ili više javnih ključeva koje ste uvezli (izdanja Bitcoin Core nisu uvek potpisana od strane svih). To možete učiniti pomoću aplikacije kao što je Kleopetra.
 
