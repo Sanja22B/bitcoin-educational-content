@@ -974,7 +974,7 @@ x^3 + 7 = y^2 \mod 2^{256} – 2^{32} – 29 – 28 – 27 – 26 - 24 - 1
 $$
 
 
-(najveći prost broj manji od $2^{256}$).
+(koji je najveći prost broj manji od $2^{256}$).
 
 
 Bitcoin transakcije obično uključuju zaključavanje izlaza na jedan ili više javnih ključeva na neki način. Vrednost iz ovih transakcija može se, zatim, otključati pravljenjem digitalnih potpisa sa odgovarajućim privatnim ključevima.
