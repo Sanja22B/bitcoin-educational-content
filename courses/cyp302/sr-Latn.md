@@ -2919,7 +2919,7 @@ $$ \frac{2^{1024}}{\LN(2^{1024})} - \frac{2^{1023}}{\LN(2^{1023})} $$
 ...što je približno jednako $1.265 \times 10^{305}$.
 
 
-[3] Isto je tačno za probleme diskretnih logaritama. Dakle, zašto asimetrične konstrukcije rade sa mnogo većim ključevima nego simetrične kriptografske konstrukcije.
+[3] Isto je tačno za probleme diskretnih logaritama. Zato asimetrične konstrukcije funkcionišu sa mnogo većim ključevima nego simetrične kriptografske konstrukcije.
 
 
 
@@ -2969,7 +2969,7 @@ Pretpostavimo da $N$ nije prost. Tada možete izračunati njegov red koristeći 
 $$\phi(N) = p_1^{e_1 - 1} \cdot (p_1 - 1) \cdot p_2^{e_2 - 1} \cdot (p_2 - 1) \cdot \ldots \cdot p_n^{e_n - 1} \cdot (p_n - 1)$$
 
 
-**Theorem 2** pokazuje da kada razložite bilo koji složeni broj $N$ na njegove različite proste faktore, lako je izračunati redosled $N$.
+**Teorema 2** pokazuje da kada razložite bilo koji složeni broj $N$ na njegove različite proste faktore, lako je izračunati redosled $N$.
 
 
 Na primer, pretpostavimo da je $N = 270$. Ovo očigledno nije prost broj. Razlaganje $N$ na njegove proste faktore daje izraz: $2 \cdot 3^3 \cdot 5$. Prema Eulerovoj Fi funkciji, redosled $N$ je zatim sledeći:
@@ -3037,7 +3037,7 @@ Nije nužno da inverz od $a$ postoji u redukciji modulo $N$. Pretpostavimo, na p
 Kako tačno znamo da li neki ceo broj $a$ ima inverz za dati $N$? Kao što ste možda primetili u gornjem primeru, najveći zajednički delilac između 2 i 8 je veći od 1, tačnije 2. I ovo je zapravo ilustrativno za sledeći opšti rezultat:
 
 
-**Proposition 4**. Inverz postoji za ceo broj $a$ dat redukcijom modulo $N$, i specifično jedinstven pozitivan inverz manji od $N$, ako i samo ako je najveći zajednički delilac između $a$ i $N$ jednak 1 (to jest, ako su međusobno prosti).
+**Propozicija 4**. Inverz postoji za ceo broj $a$ dat redukcijom modulo $N$, i specifično jedinstven pozitivan inverz manji od $N$, ako i samo ako je najveći zajednički delilac između $a$ i $N$ jednak 1 (to jest, ako su međusobno prosti).
 
 
 Za slučaj kada je $a = 5$ i $N = 11$, zaključili smo da je $a^{-1} = 9$, s obzirom na to da $5 \cdot 9 \mod 11 = 45 \mod 11 = 1 \mod 11$. Važno je napomenuti da je i obrnuto tačno. To jest, kada je $a = 9$ i $N = 11$, važi da je $a^{-1} = 5$.
