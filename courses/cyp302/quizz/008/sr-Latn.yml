@@ -5,5 +5,5 @@ wrong_answers:
   - Mono-algoritamska kriptografija
   - Integrativna kriptografija
 explanation: |
-  Asimetrična kriptografija zasniva se na korišćenju para ključeva, javnog i privatnog, omogućavajući šifrovanje bez deljenja tajnog ključa.
+  Asimetrična kriptografija zasniva se na korišćenju par ključeva, javnog i privatnog, omogućavajući šifrovanje bez deljenja tajnog ključa.
 reviewed: true
