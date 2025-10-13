@@ -107,24 +107,24 @@ Trenutna nagrada rudarima je dvostruka. S jedne strane, uključuje kreiranje nov
 Proces rudarenja uključuje pronalaženje validne heš vrednosti koja je prihvatljiva za Bitcoin mrežu. Kada se izračuna i pronađe, ova heš vrednost je nepovratna, slično kao kada se krompir pretvori u pire krompir. On verifikuje određenu funkciju bez mogućnosti vraćanja unazad. Rudari, u konkurenciji, koriste mašine za izračunavanje ovih heševa. Iako je teoretski moguće pronaći ovu heš vrednost ručno, složenost operacije čini ovu opciju neizvodljivom. Računari, sposobni da brzo izvrše ove proračune, se stoga koriste, trošeći značajnu količinu električne energije.
 
 
-Na početku je dominirala era CPU-a, gde su rudari koristili svoje lične računare za Bitcoin rudarenje. Otkriće prednosti GPU-ova (grafičkih kartica) za ovaj zadatak označilo je prekretnicu, značajno povećavajući [Hashrate] (https://planb.network/en/resources/glossary/hashrate) i smanjujući potrošnju energije. Napredak se tu nije zaustavio, sa kasnijim uvođenjem FPGA-ova (polje-programabilnih gejt nizova). FPGA-ovi su služili kao platforma za razvoj ASIC-ova (integrisanih kola specifičnih za aplikaciju).
+Na početku je dominirala era CPU-a, gde su rudari koristili svoje lične računare za Bitcoin rudarenje. Otkriće prednosti GPU-ova (grafičkih kartica) za ovaj zadatak označilo je prekretnicu, značajno povećavajući [Hashrate] (https://planb.network/resources/glossary/hashrate) i smanjujući potrošnju energije. Napredak se tu nije zaustavio, sa kasnijim uvođenjem FPGA-ova (polje-programabilnih gejt nizova). FPGA-ovi su služili kao platforma za razvoj ASIC-ova (integrisanih kola specifičnih za aplikaciju).
 
 
 ![image](assets/en/002.webp)
 
 
-ASIC-i su čipovi, uporedivi sa CPU čipom, međutim, oni su razvijeni da obavljaju samo jednu specifičnu vrstu proračuna na najefikasniji mogući način. Drugim rečima, CPU je sposoban da obavlja mnoštvo različitih vrsta proračuna bez da je posebno optimizovan za jednu ili drugu vrstu proračuna, dok će ASIC moći da obavlja samo jednu vrstu proračuna, ali veoma efikasno. U slučaju Bitcoin ASIC-a, oni su dizajnirani za proračun SHA256 algoritma.
+ASIC-i su čipovi, uporedivi sa CPU čipom, međutim, oni su razvijeni da obavljaju samo jednu specifičnu vrstu proračuna na najefikasniji mogući način. Drugim rečima, CPU je sposoban da obavlja mnoštvo različitih vrsta proračuna bez da je posebno optimizovan za jednu ili drugu vrstu proračuna, dok će ASIC moći da obavlja samo jednu vrstu proračuna, ali veoma efikasno. U slučaju Bitcoin ASIC-a, oni su dizajnirani za izračunavanje SHA256 algoritma.
 
-Danas rudari isključivo koriste ASIC uređaje posvećene ovoj operaciji, optimizovane da testiraju maksimalan broj kombinacija uz najmanju moguću potrošnju energije i što je brže moguće. Ovi računari, nesposobni za obavljanje zadataka osim Bitcoin Mining, su opipljiv dokaz kontinuirane evolucije i sve veće specijalizacije Bitcoin Mining industrije. Ova stalna evolucija odražava intrinzičnu dinamiku Bitcoin, gde prilagođavanje težine osigurava proizvodnju bloka svakih deset minuta uprkos eksponencijalnom povećanju Mining kapaciteta.
+Danas rudari isključivo koriste ASIC uređaje posvećene ovoj operaciji, optimizovane da testiraju maksimalan broj kombinacija uz najmanju moguću potrošnju energije i što je brže moguće. Ovi računari, nesposobni za obavljanje zadataka osim Bitcoin rudarenja, su opipljiv dokaz kontinuirane evolucije i sve veće specijalizacije Bitcoin industrije rudarenja. Ova stalna evolucija odražava intrinzičnu dinamiku Bitcoin-a, gde prilagođavanje težine osigurava proizvodnju bloka svakih deset minuta uprkos eksponencijalnom povećanju rudarskih kapaciteta.
 
 
-Da ilustrujemo intenzitet ovog procesa, razmotrite tipičan Miner sposoban da postigne 14 TeraHash-a po sekundi, ili 14 triliona pokušaja svake sekunde da pronađe tačan Hash. Na nivou Bitcoin mreže, sada dostižemo približno 300 ExaHash-a po sekundi, što ističe kolektivnu snagu mobilisanu u Bitcoin Mining.
+Da ilustrujemo intenzitet ovog procesa, razmotrite tipičan uređaj za rudarenje sposoban da postigne 14 TeraHash-a po sekundi, ili 14 triliona pokušaja svake sekunde da pronađe ispravan heš. Na nivou Bitcoin mreže, sada dostižemo približno 300 ExaHash-a po sekundi, što ističe kolektivnu snagu mobilisanu u Bitcoin rudarenje.
 
 
 ### Podešavanje težine
 
 
-Podešavanje težine je ključni mehanizam u radu Bitcoin mreže, osiguravajući da se blokovi rudare u proseku svakih 10 minuta. Ovo trajanje je prosečno jer je Mining proces zapravo igra verovatnoće, slična bacanju kockica u nadi da će se dobiti broj manji od broja definisanog težinom. Svakih 2016 blokova, mreža podešava Mining težinu na osnovu prosečnog vremena potrebnog za rudarenje prethodnih blokova. Ako je prosečno vreme veće od 10 minuta, težina se smanjuje, i obrnuto, ako je prosečno vreme manje, težina se povećava. Ovaj mehanizam podešavanja osigurava da Mining vreme za nove blokove ostane konstantno tokom vremena, bez obzira na broj rudara ili ukupnu računarsku snagu mreže. Zato se Bitcoin Blockchain takođe naziva Timechain.
+Podešavanje težine je ključni mehanizam u radu Bitcoin mreže, osiguravajući da se blokovi rudare u proseku svakih 10 minuta. Ovo trajanje je prosečno jer je proces rudarenja zapravo igra verovatnoće, slična bacanju kockica u nadi da će se dobiti broj manji od broja definisanog težinom. Svakih 2016 blokova, mreža podešava težinu rudarenjana osnovu prosečnog vremena potrebnog za rudarenje prethodnih blokova. Ako je prosečno vreme veće od 10 minuta, težina se smanjuje, i obrnuto, ako je prosečno vreme manje, težina se povećava. Ovaj mehanizam podešavanja osigurava da vreme rudarenja novih blokove ostane konstantno tokom vremena, bez obzira na broj rudara ili ukupnu računarsku snagu mreže. Zato se Bitcoin Blockchain (u prevodu lanac blokova) takođe naziva Timechain (u prevodu vremenski lanac).
 
 
 ![image](assets/en/003.webp)
@@ -133,81 +133,81 @@ Podešavanje težine je ključni mehanizam u radu Bitcoin mreže, osiguravajući
 
 - Primer iz Kine:
 
-Slučaj Kine savršeno ilustruje ovaj mehanizam prilagođavanja težine. Sa obilnom i jeftinom energijom, Kina je bila glavni globalni centar za Bitcoin Mining. U 2021. godini, zemlja je iznenada zabranila Bitcoin Mining na svojoj teritoriji, što je rezultiralo masovnim padom globalnog Bitcoin mrežnog Hashrate, oko 50%. Ovaj brzi pad Mining snage mogao je ozbiljno poremetiti Bitcoin mrežu povećanjem prosečnog vremena Mining bloka. Međutim, mehanizam prilagođavanja težine je stupio na snagu, smanjujući Mining težinu kako bi se osiguralo da frekvencija Mining bloka ostane u proseku na 10 minuta. Ovaj slučaj pokazuje efikasnost i otpornost Bitcoin mehanizma prilagođavanja težine, koji osigurava stabilnost i predvidljivost mreže, čak i suočen sa iznenadnim i značajnim promenama u globalnom Mining pejzažu.
+Slučaj Kine savršeno ilustruje ovaj mehanizam prilagođavanja težine. Sa obilnom i jeftinom energijom, Kina je bila glavni globalni centar za Bitcoin rudarenje. U 2021. godini, zemlja je iznenada zabranila Bitcoin rudarenej na svojoj teritoriji, što je rezultiralo masovnim padom globalnog Hashrate Bitcoin mreže, oko 50%. Ovaj brzi pad rudarske snage mogao je ozbiljno poremetiti Bitcoin mrežu povećanjem prosečnog vremena za rudarenje bloka. Međutim, mehanizam prilagođavanja težine je stupio na snagu, smanjujući težinu rudarenja kako bi se osiguralo da frekvencija rudarenja bloka ostane u proseku na 10 minuta. Ovaj slučaj pokazuje efikasnost i otpornost mehanizma prilagođavanja težine u Bitcoinu, koji obezbeđuje stabilnost i predvidljivost mreže čak i u uslovima naglih i značajnih promena u globalnom sistemu rudarenja.
 
 
-### Evolucija mašina Bitcoin Mining
+### Evolucija mašina za rudarenje Bitcoin-a
 
 
-Što se tiče evolucije mašina Bitcoin Mining, važno je napomenuti da je kontekst više orijentisan ka tradicionalnom poslovnom modelu. Rudari zarađuju svoj prihod od validacije blokova, zadatka sa relativno niskom verovatnoćom uspeha. Trenutni model u upotrebi, Antminer S9, iako stariji model lansiran oko 2016. godine, još uvek je u opticaju na tržištu polovnih uređaja, gde se prodaje za oko €100 do €200. Međutim, cena mašina Mining varira u zavisnosti od vrednosti Bitcoin, a noviji model, Antminer S19, trenutno se procenjuje na oko €3000.
+Što se tiče evolucije mašina za rudarenje Bitcoin-a, važno je napomenuti da je kontekst više orijentisan ka tradicionalnom poslovnom modelu. Rudari zarađuju svoj prihod od validacije blokova, zadatka sa relativno niskom verovatnoćom uspeha. Trenutni model u upotrebi, Antminer S9, iako stariji model lansiran oko 2016. godine, još uvek je u opticaju na tržištu polovnih uređaja, gde se prodaje za oko €100 do €200. Međutim, cena mašina za rudarenje varira u zavisnosti od vrednosti Bitcoin-a, a noviji model, Antminer S19, trenutno se procenjuje na oko €3000.
 
 
-Suočeni sa stalnim tehnološkim napretkom u oblasti Mining, profesionalci moraju strateški da se pozicioniraju. Industrija Mining je podložna kontinuiranim inovacijama, što je pokazano nedavnim izdanjem J verzije S19 i očekivanim izdanjem S19 XP, koji nude značajno veće mogućnosti Mining. Štaviše, poboljšanja nisu vezana samo za sirove performanse mašina. Na primer, novi model S19 XP koristi Liquid sistem hlađenja, tehničku modifikaciju koja omogućava značajno poboljšanje energetske efikasnosti. Iako inovacija ostaje konstantna, budući dobici u efikasnosti verovatno će biti manji u poređenju sa onima koji su do sada zabeleženi, zbog dostizanja određenog praga tehnološke inovacije.
+Suočeni sa stalnim tehnološkim napretkom u oblasti rudarenja, profesionalci moraju strateški da se pozicioniraju. Industrija rudarenja je podložna kontinuiranim inovacijama, što je pokazano nedavnim izdanjem J verzije S19 i očekivanim izdanjem S19 XP, koji nude značajno veće mogućnosti rudarenja. Štaviše, poboljšanja nisu vezana samo za sirove performanse mašina. Na primer, novi model S19 XP koristi Liquid sistem hlađenja, tehničku modifikaciju koja omogućava značajno poboljšanje energetske efikasnosti. Iako inovacija ostaje konstantna, budući dobici u efikasnosti verovatno će biti manji u poređenju sa onima koji su do sada zabeleženi, zbog dostizanja određenog granice za tehnološke inovacije.
 
 
 ![image](assets/en/004.webp)
 
 
-Zaključno, industrija Bitcoin Mining nastavlja da se prilagođava i razvija, i igrači u industriji moraju predvideti smanjenje dobitaka u efikasnosti u budućnosti i prilagoditi svoje strategije u skladu s tim. Budući tehnološki napreci, iako još uvek prisutni, verovatno će se dešavati u manjem obimu, što odražava rastuću zrelost sektora.
+Konačno, industrija Bitcoin rudarenja nastavlja da se prilagođava i razvija, i igrači u industriji moraju predvideti smanjenje dobitaka u efikasnosti u budućnosti i prilagoditi svoje strategije u skladu s tim. Budući tehnološki napreci, iako još uvek prisutni, verovatno će se dešavati u manjem obimu, što odražava rastuću zrelost sektora.
 
 
-## Industrija Mining
+## Industrija rudarenja
 
 
 <chapterId>0896dfc1-c97e-5bec-9bf1-8c20b3388a2c</chapterId>
 
 
-### Mining bazeni
+### Bazeni za rudarenje
 
 
-Trenutno, Bitcoin Mining se razvio u ozbiljnu i značajnu industriju, sa mnogim igračima koji su sada javno poznati i sve većim brojem značajnih rudara. Ova evolucija je učinila Mining gotovo nedostupnim za male igrače zbog visokih troškova povezanih sa nabavkom novih Mining mašina. Ovo postavlja pitanje distribucije Hashrate među različitim tržišnim igračima. Situacija je složena jer je neophodno ispitati i distribuciju Hashrate među različitim kompanijama i među različitim Mining bazenima.
+Trenutno, Bitcoin rudarenje se razvija u ozbiljnu i značajnu industriju, sa mnogim igračima koji su sada javno poznati i sve većim brojem značajnih rudara. Ova evolucija je učinila rudarenje gotovo nedostupnim za male igrače zbog visokih troškova povezanih sa nabavkom novih mašina za rudarenje. Ovo postavlja pitanje distribucije Hashrate među različitim tržišnim igračima. Situacija je složena jer je neophodno ispitati i distribuciju Hashrate među različitim kompanijama i među različitim bazenima za rudarenje (eng. [mining pools](https://planb.network/en/resources/glossary/pool-mining).
 
 
 ![image](assets/en/005.webp)
 
 
-Mining pool je grupa rudara koji kombinuju svoje računarske resurse kako bi povećali svoje šanse za Mining. Ova saradnja je neophodna jer izolovana mala Mining mašina takmiči se protiv industrijskih giganata, smanjujući svoje šanse za uspeh na zanemarljiv nivo. Mining radi na principu lutrije, i šanse za osvajanje bloka (a samim tim i Bitcoin nagrade) svakih deset minuta su izuzetno male za pojedinačni mali Miner. Udruživanjem, rudari mogu kombinovati svoju računarsku snagu, češće pronalaziti blokove, a zatim raspodeliti nagrade proporcionalno doprinosu svakog Miner u bazenu.
+Rudarski bazen je grupa rudara koji kombinuju svoje računarske resurse kako bi povećali svoje šanse za uspešno rudarenje. Ova saradnja je neophodna jer izolovana mala mašina za rudarenje takmiči se protiv industrijskih giganata, smanjujući svoje šanse za uspeh na zanemarljiv nivo. Rudarenje radi na principu lutrije, i šanse za osvajanje bloka (a samim tim i Bitcoin nagrade) svakih deset minuta su izuzetno male za pojedinačni mali uređaj. Udruživanjem, rudari mogu kombinovati svoju računarsku snagu, češće pronalaziti blokove, a zatim raspodeliti nagrade proporcionalno doprinosu svakog uređaja u bazenu.
 
 
-Na primer, ako bazen pronađe blok i osvoji 6.25 bitkoina, Miner koji doprinosi sa 1% ukupne računarske snage bazena bi dobio 1% od zarađenih 6.25 bitkoina. Međutim, treba napomenuti da Mining bazeni obično uzimaju malu proviziju (obično oko 2%) kako bi pokrili operativne troškove zadruge.
+Na primer, ako bazen pronađe blok i osvoji 6.25 bitkoina, rudar koji doprinosi sa 1% ukupne računarske snage bazena bi dobio 1% od zarađenih 6.25 bitkoina. Međutim, treba napomenuti da rudarski bazeni obično uzimaju malu proviziju (obično oko 2%) kako bi pokrili operativne troškove zadruge.
 
 
 ### Softver koji koristi industrija
 
 
-U kontekstu Bitcoin Mining, uloga softvera je jednako ključna kao i hardvera. Primer za to ilustruje uloga Bitmain-a, plodnog proizvođača koji je razvio Antminer S9. Pored Mining hardvera, industrija se u velikoj meri oslanja na kolaborativne Mining bazene, kao što je Brainspool, koji kontroliše približno 5% globalnog Hashrate Bitcoin mreže.
+U kontekstu Bitcoin rudarenja, uloga softvera je jednako ključna kao i hardvera. Primer za to ilustruje uloga Bitmain-a, plodnog proizvođača koji je razvio Antminer S9. Pored hardvera za rudarenje, industrija se u velikoj meri oslanja na kolaborativne rudarske bazene, kao što je Brainspool, koji kontroliše približno 5% globalnog Hashrate-a Bitcoin mreže.
 
-Glumci u ovoj industriji stalno traže načine da povećaju efikasnost putem hardvera i softvera. Na primer, popularan softver koji se koristi u ovom kontekstu je BrainsOS Plus. Ovaj softver zamenjuje originalni operativni sistem mašine Mining, omogućavajući da se iste operacije obavljaju efikasnije. Sa ovakvim softverom, Miner može povećati efikasnost svoje mašine za 25%. To znači da za ekvivalentnu količinu električne energije, mašina može proizvesti dodatnih 25% Hashrate, čime se povećavaju nagrade koje dobija Miner. Ova optimizacija softvera je suštinski element konkurentnosti u Bitcoin Mining, pokazujući važnost integrisanog pristupa koji kombinuje poboljšanja hardvera i softvera kako bi se maksimizirala efikasnost i povrat.
+Glumci u ovoj industriji stalno traže načine da povećaju efikasnost putem hardvera i softvera. Na primer, popularan softver koji se koristi u ovom kontekstu je BrainsOS Plus. Ovaj softver zamenjuje originalni operativni sistem mašine za rudarenje, omogućavajući da se iste operacije obavljaju efikasnije. Sa ovakvim softverom, rudar može povećati efikasnost svoje mašine za 25%. To znači da za ekvivalentnu količinu električne energije, mašina može proizvesti dodatnih 25% Hashrate-a, čime se povećavaju nagrade koje dobija rudar. Ova optimizacija softvera je suštinski element konkurentnosti u Bitcoin rudarenju, pokazujući važnost integrisanog pristupa koji kombinuje poboljšanja hardvera i softvera kako bi se maksimizirala efikasnost i povrat.
 
 
 ### Regulacija i tarife za električnu energiju
 
 
-Kao što je primećeno u Kini i drugde, regulativa ima značajan uticaj na Mining. Iako u Francuskoj nema značajnih rudara, regulativa i visoke tarife za električnu energiju u Evropi predstavljaju glavne prepreke. Rudari stalno traže jeftinu električnu energiju kako bi maksimizirali svoj profit. Stoga, visoka cena električne energije u Evropi i Francuskoj ne privlači rudare u ove regione.
+Kao što je primećeno u Kini i drugde, regulativa ima značajan uticaj na rudarenje. Iako u Francuskoj nema značajnih rudara, regulativa i visoke tarife za električnu energiju u Evropi predstavljaju glavne prepreke. Rudari stalno traže jeftinu električnu energiju kako bi maksimizirali svoj profit. Stoga, visoka cena električne energije u Evropi i Francuskoj ne privlači rudare u ove regione.
 
 
-Rudari obično gravitiraju ka regionima sa niskim tarifama za električnu energiju, često u zemljama u razvoju ili zemljama sa viškom energije. Na primer, veliki deo globalnog Hashrate nalazi se u Teksasu, Sjedinjene Američke Države. Teksas ima nezavisnu elektroenergetsku mrežu koja ne deli svoje energetske resurse sa drugim državama. Ova jedinstvenost često dovodi do toga da Teksas proizvodi više električne energije nego što je potrebno kako bi se izbegli nedostaci, stvarajući višak. Bitcoin rudari koriste ovu prekomernu proizvodnju tako što postavljaju operacije u Teksasu, gde mogu da rudare bitkoine po vrlo niskim cenama električne energije tokom perioda viška energije. Ova situacija pokazuje značajan uticaj propisa i tarifa za električnu energiju na Bitcoin Mining, ističući važnost ovih faktora u donošenju odluka rudara u vezi sa lokacijom njihovih Mining operacija.
+Rudari obično gravitiraju ka regionima sa niskim tarifama za električnu energiju, često u zemljama u razvoju ili zemljama sa viškom energije. Na primer, veliki deo globalnog Hashrate-a nalazi se u Teksasu, Sjedinjene Američke Države. Teksas ima nezavisnu elektroenergetsku mrežu koja ne deli svoje energetske resurse sa drugim državama. Ova jedinstvenost često dovodi do toga da Teksas proizvodi više električne energije nego što je potrebno kako bi se izbegli nedostaci, stvarajući višak. Bitcoin rudari koriste ovu prekomernu proizvodnju tako što postavljaju operacije u Teksasu, gde mogu da rudare bitkoine po vrlo niskim cenama električne energije tokom perioda viška energije. Ova situacija pokazuje značajan uticaj propisa i tarifa za električnu energiju na Bitcoin rudarenje, ističući važnost ovih faktora u donošenju odluka rudara u vezi sa lokacijom njihovih operacija za rudarenje.
 
 
 ### Gde idu rudari i upravljanje energijom?
 
 
-Isticanjem uticaja Bitcoin rudara u svetu energije, putanja je jasna: ovi akteri stalno traže izvore jeftine električne energije, često one koji su neiskorišćeni ili neiskorišteni. Ovaj fenomen je evidentan u regionima sa novom električnom infrastrukturom, kao što su oni opremljeni nedavnim hidroelektričnim branama.
+Isticanjem uticaja rudara Bitcoina na globalni energetski pejzaž, jasno se uočava njihov pravac delovanja: oni neprestano traže izvore jeftine električne energije, često one koji su neiskorišćeni ili se inače rasipaju. Ovaj fenomen je evidentan u regionima sa novom električnom infrastrukturom, kao što su oni opremljeni nedavnim hidroelektričnim branama.
 
 
-Hajde da uzmemo primer. U zemlji koja je u procesu izgradnje brane, proizvodnja električne energije često počinje pre nego što su distributivne linije u potpunosti operativne. Ovaj vremenski jaz može rezultirati značajnim troškovima i obeshrabriti ulaganja u takve infrastrukturne projekte. Međutim, Bitcoin rudari mogu delovati kao fleksibilan izvor potražnje, spremni da potroše ovu "napuštenu" električnu energiju, čime pomažu u smanjenju troškova infrastrukture. Implikacija ovde je da nove instalacije mogu odmah biti profitabilne, podstičući stvaranje novih izvora električne energije. Ovaj princip se takođe primenjuje na manjim razmerama. Bilo da je reč o pojedincu koji koristi hidroelektrični generator na maloj reci ili domaćinstvu opremljenom solarnim panelima, višak proizvedene električne energije može se koristiti za napajanje Bitcoin Mining operacija.
+Hajde da uzmemo primer. U zemlji koja je u procesu izgradnje brane, proizvodnja električne energije često počinje pre nego što su distributivne linije u potpunosti operativne. Ovaj vremenski jaz može rezultirati značajnim troškovima i obeshrabriti ulaganja u takve infrastrukturne projekte. Međutim, Bitcoin rudari mogu delovati kao fleksibilan izvor potražnje, spremni da potroše ovu "napuštenu" električnu energiju, čime pomažu u smanjenju troškova infrastrukture. Implikacija ovde je da nove instalacije mogu odmah biti profitabilne, podstičući stvaranje novih izvora električne energije. Ovaj princip se takođe primenjuje na manjim razmerama. Bilo da je reč o pojedincu koji koristi hidroelektrični generator na maloj reci ili domaćinstvu opremljenom solarnim panelima, višak proizvedene električne energije može se koristiti za napajanje Bitcoin rudarskih operacija.
 
 
-U Francuskoj, na primer, višak električne energije iz solarnih panela se vraća u mrežu i proizvođači su kompenzovani kreditom za potrošnju od EDF-a. Slično, može se zamisliti Miner koji radi na ovom višku električne energije, isključujući se kada lokalna potražnja izjednači Supply. Iako ovo može delovati sebično, dajući prednost proizvodnji Bitcoin nad podrškom lokalnoj elektroenergetskoj mreži, predstavlja drugi ugao: stabilizaciju elektroenergetske mreže. Kompleksno upravljanje viškom električne energije, ponekad čak i sa povezanim troškovima za odlaganje, može biti znatno pojednostavljeno. Bitcoin rudari mogu apsorbovati ove viškove, delujući kao fleksibilni bafer, prilagođavajući potražnju umesto Supply. U svetu gde proizvodnja električne energije iz obnovljivih (nekontrolisanih) izvora stalno raste, rudari mogu igrati ključnu ulogu u osiguravanju ravnoteže naših elektroenergetskih mreža, dok istovremeno koriste jeftinu ili višak električne energije za napajanje svojih Mining operacija.
+U Francuskoj, na primer, višak električne energije iz solarnih panela se vraća u mrežu i proizvođači su kompenzovani kreditom za potrošnju od EDF-a. Slično, može se zamisliti rudar koji radi na ovom višku električne energije, isključujući se kada lokalna potražnja izjednači ponudu. Iako ovo može delovati sebično, dajući prednost proizvodnji Bitcoina nad podrškom lokalnoj elektroenergetskoj mreži, može se posmatrati iz drugog ugala: stabilizacija elektroenergetske mreže. Kompleksno upravljanje viškom električne energije, ponekad čak i sa povezanim troškovima za odlaganje, može biti znatno pojednostavljeno. Bitcoin rudari mogu apsorbovati ove viškove, delujući kao fleksibilni regulator, prilagođavajući potražnju umesto ponude. U svetu gde proizvodnja električne energije iz obnovljivih (nekontrolisanih) izvora stalno raste, rudari mogu igrati ključnu ulogu u osiguravanju ravnoteže naših elektroenergetskih mreža, dok istovremeno koriste jeftinu ili višak električne energije za napajanje svojih rudarskih operacija.
 
 
-### Mining centralizacija
+### Centralizacija rudarenja
 
 
-Centralizacija Mining se smatra glavnim izazovom. Veliki igrači, kao što je Foundry, dominiraju tržištem, što potencijalno može dovesti do cenzure transakcija. Ova centralizacija takođe može učiniti mrežu ranjivom na napade, uključujući napad od 51%, gde akter ili grupa kontroliše više od 50% snage heširanja mreže, omogućavajući im da kontrolišu i manipulišu mrežom.
+Centralizacija rudarenja se smatra glavnim izazovom. Veliki igrači, kao što je Foundry, dominiraju tržištem, što potencijalno može dovesti do cenzure transakcija. Ova centralizacija takođe može učiniti mrežu ranjivom na napade, uključujući napad od 51%, kada pojedinac ili grupa kontroliše više od 50% hashrate-a mreže, što im omogućava da upravljaju i manipulišu mrežom.
 
 
-Regulation Risk Naglašava se da ako bi zemlja poput Sjedinjenih Američkih Država odlučila da reguliše ili zabrani određene Bitcoin transakcije, to bi moglo imati značajan uticaj na mrežu, posebno ako je veliki deo hashing snage centralizovan u toj zemlji.
+Rizik od regulative: Naglašava da ako bi zemlja poput Sjedinjenih Američkih Država odlučila da reguliše ili zabrani određene Bitcoin transakcije, to bi moglo imati značajan uticaj na mrežu, posebno ako je veliki deo hashing snage centralizovan u toj zemlji.
 
 
 ![image](assets/en/006.webp)
@@ -217,20 +217,20 @@ Da bi se suzbila ova centralizacija, razmatraju se različite strategije:
 
 
 
-- Home Mining: Ideja Home Mining zasniva se na decentralizaciji aktivnosti Mining. Podstiče pojedince da učestvuju u Mining iz svojih domova, čime se Hashrate šire distribuira.
-- Stratum V2: Protokol Stratum V2 nudi drugačiji pristup. Za razliku od svog prethodnika, Stratum V2 omogućava rudarima da biraju koje transakcije će uključiti u blokove koje rudare. Ova sposobnost jača otpornost na cenzuru i smanjuje mogućnost velikih Mining bazena da dominiraju mrežom. Davanjem više moći pojedinačnim rudarima, protokol Stratum V2 može igrati odlučujuću ulogu u borbi protiv centralizacije Hashrate.
+- Kućno rudarenje: Ideja kućnog rudarenja zasniva se na decentralizaciji aktivnosti rudarenja. Podstiče pojedince da učestvuju u rudarenju iz svojih domova, čime se Hashrate šire distribuira.
+- Stratum V2: Protokol Stratum V2 nudi drugačiji pristup. Za razliku od svog prethodnika, Stratum V2 omogućava rudarima da biraju koje transakcije će uključiti u blokove koje rudare. Ova sposobnost jača otpornost na cenzuru i smanjuje mogućnost velikih rudarskih bazena da dominiraju mrežom. Davanjem više moći pojedinačnim rudarima, protokol Stratum V2 može igrati odlučujuću ulogu u borbi protiv centralizacije Hashrate-a.
 
-Otvaranje izvornog koda softvera Mining
+Otvaranje izvornog koda softvera za rudarenje
 
 
-- Otvaranje izvornog koda softvera Mining: Ovo je još jedna potencijalno efikasna strategija. Omogućavanjem pristupa softveru Mining svima, mali rudari bi imali iste mogućnosti kao i velike Mining kompanije da učestvuju i doprinesu Blockchain mreži. Ovaj pristup bi podstakao širu distribuciju Hashrate, čime bi se doprinelo decentralizaciji mreže.
-- Diversifikacija aktera i geografije: Podsticanje učešća različitih aktera iz različitih geografskih regiona u kriptovaluti Mining takođe može biti efikasno. Geografskom diversifikacijom Hashrate postaje teže da jedan akter ili država ostvare nesrazmernu kontrolu ili uticaj nad mrežom. Ovaj pristup može pomoći u zaštiti mreže od potencijalnih napada i ojačati njenu decentralizaciju.
+- Otvaranje izvornog koda softvera za rudarenje: Ovo je još jedna potencijalno efikasna strategija. Omogućavanjem pristupa softveru za rudarenje svima, mali rudari bi imali iste mogućnosti kao i velike rudarske kompanije da učestvuju i doprinesu Blockchain mreži. Ovaj pristup bi podstakao širu distribuciju Hashrate-a, čime bi se doprinelo decentralizaciji mreže.
+- Diversifikacija aktera i geografije: Podsticanje učešća različitih aktera iz različitih geografskih regiona u rudarenju kriptovalute takođe može biti efikasno. Geografskom diversifikacijom Hashrate-a postaje teže da jedan akter ili država ostvare nesrazmernu kontrolu ili uticaj nad mrežom. Ovaj pristup može pomoći u zaštiti mreže od potencijalnih napada i ojačati njenu decentralizaciju.
 
 
 Opšti zaključak je da je decentralizacija ključna za sigurnost i otpornost Bitcoin mreže. Iako centralizacija može ponuditi prednosti u efikasnosti, ona izlaže mrežu značajnim rizicima, uključujući cenzuru i 51% napade. Inicijative poput Takai i usvajanje novih protokola kao što je Stratum V2 su važni koraci ka decentralizaciji i zaštiti Bitcoin mreže od ovih pretnji.
 
 
-## Nijanse industrije Mining
+## Nijanse rudarske industrije
 
 
 <chapterId>7b9ee427-316a-54e3-a2d4-4ea97839a31b</chapterId>
