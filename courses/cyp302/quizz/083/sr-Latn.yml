@@ -1,5 +1,5 @@
 question: Zašto se pseudonasumične šifre toka češće koriste u praksi nego jednokratni blokovi?
-answer: Dozvoljavaju korišćenje kraćeg ključa prilikom generisanja dužeg toka ključeva (eng. keystream-a)
+answer: Dozvoljavaju korišćenje kraćeg ključa prilikom generisanja dužeg toka ključeva (eng - keystream-a)
 wrong_answers:
   - Oni ne zahtevaju tajni ključ
   - Oni koriste kombinaciju simetrične i asimetrične enkripcije
