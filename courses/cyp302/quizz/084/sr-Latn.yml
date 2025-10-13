@@ -1,4 +1,4 @@
-question: Koje je glavno praktično ograničenje jednokratne lozinke (eng. one-time pad)?
+question: Koje je glavno praktično ograničenje jednokratne lozinke (eng - one-time pad)?
 answer: Ključ mora biti dug kao poruka i nikada se ne sme ponovo koristiti
 wrong_answers:
   - Ključ mora biti promenjen svaki dan
