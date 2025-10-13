@@ -1,27 +1,27 @@
 ---
-name: Uvod u Bitcoin Mining
-goal: Razumite funkcionisanje industrije Mining kroz praktičnu vežbu ponovnog korišćenja ASIC-ova.
+name: Uvod u rudarenje Bitcoin-a
+goal: Razumevanje funkcionisanje industrije rudarenja kroz praktičnu vežbu ponovnog korišćenja ASIC-a.
 objectives: 
 
-  - Razumeti teoriju iza Mining
-  - Razumeti industriju Mining
+  - Razumeti teoriju iza rudarenja
+  - Razumeti industriju rudarenja
   - Pretvorite S9 u grejač
-  - Iskopaj svoj prvi Satoshi
+  - Izrudarite svoj prvi Satoshi
 
 ---
 
-# Vaši prvi koraci u Mining!
+# Vaši prvi koraci u rudarenju!
 
 
-U ovoj obuci, istražićemo industriju Mining kako bismo demistifikovali ovu složenu temu! Obuka je dostupna svima i ne zahteva početno ulaganje.
+U ovoj obuci, istražićemo industriju rudarenja kako bismo demistifikovali ovu složenu temu! Obuka je dostupna svima i ne zahteva početno ulaganje.
 
 
-Prvi deo će biti teoretski, gde ćemo Ajelex i ja imati detaljnu diskusiju o raznim temama vezanim za Mining. Ovo će nam pomoći da bolje razumemo ovu industriju i ekonomska i geopolitička pitanja povezana s njom.
+Prvi deo će biti teoretski, gde ćemo Ajelex i ja imati detaljnu diskusiju o raznim temama vezanim za rudarenje. Ovo će nam pomoći da bolje razumemo ovu industriju i ekonomska i geopolitička pitanja povezana s njom.
 
-U drugom delu, bavićemo se praktičnim slučajem. Zaista, naučićemo kako da transformišemo korišćeni S9 Miner u sistem za grejanje doma! Kroz pisane vodiče i video snimke, pokazaćemo i objasniti sve korake kako biste to postigli kod kuće :)
+U drugom delu, bavićemo se praktičnim slučajem. Zaista, naučićemo kako da transformišemo korišćeni S9 mašinu za rudarenje u sistem za grejanje doma! Kroz pisane vodiče i video snimke, pokazaćemo i objasniti sve korake kako biste to postigli kod kuće :)
 
 
-Kroz ovaj video, nadamo se da ćemo vam pokazati da je industrija Mining složenija nego što se čini, a njeno proučavanje pomaže u nijansiranju ekološke debate koja je s njom povezana!
+Kroz ovaj video, nadamo se da ćemo vam pokazati da je industrija rudarenja složenija nego što se čini, a njeno proučavanje pomaže u nijansiranju ekološke debate koja je s njom povezana!
 
 Ako vam je potrebna pomoć oko postavljanja, kreirana je Telegram grupa za studente, a sve potrebne komponente možete pronaći na našoj e-commerce platformi!
 
@@ -40,74 +40,74 @@ Ako vam je potrebna pomoć oko postavljanja, kreirana je Telegram grupa za stude
 <chapterId>7ad1abeb-a190-5c85-8bff-44df71331e4d</chapterId>
 
 
-Dobrodošli na kurs MIN201: Uvod u Mining. Ajelex, Jim & Rogzy su uzbuđeni da vas vode kroz vaše prve korake u ovoj industriji. Nadamo se da ćete uživati u kursu i krenuti u Mining avanturu kod kuće!
+Dobrodošli na kurs MIN201: Uvod u rudarenje. Ajelex, Jim & Rogzy su uzbuđeni da vas vode kroz vaše prve korake u ovoj industriji. Nadamo se da ćete uživati u kursu i krenuti u avanturu rudarenja kod kuće!
 
 
-Ova obuka vas vodi u srce industrije Bitcoin Mining, pružajući i teorijsko i praktično znanje. Bilo da ste početnik ili već upoznati sa temom, ovaj kurs će vam pomoći da razumete ekonomske i tehničke aspekte Mining, dok završavate praktični projekat prenamene ASIC za grejanje doma.
+Ova obuka vas vodi u srce industrije Bitcoin rudarenja, pružajući i teorijsko i praktično znanje. Bilo da ste početnik ili već upoznati sa temom, ovaj kurs će vam pomoći da razumete ekonomske i tehničke aspekte rudarenja, dok završavate praktični projekat prenamene ASIC-a za grejanje doma.
 
 
-**Sekcija 2: Sve o Mining**
+**Sekcija 2: Sve o rudarenju**
 
-U ovom odeljku, pružićemo sveobuhvatno razumevanje Bitcoin Mining. Pokrićemo tehničko funkcionisanje Mining, njegovu ulogu u Bitcoin protokolu, kao i ekonomske i geopolitičke implikacije. Takođe ćete istražiti složen odnos između cene Bitcoin i Hashrate, kao i pitanja vezana za suverenitet i regulaciju u industriji.
-
-
-**Sekcija 3: Kućni Mining i Ponovna Upotreba Toplote**
-
-Dalje ćemo se upustiti u praktičnu primenu sa konceptom Attakai, koji ima za cilj da demokratizuje kućni Mining transformacijom korišćenih S9 minera u uređaje za grejanje doma. Naučićete kako da kupite i modifikujete korišćeni ASIC, dok pripremate neophodnu opremu za hardverske modifikacije.
+U ovom odeljku, pružićemo sveobuhvatno razumevanje Bitcoin rudarenja. Pokrićemo tehničko funkcionisanje rudarenja, njegovu ulogu u Bitcoin protokolu, kao i ekonomske i geopolitičke implikacije. Takođe ćete istražiti složen odnos između cene Bitcoin-a i Hashrate-a, kao i pitanja vezana za suverenitet i regulaciju u industriji.
 
 
-**Section 4: Attakai - Modifikovanje softvera Antminer S9**
+**Sekcija 3: Kućno rudarenje i ponovna upotreba toplote**
 
-Ovde ćete naučiti kako da konfigurišete vaš Antminer S9 za kućnu upotrebu. Provešćemo vas kroz podešavanje Wi-Fi/Ethernet mosta, resetovanje vašeg uređaja, instalaciju BraiinsOS+, i optimizaciju za Mining.
+Dalje ćemo se upustiti u praktičnu primenu Attakai koncepta, koji ima za cilj da demokratizuje rudarenje kod kuće transformacijom korišćenih S9 uređaja u uređaje za grejanje doma. Naučićete kako da kupite i modifikujete korišćeni ASIC, dok pripremate neophodnu opremu za hardverske modifikacije.
+
+
+**Section 4: Attakai - Modifikovanje Antminer S9 softvera**
+
+Ovde ćete naučiti kako da konfigurišete vaš Antminer S9 za kućnu upotrebu. Provešćemo vas kroz podešavanje Wi-Fi/Ethernet mosta, resetovanje vašeg uređaja, instalaciju BraiinsOS+, i optimizaciju za najbolju efikasnost rudarenja.
 
 
 **Sekcija 5: Attakai - Modifikacije od strane fanova**
 
-Da biste optimizovali vaš Antminer S9 za korišćenje kao pomoćni grejač, ovaj deo će vas naučiti kako da zamenite Supply ventilatore za napajanje i glavne ventilatore. Ove modifikacije su ključne za smanjenje buke i poboljšanje termalne efikasnosti uređaja.
+Da biste optimizovali vaš Antminer S9 za korišćenje kao pomoćni grejač, ovaj deo će vas naučiti kako da zamenite ventilatore za napajanje i glavne ventilatore. Ove modifikacije su ključne za smanjenje buke i poboljšanje termalne efikasnosti uređaja.
 
 
 **Section 6: Attakai - Konfiguracija**
 
-Konačno, naučićete kako da povežete Mining pool i optimizujete performanse vašeg Antminer S9. Otkrićete kako da postignete optimalnu energetsku efikasnost i efikasno iskopate svoje prve satoshije.
+Konačno, naučićete kako da povežete sa pool za rudarenje (eng. mining pool) i optimizujete performanse vašeg Antminer S9. Otkrićete kako da postignete optimalnu energetsku efikasnost i efikasno iskopate svoje prve satoshije.
 
 
-Spremni da otkrijete svet Bitcoin Mining i prihvatite praktični izazov Attakai? Hajde da počnemo!
+Spremni da otkrijete svet Bitcoin rudarenja i prihvatite praktični Attakai izazov? Hajde da počnemo!
 
 
 
-# Sve što treba da znate o Mining
+# Sve što treba da znate o rudarenju
 
 
 <partId>aa99ef2c-da29-5317-a533-2ffa4f66f674</partId>
 
 
-## Objašnjenje Mining
+## Objašnjenje rudarenja
 
 
 <chapterId>36a82de7-87ee-5e7a-b69e-48fc30030447</chapterId>
 
 
-### Mining objašnjeno: analogija slagalice
+### Objašnjenje rudarenja: analogija sa slagalicom
 
 
-Da bi se koncept Mining objasnio na pojednostavljen način, može se koristiti relevantna analogija: slagalice. Baš kao slagalica, Mining je složen zadatak za izvršavanje, ali ga je lako proveriti kada je završen. U kontekstu Bitcoin Mining, rudari se trude da brzo reše digitalnu slagalicu. Prvi Miner koji reši slagalicu predstavlja svoje rešenje celokupnoj mreži, koja zatim lako može proveriti njegovu validnost. Ovo uspešno verifikovanje omogućava Miner da validira novi blok i doda ga u Bitcoin Timechain. Kao priznanje za njihov rad, koji uključuje značajne troškove, Miner dobija nagradu u određenom broju bitkoina. Ova nagrada služi kao finansijski podsticaj rudarima da nastave svoj rad na validaciji transakcija i obezbeđivanju Bitcoin mreže.
+Da bi se koncept rudarenja objasnio na pojednostavljen način, može se koristiti relevantna analogija: slagalice. Baš kao slagalica, rudarenje je složen zadatak za izvršavanje, ali ga je lako proveriti kada je završen. U kontekstu Bitcoin rudarenja, rudari se trude da brzo reše digitalnu slagalicu. Prvi rudar koji reši slagalicu predstavlja svoje rešenje celokupnoj mreži, koja zatim lako može proveriti njegovu validnost. Ovo uspešno verifikovanje omogućava rudaru da validira novi blok i doda ga u Bitcoin Timechain (u prevodu vremenski lanac). Kao priznanje za njihov rad, koji uključuje značajne troškove, rudar dobija nagradu u određenom broju bitkoina. Ova nagrada služi kao finansijski podsticaj rudarima da nastave svoj rad na validaciji transakcija i obezbeđivanju Bitcoin mreže.
 
 
 ![image](assets/en/001.webp)
 
 
-U početku u Bitcoin mreži, dodeljena nagrada je bila 50 bitkoina svakih deset minuta, paralelno sa otkrivanjem bloka u proseku svakih deset minuta od strane rudara. Ova nagrada prolazi kroz Halving svakih 210.000 blokova, otprilike svake četiri godine. Ova naknada služi kao snažan podsticaj da se rudari ohrabre da učestvuju u Mining procesu uprkos njegovim energetskim troškovima. Bez nagrade, energetski intenzivan Mining bi bio napušten, ugrožavajući sigurnost i stabilnost cele Bitcoin mreže.
+U početku u Bitcoin mreži, dodeljena nagrada je bila 50 bitkoina svakih deset minuta, paralelno sa otkrivanjem bloka u proseku svakih deset minuta od strane rudara. Ova nagrada se prepolovljava svakih 210.000 blokova, otprilike svake četiri godine. Ova naknada služi kao snažan podsticaj da se rudari ohrabre da učestvuju u rudarskom procesu uprkos njegovim energetskim troškovima. Bez nagrade, energetski intenzivno rudarenje bi bilo napušteno, ugrožavajući sigurnost i stabilnost cele Bitcoin mreže.
 
-Trenutna Mining nagrada je dvostruka. S jedne strane, uključuje kreiranje novih bitkoina, što je smanjeno sa 50 bitkoina svakih deset minuta na početku na 6.25 bitkoina danas (2023). S druge strane, uključuje naknade za transakcije, ili Mining naknade, iz transakcija koje Miner odluči da uključi u svoj blok. Kada se izvrši Bitcoin transakcija, plaćaju se naknade za transakcije. Ove naknade funkcionišu kao neka vrsta aukcije gde korisnici navode koliko su spremni da plate da bi njihova transakcija bila uključena u sledeći blok. Da bi maksimizirali svoju nagradu, rudari, delujući u svom interesu, biraju najprofitabilnije transakcije koje će uključiti u svoj blok, uzimajući u obzir ograničeni raspoloživi prostor. Tako, Mining nagrada se sastoji od generisanja novih bitkoina i naknada za transakcije, osiguravajući kontinuirani podsticaj za rudare i osiguravajući dugovečnost i sigurnost Bitcoin mreže.
-
-
-### Rudari i njihovi alati: Mining
+Trenutna nagrada rudarima je dvostruka. S jedne strane, uključuje kreiranje novih bitkoina, što je smanjeno sa 50 bitkoina svakih deset minuta inicijalno na 6.25 bitkoina danas (2023). S druge strane, uključuje naknade za transakcije, ili rudarske naknade, iz transakcija koje rudar odluči da uključi u svoj blok. Kada se izvrši Bitcoin transakcija, plaćaju se naknade za transakciju. Ove naknade funkcionišu kao neka vrsta aukcije gde korisnici navode koliko su spremni da plate da bi njihova transakcija bila uključena u sledeći blok. Da bi maksimizirali svoju nagradu, rudari, delujući u svom interesu, biraju najprofitabilnije transakcije koje će uključiti u svoj blok, uzimajući u obzir ograničeni raspoloživi prostor. Tako, rudarske nagrada se sastoji od generisanja novih bitkoina i naknada za transakcije, osiguravajući kontinuirani podsticaj za rudare i osiguravajući dugovečnost i sigurnost Bitcoin mreže.
 
 
-Proces Mining uključuje pronalaženje validnog Hash koji je prihvatljiv za Bitcoin mrežu. Kada se izračuna i pronađe, ovaj Hash je nepovratan, slično kao kada se krompir pretvori u pire krompir. On verifikuje određenu funkciju bez mogućnosti vraćanja unazad. Rudari, u konkurenciji, koriste mašine za izračunavanje ovih heševa. Iako je teoretski moguće pronaći ovaj Hash ručno, složenost operacije čini ovu opciju neizvodljivom. Računari, sposobni da brzo izvrše ove proračune, se stoga koriste, trošeći značajnu količinu električne energije.
+### Rudari i njihovi alati: rudarenje
 
 
-Na početku je dominirala era CPU-a, gde su rudari koristili svoje lične računare za Bitcoin Mining. Otkriće prednosti GPU-ova (grafičkih kartica) za ovaj zadatak označilo je prekretnicu, značajno povećavajući Hashrate i smanjujući potrošnju energije. Napredak se tu nije zaustavio, sa kasnijim uvođenjem FPGA-ova (polje-programabilnih gejt nizova). FPGA-ovi su služili kao platforma za razvoj ASIC-ova (integrisanih kola specifičnih za aplikaciju).
+Proces rudarenja uključuje pronalaženje validne heš vrednosti koja je prihvatljiva za Bitcoin mrežu. Kada se izračuna i pronađe, ova heš vrednost je nepovratna, slično kao kada se krompir pretvori u pire krompir. On verifikuje određenu funkciju bez mogućnosti vraćanja unazad. Rudari, u konkurenciji, koriste mašine za izračunavanje ovih heševa. Iako je teoretski moguće pronaći ovu heš vrednost ručno, složenost operacije čini ovu opciju neizvodljivom. Računari, sposobni da brzo izvrše ove proračune, se stoga koriste, trošeći značajnu količinu električne energije.
+
+
+Na početku je dominirala era CPU-a, gde su rudari koristili svoje lične računare za Bitcoin rudarenje. Otkriće prednosti GPU-ova (grafičkih kartica) za ovaj zadatak označilo je prekretnicu, značajno povećavajući [Hashrate] (https://planb.network/en/resources/glossary/hashrate) i smanjujući potrošnju energije. Napredak se tu nije zaustavio, sa kasnijim uvođenjem FPGA-ova (polje-programabilnih gejt nizova). FPGA-ovi su služili kao platforma za razvoj ASIC-ova (integrisanih kola specifičnih za aplikaciju).
 
 
 ![image](assets/en/002.webp)
