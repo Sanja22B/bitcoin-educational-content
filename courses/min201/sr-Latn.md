@@ -478,45 +478,44 @@ Za potrošnju od 1 kW električne energije, električni radijator proizvodi 1 kW
 Računar, ili šire gledano elektronska ploča, ne troši energiju za obavljanje proračuna, već jednostavno treba da energija prolazi kroz njegove komponente da bi funkcionisao. Potrošnja energije je posledica električnog otpora komponenti, što proizvodi gubitke i generiše toplotu, poznatu kao Džulov efekat.
 
 
-Neke kompanije su došle na ideju da kombinuju potrebe za računalnom snagom sa potrebama za grejanjem putem radijatora/servera. Ideja je da se serverski sistemi kompanije distribuiraju u male jedinice koje bi mogle biti postavljene u domovima ili kancelarijama. Međutim, ova ideja se suočava sa nekoliko problema. Potreba za serverima nije povezana sa potrebom za grejanjem, i kompanije ne mogu fleksibilno koristiti računalne kapacitete svojih servera. Takođe postoje ograničenja u širini pojasa koju pojedinci mogu imati. Svi ovi faktori sprečavaju kompaniju da učini ove skupe instalacije profitabilnim ili da obezbedi stabilnu ponudu online servera bez data centara koji mogu preuzeti kada grejanje nije potrebno.
+Neke kompanije su došle na ideju da kombinuju potrebe za kompujterskom snagom sa potrebama za grejanjem putem radijatora/servera. Ideja je da se serverski sistemi kompanije distribuiraju u male jedinice koje bi mogle biti postavljene u domovima ili kancelarijama. Međutim, ova ideja se suočava sa nekoliko problema. Potreba za serverima nije povezana sa potrebom za grejanjem, i kompanije ne mogu fleksibilno koristiti kompjuterske kapacitete svojih servera. Takođe postoje ograničenja propusnog opsega (eng. bandwidth) koju pojedinci mogu imati. Svi ovi faktori sprečavaju kompaniju da učini ove skupe instalacije profitabilnim ili da obezbedi stabilnu ponudu online servera bez data centara koji mogu preuzeti kada grejanje nije potrebno.
 
 
-> Toplota koju generiše vaš računar nije uzaludna ako treba da grejete svoj dom. Ako koristite električno grejanje tamo gde živite, onda toplota iz vašeg računara nije uzaludna. Košta isto da generate ovu toplotu sa vašim računarom. Ako imate jeftiniji sistem grejanja od električnog grejanja, onda je gubitak samo u razlici u ceni. Ako je leto i koristite klima uređaj, onda je to dvostruki gubitak. Bitcoin Mining treba da se odvija tamo gde je jeftinije. Možda će to biti tamo gde je klima Cold i gde je grejanje električno, gde će Mining postati besplatno.
+> Toplota koju generiše vaš računar nije uzaludna ako treba da grejete svoj dom. Ako koristite električno grejanje tamo gde živite, onda toplota iz vašeg računara nije uzaludna. Košta isto da generišete ovu toplotu sa vašim računarom. Ako imate jeftiniji sistem grejanja od električnog grejanja, onda je gubitak samo u razlici u ceni. Ako je leto i koristite klima uređaj, onda je to dvostruki gubitak. Bitcoin rudarenje treba da se odvija tamo gde je jeftinije. Možda će to biti tamo gde je klima hladnija i gde je grejanje električno, i gde će rudarenje postati besplatno.
 >
 
 > Satoshi Nakamoto - 8. avgust 2010.
 
-Bitcoin i njegov Proof of Work se ističu jer automatski prilagođavaju težinu Mining na osnovu količine računanja koje obavlja cela mreža. Ova količina se naziva Hashrate i izražava se u hešovima po sekundi. Danas se procenjuje na 380 eksahešova po sekundi, što je 380 milijardi milijardi hešova po sekundi. Ovaj Hashrate predstavlja rad i stoga količinu utrošene energije. Što je veći Hashrate, to je veća težina, i obrnuto. Tako se Bitcoin Miner može aktivirati ili deaktivirati u bilo kom trenutku bez uticaja na mrežu, za razliku od radijatora/servera koji moraju ostati stabilni da bi pružili svoju uslugu. Miner je nagrađen za svoje učešće, u odnosu na druge, bez obzira koliko malo to bilo.
+Bitcoin i njegov Proof of Work se ističu jer automatski prilagođavaju težinu rudarenja na osnovu količine računanja koje obavlja cela mreža. Ova količina se naziva Hashrate i izražava se u hešovima po sekundi. Danas se procenjuje na 380 eksahešova po sekundi, što je 380 milijardi milijardi hešova po sekundi. Ovaj Hashrate predstavlja rad i stoga količinu utrošene energije. Što je veći Hashrate, to je veća težina, i obrnuto. Tako se Bitcoin rudarenje može aktivirati ili deaktivirati u bilo kom trenutku bez uticaja na mrežu, za razliku od radijatora/servera koji moraju ostati stabilni da bi pružili svoju uslugu. Rudar je nagrađen za svoje učešće, u odnosu na druge, bez obzira koliko malo to bilo.
 
 
-Ukratko, električni radijator i Bitcoin Miner proizvode 1 kW toplote za 1 kW potrošene električne energije. Međutim, Miner takođe prima bitkoine kao nagradu. Bez obzira na cenu električne energije, cenu Bitcoin, ili konkurenciju u Bitcoin Mining aktivnosti na mreži, ekonomski je isplativije grejati se sa Miner nego sa električnim radijatorom.
+Ukratko, električni radijator i Bitcoin rudarenje proizvode 1 kW toplote za 1 kW potrošene električne energije. Međutim, rudar takođe prima bitkoine kao nagradu. Bez obzira na cenu električne energije, cenu Bitcoina, ili konkurenciju u aktivnosti Bitcoin rudarenju na mreži, ekonomski je isplativije grejati se sa uređajem za rudarenje nego sa električnim radijatorom.
 
 
 ### Dodata vrednost za Bitcoin
 
 
-Važno je razumeti kako Mining doprinosi decentralizaciji Bitcoin.
+Važno je razumeti kako rudarenje doprinosi decentralizaciji Bitcoina.
 
 Nekoliko postojećih tehnologija je ingeniozno kombinovano kako bi se oživeo Nakamoto konsenzus. Ovaj konsenzus ekonomski nagrađuje poštene učesnike za njihov doprinos radu Bitcoin mreže, dok obeshrabruje nepoštene učesnike. Ovo je jedna od ključnih tačaka koja omogućava mreži da postoji održivo.
 
-Pošteni akteri, oni koji kopaju u skladu sa pravilima, svi se međusobno takmiče da dobiju što veći deo nagrade za proizvodnju novih blokova. Ovaj ekonomski podsticaj prirodno vodi ka obliku centralizacije jer kompanije biraju da se specijalizuju u ovoj unosnoj aktivnosti smanjenjem svojih troškova kroz ekonomiju obima. Ovi industrijski akteri imaju povoljan položaj za kupovinu i održavanje mašina, kao i za pregovaranje o veleprodajnim cenama električne energije.
+Pošteni akteri, oni koji "kopaju" u skladu sa pravilima, svi se međusobno takmiče da dobiju što veći deo nagrade za proizvodnju novih blokova. Ovaj ekonomski podsticaj prirodno vodi ka obliku centralizacije jer kompanije biraju da se specijalizuju u ovoj unosnoj aktivnosti smanjenjem svojih troškova kroz ekonomiju obima. Ovi industrijski akteri imaju povoljan položaj za kupovinu i održavanje mašina, kao i za pregovaranje o veleprodajnim cenama električne energije.
 
 
-> U početku bi većina korisnika pokretala mrežne čvorove, ali kako mreža raste preko određene tačke, sve više bi to bilo prepušteno stručnjacima sa server farmama specijalizovanog hardvera. Server farmi bi bilo potrebno da ima samo jedan čvor na mreži, a ostatak LAN-a bi se povezivao na taj čvor.
+> U početku bi većina korisnika pokretala mrežne čvorove, ali kako mreža raste preko određene tačke, sve više bi to bilo prepušteno stručnjacima sa server farmama specijalizovanog hardvera. Server farmi bi bilo potrebno da ima samo jedan čvor na mreži, a ostatak lokalne mreže (LAN) bi se povezivao na taj čvor.
 >
 
 > Satoshi Nakamoto - 2. novembar 2008.
 
-Određeni entiteti drže značajan procenat ukupnog Hashrate u velikim Mining farmama. Možemo primetiti nedavni Cold talas u Sjedinjenim Državama gde je značajan deo Hashrate bio isključen kako bi se energija preusmerila ka domaćinstvima sa izuzetnom potrebom za električnom energijom. Tokom nekoliko dana, rudari su bili ekonomski podstaknuti da ugase svoje farme, a ovo izuzetno vreme može se videti na Bitcoin Hashrate krivoj.
+Određeni entiteti drže značajan procenat ukupnog Hashrate-a u velikim farmama za rudaranje. Možemo primetiti nedavni hladni talas u Sjedinjenim Državama gde je značajan deo Hashrate-a bio isključen kako bi se energija preusmerila ka domaćinstvima sa izuzetnom potrebom za električnom energijom. Tokom nekoliko dana, rudari su bili ekonomski podstaknuti da ugase svoje farme, a to izuzetno vremensko stanje odrazilo se na krivu Bitcoin heš stope.
 
-
-Ovo pitanje bi moglo postati problematično i predstavlja značajan rizik za neutralnost mreže. Akter sa više od 51% Hashrate bi lakše mogao cenzurisati transakcije ako to želi. Zato je važno distribuirati Hashrate među više aktera, a ne centralizovanim entitetima koje bi vlada, na primer, lakše mogla zapleniti.
+Ovo pitanje bi moglo postati problematično i predstavlja značajan rizik za neutralnost mreže. Akter sa više od 51% Hashrate-a bi lakše mogao cenzurisati transakcije ako to želi. Zato je važno distribuirati Hashrate-a među više aktera, a ne centralizovanim entitetima koje bi vlada, na primer, lakše mogla zapleniti.
 
 
 **Ako su rudari raspoređeni u hiljadama, ili čak milionima, domaćinstava širom sveta, postaje veoma teško za državu da preuzme kontrolu nad njima.**
 
 
-Kada izađe iz fabrike, Miner nije pogodan za korišćenje kao grejač u kući, zbog dva glavna problema: prekomerne buke i nedostatka podešavanja. Međutim, ovi problemi se lako mogu rešiti kroz hardverske i softverske modifikacije, omogućavajući mnogo tiši Miner koji se može konfigurisati i automatizovati kao moderni električni grejači.
+Kada izađe iz fabrike, uređaj za rudarenje nije pogodan za korišćenje kao grejač u kući, zbog dva glavna problema: prekomerne buke i nedostatka podešavanja. Međutim, ovi problemi se lako mogu rešiti kroz hardverske i softverske modifikacije, omogućavajući mnogo tiši uređaj koji se može konfigurisati i automatizovati kao moderni električni grejači.
 
 
 **Attakaï je obrazovna inicijativa koja vas uči kako da na najisplativiji način unapredite Antminer S9.**
@@ -525,22 +524,22 @@ Kada izađe iz fabrike, Miner nije pogodan za korišćenje kao grejač u kući, 
 Ovo je odlična prilika da učite kroz praksu dok ste nagrađeni za vaše učešće sa KYC-free satoshijima.
 
 
-## Vodič za kupovinu polovnog ASIC
+## Vodič za kupovinu polovnog ASIC-a
 
 
 <chapterId>3b0b3bf0-859b-57f2-b92f-843ac70b7e68</chapterId>
 
 
-U ovom odeljku ćemo diskutovati o najboljim praksama za kupovinu polovnog Bitmain Antminer S9, mašine na kojoj će se zasnivati ovaj vodič za ugradnju radijatora. Ovaj vodič se takođe primenjuje na druge modele ASIC-a jer je to opšti vodič za kupovinu polovnog Mining hardvera.
+U ovom odeljku ćemo diskutovati o najboljim praksama za kupovinu polovnog Bitmain Antminer S9, mašine na kojoj će se zasnivati ovaj vodič za ugradnju radijatora. Ovaj vodič se takođe primenjuje na druge modele ASIC-a jer je to opšti vodič za kupovinu polovnog hardvera za rudarenje.
 
 
-Antminer S9 je uređaj koji nudi Bitmain od maja 2016. Troši 1400W električne energije i proizvodi 13.5 TH/s. Iako se smatra starim, ostaje odlična opcija za početak Mining. Pošto je proizveden u velikim količinama, lako je pronaći rezervne delove u mnogim regionima sveta. Generalno se može nabaviti peer-to-peer na sajtovima kao što su eBay ili LeBonCoin, jer ga profesionalni prodavci više ne nude zbog njegove niže konkurentnosti u poređenju sa novijim mašinama. Manje je efikasan od ASIC-a kao što je Antminer S19, koji se nudi od marta 2020, ali to ga čini pristupačnim polovnim hardverom i pogodnijim za modifikacije koje ćemo napraviti.
+Antminer S9 je uređaj koji nudi Bitmain od maja 2016. Troši 1400W električne energije i proizvodi 13.5 TH/s. Iako se smatra starim, ostaje odlična opcija za početak rudarenja. Pošto je proizveden u velikim količinama, lako je pronaći rezervne delove u mnogim regionima sveta. Generalno se može nabaviti peer-to-peer na sajtovima kao što su eBay ili LeBonCoin, jer ga profesionalni preprodavci više ne nude zbog njegove niže konkurentnosti u poređenju sa novijim mašinama. Manje je efikasan od ASIC-a kao što je Antminer S19, koji se nudi od marta 2020, ali to ga čini pristupačnim polovnim hardverom i pogodnijim za modifikacije koje ćemo napraviti.
 
 
-Antminer S9 dolazi u nekoliko varijacija (i, j) koje čine manje modifikacije na hardveru prve generacije. Ne verujemo da ovo treba da utiče na vašu odluku o kupovini, i ovaj vodič funkcioniše za sve te varijacije.
+Antminer S9 dolazi u nekoliko varijacija (i, j) koje čine manje modifikacije na hardveru u odnosu na prvu generaciju. Ne verujemo da ovo treba da utiče na vašu odluku o kupovini, i ovaj vodič funkcioniše za sve te varijacije.
 
 
-Cena ASIC-a varira u zavisnosti od mnogih faktora kao što su cena Bitcoin, težina mreže, efikasnost mašine i trošak električne energije. Stoga je teško dati tačnu procenu za kupovinu korišćene mašine. U februaru 2023. godine, očekivana cena u Francuskoj generalno se kreće od €100 do €200, ali ove cene mogu brzo da se promene.
+Cena ASIC-a varira u zavisnosti od mnogih faktora kao što su cena Bitcoina, težina mreže, efikasnost mašine i trošak električne energije. Stoga je teško dati tačnu procenu za kupovinu korišćene mašine. U februaru 2023. godine, očekivana cena u Francuskoj generalno se kreće od €100 do €200, ali ove cene mogu brzo da se promene.
 
 
 ![image](assets/en/015.webp)
@@ -557,21 +556,21 @@ Antminer S9 se sastoji od sledećih delova:
 
 
 
-- Kontrolna ploča koja uključuje slot za SD karticu, Ethernet port i konektore za hashboardove i ventilatore. Ovo je mozak vašeg ASIC.
+- Kontrolna ploča koja uključuje slot za SD karticu, Ethernet port i konektore za hashboardove i ventilatore. Ovo je mozak vašeg ASIC-a.
 
 
 ![image](assets/en/017.webp)
 
 
 
-- 3 data kablova koji povezuju heš table sa kontrolnom pločom.
+- 3 kabla za prenos podataka koji povezuju heš table sa kontrolnom pločom.
 
 
 ![image](assets/en/018.webp)
 
 
 
-- Snaga Supply, koja radi na 220V i može se priključiti kao običan kućni aparat.
+- Napajanje, koje radi na 220V i može se priključiti kao običan kućni aparat.
 
 
 ![image](assets/en/019.webp)
@@ -585,28 +584,28 @@ Antminer S9 se sastoji od sledećih delova:
 
 
 
-- Muški C13 kabl.
+- C13 kabl.
 
 
 ![image](assets/en/021.webp)
 
 
-Kada kupujete korišćenu mašinu, važno je proveriti da li su svi delovi uključeni i funkcionalni. Tokom Exchange, trebalo bi da zamolite prodavca da uključi mašinu kako biste proverili njeno pravilno funkcionisanje. Važno je potvrditi da se uređaj pravilno uključuje, a zatim proveriti internet konekciju priključivanjem Ethernet kabla i pristupom Bitmain loginu Interface putem web pregledača na istoj lokalnoj mreži. Možete pronaći ovaj IP Address povezivanjem na vaš internet ruter Interface i traženjem povezanih uređaja. Ovaj Address bi trebalo da ima sledeći format: 192.168.x.x
+Kada kupujete korišćenu mašinu, važno je proveriti da li su svi delovi uključeni i funkcionalni. Tokom kupovine, trebalo bi da zamolite prodavca da uključi mašinu kako biste proverili njeno pravilno funkcionisanje. Važno je potvrditi da se uređaj pravilno uključuje, a zatim proveriti internet konekciju priključivanjem Ethernet kabla i pristupom Bitmain login korisničkom interfejsu putem web pregledača na istoj lokalnoj mreži. Možete pronaći ovu IP adresu povezivanjem na interfejs vašeg internet ruter i traženjem povezanih uređaja. Ova adresa bi trebalo da ima sledeći format: 192.168.x.x
 
 
 ![image](assets/en/022.webp)
 
 
-Takođe, proverite da li podrazumevane kredencijale rade (korisničko ime: root, lozinka: root). Ako podrazumevane kredencijale ne rade, biće potrebno da resetujete mašinu.
+Takođe, proverite da li podrazumevani kredencijali rade (korisničko ime: root, lozinka: root). Ako podrazumevani kredencijali ne rade, biće potrebno da resetujete mašinu.
 
 
 ![image](assets/en/023.webp)
 
 
-Kada se povežete, trebali biste moći videti status svake hashboarde na kontrolnoj tabli. Ako je Miner povezan na pool, trebali biste videti da sve hashboarde funkcionišu. Važno je napomenuti da rudari prave mnogo buke, što je normalno. Takođe, proverite da li ventilatori rade ispravno.
+Kada se povežete, trebali biste moći videti status svakog hashboarde-a na kontrolnoj tabli. Ako je uređaj povezan na rudarski bazen, trebali biste videti da svi hashboarde-i funkcionišu. Važno je napomenuti da ovi uređaji prave mnogo buke, što je normalno. Takođe, proverite da li ventilatori rade ispravno.
 
 
-Zatim možete ukloniti Mining pool prethodnog vlasnika kako biste kasnije postavili svoj. Ako želite, možete takođe pregledati hashboardove rastavljanjem mašine. Međutim, ovaj korak je složeniji i zahteva više vremena i neke alate. Ako želite da nastavite sa ovim rastavljanjem, možete se obratiti sledećem delu ovog tutorijala koji detaljno objašnjava kako to uraditi. Važno je napomenuti da rudari sakupljaju mnogo Dust i zahtevaju redovno održavanje. Možete posmatrati ovo nakupljanje Dust i kvalitet održavanja rastavljanjem mašine.
+Zatim možete ukloniti rudarski bazen prethodnog vlasnika kako biste kasnije postavili svoj. Ako želite, možete takođe pregledati hashboardove rastavljanjem mašine. Međutim, ovaj korak je složeniji i zahteva više vremena i neke alate. Ako želite da nastavite sa ovim rastavljanjem, možete se obratiti sledećem delu ovog tutorijala koji detaljno objašnjava kako to uraditi. Važno je napomenuti da ovi uređaji sakupljaju mnogo prašine i zahtevaju redovno održavanje. Možete videti nakupljenu prašinu i kvalitet održavanja rastavljanjem mašine.
 
 Nakon što pregledate sve ove tačke, možete kupiti svoju mašinu sa visokim stepenom poverenja. Ako ste u nedoumici, konsultujte zajednicu.
 
@@ -614,7 +613,7 @@ Nakon što pregledate sve ove tačke, možete kupiti svoju mašinu sa visokim st
 Da rezimiramo ovaj vodič u jednoj rečenici: **"Ne veruj, proveri."**
 
 
-[Takođe se možete obratiti profesionalcima za rekondicioniranje Mining mašina, kao što je naš partner 21energy. Oni nude testirane S9 mašine, očišćene i sa već instaliranim BraiiinOS+ softverom. Sa partnerskim kodom "decouvre," dobićete 10% popusta na kupovinu S9 i podržati Attakai projekat.](https://21energy.io/en/produkt/bitmain-antminer-s9-bundle/)
+[Takođe se možete obratiti profesionalcima za obnavljanje rudarskih mašina, kao što je naš partner 21energy. Oni nude testirane S9 mašine, očišćene i sa već instaliranim BraiiinOS+ softverom. Sa partnerskim kodom "decouvre," dobićete 10% popusta na kupovinu S9 i podržati Attakai projekat.](https://21energy.io/en/produkt/bitmain-antminer-s9-bundle/)
 
 
 ## Vodič za kupovinu hardverskih modifikacija za S9
