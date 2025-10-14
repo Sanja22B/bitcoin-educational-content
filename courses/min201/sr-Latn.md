@@ -239,13 +239,13 @@ Opšti zaključak je da je decentralizacija ključna za sigurnost i otpornost Bi
 ### Princip Attakai
 
 
-U trenutnom kontekstu, Bitcoin Mining sa modelom S9 može delovati složeno, ali dublja analiza otvara vrata ka inovativnim alternativama. Princip Attakai zasniva se na razmatranju upotrebe Mining instalacija u raznim tipovima zgrada, kao što su škole ili bolnice. Glavna ideja je postaviti nekoliko Mining mašina na različite lokacije, čime bi se ponovo koristila toplota koju emituju ove mašine za grejanje objekata. Odabirom efikasnijih modela kao što je S19, bilo bi moguće distribuirati aktivnost Mining, čime bi se poboljšale ukupne performanse, dok bi se istovremeno korisno doprinosilo društvu. Ova inicijativa ima za cilj da se takmiči sa velikim centralizovanim Mining operacijama koristeći toplotu generisanu od strane Mining mašina na produktivan i efikasan način.
+U trenutnom kontekstu, Bitcoin rudarenje sa modelom S9 može delovati složeno, ali dublja analiza otvara vrata ka inovativnim alternativama. Princip Attakai zasniva se na razmatranju upotrebe instalacija za rudarenje u raznim tipovima zgrada, kao što su škole ili bolnice. Glavna ideja je postaviti nekoliko mašina za rudarenje na različite lokacije, čime bi se ponovo koristila toplota koju emituju ove mašine za grejanje objekata. Odabirom efikasnijih modela kao što je S19, bilo bi moguće distribuirati aktivnost rudarenja, čime bi se poboljšale ukupne performanse, dok bi se istovremeno korisno doprinosilo društvu. Ova inicijativa ima za cilj da se takmiči sa velikim centralizovanim rudarskim operacijama koristeći toplotu generisanu od strane mašina na produktivan i efikasan način.
 
 
-Inicijativa Attakai potiče iz ličnog kućnog-Mining eksperimenta koji su sprovela dva prijatelja željna da aktivno učestvuju u Bitcoin mreži. Suočili su se sa velikim preprekama, kao što su visoki nivoi buke Mining opreme, koja je dizajnirana za industrijsku, a ne za kućnu upotrebu. Da bi se Address ovaj problem, izvršene su hardverske modifikacije na Mining mašinama. Efikasniji i tiši ventilatori zamenili su originalnu opremu, čineći kućni Mining pristupačnijim i manje ometajućim. Pored toga, uključivanje Wi-Fi adaptera eliminisalo je potrebu za žičanom Ethernet vezom, dodatno pojednostavljujući kućni-Mining proces. Zimi su ovi modifikovani rudari korišćeni kao izvor grejanja, pretvarajući smetnju u korist.
+Inicijativa Attakai potiče iz ličnog kućnog eksperimenta koja su sprovela dva prijatelja željna da aktivno učestvuju u Bitcoin mreži. Suočili su se sa velikim preprekama, kao što su visoki nivoi buke opreme za rudarenje, koja je dizajnirana za industrijsku, a ne za kućnu upotrebu. Da bi se rešio ovaj problem, izvršene su hardverske modifikacije na rudarskim mašinama. Efikasniji i tiši ventilatori zamenili su originalnu opremu, čineći rudarenje kod kuće pristupačnijim i manje ometajućim. Pored toga, uključivanje Wi-Fi adaptera eliminisalo je potrebu za žičanom Ethernet vezom, dodatno pojednostavljujući kućni proces rudarenja. Zimi su ovi modifikovani rudari korišćeni kao izvor grejanja, pretvarajući smetnju u korist.
 
 
-Nakon što su predstavili svoj projekat zajednici Bitcoin i videli interesovanje koje je izazvao, pronalazači Attakai odlučili su da objave detaljne vodiče na platformi Découvre Bitcoin, omogućavajući svakome da replicira svoje kućno-Mining iskustvo. Sada planiraju da prošire ovaj koncept izvan domaćeg okruženja. Cilj je da pokažu kako modifikovani Miner može biti transformisan u tihi pomoćni grejač koji se može koristiti tokom zime, nudeći glatku tranziciju ka drugom delu obuke, fokusiranom na praktičnu primenu ovih modifikacija, ilustrovanu objašnjavajućim video zapisima. Međutim, ostaje pitanje da li se ova inicijativa može proširiti na veću skalu, nudeći realističnu i održivu alternativu trenutnim centralizovanim Mining strukturama.
+Nakon što su predstavili svoj projekat Bitcoin zajednici i videli interesovanje koje je izazvao, pronalazači Attakai odlučili su da objave detaljne vodiče na platformi Découvre Bitcoin, omogućavajući svakome da replicira svoje kućno iskustvo rudarenja. Sada planiraju da prošire ovaj koncept izvan domaćeg okruženja. Cilj je da pokažu kako modifikovana mašina za rudarenje može biti transformisana u tihi pomoćni grejač koji se može koristiti tokom zime, nudeći glatku tranziciju ka drugom delu obuke, fokusiranom na praktičnu primenu ovih modifikacija, ilustrovanu objašnjavajućim video zapisima. Međutim, ostaje pitanje da li se ova inicijativa može proširiti na veću skalu, nudeći realističnu i održivu alternativu trenutnim centralizovanim rudarskim strukturama.
 
 
 ![image](assets/en/007.webp)
@@ -254,64 +254,62 @@ Nakon što su predstavili svoj projekat zajednici Bitcoin i videli interesovanje
 ### Granica ove decentralizacije?
 
 
-Iako se ideja o decentralizaciji Mining kroz produktivnu upotrebu generisane toplote čini obećavajućom, ona ima određena ograničenja i pitanja ostaju. Energetski intenzivni objekti kao što su saune i bazeni mogli bi imati koristi od ovog koncepta koristeći toplotu proizvedenu od strane majnera za zagrevanje vode u svojim objektima. Ova praksa se već primenjuje od strane nekih članova Bitcoin zajednice, koji istražuju različite metode za efikasno korišćenje toplote generisane Mining opremom. Na primer, svečana sala bi teoretski mogla biti zagrejana sa tri ili četiri S19 majnera, od kojih svaki troši 3000 vati i proizvodi ekvivalentnu količinu toplote.
+Iako se ideja o decentralizaciji rudarenja kroz produktivnu upotrebu generisane toplote čini obećavajućom, ona ima određena ograničenja i pitanja ostaju. Energetski intenzivni objekti kao što su saune i bazeni mogli bi imati koristi od ovog koncepta koristeći toplotu proizvedenu od strane majnera za zagrevanje vode u svojim objektima. Ova praksa se već primenjuje od strane nekih članova Bitcoin zajednice, koji istražuju različite metode za efikasno korišćenje toplote generisane opremom za rudarenje. Na primer, svečana sala bi teoretski mogla biti zagrejana sa tri ili četiri S19 uređaja, od kojih svaki troši 3000 vati i proizvodi ekvivalentnu količinu toplote.
 
 
-Međutim, treba napomenuti da su potrošnja energije i proizvodnja toplote ekvivalentni, bilo da energiju koristi električni grejač ili Miner. Za svaki kilovat utrošene električne energije, količina proizvedene toplote biće ista u oba slučaja. Razlika leži u činjenici da Miner ne samo da obezbeđuje toplotu već i Bitcoin nagradu, čime nudi ekonomski podsticaj za korišćenje Miner umesto jednostavnog električnog grejača. Ova dodatna nagrada mogla bi pomoći u ublažavanju zabrinutosti oko visoke potrošnje energije rudara.
+Međutim, treba napomenuti da su potrošnja energije i proizvodnja toplote ekvivalentni, bilo da energiju koristi električni grejač ili uređaj za rudarenje. Za svaki kilovat utrošene električne energije, količina proizvedene toplote biće ista u oba slučaja. Razlika leži u činjenici da uređaj za rudaranje ne samo da obezbeđuje toplotu već i Bitcoin nagradu, čime nudi ekonomski podsticaj za korišćenje mašina za rudarenje umesto jednostavnog električnog grejača. Ova dodatna nagrada mogla bi pomoći u ublažavanju zabrinutosti oko visoke potrošnje energije rudara.
 
 
-Pitanje dugoročne efikasnosti i izvodljivosti korišćenja Bitcoin uređaja za grejanje ostaje otvoreno. Stalne inovacije u Mining hardveru i tehnologijama grejanja mogu potencijalno otvoriti nove puteve za efikasniju upotrebu toplote generisane od strane Mining, čime bi se doprinelo održivosti ovog pristupa u budućnosti.
+Pitanje dugoročne efikasnosti i izvodljivosti korišćenja Bitcoin uređaja za grejanje ostaje otvoreno. Stalne inovacije u hardveru za rudarenje i tehnologijama grejanja mogu potencijalno otvoriti nove puteve za efikasniju upotrebu toplote generisane od strane uređaja, čime bi se doprinelo održivosti ovog pristupa u budućnosti.
 
 
 ### Zašto imati BTC nagrade?
 
 
-Pitanje nagrađivanja u Bitcoin umesto u nekoj drugoj valuti je ključno u sistemu koji je zamislio Satoshi Nakamoto. Kreiranje Bitcoin karakteriše fiksna granica od 21 milion jedinica. Cilj je bio pronaći pravedan način za distribuciju ovih novo kreiranih jedinica. Rudari, pružajući svoju računarsku snagu kako bi osigurali mrežu i učinili svaki napad sve skupljim, efikasno štite Bitcoin mrežu. Kao nagradu za ovaj ključni doprinos, oni su nagrađeni novo kreiranim bitcoinima, što olakšava distribuciju novčića unutar ekosistema.
+Pitanje nagrađivanja u Bitcoinu umesto u nekoj drugoj valuti je ključno u sistemu koji je zamislio Satoshi Nakamoto. Kreiranje Bitcoina karakteriše fiksna granica od 21 milion jedinica. Cilj je bio pronaći pravedan način za distribuciju ovih novo kreiranih jedinica. Rudari, pružajući svoju računarsku snagu kako bi osigurali mrežu i učinili svaki napad sve skupljim, efikasno štite Bitcoin mrežu. Kao nagradu za ovaj ključni doprinos, oni su nagrađeni novo kreiranim bitcoinima, što olakšava distribuciju novčića unutar ekosistema.
 
 
-To je win-win sistem. Rudari su nagrađeni i za obezbeđivanje mreže i za odobravanje transakcija. Novo kreirani bitkoini se daju kao podsticaj za jačanje sigurnosti, a naknade za transakcije su dodatni prihod za odobravanje transakcija. Ova dva Elements zajedno čine ukupnu nagradu za Mining. Pitanje budućnosti Mining se postavlja zbog programiranog smanjenja nagrada za Mining, Halving svake četiri godine, događaj poznat kao "Halving". Do 2032. godine, Block reward će biti manji od jednog Bitcoin, a do 2140. godine, neće biti kreirani novi bitkoini. U tom trenutku, rudari će se oslanjati isključivo na naknade za transakcije za kompenzaciju. Mreža Bitcoin će morati da podrži veliki broj transakcija, sa dovoljno visokim naknadama, kako bi se osigurala profitabilnost Mining.
+To je win-win sistem. Rudari su nagrađeni i za obezbeđivanje mreže i za odobravanje transakcija. Novo kreirani bitkoini se daju kao podsticaj za jačanje sigurnosti, a naknade za transakcije su dodatni prihod za odobravanje transakcija. Ova dva elementa zajedno čine ukupnu nagradu za rudarenje. Pitanje budućnosti rudarenje se postavlja zbog programiranog smanjenja nagrada za rudarenje, tačnije prepolovljavanje svake četiri godine, događaj poznat kao "Halving". Do 2032. godine, nagrada za izrudareni blok će biti manji od jednog Bitcoina, a do 2140. godine, neće više biti kreirani novi bitkoini. U tom trenutku, rudari će se oslanjati isključivo na naknade za transakcije za kompenzaciju. Bitcoin mreža će morati da podrži veliki broj transakcija, sa dovoljno visokim naknadama, kako bi se osigurala profitabilnost rudarenja.
 
 
-Porast Lightning Network, koji omogućava brze i niskobudžetne transakcije van glavnog Bitcoin lanca, postavlja pitanja o budućnosti Mining. Lightning Network ima potencijal da značajno smanji naknade za transakcije, čime bi uticao na prihode rudara. Međutim, to će zavisiti od usvajanja i korišćenja Lightning Network u poređenju sa glavnom Bitcoin mrežom. U pesimističnom scenariju, rudarima bi moglo biti isplativo da rudare čak i uz gubitak ako su amortizovali svoje troškove i imaju pristup jeftinoj struji. U optimističnijem scenariju, naknade za transakcije na glavnoj Bitcoin mreži mogle bi ostati dovoljno visoke da održe profitabilnost Mining.
+Porast Lightning mreže, koja omogućava brze i niskobudžetne transakcije van glavnog Bitcoin lanca, postavlja pitanja o budućnosti rudarenja. Lightning mreža ima potencijal da značajno smanji naknade za transakcije, čime bi se uticalo na prihode rudara. Međutim, to će zavisiti od stepena usvajanja i korišćenja Lightning mreže u poređenju sa glavnom Bitcoin mrežom. U pesimističnom scenariju, rudarima bi moglo biti isplativo da rudare čak i uz gubitak ako su amortizovali svoje troškove i imaju pristup jeftinoj struji. U optimističnijem scenariju, naknade za transakcije na glavnoj Bitcoin mreži mogle bi ostati dovoljno visoke da održe profitabilnost rudarenja.
 
 
 ### Šta treba da bude uključeno u Bitcoin blok?
 
 
-Što se tiče pitanja šta bi trebalo uključiti u Bitcoin blok, ključno je razmotriti komplementarnu prirodu različitih slojeva Bitcoin mreže. Iako Lightning Network može omogućiti brže i jeftinije transakcije, i dalje se oslanja na osnovni Layer od Bitcoin, često nazivan "settlement Layer," za otvaranje i zatvaranje platnih kanala.
+Što se tiče pitanja šta bi trebalo uključiti u Bitcoin blok, ključno je razmotriti komplementarnu prirodu različitih slojeva Bitcoin mreže. Iako Lightning mreža može omogućiti brže i jeftinije transakcije, ona i dalje zavisi od osnovnog sloja Bitcoina, koji se često naziva „sloj za poravnanje“ (eng. settlement layer), za otvaranje i zatvaranje platnih kanala.
 
-
-Sa očekivanim rastom Lightning Network i posljedičnim povećanjem otvaranja i zatvaranja kanala, prostor u Bitcoin blokovima postaje sve vredniji. Zajednica Bitcoin već teži da ceni očuvanje ovog prostora, prepoznajući njegovu intrinzičnu ograničenost. Ova svest je dovela do diskusija o legitimnoj upotrebi prostora blokova, sa zabrinutošću zbog "spama" na Blockchain od transakcija koje se smatraju neesencijalnim.
-
+Sa očekivanim rastom Lightning mreže i posledičnim povećanjem otvaranja i zatvaranja kanala, prostor u Bitcoin blokovima postaje sve vredniji. Bitcoin zajednica već teži da ceni očuvanje ovog prostora, prepoznajući njegovu intrinzičnu ograničenost. Ova svest je dovela do diskusija o legitimnoj upotrebi prostora unutar blokova, uz zabrinutost zbog „spama“ na blokčejnu koji potiče od transakcija koje se smatraju neesencijalnim.
 
 ![image](assets/en/008.webp)
 
 
-Spekulacije okružuju buduću upotrebu prostora blokova, ali se generalno prihvata da je to oskudan resurs koji treba mudro koristiti. Iako postoji želja da se popuni, neophodno je očuvati ga kako bi se osigurala dugoročna održivost Bitcoin mreže, predviđajući buduće povećanje potražnje za prostorom blokova. Kao i na svakom slobodnom tržištu, Supply i potražnja će regulisati upotrebu prostora blokova. Sa ograničenim Supply, zainteresovane strane će morati donositi informisane odluke o korišćenju ovog vrednog prostora kako bi osigurale dugoročnu efikasnost i sigurnost Bitcoin mreže.
+Spekulacije okružuju buduću upotrebu prostora unutar blokova, ali se generalno prihvata da je to oskudan resurs koji treba mudro koristiti. Iako postoji želja da se popuni, neophodno je očuvati ga kako bi se osigurala dugoročna održivost Bitcoin mreže, predviđajući buduće povećanje potražnje za prostorom unutar blokova. Kao i na svakom slobodnom tržištu, ponuda i potražnja će regulisati upotrebu prostora unutar blokova. Sa ograničenom ponudom, zainteresovane strane će morati donositi informisane odluke o korišćenju ovog vrednog prostora kako bi osigurale dugoročnu efikasnost i sigurnost Bitcoin mreže.
 
 
-## Bitcoin Mining u Bitcoin protokolu
+## Bitcoin rudarenje u Bitcoin protokolu
 
 
 <chapterId>879a66b0-c20a-56b5-aad0-8a21be61e338</chapterId>
 
 
-Uloga rudara u Bitcoin mreži bila je predmet intenzivne debate tokom ratova oko veličine blokova. Iako su ključni za sigurnost i funkcionalnost mreže, rudari ne poseduju nužno ultimativnu moć u Bitcoin ekosistemu. Ravnoteža između rudara, čvorova i krajnjih korisnika osigurava integritet i distribuciju mreže.
+Uloga rudara u Bitcoin mreži bila je predmet intenzivne debate tokom "ratova" oko veličine blokova. Iako su ključni za sigurnost i funkcionalnost mreže, rudari ne poseduju nužno ultimativnu moć u Bitcoin ekosistemu. Ravnoteža između rudara, čvorova i krajnjih korisnika osigurava integritet i distribuciju mreže.
 
 
 ### Ratovi oko veličine bloka
 
 
-Tokom ratova oko veličine blokova, mnogi rudari su se protivili određenim razvojnim promenama u mreži, ističući tenzije između različitih aktera u ekosistemu. Pitanje ostaje kako balansirati moć među rudarima, čvorovima i korisnicima kako bi se osigurala dugoročna sigurnost Bitcoin.
+Tokom ratova oko veličine blokova, mnogi rudari su se protivili određenim razvojnim promenama u mreži, ističući tenzije između različitih aktera u ekosistemu. Pitanje ostaje kako balansirati moć među rudarima, čvorovima i korisnicima kako bi se osigurala dugoročna sigurnost Bitcoina.
 
 
 ![image](assets/en/009.webp)
 
 
-Sigurnosna dilema Bitcoin počiva na delikatnoj ravnoteži. Dok rudari igraju ključnu ulogu u validaciji i kreiranju blokova, čvorovi održavaju integritet verifikacijom i validacijom transakcija i blokova. Neispravan ili lažan blok će biti odbijen od strane čvorova, čime se cenzuriše Miner i očuva sigurnost mreže. Moć takođe drže čvorovi i korisnici Bitcoin mreže. Čvorovi imaju moć verifikacije i validacije, dok korisnici imaju moć da biraju koji Blockchain će koristiti. Ova distribucija moći osigurava distribuciju i integritet Bitcoin mreže.
+Sigurnosna Bitcoin dilema počiva na delikatnoj ravnoteži. Dok rudari igraju ključnu ulogu u validaciji i kreiranju blokova, čvorovi održavaju integritet verifikacijom i validacijom transakcija i blokova. Neispravan ili lažan blok će biti odbijen od strane čvorova, čime se cenzuriše rudar i očuvava sigurnost mreže. Moć takođe drže čvorovi i korisnici Bitcoin mreže. Čvorovi imaju moć verifikacije i validacije, dok korisnici imaju moć da biraju koji Blockchain će koristiti. Ova distribucija moći osigurava distribuciju i integritet Bitcoin mreže.
 
 
-Ratovi oko veličine blokova otkrili su nesigurnost i napetost svojstvene upravljanju mrežom Bitcoin. Iako je Bitcoin Core trenutno dominantni lanac, debata oko upravljanja i menadžmenta mreže se nastavlja.
+Ratovi oko veličine blokova otkrili su nesigurnost i napetost svojstvene upravljanju Bitcoin mrežom. Iako je Bitcoin Core trenutno dominantni lanac, debata oko upravljanja i menadžmenta mreže se nastavlja.
 
 
 Na kraju, odgovornost je podeljena među svim akterima u Bitcoin mreži. Smanjenje broja korisnika, čvorova ili rudara moglo bi oslabiti mrežu, povećavajući rizik od centralizacije i ranjivosti na napade. Svaki akter doprinosi robusnosti i sigurnosti mreže, naglašavajući važnost održavanja ravnoteže moći i odgovornosti.
@@ -320,37 +318,36 @@ Na kraju, odgovornost je podeljena među svim akterima u Bitcoin mreži. Smanjen
 ### Moć rudara
 
 
-Satoshi Nakamotova elegantna teorija igara uspostavila je situaciju u kojoj je svaki akter u Bitcoin mreži motivisan da deluje ispravno kako bi zaštitio i svoje interese i interese drugih učesnika. Ovo stvara ravnotežu u kojoj se loše ponašanje može kazniti, čime se poboljšava sigurnost i stabilnost celog sistema. Uprkos ovoj ravnoteži, države ostaju potencijalna pretnja. Kao što je navedeno u prezentaciji na Surfing Bitcoin 2022, države mogu pokušati da napadnu Mining industriju, izlažući Bitcoin mrežu rizicima centralizacije i napada. Hipotetički scenariji kao što je vojni napad usmeren na proizvodne pogone Mining hardvera ističu važnost geografske i industrijske diverzifikacije za otpornost Bitcoin mreže.
-
+Satoshi Nakamotova elegantna teorija igara uspostavila je situaciju u kojoj je svaki akter u Bitcoin mreži motivisan da deluje ispravno kako bi zaštitio i svoje interese i interese drugih učesnika. Ovo stvara ravnotežu u kojoj se loše ponašanje može kazniti, čime se poboljšava sigurnost i stabilnost celog sistema. Uprkos ovoj ravnoteži, države ostaju potencijalna pretnja. Kao što je navedeno u prezentaciji na Surfing Bitcoin 2022, države mogu pokušati da napadnu industriju rudarenja, izlažući Bitcoin mrežu rizicima centralizacije i napada. Hipotetički scenariji, kao što je vojni napad usmeren na pogone za proizvodnju rudarske opreme, ističu značaj geografske i industrijske diverzifikacije za otpornost Bitcoin mreže.
 
 ![image](assets/en/010.webp)
 
 
-Centralizacija proizvodnje Mining hardvera u Kini predstavlja još jedan rizik. Odbijanje izvoza Mining mašina ili akumulacija Hashrate za potencijalni 51% napad od strane Kine naglašava potrebu za diversifikovanom proizvodnjom Mining hardvera. Kao odgovor na ove rizike, Bitcoin zajednica aktivno istražuje rešenja. Kompanije poput Intela razmatraju proizvodnju Mining opreme u Sjedinjenim Državama, doprinoseći distribuciji proizvodnje. Druge inicijative, kao što je Block-ov open-source Mining Development Kit (MDK), imaju za cilj smanjenje monopola na dizajn i proizvodnju Mining hardvera, omogućavajući širu distribuciju Hashrate. U središtu ovih diskusija leži osnovna misija Bitcoin: biti mreža vrednosti Exchange otporna na cenzuru. Bitcoin zajednica neprestano teži jačanju distribucije, otpornosti na cenzuru i antifragilnosti mreže, odbacujući predloge kao što je prelazak na proof of stake, koji nisu u skladu sa ovim osnovnim principima.
+Centralizacija proizvodnje hardvera za rudarenje u Kini predstavlja još jedan rizik. Odbijanje izvoza mašina za rudarenje ili akumulacija Hashrate za potencijalni 51% napad od strane Kine naglašava potrebu za diversifikovanom proizvodnjom rudarskog hardvera. Kao odgovor na ove rizike, Bitcoin zajednica aktivno istražuje rešenja. Kompanije poput Intela razmatraju proizvodnju rudarske opreme u Sjedinjenim Državama, doprinoseći distribuciji proizvodnje. Druge inicijative, kao što je Block-ov open-source Mining Development Kit (MDK), imaju za cilj smanjenje monopola na dizajn i proizvodnju rudarskog hardvera, omogućavajući širu distribuciju Hashrate-a. U središtu ovih diskusija leži osnovna Bitcoin misija: biti mreža za razmenu vrednosti otporna na cenzuru. Bitcoin zajednica neprestano teži jačanju distribucije, otpornosti na cenzuru i antifragilnosti mreže, odbacujući predloge kao što je prelazak na "dokaz o udelu" ili na engleskom "proof of stake", koji nisu u skladu sa ovim osnovnim principima.
 
 
 ### Fizička veza Proof of Work vs Proof of Stake
 
 
-Proof of Work (PoW) je suštinski važan jer predstavlja fizičku vezu između stvarnog sveta i Bitcoin. Iako su bitkoini nematerijalni, njihova proizvodnja zahteva opipljivu energiju, čime se uspostavlja direktna veza sa fizičkim i stvarnim svetom. Ova veza osigurava da proizvodnja i validacija bitkoina i blokova imaju stvarni energetski trošak, čime se mreža Bitcoin usidruje u fizičkoj stvarnosti i sprečava njena potpuna dominacija od strane moćnih entiteta. PoW deluje kao bedem protiv centralizacije, osiguravajući da učešće u mreži i validacija transakcija zahtevaju ulaganje u opipljive resurse. Ovo sprečava monopolizaciju mreže od strane entiteta koji bi inače mogli preuzeti kontrolu bez značajne ulazne barijere, čime se osigurava pravednija distribucija moći i uticaja unutar mreže Bitcoin.
+Proof of Work (PoW) je suštinski važan jer predstavlja fizičku vezu između stvarnog sveta i Bitcoina. Iako su bitkoini nematerijalni, njihova proizvodnja zahteva opipljivu energiju, čime se uspostavlja direktna veza sa fizičkim i stvarnim svetom. Ova veza osigurava da proizvodnja i validacija bitkoina i blokova imaju stvarni energetski trošak, čime se Bitcoin mreža usidruje u fizičkoj stvarnosti i sprečava njena potpuna dominacija od strane moćnih entiteta. PoW deluje kao bedem protiv centralizacije, osiguravajući da učešće u mreži i validacija transakcija zahtevaju ulaganje u opipljive resurse. Ovo sprečava monopolizaciju mreže od strane entiteta koji bi inače mogli preuzeti kontrolu bez značajne ulazne barijere, čime se osigurava pravednija distribucija moći i uticaja unutar Bitcoin mreže.
 
 
 ![image](assets/en/011.webp)
 
 
-### Ograničenja Proof of Stake
+### Ograničenja Proof of Stake-a
 
 
-S druge strane, Proof of Stake (PoS), iako omogućava učešće u malom obimu, ne garantuje ekvivalentnu zaštitu od centralizacije. U PoS mreži, oni koji već poseduju veliku količinu valute imaju nesrazmernu moć, što odražava postojeće nejednakosti moći u društvu u celini. Ova dinamika bi potencijalno mogla da produži centralizaciju i koncentraciju moći u rukama nekolicine, suprotno osnovnim ciljevima distribucije Bitcoin mreže. Argument da svako može učestvovati u PoS, čak i u malom obimu, pridruživanjem bazenima, nije nužno čvrst. U PoW mreži, čak i mali doprinosilac, sa skromnom opremom, može aktivno učestvovati i doprineti bezbednosti i distribuciji mreže.
+S druge strane, Proof of Stake (PoS), iako omogućava učešće u malom obimu, ne garantuje ekvivalentnu zaštitu od centralizacije. U PoS mreži, oni koji već poseduju veliku količinu valute imaju nesrazmernu moć, što odražava postojeće nejednakosti moći u društvu u celini. Ova dinamika bi potencijalno mogla da produži centralizaciju i koncentraciju moći u rukama nekolicine, suprotno osnovnim ciljevima distribucije Bitcoin mreže. Argument da svako može učestvovati u PoS, čak i u malom obimu, pridruživanjem bazenima (eng. pools), nije nužno čvrst. U PoW mreži, čak i mali doprinosilac, sa skromnom opremom, može aktivno učestvovati i doprineti bezbednosti i distribuciji mreže.
 
 
 ### Rekapitulacija
 
 
-Da rezimiramo, rudari jačaju Bitcoin mrežu protiv cenzure koristeći električnu energiju za izračunavanje Bitcoin-ovog Proof of Work, i nagrađuju se novim bitkoinima i naknadama za transakcije. Sa profesionalizacijom industrije, pojavljuju se različiti igrači, igrajući različite uloge, od kreiranja čipova do upravljanja Mining farmama. Pored toga, finansije takođe igraju ulogu, vršeći kontrolu odlučujući ko preživljava tokom različitih faza tržišta. Problem centralizacije i dalje postoji, s najbogatijim entitetima koji potencijalno dominiraju tržištem. Međutim, razvijaju se alternative na hardverskom i softverskom nivou. Na svakom pojedincu je da deluje i doprinese distribuciji mreže. Bitcoin predstavlja izvanrednu priliku ne samo u smislu slobode već i energetske nezavisnosti. Uprkos kontroverzama oko potrošnje električne energije, Bitcoin nudi ekonomski podsticaj za tranziciju ka racionalnijem i obilnijem korišćenju energije, ostvarujući ono što je prethodno bilo ekološki ideal.
+Da rezimiramo, rudari jačaju Bitcoin mrežu protiv cenzure koristeći električnu energiju za izračunavanje Bitcoin-ovog Proof of Work-a, i nagrađuju se novim bitkoinima i naknadama za transakcije. Sa profesionalizacijom industrije, pojavljuju se različiti igrači, igrajući različite uloge, od kreiranja čipova do upravljanja farmama za rudarenje. Pored toga, finansije takođe imaju svoju ulogu, vršeći kontrolu time što odlučuju ko će opstati tokom različitih faza tržišta. Problem centralizacije i dalje postoji, s najbogatijim entitetima koji potencijalno dominiraju tržištem. Međutim, razvijaju se alternative na hardverskom i softverskom nivou. Na svakom pojedincu je da deluje i doprinese distribuciji mreže. Bitcoin predstavlja izvanrednu priliku ne samo u smislu slobode već i energetske nezavisnosti. Uprkos kontroverzama oko potrošnje električne energije, Bitcoin nudi ekonomski podsticaj za tranziciju ka racionalnijem i obilnijem korišćenju energije, ostvarujući ono što je prethodno bilo ekološki ideal.
 
 
-## Bitcoin Cena i Hashrate, korelacija?
+## Bitcoin cena i Hashrate, korelacija?
 
 
 <chapterId>e6676214-007c-5181-968e-c27536231bd6</chapterId>
@@ -359,10 +356,10 @@ Da rezimiramo, rudari jačaju Bitcoin mrežu protiv cenzure koristeći električ
 ### Hashrate, cena i profitabilnost
 
 
-Trenutna stopa Hash, uprkos tome što je cena Bitcoin na $30,000 u poređenju sa njenim prethodnim vrhuncem od $69,000, ističe opipljivu vezu između Mining i stvarnog sveta. Periodi bikovskog tržišta dovode do velike potražnje za Bitcoin Mining i povećanja narudžbi mašina od proizvođača kao što su Avalon i Bitmain. Međutim, proizvodnja i isporuka nisu trenutni, što stvara nesklad između povećane potražnje i kasnije dostupnosti. Ovo može dovesti do toga da mašine naručene tokom bikovskog tržišta budu isporučene u medveđem tržištu, ističući značajnu asimetriju između niske cene i visoke stope Hash.
+Trenutna stopa Hash iliti Hashrate, uprkos tome što je cena Bitcoin na $30,000 u poređenju sa njenim prethodnim vrhuncem od $69,000, ističe opipljivu vezu između rudarenja i stvarnog sveta. Periodi rasta tržišta dovode do velike potražnje za Bitcoin rudarenjem i povećanja narudžbine mašina od proizvođača kao što su Avalon i Bitmain. Međutim, proizvodnja i isporuka nisu trenutni, što stvara nesklad između povećane potražnje i kasnije dostupnosti. Ovo može dovesti do toga da mašine naručene tokom perioda naglog rasta tržišta budu isporučene u periodu pada vrednosti na tržištu, ističući značajnu asimetriju između niske cene i visoke Hash stope.
 
 
-Ova situacija takođe ilustruje otpornost Bitcoin, često procenjivanu na osnovu njegove cene. Međutim, dublja analiza zdravlja Bitcoin zahteva ispitivanje njegove Hash stope, koja meri proračune po sekundi u Bitcoin mreži. Dok cena Bitcoin varira, njegov trošak, povezan sa električnom energijom potrebnom za rad Mining mašina, ostaje ključan za razumevanje dinamike tržišta. Fokusiranjem na trošak umesto na cenu, dobija se konzistentnija perspektiva o stabilnosti i dugoročnoj održivosti Bitcoin. Generalno, trošak Bitcoin je proporcionalan njegovoj ceni, pružajući bolje razumevanje fluktuacija cena i budućih izgleda.
+Ova situacija takođe ilustruje otpornost Bitcoina, često procenjivanu na osnovu njegove cene. Međutim, dublja analiza zdravlja Bitcoina zahteva ispitivanje njegove Hash stope, koja meri broj proračuna u sekundi u Bitcoin mreži. Dok Bitcoin cena varira, njegov trošak, povezan sa električnom energijom potrebnom za rad mašina za rudarenje, ostaje ključan za razumevanje dinamike tržišta. Fokusiranjem na trošak umesto na cenu, dobija se konzistentnija perspektiva o stabilnosti i dugoročnoj održivosti Bitcoina. Generalno, trošak Bitcoina je proporcionalan njegovoj ceni, pružajući bolje razumevanje fluktuacija cena i budućih izgleda.
 
 
 ![image](assets/en/012.webp)
@@ -371,37 +368,37 @@ Ova situacija takođe ilustruje otpornost Bitcoin, često procenjivanu na osnovu
 ### Hash stopa i nagrada
 
 
-Mining može uspostaviti donju cenu za Bitcoin, ispod koje bi rudari prodavali sa gubitkom. Trošak Mining značajno utiče na cenu, kao što je ilustrovano zabranom Mining u Kini, gde su stopa i cena Hash značajno pali, ali su se brzo oporavili. Fokusiranje isključivo na cenu može biti obmanjujuće. Proučavanje troškova, putem kalkulatora profitabilnosti, nudi uravnoteženiju perspektivu. Međutim, tržište može ponašati iracionalno, sa rudarima koji su potencijalno primorani da prodaju sa gubitkom, što može sniziti cenu ispod troška Mining. Da bi se procenilo zdravlje Bitcoin i njegova decentralizacija, mogla bi se razviti jednačina koja uključuje različite faktore, kao što su broj čvorova i cena. Ovaj pristup mogao bi pružiti nijansiraniju analizu Bitcoin u poređenju sa diskusijama zasnovanim isključivo na ceni.
+Rudarenje može uspostaviti donju cenu za Bitcoin, ispod koje bi rudari prodavali sa gubitkom. Trošak rudarenja značajno utiče na cenu, kao što je ilustrovano zabranom rudarenja u Kini, gde su heš stopa i cena značajno pali, ali su se brzo oporavili. Fokusiranje isključivo na cenu može biti obmanjujuće. Proučavanje troškova, putem kalkulatora profitabilnosti, nudi uravnoteženiju perspektivu. Međutim, tržište se može ponašati iracionalno, sa rudarima koji su potencijalno primorani da prodaju sa gubitkom, što može sniziti cenu ispod troška rudarenja. Da bi se procenilo zdravlje Bitcoina i njegova decentralizacija, mogla bi se razviti jednačina koja uključuje različite faktore, kao što su broj čvorova i cena. Ovaj pristup mogao bi pružiti nijansiraniju Bitcoin analizu u poređenju sa diskusijama zasnovanim isključivo na ceni.
 
 
-### Mining za profit ili za mrežu?
+### Rudarenje za profit ili za mrežu?
 
 
-Pitanje je duboko i obuhvata nekoliko dimenzija Bitcoin Mining. Ravnoteža između traženja profita i doprinosa sigurnosti i distribuciji Bitcoin mreže je stalna dilema za rudare. Debata se nastavlja u Bitcoin zajednici, sa snažnim argumentima na svakoj strani.
-
-
-
-- Mining za profit:
+Pitanje je duboko i obuhvata nekoliko dimenzija Bitcoin rudarenja. Ravnoteža između traženja profita i doprinosa sigurnosti i distribuciji Bitcoin mreže je stalna dilema za rudare. Debata se nastavlja u Bitcoin zajednici, sa snažnim argumentima na svakoj strani.
 
 
 
-- Za: Rudari su prirodno privučeni potencijalnom zaradom od Bitcoin Mining. Ulaganje u skupu opremu Mining može biti nadoknađeno nagradama Mining i naknadama za transakcije, posebno kada je cena Bitcoin visoka.
-- Protiv: Potraga za profitom može dovesti do centralizacije snage heširanja ako samo nekoliko velikih kompanija može priuštiti ulaganje u vrhunsku Mining opremu. Pored toga, Mining radi profita može imati značajan uticaj na životnu sredinu.
+- Rudarenje za profit:
 
 
 
-- Mining za mrežu:
+- Za: Rudari su prirodno privučeni potencijalnom zaradom od Bitcoin rudarenja. Ulaganje u skupu opremu za rudarenje može biti nadoknađeno nagradama za rudarenje i naknadama za transakcije, posebno kada je cena Bitcoina visoka.
+- Protiv: Potraga za profitom može dovesti do centralizacije snage heširanja ako samo nekoliko velikih kompanija može priuštiti ulaganje u vrhunsku opremu za rudarenje. Pored toga, rudarenje radi profita može imati značajan uticaj na životnu sredinu.
 
 
 
-- Za: Mining da doprinese bezbednosti i decentralizaciji Bitcoin mreže je plemenita inicijativa. Pomaže u jačanju otpornosti mreže i otporu cenzuri i napadima.
+- Rudarenje za mrežu:
+
+
+
+- Za: Rudarenje koje doprinesi bezbednosti i decentralizaciji Bitcoin mreže je plemenita inicijativa. Pomaže u jačanju otpornosti mreže i otporu cenzuri i napadima.
 - Protiv: Bez dovoljno finansijskog podsticaja, može biti teško za rudare da nastave podržavati mrežu, posebno ako posluju s gubitkom.
 
 
-Inicijativa Attakai ističe važnost doprinosa mreži dok nudi rešenja za lakši pristup i smanjenje štetnosti Mining. Mogućnost Mining kod kuće, uz pristupačniju opremu i rešenja za smanjenje zagađenja bukom, može pomoći u demokratizaciji Bitcoin Mining. Podstiče one koji su zainteresovani za Bitcoin ne samo da investiraju i drže bitkoine, već i da aktivno učestvuju u obezbeđivanju mreže. Pružanjem testirane opreme i vodiča za montažu i instalaciju, Attakai olakšava ulazak u svet Bitcoin Mining. Takođe podstiče inovacije i kontinuirana poboljšanja, pozivajući zajednicu da doprinese i podeli svoje ideje i iskustva kako bi unapredila kućni Mining. Model Attakai je odgovor na pitanje Mining za profit ili za mrežu. Nije reč samo o ostvarivanju profita, već i o jačanju distribucije i sigurnosti Bitcoin mreže, omogućavajući većem broju ljudi da učestvuju u Mining, uče i razumeju ovu ključnu industriju. Izazov potencijalne zabrane Mining u Evropi ostaje otvoreno pitanje. Ovo izaziva zabrinutost za budućnost Bitcoin Mining u regionu i potrebu za uravnoteženom regulacijom koja prepoznaje važnost Mining za sigurnost i održivost Bitcoin mreže, dok se bavi ekološkim pitanjima. Attakai i druge slične inicijative mogu igrati ključnu ulogu u ovoj debati, pokazujući da je moguće rudarenje na održiviji i odgovorniji način, dok se pozitivno doprinosi Bitcoin mreži.
+Inicijativa Attakai ističe važnost doprinosa mreži dok nudi rešenja za lakši pristup i smanjenje štetnosti rudarenja. Mogućnost rudarenja kod kuće, uz pristupačniju opremu i rešenja za smanjenje zagađenja bukom, može pomoći u demokratizaciji Bitcoin rudarenja. Podstiče one koji su zainteresovani za Bitcoin ne samo da investiraju i drže bitkoine, već i da aktivno učestvuju u obezbeđivanju mreže. Pružanjem testirane opreme i vodiča za montažu i instalaciju, Attakai olakšava ulazak u svet Bitcoin rudarenja. Takođe podstiče inovacije i kontinuirana poboljšanja, pozivajući zajednicu da doprinese i podeli svoje ideje i iskustva kako bi se unapredilo rudarenje kod kuće. Model Attakai je odgovor na pitanje rudarenje za profit ili za mrežu. Nije reč samo o ostvarivanju profita, već i o jačanju distribucije i sigurnosti Bitcoin mreže, omogućavajući većem broju ljudi da učestvuju u rudarenju, uče i razumeju ovu ključnu industriju. Izazov potencijalne zabrane rudarenja u Evropi ostaje otvoreno pitanje. Ovo izaziva zabrinutost za budućnost Bitcoin rudarenja u regionu i potrebu za uravnoteženom regulacijom koja prepoznaje važnost rudarenja za sigurnost i održivost Bitcoin mreže, dok se istovremeno bavi ekološkim pitanjima. Attakai i druge slične inicijative mogu igrati ključnu ulogu u ovoj debati, pokazujući da je moguće rudarenje na održiviji i odgovorniji način, dok se pozitivno doprinosi Bitcoin mreži.
 
 
-## Suverenitet i Regulacija
+## Suverenitet i regulacija
 
 
 <chapterId>9d9a5908-2acc-501e-906b-a6fce9ecfebd</chapterId>
@@ -410,72 +407,72 @@ Inicijativa Attakai ističe važnost doprinosa mreži dok nudi rešenja za lakš
 ### Suverenitet pre profita?
 
 
-Za Address ključno pitanje bogatstva kroz Mining, važno je razmotriti različite perspektive i pristupe. Pitanja o profitabilnosti Mining su česta, sa upitima oko kupovine akcija u kompanijama kao što su Riot ili iznajmljivanja Mining mašina u zemljama sa niskim troškovima energije kao što su Island ili Rusija. Pre nego što se upustite u Mining, ključna razmatranja bi bila da se uporedi profitabilnost Mining sa direktnom kupovinom Bitcoin. Ako trošak Mining a Bitcoin premašuje trošak direktne kupovine, generalno je mudrije kupiti Bitcoin direktno. Ovo izbegava višestruke izazove i troškove povezane sa procesom Mining.
+Da bi se rešilo ključno pitanje bogatstva kroz rudarenje, važno je razmotriti različite perspektive i pristupe. Pitanja o profitabilnosti rudarenja su česta, sa upitima oko kupovine akcija u kompanijama kao što su Riot ili iznajmljivanja mašina za rudarenje u zemljama sa niskim troškovima energije kao što su Island ili Rusija. Pre nego što se upustite u rudarenje, ključna razmatranja bi bila da se uporedi profitabilnost rudarenja sa direktnom kupovinom Bitcoina. Ako trošak rudarenja Bitcoina premašuje trošak direktne kupovine, generalno je mudrije kupiti Bitcoin direktno. Ovo izbegava višestruke izazove i troškove povezane sa procesom rudarenja.
 
 
-Međutim, Mining nudi jedinstvene načine za uključivanje u ekosistem Bitcoin. Na primer, Mining Bitcoin zimi može biti pametan način da zagrejete svoj dom dok generišete prihod od Bitcoin. Druga opcija je ulaganje u kompanije koje prodaju Mining opremu i skladište i upravljaju mašinama na lokacijama sa niskim troškovima energije, čime se omogućava pristup povoljnim cenama električne energije bez muke oko upravljanja opremom.
+Međutim, rudarenje nudi jedinstvene načine za uključivanje u Bitcoin ekosistem. Na primer, Bitcoin rudarenje zimi može biti pametan način da zagrejete svoj dom dok generišete prihod od Bitcoina. Druga opcija je ulaganje u kompanije koje prodaju opremu za rudarenje i skladište i upravljaju mašinama na lokacijama sa niskim troškovima energije, čime se omogućava pristup povoljnim cenama električne energije bez muke oko upravljanja opremom.
 
 
-Uprkos ovim opcijama, Mining predstavlja značajne izazove. Dobro poznata izreka u svetu kriptovaluta, "Nisu tvoji ključevi, nisu tvoji Bitcoini," nalazi sličan odjek u svetu Mining: "Nije tvoj Hashrate, nije tvoja nagrada." Priče o razočaranjima i isključenim mašinama su česte, sa mnogim igračima koji obećavaju izuzetne rezultate, ali ne uspevaju da ih isporuče. Problemi sa električnom energijom Supply i kvarovi mašina mogu ostaviti investitore nemoćnim, sa skupom opremom koju ne kontrolišu. U ovom kontekstu, oprez i duboko razumevanje sektora Mining su ključni pre nego što se upustite u njega. Iako postoje mogućnosti za dobitke, rizici su značajni, i informisan i promišljen pristup je neophodan za navigaciju ovim složenim i često nepredvidivim poljem. Stoga je od vitalnog značaja sprovesti temeljno istraživanje i pažljivo razmotriti prednosti i mane pre nego što se uključite u Bitcoin Mining.
+Uprkos ovim opcijama, rudarenje predstavlja značajne izazove. Dobro poznata izreka u svetu kriptovaluta, "Nisu tvoji ključevi, nisu tvoji Bitcoini," nalazi sličan odjek u svetu rudarenja: "Nije tvoj Hashrate, nije tvoja nagrada." Priče o razočaranjima i isključenim mašinama su česte, sa mnogim igračima koji obećavaju izuzetne rezultate, ali ne uspevaju da ih isporuče. Problemi sa ponudom električne energije i kvarovi mašina mogu ostaviti investitore nemoćnim, sa skupom opremom koju ne kontrolišu. U ovom kontekstu, oprez i duboko razumevanje sektora rudarenja su ključni pre nego što se upustite u njega. Iako postoje mogućnosti za dobitke, rizici su značajni, i informisan i promišljen pristup je neophodan za navigaciju ovim složenim i često nepredvidivim poljem. Stoga je od vitalnog značaja sprovesti temeljno istraživanje i pažljivo razmotriti prednosti i mane pre nego što se uključite u Bitcoin rudarenje.
 
 
 ![image](assets/en/013.webp)
 
 
-### Virgin Bitcoini
+### Novokreirani Bitcoini
 
 
-Aspiracija da se poseduje sopstveni Hashrate pojavljuje se kao obećavajući put u svetu Mining. Međutim, navigacija kroz ovaj složeni ekosistem zahteva oprezan pristup. Oblast cloud Mining obeležena je velikim brojem prevara, podstaknutih nedostatkom razumevanja Mining od strane mnogih investitora. Privlačne ponude, upakovane na različite načine, lako mogu dovesti u zabludu one koji nisu dovoljno informisani. S druge strane, posedovanje sopstvene Mining opreme nudi značajne prednosti. Osim ličnog zadovoljstva aktivnim doprinosom sigurnosti Bitcoin mreže i posmatranja nagrada kako pristižu u vaš Wallet, tu je i privlačan aspekt "virgin bitcoina." To su sveže iskopani bitcoini, koji nikada nisu potrošeni i nemaju istoriju vezanu za njih. Ovi bitcoini se često smatraju vrednijim jer nikada nisu bili "kontaminirani," nudeći određenu garanciju protiv odbijanja od strane regulatora ili velikih Exchange platformi.
+Aspiracija da se poseduje sopstveni Hashrate pojavljuje se kao obećavajući put u svetu rudarenja. Međutim, navigacija kroz ovaj složeni ekosistem zahteva oprezan pristup. Oblast cloud rudarenja obeležena je velikim brojem prevara, podstaknutih nedostatkom razumevanja rudarenja od strane mnogih investitora. Privlačne ponude, upakovane na različite načine, lako mogu dovesti u zabludu one koji nisu dovoljno informisani. S druge strane, posedovanje sopstvene opreme za rudarenje nudi značajne prednosti. Osim ličnog zadovoljstva aktivnim doprinosom sigurnosti Bitcoin mreže i posmatranja nagrada kako pristižu u vaš novčanik, tu je i privlačan aspekt "novokreiranih bitcoina." (eng. "virgin bitcoin") To su sveže iskopani bitcoini, koji nikada nisu potrošeni i nemaju istoriju vezanu za njih. Ovi bitcoini se često smatraju vrednijim jer nikada nisu bili "kontaminirani," nudeći određenu garanciju protiv odbijanja od strane regulatora ili velikih platformi za trgovinu, kao što su menjačnice i berze.
 
 
-Mogućnost Mining virgin bitkoina uz izbegavanje Know Your Customer (KYC) procedura je još jedna dodata vrednost. Mnogi Mining bazeni ne zahtevaju identitet rudara, što omogućava sticanje bitkoina bez prolaska kroz zamorne provere identiteta. Virgin bitkoini se smatraju "čistim," bez prošle istorije ili asocijacija. Posebno su traženi od strane velikih institucionalnih igrača koji mogu garantovati legitimitet svojih digitalnih sredstava pred regulatornim vlastima. Međutim, uprkos ovim prednostima, ključno je prepoznati da Mining industrija ostaje izuzetno konkurentna i nestabilna, a nepredviđeni incidenti mogu poremetiti Mining operacije.
+Mogućnost rudarenja novokreiranih bitkoina uz izbegavanje Know Your Customer (KYC) procedura je još jedna dodata vrednost. Mnogi bazeni za rudarenje ne zahtevaju identitet rudara, što omogućava sticanje bitkoina bez prolaska kroz zamorne provere identiteta. Novokreirani bitkoini se smatraju "čistim," bez prošle istorije ili asocijacija. Posebno su traženi od strane velikih institucionalnih igrača koji mogu garantovati legitimitet svojih digitalnih sredstava pred regulatornim vlastima. Međutim, uprkos ovim prednostima, ključno je prepoznati da industrija rudarenja ostaje izuzetno konkurentna i nestabilna, a nepredviđeni incidenti mogu poremetiti operacije rudarenja.
 
 
-U ovom kontekstu, izbor autonomnog i obrazovanog pristupa Mining čini se mudrim. Sticanje sopstvenog Hashrate i ulaganje u ličnu Mining opremu, uz svest o rizicima i izazovima, može potencijalno ponuditi sigurniji i zadovoljavajući put ka sticanju virgin bitcoina, čime se poboljšava finansijski suverenitet pojedinca dok se podržava Bitcoin ekosistem u celini.
+U ovom kontekstu, izbor autonomnog i obrazovanog pristupa rudarenju čini se mudrim. Sticanje sopstvenog Hashrate i ulaganje u ličnu opremu za rudarenje, uz svest o rizicima i izazovima, može potencijalno ponuditi sigurniji i zadovoljavajući put ka sticanju novokreiranih bitcoina, čime se poboljšava finansijski suverenitet pojedinca dok se podržava Bitcoin ekosistem u celini.
 
 
-### Da li je Mining zabranjen u Evropi?
+### Da li je rudarenje zabranjeno u Evropi?
 
 
-Sa pitanjem potencijalne zabrane Mining u Evropi, diskusije o regulaciji postaju sve relevantnije. Promenljivi regulatorni pejzaž zaista može značajno uticati na industriju Bitcoin Mining. Zabrana Mining u Evropi je zamisliv scenario, posebno uzimajući u obzir presedane u Kini. Iako operacije Mining i dalje traju u Kini uprkos zabrani, Evropa bi mogla slediti sličan put. Šira distribucija Hashrate širom različitih regiona mogla bi pomoći u jačanju zajednice Mining u Evropi, omogućavajući im da efikasno suprotstave nesporazume i zablude o Mining, njegovom uticaju na životnu sredinu i njegovom otisku na električnu mrežu.
+Sa pitanjem potencijalne zabrane rudarenja u Evropi, diskusije o regulaciji postaju sve relevantnije. Promenljivi regulatorni pejzaž zaista može značajno uticati na industriju Bitcoin rudarenja. Zabrana rudarenja u Evropi je zamisliv scenario, posebno uzimajući u obzir presedane u Kini. Iako operacije rudarenja i dalje traju u Kini uprkos zabrani, Evropa bi mogla slediti sličan put. Šira distribucija Hashrate širom različitih regiona mogla bi pomoći u jačanju zajednice rudara u Evropi, omogućavajući im da efikasno suprotstave nesporazumima i zabludama o rudarenju, njegovom uticaju na životnu sredinu kao i njegovom uticaju na električnu mrežu.
 
 
 ![image](assets/en/014.webp)
 
 
-Suočeni sa kampanjama poput onih Greenpeace-a i često obmanjujućim podacima iz nekih studija, najbolje oružje ostaje istinita informacija. Neophodno je informisati širu javnost i donosioce odluka o stvarnosti Mining, njegovoj složenosti i nijansama, umesto da se oslanjaju na stereotipe i netačne informacije. Što su ljudi više informisani i svesni šta Mining zaista jeste, to se industrija bolje može braniti od potencijalnih restriktivnih regulativa.
+Suočeni sa kampanjama poput onih Greenpeace-a i često obmanjujućim podacima iz nekih studija, najbolje oružje ostaje istinita informacija. Neophodno je informisati širu javnost i donosioce odluka o stvarnosti rudarenja, njegovoj složenosti i nijansama, umesto da se oslanjaju na stereotipe i netačne informacije. Što su ljudi više informisani i svesni šta rudarenje zaista jeste, to se industrija bolje može braniti od potencijalnih restriktivnih regulativa.
 
 
-U zaključku, uprkos regulatornom riziku i mogućnosti zabrane Mining u Evropi, najmoćnije oružje ostaje obrazovanje i informisanje. Jasno i precizno razumevanje Mining, kako funkcioniše i njegovog uticaja može pomoći u demistifikaciji industrije i borbi protiv dezinformacija, čime se nudi bolji otpor potencijalno štetnim regulativama. Inicijativa za obuku i informisanje ljudi o Mining, kao što ova diskusija čini, je korak u pravom smeru kako bi se osigurala održivost i rast Mining u Evropi i širom sveta. Kontinuirani napori za edukaciju i informisanje su od suštinskog značaja za osiguranje sigurne i prosperitetne budućnosti za industriju Bitcoin Mining.
+U zaključku, uprkos regulatornom riziku i mogućnosti zabrane rudarenja u Evropi, najmoćnije oružje ostaje obrazovanje i informisanje. Jasno i precizno razumevanje rudarenja, kako funkcioniše i njegovog uticaja može pomoći u demistifikaciji industrije i borbi protiv dezinformacija, čime se nudi bolji otpor potencijalno štetnim regulativama. Inicijativa za obuku i informisanje ljudi o rudarenju, kao što ova diskusija čini, je korak u pravom smeru kako bi se osigurala održivost i rast rudarenja u Evropi i širom sveta. Kontinuirani napori za edukaciju i informisanje su od suštinskog značaja za osiguranje sigurne i prosperitetne budućnosti za industriju Bitcoin rudarenja.
 
 
-# Home Mining i Ponovna Upotreba Toplote
+# Rudarenje kod kuće i ponovna upotreba toplote
 
 
 <partId>78d22d06-2c4a-573f-86bb-1027115dad3a</partId>
 
 
-## Attakai - Omogućavanje i dostupnost kuće Mining!
+## Attakai - Omogućavanje i dostupnost rudarenja kod kuće!
 
 
 <chapterId>1f5d1b74-2f99-5f31-a088-a73d36491ebf</chapterId>
 
 
-Attakai, što znači "idealna temperatura" na japanskom, naziv je inicijative usmerene na otkrivanje Bitcoin Mining kroz ponovnu upotrebu toplote koju su pokrenuli @ajelexBTC i @jimzap21 sa Découvre Bitcoin.
+Attakai, što znači "idealna temperatura" na japanskom, naziv je inicijative usmerene na otkrivanje Bitcoin rudarenja kroz ponovnu upotrebu toplote koju su pokrenuli @ajelexBTC i @jimzap21 sa Découvre Bitcoin.
 
-Ovaj vodič za retrofitting ASIC će poslužiti kao osnova za bolje razumevanje Mining, njegovog rada i osnovne ekonomije, demonstrirajući mogućnost prilagođavanja Bitcoin Miner za korišćenje kao radijatori u domovima. Ovo nudi više komfora i uštede, omogućavajući učesnicima da dobiju povrat BTC-a bez KYC-a na račun za električno grejanje.
-
-
-Bitcoin automatski podešava težinu Mining i nagrađuje rudare za njihovo učešće. Međutim, koncentracija Hashrate može predstavljati rizike za neutralnost mreže. Korišćenje računarske snage Bitcoin za grejna rešenja direktno koristi samoj mreži povećanjem distribucije računarske snage.
+Ovaj vodič za prepravku ASIC uređaja poslužiće kao osnova za dublje razumevanje rudarenja, njegovog funkcionisanja i prateće ekonomije, prikazujući mogućnost prilagođavanja Bitcoin mašina za rudarenje za upotrebu kao radijatora u domaćinstvima. Ovo nudi više komfora i uštede, omogućavajući učesnicima da dobiju povrat BTC-a bez KYC-a na svom računu za električno grejanje.
 
 
-### Zašto ponovo koristiti toplotu iz ASIC?
+Bitcoin automatski podešava težinu rudarenja i nagrađuje rudare za njihovo učešće. Međutim, koncentracija Hashrate-a može predstavljati rizike za neutralnost mreže. Korišćenje računarske snage Bitcoina za grejna rešenja direktno koristi samoj mreži povećanjem distribucije računarske snage.
+
+
+### Zašto ponovo koristiti toplotu iz ASIC-a?
 
 
 Važno je razumeti odnos između energije i proizvodnje toplote u električnom sistemu.
 
 
-Za ulaganje od 1 kW električne energije, električni radijator proizvodi 1 kW toplote, ni više, ni manje. Novi radijatori nisu efikasniji od tradicionalnih radijatora. Njihova prednost leži u sposobnosti da kontinuirano i ravnomerno raspoređuju toplotu u prostoriji, pružajući veći komfor u poređenju sa tradicionalnim radijatorima koji naizmenično prelaze između visokog grejanja i bez grejanja, čime se stvaraju redovne temperaturne varijacije i nelagodnost.
+Za potrošnju od 1 kW električne energije, električni radijator proizvodi 1 kW toplote, ni više, ni manje. Novi radijatori nisu efikasniji od tradicionalnih radijatora. Njihova prednost leži u sposobnosti da kontinuirano i ravnomerno raspoređuju toplotu u prostoriji, pružajući veći komfor u poređenju sa tradicionalnim radijatorima koji naizmenično prelaze između visokog grejanja i bez grejanja, čime se stvaraju uobičajne temperaturne varijacije i nelagodnosti.
 
 
 Računar, ili šire gledano elektronska ploča, ne troši energiju za obavljanje proračuna, već jednostavno treba da energija prolazi kroz njegove komponente da bi funkcionisao. Potrošnja energije je posledica električnog otpora komponenti, što proizvodi gubitke i generiše toplotu, poznatu kao Džulov efekat.
