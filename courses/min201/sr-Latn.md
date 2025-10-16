@@ -622,16 +622,16 @@ Da rezimiramo ovaj vodič u jednoj rečenici: **"Ne veruj, proveri."**
 <chapterId>fa5f5eca-bcbf-5a83-9b03-98ecbadbabd6</chapterId>
 
 
-Vlasnik Antminer S9, verovatno znate koliko ova oprema može biti bučna i glomazna. Međutim, moguće je transformisati je u tihi i povezani grejač prateći nekoliko jednostavnih koraka. U ovom delu ćemo predstaviti potrebnu opremu za izvršenje modifikacija.
+Kao vlasnik Antminer S9, verovatno znate koliko ova oprema može biti bučna i glomazna. Međutim, moguće je transformisati je u tihi i povezani grejač prateći nekoliko jednostavnih koraka. U ovom delu ćemo predstaviti potrebnu opremu za izvršenje modifikacija.
 
 
-Ako ste vešt majstor i želite da transformišete Miner u grejač, ovaj vodič je za vas. Želimo da vas upozorimo da modifikacije elektronskog uređaja mogu predstavljati električne rizike. Stoga je neophodno preduzeti sve potrebne mere predostrožnosti kako biste izbegli bilo kakvu štetu ili povredu.
+Ako ste vešt majstor i želite da transformišete uređaj u grejač, ovaj vodič je za vas. Želimo da vas upozorimo da modifikacije elektronskog uređaja mogu predstavljati električne rizike. Stoga je neophodno preduzeti sve potrebne mere predostrožnosti kako biste izbegli bilo kakvu štetu ili povredu.
 
 
 1. Zamenite ventilatore
 
 
-Originalni ventilatori Antminer S9 su previše bučni da biste koristili svoj Antminer kao grejač. Rešenje je da ih zamenite tišim ventilatorima. Naš tim je testirao nekoliko modela brenda Noctua i odabrao Noctua NF-A14 iPPC-2000 PWM kao najbolji kompromis. Obavezno izaberite verziju ventilatora od 12V. Ovaj ventilator od 140mm može proizvesti do 1200W grejanja uz održavanje teoretskog nivoa buke od 31 dB. Da biste instalirali ove ventilatore od 140mm, biće vam potreban adapter od 140mm na 120mm, koji možete pronaći u DécouvreBitcoin prodavnici. Takođe ćemo dodati zaštitne rešetke od 140mm.
+Originalni ventilatori Antminer S9 su previše bučni da biste koristili svoj Antminer kao grejač. Rešenje je da ih zamenite tišim ventilatorima. Naš tim je testirao nekoliko modela brenda Noctua i odabrao Noctua NF-A14 iPPC-2000 PWM kao najbolji kompromis. Obavezno izaberite verziju ventilatora od 12V. Ovaj ventilator od 140mm može proizvesti do 1200W grejanja uz održavanje teoretskog nivoa buke od 31 dB. Da biste instalirali ove ventilatore od 140mm, biće vam potreban adapter sa 140mm na 120mm, koji možete pronaći u DécouvreBitcoin prodavnici. Takođe ćemo dodati zaštitne rešetke od 140mm.
 
 
 ![image](assets/en/024.webp)
@@ -641,7 +641,7 @@ Originalni ventilatori Antminer S9 su previše bučni da biste koristili svoj An
 ![image](assets/en/026.webp)
 
 
-Ventilator Supply je takođe prilično bučan i potrebno ga je zameniti. Preporučujemo Noctua NF-A6x25 PWM. Imajte na umu da konektori Noctua ventilatora nisu isti kao originalni, tako da će vam biti potreban adapter za konektor da ih povežete. Dva će biti dovoljna. Ponovo, obavezno izaberite 12V verziju ventilatora.
+Napajanje za ventilator je takođe prilično bučan i potrebno ga je zameniti. Preporučujemo Noctua NF-A6x25 PWM. Imajte na umu da se konektori na Noctua ventilatorima razlikuju od originalnih, tako da će vam biti potreban adapter za konektor da ih povežete. Dva će biti dovoljna. Ponovo, obavezno izaberite verziju ventilatora od 12V.
 
 
 ![image](assets/en/027.webp)
@@ -652,7 +652,7 @@ Ventilator Supply je takođe prilično bučan i potrebno ga je zameniti. Preporu
 2. Dodajte WIFI/Ethernet most
 
 
-Umesto korišćenja Ethernet kabla, možete povezati svoj Antminer putem WIFI-ja dodavanjem WIFI/Ethernet mosta. Odabrali smo vonets vap11g-300 jer vam lako omogućava da preuzmete WIFI signal sa vaše Internet kutije i prenesete ga na vaš Antminer putem Ethernet-a bez kreiranja podmreže. Ako imate električarske veštine, možete ga napajati direktno sa napajanjem Antminera Supply bez potrebe za dodavanjem USB punjača. Za ovo će vam biti potreban ženski 5.5mmx2.1mm džek.
+Umesto korišćenja Ethernet kabla, možete povezati svoj Antminer putem WIFI-ja dodavanjem WIFI/Ethernet mosta. Odabrali smo vonets vap11g-300 jer vam lako omogućava da preuzmete WIFI signal sa vašeg internet boksa (rutera/modema)i prenesete ga na vaš Antminer putem Ethernet-a bez kreiranja podmreže. Ako imate električarske veštine, možete ga napajati direktno sa napajanjem Antminera bez potrebe za dodavanjem USB punjača. Za to će vam biti potreban ženski džek od 5,5 mm x 2,1 mm.
 
 
 ![image](assets/en/029.webp)
@@ -709,7 +709,7 @@ Da biste povezali svoj ASIC putem WIFI-ja, biće vam potreban uređaj koji se zo
 Mnogi uređaji mogu obavljati ovu funkciju, ali preporučujemo VONETS WiFi Bridge/Repeater zbog njegove praktičnosti.
 
 
-Napajajte most povezivanjem putem USB-a.
+Most se napaja povezivanjem preko USB kabla.
 
 
 Sa vašeg računara povežite se na VONETS\_**\*\*** WIFI mrežu sa lozinkom 12345678.
@@ -724,13 +724,13 @@ Prijavite se sa korisničkim imenom "admin" i lozinkom "admin".
 ![image](assets/en/033.webp)
 
 
-Izaberi Čarobnjaka.
+Izaberi čarobnjaka (eng. wizard).
 
 
 ![image](assets/en/034.webp)
 
 
-Izaberite WIFI mrežu na koju želite da povežete svoj Miner, zatim kliknite Dalje.
+Izaberite WIFI mrežu na koju želite da povežete svoj uređaj za rudarenje, zatim kliknite Next za dalje.
 
 
 NAPOMENA: Vonet most radi samo na frekvenciji od 2.4GHz. Danas ruteri obično nude dve WIFI mreže, jednu na 2.4GHz i jednu na 5GHz.
@@ -742,7 +742,7 @@ NAPOMENA: Vonet most radi samo na frekvenciji od 2.4GHz. Danas ruteri obično nu
 Unesite lozinku za vašu WIFI mrežu u polje "Source WIFI hotspot password". Ako ne želite da koristite vaš Vonet most za proširenje vaše WIFI mreže, označite polje "Disable Hotspot". U suprotnom, ostavite ga neoznačenim.
 
 
-Zatim možete kliknuti na Primeni.
+Zatim možete kliknuti na Save, kako biste sačuvali izmene.
 
 
 Na kraju, kliknite na reboot da ponovo pokrenete most. Biće potrebno nekoliko minuta da se ponovo pokrene.
@@ -751,7 +751,7 @@ Na kraju, kliknite na reboot da ponovo pokrenete most. Biće potrebno nekoliko m
 Most treba da se poveže sa vašim ruterom i pojaviće se pod imenom "[VONETS.COM](http://vonets.com/)". Ako se i dalje ne povezuje nakon nekoliko minuta, možda ćete morati da isključite/ponovo uključite most.
 
 
-Kada je most povezan, povežite Ethernet kabl od mosta do vašeg ASIC, a zatim priključite ASIC u strujnu utičnicu. Zatim možete pristupiti ASIC Interface na isti način kao da je direktno povezan sa vašim ruterom putem Ethernet-a.
+Kada je most povezan, povežite Ethernet kabl od mosta do vašeg ASIC-a, a zatim priključite ASIC u strujnu utičnicu. Zatim možete pristupiti ASIC korisničkom interfejsu na isti način kao da je direktno povezan sa vašim ruterom putem Ethernet-a.
 
 
 ## Resetovanje Antminer S9
@@ -762,9 +762,9 @@ Kada je most povezan, povežite Ethernet kabl od mosta do vašeg ASIC, a zatim p
 
 Pre nego što instalirate BraiinOS+, možda će biti potrebno da resetujete vaš S9 na fabrička podešavanja.
 
-Ova metoda se može primeniti između 2 minuta i 10 minuta nakon pokretanja Miner.
+Ova metoda se može primeniti između 2 minuta i 10 minuta nakon pokretanja uređaja za rudarenje.
 
-2 minuta nakon uključivanja Miner, pritisnite dugme "Reset" na 5 sekundi, a zatim ga otpustite. Miner će biti vraćen na fabrička podešavanja u roku od 4 minuta i automatski će se ponovo pokrenuti (nema potrebe da ga isključujete).
+2 minuta nakon uključivanja uređaja, pritisnite dugme "Reset" na 5 sekundi, a zatim ga otpustite. Uređaj će biti vraćen na fabrička podešavanja u roku od 4 minuta i automatski će se ponovo pokrenuti (nema potrebe da ga isključujete).
 
 
 ![image](assets/en/036.webp)
@@ -776,7 +776,7 @@ Ova metoda se može primeniti između 2 minuta i 10 minuta nakon pokretanja Mine
 <chapterId>38e8b1a8-8b1d-51ed-8b92-59d4ddb15184</chapterId>
 
 
-Originalni softver koji je instalirao Antminer na njihove Mining mašine je ograničen u funkcionalnosti. Zato ćemo u ovom vodiču instalirati drugi softver pod nazivom BraiinsOS+. To je softver treće strane razvijen od strane prvog Bitcoin Mining pool koji ima više funkcija i omogućava, na primer, modifikaciju snage mašine.
+Originalni softver koji je instalirao Antminer na njihove mašine je ograničen u funkcionalnosti. Zato ćemo u ovom vodiču instalirati drugi softver pod nazivom BraiinsOS+. To je softver treće strane razvijen od strane prvog Bitcoin rudarskog bazena (eng. mining pool) koji ima više funkcija i omogućava, na primer, modifikaciju snage mašine.
 
 
 Postoji nekoliko načina za instalaciju Braiins OS+ na ASIC. Možete se pozvati na ovaj vodič kao i na [zvaničnu Braiins dokumentaciju](https://academy.braiins.com/en/braiins-os/about/).
@@ -785,9 +785,9 @@ Postoji nekoliko načina za instalaciju Braiins OS+ na ASIC. Možete se pozvati 
 Ovde ćemo videti kako lako instalirati Braiins OS+ direktno na memoriju vašeg Antminera koristeći BOS toolbox softver, zamenjujući originalni operativni sistem, kroz detaljne korake ispod.
 
 
-1. Uključite svoj Antminer i povežite ga sa svojim internet box-om.
+1. Uključite svoj Antminer i povežite ga sa internet boksom (ruterom/modemom).
 
-2. Preuzmi BOS toolbox za Windows / Linux.
+2. Preuzmite BOS toolbox za Windows / Linux.
 
 3. Raspakujte preuzetu datoteku i otvorite bos-toolbox.bat datoteku. Izaberite jezik, i nakon nekoliko trenutaka, videćete ovaj prozor:
 
@@ -795,25 +795,25 @@ Ovde ćemo videti kako lako instalirati Braiins OS+ direktno na memoriju vašeg 
 ![image](assets/en/037.webp)
 
 
-4. Bos toolbox će vam omogućiti da lako pronađete IP Address vašeg Antminera i instalirate BraiinsOS+. Ako već znate IP Address vaše mašine, možete preskočiti na korak 8. U suprotnom, idite na karticu za skeniranje.
+4. Bos toolbox će vam omogućiti da lako pronađete IP adresu vašeg Antminera i instalirate BraiinsOS+. Ako već znate IP adresu vaše mašine, možete preskočiti na korak 8. U suprotnom, idite na karticu za skeniranje.
 
 
 ![image](assets/en/038.webp)
 
 
-5. Obično, na kućnim mrežama, IP Address opseg je između 192.168.1.1 i 192.168.1.255, pa unesite "192.168.1.0/24" u polje za IP opseg. Ako je vaša mreža drugačija, molimo vas da promenite ove adrese u skladu s tim. Zatim kliknite na "Start".
+5. Obično, na kućnim mrežama, opseg IP adresa je između 192.168.1.1 i 192.168.1.255, pa unesite "192.168.1.0/24" u polje za IP opseg. Ako je vaša mreža drugačija, molimo vas da promenite ove adrese u skladu s tim. Zatim kliknite na "Start".
 
 
 6. Pažnja, ako Antminer ima lozinku, detekcija neće raditi. Ako je to slučaj, najjednostavnije rešenje je izvršiti resetovanje.
 
 
-7. Trebalo bi da vidite sve Antminere na vašoj mreži kako se pojavljuju ovde, a IP Address je 192.168.1.37.
+7. Trebalo bi da vidite sve Antminere na vašoj mreži kako se pojavljuju ovde, a IP adresa je 192.168.1.37.
 
 
 ![image](assets/en/039.webp)
 
 
-8. Kliknite na "Back", a zatim na karticu "Install", unesite prethodno pronađeni IP Address i kliknite na "Start".
+8. Kliknite na "Back", a zatim na karticu "Install", unesite prethodno pronađenu IP adresu i kliknite na "Start".
 
 
 > Ako instalacija ne radi, možda će biti potrebno izvršiti resetovanje i pokušati ponovo (pogledajte prethodni odeljak).
@@ -821,7 +821,7 @@ Ovde ćemo videti kako lako instalirati Braiins OS+ direktno na memoriju vašeg 
 ![image](assets/en/040.webp)
 
 
-9. Nakon nekoliko trenutaka, vaš Antminer će se ponovo pokrenuti i moći ćete pristupiti Braiins OS+ Interface na specificiranoj IP adresi Address, ovde 192.168.1.37, direktno u Address traci vašeg pregledača. Podrazumevano korisničko ime je "root" i nema podrazumevane lozinke.
+9. Nakon nekoliko trenutaka, vaš Antminer će se ponovo pokrenuti i moći ćete pristupiti Braiins OS+ korisničkom interfejsu na navedenoj IP adresi — ovde 192.168.1.37 — direktno u adresnoj traci vašeg pregledača. Podrazumevano korisničko ime je "root" i nema podrazumevane lozinke.
 
 
 ## Konfigurišite BraiinsOS+
@@ -830,13 +830,13 @@ Ovde ćemo videti kako lako instalirati Braiins OS+ direktno na memoriju vašeg 
 <chapterId>36e432f2-85bc-52d0-a62a-009fc4c69338</chapterId>
 
 
-Trebaće da se povežete sa svojim ASIC koristeći lokalni IP Address vašeg uređaja na vašoj mreži putem pregledača.
+Trebaće da se povežete sa svojim ASIC-om koristeći lokalnu IP adresi vašeg uređaja na vašoj mreži putem pregledača.
 
 
-Možete pronaći IP Address vaše mašine koristeći alat BOS toolbox ili direktno na veb stranici vašeg rutera.
+Možete pronaći IP adresu vaše mašine koristeći alat BOS toolbox ili direktno na veb stranici vašeg rutera.
 
 
-Podrazumevane akreditive su iste kao originalni operativni sistem.
+Podrazumevani kredencijali su isti kao originalni operativni sistem.
 
 
 
@@ -844,7 +844,7 @@ Podrazumevane akreditive su iste kao originalni operativni sistem.
 - lozinka: (nema)
 
 
-Zatim će vas dočekati Brains OS+ Dashboard.
+Zatim će vas dočekati Brains OS+ Dashboard (u prevodu kontrolna tabla).
 
 
 ### Kontrolna tabla
@@ -866,9 +866,9 @@ Na ovoj prvoj stranici možete posmatrati performanse vaše mašine u realnom vr
 
 
 
-- Dalje u tekstu, naći ćete detaljan prikaz svake hashboarde. Prosečna temperatura ploče i čipova koje sadrži, kao i napon i frekvencija.
-- Detalji o aktivnim Mining bazenima u Pools.
-- Status autotjuninga u Statusu tjunera.
+- Niže ćete pronaći detaljan prikaz svake heš ploče. Prosečna temperatura ploče i čipova koje sadrži, kao i napon i frekvencija.
+- Detalji o aktivnim rudarskim bazenima u Pools.
+- Status automatskog podešavanja u odeljku Tuner Status.
 - Sa desne strane, detalji o podacima prenetim u bazen.
 
 
@@ -890,19 +890,19 @@ Na ovoj prvoj stranici možete posmatrati performanse vaše mašine u realnom vr
 ![image](assets/en/045.webp)
 
 
-# Attakai - Fan Modification
+# Attakai - modifikacija ventilatora
 
 
 <partId>98266a8f-3745-58a0-9f6b-26a9734e1427</partId>
 
 
-## Zamenite ventilator Power Supply
+## Zamenite napajanje od ventilatora
 
 
 <chapterId>0c6befa7-f3ef-5bcf-ae8d-0ad5e5d41d70</chapterId>
 
 
-> UPOZORENJE: Neophodno je prethodno instalirati Braiins OS+ na vaš Miner, ili bilo koji drugi softver koji može smanjiti performanse vaše mašine. Ova mera je ključna jer ćemo, kako bismo smanjili buku, instalirati manje snažne ventilatore koji mogu raspršiti manje toplote.
+> UPOZORENJE: Neophodno je prethodno instalirati Braiins OS+ na vaš uređaj, ili bilo koji drugi softver koji može smanjiti performanse vaše mašine. Ova mera je ključna jer ćemo, kako bismo smanjili buku, instalirati manje snažne ventilatore koji mogu raspršiti manje toplote.
 
 ![image](assets/en/046.webp)
 
@@ -912,10 +912,10 @@ Na ovoj prvoj stranici možete posmatrati performanse vaše mašine u realnom vr
 
 
 - 1 Noctua NF-A6x25 PWM ventilator
-- električarska čokoladica 2.5mm2
+- električarska kocka 2.5mm2
 
 
-> UPOZORENJE: Pre svega, pre nego što počnete, uverite se da ste isključili svoj Miner kako biste izbegli bilo kakav rizik od strujnog udara.
+> UPOZORENJE: Pre svega, pre nego što počnete, uverite se da ste isključili svoj uređaj kako biste izbegli bilo kakav rizik od strujnog udara.
 
 ![image](assets/en/047.webp)
 
@@ -934,13 +934,13 @@ Zatim, vreme je da uklonite originalni ventilator, pazeći da ne oštetite druge
 ![image](assets/en/050.webp)
 
 
-Kada se originalni ventilator ukloni, primetićete da konektori novog Noctua ventilatora ne odgovaraju onima originalnog ventilatora. Naime, novi ventilator ima 3 žice, uključujući žutu žicu koja omogućava kontrolu brzine. Međutim, ova žica neće biti korišćena u ovom specifičnom slučaju. Da biste povezali novi ventilator, preporučuje se korišćenje specijalnog adaptera. Međutim, važno je napomenuti da ovaj adapter ponekad može biti teško pronaći.
+Kada se originalni ventilator ukloni, primetićete da konektori novog Noctua ventilatora ne odgovaraju onima originalnog ventilatora. Naime, novi ventilator ima 3 žice, uključujući žutu žicu koja omogućava kontrolu brzine. Međutim, ova žica neće biti korišćena u ovom specifičnom slučaju. Da biste povezali novi ventilator, preporučuje se korišćenje specijalnog adaptera. Međutim, važno je napomenuti da ovaj adapter ponekad može teško pronaći.
 
 
 ![image](assets/en/051.webp)
 
 
-Ako nemate ovaj adapter, i dalje možete nastaviti sa povezivanjem novog ventilatora koristeći električarsku čokoladu. Da biste to uradili, biće potrebno da isečete kablove starog i novog ventilatora.
+Ako nemate ovaj adapter, i dalje možete nastaviti sa povezivanjem novog ventilatora koristeći električarsku kocku. Da biste to uradili, biće potrebno da isečete kablove starog i novog ventilatora.
 
 
 ![image](assets/en/052.webp)
@@ -974,7 +974,7 @@ Kada su crvene i crne žice izložene, pažljivo isecite omotače kako ne biste 
 ![image](assets/en/058.webp)
 
 
-Zatim, povežite kablove sa šugarom, crnu žicu sa crnom i crvenu žicu sa crvenom. Možete dodati i izolir traku.
+Zatim povežite kablove pomoću električarske kocke — crnu žicu sa crnom, a crvenu sa crvenom. Možete dodati i izolir traku.
 
 
 ![image](assets/en/059.webp)
@@ -990,7 +990,7 @@ Kada se uspostavi veza, vreme je da instalirate novi Noctua ventilator sa rešet
 ![image](assets/en/062.webp)
 
 
-> Opcionalno: Ako ste upućeni u električnu energiju, možete direktno dodati ženski 5.5mm džek konektor na 12V izlaz za napajanje, što će direktno napajati Vonet Wi-Fi most. Međutim, ako niste sigurni u svoje električne veštine, najbolje je koristiti USB konektor sa punjačem tipa za pametni telefon kako biste izbegli bilo kakav rizik od kratkog spoja ili električnog oštećenja.
+> Opcionalno: Ako ste upućeni u električnu energiju, možete direktno dodati ženski džek 5.5mm konektor na 12V izlaz za napajanje, što će direktno napajati Vonet Wi-Fi most. Međutim, ako niste sigurni u svoje električarske veštine, najbolje je koristiti USB konektor sa punjačem tipa za pametni telefon kako biste izbegli bilo kakav rizik od kratkog spoja ili električnog oštećenja.
 
 ![image](assets/en/063.webp)
 
@@ -1001,7 +1001,7 @@ Kada su veze uspostavljene, postavite plastični poklopac preko kućišta plasti
 ![image](assets/en/064.webp)
 
 
-Konačno, vratite poklopac kućišta na mesto i zavrnite 6 šrafova sa strane kako biste sve učvrstili. I eto ga, vaše Supply kućište sada ima novi ventilator.
+Konačno, vratite poklopac kućišta na mesto i zavrnite 6 šrafova sa strane kako biste sve učvrstili. I eto, vaše kućište napajanja sada je opremljeno novim ventilatorom.
 
 
 ## Zamena glavnih ventilatora
@@ -1010,7 +1010,7 @@ Konačno, vratite poklopac kućišta na mesto i zavrnite 6 šrafova sa strane ka
 <chapterId>a29f60f1-3fa3-57fc-a630-9c97cec30e56</chapterId>
 
 
-> UPOZORENJE: Neophodno je prethodno instalirati Braiins OS+ na vaš Miner, ili bilo koji drugi softver sposoban da smanji performanse vaše mašine. Ova mera je ključna jer ćemo, kako bismo smanjili buku, instalirati manje snažne ventilatore, koji će rasipati manje toplote.
+> UPOZORENJE: Neophodno je prethodno instalirati Braiins OS+ na vaš uređaj, ili bilo koji drugi softver sposoban da smanji performanse vaše mašine. Ova mera je ključna jer ćemo, kako bismo smanjili buku, instalirati manje snažne ventilatore, koji će rasipati manje toplote.
 
 ![image](assets/en/046.webp)
 
@@ -1024,7 +1024,7 @@ Konačno, vratite poklopac kućišta na mesto i zavrnite 6 šrafova sa strane ka
 - 2 140mm rešetke za ventilatore
 
 
-> UPOZORENJE: Prvo, pre nego što počnete, obavezno isključite svoj Miner kako biste izbegli bilo kakav rizik od strujnog udara.
+> UPOZORENJE: Prvo, pre nego što počnete, obavezno isključite svoj uređaj kako biste izbegli bilo kakav rizik od strujnog udara.
 
 1. Prvo, isključite ventilatore i odvrnite ih.
 
@@ -1032,7 +1032,7 @@ Konačno, vratite poklopac kućišta na mesto i zavrnite 6 šrafova sa strane ka
 ![image](assets/en/065.webp)
 
 
-2. Konektori novih Noctua ventilatora ne odgovaraju originalnim, ali ne brinite! Uzmite svoj rezač i pažljivo isecite male plastične jezičke tako da konektori savršeno odgovaraju vašem Miner.
+2. Konektori novih Noctua ventilatora ne odgovaraju originalnim, ali ne brinite! Uzmite svoj rezač i pažljivo isecite male plastične jezičke tako da konektori savršeno odgovaraju vašem uređaju.
 
 
 ![image](assets/en/066.webp)
@@ -1042,13 +1042,13 @@ Konačno, vratite poklopac kućišta na mesto i zavrnite 6 šrafova sa strane ka
 
 3. Vreme je da instalirate 3D delove!
 
-Pričvrstite ih na obe strane Miner koristeći šrafove koje ste uklonili sa ventilatora. Ušrafite ih dok glava šrafa ne bude u ravni sa 3D delom i dok ne bude sigurno na mestu. Pazite da ne zategnete previše, jer biste mogli deformisati deo i jedan od šrafova bi mogao dodirnuti kondenzator!
+Pričvrstite ih na obe strane uređaja koristeći šrafove koje ste uklonili sa ventilatora. Ušrafite ih dok glava šrafa ne bude u ravni sa 3D delom i dok ne bude sigurno na mestu. Pazite da ne zategnete previše, jer biste mogli deformisati deo i jedan od šrafova bi mogao dodirnuti kondenzator!
 
 
 ![image](assets/en/068.webp)
 
 
-4. Sada pređimo na navijače.
+4. Sada pređimo na ventilatore.
 
 
 Pričvrstite ih na 3D delove koristeći šrafove koji su obezbeđeni u kutiji. Obratite pažnju na pravac protoka vazduha, strelice na stranama ventilatora će pokazati pravac koji treba pratiti. Idite od strane sa Ethernet portom ka drugoj strani. Pogledajte fotografiju ispod.
@@ -1061,7 +1061,7 @@ Pričvrstite ih na 3D delove koristeći šrafove koji su obezbeđeni u kutiji. O
 ![image](assets/en/071.webp)
 
 
-5. Poslednji korak: povežite ventilatore i pričvrstite rešetke na vrh pomoću šrafova koji nisu korišćeni u kutiji ventilatora Supply. Imate samo 4, ali 2 po rešetki u suprotnim uglovima će biti dovoljna. Takođe možete potražiti slične šrafove u prodavnici alata ako je potrebno.
+5. Poslednji korak: povežite ventilatore i pričvrstite rešetke na vrhu pomoću šrafova koji nisu korišćeni u kutiji ventilatora napajanja. Imate samo 4, ali 2 po rešetki u suprotnim uglovima će biti dovoljna. Takođe možete potražiti slične šrafove u prodavnici alata ako je potrebno.
 
 
 ![image](assets/en/072.webp)
@@ -1069,19 +1069,19 @@ Pričvrstite ih na 3D delove koristeći šrafove koji su obezbeđeni u kutiji. O
 ![image](assets/en/073.webp)
 
 
-Dok čekate da budete u mogućnosti da ponudite stilizovanije kućište za vaš novi grejač, možete pričvrstiti kućište i napajanje Supply električarskim vezicama.
+Dok čekate da budete u mogućnosti da ponudite stilizovanije kućište za vaš novi grejač, možete pričvrstiti kućište i napajanje električarskim vezicama.
 
 
 ![image](assets/en/074.webp)
 
 
-I za završni dodir, povežite Vonet most na Ethernet port i njegovu struju Supply.
+I za završni detalj, povežite Vonet bridge sa Ethernet portom i njegovim napajanjem.
 
 
 ![image](assets/en/075.webp)
 
 
-I eto ga, čestitamo! Upravo ste zamenili ceo mehanički deo vašeg Miner. Sada bi trebalo da čujete mnogo manje buke.
+I eto ga, čestitamo! Upravo ste zamenili ceo mehanički deo vašeg uređaja za rudarenje. Sada bi trebalo da čujete mnogo manje buke.
 
 
 # Attakai - Konfiguracija
@@ -1090,36 +1090,36 @@ I eto ga, čestitamo! Upravo ste zamenili ceo mehanički deo vašeg Miner. Sada 
 <partId>9c3918a8-d9a3-5a1f-bb9a-70314f7ac175</partId>
 
 
-## Pridruživanje Mining pool
+## Pridruživanje rudarskom bazenu
 
 
 <chapterId>b57a6105-0a53-5fe9-bad1-d6d9daf97c0d</chapterId>
 
 
-Može se zamisliti Mining pool kao poljoprivrednu zadrugu. Poljoprivrednici udružuju svoju proizvodnju kako bi smanjili varijansu Supply i potražnje, te tako ostvarili stabilniji prihod za svoje poslovanje. Mining pool funkcioniše na isti način, s tim što je zajednički resurs heš. Naime, otkriće jednog validnog Hash omogućava kreiranje bloka i osvajanje coinbase-a ili nagrade, koja trenutno iznosi 6.25 BTC plus transakcione naknade uključene u blok.
+Možete zamisliti rudarski bazen kao poljoprivrednu zadrugu. Poljoprivrednici udružuju svoju proizvodnju kako bi smanjili razlike između ponude i potražnje, te tako ostvarili stabilniji prihod za svoje poslovanje. Rudarski bazeni funkcioniše na isti način, s tim što je zajednički resurs heš. Naime, otkriće jednog validnog Hasha omogućava kreiranje bloka i osvajanje coinbase-a ili nagrade, koja trenutno iznosi 6.25 BTC plus transakcione naknade uključene u blok.
 
 
-Ako kopaš sam, bićeš nagrađen samo kada pronađeš blok. U konkurenciji sa svim ostalim rudarima na planeti, imao bi vrlo male šanse da osvojiš ovu lutriju i još uvek bi morao da platiš naknade povezane sa korišćenjem svog Miner bez ikakve garancije uspeha. Mining rešava ovaj problem udruživanjem računarske snage nekoliko (hiljada) rudara i deljenjem njihovih nagrada na osnovu procenta učešća u Hashrate bazenu kada se pronađe blok. Da bi vizualizovao svoje šanse da sam pronađeš Mining blok, možeš koristiti ovaj alat. Unoseći informacije za Antminer S9, možemo videti da su šanse za pronalaženje Hash koji omogućava kreiranje bloka 1 u 24,777,849 za svaki blok ili 1 u 172,068 dnevno. U proseku (sa konstantnim Hashrate i težinom), trebalo bi najmanje 471 godina da se pronađe blok (kako težina raste).
+Ako kopaš sam, bićeš nagrađen samo kada pronađeš blok. U konkurenciji sa svim ostalim rudarima na planeti, imao/la bi vrlo male šanse da osvojiš ovu lutriju i još uvek bi morao/la da platiš naknade povezane sa korišćenjem svog uređaja bez ikakve garancije uspeha. Rudarenje rešava ovaj problem udruživanjem računarske snage nekoliko (hiljada) rudara i deljenjem njihovih nagrada na osnovu procenta učešća u Hashrateu bazena kada se pronađe blok. Da bi vizualizovao svoje šanse da sam pronađeš blok, možeš koristiti ovaj alat. Unoseći informacije za Antminer S9, možemo videti da su šanse za pronalaženje Hasha koji omogućava kreiranje bloka 1 u 24,777,849 za svaki blok ili 1 u 172,068 dnevno. U proseku (sa konstantnim Hashrate-om i težinom), trebalo bi najmanje 471 godina da se pronađe blok (kako težina raste).
 
 
 Međutim, pošto je sve u Bitcoin zasnovano na verovatnoći, ponekad se dešava da solo rudari budu nagrađeni za preuzimanje ovog rizika: Solo Bitcoin Miner rešava blok sa Hash brzinom od samo 10 TH/s, pobedivši izuzetno male šanse – Decrypt
 
 
-Ako volite da kockate, možete pokušati, ali naš vodič se neće fokusirati u tom pravcu. Umesto toga, koncentrisaćemo se na Mining pool koji najbolje odgovara našim potrebama za kreiranje sistema grejanja.
+Ako volite da kockate, možete pokušati, ali naš vodič se neće fokusirati u tom pravcu. Umesto toga, koncentrisaćemo se na rudarske bazene koji najbolje odgovaraju našim potrebama za kreiranje sistema grejanja.
 
 
-Razmatranja koja treba imati kada birate Mining pool su rad nagrada bazena, koje mogu varirati, kao i minimalni iznos pre nego što možete povući nagrade na Address. Na primer, Braiins, koji nudi softver o kojem ovde govorimo, takođe nudi bazen. Ovaj bazen ima sistem nagrađivanja nazvan "Score" koji podstiče rudare da rudare duže periode. Učešće uključuje faktor vremena rada izražen kao "scoring Hashrate". U našem slučaju, gde želimo sistem grejanja koji može biti uključen samo nekoliko minuta, ovo nije idealan sistem nagrađivanja. Preferiramo sistem nagrađivanja koji nam daje jednaku nagradu za svako učešće. Dodatno, minimalni iznos za povlačenje za Braiins Pool je 100,000 Sats i On-Chain. Tako gubimo neke Sats u transakcijskim naknadama i deo naše nagrade može biti zaključan ako ne rudarimo dovoljno tokom zime.
+Prilikom izbora rudarskog pool-a treba uzeti u obzir sistem nagrađivanja pool-a, koji može varirati, kao i minimalni iznos potreban za isplatu nagrada na adresu. Na primer, Braiins, koji nudi softver o kojem ovde govorimo, takođe nudi bazen. Ovaj bazen ima sistem nagrađivanja nazvan "Score" koji podstiče rudare da rudare duže periode. Učešće uključuje faktor vremena rada izražen kao "scoring Hashrate". U našem slučaju, gde želimo sistem grejanja koji može biti uključen samo nekoliko minuta, ovo nije idealan sistem nagrađivanja. Preferiramo sistem nagrađivanja koji nam daje jednaku nagradu za svako učešće. Pored toga, minimalni iznos za isplatu sa Braiins Pool-a je 100.000 satošija, i isplata se vrši on-chain. Tako gubimo neke satošije u transakcijskim naknadama i deo naše nagrade može biti zaključan ako ne rudarimo dovoljno tokom zime.
 
 
-Model nagrađivanja koji nas zanima je PPS, što znači "plaćanje po deonici". To znači da će Miner dobiti nagradu za svaku validnu deonicu. Postoji i varijanta ovog sistema, FPPS (Full Pay Per Share), koja ne samo da deli nagradu za coinbase, već i transakcione naknade uključene u blok. Mining bazeni koje preporučujemo za povezivanje vašeg Mining/grejanja su Linecoin Pool (FPPS) i Nicehash (PPS).
-
-
-
-- Nicehash: Prednost Nicehash-a je što se povlačenje može izvršiti koristeći Lightning uz minimalne naknade. Pored toga, minimalni iznos za povlačenje je 2000 Sats. Nedostatak je što Nicehash koristi svoj Hashrate za najprofitabilniji Blockchain, bez stvarnog davanja kontrole korisniku, tako da možda neće nužno doprineti Bitcoin Hashrate.
+Model nagrađivanja koji nas zanima je PPS, što znači "plaćanje po deonici". To znači da će rudar dobiti nagradu za svaku validnu deonicu. Postoji i varijanta ovog sistema, FPPS (Full Pay Per Share), koja ne samo da deli nagradu za coinbase, već i transakcione naknade uključene u blok. Rudarski bazeni koje preporučujemo za povezivanje vašeg uređaja za rudarenje i grejanje su Linecoin Pool (FPPS) i Nicehash (PPS).
 
 
 
-- Linecoin: Prednost Linecoina je broj funkcija koje nudi, kao što su detaljna kontrolna tabla, mogućnost povlačenja sa Paynym (BIP 47) za bolju zaštitu privatnosti, i integracija Telegram bota kao i direktno konfigurisane automatizacije u mobilnoj aplikaciji. Ovaj pool kopa samo Bitcoin blokove, ali minimalni iznos za povlačenje ostaje visok na 100,000 Sats. Detaljnije ćemo ispitati Interface jednog od ovih poolova u budućem članku.
+- Nicehash: Prednost Nicehash-a je što se povlačenje može izvršiti koristeći Lightning uz minimalne naknade. Pored toga, minimalni iznos za povlačenje je 2000 satošija. Nedostatak je što Nicehash koristi svoju hash snagu za najprofitabilniju blokčejn mrežu, bez stvarne kontrole korisnika, tako da to ne mora nužno doprinositi Bitcoin hash snazi.
+
+
+
+- Linecoin: Prednost Linecoina je broj funkcija koje nudi, kao što su detaljna kontrolna tabla, mogućnost povlačenja sa Paynym (BIP 47) za bolju zaštitu privatnosti, i integracija Telegram bota kao i direktno konfigurisane automatizacije u mobilnoj aplikaciji. Ovaj pool kopa samo Bitcoin blokove, ali minimalni iznos za povlačenje ostaje visok na 100,000 Sats. Detaljnije ćemo ispitati korisnički interfejs jednog od ovih bazena u budućem članku.
 
 
 Da biste konfigurisali bazen u Braiins OS+, potrebno je da kreirate nalog u jednom od bazena po vašem izboru. Ovde ćemo uzeti primer Linecoin:
@@ -1131,13 +1131,13 @@ Da biste konfigurisali bazen u Braiins OS+, potrebno je da kreirate nalog u jedn
 Kada je vaš nalog kreiran, kliknite na Connect To Pool
 
 
-Zatim kopirajte Stratum Address i vaše korisničko ime:
+Zatim kopirajte Stratum adresu i vaše korisničko ime:
 
 
 ![image](assets/en/077.webp)
 
 
-Sada se možete vratiti na Braiins OS+ Interface da unesete ove akreditive. Polje za lozinku možete ostaviti prazno.
+Sada se možete vratiti na Braiins OS+ interfejs da unesete ove kredencijale. Polje za lozinku možete ostaviti prazno.
 
 
 ![image](assets/en/078.webp)
