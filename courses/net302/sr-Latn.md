@@ -6,8 +6,8 @@ objectives:
 
   - Razumevanje arhitekture i rada TCP/IP protokola
   - Objasnite razlike, prednosti i ograničenja IPv4 i IPv6.
-  - Identifikujte i razlikujte različite tipove IP Address
-  - Konfigurisanje i verifikacija IP adresa na Unix/Linux sistemima
+  - Identifikujte i razlikujte različite tipove IP adresa
+  - Konfigurišite i verifikujte IP adrese na Unix/Linux sistemima
   - Koristite glavne dijagnostičke alate za analizu i rešavanje mrežnih problema.
 
 
@@ -19,7 +19,7 @@ objectives:
 Zaronite u srž IP sveta i opremite se znanjem za razumevanje i efikasno upravljanje vašim mrežama. Na ovom kursu, naučićete sve što treba da znate o računarskim mrežama na jasan i praktičan način.
 
 
-Naučićete kako funkcionišu mreže i IP adresiranje, kako razlikovati IPv4 i IPv6, kako identifikovati i koristiti različite Address kategorije, i kako razumeti pun značaj TCP/IP protokola i veza koje uspostavlja između IP adresa, fizičkih adresa i DNS imena.
+Naučićete kako funkcionišu mreže i IP adresiranje, kako razlikovati IPv4 i IPv6, kako identifikovati i koristiti različite kategorije adresa, i kako razumeti pun značaj TCP/IP protokola i veza koje se uspostavljaju između IP adresa, fizičkih adresa i DNS imena.
 
 
 NET 302 je namenjen uglavnom studentima, korisnicima Linux-a ili jednostavno radoznalima koji žele da razumeju osnove umrežavanja i ojačaju svoju autonomiju u upravljanju, rešavanju problema i optimizaciji infrastruktura.
@@ -60,25 +60,25 @@ Ovaj kurs pruža potpuni uvod u osnove IP mreža. Struktuiran je u četiri glavn
 ### TCP/IP protokol
 
 
-U ovom prvom delu, postavićemo osnove istraživanjem koncepta umrežavanja i istorije TCP/IP protokola. Proučićemo njegove glavne komponente: IP, TCP, uz kratak pregled IPv5 QoS protokola. Takođe ćemo pokriti servisne primitive kako bismo bolje razumeli logiku podataka Exchange.
+U ovom prvom delu, postavićemo osnove istraživanjem koncepta umrežavanja i istorije TCP/IP protokola. Proučićemo njegove glavne komponente: IP, TCP, uz kratak pregled IPv5 QoS protokola. Takođe ćemo pokriti servisne primitive kako bismo bolje razumeli logiku razmene podataka.
 
 
 ### IPv4 adresiranje
 
 
-Zatim ćemo preći na modul posvećen IPv4 adresiranju. Naučićete kako se IPv4 koristi u praksi, njegove različite Address tipove (privatne, javne, broadcast, itd.), fundamentalnu ulogu DNS-a, kao i kako funkcionišu Ethernet adrese i ARP protokol. Takođe ćete otkriti NAT (Network Address Translation) i osnove mrežne konfiguracije.
+Zatim ćemo preći na modul posvećen IPv4 adresiranju. Naučićete kako se IPv4 koristi u praksi, njegove različite tipove adresa (privatne, javne, broadcast, itd.), fundamentalnu ulogu DNS-a, kao i kako funkcionišu Ethernet adrese i ARP protokol. Takođe ćete otkriti NAT (Network Address Translation) i osnove mrežne konfiguracije.
 
 
 ### IPv6 adresiranje
 
 
-Treći deo se fokusira na IPv6 adresiranje, što je neophodno da bi se Address ograničenja IPv4. Proći ćemo kroz njegove standarde i definicije, Address Assignment unutar lokalne mreže, Address upravljanje blokovima i odnos između IPv6 i DNS-a.
+Treći deo se fokusira na IPv6 adresiranje, koje je neophodno da bi se prevazišla ograničenja IPv4. Proći ćemo kroz njegove standarde i definicije, dodela adresa unutar lokalne mreže, upravljanje blokovima adresa i odnos između IPv6 i DNS-a.
 
 
 ### Alati za dijagnostiku mreže
 
 
-Na kraju, završićemo prezentacijom glavnih alata za dijagnostiku mreže. Ovi alati će vam omogućiti da analizirate, kontrolišete i rešavate probleme u radu. Ovaj deo će biti strukturisan po slojevima: Pristup mreži, Mreža, Transport i Gornji slojevi.
+Na kraju, završićemo prezentacijom glavnih alata za dijagnostiku mreže. Ovi alati će vam omogućiti da analizirate, kontrolišete i rešavate probleme u radu. Ovaj deo će biti strukturisan po slojevima: pristup mreži, mreža, transport i gornji slojevi.
 
 
 Do kraja ovog kursa, imaćete osnovno znanje za efikasno upravljanje mrežnom infrastrukturom i dijagnostikovanje potencijalnih problema.
@@ -87,7 +87,7 @@ Do kraja ovog kursa, imaćete osnovno znanje za efikasno upravljanje mrežnom in
 Spremni da zaronite u svet računarskih mreža? Hajde da krenemo!
 
 
-**NAPOMENA**: Opisi su zasnovani na GNU/Linux CentOS 7 sistemu. Međutim, mrežne konfiguracije su uglavnom iste kada se upoređuje Debian sa CentOS sistemom. Dakle, nećemo praviti nikakvu razliku. Kada postoji razlika, prefiksiraćemo je specifičnim logotipom.
+**NAPOMENA**: Opisi su zasnovani na GNU/Linux CentOS 7 sistemu. Međutim, mrežne konfiguracije su uglavnom iste kada se upoređuje Debian sa CentOS sistemom. Dakle, nećemo praviti nikakvu razliku. Kada je bude, označićemo je određenim logotipom.
 
 
 **N.B.**: Ako naiđete na bilo koji nepoznat termin tokom kursa, molimo vas da se obratite [glosaru](https://planb.network/resources/glossary) za definicije.
@@ -111,7 +111,7 @@ Spremni da zaronite u svet računarskih mreža? Hajde da krenemo!
 U ovom prvom modulu, detaljno ćemo razmotriti TCP/IP protokol, temelj savremenih digitalnih komunikacija. Diskutovaćemo o njegovom poreklu, osnovnim principima i sistemu adresiranja koji koristi, a koji je ključan za obezbeđivanje protoka informacija između povezanih uređaja.
 
 
-Detalisaćemo i glavne komponente koje strukturišu ovaj model i objasniti kako one međusobno deluju da bi formirale operativnu, pouzdanu i skalabilnu mrežu. Ali prvo, neophodno je vratiti se na koncept mreže.
+Takođe ćemo detaljno objasniti glavne komponente koje čine strukturu ovog modela i objasniti kako one međusobno deluju da bi formirale operativnu, pouzdanu i skalabilnu mrežu. Ali prvo, neophodno je vratiti se na koncept mreže.
 
 
 Etimološki, mreža se odnosi na skup tačaka povezanih jedna s drugom, formirajući međusobno povezanu strukturu. U telekomunikacijama i računarstvu, ova definicija se prevodi u grupu uređaja (računari, ruteri, prekidači, pristupne tačke, itd.) sposobnih za razmenu podataka putem fizičkih ili bežičnih medija. Mreža tako omogućava kontinuirani ili povremeni protok informacija, u zavisnosti od zahteva, korišćenih protokola i prirode primenjene arhitekture.
@@ -120,11 +120,11 @@ Etimološki, mreža se odnosi na skup tačaka povezanih jedna s drugom, formiraj
 Tokom vremena, razvijeno je nekoliko klasičnih topologija kako bi se zadovoljile različite potrebe za troškovima, performansama, otpornošću i lakoćom održavanja. To uključuje:
 
 
-- prstenasta mreža,
-- mrežna struktura stabla,
-- mreža autobusa,
-- zvezdasta mreža,
-- mesh network.
+- prstenasta mreža (engl. ring network),
+- stablasta mreža (engl.tree network),
+- sabirnička mreža (engl. bus network),
+- zvezdasta mreža (engl. star network),
+- mesh mreža.
 
 
 
@@ -142,10 +142,10 @@ Prednost ovog aranžmana leži u jednostavnosti kabliranja i odsustvu zavisnosti
 
 
 
-### Mrežna struktura drveta
+### Stablasta mreža
 
 
-Mrežna topologija stabla, ili hijerarhijska topologija, modelovana je prema strukturi porodičnog stabla. Sastoji se od uzastopnih nivoa: korenski čvor na vrhu povezuje se sa nekoliko čvorova nižeg nivoa, koji se mogu povezivati sa drugim čvorovima, i tako dalje.
+Stablasta mreža, ili hijerarhijska topologija, modelovana je prema strukturi porodičnog stabla. Sastoji se od uzastopnih nivoa: korenski čvor na vrhu povezuje se sa nekoliko čvorova nižeg nivoa, koji se mogu povezivati sa drugim čvorovima, i tako dalje.
 
 
 Ovaj hijerarhijski raspored posebno dobro funkcioniše za velike mreže koje zahtevaju jasnu podelu odgovornosti i segmentirano upravljanje. Međutim, takođe čini mrežu ranjivom na kvarove čvorova višeg nivoa: gubitak korena ili glavne grane može odseći čitave delove infrastrukture.
@@ -156,7 +156,7 @@ Ovaj hijerarhijski raspored posebno dobro funkcioniše za velike mreže koje zah
 
 
 
-### Mreža autobusa
+### Sabirnička mreža
 
 
 U sabirničkoj topologiji, svi uređaji dele isti prenosni medijum, obično koaksijalni kabl ili optičko vlakno. Svaka jedinica je pasivno povezana, što znači da ne menja aktivno signal, i može slati ili primati podatke preko ovog zajedničkog kanala.
@@ -184,16 +184,15 @@ Ovaj raspored olakšava upravljanje i održavanje: ako jedan periferni uređaj z
 
 
 
-**Napomena**: još uvek postoje mreže organizovane u linearnoj, sabirničkoj topologiji, gde je oprema povezana jedna za drugom. Ovo rešenje, iako jeftino za implementaciju, ima veliki nedostatak da jedan prekid izoluje neke od hostova, razdvajajući mrežu na nezavisne podskupove.
+**Napomena**: još uvek postoje mreže organizovane u linearnoj, sabirničkoj topologiji, gde je oprema povezana jedna za drugom. Ovo rešenje, iako je jeftino za implementaciju, ima veliki nedostatak — jedan prekid može izolovati deo hostova, razdvajajući mrežu na nezavisne podskupove.
+
+### Meš mreža
 
 
-### Mrežna mreža
+Meš mreža je dizajnirana za maksimalnu redundanciju: svaki uređaj je direktno povezan sa svakim drugim uređajem. Ovo osigurava kontinuitet usluge čak i ako više veza ili uređaja otkaže, jer se saobraćaj može preusmeriti duž alternativnih puteva.
 
 
-Mrežna mreža je dizajnirana za maksimalnu redundanciju: svaki uređaj je direktno povezan sa svakim drugim uređajem. Ovo osigurava kontinuitet usluge čak i ako više veza ili uređaja otkaže, jer se saobraćaj može preusmeriti duž alternativnih puteva.
-
-
-Kompromis je u tome što broj veza koje treba uspostaviti brzo raste s brojem terminala. Za `N` priključnih tačaka, potrebno je `N × (N-1) / 2` zasebnih veza, što ovu topologiju čini skupom i složenom za implementaciju. Stoga se uglavnom koristi u kritičnim mrežama koje zahtevaju veoma visoku dostupnost, kao što su određeni delovi Interneta ili osetljivi industrijski sistemi.
+Kompromis je u tome što broj veza koje treba uspostaviti brzo raste s brojem terminala. Za `N` priključnih tačaka, potrebno je `N × (N-1) / 2` zasebnih veza, što ovu topologiju čini skupom i složenom za implementaciju. Stoga se uglavnom koristi u kritičnim mrežama koje zahtevaju veoma visoku dostupnost, kao što su određeni delovi interneta ili osetljivi industrijski sistemi.
 
 
 
@@ -204,7 +203,7 @@ Kompromis je u tome što broj veza koje treba uspostaviti brzo raste s brojem te
 Postoje i druge varijacije, kao što su mreže u obliku rešetke ili hiperkocke, koje su dizajnirane za specijalizovane potrebe u distribuiranom računarstvu ili paralelnoj obradi.
 
 
-Na globalnom nivou, Internet je masivna međusobna povezanost mreža koje koriste različite topologije, ujedinjene zajedničkim adresiranjem (IPv4 i IPv6) i skupom standardizovanih protokola definisanih od strane IETF (*Internet Engineering Task Force*). Ova raznolikost znači da Internet ne prati jednu jedinu topologiju: njegova struktura je fleksibilna, skalabilna i nezavisna od logičke šeme adresiranja koja ga čini upotrebljivim.
+Na globalnom nivou, internet je masivna međusobna povezanost mreža koje koriste različite topologije, ujedinjene zajedničkim adresiranjem (IPv4 i IPv6) i skupom standardizovanih protokola definisanih od strane IETF (*Internet Engineering Task Force*). Ova raznolikost znači da internet ne prati jednu jedinu topologiju: njegova struktura je fleksibilna, skalabilna i nezavisna od logičke šeme adresiranja koja ga čini upotrebljivim.
 
 
 
