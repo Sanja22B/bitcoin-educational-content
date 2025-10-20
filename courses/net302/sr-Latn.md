@@ -396,14 +396,14 @@ Proces fragmentacije funkcioniše ovako:
 
 
 - Ruter razbija datagram na fragmente koji nisu veći od MTU ciljne mreže.
-- Veličina svakog fragmenta je višekratnik od 8 bajtova, pošto IP protokol koristi ovu jedinicu za kodiranje ofseta ponovnog sastavljanja.
-- Svaki fragment dobija svoj IP zaglavlje, koje sadrži informacije potrebne krajnjem primaocu da ih ponovo sastavi u ispravnom redosledu.
+- Veličina svakog fragmenta je umnožak od 8 bajtova, jer IP protokol koristi tu jedinicu za kodiranje pomeraja pri ponovnom sastavljanju.
+- Svaki fragment dobija svoje IP zaglavlje, koje sadrži informacije potrebne krajnjem primaocu da ih ponovo sastavi u ispravnom redosledu.
 
 
 Jednom fragmentirani, delovi putuju nezavisno kroz mrežu. Mogu uzeti različite rute, u zavisnosti od tabela rutiranja, opterećenja linkova ili prekida. Nema garancije da će stići redosledom kojim su poslati.
 
 
-Po dolasku, mašina koja prima podatke rukuje **ponovnim sastavljanjem**. Koristeći informacije u zaglavljima (zajednički identifikator, pomeraj i zastavice fragmentacije), vraća fragmente u pravilan redosled kako bi rekonstruisala originalni datagram pre nego što ga prenese sledećem Layer. Ako čak i jedan fragment bude izgubljen ili oštećen, ceo datagram se obično odbacuje, bez svakog dela, rezultat bi bio nepotpun ili neupotrebljiv.
+Po prijemu, mašina koja prima podatke obavlja **ponovno sastavljanje**. Koristeći informacije u zaglavljima (zajednički identifikator, pomeraj i zastavice fragmentacije), vraća fragmente u pravilan redosled kako bi rekonstruisala originalni datagram pre nego što ga prenese sledećem sloju. Ako čak i jedan fragment bude izgubljen ili oštećen, ceo datagram se obično odbacuje, bez svakog dela, rezultat bi bio nepotpun ili neupotrebljiv.
 
 
 Iako efikasni, fragmentacija i ponovno sastavljanje dolaze s nedostacima: dodatna obrada za rutere i hostove, i veća šansa za gubitak paketa, što može povećati ponovna slanja. Zato su pažljivo upravljanje MTU-om i optimizacija veličine paketa važni za glatku i efikasnu IP komunikaciju.
@@ -416,16 +416,16 @@ Iako efikasni, fragmentacija i ponovno sastavljanje dolaze s nedostacima: dodatn
 Da bi se osiguralo da se podaci pravilno usmeravaju kroz slojeve TCP/IP modela, proces **enkapsulacije** igra ključnu ulogu. Na svakoj fazi dok poruka putuje od aplikacije pošiljaoca do mašine primaoca, dodaju se dodatne informacije, poznate kao zaglavlja. Ova zaglavlja daju međusobnim uređajima i softverskim slojevima instrukcije koje su im potrebne za obradu, isporuku i, ako je potrebno, ponovno sastavljanje podataka.
 
 
-Kada se poruka pošalje, prolazi kroz četiri sloja TCP/IP steka. Na svakom Layer, novi zaglavlje se dodaje ispred postojećih podataka: svako zaglavlje sadrži specifične metapodatke, kao što su logičke ili fizičke adrese, komunikacioni portovi, redni brojevi, zastavice za kontrolu grešaka i bilo koje informacije potrebne za upravljanje prenosom i rutiranjem.
+Kada se poruka pošalje, prolazi kroz četiri sloja TCP/IP steka. Na svakom sloju, novo zaglavlje se dodaje ispred postojećih podataka: svako zaglavlje sadrži specifične metapodatke, kao što su logičke ili fizičke adrese, komunikacioni portovi, redni brojevi, zastavice za kontrolu grešaka i bilo koje informacije potrebne za upravljanje prenosom i rutiranjem.
 
 
 Prenos tako prati strukturiran proces:
 
 
-- Aplikacija Layer kreira početnu **poruku**, koja sadrži neobrađene podatke.
-- Transportni Layer ga enkapsulira u **segment**, dodajući izvorne i odredišne portove, brojeve sekvenci i mehanizme kontrole toka.
-- Internet Layer dodaje segmentu IP zaglavlje kako bi formirao **datagram**, navodeći izvorne i odredišne IP adrese.
-- Mreža Access Layer obavija datagram u **frejm**, dodajući MAC adrese i kodove za proveru integriteta (CRC).
+- Aplikacioni sloj kreira početnu **poruku**, koja sadrži neobrađene podatke.
+- Transportni sloj ga enkapsulira u **segment**, dodajući izvorne i odredišne portove, brojeve sekvenci i mehanizme kontrole toka.
+- Internteski sloj dodaje segmentu IP zaglavlje kako bi formirao **datagram**, navodeći izvorne i odredišne IP adrese.
+- Sloj pristupa mreži obavija datagram u **frejm ili u prevodu okvir**, dodajući MAC adrese i kodove za proveru integriteta (CRC).
 
 
 
@@ -436,7 +436,7 @@ Prenos tako prati strukturiran proces:
 Ovaj proces enkapsulacije osigurava i integritet i sledljivost podataka, kao i njihovu prilagodljivost: prilikom prelaska sa jedne mreže na drugu, zaglavlja obezbeđuju uređajima informacije potrebne za izbor rute, proveru validnosti ili izvršavanje fragmentacije ako je potrebno.
 
 
-Po dolasku, proces se obrće: prijemna mašina prima okvir na Network Access Layer, koji čita i uklanja odgovarajući zaglavlje. Datagram se zatim prosleđuje Internet Layer, koji čita IP zaglavlje i uklanja ga kako bi isporučio segment Transport Layer. Transport Layer obrađuje transportna zaglavlja, proverava integritet toka i konačno isporučuje **poruku** ciljnoj aplikaciji u njenom originalnom stanju.
+Po dolasku, proces se obrće: prijemna mašina prima okvir sa sloja pristupa mreži, koji čita i uklanja odgovarajuće zaglavlje. Datagram se zatim prosleđuje internetskom sloju, koji čita IP zaglavlje i uklanja ga kako bi isporučio segment transportnom sloju. Transportni sloj obrađuje transportna zaglavlja, proverava integritet toka i konačno isporučuje **poruku** ciljnoj aplikaciji u njenom originalnom stanju.
 
 
 
@@ -444,13 +444,13 @@ Po dolasku, proces se obrće: prijemna mašina prima okvir na Network Access Lay
 
 
 
-Transformacija podataka na svakom Layer može se sažeti kao:
+Transformacija podataka na svakom sloju može se sažeti kao:
 
 
-- **Poruka**: blok informacija na Aplikaciji Layer.
-- **Segment**: jedinica podataka nakon enkapsulacije od strane Transport Layer.
-- **Datagram**: oblik koji se formira nakon dodavanja IP zaglavlja od strane Internet Layer.
-- **Frame**: konačni blok spreman za prenos preko fizičkog medijuma putem Network Access Layer.
+- **Poruka**: blok informacija na aplikacionom sloju.
+- **Segment**: jedinica podataka nakon enkapsulacije od strane transportnog sloja.
+- **Datagram**: oblik koji se formira nakon dodavanja IP zaglavlja od strane internet sloja.
+- **Frame (okvir)**: konačni blok spreman za prenos preko fizičkog medijuma putem sloja za pristupa mreži.
 
 
 
@@ -465,34 +465,34 @@ Ovaj proces, koji je ključan za pouzdanost i univerzalnost internet komunikacij
 ### IP adresiranje
 
 
-Čak i sa komutacijom paketa, fragmentacijom i enkapsulacijom, mreža i dalje ne bi mogla funkcionisati bez pouzdanog sistema adresiranja. Da bi se osiguralo da svaki paket podataka stigne do pravog primaoca, Internet Layer koristi jedinstveni identifikator: **IP Address**.
+Čak i sa komutacijom paketa, fragmentacijom i enkapsulacijom, mreža i dalje ne bi mogla funkcionisati bez pouzdanog sistema adresiranja. Da bi se osiguralo da svaki paket podataka stigne do pravog primaoca, internet sloj koristi jedinstveni identifikator: **IP adrese**.
 
-U IPv4, IP Address je kodiran na **32 bita** i napisan kao četiri decimalna broja odvojena tačkama, u poznatom formatu N1.N2.N3.N4 (na primer: 192.168.1.12).
+U IPv4, IP adresa je kodirana sa **32 bita** i napisana kao četiri decimalna broja odvojena tačkama, u poznatom formatu N1.N2.N3.N4 (na primer: 192.168.1.12).
 
 
-IP Address ima dva dela:
+IP adresa ima dva dela:
 
 
 - **netid**: identifikuje mrežu kojoj host pripada
 - **hostid**: identifikuje specifičnog domaćina unutar te mreže
 
-Ova separacija omogućava da globalni Internet bude logički strukturiran u mnoge međusobno povezane mreže.
+Ova separacija omogućava da globalni internet bude logički strukturiran u mnoge međusobno povezane mreže.
 
 
-Istorijski gledano, IPv4 sistem se oslanjao na šemu zasnovanu na klasama, označenim od A do E, koja je definisala opseg Address i njihovu namenu. Svaka klasa je dodeljivala određen broj bitova _netid_-u i _hostid_-u, što je direktno uticalo na mogući broj mreža i hostova.
+Istorijski gledano, IPv4 sistem se oslanjao na šemu zasnovanu na klasama, označenim od A do E, koja je definisala opseg adresa i njihovu namenu. Svaka klasa je dodeljivala određen broj bitova _netid_-u i _hostid_-u, što je direktno uticalo na mogući broj mreža i hostova.
 
 
 
 | **Class** | **IPv4 Address Range**            | **Usage**                    |
 | --------- | --------------------------------- | ---------------------------- |
-| A         | 1.x.x.x to 126.x.x.x              | Unicast addresses            |
-|           | (127.x.x.x reserved for loopback) | Local loopback               |
-| B         | 128.0.x.x to 191.255.x.x          | Unicast addresses            |
-| C         | 192.0.0.x to 223.255.255.x        | Unicast addresses            |
+| A         | 1.x.x.x to 126.x.x.x              | Unicast adrese               |
+|           | (127.x.x.x rezervisana za loopback)| Lokalni loopback            |
+| B         | 128.0.x.x to 191.255.x.x          | Unicast adrese               |
+| C         | 192.0.0.x to 223.255.255.x        | Unicast adrese               |
 | D         | 224.0.0.0 to 239.255.255.255      | IP Multicast                 |
-| E         | 240.0.0.0 to 255.255.255.255      | Reserved for experimentation |
+| E         | 240.0.0.0 to 255.255.255.255      | Rezervisano za eksperimentisanje |
 
-Nije moguće dodeliti sve moguće vrednosti hostovima. Na primer, u **klasi C** Address, poslednji bajt nudi 8 bita (256 vrednosti). Ali dve od njih su rezervisane:
+Nije moguće dodeliti sve moguće vrednosti hostovima. Na primer, u **klasi C** adresa, poslednji bajt nudi 8 bita (256 vrednosti). Ali dve od njih su rezervisane:
 
 
 - 0: identifikuje samu mrežu
