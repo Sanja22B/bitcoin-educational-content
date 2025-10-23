@@ -13,7 +13,7 @@ objectives:
 
 ---
 
-# Osnovne veštine za navigaciju svetom intelektualne svojine
+# Ključne veštine za snalaženje u svetu IP mreža
 
 
 Zaronite u srž IP sveta i opremite se znanjem za razumevanje i efikasno upravljanje vašim mrežama. Na ovom kursu, naučićete sve što treba da znate o računarskim mrežama na jasan i praktičan način.
