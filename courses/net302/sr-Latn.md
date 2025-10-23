@@ -486,7 +486,7 @@ Istorijski gledano, IPv4 sistem se oslanjao na šemu zasnovanu na klasama, ozna�
 | **Class** | **IPv4 Address Range**            | **Usage**                    |
 | --------- | --------------------------------- | ---------------------------- |
 | A         | 1.x.x.x to 126.x.x.x              | Unicast adrese               |
-|           | (127.x.x.x rezervisana za loopback)| Lokalni loopback            |
+|           | (127.x.x.x rezervisana za loopback)| Lokalna petlja (engl. local loopback)|
 | B         | 128.0.x.x to 191.255.x.x          | Unicast adrese               |
 | C         | 192.0.0.x to 223.255.255.x        | Unicast adrese               |
 | D         | 224.0.0.0 to 239.255.255.255      | IP Multicast                 |
@@ -496,7 +496,7 @@ Nije moguće dodeliti sve moguće vrednosti hostovima. Na primer, u **klasi C** 
 
 
 - 0: identifikuje samu mrežu
-- 255: je **broadcast** Address, koristi se za slanje paketa svim hostovima u mreži odjednom.
+- 255: je **broadcast** adresa, koristi se za slanje paketa svim hostovima u mreži odjednom.
 
 To ostavlja 254 upotrebljive adrese za uređaje.
 
@@ -509,7 +509,7 @@ Broj dostupnih adresa značajno varira između klasa: od velikih javnih mreža u
 
 
 
-Neki opsezi Address su rezervisani za privatnu upotrebu i nikada se ne rutiraju direktno na Internetu. Oni su poznati kao **privatne adrese**, i koriste se unutar organizacija, preduzeća ili domova, i zahtevaju Address prevođenje, obično NAT (*Network Address Translation*), da bi se došlo do javnog Interneta. To su:
+Neki opsezi adresa su rezervisani za privatnu upotrebu i nikada se ne rutiraju direktno na internetu. Oni su poznati kao **privatne adrese**, i koriste se unutar organizacija, preduzeća ili domova, i zahtevaju prevod adresa, obično NAT (*Network Address Translation*), da bi se došlo do javnog interneta. To su:
 
 
 - **Klasa A**: od 10.0.0.0 do 10.255.255.255
@@ -517,23 +517,23 @@ Neki opsezi Address su rezervisani za privatnu upotrebu i nikada se ne rutiraju 
 - **Klasa C**: od 192.168.0.0 do 192.168.255.255
 
 
-Kada uređaj sa privatnim Address pristupa Internetu, ruter ili prolaz sa omogućenim NAT-om zamenjuje ga važećim javnim Address.
+Kada uređaj sa privatnom adresom pristupa internetu, ruter ili mrežni prolaz (eng. gateway) sa omogućenim NAT-om zamenjuje ga važećom javnom adresom.
 
 
-Primer: Ako host ima Address **192.168.7.5**, možemo zaključiti:
+Primer: Ako host ima adresu **192.168.7.5**, možemo zaključiti:
 
 
-- 192.168.7.0: mreža Address
+- 192.168.7.0: mrežna adresa
 - 192.168.7.1: često lokalni ruter
 - 192.168.7.5: sam domaćin
 
 
 Još jedan poseban slučaj je **127.0.0.1**, poznat kao "***loopback***".
 
-Na Linux sistemima, to je povezano sa Interface **lo**. Ovaj Address omogućava mašini da Address samu sebe za lokalno testiranje ili dijagnostiku, bez prolaska kroz fizički Interface. Čitav opseg **127.0.0.0/8** je rezervisan za ovu svrhu.
+Na Linux sistemima, to je povezano sa interfejsom **lo**. Ova adresa omogućava mašini da adresira samu sebe za lokalno testiranje ili dijagnostiku, bez prolaska kroz fizički interfejs. Čitav opseg **127.0.0.0/8** je rezervisan za ovu svrhu.
 
 
-Da bi se optimizovala upotreba Address i dizajnirale složene mreže, **subnetmask** (_netmask_) je esencijalna. Ova binarna maska odvaja _netid_ od _hostid_ u IP Address.
+Da bi se optimizovala upotreba adresa i dizajnirale složene mreže, **subnetmask** (_netmask_) je esencijalna. Ova binarna maska odvaja _netid_ od _hostid_ u IP adresi.
 
 Svaka klasa ima podrazumevanu masku:
 
@@ -567,11 +567,11 @@ Mreža **klase C**: 192.168.1.0/24 sa podrazumevanom maskom 255.255.255.0.
 ```
 
 
-**Korak 4**: Izračunajte opsege Address za svaki podmrežni segment, menjajući broj bita rezervisanih za hosta.
+**Korak 4**: Izračunajte opsege adresa za svaki podmrežni segment, menjajući broj bita rezervisanih za hosta.
 
 
 
-| Subnet ID (bits) | Subnet Address   | Subnet Mask     | Address Range                 | Broadcast Address |
+| Subnet ID (bits) | Subnet adresa    | Subnet maska    | Opseg adresa                  | Broadcast adresa  |
 | ---------------- | ---------------- | --------------- | ----------------------------- | ----------------- |
 | 00               | 192.168.1.0/26   | 255.255.255.192 | 192.168.1.1 – 192.168.1.62    | 192.168.1.63      |
 | 01               | 192.168.1.64/26  | 255.255.255.192 | 192.168.1.65 – 192.168.1.126  | 192.168.1.127     |
@@ -594,23 +594,23 @@ Ovaj fundamentalni princip subnetovanja ostaje nezamenljiv u modernom mrežnom i
 ### CIDR adresiranje
 
 
-Početkom 1990-ih, kako se Internet brzo širio kroz preduzeća i organizacije, tradicionalni sistem IP adresiranja zasnovan na klasama (A, B, C) počeo je da pokazuje svoja ograničenja.
+Početkom 1990-ih, kako se internet brzo širio kroz preduzeća i organizacije, tradicionalni sistem IP adresiranja zasnovan na klasama (A, B, C) počeo je da pokazuje svoja ograničenja.
 
 Njegova rigidna struktura dovela je do značajnog rasipanja IP adresa i učinila tabele rutiranja sve većim, složenijim i težim za održavanje.
 
-Da bi se rešili ovi problemi sa Address, uvedena je fleksibilnija i efikasnija metoda: **CIDR** (_Classless Inter-Domain Routing_). CIDR je postepeno postao standard, uglavnom zamenjujući stari sistem zasnovan na klasama.
+Da bi se rešili ovi problemi sa adresama, uvedena je fleksibilnija i efikasnija metoda: **CIDR** (_Classless Inter-Domain Routing_). CIDR je postepeno postao standard, uglavnom zamenjujući stari sistem zasnovan na klasama.
 
 
 Osnovna ideja iza CIDR-a je mogućnost grupisanja nekoliko susednih mreža, posebno blokova klase C, u jednu logičku jedinicu koja se zove **supermreža** (_supernet_). Sa ovom agregacijom, jedan unos u tabeli rutiranja može predstavljati više podmreža, smanjujući broj ruta koje ruteri moraju da obrađuju i poboljšavajući njihov učinak.
 
 
-Iako su mreže klase C u početku imale najveću potrebu za agregacijom zbog svog manjeg kapaciteta, princip je takođe primenjen na mreže klase B i, u teoriji, čak i na mreže klase A, iako su ove poslednje manje pogođene zahvaljujući svom velikom Address opsegu.
+Iako su mreže klase C u početku imale najveću potrebu za agregacijom zbog svog manjeg kapaciteta, princip je takođe primenjen na mreže klase B i, u teoriji, čak i na mreže klase A, iako su ove poslednje manje pogođene zahvaljujući svom velikom opsegu adresa.
 
 
-Sa CIDR-om, koncept fiksnih klasa nestaje. Prostor Address tretira se kao kontinuirani raspon koji se može deliti ili agregirati po potrebi. CIDR blokovi se definišu korišćenjem subnet maski koje nisu ograničene na podrazumevane A, B ili C klase. CIDR blok može predstavljati ili jednu mrežu ili kontinuirani skup podmreža koje dele isti prefiks.
+Sa CIDR-om, koncept fiksnih klasa nestaje. Prostor adresa tretira se kao kontinuirani raspon koji se može deliti ili agregirati po potrebi. CIDR blokovi se definišu korišćenjem subnet maski koje nisu ograničene na podrazumevane A, B ili C klase. CIDR blok može predstavljati ili jednu mrežu ili kontinuirani skup podmreža koje dele isti prefiks.
 
 
-CIDR blok je napisan u formatu "Address/prefix", gde broj posle kose crte označava koliko bitova čini mrežni deo. Na primer, /17 znači da prvih 17 bitova identifikuje mrežu, dok preostalih 15 bitova identifikuje hostove.
+CIDR blok je napisan u formatu "adresa/prefix", gde broj posle kose crte označava koliko bitova čini mrežni deo. Na primer, /17 znači da prvih 17 bitova identifikuje mrežu, dok preostalih 15 bitova identifikuje hostove.
 
 
 Primer:
@@ -621,7 +621,7 @@ Blok A /17 sadrži 2^(32-17) adresa, tako da 2^15 = 32,768 ukupnih adresa. Oduzi
 Da bi CIDR veličine bile lakše za razumevanje, evo tabele uobičajenih prefiksa i njihovih ekvivalentnih maski podmreže i upotrebljivih adresa:
 
 
-| CIDR Prefix | Available Host Bits | Subnet Mask     | Usable Host Addresses         |
+| CIDR prefiks | Raspoloživi bitovi za hostove | Subnet maska     | Broj upotrebljivih adresa za hostove         |
 | ----------- | ------------------- | --------------- | ----------------------------- |
 | /8          | 24                  | 255.0.0.0       | 2^24 - 2 = 16,777,214         |
 | /12         | 20                  | 255.240.0.0     | 2^20 - 2 = 1,048,574          |
@@ -643,7 +643,7 @@ Da bi CIDR veličine bile lakše za razumevanje, evo tabele uobičajenih prefiks
 Na primer, podmreža **1.0.0.0** sa maskom podmreže **255.255.0.0**, koja je nekada bila dvosmislena sa identifikatorom mreže klase A, sada je potpuno validna i upotrebljiva.
 
 
-**SAVET**: za proračune podmreža bez grešaka i brzu konverziju adresa u CIDR notaciju, postoje korisni alati kao što je ***ipcalc***. Ovaj "mrežni kalkulator" jasno prikazuje Address razlaganja, dostupne opsege i pridružene maske, idealno za administratore i studente koji uče CIDR.
+**SAVET**: za proračune podmreža bez grešaka i brzu konverziju adresa u CIDR notaciju, postoje korisni alati kao što je ***ipcalc***. Ovaj "mrežni kalkulator" jasno prikazuje raspodelu adresa, dostupne opsege i pridružene maske, idealno za administratore i studente koji uče CIDR.
 
 
 ```shell
