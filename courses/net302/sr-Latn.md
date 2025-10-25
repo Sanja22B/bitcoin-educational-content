@@ -660,7 +660,7 @@ https://planb.network/tutorials/computer-security/communication/angry-ip-scanner
 
 
 
-**TCP protokol** (_Transmission Control Protocol_) igra centralnu ulogu u TRANSPORT Layer TCP/IP modela. Djeluje kao most između aplikacija i Internet Layer, osiguravajući pouzdan prijenos podataka između dvije udaljene mašine.
+**TCP protokol** (_Transmission Control Protocol_) igra centralnu ulogu u TRANSPORT-nom sloju TCP/IP modela. Deluje kao most između aplikacija i internet sloja, osiguravajući pouzdan prenos podataka između dve udaljene mašine.
 
 Dok IP protokol jednostavno šalje pakete bez garancije isporuke ili redosleda, TCP osigurava integritet i konzistentnost toka podataka, isporučujući ga bez gubitaka, u ispravnom redosledu i bez duplikata.
 
@@ -668,7 +668,7 @@ Dok IP protokol jednostavno šalje pakete bez garancije isporuke ili redosleda, 
 Glavne odgovornosti TCP-a uključuju:
 
 
-- Ponovno naručivanje primljenih segmenata;
+- Preuređivanje primljenih segmenata;
 - Praćenje protoka podataka kako bi se izbegla zagušenja;
 - Razdvajanje ili ponovno sastavljanje blokova podataka u odgovarajuće jedinice (segmente);
 - Upravljanje uspostavljanjem i prekidom veza između oba kraja komunikacije.
@@ -696,10 +696,10 @@ TCP može da detektuje i obradi duplikate. Ako retransmitovani segment stigne, a
 Da bi ovaj proces funkcionisao, obe mašine moraju deliti zajedničko razumevanje svojih početnih sekvencijalnih brojeva. Ovo se obezbeđuje praćenjem striktne procedure povezivanja: s jedne strane, **server** osluškuje na specifičnom portu, čekajući dolazni zahtev (pasivni režim); s druge strane, **klijent** aktivno inicira vezu slanjem zahteva serveru na istom servisnom portu.
 
 
-**NAPOMENA**: "Port" je numerički identifikator (od 0 do 65.535) dodeljen mrežnoj aplikaciji na računaru. Koristi se za razlikovanje više servisa koji istovremeno rade na istoj IP adresi Address. Kada klijent šalje podatke, navodi broj porta kako bi operativni sistem servera znao kojem programu treba da ih prosledi (npr. 80 za HTTP, 443 za HTTPS, 25 za SMTP). Portovi funkcionišu kao posvećena vrata, usmeravajući saobraćaj unutra i napolje, sprečavajući zabunu između servisa i omogućavajući preciznu kontrolu pristupa putem vatrozida ili pravila filtriranja.
+**NAPOMENA**: "Port" je numerički identifikator (od 0 do 65.535) dodeljen mrežnoj aplikaciji na računaru. Koristi se za razlikovanje više servisa koji istovremeno rade na istoj IP adresi. Kada klijent šalje podatke, navodi broj porta kako bi operativni sistem servera znao kojem programu treba da ih prosledi (npr. 80 za HTTP, 443 za HTTPS, 25 za SMTP). Portovi funkcionišu kao posvećena vrata, usmeravajući saobraćaj unutra i napolje, sprečavajući zabunu između servisa i omogućavajući preciznu kontrolu pristupa putem firewall-a ili pravila filtriranja.
 
 
-Sekvenca sinhronizacije Exchange zasniva se na čuvenom mehanizmu **"*three-way handshake*"**, sličnom načinu na koji se dve osobe pozdravljaju kako bi uspostavile kontakt. Ova faza inicijalizacije, koja osigurava pouzdanost TCP-a, odvija se u 3 faze:
+Razmena sinhronizacije sekvenci zasnovana je na čuvenom mehanizmu **"*three-way handshake*"**, sličnom načinu na koji se dve osobe pozdravljaju kako bi uspostavile kontakt. Ova faza inicijalizacije, koja osigurava pouzdanost TCP-a, odvija se u 3 faze:
 
 1. **SYN:** Klijent šalje početni segment za sinhronizaciju (**SYN**) sa odgovarajućom zastavicom postavljenom i početnim rednim brojem (npr., C);
 
@@ -713,7 +713,7 @@ Sekvenca sinhronizacije Exchange zasniva se na čuvenom mehanizmu **"*three-way 
 
 
 
-Ovaj Exchange protokol osigurava da obe strane dele istu numeričku bazu pre prenosa podataka o korisnom opterećenju. Kada je ova sinhronizacija završena, sesija se otvara: segmenti sada mogu putovati u oba smera, svaki se potvrđuje po prijemu, čime se osigurava maksimalna pouzdanost protoka podataka.
+Ovaj protokol razmene osigurava da obe strane koriste istu osnovu numerisanja pre slanja podataka. Kada je ova sinhronizacija završena, sesija se otvara: segmenti sada mogu putovati u oba smera, svaki se potvrđuje po prijemu, čime se osigurava maksimalna pouzdanost protoka podataka.
 
 
 Ovo ***trostruko rukovanje*** odnosi se samo na uspostavljanje veze. Za zatvaranje, TCP koristi *četvorostruko rukovanje*: FIN → ACK → FIN → ACK, što garantuje da nijedan segment u tranzitu nije izgubljen pre nego što se veza potpuno prekine.
@@ -766,26 +766,26 @@ Ova komplementarnost između TCP i UDP omogućava modernim mrežama da se prilag
 
 
 
-## Servisne primitive
+## Servisni primitiv
 
 
 <chapterId>4480afb7-e950-4ccb-88fa-d132f9dc3479</chapterId>
 
 
 
-### Slojevita arhitektura i organizacija Exchange
+### Slojevita arhitektura i organizacija razmene
 
 
-Kao što smo videli, **servisi** su konkretna implementacija protokola koje smo do sada opisali. Iako se TCP/IP model razlikuje od **OSI** modela, usvaja isti slojeviti pristup: svaki Layer je dizajniran da obavlja specifičnu funkciju i da pruža **servise** Layer direktno iznad njega, što rezultira modularnom, robusnom i lako održivom arhitekturom.
+Kao što smo videli, **servisi** su konkretna implementacija protokola koje smo do sada opisali. Iako se TCP/IP model razlikuje od **OSI** modela, usvaja isti slojeviti pristup: svaki sloj je dizajniran da obavlja specifičnu funkciju i da pruža **servise** sloju direktno iznad njega, što rezultira modularnom, robusnom i lako održivom arhitekturom.
 
 
-Svaki Layer nadograđuje se na sposobnostima onog ispod njega, i zauzvrat obezbeđuje Layer iznad sa doslednim Interface za upravljanje podacima. U ovoj arhitekturi, svaki Layer ima svoje **strukture podataka**, pažljivo definisane kako bi se osigurala savršena kompatibilnost sa ostalim slojevima. Ova kompatibilnost je ključna za glatku, pouzdanu i jasnu komunikaciju od jedne krajnje tačke do druge.
+Svaki sloj nadograđuje se na sposobnostima onog ispod njega, i zauzvrat obezbeđuje sloju iznad sa doslednim interfejsom za upravljanje podacima. U ovoj arhitekturi, svaki sloj ima svoje **strukture podataka**, pažljivo definisane kako bi se osigurala savršena kompatibilnost sa ostalim slojevima. Ova kompatibilnost je ključna za glatku, pouzdanu i jasnu komunikaciju od jedne krajnje tačke do druge.
 
 
 Dva ključna aspekta upravljaju ovim razmenama:
 
 
-- **Vertikalni aspekt**: odnos između jednog Layer i onog iznad ili ispod njega (od Layer N do Layer N+1, i obrnuto).
+- **Vertikalni aspekt**: odnos između jednog sloja i onog iznad ili ispod njega (od sloja N do sloja N+1, i obrnuto).
 
 
 
@@ -802,32 +802,32 @@ Dva ključna aspekta upravljaju ovim razmenama:
 
 
 
-Slojevita arhitektura prati princip da svaki Layer obrađuje samo informacije unutar svog opsega: strukture podataka, zaglavlja i kontrolni mehanizmi variraju od jednog Layer do drugog, ali zajedno formiraju koherentan sistem, osiguravajući da se podaci postepeno usmeravaju ka svojoj konačnoj destinaciji.
+Slojevita arhitektura prati princip da svaki sloj obrađuje samo informacije unutar svog opsega: strukture podataka, zaglavlja i kontrolni mehanizmi variraju od jednog sloja do drugog, ali zajedno formiraju koherentan sistem, osiguravajući da se podaci postepeno usmeravaju ka svojoj konačnoj destinaciji.
 
 
 **Podsetnik**: Specifična terminologija se koristi za opisivanje jedinica podataka razmenjenih između slojeva:
 
 
-- **poruka** za Aplikaciju Layer,
-- **segment** za Transport Layer (TCP),
-- **datagram** za Internet Layer (IP),
-- **okvir** za Network Access Layer.
+- **poruka** za aplikativni sloj,
+- **segment** za transportni sloj (TCP),
+- **datagram** za internet sloj (IP),
+- **okvir** za sloj pristupa internetu.
 
 
 Tabela ispod rezimira termine za TCP i UDP kontekste:
 
 
-| TCP/IP Layer         | Unit Name (TCP) | Unit Name (UDP) |
+| TCP/IP sloj          | Naziv jedinice (TCP) | Naziv jedinice (UDP) |
 |----------------------|------------------|------------------|
 | Application Layer    | Stream           | Message          |
 | Transport Layer      | Segment          | Packet           |
 | Internet Layer       | Datagram         | Datagram         |
 | Network Access Layer | Frame            | Frame            |
 
-### Primitivi usluge i jedinice podataka
+### Servisni primitiv i jedinice podataka
 
 
-U srži ovog sistema su **servisne primitive**, koje deluju kao komunikacioni interfejsi. Ove primitive funkcionišu poput servisnih pultova, osluškujući na rezervisanim specifičnim **portovima** i omogućavajući procesima da uspostave, održavaju i prekidaju mrežne veze na kontrolisan način. Dok protokoli organizuju format i prenos podataka preko mreže, **servisi i njihove primitive** obezbeđuju vertikalnu vezu između slojeva.
+U srži ovog sistema su **servisni primitivi**, koje deluju kao komunikacioni interfejsi. Ovi primitivi funkcionišu poput servisnih pultova, osluškujući na rezervisanim specifičnim **portovima** i omogućavajući procesima da uspostave, održavaju i prekidaju mrežne veze na kontrolisan način. Dok protokoli organizuju format i prenos podataka preko mreže, **servisi i njihovi primitivi** obezbeđuju vertikalnu vezu između slojeva.
 
 
 Kombinovanjem horizontalnog aspekta (komunikacija između distribuiranih aplikacija) sa vertikalnim aspektom (unutrašnje interakcije između slojeva), TCP/IP model pruža kompletnu, skalabilnu arhitekturu. Preklapanje ovih dvaju perspektiva daje jasan pregled kako se podaci razmenjuju u strukturisanoj mrežnoj komunikaciji.
@@ -841,7 +841,7 @@ Kombinovanjem horizontalnog aspekta (komunikacija između distribuiranih aplikac
 ### Deo rezimea
 
 
-U ovom prvom glavnom delu, istražili smo osnovnu arhitekturu koja upravlja konfiguracijom i radom današnjih mreža povezanih na Internet. Ova arhitektura je zasnovana na **četiri-Layer modelu**, inspirisanom OSI modelom, i izgrađena oko **TCP/IP** protokol suite-a, kičme modernih komunikacija. Videli smo da TCP, sa svojim pristupom orijentisanim na vezu, obezbeđuje pouzdane prenose, dok se UDP, lakši i brži, preferira kada je brzina važnija od pouzdanosti.
+U ovom prvom glavnom delu, istražili smo osnovnu arhitekturu koja upravlja konfiguracijom i radom današnjih mreža povezanih na internet. Ova arhitektura je zasnovana na **modelu sa četiri sloja**, inspirisanom OSI modelom, i izgrađena oko **TCP/IP** protokolnog skupa, kičme modernih komunikacija. Videli smo da TCP, sa svojim pristupom orijentisanim na vezu, obezbeđuje pouzdane prenose, dok se UDP, lakši i brži, preferira kada je brzina važnija od pouzdanosti.
 
 
 Pravilno funkcionisanje ovog modela oslanja se na implementaciju protokola putem **servisnih primitiva**. Oni obezbeđuju vezu između slojeva, omogućavajući da se obrada podataka prilagodi specifičnim zahtevima svakog nivoa, od transporta do aplikacije, uključujući pristup Internetu i mreži. Ovaj modularni pristup čini sistem i fleksibilnim i robusnim.
