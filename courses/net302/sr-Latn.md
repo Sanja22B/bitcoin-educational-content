@@ -844,13 +844,13 @@ Kombinovanjem horizontalnog aspekta (komunikacija između distribuiranih aplikac
 U ovom prvom glavnom delu, istražili smo osnovnu arhitekturu koja upravlja konfiguracijom i radom današnjih mreža povezanih na internet. Ova arhitektura je zasnovana na **modelu sa četiri sloja**, inspirisanom OSI modelom, i izgrađena oko **TCP/IP** protokolnog skupa, kičme modernih komunikacija. Videli smo da TCP, sa svojim pristupom orijentisanim na vezu, obezbeđuje pouzdane prenose, dok se UDP, lakši i brži, preferira kada je brzina važnija od pouzdanosti.
 
 
-Pravilno funkcionisanje ovog modela oslanja se na implementaciju protokola putem **servisnih primitiva**. Oni obezbeđuju vezu između slojeva, omogućavajući da se obrada podataka prilagodi specifičnim zahtevima svakog nivoa, od transporta do aplikacije, uključujući pristup Internetu i mreži. Ovaj modularni pristup čini sistem i fleksibilnim i robusnim.
+Pravilno funkcionisanje ovog modela oslanja se na implementaciju protokola putem **servisnih primitiva**. Oni obezbeđuju vezu između slojeva, omogućavajući da se obrada podataka prilagodi specifičnim zahtevima svakog nivoa, od transporta do aplikacije, uključujući pristup internetu i mreži. Ovaj modularni pristup čini sistem i fleksibilnim i robusnim.
 
 
-IP addressing je još jedan kamen temeljac ove infrastrukture. Svaki povezani uređaj je identifikovan jedinstvenom **IP Address**, uzetom iz Address prostora organizovanog u **klase** (od A do E). Neke od ovih adresa su rezervisane za posebne svrhe, kao što su lokalni loopback ili multicast, dok se druge, poznate kao "privatne adrese", ne rutiraju preko Interneta bez prevođenja (NAT). Ova klasifikacija omogućava logičnu, hijerarhijsku organizaciju mreža.
+IP adresiranje je još jedan kamen temeljac ove infrastrukture. Svaki povezani uređaj je identifikovan jedinstvenom **IP adresom**, uzetom iz prostora adresa organizovanog u **klase** (od A do E). Neke od ovih adresa su rezervisane za posebne svrhe, kao što su lokalni loopback ili multicast, dok se druge, poznate kao "privatne adrese", ne rutiraju preko interneta bez prevođenja (NAT). Ova klasifikacija omogućava logičnu, hijerarhijsku organizaciju mreža.
 
 
-Takođe smo ispitali koncept **podmreža**, što omogućava podelu segmenata mreže kako bi se bolje upravljalo IP resursima i optimizovao protok podataka. Iako ručna podela korišćenjem maski podmreže ostaje važan princip, u velikoj meri je modernizovana zahvaljujući **CIDR** (_Classless Inter-Domain Routing_). Ova metoda je transformisala upravljanje Address omogućavajući fleksibilniju i racionalniju dodelu IP opsega, dok istovremeno smanjuje veličinu tabela rutiranja.
+Takođe smo ispitali koncept **podmreža**, što omogućava podelu segmenata mreže kako bi se bolje upravljalo IP resursima i optimizovao protok podataka. Iako ručna podela korišćenjem maski podmreže ostaje važan princip, u velikoj meri je modernizovana zahvaljujući **CIDR** (_Classless Inter-Domain Routing_). Ova metoda je transformisala upravljanje adresama omogućavajući fleksibilniju i racionalniju dodelu IP opsega, dok istovremeno smanjuje veličinu tabela rutiranja.
 
 
 Savladavanjem ovih pojmova - slojevi, protokoli, servisne primitive, adresiranje i subnetiranje - stičete čvrstu osnovu za razumevanje tehničkog funkcionisanja modernih mreža i za efikasno konfigurisanje mrežne infrastrukture kako bi se zadovoljile današnje potrebe.
@@ -874,23 +874,23 @@ U sledećem odeljku, detaljnije ćemo pogledati IPv4 adresiranje.
 
 
 
-U ovom odeljku ćemo detaljnije pogledati kako su **IPv4** adrese zapravo implementirane u mreži stvarnog sveta. Razložićemo njihov format, logiku iza njih i kako se povezuju sa drugim ključnim mrežnim Elements kao što su **DNS imena**, **MAC adrese**, **podmreže** i **tehnike prevođenja**.
+U ovom odeljku ćemo detaljnije pogledati kako su **IPv4** adrese zapravo implementirane u mreži stvarnog sveta. Razložićemo njihov format, logiku iza njih i kako se povezuju sa drugim ključnim mrežnim elementima kao što su **DNS imena**, **MAC adrese**, **podmreže** i **tehnike prevođenja**.
 
 
-IP Address je jedinstveni numerički identifikator dodeljen svakom **mrežnom Interface** na uređaju. Omogućava lociranje ovog uređaja unutar mreže i pristup njemu radi prenosa podataka. Na primer, ruter, server, radna stanica, mrežni štampač ili čak nadzorna kamera imaju bar jedan svoj IP Address. IP Address omogućava **rutiranje**, tj. premeštanje paketa sa tačke A do tačke B, čak i ako su fizički udaljeni.
+IP adresa je jedinstveni numerički identifikator dodeljen svakom **mrežnom interfejsu** na uređaju. Omogućava lociranje ovog uređaja unutar mreže i pristup njemu radi prenosa podataka. Na primer, ruter, server, radna stanica, mrežni štampač ili čak nadzorna kamera imaju bar jednu svoju IP adresu. IP adresa omogućava **rutiranje**, tj. premeštanje paketa sa tačke A do tačke B, čak i ako su fizički udaljeni.
 
 
 IP adrese mogu biti dodeljene na dva glavna načina:
 
 
-- **Static**: Ručno postavljeno na uređaju.
-- **Dinamički**: Automatski dodeljen po potrebi od strane DHCP (_Dynamic Host Configuration Protocol_) servera. DHCP pojednostavljuje upravljanje mrežom, eliminišući potrebu za ručnom konfiguracijom dok omogućava preciznu kontrolu putem rezervacija i trajanja zakupa.
+- **Statički**: Ručno postavljene na uređaju.
+- **Dinamički**: Automatski dodeljena adresa po potrebi od strane DHCP (_Dynamic Host Configuration Protocol_) servera. DHCP pojednostavljuje upravljanje mrežom, eliminišući potrebu za ručnom konfiguracijom dok omogućava preciznu kontrolu putem rezervacija i trajanja zakupa.
 
 
 **IPv4** adrese su napisane u formatu od **32 bita** podeljenom na **četiri bajta**. Svaki bajt sadrži 8 bita i predstavlja decimalni broj od 0 do 255. Četiri bajta su odvojena tačkama kako bi se formirala jasna, čitljiva notacija.
 
 
-primer: Address 172.16.254.1_
+primer: adresa 172.16.254.1_
 
 
 
@@ -905,7 +905,7 @@ Tabela ispod ilustruje ovu korespondenciju:
 
 
 
-| Binary Code | Activated Bit Values          | Decimal Value |
+| Binarni kod |Postavljene vrednosti bitova   | Decimalna vrednost |
 |-------------|-------------------------------|---------------|
 | 00000000    | 0                             | 0             |
 | 00000001    | 1                             | 1             |
@@ -920,32 +920,32 @@ Tabela ispod ilustruje ovu korespondenciju:
 Da biste konvertovali binarni u decimalni broj, saberite težine bitova koji su postavljeni na 1.
 
 
-| Binary     | Decimal Value |
+| Binarana   | Decimalna vrednost |
 | ---------- | ------------- |
 | `10101100` | 172           |
 | `00010000` | 16            |
 | `11111110` | 254           |
 | `00000001` | 1             |
 
-IP Address identifikuje jednu **mrežnu Interface**, ne ceo uređaj. Ruter ili firewall sa više portova ima više interfejsa, svaki sa svojim IP Address. Jedan Interface može čak imati nekoliko IP adresa (na primer, da služi više virtuelnih mreža ili servisa).
+IP adresa identifikuje jedan **mrežni interfejs**, ne ceo uređaj. Ruter ili firewall sa više portova ima više interfejsa, svaki sa svojim IP adresama. Jedan interfejs može čak imati nekoliko IP adresa (na primer, da služi više virtuelnih mreža ili servisa).
 
 
 Svaki IP paket sadrži dve IP adrese u svom zaglavlju:
 
 
-- Izvor Address (**pošiljalac**)
-- Odredište Address (**primalac**)
+- Adresa izvoa (**pošiljalac**)
+- Adresa odredišta (**primalac**)
 
 Ruteri čitaju ove adrese kako bi odredili najbolji put za slanje paketa dok ne stigne do odredišta. Bez strogih pravila adresiranja, mrežni saobraćaj ne bi mogao biti pravilno usmeren i globalno povezivanje mreža bi bilo nemoguće.
 
 
-IPv4 Address ima dva dela:
+IPv4 adresa ima dva dela:
 
 
 - **NetID**: identifikuje mrežu
 - **HostID**: identifikuje uređaj unutar te mreže
 
-**Subnet mask** određuje gde se završava NetID, a počinje HostID, specificirajući koliko bitova pripada svakom delu. Što je NetID duži, veći je broj mogućih podmreža, ali se broj hostova po podmreži smanjuje u skladu s tim.
+**Subnet maska** određuje gde se završava NetID, a počinje HostID, specificirajući koliko bitova pripada svakom delu. Što je NetID duži, veći je broj mogućih podmreža, ali se broj hostova po podmreži smanjuje u skladu s tim.
 
 
 Prvobitno su IPv4 mreže bile podeljene u pet **klasa**: (A, B, C, D i E). Svaka klasa odgovara specifičnom opsegu NetID-a i definiše fiksnu granularnost:
@@ -959,7 +959,7 @@ Prvobitno su IPv4 mreže bile podeljene u pet **klasa**: (A, B, C, D i E). Svaka
 
 
 
-| Class | Leading Bits | First Byte Range | Default Subnet Mask | Purpose                          |
+| Klasa | Vodeći bitovi| Raspon prvog bajta | Defaultna Subnet Maska | Svrha                          |
 | ----- | ------------ | ---------------- | ------------------- | -------------------------------- |
 | A     | 0            | 0 – 127          | 255.0.0.0           | Very large networks              |
 | B     | 10           | 128 – 191        | 255.255.0.0         | Medium-sized networks            |
@@ -970,8 +970,8 @@ Prvobitno su IPv4 mreže bile podeljene u pet **klasa**: (A, B, C, D i E). Svaka
 Specijalne adrese:
 
 
-- **Mreža Address**: Identifikuje samu mrežu (koristi se u tabelama rutiranja).
-- **Broadcast Address**: Šalje podatke svim uređajima u podmreži odjednom (svi HostID bitovi postavljeni na 1).
+- **Mreža adresa**: Identifikuje samu mrežu (koristi se u tabelama rutiranja).
+- **Broadcast adresa**: Šalje podatke svim uređajima u podmreži odjednom (svi HostID bitovi postavljeni na 1).
 
 
 Sledeći opsezi su rezervisani za internu upotrebu:
