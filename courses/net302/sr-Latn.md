@@ -986,18 +986,18 @@ Sledeći opsezi su rezervisani za internu upotrebu:
 Adrese **127.0.0.1** i, generalno, ceo opseg 127.0.0.0/8 koristi se za interno testiranje: svaki zahtev poslat na ovu adresu nikada ne napušta mašinu. Ovo je korisno za proveru da li lokalna mrežna usluga radi bez uključivanja šire mreže.
 
 
-Da bi se bolje iskoristio prostor Address, administratori često dele mreže na **podmreže** koristeći maske podmreže ili **CIDR** notaciju (_Classless Inter-Domain Routing_). CIDR omogućava preciznije upravljanje i pomaže u izbegavanju rasipanja adresa. Danas je CIDR neophodan za fino podešavanje IP opsega i smanjenje veličine tabela rutiranja.
+Da bi se bolje iskoristio prostor adresa, administratori često dele mreže na **podmreže** koristeći maske podmreže ili **CIDR** notaciju (_Classless Inter-Domain Routing_). CIDR omogućava preciznije upravljanje i pomaže u izbegavanju rasipanja adresa. Danas je CIDR neophodan za fino podešavanje IP opsega i smanjenje veličine tabela rutiranja.
 
 
 U modernim mrežama, IP adresiranje se obično uparuje sa drugim identifikatorima:
 
 
 
-- **domen ime** registrovano u **DNS** (_Domain Name System_): Povezuje numerički IP Address sa imenom koje je prilagođeno ljudima.
-- **MAC Address**: fizički identifikator ugraviran na mrežnoj kartici, koristi se za lokalni transport (_Ethernet_). Kada IP paket treba fizički da se prenese, ARP tabela povezuje IP Address sa MAC Address odredišta.
+- **domensko ime** registrovano u **DNS** (_Domain Name System_): Povezuje numeričku IP adresu sa imenom koje je prilagođeno ljudima.
+- **MAC adresa**: fizički identifikator ugraviran na mrežnoj kartici, koristi se za lokalni transport (_Ethernet_). Kada IP paket treba fizički da se prenese, ARP tabela povezuje IP adresu sa MAC adresom odredišta.
 
 
-Da bi se rešili nedostaci IPv4 Address i dodao Layer bezbednosti, mreže često koriste Address prevođenje (_NAT_). NAT omogućava mnogim privatnim uređajima da dele jednu javnu IP Address prilikom pristupa Internetu.
+Da bi se rešili nedostaci IPv4 adresa i dodao sloj bezbednosti, mreže često koriste prevođenje adresa (_NAT_). NAT omogućava mnogim privatnim uređajima da dele jednu javnu IP adresu prilikom pristupa internetu.
 
 
 **Napomena**: Online i ugrađeni alati operativnog sistema, kao što je [Grenoble CRIC kalkulator](http://cric.grenoble.cnrs.fr/Administrateurs/Outils/CalculMasque/), čine proračune podmreža i maski mnogo jednostavnijim.
@@ -1005,21 +1005,21 @@ Da bi se rešili nedostaci IPv4 Address i dodao Layer bezbednosti, mreže često
 Ovi alati pomažu u efikasnom planiranju razdvajanja mreže.
 
 
-Zaključno, emitovanje Address ostaje praktična funkcija za slanje iste poruke svim uređajima povezanim na segment: ovo se postiže postavljanjem svih bitova u delu HostID na 1 tako da su svi hostovi ciljani.
+Na kraju, broadcast adresa ostaje praktična funkcija za slanje iste poruke svim uređajima povezanim na segment: ovo se postiže postavljanjem svih bitova u delu HostID na 1 tako da su svi hostovi ciljani.
 
 
 
-## Različite vrste IPv4 Address
+## Različite vrste IPv4 adresa
 
 
 <chapterId>2adfad24-a90d-45b5-b808-3d2f6598bebf</chapterId>
 
 
 
-IPv4 adrese spadaju u dve glavne kategorije: javne adrese, direktno dostupne na Internetu, i privatne adrese, namenjene za internu upotrebu unutar lokalne mreže.
+IPv4 adrese spadaju u dve glavne kategorije: javne adrese, direktno dostupne na internetu, i privatne adrese, namenjene za internu upotrebu unutar lokalne mreže.
 
 
-Javni IPv4 Address je globalno jedinstven i može se rutirati preko Interneta. Dodeljuje ga zvanične vlasti i potreban je za usluge koje su okrenute ka javnosti, kao što su veb-sajtovi, email serveri ili cloud infrastruktura.
+Javna IPv4 adresa je globalno jedinstvena i može se rutirati preko interneta. Dodeljuju je zvanične vlasti i potreban je za usluge koje su okrenute ka javnosti, kao što su veb-sajtovi, email serveri ili cloud infrastruktura.
 
 Jedinstvenost ovih adresa na svetskom nivou je neophodna kako bi se izbegli bilo kakvi sukobi ili kolizije u rutiranju.
 
@@ -1027,7 +1027,7 @@ Jedinstvenost ovih adresa na svetskom nivou je neophodna kako bi se izbegli bilo
 **IANA** (_Internet Assigned Numbers Authority_), koja posluje pod okriljem **ICANN** (_Internet Corporation for Assigned Names and Numbers_), upravlja distribucijom ovih IP opsega. Konkretno, IANA deli IPv4 prostor na 256 blokova veličine /8, prema CIDR notaciji. Svaki blok predstavlja nešto više od 16,7 miliona adresa (2³² / 2⁸).
 
 
-Ovi unicast Address blokovi su povereni od strane IANA-e **Regionalnim internet registrima** (RIR-ovima). Ovi RIR-ovi su odgovorni za redistribuciju adresa na regionalnom nivou, u skladu sa stvarnim potrebama provajdera pristupa, kompanija ili administracija. Unicast Address prostor se proteže od blokova **1/8 do 223/8**, sa delovima koji su ili rezervisani za posebne namene (istraživanje, dokumentacija, testiranje), ili direktno dodeljeni mreži ili RIR-u za redistribuciju.
+Ovi unicast blokovi adresa su povereni od strane IANA-e **Regionalnim internet registrima** (RIR-ovima). Ovi RIR-ovi su odgovorni za redistribuciju adresa na regionalnom nivou, u skladu sa stvarnim potrebama internet provajderi (eng. access providers), kompanija ili administracija. Unicast prostor adresa se proteže od blokova **1/8 do 223/8**, sa delovima koji su ili rezervisani za posebne namene (istraživanje, dokumentacija, testiranje), ili direktno dodeljeni mreži ili RIR-u za redistribuciju.
 
 
 Da biste proverili ko je vlasnik javne IP adrese Address, možete se poslužiti bazama podataka RIR koristeći komandu **whois**, ili putem web interfejsa koje pruža svaki registar. Ovi alati se mogu koristiti za praćenje Address do organizacije ili provajdera koji ju je prijavio.
