@@ -1030,75 +1030,74 @@ Jedinstvenost ovih adresa na svetskom nivou je neophodna kako bi se izbegli bilo
 Ovi unicast blokovi adresa su povereni od strane IANA-e **Regionalnim internet registrima** (RIR-ovima). Ovi RIR-ovi su odgovorni za redistribuciju adresa na regionalnom nivou, u skladu sa stvarnim potrebama internet provajderi (eng. access providers), kompanija ili administracija. Unicast prostor adresa se proteže od blokova **1/8 do 223/8**, sa delovima koji su ili rezervisani za posebne namene (istraživanje, dokumentacija, testiranje), ili direktno dodeljeni mreži ili RIR-u za redistribuciju.
 
 
-Da biste proverili ko je vlasnik javne IP adrese Address, možete se poslužiti bazama podataka RIR koristeći komandu **whois**, ili putem web interfejsa koje pruža svaki registar. Ovi alati se mogu koristiti za praćenje Address do organizacije ili provajdera koji ju je prijavio.
+Da biste proverili ko je vlasnik javne IP adrese, možete se poslužiti RIR bazama podataka koristeći komandu **whois**, ili putem web interfejsa koje pruža svaki registar. Ovi alati se mogu koristiti za praćenje adrese do organizacije ili provajdera koji ju je prijavio.
 
 
-Suprotno tome, postoje privatne IPv4 adrese, praktičan odgovor na nedostatak javnih adresa. Ove adrese, koje nisu rutabilne na Internetu, rezervisane su za lokalna okruženja: korporativne mreže, kućne LAN-ove, podatkovne centre ili računarske klastere. One nisu jedinstvene na svetskom nivou: mnoge privatne mreže mogu ponovo koristiti iste IP opsege bez smetnji, sve dok ostaju izolovane ili koriste uređaj za prevođenje mreže Address za pristup internetu.
+Suprotno tome, postoje privatne IPv4 adrese, praktičan odgovor na nedostatak javnih adresa. Ove adrese, koje nisu rutabilne na internetu, rezervisane su za lokalna okruženja: korporativne mreže, kućne LAN-ove, data centre ili računarske klastere. One nisu jedinstvene na svetskom nivou: mnoge privatne mreže mogu ponovo koristiti iste opsege IP adresa bez međusobnog ometanja, sve dok ostaju izolovane ili koriste uređaj za prevođenje mrežnih adresa (NAT) za pristup internetu.
 
 
-Da bi se omogućilo uređaju sa privatnom IP adresom Address pristup Internetu, mreže koriste NAT (Network Address Translation). NAT funkcioniše tako što dinamički zamenjuje privatni Address javnim, omogućavajući desetinama (ili čak stotinama) uređaja da dele jednu javnu IP adresu Address. Ova metoda optimizuje korišćenje IPv4 prostora i takođe dodaje Layer sigurnosti skrivajući strukturu interne mreže.
+Da bi se omogućilo uređaju sa privatnom IP adresom da pristupi internetu, mreže koriste NAT (Network Address Translation). NAT funkcioniše tako što dinamički zamenjuje privatne adrese javnim, omogućavajući desetinama (ili čak stotinama) uređaja da dele jednu javnu IP adresu. Ova metoda optimizuje korišćenje IPv4 prostora i takođe dodaje nivo sigurnosti skrivajući strukturu interne mreže.
 
 
-Druga posebna kategorija su **neodređene** adrese. IPv4 notacija **0.0.0.0** ili njena IPv6 verzija **::/128** znači "nema specifičnog Address". Takav Address je nevažeći kao mrežna Address destinacija, ali ga može koristiti lokalni host da označi "svi interfejsi" ili "nema još dodeljenog Address". Ovo je uobičajeno u DHCP dinamičkom Assignment ili za slušanje na svim server interfejsima.
+Druga posebna kategorija su **neodređene** adrese. IPv4 notacija **0.0.0.0** ili njena IPv6 verzija **::/128** znači "nema određene adrese". Takva adresa je nevažeća kao mrežna adresa destinacije, ali je može koristiti lokalni host da označi "svi interfejsi" ili "nema još dodeljene adrese". Ovo je uobičajeno kod dinamičke dodele adresa putem DHCP-a ili za slušanje na svim serverskim interfejsima.
 
 
-IPv6 takođe podržava privatne adrese, ali standard generalno preporučuje javne adrese kako bi se izbeglo slaganje više NAT slojeva. **Adrese lokalne za sajt** (_site-local_) iz bloka **fec0::/10** su ukinute od strane **RFC 3879** iz razloga konzistentnosti i bezbednosti. One su zamenjene sa **Jedinstvenim Lokalnim Adresama** (_ULA_) koje se nalaze u bloku **fc00::/7**. ULA omogućavaju kreiranje privatnih IPv6 mreža sa čistim internim rutiranjem, koristeći nasumično generisan 40-bitni identifikator kako bi se osigurala lokalna jedinstvenost.
+IPv6 takođe podržava privatne adrese, ali standard generalno preporučuje javne adrese kako bi se izbeglo nagomilavanje više NAT slojeva. **Adrese lokalne za sajt** (_site-local_) iz bloka **fec0::/10** su ukinute od strane **RFC 3879** iz razloga konzistentnosti i bezbednosti. One su zamenjene sa **jedinstvenim lokalnim adresama** (_ULA_) koje se nalaze u bloku **fc00::/7**. ULA omogućavaju kreiranje privatnih IPv6 mreža sa čistim internim rutiranjem, koristeći nasumično generisan 40-bitni identifikator kako bi se osigurala lokalna jedinstvenost.
 
 
-Iscrpljenje IPv4 je zvanično potvrđeno 2011. godine. Da bi se produžio njegov vek trajanja, internet zajednica je usvojila nekoliko strategija:
+Iscrpljenost IPv4 adresa je zvanično potvrđeno 2011. godine. Da bi se produžio njegov vek trajanja, internet zajednica je usvojila nekoliko strategija:
 
 
 - Postepena migracija na **IPv6**
-- Široka upotreba **NAT**
-- Strožije politike alokacije od strane RIR-ova, koje zahtevaju precizno opravdanje i upravljanje potrebama za Address.
-- Povrat neiskorišćenih ili dobrovoljno vraćenih Address blokova od strane kompanija
+- Široka upotreba **NAT-a**
+- Strožija pravila dodele adresa od strane RIR-ova, koja zahtevaju precizno obrazloženje i upravljanje potrebama za adresama.
+- Povrat neiskorišćenih ili dobrovoljno vraćenih blokova adresa od strane kompanija
 
 
-Ove mere pokazuju da IP adresiranje nije samo tehnički izazov, već i pitanje globalnog upravljanja, ključno za kontinuiranu ekspanziju Interneta.
+Ove mere pokazuju da IP adresiranje nije samo tehnički izazov, već i pitanje globalnog upravljanja, ključno za kontinuiranu ekspanziju interneta.
 
 
 
-## DNS, an Address direktorijum
+## DNS, direktorijum adresa
 
 
 <chapterId>511244ec-ba43-44ac-b4c3-b41579a15cff</chapterId>
 
 
 
-Budimo iskreni, ljudima ne ide baš najbolje pamćenje dugih nizova brojeva, bilo u binarnom ili decimalnom obliku. Ovaj izazov postaje još veći sa IP adresama, koje mogu biti složene i jedna IP Address ponekad može maskirati više adresa, posebno kada su uključene tehnike poput NAT-a ili virtuelnog hostinga.
+Budimo iskreni, ljudima ne ide baš najbolje pamćenje dugih nizova brojeva, bilo u binarnom ili decimalnom obliku. Ovaj izazov postaje još veći sa IP adresama, koje mogu biti složene i jedna IP adresa ponekad može maskirati više adresa, posebno kada su uključene tehnike poput NAT-a ili virtuelnog hostinga.
 
 
-Da bi stvari bile jednostavnije, Aplikacija Layer koristi sistem koji povezuje IP Address sa logičkim, ljudski čitljivim imenom. Ovo je uloga **DNS** (*Domain Name System*), masivnog, hijerarhijskog, distribuiranog direktorijuma koji povezuje čitljiva imena domena sa IP adresama. Sistem se zasniva na skupu protokola i usluga. Najčešće korišćen DNS server softver je **BIND** (_Berkeley Internet Name Domain_), softverski paket otvorenog koda koji referencira veliki deo DNS infrastrukture Interneta.
+Da bi stvari bile jednostavnije, aplikacioni sloj koristi sistem koji povezuje IP adresu sa logičkim, ljudski čitljivim imenom. Ovo je uloga **DNS** (*Domain Name System*), masivnog, hijerarhijskog, distribuiranog direktorijuma koji povezuje čitljiva imena domena sa IP adresama. Sistem se zasniva na skupu protokola i usluga. Najrasprostranjeniji softver za DNS servere je **BIND** (_Berkeley Internet Name Domain_), softverski paket otvorenog koda koji predstavlja osnovu velikog dela DNS infrastrukture interneta.
 
 
 Osnovna ideja iza DNS-a je jednostavna: za bilo koju povezanu uslugu, bilo da je to veb-sajt, mejl server ili neka druga mrežna usluga, postoji zapis koji mapira naziv domena na jednu ili više IP adresa. Ovo funkcioniše u dva smera:
 
 
-- Prosleđivanje rezolucije: prevođenje imena u IP Address.
-- Obrnuto rešavanje: pronalaženje naziva domena povezanog sa datom IP adresom Address.
+- Direktno razrešavanje: prevođenje imena u IP adresu.
+- Obrnuto razrešavanje: pronalaženje naziva domena povezanog sa datom IP adresom.
 
-Ovo čini adresiranje mreže upotrebljivim za ljude, dok se očuva preciznost koju ruteri trebaju za ispravno premeštanje podataka.
+Ovo čini adresiranje u mreži upotrebljivom za ljude, a istovremeno zadržava preciznost koja je ruterima potrebna za ispravno prenošenje podataka.
 
-
-Ime domena je uvek hijerarhijski strukturirano, sa svakim nivoom odvojenim tačkom: puno ime se naziva **FQDN** (_Fully Qualified Domain Name_). Desni deo je **TLD** (_Top Level Domain_) kao što su `.com`, `.org` ili `.fr`. Levi deo označava host, tj. specifičnu mašinu ili uslugu povezanu sa IP Address.
-
-
-DNS sistem je dizajniran kao **stablo zona**. **Zona** je deo domen prostora imena kojim upravlja određeni DNS server. Jedna zona može sadržati više **poddomena**, koji mogu biti delegirani drugim zonama kojima upravljaju različiti serveri. Administratori su odgovorni za održavanje svojih zona: upravljanje ažuriranjima, delegacijama i celokupnim menadžmentom.
+Ime domena je uvek hijerarhijski strukturirano, sa svakim nivoom odvojenim tačkom: puno ime se naziva **FQDN** (_Fully Qualified Domain Name_). Desni deo je **TLD** (_Top Level Domain_) kao što su `.com`, `.org` ili `.fr`. Levi deo označava host, tj. specifičnu mašinu ili uslugu povezanu sa IP adresom.
 
 
-Ova struktura omogućava ne samo usmeravanje na glavni domen (npr. `example.com`), već i fino podešavanje zapisa za pojedinačne hostove (`www`, `mail`, `ftp`, itd.). U ranim danima umrežavanja, ovo mapiranje je bilo rešavano statičkim fajlovima kao što je (`/etc/hosts` na Unix sistemima), ali takav metod je brzo postao nepraktičan za brzo rastući, međusobno povezani Internet.
+DNS sistem je dizajniran kao **hijararhijsko stablo zona**. **Zona** je deo domen prostora imena kojim upravlja određeni DNS server. Jedna zona može sadržati više **poddomena**, koji mogu biti delegirani drugim zonama kojima upravljaju različiti serveri. Administratori su odgovorni za održavanje svojih zona: upravljanje ažuriranjima, delegacijama i celokupnim menadžmentom.
 
 
-Važno je razumeti da **DNS server** može služiti samo ograničenom opsegu. Na primer, interni DNS server kompanije možda neće biti direktno dostupan sa Interneta. Ako ovaj DNS nije konfigurisan da prosleđuje upite, ili nema poverljiv odnos sa drugim serverima, neki upiti će propasti: ni ime ni IP Address tada ne mogu biti razrešeni van definisane zone.
+Ova struktura omogućava ne samo usmeravanje na glavni domen (npr. `example.com`), već i fino podešavanje zapisa za pojedinačne hostove (`www`, `mail`, `ftp`, itd.). U ranim danima umrežavanja, ovo mapiranje je bilo rešavano statičkim fajlovima kao što je (`/etc/hosts` na Unix sistemima), ali takav metod je brzo postao nepraktičan za brzo rastući, međusobno povezani internet.
+
+
+Važno je razumeti da **DNS server** može služiti samo ograničenom opsegu. Na primer, interni DNS server kompanije možda neće biti direktno dostupan sa interneta. Ako ovaj DNS nije konfigurisan da prosleđuje upite, ili nema poverljiv odnos sa drugim serverima, neki upiti će propasti: ni ime ni IP adresa tada ne mogu biti razrešeni van definisane zone.
 
 
 DNS takođe igra ulogu u rutiranju e-pošte. Na primer, **MX** (_Mail Exchange_) zapis specificira mail servere odgovorne za primanje e-mailova za dati domen. Ovi zapisi definišu prioritete (faktor težine) i rešenja za prebacivanje u slučaju kvara. Zona fajl DNS servera mora sadržati **SOA** (_Start Of Authority_) zapis, koji označava server kao zvanični izvor informacija za tu zonu.
 
 
-Zahvaljujući svojoj hijerarhijskoj, distribuiranoj strukturi, DNS ostaje kamen temeljac Interneta, omogućavajući korisnicima pristup uslugama putem jasnih, pamtljivih domena umesto dugih, tehničkih IP adresa.
+Zahvaljujući svojoj hijerarhijskoj, distribuiranoj strukturi, DNS ostaje kamen temeljac interneta, omogućavajući korisnicima pristup uslugama putem jasnih, pamtljivih domena umesto dugih, tehničkih IP adresa.
 
 
-U sledećem poglavlju, istražićemo još jedan fundamentalni koncept: **Ethernet adrese**, takođe poznate kao **MAC adrese**, koje obezbeđuju isporuku podataka na fizičkom Layer lokalnih mreža.
+U sledećem poglavlju, istražićemo još jedan fundamentalni koncept: **Ethernet adrese**, takođe poznate kao **MAC adrese**, koje obezbeđuju isporuku podataka na fizičkom sloju unutar lokalnih mreža.
 
 
 
