@@ -1111,16 +1111,16 @@ U sledećem poglavlju, istražićemo još jedan fundamentalni koncept: **Etherne
 ### Definicije
 
 
-Da bi protokol za usmeravanje podataka radio pouzdano i dosledno, jedan ključni element je neophodan. Kao ljudi, lako možemo identifikovati mašinu po njenom IP Address ili po imenu dobijenom putem DNS-a. Mašina, međutim, mora biti u stanju da nedvosmisleno prepozna odredišni uređaj kako bi isporučila pakete. Da bi to uradila, oslanja se na specifičan hardverski identifikator, koji direktno koristi njena mreža Interface: MAC Address (_Media Access Control_).
+Da bi protokol za usmeravanje podataka radio pouzdano i dosledno, jedan ključni element je neophodan. Kao ljudi, lako možemo identifikovati mašinu po njenoj IP adresi ili po imenu dobijenog putem DNS-a. Mašina, međutim, mora biti u stanju da nedvosmisleno prepozna odredišni uređaj kako bi isporučila pakete. Da bi to uradila, oslanja se na specifičan hardverski identifikator, koji direktno koristi njen mrežni interfejs: MAC adresa (_Media Access Control_).
 
 
-**Napomena**: Ovo nema nikakve veze sa "fizičkim Address" u arhitekturi memorije. U računarstvu, fizička memorija Address odnosi se na specifičnu lokaciju na memorijskom magistralu, za razliku od virtuelnog Address kojim upravlja operativni sistem. MAC Address, nasuprot tome, odnosi se isključivo na mrežni hardver.
+**Napomena**: Ovo nema nikakve veze sa "fizičkom adresom" u arhitekturi memorije. U računarstvu, fizička memorijska adresa odnosi se na specifičnu lokaciju na memorijskoj magistrali (eng. memory bus), za razliku od virtuelne adrese kojom upravlja operativni sistem. MAC adresa, nasuprot tome, odnosi se isključivo na mrežni hardver.
 
 
-MAC Address je trajno i jedinstveno dodeljen od strane proizvođača opreme u kojoj je proizveden. MAC Address nedvosmisleno identifikuje mrežnu karticu bilo da je u pitanju računar, pametni telefon, štampač ili bilo koji drugi povezani uređaj. Za razliku od IP Address, koji se može dinamički menjati (putem DHCP servera ili ručne konfiguracije), MAC Address obično ostaje isti tokom celog životnog veka uređaja, osim ako nije namerno izmenjen.
+MAC adresa je trajno i jedinstveno dodeljena od strane proizvođača opreme u kojoj je proizveden. MAC adresa nedvosmisleno identifikuje mrežnu karticu bilo da je u pitanju računar, pametni telefon, štampač ili bilo koji drugi povezani uređaj. Za razliku od IP adrese, koja se može dinamički menjati (putem DHCP servera ili ručne konfiguracije), MAC adresa obično ostaje ista tokom celog životnog veka uređaja, osim ako nije namerno izmenjena.
 
 
-Svaka mreža Interface, žičana ili bežična, ima svoj MAC Address. Ovaj Address se koristi unutar sloja podatkovne veze Layer (Layer 2 OSI modela) za umetanje i upravljanje hardverskim Address u svakom mrežnom okviru koji se razmenjuje. Ovo se ponekad naziva _Ethernet adresa_ ili _UAA_ (_Univerzalno Administrirana Adresa_). Standardizovana na dužinu od 48 bita, ili 6 bajtova, piše se u heksadecimalnoj notaciji, obično u obliku bajtova odvojenih sa `:` ili `-`.
+Svaki mrežni interfejs, žičani ili bežični, ima svoju MAC adresu. Ova adresa se koristi u sloju veze podataka (eng. data link layer) (sloj 2 OSI modela) za umetanje i upravljanje hardverskim adresama u svakom mrežnom okviru koji se razmenjuje. Ovo se ponekad naziva _Ethernet adresa_ ili _UAA_ (_Univerzalno Administrirana Adresa_). Standardizovana na dužinu od 48 bita, ili 6 bajtova, piše se u heksadecimalnoj notaciji, obično u obliku bajtova odvojenih sa `:` ili `-`.
 
 
 Na primer: `5A:BC:17:A2:AF:15`
@@ -1129,33 +1129,33 @@ Na primer: `5A:BC:17:A2:AF:15`
 U ovoj strukturi, prva tri bajta identifikuju proizvođača mrežne kartice: ovo je poznato kao **OUI** (*Organisationally Unique Identifier*). Ovi prefiksi, dodeljeni od strane IEEE, takođe se koriste u drugim šemama adresiranja hardvera, kao što su Bluetooth i LLDP, kako bi se garantovala jedinstvenost na svetskom nivou.
 
 
-### Promena MAC Address (MAC Spoofing)
+### Promena MAC adrese (MAC Spoofing - lažiranje MAC adrese)
 
 
-U teoriji, MAC Address je dizajniran da ostane fiksiran, ali postoje načini da se modifikuje, naročito da bi se zadovoljile posebne potrebe ili zaobšle određena ograničenja. Ova operacija, često nazvana _spoofing MAC_, uključuje zamenu originalnog hardverskog Address sa drugačijom vrednošću, definisanom na softverskom nivou. Neki operativni sistemi olakšavaju ovu modifikaciju, posebno kada stvarni Ethernet Address nije direktno korišćen od strane drajvera.
+U teoriji, MAC adresa je dizajnirana da ostane fiksirana, ali postoje načini da se modifikuje, naročito da bi se zadovoljile posebne potrebe ili zaobišle određena ograničenja. Ova operacija, često nazvana _spoofing MAC_, uključuje zamenu originalne hardverske adrese sa drugačijom vrednošću, definisanom na softverskom nivou. Neki operativni sistemi olakšavaju ovu modifikaciju, posebno kada stvarna Ethernet (MAC) adresa nije direktno korišćena od strane drajvera.
 
 
-Razlozi za takvu promenu su različiti. To može biti potreba da određena aplikacija zahteva specifičan Ethernet Address kako bi ispravno funkcionisala, ili da se reši konflikt identičnih adresa između dva uređaja koji dele istu lokalnu mrežu.
+Razlozi za takvu promenu su različiti. To može biti potreba da određena aplikacija zahteva specifičnu Ethernet adresu kako bi ispravno funkcionisala, ili da se reši konflikt identičnih adresa između dva uređaja koji dele istu lokalnu mrežu.
 
 
-Promena MAC Address može biti motivisana i razlozima privatnosti: skrivanjem jedinstvenog identifikatora ugraviranog na kartici, korisnici smanjuju mogućnost praćenja njihovog uređaja od strane mreža ili nadzornih službi. Međutim, ova praksa nije bez posledica. Promena MAC Address može poremetiti određene uređaje za filtriranje ili zahtevati ponovno konfigurisanje vatrozida kako bi se autorizovao novi hardver.
+Promena MAC adrese može biti motivisana i razlozima privatnosti: skrivanjem jedinstvenog identifikatora ugraviranog na kartici, korisnici smanjuju mogućnost praćenja njihovog uređaja od strane mreža ili nadzornih službi. Međutim, ova praksa nije bez posledica. Promena MAC adrese može poremetiti rad pojedinih uređaja za filtriranje ili zahtevati ponovno konfigurisanje firewalla kako bi se novi hardver autorizovao.
 
 
-Neke mreže, posebno Wi-Fi, koriste MAC Address filtriranje kako bi omogućile samo uređajima sa odobrenim adresama pristup. Iako ovo dodaje osnovni nivo kontrole, nije samo po sebi sigurno. Napadač može presresti važeći MAC Address koji je već autorizovan na mreži i klonirati ga kako bi zaobišao ograničenja. Iz tog razloga, MAC filtriranje uvek treba kombinovati sa jačim merama bezbednosti.
+Neke mreže, posebno Wi-Fi, koriste MAC adresu za filtriranje kako bi omogućile samo uređajima sa odobrenim adresama pristup. Iako ovo dodaje osnovni nivo kontrole, nije samo po sebi sigurno. Napadač može presresti važeću MAC adresu koja je već autorizovana na mreži i klonirati je kako bi zaobišao ograničenja. Iz tog razloga, MAC filtriranje uvek treba kombinovati sa jačim merama bezbednosti.
 
 
 ### MAC/IP korespondencija
 
 
-Da bi lokalna mreža radila efikasno, mora postojati jasno mapiranje između fizičkih adresa (MAC adresa) i logičkih adresa (IP adresa). Bez ove veze, računar bi mogao znati IP Address odredišta, ali ne bi znao kako fizički poslati podatke do njega na lokalnoj mreži.
+Da bi lokalna mreža radila efikasno, mora postojati jasno mapiranje između fizičkih adresa (MAC adresa) i logičkih adresa (IP adresa). Bez ove veze, računar bi mogao znati IP adresu odredišta, ali ne bi znao kako fizički poslati podatke do njega na lokalnoj mreži.
 
 Ovo mapiranje se automatski obrađuje putem ARP-a (_Address Resolution Protocol_).
 
 
-U praksi, kada korisnik želi da sazna MAC Address koji odgovara određenom IP Address, korisnik može koristiti `arp` alat. Ovaj alat proverava lokalnu ARP tabelu mašine kako bi prikazao poznate podudarnosti između IP adresa i MAC adresa na lokalnoj mreži. Na ovaj način, moguće je brzo verifikovati efektivnu vezu između logičkog i fizičkog sloja.
+U praksi, kada korisnik želi da sazna MAC adresu koja odgovara određenoj IP adresi, korisnik može koristiti `arp` alat. Ovaj alat proverava lokalnu ARP tabelu mašine kako bi prikazao poznate podudarnosti između IP adresa i MAC adresa na lokalnoj mreži. Na ovaj način, moguće je brzo verifikovati efektivnu vezu između logičkog i fizičkog sloja.
 
 
-Praktičan primer: ako želite da proverite koja mrežna kartica odgovara IP adresi Address `192.168.1.5`, koristite sledeću komandu:
+Praktičan primer: ako želite da proverite koja mrežna kartica odgovara IP adresi `192.168.1.5`, koristite sledeću komandu:
 
 
 ```bash
@@ -1163,7 +1163,7 @@ arp –a 192.168.1.5
 ```
 
 
-Izlaz će prikazati povezani fizički Address (MAC), prirodu ulaza (staticki ili dinamički) i odgovarajući Interface.
+Izlaz će prikazati povezanu fizičku adresu (MAC), prirodu ulaza (statički ili dinamički) i odgovarajući interfejs.
 
 
 ```
@@ -1173,11 +1173,11 @@ IP Address            MAC Address                Type
 ```
 
 
-Važno je zapamtiti da su MAC Address i IP Address dva potpuno različita identifikatora, ali su blisko komplementarni. MAC Address je jedinstveno ugraviran u svaki mrežni Interface od strane proizvođača i koristi se za fizičku identifikaciju uređaja na lokalnoj mreži. S druge strane, IP Address je logički Address koji se dodeljuje dinamički ili statički, omogućavajući mašini da se pridruži IP mreži i Exchange pakete izvan svoje lokalne mreže.
+Važno je zapamtiti da su MAC adrese i IP adrese dva potpuno različita identifikatora, ali su blisko komplementarni. MAC adresa je jedinstveno ugravirana u svaki mrežni interfejs od strane proizvođača i koristi se za fizičku identifikaciju uređaja na lokalnoj mreži. S druge strane, IP adresa je logička adresa koja se dodeljuje dinamički ili statički, omogućavajući mašini da se pridruži IP mreži i razmeni pakete izvan svoje lokalne mreže.
 
 
 
-- Vizuelni primer MAC Address:
+- Vizuelni primer MAC adrese:
 
 
 ![Image](assets/sr-Latn/022.webp)
@@ -1185,17 +1185,17 @@ Važno je zapamtiti da su MAC Address i IP Address dva potpuno različita identi
 
 
 
-- Vizuelni primer IP Address:
+- Vizuelni primer IP adrese:
 
 
 ![Image](assets/sr-Latn/023.webp)
 
 
 
-U korporativnom okruženju, ova dva nivoa adresiranja ne mogu funkcionisati odvojeno. Na primer, kada DHCP server automatski dodeli IP Address, MAC Address opreme se koristi kao početna tačka. Računar šalje DHCP broadcast zahtev koji sadrži njegov MAC Address kako bi server mogao dodeliti dostupni IP Address ispravnom uređaju. Bez ove hardverske identifikacije, DHCP server ne bi znao kojem uređaju da isporuči Address.
+U korporativnom okruženju, ova dva nivoa adresiranja ne mogu funkcionisati odvojeno. Na primer, kada DHCP server automatski dodeli IP adresu, MAC adresa opreme se koristi kao početna tačka. Računar šalje DHCP broadcast zahtev koji sadrži njegou MAC adresu kako bi server mogao dodeliti dostupnu IP adresu ispravnom uređaju. Bez ove hardverske identifikacije, DHCP server ne bi znao kojem uređaju da isporuči adresu.
 
 
-ARP protokol je stoga fundamentalan: obezbeđuje vezu između IP adresa i fizičkih adresa, omogućavajući mašinama da prevedu logičku destinaciju u stvarnu fizičku destinaciju. Kada računar treba da pošalje paket mašini na istoj mreži, prvo konsultuje svoju ARP tabelu da proveri da li je primaočev MAC Address već poznat. Ako nije, emituje ARP zahtev svim domaćinima na lokalnoj mreži. Mašina koja prepozna ciljni IP Address u ovom zahtevu odgovara specificirajući svoj MAC Address. Pošiljalac zatim upisuje ovaj IP/MAC par u svoju ARP keš memoriju, kako ne bi morao da ponavlja operaciju svaki put kada se zahtev šalje.
+ARP protokol je stoga fundamentalan: obezbeđuje vezu između IP adresa i fizičkih adresa, omogućavajući mašinama da prevedu logičku destinaciju u stvarnu fizičku destinaciju. Kada računar treba da pošalje paket mašini na istoj mreži, prvo konsultuje svoju ARP tabelu da proveri da li je primaočeva MAC adresa već poznata. Ako nije, emituje ARP zahtev svim domaćinima na lokalnoj mreži. Mašina koja prepozna ciljnu IP adresu u ovom zahtevu odgovara specificirajući svoju MAC adresu. Pošiljalac zatim upisuje ovaj IP/MAC par u svoju ARP keš memoriju, kako ne bi morao da ponavlja operaciju svaki put kada se zahtev šalje.
 
 
 Ova ARP tabela deluje kao mini-direktorijum za mapiranje, dinamički ažuriran na sličan način kao što DNS povezuje imena domena sa IP adresama. Bez ARP-a, nijedan lokalni Exchange ne bi bio moguć, jer podatkovni link Layer treba da zna MAC Address kako bi ispravno enkapsulirao Ethernet okvire.
