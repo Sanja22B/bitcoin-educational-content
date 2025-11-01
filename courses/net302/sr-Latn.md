@@ -1198,10 +1198,10 @@ U korporativnom okruženju, ova dva nivoa adresiranja ne mogu funkcionisati odvo
 ARP protokol je stoga fundamentalan: obezbeđuje vezu između IP adresa i fizičkih adresa, omogućavajući mašinama da prevedu logičku destinaciju u stvarnu fizičku destinaciju. Kada računar treba da pošalje paket mašini na istoj mreži, prvo konsultuje svoju ARP tabelu da proveri da li je primaočeva MAC adresa već poznata. Ako nije, emituje ARP zahtev svim domaćinima na lokalnoj mreži. Mašina koja prepozna ciljnu IP adresu u ovom zahtevu odgovara specificirajući svoju MAC adresu. Pošiljalac zatim upisuje ovaj IP/MAC par u svoju ARP keš memoriju, kako ne bi morao da ponavlja operaciju svaki put kada se zahtev šalje.
 
 
-Ova ARP tabela deluje kao mini-direktorijum za mapiranje, dinamički ažuriran na sličan način kao što DNS povezuje imena domena sa IP adresama. Bez ARP-a, nijedan lokalni Exchange ne bi bio moguć, jer podatkovni link Layer treba da zna MAC Address kako bi ispravno enkapsulirao Ethernet okvire.
+Ova ARP tabela deluje kao mini-direktorijum za mapiranje, dinamički ažuriran na sličan način kao što DNS povezuje imena domena sa IP adresama. Bez ARP-a, nijedna lokalna razmena ne bi bila moguća, jer podatkovni link sloj treba da zna MAC adresu kako bi ispravno enkapsulirao Ethernet okvire.
 
 
-Suprotno tome, RARP protokol (_Reverse Address Resolution Protocol_) je dizajniran za suprotnu situaciju: omogućavanje mašini koja zna samo svoj MAC Address da otkrije svoj IP Address. Ovo je bio čest slučaj za starije radne stanice bez lokalnog Hard diska, koje su morale da se pokreću preko mreže i zahtevaju IP Address. RARP je na kraju zamenjen sa **BOOTP** a zatim sa **DHCP**, koji su fleksibilniji i automatizovani.
+Suprotno tome, RARP protokol (_Reverse Address Resolution Protocol_) je dizajniran za suprotnu situaciju: omogućavanje mašini koja zna samo svoju MAC adresu da otkrije svoju IP adresu. Ovo je bio čest slučaj za starije radne stanice bez lokalnog hard diska, koje su morale da se pokreću preko mreže i zahtevaju IP adresu. RARP je na kraju zamenjen sa **BOOTP** a zatim sa **DHCP**, koji su fleksibilniji i automatizovani.
 
 
 Ovi protokoli asocijacije igraju važnu ulogu u rutiranju. Ruter je u suštini mašina sa više mrežnih interfejsa, koja povezuje različite segmente. Kada ruter primi okvir, obrađuje ga kako bi izvukao IP datagram i ispituje IP zaglavlje da bi odredio odredište. Ako je odredište na direktno povezanoj mreži, datagram se isporučuje direktno nakon ažuriranja zaglavlja. Ako odredište pripada drugoj mreži, ruter konsultuje svoju tabelu rutiranja kako bi identifikovao najbolji put, ili _sledeći skok_, do odredišta.
@@ -1213,23 +1213,23 @@ Ovo razbija rutu na kraće, lakše upravljive segmente. Svaki međusmernik zna s
 **Podsetnik:** Direktna isporuka se dešava kada su pošiljalac i primalac na istoj fizičkoj mreži. U suprotnom, isporuka je indirektna i prolazi kroz jedan ili više rutera.
 
 
-Tabela rutiranja, kojom se upravlja ili ručno (staticko rutiranje) ili dinamički (dinamičko rutiranje), sadrži informacije potrebne za odlučivanje kojom rutom krenuti. U malim mrežama, statička konfiguracija je dovoljna. U većim infrastrukturama, dinamičko rutiranje je neophodno za automatsko prilagođavanje ruta kada se topologija promeni ili kada veza padne.
+Tabela rutiranja, kojom se upravlja ili ručno (statičko rutiranje) ili dinamički (dinamičko rutiranje), sadrži informacije potrebne za odlučivanje kojom rutom krenuti. U malim mrežama, statička konfiguracija je dovoljna. U većim infrastrukturama, dinamičko rutiranje je neophodno za automatsko prilagođavanje ruta kada se topologija promeni ili kada veza padne.
 
 
-Tabela rutiranja deluje kao tabela mapiranja između ciljnih IP adresa i sledećih prolaza. Obično skladišti identifikatore mreže (_network ID_) umesto svakog pojedinačnog hosta Address, što značajno smanjuje njenu veličinu.
+Tabela rutiranja deluje kao tabela mapiranja između ciljnih IP adresa i sledećih prolaza. Obično skladišti identifikatore mreže (_network ID_) umesto svake pojedinačne host adrese, što značajno smanjuje njenu veličinu.
 
 
-| Destination Address | Next-Hop Router Address | Interface |
+| Adresa odredišta    | Adresa sledećeg rutera  | Interfejs |
 | ------------------- | ----------------------- | --------- |
 
-Koristeći ove unose, ruter može brzo odrediti kroz koji Interface i ka kojem čvoru svaki datagram treba biti poslat. U kombinaciji sa ARP-om za rešavanje odgovarajućih MAC adresa, ovo osigurava efikasan i pouzdan prenos podataka preko mreže.
+Koristeći ove unose, ruter može brzo odrediti kroz koji interfejs i ka kojem čvoru svaki datagram treba biti poslat. U kombinaciji sa ARP-om za rešavanje odgovarajućih MAC adresa, ovo osigurava efikasan i pouzdan prenos podataka preko mreže.
 
 
-Konačno, dinamički protokoli rutiranja uključuju standarde kao što su RIP (_Routing Information Protocol_), zasnovan na algoritmu udaljenosti, i OSPF (_Open Shortest Path First_), koji izračunava najkraće puteve u složenoj topologiji. Ovi protokoli stalno ažuriraju Exchange kako bi optimizovali rute, smanjili troškove prenosa i poboljšali otpornost na prekide ili zagušenja.
+Konačno, dinamički protokoli rutiranja uključuju standarde kao što su RIP (_Routing Information Protocol_), zasnovan na algoritmu udaljenosti, i OSPF (_Open Shortest Path First_), koji izračunava najkraće puteve u složenoj topologiji. Ovi protokoli neprestano razmenjuju ažuriranja kako bi optimizovali rute, smanjili troškove prenosa i poboljšali otpornost na prekide ili zagušenja.
 
 
 
-## NAT: Address Prevod
+## NAT: Prevođenje adresa
 
 
 <chapterId>4f984d5d-f2e0-4faf-b703-ff315f32cef4</chapterId>
@@ -1239,16 +1239,16 @@ Konačno, dinamički protokoli rutiranja uključuju standarde kao što su RIP (_
 ### Definicija
 
 
-Mreža Address Translation_ (NAT) je tehnika razvijena za Address postepeno iscrpljivanje dostupnih IPv4 adresa. Dizajnirana kao privremeno rešenje pre široke primene IPv6, NAT je omogućila kompanijama i pojedincima da nastave povezivanje velikog broja mašina koristeći samo ograničen skup javnih IP adresa.
+_Network Address Translation_ (NAT) je tehnika razvijena za rešavanje problema postepenog iscrpljivanja dostupnih IPv4 adresa. Dizajnirana kao privremeno rešenje pre široke primene IPv6, NAT je omogućio kompanijama i pojedincima da nastave povezivanje velikog broja mašina koristeći samo ograničen skup javnih IP adresa.
 
 
-**Važno podsećanje:** prelazak sa IPv4 na IPv6 teoretski rešava problem iscrpljivanja proširivanjem Address prostora sa 32 bita na 128 bita, pružajući gotovo neograničen broj adresa (2^128). U praksi, međutim, tranzicija je još uvek nepotpuna, i NAT se i dalje široko koristi danas.
+**Važno podsećanje:** prelazak sa IPv4 na IPv6 teoretski rešava problem iscrpljivanja proširivanjem prostora adresa sa 32 bita na 128 bita, pružajući gotovo neograničen broj adresa (2^128). U praksi, međutim, tranzicija je još uvek nepotpuna, i NAT se i dalje široko koristi danas.
 
 
-Princip iza NAT-a je jednostavan, ali veoma efikasan: umesto dodeljivanja jedinstvene javne IP adrese Address svakom uređaju na unutrašnjoj mreži, koristi se jedna rutabilna Address (ili mali skup adresa) za sve privatne uređaje. NAT prolaz, često integrisan u ruter ili firewall, zatim dinamički prevodi unutrašnju IP adresu Address zajedno sa informacijama potrebnim za ispravno usmeravanje saobraćaja ka spoljašnjem svetu, i osigurava da se odgovori vrate originalnom pošiljaocu.
+Princip iza NAT-a je jednostavan, ali veoma efikasan: umesto dodeljivanja jedinstvene javne IP adrese svakom uređaju na unutrašnjoj mreži, koristi se jedna rutabilna adresa (ili mali skup adresa) za sve privatne uređaje. NAT prolaz, često integrisan u ruter ili firewall, zatim dinamički prevodi unutrašnju IP adresu zajedno sa informacijama potrebnim za ispravno usmeravanje saobraćaja ka spoljašnjem svetu, i osigurava da se odgovori vrate originalnom pošiljaocu.
 
 
-Ovaj pristup ima trenutnu korist: potpuno skriva internu mrežnu arhitekturu. Za posmatrača spolja, svi zahtevi sa radnih stanica, servera ili štampača izgledaju kao da dolaze sa istog javnog identiteta. Privatne adrese, obično preuzete iz rezervisanih opsega (npr. 192.168.x.x ili 10.x.x.x), ostaju nevidljive sa Interneta.
+Ovaj pristup ima trenutnu korist: potpuno skriva internu mrežnu arhitekturu. Za posmatrača spolja, svi zahtevi sa radnih stanica, servera ili štampača izgledaju kao da dolaze sa istog javnog identiteta. Privatne adrese, obično preuzete iz rezervisanih opsega (npr. 192.168.x.x ili 10.x.x.x), ostaju nevidljive sa interneta.
 
 
 Pored rešavanja problema nestašice IPv4 adresa, NAT takođe jača bezbednost stvaranjem prve logičke barijere između internih i javnih mreža. Neželjene dolazne komunikacije su prirodno blokirane, jer samo veze inicirane iz unutrašnje mreže imaju koristi od neophodnog prevođenja za primanje odgovora.
@@ -1265,43 +1265,43 @@ Pored rešavanja problema nestašice IPv4 adresa, NAT takođe jača bezbednost s
 NAT se može implementirati na različite načine kako bi odgovarao specifičnim potrebama. Dva glavna načina rada su statički prevod i dinamički prevod.
 
 
-**Static translation** stvara fiksno mapiranje između privatne IP adrese Address i javne IP adrese Address. Svaka interna mašina je trajno povezana sa svojom posvećenom javnom Address. Na primer, interni uređaj konfigurisan kao 192.168.20.1 mogao bi biti povezan sa rutabilnom Address 157.54.130.1. Kada odlazni paket napusti lokalnu mrežu, ruter zamenjuje izvorni Address paketa javnim Address, i obavlja obrnuti postupak za dolazni saobraćaj. Ova dvosmerna translacija je transparentna za korisnika.
+**Statički prevod** stvara fiksno mapiranje između privatne IP adrese i javne IP adrese. Svaka interna mašina je trajno povezana sa svojom posvećenom javnom adresom. Na primer, interni uređaj konfigurisan kao 192.168.20.1 mogao bi biti povezan sa rutabilnom adresom 157.54.130.1. Kada odlazni paket napusti lokalnu mrežu, ruter zamenjuje izvornu adresu paketa javnom adresom, i obavlja obrnuti postupak za dolazni saobraćaj. Ova dvosmerna translacija je transparentna za korisnika.
 
 
 **Upozorenje:** Iako ova metoda izoluje internu mrežu, ne rešava problem nedostatka javnih IP adresa, jer vam i dalje treba onoliko javnih adresa koliko ima mašina koje treba izložiti. Statički prevod se stoga uglavnom koristi kada određeni interni resursi moraju ostati dostupni spolja (web server, mail server...).
 
 
-**Dinamički prevod**, s druge strane, koristi bazen javnih IP adresa. Kada interni host započne vezu, ruter privremeno dodeljuje jednu od ovih javnih adresa privatnom Address hostu za trajanje sesije. Veza je 1-na-1, ali privremena: kada veza završi, javni Address postaje dostupan za drugi uređaj. Dinamički NAT stoga smanjuje broj potrebnih javnih adresa kada nisu sve mašine istovremeno na mreži, ali i dalje zahteva blok eksternih adresa barem onoliko velik koliko je maksimalni broj istovremenih veza.
+**Dinamički prevod**, s druge strane, koristi bazen javnih IP adresa. Kada interni host započne vezu, ruter privremeno dodeljuje jednu od ovih javnih adresa privatnoj host adresi za vreme trajanja sesije. Veza je 1-na-1, ali privremena: kada veza završi, javna adresa postaje dostupna za drugi uređaj. Dinamički NAT stoga smanjuje broj potrebnih javnih adresa kada nisu sve mašine istovremeno na mreži, ali i dalje zahteva blok eksternih adresa barem onoliko velik koliko je maksimalni broj istovremenih veza.
 
 
-**Prevod porta** (PAT), takođe poznat kao *NAT preopterećenje* ili *IP maskiranje*, ide korak dalje: svi privatni uređaji dele jednu javnu IP adresu Address (ili vrlo mali broj). Da bi razlikovao sesije, prolaz menja ne samo izvorni Address, već i izvorni port. Održava tabelu koja povezuje svaki par *(privatni Address, privatni port)* sa jedinstvenim parom *(javni Address, javni port)*. Ovaj oblik NAT-a koristi se u gotovo svim kućnim ruterima, omogućavajući desetinama uređaja (računari, pametni telefoni, povezani objekti, itd.) da dele istu javnu IP adresu Address, dok održavaju tečnu komunikaciju.
+**Prevod porta** (PAT), takođe poznat kao *NAT preopterećenje* ili *IP maskiranje*, ide korak dalje: svi privatni uređaji dele jednu javnu IP adresu (ili vrlo mali broj). Da bi razlikovao sesije, ruter menja ne samo izvornu adresu, već i izvorni port. Održava tabelu koja povezuje svaki par *(privatna adresa, privatni port)* sa jedinstvenim parom *(javna adresa, javni port)*. Ovaj oblik NAT-a koristi se u gotovo svim kućnim ruterima, omogućavajući desetinama uređaja (računari, pametni telefoni, povezani objekti, itd.) da dele istu javnu IP adresu, dok održavaju tečnu komunikaciju.
 
 
-NAT stoga produžava životni vek IPv4, dok dodaje vredan Layer segmentacije i bezbednosti. Međutim, kako usvajanje IPv6 raste i njegov ogroman Address prostor postaje sve šire korišćen, uloga NAT-a će verovatno opadati, iako će se zbog kompatibilnosti i kontrolnih svrha i dalje koristiti u nekim okruženjima za segmentaciju i filtriranje saobraćaja.
+NAT stoga produžava životni vek IPv4, dok dodaje vredan sloj segmentacije i bezbednosti. Međutim, kako usvajanje IPv6 raste i njegov ogroman adresni prostor postaje sve šire korišćen, uloga NAT-a će verovatno opadati, iako će se zbog kompatibilnosti i kontrolnih svrha i dalje koristiti u nekim okruženjima za segmentaciju i filtriranje saobraćaja.
 
 
-### implementacija NAT-a
+### Implementacija NAT-a
 
 
-Da bi se osigurala pravilna operacija Address prevoda, NAT ruter ili prolaz mora voditi tačan zapis o mapiranjima uspostavljenim između svakog privatnog Address na unutrašnjoj mreži i javnog Address koji koristi za komunikaciju sa spoljnim svetom. Ove informacije se čuvaju u onome što je poznato kao "NAT tabela prevoda", koja igra centralnu ulogu u upravljanju mrežnim saobraćajem.
+Da bi se osigurala pravilna operacija prevođenja adresa, NAT ruter ili gateway mora voditi tačan zapis o mapiranjima uspostavljenim između svake privatne adrese na unutrašnjoj mreži i javne adrese koja se koristi za komunikaciju sa spoljnim svetom. Ove informacije se čuvaju u onome što je poznato kao "NAT tabela prevoda", koja igra centralnu ulogu u upravljanju mrežnim saobraćajem.
 
 
-Svaki unos u ovoj tabeli povezuje bar jedan par: interni IP Address mašine koja šalje i eksterni IP Address koji će biti izložen na Internetu. Kada se paket iz privatne mreže šalje na javnu destinaciju, NAT ruter presreće okvir, analizira IP i TCP/UDP zaglavlja, zatim zamenjuje privatni izvor Address javnim Address prolaza. Na povratnom putu, isti prolaz hvata dolazni paket, proverava tabelu mapiranja i izvršava obrnuti postupak kako bi preusmerio tok na originalni interni IP Address.
+Svaki unos u ovoj tabeli povezuje bar jedan par: interna IP adresa mašine koja šalje i eksterna IP adresa koji će biti izložen na internetu. Kada se paket iz privatne mreže šalje na javnu destinaciju, NAT ruter presreće okvir, analizira IP i TCP/UDP zaglavlja, zatim zamenjuje privatnu adresu izvora javnom adresom rutera. Na povratnom putu, isti ruter hvata dolazni paket, proverava tabelu mapiranja i izvršava obrnuti postupak kako bi preusmerio tok na originalnu internu IP adresu.
 
 
-Ovaj dinamički princip prevođenja oslanja se na precizno upravljanje tabelama: svaki unos ostaje važeći sve dok postoji aktivan saobraćaj koji ga opravdava. Nakon konfigurisane periode neaktivnosti, unos se briše i može se ponovo koristiti za nove konekcije.
+Ovaj dinamički princip prevođenja oslanja se na precizno upravljanje tabelama: svaki unos ostaje važeći sve dok postoji aktivan saobraćaj koji ga opravdava. Nakon konfigurisanog perioda neaktivnosti, unos se briše i može se ponovo koristiti za nove konekcije.
 
 
 _Primer pojednostavljene NAT tabele prevođenja:_
 
 
-| Internal IP   | External IP    | Duration (sec) | Reusable? |
+| Interna  IP   | Eksterna IP    | Trajanje (sec) | Ponovo upotrebljiv? |
 | ------------- | -------------- | -------------- | --------- |
 | 10.101.10.20  | 193.48.100.174 | 1,200          | no        |
 | 10.100.54.251 | 193.48.101.8   | 3,601          | yes       |
 | 10.100.0.89   | 193.48.100.46  | 0              | no        |
 
-U ovom primeru, ako nijedan paket nije prošao kroz drugi unos duže od sat vremena (3.600 sekundi), označava se kao ponovo upotrebljiv. Suprotno tome, trajanje od nula označava aktivnu komunikaciju, sa zaključanom mapiranjem.
+U ovom primeru, ako nijedan paket nije prošao kroz drugi unos duže od sat vremena (3.600 sekundi), označava se kao ponovo upotrebljiv. Suprotno tome, trajanje od nula označava aktivnu komunikaciju, sa zaključanim mapiranjem.
 
 
 Iako NAT funkcioniše transparentno za većinu uobičajenih upotreba (pregledanje interneta, e-mail, prenos fajlova, itd.), može stvoriti dodatne izazove za određene mrežne aplikacije. Neke tehnologije se oslanjaju na eksplicitnu razmenu IP adresa ili portova unutar sadržaja paketa. Nakon prolaska kroz NAT prolaz, ove informacije postaju nedosledne.
@@ -1310,15 +1310,15 @@ Iako NAT funkcioniše transparentno za većinu uobičajenih upotreba (pregledanj
 Tipični primeri ograničenja uključuju:
 
 
-- Peer-to-peer protokoli (P2P), koji zahtevaju direktne veze između uređaja, ometeni su NAT barijerom, budući da svi interni uređaji dele istu eksternu IP adresu Address i ne mogu biti direktno dostupni bez specifične konfiguracije (kao što su *prosleđivanje portova* ili UPnP);
+- Peer-to-peer protokoli (P2P), koji zahtevaju direktne veze između uređaja, ometeni su NAT barijerom, budući da svi interni uređaji dele istu eksternu IP adresu i ne mogu biti direktno dostupni bez specifične konfiguracije (kao što su *prosleđivanje portova* ili UPnP);
 - IPSec protokol, korišćen za obezbeđivanje mrežnih komunikacija, šifruje zaglavlja paketa. Pošto NAT mora da modifikuje ova zaglavlja kako bi zamenio IP adrese, šifrovanje to čini nemogućim bez mehanizama prilagođavanja kao što je NAT-T (*NAT Traversal*);
 - X Window protokol, koji omogućava udaljeni prikaz grafičkih aplikacija na Unix/Linux sistemima, funkcioniše tako da X server aktivno šalje TCP konekcije klijentima. Ovo obrtanje uobičajenog smera konekcija može biti blokirano od strane NAT-a.
 
 
-Uopšteno, svaki protokol koji eksplicitno uključuje interni IP Address u sadržaju paketa će biti pogođen, jer taj Address više neće odgovarati stvarnom, na internetu vidljivom Address nakon prevođenja.
+Uopšteno, svaki protokol koji eksplicitno uključuje internu IP adresu u sadržaju paketa će biti pogođen, jer ta adresa više neće odgovarati stvarnom, na internetu vidljivom adresom nakon prevođenja.
 
 
-**Važna napomena:** Za Address ove probleme, neki NAT ruteri nude _Dubinsku Inspekciju Paketa_ (DPI) ili _Protokol Pomagače_, koji pregledaju sadržaj paketa kako bi identifikovali i dinamički zamenili adrese ili brojeve portova unutar aplikacionih podataka. Ovo zahteva detaljno poznavanje formata protokola i može stvoriti sigurnosne ranjivosti ili povećati upotrebu resursa.
+**Važna napomena:** Za rešavanje ovih problema, neki NAT ruteri nude _Dubinsku Inspekciju Paketa_ (DPI) ili _Protokol Pomagače_, koji pregledaju sadržaj paketa kako bi identifikovali i dinamički zamenili adrese ili brojeve portova unutar aplikacionih podataka. Ovo zahteva detaljno poznavanje formata protokola i može stvoriti sigurnosne ranjivosti ili povećati upotrebu resursa.
 
 
 **Upozorenje:** Iako NAT pomaže u skrivanju interne mreže i kontroli dolaznog saobraćaja, nije zamena za namenski firewall. Sama translacija nije potpuna sigurnosna barijera: uvek mora biti dopunjena jasnim pravilima filtriranja kako bi se blokirao nepoželjan ili neželjen saobraćaj.
@@ -1332,7 +1332,7 @@ _Da bismo ilustrovali kako ovo funkcioniše u praksi, razmotrimo sledeći primer
 
 
 
-U ovom scenariju, interna radna stanica može pristupiti internom veb serveru jednostavno pozivanjem URL-a `http://192.168.1.20:80`. Navođenje porta je ovde opcionalno, jer je `80` standardni HTTP port. Suprotno tome, ako je zahtev iniciran spolja, korisnik će uneti javni Address `http://85.152.44.14:80`. NAT ruter prima zahtev, konsultuje svoju tabelu mapiranja i automatski prevodi javni Address u privatni, preusmeravajući vezu na `http://192.168.1.20:80`.
+U ovom scenariju, interna radna stanica može pristupiti internom veb serveru jednostavno pozivanjem URL-a `http://192.168.1.20:80`. Navođenje porta je ovde opcionalno, jer je `80` standardni HTTP port. Suprotno tome, ako je zahtev iniciran spolja, korisnik će uneti javnu adresu `http://85.152.44.14:80`. NAT ruter prima zahtev, konsultuje svoju tabelu mapiranja i automatski prevodi javnu adresu u privatnu, preusmeravajući vezu na `http://192.168.1.20:80`.
 
 
 Isti princip se primenjuje na bilo koji drugi server ovlašćen za primanje internet konekcija, kao što je Extranet server (plavi krug u dijagramu).
@@ -1372,7 +1372,7 @@ iptables -t nat -A POSTROUTING -o <WAN> -s 192.168.0.0/24 -j MASQUERADE
 Sa ovom konfiguracijom, odlazni saobraćaj se usmerava i primenjuje se NAT prevođenje, omogućavajući virtuelnim mašinama da komuniciraju sa spoljnim svetom bez direktnog izlaganja njihovih internih IP adresa.
 
 
-U sledećem poglavlju, detaljno ćemo razmotriti konfiguraciju IP Address na Linux-u, pokrivajući i jednostavne i napredne metode prilagođene različitim kontekstima administracije.
+U sledećem poglavlju, detaljno ćemo razmotriti konfiguraciju IP adresa na Linux-u, pokrivajući i jednostavne i napredne metode prilagođene različitim kontekstima administracije.
 
 
 
@@ -1396,16 +1396,16 @@ https://planb.network/tutorials/computer-security/operating-system/pfsense-24eea
 Nakon što smo pokrili teorijske osnove umrežavanja i razumeli kako IP adrese, maske, rutiranje i prevođenje rade zajedno, vreme je da pređemo na praktičnu konfiguraciju. Na GNU/Linux-u, podešavanje mreže se sada obavlja pomoću komande **`ip`** (paket _iproute2_), koja zamenjuje stariju `ifconfig`.
 
 
-`ip` vam omogućava da dodelite ili promenite IP Address, promenite masku, pokrenete ili zaustavite Interface, ili proverite njegov status u bilo kom trenutku.
+`ip` vam omogućava da dodelite ili promenite IP adresu, promenite masku, pokrenete ili zaustavite interfejs, ili proverite njegov status u bilo kom trenutku.
 
 
 **SAVETI:** za prikaz svih interfejsa (aktivnih ili ne): `ip addr show`
 
 
-Primer: dodeljivanje statičkog Address i aktiviranje Interface
+Primer: dodeljivanje statičke adrese i aktiviranje interfejsa
 
 
-Dodaj Address `192.168.1.2/24` na Interface `eth0`:
+Dodaj adresu `192.168.1.2/24` na interfejs `eth0`:
 
 
 ```shell
@@ -1413,7 +1413,7 @@ ip addr add 192.168.1.2/24 dev eth0
 ```
 
 
-Aktiviraj Interface:
+Aktiviraj interfejs:
 
 
 ```shell
@@ -1421,7 +1421,7 @@ ip link set dev eth0 up
 ```
 
 
-Deaktiviraj isti Interface:
+Deaktiviraj isti interfejs:
 
 
 ```shell
@@ -1429,7 +1429,7 @@ ip link set dev eth0 down
 ```
 
 
-Prikaži status određenog Interface:
+Prikaži status određenog interfejsa:
 
 
 ```shell
@@ -1437,7 +1437,7 @@ ip addr show dev eth2
 ```
 
 
-**Praktični savet:** sa `ip`, dodavanje dodatnog Address na Interface više ne zahteva sufiks `:1`. Samo dodajte još jednu liniju `ip addr add ...`:
+**Praktični savet:** sa `ip`, dodavanje dodatne adrese na interfejs više ne zahteva sufiks `:1`. Samo dodajte još jednu liniju `ip addr add ...`:
 
 
 ```shell
@@ -1461,7 +1461,7 @@ Datoteke konfiguracije (slično RHEL-u):
 
 
 - **/etc/sysconfig/network**: globalna podešavanja (NETWORKING, HOSTNAME, GATEWAY...).
-- **ifcfg-**: postavke specifične za svaki Interface.
+- **ifcfg-**: postavke specifične za svaki interfejs.
 
 
 Staticki primer (ifcfg-eth0):
@@ -1493,7 +1493,7 @@ Ova modularna struktura je i dalje važeća i može se lako automatizovati na tr
 ### Napredna konfiguracija: bonding
 
 
-U profesionalnim okruženjima, cilj je garantovati kontinuitet usluge i/ili agregirati propusni opseg. Mehanizmi *Bonding* (ili *teaming* sa _teamd_) ispunjavaju ove potrebe: nekoliko fizičkih interfejsa funkcioniše kao jedan logički Interface, često nazvan `bond0` ili `team0`.
+U profesionalnim okruženjima, cilj je garantovati kontinuitet usluge i/ili agregirati propusni opseg. Mehanizmi *Bonding* (ili *teaming* sa _teamd_) ispunjavaju ove potrebe: nekoliko fizičkih interfejsa funkcioniše kao jedan logički interfejs, često nazvan `bond0` ili `team0`.
 
 
 
@@ -1535,7 +1535,7 @@ ip link set eth1 down
 
 
 
-- Kreiraj povezani Interface:
+- Kreiraj povezani interfejs:
 
 
 ```shell
@@ -1564,7 +1564,7 @@ ip route add default via 192.168.2.1
 
 
 
-- Prikači interfejse za robove:
+- Povezivanje sekundarnih interfejsa:
 
 
 ```shell
@@ -1584,10 +1584,10 @@ ip link set eth1 up
 ```
 
 
-**Savjet:** za odvajanje slave-a bez isključivanja veze: `ip link set eth1 nomaster`
+**Savet:** za odvajanje podređenih interfejsa bez isključivanja veze: `ip link set eth1 nomaster`
 
 
-#### Trajna konfiguracija (RHEL-like)
+#### Trajno podešavanje (po uzoru na RHEL)
 
 
 Kreirajte tri datoteke u `/etc/sysconfig/network-scripts`:
@@ -1638,10 +1638,10 @@ systemctl restart network
 ```
 
 
-#### Dodatni IP Address (moderni alias)
+#### Dodatna IP adresa (savremeni način za alias adresu)
 
 
-Sa `ip`, možete jednostavno dodati drugi Address na isti uređaj:
+Sa `ip`, možete jednostavno dodati drugu adresu na isti uređaj:
 
 
 ```shell
@@ -1652,7 +1652,7 @@ ip addr add 192.168.1.2/24 dev eth0
 Da bi ovaj alias bio postojan nakon ponovnog pokretanja, dodajte drugi blok `IPADDR2=...` / `PREFIX2=...` u `ifcfg-eth0`, ili kreirajte novu *NetworkManager* konekciju putem `nmcli`.
 
 
-Zahvaljujući komandama `ip` i srodnim komandama (`ip link`, `ip addr`, `ip route`), mrežna konfiguracija je konzistentnija, skriptabilna i jasna. Bonding je ključna komponenta arhitektura visoke dostupnosti, a dodeljivanje više adresa jednom Interface postalo je mnogo jednostavnije.
+Zahvaljujući komandama `ip` i srodnim komandama (`ip link`, `ip addr`, `ip route`), mrežna konfiguracija je konzistentnija, skriptabilna i jasna. Bonding je ključna komponenta arhitektura visoke dostupnosti, a dodeljivanje više adresa jednom interfejsu postalo je mnogo jednostavnije.
 
 
 U narednom poglavlju, pogledaćemo specifičnosti i implementaciju IPv6 adresiranja.
@@ -1674,22 +1674,22 @@ U narednom poglavlju, pogledaćemo specifičnosti i implementaciju IPv6 adresira
 Sada prelazimo na sledeću generaciju IP adresiranja: IPv6 protokol, prvobitno poznat kao IPng (_IP Next Generation_). Dizajniran da prevaziđe strukturna ograničenja IPv4, ovaj protokol uvodi znatno proširenu adresnu arhitekturu, kao i brojne tehničke optimizacije.
 
 
-Motivacije iza usvajanja IPv6 su različite, i Address kritične potrebe za evoluciju Interneta. Prvo, uloga IPv6 je da podrži eksponencijalni rast broja povezanih uređaja (cilj koji je nedostižan sa ograničenim Address prostorom IPv4). Drugo, protokol ima za cilj da smanji veličinu tabela rutiranja, čineći razmene efikasnijim i smanjujući opterećenje rutera na duži rok.
+Motivacije iza usvajanja IPv6 su različite, i rešava kritične potrebe za evoluciju interneta. Prvo, uloga IPv6 je da podrži eksponencijalni rast broja povezanih uređaja (cilj koji je nedostižan sa ograničenim prostorom adresa IPv4). Drugo, protokol ima za cilj da smanji veličinu tabela rutiranja, čineći razmene efikasnijim i smanjujući opterećenje rutera na duži rok.
 
 
 IPv6 takođe nastoji da pojednostavi određene aspekte rukovanja paketima, poboljšavajući tok datagrama i optimizujući brzine prenosa između mreža. Sa stanovišta bezbednosti, AH/ESP zaglavlja *IPsec* protokola su uključena u osnovnu specifikaciju, i svi IPv6 čvorovi moraju biti sposobni da ih podrže (RFC 6434). Njihova upotreba, međutim, ostaje opcionalna: na administratoru je da ih omogući u zavisnosti od konteksta.
 
 
-Drugi ciljevi uključuju preciznije rukovanje tipovima usluga, posebno kako bi se osigurala bolja kvaliteta za aplikacije u realnom vremenu (VoIP, videokonferencije, itd.). IPv6 je takođe dizajniran da omogući fleksibilnije upravljanje mobilnošću: uređaj može promeniti pristupne tačke bez promene svog Address na način koji je vidljiv njegovim vršnjacima.
+Drugi ciljevi uključuju preciznije rukovanje tipovima usluga, posebno kako bi se osigurala bolji kvalitet za aplikacije u realnom vremenu (VoIP, videokonferencije, itd.). IPv6 je takođe dizajniran da omogući fleksibilnije upravljanje mobilnošću: uređaj može promeniti pristupne tačke bez promene svoje adrese na način koji je vidljiv njegovim vršnjacima.
 
 
-Konačno, IPv6 je dizajniran da koegzistira sa starijim protokolima. Iako nije direktno binarno kompatibilan sa IPv4, ostaje potpuno interoperabilan sa višim-Layer protokolima kao što su TCP, UDP, ICMPv6 i DNS, kao i sa rutirajućim protokolima kao što su OSPF i BGP, uz određena prilagođavanja. Za upravljanje multicast-om, IPv6 koristi MLD (*Multicast Listener Discovery*) protokol, koji je funkcionalni ekvivalent IGMP-u u IPv4 okruženju.
+Konačno, IPv6 je dizajniran da koegzistira sa starijim protokolima. Iako nije direktno binarno kompatibilan sa IPv4, ostaje potpuno interoperabilan sa višim-slojevima protokolima kao što su TCP, UDP, ICMPv6 i DNS, kao i sa rutirajućim protokolima kao što su OSPF i BGP, uz određena prilagođavanja. Za upravljanje multicast-om, IPv6 koristi MLD (*Multicast Listener Discovery*) protokol, koji je funkcionalno ekvivalent IGMP-u u IPv4 okruženju.
 
 
 ### Pravila notacije
 
 
-Jedna od najznačajnijih promena u IPv6 je format samog IP Address. Da bi se Address hronični nedostatak IPv4 adresa, dužina Address je povećana sa 32 bita na 128 bita, što je 16 bajtova. U teoriji, ovo daje mogući Address prostor od:
+Jedna od najznačajnijih promena u IPv6 je format same IP adrese. Da bi se rešio problem hroničnog nedostatka IPv4 adresa, dužina adrese je povećana sa 32 bita na 128 bita, što je 16 bajtova. U teoriji, ovo daje mogući adresni prostor od:
 
 
 $$3.4 \times 10^{38}$$
@@ -1698,7 +1698,7 @@ $$3.4 \times 10^{38}$$
 Ovo osigurava praktično neograničen kapacitet za svu trenutnu i buduću opremu.
 
 
-IPv6 adrese su napisane veoma drugačije od poznate notacije sa tačkama u decimalnom formatu. IPv6 Address se sastoji od osam 16-bitnih grupa, napisanih u heksadecimalnom formatu i odvojenih dvotačkama `:`.
+IPv6 adrese su napisane veoma drugačije od poznate notacije sa tačkama u decimalnom formatu. IPv6 adresa se sastoji od osam 16-bitnih grupa, napisanih u heksadecimalnom formatu i odvojenih dvotačkama `:`.
 
 
 Na primer:
@@ -1717,7 +1717,7 @@ Da bi se pojednostavila notacija, vodeće nule u svakoj grupi mogu biti izostavl
 ```
 
 
-Pored toga, jedan neprekinuti niz grupa nula može se zameniti sa ::, dodatno skraćujući Address:
+Pored toga, jedan neprekinuti niz grupa nula može se zameniti sa ::, dodatno skraćujući adresu:
 
 
 ```
@@ -1725,13 +1725,13 @@ Pored toga, jedan neprekinuti niz grupa nula može se zameniti sa ::, dodatno sk
 ```
 
 
-**Upozorenje:** ovo pravilo je strogo: samo jedan niz uzastopnih nula može biti zamenjen sa `::`. Ako Address sadrži više nizova nula, samo najduži se kondenzuje. Ovo osigurava i jedinstvenost i čitljivost.
+**Upozorenje:** ovo pravilo je strogo: samo jedan niz uzastopnih nula može biti zamenjen sa `::`. Ako adresa sadrži više nizova nula, samo najduži se kondenzuje. Ovo osigurava i jedinstvenost i čitljivost.
 
 
 **Važan detalj:** karakter `:` koji se koristi za razdvajanje heksadecimalnih blokova može izazvati nejasnoće u URL-ovima, jer se `:` takođe koristi za označavanje porta usluge. Da bi se izbegla zabuna, IPv6 adrese u URL-u moraju biti obuhvaćene uglastim zagradama `[ ]`.
 
 
-Primer HTTP pristupa određenom portu za Address `2002:400:2A41:378::34A2:36`:
+Primer HTTP pristupa određenom portu za adresu `2002:400:2A41:378::34A2:36`:
 
 
 ```
@@ -1739,7 +1739,7 @@ http://[2002:400:2A41:378::34A2:36]:8080
 ```
 
 
-Kada predstavljate IPv4 Address u kontekstu IPv6, možete koristiti mešovitu notaciju u obliku tačkaste decimale, kojoj prethodi `::`:
+Kada predstavljate IPv4 adrese u kontekstu IPv6, možete koristiti mešovitu notaciju u obliku tačkaste decimale, kojoj prethodi `::`:
 
 
 ```
@@ -1747,29 +1747,29 @@ Kada predstavljate IPv4 Address u kontekstu IPv6, možete koristiti mešovitu no
 ```
 
 
-Ova kompatibilnost pomaže u olakšavanju prelaza između dva protokola omogućavajući da IPv4 blokovi budu uključeni unutar IPv6 Address prostora.
+Ova kompatibilnost pomaže u olakšavanju prelaza između dva protokola omogućavajući da IPv4 blokovi budu uključeni unutar IPv6 adresnog prostora.
 
 
-**Napomena:** Da bi se standardizovao način pisanja adresa, RFC 5952 definiše kanonski format sa pravilima za skraćivanje kako bi se izbegle višestruke reprezentacije iste Address. Praćenje ovih preporuka pomaže u smanjenju pogrešnog tumačenja i obezbeđuje dosledne mrežne konfiguracije.
+**Napomena:** Da bi se standardizovao način pisanja adresa, RFC 5952 definiše kanonski format sa pravilima za skraćivanje kako bi se izbegle višestruke reprezentacije iste adrese. Praćenje ovih preporuka pomaže u smanjenju pogrešnog tumačenja i obezbeđuje dosledne mrežne konfiguracije.
 
 
-### IPv6 Address tipovi
+### IPv6 tipovi adresa
 
 
-IPv6 se razlikuje od svog prethodnika kroz širok spektar Address kategorija, od kojih je svaka dizajnirana za specifične namene, dok omogućava fleksibilno rutiranje i upravljanje mrežom. Kao i kod IPv4, adrese mogu biti globalne, lokalne, rezervisane ili specifične za određene mehanizme tranzicije.
+IPv6 se razlikuje od svog prethodnika kroz širok spektar kategorija adresa, od kojih je svaka dizajnirana za specifične namene, dok omogućava fleksibilno rutiranje i upravljanje mrežom. Kao i kod IPv4, adrese mogu biti globalne, lokalne, rezervisane ili specifične za određene mehanizme tranzicije.
 
 
-Neodređeni IPv6 Address je predstavljen sa `::` ili, preciznije, `::0.0.0.0`. Ovaj poseban oblik se koristi tokom akvizicije Address, ili kao podrazumevana vrednost da označi odsustvo Address.
+Neodređena IPv6 adresa je predstavljena sa `::` ili, preciznije, `::0.0.0.0`. Ovaj poseban oblik se koristi tokom akvizicije adresa, ili kao podrazumevana vrednost da označi odsustvo adresa.
 
 
 
-| IPv6 Address Prefix | Description                                 |
+| IPv6 Prefiks adrese | Opis                                        |
 | ------------------- | ------------------------------------------- |
-|::/8                | Reserved addresses                          |
-| 2000::/3            | Unicast addresses, routable on the Internet |
-| fc00::/7            | Unique local addresses (1)                  |
+|::/8                 | Rezervisane adrese                          |
+| 2000::/3            | Unikast adrese, rutabilne na internetu      |
+| fc00::/7            | Jedinstvene lokalne adrse (1)               |
 | fe80::/10           | Link-local addresses                        |
-| ff00::/8            | Multicast addresses                         |
+| ff00::/8            | Multikast adrese                            |
 
 (1): *Na privatnoj LAN mreži, prefiks `fd00::/8` je preferiran za dodelu internih adresa koje nisu rutabilne na Internetu.*
 
