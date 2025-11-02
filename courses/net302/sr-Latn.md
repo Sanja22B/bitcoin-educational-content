@@ -1780,10 +1780,10 @@ Neodređena IPv6 adresa je predstavljena sa `::` ili, preciznije, `::0.0.0.0`. O
 Određeni opsezi IPv6 su eksplicitno rezervisani i ne smeju se koristiti kao globalne adrese. Imaju specifične tehničke svrhe:
 
 
-- `::/128`: nespecificirana Address, nikada trajno dodeljena uređaju, već je koristi kao izvor Address mašina koja čeka konfiguraciju.
-- `::1/128`: the _loopback_ Address, the direct equivalent of `127.0.0.1` in IPv4, which allows a machine to Address itself.
+- `::/128`: nespecificirana adresa, nikada trajno dodeljena uređaju, ali se koristi kao izvorna adresa na uređaju koji čeka konfiguraciju.
+- `::1/128`: the _loopback_ adresa, odgovara tačno `127.0.0.1` kod IPv4, što omogućava uređaju da sam sebi dodeli adresu.
 - `64:ff9b::/96`: **Rezervisano za protokolske prevodioce radi omogućavanja međusobnog povezivanja IPv4/IPv6, kako je definisano u RFC 6052.**
-- `::ffff:0:0/96`: **blok za kompatibilnost za predstavljanje IPv4 Address u specifičnoj IPv6 strukturi, često korišćen interno od strane aplikacija.**
+- `::ffff:0:0/96`: **blok za kompatibilnost za predstavljanje IPv4 adresa u specifičnoj IPv6 strukturi, često korišćen interno od strane aplikacija.**
 
 
 Ovi blokovi garantuju interoperabilnost i olakšavaju migraciju između dve verzije protokola.
@@ -1792,7 +1792,7 @@ Ovi blokovi garantuju interoperabilnost i olakšavaju migraciju između dve verz
 #### Globalne unicast adrese
 
 
-Globalne unicast adrese čine većinu javno rutabilnog IPv6 prostora, predstavljajući oko 1/8 Address prostora. Od 1999. godine, IANA je dodelila ove blokove, kao što je prefiks `2001::/16`, u CIDR blokovima (od `/23` do `/12`) regionalnim registrima, koji ih zatim redistribuiraju provajderima i organizacijama.
+Globalne unicast adrese čine većinu javno rutabilnog IPv6 prostora, predstavljajući oko 1/8 adresnog prostora. Od 1999. godine, IANA je dodelila ove blokove, kao što je prefiks `2001::/16`, u CIDR blokovima (od `/23` do `/12`) regionalnim registrima, koji ih zatim redistribuiraju provajderima i organizacijama.
 
 
 Neki opsezi imaju posebne dokumentovane upotrebe:
@@ -1803,66 +1803,66 @@ Neki opsezi imaju posebne dokumentovane upotrebe:
 - `2002::/16`: Koristi se za 6to4 mehanizam, koji omogućava IPv6 saobraćaju da putuje preko IPv4 infrastrukture (korisno tokom faze prelaska između dva protokola).
 
 
-**Napomena:** veliki deo globalnih adresa ostaje neiskorišćen, služeći kao rezerva za budući rast Interneta.
+**Napomena:** veliki deo globalnih adresa ostaje neiskorišćen, služeći kao rezerva za budući rast interneta.
 
 
 #### Jedinstvene lokalne adrese (ULA)
 
 
-Jedinstvene lokalne adrese (`fc00::/7`) su IPv6 ekvivalent IPv4 privatnih adresa (RFC1918). Omogućavaju kreiranje izolovanih internih mreža bez rizika od konflikata sa javnim adresiranjem. U praksi, efektivni prefiks je `fd00::/8`, sa 8. bitom postavljenim na 1 kako bi se označila lokalna upotreba. Svaki ULA blok uključuje 40-bitni pseudo-slučajni identifikator, minimizirajući Address kolizije prilikom povezivanja odvojenih privatnih mreža.
+Jedinstvene lokalne adrese (`fc00::/7`) su IPv6 ekvivalent IPv4 privatnih adresa (RFC1918). Omogućavaju kreiranje izolovanih internih mreža bez rizika od konflikata sa javnim adresiranjem. U praksi, efektivni prefiks je `fd00::/8`, sa 8. bitom postavljenim na 1 kako bi se označila lokalna upotreba. Svaki ULA blok uključuje 40-bitni pseudo-slučajni identifikator, minimizirajući kolizije adresa prilikom povezivanja odvojenih privatnih mreža.
 
 
 #### Link-local adrese
 
 
-Link-local adrese (`fe80::/64`) koriste se isključivo za komunikaciju unutar istog Layer 2 segmenta (isti VLAN ili prekidač). Nikada se ne rutiraju izvan lokalne veze. Svaka mreža Interface automatski generiše link-local Address, često izveden iz svog MAC Address koristeći EUI-64 šemu.
+Link-local adrese (`fe80::/64`) koriste se isključivo za komunikaciju unutar istog sloja 2 segmenta (isti VLAN ili prekidač). Nikada se ne rutiraju izvan lokalne veze. Svaki mrežni interfejs automatski generiše link-local adresu, koja je često izvedena iz MAC adrese koristeći EUI-64 šemu.
 
 
-**Specijalna funkcija**: ista mašina može koristiti isti link-local Address na više interfejsa, ali Interface mora biti specificiran prilikom komunikacije kako bi se izbegla dvosmislenost.
+**Specijalna funkcija**: ista mašina može koristiti isti link-local adresu na više interfejsa, ali interfejs mora biti specificiran prilikom komunikacije kako bi se izbegla dvosmislenost.
 
 
 #### Multicast adrese
 
 
-U IPv6, broadcast je zamenjen multicast-om, efikasnijim načinom za isporuku paketa definisanoj grupi primalaca. Multicast opseg je prefiksiran sa `ff00::/8`. Ovo uključuje adrese poput `ff02::1`, koja cilja sve čvorove na lokalnoj vezi. Iako je zgodno, ovaj Address više nije preporučen za aplikacije, jer može generate nekontrolisane broadcast-e.
+U IPv6, broadcast je zamenjen multicast-om, efikasnijim načinom za isporuku paketa definisanoj grupi primalaca. Multicast opseg je prefiksiran sa `ff00::/8`. Ovo uključuje adrese poput `ff02::1`, koja cilja sve čvorove na lokalnoj vezi. Iako je zgodno, ova adresa više nije preporučen za aplikacije, jer može generisati nekontrolisane broadcast-e.
 
 
 Uobičajena upotreba multicast-a je _Neighbor Discovery Protocol_ (NDP), koji zamenjuje ARP u IPv6. NDP koristi specifične multicast adrese, kao što je `ff02::1:ff00:0/104`, za automatsko otkrivanje drugih hostova povezanih na isti link.
 
 
-Kombinovanjem ovih tipova Address, IPv6 pruža kompletan skup opcija za ispunjavanje potreba globalnog rutiranja, lokalnih komunikacija, migracije IPv4/IPv6 i automatske konfiguracije uređaja, uz poboljšanje efikasnosti prenosa.
+Kombinovanjem ovih tipova adresa, IPv6 pruža kompletan skup opcija za ispunjavanje potreba globalnog rutiranja, lokalnih komunikacija, migracije IPv4/IPv6 i automatske konfiguracije uređaja, uz poboljšanje efikasnosti prenosa.
 
 
-### Address opseg
+### Opseg adresa
 
 
-Opseg IPv6 Address definiše tačnu oblast u kojoj je važeći i jedinstven. Razumevanje ovog koncepta je ključno za savladavanje rutiranja paketa i logičke organizacije IPv6 mreže. IPv6 adrese su generalno grupisane u tri glavne kategorije na osnovu njihovog opsega i upotrebe: unicast, anycast i multicast.
+Opseg IPv6 adresa definiše tačnu oblast u kojoj je važeći i jedinstven. Razumevanje ovog koncepta je ključno za savladavanje rutiranja paketa i logičke organizacije IPv6 mreže. IPv6 adrese su generalno grupisane u tri glavne kategorije na osnovu njihovog opsega i upotrebe: unicast, anycast i multicast.
 
 
 **Unicast adrese** su najčešće i uključuju nekoliko različitih podtipova.
 
-To uključuje _loopback_ (`::1`) Address, čiji je opseg ograničen na host koji ga koristi, i koji se koristi za testiranje mrežnog steka interno bez slanja saobraćaja preko fizičke mreže.
+To uključuje _loopback_ (`::1`) adresu, čiji je opseg ograničen na host koji ga koristi, i koji se koristi za testiranje mrežnog steka interno bez slanja saobraćaja preko fizičke mreže.
 
 Zatim postoje link-lokalne adrese (_link-local_), čiji je opseg ograničen na jedan segment mreže: koriste se za direktnu komunikaciju između uređaja na istom fizičkom ili logičkom linku (npr. jedan switch ili VLAN).
 
-Konačno, jedinstvene lokalne adrese (_ULA_, za _Unique Local Addresses_) su interne za privatnu mrežu. Mogu se rutirati između više privatnih segmenata, ali nikada nisu vidljive na Internetu.
+Konačno, jedinstvene lokalne adrese (_ULA_, za _Unique Local Addresses_) su interne za privatnu mrežu. Mogu se rutirati između više privatnih segmenata, ali nikada nisu vidljive na internetu.
 
 
-Konceptualno, IPv6 adrese se često predstavljaju kao binarna struktura gde prva polovina (prvih 64 bita) identifikuje mrežni prefiks, a druga polovina (takođe 64 bita) jedinstveno identifikuje uređaj Interface na toj mreži. Ova podela olakšava Address autokonfiguraciju kroz mehanizme kao što je SLAAC (_Stateless Address Autoconfiguration_), koji omogućavaju mašinama da automatski generate stabilan Address na osnovu MAC Address ili pseudo-slučajnog identifikatora.
+Konceptualno, IPv6 adrese se često predstavljaju kao binarna struktura gde prva polovina (prvih 64 bita) identifikuje mrežni prefiks, a druga polovina (takođe 64 bita) jedinstveno identifikuje interfejs uređaja na toj mreži. Ova podela olakšava autokonfiguraciju adresa kroz mehanizme kao što je SLAAC (_Stateless Address Autoconfiguration_), koji omogućavaju mašinama da automatski generišu stabilnu adresu na osnovu MAC adrese ili pseudo-slučajnog identifikatora.
 
 
-| Field     | Prefix | L | Global ID | Subnet | Interface ID |
+| polje     | Prefiks | L | Globalni ID | Subnet | Interfejs ID |
 |-----------|--------|---|-----------|--------|---------------|
 | Bits      | 7      | 1 | 40        | 16     | 64            |
 
-IPv6 arhitektura prati hijerarhijski model globalnog rutiranja današnjeg Interneta. Podela prefiksa omogućava regionalnim registrima i mrežnim operaterima da upravljaju Address alokacijom na decentralizovan način, dok se obezbeđuje globalna jedinstvenost. U okviru ovog okvira, isti host može istovremeno imati globalni unicast Address za internet komunikaciju i link-local Address za lokalne interakcije, npr. sa neposrednim susedstvom ili za poruke otkrivanja rutera.
+IPv6 arhitektura prati hijerarhijski model globalnog rutiranja današnjeg interneta. Podela prefiksa omogućava regionalnim registrima i mrežnim operaterima da upravljaju adresama alokacijom na decentralizovan način, dok se obezbeđuje globalna jedinstvenost. U okviru ovog okvira, isti host može istovremeno imati globalnu unicast adresu za internet komunikaciju i link-local adresu za lokalne interakcije, npr. sa neposrednim susedstvom ili za poruke otkrivanja rutera.
 
 
 | Field     | Prefix | Zero | Interface ID |
 |-----------|--------|------|--------------|
 | Bits      | 10     | 54   | 64           |
 
-**Anycast adrese** predstavljaju posredni koncept koji se nadovezuje na unicast model, ali se u određenim slučajevima može ponašati kao multicast. Anycast Address je, u suštini, unicast Address dodeljen na nekoliko interfejsa raspoređenih preko različitih mrežnih čvorova. Kada se paket pošalje na anycast Address, IPv6 protokol ima za cilj da ga isporuči jednom od domaćina koji dele taj Address, obično onom najbližem u smislu rutirajuće topologije. Ovaj pristup optimizuje brzinu obrade upita i poboljšava otpornost distribuiranih servisa. Klasičan primer su root DNS serveri, gde anycast adresiranje automatski usmerava upite na najbližu tačku prisustva.
+**Anycast adrese** predstavljaju posredni koncept koji se nadovezuje na unicast model, ali se u određenim slučajevima može ponašati kao multicast. Anycast adresa je, u suštini, unicast adresa dodeljena na nekoliko interfejsa raspoređenih preko različitih mrežnih čvorova. Kada se paket pošalje na anycast adresu, IPv6 protokol ima za cilj da ga isporuči jednom od domaćina koji dele tu adrsu, obično onom najbližem u smislu rutirajuće topologije. Ovaj pristup optimizuje brzinu obrade upita i poboljšava otpornost distribuiranih servisa. Klasičan primer su root DNS serveri, gde anycast adresiranje automatski usmerava upite na najbližu tačku prisustva.
 
 
 
@@ -1870,19 +1870,19 @@ IPv6 arhitektura prati hijerarhijski model globalnog rutiranja današnjeg Intern
 |-----------|--------|--------|--------------|
 | Bits      | 48     | 16     | 64           |
 
-U IPv6, **multicast adrese** zamenjuju mehanizam emitovanja, koji se smatrao previše skupim i nepodesnim za mrežu globalnog obima. Multicast Address identifikuje grupu interfejsa, obično na više hostova, koji žele da istovremeno prime iste pakete.
+U IPv6, **multicast adrese** zamenjuju mehanizam emitovanja, koji se smatrao previše skupim i nepodesnim za mrežu globalnog obima. Multicast adresa identifikuje grupu interfejsa, obično na više hostova, koji žele da istovremeno prime iste pakete.
 
-Svaki multicast Address uključuje posebno 4-bitno polje _scope_, koje definiše geografsko ili logičko ograničenje emitovanja:
+Svaka multicast adresa uključuje posebno 4-bitno polje _scope_, koje definiše geografsko ili logičko ograničenje emitovanja:
 
 
 - Opseg od `1` znači da je paket namenjen samo za lokalni uređaj.
 - Opseg od `2` ograničava paket na lokalnu vezu: svi uređaji na istom fizičkom ili virtualnom segmentu mogu ga primiti.
 - Opseg od `5` proširuje domet do lokacije, obično čitave korporativne mreže.
 - Opseg od `8` proširuje domet na organizaciju, omogućavajući isporuku preko svih podmreža iste entitete.
-- Opseg `e` (14 u heksadecimalnom formatu) označava globalni domet, čineći multicast grupu dostupnom sa bilo kog mesta na Internetu ako je infrastruktura rutiranja podržava.
+- Opseg `e` (14 u heksadecimalnom formatu) označava globalni domet, čineći multicast grupu dostupnom sa bilo kog mesta na internetu ako je infrastruktura rutiranja podržava.
 
 
-Struktura IPv6 multicast Address uključuje:
+Struktura IPv6 multicast adresa uključuje:
 
 
 - polje _Flag_ (4 bita) određuje da li je grupa trajna ili privremena,
@@ -1897,10 +1897,10 @@ Struktura IPv6 multicast Address uključuje:
 Poznat primer IPv6 multicast-a u akciji je _Neighbor Discovery Protocol_ (NDP). Umesto korišćenja ARP kao u IPv4, NDP se oslanja na multicast adrese kao što je `ff02::1:ff00:0/104` za emitovanje zahteva za otkrivanje suseda, ciljajući samo relevantne hostove na istoj vezi.
 
 
-Preciznim definisanjem opsega Address, IPv6 strukturiše kako se tokovi podataka šalju, primaju i usmeravaju. Ova granularnost čini protokol fleksibilnijim i efikasnijim za upravljanje lokalnim i globalnim komunikacijama, istovremeno izbegavajući nedostatke generalizovanog emitovanja.
+Preciznim definisanjem opsega adresa, IPv6 strukturiše kako se tokovi podataka šalju, primaju i usmeravaju. Ova granularnost čini protokol fleksibilnijim i efikasnijim za upravljanje lokalnim i globalnim komunikacijama, istovremeno izbegavajući nedostatke generalizovanog emitovanja.
 
 
-## Address Assignment u lokalnoj mreži
+## Dodela adresa u lokalnoj mreži
 
 
 <chapterId>4c9c3e52-59bc-499a-af0a-6dd369a9e029</chapterId>
