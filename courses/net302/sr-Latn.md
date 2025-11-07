@@ -1906,30 +1906,30 @@ Preciznim definisanjem opsega adresa, IPv6 strukturiše kako se tokovi podataka 
 <chapterId>4c9c3e52-59bc-499a-af0a-6dd369a9e029</chapterId>
 
 
-U ovom poglavlju ćemo pogledati jedan od najpraktičnijih aspekata implementacije IPv6: dodeljivanje IP adresa uređajima na lokalnoj mreži. Arhitektura IPv6 je dizajnirana za fleksibilnost, omogućavajući svakom uređaju da generate svoj sopstveni Address automatski, dok i dalje omogućava potpuno ručno konfigurisanje kada je to potrebno.
+U ovom poglavlju ćemo pogledati jedan od najpraktičnijih aspekata implementacije IPv6: dodeljivanje IP adresa uređajima na lokalnoj mreži. Arhitektura IPv6 je dizajnirana za fleksibilnost, omogućavajući svakom uređaju da generiše svoju sopstvenu adresu automatski, dok i dalje omogućava potpuno ručno konfigurisanje kada je to potrebno.
 
 
-IPv6 lokalna mreža sistematski deli Address na dva dela:
+IPv6 lokalna mreža sistematski deli adresu na dva dela:
 
 
-- prvih 64 bita predstavljaju prefiks podmreže, obično obezbeđen od strane rutera ili Address autoriteta;
-- preostalih 64 bita koristi domaćin da se jedinstveno identifikuje na tom segmentu.
+- prvih 64 bita predstavljaju prefiks podmreže, obično obezbeđen od strane rutera ili adresa autoriteta;
+- preostalih 64 bita koristi host da se jedinstveno identifikuje na tom segmentu.
 
-Ovaj model u velikoj meri pojednostavljuje agregaciju ruta i upravljanje blokom Address.
+Ovaj model u velikoj meri pojednostavljuje agregaciju ruta i upravljanje blokom adresa.
 
 
 Dva glavna pristupa se koriste za dodelu adresa uređajima:
 
 
-- Ručno konfigurisanje, gde administrator precizira tačan Address za svaki Interface;
-- Automatska konfiguracija,gde uređaji generate ili dinamički dobijaju svoje adrese.
+- Ručno konfigurisanje, gde administrator precizira tačnu adresu za svaki interfejs;
+- Automatska konfiguracija, gde uređaji generišu ili dinamički dobijaju svoje adrese.
 
 
-U ručnoj konfiguraciji, administrator dodeljuje kompletan IPv6 Address svakom Interface. Određene vrednosti ostaju rezervisane:
+U ručnoj konfiguraciji, administrator dodeljuje kompletnu IPv6 adresu svakom interfejsu. Određene vrednosti ostaju rezervisane:
 
 
-- `::/128`: nespecificirani Address, nikada trajno dodeljen ;
-- `::1/128`: loopback Address (_loopback_), IPv4 equivalent: `127.0.0.1`.
+- `::/128`: nespecificirana adresa, nikada trajno dodeljena ;
+- `::1/128`: loopback adresa (_loopback_), IPv4 equivalent: `127.0.0.1`.
 
 
 Za razliku od IPv4, ne postoji koncept _broadcast_-a; kombinacije "sve nule" ili "sve jedinice" u delu za host nemaju posebno značenje.
@@ -1940,52 +1940,52 @@ Ručna konfiguracija je i dalje korisna u kontrolisanim okruženjima, ali postaj
 Za automatsku konfiguraciju, postoji nekoliko metoda:
 
 
-- Protokol **NDP** (_Neighbor Discovery Protocol_), specificiran od strane RFC4862, omogućava *stateless* auto-konfiguraciju. U ovom režimu, host prima mrežni prefiks od lokalnog rutera i završava Address samostalno sa identifikatorom zasnovanim na svom MAC Address. Ova metoda je jednostavna za implementaciju i ne zahteva centralni server.
-- Implementacije kao one u Windows-u mogu generate deo hosta pseudo-slučajno kako bi poboljšale privatnost izbegavanjem direktnog izlaganja MAC Address. Otkrivanje MAC Address u IPv6 paketima može izazvati zabrinutost za privatnost, jer omogućava praćenje uređaja preko različitih mreža.
-- DHCPv6 protokol: Definisan u RFC3315 i sličan DHCP-u koji se koristi za IPv4, omogućava kontrolisaniju i centralizovanu konfiguraciju, uključujući upravljanje zakupom, dodatne opcije (DNS, MTU...) i registraciju baza podataka. DHCPv6 može raditi samostalno ili zajedno sa stateless konfiguracijom kako bi obezbedio dodatne parametre bez dodeljivanja samog IP Address.
+- Protokol **NDP** (_Neighbor Discovery Protocol_), specificiran od strane RFC4862, omogućava *stateless* auto-konfiguraciju. U ovom režimu, host prima mrežni prefiks od lokalnog rutera i samostalno kompletira adresu identifikatorom zasnovanim na svojoj MAC adresi. Ova metoda je jednostavna za implementaciju i ne zahteva centralni server.
+- Implementacije kao one u Windows-u mogu generisati deo hosta pseudo-slučajno kako bi poboljšale privatnost izbegavanjem direktnog izlaganja MAC adrese. Otkrivanje MAC adrese u IPv6 paketima može izazvati zabrinutost za privatnost, jer omogućava praćenje uređaja preko različitih mreža.
+- DHCPv6 protokol: Definisan u RFC3315 i sličan DHCP-u koji se koristi za IPv4, omogućava kontrolisaniju i centralizovanu konfiguraciju, uključujući upravljanje zakupom, dodatne opcije (DNS, MTU...) i registraciju baza podataka. DHCPv6 može raditi samostalno ili zajedno sa stateless konfiguracijom kako bi obezbedio dodatne parametre bez dodeljivanja same IP adrese.
 
 
-**Važna napomena:** U metodi zasnovanoj na MAC-u, MAC Address se konvertuje u 64-bitni identifikator koristeći EUI-64 format. Ovaj mehanizam umeće bajtove `FF:FE` u sredinu originalnog MAC Address (u 48 bita), i inverzuje 7. bit kako bi označio globalnu jedinstvenost. Rezultat je stabilan Interface identifikator, koji se koristi u punom IPv6 Address.
+**Važna napomena:** U metodi zasnovanoj na MAC-u, MAC adresa se konvertuje u 64-bitni identifikator koristeći EUI-64 format. Ovaj mehanizam umeće bajtove `FF:FE` u sredinu originalne MAC adrese (u 48 bita), i inverzuje 7. bit kako bi označio globalnu jedinstvenost. Rezultat je stabilan interfejs identifikator, koji se koristi u punoj IPv6 adresi.
 
 
-Evo primera kako transformisati MAC Address u EUI-64:
+Evo primera kako transformisati MAC adresu u EUI-64:
 
 
 ![Image](assets/sr-Latn/027.webp)
 
 
 
-Međutim, zbog rastućih zabrinutosti oko praćenja uređaja, moderni operativni sistemi (posebno Linux, Windows 10+, macOS, Android) sada podrazumevano omogućavaju ekstenzije za privatnost. One koriste nasumično generisane Interface identifikatore koji se periodično obnavljaju za odlazne veze, dok zadržavaju stabilan identifikator za interne komunikacije (kao što su DNS ili DHCPv6).
+Međutim, zbog rastućih zabrinutosti oko praćenja uređaja, moderni operativni sistemi (posebno Linux, Windows 10+, macOS, Android) sada podrazumevano omogućavaju ekstenzije za privatnost. One koriste nasumično generisane interfejs identifikatore koji se periodično obnavljaju za odlazne veze, dok zadržavaju stabilan identifikator za interne komunikacije (kao što su DNS ili DHCPv6).
 
 
 Kao i kod DHCP-a u IPv4, automatski dodeljene IPv6 adrese mogu imati dva životna veka, definisana od strane DHCPv6 rutera ili servera:
 
 
-- Preferirani životni vek: nakon ovog perioda, Address ostaje važeći, ali se više ne koristi za iniciranje novih veza;
-- Važeći vek trajanja: kada ovo vreme istekne, Address se potpuno uklanja iz konfiguracije Interface.
+- Preferirani životni vek: nakon ovog perioda, adresa ostaje važeći, ali se više ne koristi za iniciranje novih veza;
+- Važeći vek trajanja: kada ovo vreme istekne, adresa se potpuno uklanja iz konfiguracije interfejsa.
 
 
 Ovaj sistem omogućava dinamičko upravljanje promenama u mreži, na primer, obezbeđujući nesmetan prelaz sa jednog ISP-a na drugi. Ažuriranjem prefiksa koji najavljuju ruteri i paralelnim podešavanjem DNS zapisa, migracija na IPv6 može se izvršiti bez ikakvog primetnog prekida usluge.
 
 
-**Savjet:** Kombinovana upotreba Address i DNS životnih ciklusa omogućava implementaciju strategije postepenog prelaska, gde se nove veze prebacuju na novu topologiju, dok postojeće veze traju do svog prirodnog završetka.
+**Savet:** Kombinovana upotreba adresa i DNS životnih ciklusa omogućava implementaciju strategije postepenog prelaska, gde se nove veze prebacuju na novu topologiju, dok postojeće veze traju do svog prirodnog završetka.
 
 
-Ukratko, IPv6 nudi širok spektar fleksibilnosti za Address Assignment: ručna konfiguracija, stateless ili stateful auto-konfiguracija, DHCPv6 ili nasumična generacija. Svaki pristup dolazi sa svojim prednostima i ograničenjima, i može se prilagoditi prema potrebnom nivou kontrole, veličini mreže ili potrebama privatnosti.
+Ukratko, IPv6 nudi širok spektar fleksibilnosti za dodeljivanje adresa: ručna konfiguracija, stateless ili stateful auto-konfiguracija, DHCPv6 ili nasumična generacija. Svaki pristup dolazi sa svojim prednostima i ograničenjima, i može se prilagoditi prema potrebnom nivou kontrole, veličini mreže ili potrebama privatnosti.
 
 
-## Dodeljivanje IPv6 Address blokova
+## Dodeljivanje IPv6 blokova adresa
 
 
 <chapterId>45cce866-1b58-4888-b3fe-15c922180839</chapterId>
 
 
-### Address distribucija
+### Distribucija adresa
 
 
-Šema dodele IPv6 Address je strukturisana da ispuni dva cilja: da garantuje globalnu jedinstvenost Address i da omogući logičku hijerarhiju koja favorizuje agregaciju i pojednostavljenje tabela rutiranja.
+Šema dodele IPv6 adresa je strukturisana da ispuni dva cilja: da garantuje globalnu jedinstvenost adrese i da omogući logičku hijerarhiju koja favorizuje agregaciju i pojednostavljenje tabela rutiranja.
 
-Kao i kod IPv4, *Internet Assigned Numbers Authority* (IANA) se nalazi na vrhu ove hijerarhije. Ona upravlja globalnim unicast Address prostorom i delegira Address blokove pet regionalnih internet registara (_RIR_).
+Kao i kod IPv4, *Internet Assigned Numbers Authority* (IANA) se nalazi na vrhu ove hijerarhije. Ona upravlja globalnim unicast adresnim prostorom i delegira blokove adresa pet regionalnih internet registara (_RIR_).
 
 
 Pet postojećih RIR-ova su:
@@ -2010,14 +2010,14 @@ Od 2006. godine, svaki RIR je dobio IPv6 /12 blok od IANA, fiksne veličine diza
 Tipična hijerarhija alokacije izgleda ovako:
 
 
-| IANA | RIR | LIR | Customer | Subnet | Interface |
+| IANA | RIR | LIR | Klijent  | Podmreža | Interfejs |
 |------|-----|-----|----------|--------|-----------|
 |  3   | 20  |  9  |    16    |   16   |     64    |
 
-Sa ovom obiljem adresa, NAT (*Network Address Translation*), nekada neophodan u IPv4 za rešavanje nedostatka Address, više nije potreban. Svaki host može imati jedinstvenu, globalno rutabilnu javnu Address, što pojednostavljuje end-to-end povezivanje i olakšava korišćenje protokola kao što su IPSec, VoIP ili dolazne konekcije.
+Sa ovom obiljem adresa, NAT (*Network Address Translation*), nekada neophodan u IPv4 za rešavanje nedostatka adresa, više nije potreban. Svaki host može imati jedinstvenu, globalno rutabilnu javnu adresu, što pojednostavljuje end-to-end povezivanje i olakšava korišćenje protokola kao što su IPSec, VoIP ili dolazne konekcije.
 
 
-Da biste proverili kojoj organizaciji pripada IPv6 Address, možete koristiti komandu `whois` za upit javnih RIR baza podataka. Ova transparentnost omogućava identifikaciju organizacije koja poseduje prefiks, što može biti korisno za mrežu, analizu ili bezbednosne svrhe.
+Da biste proverili kojoj organizaciji pripada IPv6 adresa, možete koristiti komandu `whois` za upit javnih RIR baza podataka. Ova transparentnost omogućava identifikaciju organizacije koja poseduje prefiks, što može biti korisno za mrežu, analizu ili bezbednosne svrhe.
 
 
 ### PA vs PI adresiranje
@@ -2026,7 +2026,7 @@ Da biste proverili kojoj organizaciji pripada IPv6 Address, možete koristiti ko
 Prvobitno, model dodele IPv6 adresa bio je zasnovan isključivo na PA (*Provider Aggregatable*) blokovima, što znači da su povezani sa ISP-om. U ovom modelu, organizacija dobija svoj prefiks od svog ISP-a, što znači da promena provajdera zahteva ponovno numerisanje cele infrastrukture.
 
 
-Iako IPv6-ove funkcije automatske konfiguracije i Address životni vekovi olakšavaju ponovno numerisanje, ono ostaje nezgodno za organizacije sa kritičnom infrastrukturom ili višestrukim vezama sa provajderima zbog zahteva za redundansom.
+Iako IPv6-ove funkcije automatske konfiguracije i životni vekovi adresa olakšavaju ponovno numerisanje, ono ostaje nezgodno za organizacije sa kritičnom infrastrukturom ili višestrukim vezama sa provajderima zbog zahteva obezbeđivanja redundanse.
 
 
 Od 2009. godine, politike alokacije su omogućile PI (*Provider Independent*) blokove. Ovi blokovi (uglavnom veličine /48) se direktno dodeljuju kompaniji ili instituciji od strane RIR-a, nezavisno od bilo kog ISP-a. Ovaj model je posebno pogodan za organizacije koje praktikuju *multihoming* (što znači povezivanje sa nekoliko operatera istovremeno). Na primer, u Evropi, RIPE-512 opisuje politiku za PI alokacije.
@@ -2035,7 +2035,7 @@ Od 2009. godine, politike alokacije su omogućile PI (*Provider Independent*) bl
 ### Notacija podmrežne maske
 
 
-Kao i u IPv4, IPv6 koristi CIDR (*Classless Inter-Domain Routing*). Ovo se sastoji od navođenja broja bitova koji čine prefiks nakon Address, koristeći znak `/`.
+Kao i u IPv4, IPv6 koristi CIDR (*Classless Inter-Domain Routing*). Ovo se sastoji od navođenja broja bitova koji čine prefiks nakon adrese, koristeći znak `/`.
 
 
 Uzmite sledeći primer:
@@ -2055,7 +2055,7 @@ Tako, ova notacija pokriva adrese od `2001:db8:1:1a0:0:0:0:0` do `2001:db8:1:1bf
 Ovaj blok stoga pokriva skup od 8 /64 podmreža, od kojih svaka može da ugosti ogroman broj uređaja.
 
 
-CIDR notacija omogućava precizno Address planiranje prostora, od velikih mreža do kućnih postavki i virtualizovanih okruženja, i podstiče agregaciju ruta, smanjujući opterećenje rutera i poboljšavajući skalabilnost.
+CIDR notacija omogućava precizno planiranje adresnog prostora, od velikih mreža do kućnih postavki i virtualizovanih okruženja, i podstiče agregaciju ruta, smanjujući opterećenje rutera i poboljšavajući skalabilnost.
 
 
 ### IPv6 paketi i zaglavlja
@@ -2064,7 +2064,7 @@ CIDR notacija omogućava precizno Address planiranje prostora, od velikih mreža
 IPv6 format paketa razlikuje se od IPv4 po tome što je jednostavniji i proširiviji. IPv6 datagram uvek počinje sa zaglavljem fiksne veličine od 40 bajtova koje sadrži sve osnovne informacije o rutiranju. Ovaj pojednostavljeni pristup, u poređenju sa promenljivom dužinom zaglavlja IPv4 (od 20 do 60 bajtova), omogućava bržu i efikasniju obradu paketa od strane rutera.
 
 
-Međutim, IPv6 ne uklanja funkcionalnost: umesto integrisanja brojnih opcionih polja u glavni zaglavlje, uvodi sistem zaglavlja proširenja, koja se postavljaju odmah nakon osnovnog zaglavlja. Ova opciona zaglavlja omogućavaju dodavanje podataka ili instrukcija specifičnih za određene funkcije, bez nepotrebnog opterećivanja običnih paketa.
+Međutim, IPv6 ne uklanja funkcionalnost: umesto integrisanja brojnih opcionih polja u glavno zaglavlje, uvodi sistem zaglavlja proširenja, koja se postavljaju odmah nakon osnovnog zaglavlja. Ova opciona zaglavlja omogućavaju dodavanje podataka ili instrukcija specifičnih za određene funkcije, bez nepotrebnog opterećivanja običnih paketa.
 
 
 Neki zaglavlja ekstenzija prate fiksnu strukturu, dok druga mogu sadržati promenljiv broj opcija. U ovim opcijama su kodirani kao `{Type, Length, Value}` trojke:
