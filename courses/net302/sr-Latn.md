@@ -2067,7 +2067,7 @@ IPv6 format paketa razlikuje se od IPv4 po tome što je jednostavniji i proširi
 Međutim, IPv6 ne uklanja funkcionalnost: umesto integrisanja brojnih opcionih polja u glavno zaglavlje, uvodi sistem zaglavlja proširenja, koja se postavljaju odmah nakon osnovnog zaglavlja. Ova opciona zaglavlja omogućavaju dodavanje podataka ili instrukcija specifičnih za određene funkcije, bez nepotrebnog opterećivanja običnih paketa.
 
 
-Neki zaglavlja ekstenzija prate fiksnu strukturu, dok druga mogu sadržati promenljiv broj opcija. U ovim opcijama su kodirani kao `{Type, Length, Value}` trojke:
+Neka zaglavlja ekstenzija prate fiksnu strukturu, dok druga mogu sadržati promenljiv broj opcija. U ovim opcijama su kodirani kao `{Type, Length, Value}` trojke:
 
 
 - Polje "Type" (1 bajt) označava prirodu opcije;
