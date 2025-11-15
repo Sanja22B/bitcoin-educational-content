@@ -2105,9 +2105,9 @@ Zaglavlje usmeravanja specificira listu posrednih adresa kroz koje paket mora pr
 Prva četiri polja ovog zaglavlja za usmeravanje su:
 
 
-- **Sledeći zaglavlje**: identifikuje tip sledećeg zaglavlja;
+- **Sledeće zaglavlje**: identifikuje tip sledećeg zaglavlja;
 - **Tip rutiranja**: definiše metod rutiranja (obično `0`);
-- **Segmenti preostali**: broj preostalih segmenata za prelazak ;
+- **Preostali segmenti**: broj preostalih segmenata za prelazak ;
 - **Address[n]**: lista srednjih adresa.
 
 
@@ -2127,14 +2127,14 @@ Zaglavlje fragmentacije sadrži sledeća polja:
 
 
 - **Identifikacija**: jedinstveni identifikator datagrama za ponovno sastavljanje.
-- **Fragment Offset**: fragmentova pozicija unutar originalnog datagrama.
-- **M zastavica**: označava da li slede još fragmenti.
+- **Fragment Offset**: pozicija fragmenta unutar originalnog datagrama.
+- **M zastavica**: označava da li sledi još fragmenata.
 
 
 ![Image](assets/sr-Latn/030.webp)
 
 
-#### Autentifikacioni zaglavlje (AH)
+#### Autentifikaciono zaglavlje (AH)
 
 
 Ovaj zaglavlje je dizajnirano da osigura komunikacije verifikovanjem autentičnosti pošiljaoca i integriteta podataka. Obično se koristi sa IPsec protokolom. Koristeći autentifikacioni kod, primalac može potvrditi da poruka zaista dolazi od očekivanog pošiljaoca i da nije izmenjena tokom prenosa.
@@ -2146,19 +2146,19 @@ U slučaju pokušaja lažne izmene, kod za autentifikaciju više neće odgovarat
 ![Image](assets/sr-Latn/031.webp)
 
 
-#### Zaglavlje Opcija Odredišta
+#### Zaglavlje opcija odredišta
 
 
-Ovaj zaglavlje je namenjeno samo za krajnjeg primaoca datagrama. Može se koristiti za dodavanje opcija ili metapodataka specifičnih za aplikaciju, bez uzimanja u obzir od strane međusmernika.
+Ovo zaglavlje je namenjeno samo za krajnjeg primaoca datagrama. Može se koristiti za dodavanje opcija ili metapodataka specifičnih za aplikaciju, a koje usputni ruteri ignorišu.
 
 
-U početku, takva opcija nije bila definisana u protokolu. Međutim, ovaj zaglavlje je uvedeno kada je IPv6 dizajniran, kako bi se omogućilo dodavanje budućih proširenja bez modifikovanja ukupne strukture paketa. Null opcija, na primer, koristi se samo za popunjavanje zaglavlja na višekratnik od 8 bajtova radi poravnanja memorije.
+U početku, takva opcija nije bila definisana u protokolu. Međutim, ovo zaglavlje je uvedeno kada je IPv6 dizajniran, kako bi se omogućilo dodavanje budućih proširenja bez modifikovanja ukupne strukture paketa. Null opcija, na primer, koristi se samo za popunjavanje zaglavlja na višekratnik od 8 bajtova radi poravnanja memorije.
 
 
 ![Image](assets/sr-Latn/032.webp)
 
 
-Dizajn IPv6 paketa zasnovan je na jasnoj separaciji između minimalne osnovne zaglavlja i modularnih zaglavlja za proširenje. Ova arhitektura osigurava kako standardne performanse obrade, tako i fleksibilnost potrebnu za evoluciju protokola i integraciju sigurnosti, složenog rutiranja ili mehanizama kvaliteta usluge, uz održavanje kompatibilnosti sa budućim infrastrukturama.
+Dizajn IPv6 paketa zasnovan je na jasnoj separaciji između minimalnog osnovnog zaglavlja i modularnih zaglavlja za proširenje. Ova arhitektura osigurava kako standardne performanse obrade, tako i fleksibilnost potrebnu za evoluciju protokola i integraciju sigurnosti, složenog rutiranja ili mehanizama kvaliteta usluge, uz održavanje kompatibilnosti sa budućim infrastrukturama.
 
 
 ## Odnos između IPv6 i DNS-a
@@ -2167,13 +2167,13 @@ Dizajn IPv6 paketa zasnovan je na jasnoj separaciji između minimalne osnovne za
 <chapterId>421eacb8-b80b-4aee-910f-e069ed805f00</chapterId>
 
 
-U modernim mrežama, DNS (*Domain Name System*) prevodi nazive domena u IP adrese koje mašine mogu koristiti. Sa uvođenjem IPv6, DNS je morao da se prilagodi kako bi podržao 128-bitne adrese, dok je zadržao unazadnu kompatibilnost sa IPv4. Ovo suživot je posebno važan u dual-stack okruženjima, gde obe verzije IP-a rade istovremeno.
+U modernim mrežama, DNS (*Domain Name System*) prevodi nazive domena u IP adrese koje mašine mogu koristiti. Sa uvođenjem IPv6, DNS je morao da se prilagodi kako bi podržao 128-bitne adrese, dok je zadržao unazadnu kompatibilnost sa IPv4. Ovaj suživot je posebno važan u dual-stack okruženjima, gde obe verzije IP-a rade istovremeno.
 
 
 ### DNS zapisi specifični za IPv6
 
 
-Da bi se ime domena povezalo sa IPv6 Address, DNS koristi AAAA (*quad-A*) zapis, analogan "A" zapisu za IPv4 adrese. AAAA zapis eksplicitno mapira ime domena na IPv6 Address.
+Da bi se ime domena povezalo sa IPv6 adresom, DNS koristi AAAA (*quad-A*) zapis, analogan "A" zapisu za IPv4 adrese. AAAA zapis eksplicitno mapira ime domena na IPv6 adrese.
 
 Primer:
 
@@ -2183,18 +2183,18 @@ ipv6.mydmn.org.         IN      AAAA    2001:66c:2a8:22::c100:68b
 ```
 
 
-Ovaj zapis pokazuje da domen `ipv6.mydmn.org` razrešava na IPv6 Address `2001:66c:2a8:22::c100:68b`. Moguće je, a čak i preporučljivo za maksimalnu kompatibilnost, povezati isti naziv domena sa nekoliko IP adresa, bilo IPv4 (putem A zapisa) ili IPv6 (putem AAAA zapisa). Ovo omogućava korisnicima kompatibilnim sa IPv6 da preferiraju IPv6, dok se obezbeđuje podrška za klijente koji koriste samo IPv4.
+Ovaj zapis pokazuje da domen `ipv6.mydmn.org` razrešava na IPv6 adresu `2001:66c:2a8:22::c100:68b`. Moguće je, a čak i preporučljivo za maksimalnu kompatibilnost, povezati isti naziv domena sa nekoliko IP adresa, bilo IPv4 (putem A zapisa) ili IPv6 (putem AAAA zapisa). Ovo omogućava korisnicima kompatibilnim sa IPv6 da preferiraju IPv6, dok se obezbeđuje podrška za klijente koji koriste samo IPv4.
 
 
-Pored toga, DNS podržava obrnuto rešavanje, što znači da može pronaći ime domena povezano sa datom IP Address. U slučaju IPv6, ova operacija koristi PTR zapise smeštene u zoni `ip6.arpa`. Ova zona je specifično rezervisana za obrnuto rešavanje IPv6. Za IPv4, to je zona `in-addr.arpa`.
+Pored toga, DNS podržava obrnuto rešavanje, što znači da može pronaći ime domena povezano sa datom IP adresom. U slučaju IPv6, ova operacija koristi PTR zapise smeštene u zoni `ip6.arpa`. Ova zona je specifično rezervisana za obrnuto rešavanje IPv6. Za IPv4, to je zona `in-addr.arpa`.
 
 
 ### Obrnuta rezolucija
 
 
-Obrnuto razrešavanje IPv6 Address sledi strogom procesu:
+Obrnuto razrešavanje IPv6 adresa prati strogu proceduru:
 
-1) Proširite Address u punu heksadecimalnu notaciju (16 bajtova, tj. 32 heksadecimalne cifre).
+1) Proširi adresu u punu heksadecimalnu notaciju (16 bajtova, tj. 32 heksadecimalne cifre).
 
 Primer:
 
@@ -2220,7 +2220,7 @@ b.8.6.0.0.0.1.c.0.0.0.0.0.0.0.0.2.2.0.0.8.a.2.0.c.6.6.0.1.0.0.2.ip6.arpa  IN PTR
 ```
 
 
-Ova struktura osigurava standardizovane, jedinstvene obrnute pretrage u IPv6 Address prostoru.
+Ova struktura osigurava standardizovane, jedinstvene obrnute pretrage u IPv6 adresnom prostoru.
 
 
 **Imajte na umu**: DNS upiti mogu putovati preko IPv4 ili IPv6. Korišćeni transportni protokol nema uticaja na tip vraćenih zapisa.
@@ -2234,10 +2234,10 @@ Na primer:
 DNS server jednostavno odgovara sa zapisima koje ima, bez obzira na transportni protokol upita.
 
 
-Kada je ime hosta mapirano na oba, IPv4 i IPv6, izbor koji Address koristiti je regulisan RFC 6724, koji definiše algoritam izbora Address zasnovan na faktorima kao što su preferencija prefiksa, opseg i dostupnost. Podrazumevano, IPv6 je generalno preferiran osim ako nije nadjačan sistemskom ili mrežnom konfiguracijom.
+Kada je ime hosta mapirano na oba, IPv4 i IPv6, izbor koju adresu koristiti je regulisan RFC 6724, koji definiše algoritam izbora adresa zasnovan na faktorima kao što su preferencija prefiksa, opseg i dostupnost. Podrazumevano, IPv6 je generalno preferiran osim ako nije nadjačan sistemskom ili mrežnom konfiguracijom.
 
 
-**Važno podsećanje**: kada se IPv6 Address ugrađuje u URL (*Uniform Resource Locator*), mora biti obuhvaćen uglastim zagradama (`[]`). Ovo izbegava zabunu između dvotačke (`:`) unutar IPv6 Address i dvotačke koja razdvaja ime hosta od porta u URL-u.
+**Važno podsećanje**: kada se IPv6 adresa ugrađuje u URL (*Uniform Resource Locator*), mora biti obuhvaćena uglastim zagradama (`[]`). Ovo izbegava zabunu između dvotačke (`:`) unutar IPv6 adrese i dvotačke koja razdvaja ime hosta od porta u URL-u.
 
 
 Važeći primer:
@@ -2257,16 +2257,16 @@ Integrisanje IPv6 u DNS sistem stoga se oslanja na nove tipove zapisa, strogu me
 ### Deo rezimea
 
 
-U ovom odeljku, istražili smo osnovne principe IPv6 adresiranja. Počeli smo ispitivanjem strukture IPv6 Address: njene dužine od 128 bita, heksadecimalne notacije i pravila pojednostavljenja korišćenih za skraćivanje ponavljajućih sekvenci nula. Ovaj dizajn omogućava IPv6 da prevaziđe ograničenja IPv4 Address prostora, dok garantuje skalabilnost i efikasnu hijerarhiju.
+U ovom odeljku, istražili smo osnovne principe IPv6 adresiranja. Počeli smo ispitivanjem strukture IPv6 adresa: njene dužine od 128 bita, heksadecimalne notacije i pravila pojednostavljenja korišćenih za skraćivanje ponavljajućih sekvenci nula. Ovaj dizajn omogućava IPv6 da prevaziđe ograničenja IPv4 adresnog prostora, dok garantuje skalabilnost i efikasnu hijerarhiju.
 
 
-Zatim smo pogledali različite kategorije IPv6 adresa: unicast, anycast i multicast, detaljno opisujući njihov opseg, tipičnu upotrebu i predstavljanje u Address prostoru.
+Zatim smo pogledali različite kategorije IPv6 adresa: unicast, anycast i multicast, detaljno opisujući njihov opseg, tipičnu upotrebu i predstavljanje u adresnom prostoru.
 
 
-Zatim smo pregledali metode dodeljivanja IPv6 adresa unutar lokalne mreže, bilo ručnom konfiguracijom, putem DHCPv6 protokola, ili korišćenjem mehanizama za stateless autokonfiguraciju kao što su oni koje nudi NDP. Ovi pristupi omogućavaju uređajima da automatski generate svoje sopstvene Address iz datog prefiksa i njihovog MAC Address (putem EUI-64), dok nude fleksibilnost u smislu upravljanja vremenom trajanja i privatnošću.
+Zatim smo pregledali metode dodeljivanja IPv6 adresa unutar lokalne mreže, bilo ručnom konfiguracijom, putem DHCPv6 protokola, ili korišćenjem mehanizama za stateless autokonfiguraciju kao što su oni koje nudi NDP. Ovi pristupi omogućavaju uređajima da automatski generišu svoje sopstvene adrese iz datog prefiksa i njihove MAC adrese (putem EUI-64), dok nude fleksibilnost u smislu upravljanja vremenom trajanja i privatnošću.
 
 
-Takođe smo detaljno objasnili kako se dodeljuju Address blokovi, počevši od IANA, koja ih distribuira pet RIR-ovima (*Registrovane Internet Regije*), a zatim ISP-ovima, koji ih redistribuiraju svojim korisnicima kao podmreže (često u /48, što omogućava 65536 /64 podmreža). Razlika između _Provider Aggregatable_ (PA) i _Provider Independent_ (PI) blokova pomaže u upravljanju scenarijima _multihoming_-a ili promene provajdera.
+Takođe smo detaljno objasnili kako se dodeljuju adresni blokovi, počevši od IANA, koja distribuira pet RIR-ovima (*Registrovane Internet Regije*), a zatim ISP-ovima, koji ih redistribuiraju svojim korisnicima kao podmreže (često u /48, što omogućava 65536 /64 podmreža). Razlika između _Provider Aggregatable_ (PA) i _Provider Independent_ (PI) blokova pomaže u upravljanju scenarijima _multihoming_-a ili promene provajdera.
 
 
 Videli smo da se DNS prilagodio na IPv6 uvođenjem AAAA zapisa, i da se mehanizmi reverzne rezolucije sada oslanjaju na `ip6.arpa` zonu. Važno je napomenuti da DNS ostaje nezavisan od korišćenog transportnog protokola (IPv4 ili IPv6), obezbeđujući besprekornu interoperabilnost u dual-stack okruženju.
@@ -2285,7 +2285,7 @@ U završnom delu ovog NET 302 kursa, preći ćemo na praksu i fokusirati se na a
 <partId>368a5c6f-ec48-4b28-970f-3a770788ad37</partId>
 
 
-## Alati za pristup mreži Layer
+## Alati za rad na sloju pristupa mreži
 
 
 <chapterId>1d25a21d-6900-4fbe-a438-e06c8afb9e02</chapterId>
