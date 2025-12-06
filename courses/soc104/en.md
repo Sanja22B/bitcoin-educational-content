@@ -952,19 +952,19 @@ Economic issues concern money, such as employment, buying and selling, investmen
 
 
 
-- Socialists:** No. Subsidies may be necessary to support innovation, protect jobs, develop strategic sectors or ensure the ecological transition. The State's role is that of an economic player and planner.
+- **Socialists:** No. Subsidies may be necessary to support innovation, protect jobs, develop strategic sectors or ensure the ecological transition. The State's role is that of an economic player and planner.
 
 
 
-- Conservatives:** In principle, yes, to encourage free competition and individual corporate responsibility. However, exceptions can be made for strategic or national industries that are vital to the country's security or employment.
+- **Conservatives:** In principle, yes, to encourage free competition and individual corporate responsibility. However, exceptions can be made for strategic or national industries that are vital to the country's security or employment.
 
 
 
-- Libertarians:** Yes. Subsidies and bailouts distort the market, favor some companies over others, and create dependency on the state. Companies that fail should go bankrupt.
+- **Libertarians:** Yes. Subsidies and bailouts distort the market, favor some companies over others, and create dependency on the state. Companies that fail should go bankrupt.
 
 
 
-- Centrists:** In general, yes, but with exceptions. Subsidies should be targeted and temporary, justified by a general interest (innovation, ecological transition, strategic sectors). Bailouts should only be considered in the event of a major systemic threat to the economy.
+- **Centrists:** In general, yes, but with exceptions. Subsidies should be targeted and temporary, justified by a general interest (innovation, ecological transition, strategic sectors). Bailouts should only be considered in the event of a major systemic threat to the economy.
 
 
 
@@ -1038,7 +1038,7 @@ According to Hayek, any pretension to scientifically organizing society and the 
 
 Indeed, rules, institutions, practices and other social phenomena are not the result of intentional planning by a central authority.
 
-*Many of the greatest things man has accomplished are not the result of consciously directed thought, still less of a deliberately coordinated effort by many people, but of a process in which the individual plays a role he will never fully understand.* F. Hayek.
+*Many of the greatest things humanity has achieved did not result from consciously directed thought, and even less from a deliberately coordinated effort by many people, but from a process in which the individual plays a role he will never fully understand.* F. Hayek.
 
 
 Languages, for example, or customs, are things created by man. But none of them was conceived by a human being. They all emerged unplanned. The same goes for old currencies, such as metallic coins, or for a new currency like Bitcoin. These are *innovations without permission* that have been elected by the market.
@@ -1062,7 +1062,7 @@ Libertarians are therefore opposed to both socialists and conservatives, i.e., t
 
 
 
-**Politics or the market?
+**Politics or the market?**
 
 Constructivists, centrists, conservatives and socialists all agree on one key point: they consider the political process to be more efficient than the market process.
 
@@ -1118,13 +1118,13 @@ From an ethical and legal point of view, the individual is the only moral agent.
 The fundamental anthropological principle underpinning this well-understood individualism was clearly set out by Immanuel Kant in the 18th century: *Dare to think for yourself*.
 
 
-This injunction, originally taken from an epistle by Horace published twenty years before our era, was taken up and popularized by Immanuel Kant in his essay *What is* Enlightenment? published in 1784. For Kant, this phrase is the motto of the Enlightenment, symbolizing man's emergence from his minority, a state of inability to use his understanding without the guidance of others, for which he himself is responsible, through laziness and cowardice.
+This injunction, originally taken from an epistle by Horace published twenty years before our era, was taken up and popularized by Immanuel Kant in his essay *What is* the Enlightenment? published in 1784. For Kant, this phrase is the motto of the Enlightenment, symbolizing man's emergence from his minority, a state of inability to use his understanding without the guidance of others, for which he himself is responsible, through laziness and cowardice.
 
 
 Human beings are neither mere animals nor slaves. He belongs to himself and is endowed with a free will, a capacity for choice informed by reason. In short, human beings are ends in themselves, not means for others. This is what gives him his moral dignity.
 
 
-But by empowering human beings in this way, individualism can nevertheless seem to many a frightening experience. Are we ready to take responsibility for our own lives?
+But by empowering human beings in this way, individualism nevertheless can seem to many a frightening experience. Are we ready to take responsibility for our own lives?
 
 
 Collectivism, whether economic or political, is a philosophy that relies on an authority outside the individual - the state or the majority - to impose a certain way of life and economic condition on the individual. Decisions are taken in the name of this superior entity. The private interests of individuals must therefore be subordinated to it.
@@ -1169,7 +1169,7 @@ The main difference between the two models of society lies in their attitude to 
 This opposition highlights the fundamental incompatibility between a model based on individual freedom and critical reason, and another founded on organic unity, irrationality and collective submission.
 
 
-But the open society is fragile, always unfinished and constantly being called into question. It is confronted by nostalgic tendencies, the loss of the sense of security that the tribal community embodied for its members, and the desire to restore the original communitarianism, possibly through violence.
+But the open society is fragile, always unfinished and constantly being called into question. It is confronted by nostalgic tendencies, the loss of the sense of security that the tribal community embodied for its members, and the desire to restore the original communitarian order, possibly through violence.
 
 
 
@@ -1212,7 +1212,7 @@ Reading the Satoshi Nakamoto White Paper, we can see that Bitcoin was designed t
 1. Although not totally anonymous, Bitcoin considerably enhances privacy by limiting financial surveillance of individuals. This capability enables, for example, a dissident in a dictatorship to hold and exchange value online without fear of confiscation or censorship. While this may seem a long way off for citizens of democracies, it is a crucial step forward for individual freedoms.
 
 
-2. Bitcoin enables everyone to protect their savings against the spoliation of private property embodied in monetary inflation. It is an attempt to challenge the state's stranglehold on the management of money as an instrument of exchange, and thus to compete with the state. The 2008 financial crisis and the Covid 19 pandemic have highlighted the flaws in the current system. The trillions of dollars printed out of thin air to prevent the economy from collapsing further had devastating effects, which we are still paying for.
+2. Bitcoin enables everyone to protect their savings against the spoliation of private property embodied in monetary inflation. It is an attempt to challenge the state's control on the management of money as an instrument of exchange, and thus to compete with the state. The 2008 financial crisis and the Covid 19 pandemic have highlighted the flaws in the current system. The trillions of dollars printed out of thin air to prevent the economy from collapsing further had devastating effects, which we are still paying for.
 
 
 ![Bitcoin Counterflow Abstract](./assets/fr/021.webp)
@@ -1252,10 +1252,10 @@ It prevents the use of money for political purposes such as: public spending, wa
 
 
 - The government can take the euros from your bank account.
-- He can take your house and your land.
-- He can take your shares.
-- He can take your gold.
-- He can take everything from you.
+- It can take your house and your land.
+- It can take your shares.
+- It can take your gold.
+- It can take everything from you.
 
 
 But the government can't take your bitcoins, because it can't confiscate the contents of your mind.
@@ -1360,13 +1360,13 @@ In fact, the real political divide lies in fundamental philosophical principles:
 The right way to think about politics is to start from ethical principles rather than labels.
 
 
-From then on, the political question was no longer: *do you want to make the important decisions in your life, or do you want someone else to make them for you? *do you want to make the important decisions in your life, or do you want someone else to make them for you?
+From then on, the political question was no longer: *do you want to make the important decisions in your life, or do you want someone else to make them for you?*
 
 
 On a more general level, the philosophical question is this: *should social organization be the product of a deliberate plan devised and imposed by the political class, or the result of a free evolution that emerges from voluntary interactions between all the players in economic and social life?*
 
 
-**An ignored political family: the libertarians
+**An ignored political family: the libertarians**
 
 
 This new political divide, based on opposition between principles, brings to light a political family that is very real but often ignored by the general public: the libertarians.
@@ -1377,7 +1377,7 @@ From a libertarian point of view, individuals have both the right and the respon
 
 But why should some impose their lifestyle and worldview on others?
 
-In a genuine regime of freedom, those who adhere to the ideals of the Left can live according to their principles. They are free to give up their possessions, to share the means of production they own, or to donate their wages to an organization of their choice, which could redistribute these funds to the most disadvantaged or support cultural initiatives and businesses that promote employment.
+In a genuine regime of freedom, those who adhere to the ideals of the left can live according to their principles. They are free to give up their possessions, to share the means of production they own, or to donate their wages to an organization of their choice, which could redistribute these funds to the most disadvantaged or support cultural initiatives and businesses that promote employment.
 
 
 By the same token, in this regime of freedom, those who share right-wing values have the right to live according to their convictions: to work hard, to save, to pass on family and national values to their children, to avoid content contrary to their morals, or to choose not to employ this or that type of worker. No one should impose their way of life on others. It is through the freedom of the market and the power of choice that our goals can be achieved peacefully.
@@ -1386,7 +1386,7 @@ By the same token, in this regime of freedom, those who share right-wing values 
 In short, the fundamental divergence between political trends lies in the role of the centralized state: socialists and conservatives use the state to impose their vision of society, while libertarians advocate decentralization, leaving individuals and private communities to define and organize society, according to their preferences and in line with property rights.
 
 
-**And what about Bitcoin?
+**And what about Bitcoin?**
 
 
 That's why Bitcoin is also a political rupture. It's a peaceful revolt against the politicization of money and its confiscation by a small minority. Bitcoin is not about right and left. On the contrary, it's a market currency opposed to state money.
