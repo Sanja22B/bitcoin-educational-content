@@ -647,7 +647,7 @@ However, both agree on the fundamental principle of individual sovereignty. Libe
 
 
 
-- **Politics:** they want to combine government control and individual choice for a stable, moderate approach. It's a flexible dirigisme, adaptable to individual cases. In this technocratic form of governance, political decisions are based on rationality and expertise, rather than ideology or partisan debate.
+- **Politics:** they want to combine government control and individual choice for a stable, moderate approach. It is a flexible, case-by-case form of state intervention. In this technocratic form of governance, political decisions are based on rationality and expertise, rather than ideology or partisan debate.
 
 
 
@@ -660,7 +660,7 @@ Centrism also recognizes the importance of targeted social programs to correct i
 **Types of centrists:** Centrists may lean towards socialism, conservatism, libertarianism or authoritarianism, not out of principle but out of pragmatism or political opportunism.
 
 
-- **Emmanuel Macron (France):** his positioning is both right and left . with liberal economic reforms (economic right) and support for certain societal freedoms (social left), seeking a middle way.
+- **Emmanuel Macron (France):** his positioning is both right and left. With liberal economic reforms (economic right) and support for certain societal freedoms (social left), seeking a middle way.
 - **Tony Blair (UK):** with his "Third Way" concept. He sought to reconcile market policies with social justice objectives, setting himself apart from traditional socialists and conservatives.
 
 
@@ -673,12 +673,12 @@ Rather than letting markets regulate themselves, Keynes argued that the state sh
 Keynes advocated neither absolute laissez-faire (like pure pro-marketeers) nor total state control (as in a planned economy).
 
 
-This approach represents an economic "third way", seeking a balance between classical liberalism, which wants a free market, and dirigiste socialism, which wants maximum planning.
+This approach represents an economic "third way", seeking a balance between classical liberalism, which wants a free market, and state-planned socialism, which wants maximum planning.
 
 Philosophically speaking, we can refer to the famous political philosopher John Rawls, author of *The Theory of Justice* (1971).
 
 
-Its two principles of justice (equal liberty for all and the principle of difference, allowing inequalities only if they benefit the most disadvantaged) embody this attempt to synthesize liberalism and egalitarianism,
+Its two principles of justice (equal liberty for all and the principle of difference, allowing inequalities only if they benefit the most disadvantaged) embody this attempt to synthesize liberalism and egalitarianism.
 
 
 The concept of **overlapping consensus** is also central to the thinking of John Rawls, notably in his book *Political Liberalism* (1993). Here's a quote that illustrates this concept:
@@ -704,13 +704,13 @@ It's important to note here that the term totalitarianism refers to a political 
 
 
 
-- Freedoms:** totalitarian regimes support strong government control over personal and economic life. Totalitarianism exists when the state controls everything in society and has unlimited power.
-- Philosophy:** Totalitarians believe that centralized authority is the only way to guarantee order and fairness, while freedom is a factor of disorder. They want the state to control all aspects of economic and personal life, believing that such control is more likely to produce an ideal society. They are revolutionary regimes that justify violence on the grounds that the previous system was entirely wrong, and that a new model must be established by wiping the slate clean. They cannot tolerate excessive diversity of opinion or any expression that challenges their authority.
-- Politics:** totalitarianism refers to a single-party system. According to Hannah Arendt, totalitarianism is not a political family, nor a despotic political regime. It is the very negation of politics: a system in which men are rendered incapable of independent action. According to her, the aim of totalitarian education has never been to inculcate convictions, but to destroy the ability to form any other (The Origins of Totalitarianism, 1951). Indeed, totalitarian societies are distinguished by the use of an ideology, the promise of a *paradise*, such as the end of history or racial purity. Consequently, they eliminate all forms of opposition through political policing and the use of terror.
-- Economy:** totalitarian regimes may tolerate private enterprise if it is forced to serve the interests of the state, or demand that the state control all means of production. They see the free market as a threat to general order, because ideal societies must be planned by the authorities.
+- **Freedoms:** totalitarian regimes support strong government control over personal and economic life. Totalitarianism exists when the state controls everything in society and has unlimited power.
+- **Philosophy:** Totalitarians believe that centralized authority is the only way to guarantee order and fairness, while freedom is a factor of disorder. They want the state to control all aspects of economic and personal life, believing that such control is more likely to produce an ideal society. They are revolutionary regimes that justify violence on the grounds that the previous system was entirely wrong, and that a new model must be established by wiping the slate clean. They cannot tolerate excessive diversity of opinion or any expression that challenges their authority.
+- **Politics:** totalitarianism refers to a single-party system. According to Hannah Arendt, totalitarianism is not a political family, nor a despotic political regime. It is the very negation of politics: a system in which men are rendered incapable of independent action. According to her, the aim of totalitarian education has never been to instill convictions, but to destroy the ability to form any other (The Origins of Totalitarianism, 1951). Indeed, totalitarian societies are distinguished by the use of an ideology, the promise of a *paradise*, such as the end of history or racial purity. Consequently, they eliminate all forms of opposition through political policing and the use of terror.
+- **Economy:** totalitarian regimes may tolerate private enterprise if it is forced to serve the interests of the state, or demand that the state control all means of production. They see the free market as a threat to general order, because ideal societies must be planned by the authorities.
 
 
-**There are two general categories of totalitarian regimes: left-wing totalitarian (communism, national socialism) and right-wing totalitarian (military dictatorships, fascism). But these categories lose their meaning if we understand that the matrix is the same. This is the case with Hitler and Stalin. Despite their historical antagonism, we find the same cult of the leader, youth recruitment, censorship, surveillance, repression of all opposition, political persecution and the crushing of all individual freedom.
+**There are two general categories of totalitarian regimes**: left-wing totalitarian (communism, national socialism) and right-wing totalitarian (military dictatorships, fascism). But these categories lose their meaning if we understand that the matrix is the same. This is the case with Hitler and Stalin. Despite their historical antagonism, we find the same cult of the leader, youth recruitment, censorship, surveillance, repression of all opposition, political persecution and the crushing of all individual freedom.
 
 
 
@@ -749,19 +749,19 @@ Societal issues are not about money, but about the choices we make about what we
 
 
 
-- Socialists:** Yes, they see a heterosexual majority oppressing a homosexual minority by denying them marriage, and so naturally support the reform. Socialists want to impose a single conception of civil marriage, including homosexuality, to the detriment of those who consider marriage to be only between a man and a woman. Legalizing gay marriage is therefore an act of social justice that promotes a more inclusive and tolerant society. It ensures that same-sex couples enjoy the same legal rights (inheritance, taxation, filiation, etc.) and protections as heterosexual couples, thus bridging a de facto inequality. At the heart of the argument lies the belief that all citizens should be treated equally under the law, regardless of sexual orientation. Denying marriage to same-sex couples is seen as unacceptable discrimination.
+- **Socialists:** Yes, they see a heterosexual majority oppressing a homosexual minority by denying them marriage, and so naturally support the reform. Socialists want to impose a single conception of civil marriage, including homosexuality, to the detriment of those who consider marriage to be only between a man and a woman. Legalizing gay marriage is therefore an act of social justice that promotes a more inclusive and tolerant society. It ensures that same-sex couples enjoy the same legal rights (inheritance, taxation, filiation, etc.) and protections as heterosexual couples, thus bridging a de facto inequality. At the heart of the argument lies the belief that all citizens should be treated equally under the law, regardless of sexual orientation. Denying marriage to same-sex couples is seen as unacceptable discrimination.
 
 
 
-- Conservatives:** No. They see traditional marriage as a fundamental institution of Western civilization, dating back 2,500 years and historically defined as the union between a man and a woman. This definition is not arbitrary, but rests on biological (the ability to procreate naturally) and cultural/religious foundations. A radical redefinition of marriage is seen as a threat to civilized society. To legalize gay marriage would be to denature or redefine this sacred and fundamental institution, emptying it of its original meaning and primary vocation, which is procreation and the foundation of a family in its natural form. Rapidly changing social norms are often viewed with suspicion, as they can lead to a dissolution of reference points and a loss of cultural or national identity. Marriage is seen as a pillar of this order.
+- **Conservatives:** No. They see traditional marriage as a fundamental institution of Western civilization, dating back 2,500 years and historically defined as the union between a man and a woman. This definition is not arbitrary, but rests on biological (the ability to procreate naturally) and cultural/religious foundations. A radical redefinition of marriage is seen as a threat to civilized society. To legalize gay marriage would be to denature or redefine this sacred and fundamental institution, emptying it of its original meaning and primary vocation, which is procreation and the foundation of a family in its natural form. Rapidly changing social norms are often viewed with suspicion, as they can lead to a dissolution of reference points and a loss of cultural or national identity. Marriage is seen as a pillar of this order.
 
 
 
-- Libertarians:** Yes and no. The consistent libertarian approach is to defend the privatization of marriage, i.e. marriage entirely free from state intervention. Marriage is a non-state institution, and the state has no business forcing others to recognize traditional or gay marriage. The solution? Get rid of compulsory civil marriage and leave this role to private associations: churches, synagogues, mosques or private secular organizations. This political solution, which respects property rights and individual freedom, could be called the separation of marriage and state.
+- **Libertarians:** Yes and no. The consistent libertarian approach is to defend the privatization of marriage, i.e. marriage entirely free from state intervention. Marriage is a non-state institution, and the state has no business forcing others to recognize traditional or gay marriage. The solution? Get rid of compulsory civil marriage and leave this role to private associations: churches, synagogues, mosques or private secular organizations. This political solution, which respects property rights and individual freedom, could be called the separation of marriage and state.
 
 
 
-- Centrists:** Yes. Centrists would recognize that society has evolved and that a significant part of the population wants same-sex couples to be recognized. They adhere to the principle of non-discrimination and believe that individuals have the right to lead the lives they choose, including legal unions. They would be sensitive to the argument that same-sex couples should enjoy the same legal rights and protections (inheritance, social protection, taxation) as heterosexual couples. For centrists, the State must reflect the diversity of its citizens and the modernization of the law, while maintaining a certain social cohesion.
+- **Centrists:** Yes. Centrists would recognize that society has evolved and that a significant part of the population wants same-sex couples to be recognized. They adhere to the principle of non-discrimination and believe that individuals have the right to lead the lives they choose, including legal unions. They would be sensitive to the argument that same-sex couples should enjoy the same legal rights and protections (inheritance, social protection, taxation) as heterosexual couples. For centrists, the State must reflect the diversity of its citizens and the modernization of the law, while maintaining a certain social cohesion.
 
 
 ### Immigration
@@ -770,19 +770,19 @@ Societal issues are not about money, but about the choices we make about what we
 
 
 
-- Socialists:** Yes. They see illegal immigrants as an oppressed group and native-born whites, hostile to immigrants, as their oppressors. Moreover, restrictions based on nationality or religion are discriminatory and contrary to human rights. The state has a duty to welcome people in need and to promote diversity and integration.
+- **Socialists:** Yes. They see illegal immigrants as an oppressed group and native-born whites, hostile to immigrants, as their oppressors. Moreover, restrictions based on nationality or religion are discriminatory and contrary to human rights. The state has a duty to welcome people in need and to promote diversity and integration.
 
 
 
-- Conservatives:** No. The state has the sovereign right to control its borders and to choose who enters its territory. Restrictions may be necessary to protect national security, cultural identity or society's ability to integrate. They fear that allowing immigration will destroy the identity of nations, and further undermine the work of even the most modest citizens. Borders and a well-defined population are part of civilized values.
+- **Conservatives:** No. The state has the sovereign right to control its borders and to choose who enters its territory. Restrictions may be necessary to protect national security, cultural identity or society's ability to integrate. They fear that allowing immigration will destroy the identity of nations, and further undermine the work of even the most modest citizens. Borders and a well-defined population are part of civilized values.
 
 
 
-- Libertarians:** Yes and no. Yes to market immigration and no to state immigration. Because in a heavily state-sponsored world, immigration is always subsidized and creates an unfortunate right to the labor of others, i.e., a false right, a form of spoliation. However, from the point of view of the freedom/coercion axis, an open border gives the individual the choice of government and the ability to vote with his or her feet. This is why the best immigration policy would be to de-statize society and let citizens decide.
+- **Libertarians:** Yes and no. Yes to market immigration and no to state immigration. Because in a heavily state-sponsored world, immigration is always subsidized and creates an unfortunate claim to the labor of others, that is, an artificial right, a form of economic transfer. However, from the point of view of the freedom/coercion axis, an open border gives the individual the choice of government and the ability to vote with his or her feet. This is why the best immigration policy would be to reduce state involvement and allow citizens to decide for themselves.
 
 
 
-- Centrists:** Government must manage immigration in a balanced way. While restrictions based on religion are generally unacceptable, those based on nationality or skills may be necessary to meet economic needs and ensure successful integration, while respecting international conventions and human rights.
+- **Centrists:** Government must manage immigration in a balanced way. While restrictions based on religion are generally unacceptable, those based on nationality or skills may be necessary to meet economic needs and ensure successful integration, while respecting international conventions and human rights.
 
 
 ### Firearms
@@ -792,19 +792,19 @@ Societal issues are not about money, but about the choices we make about what we
 
 
 
-- Socialists:** No. Public safety must take precedence over the freedom to own guns. Strict regulation is necessary to reduce violence and guarantee the safety of all, because the state has a duty to protect its citizens.
+- **Socialists:** No. Public safety must take precedence over the freedom to own guns. Strict regulation is necessary to reduce violence and guarantee the safety of all, because the state has a duty to protect its citizens.
 
 
 
-- Conservatives:** In part yes, the right to own a gun for self-defense is an important value. However, regulations to guarantee safety and public order are also necessary, but they must respect this fundamental right.
+- **Conservatives:** In part yes, the right to own a gun for self-defense is an important value. However, regulations to guarantee safety and public order are also necessary, but they must respect this fundamental right.
 
 
 
-- Libertarians:** Yes, the right to arm oneself is an essential component of the right to self-defense. The state should not have a monopoly on force, and individuals should be able to protect themselves without hindrance. But regulating the carrying of weapons should be left to the market, professionals and citizens' associations.
+- **Libertarians:** Yes, the right to arm oneself is an essential component of the right to self-defense. The state should not have a monopoly on force, and individuals should be able to protect themselves without hindrance. But regulating the carrying of weapons should be left to the market, professionals and citizens' associations.
 
 
 
-- Centrists:** No, regulation is essential. While the right to own firearms may exist for certain uses, public safety and the reduction of violence require strict controls (permits, background checks, type of weapons) to strike a balance between freedom and order.
+- **Centrists:** No, regulation is essential. While the right to own firearms may exist for certain uses, public safety and the reduction of violence require strict controls (permits, background checks, type of weapons) to strike a balance between freedom and order.
 
 
 ### The drugs
@@ -814,10 +814,10 @@ Societal issues are not about money, but about the choices we make about what we
 
 
 
-- Socialists: Yes** Penalization is ineffective. Legalization allows control and revenue generation.
-- Conservatives: No.** Consumption is harmful to health and social order.
-- Libertarians: Yes** as long as society is de-staticized. The state has no business interfering in personal decisions as long as they don't directly harm others.
-- Centrists:** Complex debate. Decriminalization possible but strict regulation imperative.
+- **Socialists:** Yes Penalization is ineffective. Legalization allows control and revenue generation.
+- **Conservatives:** No. Consumption is harmful to health and social order.
+- **Libertarians:** Yes provided the state’s role in society is reduced. The state has no business interfering in personal decisions as long as they don't directly harm others.
+- **Centrists:** Complex debate. Decriminalization possible but strict regulation imperative.
 
 
 
@@ -828,19 +828,19 @@ Societal issues are not about money, but about the choices we make about what we
 
 
 
-- Socialists:** Yes. The problem of obesity is the problem of the manufacturers who market soft drinks. The soda tax is a Socialist proposal to combat manufacturers or sellers of sugary drinks accused of making profits at the expense of public health.
+- **Socialists:** Yes. The problem of obesity is the problem of the manufacturers who market soft drinks. The soda tax is a Socialist proposal to combat manufacturers or sellers of sugary drinks accused of making profits at the expense of public health.
 
 
 
-- Conservatives:** In principle, yes. The government's mission is to ensure the health of its citizens. But conservatives generally prefer solutions based on personal responsibility and education. Imposing a tax on sugary drinks would be seen as excessive government interference in citizens' personal decisions.
+- **Conservatives:** In principle, yes. The government's mission is to ensure the health of its citizens. But conservatives generally prefer solutions based on personal responsibility and education. Imposing a tax on sugary drinks would be seen as excessive government interference in citizens' personal decisions.
 
 
 
-- Libertarians:** No. A fundamental principle of libertarianism is that it's unfair to protect people from themselves. Citizens are adults, not children. Attempts to impose better health habits by coercive means are considered costly, ineffective and ultimately counterproductive. The problem of obesity must be tackled by private initiative.
+- **Libertarians:** No. A fundamental principle of libertarianism is that it's unfair to protect people from themselves. Citizens are adults, not children. Attempts to impose better health habits by coercive means are considered costly, ineffective and ultimately counterproductive. The problem of obesity must be tackled by private initiative.
 
 
 
-- Centrists:** Yes, they would be open to the idea of a tax if it were proven to be effective, and if its social and economic drawbacks could be mitigated. They would see it as part of a wider, integrated solution, rather than an isolated measure.
+- **Centrists:** Yes, they would be open to the idea of a tax if it were proven to be effective, and if its social and economic drawbacks could be mitigated. They would see it as part of a wider, integrated solution, rather than an isolated measure.
 
 
 # Economic issues
@@ -866,16 +866,16 @@ Economic issues concern money, such as employment, buying and selling, investmen
 
 
 
-- Socialists:** No. Progressive income taxes are a fundamental tool for redistributing wealth and financing public services (health, education, social protection). They are essential for social justice.
-- Conservatives:** Yes. Lower taxes encourage investment, job creation and economic growth. They encourage individual initiative and reduce government waste. Taxes must be fair and low.
+- **Socialists:** No. Progressive income taxes are a fundamental tool for redistributing wealth and financing public services (health, education, social protection). They are essential for social justice.
+- **Conservatives:** Yes. Lower taxes encourage investment, job creation and economic growth. They encourage individual initiative and reduce government waste. Taxes must be fair and low.
 
 
 
-- Libertarians:** Yes. Taxes are a form of state theft and an impediment to private property. It should be drastically reduced or abolished in favor of voluntary taxation or entirely private services.
+- **Libertarians:** Yes. Taxes are a form of state theft and an impediment to private property. It should be drastically reduced or abolished in favor of voluntary taxation or entirely private services.
 
 
 
-- Centrists:** A tax system must be balanced. A certain degree of progressivity is necessary for solidarity, but taxes that are too high can discourage investment. The goal is a system that finances essential services without stifling the economy.
+- **Centrists:** A tax system must be balanced. A certain degree of progressivity is necessary for solidarity, but taxes that are too high can discourage investment. The goal is a system that finances essential services without stifling the economy.
 
 
 ### Minimum wage
@@ -885,19 +885,19 @@ Economic issues concern money, such as employment, buying and selling, investmen
 
 
 
-- Socialists:** No. The minimum wage is essential to guarantee a dignified life for workers, reduce inequalities and fight poverty. It is a tool of social justice that protects the most vulnerable.
+- **Socialists:** No. The minimum wage is essential to guarantee a dignified life for workers, reduce inequalities and fight poverty. It is a tool of social justice that protects the most vulnerable.
 
 
 
-- Conservatives:** In principle, no, the market must play its role as regulator. However, a minimum wage may be tolerable if it does not excessively hinder the competitiveness of companies. What's important is individual responsibility and job creation, rather than dependence on subsidies.
+- **Conservatives:** In principle, no, the market must play its role as regulator. However, a minimum wage may be tolerable if it does not excessively hinder the competitiveness of companies. What's important is individual responsibility and job creation, rather than dependence on subsidies.
 
 
 
-- Libertarians:** Yes. The minimum wage is an artificial intervention that distorts the labor market, creates unemployment and violates freedom of contract. The market should determine wages through negotiation.
+- **Libertarians:** Yes. The minimum wage is an artificial intervention that distorts the labor market, creates unemployment and violates freedom of contract. The market should determine wages through negotiation.
 
 
 
-- Centrists: No.** No, the minimum wage has an important social role. It must exist, but its level must be adjusted pragmatically to avoid destroying jobs, taking into account the competitiveness of companies and the purchasing power of workers.
+- **Centrists:** No, the minimum wage has an important social role. It must exist, but its level must be adjusted pragmatically to avoid destroying jobs, taking into account the competitiveness of companies and the purchasing power of workers.
 
 
 ### Health care
@@ -907,19 +907,19 @@ Economic issues concern money, such as employment, buying and selling, investmen
 
 
 
-- Socialists:** No. Access to healthcare is a fundamental right, not a commodity. The State must guarantee a universal, publicly-funded healthcare system, so that everyone has access to care, regardless of income.
+- **Socialists:** No. Access to healthcare is a fundamental right, not a commodity. The State must guarantee a universal, publicly-funded healthcare system, so that everyone has access to care, regardless of income.
 
 
 
-- Conservatives:** For the most part, yes. Private markets can be more efficient and reduce the tax burden. The state can play a minimal role for the poorest, but individual responsibility and private insurance are preferable.
+- **Conservatives:** For the most part, yes. Private markets can be more efficient and reduce the tax burden. The state can play a minimal role for the poorest, but individual responsibility and private insurance are preferable.
 
 
 
-- Libertarians:** Yes. Healthcare is a service like any other. The private market is more efficient, innovative and offers consumers more choice. Government intervention leads to inefficiency and bureaucracy. But above all, individuals have the right to choose for themselves if they want to opt out of the social security system.
+- **Libertarians:** Yes. Healthcare is a service like any other. The private market is more efficient, innovative and offers consumers more choice. Government intervention leads to inefficiency and bureaucracy. But above all, individuals have the right to choose for themselves if they want to opt out of the social security system.
 
 
 
-- Centrists:** A mixed system is often the best approach. The State must guarantee universal access and solidarity (basic coverage), while leaving room for the private sector to diversify the offer and innovate, in order to optimize efficiency and quality.
+- **Centrists:** A mixed system is often the best approach. The State must guarantee universal access and solidarity (basic coverage), while leaving room for the private sector to diversify the offer and innovate, in order to optimize efficiency and quality.
 
 
 ### The environment
@@ -929,19 +929,19 @@ Economic issues concern money, such as employment, buying and selling, investmen
 
 
 
-- Socialists:** No. The state must impose strict regulations to protect the environment and combat climate change. The market alone cannot solve these problems, which require collective action and planning. Subsidies are considered necessary to ensure the ecological transition. Moreover, international free trade must be regulated to protect the environment.
+- **Socialists:** No. The state must impose strict regulations to protect the environment and combat climate change. The market alone cannot solve these problems, which require collective action and planning. Subsidies are considered necessary to ensure the ecological transition. Moreover, international free trade must be regulated to protect the environment.
 
 
 
-- Conservatives:** In principle, yes, because freedom of enterprise is important. However, a certain level of regulation is necessary to protect the environment as a heritage and resource, but without stifling the economy.
+- **Conservatives:** In principle, yes, because freedom of enterprise is important. However, a certain level of regulation is necessary to protect the environment as a heritage and resource, but without stifling the economy.
 
 
 
-- Libertarians:** Yes. Environmental regulations are a hindrance to economic freedom and property ownership. They believe that the best way to protect the environment is through private property, not through bureaucratic organizations. They add that owners are more likely to take care of their property, as they have a vested interest in preserving its value. Environmental problems can be solved by the market, individual responsibility and property rights. Polluters must be held responsible for the damage they cause to the environment.
+- **Libertarians:** Yes. Environmental regulations are a hindrance to economic freedom and property ownership. They believe that the best way to protect the environment is through private property, not through bureaucratic organizations. They add that owners are more likely to take care of their property, as they have a vested interest in preserving its value. Environmental problems can be solved by the market, individual responsibility and property rights. Polluters must be held responsible for the damage they cause to the environment.
 
 
 
-- Centrists:** No, self-regulation is not enough. Environmental regulations are necessary to protect the planet and public health. However, they must be designed in such a way as not to penalize business competitiveness excessively, and to encourage green innovation.
+- **Centrists:** No, self-regulation is not enough. Environmental regulations are necessary to protect the planet and public health. However, they must be designed in such a way as not to penalize business competitiveness excessively, and to encourage green innovation.
 
 
 
