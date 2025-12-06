@@ -47,7 +47,7 @@ So, to identify an individual's political leanings, we plot them on a simple hor
 Some lean towards those for whom order must be preserved and imposed at all costs, that's the **right**. Others lean towards those for whom equality must be applied at all costs, even if it means reforming everything - this is the **left**.
 
 
-However, this categorization is often too simplistic and ineffective. Traditionally, for example, the left is seen as reformist, while the right is more conservative. But this has become questionable in our time, since the left militates for acquired advantages, which makes it, from this point of view, conservative.
+However, this categorization is often too simplistic and ineffective. Traditionally, for example, the left is seen as reformist, while the right is more conservative. But this has become questionable in our time, since the left now fights to preserve acquired advantages, which makes it, from that point of view, conservative.
 
 
 Most individuals who fall between the two extremes are often referred to as centrists, but this label also simplifies their position.
@@ -80,7 +80,7 @@ In his day, the economist and member of parliament Frédéric Bastiat said he so
 ![Frédéric Bastiat](./assets/fr/002.webp)
 
 
-This did not mean he was a centrist or a social democrat. Bastiat was firmly opposed to statism and dirigisme of any kind. He favored a maximum of economic and personal freedoms compatible with respect for others, because he believed that social order could emerge from below, through private initiative, social cooperation and individual responsibility, with a minimum of laws.
+This did not mean he was a centrist or a social democrat. Bastiat was firmly opposed to any form of statism, to any kind of government interventionism whatsoever. He favored a maximum of economic and personal freedoms compatible with respect for others, because he believed that social order could emerge from below, through private initiative, social cooperation and individual responsibility, with a minimum of laws.
 
 
 Let's take another example: **Is Bitcoin right or left?
@@ -89,10 +89,10 @@ Let's take another example: **Is Bitcoin right or left?
 ![Bitcoin](./assets/fr/003.webp)
 
 
-Undeniably, bitcoin is a project for breaking with current monetary policy. So it's a political project. But it's hard to place Bitcoin on a simple linear axis running from the extreme left to the extreme right.
+Undeniably, Bitcoin is a project that breaks with current monetary policy. So it's a political project. But it's hard to place Bitcoin on a simple linear axis running from the extreme left to the extreme right.
 
 
-For a start, the very definition of right and left is complex and evolves over time, making strict classification difficult. But above all Bitcoin, as a decentralized technology, transcends traditional cleavages, attracting supporters from diverse political backgrounds, left and right, including anarchists and individuals who claim to be apolitical.
+For a start, the very definition of right and left is complex and evolves over time, making strict classification difficult. But above all Bitcoin, as a decentralized technology, transcends traditional political divides, attracting supporters from various political backgrounds, from the left and the right, including anarchists and people who consider themselves apolitical.
 
 
 
@@ -100,7 +100,7 @@ For a start, the very definition of right and left is complex and evolves over t
 - Left-wing personalities are also present, notably because of Bitcoin's potential for financial inclusion and as a tool against censorship.
 
 
-In reality, the traditional dichotomy between right and left is inadequate, arbitrary and unsuitable for correctly situating Bitcoin, which is a public currency that everyone can appropriate, whatever their political leanings.
+In reality, the traditional dichotomy between right and left is inadequate, arbitrary, and ill-suited to properly situate Bitcoin, which is a public currency that anyone can adopt, regardless of their political leanings.
 
 
 What's more, a simple linear axis running from left to right doesn't work well, as ideologies like fascism and communism have similarities (totalitarianism) that aren't apparent on such an axis.
@@ -109,7 +109,7 @@ What's more, a simple linear axis running from left to right doesn't work well, 
 ![Spectre politique en fer à cheval](./assets/fr/004.webp)
 
 
-What's more, although the Right is undoubtedly more economically liberal than the Left, both camps share a distrust of the free market, freedom of contract and private property, and an attraction to state interventionism. For those in power, whether on the right or the left, every problem is solved by a new regulation or tax, rather than by the self-regulation of individual interactions.
+What's more, although the right is undoubtedly more economically liberal than the left, both camps share a distrust of the free market, freedom of contract and private property, and an attraction to state interventionism. For those in power, whether on the right or the left, every problem is solved by a new regulation or tax, rather than by the self-regulation of individual interactions.
 
 
 It's interesting to note that certain political positions can cut across traditional right/left divides. For example, protectionism, often defended by the left, can easily be reconciled with nationalism, a value traditionally associated with the right. Similarly, the peasantry, while attached to the land and family traditions - right-wing values - does not hesitate to demonstrate vehemently to demand state subsidies, an approach that is in line with socialist logic.
@@ -177,7 +177,7 @@ In 1966, in *Revolt on the Moon* (The Moon is a Harsh Mistress), novelist Robert
 ![The Moon is a Harsh Mistress](./assets/fr/005.webp)
 
 
-He observes that mankind is divided politically between those who want to control the lives of others, and those who do not
+He observes that mankind is divided politically between those who want to control the lives of others, and those who do not.
 
 
 > The human race divides politically into those who want people to be controlled and those who have no such desire.
