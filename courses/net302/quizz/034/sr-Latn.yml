@@ -5,5 +5,5 @@ wrong_answers:
   - Dinamička dodela MAC adrese na mreži
   - Generisanje DNS imena
 explanation: |
-  IPv4 adresa je dodeljena svakom mrežnom interfejsu uređaja, omogućavajući njegovo lociranje i pristupanje na mrežu.
+  IPv4 adresa se dodeljuje svakom mrežnom interfejsu uređaja, omogućavajući njegovo lociranje i pristupanje na mrežu.
 reviewed: true
