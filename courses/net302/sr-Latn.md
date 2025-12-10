@@ -78,7 +78,7 @@ Treći deo se fokusira na IPv6 adresiranje, koje je neophodno da bi se prevaziš
 ### Alati za dijagnostiku mreže
 
 
-Na kraju, završićemo prezentacijom glavnih alata za dijagnostiku mreže. Ovi alati će vam omogućiti da analizirate, kontrolišete i rešavate probleme u radu. Ovaj deo će biti strukturisan po slojevima: pristup mreži, mreža, transport i gornji slojevi.
+Na kraju, završićemo prezentacijom glavnih alata za dijagnostiku mreže. Ovi alati će vam omogućiti da analizirate, kontrolišete i rešavate probleme u radu. Ovaj deo će biti strukturisan po slojevima: pristup mreži (eng. network access), mreža (eng. network), transport i gornji slojevi.
 
 
 Do kraja ovog kursa, imaćete osnovno znanje za efikasno upravljanje mrežnom infrastrukturom i dijagnostikovanje potencijalnih problema.
