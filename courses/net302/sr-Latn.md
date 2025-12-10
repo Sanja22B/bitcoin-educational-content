@@ -556,7 +556,7 @@ Mreža **klase C**: 192.168.1.0/24 sa podrazumevanom maskom 255.255.255.0.
 **Korak 1**: Broj adresa potrebnih po podmreži = 60 + 2 rezervisane adrese (mrežna + broadcast) = 62.
 
 
-**Korak 2**: Pronađi najbližu stepen 2 ≥ 62. ->  2⁶ = 64.
+**Korak 2**: Pronađi najbliži stepen 2 ≥ 62. ->  2⁶ = 64.
 
 
 **Korak 3: Podesite masku. Zadržite _netid_ bitove i rezervišite potrebne _hostid_ bitove. Dobijamo binarnu masku koja, kada se konvertuje, daje** 255.255.255.192.
@@ -699,9 +699,9 @@ Da bi ovaj proces funkcionisao, obe mašine moraju deliti zajedničko razumevanj
 **NAPOMENA**: "Port" je numerički identifikator (od 0 do 65.535) dodeljen mrežnoj aplikaciji na računaru. Koristi se za razlikovanje više servisa koji istovremeno rade na istoj IP adresi. Kada klijent šalje podatke, navodi broj porta kako bi operativni sistem servera znao kojem programu treba da ih prosledi (npr. 80 za HTTP, 443 za HTTPS, 25 za SMTP). Portovi funkcionišu kao posvećena vrata, usmeravajući saobraćaj unutra i napolje, sprečavajući zabunu između servisa i omogućavajući preciznu kontrolu pristupa putem firewall-a ili pravila filtriranja.
 
 
-Razmena sinhronizacije sekvenci zasnovana je na čuvenom mehanizmu **"*three-way handshake*"**, sličnom načinu na koji se dve osobe pozdravljaju kako bi uspostavile kontakt. Ova faza inicijalizacije, koja osigurava pouzdanost TCP-a, odvija se u 3 faze:
+Razmena sinhronizacije sekvenci zasnovana je na čuvenom mehanizmu **"*three-way handshake*"** ili u prevodu trostruko rukovanje, sličnom načinu na koji se dve osobe pozdravljaju kako bi uspostavile kontakt. Ova faza inicijalizacije, koja osigurava pouzdanost TCP-a, odvija se u 3 faze:
 
-1. **SYN:** Klijent šalje početni segment za sinhronizaciju (**SYN**) sa odgovarajućom zastavicom postavljenom i početnim rednim brojem (npr., C);
+1. **SYN:** Klijent šalje početni segment za sinhronizaciju (**SYN**) sa odgovarajućom postavljenom zastavicom i početnim rednim brojem (npr., C);
 
 2. **SYN-ACK:** Server koji prima odgovara segmentom potvrde (**SYN-ACK**), potvrđuje klijentov redni broj i pruža svoj početni redni broj;
 
@@ -766,7 +766,7 @@ Ova komplementarnost između TCP i UDP omogućava modernim mrežama da se prilag
 
 
 
-## Servisni primitiv
+## Servisni primitivi
 
 
 <chapterId>4480afb7-e950-4ccb-88fa-d132f9dc3479</chapterId>
@@ -779,7 +779,7 @@ Ova komplementarnost između TCP i UDP omogućava modernim mrežama da se prilag
 Kao što smo videli, **servisi** su konkretna implementacija protokola koje smo do sada opisali. Iako se TCP/IP model razlikuje od **OSI** modela, usvaja isti slojeviti pristup: svaki sloj je dizajniran da obavlja specifičnu funkciju i da pruža **servise** sloju direktno iznad njega, što rezultira modularnom, robusnom i lako održivom arhitekturom.
 
 
-Svaki sloj nadograđuje se na sposobnostima onog ispod njega, i zauzvrat obezbeđuje sloju iznad sa doslednim interfejsom za upravljanje podacima. U ovoj arhitekturi, svaki sloj ima svoje **strukture podataka**, pažljivo definisane kako bi se osigurala savršena kompatibilnost sa ostalim slojevima. Ova kompatibilnost je ključna za glatku, pouzdanu i jasnu komunikaciju od jedne krajnje tačke do druge.
+Svaki sloj se nadovezuje na mogućnosti sloja ispod sebe i zauzvrat obezbeđuje sloju iznad sebe dosledan interfejs za upravljanje podacima. U ovoj arhitekturi, svaki sloj ima svoje **strukture podataka**, pažljivo definisane kako bi se osigurala savršena kompatibilnost sa ostalim slojevima. Ova kompatibilnost je ključna za glatku, pouzdanu i jasnu komunikaciju od jedne krajnje tačke do druge.
 
 
 Dva ključna aspekta upravljaju ovim razmenama:
@@ -811,7 +811,7 @@ Slojevita arhitektura prati princip da svaki sloj obrađuje samo informacije unu
 - **poruka** za aplikativni sloj,
 - **segment** za transportni sloj (TCP),
 - **datagram** za internet sloj (IP),
-- **okvir** za sloj pristupa internetu.
+- **okvir** za sloj pristupa mreži.
 
 
 Tabela ispod rezimira termine za TCP i UDP kontekste:
@@ -819,18 +819,18 @@ Tabela ispod rezimira termine za TCP i UDP kontekste:
 
 | TCP/IP sloj          | Naziv jedinice (TCP) | Naziv jedinice (UDP) |
 |----------------------|------------------|------------------|
-| Application Layer    | Stream           | Message          |
-| Transport Layer      | Segment          | Packet           |
-| Internet Layer       | Datagram         | Datagram         |
-| Network Access Layer | Frame            | Frame            |
+| Aplikativni sloj     | Stream           | Message          |
+| Transportni sloj     | Segment          | Packet           |
+| Mrežni sloj          | Datagram         | Datagram         |
+| Sloj pristupa mreži  | Frame            | Frame            |
 
-### Servisni primitiv i jedinice podataka
+### Servisni primitivi i jedinice podataka
 
 
 U srži ovog sistema su **servisni primitivi**, koje deluju kao komunikacioni interfejsi. Ovi primitivi funkcionišu poput servisnih pultova, osluškujući na rezervisanim specifičnim **portovima** i omogućavajući procesima da uspostave, održavaju i prekidaju mrežne veze na kontrolisan način. Dok protokoli organizuju format i prenos podataka preko mreže, **servisi i njihovi primitivi** obezbeđuju vertikalnu vezu između slojeva.
 
 
-Kombinovanjem horizontalnog aspekta (komunikacija između distribuiranih aplikacija) sa vertikalnim aspektom (unutrašnje interakcije između slojeva), TCP/IP model pruža kompletnu, skalabilnu arhitekturu. Preklapanje ovih dvaju perspektiva daje jasan pregled kako se podaci razmenjuju u strukturisanoj mrežnoj komunikaciji.
+Kombinovanjem horizontalnog aspekta (komunikacija između distribuiranih aplikacija) sa vertikalnim aspektom (unutrašnje interakcije između slojeva), TCP/IP model pruža kompletnu, skalabilnu arhitekturu. Preklapanje ovih dveju perspektiva daje jasan pregled kako se podaci razmenjuju u strukturisanoj mrežnoj komunikaciji.
 
 
 
@@ -853,7 +853,7 @@ IP adresiranje je još jedan kamen temeljac ove infrastrukture. Svaki povezani u
 Takođe smo ispitali koncept **podmreža**, što omogućava podelu segmenata mreže kako bi se bolje upravljalo IP resursima i optimizovao protok podataka. Iako ručna podela korišćenjem maski podmreže ostaje važan princip, u velikoj meri je modernizovana zahvaljujući **CIDR** (_Classless Inter-Domain Routing_). Ova metoda je transformisala upravljanje adresama omogućavajući fleksibilniju i racionalniju dodelu IP opsega, dok istovremeno smanjuje veličinu tabela rutiranja.
 
 
-Savladavanjem ovih pojmova - slojevi, protokoli, servisne primitive, adresiranje i subnetiranje - stičete čvrstu osnovu za razumevanje tehničkog funkcionisanja modernih mreža i za efikasno konfigurisanje mrežne infrastrukture kako bi se zadovoljile današnje potrebe.
+Savladavanjem ovih pojmova - slojevi, protokoli, servisni primitivi, adresiranje i subnetiranje - stičete čvrstu osnovu za razumevanje tehničkog funkcionisanja modernih mreža i za efikasno konfigurisanje mrežne infrastrukture kako bi se zadovoljile današnje potrebe.
 
 
 U sledećem odeljku, detaljnije ćemo pogledati IPv4 adresiranje.
@@ -933,7 +933,7 @@ IP adresa identifikuje jedan **mrežni interfejs**, ne ceo uređaj. Ruter ili fi
 Svaki IP paket sadrži dve IP adrese u svom zaglavlju:
 
 
-- Adresa izvoa (**pošiljalac**)
+- Adresa izvora (**pošiljalac**)
 - Adresa odredišta (**primalac**)
 
 Ruteri čitaju ove adrese kako bi odredili najbolji put za slanje paketa dok ne stigne do odredišta. Bez strogih pravila adresiranja, mrežni saobraćaj ne bi mogao biti pravilno usmeren i globalno povezivanje mreža bi bilo nemoguće.
@@ -945,7 +945,7 @@ IPv4 adresa ima dva dela:
 - **NetID**: identifikuje mrežu
 - **HostID**: identifikuje uređaj unutar te mreže
 
-**Subnet maska** određuje gde se završava NetID, a počinje HostID, specificirajući koliko bitova pripada svakom delu. Što je NetID duži, veći je broj mogućih podmreža, ali se broj hostova po podmreži smanjuje u skladu s tim.
+**Subnet maska** određuje gde se završava NetID, a počinje HostID, specificirajući koliko bitova pripada svakom delu. Što je NetID duži, veći je broj mogućih podmreža, ali se broj hostova unutar podmreže smanjuje u skladu s tim.
 
 
 Prvobitno su IPv4 mreže bile podeljene u pet **klasa**: (A, B, C, D i E). Svaka klasa odgovara specifičnom opsegu NetID-a i definiše fiksnu granularnost:
@@ -959,26 +959,26 @@ Prvobitno su IPv4 mreže bile podeljene u pet **klasa**: (A, B, C, D i E). Svaka
 
 
 
-| Klasa | Vodeći bitovi| Raspon prvog bajta | Defaultna Subnet Maska | Svrha                          |
+| Klasa | Vodeći bitovi| Raspon prvog bajta | Podrazumevana Subnet Maska | Svrha                   |
 | ----- | ------------ | ---------------- | ------------------- | -------------------------------- |
-| A     | 0            | 0 – 127          | 255.0.0.0           | Very large networks              |
-| B     | 10           | 128 – 191        | 255.255.0.0         | Medium-sized networks            |
-| C     | 110          | 192 – 223        | 255.255.255.0       | Small networks                   |
-| D     | 1110         | 224 – 239        | N/A                 | Multicast addresses              |
-| E     | 1111         | 240 – 255        | N/A                 | Experimental (not publicly used) |
+| A     | 0            | 0 – 127          | 255.0.0.0           | Veoma velike mreže               |
+| B     | 10           | 128 – 191        | 255.255.0.0         | Srednje mreže                    |
+| C     | 110          | 192 – 223        | 255.255.255.0       | Male mreže                       |
+| D     | 1110         | 224 – 239        | N/A                 | Multicast adrese                 |
+| E     | 1111         | 240 – 255        | N/A                 | Eksperimentalne (nije u javnoj upotrebi) |
 
 Specijalne adrese:
 
 
-- **Mreža adresa**: Identifikuje samu mrežu (koristi se u tabelama rutiranja).
+- **Mrežna adresa**: Identifikuje samu mrežu (koristi se u tabelama rutiranja).
 - **Broadcast adresa**: Šalje podatke svim uređajima u podmreži odjednom (svi HostID bitovi postavljeni na 1).
 
 
 Sledeći opsezi su rezervisani za internu upotrebu:
 
 
-- **10.0.0.0/8** (Privatna Klasa A)
-- **127.0.0.0/8** (lokalni povratni ili _loopback_)
+- **10.0.0.0/8** (privatna Klasa A)
+- **127.0.0.0/8** (lokalna povratna ili _loopback_)
 - 172.16.0.0 do 172.31.255.255 **(privatna Klasa B)**
 - 192.168.0.0 do 192.168.255.255 **(privatna Klasa C)**
 
@@ -1019,7 +1019,7 @@ Na kraju, broadcast adresa ostaje praktična funkcija za slanje iste poruke svim
 IPv4 adrese spadaju u dve glavne kategorije: javne adrese, direktno dostupne na internetu, i privatne adrese, namenjene za internu upotrebu unutar lokalne mreže.
 
 
-Javna IPv4 adresa je globalno jedinstvena i može se rutirati preko interneta. Dodeljuju je zvanične vlasti i potreban je za usluge koje su okrenute ka javnosti, kao što su veb-sajtovi, email serveri ili cloud infrastruktura.
+Javna IPv4 adresa je globalno jedinstvena i može se rutirati preko interneta. Dodeljuju je zvanične vlasti i potrebna je za usluge koje su okrenute ka javnosti, kao što su veb-sajtovi, email serveri ili cloud infrastruktura.
 
 Jedinstvenost ovih adresa na svetskom nivou je neophodna kako bi se izbegli bilo kakvi sukobi ili kolizije u rutiranju.
 
@@ -1192,7 +1192,7 @@ Važno je zapamtiti da su MAC adrese i IP adrese dva potpuno različita identifi
 
 
 
-U korporativnom okruženju, ova dva nivoa adresiranja ne mogu funkcionisati odvojeno. Na primer, kada DHCP server automatski dodeli IP adresu, MAC adresa opreme se koristi kao početna tačka. Računar šalje DHCP broadcast zahtev koji sadrži njegou MAC adresu kako bi server mogao dodeliti dostupnu IP adresu ispravnom uređaju. Bez ove hardverske identifikacije, DHCP server ne bi znao kojem uređaju da isporuči adresu.
+U korporativnom okruženju, ova dva nivoa adresiranja ne mogu funkcionisati odvojeno. Na primer, kada DHCP server automatski dodeli IP adresu, MAC adresa opreme se koristi kao početna tačka. Računar šalje DHCP broadcast zahtev koji sadrži njegovu MAC adresu kako bi server mogao dodeliti dostupnu IP adresu ispravnom uređaju. Bez ove hardverske identifikacije, DHCP server ne bi znao kojem uređaju da isporuči adresu.
 
 
 ARP protokol je stoga fundamentalan: obezbeđuje vezu između IP adresa i fizičkih adresa, omogućavajući mašinama da prevedu logičku destinaciju u stvarnu fizičku destinaciju. Kada računar treba da pošalje paket mašini na istoj mreži, prvo konsultuje svoju ARP tabelu da proveri da li je primaočeva MAC adresa već poznata. Ako nije, emituje ARP zahtev svim domaćinima na lokalnoj mreži. Mašina koja prepozna ciljnu IP adresu u ovom zahtevu odgovara specificirajući svoju MAC adresu. Pošiljalac zatim upisuje ovaj IP/MAC par u svoju ARP keš memoriju, kako ne bi morao da ponavlja operaciju svaki put kada se zahtev šalje.
@@ -1207,7 +1207,7 @@ Suprotno tome, RARP protokol (_Reverse Address Resolution Protocol_) je dizajnir
 Ovi protokoli asocijacije igraju važnu ulogu u rutiranju. Ruter je u suštini mašina sa više mrežnih interfejsa, koja povezuje različite segmente. Kada ruter primi okvir, obrađuje ga kako bi izvukao IP datagram i ispituje IP zaglavlje da bi odredio odredište. Ako je odredište na direktno povezanoj mreži, datagram se isporučuje direktno nakon ažuriranja zaglavlja. Ako odredište pripada drugoj mreži, ruter konsultuje svoju tabelu rutiranja kako bi identifikovao najbolji put, ili _sledeći skok_, do odredišta.
 
 
-Ovo razbija rutu na kraće, lakše upravljive segmente. Svaki međusmernik zna samo sledeći korak, ne nužno i konačno odredište.
+Ovo razbija rutu na kraće, lakše upravljive segmente. Svaki posrednički ruter zna samo sledeći korak, ne nužno i konačno odredište.
 
 
 **Podsetnik:** Direktna isporuka se dešava kada su pošiljalac i primalac na istoj fizičkoj mreži. U suprotnom, isporuka je indirektna i prolazi kroz jedan ili više rutera.
