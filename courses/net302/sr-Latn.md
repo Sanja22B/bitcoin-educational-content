@@ -203,7 +203,7 @@ Kompromis je u tome što broj veza koje treba uspostaviti brzo raste s brojem te
 Postoje i druge varijacije, kao što su mreže u obliku rešetke ili hiperkocke, koje su dizajnirane za specijalizovane potrebe u distribuiranom računarstvu ili paralelnoj obradi.
 
 
-Na globalnom nivou, internet je masivna međusobna povezanost mreža koje koriste različite topologije, ujedinjene zajedničkim adresiranjem (IPv4 i IPv6) i skupom standardizovanih protokola definisanih od strane IETF (*Internet Engineering Task Force*). Ova raznolikost znači da internet ne prati jednu jedinu topologiju: njegova struktura je fleksibilna, skalabilna i nezavisna od logičke šeme adresiranja koja ga čini upotrebljivim.
+Na globalnom nivou, Internet predstavlja ogromnu međusobnu povezanost mreža koje koriste različite topologije, ujedinjene zajedničkim adresiranjem (IPv4 i IPv6) i skupom standardizovanih protokola definisanih od strane IETF (*Internet Engineering Task Force*). Ova raznolikost znači da internet ne prati jednu jedinu topologiju: njegova struktura je fleksibilna, skalabilna i nezavisna od logičke šeme adresiranja koja ga čini upotrebljivim.
 
 
 
@@ -214,7 +214,7 @@ Na globalnom nivou, internet je masivna međusobna povezanost mreža koje korist
 
 
 
-Poreklo TCP protokola potiče od **ARPA-e** (*Advanced Research Projects Agency*, preimenovana u "DARPA" 1972. godine), koja je pokrenula projekat **ARPANET** 1966. godine. Prvi segment ARPANET-a postao je operativan u oktobru 1969. godine, povezujući univerzitete UCLA i Stanford. Cilj je bio povezati istraživačke centre putem mreže sa komutacijom paketa koja bi mogla održavati komunikaciju čak i u slučaju delimičnog kvara infrastrukture.
+Poreklo TCP protokola potiče od **ARPA-e** (*Advanced Research Projects Agency*, preimenovana u "DARPA" 1972. godine), koja je pokrenula projekat **ARPANET** 1966. godine. Prvi segment ARPANET-a postao je operativan u oktobru 1969. godine, povezujući univerzitete UCLA i Stanford. Cilj je bio da se istraživački centri povežu preko paketski preklopljene mreže (eng. packet-switched network) koja bi omogućavala neprekidnu komunikaciju čak i u slučaju delimičnog kvara infrastrukture.
 
 
 Kao deo ove dinamike, ARPA je finansirala Univerzitet u Berkliju da integriše prve TCP/IP protokole u svoj BSD Unix sistem. Ovo je odigralo ključnu ulogu u širenju i standardizaciji protokola, prvo u akademskom svetu, a kasnije i u industriji.
@@ -225,7 +225,7 @@ Kao deo ove dinamike, ARPA je finansirala Univerzitet u Berkliju da integriše p
 
 Strogo govoreći, TCP/IP nije jedan protokol već skup protokola izgrađen oko TCP i IP. Postao je značajan jer je obezbedio standardizovan programski interfejs za razmenu podataka između računara u istoj mreži. Ovaj interfejs, zasnovan na primitivima koji se nazivaju „socketi“, omogućio je uspostavljanje pouzdanih i fleksibilnih veza uz integraciju osnovnih aplikativnih protokola.
 
-ARPANET je stoga istorijska osnova današnjeg interneta. Zaista, internet je globalna mreža zasnovana na principu preklapanja paketa, gde informacije cirkulišu koristeći skup standardizovanih protokola koji osiguravaju kompatibilnost i interoperabilnost između heterogenih sistema. Ova otvorena arhitektura omogućila je razvoj i implementaciju bezbrojnih usluga i aplikacija, uključujući:
+ARPANET je stoga istorijska osnova današnjeg interneta. Zaista, internet je globalna mreža zasnovana na principu preklapanja paketa (eng. packet switching), gde informacije cirkulišu koristeći skup standardizovanih protokola koji osiguravaju kompatibilnost i interoperabilnost između heterogenih sistema. Ova otvorena arhitektura omogućila je razvoj i implementaciju bezbrojnih usluga i aplikacija, uključujući:
 
 
 - e-pošte,
@@ -265,21 +265,21 @@ TCP/IP stek se često predstavlja kao stek od četiri funkcionalna sloja, često
 
 
 
-Danas je najčešće korišćena verzija IP-a IPv4, ali njegov 32-bitni adresni prostor ima jasna ograničenja. To je dovelo do stvaranja IPv6, koji koristi 128-bitno adresiranje i nudi praktično neograničen kapacitet: neophodan za podršku eksplozivnom rastu povezanih uređaja i ispunjavanje izazova Interneta stvari (eng.Internet of Things), mobilnosti i bezbednosti.
+Danas je najčešće korišćena verzija IP-a IPv4, ali njegov 32-bitni adresni prostor ima jasna ograničenja. To je dovelo do stvaranja IPv6, koji koristi 128-bitno adresiranje i nudi praktično neograničen kapacitet: neophodan za podršku eksplozivnom rastu povezanih uređaja i za suočavanje sa izazovima Interneta stvari (eng.Internet of Things), mobilnosti i bezbednosti.
 
 
 Svaki sloj TCP/IP steka obezbeđuje određene usluge, čime se omogućava modularno rešavanje različitih mrežnih potreba: fizički prenos, logičko adresiranje, integritet podataka i usluge na aplikativnom nivou.
 
 
-| Primer uređaja    | Opis                                                                               | 	TCP/IP sloj |
+| Primer uređaja         | Opis                                                                                      | 	TCP/IP sloj            |
 | ---------------------- | ----------------------------------------------------------------------------------------- | ----------------------- |
-| Web server            | Aplikativne usluge najbliže krajnjim korisnicima                                      | Aplikativni             |
-| Gateway ili proxy    | 	Kodira, šifruje i kompresuje korisne podatke                                              | Aplikativni             |
-| Session switch | Uspostavlja sesije između aplikacija                                               | Aplikativni             |
-| Firewall ili L4 ruter | Uspostavlja, održava i prekida sesije između krajnjih uređaja                  | Transportni               |
-| Ruter                | Globalno adresira interfejse i određuje optimalne putanje kroz mrežu | Network                  |
-| Switch   | Lokalno adresira interfejse i prosleđuje saobraćaj putem MAC adrese                            | Network Access         |
-| Network Interface Card (NIC)     | Kodiranje signala, kablovi, konektori i fizičke specifikacije                        | Network Access         |
+| Web server             | Servisi aplikacija najbliži krajnjim korisnicima.                                         | Aplikativni             |
+| Gateway ili proxy      | 	Kodira, šifruje i kompresuje korisne podatke                                             | Aplikativni             |
+| Session switch         | Uspostavlja sesije između aplikacija                                                      | Aplikativni             |
+| Firewall ili L4 ruter  | Uspostavlja, održava i prekida sesije između krajnjih uređaja                             | Transportni             |
+| Ruter                  | Globalno adresira interfejse i određuje optimalne putanje kroz mrežu                      | Network                 |
+| Switch                 | Lokalno adresira interfejse i prosleđuje saobraćaj putem MAC adrese                       | Network Access          |
+| Network Interface Card (NIC)     | Kodiranje signala, kablovi, konektori i fizičke specifikacije                   | Network Access          |
 
 https://planb.network/tutorials/computer-security/communication/pi-hole-46a735c5-8af3-4cc3-a2c2-1d4f6a7dc428
 
@@ -294,10 +294,10 @@ https://planb.network/tutorials/computer-security/operating-system/pfsense-24eea
 
 
 
-Zaglavlje IP paketa je suštinska struktura podataka, podeljena na nekoliko polja, od kojih svako ima specifičnu ulogu kako bi se osiguralo da se paketi pravilno prenose i obrađuju dok putuju kroz mrežu. Ova polja uključuju odredišnu IP adresu (potrebnu za usmeravanje paketa ka njegovom nameravanom primaocu), dužinu zaglavlja označenu poljem IHL (*Internet Header Length*), ukupnu dužinu paketa zabeleženu u *Total Length field*, informacije za kontrolu i verifikaciju, i druge parametre za upravljanje protokom komunikacije i kvalitetom.
+Zaglavlje IP paketa je ključna struktura podataka, podeljena na nekoliko polja, od kojih svako ima specifičnu ulogu kako bi se osiguralo da se paketi pravilno prenose i obrađuju dok putuju kroz mrežu. Ova polja uključuju odredišnu IP adresu (potrebnu za usmeravanje paketa ka njegovom nameravanom primaocu), dužinu zaglavlja označenu poljem IHL (*Internet Header Length*), ukupnu dužinu paketa zabeleženu u *Total Length field*, informacije za kontrolu i verifikaciju, i druge parametre za upravljanje protokom komunikacije i kvalitetom.
 
 
-Prvo polje u zaglavlju naziva se verzija. Ova 4-bitna vrednost određuje koju verziju IP protokola paket prati. To je važno jer govori svakom ruteru ili međuprostornom uređaju kako da interpretira i obradi enkapsulirane podatke.
+Prvo polje u zaglavlju naziva se verzija. Ova 4-bitna vrednost određuje koju verziju IP protokola paket prati. To je važno jer govori svakom ruteru ili međumrežnom uređaju kako da interpretira i obradi enkapsulirane podatke.
 
 
 **Napomena**: Upravljanje i dodela verzija IP protokola spada pod nadležnost **IANA**. Polje od 4 bita omogućava 16 binarnih kombinacija (vrednosti 0 do 15). Do danas, njihova dodela je sledeća:
@@ -307,7 +307,7 @@ Prvo polje u zaglavlju naziva se verzija. Ova 4-bitna vrednost određuje koju ve
 | Broj verzije   | Protokol   | Opis verzije                | Reference               |
 | -------------- | ---------- | --------------------------- | ----------------------- |
 | 0–1            | Rezervisano| Rezervisano                 |                         |
-| 2–3            | Nedodeljeno| Nedodeljeno                  |                         |
+| 2–3            | Nedodeljeno| Nedodeljeno                 |                         |
 | 4              | IP         | Internet protokol           | RFC 791                 |
 | **5**          | **ST**     | **ST Datagram mode**        | **RFC 1190** / RFC 1819 |
 | 6              | IPv6       | Internet Protocol verzija 6 | RFC 8200                |
@@ -315,7 +315,7 @@ Prvo polje u zaglavlju naziva se verzija. Ova 4-bitna vrednost određuje koju ve
 | 8              | PIP        | P Internet protokol         | RFC 1621                |
 | 9              | TUBA       | Tuba                        | RFC 1347                |
 | 10–14          | Unassigned | Nedodeljeno                 |                         |
-| 15             | Reserved   | Rezervisano                 |                         |
+| 15             | Rezervisano| Rezervisano                 |                         |
 
 Među njima je IPv5, koji, iako uglavnom nepoznat javnosti, jeste postojao kao ST (_Stream Protocol_). Razvijen 1980-ih, IPv5 je bio dizajniran da reši rastuću potrebu tog vremena: pružanje "_Quality of Service_" (QoS) za određene tokove podataka koji su zahtevali kontinuirani, stabilni prenos, kao što su glas preko IP (engl. Voice over IP) ili multimedijalni tokovi. Njegov cilj je bio da garantuje propusni opseg i prioritet od kraja do kraja, koncept sličan onome što RSVP (_Resource Reservation Protocol_) danas nudi za dinamičko rezervisanje mrežnih resursa na modernim ruterima.
 
@@ -357,10 +357,10 @@ Tri mrežne konfiguracije elemenata određuju kako se paket šalje na svoj put:
 - **Prelazni uređaj (engl. gateway)**: označava posrednički ruter kroz koji paket treba da prođe kako bi stigao do spoljne mreže ili drugog segmenta lokalne mreže.
 
 
-Na internetu, podaci ne teku kao jedan kontinuirani tok, već se šalju kao **datagrami**: nezavisni blokovi podataka, svaki upakovan sa svim informacijama potrebnim za njihovu isporuku. Ovo je princip **komutacije paketa**, gde se informacije dele na samostalne jedinice koje mogu ići različitim putevima da bi stigle do istog primaoca.
+Na internetu, podaci ne teku kao jedan kontinuirani tok, već se šalju kao **datagrami**: nezavisni blokovi podataka, svaki upakovan sa svim informacijama potrebnim za njihovu isporuku. Ovo je princip **komutacije paketa** (eng. packet switching), gde se informacije dele na samostalne jedinice koje mogu ići različitim putevima da bi stigle do istog primaoca.
 
 
-Pored korisnog sadržaja (*payload*), svaki IP datagram sadrži strukturisanu zaglavlje sa poljima kao što su odredišna adresa, izvorna adresa, tip usluge, broj verzije protokola i druge kontrolne informacije potrebne za upravljanje prenosom.
+Pored korisnog sadržaja (*payload*), svaki IP datagram sadrži strukturisano zaglavlje sa poljima kao što su odredišna adresa, izvorna adresa, tip usluge, broj verzije protokola i druge kontrolne informacije potrebne za upravljanje prenosom.
 
 
 Teorijska maksimalna veličina IP datagrama je **65.536 okteta**, što je ograničenje postavljeno poljem ukupne dužine u zaglavlju. U praksi, ova veličina se retko dostiže, jer fizičke mreže koje prenose pakete (Ethernet, Wi-Fi, optička vlakna...) obično nameću stroža ograničenja poznata kao **MTU** (_Maximum Transmission Unit_). Ako datagram premašuje MTU fizičke veze, mora biti podeljen na manje pakete, od kojih se svaki šalje zasebno i ponovo sastavlja po dolasku.
@@ -373,7 +373,7 @@ Ova prilagodljivost čini IP robusnim i fleksibilnim protokolom, sposobnim da fu
 ### Fragmentacija IP datagrama
 
 
-Kada IP datagram treba da prođe kroz mrežu čiji je kapacitet prenosa manji od samog datagrama, mora biti **fragmentiran** kako bi mogao da putuje bez problema. Ovo fizičko ograničenje veličine naziva se **MTU** (Maximum Transmission Unit): najveća veličina okvira koja može proći kroz datu mrežu bez cepanja.
+Kada IP datagram treba da prođe kroz mrežu čiji je kapacitet prenosa manji od samog datagrama, datagram mora biti **fragmentiran** kako bi mogao da putuje bez problema. Ovo fizičko ograničenje veličine naziva se **MTU** (Maximum Transmission Unit): najveća veličina okvira koja može proći kroz datu mrežu bez cepanja.
 
 
 Svaka mrežna tehnologija nameće svoj MTU, određen karakteristikama njenog hardvera i protokola. Uobičajene vrednosti uključuju:
@@ -396,14 +396,14 @@ Proces fragmentacije funkcioniše ovako:
 
 
 - Ruter razbija datagram na fragmente koji nisu veći od MTU ciljne mreže.
-- Veličina svakog fragmenta je umnožak od 8 bajtova, jer IP protokol koristi tu jedinicu za kodiranje pomeraja pri ponovnom sastavljanju.
+- Veličina svakog fragmenta je umnožak od 8 bajtova, jer IP protokol koristi tu jedinicu za kodiranje pomaka pri ponovnom sastavljanju.
 - Svaki fragment dobija svoje IP zaglavlje, koje sadrži informacije potrebne krajnjem primaocu da ih ponovo sastavi u ispravnom redosledu.
 
 
 Jednom fragmentirani, delovi putuju nezavisno kroz mrežu. Mogu uzeti različite rute, u zavisnosti od tabela rutiranja, opterećenja linkova ili prekida. Nema garancije da će stići redosledom kojim su poslati.
 
 
-Po prijemu, mašina koja prima podatke obavlja **ponovno sastavljanje**. Koristeći informacije u zaglavljima (zajednički identifikator, pomeraj i zastavice fragmentacije), vraća fragmente u pravilan redosled kako bi rekonstruisala originalni datagram pre nego što ga prenese sledećem sloju. Ako čak i jedan fragment bude izgubljen ili oštećen, ceo datagram se obično odbacuje, bez svakog dela, rezultat bi bio nepotpun ili neupotrebljiv.
+Po prijemu, mašina koja prima podatke obavlja **ponovno sastavljanje**. Koristeći informacije u zaglavljima (zajednički identifikator, pomak i zastavice fragmentacije), vraća fragmente u pravilan redosled kako bi rekonstruisala originalni datagram pre nego što ga prenese sledećem sloju. Ako čak i jedan fragment bude izgubljen ili oštećen, ceo datagram se obično odbacuje, bez svakog dela, rezultat bi bio nepotpun ili neupotrebljiv.
 
 
 Iako efikasni, fragmentacija i ponovno sastavljanje dolaze s nedostacima: dodatna obrada za rutere i hostove, i veća šansa za gubitak paketa, što može povećati ponovna slanja. Zato su pažljivo upravljanje MTU-om i optimizacija veličine paketa važni za glatku i efikasnu IP komunikaciju.
@@ -483,7 +483,7 @@ Istorijski gledano, IPv4 sistem se oslanjao na šemu zasnovanu na klasama, ozna�
 
 
 
-| **Class** | **IPv4 Address Range**            | **Usage**                    |
+| **Class** | **IPv4 opseg adresa **            | **Upotreba**                 |
 | --------- | --------------------------------- | ---------------------------- |
 | A         | 1.x.x.x to 126.x.x.x              | Unicast adrese               |
 |           | (127.x.x.x rezervisana za loopback)| Lokalna petlja (engl. local loopback)|
@@ -525,7 +525,7 @@ Primer: Ako host ima adresu **192.168.7.5**, možemo zaključiti:
 
 - 192.168.7.0: mrežna adresa
 - 192.168.7.1: često lokalni ruter
-- 192.168.7.5: sam domaćin
+- 192.168.7.5: sam host
 
 
 Još jedan poseban slučaj je **127.0.0.1**, poznat kao "***loopback***".
