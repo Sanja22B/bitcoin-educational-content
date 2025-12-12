@@ -1242,7 +1242,7 @@ Konačno, dinamički protokoli rutiranja uključuju standarde kao što su RIP (_
 _Network Address Translation_ (NAT) je tehnika razvijena za rešavanje problema postepenog iscrpljivanja dostupnih IPv4 adresa. Dizajnirana kao privremeno rešenje pre široke primene IPv6, NAT je omogućio kompanijama i pojedincima da nastave povezivanje velikog broja mašina koristeći samo ograničen skup javnih IP adresa.
 
 
-**Važno podsećanje:** prelazak sa IPv4 na IPv6 teoretski rešava problem iscrpljivanja proširivanjem prostora adresa sa 32 bita na 128 bita, pružajući gotovo neograničen broj adresa (2^128). U praksi, međutim, tranzicija je još uvek nepotpuna, i NAT se i dalje široko koristi danas.
+**Važno podsećanje:** prelazak sa IPv4 na IPv6 teoretski rešava problem iscrpljivanja proširivanjem prostora adresa sa 32 bita na 128 bita, pružajući gotovo neograničen broj adresa (2^128). U praksi, međutim, tranzicija je još uvek nepotpuna, i NAT se i dalje danas široko koristi.
 
 
 Princip iza NAT-a je jednostavan, ali veoma efikasan: umesto dodeljivanja jedinstvene javne IP adrese svakom uređaju na unutrašnjoj mreži, koristi se jedna rutabilna adresa (ili mali skup adresa) za sve privatne uređaje. NAT prolaz, često integrisan u ruter ili firewall, zatim dinamički prevodi unutrašnju IP adresu zajedno sa informacijama potrebnim za ispravno usmeravanje saobraćaja ka spoljašnjem svetu, i osigurava da se odgovori vrate originalnom pošiljaocu.
@@ -1251,8 +1251,7 @@ Princip iza NAT-a je jednostavan, ali veoma efikasan: umesto dodeljivanja jedins
 Ovaj pristup ima trenutnu korist: potpuno skriva internu mrežnu arhitekturu. Za posmatrača spolja, svi zahtevi sa radnih stanica, servera ili štampača izgledaju kao da dolaze sa istog javnog identiteta. Privatne adrese, obično preuzete iz rezervisanih opsega (npr. 192.168.x.x ili 10.x.x.x), ostaju nevidljive sa interneta.
 
 
-Pored rešavanja problema nestašice IPv4 adresa, NAT takođe jača bezbednost stvaranjem prve logičke barijere između internih i javnih mreža. Neželjene dolazne komunikacije su prirodno blokirane, jer samo veze inicirane iz unutrašnje mreže imaju koristi od neophodnog prevođenja za primanje odgovora.
-
+Pored rešavanja problema nestašice IPv4 adresa, NAT takođe jača bezbednost stvaranjem prve logičke barijere između internih i javnih mreža.Neželjene dolazne komunikacije se prirodno blokiraju, jer samo veze pokrenute iz unutrašnje mreže dobijaju potrebnu translaciju kako bi mogle da prime odgovore.
 
 
 ![Image](assets/sr-Latn/024.webp)
@@ -1297,9 +1296,9 @@ _Primer pojednostavljene NAT tabele prevođenja:_
 
 | Interna  IP   | Eksterna IP    | Trajanje (sec) | Ponovo upotrebljiv? |
 | ------------- | -------------- | -------------- | --------- |
-| 10.101.10.20  | 193.48.100.174 | 1,200          | no        |
-| 10.100.54.251 | 193.48.101.8   | 3,601          | yes       |
-| 10.100.0.89   | 193.48.100.46  | 0              | no        |
+| 10.101.10.20  | 193.48.100.174 | 1,200          | ne        |
+| 10.100.54.251 | 193.48.101.8   | 3,601          | da       |
+| 10.100.0.89   | 193.48.100.46  | 0              | ne        |
 
 U ovom primeru, ako nijedan paket nije prošao kroz drugi unos duže od sat vremena (3.600 sekundi), označava se kao ponovo upotrebljiv. Suprotno tome, trajanje od nula označava aktivnu komunikaciju, sa zaključanim mapiranjem.
 
@@ -1505,21 +1504,21 @@ Preduslovi:
 
 
 - Učitajte modul `bonding` (ili koristite `teamd`) ;
-- Imajte na raspolaganju najmanje dva fizička interfejsa.
+- Imate na raspolaganju najmanje dva fizička interfejsa.
 
 
 #### Različite uobičajene metode povezivanja:
 
 
-|Mode|Name|Principle|
+|Način rada|Naziv|Princip rada|
 |---|---|---|
-|0|balance-rr|Round-robin, cyclic distribution of frames|
-|1|active-backup|Single active interface with hot failover |
-|2|balance-xor|Selection based on XOR of src/dst MAC addresses|
-|3|broadcast|Broadcast simultaneously on all interfaces   |
-|4|802.3ad (LACP)|Standardized dynamic aggregation; requires compatible switch|
-|5|tlb (Transmit Load Balancing)|Balancing based on transmit load|
-|6|alb (Adaptive Load Balancing)|Adaptive balancing; also balances receive via ARP|
+|0|balance-rr|Round-robin, ciklična distribucija frejmova|
+|1|active-backup|Jedan aktivni interfejs sa brzim (vrućim) prebacivanjem u slučaju kvara. |
+|2|balance-xor|Selekcija zasnovana na XOR-u izvorne i odredišne MAC adrese.|
+|3|broadcast|Emitovanje (broadcast) istovremeno na svim interfejsima.   |
+|4|802.3ad (LACP)|Standardizovana dinamička agregacija; zahteva kompatibilan svič|
+|5|tlb (Transmit Load Balancing)|Balansiranje zasnovano na opterećenju prilikom slanja (transmit load)|
+|6|alb (Adaptive Load Balancing)|Adaptivno balansiranje; takođe balansira prijem koristeći ARP|
 
 #### Podešavanje sa `ip link
 
@@ -1574,7 +1573,7 @@ ip link set eth1 master bond0
 
 
 
-- Vratite sve nazad:
+- Ponovo aktivirajte sve:
 
 
 ```shell
@@ -1649,7 +1648,7 @@ ip addr add 192.168.1.2/24 dev eth0
 ```
 
 
-Da bi ovaj alias bio postojan nakon ponovnog pokretanja, dodajte drugi blok `IPADDR2=...` / `PREFIX2=...` u `ifcfg-eth0`, ili kreirajte novu *NetworkManager* konekciju putem `nmcli`.
+Da bi ovaj alias bio postojan nakon ponovnog pokretanja (eng. reboot), dodajte drugi blok `IPADDR2=...` / `PREFIX2=...` u `ifcfg-eth0`, ili kreirajte novu *NetworkManager* konekciju putem `nmcli`.
 
 
 Zahvaljujući komandama `ip` i srodnim komandama (`ip link`, `ip addr`, `ip route`), mrežna konfiguracija je konzistentnija, skriptabilna i jasna. Bonding je ključna komponenta arhitektura visoke dostupnosti, a dodeljivanje više adresa jednom interfejsu postalo je mnogo jednostavnije.
@@ -1677,13 +1676,13 @@ Sada prelazimo na sledeću generaciju IP adresiranja: IPv6 protokol, prvobitno p
 Motivacije iza usvajanja IPv6 su različite, i rešava kritične potrebe za evoluciju interneta. Prvo, uloga IPv6 je da podrži eksponencijalni rast broja povezanih uređaja (cilj koji je nedostižan sa ograničenim prostorom adresa IPv4). Drugo, protokol ima za cilj da smanji veličinu tabela rutiranja, čineći razmene efikasnijim i smanjujući opterećenje rutera na duži rok.
 
 
-IPv6 takođe nastoji da pojednostavi određene aspekte rukovanja paketima, poboljšavajući tok datagrama i optimizujući brzine prenosa između mreža. Sa stanovišta bezbednosti, AH/ESP zaglavlja *IPsec* protokola su uključena u osnovnu specifikaciju, i svi IPv6 čvorovi moraju biti sposobni da ih podrže (RFC 6434). Njihova upotreba, međutim, ostaje opcionalna: na administratoru je da ih omogući u zavisnosti od konteksta.
+IPv6 takođe nastoji da pojednostavi određene aspekte rukovanja paketima, poboljšavajući tok datagrama i optimizujući brzine prenosa između mreža. Sa stanovišta bezbednosti, AH/ESP zaglavlja *IPsec* protokola su uključena u osnovnu specifikaciju, i svi IPv6 uređaji moraju biti sposobni da ih podrže (RFC 6434). Njihova upotreba, međutim, ostaje opcionalna: na administratoru je da ih omogući u zavisnosti od konteksta.
 
 
-Drugi ciljevi uključuju preciznije rukovanje tipovima usluga, posebno kako bi se osigurala bolji kvalitet za aplikacije u realnom vremenu (VoIP, videokonferencije, itd.). IPv6 je takođe dizajniran da omogući fleksibilnije upravljanje mobilnošću: uređaj može promeniti pristupne tačke bez promene svoje adrese na način koji je vidljiv njegovim vršnjacima.
+Drugi ciljevi uključuju preciznije rukovanje tipovima servisa, posebno kako bi se osigurala bolji kvalitet za aplikacije u realnom vremenu (VoIP, videokonferencije, itd.). IPv6 je takođe dizajniran da omogući fleksibilnije upravljanje mobilnošću: uređaj može promeniti pristupne tačke bez promene svoje adrese na način koji je vidljiv drugim uređajima s kojima komunicira.
 
 
-Konačno, IPv6 je dizajniran da koegzistira sa starijim protokolima. Iako nije direktno binarno kompatibilan sa IPv4, ostaje potpuno interoperabilan sa višim-slojevima protokolima kao što su TCP, UDP, ICMPv6 i DNS, kao i sa rutirajućim protokolima kao što su OSPF i BGP, uz određena prilagođavanja. Za upravljanje multicast-om, IPv6 koristi MLD (*Multicast Listener Discovery*) protokol, koji je funkcionalno ekvivalent IGMP-u u IPv4 okruženju.
+Konačno, IPv6 je dizajniran da koegzistira sa starijim protokolima. Iako nije direktno binarno kompatibilan sa IPv4, i dalje je potpuno interoperabilan sa protokolima višeg sloja kao što su TCP, UDP, ICMPv6 i DNS, kao i sa protokolima za rutiranje poput OSPF i BGP, uz određene prilagodbe. Za upravljanje multicast-om, IPv6 koristi MLD (*Multicast Listener Discovery*) protokol, koji je funkcionalno ekvivalent IGMP-u u IPv4 okruženju.
 
 
 ### Pravila notacije
@@ -1768,7 +1767,7 @@ Neodređena IPv6 adresa je predstavljena sa `::` ili, preciznije, `::0.0.0.0`. O
 |::/8                 | Rezervisane adrese                          |
 | 2000::/3            | Unikast adrese, rutabilne na internetu      |
 | fc00::/7            | Jedinstvene lokalne adrse (1)               |
-| fe80::/10           | Link-local addresses                        |
+| fe80::/10           | Link-lokalne adrese                         |
 | ff00::/8            | Multikast adrese                            |
 
 (1): *Na privatnoj LAN mreži, prefiks `fd00::/8` je preferiran za dodelu internih adresa koje nisu rutabilne na Internetu.*
@@ -1812,13 +1811,13 @@ Neki opsezi imaju posebne dokumentovane upotrebe:
 Jedinstvene lokalne adrese (`fc00::/7`) su IPv6 ekvivalent IPv4 privatnih adresa (RFC1918). Omogućavaju kreiranje izolovanih internih mreža bez rizika od konflikata sa javnim adresiranjem. U praksi, efektivni prefiks je `fd00::/8`, sa 8. bitom postavljenim na 1 kako bi se označila lokalna upotreba. Svaki ULA blok uključuje 40-bitni pseudo-slučajni identifikator, minimizirajući kolizije adresa prilikom povezivanja odvojenih privatnih mreža.
 
 
-#### Link-local adrese
+#### Link-lokalne adrese
 
 
-Link-local adrese (`fe80::/64`) koriste se isključivo za komunikaciju unutar istog sloja 2 segmenta (isti VLAN ili prekidač). Nikada se ne rutiraju izvan lokalne veze. Svaki mrežni interfejs automatski generiše link-local adresu, koja je često izvedena iz MAC adrese koristeći EUI-64 šemu.
+Link-lokalne adrese (`fe80::/64`) koriste se isključivo za komunikaciju unutar istog sloja 2 segmenta (isti VLAN ili prekidač). Nikada se ne rutiraju izvan lokalne veze. Svaki mrežni interfejs automatski generiše link-lokalnu adresu, koja je često izvedena iz MAC adrese koristeći EUI-64 šemu.
 
 
-**Specijalna funkcija**: ista mašina može koristiti isti link-local adresu na više interfejsa, ali interfejs mora biti specificiran prilikom komunikacije kako bi se izbegla dvosmislenost.
+**Specijalna funkcija**: ista mašina može koristiti istu link-lokalnu adresu na više interfejsa, ali interfejs mora biti specificiran prilikom komunikacije kako bi se izbegla dvosmislenost.
 
 
 #### Multicast adrese
@@ -1836,12 +1835,12 @@ Kombinovanjem ovih tipova adresa, IPv6 pruža kompletan skup opcija za ispunjava
 ### Opseg adresa
 
 
-Opseg IPv6 adresa definiše tačnu oblast u kojoj je važeći i jedinstven. Razumevanje ovog koncepta je ključno za savladavanje rutiranja paketa i logičke organizacije IPv6 mreže. IPv6 adrese su generalno grupisane u tri glavne kategorije na osnovu njihovog opsega i upotrebe: unicast, anycast i multicast.
+Opseg IPv6 adrese definiše tačan domen u kojem je ona važeća i jedinstvena. Razumevanje ovog koncepta je ključno za savladavanje rutiranja paketa i logičke organizacije IPv6 mreže. IPv6 adrese su generalno grupisane u tri glavne kategorije na osnovu njihovog opsega i upotrebe: unicast, anycast i multicast.
 
 
 **Unicast adrese** su najčešće i uključuju nekoliko različitih podtipova.
 
-To uključuje _loopback_ (`::1`) adresu, čiji je opseg ograničen na host koji ga koristi, i koji se koristi za testiranje mrežnog steka interno bez slanja saobraćaja preko fizičke mreže.
+To uključuje _loopback_ (`::1`) adresu, čiji je opseg ograničen na host koji ga koristi, i koji se koristi za interno testiranje mreže bez slanja saobraćaja preko fizičke mreže.
 
 Zatim postoje link-lokalne adrese (_link-local_), čiji je opseg ograničen na jedan segment mreže: koriste se za direktnu komunikaciju između uređaja na istom fizičkom ili logičkom linku (npr. jedan switch ili VLAN).
 
@@ -1855,18 +1854,18 @@ Konceptualno, IPv6 adrese se često predstavljaju kao binarna struktura gde prva
 |-----------|--------|---|-----------|--------|---------------|
 | Bits      | 7      | 1 | 40        | 16     | 64            |
 
-IPv6 arhitektura prati hijerarhijski model globalnog rutiranja današnjeg interneta. Podela prefiksa omogućava regionalnim registrima i mrežnim operaterima da upravljaju adresama alokacijom na decentralizovan način, dok se obezbeđuje globalna jedinstvenost. U okviru ovog okvira, isti host može istovremeno imati globalnu unicast adresu za internet komunikaciju i link-local adresu za lokalne interakcije, npr. sa neposrednim susedstvom ili za poruke otkrivanja rutera.
+IPv6 arhitektura prati hijerarhijski model globalnog rutiranja današnjeg interneta. Podela prefiksa omogućava regionalnim registrima i mrežnim operatorima da upravljaju dodelom adresa na decentralizovan način, uz obezbeđivanje globalne jedinstvenosti. U okviru ovog okvira, isti host može istovremeno imati globalnu unicast adresu za internet komunikaciju i link-lokalnu adresu za lokalne interakcije, npr. sa neposrednim susedstvom ili za poruke otkrivanja rutera.
 
 
-| Field     | Prefix | Zero | Interface ID |
+| polje     | Prefiks | Zero | Interfejs ID |
 |-----------|--------|------|--------------|
 | Bits      | 10     | 54   | 64           |
 
-**Anycast adrese** predstavljaju posredni koncept koji se nadovezuje na unicast model, ali se u određenim slučajevima može ponašati kao multicast. Anycast adresa je, u suštini, unicast adresa dodeljena na nekoliko interfejsa raspoređenih preko različitih mrežnih čvorova. Kada se paket pošalje na anycast adresu, IPv6 protokol ima za cilj da ga isporuči jednom od domaćina koji dele tu adrsu, obično onom najbližem u smislu rutirajuće topologije. Ovaj pristup optimizuje brzinu obrade upita i poboljšava otpornost distribuiranih servisa. Klasičan primer su root DNS serveri, gde anycast adresiranje automatski usmerava upite na najbližu tačku prisustva.
+**Anycast adrese** predstavljaju posredni koncept koji se nadovezuje na unicast model, ali se u određenim slučajevima može ponašati kao multicast. Anycast adresa je, u suštini, unicast adresa dodeljena na nekoliko interfejsa raspoređenih preko različitih mrežnih čvorova. Kada se paket pošalje na anycast adresu, IPv6 protokol ima za cilj da ga isporuči jednom od domaćina koji dele tu adresu, obično onom najbližem u smislu rutirajuće topologije. Ovaj pristup optimizuje brzinu obrade upita i poboljšava otpornost distribuiranih servisa. Klasičan primer su root DNS serveri, gde anycast adresiranje automatski usmerava upite na najbližu tačku prisustva.
 
 
 
-| Field     | Prefix | Subnet | Interface ID |
+| polje     | Prefiks | Subnet | Interfejs ID |
 |-----------|--------|--------|--------------|
 | Bits      | 48     | 16     | 64           |
 
@@ -1878,7 +1877,7 @@ Svaka multicast adresa uključuje posebno 4-bitno polje _scope_, koje definiše 
 - Opseg od `1` znači da je paket namenjen samo za lokalni uređaj.
 - Opseg od `2` ograničava paket na lokalnu vezu: svi uređaji na istom fizičkom ili virtualnom segmentu mogu ga primiti.
 - Opseg od `5` proširuje domet do lokacije, obično čitave korporativne mreže.
-- Opseg od `8` proširuje domet na organizaciju, omogućavajući isporuku preko svih podmreža iste entitete.
+- Opseg od `8` proširuje domet na organizaciju, omogućavajući isporuku preko svih podmreža istog entiteta.
 - Opseg `e` (14 u heksadecimalnom formatu) označava globalni domet, čineći multicast grupu dostupnom sa bilo kog mesta na internetu ako je infrastruktura rutiranja podržava.
 
 
@@ -1890,14 +1889,14 @@ Struktura IPv6 multicast adresa uključuje:
 - polje za identifikaciju (112 bita) koje identifikuje broj multicast grupe.
 
 
-| Field      | Prefix | Flags | Scope | Group ID |
+| polje      | Prefiks | Zastavice | Opseg | Grupni ID |
 |------------|--------|--------|--------|----------|
 | Bits       | 8      | 4      | 4      | 112      |
 
-Poznat primer IPv6 multicast-a u akciji je _Neighbor Discovery Protocol_ (NDP). Umesto korišćenja ARP kao u IPv4, NDP se oslanja na multicast adrese kao što je `ff02::1:ff00:0/104` za emitovanje zahteva za otkrivanje suseda, ciljajući samo relevantne hostove na istoj vezi.
+Poznat primer IPv6 multicast-a u akciji je _Neighbor Discovery Protocol_ (NDP). Umesto korišćenja ARP kao u IPv4, NDP se oslanja na multicast adrese kao što je `ff02::1:ff00:0/104` za emitovanje zahteva za otkrivanje lokalnih uređaja, ciljajući samo relevantne uređaje na istoj mrežnoj vezi.
 
 
-Preciznim definisanjem opsega adresa, IPv6 strukturiše kako se tokovi podataka šalju, primaju i usmeravaju. Ova granularnost čini protokol fleksibilnijim i efikasnijim za upravljanje lokalnim i globalnim komunikacijama, istovremeno izbegavajući nedostatke generalizovanog emitovanja.
+Preciznim definisanjem opsega adresa, IPv6 strukturiše kako se tokovi podataka šalju, primaju i usmeravaju. Ova granularnost čini protokol fleksibilnim i efikasnijim za upravljanje lokalnim i globalnim komunikacijama, istovremeno izbegavajući nedostatke generalizovanog emitovanja.
 
 
 ## Dodela adresa u lokalnoj mreži
@@ -1940,7 +1939,7 @@ Ručna konfiguracija je i dalje korisna u kontrolisanim okruženjima, ali postaj
 Za automatsku konfiguraciju, postoji nekoliko metoda:
 
 
-- Protokol **NDP** (_Neighbor Discovery Protocol_), specificiran od strane RFC4862, omogućava *stateless* auto-konfiguraciju. U ovom režimu, host prima mrežni prefiks od lokalnog rutera i samostalno kompletira adresu identifikatorom zasnovanim na svojoj MAC adresi. Ova metoda je jednostavna za implementaciju i ne zahteva centralni server.
+- Protokol **NDP** (_Neighbor Discovery Protocol_), specificiran od strane RFC4862, omogućava *stateless* auto-konfiguraciju. U ovom režimu, host prima mrežni prefiks od lokalnog rutera i samostalno kompletira adresu identifikatorom zasnovanom na svojoj MAC adresi. Ova metoda je jednostavna za implementaciju i ne zahteva centralni server.
 - Implementacije kao one u Windows-u mogu generisati deo hosta pseudo-slučajno kako bi poboljšale privatnost izbegavanjem direktnog izlaganja MAC adrese. Otkrivanje MAC adrese u IPv6 paketima može izazvati zabrinutost za privatnost, jer omogućava praćenje uređaja preko različitih mreža.
 - DHCPv6 protokol: Definisan u RFC3315 i sličan DHCP-u koji se koristi za IPv4, omogućava kontrolisaniju i centralizovanu konfiguraciju, uključujući upravljanje zakupom, dodatne opcije (DNS, MTU...) i registraciju baza podataka. DHCPv6 može raditi samostalno ili zajedno sa stateless konfiguracijom kako bi obezbedio dodatne parametre bez dodeljivanja same IP adrese.
 
@@ -1955,13 +1954,13 @@ Evo primera kako transformisati MAC adresu u EUI-64:
 
 
 
-Međutim, zbog rastućih zabrinutosti oko praćenja uređaja, moderni operativni sistemi (posebno Linux, Windows 10+, macOS, Android) sada podrazumevano omogućavaju ekstenzije za privatnost. One koriste nasumično generisane interfejs identifikatore koji se periodično obnavljaju za odlazne veze, dok zadržavaju stabilan identifikator za interne komunikacije (kao što su DNS ili DHCPv6).
+Međutim, zbog rastućih zabrinutosti oko praćenja uređaja, moderni operativni sistemi (posebno Linux, Windows 10+, macOS, Android) sada podrazumevano omogućavaju ekstenzije za privatnost. Oni koriste nasumično generisane interfejs identifikatore koji se periodično obnavljaju za odlazne veze, dok zadržavaju stabilan identifikator za interne komunikacije (kao što su DNS ili DHCPv6).
 
 
 Kao i kod DHCP-a u IPv4, automatski dodeljene IPv6 adrese mogu imati dva životna veka, definisana od strane DHCPv6 rutera ili servera:
 
 
-- Preferirani životni vek: nakon ovog perioda, adresa ostaje važeći, ali se više ne koristi za iniciranje novih veza;
+- Preferirani životni vek: nakon ovog perioda, adresa ostaje važeća, ali se više ne koristi za iniciranje novih veza;
 - Važeći vek trajanja: kada ovo vreme istekne, adresa se potpuno uklanja iz konfiguracije interfejsa.
 
 
@@ -1983,9 +1982,9 @@ Ukratko, IPv6 nudi širok spektar fleksibilnosti za dodeljivanje adresa: ručna 
 ### Distribucija adresa
 
 
-Šema dodele IPv6 adresa je strukturisana da ispuni dva cilja: da garantuje globalnu jedinstvenost adrese i da omogući logičku hijerarhiju koja favorizuje agregaciju i pojednostavljenje tabela rutiranja.
+Šema dodele IPv6 adresa je strukturisana da ispuni dva cilja: da garantuje globalnu jedinstvenost adrese i da omogući logičku hijerarhiju koja favorizuje agregaciju i pojednostavljivanje tabela rutiranja.
 
-Kao i kod IPv4, *Internet Assigned Numbers Authority* (IANA) se nalazi na vrhu ove hijerarhije. Ona upravlja globalnim unicast adresnim prostorom i delegira blokove adresa pet regionalnih internet registara (_RIR_).
+Kao i kod IPv4, *Internet Assigned Numbers Authority* (IANA) se nalazi na vrhu ove hijerarhije. Ona upravlja globalnim unicast adresnim prostorom i delegira blokove adresa pet regionalnim internet registrima (_RIR_).
 
 
 Pet postojećih RIR-ova su:
@@ -2001,10 +2000,10 @@ Pet postojećih RIR-ova su:
 IANA dodeljuje IPv6 blokove različitih veličina svakom RIR-u, uglavnom između /23 i /12. Ovaj pristup nudi fleksibilnost uz osiguranje dugoročne skalabilnosti. RIR-ovi, zauzvrat, redistribuiraju ove blokove Internet provajderima (ISP-ovima), velikim korporacijama i javnim institucijama.
 
 
-Od 2006. godine, svaki RIR je dobio IPv6 /12 blok od IANA, fiksne veličine dizajnirane da osigura stabilnu i dovoljno veliku rezervu za budući rast. RIR-ovi obično dele ove blokove na /23, /26 ili /29 blokove. ISP-ovi najčešće dobijaju /32 blokove, iako ova veličina može varirati u zavisnosti od veličine ISP-a i geografske oblasti. Oni obično dodeljuju /48 blokove korisnicima. Svaki /48 obezbeđuje 65,536 različitih /64 podmreža (ogroman kapacitet u poređenju sa IPv4).
+Od 2006. godine, svaki RIR je dobio IPv6 blok veličine /12 od IANA, fiksna veličina je dizajnirana da osigura stabilnu i dovoljno veliku rezervu za budući rast. RIR-ovi obično dele ove blokove na /23, /26 ili /29 blokove. ISP-ovi najčešće dobijaju /32 bloka, iako ova veličina može varirati u zavisnosti od veličine ISP-a i geografske oblasti. Oni obično dodeljuju /48 bloka korisnicima. Svaki blok veličine /48 obezbeđuje 65,536 različitih /64 podmreža (ogroman kapacitet u poređenju sa IPv4).
 
 
-**Važna napomena:** blok /32 sadrži tačno 65.536 podblokova /48. To znači da svaki ISP može opslužiti desetine hiljada korisnika bez iscrpljivanja svoje alokacije. Zahvaljujući svom /48, svaki korisnik će zatim imati ogromnu količinu prostora za strukturiranje svoje interne mreže sa onoliko /64 segmenata koliko želi.
+**Važna napomena:** blok /32 sadrži tačno 65.536 /48 podblokova. To znači da svaki ISP može opslužiti desetine hiljada korisnika bez iscrpljivanja svoje alokacije. Zahvaljujući svom /48, svaki korisnik će zatim imati ogromnu količinu prostora za strukturiranje svoje interne mreže sa onoliko /64 segmenata koliko želi.
 
 
 Tipična hijerarhija alokacije izgleda ovako:
@@ -2067,11 +2066,11 @@ IPv6 format paketa razlikuje se od IPv4 po tome što je jednostavniji i proširi
 Međutim, IPv6 ne uklanja funkcionalnost: umesto integrisanja brojnih opcionih polja u glavno zaglavlje, uvodi sistem zaglavlja proširenja, koja se postavljaju odmah nakon osnovnog zaglavlja. Ova opciona zaglavlja omogućavaju dodavanje podataka ili instrukcija specifičnih za određene funkcije, bez nepotrebnog opterećivanja običnih paketa.
 
 
-Neka zaglavlja ekstenzija prate fiksnu strukturu, dok druga mogu sadržati promenljiv broj opcija. U ovim opcijama su kodirani kao `{Type, Length, Value}` trojke:
+Neka zaglavlja ekstenzija prate fiksnu strukturu, dok druga mogu sadržati promenljiv broj opcija. Ove opcije su kodirani kao grupe od tri elementa `{Type, Length, Value}`:
 
 
 - Polje "Type" (1 bajt) označava prirodu opcije;
-- Prva dva bita "Tipa" određuju šta ruteri treba da urade ako opcija nije prepoznata:
+- Prva dva bita polja "Type" određuju šta ruteri treba da urade ako opcija nije prepoznata:
  - Ignoriši opciju i nastavi sa tretmanom,
  - Ispusti datagram,
  - Ispusti i pošalji ICMP grešku izvoru.
@@ -2117,18 +2116,18 @@ Polje "Segments Left" počinje sa ukupnim brojem preostalih segmenata i smanjuje
 ![Image](assets/sr-Latn/029.webp)
 
 
-#### Fragmentacioni zaglavlje
+#### Zaglavlje fragmentacije
 
 
-U IPv6, samo izvorni host sme da fragmentira datagram, za razliku od IPv4 gde su ruteri takođe mogli to da rade. Svi IPv6 čvorovi moraju biti sposobni da obrade pakete od najmanje 1280 bajtova. Ako ruter naiđe na paket veći od MTU sledeće veze, šalje poruku *ICMPv6 Packet Too Big* nazad izvoru, koji zatim prilagođava veličinu svojih prenosa.
+U IPv6, samo izvorni host sme da fragmentira datagram, za razliku od IPv4 gde su ruteri takođe mogli to da rade. Svi IPv6 čvorovi moraju biti sposobni da obrade pakete od najmanje 1280 bajtova. Ako ruter naiđe na paket veći od MTU naredne veze, šalje poruku *ICMPv6 Packet Too Big* nazad izvoru, koji zatim prilagođava veličinu svojih prenosa.
 
 
 Zaglavlje fragmentacije sadrži sledeća polja:
 
 
-- **Identifikacija**: jedinstveni identifikator datagrama za ponovno sastavljanje.
+- **Identification**: jedinstveni identifikator datagrama za ponovno sastavljanje.
 - **Fragment Offset**: pozicija fragmenta unutar originalnog datagrama.
-- **M zastavica**: označava da li sledi još fragmenata.
+- **M flag**: označava da li sledi još fragmenata.
 
 
 ![Image](assets/sr-Latn/030.webp)
