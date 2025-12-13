@@ -257,11 +257,10 @@ Još jedna velika pretnja je ransomware, koji blokira vaše podatke šifrovanjem
 
 
 
-SCU101 je posebno naglasio važnost osiguravanja vaše e-pošte, koja je ulazna tačka za sve vaše druge online naloge. Kompromitovani poštanski sandučić omogućava hakerima da resetuju lozinke gotovo svih vaših naloga putem uobičajenih procedura za oporavak e-pošte.
+SCU101 je posebno naglasio važnost zaštite vaše e-pošte, koja je ulazna tačka za sve vaše druge online naloge. Kompromitovan mejl-nalog omogućava napadačima da resetuju lozinke za gotovo sve vaše naloge putem uobičajenih procedura za oporavak lozinke putem e-pošte.
 
 
-
-Dakle, videli ste važnost kreiranja sigurnih, posvećenih e-mail adresa. Pametno je imati specifičan e-mail Address rezervisan za oporavak naloga, odvojen od vašeg glavnog Address.
+Dakle, videli ste važnost kreiranja sigurnih, posvećenih e-mail adresa. Pametno je imati posebnu e-mail adresu rezervisanu za oporavak naloga, odvojenu od vaše glavne adrese.
 
 
 
@@ -273,7 +272,7 @@ Dakle, videli ste važnost kreiranja sigurnih, posvećenih e-mail adresa. Pametn
 
 
 
-Digitalna sigurnost u velikoj meri zavisi od kvaliteta vaših lozinki. SCU101 je objasnio zašto je korišćenje menadžera lozinki neophodno: ovi alati vam omogućavaju da generate i skladištite složene, jedinstvene i nasumične lozinke za svaku uslugu koju koristite.
+Digitalna sigurnost u velikoj meri zavisi od kvaliteta vaših lozinki. SCU101 je objasnio zašto je korišćenje menadžera lozinki neophodno: ovi alati vam omogućavaju da generišete i skladištite složene, jedinstvene i nasumične lozinke za svaku uslugu koju koristite.
 
 
 
@@ -301,11 +300,11 @@ ___
 
 
 
-Ovaj podsetnik na osnove će poslužiti kao baza za naš kurs SCU202, gde ćemo mnogo dublje ući u savladavanje tehnika sajber bezbednosti, kako bismo bolje zaštitili vašu individualnu suverenost, vašu privatnost i vaše lične podatke u celini.
+Ovaj podsetnik na osnove će poslužiti kao baza za naš kurs SCU202, gde ćemo mnogo detaljnije ući u savladavanje tehnika sajber bezbednosti, kako bismo bolje zaštitili našu individualnu suverenost, privatnost i lične podatke u celini.
 
 
 
-# Od klika do terminala: ovladavanje Linux-a
+# Od klika do terminala: ovladavanje Linux-om
 
 
 <partId>e28895b3-2b09-4811-8031-5abc1f14fde2</partId>
@@ -319,7 +318,7 @@ Ovaj podsetnik na osnove će poslužiti kao baza za naš kurs SCU202, gde ćemo 
 
 
 
-Počnimo ovaj kurs SCU202 sa osnovama: operativni sistem (OS) vašeg računara. Ne samo da određuje vaš izbor hardvera, već i vašu sigurnost, jednostavnost korišćenja i mogućnost prilagođavanja vašeg uređaja.
+Počnimo ovaj SCU202 kurs sa osnovama: operativnim sistemom (OS) vašeg računara. Ne samo da određuje vaš izbor hardvera, već i vašu sigurnost, jednostavnost korišćenja i mogućnost prilagođavanja vašeg uređaja.
 
 
 
@@ -331,7 +330,7 @@ Pre nego što pređemo na tehničke detalje o Linuxu u narednim poglavljima, va�
 
 
 
-Operativni sistem je skup centralnih programa koji deluje kao posrednik između korisnika, aplikacija (koje su takođe softver) i hardvera, odnosno vašeg računara. To je osnovni softver Layer koji omogućava korišćenje hardverskih resursa računara (procesor, memorija, diskovi, periferije, itd.).
+Operativni sistem je skup centralnih programa koji deluje kao posrednik između korisnika, aplikacija (koje su takođe softver) i hardvera, odnosno vašeg računara. To je osnovni softver sloj koji omogućava korišćenje hardverskih resursa računara (procesor, memorija, diskovi, periferije, itd.).
 
 
 
@@ -359,7 +358,7 @@ Upravo tako su radili rani računari. Prvi operativni sistem, GM-NAA I/O, pojavi
 
 
 
-Danas, tržištem operativnih sistema dominiraju tri glavne porodice: **Windows, MacOS i GNU/Linux**.
+Danas, tržištem operativnih sistema dominiraju tri glavne grupe: **Windows, MacOS i GNU/Linux**.
 
 
 
@@ -375,13 +374,13 @@ Prema trenutnim statistikama, Windows i dalje drži većinu instalacija na ličn
 
 
 
-- Iako se ovaj trend razvija sporo, Windows se vrlo rano uspostavio kao standard u profesionalnom svetu. Osim specifičnih sektora kao što je tehnologija, gotovo sve kompanije i dalje koriste računare zasnovane na Windows-u.
+- Iako se ovaj trend razvija sporo, Windows se vrlo rano uspostavio kao standard u profesionalnom svetu. Osim specifičnih sektora kao što je IT sektor, gotovo sve kompanije i dalje koriste računare zasnovane na Windows-u.
 
 
 
 
 
-- Široka baza korisnika podstakla je programere da daju prioritet kreiranju svog softvera za Windows, kako bi dosegli što veći broj ljudi. Zauzvrat, rastući ekosistem aplikacija privlači nove korisnike, stvarajući vrlinski krug.
+- Široka baza korisnika podstakla je programere da daju prioritet kreiranju svog softvera za Windows, kako bi dosegli što veći broj ljudi. Zauzvrat, rastući ekosistem aplikacija privlači nove korisnike, stvarajući samopodržavajući ciklus rasta.
 
 
 
@@ -395,7 +394,7 @@ macOS, u međuvremenu, ima tržišni udeo od oko 16%, i obično se bira zbog opt
 
 
 
-Linux ostaje manjina na ličnim računarima (oko 4%), ali dominira serverima (oko 63%) i superkompjuterima (100%), zahvaljujući svojoj stabilnosti i performansama.
+Linux ostaje najmanje zastupljen na ličnim računarima (oko 4%), ali dominira serverima (oko 63%) i superkompjuterima (100%), zahvaljujući svojoj stabilnosti i performansama.
 
 
 
@@ -412,7 +411,7 @@ Linux je takođe masovno integrisan u ugrađene uređaje kao što su ruteri, pov
 
 
 
-→ **Važno:** Kernel je centralna komponenta operativnog sistema: upravlja pristupom hardveru (procesor, memorija, periferije), arbitražno upravlja istovremenim izvršavanjem procesa, sprovodi bezbednosne politike i nudi uniformni Interface programima koji maskira složenost elektronskih kola. Drugim rečima, deluje kao most između softverskog okruženja (biblioteke, drajveri, shell-ovi, servisi, administrativni alati, grafički Interface, itd.) i hardvera.
+→ **Važno:** Kernel je centralna komponenta operativnog sistema: upravlja pristupom hardveru (procesor, memorija, periferije), arbitražno upravlja istovremenim izvršavanjem procesa, sprovodi bezbednosne politike i nudi uniformni interfejs programima čime maskira složenost elektronskih kola. Drugim rečima, deluje kao most između softverskog okruženja (biblioteke, drajveri, shell-ovi, servisi, administrativni alati, grafički interfejs, itd.) i hardvera.
 
 
 
@@ -420,11 +419,11 @@ Linux je takođe masovno integrisan u ugrađene uređaje kao što su ruteri, pov
 
 
 
-Windows je vlasnički operativni sistem koji je razvio Microsoft. Instaliran je na većini ličnih računara u svetu. Istorijski gledano, bio je cenjen zbog jednostavnosti korišćenja i intuitivnog Interface. Međutim, ta prednost je sada upitna: Interface macOS-a je takođe vrlo pristupačan, a mnoge Linux distribucije imaju Interface pogodan za širu javnost (vratićemo se na ovo u narednim poglavljima).
+Windows je vlasnički operativni sistem koji je razvio Microsoft. Instaliran je na većini ličnih računara u svetu. Istorijski gledano, bio je cenjen zbog jednostavnosti korišćenja i intuitivnog korisničkog interfejsa. Međutim, ta prednost je sada upitna: interfejs macOS-a je takođe vrlo pristupačan, a mnoge Linux distribucije imaju interfejs pogodan za širu javnost (vratićemo se na ovo u narednim poglavljima).
 
 
 
-Za neiskusne korisnike ili one sa ograničenim potrebama (kancelarijski rad, multimedija, pretraživanje interneta), Windows može biti jednostavna početna tačka, sa prednostima kao što su opsežna dokumentacija i brza kriva učenja. Ali u stvarnosti, jedino polje u kojem Windows jasno nadmašuje macOS i Linux su video igre.
+Za neiskusne korisnike ili one sa ograničenim potrebama (kancelarijski rad, multimedija, pretraživanje interneta), Windows može biti jednostavna početna tačka, sa prednostima kao što su opsežna dokumentacija i brzo savladavanje. Ali u stvarnosti, jedino polje u kojem Windows jasno nadmašuje macOS i Linux su video igre.
 
 
 
@@ -440,7 +439,7 @@ Međutim, ova pristupačnost dolazi uz cenu. Windows je vlasnički, centralizova
 
 
 
-U smislu bezbednosti, Windows je glavna meta za malver. Njegova popularnost i određeni istorijski strukturni nedostaci delimično objašnjavaju ovu situaciju. Napori su svakako uloženi poslednjih godina (posebno sa Windows Defender i UAC), ali generalno ostaje dizajniran više za lakoću korišćenja nego za otpornost i kontrolu korisnika.
+U smislu bezbednosti, Windows je glavna meta za malver. Njegova popularnost i određeni istorijski strukturni nedostaci delimično objašnjavaju ovu situaciju. Napori su svakako uloženi poslednjih godina (posebno sa Windows Defender i UAC), ali generalno ostaje dizajniran više za lakoću korišćenja nego za otpornost (sposobnost da se sistem održi i zaštiti pod napadom) i kontrolu koju korisnik ima nad sistemom.
 
 
 
@@ -464,7 +463,7 @@ Kada je reč o digitalnom suverenitetu i tehničkoj veštini, Windows brzo pokaz
 
 
 
-macOS je operativni sistem koji je razvila kompanija Apple za svoje Mac računare. To je sistem koji potiče od Unix-a, preko sistema NeXTSTEP, koji je Apple preuzeo 1997. godine. macOS se zasniva na kernelu pod nazivom "*XNU*", koji kombinuje Elements BSD-a (*Berkeley Software Distribution*) i Mach mikrokernel.
+macOS je operativni sistem koji je razvila kompanija Apple za svoje Mac računare. To je sistem koji potiče od Unix-a, preko sistema NeXTSTEP, koji je Apple preuzeo 1997. godine. macOS se zasniva na kernelu pod nazivom "*XNU*", koji kombinuje elemente BSD-a (*Berkeley Software Distribution*) i Mach mikrokernela.
 
 
 
@@ -472,7 +471,7 @@ macOS je operativni sistem koji je razvila kompanija Apple za svoje Mac računar
 
 
 
-Ova čvrsta osnova pruža dobru stabilnost, efikasno upravljanje resursima i relativno sigurnu arhitekturu po defaultu. Tome je dodat posebno uglađen grafički Interface, dizajniran za glatko korisničko iskustvo.
+Ova čvrsta osnova pruža dobru stabilnost, efikasno upravljanje resursima i relativno sigurnu arhitekturu po defaultu. Tome je dodat posebno uglađen grafički interfejs, dizajniran za glatko korisničko iskustvo.
 
 
 
@@ -480,11 +479,11 @@ Ova čvrsta osnova pruža dobru stabilnost, efikasno upravljanje resursima i rel
 
 
 
-Jedna od glavnih prednosti macOS-a leži u vertikalnoj integraciji hardvera i softvera. Apple kontroliše ceo lanac, od dizajna procesora do najsitnijih detalja Interface. Rezultat je generalno pouzdan sistem, sa malo hardverskih grešaka i optimizovan za performanse.
+Jedna od glavnih prednosti macOS-a leži u vertikalnoj integraciji hardvera i softvera. Apple kontroliše ceo lanac, od dizajna procesora do najsitnijih detalja interfejsa. Rezultat je generalno pouzdan sistem, sa malo hardverskih grešaka i optimizovan za performanse.
 
 
 
-Međutim, ova integracija ima nedostatak jer je sve više zaključana u Apple ekosistem. macOS je delimično vlasnički sistem (uglavnom zatvorenog izvornog koda) koji radi samo na hardveru proizvedenom od strane Apple-a. Korisnici imaju malo kontrole nad ažuriranjima, naprednim opcijama konfiguracije sistema ili izborom hardverskih komponenti. Hardver je teško modifikovati ili popraviti, i često je softverski zaključan.
+Međutim, ovakva integracija nosi i nedostatak – sve više ograničava korisnika na Apple ekosistem. macOS je delimično vlasnički sistem (uglavnom zatvorenog izvornog koda) koji radi samo na hardveru proizvedenom od strane Apple-a. Korisnici imaju malo kontrole nad ažuriranjima, naprednim opcijama konfiguracije sistema ili izborom hardverskih komponenti. Hardver je teško modifikovati ili popraviti, i često je softverski zaključan.
 
 
 
@@ -492,11 +491,11 @@ Međutim, ova integracija ima nedostatak jer je sve više zaključana u Apple ek
 
 
 
-Što se tiče privatnosti, iako je macOS manje nametljiv od Windows-a, i dalje je vezan za logiku prikupljanja podataka, sinhronizacije sa oblakom i zavisnosti od centralizovanih usluga. Većina naprednih funkcija sistema oslanja se na stalnu vezu sa Apple ekosistemom (iCloud, App Store, Siri...), što ograničava korisnikovu nezavisnost.
+Što se tiče privatnosti, iako je macOS manje nametljiv od Windows-a, i dalje je vezan za princip prikupljanja podataka, sinhronizacije u oblaku i zavisnosti od centralizovanih usluga. Većina naprednih funkcija sistema oslanja se na stalnu vezu sa Apple ekosistemom (iCloud, App Store, Siri...), što ograničava korisnikovu nezavisnost.
 
 
 
-macOS može odgovarati korisnicima koji cene performanse, stabilnost i udobnost dobro integrisanog sistema, bez potrebe da ulaze u tehničke detalje. S druge strane, kada je reč o digitalnom suverenitetu i kontroli vašeg IT okruženja, previše je zatvoren, previše zavisan od jedne kompanije i nije pogodan za fino podešavanje prilagođavanja. Zato ga nećemo dalje razmatrati u ovom SCU202 kursu.
+macOS može odgovarati korisnicima koji cene performanse, stabilnost i udobnost dobro integrisanog sistema, bez potrebe da ulaze u tehničke detalje. S druge strane, kada je reč o digitalnom suverenitetu i kontroli vašeg IT okruženja, previše je zatvoren, previše zavisan od jedne kompanije i nije pogodan za fina podešavanja. Zato ga nećemo dalje razmatrati u ovom SCU202 kursu.
 
 
 
@@ -504,11 +503,11 @@ macOS može odgovarati korisnicima koji cene performanse, stabilnost i udobnost 
 
 
 
-GNU/Linux se snažno razlikuje od prethodna dva po svom besplatnom i open-source modelu. Za razliku od Windowsa ili macOS-a, Linux ne razvija jedna kompanija, već svetska zajednica programera. Ovaj model zajednice garantuje transparentnost, sigurnost i fleksibilnost. Linux nudi potpunu kontrolu svojim korisnicima, što omogućava potpunu personalizaciju radnog okruženja. Ovo je posebno zanimljivo za napredne korisnike, programere ili one koji žele savršeno da ovladaju svojim digitalnim okruženjem.
+GNU/Linux se snažno razlikuje od prethodna dva po svom besplatnom i open-source modelu. Za razliku od Windowsa ili macOS-a, Linux ne razvija jedna kompanija, već svetska zajednica programera. Takav model zasnovan na zajednici pruža transparentnost, sigurnost i fleksibilnost. Linux nudi potpunu kontrolu svojim korisnicima, što omogućava potpunu personalizaciju radnog okruženja. Ovo je posebno zanimljivo za napredne korisnike, programere ili one koji žele savršeno da ovladaju svojim digitalnim okruženjem.
 
 
 
-Glavne prednosti Linuxa su njegova robusnost, stabilnost i visok nivo sigurnosti. Kao open source, njegov kod može biti pregledan od strane bilo kog korisnika ili organizacije, što u velikoj meri ograničava rizik od malvera ili backdoor-a. Linux je veoma moćan, generalno troši manje resursa nego Windows, i posebno je pogodan za skromne hardverske konfiguracije ili intenzivnu upotrebu kao što su računanje, administracija servera ili sajber bezbednost.
+Glavne prednosti Linuxa su njegova robusnost, stabilnost i visok nivo sigurnosti. Kao open source, njegov kod može biti pregledan od strane bilo kog korisnika ili organizacije, što u velikoj meri ograničava rizik od malvera ili [backdoor-a](https://planb.academy/resources/glossary/backdoor) . Linux je veoma moćan, generalno troši manje resursa nego Windows, i posebno je pogodan za skromne hardverske konfiguracije ili intenzivnu upotrebu kao što su računanje, administracija servera ili sajber bezbednost.
 
 
 
@@ -530,7 +529,7 @@ Vaš izbor će zavisiti prvenstveno od vaših potreba i očekivanja:
 
 
 - Ako tražite jednostavnost, široku kompatibilnost hardvera i softvera (posebno za video igre), kao i za opštu upotrebu, Windows može biti dobra opcija. Međutim, morate biti svesni njegovih ograničenja u pogledu performansi, sigurnosti i privatnosti;
-- Ako tražite optimalnu integraciju između vašeg hardvera i vašeg sistema, rafiniran i korisnički prijatan Interface i relativno dobru sigurnost bez potrebe za naprednom konfiguracijom, a već posedujete ili želite da usvojite Apple ekosistem, macOS je prirodan izbor;
+- Ako tražite optimalnu integraciju između vašeg hardvera i vašeg sistema, rafiniran i korisnički prijatan interfejs i relativno dobru sigurnost bez potrebe za naprednom konfiguracijom, a već posedujete ili želite da usvojite Apple ekosistem, macOS je prirodan izbor;
 - Konačno, ako tražite sigurnost, stabilnost i performanse iznad svega i takođe želite duboko kontrolisati svoje digitalno okruženje, dok ste spremni da uložite vreme u učenje kako da koristite svoj operativni sistem, Linux je odlična opcija, posebno u kontekstu gde su tehnička autonomija i digitalni suverenitet prioriteti.
 
 
@@ -546,7 +545,7 @@ U narednim poglavljima ovog odeljka o operativnim sistemima, vodiću vas dublje 
 
 
 
-Pre nego što pogledamo GNU/Linux distribucije i mesto koje ovaj sistem zauzima u savremenom računarstvu, važno je pratiti njegove korene kako bismo razumeli šta on predstavlja. U ovom poglavlju osvrćemo se na istorijske, filozofske i tehničke korene GNU/Linux-a, kroz nasleđe Unix-a, Genesis GNU projekta, stvaranje Linux kernela i pojavu pokreta slobodnog softvera.
+Pre nego što pogledamo GNU/Linux distribucije i mesto koje ovaj sistem zauzima u savremenom računarstvu, važno je pratiti njegove korene kako bismo razumeli šta on predstavlja. U ovom poglavlju osvrćemo se na istorijske, filozofske i tehničke korene GNU/Linux-a, kroz nasleđe Unix-a, nastanak GNU projekta, stvaranje Linux kernela i pojavu pokreta slobodnog softvera.
 
 
 
@@ -596,7 +595,7 @@ Rastuća fragmentacija između ovih grana (BSD na akademskoj strani, i System V 
 
 
 
-GNU projekat (rekurzivni akronim za "*GNU's Not Unix*") zvanično je najavio Ričard Stalman 27. septembra 1983. godine u specijalizovanim njuzgrupama. U to vreme, Stalman je još uvek radio u Laboratoriji za veštačku inteligenciju na MIT-u. Dana 5. januara 1984. godine, dobrovoljno je dao ostavku na svoju poziciju kako bi osigurao da kod koji je nameravao da napiše ne može biti prisvojen od strane njegovog poslodavca. Zatim je započeo razvoj GNU-a, sa ciljem stvaranja potpuno slobodnog operativnog sistema, tj. onog koji poštuje četiri osnovne slobode: slobodno izvršavanje, slobodno proučavanje, slobodnu modifikaciju i slobodnu redistribuciju.
+GNU projekat (rekurzivni akronim za "*GNU's Not Unix*") zvanično je najavio Richard Stallman 27. septembra 1983. godine u specijalizovanim tehničkim forumima i diskusionim grupama. U to vreme, Stallman je još uvek radio u Laboratoriji za veštačku inteligenciju na MIT-u. Dana 5. januara 1984. godine, dobrovoljno je dao ostavku na svoju poziciju kako bi osigurao da kod koji je nameravao da napiše ne može biti prisvojen od strane njegovog poslodavca. Zatim je započeo razvoj GNU-a, sa ciljem stvaranja potpuno slobodnog operativnog sistema, tj. onog koji poštuje četiri osnovne slobode: slobodno izvršavanje, slobodno proučavanje, slobodnu modifikaciju i slobodnu redistribuciju.
 
 
 
@@ -604,7 +603,7 @@ GNU projekat (rekurzivni akronim za "*GNU's Not Unix*") zvanično je najavio Ri�
 
 
 
-Iza svojih tehničkih aspekata, GNU projekat je deo filozofije nasleđene iz hakerske kulture 1970-ih: kulture zasnovane na deljenju znanja, saradnji među vršnjacima i slobodnom pristupu izvornom kodu. Ričard Stalman želeo je da očuva duh saradnje koji je dominirao ranim danima računarstva, kada su proizvođači još uvek slobodno distribuirali izvorni kod svojih sistema. GNU projekat ima za cilj ne samo da ponudi slobodan operativni sistem, već i da brani političku i etičku viziju računarstva: onu znanja dostupnog svima, bez monopola ili vlasničkog zaključavanja. Cilj je sprečiti korisnike da postanu zarobljenici softvera koji ne mogu ni da razumeju ni da modifikuju, i promovisati emancipatorsko računarstvo.
+Iza svojih tehničkih aspekata, GNU projekat je deo filozofije nasleđene iz hakerske kulture 1970-ih: kulture zasnovane na deljenju znanja, kolektivnoj saradnji i slobodnom pristupu izvornom kodu. Richard Stallman želeo je da očuva duh saradnje koji je dominirao ranim danima računarstva, kada su proizvođači još uvek slobodno distribuirali izvorni kod svojih sistema. GNU projekat ima za cilj ne samo da ponudi besplatan operativni sistem, već i da brani političku i etičku viziju računarstva: viziju znanja dostupnog svima, bez monopola i vlasničkih ograničenja. Cilj je sprečiti korisnike da postanu zarobljenici softvera koji ne mogu ni da razumeju ni da modifikuju, i promovisati emancipatorsko računarstvo.
 
 
 
@@ -646,7 +645,7 @@ Većinu GNU-a razvili su volonteri, neki u svoje slobodno vreme, drugi finansira
 
 
 
-Kada je Linus Torvalds objavio svoj Linux kernel 1991. godine, savršeno se uklopio u okruženje koje je već stvorio GNU i pokazao se daleko relevantnijim od Mach + Hurd kernela. Kombinacija GNU i Linux-a omogućila je po prvi put da se ima kompletan, besplatan i funkcionalan operativni sistem: **GNU/Linux**, praktična realizacija projekta koji je Stallman pokrenuo skoro deceniju ranije.
+Kada je Linus Torvalds objavio svoj Linux kernel 1991. godine, savršeno se uklopio u okruženje koje je već stvorilo GNU i pokazao se daleko relevantnijim od Mach + Hurd kernela. Kombinacija GNU i Linux-a omogućila je po prvi put da se ima kompletan, besplatan i funkcionalan operativni sistem: **GNU/Linux**, praktična realizacija projekta koji je Stallman pokrenuo skoro deceniju ranije.
 
 
 
@@ -702,7 +701,7 @@ Razlika između ova dva pojma stoga leži u osnovnoj motivaciji: pokret slobodno
 
 
 
-Uprkos njihovim filozofskim razlikama, ova dva pravca dele zajedničke vrednosti kao što su transparentnost, mogućnost revizije izvornog koda, nezavisnost od dobavljača i sposobnost krajnjih korisnika da razumeju, modifikuju i unaprede svoje softverske alate. Čak i danas, ove razlike redovno podstiču debate i razmišljanja unutar tehničkih zajednica, posebno Bitcoin.
+Uprkos njihovim filozofskim razlikama, ova dva pravca dele zajedničke vrednosti kao što su transparentnost, mogućnost revizije izvornog koda, nezavisnost od dobavljača i sposobnost krajnjih korisnika da razumeju, modifikuju i unaprede svoje softverske alate. Čak i danas, ove razlike redovno podstiču debate i razmišljanja unutar tehničkih zajednica, posebno Bitcoin zajednice.
 
 
 
@@ -710,11 +709,11 @@ Uprkos njihovim filozofskim razlikama, ova dva pravca dele zajedničke vrednosti
 
 
 
-GNU i Linux nisu samo tehnička priča o uspehu: njihov kulturni i društveni uticaj je jednako važan. Njihovo početno širenje bilo je uglavnom putem Interneta, kroz tehničke forume i mejling liste, a zatim brzo kroz distribucije, tj. unapred konfigurisane skupove softvera oko Linux kernela. Već 1993. godine, pionirske distribucije kao što su Slackware i Debian su stvorene kako bi GNU/Linux operativni sistem bio pristupačniji širem krugu ljudi.
+GNU i Linux nisu samo tehnička priča o uspehu: njihov kulturni i društveni uticaj je jednako važan. Njihovo početno širenje bilo je uglavnom putem Interneta, kroz tehničke forume i mejling liste, a ubrzo zatim kroz distribucije, tj. unapred konfigurisanih paketa softvera zasnovanih na Linux kernelu. Već 1993. godine, pionirske distribucije kao što su Slackware i Debian su stvorene kako bi GNU/Linux operativni sistem bio pristupačniji širem krugu ljudi.
 
 
 
-Ovaj pristup zasnovan na zajednici, otvoren i kolaborativan omogućava Linuxu da se brzo razvija, na decentralizovan i participativan način. Svaki korisnik može doprineti projektu, bilo kodiranjem, dokumentovanjem ili testiranjem. Ova masivna kolaborativna dinamika predstavlja veliku društvenu inovaciju u svetu računarstva.
+Ovaj pristup zasnovan na zajednici, otvoren i kolaborativan pristup omogućava Linuxu da se brzo razvija, na decentralizovan i participativan način. Svaki korisnik može doprineti projektu, bilo kodiranjem, dokumentovanjem ili testiranjem. Ova masivna kolaborativna dinamika predstavlja veliku društvenu inovaciju u svetu računarstva.
 
 
 
@@ -726,7 +725,7 @@ GNU/Linux je mnogo više od samo operativnog sistema: to je filozofija, tehnolo�
 
 
 
-U svetlu ovog tehničkog nasleđa, sada je moguće konkretno ispitati kako se ovi principi materijalizuju u današnjem ekosistemu personalnih računara. U tu svrhu, istražićemo široki spektar Linux (ili GNU/Linux) distribucija, kako bismo razumeli njihov razvoj i slučajeve upotrebe, i pomogli vam da izaberete onu koja najbolje odgovara vašim potrebama.
+U svetlu ovog tehničkog nasleđa, sada je moguće konkretno ispitati kako se ovi principi materijalizuju u današnjem ekosistemu personalnih računara. U tu svrhu, istražićemo široki spektar Linux (ili GNU/Linux) distribucija, kako bismo razumeli njihove razvoje i primene, i pomogli vam da izaberete onu koja najbolje odgovara vašim potrebama.
 
 
 
