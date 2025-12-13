@@ -2284,7 +2284,7 @@ U završnom delu ovog NET 302 kursa, preći ćemo na praksu i fokusirati se na a
 <partId>368a5c6f-ec48-4b28-970f-3a770788ad37</partId>
 
 
-## Alati za rad na sloju pristupa mreži
+## Alati za rad na sloju pristupa mreži (eng. Network Access)
 
 
 <chapterId>1d25a21d-6900-4fbe-a438-e06c8afb9e02</chapterId>
@@ -2293,10 +2293,10 @@ U završnom delu ovog NET 302 kursa, preći ćemo na praksu i fokusirati se na a
 U ovom prvom poglavlju završnog dela o dijagnostici mreže, fokusiramo se na alate za analizu mrežnog pristupa TCP/IP modela. Ovaj sloj je odgovoran za direktnu komunikaciju između uređaja na istoj fizičkoj mreži, posebno kroz korišćenje MAC adresa i fizičkih mrežnih interfejsa kao što su Ethernet kartice ili Wi-Fi interfejsi.
 
 
-Cilj ovde je da se administratorima obezbede praktični alati za inspekciju, testiranje i optimizaciju ovog esencijalnog sloja niskonivovske povezanosti. Ovi alati se mogu koristiti za verifikaciju pravilnog rada interfejsa, rešavanje problema sa konfiguracijom mrežne kartice, ili detekciju anomalija kao što su sudari, gubitak paketa ili greške u vezi.
+Cilj je da se administratorima obezbede praktični alati za proveru, testiranje i optimizaciju ovog osnovnog sloja mrežnog povezivanja. Ovi alati se mogu koristiti za verifikaciju pravilnog rada interfejsa, rešavanje problema sa konfiguracijom mrežne kartice, ili detekciju anomalija kao što su sudari, gubitak paketa ili greške u vezi.
 
 
-### IP/MAC komšijske alatke
+### Alati za IP/MAC susede (uređaje na istom linku/LAN-u)
 
 
 #### `Arp` alat
@@ -2319,7 +2319,7 @@ arp -a
 Ova komanda prikazuje sve lokalno registrovane IP/MAC mape, preko svih interfejsa. Svaka linija pruža ime hosta (ako je rešivo), IP adresu, odgovarajuću MAC adresu i interfejs gde je mapa primećena.
 
 
-Da biste filtrirali prikaz na određenu IP adresu, jednostavno ga navedite:
+Da biste filtrirali prikaz za određenu IP adresu, jednostavno je navedite:
 
 
 ```bash
@@ -2366,13 +2366,13 @@ Ovo briše unos, osiguravajući da sledeći pokušaj komunikacije pokrene novi A
 **NAPOMENA**: Opcija brisanja takođe prihvata naziv interfejsa, omogućavajući vam da preciznije ciljate uklanjanje određenog unosa.
 
 
-Ukratko, alatka `arp` pruža dijagnostiku niskog nivoa, posebno korisnu u lokalnim mrežama gde se problemi sa povezivanjem često mogu pratiti do netačne ili zastarele rezolucije adrese. Međutim, na novijim sistemima, posebno sa modernim Linux distribucijama, ova alatka se sve više zamenjuje komandom `ip neigh`, iz skupa alatki `iproute2`, koja nudi sličnu funkcionalnost u ujedinjenijem okviru.
+Ukratko, alat `arp` omogućava dijagnostiku na osnovnom mrežnom sloju, što je posebno korisno u lokalnim mrežama gde problemi u povezivanju često potiču od pogrešnog ili zastarelog mapiranja adresa. Međutim, na novijim sistemima, posebno sa modernim Linux distribucijama, ova alatka se sve više zamenjuje komandom `ip neigh`, iz skupa alatki `iproute2`, koji nudi sličnu funkcionalnost unutar jednog paketa.
 
 
-#### `Ip neigh` alat
+#### Alat `Ip neigh`
 
 
-Na modernim sistemima, posebno na novijim Linux distribucijama, komanda `ip neigh` je osnovni alat za pregled i upravljanje mapiranjima između IP i MAC adresa. Ova komanda je deo `iproute2` paketa, koji postepeno zamenjuje starije alate kao što je `arp`, pružajući konzistentniji i fleksibilniji okvir za dijagnostiku na sloju podatkovne veze.
+Na modernim sistemima, posebno na novijim Linux distribucijama, komanda `ip neigh` je osnovni alat za pregled i upravljanje mapiranjima između IP i MAC adresa. Ova komanda je deo `iproute2` paketa, koji postepeno zamenjuje starije alate kao što je `arp`, pružajući konzistentniji i fleksibilniji okvir za dijagnostiku na sloju podatkovne veze (eng. data link).
 
 
 Komanda `ip neigh` ispituje lokalnu IP keš memoriju suseda, koja je ekvivalentna ARP kešu za IPv4 i NDP (_Neighbor Discovery Protocol_) kešu za IPv6. Ova keš memorija čuva poznate asocijacije između IP adresa (v4 ili v6) i MAC adresa, zajedno sa njihovim statusom (važeći, na čekanju, istekao...).
@@ -2386,7 +2386,7 @@ ip neigh
 ```
 
 
-Ovo ispisuje listu unosa, prikazujući odredišnu IP adresu, relevantnu mrežni interfejs, pridruženu MAC adresu (ako je dostupna), i stanje unosa (npr. `REACHABLE`, `STALE`, `DELAY`, `FAILED`...).
+Ovo ispisuje listu unosa, prikazujući odredišnu IP adresu, relevantni mrežni interfejs, pridruženu MAC adresu (ako je dostupna), i stanje unosa (npr. `REACHABLE`, `STALE`, `DELAY`, `FAILED`...).
 
 
 Primer izlaza:
@@ -2400,7 +2400,7 @@ Primer izlaza:
 Ova linija ukazuje da mašina zna za validno mapiranje između IP adrese `192.168.1.5` i MAC adrese `00:17:BC:56:4F:25` preko interfejsa `eth0`.
 
 
-Takođe možete filtrirati unose prema kriterijumima kao što su IP adresa, interfejs, ili stanje. Na primer, da biste upitili za samo adresu `192.168.1.7`:
+Takođe možete filtrirati unose prema kriterijumima kao što su IP adresa, interfejs, ili stanje. Na primer, upit samo za adresu `192.168.1.7`:
 
 
 ```bash
@@ -2444,13 +2444,13 @@ Ovo primorava sistem da ponovo razreši mapiranje sledeći put kada komunicira s
 ### Alati za analizu paketa
 
 
-Da bi temeljno analizirali šta se dešava na računarskoj mreži, administratori trebaju alate koji mogu da uhvate pakete razmenjene između mašina. Dve alatke se ističu kao merila: `tcpdump` i `Wireshark`. Ovi alati su neophodni za dijagnostikovanje abnormalnog ponašanja, reviziju razmene protokola ili proučavanje bezbednosti mreže inspekcijom sadržaja frejmova.
+Da bi temeljno analizirali šta se dešava na računarskoj mreži, administratori trebaju alate koji mogu da uhvate pakete razmenjene između mašina. Dve alatke se ističu kao merila: `tcpdump` i `Wireshark`. Ovi alati su ključni za dijagnostikovanje abnormalnog ponašanja, praćenje razmene podataka unutar protokola ili proučavanje bezbednosti mreže kroz pregled sadržaja frejmova.
 
 
 #### `tcpdump`: analiza komandne linije
 
 
-`tcpdump` je veoma moćan alat komandne linije dizajniran za hvatanje i prikazivanje paketa koji prolaze kroz mrežni interfejs. Radi u realnom vremenu, i zahvaljujući svom laganom dizajnu, može se koristiti na sistemima bez grafičkog interfejsa ili sa ograničenim resursima. Oslanja se na biblioteku `libpcap`, koja pruža hardverski nezavisne funkcije za nisko-nivojsko hvatanje.
+`tcpdump` je veoma moćan alat komandne linije dizajniran za hvatanje i prikazivanje paketa koji prolaze kroz mrežni interfejs. Radi u realnom vremenu, i zahvaljujući svom laganom dizajnu, može se koristiti na sistemima bez grafičkog interfejsa ili sa ograničenim resursima. Koristi biblioteku `libpcap`, koja omogućava hvatanje mrežnih paketa nezavisno od hardvera.
 
 
 Uobičajena upotreba `tcpdump` je praćenje mrežne aktivnosti mašine ili segmenta mreže, filtrirajući pakete prema specifičnim kriterijumima. Rezultati se mogu preusmeriti u datoteku, omogućavajući arhiviranje saobraćaja za kasniju analizu ili reprodukciju u drugom alatu, kao što je Wireshark.
@@ -2471,7 +2471,7 @@ tcpdump -w <file.cap> -i <interface> -s <snapshot_length> -n <filters>
 - `-n` onemogućava DNS i rezoluciju imena usluga, poboljšavajući performanse.
 
 
-Izrazni filteri na kraju komande omogućavaju vam da ograničite hvatanje na podskup saobraćaja. Možete kombinovati ključne reči `host`, `port`, `src`, `dst`, itd., da biste precizirali izbor.
+Izlazni filteri na kraju komande omogućavaju vam da ograničite hvatanje na podskup saobraćaja. Možete kombinovati ključne reči `host`, `port`, `src`, `dst`, itd., da biste precizirali izbor.
 
 
 Primer: za hvatanje HTTP paketa (port 80) do ili od `192.168.25.24` servera, i njihovo čuvanje u `fichier.cap` fajl:
@@ -2493,7 +2493,7 @@ Wireshark, ranije poznat kao *Ethereal*, predstavlja kompletan program za analiz
 Wireshark je dostupan na mnogim operativnim sistemima, uključujući Linux i Windows. Instalacija zahteva administratorske privilegije za pristup interfejsima za hvatanje. Kada se pokrene, možete izabrati mrežni interfejs iz menija *Capture*. Klikom na *Start* počinje snimanje paketa u realnom vremenu. Prikaz je podeljen u tri panela:
 
 
-- lista uhvaćenih frejmova ;
+- lista uhvaćenih frejmova;
 - detalji dekodiranog protokola,
 - sirovi heksadecimalni podaci.
 
@@ -2503,7 +2503,7 @@ Wireshark je dostupan na mnogim operativnim sistemima, uključujući Linux i Win
 
 
 
-Wireshark se ističe u scenarijima gde je potrebno posmatrati složeno ponašanje protokola, rekonstruisati dijaloge aplikacija (kao što su HTTP ili DNS sesije), ili proučavati vremena odziva servisa. Takođe podržava veoma specifične filtere prikaza koristeći svoju posvećenu sintaksu (različitu od one `tcpdump`-a) kako bi se fokusirao samo na relevantne pakete.
+Wireshark se ističe u scenarijima gde je potrebno posmatrati složeno ponašanje protokola, rekonstruisati dijaloge aplikacija (kao što su HTTP ili DNS sesije), ili proučavati vremena odziva servisa. Takođe podržava veoma specifične filtere prikaza koristeći svoju posebnu sintaksu (različitu od one `tcpdump`-a) kako bi se fokusirao samo na relevantne pakete.
 
 
 #### Komplementarni alati
@@ -2512,7 +2512,7 @@ Wireshark se ističe u scenarijima gde je potrebno posmatrati složeno ponašanj
 Važno je napomenuti da `tcpdump` i Wireshark nisu zamenjivi: svaki ima svoje prednosti. `tcpdump` je bolje prilagođen za komandno-linijska okruženja, automatizovane skripte i intervencije na udaljenim serverima, dok je Wireshark idealan za detaljnu, interaktivnu i edukativnu analizu saobraćaja.
 
 
-Dva alata se mogu kombinovati: snimanje se može izvršiti na udaljenom sistemu pomoću `tcpdump`, zatim se `.cap` fajl prenosi za analizu sa Wireshark na lokalnom računaru. Ovaj pristup je široko korišćen u praksi.
+Dva alata se mogu kombinovati: snimanje se može izvršiti na udaljenom sistemu pomoću `tcpdump`, zatim se `.cap` fajl prenosi za analizu koristeći Wireshark na lokalnom računaru. Ovaj pristup je široko korišćen u praksi.
 
 
 ### Alati za analizu interfejsa
@@ -2521,14 +2521,14 @@ Dva alata se mogu kombinovati: snimanje se može izvršiti na udaljenom sistemu 
 Na sloju mrežnog pristupa, često je potrebno ispitati i konfigurisati fizičke mrežne interfejse kako bi se dijagnostikovali kvarovi, optimizovala performansa ili proverio integritet veze. Jedan od najmoćnijih alata dostupnih pod Linux-om za ovu svrhu je `ethtool`, komandno-linijski alat koji ne samo da pruža detaljne tehničke informacije o Ethernet interfejsu, već vam takođe omogućava da prilagodite neke od njegovih parametara u realnom vremenu.
 
 
-#### Pogledajte specifikacije interfejsa
+#### Prikaz specifikacije interfejsa
 
 
 Osnovna funkcija `ethtool` je njegova sposobnost da ispita interfejs i prikaže njegove trenutne karakteristike. Ovo vam omogućava da proverite:
 
 
-- brzina veze (npr. 100 Mbit/s, 1 Gbit/s ili 10 Gbit/s) ;
-- način pregovaranja (polu-dupleks ili puni dupleks) ;
+- brzina veze (npr. 100 Mbit/s, 1 Gbit/s ili 10 Gbit/s);
+- način pregovaranja (polu-dupleks ili puni dupleks);
 - da li je automatsko pregovaranje omogućeno;
 - tip porta (bakar, vlakno, itd.);
 - status veze (aktivna ili ne) ;
@@ -2554,7 +2554,7 @@ Ova komanda ispisuje detaljan izveštaj o `enp0s3` interfejsu, uobičajena konve
 
 
 
-#### Dinamički modifikuj interfejs parametre
+#### Dinamička promena parametara interfejsa
 
 
 `ethtool` nije ograničen samo na posmatranje: takođe vam omogućava da prilagodite određene parametre interfejsa bez ponovnog pokretanja mašine. Ovo omogućava, na primer, da forsirate određenu brzinu veze ili omogućite funkcije prema potrebama lokalne mreže.
@@ -2586,7 +2586,7 @@ ethtool -s enp0s3 wol p
 ```
 
 
-U ovom primeru, opcija `p` specificira da će buđenje nastupiti čim se detektuje *Wake-on-LAN* paket. Ova postavka se često koristi u poslovnim okruženjima za obavljanje noćnih ažuriranja ili daljinsko održavanje.
+U ovom primeru, opcija `p` određuje da će buđenje nastupiti čim se detektuje *Wake-on-LAN* paket. Ova postavka se često koristi u poslovnim okruženjima za obavljanje noćnih ažuriranja ili daljinsko održavanje.
 
 
 #### Instalacija alata
@@ -2608,11 +2608,11 @@ sudo apt install ethtool
 ```
 
 
-**UPOZORENJE**: u svim `ethtool` komandama, ime mrežnog interfejsa mora biti navedeno odmah nakon opcije (kao `-s`). Bilo koja sintaksna greška u postavljanju parametara učiniće komandu nevažećom ili neučinkovitom.
+**UPOZORENJE**: u svim `ethtool` komandama, ime mrežnog interfejsa mora biti navedeno odmah nakon opcije (kao kod `-s`). Bilo koja sintaksna greška u postavljanju parametara učiniće komandu nevažećom ili neučinkovitom.
 
 
 
-## Alati mrežnog sloja
+## Alati mrežnog sloja (eng. Network)
 
 
 <chapterId>d2c5bf35-4284-4af8-8e8b-049c696a511b</chapterId>
@@ -2660,7 +2660,7 @@ U ovom primeru, razrešavanje imena je izvršeno automatski: domen `mydmn.org` j
 TTL je kritično polje u IP protokolu. Svaki datagram je inicijalizovan sa TTL vrednošću od strane pošiljaoca (često 64, 128 ili 255). Svaki ruter na putu smanjuje ovu vrednost za 1. Ako TTL dostigne 0 pre nego što stigne na odredište, paket se odbacuje i ICMP greška se vraća pošiljaocu. Ovaj mehanizam sprečava beskonačne petlje rutiranja.
 
 
-Vreme propagacije (*round-trip delay/time*) meri kašnjenje paketa da napusti pošiljaoca, stigne do cilja i vrati se nazad. U praksi, kašnjenje ispod 200 ms se smatra prihvatljivim za stabilnu vezu. Nenormalno visoka kašnjenja mogu ukazivati na zagušenje mreže, neefikasno rutiranje ili loš kvalitet veze.
+Vreme propagacije (*round-trip delay/time*) pokazuje koliko traje da paket ode do odredišta i vrati se nazad. U praksi, kašnjenje ispod 200 ms se smatra prihvatljivim za stabilnu vezu. Nenormalno visoka kašnjenja mogu ukazivati na zagušenje mreže, neefikasno rutiranje ili loš kvalitet veze.
 
 
 #### Napredno korišćenje `ping` komande
@@ -2724,9 +2724,9 @@ Svaka linija predstavlja rutu. Ključna polja uključuju:
 
 - **default**: podrazumevana ruta, koristi se kada nijedna specifičnija ruta ne odgovara.
 - **via**: prolaz korišćen za dolazak do odredišta.
-- **dev**: mrežni interfejs korišćen.
+- **dev**: korišćeni mrežni interfejs.
 - **proto**: kako je ruta kreirana (ručno, DHCP, kernel, itd.).
-- **metrika**: cena rute, koristi se za prioritizaciju više mogućih puteva.
+- **metric**: cena rute, koristi se za prioritizaciju više mogućih puteva.
 - **scope**: opseg rute (npr. `link` za direktno povezanu rutu).
 - **src**: izvorna IP adresa korišćena za odlazne pakete na ovom interfejsu.
 
@@ -2893,10 +2893,10 @@ Neke uobičajene opcije za preciziranje analize:
 - `-t`: prikaži samo TCP konekcije;
 - `-u`: prikaži samo UDP konekcije;
 - `-l`: prikaži samo osluškujuće sokete;
-- `-n`: onemogućava razrešavanje imena (sirovi IP-ovi i brojevi portova) ;
+- `-n`: onemogućava razrešavanje imena (IP-ovi u numeričkom obliku i brojevi portova bez prevoda u servisne nazive);
 - `-p`: prikaži svaki proces povezan sa soketom (PID i naziv programa),
 - `-a`: prikaži sve veze, uključujući neaktivne,
-- `-s`: prikaži statistiku soketa na visokom nivou.
+- `-s`: prikazuje detaljnu statistiku socket-a.
 
 
 #### Studije slučaja
@@ -2945,7 +2945,7 @@ ss -unp
 Ove komande su posebno korisne za otkrivanje sumnjivih veza, neočekivanih portova za slušanje ili praćenje aktivnosti određene usluge.
 
 
-## Alati transportnog i najvišeg sloja
+## Alati za transportni i aplikacioni sloj
 
 
 <chapterId>bce47931-930e-4288-b0fd-666c9a1066b5</chapterId>
@@ -3060,7 +3060,7 @@ Ponovljeni ili intenzivni upiti ka DNS serverima trećih strana bez dozvole mogu
 ### Alati za skeniranje mreže
 
 
-Kada nadgledate ili osiguravate lokalnu ili širokopojasnu mrežu, ključno je identifikovati aktivne uređaje i usluge koje oni izlažu. Upravo to radi alatka `nmap` (*Network Mapper*).
+Kada nadgledate ili osiguravate lokalnu ili širokopojasnu mrežu, ključno je identifikovati aktivne uređaje i usluge koje pružaju. Upravo to radi alatka `nmap` (*Network Mapper*).
 
 
 https://planb.network/tutorials/computer-security/communication/nmap-862300d7-6dfb-4660-970d-f56a9f58f60d
@@ -3068,10 +3068,10 @@ https://planb.network/tutorials/computer-security/communication/nmap-862300d7-6d
 #### Uvod u `nmap`
 
 
-`nmap` omogućava ciljano skeniranje jednog ili više hostova kako bi se detektovali otvoreni portovi, dostupne usluge (HTTP, SSH, DNS, itd.), a ponekad čak i tip operativnog sistema koji se koristi. Zahvaljujući mnogim opcijama, `nmap` pruža precizan pregled izložene površine mreže, što je ključno tokom faza revizije ili učvršćivanja u upravljanju infrastrukturom.
+`nmap` omogućava ciljano skeniranje jednog ili više hostova kako bi se detektovali otvoreni portovi, dostupne usluge (HTTP, SSH, DNS, itd.), a ponekad čak i tip operativnog sistema koji se koristi. Zahvaljujući mnogim opcijama, `nmap` pruža precizan pregled izloženost mreže, što je ključno tokom faza revizije ili učvršćivanja u upravljanju infrastrukturom.
 
 
-Baš kao i komanda `host`, `nmap` nikada ne sme biti korišćen na mrežama ili infrastrukturama koje ne posedujete, ili bez eksplicitne dozvole. Neovlašćeno skeniranje portova može biti označeno kao zlonameran pokušaj izviđanja, često biva detektovano od strane sigurnosnih sistema (vatrozidi, IDS/IPS), i može čak dovesti do pravnih posledica.
+Baš kao i komanda `host`, `nmap` nikada ne sme biti korišćen na mrežama ili infrastrukturama koje ne posedujete, ili bez eksplicitne dozvole. Neovlašćeno skeniranje portova može biti označeno kao zlonameran pokušaj izviđanja, često biva detektovano od strane sigurnosnih sistema (firewall, IDS/IPS), i može čak dovesti do pravnih posledica.
 
 
 #### Osnovna upotreba
@@ -3090,7 +3090,7 @@ Ova komanda skenira 1000 najčešćih portova na hostu `192.168.0.1` i prikazuje
 #### Kompletno skeniranje mreže
 
 
-Jedna od prednosti `nmap`-a je njegova sposobnost da skenira čitav opseg adresa jednim komandama. Ovo olakšava, na primer, brzo popisivanje svih aktivnih mašina na mreži:
+Jedna od prednosti `nmap`-a je njegova sposobnost da skenira čitav opseg adresa jednom komandom. Ovo olakšava, na primer, brzo popisivanje svih aktivnih mašina na mreži:
 
 
 ```bash
