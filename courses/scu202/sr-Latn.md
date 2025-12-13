@@ -1,12 +1,12 @@
 ---
 name: Poboljšanje vaše lične digitalne sigurnosti
-goal: Postavite sigurno, stabilno i efikasno lično digitalno okruženje.
+goal: Postavite sigurno, stabilno i efikasno lično digitalno okruženje
 objectives: 
 
 
   - Razumite kako moderni operativni sistemi funkcionišu i donesite informisanu odluku
   - Steknite tehničku autonomiju u Linuxu
-  - Primeni najbolje bezbednosne prakse na ličnom računaru
+  - Primenite najbolje bezbednosne prakse na ličnom računaru
   - Poboljšajte sigurnost pretraživanja interneta i korišćenja mobilnih uređaja putem alata otvorenog koda i odgovarajućih postavki
   - Implementirajte neophodne zaštite na kućnoj mreži
 
@@ -17,7 +17,7 @@ objectives:
 
 
 
-U svetu gde su digitalni uređaji svuda, ali retko ko ih savlada, učenje kako da obezbedite sopstveno IT okruženje je neophodnost. Bilo da je u pitanju vaš računar, pregledač, telefon ili kućna mreža, svaki od ovih Elements može biti potencijalna kapija ka vašoj privatnosti. Ovaj kurs vam pomaže da povratite kontrolu nad vašim digitalnim uređajima.
+U svetu prepunom digitalnih uređaja koje retko potpuno razumemo, neophodno je naučiti kako zaštititi sopstveno IT okruženje. Bilo da je u pitanju vaš računar, pregledač, telefon ili kućna mreža, svaki od ovih elemenata može biti potencijalna kapija ka vašoj privatnosti. Ovaj kurs vam pomaže da povratite kontrolu nad vašim digitalnim uređajima.
 
 
 
@@ -65,7 +65,7 @@ Kurs počinje kratkim pregledom koncepata obrađenih u SCU101, što će osigurat
 
 
 
-Ovaj deo uvodi GNU/Linux sistem, stub digitalnog suvereniteta. Istražićete razlike između Linux-a, Windows-a i macOS-a, otkriti fascinantnu istoriju Linux-a i slobodnog softvera, i razumeti zašto je Linux često sinonim za sigurnost i slobodu.
+Ovaj deo je uvod u GNU/Linux sistem, koji predstavlja stub digitalnog suvereniteta. Istražićete razlike između Linux-a, Windows-a i macOS-a, otkriti fascinantnu istoriju Linux-a i slobodnog softvera, i razumeti zašto je Linux često sinonim za sigurnost i slobodu.
 
 
 
@@ -80,7 +80,7 @@ Zatim ćete naučiti kako odabrati Linux distribuciju koja najbolje odgovara va�
 ### Deo 3 - Osiguravanje vašeg računara
 
 
-U ovom odeljku ćete naučiti kako da ojačate bezbednost vašeg računara. Pristupićemo metodama za efikasnu zaštitu vašeg pristupa i razdvajanje vaših upotreba. Razumećete važnost redovnih ažuriranja sistema i softvera kako biste minimizirali potencijalne ranjivosti.
+U ovom odeljku ćete naučiti kako da ojačate bezbednost vašeg računara. Pristupićemo metodama kako da efikasno zaštitite pristup svojim nalozima, servisima, ličnim podacima i odvojite različite načine korišćenja. Razumećete važnost redovnih ažuriranja sistema i softvera kako biste minimizirali potencijalne ranjivosti.
 
 
 
@@ -92,7 +92,7 @@ Takođe ćete biti obučeni da proverite integritet i autentičnost preuzetog so
 
 
 
-### Deo 4 - Pregledač: operativni sistem unutar operativnog sistema
+### Deo 4 - Pregledač (eng. browser): operativni sistem unutar operativnog sistema
 
 
 
@@ -100,7 +100,7 @@ Danas su veb pregledači svuda u našim svakodnevnim digitalnim životima i čes
 
 
 
-Zatim ćete otkriti pregled današnjih rendering mašina i pregledača, njihove prednosti i mane, zajedno sa konkretnim najboljim praksama za što sigurnije pretraživanje.
+Zatim ćete otkriti pregled današnjih rendering motora (eng. rendering machines) (motori za prikaz web sadržaja) i pregledača (eng. browsers), njihove prednosti i mane, zajedno sa konkretnim najboljim praksama za što sigurnije pretraživanje.
 
 
 
@@ -128,11 +128,11 @@ Zatim ćete naučiti najbolje prakse za svakodnevnu sigurnost, od ažuriranja do
 
 
 
-Vaša kućna mreža je važna kritična tačka kada je u pitanju sigurnost. Počećemo tako što ćemo pogledati kako funkcioniše lokalna mreža, pre nego što pređemo na praktične korake uključene u njeno efikasno osiguranje.
+Vaša kućna mreža je važna kritična tačka kada je u pitanju sigurnost. Počećemo pregledom kako funkcioniše lokalna mreža, pre nego što pređemo na praktične korake za njenu efikasnu zaštitu.
 
 
 
-Naučićete kako da izaberete i konfigurišete siguran ruter, segmentirate svoju mrežu, ojačate svoju Wi-Fi mrežu i primenite alate za nadzor kako biste brzo otkrili sve anomalije.
+Naučićete kako da izaberete i konfigurišete siguran ruter, segmentirate svoju mrežu, ojačate svoju Wi-Fi mrežu i primenite alate za nadzor kako biste brzo otkrili bilo kakve anomalije.
 
 
 
@@ -167,7 +167,7 @@ Da li ste spremni da u potpunosti preuzmete kontrolu nad svojom IT sigurnošću,
 
 
 
-Pre nego što počnemo sa kursom SCU202, želeo bih da ukratko pregledam osnovne pojmove obrađene u prethodnom kursu("SCU101") u ovom poglavlju.
+Pre nego što počnemo sa kursom SCU202, želeo bih u ovom poglavlju da ukratko pregledamo osnovne pojmove obrađene u prethodnom kursu("SCU101").
 
 
 
@@ -185,7 +185,7 @@ https://planb.academy/courses/99c46148-7080-4915-a7e0-9df0e145cd47
 
 
 
-Pregledanje interneta često je glavna ulazna tačka za pretnje sajber bezbednosti. U SCU101, videli smo da je važno ostati oprezan, posebno kada je reč o preuzimanjima. Preuzimajte datoteke samo sa pouzdanih izvora i dajte prednost softveru otvorenog koda, koji često ima koristi od veće transparentnosti i kontrole zajednice.
+Pretraživanje interneta često je glavni način nastanka pretnji po vašu sajber/informatičku bezbednost. U SCU101, videli smo da je važno ostati oprezan, posebno kada je reč o preuzimanjima. Preuzimajte datoteke samo sa pouzdanih izvora i dajte prednost softveru otvorenog koda, koji često ima koristi od veće transparentnosti i kontrole zajednice.
 
 
 
@@ -201,7 +201,7 @@ Generalno govoreći, sigurno pretraživanje zahteva određenu dozu opreza: izbeg
 
 
 
-### Razumevanje VPN-ova i osiguravanje vaše Internet veze
+### Razumevanje VPN-ova i zaštita vaše Internet konekcije
 
 
 
@@ -221,7 +221,7 @@ SCU101 vas je uveo u koncept VPN-a (Virtuelna Privatna Mreža). U praktičnom sm
 
 
 
-Sigurnost takođe znači poznavanje vašeg operativnog sistema (OS). Istražili ste tri glavna OS-a: Windows, macOS i Linux, svaki sa svojim bezbednosnim funkcijama. Na Windowsu je posebno važno imati ažuriran antivirus kako bi se otkrio i blokirao malver.
+Sigurnost takođe znači poznavanje vašeg operativnog sistema (OS). Istražili smo tri glavna OS-a: Windows, macOS i Linux, svaki sa svojim bezbednosnim funkcijama. Na Windowsu je posebno važno imati ažuriran antivirus kako bi se otkrio i blokirao malver.
 
 
 
@@ -253,7 +253,7 @@ Još jedna velika pretnja je ransomware, koji blokira vaše podatke šifrovanjem
 
 
 
-### Osigurajte svoje poštanske sandučiće efikasno
+### Efikasno zaštitite svoje poštanske sandučiće
 
 
 
