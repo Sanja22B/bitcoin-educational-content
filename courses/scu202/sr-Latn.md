@@ -1334,15 +1334,15 @@ U sledećem poglavlju SCU202, detaljnije ćemo razmotriti praktično Linux okru�
 
 <chapterId>ecfac353-a31b-48fb-b2af-2abbeeac5f2b</chapterId>
 
-U GNU/Linux sistemu, okruženje radne površine igra jednu od najvažnijih uloga u korisničkom iskustvu. To je grafički Layer koji omogućava interakciju sa sistemom, zasnovan na poznatim vizuelnim prikazima: prozori, meniji, ikone, paneli i unapred instalirane aplikacije.
+U GNU/Linux sistemu, okruženje radne površine igra jednu od najvažnijih uloga u korisničkom iskustvu. To je grafički sloj koji omogućava interakciju sa sistemom, zasnovan na poznatim vizuelnim prikazima: prozori, meniji, ikone, paneli i unapred instalirane aplikacije.
 
 U ovom poglavlju istražujem strukturu i ulogu desktop okruženja, njegove tipične komponente, glavne dostupne porodice, kriterijume za odabir i njihovu integraciju u najpopularnije Linux distribucije.
 
-### Šta je kancelarijsko okruženje?
+### Šta je radno okruženje?
 
-Radno okruženje (ili "*DE*" za *Desktop Environment*) odnosi se na skup programa koji čine kompletan grafički Interface operativnog sistema. Na Windows i macOS sistemima, jedno radno okruženje je ponuđeno po defaultu, integrisano u sistem, bez mogućnosti potpunog menjanja (postoje samo određene ljuske za delimičnu modifikaciju Interface). Linux sistemi, s druge strane, su mnogo modularniji, tretirajući radno okruženje kao nezavisnu komponentu koja se može slobodno zameniti.
+Radno okruženje (ili "*DE*" za *Desktop Environment*) odnosi se na skup programa koji čine kompletan grafički interfejs operativnog sistema. Na Windows i macOS sistemima, jedno radno okruženje je ponuđeno po defaultu, integrisano u sistem, bez mogućnosti potpunog menjanja (postoje samo određene ljuske (eng. shells) za delimičnu modifikaciju interfejsa). Linux sistemi, s druge strane, su mnogo modularniji, tretirajući radno okruženje kao nezavisnu komponentu koja se može slobodno zameniti.
 
-U Linuxu je važno jasno razlikovati sve slojeve: kernel (koji upravlja interakcijom sa hardverom), server za prikaz (koji deluje kao posrednik između aplikacija, grafičkih drajvera i hardvera preko kernela), i na kraju sam desktop okruženje, koje se oslanja na ovu infrastrukturu da bi korisniku isporučilo koherentan grafički Interface. Ova razlika ponekad može biti manje jasna, jer mnoge Linux distribucije dolaze sa unapred instaliranim desktop okruženjem koje ponekad uključuje sopstveni Wayland kompozitor, koji tada deluje kao server za prikaz.
+U Linuxu je važno jasno razlikovati sve slojeve sistema: kernel (koji upravlja interakcijom sa hardverom), server za prikaz (koji deluje kao posrednik između aplikacija, grafičkih drajvera i hardvera (preko kernela)), i na kraju samo desktop okruženje, koje se oslanja na ovu infrastrukturu da bi korisniku isporučilo koherentan grafički interfejs. Ova razlika ponekad može biti manje jasna, jer mnoge Linux distribucije dolaze sa unapred instaliranim desktop okruženjem koje ponekad uključuje sopstveni Wayland kompozitor, koji tada deluje kao server za prikaz.
 
 
 
@@ -1350,69 +1350,69 @@ U Linuxu je važno jasno razlikovati sve slojeve: kernel (koji upravlja interakc
 
 
 
-### Tipične komponente kancelarijskog okruženja
+### Tipične komponente radnog okruženja
 
 
 
-Radno okruženje u Linux distribuciji nije jedna aplikacija, već koherentan skup softverskih komponenti koje pružaju kompletan grafički Interface za interakciju sa operativnim sistemom. Ove komponente su zasnovane na nekoliko softverskih slojeva, koji su strukturirani na sledeći način:
-
-
-
-
-
-- **Menadžer prozora**: crta okvire prozora, upravlja njihovim postavljanjem, promenom veličine i efektima prelaza... Na primer: Mutter (GNOME), KWin (KDE Plasma), Xfwm (Xfce).
+Radno okruženje u Linux distribuciji nije jedna aplikacija, već koherentan skup softverskih komponenti koje pružaju kompletan grafički interfejs za interakciju sa operativnim sistemom. Ove komponente su zasnovane na nekoliko softverskih slojeva, koji su strukturirani na sledeći način:
 
 
 
 
 
-- **Menadžer fajlova**: omogućava vam da se krećete kroz stablo direktorijuma, vizuelno kopirate, premještate ili brišete fajlove. Primeri: Nautilus (GNOME), Dolphin (KDE), Thunar (Xfce).
+- **Menadžer prozora** (eng. Window manager): crta okvire prozora, upravlja njihovim postavljanjem, promenom veličine i efektima prelaza... Na primer: Mutter (GNOME), KWin (KDE Plasma), Xfwm (Xfce).
 
 
 
 
 
-- **Centar za konfiguraciju**: ovo je skup alata koji omogućava korisniku da modifikuje sistemske parametre bez korišćenja komandne linije: izgled, pozadina, upravljanje korisnicima, mreža, periferije...
+- **Menadžer fajlova** (eng. file manager): omogućava vam da se krećete kroz stablo direktorijuma, vizuelno kopirate, premještate ili brišete fajlove. Primeri: Nautilus (GNOME), Dolphin (KDE), Thunar (Xfce).
 
 
 
 
 
-- **Sistemski apleti**: ovo su male ikone i interaktivni moduli u traci zadataka (ili "panelu"), kao što su kontrola zvuka, nivo baterije, mrežna veza, sat...
+- **Centar za konfiguraciju** (eng. configuration center): ovo je skup alata koji omogućava korisniku da modifikuje sistemske parametre bez korišćenja komandne linije: izgled, pozadina, upravljanje korisnicima, mreža, periferije...
 
 
 
 
 
-- **Panel ili kontrolna tabla**: vidljiva traka, često na vrhu ili dnu ekrana, koja sadrži glavni meni, sistemske aplete, prečice, zonu za obaveštenja, itd.
+- **Sistemski apleti** (eng. System applets): ovo su male ikone i interaktivni moduli u traci zadataka (ili "panelu"), kao što su kontrola zvuka, nivo baterije, mrežna veza, sat...
 
 
 
 
 
-- **Menadžer sesije**: pokreće se pri pokretanju sistema, prikazuje ekran za prijavu i pokreće izabranu grafičku sesiju. Na primer: GDM (GNOME), SDDM (KDE), LightDM (Xfce).
+- **Panel ili kontrolna tabla** (eng. panel ili dashboard): vidljiva traka, često na vrhu ili dnu ekrana, koja sadrži glavni meni, sistemske aplete, prečice, zonu za obaveštenja, itd.
 
 
 
 
 
-- **Upravljač obaveštenjima**: upravlja prikazom sistemskih obaveštenja (poruke, upozorenja, ažuriranja, itd.). Na primer: dunst, Plasma-notifier, xfce4-notifyd.
+- **Menadžer sesije** (eng. session manager): pokreće se pri pokretanju sistema, prikazuje ekran za prijavu i pokreće izabranu grafičku sesiju. Na primer: GDM (GNOME), SDDM (KDE), LightDM (Xfce).
 
 
 
 
 
-- **X11 kompozitor (opciono)**: dodaje vizuelne efekte (senke, transparentnost, animacije) u okruženjima gde menadžer prozora ne podržava kompoziting. Na primer: compton, picom.
+- **Upravljač obaveštenjima** (eng. Notification manager): upravlja prikazom sistemskih obaveštenja (poruke, upozorenja, ažuriranja, itd.). Na primer: dunst, Plasma-notifier, xfce4-notifyd.
 
 
 
 
 
-- **Server za prikaz**: ovo je softver koji upravlja komunikacijom između sistema (putem kernela i grafičkih drajvera) i grafičkih aplikacija. Prikazuje prozore na ekranu i upravlja unosima sa tastature i miša. Server za prikaz je često drugačija komponenta desktop okruženja, ali sve više sistema usvaja Wayland, moderan protokol gde ulogu servera za prikaz može direktno preuzeti menadžer prozora (npr. Mutter pod GNOME ili KWin pod KDE). Ovo se tada naziva "Wayland kompozitovanje".
+- **X11 kompozitor (opciono)** (eng. X11 compositor): dodaje vizuelne efekte (senke, transparentnost, animacije) u okruženjima gde menadžer prozora ne podržava kompoziting. Na primer: compton, picom.
 
 
 
-Svi ovi Elements zasnovani su na grafičkom alatu, tj. softverskoj biblioteci koja pruža osnovne komponente za kreiranje grafičkih interfejsa: dugmad, meniji, tekstualna polja... Dva glavna Linux alata su:
+
+
+- **Server za prikaz** (eng. display server): ovo je softver koji upravlja komunikacijom između sistema (putem kernela i grafičkih drajvera) i grafičkih aplikacija. Prikazuje prozore na ekranu i upravlja unosima sa tastature i miša. Server za prikaz je često drugačija komponenta desktop okruženja, ali sve više sistema usvaja Wayland, moderan protokol gde ulogu servera za prikaz može direktno preuzeti menadžer prozora (npr. Mutter pod GNOME ili KWin pod KDE). Ovo se tada naziva "Wayland kompozitovanje".
+
+
+
+Svi ovi elementi zasnovani su na grafičkom alatu, tj. softverskoj biblioteci koja pruža osnovne komponente za kreiranje grafičkih interfejsa: dugmad, meniji, tekstualna polja... Dva glavna Linux alata su:
 
 
 
@@ -1438,7 +1438,7 @@ Svi ovi Elements zasnovani su na grafičkom alatu, tj. softverskoj biblioteci ko
 
 
 
-Pokrenut 1997. i prvi put objavljen 1999. godine, GNOME ("*GNU Network Object Model Environment*") zasnovan je na GTK biblioteci i ima za cilj da minimizira trenje između korisnika i Interface kroz vrlo jednostavnu organizaciju. Od GNOME 3, njegova srž, GNOME Shell, napustila je tradicionalnu metaforu radne površine prekrivene ikonama: umesto žongliranja sa nekoliko istovremeno vidljivih radnih prostora, korisnici prelaze na jedan selektor aktivnosti gde upravljaju prozorima, virtuelnim radnim površinama i pokretačima aplikacija.
+Pokrenut 1997. i prvi put objavljen 1999. godine, GNOME ("*GNU Network Object Model Environment*") zasnovan je na GTK biblioteci i ima za cilj da minimizira trenje između korisnika i interfejsa kroz vrlo jednostavnu organizaciju. Od GNOME 3, njegova srž, GNOME Shell, napustila je tradicionalnu metaforu radne površine prekrivene ikonama: umesto žongliranja sa nekoliko istovremeno vidljivih radnih prostora, korisnici prelaze na jedan selektor aktivnosti gde upravljaju prozorima, virtuelnim radnim površinama i pokretačima aplikacija.
 
 
 
@@ -1446,7 +1446,7 @@ Pokrenut 1997. i prvi put objavljen 1999. godine, GNOME ("*GNU Network Object Mo
 
 
 
-Tehnički, Mutter kompozitor kombinuje upravljanje prozorima i Wayland stack, dok ostaje kompatibilan sa X11 zahvaljujući XWayland-u. Po defaultu, okruženje pruža Nautilus za pregledanje fajlova, GNOME Terminal za komandnu liniju i centralizovani panel za podešavanja. GNOME-ove opcije prilagođavanja su inherentno ograničene.
+Tehnički, Mutter kompozitor kombinuje upravljanje prozorima i Wayland stack-om, dok ostaje kompatibilan sa X11 zahvaljujući XWayland-u. Po defaultu, okruženje pruža Nautilus za pregledanje fajlova, GNOME Terminal za komandnu liniju i centralizovani panel za podešavanja. GNOME-ove opcije prilagođavanja su inherentno ograničene.
 
 
 
@@ -1470,7 +1470,7 @@ KDE Plasma je zasnovan na Qt 6, međuplatformskom C++ okviru, i na KDE Framework
 
 
 
-Jedna od karakteristika KDE Plasma je njen objedinjeni centar za konfiguraciju, koji prikazuje grafički Interface za gotovo sva podešavanja: ponašanje virtuelnog desktopa, globalne prečice, glatkoću animacija, upravljanje napajanjem, mrežnu konfiguraciju, izgled ivica prozora... Nema potrebe za ručnim uređivanjem tekstualnih konfiguracionih fajlova, što čini radno okruženje lakim za prilagođavanje.
+Jedna od karakteristika KDE Plasma je njen objedinjeni centar za konfiguraciju, koji prikazuje grafički interfejs za gotovo sva podešavanja: ponašanje virtuelnog desktopa, globalne prečice, glatkoću animacija, upravljanje napajanjem, mrežnu konfiguraciju, izgled ivica prozora... Nema potrebe za ručnim uređivanjem tekstualnih konfiguracionih fajlova, što čini radno okruženje lakim za prilagođavanje.
 
 
 
@@ -1486,7 +1486,7 @@ Xfce je besplatno, open-source okruženje za radnu površinu koje je 1996. godin
 
 
 
-Xfce uzima tradicionalni grafički Interface pristup, sa desktopom vođenim ikonama, menijem aplikacija, taskbarom i konfigurisanim panelima. Ceo paket je dizajniran da bude resursno efikasan, kako u pogledu RAM-a, tako i procesorske snage. Ovo ga čini idealnim rešenjem za starije, manje moćne računare, ili jednostavno za korisnike koji traže fluidan, stabilan i responzivan sistem.
+Xfce uzima tradicionalni grafički interfejs pristup, sa desktopom vođenim ikonama, menijem aplikacija, taskbarom i konfigurisanim panelima. Ceo paket je dizajniran da bude resursno efikasan, kako u pogledu RAM-a, tako i procesorske snage. Ovo ga čini idealnim rešenjem za starije, manje moćne računare, ili jednostavno za korisnike koji traže fluidan, stabilan i responzivan sistem.
 
 
 
@@ -1498,7 +1498,7 @@ Xfce uzima tradicionalni grafički Interface pristup, sa desktopom vođenim ikon
 
 
 
-LXQt je lagano radno okruženje dizajnirano da pruži potpuni grafički Interface uz minimalnu potrošnju sistemskih resursa. Posebno je pogodno za starije ili manje moćne mašine.
+LXQt je lagano radno okruženje dizajnirano da pruži potpuni grafički interfejs uz minimalnu potrošnju sistemskih resursa. Posebno je pogodno za starije ili manje moćne mašine.
 
 
 
@@ -1510,11 +1510,11 @@ LXQt je rezultat spajanja dva odvojena projekta 2013. godine: LXDE (originalno r
 
 
 
-#### Cimetna
+#### Cinnamon
 
 
 
-Cinnamon je moderno radno okruženje koje razvija i održava tim distribucije Linux Mint. Pokrenuto je 2011. godine kao direktan odgovor na radikalne promene koje je uveo GNOME 3, koje su neki u zajednici smatrali previše disruptivnim.
+Cinnamon je moderno radno okruženje koje razvija i održava tim distribucije Linux Mint. Pokrenuto je 2011. godine kao direktan odgovor na radikalne promene koje je uveo GNOME 3, koje su neki u zajednici smatrali previše poremećujućim.
 
 
 
@@ -1522,7 +1522,7 @@ U početku, Cinnamon je bio jednostavan Fork GNOME Shell-a, ali se postepeno osl
 
 
 
-Njegov glavni cilj je ponuditi klasični, intuitivni Interface, u kontinuitetu GNOME 2 i Windows-a: meni aplikacija u donjem levom uglu, traku zadataka, zonu za obaveštenja i upravljivu radnu površinu. Ovaj konzervativni pristup je posebno zanimljiv za početnike ili one koji dolaze sa Windows-a, koji će brzo pronaći svoje mesto.
+Njegov glavni cilj je ponuditi klasični, intuitivni interfejs, u kontinuitetu GNOME 2 i Windows-a: meni aplikacija u donjem levom uglu, traku zadataka, zonu za obaveštenja i upravljivu radnu površinu. Ovaj konzervativni pristup je posebno zanimljiv za početnike ili one koji dolaze sa Windows-a, koji će brzo pronaći svoje mesto.
 
 
 
@@ -1534,7 +1534,7 @@ Njegov glavni cilj je ponuditi klasični, intuitivni Interface, u kontinuitetu G
 
 
 
-MATE je Fork od GNOME 2, lansiran 2011. godine, nakon dolaska GNOME 3 i njegovog radikalno drugačijeg Interface (GNOME Shell). MATE je nastao iz želje da se očuva klasični pristup GNOME 2 okruženja, uz održavanje i modernizaciju istog.
+MATE je Fork od GNOME 2, lansiran 2011. godine, nakon dolaska GNOME 3 i njegovog radikalno drugačijeg interfejsa (GNOME Shell). MATE je nastao iz želje da se očuva klasični pristup GNOME 2 okruženja, uz održavanje i modernizaciju istog.
 
 
 
@@ -1542,7 +1542,7 @@ Tehnički, MATE je zasnovan na GTK 3 bibliotekama (nakon što je dugo koristio G
 
 
 
-Njegov Interface zasnovan je na tradicionalnoj logici desktopa: jedan ili dva panela (meni, područja za brzo pokretanje, sat, područja za obaveštenja), desktop sa ikonama i organizacija plutajućih prozora.
+Njegov interfejs zasnovan je na tradicionalnoj logici desktopa: jedan ili dva panela (meni, područja za brzo pokretanje, sat, područja za obaveštenja), desktop sa ikonama i organizacija plutajućih prozora.
 
 
 
@@ -1562,12 +1562,12 @@ Odabir vašeg GNU/Linux okruženja radne površine nije trivijalna stvar: ono od
 
 
 
-Svako radno okruženje ima različit otisak resursa. Ovo se meri u smislu potrošnje RAM-a, korišćenja CPU-a i vremena pokretanja:
+Svako desktop okruženje ima različitu potrošnju resursa. Ovo se meri u smislu potrošnje RAM-a, korišćenja CPU-a i vremena pokretanja:
 
 
 
 
-- Na starijim ili manje moćnim mašinama (jednojezgarni CPU, manje od 2 GB RAM-a...), preporučujem veoma lagana okruženja kao što su LXQt, LXDE ili Xfce. Ona nude pun grafički Interface, ali bez vizuelnih efekata ili teških zavisnosti;
+- Na starijim ili manje moćnim mašinama (jednojezgarni CPU, manje od 2 GB RAM-a...), preporučujem veoma lagana okruženja kao što su LXQt, LXDE ili Xfce. Ona nude pun grafički interfejs, ali bez vizuelnih efekata ili teških zavisnosti;
 - Srednja okruženja, kao što su MATE ili Cinnamon, zahtevaju nešto noviji hardver (preporučeno 4 do 6 GB RAM-a), ali ostaju razumna;
 - Moderna, bogata okruženja kao što su GNOME ili KDE Plasma su veoma kompletna, ali zahtevaju više resursa, posebno ako su grafički efekti omogućeni. Ona su pogodna za novije mašine.
 
@@ -1577,15 +1577,15 @@ Svako radno okruženje ima različit otisak resursa. Ovo se meri u smislu potro�
 
 
 
-Svaki DE nudi jedinstvenu Interface filozofiju:
+Svaki DE nudi jedinstvenu interfejs filozofiju:
 
 
 
 
-- GNOME favorizuje jednostavnost korišćenja, sa pojednostavljenim Interface, bez klasične radne površine ili ikona, i radnim tokom usmerenim na produktivnost koji može biti zbunjujući za početnike.
-- KDE Plasma je izuzetno prilagodljiv, sve do najsitnijih detalja. Odlikuje ga moderan izgled, animacije i podrazumevani Interface koji je bliži Windows-u.
-- Cinnamon i MATE nude klasično iskustvo: meni u donjem levom uglu, taskbar, ikone na desktopu. Cinnamon je vizuelno moderniji, MATE lakši
-- Xfce i LXQt teže ka jednostavnosti i performansama, sa suzdržanijom, ali podesivom estetikom
+- GNOME favorizuje jednostavnost korišćenja, sa pojednostavljenim interfejsom, bez klasične radne površine ili ikona, i radnim tokom usmerenim na produktivnost koji može biti zbunjujući za početnike.
+- KDE Plasma je izuzetno prilagodljiv, sve do najsitnijih detalja. Odlikuje ga moderan izgled, animacije i podrazumevani interfejs koji je bliži Windows-u.
+- Cinnamon i MATE nude klasično iskustvo: meni u donjem levom uglu, taskbar, ikone na desktopu. Cinnamon je vizuelno moderniji, dok je MATE lakši.
+- Xfce i LXQt teže ka jednostavnosti i performansama, sa suzdržanijom, ali podesivom estetikom.
 
 
 
@@ -1600,7 +1600,7 @@ Glavna upotreba računara će takođe uticati na vaš izbor:
 
 - Za kancelarijsku i multimedijalnu upotrebu, sva okruženja su pogodna
 - Za razvojne radne stanice, preferencije variraju: neki programeri cene ozbiljnost Xfce-a, dok drugi preferiraju alate za integraciju koje nudi KDE.
-- Za ugrađene ili serverske aplikacije sa minimalnim Interface, ili na veoma starim mašinama, LXQt, LXDE ili Xfce su često jedini održivi izbori.
+- Za ugrađene ili serverske aplikacije sa minimalnim interfejsom, ili na veoma starim mašinama, LXQt, LXDE ili Xfce su često jedini održivi izbori.
 
 
 
@@ -1652,7 +1652,7 @@ Evo su radna okruženja glavnih distribucija:
 
 
 
-- Fedora → GNOME (glavno izdanje), ali nudi nekoliko zvaničnih Spins:
+- Fedora → GNOME (glavno izdanje), ali nudi nekoliko zvaničnih Spins varijanti:
  - Fedora KDE Spin → KDE Plasma
  - Fedora Xfce Spin → Xfce
  - Fedora LXQt Spin → LXQt
@@ -1682,13 +1682,13 @@ Evo su radna okruženja glavnih distribucija:
 
 
 
-- elementary OS → Pantheon, elementaryjev sopstveni GTK zasnovan okruženje
+- elementary OS → Pantheon, sopstveno GTK-bazirano okruženje elementary-a
 
 
 
 
 
-- Pop! OS → GNOME modifikovan sa Interface COSMIC, uskoro će biti zamenjen verzijom Rust
+- Pop! OS → GNOME modifikovan sa COSMIC interfejs, uskoro će biti zamenjen Rust verzijom 
 
 
 
@@ -1718,7 +1718,7 @@ Evo su radna okruženja glavnih distribucija:
 
 
 
-- Repovi → GNOME
+- Tails → GNOME
 
 
 
@@ -1730,7 +1730,7 @@ Evo su radna okruženja glavnih distribucija:
 
 
 
-- BlackArch → i3 window manager (nije kompletno radno okruženje)
+- BlackArch → i3 menadžer prozora (nije kompletno radno okruženje)
 
 
 
@@ -1746,15 +1746,15 @@ Evo su radna okruženja glavnih distribucija:
 
 
 
-Zaključno, ne postoji jedinstveno najbolje desktop okruženje, već ono koje najbolje odgovara vašoj opremi, upotrebi i preferencijama. Čak je uobičajeno testirati nekoliko DE-ova pre nego što pronađete ono koje nudi pravi kompromis između estetike, ergonomije i performansi.
+Na kraju, ne postoji jedinstveno najbolje desktop okruženje, već ono koje najbolje odgovara vašoj opremi, upotrebi i preferencijama. Čak je uobičajeno testirati nekoliko DE-ova pre nego što pronađete ono koje nudi pravi kompromis između estetike, ergonomije i performansi.
 
 
 
-Ovo poglavlje će vam pružiti bolje razumevanje šta je desktop okruženje, njegovih ključnih komponenti, razlike između glavnih dostupnih rešenja i važnih kriterijuma za donošenje vaše odluke. U sledećem poglavlju, moći ćete da napravite svoje prve korake sa Ubuntu-om, svestranom distribucijom za širu javnost.
+Ovo poglavlje trebalo da vam je pruđilo bolje razumevanje šta je desktop okruženje, njegovih ključnih komponenti, razlike između glavnih dostupnih rešenja i važnih kriterijuma za donošenje vaše odluke. U sledećem poglavlju, moći ćete da napravite svoje prve korake sa Ubuntu-om, svestranom distribucijom za širu javnost.
 
 
 
-## Početak rada sa Ubuntuom: sve što treba da znate
+## Početak rada sa Ubuntu-om: sve što treba da znate
 
 
 <chapterId>7cea476d-f759-4c7e-8ca5-8b35bc79c682</chapterId>
