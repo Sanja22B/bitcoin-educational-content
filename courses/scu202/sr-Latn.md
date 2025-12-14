@@ -1765,11 +1765,11 @@ Danas je Ubuntu jedan od najpristupačnijih ulaza u GNU/Linux: uglađeno GNOME o
 
 
 
-Međutim, ovladavanje instalacijom na radnoj površini zahteva razumevanje osnovnih mehanizama sistema: upravljanje paketima, komandna linija, osnovna bezbednost i svakodnevne najbolje prakse. U ovom poglavlju, vodiću vas korak po korak, od početne konfiguracije do instalacije alata za produktivnost i razvoj, kako bih osigurao da imate kompletnu, sigurnu i efikasnu radnu površinu.
+Međutim, ovladavanje instalacijom radnog okruženja zahteva razumevanje osnovnih mehanizama sistema: upravljanje paketima, komandna linija, osnovna bezbednost i svakodnevne najbolje prakse. U ovom poglavlju, vodiću vas korak po korak, od početne konfiguracije do instalacije alata za produktivnost i razvoj, kako bih osigurao da imate kompletnu, sigurnu i efikasnu desktop okruženje.
 
 
 
-### Instaliranje distribucije Ubuntu
+### Instaliranje Ubuntu distribucije 
 
 
 
@@ -1841,7 +1841,7 @@ Priključite USB fleš disk od najmanje 8 GB (pazite, njegov sadržaj će biti i
 
 
 
-Sada treba da pokrenete računar ne sa Hard diska, već sa USB ključa. Restartujte svoj uređaj i pristupite boot meniju ili BIOS/UEFI. Ovo se obično radi pritiskom na taster odmah nakon pokretanja računara (često `F2`, `F10`, `F12`, `DEL`, `ESC`). Proverite kako da pristupite ovom meniju na svom uređaju.
+Sada treba da pokrenete računar ne sa hard diska, već sa USB ključa. Restartujte svoj uređaj i pristupite boot meniju ili BIOS/UEFI. Ovo se obično radi pritiskom na taster odmah nakon pokretanja računara (često `F2`, `F10`, `F12`, `DEL`, `ESC`). Proverite kako da pristupite ovom meniju na svom uređaju.
 
 
 
@@ -1879,14 +1879,14 @@ Kada pokrenete Ubuntu, čarobnjak za instalaciju vodi vas korak po korak. Pratit
 
 
 
-Ako vaš računar već ima Windows, Ubuntu će automatski detektovati ovu instalaciju i predložiti dual-boot podešavanje za 2 operativna sistema:
+Ako vaš računar već ima Windows, Ubuntu će automatski detektovati ovu instalaciju i predložiti dual-boot podešavanje sa 2 operativna sistema:
 
 
 
 
-- Instalater će smanjiti Windows particiju kako bi oslobodio prostor
+- Instalater će smanjiti Windows particiju kako bi oslobodio prostor.
 - Ubuntu će biti instaliran u ovom slobodnom prostoru, sa sopstvenim particijama.
-- Menadžer pokretanja (GRUB) će biti instaliran, omogućavajući vam da birate između Windows-a i Ubuntu-a svaki put kada se računar pokrene.
+- Menadžer pokretanja (GRUB) (eng. boot manager) će biti instaliran, omogućavajući vam da birate između Windows-a i Ubuntu-a svaki put kada se računar pokrene.
 
 
 
@@ -1924,7 +1924,7 @@ Izaberite ovu opciju samo ako želite da pređete 100% na GNU/Linux. Ne zaboravi
 
 
 
-Ako vaša mašina uopšte ne sadrži sistem, ili ako ste prethodno obrisali disk, instalacija će se odvijati kao u prethodnom slučaju. Ubuntu će se instalirati kao glavni sistem i automatski konfigurisati potrebne particije.
+Ako vaša mašina uopšte ne sadrži nijedan sistem, ili ako ste prethodno obrisali disk, instalacija će se odvijati kao u prethodnom slučaju. Ubuntu će se instalirati kao glavni sistem i automatski konfigurisati potrebne particije.
 
 
 
@@ -2019,9 +2019,9 @@ Svako spremište je podeljeno na sekcije. Po defaultu, Ubuntu aktivira četiri g
 
 
 - **main**: besplatan softver zvanično održavan od strane Canonical-a. Primeri: Firefox, LibreOffice, bash
-- **restricted**: non-free software that is essential for the hardware to function properly. Examples: NVIDIA drivers, Wi-Fi firmware, proprietary codecs
+- **restricted**: Neslobodan softver koji je neophodan da bi hardver ispravno funkcionisao. Primeri: NVIDIA drajveri, Wi-Fi firmver, vlasnički kodeci.
 - **universe**: besplatan softver koji održava zajednica. Primeri: GIMP, Inkscape, Audacity
-- **multiverse**: softver podložan pravnim ograničenjima (patenti, neliberalne licence). Dostupnost može varirati u zavisnosti od zemlje. Primeri: određeni audio/video kodeci, Steam
+- **multiverse**: softver podložan pravnim ograničenjima (patenti, neslobodne licence). Dostupnost može varirati u zavisnosti od zemlje. Primeri: određeni audio/video kodeci, Steam
 
 
 
@@ -2033,7 +2033,7 @@ Svaka komponenta se zatim može razložiti na nekoliko kanala ili grana: `releas
 
 
 
-Grafički Interface čini korišćenje Ubuntu-a intuitivnim, ali za određene administrativne zadatke, terminal ostaje najefikasniji i najmoćniji alat. Pod Ubuntu-om, podrazumevana ljuska je **Bash** (*Bourne Again SHell*), besplatna ljuska iz Unix tradicije.
+Grafički interfejs čini korišćenje Ubuntu-a intuitivnim, ali za određene administrativne zadatke, terminal ostaje najefikasniji i najmoćniji alat. Pod Ubuntu-om, podrazumevani shell program (u prevodu ljuska) je **Bash** (*Bourne Again SHell*), besplatan shell sistemski program iz Unix tradicije.
 
 
 
@@ -2140,12 +2140,12 @@ Da biste kreirali novi direktorijum unutar trenutnog, koristite komandu:
 
 
 ```bash
-mkdir name
+mkdir naziv
 ```
 
 
 
-Jednostavno promenite "name" u ime vašeg novog direktorijuma.
+Jednostavno promenite "naziv" u ime vašeg novog direktorijuma.
 
 
 
@@ -2164,7 +2164,7 @@ Da biste kopirali datoteku, koristite komandu `cp`, nakon koje sledi naziv datot
 
 
 ```bash
-cp file.txt destination
+cp file.txt destinacija
 ```
 
 
@@ -2180,12 +2180,12 @@ cp file.txt destination
 
 
 ```bash
-mv file.txt /new/directory/
+mv file.txt /novi/direktorijum/
 ```
 
 
 
-Komanda `mv` omogućava vam da premestite ili preimenujete fajl ili direktorijum. Ako navedete putanju do drugog direktorijuma nakon imena fajla, fajl će biti premesten. Ako navedete novo ime u istom direktorijumu, fajl će biti preimenovan.
+Komanda `mv` omogućava vam da premestite ili preimenujete fajl ili direktorijum. Ako navedete putanju do drugog direktorijuma nakon imena fajla, fajl će biti premešten. Ako navedete novo ime u istom direktorijumu, fajl će biti preimenovan.
 
 
 
@@ -2220,7 +2220,7 @@ Upozorenje: ova komanda ne premešta fajlove u korpu za otpatke.
 
 
 
-Da biste izbegli greške sa ovom komandom, preporučujem da dodate potvrdu po podrazumevanim postavkama. Jednostavno izvršite u vašem terminalu:
+Da biste izbegli greške sa ovom komandom, preporučujem da podrazumevano dodate upit za potvrdu. Jednostavno izvršite u vašem terminalu:
 
 
 
@@ -2231,7 +2231,7 @@ source ~/.bashrc
 
 
 
-Bićete upitani da potvrdite pre svake brisanja.
+Bićete upitani da potvrdite pre svakog brisanja.
 
 
 
@@ -2258,16 +2258,16 @@ clear
 
 
 ```bash
-sudo command
+sudo komanda
 ```
 
 
 
-Ključna reč `sudo` (*superuser do*) omogućava vam da privremeno izvršite komandu sa privilegijama *root* (sistemskog administratora). Bićete upitani za vašu lozinku kako biste potvrdili ovu akciju. Budite oprezni: nikada ne koristite `sudo` bez razumevanja šta komanda radi.
+Ključna reč `sudo` (*superuser do*) omogućava vam da privremeno izvršite komandu sa  *root* privilegijama (privilegijama sistemskog administratora). Bićete upitani za vašu lozinku kako biste potvrdili ovu akciju. Budite oprezni: nikada ne koristite `sudo` bez razumevanja šta komanda radi.
 
 
 
-Savjet: da biste prešli na root shell (administratorsku sesiju), upišite:
+Savet: da biste prešli na root shell (administratorsku sesiju), upišite:
 
 
 
@@ -2288,7 +2288,7 @@ Ovo otvara puni terminal sa root privilegijama. Koristite sa oprezom i nikada na
 
 
 ```bash
-man command_name
+man naziv_komande
 ```
 
 
@@ -2329,7 +2329,7 @@ U sledećim odeljcima, detaljnije ćemo pogledati kako koristiti terminal za upr
 
 
 
-Na GNU/Linux sistemu kao što je Ubuntu, instalacija, ažuriranje i uklanjanje softvera su centralizovani kroz sisteme za upravljanje paketima. Za razliku od Windows-a, gde preuzimate `.exe' ili `.msi' datoteke, Ubuntu koristi alate kao što su APT, Snap ili Flatpak da automatizuje ove operacije, garantujući konzistentnost sistema.
+Na GNU/Linux sistemu kao što je Ubuntu, instalacija, ažuriranje i uklanjanje softvera su centralizovani kroz sisteme za upravljanje paketima. Za razliku od Windows-a, gde preuzimate `.exe` ili `.msi` datoteke, Ubuntu koristi alate kao što su APT, Snap ili Flatpak da automatizuje ove operacije, garantujući konzistentnost sistema.
 
 
 
@@ -2341,7 +2341,7 @@ APT (*Advanced Package Tool*) je glavni upravitelj paketa za Ubuntu. Rukuje pake
 
 
 
-Da pretražite repozitorijume za dostupni paket (naravno, morate zameniti "gimp" imenom željenog softvera):
+Da biste pretražili repozitorijume u potrazi za dostupnim paketom (naravno, morate zameniti "gimp" imenom željenog softvera):
 
 
 
@@ -2369,7 +2369,7 @@ sudo apt install gimp
 
 
 
-Kada je instalacija završena, izvršni fajl ćete pronaći u Ubuntu meniju aplikacija, koji se nalazi u donjem levom uglu Interface.
+Kada je instalacija završena, izvršni fajl ćete pronaći u Ubuntu meniju aplikacija, koji se nalazi u donjem levom uglu interfejsa.
 
 
 
@@ -2424,23 +2424,22 @@ sudo apt upgrade
 
 
 
-→ APT je brz, lagan i veoma dobro integrisan u Ubuntu. Za sav softver dostupan u zvaničnim riznicama, ovo je preferirani metod.
+→ APT je brz, lagan i veoma dobro integrisan u Ubuntu. Za sav softver dostupan u zvaničnim repozitorijima, ovo je preferirani metod.
 
 
 
-#### Snap: containerizovani paketi od Canonical
+#### Snap: kontejnerizovani paketi kompanije Canonical
 
 
 
-Snap je format paketa koji je razvio Canonical, dizajniran da bude univerzalan, izolovan od glavnog sistema i samostalan. To znači da svaki snap uključuje sopstvene zavisnosti i radi u okruženju sa peskovnikom.
-
+Snap je format paketa koji je razvio Canonical, dizajniran da bude univerzalan, izolovan od glavnog sistema i samostalan. To znači da svaki snap sadrži sopstvene zavisnosti i radi u izolovanom (sandbox) okruženju.
 
 
 Ovo omogućava da se softver ažurira nezavisno od sistema i radi na svim Linux distribucijama koje podržavaju Snap. S druge strane, potrebno je više vremena za pokretanje, može dovesti do nepotrebnog nagomilavanja istih zavisnosti, a integracija sa desktopom je ponekad manje fluidna.
 
 
 
-Da biste pretražili Snap paket u Snap prodavnici (ovde za Spotify softver):
+Da biste pretražili Snap paket u Snap prodavnici (u ovom primeru za Spotify softver):
 
 
 
@@ -2464,7 +2463,7 @@ sudo snap install spotify
 
 
 
-Kada je instalacija završena, naći ćete izvršnu datoteku u Ubuntu meniju aplikacija, koji se nalazi u donjem levom uglu Interface. Ili, još jednostavnije: možete direktno upisati ime softvera u terminal (u ovom slučaju, "spotify") da biste ga otvorili.
+Kada je instalacija završena, naći ćete izvršnu datoteku u Ubuntu meniju aplikacija, koji se nalazi u donjem levom uglu interfejsa. Ili, još jednostavnije: možete direktno upisati ime softvera u terminal (u ovom slučaju, "spotify") da biste ga otvorili.
 
 
 
