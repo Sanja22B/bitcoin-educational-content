@@ -736,7 +736,7 @@ U svetlu ovog tehničkog nasleđa, sada je moguće konkretno ispitati kako se ov
 
 
 
-Linux distribucija (često skraćeno "*distro*") je kompletan operativni sistem izgrađen na Linux kernelu (i često sa Elements GNU-a), plus koherentan skup softvera, biblioteka, inicijalizacionih skripti i alata za upravljanje, kako bi se formiralo spremno za korišćenje okruženje. Linux distribucija stoga nije ograničena samo na kernel, već predstavlja sveobuhvatnu integraciju softverskih komponenti potrebnih za pokretanje i korišćenje računara (ili bilo kog drugog računarskog uređaja).
+Linux distribucija (često skraćeno "*distro*") je kompletan operativni sistem izgrađen na Linux kernelu (i često sa elementima GNU-a), plus koherentan skup softvera, biblioteka, inicijalizacionih skripti i alata za upravljanje, kako bi se formiralo spremno za korišćenje okruženje. Linux distribucija stoga nije ograničena samo na kernel, već predstavlja sveobuhvatnu integraciju softverskih komponenti potrebnih za pokretanje i korišćenje računara (ili bilo kog drugog računarskog uređaja).
 
 
 
@@ -746,12 +746,12 @@ Svaka Linux distribucija uključuje :
 
 
 - **Linux kernel**, koji komunicira sa hardverom i upravlja sistemskim resursima (CPU, memorija, diskovi, itd.)
-- a **bootloader**, such as *GRUB*, to boot the system
-- sistem za **inicijalizaciju** koji omogućava pokretanje servisa pri podizanju sistema: *systemd*, *OpenRC*, *SysV init* ili *runit* u zavisnosti od filozofskih izbora distribucije
-- sistem za **upravljanje paketima**, koji vam omogućava instaliranje, ažuriranje i uklanjanje softvera. Najčešći su *APT* (Debian, Ubuntu), *RPM/DNF* (Fedora, RHEL), *Pacman* (Arch), *Zypper* (openSUSE) ili *APK* (Alpine)
-- online **softverska skladišta**, koja centralizuju validirane verzije dostupnih aplikacija
-- skup **sistemskih alata** (ljuska, urednici, kompajleri, mrežna sučelja, itd.) i često unapred konfigurisan radni okruženje (*GNOME*, *KDE Plasma*, *XFCE*, itd.)
-- konfiguracioni skripti, dokumentacija i, u nekim slučajevima, usluge podrške
+- **bootloader**, such as *GRUB*, to boot the system
+- **sistem za inicijalizaciju** koji omogućava pokretanje servisa pri podizanju sistema: *systemd*, *OpenRC*, *SysV init* ili *runit* u zavisnosti od filozofskih izbora distribucije
+- **sistem za upravljanje paketima**, koji vam omogućava instaliranje, ažuriranje i uklanjanje softvera. Najčešći su *APT* (Debian, Ubuntu), *RPM/DNF* (Fedora, RHEL), *Pacman* (Arch), *Zypper* (openSUSE) ili *APK* (Alpine)
+- online **softverski repozitorijumi**, koja centralizuju validirane verzije dostupnih aplikacija
+- skup **sistemskih alata** (shell, editors, compilers, mrežni interfejsi, itd.) i često unapred konfigurisano radno okruženje (*GNOME*, *KDE Plasma*, *XFCE*, itd.)
+- konfiguracione skripte, dokumentacija i, u nekim slučajevima, usluge podrške
 
 
 
@@ -759,7 +759,7 @@ Svaka Linux distribucija uključuje :
 
 
 
-Ovaj skup radova je specifičan za svaku distribuciju, koja bira svoje komponente prema svojoj filozofiji (jednostavnost, lakoća, sigurnost, stabilnost, inovacija, itd.), svojim ciljnim publikama (početnici, preduzeća, serveri, radne stanice, ugrađene mašine, itd.) i svom razvojnom ciklusu (*rolling release* ili *stable*). Na primer, Arch Linux se fokusira na strukturnu jednostavnost i tehničku transparentnost, dok se Ubuntu koncentriše na korisničko iskustvo i kompatibilnost sa glavnim tokovima (ali ćemo se vratiti na ovo u završnom delu ovog poglavlja).
+Ovaj skup radova je specifičan za svaku distribuciju, koja bira svoje komponente prema svojoj filozofiji (jednostavnost, lakoća, sigurnost, stabilnost, inovacija, itd.), svojom ciljnoj publici (početnici, preduzeća, serveri, radne stanice, ugrađene mašine, itd.) i svom razvojnom ciklusu (*rolling release* ili *stable*). Na primer, Arch Linux se fokusira na strukturnu jednostavnost i tehničku transparentnost, dok se Ubuntu koncentriše na korisničko iskustvo i široku kompatibilnost (ali ćemo se vratiti na ovo u završnom delu ovog poglavlja).
 
 
 
@@ -767,7 +767,7 @@ Ovaj skup radova je specifičan za svaku distribuciju, koja bira svoje komponent
 
 
 
-Postojanje distribucija omogućava korisnicima da iskoriste gotov Linux sistem, bez potrebe za ručnom rekonstrukcijom svakog softverskog komponenta. Ovo predstavlja ogromnu uštedu u smislu vremena, doslednosti i sigurnosti. Takođe, u smislu arhitekture, distribucije koriste hardversku apstrakciju Layer koju obezbeđuje Linux kernel. Ova Layer omogućava operativnom sistemu da bude kompatibilan sa širokim spektrom različitog hardvera, bez potrebe za prilagođavanjem softvera svakom specifičnom komponentu. Ova modularnost takođe olakšava modifikaciju ili zamenu sistemskih komponenti bez potrebe za rekonstrukcijom celog sistema.
+Postojanje distribucija omogućava korisnicima da iskoriste gotov Linux sistem, bez potrebe za ručnom rekonstrukcijom svakog softverskog komponenta. Ovo predstavlja ogromnu uštedu u smislu vremena, doslednosti i sigurnosti. Takođe, u smislu arhitekture, distribucije koriste sloj apstrakcije hardvera koju obezbeđuje Linux kernel. Ovaj sloj omogućava operativnom sistemu da bude kompatibilan sa širokim spektrom različitog hardvera, bez potrebe za prilagođavanjem softvera svakoj specifičnoj komponenti. Ova modularnost takođe olakšava modifikaciju ili zamenu sistemskih komponenti bez potrebe za rekonstrukcijom celog sistema.
 
 
 
@@ -783,7 +783,7 @@ Prve Linux distribucije pojavile su se neposredno nakon objavljivanja Linux kern
 
 
 
-Da bi Linux bio pristupačniji, nekoliko projekata brzo se pojavljuje, sa idejom sastavljanja sistema spremnog za upotrebu od Linux kernela i koherentnog skupa softverskih alata.
+Da bi Linux bio pristupačniji, ubrzo se pojavljuje nekoliko projekata, sa idejom sastavljanja sistema spremnog za upotrebu Linux kernela i koherentnog skupa softverskih alata.
 
 
 
@@ -807,7 +807,7 @@ Razvijen na Univerzitetu u Mančesteru, MCC Interim Linux se smatra prvom Linux 
 
 
 
-SLS distribucija je prva koja nudi potpuniju instalaciju sa prozorskim sistemom (X Window), ljuskom, kompajlerom i drugim unapred konfiguriranim alatima. Njena svrha je da obezbedi Unix-sličan sistem koji može koristiti šira javnost.
+SLS distribucija je prva koja nudi potpuniju instalaciju sa prozorskim sistemom (X Window), shell-om, kompajlerom i drugim unapred konfiguriranim alatima. Njena svrha je da obezbedi sistem sličan Unix-u koji može koristiti šira javnost.
 
 
 
@@ -863,7 +863,7 @@ Otprilike u isto vreme, Ian Murdock je pokrenuo Debian distribuciju, u duhu veom
 
 
 
-Sa tehničke tačke gledišta, Debian se od samog početka istakao kvalitetom svog sistema pakovanja, mogućnošću praćenja ažuriranja, a pre svega uvođenjem visokoperformantnog menadžera paketa, *dpkg*, koji je brzo dopunjen sa *APT* 1998. godine, što omogućava automatizovano i pouzdano upravljanje softverskim zavisnostima.
+Sa tehničke tačke gledišta, Debian se od samog početka istakao kvalitetom svog sistem za upravljanje paketima, mogućnošću praćenja ažuriranja, a pre svega uvođenjem visokoperformantnog menadžera paketa, *dpkg*, koji je ubrzo dopunjen sa *APT* 1998. godine, što omogućava automatizovano i pouzdano upravljanje softverskim zavisnostima (eng. software dependencies).
 
 
 
@@ -893,7 +893,7 @@ Marc Ewing je objavio prvu verziju Red Hat Linux-a 1994. godine. Ovo je označil
 
 
 
-1995. godine, Bob Young, osnivač AAC Corporation koja se specijalizuje za dodatke za Linux softver, otkupio je kompaniju Marca Ewinga. Spajanjem ova dva entiteta nastao je Red Hat Software. Zajedno su razvili originalni poslovni model: distribuciju softvera otvorenog koda u kombinaciji sa uslugama podrške i sertifikacije za preduzeća. Ovaj poslovni model postao je merilo i može se pronaći u mnogim projektima u ekosistemu Bitcoin.
+1995. godine, Bob Young, osnivač AAC Corporation koja se specijalizuje za dodatke za Linux softver, otkupio je kompaniju Marca Ewinga. Spajanjem ova dva entiteta nastao je Red Hat Software. Zajedno su razvili originalni poslovni model: distribuciju softvera otvorenog koda u kombinaciji sa uslugama podrške i sertifikacije za preduzeća. Ovaj poslovni model postao je merilo i može se pronaći u mnogim projektima u Bitcoin ekosistemu.
 
 
 
@@ -909,12 +909,11 @@ Godine 2003, Red Hat je napravio stratešku podelu: zajednička grana postala je
 
 
 
-Ove pionirske distribucije uspostavile su današnje glavne Linux porodice, od kojih je svaka razvila svoj tehnički i filozofski pristup.
+Ove pionirske distribucije uspostavile su današnje glavne Linux platforme, od kojih je svaka razvila svoj tehnički i filozofski pristup.
 
 
 
-### Današnje glavne porodice Linux distribucija
-
+### Najvažnije današnje grupe Linux distribucija
 
 
 #### Debian porodica
@@ -937,7 +936,7 @@ To je porodica na koju ćemo se sledeće fokusirati, jer okuplja neke od najkonz
 
 
 
-#### Porodica Red Hat
+#### Red Hat porodica 
 
 
 
