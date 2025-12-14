@@ -940,7 +940,7 @@ To je porodica na koju ćemo se sledeće fokusirati, jer okuplja neke od najkonz
 
 
 
-Centred around the RPM format (*Red Hat Package Manager*), this family therefore includes Fedora, the innovative community distribution serving as the technical basis for Red Hat Enterprise Linux (RHEL), a commercial distribution aimed at enterprises and renowned for its long-term stability.
+Ova porodica, zasnovana na RPM formatu (*Red Hat Package Manager*), obuhvata Fedoru, inovativnu distribuciju razvijanu od strane zajednice, koja služi kao tehnička osnova za Red Hat Enterprise Linux (RHEL), komercijalnu distribuciju namenjenu preduzećima i poznatu po dugoročnoj stabilnosti.
 
 
 
@@ -986,11 +986,11 @@ Najpoznatiji je Manjaro, koji zadržava tehničku osnovu Archa dok nudi pojednos
 
 
 
-Slackware ostaje veran istorijskim Unix principima, sa naglaskom na jednostavnost, transparentnost i stabilnost. Za razliku od modernih distribucija koje automatizuju upravljanje softverom, Slackware se oslanja na `.tgz` paket sistem bez automatskog rešavanja zavisnosti, što zahteva dobro poznavanje njegovog okruženja i softverskih komponenti.
+Slackware ostaje veran istorijskim Unix principima, sa naglaskom na jednostavnost, transparentnost i stabilnost. Za razliku od modernih distribucija koje automatizuju upravljanje softverom, Slackware se oslanja na `.tgz` sistem paketa bez automatskog rešavanja zavisnosti, što zahteva dobro poznavanje njegovog okruženja i softverskih komponenti.
 
 
 
-Ovaj minimalistički pristup, u kombinaciji sa visokom stabilnošću, čini Slackware distribucijom koju preferiraju iskusni korisnici ili Unix puristi, posebno u kontekstima gde su predvidljivost i kontrola važni (serveri, ugrađeni sistemi, okruženja kritična za misije, itd.).
+Ovaj minimalistički pristup, u kombinaciji sa visokom stabilnošću, čini Slackware distribucijom koju preferiraju iskusni korisnici ili Unix čistunci, posebno u kontekstima gde su predvidljivost i kontrola važni (serveri, ugrađeni sistemi, okruženja kritična za misije, itd.).
 
 
 
@@ -1068,7 +1068,7 @@ https://planb.academy/tutorials/computer-security/operating-system/ubuntu-78a3be
 
 
 
-Pokrenut 2006. godine, Linux Mint je distribucija izvedena iz Ubuntu-a, dizajnirana da ponudi intuitivniju alternativu, bližu ergonomiji Windows-a. Nudi nekoliko radnih okruženja, uključujući Cinnamon, Fork GNOME-a dizajniran specifično od strane Mint tima, koji pruža jasan, klasičan i odmah prepoznatljiv Interface.
+Pokrenut 2006. godine, Linux Mint je distribucija izvedena iz Ubuntu-a, dizajnirana da ponudi intuitivniju alternativu, bližu ergonomiji Windows-a. Nudi nekoliko radnih okruženja, uključujući Cinnamon, fork GNOME-a dizajniran specifično od strane Mint tima, koji pruža jasan, klasičan i odmah prepoznatljiv interfejs.
 
 
 
@@ -1088,7 +1088,7 @@ Mint se ističe svojom jednostavnošću, prisustvom multimedijalnih kodeka po de
 
 
 
-Kreiran 2008. godine od strane irskog tima, Zorin OS eksplicitno cilja korisnike Windows-a i macOS-a koji traže glatku tranziciju na Linux. Baziran je na Ubuntu LTS i nudi prilagođeni Interface koji može imitirati Windows ili macOS prema preferencijama.
+Kreiran 2008. godine od strane irskog tima, Zorin OS eksplicitno cilja korisnike Windows-a i macOS-a koji traže glatku tranziciju na Linux. Baziran je na Ubuntu LTS i nudi prilagođeni interfejs koji može imitirati Windows ili macOS prema preferencijama.
 
 
 
@@ -1104,7 +1104,7 @@ Instalacija je glatka, osnovni softver je unapred instaliran, a "Lite" verzija v
 
 - **elementary OS**:
 
-Pokrenut 2011. godine, elementary OS je distribucija zasnovana na Ubuntu-u koja se pre svega fokusira na dizajn i doslednost Interface. Njegovo radno okruženje Pantheon, inspirisano macOS-om, je minimalističko, elegantno i fluidno. Međutim, sistem ostaje manje prilagodljiv od drugih distribucija, i neki napredni korisnici mogu se osećati ograničeno izborima Interface i njegovom namerno zaključanom strukturom. Dobro je prilagođen estetski osetljivim korisnicima koji traže jednostavan, koherentan sistem za svakodnevnu upotrebu.
+Pokrenut 2011. godine, elementary OS je distribucija zasnovana na Ubuntu-u koja se pre svega fokusira na dizajn i doslednost korisničkog interfejsa. Njegovo radno okruženje Pantheon, inspirisano macOS-om, je minimalističko, elegantno i fluidno. Međutim, sistem ostaje manje prilagodljiv od drugih distribucija, i neki napredni korisnici mogu se osećati ograničeno izborima interfejsa i njegovom namerno zaključanom strukturom. Dobro je prilagođen estetski osetljivim korisnicima koji traže jednostavan, koherentan sistem za svakodnevnu upotrebu.
 
 https://planb.academy/tutorials/computer-security/operating-system/elementary-os-757a20be-22b5-484c-a032-2bdd909860ac
 
@@ -1120,7 +1120,7 @@ https://planb.academy/tutorials/computer-security/operating-system/elementary-os
 
 
 
-Razvijen od strane američke kompanije System76, Pop!OS je takođe zasnovan na Ubuntu. Cilja na desktop korisnike i programere, sa modifikovanim Interface GNOME (i nedavno sopstvenim okruženjem zvanim COSMIC). Pop!OS integriše optimizacije za NVIDIA GPU-ove po defaultu, i ima mozaik režim upravljanja prozorima. Sistem ostaje jednostavan za korišćenje, ali takođe nudi napredne funkcionalnosti odmah po instalaciji. Namenjen je srednje naprednim korisnicima, studentima ili profesionalcima koji žele efikasan sistem bez potrebe za ručnim podešavanjem okruženja.
+Razvijen od strane američke kompanije System76, Pop!OS je takođe zasnovan na Ubuntu. Cilja na desktop korisnike i programere, sa modifikovanim GNOME interfejsu(i nedavno sopstvenim okruženjem zvanim COSMIC). Pop!OS integriše optimizacije za NVIDIA GPU-ove po defaultu, i ima mozaik režim upravljanja prozorima. Sistem ostaje jednostavan za korišćenje, ali takođe nudi napredne funkcionalnosti odmah po instalaciji. Namenjen je srednje naprednim korisnicima, studentima ili profesionalcima koji žele efikasan sistem bez potrebe za ručnim podešavanjem okruženja.
 
 
 
@@ -1198,7 +1198,7 @@ Baziran na Arch-u, Manjaro čini Arch Linux pristupačnim. Ova distribucija nudi
 
 
 
-Arch Linux je minimalistička, kontinuirano ažurirajuća distribucija, isporučena bez Interface ili suvišnog softvera. Zahteva ručnu instalaciju, ali nudi potpunu kontrolu i odličnu dokumentaciju (Arch Wiki). Ova distribucija se preporučuje naprednim korisnicima koji žele da ovladaju svim aspektima.
+Arch Linux je minimalistička, kontinuirano ažurirajuća distribucija, isporučena bez interfejsa ili suvišnog softvera. Zahteva ručnu instalaciju, ali nudi potpunu kontrolu i odličnu dokumentaciju (Arch Wiki). Ova distribucija se preporučuje naprednim korisnicima koji žele da ovladaju svim aspektima.
 
 
 
@@ -1212,7 +1212,7 @@ https://planb.academy/tutorials/computer-security/operating-system/arch-linux-7a
 
 - **Kali Linux**:
 
-Kali Linux je distribucija zasnovana na Debianu, dizajnirana za testiranje penetracije i bezbednosnu reviziju. Uključuje stotine alata za pentest. Ova distribucija nije baš pogodna kao glavni sistem za svakodnevnu upotrebu.
+Kali Linux je Debian-based distribucija kreirana za testiranje sigurnosti (eng. security auditing) i provere ranjivosti sistema (eng. penetration testing). Uključuje stotine alata za pentest. Ova distribucija nije baš pogodna kao glavni sistem za svakodnevnu upotrebu.
 
 
 
@@ -1236,17 +1236,17 @@ Parrot OS je takođe izveden iz Debiana. Nudi okruženje za pentesting, ofanzivn
 
 
 
-- **Repovi**:
+- **Tails**:
 
 
 
-Tails je distribucija zasnovana na Debianu, fokusirana na privatnost. Sve prolazi kroz Tor mrežu i ništa se ne čuva između korisničkih sesija. To je idealna distribucija za osetljive jednokratne upotrebe (novinarstvo, aktivizam, seed Bitcoin generisanje...).
+Tails je distribucija zasnovana na Debianu, fokusirana na privatnost. Sve prolazi kroz Tor mrežu i ništa se ne čuva između korisničkih sesija. To je idealna distribucija za osetljive jednokratne upotrebe (novinarstvo, aktivizam, generisanje Bitcoin seed-a...).
 
 
 
 https://planb.academy/tutorials/computer-security/operating-system/tails-15108901-f15d-4f7f-a001-b02b1dcd60c8
 
-→ **Napomena:** Živa distribucija je Linux operativni sistem koji se može koristiti direktno sa USB stika ili CD-a, bez instalacije na Hard disk.
+→ **Napomena:** Živa distribucija je Linux operativni sistem koji se može koristiti direktno sa USB stika ili CD-a, bez instalacije na hard disk.
 
 
 
@@ -1316,7 +1316,7 @@ Raspberry Pi OS (ranije Raspbian) je distribucija optimizovana za Raspberry Pi m
 
 
 
-Whonix kombinuje Debian sa Tor mrežom u arhitekturi sa dve VM (gateway + workstation). To je distribucija orijentisana na bezbednost, ali zavisi od virtualizacije. Preporučuje se onima koji zaista trebaju privatnost.
+Whonix kombinuje Debian sa Tor mrežom koristeći arhitekturu sa dve virtuelne mašine (gateway + radna stanica). To je distribucija orijentisana na bezbednost, ali zavisi od virtualizacije. Preporučuje se onima koji zaista trebaju privatnost.
 
 
 
