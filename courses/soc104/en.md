@@ -404,7 +404,7 @@ Historically, American *liberalism* has supported significant state intervention
 From the 1960s onwards, supporters of classical liberalism in the USA began calling themselves *libertarians* to distinguish themselves from American liberals. They are the heirs of 19th-century European classical liberalism.
 
 
-## Are you a libertarian or a libertaire/anarchist (in french libertaire)?
+## Are you a libertarian or a libertaire/anarchist (in French libertaire)?
 
 <chapterId>fc761194-249f-4009-a20f-1f98b7226cf2</chapterId>
 
@@ -415,7 +415,7 @@ From the 1960s onwards, supporters of classical liberalism in the USA began call
 The term **libertarian** is sometimes translated as libertarian or libertine, which is a major misunderstanding.
 
 
-The french term libertaire comes from the 19th-century anarchist tradition, which is derived from socialism. This tradition is historically linked to thinkers such as Pierre-Joseph Proudhon and Mikhail Bakunin. Anarchism is the political doctrine that states that all forms of government are unnecessary, oppressive and must be abolished.
+The French term libertaire comes from the 19th-century anarchist tradition, which is derived from socialism. This tradition is historically linked to thinkers such as Pierre-Joseph Proudhon and Mikhail Bakunin. Anarchism is the political doctrine that states that all forms of government are unnecessary, oppressive and must be abolished.
 
 
 For socialist and communist anarchists, property is theft. They want to see the disappearance of money and banks, and a return to a local economy based on barter. They seek an egalitarian society where individual freedom is exercised within a collective framework, without domination.
