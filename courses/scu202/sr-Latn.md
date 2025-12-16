@@ -2507,7 +2507,7 @@ Flatpak je još jedan univerzalni format paketa, razvijen od strane zajednice (R
 
 
 
-Da instalirate Flatpak i njegovu grafičku integraciju:
+Za instaliranje Flatpak i njegovog grafičkog interfejsa, koristite komandu:
 
 
 
@@ -2517,7 +2517,7 @@ sudo apt install flatpak gnome-software-plugin-flatpak
 
 
 
-Da biste dodali glavnu zajedničku riznicu (Flathub):
+Da biste dodali glavni repozitorijum zajednice (Flathub), koristite komandu:
 
 
 
@@ -2545,27 +2545,27 @@ Ukratko:
 
 
 
-| Format       | Origin       | Isolation | Size | Performance | Permission Control |
-| ------------ | ------------- | --------- | ------ | ------------ | ------------------- |
-| APT / `.deb` | Debian        | ❌         | ✅      | ✅            | 🟡                  |
-| Snap         | Canonical     | 🟡        | ❌      | ❌            | 🟡                  |
-| Flatpak      | Community     | ✅         | 🟡     | 🟡           | ✅                   |
+| Format       | Kreator       | Izolacija | Veličina| Performanse | Kontrola dozvola |
+| ------------ | ------------- | --------- | -----   | ------------| -----------------|
+| APT / `.deb` | Debian        | ❌        | ✅       | ✅          | 🟡                |
+| Snap         | Canonical     | 🟡        | ❌       | ❌          | 🟡                |
+| Flatpak      | Zajednica     | ✅        | 🟡       | 🟡          | ✅                |
 
-#### App Center: grafički instalater
-
-
-
-Ubuntu uključuje aplikaciju pod nazivom *App Center*, koja služi kao grafički Interface za lako pretraživanje, instaliranje i deinstaliranje aplikacija, bez korišćenja komandnih linija kao što smo upravo videli. Tehnički, App Center deluje kao sloj preko menadžera paketa. Stoga može:
+#### App Center: grafički instalacioni program
 
 
 
-
-- Instalirajte .deb pakete koristeći APT
-- Instalirajte Snap pakete iz Snap prodavnice
+Ubuntu uključuje aplikaciju pod nazivom *App Center*, koja služi kao grafički interfejs za lako pretraživanje, instaliranje i deinstaliranje aplikacija, bez korišćenja komandnih linija kao što smo upravo videli. Tehnički, App Center deluje kao sloj preko menadžera paketa. Stoga može:
 
 
 
-Dakle, prodavnica App Center nije sistem za instalaciju sama po sebi, već Interface koji okuplja i objedinjuje nekoliko izvora softvera, sa pretraživačem, opisnim informacijama i dugmadima za instalaciju prilagođenim početnicima.
+
+- Instalirati .deb pakete koristeći APT
+- Instalirati Snap pakete iz Snap prodavnice
+
+
+
+Dakle, prodavnica App Center nije sistem za instalaciju sama po sebi, već interfejs koji okuplja i objedinjuje nekoliko izvora softvera, sa pretraživačem, opisnim informacijama i dugmadima za instalaciju prilagođenim početnicima.
 
 
 
@@ -2577,7 +2577,7 @@ Dakle, prodavnica App Center nije sistem za instalaciju sama po sebi, već Inter
 
 
 
-Da bi se osigurala stabilnost i bezbednost vašeg sistema, Ubuntu automatski primenjuje kritične ažuriranja putem servisa pod nazivom `unattended-upgrades`. Ovaj servis radi u pozadini i instalira bezbednosne zakrpe koje izdaje distribucija, bez vaše intervencije.
+Da bi se osigurala stabilnost i bezbednost vašeg sistema, Ubuntu automatski primenjuje kritična ažuriranja putem servisa pod nazivom `unattended-upgrades`. Ovaj servis radi u pozadini i instalira bezbednosne zakrpe koje izdaje distribucija, bez vaše intervencije.
 
 
 
@@ -2613,7 +2613,7 @@ sudo systemctl enable --now unattended-upgrades
 
 
 
-Ova usluga štiti vaš sistem od novootkrivenih ranjivosti, bez potrebe za ručnim proveravanjem ažuriranja svakog dana. Posebno je korisna na radnim stanicama koje nisu pod stalnim nadzorom, kao što su lični računari, jer garantuje osnovni nivo sigurnosnih ažuriranja.
+Ova usluga štiti vaš sistem od novootkrivenih bezbednosnih ranjivosti, bez potrebe za ručnim proveravanjem ažuriranja svakog dana. Posebno je korisna na radnim stanicama koje nisu pod stalnim nadzorom, kao što su lični računari, jer garantuje osnovni nivo sigurnosnih ažuriranja.
 
 
 
@@ -2660,7 +2660,7 @@ Ova komanda uklanja zastarele pakete i pridružene konfiguracione fajlove.
 
 
 
-Ako ste instalirali softver putem Snap ili Flatpak upravitelja paketa, možete koristiti ove dve komande da ih ažurirate:
+Ako ste instalirali softver putem Snap-a ili Flatpak-a upravitelja paketa, možete koristiti ove dve komande da ih ažurirate:
 
 
 
@@ -2695,7 +2695,7 @@ sudo needrestart
 
 
 
-Ovaj program će analizirati sve usluge ili procese koji još uvek koriste starije verzije biblioteka ili kernela, i reći će vam da li je potrebno restartovati sistem kako bi se primenile ažuriranja.
+Ovaj program će analizirati sve usluge ili procese koji još uvek koriste starije verzije biblioteka ili kernela, i reći će vam da li je potrebno restartovati sistem kako bi se primenila ažuriranja.
 
 
 
@@ -2707,7 +2707,7 @@ Održavanje vašeg sistema i softvera ažurnim je suštinski refleks kada je u p
 
 
 
-### Zaštita vatrozida i mreže
+### Firewall i jačanje mrežne sigurnosti
 
 
 
@@ -2755,7 +2755,7 @@ Podrazumevano, UFW usvaja strategiju odbijanja netraženih dolaznih veza dok omo
 
 
 
-#### Autorizujte uslugu
+#### Dozvoli servis
 
 
 
@@ -2795,7 +2795,7 @@ sudo ufw status numbered
 
 
 
-Moguće je ograničiti pristup određenim uslugama na opseg IP adresa, što može biti korisno u lokalnoj mreži (LAN):
+Moguće je ograničiti pristup određenim servisima na opsegu IP adresa, što može biti korisno u lokalnoj mreži (LAN):
 
 
 
@@ -2809,11 +2809,11 @@ Ovo omogućava TCP konekcije na portu 6881 samo sa podmreže `192.168.1.0/24` (o
 
 
 
-#### Grafički Interface: GUFW
+#### Grafički interfejs: GUFW
 
 
 
-Ako ste manje upoznati sa terminalom, postoji grafički Interface pod nazivom GUFW, koji olakšava upravljanje pravilima vatrozida pomoću dugmadi, padajućih lista i dijaloških okvira. Za instalaciju:
+Ako ste manje upoznati sa terminalom, postoji grafički interfejs pod nazivom GUFW, koji olakšava upravljanje firewall pravilima pomoću dugmadi, padajućih lista i dijaloških okvira. Za instalaciju:
 
 
 
@@ -2823,7 +2823,7 @@ sudo apt install gufw
 
 
 
-Jednom instaliran, pokrenite ga putem menija aplikacija. Moći ćete da aktivirate firewall, autorizujete ili blokirate usluge i pregledate filtrirane konekcije u realnom vremenu.
+Jednom instaliran, pokrenite ga putem menija aplikacija. Moći ćete da aktivirate firewall, autorizujete ili blokirate servise i pregledate filtrirane konekcije u realnom vremenu.
 
 
 
@@ -2831,7 +2831,7 @@ Jednom instaliran, pokrenite ga putem menija aplikacija. Moći ćete da aktivira
 
 
 
-→ **Dobre prakse:** Čak i ako ne izlažete mrežne usluge spoljašnjem svetu, vatrozid je i dalje koristan za blokiranje određenih tipova skeniranja ili pristupa. Takođe, ne zaboravite da onemogućite nepotrebne usluge i uvek održavajte mrežni softver ažurnim. Ovo učvršćivanje lokalne mreže je prva linija odbrane u široj bezbednosnoj strategiji, ali ćemo se na ovo vratiti kasnije u kursu.
+→ **Dobre prakse:** Čak i ako ne izlažete nikakve mrežne servise spoljašnjem svetu, firewall je i dalje koristan za blokiranje određenih tipova skeniranja ili pristupa. Takođe, ne zaboravite da onemogućite nepotrebne servise i uvek održavajte mrežni softver ažurnim. Ovo učvršćivanje lokalne mreže je prva linija odbrane u široj bezbednosnoj strategiji, ali ćemo se na ovo vratiti kasnije u kursu.
 
 
 
@@ -2839,22 +2839,22 @@ Jednom instaliran, pokrenite ga putem menija aplikacija. Moći ćete da aktivira
 
 
 
-Pod Ubuntuom, upravljanje mrežom obavlja *NetworkManager*, servis koji centralizuje žičane veze, Wi-Fi, VPN-ove, modeme, itd. Radi u tandemu sa *netplan*-om, alatom za niskonivojsku konfiguraciju koji definiše trajna mrežna podešavanja u YAML datotekama. Zajedno, ovi alati osiguravaju jednostavnost za svakodnevnu upotrebu i robusnost za složenije slučajeve (serveri, ručne konfiguracije, itd.).
+Na Ubuntu, upravljanje mrežom obavlja *NetworkManager*, servis koji centralizuje žičane veze, Wi-Fi, VPN-ove, modeme, itd. Radi u tandemu sa *netplan*-om, alatom za konfiguraciju niskog nivoa koji definiše trajna mrežna podešavanja u YAML datotekama. Zajedno, ovi alati osiguravaju jednostavnost za svakodnevnu upotrebu i robusnost za složenije slučajeve (serveri, ručne konfiguracije, itd.).
 
 
 
-#### Upravljanje putem grafičkog Interface
+#### Upravljanje putem grafičkog interfejsa
 
 
 
-Za većinu korisnika, grafički Interface integrisan u GNOME (Podešavanja sistema → Mreža/Wi-Fi) je više nego dovoljan. Omogućava vam da:
+Za većinu korisnika, grafički interfejs integrisan u GNOME (Podešavanja sistema → Mreža/Wi-Fi) je više nego dovoljan. Omogućava vam da:
 
 
 
 
-- Povežite se na dostupnu Wi-Fi mrežu
-- Upravljajte žičanim vezama, proxyjima ili VPN-ovima
-- Pogledajte trenutni status svake mreže Interface
+- se povežete na dostupnu Wi-Fi mrežu
+- upravljate žičanim vezama, proxyjima ili VPN-ovima
+- pogledate trenutni status svakog mrežnog interfejsa
 
 
 
@@ -2876,7 +2876,7 @@ Za rešavanje problema ili daljinski pristup, komanda `nmcli` omogućava vam da 
 
 
 
-- Da prikažete otkrivene mrežne interfejse:
+- Da biste prikazali otkrivene mrežne interfejse:
 
 
 
@@ -2888,7 +2888,7 @@ nmcli device status
 
 
 
-- Da skeniraš obližnje Wi-Fi mreže
+- Da biste skenirali obližnje Wi-Fi mreže
 
 
 
@@ -2914,7 +2914,7 @@ nmcli device wifi connect "wifi_name" password "password"
 
 
 
-Kada vaš osnovni sistem bude pokrenut, sledeći korak je instalacija potrebnog softvera. Ubuntu nudi nekoliko metoda instalacije (APT, Snap, Flatpak), koje smo detaljno opisali iznad. Ovde koristimo APT kad god je to moguće kako bismo održali prirodnu integraciju sa sistemom.
+Kada vaš osnovni sistem bude pokrenut, sledeći korak je instalacija potrebnog softvera. Ubuntu nudi nekoliko metoda instalacije (APT, Snap, Flatpak), koje smo detaljno opisali iznad. Ovde koristimo APT kad god je to moguće kako bismo održali nativnu integraciju sa sistemom.
 
 
 
@@ -2922,11 +2922,11 @@ Kada vaš osnovni sistem bude pokrenut, sledeći korak je instalacija potrebnog 
 
 
 
-Podrazumevano, Ubuntu uključuje Snap verziju Firefox-a. Ovaj format pruža bolju izolaciju (što je dobro u smislu bezbednosti), ali rezultira sporijim vremenom pokretanja, većom potrošnjom resursa i nekim ograničenjima integracije sistema (upravljanje fajlovima, teme...).
+Podrazumevano, Ubuntu uključuje Snap verziju Firefox-a. Ovaj format pruža bolju izolaciju (što je dobro u smislu bezbednosti), ali rezultira sporijim vremenom pokretanja, većom potrošnjom resursa i nekim ograničenjima u integraciji sa sistemom (upravljanje fajlovima, teme...).
 
 
 
-Ako više volite izvornu `.deb` verziju, možete je instalirati sa zvaničnog Mozilla PPA:
+Ako više volite nativnu `.deb` verziju, možete je instalirati sa zvaničnog Mozilla PPA:
 
 
 
@@ -3007,7 +3007,7 @@ Ova tri paketa pokrivaju osnovne stvari: obradu teksta, tabelarne proračune i p
 
 
 
-Druge alternative takođe postoje, kao što su OnlyOffice (bliži Interface Microsoft Office), WPS Office (proprietarno, ali vrlo fluidno), ili Calligra Suite (KDE projekat). Ove opcije se mogu instalirati putem Flatpak-a, Snap-a ili preuzeti sa njihovih odgovarajućih sajtova.
+Druge alternative takođe postoje, kao što su OnlyOffice (bliži Microsoft Office interfejsu), WPS Office (zatvoreni (vlasnički) softver, ali vrlo fluidno rešenje), ili Calligra Suite (KDE projekat). Ove opcije se mogu instalirati putem Flatpak-a, Snap-a ili preuzeti sa njihovih odgovarajućih sajtova.
 
 
 
@@ -3025,7 +3025,7 @@ sudo apt install vlc
 
 
 
-Ubuntu ne pruža određene vlasničke kodeke (MP3, H.264...) po defaultu, iz pravnih razloga. Sledeći paket dodaje ove esencijalne Elements:
+Ubuntu ne pruža određene vlasničke kodeke (MP3, H.264...) po defaultu, iz pravnih razloga. Sledeći paket dodaje ove esencijalne elemente:
 
 
 
@@ -3107,7 +3107,7 @@ sudo snap install code --classic
 
 
 
-Pored ovih nekoliko osnovnih alata, takođe preporučujem da instalirate osnovne sigurnosne alate prilagođene vašem slučaju upotrebe, posebno menadžer lozinki i VPN:
+Pored ovih nekoliko osnovnih alata, takođe preporučujem da instalirate osnovne sigurnosne alate prilagođene vašem načinu korišćenja, posebno menadžer lozinki i VPN:
 
 
 
@@ -3152,7 +3152,7 @@ Ova tehnička autonomija je suštinska osnova za samouvereno pristupanje ostatku
 
 
 
-# Osiguravanje vašeg računara
+# Zaštita vašeg računara
 
 
 <partId>7fda3e41-ff0e-4fa0-8bd5-350d9ad5bbec</partId>
@@ -3166,7 +3166,7 @@ Ova tehnička autonomija je suštinska osnova za samouvereno pristupanje ostatku
 
 
 
-Bezbednost vašeg računara počinje sa dva važna koncepta u sajber bezbednosti: autentifikacija i particionisanje. Ova dva pristupa čine osnovu za efikasnu zaštitu vašeg uređaja, očuvanje vaše privatnosti i osiguranje vaše digitalne suverenosti. U ovom poglavlju, detaljno ćemo istražiti kako upravljati ovim aspektima na vašem računaru.
+Bezbednost vašeg računara počinje sa dva važna koncepta u sajber bezbednosti: autentifikacija i particionisanje. Ova dva pristupa čine osnovu za efikasnu zaštitu vašeg uređaja, očuvanje vaše privatnosti i obezbeđivanje vaše digitalne suverenosti. U ovom poglavlju, detaljno ćemo istražiti kako upravljati ovim aspektima na vašem računaru.
 
 
 
@@ -3191,9 +3191,9 @@ Ova lozinka mora biti jaka:
 
 
 
-- Mora biti dovoljno dugo. Trenutno (jun 2025), preporučujem minimum od 20 karaktera;
+- Mora biti dovoljno dugačka. Trenutno (jun 2025), preporučujem minimum od 20 karaktera;
 - Mora kombinovati velika i mala slova, brojeve i specijalne karaktere;
-- Treba da bude što nasumičnije moguće i da ne sadrži nikakve veze sa Elements iz vaše direktne ili indirektne okoline, kao što su ime, datum ili mesto.
+- Treba da bude što nasumičnija i da ne sadrži nikakve veze sa elementima iz vaše direktne ili indirektne okoline, kao što su ime, datum ili mesto.
 
 
 
@@ -3217,7 +3217,7 @@ Na kraju, menjajte ovu lozinku redovno—svakih 3 do 6 meseci—posebno ako se v
 
 
 
-#### Osiguravanje pristupa BIOS/UEFI
+#### Zaštita pristupa BIOS-u/UEFI-ju
 
 
 
@@ -3229,29 +3229,29 @@ BIOS (*Basic Input/Output System*) je prethodnik UEFI (*Unified Extensible Firmw
 
 
 
-Podrazumevano, pristup ovim podešavanjima nije zaštićen. Napadač sa fizičkim pristupom vašem računaru (u zajedničkom prostoru, u slučaju krađe ili čak privremeno bez vašeg znanja) mogao bi ući u Interface UEFI i izmeniti kritična podešavanja. Mogao bi, na primer:
+Podrazumevano, pristup ovim podešavanjima nije zaštićen. Napadač sa fizičkim pristupom vašem računaru (u zajedničkom prostoru, u slučaju krađe ili čak privremeno bez vašeg znanja) mogao bi ući u UEFI interfejs i izmeniti kritična podešavanja. Mogao bi, na primer:
 
 
 
 
-- Promenite redosled pokretanja da biste primorali pokretanje spoljnog sistema sa USB ključa.
-- Onemogući sigurnosne mehanizme kao što je Secure Boot
-- Instaliranje malvera u firmver vašeg računara...
+- promeniti redosled pokretanja da bi primorali pokretanje spoljnog operativnog sistema sa USB ključa
+- onemogući sigurnosne mehanizme kao što je Secure Boot
+- instalira malvera u firmver vašeg računara...
 
 
 
-Da biste se zaštitili od ovih offline napada, važno je zaključati pristup BIOS/UEFI lozinkom. Ova lozinka je odvojena od lozinke vašeg operativnog sistema i sprečava neovlašćen pristup BIOS/UEFI.
+Da biste se zaštitili od ovih offline napada, važno je zaključati pristup BIOS/UEFI lozinkom. Ova lozinka je odvojena od lozinke vašeg operativnog sistema i sprečava neovlašćen pristup BIOS-u/UEFI.
 
 
 
-Da biste ga aktivirali, to će zavisiti od modela vaše matične ploče, ali generalno vam je potrebno:
+Da biste to aktivirali, postupak zavisi od modela vaše matične ploče, ali je uglavnom potrebno:
 
 
 
 
 - Ponovo pokrenite računar
 - Odmah nakon uključivanja, brzo pritisnite taster za pristup BIOS/UEFI specifičan za vaš uređaj (`Del`, `F2`, `F10`, `Esc`...)
-- U Interface koji se pojavljuje, pronađite opcije za sigurnosnu ili administratorsku lozinku
+- U interfejs koji se pojavi, pronađite opcije za sigurnosnu ili administratorsku lozinku
 - Postavite dugu, jedinstvenu i nasumičnu lozinku, a zatim je sačuvajte.
 - Sačuvaj izmene i restartuj računar
 
@@ -3273,19 +3273,19 @@ Osiguranje UEFI-ja je često zanemarena, ali apsolutno ključna mera za zaštitu
 
 
 
-#### Osiguravanje fizičkog pristupa računaru
+#### Zaštita fizičkog pristupa računaru
 
 
 
-Osiguranje radne stanice nije ograničeno na softverske zaštite: ako zlonamerna osoba dobije fizički pristup vašem računaru, može zaobići mnoge barijere ili kompromitovati sistem bez vašeg znanja. Ovo je posebno tačno za laptopove, koji se lako prenose, ali takođe i za bilo koji uređaj ostavljen u zajedničkom prostoru, otvorenom za javnost ili čak jednostavno dostupan drugim ljudima.
+Osiguranje radne stanice nije ograničeno na softverske zaštite: ako zlonamerna osoba dobije fizički pristup vašem računaru, može zaobići mnoge barijere ili kompromitovati sistem bez vašeg znanja. Ovo je posebno tačno za laptopove, koji se lako prenose, ali takođe i za bilo koji drugi uređaj ostavljen u zajedničkom prostoru, otvorenom za javnost ili čak jednostavno dostupan drugim ljudima.
 
 
 
-Jedan od najčešćih (ali potcenjenih) rizika je ostavljanje računara bez nadzora, čak i na nekoliko minuta, na javnim mestima kao što su biblioteke, konferencije, otvoreni prostori i hotelski lobi. Ovo nije samo rizik od krađe: u roku od nekoliko sekundi, zlonamerna osoba može povezati zlonamerni USB stik, instalirati špijunski softver, modifikovati parametre pokretanja kako bi forsirala eksterno pokretanje, ili uhvatiti akreditive ubrizgavanjem hardverskog keylogger-a.
+Jedan od najčešćih (ali potcenjenih) rizika je ostavljanje računara bez nadzora, čak i na nekoliko minuta, na javnim mestima kao što su biblioteke, konferencije, otvoreni prostori i hotelski lobiji. Ovo nije samo rizik od krađe: u roku od nekoliko sekundi, zlonamerna osoba može povezati zlonamerni USB stik, instalirati špijunski softver, modifikovati parametre pokretanja (eng. boot parameters) kako bi forsirala eksterno pokretanje, ili uhvatiti kredencijale ubrizgavanjem hardverskog keylogger-a.
 
 
 
-U istom duhu, savetujem da ne koristite spoljne dodatke ili periferne uređaje koje ne kontrolišete. Izbegavajte umetanje USB stikova, eksternih Hard drajvova, punjača ili donglova u vaš računar ako poreklo ovih objekata nije poznato (novi ili u vlasništvu pouzdane osobe). Neki naizgled bezazleni dodaci mogu sadržati kola sposobna za izvršavanje zlonamernih komandi čim se priključe. Suprotno tome, ne pozajmljujte svoje dodatke niti ih ostavljajte bez nadzora na dostupnim mestima: mogli bi biti zamenjeni kompromitovanim verzijama.
+U istom duhu, savetujem da ne koristite spoljne dodatke ili periferne uređaje koje ne kontrolišete. Izbegavajte umetanje USB stikova, eksternih hard drajvova, punjača ili donglova u vaš računar ako poreklo ovih objekata nije poznato (ili novi ili u vlasništvu pouzdane osobe). Neki naizgled bezazleni dodaci mogu sadržati mikrokontroler/elektronske sklopove sposobne za izvršavanje zlonamernih komandi čim se priključe. Suprotno tome, ne pozajmljujte svoje dodatke niti ih ostavljajte bez nadzora na dostupnim mestima: mogli bi biti zamenjeni kompromitovanim verzijama.
 
 
 
@@ -3319,11 +3319,11 @@ U svim slučajevima, lozinka za dešifrovanje mora biti jaka, različita od lozi
 
 https://planb.academy/tutorials/computer-security/data/veracrypt-d5ed4c83-7c1c-4181-95ea-963fdf2d83c5
 
-### Princip principa najmanjih privilegija
+### Princip najmanjih privilegija
 
 
 
-Princip principa najmanjih privilegija je osnovno pravilo u sajber bezbednosti, prema kojem svaka entitet (ljudski korisnik, softverski program, sistemski proces, itd.) treba da ima samo ona prava koja su striktno neophodna za obavljanje svojih zadataka. Drugim rečima, nikada ne dodeljujte više ovlašćenja nego što je potrebno, jer svaka dodatna dozvola povećava površinu napada sistema.
+Princip najmanjih privilegija je osnovno pravilo u sajber bezbednosti, prema kojem svaka entitet (ljudski korisnik, softverski program, sistemski proces, itd.) treba da ima samo ona prava koja su striktno neophodna za obavljanje svojih zadataka. Drugim rečima, nikada ne dodeljujte više ovlašćenja nego što je potrebno, jer svaka dodatna dozvola povećava površinu napada sistema.
 
 
 
