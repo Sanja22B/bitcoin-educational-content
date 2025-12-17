@@ -3355,15 +3355,15 @@ Ova podela nije ograničena na ljudske korisnike. Mnoge aplikacije zahtevaju pov
 
 
 
-### Višesesija: odvojena okruženja
+### Multisesija: izdvojena okruženja
 
 
 
-Pored razdvajanja administratorskih naloga od standardnih naloga, komplementarna najbolja praksa je kreiranje nekoliko različitih korisničkih sesija na istom računaru kako bi se upotreba podelila prema njenoj prirodi. Ovaj pristup zasnovan je na jednostavnoj logici: razdvajanjem aktivnosti u odvojena okruženja, smanjujete površinu napada svakog okruženja i ograničavate posledice bilo kakvog sigurnosnog incidenta.
+Pored razdvajanja administratorskih naloga od standardnih naloga, dobra dopunska praksa je kreiranje nekoliko različitih korisničkih sesija na istom računaru kako bi se upotreba podelila prema njenoj nameni. Ovaj pristup zasnovan je na jednostavnoj logici: razdvajanjem aktivnosti u odvojena okruženja, smanjujete površinu napada svakog okruženja i ograničavate posledice bilo kakvog sigurnosnog incidenta.
 
 
 
-Svi moderni operativni sistemi omogućavaju kreiranje više korisničkih naloga na jednom računaru. Ovi nalozi imaju svoj lični prostor: fajlovi, aplikacije, podešavanja i mrežne sesije nisu deljeni između njih, osim ako nije eksplicitno odobreno.
+Svi moderni operativni sistemi omogućavaju kreiranje više korisničkih naloga na jednom računaru. Svaki od ovih naloga ima sopstveni lični prostor: datoteke, aplikacije, podešavanja i mrežne sesije se ne dele između njih, osim ako to nije izričito odobreno.
 
 
 
@@ -3373,13 +3373,13 @@ Na primer, možete strukturirati svoje sesije na sledeći način:
 
 
 - Nalog posvećen vašoj profesionalnoj aktivnosti, gde instalirate samo softver koji vam je strogo potreban (kancelarijski paketi, alati za saradnju, profesionalna razmena poruka...). Ova sesija ne sme se koristiti za slobodno pretraživanje interneta ili testiranje softvera;
-- Nalog za ličnu upotrebu, koristi se za svakodnevno pretraživanje interneta, društveno umrežavanje, strimovanje ili instaliranje potrošačkih aplikacija. Ovo je obično sesija koja je najviše izložena napadima na pretraživač ili sumnjivim preuzimanjima;
-- Nalog rezervisan za osetljive aktivnosti, kao što su konsultovanje bankovnih računa, upravljanje vašim Bitcoin portfolijima, ili bilo koja druga upotreba koja zahteva visok nivo sigurnosti. Ovaj nalog treba koristiti isključivo za ove zadatke, sa instaliranim softverom ograničenim na ono što je strogo neophodno, i sa strožijom mrežnom konfiguracijom;
+- Nalog za ličnu upotrebu, koristi se za svakodnevno pretraživanje interneta, društveno umrežavanje, strimovanje ili instaliranje potrošačkih aplikacija. Ovo je obično sesija koja je najviše izložena napadima putem pretraživača ili sumnjivim preuzimanjima;
+- Nalog rezervisan za osetljive aktivnosti, kao što su konsultovanje bankovnih računa, upravljanje vašim Bitcoin novčanikom, ili bilo koja druga upotreba koja zahteva visok nivo sigurnosti. Ovaj nalog treba koristiti isključivo za ove zadatke, sa instaliranim softverom ograničenim na ono što je strogo neophodno, i sa strožijom mrežnom konfiguracijom;
 - Gost ili strogo ograničen nalog, namenjen isključivo za povremenu upotrebu od strane članova porodice, na primer. Ovaj nalog očigledno ne sme imati administratorska prava i ograničen pristup.
 
 
 
-Postoji nekoliko prednosti usvajanja ovog pristupa. Prvo, aplikacije instalirane u jednoj sesiji ne mogu ometati one u drugim sesijama (osim u slučaju podizanja privilegija). Drugo, ako je sesija kompromitovana, na primer putem preuzetog malvera, uticaj je generalno ograničen unutar granica tog naloga. To znači da će vaši poslovni dokumenti ili Bitcoin portfoliji ostati nedostupni malveru ako se čuvaju u drugoj, pravilno izolovanoj sesiji.
+Postoji nekoliko prednosti usvajanja ovog pristupa. Prvo, aplikacije instalirane u jednoj sesiji ne mogu ometati one u drugim sesijama (osim u slučaju podizanja privilegija). Drugo, ako je sesija kompromitovana, na primer putem preuzetog malvera, uticaj je generalno ograničen unutar granica tog naloga. To znači da će vaši poslovni dokumenti ili Bitcoin novčanici ostati nedostupni malveru ako se čuvaju u drugoj, pravilno izolovanoj sesiji.
 
 
 
@@ -3391,7 +3391,7 @@ Na Linuxu, ovo razdvajanje može biti pojačano mehanizmima kao što su AppArmor
 
 
 
-Važno je napomenuti da multisession ne zamenjuje upotrebu naloga bez administratorskih privilegija, niti primenu principa najmanjih privilegija. On ga dopunjuje dodavanjem Layer logičke izolacije, koja je laka za postavljanje i posebno efikasna za hibridnu porodičnu ili profesionalnu upotrebu.
+Važno je napomenuti da multisesijski pristup ne zamenjuje korišćenje neadministratorskog naloga, niti primenu principa najmanjih privilegija. On ga dopunjuje dodavanjem sloja logičke izolacije, koji je lako uspostaviti i posebno je efikasan za hibridnu porodičnu ili profesionalnu upotrebu.
 
 
 
@@ -3416,7 +3416,7 @@ Ova tehnologija se zasniva na hipervizoru, softverskom programu koji upravlja kr
 
 https://planb.academy/tutorials/computer-security/operating-system/virtualbox-6472f5be-10ce-4a07-8b24-097bfbcedd65
 
-U smislu IT bezbednosti, jedna od velikih prednosti virtuelnih mašina je njihova sposobnost da izvrše kompartmenatizaciju. VM ne deli svoje fajlove, procese ili mrežni pristup sa host sistemom, osim ako eksplicitno ne konfigurišete te razmene. Dakle, ako je VM zaražena malverom, ili ako testirate osetljiv softver unutar nje, uticaj ostaje ograničen na tu virtuelnu mašinu: vaš glavni sistem ostaje netaknut, pod uslovom da se poštuju parametri izolacije (nema deljenih direktorijuma, nema USB uređaja prosleđenih VM-u...).
+U smislu IT bezbednosti, jedna od velikih prednosti virtuelnih mašina je njihova sposobnost da podeli na odvojene delove / sposobnost segmentacije. VM ne deli svoje fajlove, procese ili mrežni pristup sa host sistemom, osim ako eksplicitno ne konfigurišete te razmene. Dakle, ako je VM zaražena malverom, ili ako testirate osetljiv softver unutar nje, uticaj ostaje ograničen na tu virtuelnu mašinu: vaš glavni sistem ostaje netaknut, pod uslovom da se poštuju parametri izolacije (nema deljenih direktorijuma, nema USB uređaja prosleđenih VM-u...).
 
 
 
@@ -3428,7 +3428,7 @@ Konačno, važno je razumeti da bezbednost koju pružaju VM-ovi zavisi od njihov
 
 
 
-### Pesakivanje
+### Izolacija okruženja ili sandboxing (zaštićeno okruženje)
 
 
 
@@ -3444,13 +3444,13 @@ Evo nekoliko konkretnih rešenja za sandboxing, u zavisnosti od vašeg operativn
 
 
 
-**Prozori**
+**Windows**
 
 
 
 
 - Windows Sandbox (dostupno samo u Windows 10/11 Pro i Enterprise);
-- Sandboxie Plus (open source).
+- Sandboxie Plus (otvorenog koda).
 
 
 
@@ -3460,7 +3460,7 @@ Evo nekoliko konkretnih rešenja za sandboxing, u zavisnosti od vašeg operativn
 
 
 - Firejail: moćan, lagan alat koji izoluje aplikacije koristeći unapred definisane profile. Dobro radi sa širokim spektrom aplikacija, uključujući Firefox, VLC i Telegram;
-- Flatpak: kao što smo već videli, ovo nije softver za peskovnik per se, već upravitelj softverskih paketa koji integriše peskovnik: svaka aplikacija instalirana putem Flatpak-a je izolovana od host sistema po defaultu, sa preciznom kontrolom dozvola (pristup mikrofonu, kameri, mreži, itd.).
+- Flatpak: kao što smo već videli, ovo nije softver za sandboxing u pravom smislu, već upravitelj softverskih paketa koji integriše sandboxing: svaka aplikacija instalirana putem Flatpak-a je izolovana od host sistema po defaultu, sa preciznom kontrolom dozvola (pristup mikrofonu, kameri, mreži, itd.).
 
 
 
@@ -3473,11 +3473,11 @@ Evo nekoliko konkretnih rešenja za sandboxing, u zavisnosti od vašeg operativn
 
 
 
-Konačno, iako sandboxing nudi efikasan Layer nivo zaštite, važno je razumeti da to nije potpuna zamena za VM ili dobro particionisan sistem.
+Konačno, iako sandboxing nudi efikasan nivo zaštite, važno je razumeti da to nije potpuna zamena za VM ili dobro particionisan sistem.
 
 
 
-Sada kada smo pokrili sigurnost vašeg računara kroz autentifikaciju i kompartmenalizaciju, u sledećem poglavlju ćemo pogledati dobre prakse održavanja kako bismo dodatno poboljšali njegovu sigurnost.
+Sada kada smo pokrili sigurnost vašeg računara kroz autentifikaciju i kompartmenalizaciju (segmentaciju), u sledećem poglavlju ćemo pogledati dobre prakse održavanja kako bismo dodatno poboljšali njegovu sigurnost.
 
 
 
@@ -3488,7 +3488,7 @@ Sada kada smo pokrili sigurnost vašeg računara kroz autentifikaciju i kompartm
 
 
 
-Mnogi ljudi misle da je instaliranje antivirusnog softvera ili odabir pravog lozinke dovoljno za zaštitu njihovog računara. Ali, bezbednost računara je mnogo više od jednostavne jednokratne konfiguracije. Stvarnost je mnogo složenija: većina sajber-napada iskorišćava ranjivosti u zastarelim sistemima i softveru. Drugim rečima, bezbednost računara takođe podrazumeva redovno održavanje vašeg uređaja.
+Mnogi ljudi misle da je instaliranje antivirusnog softvera ili odabir prave lozinke dovoljno za zaštitu njihovog računara. Ali, bezbednost računara je mnogo više od jednostavne jednokratne konfiguracije. Stvarnost je mnogo složenija: većina sajber-napada iskorišćava ranjivosti u zastarelim sistemima i softveru. Drugim rečima, bezbednost računara takođe podrazumeva redovno održavanje vašeg uređaja.
 
 
 
@@ -3520,7 +3520,7 @@ Nije samo pitanje popravljanja vidljivih grešaka, već i delovanja na vektore n
 
 
 
-Specifično, preporučujem da omogućite automatska ažuriranja. Ova funkcija je nativno dostupna na svim modernim sistemima. Windows Update, na primer, podrazumevano upravlja ovim na Windows 10 i 11 mašinama. Na macOS-u, bezbednosna ažuriranja su integrisana u sistem za ažuriranje. Na Linux-u, u zavisnosti od korišćene distribucije, alati kao što su `unattended-upgrades` (Debian/Ubuntu) ili `dnf-automatic` (Fedora) omogućavaju vam da zakažete ažuriranja.
+Specifično, preporučujem da omogućite automatska ažuriranja. Ova opcija je podržana direktno u svim modernim sistemima. Windows Update, na primer, podrazumevano upravlja ovim na Windows 10 i 11 mašinama. Na macOS-u, bezbednosna ažuriranja su integrisana u sistem za ažuriranje. Na Linux-u, u zavisnosti od korišćene distribucije, alati kao što su `unattended-upgrades` (Debian/Ubuntu) ili `dnf-automatic` (Fedora) omogućavaju vam da planirate automatska ažuriranja.
 
 
 
@@ -3556,7 +3556,7 @@ Settings → Windows Update → Check for updates
 
 
 
-Ne zaboravite da proverite opcione ažuriranja u istom meniju.
+Ne zaboravite da proverite opciona ažuriranja u istom meniju.
 
 
 
