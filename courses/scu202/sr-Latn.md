@@ -3566,11 +3566,11 @@ Ne zaboravite da proverite opciona ažuriranja u istom meniju.
 
 
 
-Linux distribucije zasnovane su na sistemu paketa koje održava zajednica i održavaoci vaše distribucije. Ažuriranja se primenjuju putem upravitelja paketa.
+Linux distribucije zasnovane su na sistemu paketa koje održava zajednica i zvanični održavaoci distribucije. Ažuriranja se primenjuju putem upravitelja paketa.
 
 
 
-Pod Debianom (tj. Ubuntu) :
+Kod Debian-a (tj. Ubuntu) :
 
 
 
@@ -3584,7 +3584,7 @@ sudo apt update && sudo apt upgrade -y
 
 
 
-Ako više voliš da koristiš grafički Interface, na Ubuntu-u postoji alat *Software Updater* koji ti omogućava da lako upravljaš ažuriranjima bez korišćenja terminala.
+Ako više voliš da koristiš grafički interfejs, na Ubuntu-u postoji alat *Software Updater* koji ti omogućava da lako upravljaš ažuriranjima bez korišćenja terminala.
 
 
 
@@ -3592,7 +3592,7 @@ Ako više voliš da koristiš grafički Interface, na Ubuntu-u postoji alat *Sof
 
 
 
-Pod Red Hat (Fedora) :
+Kod Red Hat (Fedora) :
 
 
 
@@ -3602,7 +3602,7 @@ sudo dnf upgrade
 
 
 
-Pod Arch Linux :
+Kod Arch Linux :
 
 
 
@@ -3619,7 +3619,7 @@ sudo pacman -Syu
 
 
 
-Apple centralizuje svoja ažuriranja sistema u Interface podešavanjima. Da proverite dostupnost:
+Apple centralizuje ažuriranja sistema tako da se sva podešavanja vrše preko grafičkog interfejsa. Da proverite dostupnost:
 
 
 
@@ -3629,7 +3629,7 @@ Apple menu → System Settings → General → Software Update
 
 
 
-macOS automatski preuzima bezbednosna, sistemska i ažuriranja aplikacija putem opcije "*Automatska ažuriranja*" u istom meniju.
+macOS automatski preuzima bezbednosna, sistemska i ažuriranja aplikacija putem opcije "Automatic Updates" ili u prevodu na srpski "*Automatska ažuriranja*" u istom meniju.
 
 
 
@@ -3651,7 +3651,7 @@ Neki softveri su osetljiviji od drugih, jer direktno komuniciraju sa spoljnim sv
 
 
 
-- **Veb pregledači**: oni su na prvoj liniji napada, jer obrađuju neprovereni sadržaj u realnom vremenu i imaju posebno veliku površinu napada. Štaviše, oni igraju centralnu ulogu u zaštiti vaših ličnih podataka. I, iznad svega, oni imaju tendenciju da zamene mnoge softverske aplikacije koje su se ranije koristile lokalno (klijenti e-pošte, kancelarijski paketi, medija plejeri...). Ali vratićemo se na ovu tačku u sledećem delu SCU202 kursa;
+- **Veb pregledači (browser-i)**: oni su na prvoj liniji napada, jer obrađuju neprovereni sadržaj u realnom vremenu i imaju posebno veliku površinu napada. Štaviše, oni igraju centralnu ulogu u zaštiti vaših ličnih podataka. I, iznad svega, oni imaju tendenciju da zamene mnoge softverske aplikacije koje su se ranije koristile lokalno, direktno na računaru (klijenti e-pošte, kancelarijski paketi, medija plejeri...). Ali vratićemo se na ovu tačku u sledećem delu SCU202 kursa;
 
 
 
@@ -3669,7 +3669,7 @@ Neki softveri su osetljiviji od drugih, jer direktno komuniciraju sa spoljnim sv
 
 
 
-- Antivirus, firewall i druga rešenja za detekciju: ovi alati obično imaju povišene privilegije, jer kontinuirano skeniraju vaše fajlove, procese i mrežne konekcije. Zastarela baza potpisa, loša konfiguracija ili ranjivost u samom softveru mogu omogućiti malveru da ostane neprimećen, ili čak da dobije povišene privilegije.
+- **Antivirus, firewall i druga rešenja za detekciju**: ovi alati obično imaju povišene privilegije, jer kontinuirano skeniraju vaše fajlove, procese i mrežne konekcije. Zastarela baza potpisa, loša konfiguracija ili ranjivost u samom softveru mogu omogućiti malveru da ostane neprimećen, ili čak da dobije povišene privilegije.
 
 
 
@@ -3677,7 +3677,7 @@ Naravno, ovi rizici ne proizlaze isključivo iz lošeg održavanja, ali je važn
 
 
 
-#### Pod Windows
+#### Kod Windows-a
 
 
 
@@ -3703,7 +3703,7 @@ Nažalost, ova komanda ne radi za sav softver. Zato preporučujem da vodite spis
 
 
 
-#### Pod Linuxom (Debian/Ubuntu)
+#### Kod Linux-a (Debian/Ubuntu)
 
 
 
@@ -3741,8 +3741,8 @@ sudo apt update \
 
 
 - `sudo apt full-upgrade` ažurira sve instalirane pakete, uključujući one koji zahtevaju dodavanje ili uklanjanje zavisnosti. `-y` vam omogućava da automatski odgovorite "da" na bilo koje potvrde koje menadžer paketa može tražiti od vas;
-- `sudo apt autoremove -y`: uklanja nepotrebne zavisnosti ;
-- sudo apt autoclean`: čisti keš zastarelih paketa.
+- `sudo apt autoremove -y`: uklanja nepotrebne zavisnosti;
+- `sudo apt autoclean`: čisti keš zastarelih paketa.
 
 
 
@@ -3760,7 +3760,7 @@ flatpak update sudo snap refresh
 
 
 
-#### Pod macOS
+#### Kod macOS-a
 
 
 
@@ -3794,7 +3794,7 @@ Neke unapred instalirane aplikacije ili programi instalirani za jednokratnu upot
 
 
 
-#### Pod Windows
+#### U Windows-u
 
 
 
@@ -3812,7 +3812,7 @@ Prođite kroz ovu listu softvera i uklonite sve što više ne koristite ili ne z
 
 
 
-#### Pod Linuxom (Debian/Ubuntu)
+#### U Linux-u (Debian/Ubuntu)
 
 
 
@@ -3840,7 +3840,7 @@ sudo apt autoremove
 
 
 
-#### Pod macOS
+#### U macOS-u
 
 
 
@@ -3880,7 +3880,7 @@ Ako postavite rutinu za reviziju (čak i osnovnu), možete otkriti prisustvo mal
 
 
 
-#### Pod Windows
+#### U Windows-u
 
 
 
@@ -3923,7 +3923,7 @@ Kao što smo videli u prethodnom odeljku, Windows je istorijski bio više izlož
 
 
 
-#### Pod Linuxom
+#### U Linux-u
 
 
 
@@ -3952,7 +3952,7 @@ Na dobro održavanom Linux računaru koji se koristi u lične svrhe, rizici su m
 
 https://planb.academy/tutorials/computer-security/operating-system/lynis-1cf865b3-a352-4dd2-94d2-f17fa65547af
 
-#### Pod macOS
+#### U macOS-u
 
 
 
@@ -3962,7 +3962,7 @@ macOS je poznat po svojoj sigurnosti, zahvaljujući posebno svojim politikama po
 
 
 
-- **KnockKnock**: skenira sve Elements konfiguracije za pokretanje pri startup-u (agenti, demoni, kernel moduli...) i identifikuje one koje su potencijalno sumnjive, nepotpisane ili nepoznate. Omogućava vam brzo prepoznavanje zlonamerne postojanosti na vašem sistemu.
+- **KnockKnock**: skenira sve elemente konfiguracije za pokretanje pri startup-u (agenti, demoni, kernel moduli...) i identifikuje one koji su potencijalno sumnjivi, nepotpisani ili nepoznati. Omogućava vam brzo prepoznavanje zlonamerne postojanosti na vašem sistemu.
 
 
 
@@ -4018,7 +4018,7 @@ Integritet datoteke garantuje da ona nije bila izmenjena, namerno ili nenamerno,
 
 
 
-Ove modifikacije nisu vidljive golim okom: preuzeta datoteka može se otvoriti i raditi savršeno normalno, dok istovremeno izvršava zlonamerno ponašanje. Stoga je važno proveriti njen integritet koristeći kriptografske otiske prstiju (Hash).
+Ove modifikacije nisu vidljive golim okom: preuzeta datoteka može se otvoriti i raditi savršeno normalno, dok istovremeno izvršava zlonamerno ponašanje. Stoga je važno proveriti njen integritet koristeći kriptografske otiske prstiju (Hash vrednost).
 
 
 
@@ -4026,7 +4026,7 @@ Ove modifikacije nisu vidljive golim okom: preuzeta datoteka može se otvoriti i
 
 
 
-Datoteka može biti netaknuta (neizmenjena), ali je objavljena od strane zlonamerne entitete koja uzurpira identitet legitimnog programera. Autentičnost stoga ima za cilj da potvrdi da datoteka zaista dolazi iz zvaničnog izvora, a ne od uljeza, neverifikovanog mirror sajta, ili hakera koji je kompromitovao server za distribuciju.
+Datoteka može biti netaknuta (neizmenjena), ali je objavljena od strane zlonamernog entitete koja uzurpira identitet legitimnog programera. Autentičnost stoga ima za cilj da potvrdi da datoteka zaista dolazi iz zvaničnog izvora, a ne od uljeza, neverifikovanog mirror sajta ( koji predstavlja kopiju originalnog sajta), ili hakera koji je kompromitovao server za distribuciju.
 
 
 
@@ -4042,23 +4042,23 @@ Proverom autentičnosti (tj. da instalaciona datoteka dolazi iz pravog izvora) i
 
 
 
-Da bismo to uradili, koristićemo 2 kriptografska alata. Prvi je heširanje. Hash je kratak niz karaktera koji se deterministički i nepredvidivo izračunava iz sadržaja datoteke, koristeći Hash algoritam kao što je SHA-256. Dve strogo identične datoteke imaće potpuno isti Hash, ali i najmanja izmena u datoteci će uzrokovati da se Hash potpuno promeni.
+Da bismo to uradili, koristićemo 2 kriptografska alata. Prvi je heširanje. Hash je kratak niz karaktera koji se deterministički i nepredvidivo izračunava iz sadržaja datoteke, koristeći hash algoritam kao što je SHA-256. Dve strogo identične datoteke imaće potpuno isti hash, ali i najmanja izmena u datoteci će uzrokovati da se hash potpuno promeni.
 
 
 
-Legitimni developer obično objavljuje Hash originalne datoteke na svojoj zvaničnoj veb stranici. Sa svoje strane, lokalno ćete izračunati Hash instalacione datoteke koju ste preuzeli, kako biste uporedili ta dva. Ako se dva otiska prsta podudaraju, možete biti sigurni da je preuzeta datoteka originalna i da nije izmenjena.
+Legitimni developer obično objavljuje hash vrednost originalne datoteke na svojoj zvaničnoj veb stranici. Sa svoje strane, lokalno ćete izračunati hash vrednost instalacione datoteke koju ste preuzeli, kako biste uporedili ta dva. Ako se dva otiska prsta podudaraju, možete biti sigurni da je preuzeta datoteka originalna i da nije izmenjena.
 
 
 
-Drugi alat je digitalni potpis. Ovo verifikuje autentičnost instalacionog softvera. Programer potpisuje fajl koji sadrži Hash svojim privatnim ključem, a vi možete verifikovati ovaj potpis koristeći odgovarajući javni ključ. Ovo dokazuje da je fajl objavio pravi autor.
+Drugi alat je digitalni potpis. Ovo verifikuje autentičnost instalacionog softvera. Programer potpisuje fajl koji sadrži hash vrednost svojim privatnim ključem, a vi možete verifikovati ovaj potpis koristeći odgovarajući javni ključ. Ovo dokazuje da je fajl objavio pravi autor.
 
 
 
-Ovaj sistem se oslanja na asimetričnu kriptografiju i alate kao što su GnuPG (komandna linija) ili Kleopatra (Interface grafički za Windows). Ovi alati moraju biti pravilno konfigurisani, a javni ključ programera mora biti verifikovan putem sigurnog kanala (zvanična veb stranica, otisak prsta na Twitter-u...). Hajde da pogledamo praktične aspekte.
+Ovaj sistem se oslanja na asimetričnu kriptografiju i alate kao što su GnuPG (komandna linija) ili Kleopatra (grafički interfejs za Windows). Ovi alati moraju biti pravilno konfigurisani, a javni ključ programera mora biti verifikovan putem sigurnog kanala (zvanična veb stranica, otisak prsta na Twitter-u...). Hajde da pogledamo praktične aspekte.
 
 
 
-Da biste saznali više o kriptografskim Hash funkcijama i digitalnim potpisima, pozivam vas da pohađate besplatni kurs CYP 201 koji se nudi na Plan ₿ Academy:
+Da biste saznali više o kriptografskim hasg funkcijama i digitalnim potpisima, pozivam vas da pohađate besplatni kurs CYP 201 koji se nudi na Plan ₿ Academy:
 
 
 
@@ -4118,11 +4118,11 @@ Za Windows, ako nemate GPG, možete instalirati [Gpg4win](https://www.gpg4win.or
 
 
 
-#### Preuzmi dokumente
+#### Preuzmite dokumente
 
 
 
-Da biste započeli, biće vam potrebno nekoliko dokumenata vezanih za softver koji želite da instalirate. U ovom primeru, proverićemo *Sparrow wallet*, menadžer portfolija Bitcoin. Proces će biti sličan za bilo koji drugi softver: sve što treba da uradite je da pronađete prave fajlove za verifikaciju.
+Da biste započeli, biće vam potrebno nekoliko dokumenata vezanih za softver koji želite da instalirate. U ovom primeru, proverićemo *Sparrow wallet*, menadžer Bitcoin novčanika. Proces će biti sličan za bilo koji drugi softver: sve što treba da uradite je da pronađete prave fajlove za verifikaciju.
 
 
 
@@ -4142,7 +4142,7 @@ Možete takođe otići [na GitHub repozitorijum projekta](https://github.com/spa
 
 
 
-Preuzmite instalacioni program softvera za vaš operativni sistem.
+Preuzmite instalacioni fajl softvera za vaš operativni sistem.
 
 
 
@@ -4150,7 +4150,7 @@ Preuzmite instalacioni program softvera za vaš operativni sistem.
 
 
 
-Trebaće vam i Hash datoteke, često nazivan "_SHA256SUMS_" ili "_MANIFEST_".
+Trebaće vam i hash datoteke, često nazivan "_SHA256SUMS_" ili "_MANIFEST_".
 
 
 
@@ -4240,7 +4240,7 @@ Zamenite `[file.asc]` putanjom do datoteke potpisa. U slučaju Sparrow, ova dato
 
 
 
-Ako je potpis važeći, GPG će to eksplicitno potvrditi. Zatim možete preći na sledeći korak, jer ova verifikacija potvrđuje autentičnost datoteke.
+Ako je potpis važeći, GPG će to eksplicitno potvrditi. Zatim možete preći na sledeći korak, jer ova verifikacija potvrdila autentičnost datoteke.
 
 
 
@@ -4252,11 +4252,11 @@ Ako je potpis važeći, GPG će to eksplicitno potvrditi. Zatim možete preći n
 
 
 
-#### Provera Hash
+#### Provera hash vrednosti
 
 
 
-Sada kada je potvrđena autentičnost datoteke koja sadrži heševe, vreme je da proverite integritet instalacione datoteke, na osnovu ove autentifikovane datoteke. Cilj je uporediti Hash vašeg instalatera sa onim koji je naveden u `.asc` datoteci. Ako se ta dva podudaraju, to garantuje da softverski kod nije ni na koji način izmenjen.
+Sada kada je potvrđena autentičnost datoteke koja sadrži heševe, vreme je da proverite integritet instalacione datoteke, na osnovu ove autentifikovane datoteke. Cilj je uporediti hash vašeg instalacionog fajla sa onim koji je naveden u `.asc` datoteci. Ako se ta dva podudaraju, to garantuje da softverski kod nije ni na koji način izmenjen.
 
 
 
@@ -4278,7 +4278,7 @@ Zamenite `[file_path]` sa lokacijom instalacionog fajla.
 
 
 
-Terminal vraća Hash sa preuzetim softverom.
+Terminal vraća hash preuzetog softvera.
 
 
 
@@ -4294,15 +4294,15 @@ Zatim uporedite rezultat sa odgovarajućom vrednošću u datoteci "_sparrow-2.0.
 
 
 
-U mom slučaju, dva šrafiranja se savršeno poklapaju.
+U mom slučaju, dva šrafure se savršeno poklapaju.
 
 
 
-Pod macOS i Linuxom, proces verifikacije Hash je automatizovan, tako da nema potrebe za ručnim poređenjem dva otiska prsta, kao što može biti slučaj pod Windowsom.
+U macOS-u i Linux-u, proces verifikacije hash vrednosti je automatizovan, tako da nema potrebe za ručnim poređenjem dva otiska prsta, kao što može biti slučaj kod Windows-a.
 
 
 
-Jednostavno pokrenite ovu komandu pod macOS:
+Jednostavno pokrenite ovu komandu kod macOS-a:
 
 
 
@@ -4332,7 +4332,7 @@ Sparrow-2.0.0.dmg: OK
 
 
 
-Pod Linuxom, komanda je slična:
+U Linux-u, komanda je slična:
 
 
 
@@ -4380,11 +4380,11 @@ U sledećem poglavlju, detaljnije ćemo razmotriti upravljanje podacima. Pogleda
 
 
 
-Zaštita vaših ličnih podataka je važan deo osiguranja vaše digitalne suverenosti, privatnosti i bezbednosti. Rizici za vaše podatke su mnogobrojni: hakovanje, gubitak hardvera ili čak fizičko zaplenjivanje. Primenom efikasnih strategija za bekap i enkripciju, možete izbeći većinu ovih potencijalnih pretnji.
+Zaštita vaših ličnih podataka je važan deo osiguravanja vaše digitalne suverenosti, privatnosti i bezbednosti. Rizici za vaše podatke su mnogobrojni: hakovanje, gubitak hardvera ili čak fizičko zaplenjivanje. Primenom efikasnih strategija za bekap (rezervnu kopiju) i enkripciju, možete izbeći većinu ovih potencijalnih pretnji.
 
 
 
-U ovom poglavlju ćemo detaljno razmotriti kako napraviti rezervnu kopiju i šifrovati vaše podatke, kao i kako očistiti osetljive informacije na vašim dokumentima.
+U ovom poglavlju ćemo detaljno razmotriti kako napraviti rezervnu kopiju i šifrovati vaše podatke, kao i kako očistiti osetljive informacije unutar vaših dokumenata.
 
 
 
@@ -4408,7 +4408,7 @@ Redovno pravljenje rezervnih kopija vaših ličnih ili poslovnih podataka je aps
 
 
 
-- Računarski napad: neki malveri, posebno ransomware, šifruju vaše fajlove lokalno i zahtevaju otkupninu u Exchange za ključ za dešifrovanje. Bez nezavisne rezervne kopije, prepušteni ste njihovoj milosti.
+- Računarski napad: neki malveri, posebno ransomware, šifruju vaše fajlove lokalno i zahtevaju otkupninu u zamenu za ključ za dešifrovanje. Bez nezavisne rezervne kopije, prepušteni ste njihovoj milosti.
 
 
 
@@ -4424,7 +4424,7 @@ Redovno pravljenje rezervnih kopija vaših ličnih ili poslovnih podataka je aps
 
 
 
-Zato vam je potrebna rigorozna, planirana i otporna strategija bekapa.
+Zato vam je potrebna rigorozna, planirana i otporna bekap strategija.
 
 
 
