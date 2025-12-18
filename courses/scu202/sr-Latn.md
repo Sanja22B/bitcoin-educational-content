@@ -4444,7 +4444,7 @@ Pravilo "3-2-1" je prepoznati standard u IT bezbednosti. Zasniva se na jednostav
 
 
 
-- 2 različita medija za skladištenje: cilj je izbeći hardverski problem koji bi istovremeno uticao na sve vaše medije. Na primer, eksterni Hard disk + oblak; ili NAS + vaš računar.
+- 2 različita medija za skladištenje: cilj je izbeći hardverski problem koji bi istovremeno uticao na sve vaše medije. Na primer, eksterni hard disk + oblak; ili NAS + vaš računar.
 
 
 
@@ -4454,21 +4454,21 @@ Pravilo "3-2-1" je prepoznati standard u IT bezbednosti. Zasniva se na jednostav
 
 
 
-Uzmimo primer standardnog korisnika, Alice, koji želi da zaštiti svoje lične podatke.
+Uzmimo primer standardnog korisnika, Alise, koja želi da zaštiti svoje lične podatke.
 
 
 
-Alice čuva verziju svojih fajlova na svom laptopu, gde ih svakodnevno koristi. Da bi imala najmanje dva odvojena medija, redovno (na primer, svakog ponedeljka) kopira sve svoje podatke na USB stik, koji drži kod kuće. Da bi se zaštitila od krađe svojih fajlova u slučaju fizičkog gubitka ili krađe, Alice enkriptuje ovaj USB stik koristeći odgovarajući softver (videćemo kako se to radi kasnije u ovom poglavlju).
+Alisa čuva verziju svojih fajlova na svom laptopu, gde ih svakodnevno koristi. Da bi imala najmanje dva odvojena medija, redovno (na primer, svakog ponedeljka) kopira sve svoje podatke na USB stik, koji drži kod kuće. Da bi se zaštitila od krađe svojih fajlova u slučaju fizičkog gubitka ili krađe, Alisa enkriptuje ovaj USB stik koristeći odgovarajući softver (videćemo kako se to radi kasnije u ovom poglavlju).
 
 
 
-Sa ovom konfiguracijom, Alice je već zaštićen od mnogih uobičajenih pretnji. Međutim, jedan rizik ostaje: u slučaju požara ili provale u njenom domu, njene dve lokalne kopije (računar i USB stik) mogle bi nestati u isto vreme. Da bi ublažila ovaj rizik, odlučuje da koristi uslugu skladištenja u oblaku, sa kojom takođe redovno sinhronizuje svoje fajlove.
+Sa ovom konfiguracijom, Alisa je već zaštićena od mnogih uobičajenih pretnji. Međutim, jedan rizik ostaje: u slučaju požara ili provale u njenom domu, njene dve lokalne kopije (računar i USB stik) mogle bi nestati u isto vreme. Da bi ublažila ovaj rizik, odlučuje da koristi uslugu skladištenja u oblaku, sa kojom takođe redovno sinhronizuje svoje fajlove.
 
 
 
 https://planb.academy/tutorials/computer-security/data/proton-drive-03cbe49f-6ddc-491f-8786-bc20d98ebb16
 
-Alice na taj način poštuje pravilo 3-2-1: ima 3 kopije svojih fajlova (računar, USB ključ, cloud), pohranjene na najmanje 2 različita medija (interni disk, USB ključ, udaljeni server), sa najmanje 1 kopijom van lokacije (cloud server).
+Alisa na taj način poštuje pravilo 3-2-1: ima 3 kopije svojih fajlova (računar, USB ključ, cloud), pohranjene na najmanje 2 različita medija (interni disk, USB ključ, udaljeni server), sa najmanje 1 kopijom van lokacije (cloud server).
 
 
 
@@ -4480,7 +4480,7 @@ Ova strategija garantuje izvanrednu otpornost: ako njen računar padne, može vr
 
 
 
-#### Automatizuj da ne zaboraviš
+#### Automatizujte kako biste izbegli zaboravljanje
 
 
 
@@ -4520,7 +4520,7 @@ Osim što osiguravate otpornost vaših podataka, jednako je važno zaštititi pr
 
 
 
-Jedan od stubova bezbednosti ličnih računara je enkripcija sačuvanih podataka. Konkretno, potpuna enkripcija medija kao što su interni Hard diskovi, USB stikovi ili eksterni diskovi osigurava da, čak i u slučaju krađe, gubitka ili fizičkog kompromitovanja opreme, nijedna informacija ne može biti pročitana bez ključa za dekripciju.
+Jedan od stubova bezbednosti ličnih računara je enkripcija sačuvanih podataka. Konkretno, potpuna enkripcija medija kao što su interni hard diskovi, USB stikovi ili eksterni diskovi osigurava da, čak i u slučaju krađe, gubitka ili fizičkog kompromitovanja opreme, nijedna informacija ne može biti pročitana bez ključa za dekripciju.
 
 
 
