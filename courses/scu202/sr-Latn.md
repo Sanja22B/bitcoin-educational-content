@@ -4550,12 +4550,12 @@ Puna enkripcija je kao brava: sve dok lozinka nije obezbeđena, podaci ostaju ne
 
 
 
-Pod Linuxom, standardno rešenje je LUKS (*Linux Unified Key Setup*). LUKS je sistem za upravljanje šifrovanim volumenima integrisan u većinu distribucija. Kada se sistem prvi put instalira, obično će vam biti ponuđeno da šifrujete ceo disk računara. Naravno, toplo preporučujem da aktivirate ovu opciju. Kada je šifrovanje omogućeno, sistem će tražiti lozinku pri svakom pokretanju, čak i pre nego što se OS učita. Ovo osigurava da fizički pristup disku ne može zaobići sigurnost.
+Na Linux-u, standardno rešenje je LUKS (*Linux Unified Key Setup*). LUKS je sistem za upravljanje šifrovanim volumenima integrisan u većinu distribucija. Kada se sistem prvi put instalira, obično će vam biti ponuđeno da šifrujete ceo disk računara. Naravno, toplo preporučujem da aktivirate ovu opciju. Kada je šifrovanje omogućeno, sistem će tražiti lozinku pri svakom pokretanju, čak i pre nego što se OS učita. Ovo osigurava da fizički pristup disku ne može zaobići sigurnost.
 
 
 https://planb.academy/tutorials/computer-security/data/luks-13d9928b-08b1-478c-a1b4-67617978584a
 
-Ako želite da šifrujete eksterni disk ili USB stik, to se takođe može uraditi iz komandne linije ili putem grafičkog interfejsa Interface. Disk će morati biti formatiran, tako da će svi postojeći podaci biti izgubljeni ako prethodno nisu sačuvani.
+Ako želite da šifrujete eksterni disk ili USB stik, to se takođe može uraditi iz komandne linije ili putem grafičkog interfejsa. Disk će morati biti formatiran, tako da će svi postojeći podaci biti izgubljeni ako prethodno nisu sačuvani.
 
 
 
@@ -4598,7 +4598,7 @@ sudo cryptsetup luksFormat /dev/sdb
 
 
 
-Upišite "YES" velikim slovima da potvrdite operaciju, zatim izaberite i potvrdite jak passphrase. Ova lozinka će vam omogućiti pristup vašim podacima: zapamtite da napravite rezervnu kopiju, jer bez nje, pristup podacima ključa će biti trajno izgubljen.
+Upišite "YES" velikim slovima da potvrdite operaciju, zatim izaberite i potvrdite jaku lozinka-frazu (eng. passphrase). Ova lozinka će vam omogućiti pristup vašim podacima: zapamtite da napravite rezervnu kopiju, jer bez nje, pristup podacima ključa će biti trajno izgubljen.
 
 
 
@@ -4606,7 +4606,7 @@ Upišite "YES" velikim slovima da potvrdite operaciju, zatim izaberite i potvrdi
 
 
 
-Otključaj i otvori volumen:
+Otključajte volumen i pristupite njegovom sadržaju:
 
 
 
@@ -4624,7 +4624,7 @@ Moraćete da unesete svoj passphrase da biste otključali volumen. `encrypted_us
 
 
 
-Zatim formatirajte dešifrovanu particiju. Za izvorni Linux format:
+Zatim formatirajte (kreirajte fajl sistem) dešifrovanu particiju. Za izvorni Linux format:
 
 
 
@@ -4648,7 +4648,7 @@ sudo mkfs.vfat /dev/mapper/encrypted_usb
 
 
 
-Montiraj ključ za upotrebu:
+Montiraj USB ključ za upotrebu:
 
 
 
@@ -4659,11 +4659,11 @@ sudo mount /dev/mapper/encrypted_usb /mnt/usb
 
 
 
-Sada možete pristupiti svom ključu putem direktorijuma `/mnt/usb`, i čitati i pisati datoteke kao i na bilo kom drugom volumenu.
+Sada možete pristupiti svom USB ključu putem direktorijuma `/mnt/usb`, i čitati i pisati datoteke kao i na bilo kom drugom volumenu.
 
 
 
-Da rastavite i ponovo šifrujete ključ:
+Da rastavite i ponovo šifrujete USB ključ:
 
 
 
@@ -4705,7 +4705,7 @@ Ako želite, možete automatizovati ovu sekvencu koristeći Python ili Bash skri
 
 
 
-Drugo rešenje je korišćenje GNOME Disks softvera sa njegovim grafičkim Interface, što je često jednostavnije nego korišćenje terminala. Obično je ovaj alat već unapred instaliran na Ubuntu. Ako to nije slučaj, možete ga ručno instalirati sledećom komandom:
+Drugo rešenje je korišćenje GNOME Disks softvera sa njegovim grafičkim interfejsom, što je često jednostavnije nego korišćenje terminala. Obično je ovaj alat već unapred instaliran na Ubuntu. Ako to nije slučaj, možete ga ručno instalirati sledećom komandom:
 
 
 
@@ -4728,7 +4728,7 @@ U levom stupcu pronađite vaš USB ključ. Ako particija već postoji, odaberite
 
 
 
-Zatim izaberite particiju koju želite da šifrujete. Kliknite na ikonicu zupčanika, zatim izaberite "Formatiraj particiju...".
+Zatim izaberite particiju koju želite da šifrujete. Kliknite na ikonicu zupčanika, zatim izaberite "Format Partition..." ili u prevodu "Formatiraj particiju...".
 
 
 
@@ -4736,13 +4736,13 @@ Zatim izaberite particiju koju želite da šifrujete. Kliknite na ikonicu zupča
 
 
 
-U:
+U prozoru koji se otvori:
 
 
 
 
 - U polje "Volume name" unesite ime (npr. `usb`);
-- Odaberite format "Interni disk za upotrebu samo sa Linux sistemima (Ext4)";
+- Odaberite format "Internal disk for use with Linux systems only (Ext4)" ili u prevodu "Interni disk za upotrebu samo sa Linux sistemima (Ext4)";
 - Označite polje "Password protected volume (LUKS)".
 
 
@@ -4775,7 +4775,7 @@ Kada je proces završen, particija se pojavljuje sa malim katancem. Izaberite je
 
 
 
-Unesite lozinku, zatim kliknite na "Otključaj".
+Unesite lozinku, zatim kliknite na "Unlock", u prevodu "Otključaj".
 
 
 
@@ -4783,7 +4783,7 @@ Unesite lozinku, zatim kliknite na "Otključaj".
 
 
 
-Volumen će biti automatski montiran i dostupan iz vašeg upravitelja datoteka, obično u direktorijumu `/media/username/usb`.
+Volumen će se automatski montirati i biće dostupan u fajl menadžeru, obično u direktorijumu `/media/username/usb`.
 
 
 
@@ -4809,7 +4809,7 @@ Na kraju, kliknite na dugme u obliku strelice u gornjem desnom uglu da biste isp
 
 
 
-Pod Windows-om, izvorno rešenje vam omogućava da šifrujete vaš disk. Lako je aktivirati: samo idite na podešavanja "*Privatnost i bezbednost*", zatim označite polje "*Šifrovanje uređaja*" u podmeniju istog imena. Ključevi za oporavak će tada biti automatski sačuvani u vašem povezanom Microsoft nalogu.
+Na Windows operativnom sistemu, izvorno rešenje vam omogućava da šifrujete vaš disk. Koje je lako aktivirati: samo idite na podešavanja "Privacy & Security", u prevodu "*Privatnost i bezbednost*", zatim označite polje "Device encryption", u prevoduy"*Šifrovanje uređaja*" u podmeniju istog imena. Ključevi za oporavak će tada biti automatski sačuvani u vašem povezanom Microsoft nalogu.
 
 
 
@@ -4817,11 +4817,11 @@ Pod Windows-om, izvorno rešenje vam omogućava da šifrujete vaš disk. Lako je
 
 
 
-Ako koristite lokalni nalog, ili ako vaš uređaj ne podržava ovu funkciju nativno, možete ručno postaviti *BitLocker* (Microsoftov vlasnički softver za enkripciju). Ali postoje i open-source alternative kao što je *VeraCrypt*.
+Ako koristite lokalni nalog, ili ako vaš uređaj ne podržava ovu funkciju izvorno, možete ručno postaviti *BitLocker* (Microsoftov vlasnički softver za enkripciju). Ali postoje i open-source alternative kao što je *VeraCrypt*.
 
 
 
-*VeraCrypt* je besplatan, višeplatformski softver kompatibilan sa Windows, Linux i macOS sistemima. Može se koristiti za šifrovanje celog diska ili particije, ili za kreiranje fajla kontejnera koji funkcioniše kao siguran virtuelni disk. VeraCrypt-ov Interface omogućava da se ovaj volumen montira kao konvencionalni disk, dostupan samo nakon autentifikacije.
+*VeraCrypt* je besplatan, višeplatformski softver kompatibilan sa Windows, Linux i macOS sistemima. Može se koristiti za šifrovanje celog diska ili particije, ili za kreiranje kontejner fajla koji funkcioniše kao siguran virtuelni disk. VeraCrypt-ov interfejs omogućava da se ovaj volumen montira kao konvencionalni disk, dostupan samo nakon autentifikacije.
 
 
 
@@ -4838,7 +4838,7 @@ https://planb.academy/tutorials/computer-security/data/veracrypt-d5ed4c83-7c1c-4
 
 
 
-Na macOS-u, enkripcija sistemskog diska zasniva se na *FileVault*-u, izvornoj funkciji dostupnoj iz sigurnosnih postavki. Ako vaš Mac ima Apple Silicon čip (M1, M2...) ili T2 čip, hardverska enkripcija je već trajno omogućena. Međutim, aktiviranje FileVault-a dodaje dodatni Layer sigurnosti enkripcijom celog sistemskog volumena.
+Na macOS-u, enkripcija sistemskog diska zasniva se na *FileVault*-u, izvornoj funkciji dostupnoj iz sigurnosnih postavki. Ako vaš Mac ima Apple Silicon čip (M1, M2...) ili T2 čip, hardverska enkripcija je već trajno omogućena. Međutim, aktiviranje FileVault-a dodaje dodatni sloj sigurnosti enkripcijom celog sistemskog volumena.
 
 
 
@@ -4846,9 +4846,9 @@ Na macOS-u, enkripcija sistemskog diska zasniva se na *FileVault*-u, izvornoj fu
 
 
 
-Kada je FileVault aktiviran, moraćete da izaberete metod oporavka u slučaju gubitka lozinke: ili koristite svoj *iCloud* nalog, ili generate jedinstveni rezervni ključ. Ovaj ključ mora biti čuvan na sigurnom mestu, jer bi njegov gubitak učinio vaše podatke trajno nedostupnim.
+Kada je FileVault aktiviran, moraćete da izaberete metod oporavka u slučaju gubitka lozinke: ili koristite svoj *iCloud* nalog, ili generišite jedinstveni rezervni ključ. Ovaj ključ mora biti čuvan na sigurnom mestu, jer bi njegov gubitak učinio vaše podatke trajno nedostupnim.
 
-Za spoljne medije za skladištenje (Hard diskovi, USB stikovi, itd.), enkripcija se vrši korišćenjem alata za diskove. Biće potrebno potpuno preformatirati volumen:
+Za spoljne medije za skladištenje (Hard diskovi, USB stikovi, itd.), enkripcija se vrši korišćenjem alata za diskove, Disk Utility. Biće potrebno potpuno preformatirati volumen:
 
 - Izaberite uređaj, kliknite na "*Delete*"
 - Odaberite šemu "GUID Partition Table"
@@ -4866,11 +4866,11 @@ Izbor lozinke je takođe veoma važan: mora biti dugačka, složena i jedinstven
 
 ### Selektivno šifrovanje fajlova
 
-U nekim slučajevima, nije ni neophodno ni praktično šifrovati ceo Hard disk ili eksterni medijum. U takvim slučajevima, možete se odlučiti za selektivno šifrovanje, koje podrazumeva obezbeđivanje samo određenih fajlova ili direktorijuma koji sadrže osetljive podatke.
+U nekim slučajevima, nije ni neophodno ni praktično šifrovati ceo hard disk ili eksterni medijum. U takvim slučajevima, možete se odlučiti za selektivno šifrovanje, koje podrazumeva obezbeđivanje samo određenih fajlova ili direktorijuma koji sadrže osetljive podatke.
 
 Jedan od najpoznatijih metoda za šifrovanje fajlova je korišćenje GPG-a. Ovaj alat se zasniva na asimetričnoj kriptografiji: imate par ključeva, jedan javni, koji možete slobodno distribuirati svojim korespondentima, i drugi privatni, koji mora ostati strogo tajan. Fajlovi se šifruju koristeći javni ključ primaoca, ali se mogu dešifrovati samo korišćenjem njegovog ili njenog privatnog ključa.
 
-Ovaj protokol je savršen za sigurno razmenjivanje osetljivih fajlova sa drugima, bez deljenja lozinke. Za ličnu ili povremenu upotrebu, GPG takođe omogućava simetričnu enkripciju: fajl je tada zaštićen jedinstvenom lozinkom poznatom samo vama.
+Ovaj protokol je savršen za sigurno razmenjivanje osetljivih fajlova sa drugima, bez deljenja lozinke. Za ličnu ili povremenu upotrebu, GPG takođe omogućava simetričnu enkripciju: fajl je tada zaštićen jedinstvenom lozinkom koju znate samo vi.
 
 Odlična alternativa je Cryptomator. Ovaj softver otvorenog koda omogućava vam da kreirate sef: poseban direktorijum u kojem su svi deponovani fajlovi automatski enkriptovani. Ovaj sef može biti sinhronizovan sa cloud servisima kao što su Dropbox, Google Drive ili Nextcloud, a da provajder nikada nema pristup neenkriptovanim podacima. Aplikacija je dostupna na svim operativnim sistemima, uključujući Android i iOS, i ne zahteva posebne tehničke veštine za korišćenje.
 
@@ -4884,7 +4884,7 @@ https://planb.academy/tutorials/computer-security/data/cryptomator-84e52c76-2253
 
 https://planb.academy/tutorials/computer-security/data/picocrypt-98c213bd-9ace-425b-b012-bea71ce6b38f
 
-Konačno, moguće je koristiti VeraCrypt i u režimu kontejnera, koji kreira fajl koji deluje kao šifrovana arhiva, montabilna kao disk.
+Konačno, moguće je koristiti VeraCrypt i u režimu kontejnera, koji kreira fajl koji deluje kao šifrovana arhiva, i koji se može montirati kao disk.
 
 Sada kada ste naučili kako da zaštitite svoje lične podatke od gubitka i krađe, sledeće poglavlje se bavi još jednim važnim aspektom: kako sprečiti da vaši lični fajlovi postanu vektori napada putem njihovih metapodataka.
 
@@ -4892,11 +4892,11 @@ Sada kada ste naučili kako da zaštitite svoje lične podatke od gubitka i kra�
 
 <chapterId>0869e92e-5488-4e8a-90e6-9b9d1c58a19b</chapterId>
 
-Svaki put kada kreirate digitalni fajl, bilo da je to fotografija, office dokument, audio ili video fajl, on sadrži metapodatke u pozadini. Ove informacije nisu direktno vidljive kada otvorite fajl, ali su prisutne i mogu sadržati izuzetno osetljive Elements.
+Svaki put kada kreirate digitalni fajl, bilo da je to fotografija, poslovni dokument, audio ili video fajl, on sadrži metapodatke u pozadini. Ove informacije nisu direktno vidljive kada otvorite fajl, ali su prisutne i mogu sadržati izuzetno osetljive elemente.
 
 ### Zašto je metapodatak rizik?
 
-Metapodaci su podaci priloženi datoteci, čija je uloga da pruže kontekstualne informacije o sadržaju. U slici, ovo može uključivati datum i vreme kada je slika snimljena, precizne GPS koordinate, model kamere ili pametnog telefona korišćenog, a ponekad čak i tehnička podešavanja. U tekstualnom dokumentu, može uključivati ime autora, ime kompanije, ID sesije korisnika, vremenske oznake kreiranja i izmene, ili čak interne komentare ostavljene tokom uređivanja.
+Metapodaci su podaci priloženi datoteci, čija je uloga da pruže kontekstualne informacije o sadržaju. U slici, ovo može uključivati datum i vreme kada je slika snimljena, precizne GPS koordinate, model korišćene kamere ili pametnog telefona, a ponekad čak i tehnička podešavanja. U tekstualnom dokumentu, može uključivati ime autora, ime kompanije, ID sesije korisnika, vremenske oznake kreiranja i izmene, ili čak interne komentare ostavljene tokom uređivanja.
 
 Ovi metapodaci mogu izgledati bezopasno, ali ih zlonamerni akteri mogu iskoristiti da identifikuju autora datoteke, fizički lociraju osobu, rekonstruišu događaje ili navike, ili čak iskoriste softverske nedostatke na osnovu verzije korišćenog softvera.
 
