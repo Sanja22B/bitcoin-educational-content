@@ -25,7 +25,7 @@ Nije samo stvar u poznavanju najboljih praksi: radi se o razumevanju onoga što 
 
 
 
-Kroz module kursa, otkrićete kako da verifikujete integritet softvera koji instalirate, efikasno šifrujete svoje podatke, koristite svoj pretraživač i telefon uz minimalno curenje podataka, i ojačate sigurnost vaše kućne mreže.
+Kroz module kursa, otkrićete kako da verifikujete integritet softvera koji instalirate, efikasno šifrujete svoje podatke, koristite svoj pregledač (eng. browser) i telefon uz minimalno curenje podataka, i ojačate sigurnost vaše kućne mreže.
 
 
 
@@ -2956,7 +2956,7 @@ Ovo zamrzava trenutno instaliranu verziju `.deb`. Nastaviće da se ažurira, ali
 
 
 
-Detaljnije ćemo pogledati pretraživače u kasnijem poglavlju, kako bismo vam pomogli da odaberete onaj koji najbolje odgovara vašim potrebama i optimalno ga konfigurišete.
+Detaljnije ćemo pogledati pregledače u kasnijem poglavlju, kako bismo vam pomogli da odaberete onaj koji najbolje odgovara vašim potrebama i optimalno ga konfigurišete.
 
 
 
@@ -3373,7 +3373,7 @@ Na primer, možete strukturirati svoje sesije na sledeći način:
 
 
 - Nalog posvećen vašoj profesionalnoj aktivnosti, gde instalirate samo softver koji vam je strogo potreban (kancelarijski paketi, alati za saradnju, profesionalna razmena poruka...). Ova sesija ne sme se koristiti za slobodno pretraživanje interneta ili testiranje softvera;
-- Nalog za ličnu upotrebu, koristi se za svakodnevno pretraživanje interneta, društveno umrežavanje, strimovanje ili instaliranje potrošačkih aplikacija. Ovo je obično sesija koja je najviše izložena napadima putem pretraživača ili sumnjivim preuzimanjima;
+- Nalog za ličnu upotrebu, koristi se za svakodnevno pretraživanje interneta, društveno umrežavanje, strimovanje ili instaliranje potrošačkih aplikacija. Ovo je obično sesija koja je najviše izložena napadima putem pregledača (browser-a) ili sumnjivim preuzimanjima;
 - Nalog rezervisan za osetljive aktivnosti, kao što su konsultovanje bankovnih računa, upravljanje vašim Bitcoin novčanikom, ili bilo koja druga upotreba koja zahteva visok nivo sigurnosti. Ovaj nalog treba koristiti isključivo za ove zadatke, sa instaliranim softverom ograničenim na ono što je strogo neophodno, i sa strožijom mrežnom konfiguracijom;
 - Gost ili strogo ograničen nalog, namenjen isključivo za povremenu upotrebu od strane članova porodice, na primer. Ovaj nalog očigledno ne sme imati administratorska prava i ograničen pristup.
 
@@ -3420,7 +3420,7 @@ U smislu IT bezbednosti, jedna od velikih prednosti virtuelnih mašina je njihov
 
 
 
-VM vam može omogućiti testiranje sumnjivog softvera: ako preuzmete program sa nepouzdanog izvora ili sumnjive stranice, možete ga prvo pokrenuti u VM-u kako biste posmatrali njegovo ponašanje u potpunoj sigurnosti. Ovo može biti korisno i prilikom pregledavanja rizičnih stranica: možete posvetiti VM za konsultaciju osetljivog ili nepoznatog web sadržaja, što smanjuje šanse za napade zlonamernih skripti ili eksploataciju ranjivosti pretraživača. Ukratko: korišćenje VM-a vam omogućava da lako izolujete specifičnu upotrebu od ostatka vašeg sistema.
+VM vam može omogućiti testiranje sumnjivog softvera: ako preuzmete program sa nepouzdanog izvora ili sumnjive stranice, možete ga prvo pokrenuti u VM-u kako biste posmatrali njegovo ponašanje u potpunoj sigurnosti. Ovo može biti korisno i prilikom pregledavanja rizičnih stranica: možete posvetiti VM za konsultaciju osetljivog ili nepoznatog web sadržaja, što smanjuje šanse za napade zlonamernih skripti ili eksploataciju ranjivosti browser-a. Ukratko: korišćenje VM-a vam omogućava da lako izolujete specifičnu upotrebu od ostatka vašeg sistema.
 
 
 
@@ -5170,7 +5170,7 @@ Ipak, nije oduvek imao ovu centralnu ulogu. Istorija pregledača obeležena je c
 
 
 
-Istorija veb pretraživača počinje sa rođenjem *World Wide Web*-a, koji je izumeo Tim Berners-Li 1989-1990. To je sistem za pristupanje stranicama koje sadrže tekst, slike, video zapise ili linkove putem interneta, koristeći veb pretraživač. Da bi ovaj novi sistem bio dostupan, u jesen 1990. godine razvio je prvi pretraživač, nazvan "WorldWideWeb", koji je postavio temelje za pretraživanje kakvo danas poznajemo. Omogućava i pregledanje i kreiranje veb stranica, uključujući integrisani HTML editor. Da bi se izbegla bilo kakva zabuna između pretraživača i samog Veba (eng. Web), njegovo ime je kasnije promenjeno u "Nexus".
+Istorija veb pregledača počinje sa rođenjem *World Wide Web*-a, koji je izumeo Tim Berners-Li 1989-1990. To je sistem za pristupanje stranicama koje sadrže tekst, slike, video zapise ili linkove putem interneta, koristeći veb pregledač. Da bi ovaj novi sistem bio dostupan, u jesen 1990. godine razvio je prvi pregledač, nazvan "WorldWideWeb", koji je postavio temelje za pretraživanje kakvo danas poznajemo. Omogućava i pregledanje i kreiranje veb stranica, uključujući integrisani HTML editor. Da bi se izbegla bilo kakva zabuna između pregledača i samog Veba (eng. Web), njegovo ime je kasnije promenjeno u "Nexus".
 
 
 
@@ -5237,7 +5237,7 @@ Strategija Microsofta zasniva se na nekoliko tehničkih i komercijalnih poluga:
 
 
 
-Suočen sa ovom konkurencijom, Netscape je brzo počeo da gubi poziciju. Za manje od tri godine, njegov tržišni udeo se drastično smanjio. Do ranih 2000-ih, Internet Explorer je držao preko 95% tržišnog udela, čineći sve druge pretraživače gotovo marginalnim.
+Suočen sa ovom konkurencijom, Netscape je brzo počeo da gubi poziciju. Za manje od tri godine, njegov tržišni udeo se drastično smanjio. Do ranih 2000-ih, Internet Explorer je držao preko 95% tržišnog udela, čineći sve druge pregledače gotovo marginalnim.
 
 
 
@@ -5282,7 +5282,7 @@ Firefox je takođe uveo nekoliko inovacija koje su imale trajan uticaj na veb pr
 
 
 
-Zbog svoje male težine, fleksibilnosti i poštovanja standarda, brzo je osvojio napredne korisnike, veb developere i sve koji su želeli otvoreniju alternativu Internet Exploreru. Do 2005. godine, Firefox je premašio 10% tržišnog udela, što je značajno dostignuće protiv pretraživača koji je unapred instaliran na svim Windows računarima.
+Zbog svoje male težine, fleksibilnosti i poštovanja standarda, brzo je osvojio napredne korisnike, veb developere i sve koji su želeli otvoreniju alternativu Internet Exploreru. Do 2005. godine, Firefox je premašio 10% tržišnog udela, što je značajno dostignuće protiv pregledača koji je unapred instaliran na svim Windows računarima.
 
 
 
@@ -5336,7 +5336,7 @@ Podržan Google-ovim brendom i veoma efikasnom marketinškom kampanjom, Chrome j
 
 
 
-Godine 2013, Google je najavio veliku stratešku promenu: odvojio je (forkovao) WebKit kako bi kreirao novi, nezavisni rendererski mehanizam, nazvan Blink. Ovaj fork je objašnjen tehničkim i organizacionim razlikama sa Apple-om, posebno oko arhitekture engine-a i integracije eksperimentalnih funkcija. Blink je postao ekskluzivni engine za Chrome od verzije 28 nadalje, a kasnije su ga usvojili i mnogi drugi pretraživači: Opera (koja je napustila Presto 2013. godine), Vivaldi, Brave, Microsoft Edge (od 2020. godine) i drugi.
+Godine 2013, Google je najavio veliku stratešku promenu: odvojio je (forkovao) WebKit kako bi kreirao novi, nezavisni rendererski mehanizam, nazvan Blink. Ovaj fork je objašnjen tehničkim i organizacionim razlikama sa Apple-om, posebno oko arhitekture engine-a i integracije eksperimentalnih funkcija. Blink je postao ekskluzivni engine za Chrome od verzije 28 nadalje, a kasnije su ga usvojili i mnogi drugi pregledači: Opera (koja je napustila Presto 2013. godine), Vivaldi, Brave, Microsoft Edge (od 2020. godine) i drugi.
 
 
 
@@ -5382,7 +5382,7 @@ Evo istorijskog pregleda glavnih rendering mašina koje su oblikovale evoluciju 
 
 
 
-Razvijen od strane Microsofta za Internet Explorer 4, Trident je motor koji je dominirao internetom početkom 2000-ih, u središtu ratova pretraživača. Iako inovativan u svojim ranim danima, brzo je zaostao u pogledu usklađenosti sa W3C standardima, što je dovelo do pojave mnogih sajtova optimizovanih isključivo za Internet Explorer.
+Razvijen od strane Microsofta za Internet Explorer 4, Trident je motor koji je dominirao internetom početkom 2000-ih, u središtu ratova pregledača. Iako inovativan u svojim ranim danima, brzo je zaostao u pogledu usklađenosti sa W3C standardima, što je dovelo do pojave mnogih sajtova optimizovanih isključivo za Internet Explorer.
 
 
 
@@ -5444,7 +5444,7 @@ WebKit je fork KHTML-a koji je pokrenuo Apple za razvoj sopstvenog pregledača: 
 
 
 
-WebKit se izdvaja po brzini i maloj potrošnji resursa. Na iOS-u, Apple je nametnuo njegovu upotrebu svim pretraživačima iz razloga sigurnosti i energetske efikasnosti: čak i Firefox ili Chrome na iPhone-u koriste WebKit u pozadini.
+WebKit se izdvaja po brzini i maloj potrošnji resursa. Na iOS-u, Apple je nametnuo njegovu upotrebu svim pregledačima iz razloga sigurnosti i energetske efikasnosti: čak i Firefox ili Chrome na iPhone-u koriste WebKit u pozadini.
 
 
 
@@ -5496,7 +5496,7 @@ Ova situacija donosi određene prednosti: Blink je moćan i podržan od strane v
 
 
 
-S jedne strane, to marginalizuje alternativne pretraživače, posebno Gecko, koji koristi gotovo isključivo Firefox. U 2025. godini, Firefox će imati manje od 6% tržišnog udela, što znatno ograničava njegovu sposobnost da se njegov glas čuje u diskusijama o evoluciji web standarda (W3C, WHATWG). Gecko održava Mozilla, neprofitna fondacija sa znatno manje resursa od Google-a. Pretraživač ostaje konkurentan u određenim tehničkim aspektima (posebno zaštiti privatnosti), ali pati od zaostajanja u implementaciji određenih modernih API-ja. A ovaj fenomen je deo začaranog kruga: Gecko je manje efikasan, što dovodi do pada broja korisnika, što podstiče programere da manje optimizuju svoje sajtove za Gecko, pa je Gecko manje efikasan... i tako dalje.
+S jedne strane, to marginalizuje alternativne pregledače, posebno Gecko, koji koristi gotovo isključivo Firefox. U 2025. godini, Firefox će imati manje od 6% tržišnog udela, što znatno ograničava njegovu sposobnost da se njegov glas čuje u diskusijama o evoluciji web standarda (W3C, WHATWG). Gecko održava Mozilla, neprofitna fondacija sa znatno manje resursa od Google-a. Pregledač ostaje konkurentan u određenim tehničkim aspektima (posebno zaštiti privatnosti), ali pati od zaostajanja u implementaciji određenih modernih API-ja. A ovaj fenomen je deo začaranog kruga: Gecko je manje efikasan, što dovodi do pada broja korisnika, što podstiče programere da manje optimizuju svoje sajtove za Gecko, pa je Gecko manje efikasan... i tako dalje.
 
 
 
@@ -5508,15 +5508,15 @@ S druge strane, ova centralizacija oko Blink-a znači da Google de facto kontrol
 
 
 
-Štaviše, rastuće oslanjanje na jedan jedini engine povećava sistemski rizik za web ekosistem. Ako Blink uvede regresiju, pristrasnost ili grešku, uticaj pogađa sve korisnike. Tehnološka raznolikost ovde igra ulogu otpornosti, baš kao što to čini u operativnim sistemima i softverskim arhitekturama.
+Štaviše, rastuće oslanjanje na jedan jedini engine povećava sistemski rizik za web ekosistem. Ako Blink uvede smanjenje funkcionalnosti u odnosu na prethodnu verziju (eng. regression), pristrasnost ili grešku, uticaj pogađa sve korisnike. Tehnološka raznolikost ovde igra ulogu otpornosti, baš kao što to čini u operativnim sistemima i softverskim arhitekturama.
 
 
 
-Danas, Mozilla nastavlja da igra ključnu ulogu u odbrani otvorenog weba, koji poštuje privatnost i slobodno je dostupan. Firefox ostaje jedan od retkih velikih pretraživača koji nije zasnovan na Chromium-u, i nudi nezavisne inovacije. Ali njegov opstanak zavisi od sposobnosti da održi dovoljan broj korisnika i održivo finansiranje.
+Danas, Mozilla nastavlja da igra ključnu ulogu u odbrani otvorenog weba, koji poštuje privatnost i slobodno je dostupan. Firefox ostaje jedan od retkih velikih pregledača koji nije zasnovan na Chromium-u, i nudi nezavisne inovacije. Ali njegov opstanak zavisi od sposobnosti da održi dovoljan broj korisnika i održivo finansiranje.
 
 
 
-Dominacija Blinka stoga nije samo tehničko pitanje: uključuje političke, ekonomske i društvene interese u upravljanju webom. U tom smislu, promocija više rendering engine-a ostaje dobra praksa u korist neutralnijeg, sigurnijeg i otpornijeg weba.
+Dominacija Blinka stoga nije samo tehničko pitanje: uključuje političke, ekonomske i društvene interese u upravljanju web-om. U tom smislu, promocija više rendering engine-a ostaje dobra praksa u korist neutralnijeg, sigurnijeg i otpornijeg web-a.
 
 
 
@@ -5551,7 +5551,7 @@ Cilj ovog poglavlja je da vam pomogne da izaberete pregledač koji najbolje odgo
 
 
 
-[Chrome](https://www.google.com/chrome/) ima koristi od brzog i kontinuiranog razvoja, prvenstveno pod vođstvom Google-a. Prepoznat je po visokom performansu, brzini, širokoj kompatibilnosti sa modernim web standardima i dobroj integraciji Google usluga.
+[Chrome](https://www.google.com/chrome/) ima koristi od brzog i kontinuiranog razvoja, prvenstveno pod vođstvom Google-a. Prepoznat je po visokim performansama, brzini, širokoj kompatibilnosti sa modernim web standardima i dobroj integraciji Google usluga.
 
 
 
@@ -5559,7 +5559,7 @@ Cilj ovog poglavlja je da vam pomogne da izaberete pregledač koji najbolje odgo
 
 
 
-Međutim, sa stanovišta bezbednosti i privatnosti, Chrome izaziva velike zabrinutosti. Podrazumevano, pregledač prikuplja veliku količinu podataka o svojim korisnicima (pregledanje, pretrage, istorija...), što Google uglavnom koristi u reklamne svrhe. Mogućnost izolovanja kolačića i tragača je ograničena po defaultu, a potpuno isključivanje praćenja ostaje složeno. Takođe, čak i ako je Chrome tehnički siguran (efektivna sandbox, brze nadogradnje...), ostaje pod kontrolom velikog igrača čiji su komercijalni interesi prirodno nespojivi sa pravim digitalnim suverenitetom.
+Međutim, sa stanovišta bezbednosti i privatnosti, Chrome izaziva velike zabrinutosti. Podrazumevano, pregledač prikuplja veliku količinu podataka o svojim korisnicima (pregledanje, pretrage, istorija...), što Google uglavnom koristi u reklamne svrhe. Mogućnost izolovanja kolačića i tragača je ograničena po defaultu, a potpuno isključivanje praćenja ostaje složeno. Takođe, čak i ako je Chrome tehnički siguran (efektivan sandbox, brze nadogradnje...), ostaje pod kontrolom velikog igrača čiji su komercijalni interesi prirodno nespojivi sa pravim digitalnim suverenitetom.
 
 
 
@@ -5579,15 +5579,15 @@ https://planb.academy/tutorials/computer-security/communication/proton-mail-c3b0
 
 https://planb.academy/tutorials/computer-security/data/proton-drive-03cbe49f-6ddc-491f-8786-bc20d98ebb16
 
-#### Hrabro
+#### Brave
 
 
 
-[Brave](https://brave.com/) je zasnovan na Blink-u (kao Chrome), ali se radikalno razlikuje po svom pristupu usmerenog na privatnost. Po defaultu, Brave blokira oglase i trackere, integriše *HTTPS Everywhere* i nudi naprednu zaštitu protiv fingerprintinga i skripti trećih strana. Njegov poslovni model delimično se zasniva na integrisanom oglašavanju koje je prijateljsko prema privatnosti, ali ovo ostaje opcionalno i lako se može deaktivirati.
+[Brave](https://brave.com/) je zasnovan na Blink-u (kao i Chrome), ali se radikalno razlikuje po svom pristupu usmerenom na privatnost. Po defaultu, Brave blokira oglase i trackere, integriše *HTTPS Everywhere* i nudi naprednu zaštitu protiv fingerprintinga (praćenja korisnika pomoću jedinstvenih karakteristika njihovog uređaja ili pregledača) i skripti trećih strana. Njegov poslovni model delimično se zasniva na integrisanom oglašavanju koje je prijateljsko prema privatnosti, ali ovo ostaje opcionalno i lako se može deaktivirati.
 
 
 
-Brave je zasnovan na Chromiumu i sav njegov kod je dostupan na GitHubu. Samo manji delovi su delimično vlasnički. Sve u svemu, Brave je veoma blizu open source pregledaču.
+Brave je zasnovan na Chromiumu i sav njegov kod je dostupan na GitHubu. Samo manji delovi sadrže delimično vlasnički kod. Sve u svemu, Brave je veoma blizu open source pregledaču.
 
 
 
@@ -5595,7 +5595,7 @@ Brave je zasnovan na Chromiumu i sav njegov kod je dostupan na GitHubu. Samo man
 
 
 
-Brave je moćna alternativa Chrome-u, kombinujući brzinu, poboljšanu sigurnost, unapređenu privatnost po defaultu i intuitivni Interface. Međutim, ne bih ga nužno preporučio, jednostavno zato što je zasnovan na Chromium-u.
+Brave je moćna alternativa Chrome-u, kombinujući brzinu, poboljšanu sigurnost, unapređenu privatnost po defaultu i intuitivni interfejs. Međutim, ne bih ga nužno preporučio, jednostavno zato što je zasnovan na Chromium-u.
 
 
 
@@ -5607,12 +5607,12 @@ Iako je Brave od tada deaktivirao ovaj API, ovaj slučaj jasno ilustruje struktu
 
 
 
-→ "***fingerprinting***" u kontekstu internet pretraživanja odnosi se na skup tehnika koje uključuju prikupljanje i analizu specifičnih i ponekad jedinstvenih informacija o vašem okruženju pretraživanja, kako bi vas prepoznali i pratili na različitim veb-sajtovima, bez pribegavanja eksplicitnim identifikatorima kao što su kolačići. Ove informacije mogu uključivati:
+→ "***fingerprinting***" u kontekstu internet pretraživanja odnosi se na skup tehnika koje uključuju prikupljanje i analizu specifičnih i ponekad jedinstvenih informacija o vašem okruženju za pretraživanja veba, kako bi vas prepoznali i pratili na različitim veb-sajtovima, bez pribegavanja eksplicitnim identifikatorima kao što su kolačići. Ove informacije mogu uključivati:
 
 
 
 
-- Vaš IP Address,
+- Vaša IP adresa,
 - Vaš provajder internet usluga,
 - Vaša geolokacija,
 - Vaš pregledač i njegova svojstva,
@@ -5624,12 +5624,12 @@ Iako je Brave od tada deaktivirao ovaj API, ovaj slučaj jasno ilustruje struktu
 - Vaša vremenska zona i jezik,
 - HTML5 platno,
 - Analiza grafičkog renderovanja,
-- Vaša proširenja pregledača,
+- Ekstenzije vašeg pregledača,
 - itd...
 
 
 
-Da biste proverili da li vaš otisak pretraživača čini vas jedinstvenim ili se uklapate u masu, možete koristiti sledeći sajt: https://amiunique.org/
+Da proverite da li vaš veb pregledač ostavlja jedinstveni otisak ili se stapate sa masom, možete koristiti sledeći sajt: https://amiunique.org/
 
 
 
