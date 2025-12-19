@@ -6772,7 +6772,7 @@ S druge strane, metode otključavanja kao što su grafičke šeme se snažno ne 
 Biometrijski sistemi (prepoznavanje lica ili otisak prsta) nude očiglednu pogodnost, ali ih treba koristiti s oprezom. U slučaju fizičke prinude (krađa, policijski pritisak, itd.), otisak prsta ili lice mogu se koristiti bez vašeg aktivnog pristanka. U nekim zemljama, upotreba biometrije ne uživa istu pravnu zaštitu kao tajnost lozinke.
 
 
-S druge strane, biometrijski sistemi se mogu zaobići (ili bi mogli biti u budućnosti) korišćenjem tehnika kao što su vizuelna reprodukcija lica ili obnavljanje latentnih otisaka prstiju na površini. Njihova pouzdanost takođe u velikoj meri zavisi od nivoa sigurnosti vašeg uređaja: Na primer, Apple-ov Face ID za prepoznavanje lica je daleko rigorozniji od onog kod nekih osnovnih pametnih telefona.
+S druge strane, biometrijski sistemi se mogu zaobići (ili bi mogli biti u budućnosti) korišćenjem tehnika kao što su vizuelna reprodukcija lica ili otkrivanje/obnavljanje skrivenih otisaka prstiju na površini. Njihova pouzdanost takođe u velikoj meri zavisi od nivoa sigurnosti vašeg uređaja: na primer, Apple-ov Face ID za prepoznavanje lica je daleko rigorozniji od onog kod nekih osnovnih pametnih telefona.
 
 
 Da sumiramo, evo rangiranja od najboljeg do najgoreg sistema zaključavanja pametnih telefona:
@@ -6801,8 +6801,7 @@ Kao što smo videli u prethodnim poglavljima, kompartmenalizacija je važna prak
 #### Koristite poseban profesionalni profil
 
 
-*Work Profile* je funkcija koja je nativna za Android (od Android 5.0), koja vam omogućava da kreirate zasebnu softversku particiju unutar istog pametnog telefona. U praktičnom smislu, ovaj profil funkcioniše kao izolovani kontejner: Aplikacije, nalozi i podaci smešteni u ovom prostoru ne mogu da komuniciraju sa onima u ličnom profilu. Ova separacija sprečava curenje podataka između dva prostora i ograničava prava pristupa za aplikacije. Ova funkcija se često upravlja interno unutar kompanija, ali postoje i načini da se koristi lično za izolaciju aplikacija.
-
+*Work Profile* je funkcija koja je nativna za Android (od Android 5.0), koja vam omogućava da kreirate zasebnu softversku particiju unutar istog pametnog telefona. U praktičnom smislu, ovaj profil funkcioniše kao izolovani kontejner: alikacije, nalozi i podaci smešteni u ovom prostoru ne mogu da komuniciraju sa onima u ličnom profilu. Ova separacija sprečava curenje podataka između dva prostora i ograničava prava pristupa za aplikacije. Ovom funkcijom se kompanije često interno služe, ali postoje i načini da je pojedinac koristi za izolovanje aplikacija.
 
 ![Image](assets/fr/143.webp)
 
@@ -6831,7 +6830,7 @@ Vaš pametni telefon je u stalnoj komunikaciji sa spoljnim svetom, bilo putem Wi
 #### Javni Wi-Fi
 
 
-Javne Wi-Fi mreže, kao što su one u kafićima, hotelima ili javnom prevozu, retko su sigurne. Čak i kada zahtevaju lozinku, ona je često podeljena među mnogim korisnicima, a primenjena enkripcija se ponekad lako zaobilazi. Napadač povezan na istu mrežu može presresti vaše pakete, uhvatiti akreditive ili ubaciti zlonamerni sadržaj putem napada Čovek-u-Sredini.
+Javne Wi-Fi mreže, kao što su one u kafićima, hotelima ili javnom prevozu, retko su sigurne. Čak i kada zahtevaju lozinku, ona je često podeljena među mnogim korisnicima, a primenjena enkripcija se ponekad lako zaobilazi. Napadač povezan na istu mrežu može presresti vaše pakete, uhvatiti akreditive ili ubaciti zlonamerni sadržaj putem napada Čovek-u-Sredini (eng. Man-in-the-Middle).
 
 
 Da biste se zaštitili, jednostavno izbegavajte korišćenje ovih javnih mreža ili koristite VPN, koji će kreirati enkriptovani tunel između vašeg uređaja i udaljenog servera. Ovaj tunel enkapsulira vaše podatke, čineći ih izuzetno teškim za presretanje ili modifikaciju.
@@ -6850,7 +6849,7 @@ https://planb.academy/tutorials/computer-security/communication/mozilla-vpn-f559
 #### Bluetooth, NFC i GPS
 
 
-Bluetooth (bežični protokol za komunikaciju na kratkim udaljenostima), NFC (komunikacija bliskog polja) i GPS (satelitsko pozicioniranje) su podrazumevano omogućeni na mnogim pametnim telefonima. Ove tehnologije mogu biti korišćene kao ulazna tačka za lokalne napade: Daljinsko izvršavanje koda, neovlašćeni pristup, praćenje lokacije, čak i presretanje komunikacija u slučaju Bluetooth-a (na primer, BlueBorne ranjivosti).
+Bluetooth (bežični protokol za komunikaciju na kratkim udaljenostima), NFC (komunikacija bliskog polja) i GPS (satelitsko pozicioniranje) su podrazumevano omogućeni na mnogim pametnim telefonima. Ove tehnologije mogu biti korišćene kao ulazna tačka za lokalne napade: daljinsko izvršavanje koda, neovlašćeni pristup, praćenje lokacije, čak i presretanje komunikacija u slučaju Bluetooth-a (na primer, BlueBorne ranjivosti).
 
 
 Da biste ograničili ove rizike, uvek onemogućite ove funkcije kada ih ne koristite. Ovo drastično smanjuje površinu napada i sprečava bilo kakav pokušaj eksploatacije.
@@ -6880,7 +6879,7 @@ Najbolji način da osigurate svoje komunikacije je korišćenje sigurnih aplikac
 Korisnost antivirusnog softvera na pametnim telefonima često je precenjena, uglavnom zbog agresivnih marketinških kampanja. Prave pretnje na mobilnim uređajima, posebno Androidima, uglavnom su povezane sa instalacijom zlonamernih aplikacija iz neoficijalnih izvora. Na uređaju koji se redovno ažurira, pažljivo konfiguriše (posebno u smislu dozvola) i koristi samo zvanične ili verifikovane izvore, rizik od infekcije je veoma nizak.
 
 
-Takođe, Android uređaji su već po defaultu opremljeni sa Google Play Protect, koji deluje kao antivirus. Antivirus aplikacije trećih strana koriste isti Interface skener, što jednostavno dodaje redundanciju. U praksi, mobilni antivirus nudi malo dodatne vrednosti, bilo na Androidu ili iOS-u.
+Takođe, Android uređaji su već po defaultu opremljeni sa Google Play Protect, koji deluje kao antivirus. Antivirus aplikacije trećih strana koriste isti interfejs skener, što jednostavno dodaje redundanciju. U praksi, mobilni antivirus nudi malo dodatne vrednosti, bilo na Androidu ili iOS-u.
 
 
 Štaviše, ove aplikacije mogu izazvati lažni osećaj sigurnosti kod korisnika, navodeći ih da veruju da su potpuno zaštićeni od pretnji, dok u stvarnosti nude samo reaktivnu zaštitu. Ne nude zaštitu protiv phishing-a, niti protiv prekomernih dozvola dodeljenih aplikacijama, iako većina pretnji za pametne telefone dolazi upravo iz ovih vektora.
@@ -6892,13 +6891,13 @@ Njihova stvarna korisnost je stoga veoma ograničena, a ove aplikacije su poneka
 ### Proveri odlazne veze
 
 
-Postoje i aplikacije za zaštitni zid na pametnim telefonima, kao što su NetGuard ili RethinkDNS, koje deluju kao lokalni zaštitni zid direktno na vašem uređaju. One koriste Android-ov VPN API da presretnu sav odlazni saobraćaj, bez potrebe za root pristupom.
+Postoje i aplikacije za firewall na pametnim telefonima, poput NetGuard ili RethinkDNS, koje funkcionišu kao lokalni firewall direktno na vašem uređaju. One koriste Android-ov VPN API da presretnu sav odlazni saobraćaj, bez potrebe za root pristupom.
 
 
 U praktičnom smislu, ovo znači da možete pojedinačno blokirati pristup internetu za određene aplikacije, čime se značajno smanjuje rizik od neželjenog prikupljanja podataka ili neovlašćene komunikacije.
 
 
-NetGuard, na primer, omogućava vam da upravljate pristupom Internetu po aplikaciji, kako za Wi-Fi tako i za mobilne podatke. RethinkDNS takođe nudi napredne funkcije kao što su filtriranje DNS-a, blokiranje oglasa i inspekcija DNS upita za otkrivanje potencijalnih curenja.
+NetGuard, na primer, omogućava vam da upravljate pristupom internetu po aplikaciji, kako za Wi-Fi tako i za mobilne podatke. RethinkDNS takođe nudi napredne funkcije kao što su filtriranje DNS-a, blokiranje oglasa i inspekcija DNS upita za otkrivanje potencijalnih curenja podataka.
 
 
 ![Image](assets/fr/146.webp)
@@ -6913,7 +6912,7 @@ NetGuard, na primer, omogućava vam da upravljate pristupom Internetu po aplikac
 Redovan bekap podataka sa vašeg pametnog telefona je veoma važan za vašu sigurnost. Ali ovaj bekap mora biti šifrovan, kako bi se sprečilo da vaši osetljivi podaci budu dostupni bilo kome ko dođe do vašeg medija za bekap. Ovo se podjednako odnosi na fotografije, dokumente i podatke aplikacija.
 
 
-Da biste to postigli, trebalo bi da koristite šifrovana lokalna rešenja, kao što su eksterni disk ili šifrovani USB ključ (npr. sa Veracrypt-om). Ako to nije moguće, rešenja za oblak koja sami hostujete, kao što su *Syncthing* ili *Nextcloud*, omogućavaju vam da napravite rezervnu kopiju podataka na ličnom serveru, zadržavajući potpunu kontrolu nad pristupom i poverljivošću. Za razliku od komercijalnih usluga u oblaku (Google Drive, iCloud...), ova rešenja znatno ograničavaju izloženost vaših informacija trećim stranama.
+Da biste to postigli, trebalo bi da koristite šifrovana lokalna rešenja, kao što su eksterni disk ili šifrovani USB ključ (npr. sa Veracrypt-om). Ako to nije moguće, rešenja za cloud koja sami hostujete, kao što su *Syncthing* ili *Nextcloud*, omogućavaju vam da napravite rezervnu kopiju podataka na ličnom serveru, zadržavajući potpunu kontrolu nad pristupom i poverljivošću. Za razliku od komercijalnih usluga u oblaku (Google Drive, iCloud...), ova rešenja znatno ograničavaju izloženost vaših informacija trećim stranama.
 
 
 https://planb.academy/tutorials/computer-security/data/veracrypt-d5ed4c83-7c1c-4181-95ea-963fdf2d83c5
@@ -6921,16 +6920,16 @@ https://planb.academy/tutorials/computer-security/data/veracrypt-d5ed4c83-7c1c-4
 #### Daljinsko brisanje
 
 
-Izgubljeni ili ukradeni pametni telefon može postati bogat izvor informacija za napadača: Lični podaci, istorije pretrage, povezani nalozi, itd. Stoga može biti smisleno konfigurisati izvorne funkcije za lociranje, zaključavanje i daljinsko brisanje vašeg uređaja.
+Izgubljeni ili ukradeni pametni telefon može postati bogat izvor informacija za napadača: lični podaci, istorije pretrage, povezani nalozi, itd. Stoga može biti smisleno konfigurisati izvorne funkcije za lociranje, zaključavanje i daljinsko brisanje vašeg uređaja.
 
 
-Na Androidu, možete koristiti *Find My Device* iz Google podešavanja. Na iOS-u, *Find My iPhone* ima istu ulogu, dostupnu preko iClouda. Ovi alati vam omogućavaju da odmah zaključate pristup, pozvonite uređaju da ga locirate, ili kao poslednju opciju, potpuno obrišete podatke na daljinu. Postoje i slične usluge koje upravljaju softverskim slojevima proizvođača, kao što je Samsungov *SmartThings Find*.
+Na Androidu, možete koristiti *Find My Device* iz Google podešavanja. Na iOS-u, *Find My iPhone* ima istu ulogu, dostupnu preko iClouda. Ovi alati vam omogućavaju da odmah zaključate pristup, pozovete uređaj da ga locirate, ili kao poslednju opciju, potpuno obrišete podatke na daljinu. Postoje i slične usluge koje upravljaju softverskim slojevima proizvođača, kao što je Samsungov *SmartThings Find*.
 
 
 ![Image](assets/fr/147.webp)
 
 
-Međutim, ove funkcije predstavljaju značajne kompromise: One centralizuju vaše osetljive informacije (geolokacija, prijave, daljinski pristup, itd.) na serverima privatne kompanije i zahtevaju da vaša lokacija bude omogućena.
+Međutim, ove funkcije predstavljaju značajne kompromise: one centralizuju vaše osetljive informacije (geolokacija, prijave, daljinski pristup, itd.) na serverima privatne kompanije i zahtevaju da vaša lokacija bude omogućena.
 
 
 Ako odlučite da ih ipak implementirate, testirajte ove funkcije unapred kako biste bili sigurni da će raditi ispravno za dan kada vam zaista budu potrebne.
@@ -6939,7 +6938,7 @@ Ako odlučite da ih ipak implementirate, testirajte ove funkcije unapred kako bi
 Alternativno, ako ne želite da koristite ove usluge daljinskog upravljanja, toplo preporučujem da redovno pravite rezervne kopije podataka sa telefona kako biste izbegli gubitak informacija u slučaju da vaš uređaj bude izgubljen ili ukraden. Da biste smanjili rizik od napadača koji bi mogao da pristupi vašim informacijama, postavite jaku lozinku za zaključavanje telefona i SIM kartice.
 
 
-Došli smo do kraja ovog poglavlja o najboljim praksama za vaš pametni telefon. U sledećem poglavlju pokazaću vam najprikladnija rešenja za sigurno i poverljivo komuniciranje sa vašeg uređaja, bilo da se radi o obavljanju poziva, razmeni poruka ili upravljanju vašim novinskim grupama.
+Došli smo do kraja ovog poglavlja o najboljim praksama za vaš pametni telefon. U sledećem poglavlju pokazaću vam najprikladnija rešenja za sigurno i poverljivo komuniciranje sa vašeg uređaja, bilo da se radi o obavljanju poziva, razmeni poruka ili upravljanju vašim diskusionim grupama.
 
 
 ## Komuniciranje bez prisluškivanja
@@ -6957,7 +6956,7 @@ U ovom poglavlju pokušaćemo da razumemo tehnička i praktična pitanja koja su
 ### Zašto SMS poruke ne štite vaše razmene?
 
 
-SMS (*Short Message Service*) je istorijski bio veoma popularan za razmenu tekstualnih poruka, ali je zasnovan na zastarelom protokolu koji datira iz kasnih 1980-ih. Ovaj protokol, integrisan u GSM (*Global System for Mobile communications*) standarde, ne pruža mehanizam za end-to-end enkripciju. U praksi, svaki poslati SMS se prenosi u čistom tekstu preko mreža mobilnih operatera (ponekad šifrovan samo na Interface radiju, ali nikada end-to-end). To znači da sadržaj poruke može biti presretnut na nekoliko nivoa:
+SMS (*Short Message Service*) je istorijski bio veoma popularan za razmenu tekstualnih poruka, ali je zasnovan na zastarelom protokolu koji datira iz kasnih 1980-ih. Ovaj protokol, integrisan u GSM (*Global System for Mobile communications*) standarde, ne pruža mehanizam za end-to-end enkripciju. U praksi, svaki poslati SMS se prenosi u čistom tekstu preko mreža mobilnih operatera (ponekad enkriptovano samo na interfejsu radio veze, ali nikada end-to-end). To znači da sadržaj poruke može biti presretnut na nekoliko nivoa:
 
 
 
@@ -6978,13 +6977,13 @@ U poslednjih nekoliko godina, neki operateri i proizvođači su uveli RCS (*Rich
 Od 2021. godine, Google Messages je usvojio Signal protokol kako bi osigurao end-to-end enkripciju, ali ova funkcija je dostupna samo ako obe strane koriste Google Messages.
 
 
-U martu 2025. godine, GSM Association je objavila *Universal Profile 3.0* (UP 3.0), koji konačno uspostavlja standard interoperabilnosti za end-to-end enkripciju (E2EE) u RCS-u. Kao rezultat toga, kada se Exchange odvija putem RCS klijenta koji je u skladu sa UP 3.0, sadržaj postaje nečitljiv i za operatera i za IMSI-catcher. Google i Apple su najavili svoju nameru da podrže ovu tehnologiju (ostaje da se vidi da li će ovo biti interoperabilno). Međutim, ako jedan od uređaja nije kompatibilan sa RCS UP 3.0, ili ako nema IP povezivosti, komunikacija se automatski prebacuje na konvencionalni, neenkriptovani SMS, što čini presretanje trivijalnim.
+U martu 2025. godine, GSM Association je objavila *Universal Profile 3.0* (UP 3.0), koji konačno uspostavlja standard interoperabilnosti za end-to-end enkripciju (E2EE) u RCS-u. Kao rezultat toga, kada se razmena odvija putem RCS klijenta koji je u skladu sa UP 3.0, sadržaj postaje nečitljiv i za operatera i za IMSI-catcher. Google i Apple su najavili svoju nameru da podrže ovu tehnologiju (ostaje da se vidi da li će ovo biti interoperabilno). Međutim, ako jedan od uređaja nije kompatibilan sa RCS UP 3.0, ili ako nema IP povezivosti, komunikacija se automatski prebacuje na konvencionalni, neenkriptovani SMS, što čini presretanje trivijalnim.
 
 
-Na strani Apple-a, iMessage (pokrenut 2011.) nudi end-to-end enkripciju između Apple korisnika, ali ovaj protokol ostaje zatvoren i ograničen na iOS/macOS ekosistem. Kada razmenjujete poruke sa korisnicima van ovog ekosistema, poruka se vraća na klasični protokol, gubeći svu poverljivost. Enkripcija takođe može biti prekinuta ako vi ili vaš sagovornik sačuvate poruke u iCloud bez opcije *Advanced Data Protection*.
+Na strani Apple-a, iMessage (pokrenut 2011.) nudi end-to-end enkripciju između Apple korisnika, ali ovaj protokol ostaje zatvoren i ograničen na iOS/macOS ekosistem. Kada razmenjujete poruke sa korisnicima van ovog ekosistema, poruka se vraća na klasični protokol, gubeći svu poverljivost. Enkripcija takođe može biti prekinuta ako vi ili vaš sagovornik sačuvate poruke u iCloud-u bez opcije *Advanced Data Protection*.
 
 
-Ukratko, ni konvencionalni SMS, ni MMS, pa čak ni standardni RCS ne mogu se smatrati pouzdanim, univerzalnim rešenjima za očuvanje poverljivosti razmene. Samo korišćenje Google Messages, iMessage ili budućeg RCS UP 3.0 protokola može garantovati zadovoljavajuću poverljivost, pod uslovom da obe strane usvoje isti protokol za šifrovanje. I upravo tu leži glavna zamka SMS-a u najširem smislu: Ova aplikacija za razmenu poruka, unapred instalirana na većini telefona, okuplja radikalno različite protokole, i ako druga strana podržava samo SMS protokol, vaša poruka će biti preneta u otvorenom obliku, a da to možda i ne shvatite. Zato, dok se ne uspostavi univerzalni i robustan standard za šifrovanje od kraja do kraja, snažno savetujem protiv korišćenja konvencionalnih poruka, jer ostajete previše zavisni od izbora protokola vašeg sagovornika da biste garantovali sopstvenu sigurnost.
+Ukratko, ni konvencionalni SMS, ni MMS, pa čak ni standardni RCS ne mogu se smatrati pouzdanim, univerzalnim rešenjima za očuvanje poverljivosti razmene. Samo korišćenje Google Messages, iMessage ili budućeg RCS UP 3.0 protokola može garantovati zadovoljavajuću poverljivost, pod uslovom da obe strane usvoje isti protokol za enkripciju. I upravo tu leži glavna zamka SMS-a u najširem smislu: ova aplikacija za razmenu poruka, unapred instalirana na većini telefona, okuplja radikalno različite protokole, i ako druga strana podržava samo SMS protokol, vaša poruka će biti preneta u otvorenom obliku, a da to možda i ne shvatite. Zato, dok se ne uspostavi univerzalni i robustan standard za šifrovanje od kraja do kraja, snažno savetujem protiv korišćenja konvencionalnih poruka, jer ostajete previše zavisni od izbora protokola vašeg sagovornika da biste garantovali sopstvenu sigurnost.
 
 
 Umesto SMS-a, savetovao bih vam da koristite namenski aplikacije za razmenu poruka koje koriste robusnu, transparentnu end-to-end enkripciju, omogućavajući zaista sigurnu i privatnu komunikaciju.
