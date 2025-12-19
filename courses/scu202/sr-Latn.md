@@ -6054,11 +6054,11 @@ https://planb.academy/tutorials/computer-security/authentication/security-key-61
 
 
 
-VPN (*Virtual Private Network*) je alat za tuneliranje koji šifrira mrežni saobraćaj između vašeg uređaja i posredničkog servera. Ovaj server deluje kao prolaz, preusmeravajući sve vaše veze ka Internetu. Kao rezultat, vaš ISP vidi samo šifrovani saobraćaj namenjen VPN-u, a sajtovi koje posećujete vide samo IP VPN servera Address, a ne vaš.
+VPN (*Virtual Private Network*) je alat za tuneliranje koji enkriptuje mrežni saobraćaj između vašeg uređaja i posredničkog servera. Ovaj server deluje kao prolaz, preusmeravajući sve vaše veze ka internetu. Kao rezultat, vaš ISP vidi samo šifrovani saobraćaj namenjen VPN-u, a sajtovi koje posećujete vide samo IP adresu VPN servera, a ne vaš.
 
 
 
-Postoji nekoliko prednosti korišćenja VPN-a. Štiti vaše pretraživanje na nesigurnim mrežama (kao što su javni Wi-Fi u aerodromima ili hotelima, na primer), sprečavajući treće strane da presretnu vaše podatke. Takođe skriva vaš pravi IP Address, što može biti korisno za izbegavanje osnovnog praćenja ili simuliranje veze iz druge zemlje. Na kraju, ali ne manje važno, VPN je alat za zaobilaženje cenzure. U okruženjima gde je pristup određenom sadržaju blokiran na nivou ISP-a, preusmeravanje vašeg saobraćaja na VPN server koji se nalazi u nefiltriranoj zemlji omogućava vam da ponovo dobijete slobodan pristup.
+Postoji nekoliko prednosti korišćenja VPN-a. Štiti vaše pretraživanje na nesigurnim mrežama (na primer, kao što su javni Wi-Fi na aerodromima ili hotelima), sprečavajući treće strane da presretnu vaše podatke. Takođe skriva vašu pravu IP adresu, što može biti korisno za izbegavanje osnovnog praćenja ili simuliranje veze iz druge zemlje. Na kraju, ali ne manje važno, VPN je alat za zaobilaženje cenzure. U okruženjima gde je pristup određenom sadržaju blokiran na nivou ISP-a, preusmeravanje vašeg saobraćaja na VPN server koji se nalazi u nefiltriranoj zemlji omogućava vam da ponovo dobijete slobodan pristup.
 
 
 
@@ -6066,11 +6066,11 @@ Postoji nekoliko prednosti korišćenja VPN-a. Štiti vaše pretraživanje na ne
 
 
 
-S druge strane, suprotno uvreženom mišljenju, VPN ne pruža anonimnost. Provajder VPN-a zna vašu stvarnu IP adresu Address, može beležiti vaše konekcije i postaje pouzdana treća strana. Vi im poveravate celokupnu svoju online aktivnost. Ako je provajder zlonameran, podložan obavezujućim pravnim obavezama ili tehnički nemaran, vaši podaci mogu biti izloženi.
+S druge strane, suprotno uvreženom mišljenju, VPN ne pruža anonimnost. Provajder VPN-a zna vašu stvarnu IP adresu, može beležiti vaše konekcije i postaje pouzdana treća strana. Vi im poveravate celokupnu svoju online aktivnost. Ako je provajder zlonameran, podložan obavezujućim pravnim obavezama ili tehnički nemaran, vaši podaci mogu biti izloženi.
 
 
 
-Štaviše, VPN ne nudi zaštitu protiv malvera, praćenja putem JavaScript-a ili kolačića trećih strana. Ako ste prijavljeni na svoj Google ili Facebook nalog, korišćenje VPN-a neće sprečiti ove platforme da vas tačno identifikuju. VPN-ovi takođe ne filtriraju sadržaj i neće sprečiti stranicu sa zamkom da vas napadne putem ranjivosti pretraživača.
+Štaviše, VPN ne nudi zaštitu protiv malvera, praćenja putem JavaScript-a ili kolačića trećih strana. Ako ste prijavljeni na svoj Google ili Facebook nalog, korišćenje VPN-a neće sprečiti ove platforme da vas tačno identifikuju. VPN-ovi takođe ne filtriraju sadržaj i neće sprečiti maliciozne stranice da vas napadnu putem ranjivosti pretraživača.
 
 
 
@@ -6078,7 +6078,7 @@ Takođe, VPN alati ne treba mešati sa Tor mrežom, koja je decentralizovana mre
 
 
 
-Dobar VPN treba da ima jasnu politiku bez beleženja, nudi moderne tehnologije (posebno WireGuard), omogućava anonimno korišćenje usluge i nudi otvoreni izvor ili javno revidiranu tehničku bazu. Imajući ovo u vidu, preporučujem alate kao što su Mullvad ili IVPN.
+Dobar VPN treba da ima jasnu politiku bez beleženja, nudi moderne tehnologije (posebno WireGuard), omogućava anonimno korišćenje usluge i nudi softver otvorenog koda ili javno revidiranu tehničku bazu. Imajući ovo u vidu, preporučujem alate kao što su Mullvad ili IVPN.
 
 
 
@@ -6119,16 +6119,16 @@ Redovno čišćenje ovih lokalnih podataka je jednostavan, ali efikasan način d
 
 
 
-Na primer, u Firefox-u možete konfigurisati automatsko brisanje putem Podešavanja > Privatnost i bezbednost.
+Na primer, u Firefox-u možete konfigurisati automatsko brisanje putem Settings > Privacy & Security, u prevodu Podešavanja > Privatnost i bezbednost.
 
 
 
-Međutim, imajte na umu da samo brisanje kolačića nije dovoljno da garantuje vašu privatnost: postoje druge, naprednije tehnike praćenja, kao što je otisak prsta (jedinstveni otisak vašeg pregledača, vašeg hardvera, vašeg IP-a, vaše upotrebe...), koje zahtevaju dodatne mere za zaobilaženje:
+Međutim, imajte na umu da samo brisanje kolačića nije dovoljno da garantuje vašu privatnost: postoje druge, naprednije tehnike praćenja, kao što je fingerprinting ili u prevodu otisak prsta (jedinstveni otisak vašeg pregledača, vašeg hardvera, vašeg IP-a, vaše upotrebe...), koje zahtevaju dodatne mere za zaobilaženje:
 
 
 
 
-- Koristite pregledač koji nudi otpornost na otiske prstiju: Tor Browser i Mullvad Browser su najbolji za ovo, inače, druge prilično dobre opcije su LibreWolf, Brave ili Firefox sa ručnim pojačavanjem;
+- Koristite pregledač koji nudi otpornost na otiske prstiju: Tor Browser i Mullvad Browser su najbolji za ovo, inače, druge prilično dobre opcije su LibreWolf, Brave ili Firefox uz ručno sprovedeno bezbednosno ojačavanje;
 - Ograničite ili blokirajte JavaScript kad god je to moguće;
 - Izbegavajte neesencijalne ekstenzije;
 - Uopšteno, usvojite uobičajen, dosledan profil, kako biste se bolje uklopili i ograničili mogućnosti identifikacije.
@@ -6155,7 +6155,7 @@ U konkretnim terminima, kada otvorite prozor u privatnom pretraživanju:
 
 
 
-Međutim, ovaj režim ne skriva vašu aktivnost na mreži: veb-sajtovi koje posećujete i dalje vide vaš javni IP Address, i dalje mogu koristiti tehnike otiska prsta, a vaš ISP, ili bilo ko na vašoj lokalnoj mreži, i dalje može videti sajtove koje posećujete.
+Međutim, ovaj režim ne skriva vašu aktivnost na mreži: veb-sajtovi koje posećujete i dalje vide vašu javnu IP adresu, i dalje mogu koristiti tehnike otiska prsta, a vaš ISP, ili bilo ko na vašoj lokalnoj mreži, i dalje može videti sajtove koje posećujete.
 
 
 
@@ -6171,11 +6171,11 @@ Zato je važno ne mešati privatno pretraživanje sa anonimnošću. Za poboljša
 
 
 
-Phishing je oblik socijalnog inženjeringa koji se koristi za obmanjivanje korisnika kako bi otkrili osetljive podatke bez njihovog znanja: podatke za prijavu, brojeve kreditnih kartica, pristupne kodove, poverljiva dokumenta. Ova pretnja nije zasnovana na tehničkoj grešci, već na psihološkoj manipulaciji, iskorišćavanju korisnikovog poverenja, žurbe ili nedostatka znanja.
+Phishing (fišing) je oblik socijalnog inženjeringa koji se koristi za obmanjivanje korisnika kako bi otkrili osetljive podatke bez njihovog znanja: podatke za prijavu, brojeve kreditnih kartica, pristupne kodove, poverljiva dokumenta. Ova pretnja nije zasnovana na tehničkoj grešci, već na psihološkoj manipulaciji, iskorišćavanju korisnikovog poverenja, žurbe ili nedostatka znanja.
 
 
 
-U većini slučajeva, napad se sastoji od imitacije izgleda zvaničnog sajta (banka, servis za razmenu poruka, administracija, online prodavnica, itd.) putem lažnog sajta sa maskiranom URL adresom. Korisnici dobijaju prevarantski link putem e-maila, SMS-a ili aplikacija za razmenu poruka, i, verujući da komuniciraju sa pravim sajtom, unose svoje pristupne podatke.
+U većini slučajeva, napad se sastoji od imitacije izgleda zvaničnog sajta (banke, servisa za razmenu poruka, državne administracije, online prodavnica, itd.) putem lažnog sajta sa maskiranom URL adresom. Korisnici dobijaju prevarantski link putem e-maila, SMS-a ili aplikacija za razmenu poruka, i, verujući da komuniciraju sa pravim sajtom, unose svoje pristupne podatke.
 
 
 
@@ -6185,13 +6185,13 @@ Da biste izbegli ove napade prilikom pretraživanja interneta, važno je pratiti
 
 
 
-- Analizirajte **URL**: napadači često koriste adrese vrlo slične originalu (npr. `micr0soft-support.com`, `paypal-verif.net`, itd.). Neki takođe zamenjuju vizuelno slične karaktere, koristeći Unicode karaktere. Proverite da li Address tačno odgovara očekivanom sajtu, bez sumnjivih prefiksa ili sufiksa.
+- Analizirajte **URL**: napadači često koriste adrese vrlo slične originalu (npr. `micr0soft-support.com`, `paypal-verif.net`, itd.). Neki takođe zamenjuju vizuelno slične karaktere, koristeći Unicode karaktere. Proverite da li adresa tačno odgovara očekivanom sajtu, bez sumnjivih prefiksa ili sufiksa.
 
 
 
 
 
-- **Izbegavajte skraćene linkove**: servisi kao što su `bit.ly` ili `t.co` mogu sakriti krajnji Address. Ako dobijete skraćeni link, budite sumnjičavi ili koristite servis za proširenje URL-a da proverite njegovo odredište.
+- **Izbegavajte skraćene linkove**: servisi kao što su `bit.ly` ili `t.co` mogu sakriti krajnju adresu. Ako dobijete skraćeni link, budite sumnjičavi ili koristite servis za proširenje URL-a da proverite njegovo odredište.
 
 
 
@@ -6213,7 +6213,7 @@ A evo nekoliko preventivnih mera koje možete direktno primeniti u svom pregleda
 
 
 
-- Pristupite kritičnim sajtovima putem vaših **obeleživača**:
+- Pristupite kritičnim sajtovima putem vaših **obeleživača** (eng. bookmarks):
 
 
 
@@ -6235,7 +6235,7 @@ Takođe je neophodno pratiti dobre prakse autentifikacije kako bi se ograničio 
 
 
 
-Hajde da uzmemo primer: ako napadač uspe da dođe do lozinke za vaš Steam nalog, ali koristite različitu lozinku za svaki od vaših naloga, neće moći da pristupi osetljivijim servisima kao što su vaš e-mail ili bankarstvo. A ako ste aktivirali dvofaktorsku autentifikaciju (2FA), onda čak i sa lozinkom, napadač neće moći da se prijavi, jer neće imati pristup vašoj TOTP aplikaciji (kao što su Authy, Google Authenticator...).
+Hajde da uzmemo primer: ako napadač uspe da dođe do lozinke za vaš Steam nalog, ali koristite različitu lozinku za svaki od vaših naloga, napadač neće moći da pristupi osetljivijim servisima kao što su vaš e-mail ili bankarstvo. A ako ste aktivirali dvofaktorsku autentifikaciju (2FA), onda čak i sa lozinkom, napadač neće moći da se prijavi, jer neće imati pristup vašoj TOTP aplikaciji (kao što su Authy, Google Authenticator...).
 
 
 
@@ -6249,7 +6249,7 @@ Pored ovih mera, korišćenje dobrog menadžera lozinki kao ekstenzije za pregle
 
 
 
-Ikonica katanca u Address traci označava šifrovanu vezu, ali ne garantuje legitimnost sajta. Kliknite na nju da pregledate sertifikat (organizacija, domen, sertifikaciona vlast). Ovo može biti korisno ako imate sumnje u vezi sa URL-om sajta.
+Ikonica katanca u adresnoj traci označava šifrovanu vezu, ali ne garantuje legitimnost sajta. Kliknite na nju da pregledate sertifikat (organizacija, domen, sertifikaciona vlast). Ovo može biti korisno ako imate sumnje u vezi sa URL-om sajta.
 
 
 
@@ -6269,7 +6269,7 @@ Zlonamerna ili kompromitovana ekstenzija može presresti vaše lične podatke, p
 
 
 
-Da biste ograničili ove rizike, instalirajte samo ekstenzije iz zvaničnih izvora (Mozilla Add-ons), uvek proverite tražene dozvole i držite njihov broj na strogo minimalnom nivou. Obrišite ekstenzije koje više ne koristite i pazite na klonove.
+Da biste ograničili ove rizike, instalirajte samo ekstenzije iz zvaničnih izvora (Mozilla Add-ons), uvek proverite tražene dozvole i držite njihov broj na strogo minimalnom nivou. Obrišite ekstenzije koje više ne koristite i budite oprezni sa lažnim (kloniranim) ekstenzijama.
 
 
 
@@ -6277,7 +6277,7 @@ Redovno proveravanje vaših ekstenzija je važan deo održavanja sigurnosti vaš
 
 
 
-### Razdvojite svoje korišćenje weba
+### Razdvojte različite načine korišćenja veba
 
 
 
@@ -6291,7 +6291,7 @@ Cilj je jednostavan: sprečiti da incident koji uključuje određenu aktivnost (
 
 
 
-- Koristite nekoliko različitih pregledača: na primer, Firefox za ličnu upotrebu, Tor ili Mullvad za osetljive aktivnosti, i Chromium za profesionalne zadatke. Svaki pregledač koristi svoju instancu skladišta, što potpuno izoluje kolačiće, sesije i ekstenzije. Ovo vam takođe omogućava da prilagodite postavke pregledača vašim specifičnim slučajevima upotrebe.
+- Koristite nekoliko različitih pregledača: na primer, Firefox za ličnu upotrebu, Tor ili Mullvad za osetljive aktivnosti, i Chromium za profesionalne zadatke. Svaki pregledač koristi svoju instanca za skladištenje podataka, što potpuno izoluje kolačiće, sesije i ekstenzije. Ovo vam takođe omogućava da prilagodite postavke pregledača vašim specifičnim načinima korišćenja.
 
 
 
@@ -6317,7 +6317,7 @@ Cilj je jednostavan: sprečiti da incident koji uključuje određenu aktivnost (
 
 
 
-### Ograniči veb-sajtove kojima su dodeljene dozvole
+### Ograničite dozvole koje se dodeljuju veb-sajtovima
 
 
 
@@ -6352,18 +6352,18 @@ Kad god unosite lične, poverljive ili finansijske informacije na neku veb stran
 
 
 
-Ovo je upravo uloga HTTPS-a (*HyperText Transfer Protocol Secure*). Ovaj protokol se zasniva na TLS (*Transport Layer Security*) enkripciji, koja omogućava :
+Ovo je upravo uloga HTTPS-a (*HyperText Transfer Protocol Secure*). Ovaj protokol se zasniva na TLS (*Transport Layer Security*) enkripciji, koja omogućava da:
 
 
 
 
 - šifrujte podatke koji se razmenjuju (niko ne može da ih pročita ili izmeni tokom prenosa);
-- potvrdite autentičnost udaljenog servera putem digitalnog sertifikata ;
+- potvrdite autentičnost udaljenog servera putem digitalnog sertifikata;
 - sprečiti man-in-the-middle (MITM) napade, uobičajene na javnim ili kompromitovanim mrežama.
 
 
 
-U konkretnim terminima, sajt sa omogućenim HTTPS-om je označen zatvorenim katancem u Address traci vašeg pregledača, obično u gornjem levom uglu Interface. Klikom na ovaj katanac prikazuju se informacije o TLS sertifikatu sajta (autoritet sertifikacije, datum važenja, itd.). Sajt Address takođe sistematski počinje sa `https://`.
+U konkretnim terminima, sajt sa omogućenim HTTPS-om je označen zatvorenim katancem u adresnoj traci vašeg pregledača, obično u gornjem levom uglu interfejsa. Klikom na ovaj katanac prikazuju se informacije o TLS sertifikatu sajta (autoritet sertifikacije, datum važenja, itd.). Adresa sajta takođe sistematski počinje sa `https://`.
 
 
 
@@ -6379,7 +6379,7 @@ U teoriji, uvek bi trebalo ručno proveriti ove informacije pre unosa podataka n
 
 
 
-Zapravo, vrlo malo sajtova danas je dostupno samo putem HTTP-a. Ovaj protokol se u velikoj meri napušta u korist HTTPS-a, ne samo zbog očiglednih bezbednosnih razloga, već i zato što ga pretraživači penalizuju i označavaju kao potencijalno opasan moderni pregledači, što ne uliva poverenje među posetiocima.
+Zapravo, vrlo malo sajtova danas je dostupno samo putem HTTP-a. Ovaj protokol se u velikoj meri napušta u korist HTTPS-a, ne samo zbog očiglednih bezbednosnih razloga, već i zato što ga pretraživači penalizuju i označavaju kao potencijalno opasan od strane modernih pregledača, što ne uliva poverenje među posetiocima.
 
 
 
@@ -6387,7 +6387,7 @@ Zapravo, vrlo malo sajtova danas je dostupno samo putem HTTP-a. Ovaj protokol se
 
 
 
-Kao što smo već videli, važno je napraviti razliku između dva Elements koja se često mešaju: pregledača, koji je aplikacija instalirana na vašem računaru (kao što su Firefox ili Brave) i koristi se za prikazivanje veb stranica, i pretraživača, koji je onlajn usluga (kao što je Google) kojoj šaljete upite da biste dobili rezultate. Ova dva Elements su nezavisna, iako pregledači često integrišu određeni pretraživač po defaultu.
+Kao što smo već videli, važno je napraviti razliku između dva pojma koja se često mešaju: pregledača, koji je aplikacija instalirana na vašem računaru (kao što su Firefox ili Brave) i koristi se za prikazivanje veb stranica, i pretraživača, koji je onlajn usluga (kao što je Google) kojoj šaljete upite da biste dobili rezultate. Ova dva pojma su nezavisna, iako pregledači često integrišu određeni pretraživač po defaultu.
 
 
 
@@ -6395,15 +6395,15 @@ Kao što smo već videli, važno je napraviti razliku između dva Elements koja 
 
 
 
-Pretraživač koji koristite ima direktan uticaj na vašu privatnost. Zapravo, svaka pretraga koju obavite može biti :
+Pretraživač koji koristite ima direktan uticaj na vašu privatnost. Zapravo, svaka pretraga koju obavite može biti:
 
 
 
 
-- povezano sa vašom IP Address ako ne koristite Tor ili VPN ;
-- povezano sa vašim prijavljivanjem i lozinkom ako ste povezani sa nalogom ;
-- skladišteni i analizirani kako bi se kreirao profil ponašanja;
-- koristi se za ciljno oglašavanje ili preprodaju trećim stranama.
+- povezana sa vašom IP adresom ako ne koristite Tor ili VPN;
+- povezana sa vašim prijavljivanjem i lozinkom ako ste povezani sa nalogom;
+- skladištena i analizirana kako bi se kreirao profil ponašanja;
+- korišćena za ciljno oglašavanje ili preprodaju trećim stranama.
 
 
 
