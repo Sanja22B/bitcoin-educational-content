@@ -6470,7 +6470,7 @@ Za razliku od računara, mobilni telefoni uglavnom rade na zatvorenim sistemima,
 Android sada dominira globalnim tržištem pametnih telefona, sa oko 72% uređaja u cirkulaciji. Njegov razvoj je počeo 2003. godine osnivanjem Android Inc. od strane Endija Rubina, Riča Miner, Nika Searsa i Krisa Vajta. Njihov prvobitni cilj bio je dizajn operativnog sistema za digitalne kamere.
 
 
-Nakon nekoliko odbijanja od strane investitora, Android Inc. je odlučio da preusmeri svoj projekat ka kreiranju mobilnog operativnog sistema. Da postavimo scenu, u periodu 2003-2004, tržište mobilnih telefona je cvetalo, uglavnom dominirano od strane proizvođača kao što su Nokia, Motorola, Sony Ericsson i Samsung. Većina uređaja su bili "nature telefoni", opremljeni fizičkim tastaturama, malim kolor ekranima, i ponekad osnovnom kamerom. Pametni telefoni su već postojali, ali su uglavnom bili namenjeni profesionalcima, i nošeni od strane brendova kao što je BlackBerry.
+Nakon nekoliko odbijanja od strane investitora, Android Inc. je odlučio da preusmeri svoj projekat ka kreiranju mobilnog operativnog sistema. Da postavimo scenu, u periodu 2003-2004, tržište mobilnih telefona je cvetalo, uglavnom dominirano od strane proizvođača kao što su Nokia, Motorola, Sony Ericsson i Samsung. Većina uređaja su bili "nature telefoni", opremljeni fizičkim tastaturama, malim kolor ekranima, i ponekad osnovnom kamerom. Pametni telefoni su već postojali, ali su uglavnom ciljali profesionalce i dolazili su od brendova kao što je BlackBerry.
 
 
 Google je kupio Android Inc. 2005. godine za oko 50 miliona dolara. Između 2005. i 2007. godine, kompanija je razvijala svoj operativni sistem interno, bez objavljivanja javne verzije. Tokom ovog perioda, kružile su glasine da Google priprema mobilni uređaj, moguće inspirisan BlackBerry-jem, koji je tada brzo sticao popularnost.
@@ -6479,7 +6479,7 @@ Google je kupio Android Inc. 2005. godine za oko 50 miliona dolara. Između 2005
 Ali u januaru 2007. godine, događaj je označio značajnu prekretnicu u istoriji pametnih telefona: Stiv Džobs je predstavio prvu generaciju iPhone-a. Opšte uverenje da je fizička tastatura neophodna bilo je razbijeno. iPhone je predstavio uređaj dizajniran za potpuno korišćenje na dodir, koji je samostalno redefinisao očekivanja tržišta.
 
 
-Suočen sa ovom revolucijom, Google je bio primoran da potpuno preispita pravac svog Android projekta kako bi ga učinio kompatibilnim sa ekranom osetljivim na dodir Interface. Kasnije, 2007. godine, Google je zvanično pokrenuo Android kao open-source projekat zasnovan na modifikovanom Linux kernelu, pod nazivom *Android open-source Project (AOSP)*.
+Suočen sa ovom revolucijom, Google je bio primoran da potpuno preispita pravac svog Android projekta kako bi ga učinio kompatibilnim sa ekranom osetljivim na dodir. Kasnije, 2007. godine, Google je zvanično pokrenuo Android kao open-source projekat zasnovan na modifikovanom Linux kernelu, pod nazivom *Android open-source Project (AOSP)*.
 
 
 Prvi uređaj sa Android operativnim sistemom koji je stigao na tržište, HTC Dream, pušten je u prodaju 2008. godine. Nudio je okruženje koje je još uvek bilo rudimentarno, ali potpuno otvoreno: proizvođači i operateri su mogli slobodno prilagođavati sistem svojim potrebama, dok su programeri mogli kreirati i distribuirati aplikacije bez prethodne validacije. Ovaj pristup je brzo osvojio aktivnu zajednicu i doprineo širokoj prihvaćenosti Androida od strane mnogih proizvođača.
@@ -6503,7 +6503,7 @@ Android je doživeo brz uspon: pretekao je iOS po tržišnom udelu već u julu 2
 #### Otvoreni kod vs. Google
 
 
-Android projekat zasnovan je na strukturnoj dualnosti. S jedne strane, AOSP (*Android open-source Project*) predstavlja otvorenu bazu sistema: uključuje Linux kernel, sistemski softverski stack, minimalnu Interface grafiku i set API-ja. Ova baza je objavljena pod Apache 2.0 licencom i ostaje dostupna svima. S druge strane, okruženje koje zapravo koristi većina Android korisnika gotovo u potpunosti se oslanja na vlasničke komponente koje je razvio Google: *Google Mobile Services* (GMS).
+Android projekat zasnovan je na strukturnoj dualnosti. S jedne strane, AOSP (*Android open-source Project*) predstavlja otvorenu bazu sistema: uključuje Linux kernel, sistemski softverski stack, minimalni grafički interfejs i set API-ja. Ova baza je objavljena pod Apache 2.0 licencom i ostaje dostupna svima. S druge strane, okruženje koje zapravo koristi većina Android korisnika gotovo u potpunosti se oslanja na vlasničke komponente koje je razvio Google: *Google Mobile Services* (GMS).
 
 
 Ove komponente nisu otvorenog koda: zajednica ih ne može slobodno proveravati, niti ih je lako zameniti. Da bi ih legalno unapred instalirali na svoje uređaje, proizvođači moraju potpisati licencne ugovore sa Google-om i pridržavati se strogih tehničkih i komercijalnih zahteva. Ovi zahtevi uključuju:
@@ -6518,10 +6518,10 @@ Ove komponente nisu otvorenog koda: zajednica ih ne može slobodno proveravati, 
 ![Image](assets/fr/132.webp)
 
 
-Ovo postepeno stvara strukturnu zavisnost za proizvođače pametnih telefona i čini prenos ličnih podataka na Google servere gotovo neizbežnim za krajnjeg korisnika. Ove usluge imaju za cilj da garantuju glatko i dosledno korisničko iskustvo, ali takođe centralizuju osetljive funkcije kao što su automatska izrada rezervnih kopija podataka, pasivna geolokacija ili stalna autentifikacija putem Google naloga (često potrebna za potpuno iskorišćavanje uređaja).
+Ovo postepeno stvara strukturnu zavisnost za proizvođače pametnih telefona i čini prenos ličnih podataka na Google servere gotovo neizbežnim za krajnjeg korisnika. Ove usluge imaju za cilj da garantuju glatko i dosledno korisničko iskustvo, ali takođe centralizuju osetljive funkcije kao što su automatska izrada rezervnih kopija podataka, pasivna geolokacija ili stalna autentifikacija putem Google naloga (često potrebno za potpuno iskorišćavanje mogućnosti uređaja).
 
 
-Iako Android ostaje, u teoriji, sistem otvorenog koda u svojoj srži, većina Android pametnih telefona prodatih širom sveta radi na verziji koju je modifikovao i unapredio Google. U ovoj verziji, open-source Layer je uglavnom skriven ispod vlasničkog, zaključanog i nametljivog sloja.
+Iako Android ostaje, u teoriji, sistem otvorenog koda u svojoj srži, većina Android pametnih telefona prodatih širom sveta radi na verziji koju je modifikovao i unapredio Google. U ovoj verziji, open-source komponenta je uglavnom skrivena ispod vlasničkog, zaključanog i nametljivog sloja.
 
 
 Da biste zaista povratili kontrolu, potrebno je stoga okrenuti se alternativama kao što su besplatni ROM-ovi (GrapheneOS, CalyxOS, itd.), koje ćemo razmotriti kasnije u ovom kursu.
@@ -6533,7 +6533,7 @@ Da biste zaista povratili kontrolu, potrebno je stoga okrenuti se alternativama 
 #### Kratka istorija iOS-a
 
 
-iOS je operativni sistem koji je razvila kompanija Apple za svoje pametne telefone, predstavljen sa prvim iPhone-om 2007. godine (tada nazvan "*iPhone OS*"). Od samog početka, Apple je usvojio strategiju potpune vertikalne integracije: hardver, softver, operativni sistem, onlajn usluge i prodavnica aplikacija su svi dizajnirani, kontrolisani i održavani od strane Apple-a. U početku, čak ni nisu bile podržane nativne aplikacije koje nije proizveo Apple. Ovaj pristup se oštro razlikuje od Androida, čiji je ekosistem od samog početka bio mnogo fragmentiraniji, i takav je i danas.
+iOS je operativni sistem koji je razvila kompanija Apple za svoje pametne telefone, predstavljen sa prvim iPhone-om 2007. godine (tada nazvan "*iPhone OS*"). Od samog početka, Apple je usvojio strategiju potpune vertikalne integracije: hardver, softver, operativni sistem, onlajn usluge i prodavnica aplikacija su svi dizajnirani, kontrolisani i održavani od strane Apple-a. U početku, čak nisu bile podržane nativne aplikacije koje nije proizveo Apple. Ovaj pristup se oštro razlikuje od Androida, čiji je ekosistem od samog početka bio mnogo fragmentiraniji, i takav je i danas.
 
 
 ![Image](assets/fr/133.webp)
@@ -6543,7 +6543,7 @@ iOS je inicijalno bio zasnovan na operativnom sistemu koji koristi Mac: OS X. Ko
 
 
 
-- potpuno peskovanje aplikacija, sprečavanje jedne aplikacije da pristupi podacima ili procesima druge aplikacije
+- potpuno izolovanje aplikacija (sandboxing), sprečavanje jedne aplikacije da pristupi podacima ili procesima druge aplikacije
 - obavezno potpisivanje koda aplikacije, garantujući integritet binarnih datoteka i njihovo poreklo (samo App Store)
 - hardversko šifrovanje podataka direktno na čipu, putem *Secure Enclave*, kriptografskog koprocesora izolovanog od ostatka sistema
 - brze bezbednosne ispravke, koje direktno distribuira Apple na sve uređaje, bez posrednika
@@ -6558,31 +6558,31 @@ Ova zatvorena arhitektura omogućava Apple-u da garantuje fluidno i sigurno kori
 Međutim, ova sigurnost se oslanja na strogo zaključavanje krajnjeg korisnika, koji praktično nema tehničku kontrolu nad svojim uređajem. Nemoguće je instalirati aplikacije osim putem App Store-a, osim putem *jailbreak*-a, složene, rizične i često nestabilne operacije koja poništava garanciju i ugrožava sigurnost sistema. Ovaj princip takođe podržava poslovni model Apple-a, koji naplaćuje proviziju na transakcije obavljene u aplikacijama trećih strana.
 
 
-Prilagođavanje je takođe veoma ograničeno. Nije moguće duboko modifikovati ponašanje sistema, slobodno menjati runtime okruženje ili direktno pristupiti sistemskim fajlovima. Dakle, u praksi, pametni telefon ostaje vlasništvo Apple-a, čak i nakon kupovine, jer nemate potpunu kontrolu nad njim.
+Prilagođavanje je takođe veoma ograničeno. Nije moguće značajno modifikovati ponašanje sistema, slobodno menjati okruženje gde se izvršavaju  aplikacija (eng. runtime environment) ili direktno pristupiti sistemskim fajlovima. Dakle, u praksi, pametni telefon ostaje vlasništvo Apple-a, čak i nakon kupovine, jer nemate potpunu kontrolu nad njim.
 
 
 ![Image](assets/fr/134.webp)
 
 
-Štaviše, obavezna integracija iCloud-a u većinu usluga (bekapi, poruke, fotografije, lokacija, Siri...) izlaže korisnike masovnoj centralizaciji njihovih ličnih podataka. Iako Apple tvrdi da ima model fokusiran na privatnost (i, za razliku od Google-a, njegov poslovni model nije zasnovan na eksploataciji ličnih podataka), ostaje nekoliko ograničenja:
+Štaviše, obavezna integracija iCloud-a u većinu usluga (rezervne kopije (bekapi), poruke, fotografije, lokacija, Siri...) izlaže korisnike masovnoj centralizaciji njihovih ličnih podataka. Iako Apple tvrdi da ima model fokusiran na privatnost (i, za razliku od Google-a, njegov poslovni model nije zasnovan na eksploataciji ličnih podataka), ostaje nekoliko ograničenja:
 
 
 
-- neki Elements (kao što su metapodaci o vezi, zahtevi za Siri ili dnevnici grešaka) i dalje prolaze kroz Apple servere
-- mehanizmi za analizu ponašanja za kontekstualne sugestije, ažuriranja App Store-a ili filtriranje poruka koriste neauditabilne vlasničke modele
+- neki elementi (kao što su metapodaci o vezi, zahtevi za Siri ili dnevnici grešaka) i dalje prolaze kroz Apple servere
+- mehanizmi za analizu ponašanja za kontekstualne sugestije, ažuriranja App Store-a ili filtriranje poruka zasnivaju se na vlasničkim modelima koje nije moguće nezavisno proveriti
 - korišćenje usluga kao što je iCloud podrazumeva implicitno poverenje u Apple-ovu infrastrukturu, bez kontrole nad tim gde ili koliko dugo se podaci čuvaju
 
 
 Konačno, u smislu digitalnog suvereniteta, iOS predstavlja zatvoreno okruženje: nijedna spoljašnja vlast (ni korisnik ni nezavisna organizacija) ne može da verifikuje ili modifikuje njegov rad. Korisnici su stoga primorani da veruju Apple-u na svakom nivou: hardver, softver, mreža...
 
 
-### open-source alternative sa Android
+### Open-source alternative sa Android
 
 
 Kao što smo upravo videli, standardni Android ekosistem, kojim dominira Google, zasnovan je na verziji sistema otvorenog koda (AOSP) sa vlasničkim komponentama (GMS). Nekoliko projekata otvorenog koda koristi AOSP kako bi ponudili alternativne operativne sisteme koji više poštuju privatnost, bez nametljivih slojeva, i sa boljom kontrolom korisnika. Ove alternative se instaliraju da zamene originalni sistem, u obliku prilagođenih ROM-ova. Omogućavaju vam da povratite kontrolu nad softverom, ali takođe zahtevaju minimalnu kontrolu nad hardverom, jer su kompatibilne sa samo nekoliko uređaja.
 
 
-#### Zahtjevi za hardver i upozorenja
+#### Zahtevi za hardver i upozorenja
 
 
 Pre nego što instalirate, važno je proveriti kompatibilnost vašeg pametnog telefona sa izabranim ROM-om. Većina ovih projekata podržava ograničenu listu modela. Većinu vremena, moraćete da koristite Google Pixel telefone, zbog njihove podrške za otključavanje bootloader-a i javnih drajvera.
@@ -6615,7 +6615,7 @@ Neki proizvođači zabranjuju ili komplikuju ovu operaciju, ili čak deaktiviraj
 ![Image](assets/fr/136.webp)
 
 
-GrapheneOS integriše bez vlasničkih komponenti. Slobodni ste da dodate Google usluge ili ne, ali one su strogo izolovane (sandboxovane u posebnim profilima). Ovo čini sistem izuzetno otpornim na lokalne napade i eksploataciju sistemskih ranjivosti.
+GrapheneOS ne integriše nikakve vlasničke komponente. Slobodni ste da dodate Google usluge ili ne, ali one su strogo izolovane (sandboxovane u posebnim profilima). Ovo čini sistem izuzetno otpornim na lokalne napade i eksploataciju sistemskih ranjivosti.
 
 
 Grafen je kompatibilan samo sa novijim Google Pixelima (Pixel 6, 7, 8 i 9).
@@ -6629,7 +6629,7 @@ https://planb.academy/tutorials/computer-security/operating-system/grapheneos-08
 [CalyxOS](https://calyxos.org/) je posrednički sistem koji ima za cilj da pomiri privatnost, sigurnost i kompatibilnost sa svakodnevnom upotrebom. Takođe je zasnovan na AOSP-u, sa poboljšanjima sigurnosti. Njegova posebna karakteristika je opcionalna integracija MicroG-a, slobodne reimplementacije Google usluga. Ovo omogućava pokretanje većine Android aplikacija koje zavise od Google usluga, bez potrebe za korišćenjem zvaničnih vlasničkih binarnih datoteka.
 
 
-CalyxOS takođe nudi unapred instalirane aplikacije (Signal, F-Droid, Aurora Store, integrisani VPN...), i uredan Interface. Lako se instalira putem grafičkog alata za korisnike Pixel uređaja. Calyx je uglavnom kompatibilan sa Google Pixel uređajima, ali i nekim Fairphone i Motorola modelima.
+CalyxOS takođe nudi unapred instalirane aplikacije (Signal, F-Droid, Aurora Store, integrisani VPN...), i uredan interfejs. Lako se instalira putem grafičkog alata za korisnike Pixel uređaja. Calyx je uglavnom kompatibilan sa Google Pixel uređajima, ali i nekim Fairphone i Motorola modelima.
 
 
 ![Image](assets/fr/137.webp)
@@ -6641,7 +6641,7 @@ CalyxOS takođe nudi unapred instalirane aplikacije (Signal, F-Droid, Aurora Sto
 [LineageOS](https://lineageos.org/), naslednik CyanogenMod-a, najšire je kompatibilan alternativni ROM. Podržava nekoliko stotina modela, zahvaljujući velikoj zajednici saradnika. Baziran na AOSP-u, naglašava prilagodljivost, jednostavnost i slobodu korišćenja.
 
 
-LineageOS vam pruža Android sistem bez proizvođačkih slojeva, bez nepotrebnih aplikacija, sa potpunim upravljanjem dozvolama, lakim ažuriranjem i pojednostavljenim Interface. Možete dodati Google usluge ili se odlučiti za 100% besplatno korišćenje.
+LineageOS vam pruža Android sistem bez proizvođačkih slojeva, bez nepotrebnih aplikacija, sa potpunim upravljanjem dozvolama, lakim ažuriranjem i pojednostavljenim interfejsom. Možete dodati Google usluge ili se odlučiti za 100% besplatno korišćenje.
 
 
 Međutim, na polju bezbednosti, LineageOS ne integriše određene hardverske zaštite ili memorijska pojačanja koja se nalaze u GrapheneOS i CalyxOS. Njegov sistem ažuriranja takođe zavisi od zajednice, što može uvesti kašnjenja u bezbednosnim zakrpama.
@@ -6659,30 +6659,30 @@ Kada birate operativni sistem za svoj pametni telefon, morate biti svesni kompro
 Standardni Android (sa GMS) ostaje najrasprostranjenije rešenje danas. Nudi potpunu kompatibilnost sa svim Android aplikacijama, jednostavnost korišćenja i trenutni pristup popularnim servisima (Play Store, Maps, Gmail...). Međutim, ova jednostavnost korišćenja oslanja se na snažnu integraciju Google-ovih vlasničkih servisa, sa sistematskim prikupljanjem podataka: GPS pozicija, istorija pretrage, metapodaci poziva, preferencije za oglašavanje... Dakle, to je loš izbor ako ste zabrinuti za svoj digitalni suverenitet ili privatnost.
 
 
-Appleov iOS sistem se odlikuje visokim nivoom sigurnosti. Međutim, ova sigurnost dolazi uz ekstremnu zatvorenost okruženja: Korisnik ne može instalirati aplikacije van App Store-a (osim u marginalnim slučajevima), ne može menjati ponašanje sistema i u potpunosti zavisi od Apple-a za upravljanje hardverom, skladištenjem u oblaku i sinhronizacijom. To je efikasno i robusno okruženje, ali ono koje žrtvuje bilo kakav oblik personalizacije ili nezavisnosti.
+Appleov iOS sistem se odlikuje visokim nivoom sigurnosti. Međutim, ova sigurnost dolazi uz ekstremnu zatvorenost okruženja: korisnik ne može instalirati aplikacije van App Store-a (osim u marginalnim slučajevima), ne može menjati ponašanje sistema i u potpunosti zavisi od Apple-a za upravljanje hardverom, skladištenjem u oblaku i sinhronizacijom. To je efikasno i robusno okruženje, ali ono koje žrtvuje bilo kakav oblik personalizacije ili nezavisnosti.
 
 
-GrapheneOS je namenjen najzahtevnijim profilima u pogledu sigurnosti i poverljivosti. Njegov nivo sigurnosti, međutim, nameće određena ograničenja: malo kompatibilnih uređaja (samo noviji Google Pixel modeli), nema automatske integracije usluga trećih strana aplikacija, i potreba za ručnim podešavanjem alternativnih alata za ažuriranja, prodavnicu ili obaveštenja. Ako su privatnost i sigurnost vaši prioriteti, ovo je očigledno najbolji izbor.
+GrapheneOS je namenjen najzahtevnijim profilima u pogledu sigurnosti i poverljivosti. Njegov nivo sigurnosti, međutim, nameće određena ograničenja: malo kompatibilnih uređaja (samo noviji Google Pixel modeli), bez automatske integracije servisa trećih strana u aplikacije, i potreba za ručnim podešavanjem alternativnih alata za ažuriranja, prodavnicu ili obaveštenja. Ako su privatnost i sigurnost vaši prioriteti, ovo je očigledno najbolji izbor.
 
 
 CalyxOS nudi zanimljivu ravnotežu. Korisničko iskustvo ostaje blisko standardnom Androidu, ali bez direktnog nadzora Google-a. Podržava razuman broj modela (posebno Google Pixel), i može se instalirati bez naprednog tehničkog znanja. Za korisnike koji žele visok nivo sigurnosti bez žrtvovanja kompatibilnosti softvera, CalyxOS je praktično, dobro izbalansirano rešenje.
 
 
-Konačno, LineageOS je AOSP distribucija za korisnike koji žele fleksibilnost i kontrolu. Kompatibilan je sa velikim brojem uređaja, čak i starijim, omogućava potpunu prilagodbu sistema i nudi laganu alternativu OEM slojevima. Međutim, ne integriše nativno napredna sigurnosna poboljšanja koja se nalaze u GrapheneOS ili CalyxOS, i ne dobija uvek redovne ažuriranja za sve modele. LineageOS stoga zahteva određenu disciplinu korisnika kako bi ostao siguran tokom vremena.
+Konačno, LineageOS je AOSP distribucija za korisnike koji žele fleksibilnost i kontrolu. Kompatibilan je sa velikim brojem uređaja, čak i starijim, omogućava potpunu prilagodbu sistema i nudi laganu alternativu OEM slojevima. Međutim, ne integriše nativno napredna sigurnosna poboljšanja koja se nalaze u GrapheneOS ili CalyxOS, i ne dobija uvek redovna ažuriranja za sve modele. LineageOS stoga zahteva određenu disciplinu korisnika kako bi ostao siguran tokom vremena.
 
 
-| System | Security | Privacy | Compatibility | Customization |
-| ------ | -------- | ------- | ------------- | ------------- |
-| Android | 🟡       | 🔴      | 🟢            | 🟢            |
-| iOS     | 🟢       | 🟡      | 🟡            | 🔴            |
-| GrapheneOS | 🟢       | 🟢              | 🟡            | 🟡               |
-| CalyxOS    | 🟡       | 🟢              | 🟡            | 🟡               |
-| LineageOS  | 🟡       | 🟡              | 🟢            | 🟢               |
+| Sistem | Bezbednost | Privatnos | Compatibilnost | Kastamizacija |
+| ------ | --------   | -------   | ------------- | ------------- |
+| Android | 🟡        | 🔴         | 🟢            | 🟢            |
+| iOS     | 🟢        | 🟡         | 🟡            | 🔴            |
+| GrapheneOS | 🟢       | 🟢              | 🟡            | 🟡      |
+| CalyxOS    | 🟡       | 🟢              | 🟡            | 🟡      |
+| LineageOS  | 🟡       | 🟡              | 🟢            | 🟢      |
 
 Bez obzira na vaš izbor mobilnog operativnog sistema, u sledećem poglavlju ćemo pogledati najbolje prakse koje možete usvojiti da efikasno osigurate svoj telefon i održavate zdravo digitalno okruženje.
 
 
-## Osiguranje vašeg pametnog telefona za svakodnevnu upotrebu
+## Osiguravanje vašeg pametnog telefona za svakodnevnu upotrebu
 
 
 <chapterId>37b9499e-32cf-42c3-8715-15c6884d2ec7</chapterId>
@@ -6697,7 +6697,7 @@ U ovom poglavlju, korak po korak ćemo razmotriti neke osnovne preporuke koje va
 ### Ažuriranja
 
 
-Ponoviću se ovde, ali svako ažuriranje koje izdaju programeri potencijalno uključuje važne sigurnosne zakrpe. Štaviše, pametni telefoni su izloženi brojnim rizicima zbog svoje velike površine napada: Preko mobilnih mreža, aplikacija trećih strana, bežičnih komunikacija (Wi-Fi, Bluetooth, NFC, itd.).
+Ponoviću se ovde, ali svako ažuriranje koje izdaju programeri potencijalno uključuje važne sigurnosne zakrpe. Štaviše, pametni telefoni su izloženi brojnim rizicima zbog svoje velike površine napada: preko mobilnih mreža, aplikacija trećih strana, bežičnih komunikacija (Wi-Fi, Bluetooth, NFC, itd.).
 
 
 Neprimenjivanje ovih ažuriranja znači namerno ostavljanje otvorenih poznatih ranjivosti, javno dokumentovanih u bazama podataka kao što je CVE (*Common Vulnerabilities and Exposures*). Ovi nedostaci se ponekad automatski eksploatišu alatima dostupnim na internetu, čak i bez potrebe za naprednim veštinama. To čini zastareli telefon idealnom metom, čak i za automatizovane napade velikih razmera.
@@ -6709,7 +6709,7 @@ Neprimenjivanje ovih ažuriranja znači namerno ostavljanje otvorenih poznatih r
 Stoga je neophodno omogućiti automatska ažuriranja u postavkama sistema i ručno proveravati svake nedelje da li vaš uređaj ima najnovije sigurnosne zakrpe. Na Androidu se to obično radi u `Settings > Security > System Update`, a na iOS-u u `Settings > General > Software Update`.
 
 
-#### Ažuriraj podršku
+#### Podrška za ažuriranja
 
 
 Nisu svi pametni telefoni jednaki kada je u pitanju podrška za softver. Mnogi uređaji početnog i srednjeg ranga prestaju da primaju kritične ažuriranja nakon samo dve ili tri godine, izlažući vas sve ozbiljnijim rizicima.
@@ -6721,10 +6721,10 @@ Međutim, neki brendovi imaju veoma dobru softversku podršku, posebno Google (7
 #### Koristite pouzdane prodavnice aplikacija
 
 
-Mobilne aplikacije predstavljaju veliki izvor rizika: Kroz njih prolazi većina modernog Android malvera. Instaliranje aplikacije putem `.apk` fajla primljenog sa nepoznatog sajta, ili iz necertifikovane prodavnice, znači preuzimanje rizika instaliranja programa koji je namerno zlonameran, ili modifikovan da uključuje funkcije špijuniranja ili krađe podataka.
+Mobilne aplikacije predstavljaju veliki izvor rizika: kroz njih prolazi većina modernog Android malvera. Instaliranje aplikacije putem `.apk` fajla primljenog sa nepoznatog sajta, ili sa nesertifikovane prodavnice, znači preuzimanje rizika instaliranja programa koji je namerno zlonameran, ili modifikovan da uključuje funkcije špijuniranja ili krađe podataka.
 
 
-Čak i na zvaničnim prodavnicama kao što su Google Play Store ili Apple App Store, morate ostati oprezni. Uprkos mehanizmima filtriranja, zlonamerne aplikacije redovno uspevaju da se provuku. Na primer, aplikacije "Sparrow wallet" ponekad se mogu videti na Play Store-u, iako ovaj softver postoji samo na računarima: Ovo je nesumnjivo prevarantska aplikacija.
+Čak i na zvaničnim prodavnicama kao što su Google Play Store ili Apple App Store, morate ostati oprezni. Uprkos mehanizmima filtriranja, zlonamerne aplikacije redovno uspevaju da se provuku. Na primer, aplikacija "Sparrow wallet" ponekad se mogla videti na Play Store-u, iako ovaj softver postoji samo na računarima: ovo je nesumnjivo prevarantska aplikacija.
 
 
 Pre nego što instalirate, odvojite vreme da proverite nekoliko stvari: potrebne dozvole, broj preuzimanja, ukupnu ocenu, datum poslednjeg ažuriranja i korisničke recenzije.
@@ -6736,22 +6736,22 @@ Na Androidu, alternativne prodavnice otvorenog koda kao što je [F-Droid](https:
 ![Image](assets/fr/140.webp)
 
 
-Pored Operativnog Sistema, aplikacije instalirane na vašem pametnom telefonu takođe treba redovno ažurirati. Možete aktivirati automatska ažuriranja putem podešavanja vaše prodavnice aplikacija i steći naviku da ručno proveravate ažuriranja barem jednom nedeljno.
+Pored operativnog Sistema, aplikacije instalirane na vašem pametnom telefonu takođe treba redovno ažurirati. Možete aktivirati automatska ažuriranja putem podešavanja vaše prodavnice aplikacija i steći naviku da ručno proveravate ažuriranja barem jednom nedeljno.
 
 
 Na Androidu, ako instalirate aplikacije putem `.apk` datoteka, moraćete ručno da upravljate ažuriranjima. Naime, ove aplikacije instalirane van zvaničnih kanala nemaju automatski mehanizam za ažuriranje. Zato ćete morati redovno da proveravate verzije koje su objavili programeri na GitHub-u ili na njihovoj zvaničnoj veb stranici.
 
 
-### Upravljaj dozvolama aplikacije
+### Upravljanje dozvolama aplikacije
 
 
-Na pametnom telefonu, bilo koja aplikacija može zatražiti direktan pristup osetljivim resursima: Mikrofon, kamera, precizna geografska pozicija, Address knjiga, fajlovi, SMS, senzori pokreta, itd. Takav pristup nije trivijalan: Tehnički, kada je dozvola odobrena, aplikacija može da je iskoristi u pozadini, na kontinuiranoj ili ad hoc osnovi, ponekad bez vidljive obaveštenja. Zato je važno primeniti princip najmanje privilegije: dati svakoj aplikaciji samo one dozvole koje su strogo neophodne za njeno minimalno funkcionisanje.
+Na pametnom telefonu, bilo koja aplikacija može zatražiti direktan pristup osetljivim resursima: mikrofon, kamera, precizna geografska pozicija, imenik, fajlovi, SMS, senzori pokreta, itd. Takav pristup nije trivijalan: tehnički, kada je dozvola odobrena, aplikacija može da je iskoristi u pozadini, na kontinuiranoj ili ad hoc osnovi, ponekad bez vidljive obaveštenja. Zato je važno primeniti princip najmanje privilegije: dati svakoj aplikaciji samo one dozvole koje su strogo neophodne za njeno minimalno funkcionisanje.
 
 
 ![Image](assets/fr/141.webp)
 
 
-Na primer, aplikacija za baterijsku lampu ne treba pristup vašim kontaktima ili geolokaciji. Aplikacija za vremensku prognozu može raditi sa ručnom lokalizacijom, bez pristupa GPS-u. Čitač PDF-a ne treba da koristi mikrofon ili SMS. Ako ste u nedoumici, uvek odbijte po defaultu, a zatim ponovo procenite ako aplikacija ne radi ispravno. Na nekim sistemima, moguće je i privremeno odobriti dozvole: ili za jednu upotrebu, ili samo kada je aplikacija pokrenuta. Ovo sprečava aplikaciju da koristi određene dozvole u pozadini bez vašeg znanja.
+Na primer, aplikaciji za baterijsku lampu ne treba pristup vašim kontaktima ili geolokaciji. Aplikacija za vremensku prognozu može raditi sa ručnom lokalizacijom, bez pristupa GPS-u. Čitač PDF-a ne treba da koristi mikrofon ili SMS. Ako ste u nedoumici, uvek odbijte po defaultu, a zatim ponovo procenite ako aplikacija ne radi ispravno. Na nekim sistemima, moguće je i privremeno odobriti dozvole: ili za jednu upotrebu, ili samo kada je aplikacija pokrenuta. Ovo sprečava aplikaciju da koristi određene dozvole u pozadini bez vašeg znanja.
 
 
 Android i iOS sada nude granularnu kontrolu dozvola. Možete ih upravljati po aplikaciji ili po tipu dozvole. Odvojite vreme, na primer jednom mesečno, da proverite aktivne dozvole putem podešavanja vašeg telefona.
