@@ -5653,7 +5653,7 @@ Da proverite da li vaš veb pregledač ostavlja jedinstveni otisak ili se stapat
 
 
 
-[Opera](https://www.opera.com/) je dugogodišnji pregledač, prisutan još od 1995. godine. Sada koristi Blink nakon što je napustio svoj vlasnički engine (*Presto*). Ima moderan Interface i neke inovativne funkcije.
+[Opera](https://www.opera.com/) je dugogodišnji pregledač, prisutan još od 1995. godine. Sada koristi Blink nakon što je napustio svoj vlasnički engine (*Presto*). Ima moderan interfejs i neke inovativne funkcije.
 
 
 
@@ -5679,11 +5679,11 @@ Pregledači zasnovani na Blink-u takođe uključuju brojne manje zastupljene pre
 
 
 
-Razvijen od strane The Browser Company, [Arc](https://arc.net/) nudi radikalno drugačiji pristup korisničkom Interface. Zamenjuje tradicionalne kartice sistemom "*prostora*", objedinjenu bočnu traku i integriše kreativne alate kao što su beležive snimke i jednostavan uređivač sajtova. Naglasak je na upotrebljivosti, vizuelnoj prilagodljivosti i fluidnosti korišćenja, što ovaj alat čini omiljenim kod nekih profesionalaca.
+Razvijen od strane The Browser Company, [Arc](https://arc.net/) nudi radikalno drugačiji pristup korisničkom interfejsu. Zamenjuje tradicionalne kartice sistemom "spaces", u prevodu "*prostora*", objedinjenu bočnu traku i integriše kreativne alate kao što su beležive snimke i jednostavan uređivač sajtova. Naglasak je na upotrebljivosti, vizuelnoj prilagodljivosti i fluidnosti korišćenja, što ovaj alat čini omiljenim kod nekih profesionalaca.
 
 
 
-Sa tehničke tačke gledišta, Arc je zasnovan na Chromium-u, ali ostaje vlasnički softver. Ne nudi transparentnost u vezi sa prikupljanjem podataka, a njegova politika privatnosti ostaje nejasna, posebno kada je reč o telemetriji i sinhronizaciji u oblaku. Stoga bi ga trebalo izbegavati sa stanovišta digitalnog suvereniteta.
+Sa tehničke tačke gledišta, Arc je zasnovan na Chromium-u, ali ostaje vlasnički softver. Ne nudi transparentnost u vezi sa prikupljanjem podataka, a njegova politika privatnosti ostaje nejasna, posebno kada je reč o telemetriji i sinhronizaciji u cloud-u. Stoga bi ga trebalo izbegavati sa stanovišta digitalnog suvereniteta.
 
 
 
@@ -5697,7 +5697,7 @@ Sa tehničke tačke gledišta, Arc je zasnovan na Chromium-u, ali ostaje vlasni�
 
 
 
-[Polypane](https://polypane.app/) je namenjen posebno front-end developerima i UX dizajnerima. Njegova glavna funkcija je da istovremeno prikazuje nekoliko instanci istog sajta na različitim rezolucijama ekrana, kako bi se testiralo *responzivno* ponašanje Interface u realnom vremenu. Takođe nudi alate za pristupačnost, HTML/CSS validatore, simulatore za daltonizam i metrike performansi.
+[Polypane](https://polypane.app/) je namenjen posebno front-end developerima i UX dizajnerima. Njegova glavna funkcija je da istovremeno prikazuje nekoliko instanci istog sajta na različitim rezolucijama ekrana, kako bi se testiralo *responzivno* ponašanje interfejsa u realnom vremenu. Takođe nudi alate za pristupačnost, HTML/CSS validatore, simulatore za daltonizam i metrike performansi.
 
 
 
@@ -5758,11 +5758,11 @@ Nedostatak je značajno smanjenje performansi (visoka latencija) i ograničena k
 
 #### Mullvad Browser
 
-[Mullvad Browser](https://mullvad.net/en/browser) je rezultat saradnje između Tor Foundation i Mullvad VPN. Baziran je na Tor pretraživaču, koji je sam po sebi izveden iz Firefox ESR. Mullvad Browser je dizajniran da maksimizira privatnost korisnika. Podrazumevano uključuje naprednu zaštitu protiv otiska prsta, tragača i skripti trećih strana.
+[Mullvad Browser](https://mullvad.net/en/browser) je rezultat saradnje između Tor Foundation i Mullvad VPN. Baziran je na Tor pretraživaču, koji je sam po sebi izveden iz Firefox ESR. Mullvad Browser je dizajniran da maksimizira privatnost korisnika. Podrazumevano uključuje naprednu zaštitu od praćenja putem fingerprintinga, tragača i skripti trećih strana.
 
 https://planb.academy/tutorials/computer-security/communication/mullvad-browser-a16c13d6-8bf9-4cb5-9aa0-85411a9cda0e
 
-Ima većinu sigurnosnih i privatnih funkcija koje nudi Tor Browser, sa jednom razlikom: ne preusmerava saobraćaj preko Tor mreže. Da biste izbegli curenje IP Address, možete ga koristiti u kombinaciji sa VPN-om (idealno, Mullvad VPN).
+Ima većinu sigurnosnih i privatnih funkcija koje nudi Tor Browser, sa jednom razlikom: ne preusmerava saobraćaj preko Tor mreže. Da biste izbegli curenje IP adrese, možete ga koristiti u kombinaciji sa VPN-om (idealno, Mullvad VPN).
 
 https://planb.academy/tutorials/computer-security/communication/mullvad-968ec5f5-b3f0-4d23-a9e0-c07a3e85aaa8
 
@@ -5796,11 +5796,11 @@ https://planb.academy/tutorials/computer-security/communication/librewolf-1783e9
 
 [Zen Browser](https://zen-browser.app/) je besplatan i otvoren izvorni pregledač zasnovan na Firefoxu (Gecko engine), pokrenut 2024. godine. Njegov cilj je da ponudi moderno, elegantno, visoko prilagodljivo i pre svega iskustvo pregledanja usmereno na privatnost, bez oslanjanja na Chromium.
 
-Zen se ističe svojim radikalnim pristupom Interface i upotrebljivošću, u velikoj meri inspirisan Arc pregledačem, ali oslobođen od njega svojom open-source prirodom i Gecko endžinom. Uključuje :
+Zen se ističe svojim radikalnim pristupom interfejsu i upotrebljivošću, u velikoj meri inspirisan Arc pregledačem, ali oslobođen od njega svojom open-source prirodom i Gecko engine-om. Uključuje :
 
-- Minimalistički, modularni Interface, sa vertikalnom bočnom trakom za kartice, podeljenim prikazom i *workspace* sistemom za grupisanje skupova kartica po projektu;
-- Sistem prilagodljivih Interface šablona (*Zen Mods*) koji se mogu koristiti za duboku izmenu izgleda pregledača;
-- Originalna funkcija pod nazivom *Glance*, koja otvara link u laganom privremenom prozoru, izbegavajući nered sa karticama...
+- Minimalistički, modularni interfejs, sa vertikalnom bočnom trakom za kartice, podeljenim prikazom i *workspace* sistemom za grupisanje skupova kartica po projektu;
+- Sistem prilagodljivih interfejs šablona (*Zen Mods*) koji se mogu koristiti za značajno prilagođavanje vizuelnog izgleda pregledača;
+- Originalna funkcija pod nazivom *Glance*, koja otvara link u privremenom „laganom“ prozoru, izbegavajući nered sa karticama...
 
 Zen takođe podržava ekstenzije za Firefox, kao i sinhronizaciju putem Mozilla naloga.
 
@@ -5814,7 +5814,7 @@ https://planb.academy/tutorials/computer-security/communication/zen-browser-f1af
 
 #### Safari
 
-Glavni pregledač koji još uvek koristi WebKit rendering engine (nije Fork kao Blink) je Safari. [Safari](https://www.apple.com/safari/) je ekskluzivni pregledač kompanije Apple za macOS. Nudi odličnu integraciju sa Apple ekosistemom, visoke performanse, i sada uključuje jaču zaštitu protiv praćenja i fingerprintinga.
+Glavni pregledač koji još uvek koristi WebKit rendering engine (nije fork kao Blink) je Safari. [Safari](https://www.apple.com/safari/) je ekskluzivni pregledač kompanije Apple za macOS. Nudi odličnu integraciju sa Apple ekosistemom, visoke performanse, i sada uključuje jaču zaštitu protiv praćenja i fingerprintinga.
 
 Međutim, Safari ostaje zatvoren, ograničen na macOS za svoju desktop verziju, i zavisan od Apple ekosistema. Iako Apple ima snažnu politiku privatnosti, sa poslovnim modelom koji se prvenstveno zasniva na prodaji hardvera, a ne na oglašavanju, ostaje nejasno u vezi sa određenim internim praksama.
 
@@ -5830,7 +5830,7 @@ Ovde se fokusiramo na desktop pregledače, ali je važno napomenuti da na iOS-u,
 
 
 
-Zanimljiva alternativa za Safari je [Orion](https://kagi.com/orion/), moderan pregledač dizajniran isključivo za Apple ekosistem, takođe baziran na WebKit-u. Njegov cilj je da ponudi brzu, laganu i duboko privatnost-poštujuću alternativu, bez kompromisa na naprednim funkcijama.
+Zanimljiva alternativa za Safari je [Orion](https://kagi.com/orion/), moderan pregledač dizajniran isključivo za Apple ekosistem, takođe baziran na WebKit-u. Njegov cilj je da ponudi brzu, laganu i sa snažnom zaštitom privatnosti alternativu, bez žrtvovanja naprednih funkcionalnosti.
 
 
 
@@ -5842,7 +5842,7 @@ Orion se razlikuje od Safarija u nekoliko tehničkih aspekata:
 - Usvaja strogu politiku nulte telemetrije: podaci se ne prikupljaju niti prenose po defaultu, uključujući tokom početne instalacije;
 - Podrazumevano uključuje blokator oglasa i tragača, koji je po efikasnosti u većini slučajeva uporediv sa *uBlock Origin*;
 - Izvorno podržava instalaciju i korišćenje ekstenzija za Chrome i Firefox na macOS-u;
-- Korisni alati uključuju *Focus* režim(Interface-besplatna navigacija), režim niske potrošnje i upravljanje vertikalnim karticama.
+- Korisni alati uključuju *Focus* režim(navigacija bez interfejsa), režim niske potrošnje i upravljanje vertikalnim karticama.
 
 
 
@@ -5851,7 +5851,7 @@ Orion je u potpunosti razvijen od strane Kagi tima (poznatog po svom pretraživa
 
 
 https://planb.academy/tutorials/computer-security/communication/orion-browser-a5f225d4-946f-425a-8d8e-3a3ec0174a76
-### Pregledači bez renderovanja motora
+### Pregledači bez rendererskih mehanizama
 
 
 
@@ -5859,7 +5859,7 @@ Na kraju, želeo bih da završim ovaj pregled sa mnogo manje poznatom i veoma ma
 
 
 
-Lynx je najstariji veb pregledač koji se još uvek održava (1992). Radi isključivo u tekstualnom režimu i koristi se direktno u terminalu, bez ikakvog grafičkog Interface. Tehnički, Lynx ne podržava JavaScript, CSS ili slike, što eliminiše bilo kakvo aktivno izvršavanje koda na veb stranicama. On samo interpretira sirovi HTML kod, koji prikazuje kao strukturirani tekst.
+Lynx je najstariji veb pregledač koji se još uvek održava (1992). Radi isključivo u tekstualnom režimu i koristi se direktno u terminalu, bez ikakvog grafičkog interfejsa. Tehnički, Lynx ne podržava JavaScript, CSS ili slike, što eliminiše bilo kakvo aktivno izvršavanje koda na veb stranicama. On samo interpretira sirovi HTML kod, koji prikazuje kao strukturirani tekst.
 
 
 
@@ -5871,7 +5871,7 @@ Ovaj radikalno minimalistički pristup čini ga jednim od najsigurnijih pretraž
 
 
 
-Ovaj model očigledno ima velike ograničenja: potpuni izostanak grafičkog prikaza, nemogućnost korišćenja većine modernih veb-sajtova (mnogi od kojih zavise od JavaScript-a) i stroga ergonomija namenjena iskusnim korisnicima.
+Ovaj model očigledno ima velike ograničenja: potpuni izostanak grafičkog prikaza, nemogućnost korišćenja većine modernih veb-sajtova (mnogi zavise od JavaScript-a) i stroga ergonomija namenjena iskusnim korisnicima.
 
 
 
@@ -5880,11 +5880,11 @@ Lynx može i dalje biti zanimljiv u određenim vrlo specifičnim kontekstima:
 
 
 
-- Pregledajte sirove HTML web stranice, bez izvršavanja JavaScript-a ili CSS-a;
+- Pregledanje čiste, neobrađene HTML web stranice, bez izvršavanja JavaScript-a ili CSS-a;
 - Pregledanje u minimalističkim okruženjima;
 - Pregledanje u ultra-sigurnim okruženjima;
 - Pregledanje na veoma sporim ili nestabilnim mrežama;
-- Automatizacija ili scraping.
+- Automatizacija ili prikupljanje podataka (scraping).
 
 
 
@@ -5904,7 +5904,7 @@ Za još viši nivo anonimnosti, uz smanjenje performansi, Tor Browser ostaje naj
 
 
 
-Chrome, uprkos svojoj popularnosti, ne može se preporučiti kao deo pristupa digitalnom suverenitetu, jer Google sistematski stavlja svoje komercijalne interese iznad bilo kakve stvarne zaštite privatnosti. Zato ne preporučujem njegovo korišćenje.
+Chrome, uprkos svojoj popularnosti, ne preporučuje se kao sastavni deo strategije digitalne suverenosti, jer Google sistematski stavlja svoje komercijalne interese iznad bilo kakve stvarne zaštite privatnosti. Zato ne preporučujem njegovo korišćenje.
 
 
 
@@ -5912,12 +5912,12 @@ Danas vaš izbor pregledača igra važnu ulogu u vašoj online sigurnosti i priv
 
 
 
-Evo kratkog pregleda da vam pomogne u izboru (imajte na umu, međutim, da se ovo poređenje moglo razvijati tokom vremena od kada je SCU202 napisan, a procena Interface i njegovih karakteristika je prvenstveno stvar ličnog ukusa):
+Evo kratkog pregleda da vam pomogne u izboru (imajte na umu, međutim, da se ovo poređenje moglo razvijati tokom vremena od kada je SCU202 napisan, a procena interfejsa i njegovih karakteristika je prvenstveno stvar ličnog ukusa):
 
 
 
-| Browser      | Privacy | Speed | Features | Interface | Open source | Resource consumption |
-| --------------- | --------------- | ------- | --------------- | --------- | ----------- | ----------------------- |
+| Pregledač       | Privatnost      | Brzina | Funkcionalnosti | Interfejs | Otvorenog koda | Potrošnja resursa |
+| --------------- | --------------- | -------| --------------- | --------- | -------------- | ------------------|
 | Google Chrome   | 🔴              | 🟢      | 🟢              | 🟢        | 🔴          | 🔴                      |
 | Brave           | 🟡              | 🟢      | 🟢              | 🟢        | 🟢          | 🟡                      |
 | Vivaldi         | 🟡              | 🟢      | 🟢              | 🟢        | 🔴          | 🟡                      |
@@ -5933,11 +5933,11 @@ Evo kratkog pregleda da vam pomogne u izboru (imajte na umu, međutim, da se ovo
 | Orion           | 🟡              | 🟢      | 🟢              | 🟢        | 🔴          | 🟢                      |
 | Zen Browser     | 🟢              | 🟡      | 🟢              | 🟢        | 🟢          | 🟡                      |
 
-U sledećem poglavlju, pogledaćemo najbolje prakse za bezbedno surfovanje internetom, uz minimiziranje izloženosti vaše privatnosti.
+U sledećem poglavlju, pogledaćemo najbolje prakse za bezbedno surfovanje internetom, istovremeno smanjujući rizik po vašu privatnost.
 
 
 
-## Najbolje prakse u korišćenju weba
+## Najbolje prakse u korišćenju web-a
 
 
 <chapterId>ded47ada-0569-4e63-b668-0da042e691d5</chapterId>
@@ -5948,7 +5948,7 @@ U prethodnom poglavlju, prošli smo kroz detalje glavnih pregledača koji su tre
 
 
 
-Međutim, čak ni najbezbedniji pregledač nije dovoljan: način na koji ga koristite ostaje ključan za zaštitu vaše digitalne bezbednosti. U ovom poglavlju, detaljno ćemo razmotriti osnovne najbolje prakse za minimiziranje rizika povezanih sa svakodnevnom upotrebom interneta.
+Međutim, čak ni najbezbedniji pregledač nije dovoljan: način na koji ga koristite ostaje ključan za zaštitu vaše digitalne bezbednosti. U ovom poglavlju, detaljno ćemo razmotriti osnovne i najbolje prakse za minimiziranje rizika povezanih sa svakodnevnom upotrebom interneta.
 
 
 
@@ -5956,7 +5956,7 @@ Međutim, čak ni najbezbedniji pregledač nije dovoljan: način na koji ga kori
 
 
 
-Veb pregledač je jedna od najizloženijih softverskih komponenti u računarskom sistemu. Za razliku od većine drugih programa, on obrađuje dinamički sadržaj sa Interneta u realnom vremenu, što je suštinski nepouzdano. Kada se vebsajt učita, pregledač izvršava udaljeni kod, koji direktno komunicira sa vašim sistemom putem renderovanja.
+Veb pregledač je jedna od najizloženijih softverskih komponenti u računarskom sistemu. Za razliku od većine drugih programa, on obrađuje dinamički sadržaj sa interneta u realnom vremenu, što je suštinski nepouzdano. Kada se vebsajt učita, pregledač izvršava udaljeni kod, koji direktno komunicira sa vašim sistemom putem renderovanja.
 
 
 
@@ -5964,7 +5964,7 @@ Ova tehnička složenost, u kombinaciji sa masivnom površinom napada, čini pre
 
 
 
-Da bi smanjili ove rizike, izdavači pregledača objavljuju veoma česte, često nedeljne, ažuriranja koja ispravljaju ove ranjivosti čim se identifikuju. Ove zakrpe nisu ograničene na Interface ili poboljšanja performansi: one aktivno blokiraju stvarne, dokumentovane napade.
+Da bi smanjili ove rizike, izdavači pregledača objavljuju veoma česte, često nedeljne, ažuriranja koja ispravljaju ove ranjivosti čim se identifikuju. Ove zakrpe nisu ograničene na interfejs ili poboljšanja performansi: one aktivno blokiraju stvarne, dokumentovane napade.
 
 
 
@@ -5977,7 +5977,7 @@ Stoga je imperativ:
 
 
 
-- omogući automatska ažuriranja za svoj pregledač i ručno proveravaj redovno da nema dostupnih ažuriranja;
+- omogućiti automatska ažuriranja svog pregledača i redovno ručno proveravati da nema dostupnih ažuriranja;
 - ili, ako koristite ručno upakovanu verziju (npr. putem `apt`, `flatpak` ili `snap` na Linuxu), redovno ažurirajte ceo sistem putem vašeg menadžera paketa.
 
 
@@ -5988,7 +5988,7 @@ Da ručno proverite verziju i pokrenete ažuriranje:
 
 
 - u Firefoxu: `Meni > Postavke > Ažuriranja Firefoxa`;
-- komandna linija pod Linuxom (`apt` paketi):
+- komandna linija u Linux-u (`apt` paketi):
 
 
 
