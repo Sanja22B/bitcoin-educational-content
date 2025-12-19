@@ -4900,7 +4900,7 @@ Metapodaci su podaci priloženi datoteci, čija je uloga da pruže kontekstualne
 
 Ovi metapodaci mogu izgledati bezopasno, ali ih zlonamerni akteri mogu iskoristiti da identifikuju autora datoteke, fizički lociraju osobu, rekonstruišu događaje ili navike, ili čak iskoriste softverske nedostatke na osnovu verzije korišćenog softvera.
 
-Hajde da uzmemo konkretan primer: postavite navodno anonimnu fotografiju na forum. Ako niste uklonili EXIF metapodatke, jednim klikom se mogu otkriti tačne GPS koordinate vašeg doma, model vašeg telefona i tačan datum kada je fotografija snimljena. Slično tome, PDF dokument poslat anonimno može sadržati vaše puno ime u svojim svojstvima.
+Hajde da uzmemo konkretan primer: postavite navodno anonimnu fotografiju na forum. Ako niste uklonili EXIF metapodatke, jednim klikom se mogu otkriti tačne GPS koordinate vašeg doma, model vašeg telefona i tačan datum kada je fotografija snimljena. Slično tome, PDF dokument poslat anonimno može u svojim metapodacima sadržati vaše puno ime.
 
 Zato neke medijske platforme za objavljivanje i komunikaciju automatski uklanjaju metapodatke sa vaših fotografija. To uključuje X (Twitter), Instagram, Signal i Session. S druge strane, druge platforme uopšte ne uklanjaju metapodatke: to je slučaj sa većinom online foruma, mnogim e-mail klijentima, ili čak kada objavljujete direktno na vebsajtu.
 
@@ -4931,7 +4931,7 @@ Ovaj paket instalira `exiftool`, koji zatim možete koristiti direktno iz komand
 
 
 
-- Korak 2: **Pregledanje metapodataka datoteke** (na francuskom)
+- Korak 2: **Pregledanje metapodataka datoteke** 
 
 
 
@@ -5107,11 +5107,11 @@ mat2 ~/Downloads/*
 
 
 
-Na Windows-u i macOS-u, postoji nekoliko metoda za uklanjanje metapodataka iz vaših dokumenata. Po mom mišljenju, najlakša je korišćenje open source softvera [ExifCleaner](https://exifcleaner.com/). Ovaj lagani alat ima grafički Interface i može da obradi većinu formata datoteka jednostavnim prevlačenjem i ispuštanjem. Prevlačenjem jedne ili više datoteka na Interface, softver automatski uklanja nepotrebne metapodatke i zamenjuje originalne datoteke u istom direktorijumu. ExifCleaner je dostupan za Windows, macOS i Linux.
+Na Windows-u i macOS-u, postoji nekoliko metoda za uklanjanje metapodataka iz vaših dokumenata. Po mom mišljenju, najlakša je korišćenje open source softvera [ExifCleaner](https://exifcleaner.com/). Ovaj lagani alat ima grafički interfejs i može da obradi većinu formata datoteka jednostavnim prevlačenjem i ispuštanjem. Prevlačenjem jedne ili više datoteka unutar interfejsa, softver automatski uklanja nepotrebne metapodatke i zamenjuje originalne datoteke u istom direktorijumu. ExifCleaner je dostupan za Windows, macOS i Linux.
 
 
 
-Izuzetno je lako za korišćenje: samo pokrenite softver, zatim prevucite i otpustite jednu ili više datoteka u prozor.
+Izuzetno je lak za korišćenje: samo pokrenite softver, zatim prevucite i otpustite jednu ili više datoteka u prozor.
 
 
 
@@ -5143,18 +5143,18 @@ Došli smo do kraja ovog dela o obezbeđivanju vašeg računara. U sledećem del
 
 
 
-## Kratka istorija navigatora
+## Kratka istorija veb pregledača
 
 
 <chapterId>ac6d2c23-5883-4564-b6a9-bc109b47f92c</chapterId>
 
 
 
-Veb pregledač je softver koji vam omogućava pristup veb sajtovima i sadržaju dostupnom na *World Wide Web*-u. Njegova uloga je da interpretira jezike korišćene za kreiranje veb stranica, posebno HTML, CSS i JavaScript, kako bi prikazao sadržaj sajta na čitljiv i interaktivan način. Djeluje kao Interface između korisnika i veb servera, šaljući zahteve i primajući odgovore putem HTTP ili HTTPS protokola.
+Veb pregledač je softver koji vam omogućava pristup veb sajtovima i sadržaju dostupnom na *World Wide Web*-u. Njegova uloga je da interpretira jezike korišćene za kreiranje veb stranica, posebno HTML, CSS i JavaScript, kako bi prikazao sadržaj sajta na čitljiv i interaktivan način. Djeluje kao interfejs između korisnika i veb servera, šaljući zahteve i primajući odgovore putem HTTP ili HTTPS protokola.
 
 
 
-Ali danas je pregledač postao mnogo više od samo softverskog programa: često je glavni Interface u računarstvu, posebno za početnike. Zato se ponekad smatra "sekundarnim operativnim sistemom" unutar stvarnog operativnog sistema (koji smo proučavali u prvom delu SCU202). Zaista, mnogi zadaci koji su se ranije obavljali korišćenjem specijalizovanog lokalnog softvera sada se direktno izvršavaju putem pregledača: zabava, kancelarijski poslovi (obrada teksta, tabele, prezentacije), upravljanje e-poštom, razmena poruka, skladištenje fajlova i kolaborativni rad.
+Ali danas je pregledač postao mnogo više od samo softverskog programa: često je glavni interfejs u računarstvu, posebno za početnike. Zato se ponekad smatra "sekundarnim operativnim sistemom" unutar stvarnog operativnog sistema (koji smo proučavali u prvom delu SCU202). Zaista, mnogi zadaci koji su se ranije obavljali korišćenjem specijalizovanog lokalnog softvera sada se direktno izvršavaju putem pregledača: zabava, kancelarijski poslovi (obrada teksta, tabele, prezentacije), upravljanje e-poštom, razmena poruka, skladištenje fajlova i kolaborativni rad.
 
 
 
@@ -5166,7 +5166,7 @@ Ipak, nije oduvek imao ovu centralnu ulogu. Istorija pregledača obeležena je c
 
 
 
-### Rođenje i prvi navigatori
+### Rođenje i prvi veb pregledači
 
 
 
