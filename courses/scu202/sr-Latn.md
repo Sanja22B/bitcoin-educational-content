@@ -5166,11 +5166,11 @@ Ipak, nije oduvek imao ovu centralnu ulogu. Istorija pregledača obeležena je c
 
 
 
-### Rođenje i prvi veb pregledači
+### Nastanak i prvi veb pregledači
 
 
 
-Istorija veb pretraživača počinje sa rođenjem *World Wide Web*-a, koji je izumeo Tim Berners-Li 1989-1990. To je sistem za pristupanje stranicama koje sadrže tekst, slike, video zapise ili linkove putem Interneta, koristeći veb pretraživač. Da bi ovaj novi sistem bio dostupan, u jesen 1990. godine razvio je prvi pretraživač, nazvan "WorldWideWeb", koji je postavio temelje za pretraživanje kakvo danas poznajemo. Omogućava i pregledanje i kreiranje veb stranica, uključujući integrisani HTML editor. Da bi se izbegla bilo kakva zabuna između pretraživača i samog Veba, njegovo ime je kasnije promenjeno u "Nexus".
+Istorija veb pretraživača počinje sa rođenjem *World Wide Web*-a, koji je izumeo Tim Berners-Li 1989-1990. To je sistem za pristupanje stranicama koje sadrže tekst, slike, video zapise ili linkove putem interneta, koristeći veb pretraživač. Da bi ovaj novi sistem bio dostupan, u jesen 1990. godine razvio je prvi pretraživač, nazvan "WorldWideWeb", koji je postavio temelje za pretraživanje kakvo danas poznajemo. Omogućava i pregledanje i kreiranje veb stranica, uključujući integrisani HTML editor. Da bi se izbegla bilo kakva zabuna između pretraživača i samog Veba (eng. Web), njegovo ime je kasnije promenjeno u "Nexus".
 
 
 
@@ -5178,7 +5178,7 @@ Istorija veb pretraživača počinje sa rođenjem *World Wide Web*-a, koji je iz
 
 
 
-Godine 1992. pojavilo se nekoliko drugih eksperimentalnih pregledača. Jedan od najznačajnijih bio je Erwise, razvijen od strane četiri finska studenta za Unix-bazirani X Window System. Bio je to prvi pregledač koji je imao grafički Interface za ovu vrstu okruženja. Uprkos tehničkim prednostima, patio je od nedostatka finansiranja i nije bio održavan nakon svoje prve verzije. Drugi projekti, kao što je ViolaWWW, takođe su se pojavili tokom ovog perioda.
+Godine 1992. pojavilo se nekoliko drugih eksperimentalnih pregledača. Jedan od najznačajnijih bio je Erwise, razvijen od strane četiri finska studenta za Unix-bazirani X Window System. Bio je to prvi pregledač koji je imao grafički interfejs za ovu vrstu okruženja. Uprkos tehničkim prednostima, patio je od nedostatka finansiranja i nije bio održavan nakon svoje prve verzije. Drugi projekti, kao što je ViolaWWW, takođe su se pojavili tokom ovog perioda.
 
 
 
@@ -5210,7 +5210,7 @@ Zahvaljujući lakoći korišćenja, kompatibilnosti sa različitim platformama i
 
 
 
-### Od ratova pretraživača do doba monopola
+### Od ratova veb pregledača do doba monopola
 
 
 
@@ -5218,7 +5218,7 @@ Meteorijski uspeh Netscape Navigatora sredinom 1990-ih nije promakao Microsoftu,
 
 
 
-Prva verzija Internet Explorera bila je još uvek rudimentarna, ali Microsoft je započeo agresivnu politiku razvoja. Godine 1996, sa Internet Explorerom 3.0, Microsoft je počeo da integriše svoj pregledač direktno u Windows operativni sistem, eliminišući potrebu za preuzimanjem pregledača treće strane. Ova integracija je ojačana sa Internet Explorerom 4.0 iz 1997. godine, koji je uveo novi vlasnički rendering engine nazvan Trident. Ovaj engine značajno poboljšava brzinu prikaza stranica i duboko se integriše sa Windows Interface.
+Prva verzija Internet Explorer-a bila je još uvek rudimentarna, ali Microsoft je započeo agresivnu politiku razvoja. Godine 1996, sa Internet Explorerom 3.0, Microsoft je počeo da integriše svoj pregledač direktno u Windows operativni sistem, eliminišući potrebu za preuzimanjem pregledača treće strane. Ova integracija je ojačana sa Internet Explorerom 4.0 iz 1997. godine, koji je uveo novi vlasnički rendering engine nazvan Trident. Ovaj engine značajno poboljšava brzinu prikaza stranica i duboko se integriše sa Windows interfejsom.
 
 
 
@@ -5233,11 +5233,11 @@ Strategija Microsofta zasniva se na nekoliko tehničkih i komercijalnih poluga:
 
 - izvorna integracija Internet Explorera u Windows (preinstaliran po defaultu i ne može se deinstalirati u to vreme);
 - besplatan pregledač, u poređenju sa Netscape-om, koji je do tada ostao komercijalan;
-- kontrola API-ja i operativnog sistema kako bi favorizovali njihov matični pregledač u Windows okruženju.
+- kontrola API-ja i operativnog sistema kako bi se u Windows okruženju dao prioritet njihovom sopstvenom pregledaču.
 
 
 
-Suočena sa ovom konkurencijom, Netscape je brzo izgubio tlo. Za manje od tri godine, njen tržišni udeo je drastično opao. Do ranih 2000-ih, Internet Explorer je držao preko 95% tržišnog udela, čineći sve druge pretraživače gotovo marginalnim.
+Suočen sa ovom konkurencijom, Netscape je brzo počeo da gubi poziciju. Za manje od tri godine, njegov tržišni udeo se drastično smanjio. Do ranih 2000-ih, Internet Explorer je držao preko 95% tržišnog udela, čineći sve druge pretraživače gotovo marginalnim.
 
 
 
@@ -5245,15 +5245,14 @@ Suočena sa ovom konkurencijom, Netscape je brzo izgubio tlo. Za manje od tri go
 
 
 
-Ovaj virtuelni monopol doveo je do značajnog usporavanja inovacija. Bez ozbiljne konkurencije, Microsoft je dozvolio da razvoj Internet Explorera stagnira. Između IE6 (izdatog 2001. sa Windows XP) i njegove naredne verzije IE7 (2006), nije izdata nijedna glavna verzija, uprkos bezbednosnim ranjivostima, CSS nekompatibilnostima i neusklađenosti sa W3C standardima. Ova tehnološka inercija zadržala je modernizaciju Weba nekoliko godina unazad i primorala programere da kodiraju specifično za Tridentove greške ili nepredvidivo ponašanje.
-
+Ovaj virtuelni monopol doveo je do značajnog usporavanja inovacija. Bez ozbiljne konkurencije, Microsoft je dozvolio da razvoj Internet Explorera stagnira. Između IE6 (izdatog 2001. sa Windows XP) i njegove naredne verzije IE7 (2006), nije izdata nijedna glavna verzija, uprkos bezbednosnim ranjivostima, CSS nekompatibilnostima i neusklađenosti sa W3C standardima. Ova tehnološka inertnost je godinama usporavala modernizaciju veba i primoravala programere da pišu kod posebno prilagođen bagovima ili nepredvidivom ponašanju Tridenta.
 
 
 Svestan da više ne može komercijalno konkurisati, Netscape je odlučio da objavi svoj izvorni kod zajednici 1998. godine. Ovo je bio početak Mozilla projekta, koji je označio prekretnicu: razvoj besplatnog, standardima usklađenog pregledača, podržanog od strane nezavisne fondacije.
 
 
 
-Cilj ovog projekta je potpuno obnoviti pregledač na novim temeljima, sa modernijim renderovanjem koje će poštovati otvorene Web standarde. Cilj je bio jasan: vratiti otvorenost i interoperabilnost Webu, suočenom sa dominacijom Internet Explorera. Iz ovog projekta je, nekoliko godina kasnije, nastao Mozilla Firefox.
+Cilj ovog projekta je potpuno obnoviti pregledač na novim temeljima, sa modernijim renderovanjem koje će poštovati otvorene Web standarde. Cilj je bio jasan: vratiti vebu otvorenost i interoperabilnost, nasuprot stezi u kojoj ga je držao Internet Explorer. Iz ovog projekta je, nekoliko godina kasnije, nastao Mozilla Firefox.
 
 
 
@@ -5261,11 +5260,11 @@ Cilj ovog projekta je potpuno obnoviti pregledač na novim temeljima, sa moderni
 
 
 
-Nakon nekoliko godina stagnacije zbog virtuelnog monopola Internet Explorera, web je ušao u fazu tehnološkog obnavljanja početkom 2000-ih. Ovu prekretnicu su inicirala dva velika igrača: Mozilla i Apple.
+Nakon nekoliko godina stagnacije zbog virtuelnog monopola Internet Explorer-a, veb je ušao u fazu tehnološkog obnavljanja početkom 2000-ih. Ovu prekretnicu su inicirala dva velika igrača: Mozilla i Apple.
 
 
 
-Godine 2002, Mozilla projekat, nastao iz objavljivanja izvornog koda Netscape-a, lansirao je novi pregledač: Phoenix, brzo preimenovan u Firebird, a zatim konačno u Firefox 2004. godine kako bi se izbegli sukobi u imenovanju. Firefox je bio zasnovan na potpuno novom renderovanju, nazvanom Gecko, dizajniranom da bude brz, proširiv i, pre svega, veran standardima Veba koje je definisao W3C (*World Wide Web Consortium*). Za razliku od Tridenta, Gecko podržava moderne tehnologije kao što su CSS 2.1, DOM i SVG (*Scalable Vector Graphics*), zajedno sa poboljšanim upravljanjem bezbednošću.
+Godine 2002, Mozilla projekat, koji je nastao objavljivanjem izvornog koda Netscape-a, lansirao je novi pregledač: Phoenix, brzo preimenovan u Firebird, a zatim konačno u Firefox 2004. godine kako bi se izbegli sukobi u imenovanju. Firefox je bio zasnovan na potpuno novom renderovanju, nazvanom Gecko, dizajniranom da bude brz, proširiv i, pre svega, veran standardima Web-a koje je definisao W3C (*World Wide Web Consortium*). Za razliku od Tridenta, Gecko podržava moderne tehnologije kao što su CSS 2.1, DOM i SVG (*Scalable Vector Graphics*), uz unapređeno upravljanje bezbednošću.
 
 
 
@@ -5273,8 +5272,7 @@ Godine 2002, Mozilla projekat, nastao iz objavljivanja izvornog koda Netscape-a,
 
 
 
-Firefox je takođe uveo nekoliko inovacija koje bi imale trajan uticaj na pretraživanje interneta:
-
+Firefox je takođe uveo nekoliko inovacija koje su imale trajan uticaj na veb pregledače:
 
 
 
@@ -5284,11 +5282,11 @@ Firefox je takođe uveo nekoliko inovacija koje bi imale trajan uticaj na pretra
 
 
 
-Njegova mala težina, fleksibilnost i poštovanje standarda brzo su privukli napredne korisnike, web programere i sve koji su tražili otvoreniju alternativu Internet Exploreru. Do 2005. godine, Firefox je premašio 10% tržišnog udela, što je značajno dostignuće protiv pretraživača koji je unapred instaliran na svim Windows računarima.
+Zbog svoje male težine, fleksibilnosti i poštovanja standarda, brzo je osvojio napredne korisnike, veb developere i sve koji su želeli otvoreniju alternativu Internet Exploreru. Do 2005. godine, Firefox je premašio 10% tržišnog udela, što je značajno dostignuće protiv pretraživača koji je unapred instaliran na svim Windows računarima.
 
 
 
-U međuvremenu, Apple je razvijao sopstveni izvorni pregledač za macOS. U januaru 2003. godine, Safari je zvanično pušten. Baziran je na WebKit-u, open source render engine-u izvedenom iz KHTML-a, koji je prvobitno razvijen od strane KDE projekta za njihov Konqueror pregledač. WebKit je cenjen zbog svoje lakoće, brzine i jednostavnosti prenosivosti. Apple je uveo brojne interne optimizacije, posebno za JavaScript obradu, što je postajalo ključno pitanje sa porastom interaktivnih web aplikacija.
+U međuvremenu, Apple je razvijao sopstveni izvorni pregledač za macOS. U januaru 2003. godine, Safari je zvanično pušten. Baziran je na WebKit-u, open source render engine-u izvedenom iz KHTML-a, koji je prvobitno razvijen od strane KDE projekta za njihov Konqueror pregledač. WebKit je cenjen zbog svoje lakoće, brzine i jednostavne prenosivosti. Apple je uveo brojne interne optimizacije, posebno za JavaScript obradu, što je postajalo ključno pitanje sa porastom interaktivnih web aplikacija.
 
 
 
@@ -5300,7 +5298,7 @@ Safari je postao podrazumevani pregledač na svim Mac računarima počevši od M
 
 
 
-Ove inicijative su oživele tehnološku konkurenciju, postepeno slabeći dominaciju Internet Explorera i otvarajući put za novu generaciju pregledača koji su brži, više usklađeni sa standardima i više fokusirani na modularnost, sigurnost i performanse. Između 2006. i 2008. godine, Internet Explorer je polako gubio tržišni udeo, dok se Firefox etablirao kao glavna ozbiljna alternativa. Ovaj kontekst je otvorio put za dolazak novog velikog igrača: Google Chrome.
+Ove inicijative su oživele tehnološku konkurenciju, postepeno slabeći dominaciju Internet Explorer-a i otvarajući put za novu generaciju pregledača koji su brži, više usklađeni sa standardima i više fokusirani na modularnost, sigurnost i performanse. Između 2006. i 2008. godine, Internet Explorer je polako gubio tržišni udeo, dok se Firefox etablirao kao glavna ozbiljna alternativa. Ovaj kontekst je otvorio put za dolazak novog velikog igrača: Google Chrome.
 
 
 
@@ -5326,7 +5324,7 @@ Chrome je u početku bio zasnovan na dva tehnička stuba:
 
 
 
-Ali pravi proboj Chrome-a dolazi iz njegove arhitekture sa više procesa. Svaka kartica radi u izolovanom procesu, koristeći tehniku peskovnika koja sprečava zlonamernu stranicu da ugrozi ceo pregledač. Ova izolacija takođe poboljšava stabilnost: ako jedna kartica padne, ostale ostaju funkcionalne. Pored toga, tu je minimalistički, na sadržaj usmeren Interface, bez menija, kombinovani Address i traka za pretragu (*Omnibox*), i tihi ažuriranja u pozadini.
+Ali pravi proboj Chrome-a dolazi iz njegove arhitekture sa više procesa. Svaka kartica radi u izolovanom procesu, koristeći sanboxing tehniku koja sprečava zlonamernu stranicu da ugrozi ceo pregledač. Ova izolacija takođe poboljšava stabilnost: ako jedna kartica padne, ostale ostaju funkcionalne. Pored toga, tu je minimalistički, na sadržaj usmeren interfejs, bez menija, kombinovana adresna i traka za pretragu (*Omnibox*), kao i automatska ažuriranja u pozadini koja ne ometaju korisnika.
 
 
 
@@ -5338,7 +5336,7 @@ Podržan Google-ovim brendom i veoma efikasnom marketinškom kampanjom, Chrome j
 
 
 
-Godine 2013, Google je najavio veliku stratešku promenu: Fork WebKit kako bi kreirao novi nezavisni rendering engine, nazvan Blink. Ovaj Fork je objašnjen tehničkim i organizacionim razlikama sa Apple-om, posebno oko arhitekture engine-a i integracije eksperimentalnih funkcija. Blink je postao ekskluzivni engine za Chrome od verzije 28 nadalje, a kasnije su ga usvojili i mnogi drugi pretraživači: Opera (koja je napustila Presto 2013. godine), Vivaldi, Brave, Microsoft Edge (od 2020. godine) i drugi.
+Godine 2013, Google je najavio veliku stratešku promenu: odvojio je (forkovao) WebKit kako bi kreirao novi, nezavisni rendererski mehanizam, nazvan Blink. Ovaj fork je objašnjen tehničkim i organizacionim razlikama sa Apple-om, posebno oko arhitekture engine-a i integracije eksperimentalnih funkcija. Blink je postao ekskluzivni engine za Chrome od verzije 28 nadalje, a kasnije su ga usvojili i mnogi drugi pretraživači: Opera (koja je napustila Presto 2013. godine), Vivaldi, Brave, Microsoft Edge (od 2020. godine) i drugi.
 
 
 
@@ -5350,15 +5348,15 @@ Chrome je duboko redefinisao performanse, bezbednosne i ergonomske standarde mod
 
 
 
-### Evolucija rendernih endžina: od Tridenta do Blinka
+### Evolucija rendering engine-a: od Tridenta do Blinka
 
 
 
-Mehanizam za renderovanje je osnovna komponenta web pregledača. Njegova glavna uloga je interpretacija datoteka primljenih sa servera (HTML, CSS, JavaScript, slike, fontovi...) u generate interaktivni grafički Interface. Mehanizam za renderovanje je poput prevodioca između web jezika i vašeg ekrana, prevodeći linije koda u vizuelno koherentnu, interaktivnu i funkcionalnu stranicu.
+Mehanizam za renderovanje je osnovna komponenta web pregledača. Njegova glavna uloga je interpretacija datoteka primljenih sa servera (HTML, CSS, JavaScript, slike, fontovi...) kako bi se generisao interaktivni grafički interfejs. Mehanizam za renderovanje je poput prevodioca između web jezika i vašeg ekrana, prevodeći linije koda u vizuelno koherentnu, interaktivnu i funkcionalnu stranicu.
 
 
 
-U konkretnim terminima, kada unesete URL u Address traku:
+U konkretnim terminima, kada unesete URL u adresnu traku:
 
 
 
@@ -5372,11 +5370,11 @@ U konkretnim terminima, kada unesete URL u Address traku:
 
 
 
-Ceo ovaj proces treba da bude brz i tečan kako bi se pružilo dobro korisničko iskustvo, čak i na složenim stranicama. Upravo je to uloga render motora.
+Ceo ovaj proces treba da bude brz i tečan kako bi se pružilo dobro korisničko iskustvo, čak i sa složenim stranicama. Upravo je to uloga render motora.
 
 
 
-Evo istorijski pregled glavnih rendering mašina koje su oblikovale evoluciju Weba:
+Evo istorijskog pregleda glavnih rendering mašina koje su oblikovale evoluciju Web-a:
 
 
 
@@ -5388,7 +5386,7 @@ Razvijen od strane Microsofta za Internet Explorer 4, Trident je motor koji je d
 
 
 
-Trident je takođe predstavljao bezbednosne probleme i spor JavaScript engine. Web programeri su često morali da pišu specifičan kod kako bi zaobišli njegove greške. Microsoft ga je 2015. godine zamenio sa EdgeHTML, modernijim engine-om koji nije uspeo da preokrene trend. Trident ostaje simbol ere kada je engine mogao da nameće sopstvena pravila na Web-u.
+Trident je takođe imao bezbednosne probleme i spor JavaScript engine. Web programeri su često morali da pišu specifičan kod kako bi zaobišli njegove greške. Microsoft ga je 2015. godine zamenio sa EdgeHTML, modernijim engine-om koji nije uspeo da preokrene trend. Trident ostaje simbol ere kada je engine mogao da nameće sopstvena pravila na Web-u.
 
 
 
@@ -5412,7 +5410,7 @@ Gecko je bio izvor mnogih inovacija. Međutim, njegova složena i istorijska baz
 
 
 
-U smislu tržišnog udela, Gecko je sada daleko iza Blinka, pošto je Firefox jedini veliki pregledač koji ga koristi. Takođe se marginalno koristi od strane manje poznatih i manje korišćenih pregledača koji su forkovi Firefoxa: Tor Browser, LibreWolf, Zen Browser, GNU IceCat, Waterfox... Ovo čini Gecko garantom raznolikosti na vebu, suočen sa dominacijom Blinka.
+U smislu tržišnog udela, Gecko je sada daleko iza Blinka, pošto je Firefox jedini veliki pregledač koji ga koristi. Pored toga, koristi ga u manjoj meri nekoliko manje poznatih i retko korišćenih pregledača koji su forkovi Firefoxa: Tor Browser, LibreWolf, Zen Browser, GNU IceCat, Waterfox... Ovo čini Gecko garantom raznolikosti na vebu, suočen sa dominacijom Blinka.
 
 
 
@@ -5436,7 +5434,7 @@ Razvijen od strane KDE projekta za njegov Konqueror pregledač, KHTML je lagan, 
 
 
 
-WebKit je Fork KHTML-a koji je pokrenuo Apple za razvoj sopstvenog pregledača: Safari. Prvo je optimizovan za performanse i integraciju sa macOS-om, a zatim ga je koristio Google Chrome kada je objavljen 2008. godine. WebKit se zasniva na dve podkomponente:
+WebKit je fork KHTML-a koji je pokrenuo Apple za razvoj sopstvenog pregledača: Safari. Prvo je optimizovan za performanse i integraciju sa macOS-om, a zatim ga je koristio Google Chrome kada je objavljen 2008. godine. WebKit se zasniva na dve podkomponente:
 
 
 
@@ -5446,7 +5444,7 @@ WebKit je Fork KHTML-a koji je pokrenuo Apple za razvoj sopstvenog pregledača: 
 
 
 
-WebKit se ističe svojom brzinom i malim otiskom. Na iOS-u, Apple je nametnuo njegovu upotrebu svim pretraživačima iz razloga sigurnosti i energetske efikasnosti: čak i Firefox ili Chrome na iPhone-u koriste WebKit u pozadini.
+WebKit se izdvaja po brzini i maloj potrošnji resursa. Na iOS-u, Apple je nametnuo njegovu upotrebu svim pretraživačima iz razloga sigurnosti i energetske efikasnosti: čak i Firefox ili Chrome na iPhone-u koriste WebKit u pozadini.
 
 
 
@@ -5458,7 +5456,7 @@ WebKit se ističe svojom brzinom i malim otiskom. Na iOS-u, Apple je nametnuo nj
 
 
 
-Blink je Fork WebKit-a koji je pokrenuo Google kako bi opremio Chrome (i Chromium), a zatim ga je brzo usvojio Opera, Brave, Vivaldi, pa čak i Microsoft Edge od 2020. godine. Blink uvodi fleksibilnije upravljanje od Apple-ovog, omogućavajući Google-u da brzo eksperimentiše sa novim web API-jima.
+Blink je fork WebKita koji je Google pokrenuo da bi ga koristio u Chrome-u (i Chromium-u), a ubrzo su ga prihvatili Opera, Brave, Vivaldi, pa čak i Microsoft Edge od 2020. godine. Blink uvodi fleksibilnije upravljanje od Apple-ovog, omogućavajući Google-u da brzo eksperimentiše sa novim web API-jima.
 
 
 
@@ -5466,7 +5464,7 @@ Blink je Fork WebKit-a koji je pokrenuo Google kako bi opremio Chrome (i Chromiu
 
 
 
-Danas je Blink najčešće korišćeni rendering engine na svetu. Međutim, ova supremacija postavlja pitanje tehničke monokulture na vebu, ali o tome ćemo kasnije.
+Danas je Blink najčešće korišćeni rendering engine na svetu. Međutim, ova dominacija postavlja pitanje tehničke monokulture na vebu, ali o tome ćemo kasnije.
 
 
 
@@ -5474,7 +5472,7 @@ Danas je Blink najčešće korišćeni rendering engine na svetu. Međutim, ova 
 
 
 
-Naslednik Trident-a, EdgeHTML je dizajniran od strane Microsoft-a da modernizuje Edge, sa poboljšanim performansama i kompatibilnošću. Uključuje deo koda iz Trident-a, ali sa redizajniranim JavaScript motorom. Uprkos tim naporima, EdgeHTML se borio da ubedi korisnike i web programere. Godine 2020, Microsoft je odlučio da napusti EdgeHTML u korist Blink-a, lansirajući Edge Chromium, koji je postao Blink pregledač sa Microsoft Interface Layer.
+Naslednik Trident-a, EdgeHTML je dizajniran od strane Microsoft-a da modernizuje Edge, sa poboljšanim performansama i kompatibilnošću. Uključuje deo koda iz Trident-a, ali sa redizajniranim JavaScript motorom. Uprkos tim naporima, EdgeHTML se borio da ubedi korisnike i web programere. Godine 2020, Microsoft je odlučio da napusti EdgeHTML u korist Blink-a, lansirajući Edge Chromium, koji je postao Blink pregledač sa interfejsnim slojem Microsoft-a.
 
 
 
@@ -5482,7 +5480,7 @@ Naslednik Trident-a, EdgeHTML je dizajniran od strane Microsoft-a da modernizuje
 
 
 
-Evolucija rendering endžina odražava istoriju veba: tenzije između inovacije i standardizacije, dominacija glavnih igrača, pokušaji etičnijih ili tehničkih alternativa. Danas su skoro svi pregledači zasnovani na Blink-u, sa značajnim izuzecima Firefox-a (Gecko) i Safari-ja (WebKit).
+Evolucija rendering engine-a odražava istoriju veba: tenzije između inovacije i standardizacije, dominacija glavnih igrača, pokušaji etičnijih ili tehničkih alternativa. Danas su skoro svi pregledači zasnovani na Blink-u, sa značajnim izuzecima Firefox-a (Gecko) i Safari-ja (WebKit).
 
 
 
