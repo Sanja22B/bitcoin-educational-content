@@ -7524,7 +7524,7 @@ Pokrenut od strane Proton tima (poznatog po Proton Mail-u i Proton Drive-u, izme
 ### VPN
 
 
-VPN-ovi (*Virtual Private Network*) omogućavaju vam da šifrujete vaš internet saobraćaj i usmerite ga kroz udaljeni posrednički server. Ovo prikriva vaš IP Address, osigurava vaše veze na javnim mrežama (aerodromski Wi-Fi, kafići...) i štiti vas od određenih oblika nadzora.
+VPN-ovi (*Virtual Private Network*) omogućavaju vam da enkriptujete vaš internet saobraćaj i usmerite ga kroz udaljeni posrednički server. Ovo prikriva vašu IP adresu, osigurava vaše veze na javnim mrežama (aerodromski Wi-Fi, kafići...) i štiti vas od određenih oblika nadzora.
 
 
 Međutim, nisu svi VPN-ovi jednaki. Popularne usluge kao što su NordVPN ili ExpressVPN dobro funkcionišu, ali njihov pristup ostaje komercijalan, sa modelom zasnovanim na praćenju korisnika radi optimizacije marketinga. Takođe zahtevaju kreiranje naloga i često prikupljaju više podataka nego što to priznaju.
@@ -7537,7 +7537,7 @@ Međutim, nisu svi VPN-ovi jednaki. Popularne usluge kao što su NordVPN ili Exp
 - [Mullvad VPN](https://mullvad.net/)
 
 
-Mullvad je jedan od najboljih VPN-ova u smislu zaštite privatnosti. Ne zahteva email ili lozinku: Vaš nalog je povezan sa jednostavnim nasumičnim brojem. Plaćanje se može izvršiti u bitkoinima ili gotovinom. Mobilni klijent je open-source, jednostavan za korišćenje i moćan. Mullvad ne čuva logove, ne prati svoje korisnike i redovno objavljuje nezavisne bezbednosne revizije.
+Mullvad je jedan od najboljih VPN-ova u smislu zaštite privatnosti. Ne zahteva email ili lozinku: vaš nalog je povezan sa jednostavnim nasumičnim brojem. Plaćanje se može izvršiti u bitkoinima ili gotovinom. Mobilni klijent je open-source, jednostavan za korišćenje i moćan. Mullvad ne čuva logove, ne prati svoje korisnike i redovno objavljuje nezavisne bezbednosne revizije.
 
 
 https://planb.academy/tutorials/computer-security/communication/mullvad-968ec5f5-b3f0-4d23-a9e0-c07a3e85aaa8
@@ -7546,7 +7546,7 @@ https://planb.academy/tutorials/computer-security/communication/mullvad-968ec5f5
 - [IVPN](https://www.ivpn.net/)
 
 
-IVPN je još jedna odlična alternativa fokusirana na privatnost. Nudi jednostavan i efikasan mobilni Interface, bez prikupljanja logova, i omogućava anonimnu registraciju. Takođe možete platiti u bitkoinima. Aplikacija uključuje firewall koji blokira sav saobraćaj van VPN-a, što može biti veoma korisno na pametnom telefonu. Klijenti su open-source.
+IVPN je još jedna odlična alternativa fokusirana na privatnost. Nudi jednostavan i efikasan mobilni interfejs, bez prikupljanja logova, i omogućava anonimnu registraciju. Takođe možete platiti u bitkoinima. Aplikacija uključuje firewall koji blokira sav saobraćaj van VPN-a, što može biti veoma korisno na pametnom telefonu. Klijenti (aplikacije) su otvorenog koda.
 
 
 https://planb.academy/tutorials/computer-security/communication/ivpn-5a0cd5df-29f1-4382-a817-975a96646e68
@@ -7555,7 +7555,7 @@ https://planb.academy/tutorials/computer-security/communication/ivpn-5a0cd5df-29
 - [Proton VPN](https://protonvpn.com/)
 
 
-Razvijen od strane Proton tima, ovaj VPN nudi besplatan plan bez reklama. Proton VPN je baziran u Švajcarskoj, podložan strogim zakonima o privatnosti, i objavljuje redovne revizije. Njegovi klijenti su takođe otvorenog koda.
+Razvijen od strane Proton tima, ovaj VPN nudi besplatan plan bez reklama. Proton VPN je baziran u Švajcarskoj, podložan strogim zakonima o privatnosti, i objavljuje redovne revizije. Klijentske aplikacije su takođe otvorenog koda.
 
 
 ![Image](assets/fr/174.webp)
@@ -7564,7 +7564,7 @@ Razvijen od strane Proton tima, ovaj VPN nudi besplatan plan bez reklama. Proton
 ### 2FA autentifikacija
 
 
-Dvofaktorska autentifikacija (2FA) je dodatni Layer nivo sigurnosti povrh vaše lozinke. Često se oslanja na jednokratni kod koji se generiše svakih 30 sekundi putem aplikacije za autentifikaciju. Ovaj kod se zasniva na tajni koja se deli između vašeg uređaja i online servisa, prema TOTP (*Time-based One-Time Password*) protokolu. Najpoznatija aplikacija je Google Authenticator, ali nije otvorenog koda i čini vas zavisnim od Google ekosistema.
+Dvofaktorska autentifikacija (2FA) je dodatni nivo sigurnosti povrh vaše lozinke. Često se oslanja na jednokratni kod koji se generiše svakih 30 sekundi putem aplikacije za autentifikaciju. Ovaj kod se zasniva na tajni koja se deli između vašeg uređaja i online servisa, prema TOTP (*Time-based One-Time Password*) protokolu. Najpoznatija aplikacija je Google Authenticator, ali nije otvorenog koda i čini vas zavisnim od Google ekosistema.
 
 
 **Alternative**:
@@ -7574,7 +7574,7 @@ Dvofaktorska autentifikacija (2FA) je dodatni Layer nivo sigurnosti povrh vaše 
 - [Aegis Authenticator](https://getaegis.app/)
 
 
-Aegis je sveobuhvatna aplikacija otvorenog koda. Šifrira vašu 2FA bazu podataka pomoću lozinke, nudi izvozive rezervne kopije (takođe šifrovane) i omogućava vam da sortirate svoje naloge po direktorijumu. Interface je jasan, moderan i lak za vraćanje na novom uređaju, sve dok imate rezervnu datoteku i pripadajuću lozinku.
+Aegis je sveobuhvatna aplikacija otvorenog koda. Enkriptuje vašu 2FA bazu podataka pomoću lozinke, omogućava preuzimanje rezervnih kopija (takođe enkriptovane) i omogućava vam da sortirate svoje naloge po direktorijumu. Interfejs je jasan, moderan i lak za vraćanje na novom uređaju, sve dok imate rezervnu datoteku i pripadajuću lozinku.
 
 
 ![Image](assets/fr/175.webp)
@@ -7588,7 +7588,7 @@ Ente Auth je moderno, open-source, multiplatformsko rešenje sa end-to-end enkri
 
 
 https://planb.academy/tutorials/computer-security/authentication/ente-auth-1928e65a-3b43-40f3-9efd-457ee2d79bb9
-Ente Auth nudi mnoge dodatne funkcije: Organizacija po oznakama, prilagođene ikone za svaku uslugu, beleške, omiljene stavke, integrisana pretraga, sigurno deljenje kodova sa timom.
+Ente Auth nudi mnoge dodatne funkcije: organizaciju po oznakama, prilagođene ikone za svaku uslugu, beleške, omiljene stavke, integrisanu pretragu, sigurno deljenje kodova sa timom.
 
 
 ![Image](assets/fr/176.webp)
@@ -7609,7 +7609,7 @@ Ako želite da saznate više o menadžerima lozinki, 2FA autentifikaciji i VPN-o
 
 https://planb.academy/courses/99c46148-7080-4915-a7e0-9df0e145cd47
 
-### Vreme
+### aplikacije za vremensku prognozu
 
 
 Klasične vremenske aplikacije kao što su AccuWeather ili Météo France često prikupljaju lične podatke, uključujući vašu preciznu lokaciju, navike korišćenja, a ponekad čak i identifikatore uređaja, u komercijalne ili reklamne svrhe. Ove usluge se takođe oslanjaju na centralizovane vlasničke API-je, ograničavajući vašu kontrolu nad tim koji podaci se prikazuju ili prenose.
@@ -7622,7 +7622,7 @@ Klasične vremenske aplikacije kao što su AccuWeather ili Météo France često
 - [Geometric Weather](https://github.com/WangDaYeeeeee/GeometricWeather)
 
 
-Geometric Weather nudi detaljne prognoze i prilagodljive widgete, sve bez reklama ili nametljivog prikupljanja podataka. Njegov kod je otvorenog tipa. Aplikacija podržava nekoliko provajdera vremenskih uslova.
+Geometric Weather nudi detaljne prognoze i prilagodljive widgete, sve bez reklama ili nametljivog prikupljanja podataka. Njegov kod je otvorenog tipa. Aplikacija podržava nekoliko provajdera vremenskih podataka.
 
 
 ![Image](assets/fr/177.webp)
@@ -7632,7 +7632,7 @@ Geometric Weather nudi detaljne prognoze i prilagodljive widgete, sve bez reklam
 - [Prognoza](https://github.com/davidtakac/prognoza)
 
 
-Prognoza je minimalistička aplikacija koja ide pravo na stvar: Prikazivanje trenutnog vremena i prognoza. Nudi nekoliko widgeta. Prognoza je bez reklama, bez praćenja i ne zahteva nepotrebne dozvole.
+Prognoza je minimalistička aplikacija koja ide pravo na stvar: prikazivanje trenutnog vremena i prognoza. Nudi nekoliko widgeta. Prognoza je bez reklama, bez praćenja i ne zahteva nepotrebne dozvole.
 
 
 ![Image](assets/fr/178.webp)
@@ -7648,13 +7648,13 @@ Jednostavna vremenska aplikacija, zasnovana na OpenWeatherMap, otvorenog koda, p
 ![Image](assets/fr/179.webp)
 
 
-Općenitije, na vremenskim aplikacijama, bolje je ručno konfigurirati lokacije koje vas zanimaju nego aktivirati automatsku geolokaciju.
+Šire gledano, kod aplikacija za vremensku prognozu bolje je ručno podesiti lokacije koje vas zanimaju nego uključivati automatsku geolokaciju.
 
 
 ### Strimovanje audio/video
 
 
-Popularne platforme kao što su Spotify ili YouTube nude besprekorno korisničko iskustvo, ali po cenu značajnog kompromisa po pitanju privatnosti. Ove usluge konstantno prikupljaju podatke o ponašanju: Istorija gledanja ili slušanja, vreme provedeno, preferencije sadržaja, korišćeni uređaj. Ove informacije se često koriste za profilisanje ili ciljanje.
+Popularne platforme kao što su Spotify ili YouTube nude besprekorno korisničko iskustvo, ali po cenu značajnog kompromisa po pitanju privatnosti. Ove usluge konstantno prikupljaju podatke o ponašanju: istorija gledanja ili slušanja, provedeno vreme, preferencije sadržaja, korišćeni uređaj. Ove informacije se često koriste za profilisanje ili za ciljano oglašavanje.
 
 
 **Alternative**:
@@ -7664,7 +7664,7 @@ Popularne platforme kao što su Spotify ili YouTube nude besprekorno korisničko
 - [LibreTube](https://libretube.dev/)
 
 
-LibreTube je Android aplikacija koja vam omogućava da gledate YouTube video zapise bez Google praćenja. Svi zahtevi se preusmeravaju putem Piped proxy servera, koji anonimizuje pristup video zapisima. Njegov Interface je moderan, brz i bez reklama. Aplikacija ne zahteva Google nalog i omogućava vam da anonimno pretplatite na kanale ili kreirate lokalne plejliste.
+LibreTube je Android aplikacija koja vam omogućava da gledate YouTube video zapise bez Google praćenja. Svi zahtevi se preusmeravaju putem Piped proxy servera, koji anonimizuje pristup video zapisima. Njegov interfejs je moderan, brz i bez reklama. Aplikacija ne zahteva Google nalog i omogućava vam da anonimno pretplatite na kanale ili kreirate lokalne plejliste.
 
 
 ![Image](assets/fr/180.webp)
@@ -7707,7 +7707,7 @@ Virtuelne tastature kao što su Google-ov Gboard ili Microsoft-ov SwiftKey su sv
 - [OpenBoard](https://github.com/dslul/openboard)
 
 
-OpenBoard je minimalistička, open-source Android tastatura zasnovana na AOSP (*Android open-source Project*) tastaturi. Ne sadrži vlasničke komponente ili trackere i nikada ne komunicira sa udaljenim serverima. Autokorekcija, prediktivno kucanje i lični rečnik funkcionišu isključivo lokalno.
+OpenBoard je minimalistička, open-source Android tastatura zasnovana na AOSP (*Android open-source Project*) tastaturi. Ne sadrži vlasničke komponente ili sisteme za praćenje (trackere) i nikada ne komunicira sa udaljenim serverima. Autokorekcija, prediktivno kucanje i lični rečnik funkcionišu isključivo lokalno.
 
 
 
@@ -7723,7 +7723,7 @@ FlorisBoard nudi moderniji, modularni pristup. Takođe je open-source i integri�
 ### Kalkulator
 
 
-Aplikacija Google Kalkulator, iako efikasna, i dalje je Google proizvod i dolazi sa uobičajenim rizicima povezanim sa prikupljanjem podataka i zavisnošću od centralizovanog ekosistema.
+Aplikacija Google Calculator, iako efikasna, i dalje je Google-ov proizvod i dolazi sa uobičajenim rizicima povezanim sa prikupljanjem podataka i zavisnošću od centralizovanog ekosistema.
 
 
 **Alternative**:
@@ -7742,7 +7742,7 @@ OpenCalc je brz i jednostavan za korišćenje kalkulator otvorenog koda, savrše
 ### Prodavnica aplikacija
 
 
-Google Play Store je podrazumevani izvor aplikacija na većini Android pametnih telefona. Međutim, duboko je integrisan sa Google uslugama i uključuje sistematsko prikupljanje podataka, čak i tokom jednostavnih pretraga ili ažuriranja.
+Google Play Store je podrazumevani izvor aplikacija na većini Android pametnih telefona. Međutim, duboko je integrisan sa Google servisima i uključuje sistematsko prikupljanje podataka, čak i tokom jednostavnih pretraga ili ažuriranja.
 
 
 **Alternative**:
@@ -7752,7 +7752,7 @@ Google Play Store je podrazumevani izvor aplikacija na većini Android pametnih 
 - [F-Cold](https://f-droid.org/)
 
 
-F-Droid je isključivo katalog aplikacija otvorenog koda. Sav dostupni softver je slobodno proverljiv i preuzimljiv, bez oglašavanja, praćenja ili zavisnosti od Google usluga. Sama F-Droid aplikacija ne zahteva korisnički nalog.
+F-Droid je isključivo katalog aplikacija otvorenog koda. Sav dostupni softver je slobodno proverljiv i preuzimljiv, bez oglašavanja, praćenja ili zavisnosti od Google servisa. Sama F-Droid aplikacija ne zahteva korisnički nalog.
 
 
 ![Image](assets/fr/184.webp)
@@ -7762,7 +7762,7 @@ F-Droid je isključivo katalog aplikacija otvorenog koda. Sav dostupni softver j
 - [Aurora Store](https://auroraoss.com/)
 
 
-Aurora Store vam omogućava pristup katalogu Google Play Store anonimno, bez Google naloga. To je besplatan klijent koji direktno komunicira sa Google serverima, dok maskira vaš identitet putem generičkog naloga. To je vredno rešenje za nastavak korišćenja određenih neophodnih vlasničkih: Aplikacija, dok se izbegava telemetrija Google Play-a.
+Aurora Store vam omogućava pristup katalogu Google Play Store-a anonimno, bez Google naloga. To je besplatan klijent koji direktno komunicira sa Google serverima, dok maskira vaš identitet putem generičkog naloga. To je vredno rešenje za nastavak korišćenja određenih neophodnih vlasničkih aplikacija, dok se izbegava telemetrija Google Play-a.
 
 
 ### Vesti
@@ -7784,7 +7784,7 @@ Aplikacija *News*, koju je razvio Bubelov, nudi radikalno drugačiji pristup. To
 ### Kontakt
 
 
-Google Kontakti, kao i mnoge podrazumevane aplikacije na Androidu, trajno sinhronizuju vaše Address knjige sa Google serverima. To znači da su sve informacije o vašim kontaktima (imena, brojevi, e-mailovi, ponekad poštanske adrese ili fotografije) pohranjene online i povezane sa vašim nalogom. Ova centralizacija olakšava pravljenje rezervnih kopija i sinhronizaciju, ali postavlja velike probleme privatnosti.
+Google Contacts, kao i mnoge podrazumevane aplikacije na Androidu, trajno sinhronizuju vaše imenike sa Google serverima. To znači da su sve informacije o vašim kontaktima (imena, brojevi, e-mailovi, ponekad poštanske adrese ili fotografije) skladištene online i povezane sa vašim nalogom. Ova centralizacija olakšava pravljenje rezervnih kopija i sinhronizaciju, ali postavlja velike probleme privatnosti.
 
 
 **Alternative**:
@@ -7794,13 +7794,13 @@ Google Kontakti, kao i mnoge podrazumevane aplikacije na Androidu, trajno sinhro
 - [Connect You](https://github.com/you-apps/ConnectYou)
 
 
-Connect You je lagana, pregledna open-source alternativa, dizajnirana za one koji žele da upravljaju svojim kontaktima lokalno, bez prikupljanja podataka ili prisilne sinhronizacije sa cloud-om treće strane. Nudi intuitivni Interface, olakšava sortiranje, pretragu i uređivanje vaših unosa, i može se integrisati sa CalDAV uslugama ako koristite server za kontakte koji sami hostujete (putem Nextcloud-a, na primer).
+Connect You je lagana, pregledna open-source alternativa, dizajnirana za one koji žele da upravljaju svojim kontaktima lokalno, bez prikupljanja podataka ili prisilne sinhronizacije sa cloud-om treće strane. Nudi intuitivni interfejs, olakšava sortiranje, pretragu i uređivanje vaših unosa, i može se integrisati sa CalDAV uslugama ako koristite server za kontakte koji sami hostujete (putem Nextcloud-a, na primer).
 
 
 ### Upravljanje fotografijama
 
 
-Google Photos je odličan za automatsko čuvanje slika u oblaku, njihovo organizovanje ili pronalaženje putem prepoznavanja lica. Ali ova jednostavnost prikriva sistematsku obradu vaših podataka: Svaka slika se analizira, indeksira i povezuje sa vašim drugim Google podacima. Vaše fotografije mogu postati dodatni izvor informacija, iskorišćen u komercijalne svrhe.
+Google Photos je odličan za automatsko čuvanje slika u oblaku, njihovo organizovanje ili pronalaženje putem prepoznavanja lica. Ali ova jednostavnost prikriva sistematsku obradu vaših podataka: svaka slika se analizira, indeksira i povezuje sa vašim drugim Google podacima. Vaše fotografije mogu postati dodatni izvor informacija, iskorišćen u komercijalne svrhe.
 
 
 **Alternative**:
@@ -7810,14 +7810,14 @@ Google Photos je odličan za automatsko čuvanje slika u oblaku, njihovo organiz
 - [Simple Gallery](https://github.com/SimpleMobileTools/Simple-Gallery)
 
 
-Simple Gallery je minimalistička aplikacija otvorenog koda koja radi potpuno offline. Deo je paketa *Simple Mobile Tools*. Omogućava vam upravljanje, sortiranje, pregled i uređivanje slika bez ikakvog prenosa podataka sa vašeg uređaja. Takođe sadrži funkcije retuširanja, zaštitu lozinkom i kantu za otpatke za oporavak obrisanih stavki. Bez praćenja, bez prisilne sinhronizacije: Vaše fotografije ostaju sa vama.
+Simple Gallery je minimalistička aplikacija otvorenog koda koja radi potpuno offline. Deo je paketa *Simple Mobile Tools*. Omogućava vam upravljanje, sortiranje, pregled i uređivanje slika bez ikakvog prenosa podataka sa vašeg uređaja. Takođe sadrži funkcije retuširanja, zaštitu lozinkom i kantu za otpatke za oporavak obrisanih stavki. Bez praćenja, bez prisilne sinhronizacije: vaše fotografije ostaju sa vama.
 
 
 
 - [Aves](https://github.com/deckerst/aves)
 
 
-Aves je alternativa sa modernijim Interface. Omogućava glatku navigaciju kroz albume i naprednu organizaciju (oznake, filteri, sortiranje, itd.). Ne zahteva internet konekciju za rad i ne prikuplja korisničke podatke.
+Aves je alternativa sa modernijim interfejsom. Omogućava glatku navigaciju kroz albume i naprednu organizaciju (oznake, filteri, sortiranje, itd.). Ne zahteva internet konekciju za rad i ne prikuplja korisničke podatke.
 
 
 ![Image](assets/fr/185.webp)
@@ -7837,7 +7837,7 @@ Ente Photos je open-source usluga (klijenti + serveri) za automatsko pravljenje 
 - [Stingle Photos](https://stingle.org/)
 
 
-Stingle je i galerija fotografija i aplikacija za kameru, kombinovana sa uslugom šifrovane rezervne kopije. Kao Ente, fotografije su zaštićene end-to-end enkripcijom. Možete koristiti njihov cloud servis (1 GB besplatno) ili sami hostovati Stingle server za potpunu kontrolu. Interface je jednostavan, bez reklama ili trackera.
+Stingle je i galerija fotografija i aplikacija za kameru, kombinovana sa uslugom enkriptovane rezervne kopije. Kao Ente, fotografije su zaštićene end-to-end enkripcijom. Možete koristiti njihov cloud servis (1 GB besplatno) ili sami hostovati Stingle server za potpunu kontrolu. Interfejs je jednostavan, bez reklama ili trackera.
 
 
 ![Image](assets/fr/187.webp)
@@ -7849,14 +7849,14 @@ Stingle je i galerija fotografija i aplikacija za kameru, kombinovana sa uslugom
 **Alternative**:
 
 
-Adobe Acrobat Reader, široko korišćen za čitanje ili anotiranje PDF dokumenata, dolazi sa brojnim online funkcijama koje mogu izložiti vaše podatke: Aktivna telemetrija, sinhronizacija sa oblakom i prikupljanje informacija o vašim fajlovima ili navikama čitanja.
+Adobe Acrobat Reader, široko korišćen za čitanje ili anotiranje PDF dokumenata, dolazi sa brojnim online funkcijama koje mogu izložiti vaše podatke: aktivna telemetrija, sinhronizacija sa oblakom i prikupljanje informacija o vašim fajlovima ili navikama čitanja.
 
 
 
 - [MuPDF Viewer](https://f-droid.org/en/packages/com.artifex.mupdf.viewer.app/)
 
 
-MuPDF Viewer je ultra-lagan, brz i potpuno open-source PDF čitač. Troši vrlo malo resursa. Iako ne nudi napredne funkcije kao što su anotacije ili potpisivanje, savršeno obavlja svoj posao: Prikazivanje vaših dokumenata, bez špijuniranja.
+MuPDF Viewer je ultra-lagan, brz i potpuno open-source PDF čitač. Troši vrlo malo resursa. Iako ne nudi napredne funkcije kao što su anotacije ili potpisivanje, savršeno obavlja svoj posao: prikazivanje vaših dokumenata, bez špijuniranja.
 
 
 
@@ -7879,7 +7879,7 @@ Googleova aplikacija Phone, instalirana po defaultu na mnogim Android pametnim t
 - [Koler](https://github.com/Chooloo/koler)
 
 
-Koler je aplikacija za telefoniju otvorenog koda dizajnirana da bude lepa, laka za korišćenje i prijateljska prema privatnosti. Nudi fluidan i intuitivan Interface za upravljanje vašim pozivima, bez tragača ili analize ličnih podataka. Međutim, trenutno ne uključuje napredno filtriranje poziva ili integraciju sa uslugama trećih strana.
+Koler je aplikacija za telefoniju otvorenog koda dizajnirana da bude lepa, laka za korišćenje i prijateljska prema privatnosti. Nudi fluidan i intuitivan interfejs za upravljanje vašim pozivima, bez tragača ili analize ličnih podataka. Međutim, trenutno ne uključuje napredno filtriranje poziva ili integraciju sa uslugama trećih strana.
 
 
 ![Image](assets/fr/188.webp)
@@ -7888,7 +7888,7 @@ Koler je aplikacija za telefoniju otvorenog koda dizajnirana da bude lepa, laka 
 ### Prevod
 
 
-Google Translate je merilo u automatskom prevođenju, ali njegova upotreba sistematski podrazumeva slanje svih vaših upita Google-u, sa ugrađenim praćenjem i mogućim prikupljanjem osetljivih podataka (Prevedeni tekstovi, istorija, itd.).
+Google Translate je merilo u automatskom prevođenju, ali njegova upotreba sistematski podrazumeva slanje svih vaših upita Google-u, sa ugrađenim praćenjem i mogućim prikupljanjem osetljivih podataka (prevedeni tekstovi, istorija, itd.).
 
 
 **Alternative**:
@@ -7898,10 +7898,10 @@ Google Translate je merilo u automatskom prevođenju, ali njegova upotreba siste
 - [TranslateYou](https://github.com/you-apps/TranslateYou)
 
 
-TranslateYou je aplikacija za prevođenje otvorenog koda koja poštuje privatnost svojih korisnika. Radi kao Interface za različite prevodilačke motore (LibreTranslate, LingvaTranslate, Mozhi, DeepL, itd.) i omogućava vam da izaberete uslugu koja ne iskorišćava vaše podatke.
+TranslateYou je aplikacija za prevođenje otvorenog koda koja poštuje privatnost svojih korisnika. Radi kao interfejs za različite prevodilačke motore (LibreTranslate, LingvaTranslate, Mozhi, DeepL, itd.) i omogućava vam da izaberete uslugu koja ne iskorišćava vaše podatke.
 
 
-Bez oglasa, bez praćenja i jednostavan za korišćenje Interface čine TranslateYou praktičnom alternativom za Google Translate.
+Bez oglasa, bez praćenja i jednostavan za korišćenje interfejs čine TranslateYou praktičnom alternativom za Google Translate.
 
 
 ![Image](assets/fr/189.webp)
@@ -7926,7 +7926,7 @@ OpenFoodFacts je mnogo transparentnija i privatnosti prijatnija alternativa. Ova
 Mobilna aplikacija vam omogućava da skenirate bar kodove, odmah pristupite podacima o proizvodima i sami doprinesete bazi podataka. Potpuno je besplatna za korišćenje, bez reklama ili praćenja.
 
 
-### Deljenje u blizini
+### Deljenje sa onima u blizini
 
 
 Funkcije kao što su Quick Share (Android) ili AirDrop (iOS/macOS) omogućavaju vam slanje fajlova između obližnjih uređaja putem Bluetooth-a i direktnog Wi-Fi-ja, bez internet konekcije. One su praktične, ali se oslanjaju na zatvorene sisteme, ponekad povezane sa Google, Samsung ili Apple nalozima.
@@ -7952,14 +7952,14 @@ Zanimljiva alternativa je [PairDrop](https://github.com/schlagmichdoch/pairdrop)
 - [Warpinator](https://github.com/linuxmint/warpinator)
 
 
-Warpinator, razvijen od strane Linux Mint-a, olakšava prenos fajlova između uređaja povezanih na istu Wi-Fi mrežu. Radi peer-to-peer, bez oblaka ili servera treće strane, sa jednostavnim Interface. Postoje portovi za Android, omogućavajući prenos fajlova između telefona i računara.
+Warpinator, razvijen od strane Linux Mint-a, olakšava prenos fajlova između uređaja povezanih na istu Wi-Fi mrežu. Radi peer-to-peer, bez oblaka ili servera treće strane, sa jednostavnim interfejsom. Postoje portovi za Android, omogućavajući prenos fajlova između telefona i računara.
 
 
 
 - [LocalSend](https://localsend.org/)
 
 
-LocalSend je još jedna besplatna, potpuno opremljena alternativa sa urednim Interface. Potpuno open-source, ova aplikacija omogućava decentralizovane, end-to-end enkriptovane prenose fajlova između uređaja povezanih na istu lokalnu mrežu. Ne koriste se posrednički serveri, što osigurava da vaši podaci nikada ne napuštaju vašu kućnu mrežu.
+LocalSend je još jedna besplatna, potpuno opremljena alternativa sa urednim interfejsom. Potpuno open-source, ova aplikacija omogućava decentralizovane, end-to-end enkriptovane prenose fajlova između uređaja povezanih na istu lokalnu mrežu. Ne koriste se posrednički serveri, što osigurava da vaši podaci nikada ne napuštaju vašu kućnu mrežu.
 
 
 ![Image](assets/fr/190.webp)
@@ -7968,7 +7968,7 @@ LocalSend je još jedna besplatna, potpuno opremljena alternativa sa urednim Int
 ### Knjige
 
 
-Aplikacije kao što je Goodreads, iako se široko koriste, postavljaju ozbiljna pitanja privatnosti. Ova platforma je u vlasništvu Amazona, koji prikuplja mnogo podataka o vašem čitanju, preferencijama, ocenama i recenzijama. Pored toga, Interface se u velikoj meri oslanja na praćenje korisnika i analizu ponašanja u komercijalne svrhe.
+Aplikacije kao što je Goodreads, iako se široko koriste, postavljaju ozbiljna pitanja privatnosti. Ova platforma je u vlasništvu Amazona, koji prikuplja mnogo podataka o vašem čitanju, preferencijama, ocenama i recenzijama. Pored toga, interfejs se u velikoj meri oslanja na praćenje korisnika i analizu ponašanja u komercijalne svrhe.
 
 
 **Alternative**:
@@ -7991,7 +7991,7 @@ Openreads je open-source alternativa za praćenje čitanja koja poštuje privatn
 - [Chrono](https://github.com/vicolo-dev/chrono)
 
 
-Dostupan na F-Droid-u i potpuno otvorenog koda, Chrono nudi moderan, pregledan Interface, bez reklama ili prikupljanja podataka. Omogućava vam kreiranje prilagodljivih alarma: ponavljanje prema određenim danima ili vremenskim intervalima, izbor zvuka, progresivni intenzitet, vibracija, ili čak zadaci koji se moraju izvršiti da bi se alarm deaktivirao (rešavanje proračuna, ponovno čitanje teksta, itd.).
+Dostupan na F-Droid-u i potpuno otvorenog koda, Chrono nudi moderan, pregledan interfejs, bez reklama ili prikupljanja podataka. Omogućava vam kreiranje prilagodljivih alarma: ponavljanje prema određenim danima ili vremenskim intervalima, izbor zvuka, progresivni intenzitet, vibracija, ili čak zadaci koji se moraju izvršiti da bi se alarm deaktivirao (rešavanje proračuna, ponovno čitanje teksta, itd.).
 
 
 Aplikacija takođe integriše tajmer i štopericu, sa snimanjem krugova, statistikom, poređenjem vremena i upravljanjem više tajmera. Možete konfigurisati više vremenskih zona, prilagoditi temu (boje, stilove, animacije), pa čak i organizovati svoje alarme i tajmere sa oznakama.
