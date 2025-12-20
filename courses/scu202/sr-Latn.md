@@ -6998,16 +6998,16 @@ Suočeni sa ograničenjima SMS-a, pojavile su se brojne moderne aplikacije, neke
 #### Signal
 
 
-Signal je aplikacija za instant poruke dizajnirana od samog početka da ponudi maksimalnu poverljivost i sigurnost. Zasniva se na *Signal Protocol*-u, koji obezbeđuje sistematsku end-to-end enkripciju za svaku poruku, glasovni ili video poziv, kao i za deljenje fajlova. Ovaj protokol koriste mnoge druge usluge za razmenu poruka, kao što su WhatsApp, Facebook Messenger, Skype i Google Messages (u svojim RCS implementacijama).
+Signal je aplikacija za instant poruke dizajnirana od samog početka da ponudi maksimalnu poverljivost i sigurnost. Zasniva se na *Signal Protocol*-u, koji obezbeđuje sistematsku end-to-end enkripciju za svaku poruku, glasovni ili video poziv, kao i za deljenje fajlova. Ovaj protokol koriste mnogi drugi servisi za razmenu poruka, kao što su WhatsApp, Facebook Messenger, Skype i Google Messages (u svojim RCS implementacijama).
 
 
 ![Image](assets/fr/148.webp)
 
 
-Tehnički, svaki razgovor unutar Signala je zaštićen asimetričnim i efemernim mehanizmom enkripcije: Ključevi sesije se dinamički pregovaraju i uništavaju nakon upotrebe, čime se ograničava rizik od kompromitovanja. Transparentnost aplikacije, čiji je kod u potpunosti otvorenog koda na strani klijenta i servera, znači da bilo koji stručnjak za sigurnost ili istraživač može proveriti njen integritet i usklađenost sa navedenim kriptografskim standardima.
+Tehnički, svaki razgovor unutar Signala je zaštićen asimetričnim i efemernim mehanizmom enkripcije: ključevi sesije se dinamički pregovaraju i uništavaju nakon upotrebe, čime se ograničava rizik od kompromitovanja. Transparentnost aplikacije, čiji je kod u potpunosti otvorenog koda na strani klijenta i servera, znači da bilo koji stručnjak za sigurnost ili istraživač može proveriti njen integritet i usklađenost sa navedenim kriptografskim standardima.
 
 
-Međutim, Signal ima slabu tačku kada je u pitanju anonimnost: aplikacija zahteva važeći telefonski broj za registraciju i identifikaciju korisnika. Iako ovaj broj nije sistematski vidljiv vašim kontaktima (može biti skriven pod pseudonimom), ovaj zahtev uvodi zavisnost od telefonske infrastrukture, i stoga potencijalnu rupu u tragljivosti.
+Međutim, Signal ima slabu tačku kada je u pitanju anonimnost: aplikacija zahteva važeći telefonski broj za registraciju i identifikaciju korisnika. Iako ovaj broj nije sistematski vidljiv vašim kontaktima (može biti skriven pod pseudonimom), ovaj zahtev uvodi zavisnost od telefonske infrastrukture, i samim tim potencijalni propust koji omogućava praćenje.
 
 
 Ukratko, Signal je veoma dobro rešenje za razmenu poruka, ali nažalost zahteva vezu sa telefonskim brojem.
@@ -7047,10 +7047,10 @@ Threema, pokrenuta u Švajcarskoj 2012. godine, izdvaja se od većine drugih sig
 ![Image](assets/fr/150.webp)
 
 
-Tehnički, Threema nudi end-to-end enkripciju za sve komunikacije: poruke, pozive, fajlove, grupe i druge funkcionalnosti. Od 2020. godine, izvorni kod za mobilne aplikacije je otvorenog koda, što omogućava nezavisne revizije. S druge strane, serverska infrastruktura ostaje vlasnička, iako je smeštena isključivo u Švajcarskoj, zemlji čije zakonodavstvo je povoljno za zaštitu ličnih podataka.
+Tehnički, Threema nudi end-to-end enkripciju za sve komunikacije: poruke, pozive, fajlove, grupe i druge funkcionalnosti. Od 2020. godine, izvorni kod za mobilne aplikacije je otvorenog koda, što omogućava nezavisne revizije. S druge strane, serverska infrastruktura ostaje vlasnička, ali se nalazi isključivo u Švajcarskoj, zemlji čije zakonodavstvo je povoljno za zaštitu ličnih podataka.
 
 
-Aplikacija je kompatibilna sa Android i iOS, i takođe nudi siguran Interface web, kao i native klijent za Windows, Linux i macOS. Početna aktivacija, međutim, zahteva pametni telefon.
+Aplikacija je kompatibilna sa Android i iOS, i takođe nudi siguran web interfejs, kao i native klijent za Windows, Linux i macOS. Početna aktivacija, međutim, zahteva pametni telefon.
 
 
 Još jedan važan aspekt Threema aplikacije je njen poslovni model: aplikacija nije besplatna, već se kupuje (oko €5.99). Ovaj izbor izbegava zavisnost od modela zasnovanog na prikupljanju podataka ili oglašavanju. Da bi se očuvala anonimnost prilikom kupovine, ključevi za aktivaciju mogu se kupiti u bitkoinima ili gotovinom direktno u Threema Shop-u za Android.
@@ -7076,15 +7076,15 @@ Tehnički, poruke su šifrovane od kraja do kraja i prolaze kroz relej servere. 
 Protokol je potpuno otvorenog koda: klijenti, serveri i protokoli su javno dostupni i revidirani. SimpleX je dostupan na Android, iOS, Linux, Windows i macOS platformama, sa enkriptovanom, prenosivom lokalnom memorijom, tako da se profili mogu preneti bez centralnog servera. Svaki korisnik takođe može upravljati sa nekoliko izolovanih profila, svaki sa svojim postavkama, nadimkom i fotografijom. Ova fleksibilnost omogućava jasno razdvajanje privatnog života, profesionalnog života i pseudonimnosti.
 
 
-Kontakti se dodaju putem privremenih linkova ili statičkih adresa (stalni, ali opozivi identifikatori). Takođe možete birati između efemernog Exchange ili klasičnijeg režima, sa detaljnom kontrolom vidljivosti i ovlašćenja (na primer, skrivanje vašeg pravog imena iza nasumičnog, jedinstvenog pseudonima za svaki kontakt).
+Kontakti se dodaju putem privremenih linkova ili statičkih adresa (stalni, ali opozivi identifikatori). Takođe možete birati između efemerne razmene ili klasičnijeg režima, sa detaljnom kontrolom vidljivosti i ovlašćenja (na primer, skrivanje vašeg pravog imena iza nasumičnog, jedinstvenog pseudonima za svaki kontakt).
 
 
-U smislu bezbednosti i poverljivosti, SimpleX ide dalje od većine postojećih sistema za razmenu poruka, ograničavajući metapodatke na minimum i eliminišući bilo kakvu zavisnost od centralnog direktorijuma ili jedinstvenog identifikatora. Međutim, ova arhitektura nameće određene kompromise u pogledu korisničke pristupačnosti: ponekad manje intuitivna ergonomija, potreba za blagom početnom krivom učenja i zavisnost od dostupnosti relej servera.
+U smislu bezbednosti i poverljivosti, SimpleX ide dalje od većine postojećih sistema za razmenu poruka, ograničavajući metapodatke na minimum i eliminišući bilo kakvu zavisnost od centralnog direktorijuma ili jedinstvenog identifikatora. Međutim, ova arhitektura nameće određene kompromise u pogledu korisničke pristupačnosti: ponekad manje intuitivna ergonomija, zahteva malo vremena za početno snalaženje i zavisnost od dostupnosti relej servera.
 
 
 https://planb.academy/tutorials/computer-security/communication/simplex-chat-7a1efa11-4d0a-49c4-92aa-e18bf22c22b9
 
-#### Sesija
+#### Session
 
 
 Session, pokrenut 2020. godine od strane Oxen Privacy Tech Foundation, je aplikacija za razmenu poruka dizajnirana da ponudi poboljšanu privatnost i otpornost u suočavanju sa nadzorom. Session ne zahteva lične informacije prilikom registracije: nema broja telefona, nema e-maila, samo par lokalno generisanih kriptografskih ključeva. Ovo omogućava anonimnu autentifikaciju.
@@ -7096,7 +7096,7 @@ Session, pokrenut 2020. godine od strane Oxen Privacy Tech Foundation, je aplika
 Tehnički, Session implementira end-to-end enkripciju za poruke, fajlove, audio i pozive, kao i za grupe (do 100 članova). Poruke se rutiraju putem decentralizovane mreže zasnovane na serverskim čvorovima inspirisanim Tor-ovom onion arhitekturom. Ovaj mehanizam nudi naprednu zaštitu protiv nadzora mreže, uključujući od strane ISP-ova i državnih aktera.
 
 
-Klijent i server za Session su otvorenog koda. Softver je dostupan na Android, iOS, Windows, macOS i Linux platformama, sa opcijom sinhronizacije između uređaja putem Mnemonic fraze slične onoj koja se koristi u Bitcoin novčanicima. Ova fraza korisniku daje isključivu kontrolu nad njegovim ili njenim podacima, ali takođe nameće značajnu odgovornost u smislu pravljenja rezervnih kopija.
+Klijent i server za Session su otvorenog koda. Softver je dostupan na Android, iOS, Windows, macOS i Linux platformama, sa opcijom sinhronizacije između uređaja putem mnemoničke fraze (fraza za oporavak) slične onoj koja se koristi u Bitcoin novčanicima. Ova fraza korisniku daje isključivu kontrolu nad njegovim ili njenim podacima, ali takođe nameće značajnu odgovornost u smislu pravljenja rezervnih kopija.
 
 
 https://planb.academy/tutorials/computer-security/communication/session-b0e3193c-2129-4f1b-9013-c211210724c3
@@ -7104,50 +7104,49 @@ https://planb.academy/tutorials/computer-security/communication/session-b0e3193c
 #### Keet
 
 
-Keet, lansiran 2022. godine od strane Holepunch-a (kompanije koju podržavaju Tether i Bitfinex), ističe se svojim radikalno decentralizovanim pristupom: Sve komunikacije (poruke, audio i video pozivi, prenosi fajlova, itd.) odvijaju se direktno između korisnika, bez prolaska kroz bilo koji centralni server. Ova P2P arhitektura eliminiše posrednike i značajno poboljšava poverljivost i otpornost sistema.
+Keet, lansiran 2022. godine od strane Holepunch-a (kompanije koju podržavaju Tether i Bitfinex), ističe se svojim radikalno decentralizovanim pristupom: sve komunikacije (poruke, audio i video pozivi, prenosi fajlova, itd.) odvijaju se direktno između korisnika, bez prolaska kroz bilo koji centralni server. Ova P2P arhitektura eliminiše posrednike i značajno poboljšava poverljivost i otpornost sistema.
 
 
 ![Image](assets/fr/153.webp)
 
 
-Keet šifrira sve komunikacije od kraja do kraja. Registracija je potpuno anonimna: nije potreban broj telefona, e-mail Address ili identifikator. Ovo osigurava poboljšanu poverljivost od trenutka aktivacije usluge. Video pozivi su najvišeg kvaliteta, a prenos datoteka je neograničene veličine, što ga čini pogodnim za profesionalnu i ličnu upotrebu.
+Keet šifrira sve komunikacije od kraja do kraja. Registracija je potpuno anonimna: nije potreban broj telefona, e-mail adresa ili identifikator. Ovo osigurava poboljšanu poverljivost od trenutka aktivacije usluge. Video pozivi su najvišeg kvaliteta, a prenos datoteka je neograničene veličine, što ga čini pogodnim za profesionalnu i ličnu upotrebu.
 
 
-S druge strane, iako su neki komponenti (kriptografija i umrežavanje) objavljeni kao open-source na GitHub-u, Keet-ov Interface klijent nije bio potpuno otvoren u vreme pisanja SCU-202 (maj 2025). Međutim, Holepunch je najavio svoju nameru da u budućnosti objavi ceo kod.
+S druge strane, iako su neke komponente (kriptografija i umrežavanje) objavljene kao open-source na GitHub-u, Keet-ov klijentski interface nije bio potpuno otvoren u vreme pisanja SCU-202 (maj 2025). Međutim, Holepunch je najavio svoju nameru da u budućnosti objavi ceo kod.
 
 
-Keet je dostupan na Android, iOS, Windows, macOS i Linux, i može se sinhronizovati između uređaja koristeći Mnemonic frazu.
+Keet je dostupan na Android, iOS, Windows, macOS i Linux platformi, i može se sinhronizovati između uređaja koristeći mnemoničku frazu.
 
 
 https://planb.academy/tutorials/computer-security/communication/keet-efdb759d-5e94-4bbf-b28c-5fa8669c809b
 
-#### Zaboravi
+#### Olvid
 
 
-Olvid, launched in 2019, is a French encrypted messaging service. Its strong point: Registration without any personal data. Identification is based on a direct Exchange of cryptographic keys between users.
-
+Olvid, pokrenut 2019. godine, je francuski servis za enkriptovanu razmenu poruka. Njegova glavna prednost: registracija bez ikakvih ličnih podataka. Identifikacija se zasniva na direktnoj razmeni kriptografskih ključeva između korisnika.
 
 ![Image](assets/fr/154.webp)
 
 
-Tehnički, poruke na Olvidu su šifrovane od kraja do kraja, koristeći vlasnički protokol posebno dizajniran da zaštiti ne samo sadržaj poruka, već i metapodatke: Niko, uključujući centralni server, ne može znati ko komunicira sa kim, niti kada. Ovaj model značajno smanjuje rizike od špijunaže i nadzora.
+Tehnički, poruke na Olvidu su enkriptovane od kraja do kraja, koristeći vlasnički protokol posebno dizajniran da zaštiti ne samo sadržaj poruka, već i metapodatke: niko, uključujući centralni server, ne može znati ko komunicira sa kim, niti kada. Ovaj model značajno smanjuje rizike od špijunaže i nadzora.
 
 
 Međutim, serverska infrastruktura ostaje vlasnička i centralizovana, hostovana na AWS (*Amazon Web Services*). Klijentski kod je otvorenog koda već nekoliko godina, ali serverski kod nije objavljen, što ograničava tehničku transparentnost sistema.
 
 
-Olvidov bezbednosni model zasnovan je na važnom principu: Potpuno odsustvo pouzdane treće strane u uspostavljanju digitalnih identiteta. Za razliku od većine sistema za šifrovanu razmenu poruka, koji se oslanjaju na centralizovani imenik za upravljanje korisničkim identitetima, Olvid ne zavisi od bilo kakve centralizovane infrastrukture da bi garantovao integritet komunikacija. Ova arhitektura eliminiše rizike povezane sa kompromitovanjem imenika.
+Olvidov bezbednosni model počiva na ključnom principu: digitalni identiteti se uspostavljaju bez ikakve pouzdane treće strane. Za razliku od većine sistema za enkriptovanu razmenu poruka, koji se oslanjaju na centralizovani imenik za upravljanje korisničkim identitetima, Olvid ne zavisi od bilo kakve centralizovane infrastrukture da bi garantovao integritet komunikacija. Ova arhitektura eliminiše rizike povezane sa kompromitovanjem imenika.
 
 
-Olvid koristi centralni server za distribuciju poruka, ali njegova uloga je strogo logistička: On upravlja asinhronim prenosom enkriptovanih poruka. Ovaj server nije uključen ni u jednu fazu procesa enkripcije i ne zna stvarni identitet korisnika, niti sadržaj ili metapodatke poruka (izuzev javnog ključa primaoca, koji je potreban za rutiranje). Stoga se može smatrati neprijateljskim po defaultu, bez ugrožavanja ukupne sigurnosti. Čak i ako bi bio kompromitovan, ne bi omogućio pristup sadržaju komunikacija. Olvid stoga pretpostavlja centralizovanu distribuciju poruka (iz razloga efikasnosti i kvaliteta usluge), dok garantuje sigurnost nezavisnu od ove infrastrukture.
+Olvid koristi centralni server za distribuciju poruka, ali njegova uloga je strogo logistička: on upravlja asinhronim prenosom enkriptovanih poruka. Ovaj server nije uključen ni u jednu fazu procesa enkripcije i ne zna stvarni identitet korisnika, niti sadržaj ili metapodatke poruka (izuzev javnog ključa primaoca, koji je potreban za rutiranje). Stoga se može smatrati neprijateljskim po defaultu, bez ugrožavanja ukupne sigurnosti. Čak i ako bi bio kompromitovan, ne bi omogućio pristup sadržaju komunikacija. Olvid stoga pretpostavlja centralizovanu distribuciju poruka (iz razloga efikasnosti i kvaliteta usluge), dok garantuje sigurnost nezavisnu od ove infrastrukture.
 
 
 Olvid nudi dve verzije:
 
 
 
-- Besplatna verzija, koja nudi sve funkcije osim audio i video poziva (samo primanje) i sinhronizacije na više uređaja
-- Plaćena verzija po ceni od €4.99 mesečno otključava sve funkcije.
+- besplatnu verziju, koja nudi sve funkcije osim audio i video poziva (samo primanje) i sinhronizacije na više uređaja
+- plaćenu verziju po ceni od €4.99 mesečno otključava sve funkcije.
 
 
 Aplikacija je sertifikovana od strane ANSSI (*Agence Nationale de la Sécurité des Systèmes d'Information*).
@@ -7164,7 +7163,7 @@ https://planb.academy/tutorials/computer-security/communication/olvid-05038dc1-6
 Popularne aplikacije za razmenu poruka kao što su WhatsApp, WeChat, Facebook Messenger, Instagram Direct Message, Snapchat i LINE se svakodnevno široko koriste. Međutim, sa tehničke tačke gledišta, ove platforme ne ispunjavaju moderne sigurnosne standarde pogodne za privatne komunikacije.
 
 
-Generalno govoreći, dva osnovna kriterijuma koja treba uzeti u obzir prilikom odabira usluge za razmenu poruka su: Da li pruža end-to-end enkripciju i da li je njen kod otvorenog tipa? Zatim postoje i druge funkcije koje mogu biti zanimljive, kao što su anonimna registracija ili korišćenje decentralizovane mrežne arhitekture, ali ova prva dva Elements su osnova. Enkripcija garantuje poverljivost vaših razmena, dok otvaranje izvornog koda omogućava da proverite da li je enkripcija implementirana sigurno.
+Generalno govoreći, dva osnovna kriterijuma koja treba uzeti u obzir prilikom odabira usluge za razmenu poruka su: da li pruža end-to-end enkripciju i da li je njen kod otvorenog tipa? Zatim postoje i druge funkcije koje mogu biti zanimljive, kao što su anonimna registracija ili korišćenje decentralizovane mrežne arhitekture, ali ova prva dva elementa su osnova. Enkripcija garantuje poverljivost vaših razmena, dok otvaranje izvornog koda omogućava da proverite da li je enkripcija implementirana sigurno.
 
 
 Korišćenje usluga koje ne ispunjavaju ova dva preduslova je jednako potpunom delegiranju zaštite vaših razmena komercijalnim igračima čiji ekonomski interesi često zavise od njihovog iskorišćavanja.
@@ -7173,21 +7172,21 @@ Korišćenje usluga koje ne ispunjavaju ova dva preduslova je jednako potpunom d
 Evo sažeta tabela glavnih postojećih aplikacija za razmenu poruka i njihovih karakteristika, kako stoji u trenutku pisanja (maj 2025):
 
 
-| Application          | E2EE 1:1       | E2EE groups   | Anonymous registration | Client open-source license | Server open-source license | Decentralized server | Creation year |
+| Aplikacija          | E2EE 1:1       | E2EE grupe   | Anonimna registracija | Klijentska licenca otvorenog koda | Serverska licenca otvorenog koda | Decentralizovani server | Godina nastanka |
 | -------------------- | -------------- | -------------- | ------------------- | -------------------------- | --------------------------- | -------------------- | ------------- |
 | WhatsApp             | ✅              | ✅              | ❌                   | ❌                          | ❌                           | ❌                    | 2009              |
 | WeChat               | ❌              | ❌              | ❌                   | ❌                          | ❌                           | ❌                    | 2011              |
-| Facebook Messenger   | ✅              | 🟡 (optionnel) | ❌                   | ❌                          | ❌                           | ❌                    | 2011              |
-| Telegram             | 🟡 (optionnel) | ❌              | 🟡                  | ✅                          | ❌                           | ❌                    | 2013              |
+| Facebook Messenger   | ✅              | 🟡 (opciono) | ❌                   | ❌                          | ❌                           | ❌                    | 2011              |
+| Telegram             | 🟡 (opciono) | ❌              | 🟡                  | ✅                          | ❌                           | ❌                    | 2013              |
 | LINE                 | ✅              | ✅              | ❌                   | ❌                          | ❌                           | ❌                    | 2011              |
 | Signal               | ✅              | ✅              | ❌                   | ✅                          | ✅                           | ❌                    | 2014              |
 | Threema              | ✅              | ✅              | ✅                   | ✅                          | ❌                           | ❌                    | 2012              |
-| Element (Matrix)     | ✅              | ✅              | ✅                   | ✅                          | ✅                           | 🟡 (federated)          | 2016              |
-| Delta Chat           | ✅              | ✅              | ✅                   | ✅                          | N/A                         | 🟡 (via email)       | 2017              |
-| Conversations (XMPP) | ✅              | ✅              | ✅                   | ✅                          | ✅                           | 🟡 (federated)          | 2014              |
+| Element (Matrix)     | ✅              | ✅              | ✅                   | ✅                          | ✅                           | 🟡 (federisano)          | 2016              |
+| Delta Chat           | ✅              | ✅              | ✅                   | ✅                          | N/A                         | 🟡 (preko email-a)       | 2017              |
+| Conversations (XMPP) | ✅              | ✅              | ✅                   | ✅                          | ✅                           | 🟡 (federisano)          | 2014              |
 | Session              | ✅              | ✅              | ✅                   | ✅                          | ✅                           | ✅                    | 2020              |
 | SimpleX              | ✅              | ✅              | ✅                   | ✅                          | ✅                           | ✅                    | 2021              |
-| Olvid                | ✅              | ✅              | ✅                   | ✅                          | ❌                           | 🟡(no directory)   | 2019              |
+| Olvid                | ✅              | ✅              | ✅                   | ✅                          | ❌                           | 🟡(bez globalnog imenika)   | 2019              |
 | Keet                 | ✅              | ✅              | ✅                   | ❌                          | N/A                         | ✅                    | 2022              |
 | Jami                 | ✅              | ✅              | ✅                   | ✅                          | N/A                         | ✅                    | 2005              |
 | Briar                | ✅              | ✅              | ✅                   | ✅                          | N/A                         | ✅                    | 2018              |
@@ -7199,10 +7198,10 @@ Evo sažeta tabela glavnih postojećih aplikacija za razmenu poruka i njihovih k
 Bezbednost vaših elektronskih komunikacija zavisi pre svega od izbora prave aplikacije i usvajanja najboljih praksi. Razumevanje osnovnih sigurnosnih mehanizama, identifikacija nedostataka u konvencionalnim rešenjima i izbor pouzdanih alternativa su suštinske osnove za komunikaciju bez prisluškivanja.
 
 
-Do sada smo istražili kako osigurati vaš pametni telefon i kako odabrati pouzdanu aplikaciju za razmenu poruka. U sledećem poglavlju, predlažem da proširimo ovu studiju na sve glavne porodice mobilnih aplikacija, kako bismo pronašli alternative koje poštuju privatnost vaših omiljenih aplikacija. Bilo da se radi o e-pošti, skladištenju datoteka, mapiranju, video ili muzičkom strimingu, koje su vam open-source aplikacije dostupne?
+Do sada smo istražili kako osigurati vaš pametni telefon i kako odabrati pouzdanu aplikaciju za razmenu poruka. U narednom poglavlju predlažem da ovu studiju proširimo na sve glavne kategorije mobilnih aplikacija, kako bismo pronašli alternative koje poštuju privatnost za vaše omiljene aplikacije. Bilo da je reč o e-pošti, skladištenju fajlova, mapama, video ili muzičkom strimovanju, koje open-source aplikacije su vam dostupne?
 
 
-## open-source aplikacije: najbolje alternative
+## Open-source aplikacije: najbolje alternative
 
 
 <chapterId>9c0e056c-45ce-407c-b4b6-f648bbc1f7d5</chapterId>
@@ -7211,13 +7210,13 @@ Do sada smo istražili kako osigurati vaš pametni telefon i kako odabrati pouzd
 Osim aplikacija za instant poruke, važno je zapamtiti da druge aplikacije na vašem pametnom telefonu mogu iskoristiti vaše podatke u komercijalne svrhe. Srećom, postoje open-source alternative koje poštuju vašu privatnost. To je ono što bih želeo da vam predstavim u ovom poglavlju.
 
 
-Neću ponovo prelaziti preko alternativa za pretraživače i instant mesindžere ovde, jer smo ih već detaljno obradili u prethodnim poglavljima.
+Neću ponovo prelaziti preko alternativa za pretraživače i aplikacije za dopisivanje u realnom vremenu ovde, jer smo ih već detaljno obradili u prethodnim poglavljima.
 
 
-### E-poruke kupaca
+### e-poruke korisnika
 
 
-E-pošta ostaje osnovni alat za komunikaciju, ali najpopularnije aplikacije, kao što su Gmail ili Outlook, predstavljaju niz problema sa privatnošću. Ove usluge često analiziraju vaše poruke, čuvaju metapodatke i učestvuju u kreiranju reklamnih profila.
+E-pošta ostaje osnovni alat za komunikaciju, ali najpopularnije aplikacije, kao što su Gmail ili Outlook, nose sa sobom brojne rizike po privatnost. Ove usluge često analiziraju vaše poruke, čuvaju metapodatke i učestvuju u kreiranju reklamnih profila.
 
 
 **Alternative**:
@@ -7227,8 +7226,7 @@ E-pošta ostaje osnovni alat za komunikaciju, ali najpopularnije aplikacije, kao
 - [FairEmail](https://email.faircode.eu/)
 
 
-FairEmail je sveobuhvatna, sigurnosno orijentisana Android aplikacija. Podržava sve IMAP/SMTP provajdere, omogućava šifrovanje poruka putem OpenPGP-a, blokira udaljene slike (koje se koriste kao tragači) i ne koristi usluge trećih strana. Pruža vam detaljnu kontrolu nad konekcijama, obaveštenjima i ponašanjem sinhronizacije.
-
+FairEmail je sveobuhvatna, sigurnosno orijentisana Android aplikacija. Podržava sve IMAP/SMTP provajdere, omogućava šifrovanje poruka putem OpenPGP-a, blokira udaljene slike (koje se koriste kao tragači) i ne koristi usluge trećih strana. Pruža vam detaljnu kontrolu nad konekcijama, obaveštenjima i načinom sinhronizacije.
 
 ![Image](assets/fr/155.webp)
 
@@ -7247,7 +7245,7 @@ K-9 Mail je open-source Android klijent za e-poštu, nedavno integrisan u Mozill
 - [Thunderbird Mobile](https://www.thunderbird.net/mobile/)
 
 
-Thunderbird Mobile je mobilna verzija popularnog open-source e-mail klijenta razvijenog od strane Mozilla Foundation. U skladu sa filozofijom projekta, aplikacija naglašava poverljivost, transparentnost koda i odsustvo nametljive telemetrije. Thunderbird Mobile je zasnovan na aplikaciji K-9 Mail, čiji je zvanični naslednik na Androidu. Pruža napredno upravljanje IMAP i POP nalozima, enkripciju e-mailova (putem OpenPGP), i jednostavan, efikasan Interface.
+Thunderbird Mobile je mobilna verzija popularnog open-source e-mail klijenta razvijenog od strane Mozilla Foundation. U skladu sa filozofijom projekta, aplikacija naglašava poverljivost, transparentnost koda i odsustvo nametljive telemetrije. Thunderbird Mobile je zasnovan na aplikaciji K-9 Mail, čiji je zvanični naslednik na Androidu. Pruža napredno upravljanje IMAP i POP nalozima, enkripciju e-mailova (putem OpenPGP), i jednostavan, efikasan interfejs.
 
 
 ![Image](assets/fr/157.webp)
@@ -7258,7 +7256,7 @@ https://planb.academy/tutorials/computer-security/communication/thunderbird-91d0
 - [Tuta](https://tuta.com/)
 
 
-Tuta (prethodno "*Tutanota*") nudi kompletno rešenje za e-poštu sa end-to-end enkripcijom, ali njegov mobilni klijent podržava samo Tuta naloge. Ne radi sa drugim provajderima. Interface je moderan i pregledan, a registracija ne zahteva lične podatke.
+Tuta (prethodno "*Tutanota*") nudi kompletno rešenje za e-poštu sa end-to-end enkripcijom, ali njegov mobilni klijent podržava samo Tuta naloge. Ne radi sa drugim provajderima. Interfejs je moderan i pregledan, a registracija ne zahteva lične podatke.
 
 
 ![Image](assets/fr/158.webp)
@@ -7274,13 +7272,13 @@ Proton Mail je sigurna švajcarska usluga za razmenu poruka koja nudi end-to-end
 ![Image](assets/fr/159.webp)
 
 
-Sistem e-pošte zasnovan je na 2 različite komponente: Provajder e-pošte (kao što su Gmail, Tuta ili Proton Mail), koji se bavi primanjem, slanjem i čuvanjem poruka putem servera; i klijent e-pošte, koji je aplikacija korišćena za pregled i pisanje vaših e-poruka (kao što su Gmail aplikacija, Outlook, K-9 Mail ili Thunderbird). Klijent može da se poveže sa različitim provajderima putem standardnih protokola kao što su IMAP ili SMTP.
+Sistem e-pošte zasnovan je na 2 različite komponente: provajdera e-pošte (kao što su Gmail, Tuta ili Proton Mail), koji se bavi primanjem, slanjem i čuvanjem poruka na serverima; i e-mail klijenta, aplikacije kojom pregledate i pišete svoje mejlove (kao što su Gmail aplikacija, Outlook, K-9 Mail ili Thunderbird). Klijent može da se poveže sa različitim provajderima putem standardnih protokola kao što su IMAP ili SMTP.
 
 
-Stoga je moguće koristiti klijent otvorenog koda koji poštuje privatnost, dok se u početku održava nalog kod tradicionalnijeg provajdera. Neke aplikacije, kao što su Gmail, Proton Mail ili Tuta, nude email klijente koji takođe deluju kao provajderi za razmenu poruka, i na taj način nude kompletno rešenje koje integriše i Interface čitanje i slanje/primanje email usluga.
+Stoga je moguće koristiti klijent otvorenog koda koji poštuje privatnost, dok se u početku održava nalog kod tradicionalnijeg provajdera. Neke aplikacije, kao što su Gmail, Proton Mail ili Tuta, nude e-mail klijente koji takođe deluju kao provajderi za razmenu poruka, i na taj način nude kompletno rešenje koje integriše i interfejs za čitanje i servis za slanje/primanje e-pošte..
 
 
-Evo nekoliko predloga, gde birate svog provajdera e-pošte:
+Evo nekoliko predloga, kada birate svog provajdera e-pošte:
 
 
 
@@ -7307,7 +7305,7 @@ Većina klasičnih aplikacija za mapiranje, kao što su Google Maps, Waze ili Ci
 Organic Maps je besplatna offline navigaciona aplikacija. Bazira se na podacima sa [OpenStreetMap](https://www.openstreetmap.org), otvorene, kolaborativne baze podataka. Preuzimate mape regiona koji vas zanimaju, a zatim navigirate bez mreže.
 
 
-Ne sadrži reklame, praćenje ili prikupljanje podataka. Aplikacija je posebno pogodna za putovanja peške, biciklom ili automobilom, sa Interface jednostavnom, brzom i bez ometanja.
+Ne sadrži reklame, praćenje ili prikupljanje podataka. Aplikacija je posebno pogodna za putovanja peške, biciklom ili automobilom, sa jednostavnim, brzim i bez ometanja interfejsom.
 
 
 ![Image](assets/fr/160.webp)
@@ -7317,7 +7315,7 @@ Ne sadrži reklame, praćenje ili prikupljanje podataka. Aplikacija je posebno p
 - [OsmAnd](https://osmand.net/)
 
 
-OsmAnd (*OpenStreetMap Automated Navigation Directions*) je još jedna sveobuhvatna aplikacija za mape otvorenog koda. Nudi offline GPS navigaciju, detaljne mape (uključujući staze, biciklističke staze i oblike terena) i opsežnu prilagodbu.
+OsmAnd (*OpenStreetMap Automated Navigation Directions*) je još jedna sveobuhvatna aplikacija za mape otvorenog koda. Nudi offline GPS navigaciju, detaljne mape (uključujući staze, biciklističke staze i oblike terena) i široke mogućnosti prilagođavanja.
 
 
 Možete aktivirati različite slojeve (pešačke zone, javni prevoz, itd.), definisati upozorenja o brzini ili integrisati specijalizovane mape kao što su one za planinarenje ili nautičke rute.
@@ -7329,7 +7327,7 @@ Besplatna verzija je već veoma bogata, a plaćena verzija vam omogućava da otk
 ![Image](assets/fr/161.webp)
 
 
-### Automatizacija kancelarije i dokumenti
+### Kancelarijski softver i dokumenti
 
 
 Klasični kancelarijski alati kao što su Google Docs ili Microsoft Office su veoma praktični, ali predstavljaju ozbiljne probleme sa poverljivošću. Dokumenti se čuvaju na njihovim serverima, analiziraju i ponekad koriste u marketinške svrhe ili za obuku AI modela.
@@ -7342,7 +7340,7 @@ Klasični kancelarijski alati kao što su Google Docs ili Microsoft Office su ve
 - [Collabora Office](https://www.collaboraoffice.com/)
 
 
-Collabora Office je mobilna verzija LibreOffice-a, dizajnirana za Android i iOS pametne telefone i tablete. Omogućava vam kreiranje, uređivanje i deljenje kancelarijskih dokumenata bez napuštanja vašeg uređaja ili ličnog oblaka.
+Collabora Office je mobilna verzija LibreOffice-a, dizajnirana za Android i iOS pametne telefone i tablete. Omogućava vam kreiranje, uređivanje i deljenje kancelarijskih dokumenata bez napuštanja vašeg uređaja ili ličnog oblaka (eng. cloud).
 
 
 Aplikacija podržava kolaborativno uređivanje kada je povezana sa Nextcloud instancom sa Collabora Online ekstenzijom. Ovo omogućava reprodukciju iskustva sličnog Google Docs-u, ali uz samostalno hostovanje vaših fajlova.
@@ -7361,7 +7359,7 @@ ONLYOFFICE je kancelarijski paket otvorenog koda. Omogućava vam da otvorite i u
 ![Image](assets/fr/163.webp)
 
 
-### Upravljač datotekama i oblak
+### Menadžer fajlovima i cloud servis
 
 
 Usluge kao što su Google Drive ili Dropbox čuvaju vaše fajlove na udaljenim serverima koji pripadaju privatnim kompanijama. Vaši podaci mogu biti skenirani i korišćeni za reklamne ili statističke svrhe. Štaviše, potreban vam je internet priključak i nalog treće strane da biste im pristupili.
@@ -7390,7 +7388,7 @@ Na Androidu, možete instalirati zvaničnu Nextcloud mobilnu aplikaciju da prist
 Material Files je menadžer datoteka otvorenog koda koji je lagan i pregledan. Omogućava vam pregledanje, premještanje, kopiranje ili brisanje datoteka lokalno na vašem Android uređaju.
 
 
-Aplikacija ne sadrži reklame ili trackere i ne zahteva zloupotrebljavajuće dozvole. To je zanimljiva alternativa Google-ovom pretraživaču datoteka, često integrisanom u druge vlasničke cloud usluge.
+Aplikacija ne sadrži reklame ili sisteme za praćenje (trackere) i ne zahteva zloupotrebljavajuće dozvole. To je zanimljiva alternativa Google-ovom pretraživaču datoteka, često integrisanom u druge vlasničke cloud usluge.
 
 
 ![Image](assets/fr/165.webp)
@@ -7429,7 +7427,7 @@ Ova aplikacija je deo paketa "*Simple Mobile Tools*". Ne zahteva nalog ili prist
 - [Tuta Calendar](https://tuta.com/calendar)
 
 
-Tuta Calendar, razvijen od strane tima iza Tuta Mail-a, je potpuno end-to-end šifrovani kalendar dizajniran da vaše događaje drži poverljivim. Radi na Androidu, iOS-u i putem web klijenta. Čak su i naslovi, opisi i metapodaci vaših događaja šifrovani, osiguravajući da nijedna treća strana, uključujući Tuta, ne može pristupiti vašim podacima.
+Tuta Calendar, razvijen od strane tima iza Tuta Mail-a, je potpuno end-to-end enkriptovani kalendar dizajniran da vaše događaje drži poverljivim. Radi na Androidu, iOS-u i putem web klijenta. Čak su i naslovi, opisi i metapodaci vaših događaja šifrovani, osiguravajući da nijedna treća strana, uključujući Tuta, ne može pristupiti vašim podacima.
 
 
 ![Image](assets/fr/168.webp)
@@ -7439,7 +7437,7 @@ Tuta Calendar, razvijen od strane tima iza Tuta Mail-a, je potpuno end-to-end š
 - [Proton Calendar](https://proton.me/calendar)
 
 
-Proton Calendar takođe nudi end-to-end enkripciju za vaše događaje i njihove metapodatke. Dostupan je na mobilnim uređajima (Android, iOS) i putem web klijenta, sa jasnim i intuitivnim Interface. Usluga omogućava kreiranje više kalendara, uvoz/izvoz događaja i opcije deljenja. Web klijent je open-source, ali mobilne aplikacije još uvek nisu potpuno open-source.
+Proton Calendar takođe nudi end-to-end enkripciju za vaše događaje i njihove metapodatke. Dostupan je na mobilnim uređajima (Android, iOS) i putem web klijenta, sa jasnim i intuitivnim interfejsom. Usluga omogućava kreiranje više kalendara, uvoz/izvoz događaja i opcije deljenja. Web klijent je open-source, ali mobilne aplikacije još uvek nisu potpuno open-source.
 
 
 ![Image](assets/fr/169.webp)
@@ -7458,7 +7456,7 @@ Aplikacije kao što su Evernote, Google Keep ili OneNote koriste se za beleženj
 - [Quillpad](https://quillpad.github.io/)
 
 
-Quillpad je lagana aplikacija dizajnirana posebno za beleške u Markdown formatu. Omogućava vam da opcionalno šifrujete svoje beleške, organizujete sadržaj po oznakama i bojama, i dodajete podsetnike. Sve funkcioniše bez naloga ili veze, a podaci ostaju sačuvani na vašem uređaju. Takođe mogu biti sačuvani šifrovani na pCloud-u.
+Quillpad je lagana aplikacija dizajnirana posebno za beleške u Markdown formatu. Omogućava vam da opcionalno enkriptujete svoje beleške, organizujete sadržaj po oznakama i bojama, i dodajete podsetnike. Sve funkcioniše bez naloga ili veze, a podaci ostaju sačuvani na vašem uređaju. Takođe mogu biti sačuvani šifrovani na pCloud-u.
 
 
 ![Image](assets/fr/170.webp)
@@ -7471,7 +7469,7 @@ Quillpad je lagana aplikacija dizajnirana posebno za beleške u Markdown formatu
 Joplin je sveobuhvatnije rešenje, koje nudi sinhronizaciju enkriptovanih beleški putem kompatibilnih servisa kao što su Nextcloud, Dropbox ili WebDAV. Možete upravljati jednostavnim ili strukturiranim beleškama (u Markdown formatu), klasifikovati vaše dokumente, pa čak i uvoziti priloge datoteka.
 
 
-Njegov Interface je malo složeniji od QuillNote-a, ali je i dalje savršeno upotrebljiv na mobilnim uređajima i pogodan za ličnu i profesionalnu upotrebu.
+Njegov interfejs je malo složeniji od QuillNote-a, ali je i dalje savršeno upotrebljiv na mobilnim uređajima i pogodan za ličnu i profesionalnu upotrebu.
 
 
 ![Image](assets/fr/171.webp)
@@ -7480,7 +7478,7 @@ Njegov Interface je malo složeniji od QuillNote-a, ali je i dalje savršeno upo
 ### Menadžer lozinki
 
 
-Mnogi korisnici dozvoljavaju svojim pregledačima da čuvaju njihove lozinke putem rešenja kao što je Google Password Manager. Iako je zgodno, ovaj tip centralizovanog upravljanja ne nudi korisnički kontrolisanu end-to-end enkripciju i izlaže vaše akreditive riziku ukoliko vaš Google nalog bude kompromitovan. Za sigurnije i suverenije upravljanje vašim lozinkama, dostupno je nekoliko open-source alternativa.
+Mnogi korisnici dozvoljavaju svojim pregledačima da čuvaju njihove lozinke putem rešenja kao što je Google Password Manager. Iako je zgodno, ovaj tip centralizovanog upravljanja ne nudi korisnički kontrolisanu end-to-end enkripciju i izlaže vaše kredencijale riziku ukoliko vaš Google nalog bude kompromitovan. Za sigurnije i suverenije upravljanje vašim lozinkama, dostupno je nekoliko open-source alternativa.
 
 
 **Alternative**:
@@ -7490,10 +7488,10 @@ Mnogi korisnici dozvoljavaju svojim pregledačima da čuvaju njihove lozinke put
 - [Bitwarden](https://bitwarden.com/)
 
 
-Bitwarden je jedan od najopsežnijih menadžera lozinki otvorenog koda koji su dostupni. Šifruje sve vaše akreditive lokalno, omogućava vam generate jake lozinke i nudi šifrovanu sinhronizaciju između uređaja.
+Bitwarden je jedan od najopsežnijih menadžera lozinki otvorenog koda koji su dostupni. Šifruje sve vaše kredencijale lokalno, omogućava vam da generišete jake lozinke i nudi šifrovanu sinhronizaciju između uređaja.
 
 
-Možete koristiti Bitwarden servere ili ga sami hostovati ako želite potpunu kontrolu. Njegov Interface mobilni je jasan i fluidan, sa besprekornom integracijom u Android ili iOS sistem.
+Možete koristiti Bitwarden servere ili ga sami hostovati ako želite potpunu kontrolu. Njegov mobilni interfejs je jasan i fluidan, sa besprekornom integracijom sa Android ili iOS sistemima.
 
 
 https://planb.academy/tutorials/computer-security/authentication/bitwarden-0532f569-fb00-4fad-acba-2fcb1bf05de9
@@ -7502,13 +7500,13 @@ https://planb.academy/tutorials/computer-security/authentication/bitwarden-0532f
 - [KeePassDX](https://www.keepassdx.com/)
 
 
-KeePass je istorijski menadžer lozinki zasnovan na šifrovanim lokalnim fajlovima. Na mobilnim uređajima, KeePassDX je odlična Android implementacija, kompatibilna sa svim KeePass bazama podataka. Radi offline, bez oblaka, što ga čini dobrim rešenjem za one koji žele da zadrže svoje podatke 100% lokalno.
+KeePass je istorijski menadžer lozinki zasnovan na enkriptovanim lokalnim fajlovima. Na mobilnim uređajima, KeePassDX je odlična Android implementacija, kompatibilna sa svim KeePass bazama podataka. Radi offline, bez oblaka, što ga čini dobrim rešenjem za one koji žele da zadrže svoje podatke 100% lokalno.
 
 
 ![Image](assets/fr/172.webp)
 
 
-Tu je i [KeePassium](https://keepassium.com/) za iOS, dobro integrisana aplikacija u Apple ekosistem, kompatibilna sa KeePass formatom i otvorenog koda. Druga iOS alternativa za KeePass klijent je Strongbox, ali ovaj softver nije bio otvorenog koda već nekoliko godina.
+Tu je i [KeePassium](https://keepassium.com/) za iOS, dobro integrisana aplikacija u Apple ekosistem, kompatibilna sa KeePass formatom i otvorenog koda. Druga iOS alternativa za KeePass klijent je Strongbox, ali ovaj softver već nekoliko godina nije open-source.
 
 
 https://planb.academy/tutorials/computer-security/authentication/keepass-f8073bb7-5b4a-4664-9246-228e307be246
@@ -7517,7 +7515,7 @@ https://planb.academy/tutorials/computer-security/authentication/keepass-f8073bb
 - [Proton Pass](https://proton.me/pass)
 
 
-Pokrenut od strane Proton tima (poznatog po Proton Mail i Proton Drive, između ostalog), Proton Pass kombinuje jednostavnost korišćenja, end-to-end enkripciju i privatnosti naklonjenu švajcarsku infrastrukturu. Mobilna aplikacija je intuitivna, omogućava dodavanje sigurnih beleški i podržava automatsko popunjavanje. To je odlična alternativa za one koji žele rešenje po principu "ključ u ruke", bez brige o tehničkom upravljanju.
+Pokrenut od strane Proton tima (poznatog po Proton Mail-u i Proton Drive-u, između ostalog), Proton Pass kombinuje jednostavnost korišćenja, end-to-end enkripciju i švajcarsku infrastrukturu koja je prijateljska prema privatnosti. Mobilna aplikacija je intuitivna, omogućava dodavanje sigurnih beleški i podržava automatsko popunjavanje. To je odlična alternativa za one koji žele rešenje po principu "ključ u ruke", bez brige o tehničkom upravljanju.
 
 
 ![Image](assets/fr/173.webp)
