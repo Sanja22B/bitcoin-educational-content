@@ -8022,13 +8022,13 @@ ___
 <chapterId>8a7577e0-4a27-4331-a6d9-7a4c838fa720</chapterId>
 
 
-Digitalna sigurnost često počinje dobrim poznavanjem kućne mreže. Vaša kućna mreža je prva tačka ulaska Interneta u vaše lično okruženje, a upravo Internet predstavlja najveću pretnju i vašoj sigurnosti i vašoj privatnosti.
+Digitalna bezbednost često počinje dobrim poznavanjem kućne mreže. Vaša kućna mreža je prva tačka ulaska interneta u vaše lično okruženje, a upravo internet predstavlja najveću pretnju i vašoj sigurnosti i vašoj privatnosti.
 
 
 Razumevanje kako vaša lokalna mreža funkcioniše, kako vaši podaci teku i koji uređaji su odgovorni za upravljanje tim tokovima je ključno za vašu digitalnu suverenost.
 
 
-U ovom poglavlju ćemo postepeno istraživati osnovne pojmove kućnog umrežavanja, od objašnjenja šta je Internet do konkretnih detalja kao što su dodela lokalnih IP adresa i uloga rutera. Cilj je da se ponovo prođu teorijske osnove koje su neophodne za pravilno razumevanje narednog poglavlja, koje će se baviti praktičnijim aspektima.
+U ovom poglavlju ćemo postepeno istraživati osnovne pojmove kućnog umrežavanja, od objašnjenja šta je internet do konkretnih detalja kao što su dodela lokalnih IP adresa i uloga rutera. Cilj je da se ponovo prođu teorijske osnove koje su neophodne za pravilno razumevanje narednog poglavlja, koje će se baviti praktičnijim aspektima.
 
 
 ### Internet
@@ -8043,13 +8043,13 @@ Istorija interneta seže do kasnih 1960-ih, u kontekstu naučnih i vojnih istra�
 ![Image](assets/fr/191.webp)
 
 
-Cilj je bio i da se dizajnira otporna mreža, sposobna da nastavi sa radom čak i ako deo njenih čvorova bude uništen (neophodnost usred rata Cold). ARPANET je omogućio prve komunikacije između udaljenih računara 1969. godine.
+Cilj je bio i da se dizajnira otporna mreža, sposobna da nastavi sa radom čak i ako deo njenih čvorova bude uništen (neophodnost usred hladnog rata). ARPANET je omogućio prve komunikacije između udaljenih računara 1969. godine.
 
 
 ![Image](assets/fr/192.webp)
 
 
-Tokom decenija, projekat se proširio, posebno sa standardizacijom TCP/IP protokola 1983. godine, koji su postali zajednička tehnička osnova celog Interneta. Tokom 1990-ih, pojava *World Wide Web*-a, o kojoj je bilo reči u prethodnom poglavlju, učinila je Internet dostupnim široj javnosti pojednostavljujući pristup dokumentima putem pregledača. Ova velika prekretnica transformisala je Internet u univerzalni alat za komunikaciju i informacije.
+Tokom decenija, projekat se proširio, posebno sa standardizacijom TCP/IP protokola 1983. godine, koji je postao zajednička tehnička osnova celog interneta. Tokom 1990-ih, pojava *World Wide Web*-a, o kojoj je bilo reči u prethodnom poglavlju, učinilo je internet dostupnim široj javnosti pojednostavljujući pristup dokumentima putem pregledača. Ova velika prekretnica transformisala je internet u univerzalni alat za komunikaciju i informacije.
 
 
 #### Šta je Internet?
@@ -8058,12 +8058,12 @@ Tokom decenija, projekat se proširio, posebno sa standardizacijom TCP/IP protok
 Internet, što doslovno znači "međusobno povezana mreža", globalna je infrastruktura koja omogućava milijardama uređaja da komuniciraju međusobno. To nije jedna usluga, niti specifična lokacija, već zbirka javnih i privatnih računarskih mreža, međusobno povezanih na planetarnom nivou. Svaki učesnik (privatno lice, kompanija, javna vlast, itd.) može povezati svoju mrežu sa ostatkom sveta, pod uslovom da se pridržava određenih standardizovanih tehničkih protokola koji omogućavaju uređajima da se međusobno razumeju.
 
 
-Infrastruktura Interneta se uglavnom zasniva na dva protokola:
+Infrastruktura interneta se uglavnom zasniva na dva protokola:
 
 
 
-- **IP** (*Internet Protocol*) Identifikuje svaki povezani uređaj i usmerava pakete podataka.
-- **TCP** (*Transmission Control Protocol*) Segmentira tok, proverava greške i vraća segmente u ispravan redosled.
+- **IP** (*Internet Protocol*) - Identifikuje svaki povezani uređaj i usmerava pakete podataka.
+- **TCP** (*Transmission Control Protocol*) - Segmentira tok, proverava greške i vraća segmente u ispravan redosled.
 
 
 → Za upotrebe u realnom vremenu gde je pouzdanost manje važna od kašnjenja (VoIP, DNS, streaming, itd.), često se koristi drugi transportni protokol umesto TCP: UDP (*User Datagram Protocol*).
@@ -8072,22 +8072,22 @@ Infrastruktura Interneta se uglavnom zasniva na dva protokola:
 Ova dva protokola rade zajedno kako bi osigurali da poruke poslate sa jedne tačke na drugu stignu kompletne i u pravom redosledu.
 
 
-U konkretnim terminima, kada posetite veb-sajt, na primer tako što ukucate Address u vaš pretraživač, nekoliko operacija se pokreće u pozadini. Prvo, vaš računar ili pametni telefon mora da konvertuje čitljivi Address (kao što je `planb.network`) u IP Address, koristeći uslugu zvanu DNS (*Domain Name System*). Kada se IP Address veb servera dobije, podaci mogu biti poslati na svoje odredište.
+U konkretnim terminima, kada posetite veb-sajt, na primer tako što ukucate adresu u vaš pretraživač, nekoliko operacija se pokreće u pozadini. Prvo, vaš računar ili pametni telefon mora da konvertuje čitljivu adresu (kao što je `planb.network`) u IP adresu, koristeći servis zvanim DNS (*Domain Name System*). Kada se IP adresa veb servera dobije, podaci mogu biti poslati na svoje odredište.
 
 
-Ovi podaci zatim prate složen put. Prvo prolaze kroz vaš kućni ruter i modem, pre nego što stignu do infrastrukture vašeg ISP-a. Odatle potencijalno prelaze nekoliko međumreža (ponekad transokeanske kablove, tranzitne rutere, Internet Exchange tačke, itd.) pre nego što stignu do odredišta: Servera sajta koji želite da posetite. Taj server zatim šalje podatke (sadržaj sajta) u suprotnom pravcu.
+Ovi podaci zatim prate složen put. Prvo prolaze kroz vaš kućni ruter i modem, pre nego što stignu do infrastrukture vašeg ISP-a. Odatle potencijalno prelaze nekoliko međumreža (ponekad transokeanske kablove, tranzitne rutere, internet razmenske tačke (eng. Internet exchange points- IXP), itd.) pre nego što stignu do odredišta: servera sajta koji želite da posetite. Taj server zatim šalje podatke (sadržaj sajta) u suprotnom pravcu.
 
 
 ![Image](assets/fr/193.webp)
 
 
-Internet se stoga može sažeti kao ogromna decentralizovana mreža, zasnovana na zajedničkim pravilima, gde svaki uređaj potencijalno može komunicirati sa drugim, gde god se nalazio u svetu. Ali dok ova otvorenost omogućava digitalne razmene, takođe zahteva da usvojite oprezan stav: Svaka online akcija prolazi kroz infrastrukture nad kojima nemate kontrolu, a poverljivost vaših razmena zavisi od toga kako konfigurišete i koristite ove alate.
+Internet se stoga može sažeti kao ogromna decentralizovana mreža, zasnovana na zajedničkim pravilima, gde svaki uređaj potencijalno može komunicirati sa drugim, gde god se nalazio u svetu. Ali dok ova otvorenost omogućava digitalne razmene, takođe zahteva da usvojite oprezan stav: svaka online akcija prolazi kroz infrastrukture nad kojima nemate kontrolu, a poverljivost vaših razmena zavisi od toga kako konfigurišete i koristite ove alate.
 
 
 ### Uloga modema i rutera
 
 
-U većini modernih domova, pristup Internetu se obezbeđuje putem centralnog uređaja koji funkcioniše kao modem i ruter. Naziv ovog uređaja varira od zemlje do zemlje (u Francuskoj se zove "Internet Box"). To je ovaj multifunkcionalni uređaj koji obezbeđuje ISP i koji vas povezuje sa ostatkom Internet mreže.
+U većini modernih domova, pristup internetu se obezbeđuje putem centralnog uređaja koji funkcioniše kao modem i ruter. Naziv ovog uređaja varira od zemlje do zemlje (u Francuskoj se zove "Internet Box"). Upravo ovaj multifunkcionalni uređaj koji obezbeđuje ISP je taj koji vas povezuje sa ostatkom internet mreže.
 
 
 → *ISP = Internet Service Provider.*
@@ -8097,26 +8097,26 @@ Ovaj uređaj kombinuje 2 glavne funkcije:
 
 
 
-- **Uloga modema**
+- **Ulogu modema**
 
 
-Modem (skraćeno od "*modulator-demodulator*") je komponenta koja povezuje mrežu vašeg ISP-a sa vašim domom. On prilagođava električne ili optičke signale primljene (putem optičkih vlakana, koaksijalnog kabla, ADSL-a ili mobilne mreže) u digitalne signale koje vaši uređaji mogu razumeti. Obrnuto, on konvertuje podatke sa vaše opreme u format koji se može preneti preko infrastrukture operatera. Ovaj korak je ključan ako vaša kućna mreža treba da komunicira sa Internetom.
+Modem (skraćeno od "*modulator-demodulator*") je komponenta koja povezuje mrežu vašeg ISP-a sa vašim domom. On prilagođava električne ili optičke signale primljene (putem optičkih vlakana, koaksijalnog kabla, ADSL-a ili mobilne mreže) u digitalne signale koje vaši uređaji mogu razumeti. Obrnuto, on konvertuje podatke sa vaše opreme u format koji se može preneti preko infrastrukture operatera. Ovaj korak je ključan ako vaša kućna mreža treba da komunicira sa internetom.
 
 
 
-- **Uloga rutera**
+- **Ulogu rutera**
 
 
-Ruter je srce vaše lokalne mreže. On distribuira Internet konekciju na sve vaše uređaje: Računare, pametne telefone, povezane objekte, štampače, itd. Dodeljuje svakom od njih lokalnu IP Address (različitu od vaše javne IP vidljive na Internetu). Ruter zatim organizuje dolazni i odlazni saobraćaj, osiguravajući da podaci stignu do pravog uređaja. Takođe može integrisati firewall, filtrirati mrežne pakete ili upravljati pravilima za prosleđivanje portova. NAT maskira vašu lokalnu mrežu od očiju Interneta, koristeći jednu javnu IP Address da predstavlja sve vaše uređaje. Samo ruter zna koji lokalni uređaj je inicirao koji zahtev.
+Ruter je srce vaše lokalne mreže. On distribuira internet konekciju na sve vaše uređaje: računare, pametne telefone, povezane objekte, štampače, itd. Dodeljuje svakom od njih lokalnu IP adresu (različitu od vaše javne IP vidljive na internetu). Ruter zatim organizuje dolazni i odlazni saobraćaj, osiguravajući da podaci stignu do pravog uređaja. Takođe može integrisati firewall, filtrirati mrežne pakete ili upravljati pravilima za prosleđivanje portova. NAT maskira vašu lokalnu mrežu od očiju interneta, koristeći jednu javnu IP adresu da predstavlja sve vaše uređaje. Samo ruter zna koji lokalni uređaj je inicirao koji zahtev.
 
 
-U nekim zemljama, ove dve funkcije su ponekad podeljene između dva odvojena uređaja: Modem i ruter.
+U nekim zemljama, ove dve funkcije su ponekad podeljene između dva odvojena uređaja: modema i rutera.
 
 
-U praksi, moderni modem ruter često uključuje i druge komplementarne funkcije: Wi-Fi pristupnu tačku, Ethernet prekidač, administraciju Interface, a ponekad čak i fajl server i druge karakteristike.
+U praksi, moderni modem-ruter često uključuje i druge komplementarne funkcije: Wi-Fi pristupnu tačku, Ethernet prekidač, administrativni interfejs, a ponekad čak i fajl server i druge karakteristike.
 
 
-Razumevanje uloge rutera-modema je ključni faktor u obezbeđivanju vaše lokalne mreže. Na neki način, ovaj uređaj formira granicu između spoljnog sveta (Interneta) i vašeg privatnog digitalnog okruženja. Nepravilna konfiguracija, slabe lozinke ili zastareli firmver mogu pretvoriti ovu kapiju u zjapeću rupu. Suprotno tome, dobro konfigurisani modem-ruter postaje bedem protiv upada.
+Razumevanje uloge rutera-modema je ključni faktor u obezbeđivanju vaše lokalne mreže. Na neki način, ovaj uređaj formira granicu između spoljnog sveta (interneta) i vašeg privatnog digitalnog okruženja. Nepravilna konfiguracija, slabe lozinke ili zastareli firmware mogu pretvoriti ovu kapiju u zjapeću rupu. Suprotno tome, dobro konfigurisani modem-ruter postaje bedem protiv upada.
 
 
 U sledećem poglavlju, pogledaćemo kako optimizovati ovu konfiguraciju, identifikovati uobičajene slabe tačke i povratiti kontrolu nad ovim uređajem.
@@ -8125,28 +8125,27 @@ U sledećem poglavlju, pogledaćemo kako optimizovati ovu konfiguraciju, identif
 ### Lokalna mreža (LAN)
 
 
-Lokalna mreža, ili "LAN" (*Local Area Network*), odnosi se na sve digitalne veze unutar vašeg doma. Uključuje sve uređaje povezane na vaš ruter: Računare, pametne telefone, tablete, štampače, itd.
+Lokalna mreža, ili "LAN" (*Local Area Network*), odnosi se na sve digitalne veze unutar vašeg doma. Uključuje sve uređaje povezane na vaš ruter: računare, pametne telefone, tablete, štampače, itd.
 
 
-Za razliku od Interneta, koji je globalna, javna mreža, lokalna mreža je privatni, delimično izolovani prostor dizajniran da omogući uređajima međusobnu komunikaciju, bez da njihova razmena napušta vaš dom. Na primer, kada pošaljete fajl sa svog računara na štampač povezan putem Wi-Fi-ja, ili kontrolišete povezanu sijalicu putem telefona, te komunikacije se odvijaju isključivo lokalno, bez prolaska kroz udaljeni server.
+Za razliku od interneta, koji je globalna, javna mreža, lokalna mreža je privatni, delimično izolovani prostor dizajniran da omogući uređajima međusobnu komunikaciju, bez da njihova razmena napušta vaš dom. Na primer, kada pošaljete fajl sa svog računara na štampač povezan putem Wi-Fi-ja, ili kontrolišete povezanu sijalicu putem telefona, te komunikacije se odvijaju isključivo lokalno, bez prolaska kroz udaljeni server.
 
 
 ![Image](assets/fr/194.webp)
 
 
-Ovo se zasniva na skupu standardnih tehnologija i protokola, od kojih je najvažniji IP protokol. Svakom uređaju na vašoj lokalnoj mreži dodeljuje se lokalni IP Address (obično u formatu `192.168.x.x`), koji služi za jedinstvenu identifikaciju unutar te mreže. Ovaj Address nije vidljiv sa Interneta. Samo vaš javni IP Address, koji dele svi uređaji putem modema, je izložen van vašeg doma.
+Ovo se zasniva na skupu standardnih tehnologija i protokola, od kojih je najvažniji IP protokol. Svakom uređaju na vašoj lokalnoj mreži dodeljuje se lokalna IP adresa (obično u formatu `192.168.x.x`), koji služi za jedinstvenu identifikaciju unutar te mreže. Ova adresa nije vidljiv sa interneta. Samo vaša javna IP adresa, koju dele svi uređaji putem modema, je vidljiva spolja, izvan vaše kućne mreže.
 
 
 Ali ova prividna izolacija ne bi trebalo da vam pruži lažan osećaj sigurnosti. Loše konfigurisana lokalna mreža može postati ulaz za napade, naročito u sledećim slučajevima:
 
 
 
-- Ako su otvorene usluge (kao što su deljenje fajlova ili administrativni interfejsi) dostupne sa Interneta
+- Ako su otvoreni servisi dostupni sa Interneta (poput deljenja fajlova ili administrativnih interfejsa) 
 - Ako Wi-Fi nije siguran (slaba lozinka ili zastareo sistem enkripcije)
-- Ako određeni povezani objekti komuniciraju sa spoljnim svetom u čistom tekstu ili ostavljaju otvorene portove
+- Ako određeni povezani uređaji komuniciraju sa spoljnim svetom bez enkripcije ili ostavljaju otvorene portove
 
-
-Zato je važno razumeti interne tokove vaše mreže i kontrolisati koji uređaji mogu međusobno komunicirati, kao i sa spoljnim svetom.
+Zato je važno razumeti interne tokove u vašoj mreži i kontrolisati koji uređaji mogu da komuniciraju, kako međusobno, tako i sa spoljnim svetom.
 
 
 ### Wi-Fi
@@ -8161,14 +8160,14 @@ Ali ova jednostavnost korišćenja dolazi sa sopstvenim rizicima. Za razliku od 
 ![Image](assets/fr/195.webp)
 
 
-Napadač sa pristupom vašoj Wi-Fi mreži mogao bi:
+Napadač sa pristupom vašoj Wi-Fi mreži mogao bi da:
 
 
 
-- Presretni nešifrovane podatke koji prolaze preko mreže (npr. DNS zahtevi ili HTTP saobraćaj)
-- Pristupite svojim datotekama ili uređajima ako su slabo zaštićeni
-- Ubacite zlonamerni sadržaj u vaš pregledač
-- Koristite vašu internet konekciju bez vašeg znanja, ili čak izvršite online napade sa vaše javne IP adrese Address
+- presretne nešifrovane podatke koji prolaze preko mreže (npr. DNS zahtevi ili HTTP saobraćaj)
+- pristupi tvojim datotekama ili uređajima ako su slabo zaštićeni
+- ubaci zlonamerni sadržaj u vaš pregledač
+- koristi vašu internet konekciju bez vašeg znanja, ili čak izvršava online napade sa vaše javne IP adrese
 
 
 Da biste se zaštitili od ovih pretnji, potrebno je da osigurate svoju Wi-Fi mrežu. Pogledaćemo kako to da uradimo u narednim poglavljima.
@@ -8177,10 +8176,10 @@ Da biste se zaštitili od ovih pretnji, potrebno je da osigurate svoju Wi-Fi mre
 ### Lokalne IP adrese
 
 
-Kada povežete uređaj na vašu kućnu mrežu, on dobija lokalni IP Address. Ovaj Address se sastoji od četiri broja odvojenih tačkama (npr. `192.168.1.14`). Koristi se za jedinstvenu identifikaciju svakog uređaja unutar vaše lokalne mreže. Zahvaljujući ovom Address vaš ruter zna kojem uređaju treba poslati podatke (na primer, veb stranicu ili video koji ste zatražili).
+Kada povežete uređaj na vašu kućnu mrežu, on dobija lokalnu IP adresu. Ova adresa se sastoji od četiri broja odvojenih tačkama (npr. `192.168.1.14`). Koristi se za jedinstvenu identifikaciju svakog uređaja unutar vaše lokalne mreže. Zahvaljujući ovoj adresi vaš ruter zna kojem uređaju treba poslati podatke (na primer, veb stranicu ili video koji ste zatražili).
 
 
-Važno je razumeti da ove lokalne IP adrese nisu vidljive sa Interneta. One pripadaju rezervisanim opsezima, definisanim međunarodnim standardima, koji ne mogu biti korišćeni na javnoj mreži. Tri najčešća lokalna IP Address opsega su:
+Važno je razumeti da ove lokalne IP adrese nisu vidljive sa interneta. One pripadaju rezervisanim opsezima, definisanim međunarodnim standardima, koji ne mogu biti korišćeni na javnoj mreži. Tri najčešća lokalna IP adresna opsega su:
 
 
 
@@ -8189,28 +8188,28 @@ Važno je razumeti da ove lokalne IP adrese nisu vidljive sa Interneta. One prip
 - `172.16.0.0` do `172.31.255.255`
 
 
-Isti uređaj može stoga imati IP Address kao `192.168.1.42` kod kuće, dok će drugi korisnik u drugoj zemlji imati drugi uređaj sa istim IP Address na svojoj lokalnoj mreži, bez ikakvog konflikta, jer te adrese ne napuštaju kućnu mrežu. Ruter je taj koji obezbeđuje vezu između vaše kućne mreže i javnog Interneta, prevodeći te adrese putem mehanizma zvanog "NAT" (*Network Address Translation*).
+Isti uređaj može stoga imati IP adresu kao `192.168.1.42` kod kuće, dok će drugi korisnik u drugoj zemlji imati drugi uređaj sa istom IP adresom na svojoj lokalnoj mreži, bez ikakvog konflikta, jer te adrese ne napuštaju kućnu mrežu. Ruter je taj koji obezbeđuje vezu između vaše kućne mreže i javnog interneta, prevodeći te adrese putem mehanizma zvanog "NAT" (*Network Address Translation*).
 
 
-Lokalne IP adrese se obično dodeljuju dinamički, koristeći DHCP (*Dynamic Host Configuration Protocol*). Kada povežete novi uređaj na mrežu, on šalje DHCP zahtev za Address, a ruter mu dodeljuje slobodan Address unutar definisanog opsega. Ovaj Address može varirati tokom vremena.
+Lokalne IP adrese se obično dodeljuju dinamički, koristeći DHCP (*Dynamic Host Configuration Protocol*). Kada povežete novi uređaj na mrežu, on šalje DHCP zahtev za adresu, a ruter mu dodeljuje slobodnu adresu unutar definisanog opsega. Ova adresa može varirati tokom vremena.
 
 
-Međutim, moguće je konfigurisati fiksne IP adrese za određene uređaje. To znači rezervisanje specifičnog Address za dati uređaj, na trajnoj osnovi. Ovo je korisno u brojnim slučajevima, na primer:
+Međutim, moguće je konfigurisati fiksne IP adrese za određene uređaje. To znači rezervisanje specifične adrese za dati uređaj, na trajnoj osnovi. Ovo je korisno u brojnim slučajevima, na primer:
 
 
 
-- Za lak pristup ličnom serveru ili NAS-u sa drugog uređaja
-- Da biste štampali na daljinu na mrežnom štampaču bez potrebe za traženjem njegovog Address
-- Da kreirate pravila za filtriranje ili prosleđivanje portova u vašem ruteru
+- radi lakšeg pristupa ličnom serveru ili NAS-u sa drugog uređaja
+- kako biste štampali na mrežnom štampaču sa daljine, bez potrebe da tražite njegovu adresu
+- radi kreiranja pravila za filtriranje ili prosleđivanje portova u vašem ruteru
 
 
 ### Mrežna priključnica
 
 
-Da biste razumeli kako lokalna mreža funkcioniše, potrebno je znati da je svaki IP Address (bilo lokalni ili javni) povezan sa nizom numeričkih portova, numerisanih od `0` do `65535`. Ovi portovi nisu fizički: Oni su virtuelne ulazne ili izlazne tačke koje omogućavaju aplikacijama i uslugama da komuniciraju preko mreže.
+Da biste razumeli kako lokalna mreža funkcioniše, potrebno je znati da je svaka IP adresa (bilo lokalna ili javna) povezana sa nizom numeričkih portova, numerisanih od `0` do `65535`. Ovi portovi nisu fizički: oni su virtuelne ulazne ili izlazne tačke koje omogućavaju aplikacijama i uslugama da komuniciraju preko mreže.
 
 
-Svaki put kada uređaj komunicira putem Interneta ili lokalne mreže, to čini kombinovanjem IP Address i broja porta. Ovo omogućava identifikaciju ne samo koji uređaj treba da primi podatke, već i koja specifična aplikacija ili usluga na tom uređaju. Na primer:
+Svaki put kada uređaj komunicira putem interneta ili lokalne mreže, to čini kombinovanjem IP adrese i broja porta. Ovo omogućava identifikaciju ne samo koji uređaj treba da primi podatke, već i koja specifična aplikacija ili usluga je na tom uređaju. Na primer:
 
 
 
@@ -8230,7 +8229,7 @@ Ovi portovi se takođe koriste u sistemima kao što su Bitcoin ili Tor, gde se s
 
 - Port `8333` se koristi za P2P konekcije na Bitcoin Mainnet
 - Port `18333` se koristi za P2P konekcije na Bitcoin Testnet
-- Port `8332` se koristi za Interface RPC čvora Bitcoin
+- Port `8332` se koristi za RPC interfjes Bitcoin čvora
 - Port `9050` koristi Tor-ov SOCKS5 proxy
 - Port `9150` koristi Tor Browser
 
