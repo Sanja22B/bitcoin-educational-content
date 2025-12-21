@@ -8229,24 +8229,24 @@ Ovi portovi se takođe koriste u sistemima kao što su Bitcoin ili Tor, gde se s
 
 - Port `8333` se koristi za P2P konekcije na Bitcoin Mainnet
 - Port `18333` se koristi za P2P konekcije na Bitcoin Testnet
-- Port `8332` se koristi za RPC interfjes Bitcoin čvora
+- Port `8332` se koristi za RPC interfejs Bitcoin čvora
 - Port `9050` koristi Tor-ov SOCKS5 proxy
 - Port `9150` koristi Tor Browser
 
 
-Drugim rečima, port je kao posvećena vrata. Kada posetite web sajt, vaš računar otvara izvorni port i šalje zahtev ka IP adresi udaljenog sajta Address, ciljajući port `443` ako je veza šifrovana. Udaljeni server zatim vraća odgovor putem istog kanala. Na ruteru, ovaj pojam porta je važan: Potrebno je znati kojem uređaju i kojem lokalnom portu preusmeriti dolazne pakete podataka.
+Drugim rečima, port je kao posvećena vrata. Kada posetite web sajt, vaš računar otvara izvorni port (eng. source port) i šalje zahtev ka IP adresi udaljenog sajta, ciljajući port `443` ako je veza enkriptovana. Udaljeni server zatim vraća odgovor putem istog kanala. Na ruteru, ovaj pojam porta je važan: potrebno je znati kojem uređaju i kojem lokalnom portu preusmeriti dolazne pakete podataka.
 
 
-Ali ova sposobnost otvaranja portova takođe uvodi sigurnosni rizik. Port koji je nepotrebno ostavljen otvoren može biti otkriven alatima za skeniranje mreže i iskorišćen od strane napadača ako je povezan sa ranjivom ili pogrešno konfigurisanom uslugom. To je kao da ostavite vrata otvorena. Ali o tome više kasnije.
+Ali ova sposobnost otvaranja portova takođe uvodi sigurnosni rizik. Port koji je nepotrebno ostavljen otvoren može biti otkriven alatima za skeniranje mreže i iskorišćen od strane napadača ako je povezan sa ranjivim ili pogrešno konfigurisanim serverom. To je kao da ostavite vrata otvorena. Ali o tome više kasnije.
 
 
 Razumevanje osnovnog rada vaše kućne mreže je stoga veoma važno. Dobro poznavanje osnova vašeg modema, Wi-Fi-ja, rutera, lokalnih IP adresa i portova omogućava vam da identifikujete potencijalne rizike i postupite u skladu s tim kako biste ojačali svoju digitalnu sigurnost.
 
 
-U ovom poglavlju, obradili smo važne pojmove kućnog umrežavanja. U sledećem poglavlju, pogledaćemo kako u praksi obezbediti vašu lokalnu Internet infrastrukturu i kako pravilno konfigurisati vaš Wi-Fi da optimizujete vašu sigurnost.
+U ovom poglavlju, obradili smo važne pojmove kućnog umrežavanja. U sledećem poglavlju, pogledaćemo kako u praksi obezbediti vašu lokalnu internet infrastrukturu i kako pravilno konfigurisati vaš Wi-Fi da optimizujete vašu sigurnost.
 
 
-## Osigurajte svoju kućnu mrežu u samo nekoliko koraka
+## Obezbedite svoju kućnu mrežu u samo nekoliko koraka
 
 
 <chapterId>d5577b2e-5247-4d10-8685-4906391e2cc1</chapterId>
@@ -8264,7 +8264,7 @@ Nakon pregleda teorijskih osnova, ovo poglavlje će vas voditi kroz jasne, prakt
 ### Odabir i osiguranje vaše mrežne opreme
 
 
-Bezbednost vaše kućne mreže počinje pravim izborom hardvera: rutera, ili u nekim slučajevima modemski ruter. Ovaj uređaj obezbeđuje vezu između vaše lokalne mreže i Interneta. Stoga igra centralnu ulogu u zaštiti vaših podataka.
+Bezbednost vaše kućne mreže počinje pravim izborom hardvera: rutera, ili u nekim slučajevima modem-ruter. Ovaj uređaj obezbeđuje vezu između vaše lokalne mreže i interneta. Stoga igra centralnu ulogu u zaštiti vaših podataka.
 
 
 Važno je odabrati modernu opremu, koju održava njen proizvođač, i koja je u skladu sa najnovijim bezbednosnim standardima. Danas (jun 2025), preporučuje se odabir uređaja kompatibilnog sa WPA3 (*Wi-Fi Protected Access 3*) enkripcijskim protokolom, koji je naslednik WPA2 i ispravlja nekoliko njegovih nedostataka. Konkretno, WPA3 poboljšava otpornost na brute-force napade na Wi-Fi lozinke i uvodi bolju izolaciju između klijenata na mreži.
@@ -8275,10 +8275,10 @@ Ruter kompatibilan sa Wi-Fi 6, Wi-Fi 6E ili Wi-Fi 7 pružiće vam poboljšane br
 
 **Pažnja**: Kao opšte pravilo, ruteri koje obezbeđuju internet provajderi mogu da nemaju osnovnu funkciju ažuriranja, kao i mogućnosti personalizacije. U nekim slučajevima, provajderi mogu imati i neograničen pristup unutrašnjoj mreži krajnjeg korisnika.
 
-Zato se pobrinite da sistematski ažurirate firmver vašeg rutera. Ova ažuriranja ispravljaju ranjivosti, dodaju nove funkcije i poboljšavaju ukupnu stabilnost sistema. Neki proizvođači nude automatska ažuriranja, ali u nekim slučajevima ćete morati ručno proveriti putem alata za administraciju vašeg rutera Interface. Kao i sa vašim telefonom, računarom, operativnim sistemom i softverom, važno je redovno ažurirati vaš ruter. Možete to učiniti delom vaše nedeljne rutine - Na primer, svake nedelje - tako što ćete napraviti listu svih stavki koje treba proveriti i ažurirati.
+Zato se pobrinite da sistematski ažurirate firmware vašeg rutera. Ova ažuriranja ispravljaju ranjivosti, dodaju nove funkcije i poboljšavaju ukupnu stabilnost sistema. Neki proizvođači nude automatska ažuriranja, ali u nekim slučajevima ćete morati ručno proveriti putem administratorskog interfejsa vašeg rutera. Kao i sa vašim telefonom, računarom, operativnim sistemom i softverom, važno je redovno ažurirati vaš ruter. Možete to učiniti delom vaše nedeljne rutine - na primer, svake nedelje - tako što ćete napraviti listu svih stavki koje treba proveriti i ažurirati.
 
 
-Alternativno, možete omogućiti automatska ažuriranja ili makar automatsko skeniranje novih ažuriranja firmvera ako više volite da postupate ručno. Iako funkcija automatskog ažuriranja i dalje može predstavljati bezbednosnu pretnju, neosvežavanje firmvera rutera redovno izložiće vašu lokalnu mrežu javno poznatim ranjivostima.
+Alternativno, možete omogućiti automatska ažuriranja ili makar automatsko skeniranje novih ažuriranja firmware-a ako više volite da postupate ručno. Iako funkcija automatskog ažuriranja i dalje može predstavljati bezbednosnu pretnju, neosvežavanje firmware-a rutera izložiće vašu lokalnu mrežu javno poznatim ranjivostima.
 
 **Primer**: Prilikom kupovine sopstvenog rutera, može biti dobra ideja potražiti etablirane firme u industriji koje dugo pružaju rutere na tržištu. Na primer, Fritz!Box ruteri imaju dugogodišnju reputaciju plug-and-play uređaja, pogodnih za upotrebu i u porodičnom okruženju i u malim preduzećima. Njihova politika ažuriranja softvera obično se proteže tokom više godina.
 
@@ -8287,10 +8287,10 @@ Ako vaš ruter više nije održavan ali i dalje radi ispravno sa stajališta har
 
 
 - OpenWrt, Linux distribucija specijalizovana za rutere, nudi veliku fleksibilnost i redovna ažuriranja
-- pfSense i OPNsense, dva sistema zasnovana na FreeBSD-u (slična Unix-u) za x86 vatrozide i rutere
+- pfSense i OPNsense, dva sistema zasnovana na FreeBSD-u (slična Unix-u) za x86 firewall-ove i rutere
 
 
-**Napomena**: Neki ISP-ovi isporučuju svojim korisnicima masovne rutere koje proizvodi jedna kompanija koja istovremeno opslužuje mnoge različite ISP-ove širom sveta. Možda ćete otkriti da je za instaliranje jednog od alternativnih firmvera na ruter neko drugi već otkrio kako to da uradi, čak i ako se nalazi na drugoj strani sveta.
+**Napomena**: Neki ISP-ovi isporučuju svojim korisnicima masovne rutere koje proizvodi jedna kompanija koja istovremeno opslužuje mnoge različite ISP-ove širom sveta. Možda ćete otkriti da je za instaliranje jednog od alternativnih firmware-a na ruter neko već pronašao način kako to učiniti, čak i ako se nalazi na drugom kraju sveta.
 
 ![Image](assets/fr/196.webp)
 
@@ -8300,49 +8300,49 @@ https://planb.academy/tutorials/computer-security/operating-system/opnsense-90c2
 
 https://planb.academy/tutorials/computer-security/operating-system/pfsense-24eea96a-2fdc-42a6-a77b-89bc29149864
 
-Ovi sistemi omogućavaju precizniju kontrolu pravila vatrozida, odlaznih i dolaznih veza, segmentacije mreže (VLAN-ovi) i upravljanja DNS-om, ali su više namenjeni naprednim korisnicima.
+Ovi sistemi omogućavaju precizniju kontrolu firewall pravila, odlaznih i dolaznih veza, segmentacije mreže (VLAN-ovi) i upravljanja DNS-om, ali su više namenjeni naprednim korisnicima.
 
 
 **Da sumiram, preporučujem**:
 
 
 
-- Izaberite nedavni ruter
-- Ažurirajte svoj sistem redovno
-- Razmotrite alternativni firmware ako je potrebno
+- izbor novije verzije rutera
+- redovno ažurirajte svoj sistem
+- razmotrite alternativni firmware ako je potrebno
 
 
-### Promenite podrazumevane prijave i lozinke
+### Promenite podrazumevane korisničke naloge i lozinke
 
 
 Jedna od najčešćih (i najopasnijih) grešaka je zadržavanje podrazumevanih kredencijala koje obezbeđuje proizvođač rutera, ili korišćenje slabe lozinke.
 
 
-Istorijski gledano, podrazumevane akreditive za rutere bile su veoma nesigurne i često identične za sve korisnike, kao što je poznato `admin/admin`. Ovi osnovni akreditive bili su javni, dokumentovani u korisničkim priručnicima i široko zabeleženi u bazama podataka koje koriste napadači. U ovom slučaju, svako ko detektuje prisustvo vašeg rutera mogao bi pokušati neovlašćeni pristup jednostavno testiranjem ovih poznatih kombinacija.
+Istorijski gledano, podrazumevani kredencijali za rutere bile su veoma nesigurni i često identični za sve korisnike, kao što je poznato `admin/admin`. Ovi osnovni kredencijali bili su javni, dokumentovani u korisničkim priručnicima i široko zabeleženi u bazama podataka koje koriste napadači. U ovom slučaju, svako ko detektuje prisustvo vašeg rutera mogao bi pokušati neovlašćeni pristup jednostavno testiranjem ovih poznatih kombinacija.
 
 
-Danas većina proizvođača dodeljuje jedinstvenu, robusnu lozinku svakom ruteru. Međutim, čak i u ovom slučaju, preporučujem promenu podrazumevanih akreditiva. Ovo smanjuje rizike lanca Supply i sprečava da originalna lozinka (ponekad odštampana na etiketi rutera) ugrozi vašu sigurnost.
+Danas većina proizvođača dodeljuje jedinstvenu, robusnu lozinku svakom ruteru. Međutim, čak i u ovom slučaju, preporučujem promenu podrazumevanih kredencijala. Ovo smanjuje rizike lanca snabdevanja i sprečava da originalna lozinka (ponekad odštampana na etiketi rutera) ugrozi vašu sigurnost.
 
 
 Stoga je neophodno da odmah promenite svoje identifikatore nakon instalacije rutera:
 
 
 
-- Korisničko ime (ako je dostupno) administracije Interface
-- I iznad svega, administratorska lozinka, koja štiti pristup svim mrežnim konfiguracijama, kao i Wi-Fi lozinka
+- korisničko ime (ako je dostupno) administratorskog interfejsa
+- i iznad svega, administratorsku lozinku, koja štiti pristup svim mrežnim konfiguracijama, kao i Wi-Fi lozinke
 
 
-Ova lozinka mora biti dugačka (40 karaktera), složena (brojevi, mala slova, velika slova i simboli), jedinstvena (ne sme se ponovo koristiti na drugom mestu) i nasumična. Preporučujem korišćenje menadžera lozinki za generate i sigurno čuvanje ovih akreditiva.
+Ova lozinka mora biti dugačka (40 karaktera), složena (brojevi, mala slova, velika slova i simboli), jedinstvena (ne sme se ponovo koristiti na drugom mestu) i nasumična. Preporučujem korišćenje menadžera lozinki za generisanje i sigurno čuvanje ovih kredencijala.
 
 
 https://planb.academy/tutorials/computer-security/authentication/bitwarden-0532f569-fb00-4fad-acba-2fcb1bf05de9
 
 https://planb.academy/tutorials/computer-security/authentication/keepass-f8073bb7-5b4a-4664-9246-228e307be246
 
-Upozorenje: nemojte mešati administratorsku lozinku rutera (koja štiti pristup njegovoj konfiguraciji) sa Wi-Fi lozinkom (koja vam omogućava povezivanje na bežičnu mrežu). Ovo su dve različite Elements, i obe treba promeniti.
+Upozorenje: nemojte mešati administratorsku lozinku rutera (koja štiti pristup njegovoj konfiguraciji) sa Wi-Fi lozinkom (koja vam omogućava povezivanje na bežičnu mrežu). Ovo su dva različita elementa, i obe lozinke treba promeniti.
 
 
-Konačno, neki moderni ruteri imaju dva interfejsa za upravljanje: lokalni Interface web (dostupan putem Address kao što je `192.168.1.1`) i cloud Interface (omogućava daljinsko upravljanje putem Interneta). Ako je drugi podrazumevano omogućen, savetujem vam da ga onemogućite ako ga ne koristite, ili da pojačate njegovu sigurnost jakom lozinkom i, ako je dostupno, dvofaktorskom autentifikacijom (2FA).
+Konačno, neki moderni ruteri imaju dva interfejsa za upravljanje: lokalni web interfejs(dostupan putem adrese kao što je `192.168.1.1`) i cloud interfejs (omogućava daljinsko upravljanje putem interneta). Ako je drugi podrazumevano omogućen, savetujem vam da ga onemogućite ako ga ne koristite, ili da pojačate njegovu sigurnost jakom lozinkom i, ako je dostupno, dvofaktorskom autentifikacijom (2FA).
 
 
 ### Sigurna konfiguracija rutera
@@ -8365,14 +8365,14 @@ Ova funkcija omogućava uređajima na vašoj mreži da automatski zatraže od ru
 - WPS (*Wi-Fi Protected Setup*):
 
 
-Prvobitno dizajniran da pojednostavi povezivanje uređaja na Wi-Fi bez unosa lozinke, ovaj sistem se zasniva na PIN kodu koji je često slab i lako napadnut metodom brute force. Savetujem vam da ga onemogućite.
+Prvobitno dizajniran da pojednostavi povezivanje uređaja na Wi-Fi bez unosa lozinke, ovaj sistem se zasniva na PIN kodu koji je često slab i lako napadnut brute force metodom. Savetujem vam da ga onemogućite.
 
 
 
 - Daljinski pristup (**Remote Management**):
 
 
-Neki ruteri omogućavaju povezivanje na njihovu administraciju Interface spolja, putem Interneta. Ova funkcija nerazumno povećava površinu napada vašeg rutera. Onemogućite je u potpunosti, osim ako nemate specifičnu potrebu za daljinskim upravljanjem. Čak i tada, uvek koristite VPN.
+Neki ruteri omogućavaju povezivanje na njihov administratorski interfejs spolja, putem interneta. Ova funkcija nerazumno povećava površinu napada vašeg rutera. Onemogućite je u potpunosti, osim ako nemate specifičnu potrebu za daljinskim upravljanjem. Čak i tada, uvek koristite VPN.
 
 
 https://planb.academy/tutorials/computer-security/communication/tailscale-9acbd7de-04d9-40f6-ab80-35f0dfedb632
@@ -8381,7 +8381,7 @@ https://planb.academy/tutorials/computer-security/communication/tailscale-9acbd7
 - **Zastareli ili nesigurni protokoli**:
 
 
-Onemogući sve administrativne usluge koje koriste protokole u običnom tekstu kao što su Telnet, FTP, nešifrovani HTTP ili SMBv1. Ovi protokoli ne obezbeđuju poverljivost niti integritet razmenjenih podataka i često su meta malvera. Ako vam je potreban lokalni ili daljinski pristup, koristite samo veze putem HTTPS (šifrovani Interface), SSH ili SFTP, prema potrebi.
+Onemogućite sve administrativne servise koji koriste protokole u običnom tekstu, kao što su Telnet, FTP, nešifrovani HTTP ili SMBv1. Ovi protokoli ne obezbeđuju poverljivost niti integritet razmenjenih podataka i često su meta malware-a. Ako vam je potreban lokalni ili daljinski pristup, koristite samo veze putem HTTPS (enkriptovani interfejs), SSH ili SFTP, prema potrebi.
 
 
 
@@ -8391,7 +8391,7 @@ Onemogući sve administrativne usluge koje koriste protokole u običnom tekstu k
 Neki ruteri po defaultu odgovaraju na ICMP zahteve poslate spolja (komanda `ping`). Ovo omogućava napadaču da proveri da li je vaša mreža aktivna i dostupna. Ako vam to nije potrebno, onemogućite ovaj odgovor u firewall-u rutera.
 
 
-Konačno, zapamtite da ograničite pristup administraciji rutera Interface samo na pouzdane uređaje, ograničavajući njegovu dostupnost na specifične IP adrese, ako Interface to dozvoljava. Neki firmveri, kao što je OpenWrt, nude veoma preciznu kontrolu nad ovim parametrima.
+Konačno, zapamtite da ograničite pristup administratorskom interfejsu rutera samo na pouzdane uređaje, ograničavajući njegovu dostupnost na specifične IP adrese, ako interfejs to dozvoljava. Neki firmware-i, kao što je OpenWrt, nude veoma preciznu kontrolu nad ovim parametrima.
 
 
 ### Pojačavanje sigurnosti Wi-Fi mreže
@@ -8403,10 +8403,10 @@ Wi-Fi mreža je često preferirana tačka ulaska za upade u domaće okruženje. 
 Prvi važan korak je odabrati pravi protokol za šifrovanje. Uvek aktivirajte "*WPA3-Personal*", najnoviji i najsigurniji standard. Ne samo da štiti razmenjene podatke, već i sprečava određene poznate napade.
 
 
-Naziv vaše Wi-Fi mreže, nazvan "SSID" (*Service Set Identifier*), treba da ostane neutralan. Izbegavajte uključivanje vašeg imena, Address ili brenda rutera. Naziv poput `MaisonDupont_WiFi6` već daje previše informacija potencijalnom napadaču. Preferirajte generički naziv, bez posebnog značenja. Ovo ograničava dostupne informacije za pasivno praćenje ili socijalno ciljanje.
+Naziv vaše Wi-Fi mreže, nazvan "SSID" (*Service Set Identifier*), treba da ostane neutralan. Izbegavajte uključivanje vašeg imena, adrese ili brenda rutera. Naziv poput `MaisonDupont_WiFi6` već daje previše informacija potencijalnom napadaču. Preferirajte generički naziv, bez posebnog značenja. Ovo ograničava dostupne informacije za pasivno praćenje ili socijalno ciljanje.
 
 
-Još jedna najbolja praksa je kreiranje gostujuće mreže odvojene od vaše glavne mreže. Ova paralelna mreža, često ponuđena nativno na modernim ruterima, omogućava vam da svojim gostima pružite Internet konekciju bez da im omogućite pristup vašim drugim uređajima (računari, štampači, NAS, itd.). Takođe znači da im ne morate davati lozinku vaše glavne mreže. Da biste otišli još dalje, aktivirajte izolaciju klijenata na ovoj gostujućoj mreži: Ovo će takođe sprečiti posetioce da međusobno komuniciraju, dodatno smanjujući rizike povezane sa kompromitovanim uređajima.
+Još jedna najbolja praksa je kreiranje gostujuće mreže odvojene od vaše glavne mreže. Ova paralelna mreža, često ponuđena izvorno na modernim ruterima, omogućava vam da svojim gostima pružite internet konekciju bez da im omogućite pristup vašim drugim uređajima (računari, štampači, NAS, itd.). Takođe znači da im ne morate davati lozinku vaše glavne mreže. Da biste otišli još dalje, aktivirajte izolaciju klijenata na ovoj gostujućoj mreži: ovo će takođe sprečiti posetioce da međusobno komuniciraju, dodatno smanjujući rizike povezane sa kompromitovanim uređajima.
 
 
 Konačno, podesite snagu prenosa vašeg Wi-Fi pristupnog punkta. Podrazumevano, mnogi ruteri emituju veoma jak signal, ponekad detektabilan daleko izvan vaših zidova. Ovo povećava vašu izloženu površinu. U naprednim podešavanjima vašeg rutera, smanjite snagu prenosa na minimum potreban da pokrije vaš dom. Ako vaš ruter to omogućava, možete takođe konfigurisati automatsko isključivanje Wi-Fi-ja kada se ne koristi.
@@ -8418,7 +8418,7 @@ Konačno, podesite snagu prenosa vašeg Wi-Fi pristupnog punkta. Podrazumevano, 
 Jedna od najefikasnijih strategija za jačanje sigurnosti kućne mreže je segmentacija. Ovo podrazumeva deljenje lokalne mreže na nekoliko nezavisnih podmreža nazvanih "VLANs" (*Virtual Local Area Networks*). Ovi VLAN-ovi omogućavaju izolaciju različitih tipova uređaja ili načina korišćenja, čak i ako koriste isti fizički hardver (ruter, kabliranje, Wi-Fi terminal, itd.).
 
 
-Svaki VLAN funkcioniše kao mala, autonomna mreža sa sopstvenim pravilima komunikacije. Razmene između VLAN-ova su po defaultu blokirane ili strogo kontrolisane. Ovo sprečava, na primer, da kompromitovani povezani TV dođe do vašeg ličnog računara ili NAS-a. Ovaj pristup se zasniva na 2 osnovna principa sajber bezbednosti koje smo već proučili u prethodnim poglavljima: Kompartmentalizacija i najmanje privilegije.
+Svaki VLAN funkcioniše kao mala, autonomna mreža sa sopstvenim pravilima komunikacije. Razmene između VLAN-ova su po defaultu blokirane ili strogo kontrolisane. Ovo sprečava, na primer, da kompromitovani povezani TV dođe do vašeg ličnog računara ili NAS-a. Ovaj pristup se zasniva na 2 osnovna principa sajber bezbednosti koje smo već proučili u prethodnim poglavljima: kompartmentalizacija i najmanje privilegije.
 
 
 ![Image](assets/fr/197.webp)
@@ -8428,43 +8428,43 @@ U konkretnim terminima, evo nekoliko primera segmentacije koje biste mogli da ur
 
 
 
-- Lični VLAN: Za vaše pouzdane uređaje kao što su računari, pametni telefoni ili lični serveri. Ovo je glavni segment gde vaši osetljivi podaci cirkulišu.
+- lični VLAN: za vaše pouzdane uređaje kao što su računari, pametni telefoni ili lični serveri. Ovo je glavni segment gde vaši osetljivi podaci cirkulišu.
 
 
 
-- IoT VLAN: Za povezane objekte (sijalice, zvučnici, kamere, pametni televizori, itd.). Ovi uređaji su često nesigurni, manje ažurirani i česta meta napada. Izolovanjem njih se značajno smanjuje rizik da ih napadač iskoristi kao ulaznu tačku u vašu mrežu.
+- IoT VLAN: za povezane uređaje (sijalice, zvučnici, kamere, pametni televizori, itd.). Ovi uređaji su često nesigurni, manje ažurirani i česta meta napada. Izolovanjem njih se značajno smanjuje rizik da ih napadač iskoristi kao ulaznu tačku u vašu mrežu.
 
 
 
-- Gostujući VLAN: Rezervisan za vaše prijatelje ili porodicu kada dođu da ostanu kod vas. Omogućava pristup Internetu, ali ne i pristup vašoj privatnoj opremi.
+- gostujući VLAN: rezervisan za vaše prijatelje ili porodicu kada dođu da ostanu kod vas. Omogućava pristup internetu, ali ne i pristup vašoj privatnoj opremi.
 
 
-Konačno, ovaj pristup takođe nudi prednosti u pogledu performansi i upravljanja: Omogućava vam da prioritizujete određene tipove saobraćaja, primenite specifična sigurnosna pravila u zavisnosti od VLAN-a (firewall, ograničavanje brzine, DNS filtriranje, itd.), i bolje pratite abnormalno ponašanje mreže. To je praksa koju toplo preporučujem.
+Konačno, ovaj pristup takođe nudi prednosti u pogledu performansi i upravljanja: omogućava vam da prioritizujete određene tipove saobraćaja, primenite specifična sigurnosna pravila u zavisnosti od VLAN-a (firewall, ograničavanje brzine, DNS filtriranje, itd.), i bolje pratite abnormalno ponašanje mreže. To je praksa koju toplo preporučujem.
 
 
 ### Napredno upravljanje DNS-om
 
 
-DNS (*Domain Name System*) je Internet usluga koja prevodi web adrese razumljive ljudima (npr. `planb.network`) u IP adrese razumljive mašinama. Kada uređaj na vašoj mreži želi da poseti sajt, on šalje upit DNS serveru da dobije Address servera sa kojim treba da stupi u kontakt. Podrazumevano, ovi DNS upiti se često šalju u čistom tekstu (nešifrovani) vašem ISP-u, omogućavajući njemu (ili trećoj strani kao što je vlada) da vidi sve sajtove koje posećujete, čak i ako je njihov sadržaj šifrovan putem HTTPS-a.
+DNS (*Domain Name System*) je internet usluga koja prevodi web adrese razumljive ljudima (npr. `planb.network`) u IP adrese razumljive mašinama. Kada uređaj na vašoj mreži želi da poseti sajt, on šalje upit DNS serveru da dobije adresu servera sa kojim treba da stupi u kontakt. Podrazumevano, ovi DNS upiti se često šalju u čistom tekstu (nešifrovani) vašem ISP-u, omogućavajući njemu (ili trećoj strani kao što je vlada) da vidi sve sajtove koje posećujete, čak i ako je njihov sadržaj šifrovan putem HTTPS-a.
 
 
 Da biste poboljšali privatnost pretraživanja i blokirali određeni neželjeni sadržaj direktno iz korena, možete preuzeti kontrolu nad DNS rezolucijom unutar vaše kućne mreže. Počnite tako što ćete zameniti podrazumevane DNS servere sa alternativama koje više poštuju privatnost kao što su:
 
 
 
-- [Quad9](https://quad9.net/): Uključuje liste blokiranja za zlonamerne domene i ne čuva dugoročne zapise imena
+- [Quad9](https://quad9.net/): uključuje liste blokiranja za zlonamerne domene i ne čuva dugoročne zapise imena
 
 
 
-- [Cloudflare DNS](https://www.cloudflare.com/application-services/products/dns/): Brz i posvećen strogom pravilu bez beleženja
+- [Cloudflare DNS](https://www.cloudflare.com/application-services/products/dns/): brz i posvećen strogom pravilu bez beleženja
 
 
 
-- [NextDNS](https://nextdns.io/): Visoko prilagodljiv, sa naprednim funkcijama filtriranja i statistike
+- [NextDNS](https://nextdns.io/): visoko prilagodljiv, sa naprednim funkcijama filtriranja i statistike
 
 
 
-- [AdGuard DNS](https://adguard-dns.io/): Lako za konfigurisanje, sa opcijama za blokiranje reklama i praćenja
+- [AdGuard DNS](https://adguard-dns.io/): lako za konfigurisanje, sa opcijama za blokiranje reklama i praćenja
 
 
 ![Image](assets/fr/199.webp)
@@ -8474,11 +8474,11 @@ Zatim, aktivirajte protokol za šifrovanje DNS upita kako biste sprečili presre
 
 
 
-- DoH (**DNS over HTTPS**): Encapsulira DNS zahteve u HTTPS protokol, čineći ih nerazlučivim od konvencionalnog šifrovanog web saobraćaja
+- DoH (**DNS over HTTPS**): encapsulira DNS zahteve u HTTPS protokol, čineći ih nerazlučivim od konvencionalnog šifrovanog web saobraćaja
 
 
 
-- DoT (**DNS over TLS**): Kreira specifičan enkriptovani kanal između vašeg uređaja i DNS servera
+- DoT (**DNS over TLS**): kreira specifičan enkriptovani kanal između vašeg uređaja i DNS servera
 
 
 
@@ -8489,7 +8489,7 @@ U praktičnom smislu, enkripcija DNS-a i prebacivanje servera mogu se implementi
 
 
 
-- Na nivou aplikacije: Neke softverske aplikacije, kao što je Firefox pregledač, omogućavaju vam da direktno konfigurišete DNS enkripcijske protokole, kao što je DoH. Međutim, ovo rešenje štiti samo zahteve napravljene putem aplikacije, a ne i ostatak vašeg računara.
+- na nivou aplikacije: Neke softverske aplikacije, kao što je Firefox pregledač, omogućavaju vam da direktno konfigurišete DNS enkripcijske protokole, kao što je DoH. Međutim, ovo rešenje štiti samo zahteve napravljene putem aplikacije, a ne i ostatak vašeg računara.
 
 
 ![Image](assets/fr/198.webp)
@@ -8497,11 +8497,11 @@ U praktičnom smislu, enkripcija DNS-a i prebacivanje servera mogu se implementi
 
 
 https://planb.academy/tutorials/computer-security/communication/firefox-11814cec-3415-4ed9-a06e-f6fda5c9510f
-- Na nivou operativnog sistema: Neki OS-ovi nativno integrišu podršku za enkriptovani DNS (DoT ili DoH), što osigurava sve DNS zahteve koji prolaze kroz mrežni stek sistema. Međutim, ovo ne osigurava ceo računar ili telefon: Aplikacije mogu zaobići ovo podešavanje ako su konfigurisane da koriste drugi DNS resolver ili protokol.
+- na nivou operativnog sistema: neki OS-ovi nativno integrišu podršku za enkriptovani DNS (DoT ili DoH), što osigurava sve DNS zahteve koji prolaze kroz mrežni stek sistema. Međutim, ovo ne osigurava ceo računar ili telefon: aplikacije mogu zaobići ovo podešavanje ako su konfigurisane da koriste drugi DNS resolver ili protokol.
 
 
 
-- Na mrežnom nivou: Šifrovanje DNS-a može se primeniti na celu lokalnu mrežu putem konfiguracije rutera. Još jednom, ruter konfigurisan za DoH/DoT vidi samo saobraćaj koji mu je zaista poslat. Dakle, pregledač konfigurisan da direktno kontaktira udaljeni rešavač izbegava ovu kontrolu. Da biste smanjili ove propuste, potrebno je blokirati port 53 u čistom tekstu i ograničiti neovlašćene DoH/DoT destinacije putem vatrozida rutera.
+- na mrežnom nivou: šifrovanje DNS-a može se primeniti na celu lokalnu mrežu putem konfiguracije rutera. Još jednom, ruter konfigurisan za DoH/DoT vidi samo saobraćaj koji mu je zaista poslat. Dakle, pregledač konfigurisan da direktno kontaktira udaljeni rešavač izbegava ovu kontrolu. Da biste smanjili ove propuste, potrebno je blokirati port 53 u čistom tekstu i ograničiti neovlašćene DoH/DoT destinacije putem vatrozida rutera.
 
 
 Takođe, modemi ruteri koje obezbeđuje ISP ne podržavaju uvek ove funkcije. U slučaju ograničenja rutera, postoji nekoliko alternativa. Možete instalirati ručno šifrovani DNS klijent na svaki uređaj, dodati lični ruter iza ISP-ovog (sposoban za rukovanje šifrovanjem DNS-a) ili postaviti lokalni DNS server (na primer, na Raspberry Pi) koji je odgovoran za šifrovanje i preusmeravanje DNS zahteva ka sigurnom resolveru.
