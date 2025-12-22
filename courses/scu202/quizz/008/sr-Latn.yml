@@ -6,4 +6,4 @@ wrong_answers:
   - Nedostatak ažuriranja
 explanation: |
   Uska integracija MacOS-a sa Apple hardverom dovodi do zavisnosti i vezanosti za vlasnički ekosistem brenda.
-reviewed: false
+reviewed: true
