@@ -1,7 +1,7 @@
 question: Koji je glavni nedostatak macOS ekosistema?
 answer: Zatvorenost i zavisnost od Apple-a
 wrong_answers:
-  - Previše otvorenosti softvera
+  - Prevelika otvorenost softvera
   - Slaba optimizacija grafike
   - Nedostatak ažuriranja
 explanation: |
