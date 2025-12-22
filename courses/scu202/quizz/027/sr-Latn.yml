@@ -3,7 +3,7 @@ answer: GUFW
 wrong_answers:
   - GEdit
   - Nautilus
-  - Sinaptički
+  - Synaptic
 explanation: |
   GUFW je grafički interfejs za UFW firewall, omogućavajući vam da aktivirate, deaktivirate i konfigurišete pravila bez korišćenja terminala.
 reviewed: true
