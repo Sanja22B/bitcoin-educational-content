@@ -1,7 +1,7 @@
 question: Koji open source pregledač, razvijen od strane neprofitne organizacije, je vodeći eksponent Gecko engine-a?
 answer: Mozilla Firefox
 wrong_answers:
-  - Brawe
+  - Brave
   - Safari
   - Chrome
 explanation: |
