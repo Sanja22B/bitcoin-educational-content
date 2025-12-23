@@ -615,7 +615,7 @@ Imajući ovo na umu, Stallman je osnovao *Free Software Foundation* (FSF) 1985. 
 
 
 
-GNU brzo pruža niz osnovnih alata za svoj sistem:
+GNU brzo obezbeđuje niz osnovnih alata za svoj sistem:
 
 
 
