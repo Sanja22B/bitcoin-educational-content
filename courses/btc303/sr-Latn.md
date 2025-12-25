@@ -20,7 +20,7 @@ Filozofija razvoja Bitcoina je kurs za Bitcoin programere koji već razumeju osn
 Treba da pomogne novim programerima da usvoje najvažnije lekcije iz više od decenije razvoja i javne rasprave o Bitcoin, dok im pruža koristan kontekst za evaluaciju novih ideja (dobrih i loših!).
 
 
-### Šta očekivati?
+### Šta možete očekivati?
 
 
 Kao što je gore navedeno, ovo je praktičan vodič za Bitcoin programere. Međutim, Bitcoin je široka i složena tema i ne možemo pokriti sve njene aspekte ovde. Sa ovim kursom, nadamo se da ćemo diskutovati o neophodnim funkcijama kako biste započeli svoju razvojnu aktivnost, kao i da vam omogućimo da je dalje istražujete samostalno.
@@ -49,21 +49,21 @@ Knjigu je naručio i finansirao [Chaincode Labs](https://learning.chaincode.com/
 
 Dobrodošli na kurs PHI 301 o filozofiji razvoja Bitcoina.
 
-Bitcoin is more than just a cryptocurrency, it embodies a philosophical vision about decentralization, privacy, trustlessness, and resilience. This course is designed specifically for developers already familiar with Bitcoin’s technical foundations who now seek to deepen their understanding of the principles underpinning Bitcoin’s design and governance.
+Bitcoin je više od same kriptovalute; on predstavlja filozofsku viziju decentralizacije, privatnosti, nepovredivog poverenja i otpornosti. Ovaj kurs je posebno osmišljen za developere koji su već upoznati sa tehničkim osnovama Bitcoina, a sada žele da prodube svoje razumevanje principa na kojima počiva Bitcoinov dizajn i upravljanje.
 
-Throughout this course, you'll gain clarity on the essential values and strategies that have guided Bitcoin’s evolution for over a decade. By exploring these themes in depth, you'll develop the critical perspective needed to evaluate and contribute to future developments with confidence.
+Tokom ovog kursa steći ćete jasno razumevanje osnovnih vrednosti i strategija koje su više od decenije oblikovale razvoj Bitcoina. Dubinskim proučavanjem ovih tema razvijaćete kritičku perspektivu potrebnu da sa samopouzdanjem ocenjujete i doprinosite budućim razvojnim inicijativama.
 
-### Bitcoin’s Central Values
+### Ključne vrednosti Bitcoina
 
 What makes Bitcoin unique? This section reveals the foundational values at the heart of Bitcoin’s design. You'll explore decentralization, the cornerstone ensuring no single entity controls the network; trustlessness, the key to removing third-party reliance; privacy, essential for both individual freedom and system integrity; and finite supply, the coded guarantee of scarcity that shapes Bitcoin’s economic identity. Mastering these concepts will allow you to fully grasp Bitcoin's strengths and vulnerabilities.
 
-### Bitcoin Governance
+### Proces donošenja odluka u Bitcoin mreži (eng. Bitcoin Governance)
 
-Navigating the complex governance landscape of Bitcoin requires more than technical expertise, it demands an understanding of Bitcoin’s unique approach to consensus and decision-making. In this section, you’ll dive into the mechanisms and philosophies behind critical processes like protocol upgrades, the necessity of adversarial thinking, the strength of open-source collaboration, the ongoing challenges of scaling, and the nuanced strategies required when things inevitably go wrong. Equipped with this knowledge, you'll be prepared not just to participate but to shape Bitcoin's future effectively and responsibly.
+Snalaženje u složenom upravljačkom pejzažu Bitcoina zahteva više od tehničke stručnosti; potrebno je razumevanje jedinstvenog pristupa Bitcoina konsenzusu i donošenju odluka. U ovom delu kursa detaljno ćete proučiti mehanizme i filozofije koje stoje iza ključnih procesa kao što su nadogradnje protokola, značaj razmišljanje kroz scenarije napada/grešaka (eng. adversarial thinking), snaga saradnje u open-source zajednici, stalni izazovi skalabilnosti, kao i nijansirane strategije potrebne kada stvari neizbežno krenu po zlu. Opremljeni ovim znanjem, bićete spremni ne samo da učestvujete, već i da efikasno i odgovorno oblikujete budućnost Bitcoina.
 
-Ready to take the next step in your Bitcoin journey? Let's begin!
+Spremni da napravite sledeći korak na svom Bitcoin putovanju? Hajde da počnemo!
 
-***N.B.**: If you encounter any unfamiliar terms related to Bitcoin during the course, please refer to the [glosary](https://planb.academy/resources/glossary) to find definitions.
+***Napomena**: Ako tokom kursa naiđete na bilo koji nepoznat termin vezan za Bitcoin, molimo vas da pogledate [rečnik](https://planb.academy/resources/glossary) kako biste pronašli definicije.
 
 
 
@@ -78,14 +78,10 @@ Ready to take the next step in your Bitcoin journey? Let's begin!
 <chapterId>9397c84b-0038-5d0e-88d5-11767ce8182d</chapterId>
 
 
+Ovo poglavlje analizira šta je decentralizacija i zašto je ključna za funkcionisanje Bitcoina. Pravimo razliku između decentralizacija rudara i full node-ova ((puni čvor – računar koji čuva kompletnu kopiju blockchaina i validira sve transakcije i blokove prema pravilima Bitcoina), i diskutujemo šta oni donose za otpornost na cenzuru, jedno od najcentralnijih svojstava Bitcoina.
 
 
-Ovo analizira šta je decentralizacija i zašto je ključna za funkcionisanje Bitcoin. Pravimo razliku između
-
-decentralizacija rudara i puna čvorova, i diskutujte šta oni donose za otpornost na cenzuru, jedno od najcentralnijih svojstava Bitcoin.
-
-
-Diskusija se zatim prebacuje na razumevanje neutralnosti - ili nepostojanja ograničenja prema korisnicima, rudarima i programerima - što je neophodno svojstvo svakog decentralizovanog sistema. Na kraju, dotičemo se koliko Hard može biti teško shvatiti decentralizovani sistem kao što je Bitcoin, i predstavljamo neke mentalne modele koji vam mogu pomoći da ga razumete.
+Diskusija se zatim prebacuje na razumevanje neutralnosti - ili nepostojanja ograničenja prema korisnicima, rudarima i programerima - što je neophodno svojstvo svakog decentralizovanog sistema. Na kraju, dotičemo se koliko može biti teško shvatiti decentralizovani sistem kao što je Bitcoin, i predstavljamo neke mentalne modele koji vam mogu pomoći da ga razumete.
 
 
 Sistem bez bilo kakve centralne tačke kontrole naziva se *decentralizovanim*. Bitcoin je dizajniran da izbegne postojanje centralne tačke kontrole, ili preciznije *centralne tačke cenzure*.
@@ -94,10 +90,10 @@ Sistem bez bilo kakve centralne tačke kontrole naziva se *decentralizovanim*. B
 Decentralizacija je sredstvo za postizanje *otpornosti na cenzuru*.
 
 
-Postoje dva glavna aspekta decentralizacije u Bitcoin: decentralizacija Miner i decentralizacija Full node.
+Postoje dva glavna aspekta decentralizacije u Bitcoinu: decentralizacija rudara i decentralizacija full node-ova.
 
 
-Miner decentralizacija odnosi se na činjenicu da obrada transakcija nije izvršena niti koordinisana od strane bilo kojeg centralnog entiteta. Full node decentralizacija odnosi se na činjenicu da se validacija blokova, tj. podataka koje rudari proizvode, obavlja na ivici mreže, u konačnici od strane njenih korisnika, a ne od strane nekoliko pouzdanih autoriteta.
+Decentralizacija rudara odnosi se na činjenicu da obrada transakcija nije izvršena niti koordinisana od strane bilo kojeg centralnog entiteta. Full node decentralizacija odnosi se na činjenicu da se validacija blokova, tj. podataka koje rudari proizvode, obavlja na ivici mreže, u konačnici od strane njenih korisnika, a ne od strane nekoliko pouzdanih autoriteta.
 
 
 ![](assets/sr-Latn/001.webp)
