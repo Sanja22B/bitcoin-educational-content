@@ -1,21 +1,21 @@
 ---
 name: Filozofija razvoja Bitcoin
-goal: Razvijte duboko filozofsko razumevanje principa dizajna Bitcoin.
+goal: Steknite duboko filozofsko razumevanje principa na kojima je dizajniran Bitcoin.
 objectives: 
 
-  - Analizirajte osnovne kompromise i arhitektonske odluke Bitcoin.
-  - Naučite kako da ocenite predložene promene i inovacije za Bitcoin protokol
-  - Sintetiši više od decenije istorije razvoja Bitcoin i debata unutar zajednice.
-  - Primeni okvire kritičkog razmišljanja prilikom procene novih BIP-ova.
+  - Analizirajte fundamentalne kompromisе i arhitektonske izbore na kojima se Bitcoin zasniva.
+  - Naučite kako da procenite predložene izmene i inovacije Bitcoin protokola.
+  - Sintetizujte više od decenije istorije razvoja Bitcoina i debata unutar zajednice.
+  - Primenite okrvir kritičkog razmišljanja prilikom procene novih BIP-ova.
 
 
 ---
 
-# Duboko zaronite u filozofiju razvoja Bitcoin
+# Detaljno proučavanje filozofije razvoja Bitcoina
 
 
 
-Filozofija razvoja Bitcoin je kurs za Bitcoin programere koji već razumeju osnove koncepata i procesa kao što su Proof-of-Work, izgradnja blokova i životni ciklus transakcija, i koji žele da unaprede svoje znanje sticanjem dubljeg razumevanja kompromisa u dizajnu i filozofiji Bitcoin.
+Filozofija razvoja Bitcoina je kurs za Bitcoin programere koji već razumeju osnovne koncepte i procese kao što su Proof-of-Work, formiranje blokova i životni ciklus transakcija, i koji žele da unaprede svoje znanje sticanjem dubljeg razumevanja kompromisa u dizajnu Bitcoina i njegove filozofije.
 
 Treba da pomogne novim programerima da usvoje najvažnije lekcije iz više od decenije razvoja i javne rasprave o Bitcoin, dok im pruža koristan kontekst za evaluaciju novih ideja (dobrih i loših!).
 
@@ -26,7 +26,7 @@ Treba da pomogne novim programerima da usvoje najvažnije lekcije iz više od de
 Kao što je gore navedeno, ovo je praktičan vodič za Bitcoin programere. Međutim, Bitcoin je široka i složena tema i ne možemo pokriti sve njene aspekte ovde. Sa ovim kursom, nadamo se da ćemo diskutovati o neophodnim funkcijama kako biste započeli svoju razvojnu aktivnost, kao i da vam omogućimo da je dalje istražujete samostalno.
 
 
-U Bitcoin je uključeno mnogo ljudi; pošto neki od njih imaju suprotna mišljenja, ovde možete pronaći resurse koji izražavaju kontradiktorne ideje. Međutim, uvek pokušavamo da se držimo domena činjenica, gde mišljenja nisu bitna.
+U Bitcoin je uključeno mnogo ljudi; pošto neki od njih imaju suprotna mišljenja, ovde možete pronaći izvore koji izražavaju kontradiktorne ideje. Međutim, uvek pokušavamo da se držimo domena činjenica, gde mišljenja nisu bitna.
 
 
 ### Ko je ovo napisao?
@@ -39,7 +39,35 @@ Knjigu je naručio i finansirao [Chaincode Labs](https://learning.chaincode.com/
 
 +++
 
-# Bitcoin Central Values
+# Uvod
+
+<partId>58c48e9b-e285-4dc6-8952-6cc5140b1313</partId>
+
+## Pregled kursa
+
+<chapterId>28b7256b-9cb0-463e-a82d-d732be86c98c</chapterId>
+
+Dobrodošli na kurs PHI 301 o filozofiji razvoja Bitcoina.
+
+Bitcoin is more than just a cryptocurrency, it embodies a philosophical vision about decentralization, privacy, trustlessness, and resilience. This course is designed specifically for developers already familiar with Bitcoin’s technical foundations who now seek to deepen their understanding of the principles underpinning Bitcoin’s design and governance.
+
+Throughout this course, you'll gain clarity on the essential values and strategies that have guided Bitcoin’s evolution for over a decade. By exploring these themes in depth, you'll develop the critical perspective needed to evaluate and contribute to future developments with confidence.
+
+### Bitcoin’s Central Values
+
+What makes Bitcoin unique? This section reveals the foundational values at the heart of Bitcoin’s design. You'll explore decentralization, the cornerstone ensuring no single entity controls the network; trustlessness, the key to removing third-party reliance; privacy, essential for both individual freedom and system integrity; and finite supply, the coded guarantee of scarcity that shapes Bitcoin’s economic identity. Mastering these concepts will allow you to fully grasp Bitcoin's strengths and vulnerabilities.
+
+### Bitcoin Governance
+
+Navigating the complex governance landscape of Bitcoin requires more than technical expertise, it demands an understanding of Bitcoin’s unique approach to consensus and decision-making. In this section, you’ll dive into the mechanisms and philosophies behind critical processes like protocol upgrades, the necessity of adversarial thinking, the strength of open-source collaboration, the ongoing challenges of scaling, and the nuanced strategies required when things inevitably go wrong. Equipped with this knowledge, you'll be prepared not just to participate but to shape Bitcoin's future effectively and responsibly.
+
+Ready to take the next step in your Bitcoin journey? Let's begin!
+
+***N.B.**: If you encounter any unfamiliar terms related to Bitcoin during the course, please refer to the [glosary](https://planb.academy/resources/glossary) to find definitions.
+
+
+
+# Ključne vrednosti Bitcoina
 
 <partId>2d6c683b-54c8-5465-b2ca-4e96a6828834</partId>
 
