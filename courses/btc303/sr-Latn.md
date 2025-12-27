@@ -510,13 +510,13 @@ Rad opisuje glavne probleme blockchain privatnosti, naime ponovna upotreb adresa
 Chris Belcher [pisao je prilično detaljno u ](https://en.Bitcoin.it/Privacy#Blockchain_attacks_on_privacy) o različitim vrstama curenja privatnosti koja se mogu dogoditi na Bitcoin blockchain-u. Preporučujemo da pročitate barem prvih nekoliko pododeljaka pod "Blockchain napadi na privatnost."
 
 
-Zaključak je da privatnost u Bitcoin nije savršena. Potrebno je značajno raditi kako bi se transakcije obavljale privatno. Većina ljudi nije spremna da ide tako daleko zbog privatnosti. Čini se da postoji jasan kompromis između privatnosti i upotrebljivosti.
+Zaključak je da privatnost u Bitcoin-u nije savršena. Potrebno je značajno raditi kako bi se transakcije obavljale privatno. Većina ljudi nije spremna da ide tako daleko zbog privatnosti. Čini se da postoji jasan kompromis između privatnosti i upotrebljivosti.
 
 
-Još jedan važan aspekt privatnosti je da mere koje preduzimate da zaštitite sopstvenu privatnost utiču i na druge korisnike. Ako ste nemarni sa svojom privatnošću, i drugi ljudi mogu iskusiti smanjenu privatnost. Gregory Maxwell to vrlo jasno objašnjava u istoj Bitcoin Talk diskusiji [koju smo gore povezali](https://bitcointalk.org/index.php?topic=334316.msg3589252#msg3589252), i zaključuje primerom:
+Još jedan važan aspekt privatnosti je da mere koje preduzimate da zaštitite sopstvenu privatnost utiču i na druge korisnike. Ako ste nemarni sa svojom privatnošću, i drugi ljudi mogu iskusiti smanjenu privatnost. Gregory Maxwell to vrlo jasno objašnjava u istoj Bitcoin Talk diskusiji [za koju smo dali link gore](https://bitcointalk.org/index.php?topic=334316.msg3589252#msg3589252), i zaključuje primerom:
 
 
-> Ovo zapravo funkcioniše i u praksi... Jedan ljubazan whitehat haker na IRC-u se igrao sa razbijanjem brainwallet-a i naišao na frazu sa ~250 BTC u njoj. Uspeli smo da identifikujemo vlasnika samo na osnovu Address, jer su bili plaćeni putem Bitcoin servisa koji je ponovo koristio adrese, i uspeo je da ih nagovori da daju kontakt informacije korisnika. Zapravo je stupio u kontakt sa korisnikom telefonom, bili su šokirani i zbunjeni— ali zahvalni što nisu izgubili svoj novac. Srećan kraj. (Ovo nije jedini primer, daleko od toga... ali je jedan od zabavnijih).
+> Ovo zapravo funkcioniše i u praksi... Jedan ljubazan whitehat haker na IRC-u se igrao sa razbijanjem brainwallet-a i naišao na frazu sa ~250 BTC u njoj. Uspeli smo da identifikujemo vlasnika samo na osnovu adrese, jer su bili plaćeni putem Bitcoin servisa koji je ponovo koristio adrese, i uspeo je da ih nagovori da daju kontakt informacije korisnika. Zapravo je stupio u kontakt sa korisnikom telefonom, bili su šokirani i zbunjeni— ali zahvalni što nisu izgubili svoj novac. Srećan kraj. (Ovo nije jedini primer, daleko od toga... ali je jedan od zabavnijih).
 
 U ovom slučaju, sve je prošlo dobro zahvaljujući hakeru filantropskog duha, ali nemojte računati na to sledeći put.
 
@@ -524,17 +524,15 @@ U ovom slučaju, sve je prošlo dobro zahvaljujući hakeru filantropskog duha, a
 ### Non-Blockchain privatnost
 
 
-While the Blockchain dokazuje da je ozloglašeni izvor curenja privatnosti, postoji mnogo drugih curenja koja ne koriste Blockchain, neka su lukavija od drugih. Ona se kreću od key-loggera do analize mrežnog saobraćaja. Da biste pročitali više o nekim od ovih metoda, molimo vas da se ponovo obratite na [tekst Chrisa Belchera](https://en.Bitcoin.it/Privacy#Non-blockchain_attacks_on_privacy), posebno na deo "Non-Blockchain attacks on privacy".
+Dok blockchain dokazuje da je ozloglašeni izvor curenja privatnosti, postoji mnogo drugih curenja koja ne koriste blockchain, neka su lukavija od drugih. Ona se kreću od key-loggera do analize mrežnog saobraćaja. Da biste pročitali više o nekim od ovih metoda, molimo vas da se ponovo vratite na [tekst Chrisa Belchera](https://en.Bitcoin.it/Privacy#Non-blockchain_attacks_on_privacy), posebno na deo "Non-Blockchain attacks on privacy".
 
 
 Među mnoštvom napada, Belcher pominje mogućnost da neko prisluškuje vašu internet konekciju, na primer, vaš ISP:
 
 
-> Ako protivnik vidi transakciju ili blok koji izlazi iz vašeg čvora, a koji prethodno nije ušao, onda može sa skoro sigurnošću znati da ste vi napravili transakciju ili da ste vi iskopali blok. Kako su internet konekcije uključene, protivnik će moći povezati IP Address sa otkrivenim Bitcoin informacijama.
+> Ako protivnik vidi transakciju ili blok koji izlazi iz vašeg čvora, a koji prethodno nije ušao, onda može sa skoro sigurnošću znati da ste vi napravili transakciju ili da ste vi iskopali blok. Budući da je prisutna upotreba internet konekcija, protivnik će moći povezati IP adresu sa otkrivenim Bitcoin informacijama.
 
-Međutim, među najočiglednijim curenjima privatnosti su berze. Zbog zakona, obično nazivanih KYC (Upoznaj Svog Kupca) i AML (Sprečavanje Pranja Novca), koji su važeći u jurisdikcijama u kojima posluju, berze i povezane kompanije često moraju prikupljati lične podatke o svojim korisnicima, stvarajući velike baze podataka o tome koji korisnici poseduju koje bitkoine. Ove baze podataka su odlični mamci za zle vlade i kriminalce koji su uvek u potrazi za novim žrtvama. Postoje stvarna tržišta za ovu vrstu podataka, gde hakeri
-
-prodati podatke ponuđaču koji najviše plati.
+Međutim, među najočiglednijim curenjima privatnosti su kripto-menjačnice. Zbog zakona, obično nazivanih KYC (Upoznaj Svog Kupca) i AML (Sprečavanje Pranja Novca), koji su važeći u jurisdikcijama u kojima posluju, kripto-menjačnice i povezane kompanije često moraju prikupljati lične podatke o svojim korisnicima, stvarajući velike baze podataka o tome koji korisnici poseduju koje bitkoine. Ove baze podataka su odlični mamci za zle vlade i kriminalce koji su uvek u potrazi za novim žrtvama. Postoje stvarna tržišta za ovu vrstu podataka, gde hakeri prodaju podatke ponuđaču koji najviše plati.
 
 
 Da stvar bude još gora, kompanije koje upravljaju ovim bazama podataka često imaju malo iskustva sa zaštitom finansijskih podataka, zapravo mnoge od njih su mladi start-upovi, i znamo sa sigurnošću da je već došlo do nekoliko curenja podataka. Nekoliko primera su
@@ -542,23 +540,21 @@ Da stvar bude još gora, kompanije koje upravljaju ovim bazama podataka često i
 [India-based MobiQwik](https://bitcoinmagazine.com/business/probably-the-largest-kyc-data-leak-in-history-demonstrates-the-importance-of-Bitcoin-privacy) i [HubSpot](https://bitcoinmagazine.com/business/hubspot-security-breach-leaks-Bitcoin-users-data).
 
 
-Opet, zaštita podataka od ovog širokog spektra napada je Hard, i verovatno je da nećete biti u potpunosti u mogućnosti da to učinite. Moraćete da se odlučite za kompromis između pogodnosti i privatnosti koji vam najbolje odgovara.
+Štaviše, zaštita podataka od ovako širokog spektra napada predstavlja značajan izazov, i verovatno neće biti moguće ostvariti je u potpunosti. Moraćete da se odlučite za kompromis između pogodnosti i privatnosti koji vam najbolje odgovara.
 
 
 ### Fungibilnost
 
 
-Fungibilnost, u kontekstu valuta, znači da je jedan novčić zamenljiv za bilo koji drugi novčić iste valute. Ova smešna
-
-reč je bila ukratko pomenuta ranije u poglavlju.
+Fungibilnost, u kontekstu valuta, znači da je jedan novčić zamenljiv za bilo koji drugi novčić iste valute. Ova smešna reč je bila ukratko pomenuta ranije u poglavlju.
 
 
-U članku koji se tamo raspravlja, Gregory Maxwell [navodi](https://bitcointalk.org/index.php?topic=334316.msg3588908#msg3588908):
+U članku koji je dat, Gregory Maxwell [navodi](https://bitcointalk.org/index.php?topic=334316.msg3588908#msg3588908):
 
 
-> Finansijska privatnost je suštinski element fungibilnosti u Bitcoin: ako možete značajno razlikovati jedan novčić od drugog, tada je njihova fungibilnost slaba. Ako je naša fungibilnost u praksi previše slaba, onda ne možemo biti decentralizovani: ako neko važan objavi listu ukradenih novčića koje neće prihvatiti, morate pažljivo proveriti novčiće koje prihvatate u odnosu na tu listu i vratiti one koji ne prođu. Svi su zaglavljeni proveravajući crne liste koje izdaju razne vlasti jer u tom svetu niko od nas ne bi želeo da ostane sa lošim novčićima. Ovo dodaje trenje i transakcione troškove i čini Bitcoin manje vrednim kao novac.
+> Finansijska privatnost je suštinski element fungibilnosti u Bitcoin-u: ako možete značajno razlikovati jedan novčić od drugog, tada je njihova fungibilnost slaba. Ako je naša fungibilnost u praksi previše slaba, onda ne možemo biti decentralizovani: ako neko važan objavi listu ukradenih novčića koje neće prihvatiti, morate pažljivo proveriti novčiće koje prihvatate u odnosu na tu listu i vratiti one koji ne prođu. Svi su zaglavljeni proveravajući crne liste koje izdaju razne vlasti jer u tom svetu niko od nas ne bi želeo da ostane sa lošim novčićima. Ovo dodaje trenje i transakcione troškove i čini Bitcoin manje vrednim kao novac.
 
-Ovde, on govori o opasnostima koje proizlaze iz nedostatka fungibilnosti. Pretpostavimo da imate UTXO. Istorija tog UTXO se obično može pratiti unazad kroz nekoliko koraka, šireći se na mnoštvo prethodnih izlaza. Ako je bilo koji od tih izlaza bio uključen u bilo kakvu ilegalnu, nepoželjnu ili sumnjivu aktivnost, neki potencijalni primaoci vašeg novčića mogu ga odbiti. Ako mislite da će vaši primaoci proveravati vaše novčiće prema nekoj centralizovanoj usluzi bele ili crne liste, možda ćete i vi početi da proveravate novčiće koje primate, samo da biste bili sigurni. Rezultat je da će loša fungibilnost podržati još lošiju fungibilnost.
+Ovde, on govori o opasnostima koje proizlaze iz nedostatka fungibilnosti. Pretpostavimo da imate UTXO. Istorija tog UTXO se obično može pratiti unazad kroz nekoliko koraka, šireći se na mnoštvo prethodnih izlaza. Ako je bilo koji od tih izlaza bio uključen u bilo kakvu ilegalnu, nepoželjnu ili sumnjivu aktivnost, neki potencijalni primaoci vašeg novčića mogu ga odbiti. Ukoliko smatrate da će vaši primaoci potvrđivati validnost vaših novčića putem centralizovanog servisa sa belom ili crnom listom, možda će biti potrebno da i sami proveravate primljene novčiće, kako biste osigurali sigurnost transakcija. Rezultat je da će loša fungibilnost podržati još lošiju fungibilnost.
 
 
 Adam Back i Matt Corallo [održali su prezentaciju o fungibilnosti](https://btctranscripts.com/scalingbitcoin/milan-2016/fungibility-overview/) na Scaling Bitcoin u Milanu 2016. Razmišljali su u istom pravcu:
@@ -566,47 +562,41 @@ Adam Back i Matt Corallo [održali su prezentaciju o fungibilnosti](https://btct
 
 > Treba vam fungibilnost da bi Bitcoin funkcionisao. Ako primite novčiće i ne možete ih potrošiti, onda počinjete da sumnjate da li ih možete potrošiti. Ako postoje sumnje u vezi sa novčićima koje primate, ljudi će početi da koriste usluge za proveru i da se pitaju "da li su ovi novčići blagosloveni" i onda će ljudi odbijati da trguju. Ono što se dešava je da Bitcoin prelazi iz decentralizovanog sistema bez dozvola u centralizovani sistem sa dozvolama gde imate "IOU" od pružalaca crnih lista.
 
-Čini se da privatnost i fungibilnost idu ruku pod ruku. Fungibilnost će oslabiti ako je privatnost slaba, na primer, ako novčići od neželjenih osoba postanu stavljeni na crnu listu. Na isti način, privatnost će oslabiti ako je fungibilnost slaba: ako postoji crna lista, moraćete da pitate pružaoce crne liste koje novčiće da prihvatite, čime možda otkrivate svoj IP Address, email Address, i druge osetljive informacije. Ove dve karakteristike su toliko isprepletene da je Hard govoriti o bilo kojoj od njih izolovano.
+Čini se da privatnost i fungibilnost idu ruku pod ruku. Fungibilnost će oslabiti ako je privatnost slaba, na primer, ako novčići od neželjenih osoba postanu stavljeni na crnu listu. Na isti način, privatnost će oslabiti ako je fungibilnost slaba: ako postoji crna lista, moraćete da pitate pružaoce crne liste koje novčiće da prihvatite, čime možda otkrivate svoju IP adresu, email adresu, i druge osetljive informacije. Ove dve karakteristike su toliko isprepletene da je teško govoriti o bilo kojoj od njih izolovano.
 
 
 ### Mere privatnosti
 
 
 
-Nekoliko tehnika je razvijeno kako bi se pomoglo ljudima da se zaštite od curenja privatnosti. Među najočiglednijima je, kako je ranije primetio Nakamoto, korišćenje jedinstvenih
-
-adrese za svaku transakciju, ali postoji još nekoliko drugih. Nećemo vas naučiti kako da postanete majstor privatnosti. Međutim, Bitcoin Pitanja i Odgovori imaju [brz pregled tehnologija za poboljšanje privatnosti](https://bitcoiner.guide/privacytips/), donekle poređanih po tome koliko je Hard lako ih implementirati. Kada to pročitate, primetićete da Bitcoin privatnost često ima veze sa stvarima van Bitcoin. Na primer, ne bi trebalo da se hvalite svojim bitkoinima i trebalo bi da koristite Tor i VPN.
+Nekoliko tehnika je razvijeno kako bi se pomoglo ljudima da se zaštite od curenja privatnosti. Među najočiglednijima je, kako je ranije primetio Nakamoto, korišćenje jedinstvenih adrese za svaku transakciju, ali postoji još nekoliko drugih. Nećemo vas naučiti kako da postanete majstor privatnosti. Međutim, Bitcoin Pitanja i Odgovori imaju [brz pregled tehnologija za poboljšanje privatnosti](https://bitcoiner.guide/privacytips/), donekle poređanih po tome koliko ih je teško implementirati. Kada to pročitate, primetićete da Bitcoin privatnost često ima veze sa stvarima van Bitcoina. Na primer, ne bi trebalo da se hvalite svojim bitkoinima i trebalo bi da koristite Tor i VPN.
 
 
-Objava takođe navodi neke mere direktno povezane sa Bitcoin:
+Objava takođe navodi neke mere direktno povezane sa Bitcoinom:
 
 
-- Full node: Ako ne koristite svoj Full node, procureće mnogo informacija o vašem Wallet na servere na internetu. Pokretanje Full node je odličan prvi korak.
-- Lightning Network: Nekoliko protokola postoji povrh Bitcoin, na primer Lightning Network i Blockstreamov Liquid Sidechain.
+- Full node: Ako ne koristite svoj full node, procureće mnogo informacija o vašem novčaniku na servere na internetu. Pokretanje full node-a je odličan prvi korak.
+- Lightning mreža: Nekoliko protokola postoji povrh Bitcoina, na primer Lightning mreža i Blockstreamov Liquid Sidechain.
 - CoinJoin: Način za više ljudi da spoje svoje transakcije u jednu, otežavajući analizu lanca.
 
 
 Na [govoru](https://btctranscripts.com/breaking-Bitcoin/2019/breaking-Bitcoin-privacy/) na Breaking Bitcoin konferenciji, Chris Belcher je dao zanimljiv praktičan primer kako je privatnost poboljšana:
 
 
-> Bili su Bitcoin kazino. Online kockanje nije dozvoljeno u SAD-u. Svaki korisnik Coinbase-a koji je direktno uplatio na Bustabit imao bi svoj nalog zatvoren jer je Coinbase to nadgledao. Bustabit je uradio nekoliko stvari. Uradili su nešto što se zove izbegavanje kusura gde prolazite kroz– i vidite da li možete konstruisati transakciju koja nema kusur izlaz. Ovo štedi Miner naknade i takođe otežava analizu.
+> Bili su Bitcoin kazino. Online kockanje nije dozvoljeno u SAD-u. Svaki korisnik Coinbase-a koji je direktno uplatio na Bustabit imao bi svoj nalog zatvoren jer je Coinbase to nadgledao. Bustabit je uradio nekoliko stvari. Uradili su nešto što se zove izbegavanje kusura gde prolazite kroz i vidite da li možete konstruisati transakciju koja nema kusur izlaz. Ovo štedi u rudarskim naknadama i takođe otežava analizu.
 >
 
-> Takođe, uvezli su svoje često korišćene ponovo korišćene adrese depozita u joinmarket. U ovom trenutku, korisnici coinbase.com nikada nisu bili banovani. Čini se da Coinbase-ova služba za nadzor nije bila u mogućnosti da izvrši analizu nakon ovoga, tako da je moguće razbiti ove algoritme.
+> Takođe, uvezli su svoje često korišćene, ponovo upotrebljavane depozitne adrese u JoinMarket. U ovom trenutku, korisnici coinbase.com nikada nisu bili isključeni. Čini se da Coinbase-ova služba za nadzor nije bila u mogućnosti da izvrši analizu nakon ovoga, tako da je moguće razbiti ove algoritme.
 
 Takođe je pomenuo ovaj primer, između ostalih, na [stranici o privatnosti](https://en.Bitcoin.it/Privacy) na Bitcoin vikiju.
 
 
-Imajte na umu kako se bolja privatnost može postići izgradnjom sistema na vrhu Bitcoin, kao što je slučaj sa Lightning Network:
+Imajte na umu kako se bolja privatnost može postići izgradnjom sistema povrh Bitcoina, kao što je slučaj sa Lightning mrežom:
+
+Slojevi povrh Bitcoina mogu dodati privatnost
 
 
-
-
-
-Slojevi na vrhu Bitcoin mogu dodati privatnost
-
-
-Primetili smo u poslednjem poglavlju da potreba za poverenjem može samo da raste sa slojevima na vrhu, ali to izgleda nije slučaj sa privatnošću, koja može biti poboljšana ili pogoršana proizvoljno u slojevima na vrhu. Zašto je to tako? Bilo koji Layer na vrhu Bitcoin, kako je objašnjeno u pasusu o Slojevitom Skaliranju u budućem poglavlju Skaliranje, mora povremeno koristiti On-Chain transakcije, inače ne bi bio "na vrhu Bitcoin". Slojevi koji poboljšavaju privatnost generalno pokušavaju da koriste osnovni Layer što je manje moguće kako bi minimizirali količinu otkrivenih informacija.
+U poslednjem poglavlju smo zabeležili da se potreba za poverenjem neizbežno povećava sa dodatnim slojevima, dok se privatnost u slojevima iznad može proizvoljno unaprediti ili umanjiti. Zašto je to tako? Bilo koji koji se gradi iznad Bitcoina, prema objašnjenju u odeljku ‘Layered Scaling’ u budućem poglavlju ‘Scaling’, mora povremeno koristiti on-chain transakcije; u suprotnom ne bi se mogao smatrati slojem iznad Bitcoina. Slojevi usmereni na povećanje privatnosti nastoje da minimalizuju upotrebu osnovnog sloja kako bi se smanjila količina otkrivenih informacija.
 
 
 Gore navedeni su donekle tehnički načini za poboljšanje vaše privatnosti. Ali postoje i drugi načini. Na početku ovog poglavlja, rekli smo da je Bitcoin pseudonimni sistem. To znači da korisnici u Bitcoin nisu poznati po svojim pravim imenima ili drugim ličnim podacima, već po svojim javnim ključevima. Javni ključ je pseudonim za korisnika, a korisnik može imati više pseudonima. U idealnom svetu, vaš lični identitet je odvojen od vaših Bitcoin pseudonima. Nažalost, zbog problema privatnosti opisanih u ovom poglavlju, ovo razdvajanje obično se vremenom pogoršava.
