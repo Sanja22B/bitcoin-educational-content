@@ -1,5 +1,5 @@
 ---
-name: Filozofija razvoja Bitcoin
+name: Filozofija Bitcoin razvoja
 goal: Steknite duboko filozofsko razumevanje principa na kojima je dizajniran Bitcoin.
 objectives: 
 
