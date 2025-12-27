@@ -410,10 +410,10 @@ Međutim, korisnici ne bi trebalo da veruju drugima da će ih zaštititi, već b
 
 
 
-Bitcoin protokol je Trustless jer omogućava korisnicima da interaguju s njim bez poverenja trećoj strani. U praksi, međutim, većina ljudi nije u stanju da verifikuje ceo niz softvera i hardvera na kojem pokreću Bitcoin. Vešti ljudi koji verifikuju softver ili hardver mogu upozoriti druge, manje vešte, ljude kada pronađu zlonamerni kod ili greške.
+Bitcoin protokol je zasnovan na odsustvu potrebe za poverenjem, jer korisnicima omogućava interakciju bez oslanjanja na treće strane. U praksi, međutim, većina ljudi nije u stanju da verifikuje ceo niz softvera i hardvera na kojem pokreću Bitcoin. Vešti ljudi koji verifikuju softver ili hardver mogu upozoriti druge, manje vešte, ljude kada pronađu zlonamerni kod ili greške.
 
 
-Bez trustlessness-a, ne možemo imati decentralizaciju, jer poverenje neizbežno uključuje neku centralnu tačku autoriteta. Možete izgraditi pouzdan sistem na vrhu Trustless sistema, ali ne možete izgraditi Trustless sistem na vrhu pouzdanog sistema.
+Bez odsustva potrebe za poverenjem ne može postojati decentralizacija, jer poverenje neminovno podrazumeva neku centralnu tačku autoriteta. Možete graditi pouzdan sistem povrh trustless sistema (sistem koji nije zasnovan na poverenju), ali ne možete graditi trustless sistem povrh pouzdanog sistema (sistema zasnovanom na poverenju).
 
 
 ## Privatnost
@@ -425,7 +425,7 @@ Bez trustlessness-a, ne možemo imati decentralizaciju, jer poverenje neizbežno
 ![](assets/sr-Latn/004.webp)
 
 
-Ovo poglavlje se bavi time kako da zadržite svoje privatne finansijske informacije za sebe. Objašnjava šta privatnost znači u kontekstu Bitcoin, zašto je važna i šta znači kada se kaže da je Bitcoin pseudoniman. Takođe se razmatra kako privatni podaci mogu procureti, i On-Chain i off-chain.
+Ovo poglavlje se bavi time kako da zadržite svoje privatne finansijske informacije za sebe. Objašnjava šta privatnost znači u Bitcoin kontekstu, zašto je važna i šta znači kada se kaže da je Bitcoin pseudoniman. Pored toga, analizira kako može doći do curenja privatnih podataka, kako na samom blokčejnu (on-chain), tako i izvan njega (off-chain).
 
 
 Zatim, govori o činjenici da bitkoini treba da budu fungibilni, što znači da su zamenljivi za bilo koje druge bitkoine, i kako fungibilnost i privatnost idu ruku pod ruku. Na kraju, poglavlje uvodi neke mere koje možete preduzeti da poboljšate svoju privatnost i privatnost drugih.
@@ -438,26 +438,26 @@ Bitcoin se može opisati kao pseudonimni sistem, gde korisnici imaju više pseud
 
 
 
-Privatnost može značiti različite stvari u različitim kontekstima. U Bitcoin, to generalno znači da korisnici ne moraju otkrivati svoje finansijske informacije drugima, osim ako to ne učine dobrovoljno.
+Privatnost može značiti različite stvari u različitim kontekstima. U Bitcoinu, to generalno znači da korisnici ne moraju otkrivati svoje finansijske informacije drugima, osim ako to ne učine dobrovoljno.
 
 
-Postoji mnogo načina na koje možete otkriti svoje privatne informacije drugima, sa ili bez vašeg znanja. Podaci mogu procuriti iz javnog Blockchain ili na druge načine, na primer kada zlonamerni akteri presretnu vaše internet komunikacije.
+Postoji mnogo načina na koje možete otkriti svoje privatne informacije drugima, sa ili bez vašeg znanja. Podaci mogu procuriti iz javnog blockchain-a ili na druge načine, na primer kada zlonamerni akteri presretnu vaše internet komunikacije.
 
 
 ### Zašto je privatnost važna?
 
 
-Možda se čini očiglednim zašto je privatnost važna u Bitcoin, ali postoje neki aspekti o kojima se možda ne razmišlja odmah. [Na Bitcoin Talk forumu](https://bitcointalk.org/index.php?topic=334316.msg3588908#msg3588908), Gregory Maxwell nas vodi kroz mnogo dobrih razloga zašto smatra da je privatnost bitna. Među njima su slobodno tržište, sigurnost i ljudsko dostojanstvo:
+Možda se čini očiglednim zašto je privatnost važna u Bitcoin-u, ali postoje neki aspekti o kojima se možda ne razmišlja odmah. [Na Bitcoin Talk forumu](https://bitcointalk.org/index.php?topic=334316.msg3588908#msg3588908), Gregory Maxwell nas vodi kroz mnogo dobrih razloga zašto smatra da je privatnost bitna. Među njima su slobodno tržište, sigurnost i ljudsko dostojanstvo:
 
 
 > Finansijska privatnost je suštinski kriterijum za efikasno funkcionisanje slobodnog tržišta: ako vodite posao, ne možete efikasno postavljati cene ako vaši dobavljači i kupci mogu videti sve vaše transakcije protiv vaše volje.
-> Ne možete se efikasno takmičiti ako vaša konkurencija prati vašu prodaju. Pojedinačno, vaša informativna prednost je izgubljena u vašim privatnim poslovima ako nemate privatnost nad svojim računima: ako plaćate stanodavcu u Bitcoin bez dovoljno privatnosti, vaš stanodavac će videti kada ste dobili povišicu i može vam tražiti više kirije.
+> Ne možete se efikasno takmičiti ako vaša konkurencija prati vašu prodaju. Pojedinačno, vaša informativna prednost je izgubljena u vašim privatnim poslovima ako nemate privatnost nad svojim računima: ako plaćate stanodavcu u bitcoinu bez dovoljno privatnosti, vaš stanodavac će videti kada ste dobili povišicu i može vam tražiti povećanje kirije.
 >
 
 > Finansijska privatnost je ključna za ličnu sigurnost: ako lopovi mogu videti vaše troškove, prihode i imovinu, mogu iskoristiti te informacije da vas ciljaju i eksploatišu. Bez privatnosti, zlonamerne strane imaju veću mogućnost da ukradu vaš identitet, zgrabe vaše velike kupovine sa vašeg praga, ili se predstavljaju kao preduzeća sa kojima poslujete... mogu tačno znati koliko da pokušaju da vas prevare.
 >
 
-> Finansijska privatnost je ključna za ljudsko dostojanstvo: niko ne želi da nadmeni barista u kafiću ili njihovi radoznali susedi komentarišu njihov prihod ili navike trošenja. Niko ne želi da ih rodbina opsednuta bebama pita zašto kupuju kontracepciju (ili seksualne igračke). Vaš poslodavac nema pravo da zna kojoj crkvi donirate. Samo u savršeno prosvetljenom svetu bez diskriminacije, gde niko nema neprimerenu vlast nad drugima, mogli bismo zadržati svoje dostojanstvo i slobodno obavljati svoje zakonite transakcije bez autocenzure ako nemamo privatnost.
+> Finansijska privatnost je ključna za ljudsko dostojanstvo: niko ne želi da nadmeni barista u kafiću ili njihovi radoznali susedi komentarišu njihov prihod ili navike trošenja. Niko ne želi da ih rodbina opsednuta bebama pita zašto kupuju kontracepciju (ili seksualne igračke). Vaš poslodavac nema pravo da zna kojoj crkvi donirate. Samo u potpuno prosvećenom svetu bez diskriminacije, gde niko nema nezasluženi autoritet nad drugima, mogli bismo očuvati dostojanstvo i slobodno obavljati zakonite transakcije bez samocenzure, čak i bez privatnosti.
 
 Maxwell takođe dotiče fungibilnost, o kojoj će biti reči kasnije u ovom poglavlju, kao i o tome kako privatnost i sprovođenje zakona nisu kontradiktorni.
 
@@ -471,9 +471,9 @@ Gore smo pomenuli da je Bitcoin pseudoniman, i da su pseudonimi javni ključevi.
 Andrew Poelstra [objašnjava u Bitcoin Stack Exchange postu](https://Bitcoin.stackexchange.com/a/29473/69518) kako bi anonimnost izgledala u transakcijama:
 
 
-> Potpuna anonimnost, u smislu da kada trošite novac nema traga odakle je došao ili kuda ide, teoretski je moguća korišćenjem kriptografske tehnike dokaza bez znanja.
+> Potpuna anonimnost, u smislu da kada trošite novac nema traga odakle je došao ili kuda ide, teoretski je moguća korišćenjem kriptografske tehnike dokaza bez znanja (eng. zero-knowledge proofs).
 
-Razlika izgleda da je u tome što u pseudonimnom obliku novca možete pratiti uplate između pseudonima, dok u anonimnom obliku novca ne možete. Pošto su Bitcoin uplate moguće pratiti između pseudonima, to nije anoniman sistem.
+Razlika izgleda da je u tome što u pseudonimnom obliku novca možete pratiti uplate između pseudonima, dok u anonimnom obliku novca ne možete. Pošto Bitcoin uplate je moguće pratiti između pseudonima, to nije anoniman sistem.
 
 
 Takođe smo rekli da su pseudonimi javni ključevi, ali to su zapravo adrese izvedene iz javnih ključeva. Zašto koristimo adrese kao pseudonime, a ne nešto drugo, na primer neke opisne nazive, kao što je "watchme1984"? Ovo je [dobro objašnjeno](https://Bitcoin.stackexchange.com/a/25175/69518) od strane korisnika Tim S., takođe na Bitcoin Stack Exchange:
@@ -482,24 +482,24 @@ Takođe smo rekli da su pseudonimi javni ključevi, ali to su zapravo adrese izv
 > Da bi ideja Bitcoin funkcionisala, morate imati novčiće koje može potrošiti samo vlasnik datog privatnog ključa. To znači da sve što pošaljete mora biti povezano, na neki način, sa javnim ključem.
 >
 
-> Korišćenje proizvoljnih pseudonima (npr. korisničkih imena) značilo bi da biste morali nekako povezati pseudonim sa javnim ključem kako biste omogućili kriptografiju javnog/privatnog ključa. Ovo bi uklonilo mogućnost sigurnog kreiranja adresa/pseudonima van mreže (npr. pre nego što neko može poslati novac korisničkom imenu "tdumidu", morali biste objaviti u Blockchain da "tdumidu" pripada javnom ključu "a1c...", i uključiti naknadu kako bi drugi imali razlog da to objave), smanjilo anonimnost (podsticanjem ponovnog korišćenja pseudonima), i nepotrebno naduvalo veličinu Blockchain. Takođe bi stvorilo lažni osećaj sigurnosti da šaljete onome kome mislite da šaljete (ako ja uzmem ime "Linus Torvalds" pre njega, onda je to moje i ljudi bi mogli poslati novac misleći da plaćaju kreatoru Linuxa, a ne meni).
+> Korišćenje proizvoljnih pseudonima (npr. korisničkih imena) značilo bi da biste morali nekako povezati pseudonim sa javnim ključem kako biste omogućili kriptografiju javnog/privatnog ključa. Ovo bi uklonilo mogućnost sigurnog kreiranja adresa/pseudonima van mreže (npr. pre nego što neko može poslati novac korisničkom imenu "tdumidu", morali biste objaviti u blockchain-u da "tdumidu" pripada javnom ključu "a1c...", i uključiti naknadu kako bi drugi imali razlog da to objave), smanjilo anonimnost (podsticanjem ponovnog korišćenja pseudonima), i nepotrebno naduvalo veličinu blockchain-a. Takođe bi stvorilo lažni osećaj sigurnosti da šaljete onome kome mislite da šaljete (ako ja uzmem ime "Linus Torvalds" pre njega, onda je to moje i ljudi bi mogli poslati novac misleći da plaćaju kreatoru Linuxa, a ne meni).
 
-Korišćenjem adresa, ili javnih ključeva, postižemo važne ciljeve, kao što su uklanjanje potrebe za prethodnom registracijom pseudonima, smanjenje podsticaja za ponovnu upotrebu pseudonima, izbegavanje Blockchain naduvavanja, i otežavanje lažnog predstavljanja drugih ljudi.
+Korišćenjem adresa, ili javnih ključeva, postižemo važne ciljeve, kao što su uklanjanje potrebe za prethodnom registracijom pseudonima, smanjenje podsticaja za ponovnu upotrebu pseudonima, izbegavanje blockchain naduvavanja, i otežavanje lažnog predstavljanja drugih ljudi.
 
 
 ### Blockchain privatnost
 
 
 
-Privatnost Blockchain odnosi se na informacije koje otkrivate prilikom transakcija na Blockchain. Primjenjuje se na sve transakcije, one koje šaljete kao i one koje primate.
+Blockchain privatnost odnosi se na informacije koje otkrivate prilikom transakcija na blockchain-u. Primjenjuje se na sve transakcije, one koje šaljete kao i one koje primate.
 
 
-Satoshi Nakamoto razmišlja o On-Chain privatnosti u odeljku 7 svog [Bitcoin belog papira](https://Bitcoin.org/Bitcoin.pdf):
+Satoshi Nakamoto promišlja o on-chain privatnosti u sedmom odeljku svog rada [Bitcoin belog papira](https://Bitcoin.org/Bitcoin.pdf):
 
 
 > Kao dodatni firewall, novi par ključeva treba koristiti za svaku transakciju kako bi se sprečilo njihovo povezivanje sa zajedničkim vlasnikom. Neko povezivanje je i dalje neizbežno kod transakcija sa više ulaza, koje nužno otkrivaju da su njihovi ulazi pripadali istom vlasniku. Rizik je da, ako se otkrije vlasnik ključa, povezivanje može otkriti druge transakcije koje su pripadale istom vlasniku.
 
-Rad opisuje glavne probleme privatnosti Blockchain, naime ponovnu upotrebu Address i klasterizaciju Address. Prvi je samorazumljiv, dok se drugi odnosi na sposobnost da se, sa određenim nivoom sigurnosti, odluči da skup različitih adresa pripada istom korisniku.
+Rad opisuje glavne probleme blockchain privatnosti, naime ponovna upotreb adresa i klasterizacija adresa. Prvi je samorazumljiv, dok se drugi odnosi na sposobnost da se, sa određenim nivoom sigurnosti, odluči da skup različitih adresa pripada istom korisniku.
 
 
 ![](assets/sr-Latn/005.webp)
@@ -507,7 +507,7 @@ Rad opisuje glavne probleme privatnosti Blockchain, naime ponovnu upotrebu Addre
 
 
 
-Chris Belcher [pisao je u velikim detaljima](https://en.Bitcoin.it/Privacy#Blockchain_attacks_on_privacy) o različitim vrstama curenja privatnosti koja se mogu dogoditi na Bitcoin Blockchain. Preporučujemo da pročitate barem prvih nekoliko pododeljaka pod "Napadi Blockchain na privatnost."
+Chris Belcher [pisao je prilično detaljno u ](https://en.Bitcoin.it/Privacy#Blockchain_attacks_on_privacy) o različitim vrstama curenja privatnosti koja se mogu dogoditi na Bitcoin blockchain-u. Preporučujemo da pročitate barem prvih nekoliko pododeljaka pod "Blockchain napadi na privatnost."
 
 
 Zaključak je da privatnost u Bitcoin nije savršena. Potrebno je značajno raditi kako bi se transakcije obavljale privatno. Većina ljudi nije spremna da ide tako daleko zbog privatnosti. Čini se da postoji jasan kompromis između privatnosti i upotrebljivosti.
