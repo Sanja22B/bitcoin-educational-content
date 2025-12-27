@@ -599,15 +599,15 @@ Slojevi povrh Bitcoina mogu dodati privatnost
 U poslednjem poglavlju smo zabeležili da se potreba za poverenjem neizbežno povećava sa dodatnim slojevima, dok se privatnost u slojevima iznad može proizvoljno unaprediti ili umanjiti. Zašto je to tako? Bilo koji koji se gradi iznad Bitcoina, prema objašnjenju u odeljku ‘Layered Scaling’ u budućem poglavlju ‘Scaling’, mora povremeno koristiti on-chain transakcije; u suprotnom ne bi se mogao smatrati slojem iznad Bitcoina. Slojevi usmereni na povećanje privatnosti nastoje da minimalizuju upotrebu osnovnog sloja kako bi se smanjila količina otkrivenih informacija.
 
 
-Gore navedeni su donekle tehnički načini za poboljšanje vaše privatnosti. Ali postoje i drugi načini. Na početku ovog poglavlja, rekli smo da je Bitcoin pseudonimni sistem. To znači da korisnici u Bitcoin nisu poznati po svojim pravim imenima ili drugim ličnim podacima, već po svojim javnim ključevima. Javni ključ je pseudonim za korisnika, a korisnik može imati više pseudonima. U idealnom svetu, vaš lični identitet je odvojen od vaših Bitcoin pseudonima. Nažalost, zbog problema privatnosti opisanih u ovom poglavlju, ovo razdvajanje obično se vremenom pogoršava.
+Gore navedeni su donekle tehnički načini za poboljšanje vaše privatnosti. Ali postoje i drugi načini. Na početku ovog poglavlja, rekli smo da je Bitcoin pseudonimni sistem. To znači da korisnici u Bitcoinu nisu poznati po svojim pravim imenima ili drugim ličnim podacima, već po svojim javnim ključevima. Javni ključ je pseudonim za korisnika, a korisnik može imati više pseudonima. U idealnom svetu, vaš lični identitet je odvojen od vaših Bitcoin pseudonima. Nažalost, zbog problema privatnosti opisanih u ovom poglavlju, ovo razdvajanje obično se vremenom pogoršava.
 
 
-Da biste umanjili rizike od otkrivanja vaših ličnih podataka, najbolje je da ih ne delite uopšte ili da ih ne dajete centralizovanim servisima, koji prave velike baze podataka koje mogu procureti. Članak od strane Bitcoin P+O [objašnjava KYC](https://bitcoiner.guide/nokyconly/) i opasnosti koje iz toga proizlaze. Takođe predlaže neke korake koje možete preduzeti da poboljšate svoju situaciju:
+Da biste umanjili rizike od otkrivanja vaših ličnih podataka, najbolje je da ih ne delite uopšte ili da ih ne dajete centralizovanim servisima, koji prave velike baze podataka koje mogu procureti. Članak od strane Bitcoin Q+A [objašnjava KYC](https://bitcoiner.guide/nokyconly/) i opasnosti koje iz toga proizlaze. Takođe predlaže neke korake koje možete preduzeti da poboljšate svoju situaciju:
 
 
-> Na sreću, postoje neke opcije za kupovinu Bitcoin putem izvora bez KYC-a. Sve su to P2P (peer to peer) berze gde trgujete direktno sa drugim pojedincem, a ne sa centralizovanom trećom stranom. Nažalost, neki prodaju i druge novčiće pored Bitcoin, pa vas pozivamo da budete oprezni.
+> Na sreću, postoje neke opcije za kupovinu bitcoina putem izvora bez KYC-a. Sve su to P2P (peer to peer) berze gde trgujete direktno sa drugim pojedincem, a ne sa centralizovanom trećom stranom. Nažalost, neki prodaju i druge novčiće pored bitcoina, pa vas pozivamo da budete oprezni.
 
-Članak predlaže da izbegavate korišćenje berzi koje zahtevaju KYC/AML i umesto toga trgujete privatno, ili koristite decentralizovane berze kao što je [bisq](https://bisq.network/).
+Članak predlaže da izbegavate korišćenje kripto-menjačnica koje zahtevaju KYC/AML i umesto toga trgujete privatno, ili koristite decentralizovane kripto-menjačnice kao što je [bisq](https://bisq.network/).
 
 
 https://planb.academy/en/tutorials/exchange/peer-to-peer/bisq-fe244bfa-dcc4-4522-8ec7-92223373ed04
@@ -619,13 +619,13 @@ Za detaljnije čitanje o protivmerama, pogledajte prethodno pomenuti [wiki član
 
 
 
-Privatnost je veoma važna, ali Hard za postizanje. Ne postoji čarobno rešenje za privatnost.
+Privatnost je veoma važna, ali teška za postizanje. Ne postoji čarobno rešenje za privatnost.
 
 
-Da biste dobili pristojnu privatnost u Bitcoin, morate preduzeti aktivne mere, od kojih su neke skupe i oduzimaju mnogo vremena.
+Da biste dobili pristojnu privatnost u Bitcoinu, morate preduzeti aktivne mere, od kojih su neke skupe i oduzimaju mnogo vremena.
 
 
-## Finite Supply
+## Ograničena (konačna) ponuda Bitcoina
 
 <chapterId>af125ba2-ef98-5905-8895-41a538fe5ea5</chapterId>
 
@@ -634,13 +634,13 @@ Da biste dobili pristojnu privatnost u Bitcoin, morate preduzeti aktivne mere, o
 ![](assets/sr-Latn/006.webp)
 
 
-Ovo poglavlje istražuje Bitcoin Supply limit od 21 milion BTC, ili koliko je to zapravo? Govorimo o tome kako se ovaj limit sprovodi i šta neko može učiniti da potvrdi da se poštuje. Štaviše, zavirujemo u kristalnu kuglu i diskutujemo o dinamici koja će stupiti na scenu kada se Block reward prebaci sa subvencionisanog na baziran na naknadama.
+Ovo poglavlje istražuje ograničenje ponude Bitcoina sa limitom od 21 milion BTC, ili koliko je to zapravo? Govorimo o tome kako se ovaj limit sprovodi i šta neko može učiniti da potvrdi da se poštuje. Štaviše, zavirujemo u kristalnu kuglu i diskutujemo o dinamici koja će stupiti na scenu kada se nagrada za blok prebaci sa subvencionisanog na baziran na naknadama.
 
 
-Dobro poznati konačni Supply od 21 milion BTC smatra se osnovnom osobinom Bitcoin. Ali da li je zaista uklesan u kamenu?
+Dobro poznata konačna ponuda od 21 milion BTC smatra se osnovnom osobinom Bitcoina. Ali da li je zaista uklesan u kamenu?
 
 
-Hajde da počnemo tako što ćemo pogledati šta trenutna pravila konsenzusa kažu o Supply od Bitcoin, i koliko će od toga zapravo biti upotrebljivo. Pieter Wuille je napisao članak o tome [na Stack Exchange](https://Bitcoin.stackexchange.com/a/38998/69518), u kojem je izračunao koliko će bitkoina biti kada svi novčići budu iskopani:
+Hajde da počnemo tako što ćemo pogledati šta trenutna pravila konsenzusa kažu o ponudi Bitcoina, i koliko će od toga zapravo biti upotrebljivo. Pieter Wuille je napisao članak o tome [na Stack Exchange](https://Bitcoin.stackexchange.com/a/38998/69518), u kojem je izračunao koliko će bitkoina biti kada svi novčići budu iskopani:
 
 
 > Ako saberete sve ove brojeve zajedno, dobijate 20999999.9769 BTC.
@@ -650,41 +650,38 @@ Ali zbog brojnih razloga -- kao što su rani problemi sa coinbase transakcijama,
 
 > Ovo nam ostavlja 20999817.31308491 BTC (uzimajući u obzir sve do bloka 528333)
 
-Međutim, razni novčanici su izgubljeni ili ukradeni, transakcije su poslate pogrešnom Address, ljudi su zaboravili da poseduju Bitcoin. Ukupni iznosi ovoga mogu biti milioni. Ljudi su pokušali da saberu poznate gubitke [ovde](https://bitcointalk.org/index.php?topic=7253.0).
+Međutim, razni novčanici su izgubljeni ili ukradeni, transakcije su poslate pogrešnoj adresi, ljudi su zaboravili da poseduju bitkoine. Ukupni iznosi ovoga mogu biti milioni. Ljudi su pokušali da saberu poznate gubitke [ovde](https://bitcointalk.org/index.php?topic=7253.0).
 
 
 Ovo nas ostavlja sa: ??? BTC.
 
 
-Možemo biti sigurni da će Bitcoin Supply biti najviše 20999817.31308491 BTC. Bilo koji izgubljeni ili neproverljivo spaljeni novčići će smanjiti ovaj broj, ali ne znamo za koliko. Zanimljivo je da to zapravo nije važno, ili još bolje, važno je na pozitivan način za vlasnike Bitcoin,
-
-[kako je objašnjeno](https://bitcointalk.org/index.php?topic=198.msg1647#msg1647) od strane Satoshi Nakamoto:
-
+Možemo biti sigurni da će Bitcoin ponuds biti najviše 20999817.31308491 BTC. Bilo koji izgubljeni ili neproverljivo spaljeni novčići će smanjiti ovaj broj, ali ne znamo za koliko. Zanimljivo je da to zapravo nije važno, ili još bolje, važno je na pozitivan način za vlasnike bitkoina, [kako je objašnjeno](https://bitcointalk.org/index.php?topic=198.msg1647#msg1647) od strane Satoshi Nakamoto:
 
 > Izgubljeni novčići samo čine da novčići svih ostalih vrede malo više. Smatrajte to donacijom svima.
 
-Finitni Supply će se smanjiti i to bi, barem u teoriji, trebalo izazvati deflaciju cena.
+Ograničena ponuda će se smanjiti i to bi, barem u teoriji, trebalo izazvati deflaciju cena.
 
 
-Više od tačnog broja novčića u opticaju, važniji je način na koji se Supply limit sprovodi bez ikakvog centralnog autoriteta. Alias chytrik to dobro objašnjava na [Stack Exchange](https://Bitcoin.stackexchange.com/a/106830/69518):
+Više od tačnog broja novčića u opticaju, važniji je način na koji se limit sprovodi bez ikakvog centralnog autoriteta. Pseudonim chytrik to dobro objašnjava na [Stack Exchange](https://Bitcoin.stackexchange.com/a/106830/69518):
 
 
-> Dakle, odgovor je da ne morate verovati nekome da neće povećati Supply. Samo treba da pokrenete neki kod koji će potvrditi da to nisu uradili.
+> Dakle, odgovor je da ne morate verovati nekome da neće povećati ponudu. Samo treba da pokrenete neki kod koji će potvrditi da to nisu uradili.
 
-Čak i ako neki puni čvorovi pređu na tamnu stranu i odluče da prihvate blokove sa transakcijama veće vrednosti u coinbase-u, svi preostali puni čvorovi će ih jednostavno zanemariti i nastaviti sa poslovanjem kao i obično. Neki puni čvorovi mogu, namerno ili nenamerno, pokrenuti zlonamerne softvere, ali kolektiv će snažno osigurati Blockchain. Zaključno, možete odlučiti da verujete sistemu bez potrebe da verujete bilo kome.
+Čak i ako neki full čvorovi pređu na tamnu stranu i odluče da prihvate blokove sa transakcijama veće vrednosti u coinbase-u, svi preostali full čvorovi će ih jednostavno zanemariti i nastaviti sa poslovanjem kao i obično. Neki full čvorovi mogu, namerno ili nenamerno, pokrenuti zlonamerne softvere, ali kolektiv će snažno osigurati blockchain. Zaključno, možete odlučiti da verujete sistemu bez potrebe da verujete bilo kome.
 
 
 ### Subvencija bloka i naknade za transakcije
 
 
 
-Block reward se sastoji od blok subvencije plus naknada za transakcije. Block reward treba da pokrije troškove bezbednosti Bitcoin. Možemo sa sigurnošću reći da pod današnjim uslovima u vezi sa blok subvencijom, naknadama za transakcije, cenom Bitcoin, veličinom Mempool, snagom Hash, stepenom decentralizacije itd., podsticaji za svakog igrača da igra po pravilima su dovoljno visoki da očuvaju siguran monetarni sistem.
+Nagrada za blok se sastoji od blok subvencije plus naknada za transakcije. Blok nagrada treba da pokrije troškove bezbednosti Bitcoina. Možemo sa sigurnošću reći da pod današnjim uslovima u vezi sa blok subvencijom, naknadama za transakcije, cenom bitkoina, veličinom Mempool-a, snagom heša, stepenom decentralizacije itd., podsticaji za svakog igrača da igra po pravilima su dovoljno visoki da očuvaju siguran monetarni sistem.
 
 
-Šta se dešava kada subvencija za blok približi nuli? Da pojednostavimo, pretpostavimo da zapravo iznosi nula. U tom trenutku, troškovi sigurnosti sistema pokrivaju se isključivo kroz naknade za transakcije. Šta nas čeka u budućnosti kada se to desi, ne možemo znati. Faktori nesigurnosti su brojni i ostajemo prepušteni spekulacijama. Na primer, doprinos Paula Sztorca na ovu temu [u njegovom Truthcoin blogu](https://www.truthcoin.info/blog/security-budget/) je uglavnom spekulacija, ali on ima barem jednu čvrstu tačku (imajte na umu da je M2, kako ga Sztorc pominje, mera fiat novca Supply):
+Šta se dešava kada subvencija za blok približi nuli? Da pojednostavimo, pretpostavimo da zapravo iznosi nula. U tom trenutku, troškovi sigurnosti sistema pokrivaju se isključivo kroz naknade za transakcije. Šta nas čeka u budućnosti kada se to desi, ne možemo znati. Faktori nesigurnosti su brojni i ostajemo prepušteni spekulacijama. Na primer, doprinos Paula Sztorca na ovu temu [u njegovom Truthcoin blogu](https://www.truthcoin.info/blog/security-budget/) je uglavnom spekulacija, ali on ima barem jednu čvrstu tačku (imajte na umu da je M2, kako ga Sztorc pominje, mera ponude fiat novca):
 
 
-> Iako su dva spojena u isti "budžet za sigurnost", subvencija bloka i naknade za transakcije su potpuno i potpuno različite. One su različite jedna od druge, kao što su "ukupni profiti VISA-e u 2017." različiti od "ukupnog povećanja M2 u 2017.".
+> Iako su dva spojena u isti "budžet za sigurnost", subvencija bloka i naknade za transakcije su potpuno različite stvari. One su različite jedna od druge, kao što su "ukupni profiti VISA-e u 2017." različiti od "ukupnog povećanja M2 u 2017.".
 
 Danas, vlasnici snose troškove za sigurnost (putem monetarne inflacije). Sutra će doći red na potrošače da na neki način preuzmu ovaj teret, kao što je prikazano ispod.
 
@@ -695,29 +692,29 @@ Danas, vlasnici snose troškove za sigurnost (putem monetarne inflacije). Sutra 
 Kako vreme prolazi, teret troškova bezbednosti će se prebaciti sa vlasnika na potrošače.
 
 
-Kada su naknade za transakcije glavna motivacija za Mining, podsticaji se menjaju. Najznačajnije, ako Mempool nekog Miner ne sadrži dovoljno naknada za transakcije, moglo bi postati isplativije za taj Miner da prepravi istoriju Bitcoin umesto da je produži. Bitcoin Optech ima poseban [deo o ovom ponašanju](https://bitcoinops.org/en/topics/fee-sniping/), nazvan *fee sniping*, koji je napisao David Harding:
+Kada su naknade za transakcije glavna motivacija za rudarenje, podsticaji se menjaju. Najznačajnije, ako Mempool nekog rudara ne sadrži dovoljno naknada za transakcije, moglo bi postati isplativije za tog rudara da prepravi istoriju Bitcoina umesto da je produži. Bitcoin Optech ima poseban [deo o ovom ponašanju](https://bitcoinops.org/en/topics/fee-sniping/), nazvan *fee sniping*, koji je napisao David Harding:
 
 
-> Fee sniping je problem koji može nastati kako se subvencija Bitcoin nastavlja smanjivati, a transakcione naknade počinju dominirati nagradama za blokove Bitcoin. Ako su transakcione naknade sve što je važno, onda Miner sa `x` procentom Hash stope ima `x` procenata šanse za Mining sledeći blok, tako da je očekivana vrednost za njih od poštenog Mining `x` procenata [najboljeg seta transakcija po naknadi](https://bitcoinops.org/en/newsletters/2021/06/02/#candidate-set-based-csb-block-template-construction) u njihovom Mempool.
+> Fee sniping je problem koji može nastati kako se Bitcoin subvencija nastavlja smanjivati, a transakcione naknade počinju dominirati nagradama za Bitcoin blokove. Ako su transakcione naknade sve što je važno, onda rudari sa `x` procentom heš stope imaju `x` procenata šanse za rudarenje sledećeg bloka, tako da je očekivana vrednost za njih od poštenog rudarenja `x` procenata [najboljeg seta transakcija po naknadi](https://bitcoinops.org/en/newsletters/2021/06/02/#candidate-set-based-csb-block-template-construction) u njihovom Mempool-u.
 >
 
-> Alternativno, Miner bi mogao nepošteno pokušati da ponovo rudari prethodni blok plus potpuno novi blok kako bi produžio lanac. Ovo ponašanje se naziva fee sniping, a šansa nepoštenog Miner da u tome uspe ako su svi drugi Miner pošteni je `(x/(1-x))^2`. Iako fee sniping ima ukupno manju verovatnoću uspeha od poštenog Mining, pokušaj nepoštenog Mining mogao bi biti isplativiji izbor ako su transakcije u prethodnom bloku platile znatno veće naknade nego transakcije trenutno u Mempool—mala šansa za veliku sumu može vredeti više nego velika šansa za malu sumu.
+> Alternativno, rudar bi mogao nepošteno pokušati da ponovo rudari prethodni blok plus potpuno novi blok kako bi produžio lanac. Ovo ponašanje se naziva fee sniping, a šansa nepoštenog rudara da u tome uspe ako su svi drugi rudari pošteni je `(x/(1-x))^2`. Iako fee sniping ima ukupno manju verovatnoću uspeha od poštenog rudarenja, pokušaj nepoštenog rudara mogao bi biti isplativiji izbor ako su transakcije u prethodnom bloku platile znatno veće naknade nego transakcije trenutno u Mempool-u — mala šansa za veliku sumu može vredeti više nego velika šansa za malu sumu.
 
-Bacajući mokru ćebad preko naših nada za budućnost je činjenica da ako rudari počnu sa fee sniping-om, to će podstaći i druge da rade isto, ostavljajući još manje poštenih rudara. Ovo bi moglo ozbiljno ugroziti ukupnu sigurnost Bitcoin. Harding nastavlja sa nabrajanjem nekoliko protivmera koje se mogu preduzeti, kao što je oslanjanje na vremenske brave transakcija kako bi se ograničilo gde u Blockchain transakcija može da se pojavi.
+Bacajući mokru ćebad preko naših nada za budućnost je činjenica da ako rudari počnu sa fee sniping-om, to će podstaći i druge da rade isto, ostavljajući još manje poštenih rudara. Ovo bi moglo ozbiljno ugroziti ukupnu sigurnost Bitcoina. Harding nastavlja sa nabrajanjem nekoliko protivmera koje se mogu preduzeti, kao što je oslanjanje na vremenske brave transakcija kako bi se ograničilo gde u blokchainu transakcija može da se pojavi.
 
 
-Dakle, s obzirom na to da konsenzus o konačnom Supply ostaje, subvencija bloka će - zahvaljujući [BIP42](https://github.com/Bitcoin/bips/blob/master/bip-0042.mediawiki) koji je popravio dugoročni problem inflacije - dostići nulu oko godine 2140. Da li će naknade za transakcije nakon toga biti dovoljne da osiguraju mrežu?
+Dakle, s obzirom na to da konsenzus o konačnoj ponudi ostaje, subvencija bloka će - zahvaljujući [BIP42](https://github.com/Bitcoin/bips/blob/master/bip-0042.mediawiki) koji je popravio dugoročni problem inflacije - dostići nulu oko 2140.godine. Da li će naknade za transakcije nakon toga biti dovoljne da osiguraju mrežu?
 
 
 Nemoguće je reći, ali znamo nekoliko stvari:
 
 
-- Vek je *dugo* vreme iz perspektive Bitcoin. Ako još uvek bude postojao, verovatno će se enormno razviti.
-- Ako ogromna ekonomska većina smatra da je potrebno promeniti pravila i uvesti, na primer, stalnu godišnju inflaciju od 0,1% ili 1%, Supply od Bitcoin više neće biti konačan.
-- Sa nultom subvencijom za blok i praznim ili skoro praznim Mempool, stvari mogu postati nestabilne zbog fee snipinga.
+- Vek je *dugo* vreme iz perspektive Bitcoina. Ako još uvek bude postojao, verovatno će se enormno razviti.
+- Ako ogromna ekonomska većina smatra da je potrebno promeniti pravila i uvesti, na primer, stalnu godišnju inflaciju od 0,1% ili 1%, Ponuda Bitcoina više neće biti konačna.
+- Sa nultom subvencijom za blok i praznim ili skoro praznim Mempool-om, stvari mogu postati nestabilne zbog fee snipinga.
 
 
-Pošto je prelazak na samo-naknade Block reward još daleko u budućnosti, možda bi bilo mudro ne donositi preuranjene zaključke i pokušati rešiti potencijalne probleme dok možemo. Na primer, Peter Todd smatra da postoji stvarni rizik da budžet za bezbednost Bitcoin neće biti dovoljan u budućnosti, te stoga zagovara malu stalnu inflaciju u Bitcoin. Međutim, on takođe misli da nije dobra ideja raspravljati o takvom pitanju u ovom trenutku, kao što je rekao u [podcastu What Bitcoin Did](https://www.whatbitcoindid.com/podcast/peter-todd-on-the-essence-of-Bitcoin):
+Pošto je prelazak na nagradu za blok zasnovanu samo na naknadama još daleko, možda je pametnije ne donositi brzoplete zaključke i pokušati da se pozabavimo mogućim problemima dok još možemo. Na primer, Peter Todd smatra da postoji stvarni rizik da budžet za bezbednost Bitcoina neće biti dovoljan u budućnosti, te stoga zagovara malu stalnu Bitcoin inflaciju. Međutim, on takođe misli da nije dobra ideja raspravljati o takvom pitanju u ovom trenutku, kao što je rekao u [podcastu What Bitcoin Did](https://www.whatbitcoindid.com/podcast/peter-todd-on-the-essence-of-Bitcoin):
 
 
 > Ali, to je rizik za 10, 20 godina u budućnosti. To je veoma dug period. I, do tada, ko zna kakvi će rizici biti?
@@ -725,14 +722,14 @@ Pošto je prelazak na samo-naknade Block reward još daleko u budućnosti, možd
 Možda bismo mogli da posmatramo Bitcoin kao nešto organsko. Zamislite malu, polako rastuću biljku hrasta. Zamislite takođe da nikada u životu niste videli potpuno odraslo drvo. Zar ne bi bilo mudro onda obuzdati svoje potrebe za kontrolom umesto da unapred postavite sva pravila o tome kako bi ovoj biljci trebalo dozvoliti da se razvija i raste?
 
 
-### Zaključak o Finitnom Supply
+### Zaključak o ograničenoj ponudi
 
 
 
-Da li će Bitcoin Supply prerasti 21 milion ne možemo reći danas, i to verovatno nije tako loše. Osiguranje da budžet za bezbednost ostane dovoljno visok je ključno, ali ne i hitno. Hajde da vodimo ovu diskusiju za 10-50 godina, kada budemo znali više. Ako bude još uvek relevantno.
+Da li će ponuda bitkoina prerasti 21 milion ne možemo reći danas, i to verovatno nije tako loše. Osiguranje da budžet za bezbednost ostane dovoljno visok je ključno, ali ne i hitno. Hajde da vodimo ovu diskusiju za 10-50 godina, kada budemo znali više. Ako bude još uvek relevantno.
 
 
-# Bitcoin Upravljanje
+# Decentralizovano upravljanje Bitcoin-om
 
 <partId>411bf53f-af4b-50f1-b71b-e40fe3ff64b7</partId>
 
@@ -746,7 +743,7 @@ Da li će Bitcoin Supply prerasti 21 milion ne možemo reći danas, i to verovat
 ![](assets/sr-Latn/007.webp)
 
 
-Nadogradnja Bitcoin na siguran način može biti izuzetno teška. Neke promene zahtevaju nekoliko godina da se sprovedu. U ovom poglavlju učimo o uobičajenoj terminologiji vezanoj za nadogradnju Bitcoin, i istražujemo neke primere istorijskih nadogradnji njegovog protokola kao i uvide koje smo iz njih stekli. Na kraju, govorimo o podelama lanca i rizicima i troškovima povezanim sa njima.
+Nadogradnja Bitcoina na siguran način može biti izuzetno teška. Neke promene zahtevaju nekoliko godina da se sprovedu. U ovom poglavlju učimo o uobičajenoj terminologiji vezanoj za nadogradnju Bitcoina, i istražujemo neke primere istorijskih nadogradnji njegovog protokola kao i uvide koje smo iz njih stekli. Na kraju, govorimo o podelama lanca i rizicima i troškovima povezanim sa njima.
 
 
 Da biste se uskladili za ovo poglavlje, trebali biste pročitati [tekst Davida Hardinga o harmoniji i neskladu](https://bitcointalk.org/dec/p1.html):
@@ -755,79 +752,79 @@ Da biste se uskladili za ovo poglavlje, trebali biste pročitati [tekst Davida H
 > Stručnjaci za Bitcoin često govore o konsenzusu, čije je značenje apstraktno i teško ga je precizno odrediti. Ali reč konsenzus je evoluirala iz latinske reči concentus, "zajedničko pevanje harmonije", pa hajde da ne govorimo o Bitcoin konsenzusu već o Bitcoin harmoniji.
 >
 
-> Harmonija je ono što čini da Bitcoin funkcioniše. Hiljade punih čvorova rade nezavisno kako bi proverili da su transakcije koje primaju validne, stvarajući skladan dogovor o stanju Bitcoin Ledger bez potrebe da bilo koji operater čvora veruje bilo kome drugom. To je slično horu gde svaki član peva istu pesmu u isto vreme kako bi proizveli nešto daleko lepše nego što bi bilo ko od njih mogao proizvesti sam.
+> Harmonija je ono što čini da Bitcoin funkcioniše. Hiljade punih čvorova rade nezavisno kako bi proverili da su transakcije koje primaju validne, stvarajući skladan dogovor o stanju Bitcoin dnevnika bez potrebe da bilo koji operater čvora veruje bilo kome drugom. To je slično horu gde svaki član peva istu pesmu u isto vreme kako bi proizveli nešto daleko lepše nego što bi bilo ko od njih mogao proizvesti sam.
 >
 
 > Rezultat Bitcoin harmonije je sistem u kojem su bitcoini sigurni ne samo od sitnih lopova (pod uslovom da čuvate svoje ključeve bezbedno) već i od beskonačne inflacije, masovne ili ciljane konfiskacije, ili jednostavno birokratskog haosa koji je nasleđeni finansijski sistem.
 
-Ovo poglavlje raspravlja o tome kako se Bitcoin može unaprediti bez izazivanja nesloge. Održavanje harmonije, tj. održavanje konsenzusa, zaista je jedan od najvećih izazova u razvoju Bitcoin. Postoji mnogo nijansi u mehanizmima nadogradnje, koje bi se najbolje mogle razumeti proučavanjem stvarnih slučajeva prethodnih nadogradnji. Iz tog razloga, poglavlje stavlja veliki fokus na istorijske primere, i počinje postavljanjem osnove sa nekim korisnim rečnikom.
+Ovo poglavlje raspravlja o tome kako se Bitcoin može unaprediti bez izazivanja nesloge. Održavanje harmonije, tj. održavanje konsenzusa, zaista je jedan od najvećih izazova u razvoju Bitcoina. Postoji mnogo nijansi u mehanizmima nadogradnje, koje bi se najbolje mogle razumeti proučavanjem stvarnih slučajeva prethodnih nadogradnji. Iz tog razloga, poglavlje stavlja veliki fokus na istorijske primere, i počinje postavljanjem osnove sa nekim korisnim rečnikom.
 
 
 ### Rečnik
 
 
 
-Prema Wikipediji, [forward kompatibilnost](https://en.wikipedia.org/wiki/Forward_compatibility) odnosi se na stanje u kojem stari softver može obraditi podatke kreirane od strane novijih softvera, ignorišući delove koje ne razume:
+Prema Wikipediji, [kompatibilnost unapred](https://en.wikipedia.org/wiki/Forward_compatibility) odnosi se na stanje u kojem stari softver može obraditi podatke kreirane od strane novijih softvera, ignorišući delove koje ne razume:
 
 
 Standard podržava kompatibilnost unapred ako proizvod koji je u skladu sa ranijim verzijama može "graciozno" obraditi unos dizajniran za kasnije verzije standarda, ignorišući nove delove koje ne razume.
 
 
-Obrnuto, [unazadna kompatibilnost](https://en.wikipedia.org/wiki/Backward_compatibility) odnosi se na situaciju kada se podaci iz starog softvera mogu koristiti na novijim softverima. Promena se smatra potpuno kompatibilnom ako je i unapred i unazad kompatibilna.
+Obrnuto, [kompatibilnost unazad](https://en.wikipedia.org/wiki/Backward_compatibility) odnosi se na situaciju kada se podaci iz starog softvera mogu koristiti na novijim softverima. Promena se smatra potpuno kompatibilnom ako je i unapred i unazad kompatibilna.
 
 
-Promena pravila konsenzusa Bitcoin naziva se *Soft Fork* ako je potpuno kompatibilna. Ovo je najčešći način za nadogradnju Bitcoin, iz više razloga koje ćemo dalje razmotriti u ovom poglavlju. Ako je promena pravila konsenzusa Bitcoin unazad kompatibilna, ali nije unapred kompatibilna, naziva se *Hard Fork*.
+Promena pravila Bitcoin konsenzusa naziva se *Soft Fork* ako je potpuno kompatibilna. Ovo je najčešći način za Bitcoin nadogradnju, iz više razloga koje ćemo dalje razmotriti u ovom poglavlju. Ako je promena pravila Bitcoin konsenzusa kompatibilna unazad, ali nije kompatibilna unapred, naziva se *Hard Fork*.
 
 
-Za tehnički pregled viljuški Soft i viljuški Hard, molimo pročitajte [poglavlje 11 Grokking Bitcoin](https://rosenbaum.se/book/grokking-Bitcoin-11.html). Objašnjava ove pojmove i takođe ulazi u mehanizme nadogradnje. Preporučuje se, iako nije strogo neophodno, da se upoznate sa ovim pre nego što nastavite sa čitanjem.
+Za tehnički pregled soft forkova i hard forkova, molimo pročitajte [poglavlje 11 Grokking Bitcoin](https://rosenbaum.se/book/grokking-Bitcoin-11.html). Poglavlje objašnjava ove pojmove i takođe ulazi u mehanizme nadogradnje. Preporučuje se, iako nije strogo neophodno, da se upoznate sa ovim pre nego što nastavite sa čitanjem.
 
 
 ### Istorijske nadogradnje
 
 
 
-Bitcoin nije isti danas kao što je bio kada je Genesis blok kreiran. Tokom godina napravljeno je nekoliko nadogradnji. U 2018. godini, Eric Lombrozo [govorio je na Breaking Bitcoin konferenciji](https://btctranscripts.com/breaking-Bitcoin/2017/changing-consensus-rules-without-breaking-Bitcoin/) o različitim mehanizmima nadogradnje Bitcoin, ističući koliko su se razvili tokom vremena. Čak je objasnio kako je Satoshi Nakamoto jednom nadogradio Bitcoin kroz Hard Fork:
+Bitcoin nije isti danas kao što je bio kada je Genesis blok kreiran. Tokom godina napravljeno je nekoliko nadogradnji. U 2018. godini, Eric Lombrozo [govorio je na Breaking Bitcoin konferenciji](https://btctranscripts.com/breaking-Bitcoin/2017/changing-consensus-rules-without-breaking-Bitcoin/) o različitim mehanizmima Bitcoin nadogradnje, ističući koliko su se razvili tokom vremena. Čak je objasnio kako je Satoshi Nakamoto jednom Bitcoin nadogradio kroz Hard Fork:
 
 
-> Zapravo je postojao Hard-Fork u Bitcoin koji je Satoshi uradio na način na koji mi to nikada ne bismo uradili - to je prilično loš način da se to uradi. Ako pogledate opis git commit-a ovde [[757f076](https://github.com/Bitcoin/Bitcoin/commit/757f0769d8360ea043f469f3a35f6ec204740446)], on kaže nešto o vraćanju makefile.unix wx-config verzije 0.3.6. Tačno. To je sve što piše. Nema nikakvih naznaka da ima bilo kakvu promenu koja može da izazove probleme. U suštini je to sakrio tamo. Takođe je [objavio na bitcointalk](https://bitcointalk.org/index.php?topic=626.msg6451#msg6451) i rekao, molim vas, nadogradite na 0.3.6 što pre. Ispravili smo grešku u implementaciji gde je moguće da se lažne transakcije prikažu kao prihvaćene. Ne prihvatajte Bitcoin uplate dok ne nadogradite na 0.3.6. Ako ne možete odmah da nadogradite, najbolje bi bilo da ugasite vaš Bitcoin čvor dok to ne uradite. I povrh svega toga, ne znam zašto je odlučio da to uradi, odlučio je da doda neke optimizacije u istom kodu. Ispraviti grešku i dodati neke optimizacije.
+> Zapravo je postojao hard-fork u Bitcoin koji je Satoshi uradio na način na koji mi to nikada ne bismo uradili - to je prilično loš način da se to uradi. Ako pogledate opis git commit-a ovde [[757f076](https://github.com/Bitcoin/Bitcoin/commit/757f0769d8360ea043f469f3a35f6ec204740446)], on kaže nešto o vraćanju makefile.unix wx-config verzije 0.3.6. Tačno. To je sve što piše. Nema nikakvih naznaka da ima bilo kakvu promenu koja može da izazove probleme. U suštini je to sakrio tamo. Takođe je [objavio na bitcointalk](https://bitcointalk.org/index.php?topic=626.msg6451#msg6451) i rekao, molim vas, nadogradite na 0.3.6 što pre. Ispravili smo grešku u implementaciji gde je moguće da se lažne transakcije prikažu kao prihvaćene. Ne prihvatajte Bitcoin uplate dok ne nadogradite na 0.3.6. Ako ne možete odmah da nadogradite, najbolje bi bilo da ugasite vaš Bitcoin čvor dok to ne uradite. I povrh svega toga, ne znam zašto je odlučio da to uradi, odlučio je da doda neke optimizacije u istom kodu. Ispraviti grešku i dodati neke optimizacije.
 
-Ističe da je, bilo namerno ili ne, ovaj Hard Fork stvorio prilike za buduće Soft forkove, naime Script operatore (opcodes) OP_NOP1-OP_NOP10. Više ćemo pogledati ovu promenu koda u cve-2010-5141. Ovi opkodi su do sada korišćeni za dva Soft forkova:
+Ističe da je, bilo namerno ili ne, ovaj hard fork stvorio prilike za buduće soft forkove, naime Script operatore (opcodes) OP_NOP1-OP_NOP10. Više ćemo pogledati ovu promenu koda u cve-2010-5141. Ovi opkodi su do sada korišćeni za dva soft forka:
 
 
 - [BIP65](https://github.com/Bitcoin/bips/blob/master/bip-0065.mediawiki) (OP_CHECKLOCKTIMEVERIFY)
 - [BIP113](https://github.com/Bitcoin/bips/blob/master/bip-0112.mediawiki) (OP_SEQUENCEVERIFY).
 
 
-Lombrozo takođe pruža pregled načina na koji su mehanizmi nadogradnje evoluirali tokom godina, sve do 2017. Od tada je implementirana samo još jedna velika nadogradnja, Taproot. Dug i donekle haotičan proces koji je doveo do njene aktivacije pomogao nam je da steknemo dodatne uvide o mehanizmima nadogradnje u Bitcoin.
+Lombrozo takođe pruža pregled načina na koji su mehanizmi nadogradnje evoluirali tokom godina, sve do 2017. Od tada je implementirana samo još jedna velika nadogradnja, Taproot. Dug i donekle haotičan proces koji je doveo do njene aktivacije pomogao nam je da steknemo dodatne uvide o mehanizmima nadogradnje u Bitcoinu.
 
 
 #### SegWit nadogradnja
 
 
 
-Iako su sva unapređenja pre SegWit bila manje-više bezbolna, ovo je bilo drugačije. Kada je aktivacioni kod za SegWit objavljen, u oktobru 2016, činilo se da postoji ogromna podrška među korisnicima Bitcoin, ali iz nekog razloga rudari nisu signalizirali podršku za ovo unapređenje, što je zaustavilo aktivaciju bez rešenja na vidiku.
+Iako su sva unapređenja pre SegWit-a bila manje-više bezbolna, ovo je bilo drugačije. Kada je aktivacioni kod za SegWit objavljen, u oktobru 2016, činilo se da postoji ogromna podrška među Bitcoin korisnicima, ali iz nekog razloga rudari nisu signalizirali podršku za ovo unapređenje, što je zaustavilo aktivaciju bez rešenja na vidiku.
 
 
-Aaron van Wirdum opisuje ovaj vijugavi put u svom članku u časopisu Bitcoin [The Long Road To SegWit](https://bitcoinmagazine.com/technical/the-long-road-to-SegWit-how-bitcoins-biggest-protocol-upgrade-became-reality). Počinje objašnjavajući šta je SegWit i kako se to odnosi na debatu o veličini bloka. Van Wirdum zatim iznosi tok događaja koji su doveli do njegove konačne aktivacije. U središtu ovog procesa bio je mehanizam nadogradnje nazvan *user activated Soft Fork*, ili skraćeno UASF, koji je predložio korisnik Shaolinfry:
+Aaron van Wirdum opisuje ovaj vijugavi put u svom članku u Bitcoin časopisu [The Long Road To SegWit](https://bitcoinmagazine.com/technical/the-long-road-to-SegWit-how-bitcoins-biggest-protocol-upgrade-became-reality). Počinje objašnjavajući šta je SegWit i kako se to odnosi na debatu o veličini bloka. Van Wirdum zatim iznosi tok događaja koji su doveli do njegove konačne aktivacije. U središtu ovog procesa bio je mehanizam nadogradnje nazvan *user activated soft fork*, ili skraćeno UASF, koji je predložio korisnik Shaolinfry:
 
 
-> Shaolinfry je predložio alternativu: korisnički aktiviran Soft Fork (UASF). Umesto Hash aktivacije putem snage, korisnički aktiviran Soft Fork bi imao "'flag day aktivaciju' gde čvorovi počinju sprovođenje u unapred određenom vremenu u budućnosti." Sve dok je takav UASF sproveden od strane ekonomske većine, to bi trebalo da primora većinu rudara da prate (ili aktiviraju) Soft Fork.
+> Shaolinfry je predložio alternativu: korisnički aktiviran soft fork (UASF). Umesto heš aktivacije putem snage, korisnički aktiviran soft fork bi imao "'flag day aktivaciju' gde čvorovi počinju sprovođenje u unapred određenom vremenu u budućnosti." Sve dok je takav UASF sproveden od strane ekonomske većine, to bi trebalo da primora većinu rudara da prate (ili aktiviraju) soft fork.
 
-Između ostalog, on navodi Shaolinfryjev email Bitcoin-dev mailing listi. Tom prilikom je Shaolinfry [izneo argumente protiv Miner aktiviranih Soft forkova](https://lists.linuxfoundation.org/pipermail/Bitcoin-dev/2017-February/013643.html), navodeći niz problema s njima:
+Između ostalog, on navodi Shaolinfryjev email Bitcoin-dev mailing listi. Tom prilikom je Shaolinfry [izneo argumente protiv aktiviranih soft forkova od strane rudara](https://lists.linuxfoundation.org/pipermail/Bitcoin-dev/2017-February/013643.html), navodeći niz problema s njima:
 
 
-> Prvo, to zahteva poverenje da će Hash napajanje biti validirano nakon aktivacije. BIP66 Soft Fork je bio slučaj gde je 95% Hashrate signaliziralo spremnost, ali u stvarnosti oko polovine nije zapravo validiralo unapređena pravila i greškom je rudareno na nevažećem bloku.
+> Prvo, to zahteva poverenje da će heš napajanje biti validirano nakon aktivacije. BIP66 soft fork je bio slučaj gde je 95% hashrate signaliziralo spremnost, ali u stvarnosti oko polovine nije zapravo validiralo unapređena pravila i greškom je rudareno na nevažećem bloku.
 >
 
-> Drugo, Miner signalizacija ima prirodni veto koji omogućava malom procentu Hashrate da vetira aktivaciju čvora nadogradnje za sve. Do danas, Soft forkovi su iskoristili relativno centralizovani Mining pejzaž gde postoji relativno malo Mining bazena koji grade validne blokove; kako se krećemo ka većoj Hashrate decentralizaciji, verovatno ćemo sve više patiti od "inercije nadogradnje" koja će vetirati većinu nadogradnji.
+> Drugo, signalizacija od strane rudara ima prirodni veto koji omogućava malom procentu hashrate da vetira aktivaciju čvora nadogradnje za sve. Do danas, soft forkovi su iskoristili relativno centralizovani Mining pejzaž gde postoji relativno malo Mining bazena koji grade validne blokove; kako se krećemo ka većoj hashrate decentralizaciji, verovatno ćemo sve više patiti od "inercije nadogradnje" koja će vetirati većinu nadogradnji.
 
-Shaolinfry je takođe skrenuo pažnju na uobičajenu pogrešnu interpretaciju Miner signalizacije: ljudi su generalno mislili da je to sredstvo pomoću kojeg rudari mogu odlučivati o nadogradnjama protokola, umesto akcije koja pomaže u koordinaciji nadogradnji. Zbog ovog nesporazuma, rudari su možda osećali obavezu da javno iznesu svoje stavove o određenom Soft Fork, kao da to daje težinu predlogu.
+Shaolinfry je takođe skrenuo pažnju na uobičajenu pogrešnu interpretaciju signalizacije od strane rudara: ljudi su generalno mislili da je to sredstvo pomoću kojeg rudari mogu odlučivati o nadogradnjama protokola, umesto akcije koja pomaže u koordinaciji nadogradnji. Zbog ovog nesporazuma, rudari su možda osećali obavezu da javno iznesu svoje stavove o određenom soft forku, kao da to daje težinu predlogu.
 
 
 UASF predlog je, ukratko, "dan zastave" na koji čvorovi počinju primenjivati specifična nova pravila. Na taj način, rudari ne moraju kolektivno da se usklađuju za nadogradnju, ali *mogu* pokrenuti aktivaciju pre dana zastave ako dovoljan broj blokova signalizira podršku:
 
 
-> Moj predlog je da imamo najbolje iz oba sveta. Pošto korisnik aktivira Soft Fork treba relativno dugo vreme pre aktivacije, možemo kombinovati sa BIP9 da damo opciju brže Hash aktivacije koordinisane napajanjem ili aktivacije po flag day, šta god da je pre.
+> Moj predlog je da imamo najbolje iz oba sveta. Pošto korisnik aktivira soft fork treba relativno dugo vreme pre aktivacije, možemo kombinovati sa BIP9 da damo opciju brže Hash aktivacije koordinisane napajanjem ili aktivacije po flag day, šta god da je pre.
 > U oba slučaja, možemo iskoristiti sisteme upozorenja u BIP9. Promena je relativno jednostavna, dodajući parametar vremena aktivacije koji će preći BIP9 stanje u LOCKED_IN pre isteka vremena za implementaciju BIP9.
 
 Ova ideja je privukla mnogo interesovanja, ali nije izgledalo da je dobila skoro jednoglasnu podršku, što je izazvalo zabrinutost zbog potencijalnog cepanja lanca. Članak Aarona van Wirduma objašnjava kako je ovo konačno rešeno zahvaljujući [BIP91](https://github.com/Bitcoin/bips/blob/master/bip-0091.mediawiki), čiji je autor James Hilliard:
@@ -838,20 +835,20 @@ Ova ideja je privukla mnogo interesovanja, ali nije izgledalo da je dobila skoro
 Bilo je još nekih komplikovanih faktora uključenih (npr. takozvani "New York sporazum"), koje je ovaj BIP morao uzeti u obzir. Ohrabrujemo vas da pročitate članak Van Wirduma u celosti kako biste saznali mnoge zanimljive detalje u ovoj priči.
 
 
-#### Diskusija nakon SegWit
+#### Diskusija nakon SegWit-a
 
 
-Nakon implementacije SegWit, pojavila se diskusija o mehanizmima implementacije. Kao što je primetio Eric Lombrozo u [svom govoru na Breaking Bitcoin konferenciji](https://btctranscripts.com/breaking-Bitcoin/2017/changing-consensus-rules-without-breaking-Bitcoin/) i Shaolinfry, Miner aktivirani Soft Fork nije idealan mehanizam za nadogradnju:
+Nakon SegWit implementacije, pojavila se diskusija o mehanizmima implementacije. Kao što je primetio Eric Lombrozo u [svom govoru na Breaking Bitcoin konferenciji](https://btctranscripts.com/breaking-Bitcoin/2017/changing-consensus-rules-without-breaking-Bitcoin/) i Shaolinfry, soft fork aktiviran od strane rudara nije idealan mehanizam za nadogradnju:
 
 
-> U nekom trenutku verovatno ćemo želeti da dodamo više funkcija u Bitcoin protokol. Ovo je veliko filozofsko pitanje koje postavljamo sebi. Da li da uradimo UASF za sledeći? Šta je sa hibridnim pristupom? Miner aktiviran sam po sebi je isključen. bip9 nećemo ponovo koristiti.
+> U nekom trenutku verovatno ćemo želeti da dodamo više funkcija u Bitcoin protokol. Ovo je veliko filozofsko pitanje koje postavljamo sebi. Da li da uradimo UASF za sledeći? Šta je sa hibridnim pristupom? Samostalna aktivacija od strane rudara je isključena. BIP9 nećemo ponovo koristiti.
 
-U januaru 2020. godine, Matt Corallo [poslao je email](https://lists.linuxfoundation.org/pipermail/Bitcoin-dev/2020-January/017547.html) na Bitcoin-dev mejling listu koji je započeo diskusiju o budućim mehanizmima implementacije Soft Fork. Naveo je pet ciljeva za koje je smatrao da su ključni u nadogradnji. David Harding ih [sumira u Bitcoin Optech biltenu](https://bitcoinops.org/en/newsletters/2020/01/15/#discussion-of-Soft-Fork-activation-mechanisms) kao:
+U januaru 2020. godine, Matt Corallo [poslao je email](https://lists.linuxfoundation.org/pipermail/Bitcoin-dev/2020-January/017547.html) na Bitcoin-dev mejling listu koji je započeo diskusiju o budućim mehanizmima implementacije soft forka. Naveo je pet ciljeva za koje je smatrao da su ključni u nadogradnji. David Harding ih [sumira u Bitcoin Optech biltenu](https://bitcoinops.org/en/newsletters/2020/01/15/#discussion-of-Soft-Fork-activation-mechanisms) kao:
 
 
 > Mogućnost prekida ako se naiđe na ozbiljan prigovor na predložene promene pravila konsenzusa. Dodeljivanje dovoljno vremena nakon objavljivanja ažuriranog softvera kako bi se osiguralo da većina ekonomskih čvorova bude nadograđena za sprovođenje tih pravila. Očekivanje da će stopa mreže Hash biti otprilike ista pre i posle promene, kao i tokom bilo koje tranzicije. Sprečavanje, koliko je to moguće, stvaranja blokova koji su nevažeći prema novim pravilima, što bi moglo dovesti do lažnih potvrda u nenadograđenim čvorovima i SPV klijentima. Osiguranje da mehanizmi prekida ne mogu biti zloupotrebljeni od strane ometača ili partizana kako bi se zadržala široko željena nadogradnja bez poznatih problema.
 
-Ono što Corallo predlaže je kombinacija Miner aktiviranog Soft Fork i korisnički aktiviranog Soft Fork:
+Ono što Corallo predlaže je kombinacija soft forka aktiviranog od strane rudara i korisnički aktiviranog soft forka:
 
 
 > Dakle, kao nešto malo konkretnije, mislim da bi metoda aktivacije koja postavlja pravi presedan i na odgovarajući način razmatra gore navedene ciljeve bila:
