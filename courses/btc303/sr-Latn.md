@@ -854,34 +854,28 @@ Ono što Corallo predlaže je kombinacija soft forka aktiviranog od strane rudar
 > Dakle, kao nešto malo konkretnije, mislim da bi metoda aktivacije koja postavlja pravi presedan i na odgovarajući način razmatra gore navedene ciljeve bila:
 >
 
-> 1) standardna BIP 9 implementacija sa jednogodišnjim vremenskim okvirom za
-aktivacija sa 95% Miner spremnosti, +
+> 1) standardna BIP 9 implementacija sa jednogodišnjim vremenskim horizontom za aktivaciju, uz postizanje 95% rudarske podrške (tj. 95% rudara signalizuje spremnost za promenu) +
 
-> 2) u slučaju da ne dođe do aktivacije u roku od godinu dana, šest meseci
-period tišine tokom kojeg zajednica može analizirati i diskutovati
+> 2) u slučaju da ne dođe do aktivacije u roku od godinu dana, šest meseci period tišine tokom kojeg zajednica može analizirati i diskutovati razloge za neaktivaciju i, +
 
-razlozi za neaktivaciju i, +
-
-> 3) u slučaju da ima smisla, jednostavan parametar komandne linije/Bitcoin.conf koji je podržan od originalnog izdanja omogućio bi korisnicima da se opredele za BIP 8 implementaciju sa vremenskim horizontom od 24 meseca za aktivaciju flag-dana (kao i novo Bitcoin Core izdanje koje omogućava flag univerzalno).
+> 3) u slučaju da ima smisla, jednostavan parametar komandne linije/Bitcoin.conf, koji je podržan od originalnog izdanja, omogućio bi korisnicima da se opredele za BIP 8 implementaciju sa vremenskim horizontom od 24 meseca do aktivacije na flag-day (kao i novo Bitcoin Core izdanje koje omogućava flag univerzalno).
 >
 
-> Ovo pruža veoma dug vremenski horizont za standardniju aktivaciju, dok se i dalje osigurava da ciljevi iz tačke #5 budu ispunjeni, čak i ako, u tim slučajevima, vremenski horizont treba značajno produžiti kako bi se ispunili ciljevi iz tačke #3. Razvoj Bitcoin nije trka. Ako moramo, čekanje od 42 meseca osigurava da ne postavljamo negativan presedan zbog kojeg ćemo zažaliti dok Bitcoin nastavlja da raste.
+> Ovo pruža veoma dug vremenski horizont za standardniju aktivaciju, dok se i dalje osigurava da ciljevi iz tačke #5 budu ispunjeni, čak i ako, u tim slučajevima, vremenski horizont treba značajno produžiti kako bi se ispunili ciljevi iz tačke #3. Razvoj Bitcoina nije trka. Ako moramo, čekanje od 42 meseca osigurava da ne postavljamo negativan presedan zbog kojeg ćemo zažaliti dok Bitcoin nastavlja da raste.
 
-#### Taproot nadogradnja - Brzo suđenje
+#### Taproot nadogradnja - Speedy Trial (brzi probni period aktivacije)
 
 
 
 Kada je Taproot bio spreman za implementaciju u oktobru 2020. godine, što znači da su svi tehnički detalji oko njegovih pravila konsenzusa bili implementirani i dobili široko odobrenje unutar zajednice, diskusije o tome kako ga zapravo implementirati počele su da se zahuktavaju. Te diskusije su do tog trenutka bile prilično tihe.
 
 
-Puno predloga za mehanizme aktivacije počelo je kružiti, a David Harding
-
-[sumarizovao ih na Bitcoin Wiki](https://en.Bitcoin.it/wiki/Taproot_activation_proposals). U svom članku objasnio je neka svojstva BIP8, koji je u to vreme imao neke nedavne promene kako bi bio fleksibilniji.
+Puno predloga za mehanizme aktivacije počelo je kružiti, a David Harding [sumirao ih je na Bitcoin Wiki](https://en.Bitcoin.it/wiki/Taproot_activation_proposals). U svom članku objasnio je neka svojstva BIP8, koji je u to vreme imao neke nedavne promene kako bi bio fleksibilniji.
 
 
-> U vreme kada se ovaj dokument piše, [BIP8](https://github.com/Bitcoin/bips/blob/master/bip-0008.mediawiki) je izrađen na osnovu lekcija naučenih 2017. godine. Jedna značajna promena nakon BIPs 9+148 je da je prisilna aktivacija sada zasnovana na visini bloka umesto na medijanskom vremenu prošlosti; druga značajna promena je da je prisilna aktivacija booleova promenljiva koja se bira kada se postavljaju parametri aktivacije Soft Fork, bilo za početno postavljanje ili ažuriranje u kasnijem postavljanju.
+> U vreme kada se ovaj dokument piše, [BIP8](https://github.com/Bitcoin/bips/blob/master/bip-0008.mediawiki) je izrađen na osnovu lekcija naučenih 2017. godine. Jedna od važnijih promena nakon BIP-ova 9 i 148 jeste da se prisilna aktivacija sada određuje prema visini bloka, a ne prema medijani prethodnog vremena. Druga važna promena je da se prisilna aktivacija definiše kao logički (boolean) parametar, koji se bira prilikom postavljanja parametara aktivacije soft fork-a, bilo za inicijalnu implementaciju, bilo za kasnije ažuriranje.
 
-BIP8 bez prisilne aktivacije je veoma sličan [BIP9](https://github.com/Bitcoin/bips/blob/master/bip-0009.mediawiki) verzijskim bitovima sa istekom i odlaganjem, sa jedinom značajnom razlikom što BIP8 koristi visine blokova u poređenju sa BIP9 koji koristi median time past. Ovo podešavanje omogućava pokušaju da ne uspe (ali se može ponovo pokušati kasnije).
+BIP8 bez prisilne aktivacije je veoma sličan [BIP9](https://github.com/Bitcoin/bips/blob/master/bip-0009.mediawiki) verzijskim bitovima sa istekom i odlaganjem, pri čemu je jedina suštinska razlika u tome što BIP 8 određuje aktivaciju prema visini bloka, dok BIP 9 koristi medijanu prošlih vremena (MTP). Ovo podešavanje omogućava pokušaju da ne uspe (ali se može ponovo pokušati kasnije).
 
 
 BIP8 sa prinudnom aktivacijom završava obaveznim periodom signalizacije gde svi blokovi proizvedeni u skladu sa njegovim pravilima moraju signalizirati spremnost za Soft Fork na način koji će pokrenuti aktivaciju u ranijem uvođenju istog Soft Fork sa neobaveznom aktivacijom. Drugim rečima, ako je verzija čvora x objavljena bez prinudne aktivacije, a kasnije je objavljena verzija y koja uspešno primorava rudare da počnu signalizaciju spremnosti u istom vremenskom periodu, obe verzije će početi sprovođenje novih pravila konsenzusa u isto vreme.
@@ -913,11 +907,9 @@ Tokom tih sedam meseci, diskusija je trajala i činilo se da nema načina da se 
 ```
 
 
-Pristup "hajde da vidimo šta će se desiti" konačno je počeo da se uklapa u umove ljudi. Ovaj proces će kasnije biti označen kao "Brzo suđenje" zbog svog kratkog perioda signalizacije. David Harding objašnjava ovu ideju široj zajednici u an
+Pristup "hajde da vidimo šta će se desiti" konačno je počeo da se uklapa u umove ljudi. Ovaj proces će kasnije biti označen kao "Speedy Trial" zbog svog kratkog perioda signalizacije. David Harding objašnjava ovu ideju široj zajednici u [emailu Bitcoin-dev mailing list](https://lists.linuxfoundation.org/pipermail/Bitcoin-dev/2021-March/018583.html):
 
-[email Bitcoin-dev mailing list](https://lists.linuxfoundation.org/pipermail/Bitcoin-dev/2021-March/018583.html):
-
-> Ranija verzija ovog predloga je dokumentovana pre više od 200 dana, a osnovni kod Taproot je spojen u Bitcoin Core pre više od 140 dana. Da smo započeli Speedy Trial u vreme kada je Taproot spojen (što je pomalo nerealno), bili bismo ili manje od dva meseca udaljeni od implementacije Taproot ili bismo prešli na sledeći pokušaj aktivacije pre više od mesec dana.
+> Ranija verzija ovog predloga je dokumentovana pre više od 200 dana, a osnovni Taproot kod je spojen u Bitcoin Core pre više od 140 dana. Da smo započeli Speedy Trial u vreme kada je Taproot spojen (što je pomalo nerealno), bili bismo ili manje od dva meseca udaljeni od implementacije Taproot ili bismo prešli na sledeći pokušaj aktivacije pre više od mesec dana.
 >
 
 > Umesto toga, dugo smo raspravljali i ne izgleda da smo bliže rešenju koje je široko prihvatljivo nego kada je mejling lista počela da diskutuje o šemama aktivacije posle SegWit pre više od godinu dana. Mislim da je Speedy Trial način za brzo napredovanje generate koji će ili okončati debatu (za sada, ako je aktivacija uspešna) ili nam dati neke stvarne podatke na osnovu kojih ćemo zasnivati buduće predloge za aktivaciju Taproot.
@@ -928,16 +920,16 @@ Ovaj mehanizam za implementaciju je usavršen tokom dva meseca i zatim objavljen
 #### Budući mehanizmi implementacije
 
 
-S obzirom na probleme sa nedavnim vilicama Soft, SegWit i Taproot, nije jasno kako će sledeće unapređenje biti implementirano. Speedy Trial je korišćen za implementaciju Taproot, ali je korišćen da premosti jaz između UASF i MASF grupa, a ne zato što se pojavio kao najbolji poznati mehanizam implementacije.
+S obzirom na probleme sa nedavnim soft forkovima, SegWit i Taproot, nije jasno kako će sledeće unapređenje biti implementirano. Speedy Trial je korišćen za implementaciju Taproot, ali je korišćen da premosti jaz između UASF i MASF grupa, a ne zato što se pojavio kao najbolji poznati mehanizam implementacije.
 
 
 ### Rizici
 
 
-Tokom aktivacije bilo kog Fork, bilo da je to Hard ili Soft, Miner aktiviran ili korisnik aktiviran, postoji rizik od dugotrajnog razdvajanja lanca. Razdvajanje koje traje duže od nekoliko blokova može izazvati ozbiljnu štetu sentimentu oko Bitcoin kao i njegovoj ceni. Ali iznad svega, izazvalo bi veliku konfuziju oko toga šta je Bitcoin. Da li je Bitcoin ovaj lanac ili onaj lanac?
+Tokom aktivacije bilo kog forka, bilo da je to hard ili soft, aktiviran od strane rudara ili korisnika, postoji rizik od dugotrajnog razdvajanja lanca. Razdvajanje koje traje duže od nekoliko blokova može izazvati ozbiljnu štetu sentimentu oko Bitcoin kao i njegovoj ceni. Ali iznad svega, izazvalo bi veliku konfuziju oko toga šta je Bitcoin. Da li je Bitcoin ovaj lanac ili onaj lanac?
 
 
-Rizik sa korisnikom aktiviranim Soft Fork je da se nova pravila aktiviraju čak i ako većina Hash snage ne podržava ta pravila. Ovaj scenario bi rezultirao dugotrajnim razdvajanjem lanca, koje bi trajalo sve dok većina Hash snage ne usvoji nova pravila. Moglo bi biti posebno Hard da se podstaknu rudari da pređu na novi lanac ako su već iskopali blokove nakon razdvajanja na starom lancu, jer bi prelaskom na drugu granu napustili svoje nagrade za blokove. Međutim, vredno je pomenuti izuzetan događaj: u martu 2013. dogodilo se dugotrajno razdvajanje zbog nenamernog Hard Fork i, suprotno ovom podsticaju, dva velika Mining bazena donela su odluku da napuste svoju granu razdvajanja kako bi obnovili konsenzus.
+Rizik sa soft forkom aktiviranim od strane korisnika je da se nova pravila aktiviraju čak i ako većina heš snage ne podržava ta pravila. Ovaj scenario bi rezultirao dugotrajnim razdvajanjem lanca, koje bi trajalo sve dok većina Hash snage ne usvoji nova pravila. Moglo bi biti posebno Hard da se podstaknu rudari da pređu na novi lanac ako su već iskopali blokove nakon razdvajanja na starom lancu, jer bi prelaskom na drugu granu napustili svoje nagrade za blokove. Međutim, vredno je pomenuti izuzetan događaj: u martu 2013. dogodilo se dugotrajno razdvajanje zbog nenamernog Hard Fork i, suprotno ovom podsticaju, dva velika Mining bazena donela su odluku da napuste svoju granu razdvajanja kako bi obnovili konsenzus.
 
 
 S druge strane, rizik sa Miner aktiviranim Soft Fork je posledica činjenice da rudari mogu da se uključe u lažno signaliziranje, što znači da stvarni udeo Hash snage koja podržava promenu može biti manji nego što izgleda. Ako stvarna podrška ne obuhvata većinu Hash snage, verovatno bismo videli dugotrajan lančani raskol sličan onom opisanom u prethodnom pasusu. Ovo, ili barem sličan problem, se dogodio u stvarnosti kada je BIP66 bio implementiran, ali je rešen unutar otprilike 6 blokova.
