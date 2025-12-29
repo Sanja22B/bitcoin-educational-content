@@ -1009,25 +1009,23 @@ Na svom ličnom blogu, softverski inženjer Jameson Lopp, [dublje istražuje ovo
 Dakle, imamo sistem koji izgleda funkcioniše u praksi, ali koji ne možemo formalno dokazati kao siguran. Dokaz verovatno nije moguć zbog složenost samog sistema.
 
 
-### Ne samo za stručnjake za Bitcoin
+### Ne samo za Bitcoin stručnjake
 
 
 
-Važnost adversarijalnog razmišljanja takođe se proteže na svakodnevne korisnike Bitcoin do određene mere, ne samo na hardcore Bitcoin developere i stručnjake. Ragnar Lifthasir pominje u [tweetstormu](https://bitcoinwords.github.io/tweetstorm-on-adversarial-thinking) kako pojednostavljeni narativi oko Bitcoin - na primer, "samo HODL" - mogu biti degradirajući za sam Bitcoin, i zaključuje rekavši
+Razmišljanje u neprijateljskom okruženju važno je, u određenoj meri, i za obične korisnike Bitcoina, ne samo za iskusne programere i eksperte. Ragnar Lifthasir pominje u [tweetstormu](https://bitcoinwords.github.io/tweetstorm-on-adversarial-thinking) kako pojednostavljeni narativi oko Bitcoina - na primer, "samo HODL" - mogu biti degradirajući za sam Bitcoin, i zaključuje
 
 
-> Da bismo ojačali Bitcoin i nas same, moramo razmišljati kao softverski inženjeri koji doprinose Bitcoin. Oni vrše međusobne recenzije, nemilosrdno tražeći nedostatke. Na svojim tehnološkim događajima razgovaraju o svim mogućim načinima na koje predlog može propasti. Razmišljaju suparnički. Oni su konzervativni.
+> Da bismo ojačali Bitcoin i nas same, moramo razmišljati kao softverski inženjeri koji doprinose Bitcoinu. Oni vrše međusobne recenzije, nemilosrdno tražeći nedostatke. Na svojim tehnološkim događajima razgovaraju o svim mogućim načinima na koje predlog može propasti. Razmišljaju suparnički. Oni su konzervativni.
 
-On ove jednostavne narative naziva monomanijama. Kroz ovu definiciju on kaže da fokusiranjem na jednu stvar - na primer, "samo HODL" - rizikujete da previdite verovatno važnije stvari, kao što su održavanje sigurnosti vašeg Bitcoin ili davanje svog maksimuma da koristite Bitcoin na način Trustless.
+On ove jednostavne narative naziva monomanijama. Kroz ovu definiciju on kaže da fokusiranjem na jednu stvar - na primer, "samo HODL" - rizikujete da previdite verovatno važnije stvari, kao što su održavanje sigurnosti vašeg bitkoina ili davanje svog maksimuma da koristite Bitcoin bez potrebe za poverenjem u bilo koju treću stranu.
 
 
 ### Pretnje
 
 
 
-Postoji mnogo poznatih slabosti u Bitcoin, i mnoge od njih se aktivno eksploatišu. Da biste dobili uvid u to, pogledajte [stranicu o slabostima](https://en.Bitcoin.it/wiki/Weaknesses) na Bitcoin vikiju. Tamo su navedeni razni problemi, kao što su
-
-Krađa Wallet i napadi uskraćivanjem usluge:
+Postoji mnogo poznatih slabosti u Bitcoinu, i mnoge od njih se aktivno eksploatišu. Da biste dobili uvid u to, pogledajte [stranicu o slabostima](https://en.Bitcoin.it/wiki/Weaknesses) na Bitcoin vikiju. Tamo su navedeni razni problemi, kao što su krađa novčanika i DoS napadi:
 
 
 > Ako napadač pokuša da popuni mrežu klijentima koje kontroliše, vrlo je verovatno da ćete se povezati samo sa napadačevim čvorovima. Iako Bitcoin nikada ne koristi brojanje čvorova za bilo šta, potpuno izolovanje čvora od poštene mreže može biti korisno u izvođenju drugih napada.
@@ -1041,7 +1039,7 @@ Kao što citat takođe pominje, Sybil napad nije efikasan na Bitcoin mreži jer 
 Gore navedeni su primeri stvarnih pretnji koje treba rešiti.
 
 
-### Jednostavno Sabotiranje Terena
+### Terenski priručnik za jednostavnu sabotažu (eng. Simple Sabotage Field Manual)
 
 
 ![](assets/sr-Latn/009.webp)
@@ -1049,12 +1047,10 @@ Gore navedeni su primeri stvarnih pretnji koje treba rešiti.
 
 
 
-Da biste bolje razumeli um protivnika, moglo bi biti korisno da zavirite u način na koji oni deluju. Američka vladina organizacija pod nazivom Office of Strategic Services, koja je delovala tokom Drugog svetskog rata i imala među svojim ciljevima sprovođenje špijunaže, izvođenje sabotaža i širenje propagande, proizvela je [priručnik](https://www.gutenberg.org/ebooks/26184) za svoje osoblje o tome kako pravilno sabotirati neprijatelja. Njegov naslov je bio "Simple Sabotage Field Manual" i sadržao je konkretne savete o infiltriranju neprijatelja kako bi im se život učinio Hard. Saveti se kreću od spaljivanja skladišta do izazivanja habanja bušilica kako bi se smanjila sposobnost neprijatelja.
-
-efikasnost.
+Da biste bolje razumeli um protivnika, moglo bi biti korisno da zavirite u način na koji oni deluju. Američka vladina organizacija pod nazivom Office of Strategic Services, koja je delovala tokom Drugog svetskog rata i imala među svojim ciljevima sprovođenje špijunaže, izvođenje sabotaža i širenje propagande, proizvela je [priručnik](https://www.gutenberg.org/ebooks/26184) za svoje osoblje o tome kako pravilno sabotirati neprijatelja. Njegov naslov je bio "Simple Sabotage Field Manual" i sadržao je konkretne savete o infiltriranju neprijatelja kako bi im se život učinio teškim. Saveti se kreću od spaljivanja skladišta do izazivanja habanja bušilica kako bi se smanjila efikasnost neprijatelja.
 
 
-Na primer, postoji deo o tome kako infiltrator može da poremeti organizacije. Nije Hard videti kako bi se takve taktike mogle koristiti za ciljanje procesa razvoja Bitcoin, koji je otvoren za učešće bilo koga. Posvećeni napadač može stalno odlagati napredak beskrajnim brigama o nebitnim pitanjima, cenjkati se oko preciznih formulacija i pokušavati da ponovo pokrene diskusije koje su već sveobuhvatno rešene. Napadač takođe može unajmiti vojsku trolova da umnoži sopstvenu efikasnost; ovo možemo nazvati društvenim Sybil napadom. Koristeći društveni Sybil napad, mogu učiniti da izgleda kao da postoji veći otpor protiv predložene promene nego što zapravo postoji.
+Na primer, postoji deo o tome kako infiltrator može da poremeti organizacije. Nije teško videti kako bi se takve taktike mogle koristiti za ciljanje procesa Bitcoin razvoja, koji je otvoren za učešće bilo koga. Posvećeni napadač može stalno odlagati napredak beskrajnim brigama o nebitnim pitanjima, cenjkati se oko preciznih formulacija i pokušavati da ponovo pokrene diskusije koje su već sveobuhvatno rešene. Napadač takođe može unajmiti vojsku trolova da umnoži sopstvenu efikasnost; ovo možemo nazvati društvenim Sybil napadom. Koristeći društveni Sybil napad, mogu učiniti da izgleda kao da postoji veći otpor protiv predložene promene nego što zapravo postoji.
 
 
 Ovo naglašava kako odlučna država može i hoće učiniti sve što je u njenoj moći da uništi neprijatelja, uključujući njegovo razbijanje iznutra. Pošto je Bitcoin oblik novca koji se takmiči sa uspostavljenim fiat valutama, postoji verovatnoća da će države smatrati Bitcoin neprijateljem.
@@ -1069,20 +1065,20 @@ Eric Voskuil [piše na svojoj Cryptoeconomics wiki stranici](https://github.com/
 > Drugim rečima, postoji pretpostavka da je moguće da sistem odoli državnoj kontroli. Ovo se ne prihvata kao činjenica, već se smatra razumnom pretpostavkom, zbog empirijske studije ponašanja sličnih sistema, na kojoj se zasniva sistem.
 >
 
-> Onaj ko ne prihvata aksiom otpora razmatra potpuno drugačiji sistem od Bitcoin. Ako se pretpostavi da sistem ne može da se odupre državnim kontrolama, zaključci nemaju smisla u kontekstu Bitcoin - baš kao što zaključci u sfernoj geometriji protivreče Euklidskoj. Kako Bitcoin može biti bez dozvole ili otporan na cenzuru bez aksioma? Kontradikcija vodi ka očiglednim greškama u pokušaju da se racionalizuje sukob.
+> Onaj ko ne prihvata aksiom otpora razmatra potpuno drugačiji sistem od Bitcoina. Ako se pretpostavi da sistem ne može da se odupre državnim kontrolama, zaključci nemaju smisla u kontekstu Bitcoina - baš kao što zaključci u sfernoj geometriji protivreče Euklidskoj. Kako Bitcoin može biti bez dozvole ili otporan na cenzuru bez aksioma? Kontradikcija vodi ka očiglednim greškama u pokušaju da se racionalizuje sukob.
 
 
 Ono što on suštinski kaže je da je smisleno pokušati samo kada se pretpostavi da je moguće stvoriti sistem koji države ne mogu kontrolisati.
 
 
-To znači da da biste radili na Bitcoin, treba da prihvatite aksiom otpora, inače bi bilo bolje da svoje vreme posvetite drugim projektima. Priznavanje tog aksioma pomaže vam da usmerite svoje razvojne napore na stvarne probleme: kodiranje u kontekstu protivnika na nivou države. Drugim rečima, razmišljajte na suparnički način.
+To znači da biste radili na Bitcoinu, treba da prihvatite aksiom otpora, inače bi bilo bolje da svoje vreme posvetite drugim projektima. Priznavanje tog aksioma pomaže vam da usmerite svoje razvojne napore na stvarne probleme: kodiranje u kontekstu protivnika na nivou države. Drugim rečima, razmišljajte na suparnički način.
 
 
-### Zaključak o adversarijalnom razmišljanju
+### Zaključak o razmišljanju u neprijateljskom okruženju
 
 
 
-Decentralizovani sistem ne može imati odgovornost izvan samog sistema, stoga Bitcoin mora sprečiti zlonamerno ponašanje rigoroznije nego tradicionalni sistemi. Adversarijalno razmišljanje je imperativ u takvom sistemu.
+Decentralizovani sistem ne može imati odgovornost izvan samog sistema, stoga Bitcoin mora sprečiti zlonamerno ponašanje rigoroznije nego tradicionalni sistemi. Razmišljanje u neprijateljskom okruženju je u takvom sistemu imperativ.
 
 
 Da biste održali Bitcoin sigurnim, morate znati njegove neprijatelje i njihove motive. Čini se da se većina pretnji svodi na nacionalne države, koje imaju ogromnu ekonomsku moć, kroz oporezivanje i štampanje novca. Verovatno neće lako odustati od svojih privilegija štampanja novca.
@@ -1097,16 +1093,16 @@ Da biste održali Bitcoin sigurnim, morate znati njegove neprijatelje i njihove 
 ![](assets/sr-Latn/010.webp)
 
 
-Bitcoin je izgrađen koristeći softver otvorenog koda. U ovom poglavlju analiziramo šta to znači, kako funkcioniše održavanje softvera i kako softver otvorenog koda u Bitcoin omogućava razvoj bez dozvola. Zaranjamo u *selektivnu kriptografiju*, koja se bavi izborom i korišćenjem biblioteka u kriptografskim sistemima. Poglavlje uključuje deo o procesu pregleda Bitcoin, nakon čega sledi deo o načinima na koje programeri Bitcoin dobijaju finansiranje. Poslednji deo govori o tome kako kultura otvorenog koda Bitcoin može izgledati zaista čudno spolja, i zašto je ta percipirana čudnost zapravo znak dobrog zdravlja.
+Bitcoin je izgrađen koristeći softver otvorenog koda. U ovom poglavlju analiziramo šta to znači, kako funkcioniše održavanje softvera i kako softver otvorenog koda u Bitcoinu omogućava razvoj bez dozvola. Zaranjamo u *selektivnu kriptografiju*, koja se bavi izborom i korišćenjem biblioteka u kriptografskim sistemima. Poglavlje uključuje deo o procesu pregleda Bitcoina, nakon čega sledi deo o načinima na koje programeri Bitcoin dobijaju finansiranje. Poslednji deo govori o tome kako kultura otvorenog koda Bitcoina može izgledati zaista čudno spolja, i zašto je ta percipirana čudnost zapravo znak dobrog zdravlja.
 
 
-Većina softvera Bitcoin, a posebno Bitcoin Core, je otvorenog koda. To znači da je izvorni kod softvera dostupan široj javnosti za pregled, eksperimentisanje, modifikaciju i redistribuciju. Definicija otvorenog koda na [](https://opensource.org/osd) uključuje, između ostalog, sledeće važne tačke:
+Većina Bitcoin softvera, a posebno Bitcoin Core, je otvorenog koda. To znači da je izvorni kod softvera dostupan široj javnosti za pregled, eksperimentisanje, modifikaciju i redistribuciju. Definicija otvorenog koda na [](https://opensource.org/osd) uključuje, između ostalog, sledeće važne tačke:
 
 
-> Besplatna Redistribucija: Licenca ne sme ograničiti bilo koju stranu da prodaje ili poklanja softver kao komponentu zbirne distribucije softvera koja sadrži programe iz nekoliko različitih izvora. Licenca ne sme zahtevati tantijeme ili drugu naknadu za takvu prodaju.
+> Besplatna redistribucija: Licenca ne sme ograničiti bilo koju stranu da prodaje ili poklanja softver kao komponentu zbirne distribucije softvera koja sadrži programe iz nekoliko različitih izvora. Licenca ne sme zahtevati tantijeme ili drugu naknadu za takvu prodaju.
 >
 
-> Izvorni Kod: Program mora uključivati izvorni kod i mora omogućiti distribuciju u izvornom kodu kao i u kompajliranom obliku. Gde neki oblik proizvoda nije distribuiran sa izvornim kodom, mora postojati dobro objavljen način za dobijanje izvornog koda za ne više od razumnih troškova reprodukcije, po mogućstvu preuzimanjem putem Interneta bez naknade. Izvorni kod mora biti preferirani oblik u kojem bi programer modifikovao program. Namerno zamagljen izvorni kod nije dozvoljen. Srednji oblici kao što je izlaz preprocesora ili prevodioca nisu dozvoljeni.
+> Izvorni kod: Program mora uključivati izvorni kod i mora omogućiti distribuciju u izvornom kodu kao i u kompajliranom obliku. Gde neki oblik proizvoda nije distribuiran sa izvornim kodom, mora postojati dobro objavljen način za dobijanje izvornog koda za ne više od razumnih troškova reprodukcije, po mogućstvu preuzimanjem putem interneta bez naknade. Izvorni kod mora biti preferirani oblik u kojem bi programer modifikovao program. Namerno zamagljen izvorni kod nije dozvoljen. Srednji oblici kao što je izlaz preprocesora ili prevodioca nisu dozvoljeni.
 >
 
 > Izvedena dela: Licenca mora dozvoliti izmene i izvedena dela, i mora dozvoliti njihovu distribuciju pod istim uslovima kao licenca originalnog softvera.
@@ -1126,23 +1122,23 @@ The above copyright notice and this permission notice shall be included in all c
 ```
 
 
-Kao što je navedeno u poglavlju "Ne veruj, proveri", važno je da korisnici mogu da verifikuju da softver Bitcoin koji koriste "radi kako je reklamirano". Da bi to uradili, moraju imati neograničen pristup izvornom kodu softvera koji žele da verifikuju.
+Kao što je navedeno u poglavlju "Ne veruj, proveri", važno je da korisnici mogu da verifikuju da Bitcoin softver koji koriste "radi kako je reklamirano". Da bi to uradili, moraju imati neograničen pristup izvornom kodu softvera koji žele da verifikuju.
 
 
-U narednim odeljcima istražujemo neke druge zanimljive aspekte softvera otvorenog koda u Bitcoin.
+U narednim odeljcima istražujemo neke druge zanimljive aspekte softvera otvorenog koda u Bitcoinu.
 
 
 ### Održavanje softvera
 
 
 
-Izvorni kod Bitcoin Core-a se održava u Git repozitorijumu koji je hostovan na [GitHub-u](https://github.com/Bitcoin/Bitcoin). Svako može klonirati taj repozitorijum bez traženja dozvole, a zatim ga pregledati, izgraditi ili napraviti izmene lokalno. To znači da postoje hiljade kopija repozitorijuma širom sveta. Sve su to kopije istog repozitorijuma, pa šta čini ovaj specifični GitHub Bitcoin Core repozitorijum tako posebnim? Tehnički gledano, nije uopšte poseban, ali društveno je postao žarište razvoja Bitcoin.
+Izvorni kod Bitcoin Core-a se održava u Git repozitorijumu koji je hostovan na [GitHub-u](https://github.com/Bitcoin/Bitcoin). Svako može klonirati taj repozitorijum bez traženja dozvole, a zatim ga pregledati, izgraditi ili napraviti izmene lokalno. To znači da postoje hiljade kopija repozitorijuma širom sveta. Sve su to kopije istog repozitorijuma, pa šta čini ovaj specifični GitHub Bitcoin Core repozitorijum tako posebnim? Tehnički gledano, nije uopšte poseban, ali društveno je postao žarište razvoja Bitcoina.
 
 
 Bitcoin i stručnjak za bezbednost Jameson Lopp to vrlo dobro objašnjava u [blog postu](https://blog.lopp.net/who-controls-Bitcoin-core-/) pod nazivom "Ko kontroliše Bitcoin Core?":
 
 
-> Bitcoin Core je žarišna tačka za razvoj Bitcoin protokola, a ne tačka komandovanja i kontrole. Ako bi iz bilo kog razloga prestala da postoji, pojavila bi se nova žarišna tačka — tehnička komunikaciona platforma na kojoj se zasniva (trenutno GitHub repozitorijum) je stvar pogodnosti, a ne definicije / integriteta projekta. Zapravo, već smo videli da se žarišna tačka za razvoj Bitcoin promenila u pogledu platformi, pa čak i imena!
+> Bitcoin Core je žarišna tačka za razvoj Bitcoin protokola, a ne tačka komandovanja i kontrole. Ako bi iz bilo kog razloga prestala da postoji, pojavila bi se nova žarišna tačka — tehnička komunikaciona platforma na kojoj se zasniva (trenutno GitHub repozitorijum) je stvar pogodnosti, a ne definicije / integriteta projekta. Zapravo, već smo videli da se žarišna tačka za razvoj Bitcoina promenila u pogledu platformi, pa čak i imena!
 
 On dalje objašnjava kako se softver Bitcoin Core održava i osigurava protiv zlonamernih promena koda. Opšti zaključak iz ovog celog članka je sažet na samom kraju:
 
@@ -1150,40 +1146,40 @@ On dalje objašnjava kako se softver Bitcoin Core održava i osigurava protiv zl
 > Niko ne kontroliše Bitcoin.
 >
 
-> Niko ne kontroliše fokalnu tačku za razvoj Bitcoin.
+> Niko ne kontroliše fokalnu tačku za razvoj Bitcoina.
 
-Bitcoin Osnovni programer Eric Lombrozo dalje govori o procesu razvoja u svom [Medium postu](https://medium.com/@elombrozo/the-Bitcoin-core-merge-process-74687a09d81d) pod nazivom "The Bitcoin Core Merge Process":
+Bitcoin Core programer Eric Lombrozo dalje govori o procesu razvoja u svom [Medium postu](https://medium.com/@elombrozo/the-Bitcoin-core-merge-process-74687a09d81d) pod nazivom "The Bitcoin Core Merge Process":
 
 
-> Bilo ko može Fork bazu koda repozitorijuma i napraviti proizvoljne izmene u svom repozitorijumu. Oni mogu napraviti klijenta iz svog repozitorijuma i pokrenuti ga umesto toga ako žele. Takođe mogu napraviti binarne verzije za druge ljude da ih pokrenu.
+> Bilo ko može forkovati bazu koda repozitorijuma i napraviti proizvoljne izmene u svom repozitorijumu. Oni mogu napraviti klijenta iz svog repozitorijuma i pokrenuti ga umesto toga ako žele. Takođe mogu napraviti binarne verzije za druge ljude da ih pokrenu.
 >
 
 > Ako neko želi da spoji izmenu koju je napravio u svom repozitorijumu u Bitcoin Core, može podneti pull request. Kada je podnet, bilo ko može pregledati izmene i komentarisati ih bez obzira na to da li ima pristup za commit u sam Bitcoin Core.
 
-Treba napomenuti da pull zahtevi mogu potrajati veoma dugo pre nego što ih održavaoci spoje u repozitorijum, a to je obično zbog nedostatka pregleda, što je često posledica nedostatka *pregledalaca*.
+Treba napomenuti da pull zahtevi mogu potrajati veoma dugo pre nego što ih održavaoci spoje u repozitorijum, a to je obično zbog nedostatka pregleda, što je često posledica nedostatka *pregledalača*.
 
 
-Lombrozo takođe govori o procesu koji okružuje promene konsenzusa, ali to je malo izvan okvira ovog poglavlja. Pogledajte prethodno poglavlje "Nadogradnja" za više informacija o tome kako se Bitcoin protokol nadograđuje.
+Lombrozo takođe govori o procesu koji se odnosi na promene konsenzusa, ali to je malo izvan okvira ovog poglavlja. Pogledajte prethodno poglavlje "Nadogradnja" za više informacija o tome kako se Bitcoin protokol nadograđuje.
 
 
 ### Razvoj bez dozvole
 
 
 
-Utvrđeno je da svako može pisati kod za Bitcoin Core bez traženja bilo kakve dozvole, ali to ne znači nužno da će biti spojen u glavni Git repozitorijum. Ovo utiče na bilo kakvu modifikaciju, od promene šema boja grafičkog korisničkog interfejsa Interface, do načina na koji su formatirane peer-to-peer poruke, pa čak i pravila konsenzusa, tj. skup pravila koja definišu važeći Blockchain.
+Utvrdili smo da svako može pisati kod za Bitcoin Core bez traženja bilo kakve dozvole, ali to ne znači nužno da će biti spojen u glavni Git repozitorijum. Ovo utiče na bilo kakvu modifikaciju, od promene šema boja grafičkog korisničkog interfejsa, do načina na koji su formatirane peer-to-peer poruke, pa čak i pravila konsenzusa, tj. skup pravila koja definišu važeći blockchain.
 
 
-Verovatno podjednako važno je da korisnici mogu slobodno razvijati sisteme na osnovu Bitcoin, bez traženja bilo kakve dozvole. Videli smo bezbroj uspešnih softverskih projekata koji su izgrađeni na osnovu Bitcoin, kao što su:
+Verovatno podjednako važno je da korisnici mogu slobodno razvijati sisteme na Bitcoin osnovi, bez traženja bilo kakve dozvole. Videli smo bezbroj uspešnih softverskih projekata koji su izgrađeni na osnovu Bitcoina, kao što su:
 
 
 
-- Lightning Network: Mreža plaćanja koja omogućava brzo plaćanje vrlo malih iznosa. Zahteva vrlo malo On-Chain Bitcoin transakcija. Postoje razne interoperabilne implementacije, kao što su [Core Lightning](https://github.com/ElementsProject/lightning), [LND](https://github.com/lightningnetwork/LND), [Eclair](https://github.com/ACINQ/eclair), i [Lightning Dev Kit](https://github.com/lightningdevkit).
-- CoinJoin: Više strana sarađuje kako bi kombinovale svoje uplate u jednu transakciju, čime se otežava grupisanje Address. Postoje različite implementacije.
+- Lightning Network: Mreža plaćanja koja omogućava brzo plaćanje vrlo malih iznosa. Zahteva vrlo malo on-chain Bitcoin transakcija. Postoje razne interoperabilne implementacije, kao što su [Core Lightning](https://github.com/ElementsProject/lightning), [LND](https://github.com/lightningnetwork/LND), [Eclair](https://github.com/ACINQ/eclair), i [Lightning Dev Kit](https://github.com/lightningdevkit).
+- CoinJoin: Više strana sarađuje kako bi kombinovale svoje uplate u jednu transakciju, čime se otežava grupisanje adresa. Postoje različite implementacije.
 - Sidechains: This system can lock a coin on Bitcoin's Blockchain in order to unlock it on some other Blockchain. This allows for bitcoins to be moved to some other Blockchain, namely a Sidechain, so as to use the features available on that Sidechain. Examples include [Blockstream's Elements](https://github.com/ElementsProject/Elements).
-- OpenTimestamps: Omogućava vam da [Timestamp dokument](https://opentimestamps.org/) na Bitcoin-ovom Blockchain na privatan način. Zatim možete koristiti taj Timestamp da dokažete da je dokument morao postojati pre određenog vremena.
+- OpenTimestamps: Omogućava vam da [vremenski pečetirate dokument](https://opentimestamps.org/) na Bitcoin-ovom blockchain-u na privatan način. Zatim možete koristiti taj vremenski pečat da dokažete da je dokument morao postojati pre određenog vremena.
 
 
-Bez razvoja bez dozvole, mnogi od ovih projekata ne bi bili mogući. Kao što je navedeno u poglavlju o Neutralnosti, ako bi programeri morali tražiti dozvolu za izgradnju protokola na Bitcoin, razvijali bi se samo protokoli koje bi odobravao centralni odbor za odobravanje razvoja.
+Da nema razvoja bez dozvole, mnogi od ovih projekata ne bi bili mogući. Kao što je navedeno u poglavlju o neutralnosti, ako bi programeri morali tražiti dozvolu za izgradnju protokola na Bitcoinu, razvijali bi se samo protokoli koje bi odobravao centralni odbor za odobravanje razvoja.
 
 
 Uobičajeno je da sistemi poput gore navedenih budu licencirani kao softver otvorenog koda, što omogućava ljudima da doprinose, ponovo koriste ili pregledaju njihov kod bez traženja dozvole. Otvoreni kod je postao zlatni standard Bitcoin licenciranja softvera.
@@ -1196,7 +1192,7 @@ Uobičajeno je da sistemi poput gore navedenih budu licencirani kao softver otvo
 Ne morate tražiti dozvolu za razvoj Bitcoin softvera, što donosi zanimljivu i važnu opciju: možete pisati i objavljivati kod, u Bitcoin Core ili bilo kojem drugom projektu otvorenog koda, bez otkrivanja svog identiteta.
 
 
-Mnogi programeri biraju ovu opciju radeći pod pseudonimom i pokušavajući da ga odvoje od svog pravog identiteta. Razlozi za to mogu se razlikovati od programera do programera. Jedan pseudonimni korisnik je ZmnSCPxj. Pored ostalih projekata, doprinosi Bitcoin Core i Core Lightning, jednoj od nekoliko implementacija Lightning Network. [Piše](https://zmnscpxj.github.io/about.html) na svojoj veb stranici:
+Mnogi programeri biraju ovu opciju radeći pod pseudonimom i pokušavajući da ga odvoje od svog pravog identiteta. Razlozi za to mogu se razlikovati od programera do programera. Jedan pseudonimni korisnik je ZmnSCPxj. Pored ostalih projekata, doprinosi Bitcoin Core i Core Lightning, jednoj od nekoliko implementacija Lightning mreže. [Piše](https://zmnscpxj.github.io/about.html) na svojoj veb stranici:
 
 
 > Ja sam ZmnSCPxj, nasumično generisana osoba na internetu. Moji zamenice su on/njegov/njegov.
@@ -1205,8 +1201,7 @@ Mnogi programeri biraju ovu opciju radeći pod pseudonimom i pokušavajući da g
 > Razumem da ljudi instinktivno žele da znaju moj identitet. Međutim, mislim da je moj identitet uglavnom nebitan i više volim da budem ocenjen na osnovu svog rada.
 >
 
-> Ako se pitate da li da donirate ili ne, i pitate se koliki su moji troškovi života ili moj prihod, molim vas da razumete da, pravilno govoreći, treba da donirate meni na osnovu korisnosti koju pronalazite u mom
-članci i moj rad na Bitcoin i Lightning Network.
+> Ako se pitate da li da donirate ili ne, i pitate se koliki su moji troškovi života ili moj prihod, molim vas da razumete da, pravilno govoreći, treba da donirate meni na osnovu korisnosti koju pronalazite u mojim člancima i mom radu na Bitcoinu i Lightning mreži.
 
 
 U njegovom slučaju, razlog za korišćenje pseudonima je da bude ocenjen na osnovu svojih zasluga, a ne na osnovu toga ko je osoba ili osobe iza pseudonima. Zanimljivo je da je otkrio u [članku na CoinDesk-u](https://www.coindesk.com/markets/2020/06/29/many-Bitcoin-developers-are-choosing-to-use-pseudonyms-for-good-reason/) da je pseudonim stvoren iz drugačijeg razloga.
@@ -1214,21 +1209,20 @@ U njegovom slučaju, razlog za korišćenje pseudonima je da bude ocenjen na osn
 
 > Moj početni razlog [za korišćenje pseudonima] bio je jednostavno to što sam bio zabrinut [zbog] pravljenja ogromne greške; stoga je ZmnSCPxj prvobitno bio zamišljen kao jednokratni pseudonim koji bi mogao biti napušten u takvom slučaju. Međutim, čini se da je stekao uglavnom pozitivnu reputaciju, pa sam ga zadržao.
 
-Korišćenje pseudonima zaista vam omogućava da govorite slobodnije, bez rizika po vašu ličnu reputaciju u slučaju da kažete nešto glupo ili napravite veliku grešku. Kako se ispostavilo, njegov pseudonim je postao veoma ugledan i 2019. godine [čak je dobio grant za razvoj](https://twitter.com/spiralbtc/status/1204815615678177280), što je samo po sebi dokaz Bitcoin-ove prirode bez dozvole.
+Korišćenje pseudonima zaista vam omogućava da govorite slobodnije, bez rizika po vašu ličnu reputaciju u slučaju da kažete nešto glupo ili napravite veliku grešku. Kako se ispostavilo, njegov pseudonim je postao veoma ugledan i 2019. godine [čak je dobio grant za razvoj (https://twitter.com/spiralbtc/status/1204815615678177280), što je samo po sebi dokaz Bitcoin-ove prirode bez dozvole.
 
 
-Verovatno, najpoznatiji pseudonim u Bitcoin je Satoshi Nakamoto. Nije jasno zašto je odlučio da bude pod pseudonimom, ali sa stanovišta retrospektive, verovatno je to bila dobra odluka iz više razloga:
+Verovatno, najpoznatiji pseudonim u Bitcoinu je Satoshi Nakamoto. Nije jasno zašto je odlučio da bude pod pseudonimom, ali sa stanovišta retrospektive, verovatno je to bila dobra odluka iz više razloga:
 
 
-- Kako mnogi ljudi spekulišu da Nakamoto poseduje mnogo Bitcoin, imperativno je za njegovu finansijsku i ličnu sigurnost da njegov identitet ostane nepoznat.
-- Pošto je njegov identitet nepoznat, ne postoji mogućnost gonjenja bilo koga, što raznim državnim vlastima daje Hard vreme.
-- Ne postoji autoritativna osoba kojoj bi se moglo ugledati, što čini Bitcoin meritokratskijim i otpornijim na ucene.
+- Kako mnogi ljudi spekulišu da Nakamoto poseduje mnogo Bitcoina, imperativno je za njegovu finansijsku i ličnu sigurnost da njegov identitet ostane nepoznat.
+- Pošto je njegov identitet nepoznat, ne postoji mogućnost gonjenja bilo koga, što predstavlja problem različitim državnim institucijama.
+- Ne postoji autoritativna osoba na koju bi se moglo ugledati, što čini Bitcoin meritokratskijim i otpornijim na ucene.
 
 
-Primetite da ove tačke ne važe samo za Satoshi Nakamoto, već i za svakoga ko radi u Bitcoin ili drži značajne količine valute, u različitim stepenima.
+Primetite da ovi stavovi ne važe samo za Satoshija Nakamota, već, u različitoj meri, i za svakoga ko radi sa Bitcoinom ili drži znatne količine ove valute.
 
-
-### Selekcija kriptografija
+### Selektivna kriptografija
 
 
 Open source developeri često koriste open source biblioteke koje su razvili drugi ljudi. Ovo je prirodan i sjajan deo svakog zdravog ekosistema. Ali Bitcoin softver se bavi pravim novcem i, u svetlu toga, developeri moraju biti posebno pažljivi pri odabiru trećih biblioteka na koje bi trebalo da se oslanjaju.
@@ -1242,12 +1236,12 @@ U filozofskoj [diskusiji o kriptografiji](https://btctranscripts.com/greg-maxwel
 Zatim uvodi termin *selektivna kriptografija*, koji se odnosi na umetnost odabira kriptografskih alata, i objašnjava zašto je to važan deo kriptografije. To se vrti oko toga kako odabrati kriptografske biblioteke, alate i prakse, ili kako on kaže "kriptosistem biranja kriptosistema".
 
 
-Koristeći konkretne primere, on pokazuje kako kriptografija selekcije može lako poći po zlu, a takođe predlaže listu pitanja koja biste mogli postaviti sebi kada je praktikujete. Ispod je destilovana verzija te liste:
+Koristeći konkretne primere, on pokazuje kako selekcija kriptografije može lako poći po zlu, a takođe predlaže listu pitanja koja biste mogli postaviti sebi kada je praktikujete. Ispod je destilovana verzija te liste:
 
 
 - Da li je softver namenjen vašim potrebama?
 - Da li se kriptografski aspekti uzimaju ozbiljno?
-- Kakav je proces pregleda? Da li postoji?
+- Kakav je proces pregleda koda? Da li postoji?
 - Kakvo je iskustvo autora?
 - Da li je softver dokumentovan?
 - Da li je softver prenosiv?
@@ -1258,14 +1252,14 @@ Koristeći konkretne primere, on pokazuje kako kriptografija selekcije može lak
 Iako ovo nije ultimativni vodič za uspeh, može biti veoma korisno proći kroz ove tačke prilikom odabira kriptografije.
 
 
-Zbog problema koje je gore naveo Maxwell, Bitcoin Core zaista pokušava Hard da [minimizira svoju izloženost bibliotekama trećih strana](https://github.com/Bitcoin/Bitcoin/blob/master/doc/dependencies.md). Naravno, ne možete eliminisati sve spoljne zavisnosti, inače biste morali sami da pišete sve, od renderovanja fontova do implementacije sistemskih poziva.
+Zbog problema koje je gore naveo Maxwell, Bitcoin Core zaista pokušava da [minimizira svoju izloženost bibliotekama trećih strana](https://github.com/Bitcoin/Bitcoin/blob/master/doc/dependencies.md). Naravno, ne možete eliminisati sve spoljne zavisnosti, inače biste morali sami da pišete sve, od renderovanja fontova do implementacije sistemskih poziva.
 
 
 ### Pregled
 
 
 
-Ovaj odeljak se zove "Pregled", a ne "Pregled koda", jer se bezbednost Bitcoin u velikoj meri oslanja na pregled na više nivoa, ne samo izvornog koda. Štaviše, različite ideje zahtevaju pregled na različitim nivoima: promena pravila konsenzusa zahtevala bi dublji pregled na više nivoa u poređenju sa promenom šeme boja ili ispravkom tipografske greške.
+Ovaj odeljak se zove "Pregled", a ne "Pregled koda", jer se bezbednost Bitcoina u velikoj meri oslanja na pregledu na više nivoa, ne samo izvornog koda. Štaviše, različite ideje zahtevaju pregled na različitim nivoima: promena pravila konsenzusa zahtevala bi dublji pregled na više nivoa u poređenju sa promenom šeme boja ili ispravkom tipografske greške.
 
 
 Na putu ka konačnom usvajanju, ideja obično prolazi kroz nekoliko faza diskusije i pregleda. Neke od tih faza su navedene u nastavku:
