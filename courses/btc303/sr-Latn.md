@@ -926,31 +926,31 @@ S obzirom na probleme sa nedavnim soft forkovima, SegWit i Taproot, nije jasno k
 ### Rizici
 
 
-Tokom aktivacije bilo kog forka, bilo da je to hard ili soft, aktiviran od strane rudara ili korisnika, postoji rizik od dugotrajnog razdvajanja lanca. Razdvajanje koje traje duže od nekoliko blokova može izazvati ozbiljnu štetu sentimentu oko Bitcoin kao i njegovoj ceni. Ali iznad svega, izazvalo bi veliku konfuziju oko toga šta je Bitcoin. Da li je Bitcoin ovaj lanac ili onaj lanac?
+Tokom aktivacije bilo kog forka, bilo da je to hard ili soft, aktiviran od strane rudara ili korisnika, postoji rizik od dugotrajnog razdvajanja lanca. Razdvajanje koje traje duže od nekoliko blokova može izazvati ozbiljnu štetu sentimentu oko Bitcoina kao i njegovoj ceni. Ali iznad svega, izazvalo bi veliku konfuziju oko toga šta je Bitcoin. Da li je Bitcoin ovaj lanac ili onaj lanac?
 
 
-Rizik sa soft forkom aktiviranim od strane korisnika je da se nova pravila aktiviraju čak i ako većina heš snage ne podržava ta pravila. Ovaj scenario bi rezultirao dugotrajnim razdvajanjem lanca, koje bi trajalo sve dok većina Hash snage ne usvoji nova pravila. Moglo bi biti posebno Hard da se podstaknu rudari da pređu na novi lanac ako su već iskopali blokove nakon razdvajanja na starom lancu, jer bi prelaskom na drugu granu napustili svoje nagrade za blokove. Međutim, vredno je pomenuti izuzetan događaj: u martu 2013. dogodilo se dugotrajno razdvajanje zbog nenamernog Hard Fork i, suprotno ovom podsticaju, dva velika Mining bazena donela su odluku da napuste svoju granu razdvajanja kako bi obnovili konsenzus.
+Rizik sa soft forkom aktiviranim od strane korisnika je da se nova pravila aktiviraju čak i ako većina heš snage ne podržava ta pravila. Ovaj scenario bi rezultirao dugotrajnim razdvajanjem lanca, koje bi trajalo sve dok većina heš snage ne usvoji nova pravila. Moglo bi biti posebno teško da se podstaknu rudari da pređu na novi lanac ako su već iskopali blokove nakon razdvajanja na starom lancu, jer bi prelaskom na drugu granu napustili svoje nagrade za blokove. Međutim, vredno je pomenuti izuzetan događaj: u martu 2013. dogodilo se dugotrajno razdvajanje zbog nenamernog hard forka i, suprotno ovom podsticaju, dva velika rudarska bazena (eng. mining pool) donela su odluku da napuste svoju granu razdvajanja kako bi obnovili konsenzus.
 
 
-S druge strane, rizik sa Miner aktiviranim Soft Fork je posledica činjenice da rudari mogu da se uključe u lažno signaliziranje, što znači da stvarni udeo Hash snage koja podržava promenu može biti manji nego što izgleda. Ako stvarna podrška ne obuhvata većinu Hash snage, verovatno bismo videli dugotrajan lančani raskol sličan onom opisanom u prethodnom pasusu. Ovo, ili barem sličan problem, se dogodio u stvarnosti kada je BIP66 bio implementiran, ali je rešen unutar otprilike 6 blokova.
+S druge strane, rizik sa soft forkom aktiviranim od strane korisnika je posledica činjenice da rudari mogu da se uključe u lažno signaliziranje, što znači da stvarni udeo heš snage koja podržava promenu može biti manji nego što izgleda. Ako stvarna podrška ne obuhvata većinu heš snage, verovatno bismo videli dugotrajan lančani raskol sličan onom opisanom u prethodnom pasusu. Ovo, ili barem sličan problem, se dogodio u stvarnosti kada je BIP66 bio implementiran, ali je rešen unutar otprilike 6 blokova.
 
 
 #### Troškovi razdvajanja
 
 
 
-Jimmy Song [govorio je o troškovima povezanim sa Hard forkovima](https://btctranscripts.com/breaking-Bitcoin/2017/socialized-costs-of-Hard-forks/) na Breaking Bitcoin u Parizu, ali mnogo toga što je rekao odnosi se i na podelu lanca zbog neuspelog Soft Fork. Govorio je o *negativnim eksternalijama* i definisao ih kao cenu koju neko drugi mora da plati za vaše sopstvene postupke:
+Jimmy Song [govorio je o troškovima povezanim sa hard forkovima](https://btctranscripts.com/breaking-Bitcoin/2017/socialized-costs-of-Hard-forks/) na Breaking Bitcoin u Parizu, ali mnogo toga što je rekao odnosi se i na podelu lanca zbog neuspelog soft forka. Govorio je o *negativnim eksternalijama* i definisao ih kao cenu koju neko drugi mora da plati za vaše sopstvene postupke:
 
 
-> Klasičan primer negativne eksternalije je fabrika. Možda proizvode– možda je to rafinerija nafte i proizvode dobro koje je dobro za ekonomiju, ali takođe proizvode nešto što je negativna eksternalija, kao što je zagađenje. To nije samo nešto što svi moraju da plate, da očiste, ili da trpe. Ali to su takođe efekti drugog i trećeg reda, kao što je veći saobraćaj prema fabrici kao rezultat većeg broja radnika koji moraju da idu tamo. Možda ćete takođe- možda ugroziti neku divljač u blizini. Nije da svi moraju da plate za negativne eksternalije, to mogu biti specifične osobe, kao ljudi koji su prethodno koristili taj put ili životinje koje su bile blizu te fabrike, i oni takođe plaćaju cenu te fabrike.
+> Klasičan primer negativne eksternalije je fabrika. Možda proizvode — na primer, ako je to rafinerija nafte — dobro koje koristi ekonomiji, ali takođe proizvode i nešto što je negativna eksternalija, kao što je zagađenje. To nije samo nešto što svi moraju da plate, da očiste, ili da trpe. Ali to su takođe efekti drugog i trećeg reda, kao što je veći saobraćaj prema fabrici kao rezultat većeg broja radnika koji moraju da idu tamo. Možda ćete takođe- možda ugroziti neku divljač u blizini. Nije da svi moraju da plate za negativne eksternalije, to mogu biti specifične osobe, kao ljudi koji su prethodno koristili taj put ili životinje koje su bile blizu te fabrike, i oni takođe plaćaju cenu te fabrike.
 
-U kontekstu Bitcoin, on ilustruje negativne eksternalije koristeći Bitcoin Cash (bcash), koji je Hard Fork od Bitcoin kreiran neposredno pre te konferencije 2017. godine. On kategorizuje negativne eksternalije Hard Fork na jednokratne troškove i trajne troškove.
-
-
-Među mnogim primerima jednokratnih troškova, on pominje one koje su imale berze:
+U kontekstu Bitcoina, on ilustruje negativne eksternalije koristeći Bitcoin Cash (bcash), koji je hard fork od Bitcoina kreiran neposredno pre te konferencije 2017. godine. On kategorizuje negativne eksternalije hard forka na jednokratne troškove i trajne troškove.
 
 
-> Dakle, imamo gomilu berzi i one su imale mnogo jednokratnih troškova koje su morale da plate. Prva stvar koja se desila je da su depoziti i povlačenja morali biti zaustavljeni na dan ili dva za ove berze jer nisu znali šta će se desiti. Mnoge od ovih berzi su morale da posegnu u Cold skladište jer su njihovi korisnici zahtevali bcash. To je deo njihove fiducijarne dužnosti, moraju to da urade. Takođe morate da izvršite reviziju novog softvera. Ovo je nešto što smo morali da uradimo u itbit-u. Želimo da potrošimo bcash - kako to da uradimo? Moramo da preuzmemo electron cash? Da li ima malver? Moramo da ga pregledamo. Imali smo oko 10 dana da utvrdimo da li je ovo u redu ili ne. I onda morate da odlučite, da li ćemo samo dozvoliti jednokratno povlačenje, ili ćemo uvrstiti ovu novu valutu? Za Exchange da uvrsti novu valutu, nije lako - postoje sve vrste novih procedura za Cold skladište, potpisivanje, depozite, povlačenja. Ili možete jednostavno imati ovaj jednokratni događaj gde im date njihov bcash u nekom trenutku i onda više nikada ne razmišljate o tome. Ali i to ima svoje probleme. I na kraju, i na koji god način to uradite, povlačenja ili uvrštavanje - trebat će vam nova infrastruktura da radite sa ovim token na neki način, čak i ako je to jednokratno povlačenje. Trebate neki način da date ove tokene svojim korisnicima. Opet, kratki rok. Zar ne? Nema vremena za ovo, mora se brzo uraditi.
+Među mnogim primerima jednokratnih troškova, on pominje one koje su imale kripto-menjačnice:
+
+
+> Dakle, imamo gomilu kripto-menjačnica i one su imale mnogo jednokratnih troškova koje su morale da plate. Prva stvar koja se desila je da su depoziti i povlačenja morali biti zaustavljeni na dan ili dva za ove kripto-menjačnice jer nisu znali šta će se desiti. Mnoge od ovih berzi su morale da posegnu u Cold storage (_(hladno skladište) označava način čuvanja kriptovaluta pri kojem su privatni ključevi potpuno van mreže (offline)_) jer su njihovi korisnici zahtevali bcash. To je deo njihove fiducijarne dužnosti, moraju to da urade. Takođe morate da izvršite reviziju novog softvera. Ovo je nešto što smo morali da uradimo u itbit-u. Želimo da potrošimo bcash - kako to da uradimo? Moramo da preuzmemo electron cash? Da li ima malver? Moramo da ga pregledamo. Imali smo oko 10 dana da utvrdimo da li je ovo u redu ili ne. I onda morate da odlučite, da li ćemo samo dozvoliti jednokratno povlačenje, ili ćemo uvrstiti ovu novu valutu? Za kripto-menjačnice da uvrsti novu valutu, nije lako - postoje sve vrste novih procedura za hladno skladište, potpisivanje, depozite, povlačenja. Ili možete jednostavno imati ovaj jednokratni događaj gde im date njihov bcash u nekom trenutku i onda više nikada ne razmišljate o tome. Ali i to ima svoje probleme. I na kraju, i na koji god način to uradite, povlačenja ili uvrštavanje - trebat će vam nova infrastruktura da radite sa ovim token na neki način, čak i ako je to jednokratno povlačenje. Trebate neki način da date ove tokene svojim korisnicima. Opet, kratki rok. Zar ne? Nema vremena za ovo, mora se brzo uraditi.
 
 On takođe navodi jednokratne troškove koje snose trgovci, procesori plaćanja, novčanici, rudari i korisnici, kao i neke od stalnih troškova, na primer gubitak privatnosti i veći rizik od reorganizacija.
 
@@ -964,10 +964,10 @@ Zaista, kada dođe do razdvajanja i lanac sa opštijim pravilima postane jači o
 Bitcoin raste i evoluira s vremenom. Različiti mehanizmi nadogradnje su korišćeni tokom godina i kriva učenja je strma. Sve sofisticiranije i robusnije metode se stalno izmišljaju, kako učimo više o tome kako mreža reaguje.
 
 
-Da bi Bitcoin ostao u harmoniji, viljuške Soft su se pokazale kao put napred, ali veliko pitanje još uvek nije u potpunosti odgovoreno: kako bezbedno primeniti viljuške Soft bez izazivanja nesloge?
+Da bi Bitcoin ostao u harmoniji, soft forkovi su se pokazali kao put napred, ali veliko pitanje još uvek nije u potpunosti odgovoreno: kako bezbedno primeniti soft forkove bez izazivanja nesloge?
 
 
-## Adverzarno razmišljanje
+## Adverzarno razmišljanje (razmišljanje u neprijateljskom okruženju)
 
 <chapterId>d4982f3d-4694-51cc-99be-28f54b03a2a2</chapterId>
 
@@ -975,13 +975,13 @@ Da bi Bitcoin ostao u harmoniji, viljuške Soft su se pokazale kao put napred, a
 ![](assets/sr-Latn/008.webp)
 
 
-Ovo poglavlje se bavi *adversarijalnim razmišljanjem*, načinom razmišljanja koji se fokusira na to šta bi moglo poći po zlu i kako bi protivnici mogli delovati. Počinjemo diskusijom o bezbednosnim pretpostavkama i bezbednosnom modelu Bitcoin, nakon čega objašnjavamo kako obični korisnici mogu poboljšati svoju samosuverenost i decentralizaciju Bitcoin-ovog Full node razmišljajući adversarijalno. Zatim razmatramo neke stvarne pretnje za Bitcoin kao i um protivnika. Na kraju, govorimo o *aksiomu otpora* koji vam može pomoći da razumete zašto ljudi uopšte rade na Bitcoin.
+Ovo poglavlje razmatra razmišljanje u neprijateljskom okruženju, odnosno analitički pristup koji se fokusira na potencijalne neuspehe sistema i načine na koje bi protivnici mogli da deluju. Poglavlje započinjemo razmatranjem bezbednosnih pretpostavki i bezbednosnog modela Bitcoina, nakon čega objašnjavamo kako obični korisnici mogu unaprediti svoju samosuverenost i decentralizaciju punih čvorova u Bitcoinu kroz razmišljanje u neprijateljskom okruženju. Zatim se bavimo konkretnim pretnjama Bitcoinu, kao i načinom razmišljanja protivnika. Na kraju govorimo o *aksiomu otpora*, koji može pomoći da se razume zašto se ljudi uopšte bave razvojem Bitcoina.
 
 
-Kada se diskutuje o bezbednosti unutar različitih sistema, važno je razumeti koje su bezbednosne pretpostavke. Tipična bezbednosna pretpostavka u Bitcoin je "problem diskretnog logaritma je Hard za rešavanje", što, jednostavno rečeno, znači da je praktično nemoguće pronaći privatni ključ koji odgovara određenom javnom ključu. Još jedna prilično jaka bezbednosna pretpostavka je da je većina mrežnog hashpower-a poštena, što znači da igraju po pravilima. Ako se ove pretpostavke pokažu pogrešnim, onda je Bitcoin u nevolji.
+Kada se diskutuje o bezbednosti unutar različitih sistema, važno je razumeti koje su bezbednosne pretpostavke. Tipična bezbednosna pretpostavka u Bitcoinu je "problem diskretnog logaritma je teško za rešavanje", što, jednostavno rečeno, znači da je praktično nemoguće pronaći privatni ključ koji odgovara određenom javnom ključu. Još jedna prilično jaka bezbednosna pretpostavka je da je većina mrežnog hashpower-a poštena, što znači da igraju po pravilima. Ako se ove pretpostavke pokažu pogrešnim, onda je Bitcoin u nevolji.
 
 
-2015. godine Andrew Poelstra je [održao govor](https://btctranscripts.com/scalingbitcoin/hong-kong-2015/security-assumptions/) na konferenciji Scaling Bitcoin u Hong Kongu, tokom kojeg je analizirao sigurnosne pretpostavke Bitcoin. Počinje primećujući da mnogi sistemi do neke mere zanemaruju protivnike; na primer, zaista je Hard zaštititi zgradu od svih vrsta neprijateljskih događaja. Umesto toga, generalno prihvatamo mogućnost da neko može zapaliti zgradu i do neke mere sprečavamo ovo i druga neprijateljska ponašanja kroz sprovođenje zakona itd.
+2015. godine Andrew Poelstra je [održao govor](https://btctranscripts.com/scalingbitcoin/hong-kong-2015/security-assumptions/) na konferenciji Scaling Bitcoin u Hong Kongu, tokom kojeg je analizirao sigurnosne pretpostavke Bitcoina. Počinje primećujući da mnogi sistemi do neke mere zanemaruju protivnike; na primer, zaista je teško zaštititi zgradu od svih vrsta neprijateljskih događaja. Umesto toga, generalno prihvatamo mogućnost da neko može zapaliti zgradu i do neke mere sprečavamo ovo i druga neprijateljska ponašanja kroz sprovođenje zakona itd.
 
 
 Pogledajte analogiju zgrade Grega Maxwella:
@@ -995,7 +995,7 @@ Ali na internetu stvari su drugačije:
 
 > Međutim, online nemamo ovo. Imamo pseudonimno i anonimno ponašanje, svako može da se poveže sa svima i naškodi sistemu. Ako je moguće naškoditi sistemu na neprijateljski način, onda će to i uraditi. Ne možemo pretpostaviti da će biti vidljivi i da će biti uhvaćeni.
 
-Posledica je da se sve poznate slabosti u Bitcoin moraju nekako rešiti, inače će biti iskorišćene. Uostalom, Bitcoin je najveći medni lonac na svetu.
+Posledica je da se sve poznate slabosti u Bitcoinu moraju nekako rešiti, inače će biti iskorišćene. Na kraju krajeva, Bitcoin je najveći mamac na svetu.
 
 
 Poelstra dalje pominje kako je Bitcoin nova vrsta sistema; to je više nejasno nego, na primer, protokol potpisivanja koji ima veoma jasno definisane bezbednosne pretpostavke.
@@ -1006,9 +1006,7 @@ Na svom ličnom blogu, softverski inženjer Jameson Lopp, [dublje istražuje ovo
 
 > U stvarnosti, Bitcoin protokol je bio i još uvek se gradi bez formalno definisane specifikacije ili bezbednosnog modela. Najbolje što možemo da uradimo je da proučimo podsticaje i ponašanje aktera unutar sistema kako bismo ga bolje razumeli i pokušali da ga opišemo.
 
-Dakle, imamo sistem koji izgleda funkcioniše u praksi, ali koji ne možemo formalno dokazati kao siguran. Dokaz verovatno nije moguć zbog
-
-složenost samog sistema.
+Dakle, imamo sistem koji izgleda funkcioniše u praksi, ali koji ne možemo formalno dokazati kao siguran. Dokaz verovatno nije moguć zbog složenost samog sistema.
 
 
 ### Ne samo za stručnjake za Bitcoin
