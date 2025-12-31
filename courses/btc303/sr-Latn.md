@@ -1286,60 +1286,57 @@ Jedan od najplodnijih pregledalaca koda na Bitcoin Core je Jon Atack. Napisao je
 
 > Dobar pristup je da ne bude o vama, već "Kako mogu najbolje služiti?"
 
-Ističe činjenicu da je pregled zaista ograničavajući faktor u Bitcoin Core. Mnoge dobre ideje zaglave u limbu gde se ne dešava pregled, čekajući. Primetite da pregled nije samo koristan za Bitcoin, već je i odličan način da naučite o softveru dok istovremeno pružate vrednost njemu. Atackovo pravilo je da pregledate 5-15 PR-ova pre nego što napravite bilo koji svoj PR. Ponovo, vaš fokus treba da bude na tome kako najbolje služiti zajednici, a ne na tome kako da vaš kod bude prihvaćen. Pored toga, naglašava važnost obavljanja pregleda na pravom nivou: da li je ovo vreme za sitnice i tipografske greške, ili je programeru potrebniji pregled usmeren na koncept? Jon Attack dodaje:
+Ističe činjenicu da je pregled koda zaista ograničavajući faktor u Bitcoin Core. Mnoge dobre ideje zaglave u limbu gde se ne dešava pregled koda, čekajući. Primetite da pregled nije samo koristan za Bitcoin, već je i odličan način da naučite o softveru dok istovremeno pružate vrednost njemu. Atackovo pravilo je da pregledate 5-15 PR-ova pre nego što napravite bilo koji svoj PR. Ponovo, vaš fokus treba da bude na tome kako najbolje služiti zajednici, a ne na tome kako da vaš kod bude prihvaćen. Uz to, on ističe koliko je važno raditi pregled na odgovarajućem nivou: da li je u ovom trenutku fokus na sitnim detaljima i slovnim greškama, ili je programeru potrebniji pregled koji se bavi širim, konceptualnim pitanjima? Jon Attack dodaje:
 
 
-> Korisno prvo pitanje kada započinjete pregled može biti: "Šta je najpotrebnije ovde u ovom trenutku?" Odgovaranje na ovo pitanje zahteva iskustvo i akumulirani kontekst, ali je korisno pitanje u odlučivanju kako možete dodati najviše vrednosti u najmanje vremena.
+> Korisno prvo pitanje kada započinjete pregled može biti: "šta je najpotrebnije ovde u ovom trenutku?" Odgovaranje na ovo pitanje zahteva iskustvo i akumulirani kontekst, ali je korisno pitanje u odlučivanju kako možete dodati najviše vrednosti u najmanje vremena.
 
 Druga polovina posta sastoji se od korisnih praktičnih tehničkih uputstava o tome kako zapravo obaviti pregled, i pruža linkove ka važnoj dokumentaciji za dalje čitanje.
 
 
-Bitcoin Osnovni programer i recenzent koda Gloria Zhao napisala je [članak](https://github.com/glozow/Bitcoin-notes/blob/master/review-checklist.md) koji sadrži pitanja koja obično postavlja sebi tokom pregleda. Takođe navodi šta smatra dobrim pregledom:
+Bitcoin Core programer i recenzent koda Gloria Zhao napisala je [članak](https://github.com/glozow/Bitcoin-notes/blob/master/review-checklist.md) koji sadrži pitanja koja obično postavlja sebi tokom pregleda. Takođe navodi šta smatra dobrim pregledom:
 
 
-> Lično mislim da je dobra recenzija ona u kojoj sam sebi postavio mnogo konkretnih pitanja o PR-u i bio zadovoljan odgovorima.
-njima. [...] Prirodno, počinjem sa konceptualnim pitanjima, zatim pitanjima vezanim za pristup, a potom pitanjima implementacije. Generalno, lično mislim da je beskorisno ostavljati komentare vezane za sintaksu C++ na nacrt PR-a, i osećao bih se nepristojno vraćajući se na "da li ovo ima smisla" nakon što je autor rešio 20+ mojih sugestija o organizaciji koda.
+> Lično smatram da je dobar pregled onaj u kome sam sebi postavila mnogo preciznih (ciljanih) pitanja o PR-u i bila zadovoljna odgovorima na njih. [...] Prirodno, počinjem sa konceptualnim pitanjima, zatim pitanjima vezanim za pristup, a potom pitanjima implementacije. Generalno, lično mislim da je beskorisno ostavljati komentare vezane za sintaksu C++ na nacrt PR-a, i osećala bih se nepristojno vraćajući se na "da li ovo ima smisla" nakon što je autor rešio 20+ mojih sugestija o organizaciji koda.
 
 
-Njena ideja da bi dobra recenzija trebalo da se fokusira na ono što je najpotrebnije u određenom trenutku dobro se slaže sa savetima Jona Atacka. Ona
-
-predlaže listu pitanja koja možete postaviti sebi na različitim nivoima procesa pregleda, ali naglašava da ova lista ni na koji način nije iscrpna niti direktan recept. Lista je ilustrovana stvarnim primerima sa GitHub-a.
+Njena ideja da bi dobra recenzija trebalo da se fokusira na ono što je najpotrebnije u određenom trenutku slaže se dobro sa savetima Jona Atacka. Ona predlaže listu pitanja koja možete postaviti sebi na različitim nivoima procesa pregleda, ali naglašava da ova lista ni na koji način nije iscrpna niti direktan recept. Lista je ilustrovana stvarnim primerima sa GitHub-a.
 
 
 ### Finansiranje
 
 
 
-Mnogi ljudi rade na razvoju otvorenog koda Bitcoin, bilo za Bitcoin Core ili za druge projekte. Mnogi to rade u svoje slobodno vreme bez ikakve naknade, ali neki programeri takođe dobijaju platu za to.
+Mnogi ljudi rade na razvoju Bitcoin otvorenog koda, bilo za Bitcoin Core ili za druge projekte. Mnogi to rade u svoje slobodno vreme bez ikakve naknade, ali neki programeri takođe dobijaju platu za to.
 
 
-Kompanije, pojedinci i organizacije koji su zainteresovani za nastavak uspeha Bitcoin mogu donirati sredstva programerima, bilo direktno ili preko organizacija koje zatim distribuiraju sredstva pojedinačnim programerima. Postoji i niz kompanija fokusiranih na Bitcoin koje zapošljavaju vešte programere kako bi im omogućile da rade puno radno vreme na Bitcoin.
+Kompanije, pojedinci i organizacije koji su zainteresovani za nastavak Bitcoin uspeha mogu donirati sredstva programerima, bilo direktno ili preko organizacija koje zatim distribuiraju sredstva pojedinačnim programerima. Postoji i niz kompanija fokusiranih na Bitcoin koje zapošljavaju vešte programere kako bi im omogućile da rade puno radno vreme na Bitcoinu.
 
 
 ### Kulturni šok
 
 
 
-Ljudi ponekad stiču utisak da među razvojnim programerima Bitcoin ima mnogo unutrašnjih sukoba i beskrajnih žustrih rasprava, te da nisu sposobni donositi odluke.
+Ljudi ponekad stiču utisak da među razvojnim programerima Bitcoina ima mnogo unutrašnjih sukoba i beskrajnih žustrih rasprava, te da nisu sposobni donositi odluke.
 
 
-Na primer, mehanizam implementacije Taproot, o njemu se diskutovalo tokom dužeg vremenskog perioda tokom kojeg su se formirala dva "tabora". Jedan je želeo da "ne uspe" nadogradnja ako rudari nisu pretežno glasali za nova pravila nakon određenog trenutka, dok je drugi želeo da sprovede pravila nakon tog trenutka bez obzira na sve. Michael Folkson sumira argumente iz dva tabora u [emailu](https://lists.linuxfoundation.org/pipermail/Bitcoin-dev/2021-February/018380.html) na Bitcoin-dev mejling listi.
+Na primer, mehanizam implementacije Taproot-a, o njemu se diskutovalo tokom dužeg vremenskog perioda tokom kojeg su se formirala dva "tabora". Jedan je želeo da "ne uspe" nadogradnja ako rudari nisu pretežno glasali za nova pravila nakon određenog trenutka, dok je drugi želeo da sprovede pravila nakon tog trenutka bez obzira na sve. Michael Folkson sumira argumente iz dva tabora u [emailu](https://lists.linuxfoundation.org/pipermail/Bitcoin-dev/2021-February/018380.html) na Bitcoin-dev mejling listi.
 
 
-Debata je trajala naizgled zauvek, i bilo je stvarno Hard videti bilo kakav konsenzus koji se formira uskoro. To je ljude frustriralo i kao rezultat toga, tenzije su se pojačale. Gregory Maxwell (kao korisnik nullc) je zabrinut [na Redditu](https://www.reddit.com/r/Bitcoin/comments/hrlpnc/technical_taproot_why_activate/fyqbn8s/?utm_source=share&utm_medium=web2x&context=3) da bi duge diskusije mogle učiniti nadogradnju manje sigurnom:
+Debata je trajala naizgled zauvek, i bilo je stvarno teško videti bilo kakav konsenzus koji bi se formirao uskoro. To je ljude frustriralo i kao rezultat toga, tenzije su se pojačale. Gregory Maxwell (kao korisnik nullc) je zabrinut [na Redditu](https://www.reddit.com/r/Bitcoin/comments/hrlpnc/technical_taproot_why_activate/fyqbn8s/?utm_source=share&utm_medium=web2x&context=3) da bi duge diskusije mogle učiniti nadogradnju manje sigurnom:
 
 
-> U ovom trenutku, dodatno čekanje ne doprinosi većoj reviziji i sigurnosti. Umesto toga, dodatno odlaganje iscrpljuje inerciju i potencijalno povećava rizik jer ljudi počinju da zaboravljaju detalje, odlažu rad na daljoj upotrebi (kao što je podrška za Wallet) i ne ulažu toliko dodatnog napora u reviziju koliko bi ulagali da su sigurni u vremenski okvir aktivacije.
+> U ovom trenutku, dodatno čekanje ne doprinosi većoj reviziji i sigurnosti. Umesto toga, dodatno odlaganje iscrpljuje inerciju i potencijalno povećava rizik jer ljudi počinju da zaboravljaju detalje, odlažu rad na daljoj upotrebi (kao što je podrška za novčanik) i ne ulažu toliko dodatnog napora u reviziju koliko bi ulagali da su sigurni u vremenski okvir aktivacije.
 
-Na kraju, ovaj spor je rešen zahvaljujući novom predlogu Davida Hardinga i Russela O'Connora nazvanom Speedy Trial, koji je podrazumevao relativno kraći period signalizacije za rudare da zaključe aktivaciju Taproot, ili brzo propadnu. Ako bi ga aktivirali tokom tog vremenskog okvira, tada bi Taproot bio implementiran otprilike 6 meseci kasnije.
-
-
-Neko ko nije navikao na razvojni proces Bitcoin verovatno bi pomislio da ove žustre rasprave izgledaju užasno loše, pa čak i toksično. Postoje najmanje dva faktora koja ih čine lošim u očima nekih ljudi:
+Na kraju, ovaj spor je rešen zahvaljujući novom predlogu Davida Hardinga i Russela O'Connora nazvanom Speedy Trial, koji je podrazumevao relativno kraći period signalizacije za rudare da zaključe aktivaciju Taproot-a, ili brzo propadnu. Ako bi ga aktivirali tokom tog vremenskog okvira, tada bi Taproot bio implementiran otprilike 6 meseci kasnije.
 
 
+Neko ko nije navikao na razvojni proces Bitcoina verovatno bi pomislio da ove žustre rasprave izgledaju užasno loše, pa čak i toksično. Postoje najmanje dva faktora koja ih čine lošim u očima nekih ljudi:
 
-- U poređenju sa kompanijama zatvorenog koda, sve debate se odvijaju javno, neizmenjene. Softverska kompanija poput Google-a nikada ne bi dozvolila svojim zaposlenima da javno raspravljaju o predloženim funkcijama, zapravo bi u najboljem slučaju objavila izjavu o stavu kompanije po tom pitanju. Ovo čini da kompanije izgledaju harmoničnije u poređenju sa Bitcoin.
-- Pošto je Bitcoin bez dozvole, svako može da izrazi svoje mišljenje. Ovo je suštinski drugačije od kompanije sa zatvorenim kodom koja ima nekolicinu ljudi sa mišljenjem, obično istomišljenika. Mnoštvo mišljenja izraženih unutar Bitcoin je jednostavno zapanjujuće u poređenju sa, na primer, PayPal-om.
+
+
+- U poređenju sa kompanijama zatvorenog koda, sve debate se odvijaju javno, neizmenjene. Softverska kompanija poput Google-a nikada ne bi dozvolila svojim zaposlenima da javno raspravljaju o predloženim funkcijama, zapravo bi u najboljem slučaju objavila izjavu o stavu kompanije po tom pitanju. Ovo čini da kompanije izgledaju harmoničnije u poređenju sa Bitcoinom.
+- Pošto je Bitcoin bez dozvole, svako može da izrazi svoje mišljenje. Ovo je suštinski drugačije od kompanije sa zatvorenim kodom koja ima nekolicinu ljudi sa mišljenjem, obično istomišljenika. Mnoštvo mišljenja izraženih unutar Bitcoina je jednostavno zapanjujuće u poređenju sa, na primer, PayPal-om.
 
 
 Većina Bitcoin developera bi tvrdila da ova otvorenost donosi dobro i zdravo okruženje, pa čak i da je neophodna za postizanje najboljeg ishoda.
@@ -1348,26 +1345,22 @@ Većina Bitcoin developera bi tvrdila da ova otvorenost donosi dobro i zdravo ok
 Kao što je nagovešteno u poglavlju Pretnja, druga tačka iznad može biti veoma korisna, ali dolazi sa nedostatkom. Napadač bi mogao koristiti taktike odugovlačenja, poput onih opisanih u [Priručniku za jednostavnu sabotažu](https://www.gutenberg.org/ebooks/26184), kako bi iskrivio proces donošenja odluka i razvoja.
 
 
-Još jedna stvar koju vredi pomenuti je da, pošto je Bitcoin novac i Bitcoin Core obezbeđuje nesagledivu količinu novca, bezbednost u ovom kontekstu se ne shvata olako. Zato iskusni Bitcoin Core
-
-razvijači mogu izgledati veoma Hard-usmereni, što je stav koji je obično opravdan. Zaista, funkcija sa slabom logikom iza nje neće biti prihvaćena. Isto bi se desilo ako bi prekršila
-
-reproducible builds, dodate nove zavisnosti ili ako kod nije pratio Bitcoin [najbolje prakse](https://github.com/Bitcoin/Bitcoin/blob/master/doc/developer-notes.md).
+Još jedna stvar koju vredi pomenuti je da, pošto je Bitcoin novac i Bitcoin Core obezbeđuje nesagledivu količinu novca, bezbednost u ovom kontekstu se ne shvata olako. Zbog toga iskusni Bitcoin Core programeri mogu delovati veoma strogo u stavovima, što je najčešće opravdano. Zaista, funkcionalnost iza koje stoji slabo obrazloženje neće biti prihvaćena. Isto važi i ako bi se time narušili reproducibilni buildovi, dodale nove zavisnosti ili ako kod ne bi bio u skladu sa [najboljim praksama](https://github.com/Bitcoin/Bitcoin/blob/master/doc/developer-notes.md).
 
 
-Novi (i stari) programeri mogu biti frustrirani ovim. Ali, kao što je uobičajeno u softveru otvorenog koda, uvek možete Fork repozitorijum, spojiti šta god želite u svoj Fork, i izgraditi i pokrenuti svoj sopstveni binarni fajl.
+Novi (i stari) programeri mogu biti frustrirani ovim. Ali, kao što je uobičajeno u softveru otvorenog koda, uvek možete forkovati repozitorijum, spojiti šta god želite u svoj fork, i izgraditi i pokrenuti svoj sopstveni binarni fajl.
 
 
 ### Zaključak o otvorenom kodu
 
 
-Bitcoin Core i većina drugog Bitcoin softvera su otvorenog koda, što znači da svako može slobodno distribuirati, menjati i koristiti softver kako želi. Bitcoin Core repozitorijum na GitHub-u je trenutno žarište razvoja Bitcoin, ali taj status može da se promeni ako ljudi počnu da gube poverenje u njegove održavaoce ili u sam sajt.
+Bitcoin Core i većina drugog Bitcoin softvera su otvorenog koda, što znači da svako može slobodno distribuirati, menjati i koristiti softver kako želi. Bitcoin Core repozitorijum na GitHub-u je trenutno žarište Bitcoin razvoja, ali taj status može da se promeni ako ljudi počnu da gube poverenje u njegove održavaoce ili u sam sajt.
 
 
-Open source omogućava razvoj bez dozvola u, i na Bitcoin. Bilo da pišete kod, pregledate kod ili protokole; open source je ono što vam omogućava da to radite, pseudonimno ili ne.
+Otvoreni kod omogućava razvoj bez potrebe za dozvolom u okviru Bitcoina i na njegovoj nadgradnji. Bilo da pišete kod, pregledate kod ili protokole; open source je ono što vam omogućava da to radite, pseudonimno ili ne.
 
 
-Razvojni proces oko Bitcoin je radikalno otvoren, što može učiniti da Bitcoin izgleda kao toksično i neefikasno mesto, ali to je ono što održava Bitcoin otpornim protiv zlonamernih aktera.
+Razvojni proces oko Bitcoina je radikalno otvoren, što može učiniti da Bitcoin izgleda kao toksično i neefikasno mesto, ali to je ono što održava Bitcoin otpornim protiv zlonamernih aktera.
 
 
 ## Skaliranje
@@ -1380,33 +1373,30 @@ Razvojni proces oko Bitcoin je radikalno otvoren, što može učiniti da Bitcoin
 
 
 
-U ovom poglavlju istražujemo kako Bitcoin skalira i ne skalira. Počinjemo tako što razmatramo kako su ljudi u prošlosti razmišljali o skaliranju. Zatim, glavni deo ovog poglavlja objašnjava različite pristupe skaliranju Bitcoin, konkretno vertikalno, horizontalno, unutrašnje i slojevito skaliranje. Svaki opis prati razmatranje da li pristup ometa vrednosnu ponudu Bitcoin.
+U ovom poglavlju istražujemo kako Bitcoin skalira i ne skalira. Počinjemo tako što razmatramo kako su ljudi u prošlosti razmišljali o skaliranju. Zatim, glavni deo ovog poglavlja objašnjava različite pristupe skaliranju Bitcoina, konkretno vertikalno, horizontalno, unutrašnje i slojevito skaliranje. Svaki opis prati razmatranje da li pristup ugrožava Bitcoinovu vrednosnu propoziciju.
 
 
-U prostoru Bitcoin, različiti ljudi pripisuju različite definicije reči "razmera". Neki je zamišljaju kao povećanje kapaciteta transakcija Blockchain, drugi veruju da je to jednako efikasnijem korišćenju Blockchain, a treći je vide kao razvoj sistema na vrhu Bitcoin.
+U Bitcoin prostoru, različiti ljudi pripisuju različite definicije reči "skaliranje". Neki je zamišljaju kao povećanje kapaciteta blockchain transakcija, drugi veruju da je to jednako efikasnijem korišćenju blockchaina, a treći je vidi kao razvoj sistema povrh Bitcoina.
 
 
-U kontekstu Bitcoin, i za potrebe ove knjige, skaliranje definišemo kao *povećanje kapaciteta korišćenja Bitcoin bez ugrožavanja njegove otpornosti na cenzuru*. Ova definicija obuhvata nekoliko
-
-vrste promena, na primer:
+U Bitcoin kontekstu, i za potrebe ove knjige, skaliranje definišemo kao *povećanje kapaciteta korišćenja Bitcoina bez ugrožavanja njegove otpornosti na cenzuru*. Ova definicija obuhvata nekoliko vrste promena, na primer:
 
 
-- Smanjenje broja bajtova za ulaze transakcija
+- Smanjivanje broja bajtova koje koriste ulazi transakcije
 - Poboljšanje performansi verifikacije potpisa
-- Smanjenje potrošnje propusnog opsega u peer-to-peer mreži
+- Optimizacija peer-to-peer mreže za manju potrošnju mrežnog saobraćaja
 - Grupisanje transakcija
 - Slojevita arhitektura
 
 
-Uskoro ćemo se upustiti u različite pristupe skaliranju, ali hajde da počnemo sa kratkim pregledom istorije Bitcoin u kontekstu skaliranja.
+Uskoro ćemo se upustiti u različite pristupe skaliranju, ali hajde da počnemo sa kratkim pregledom istorije Bitcoina u kontekstu skaliranja.
 
 
 ### Istorija Skaliranja
 
 
 
-Skaliranje je bilo u fokusu diskusije još od Genesis od Bitcoin. Prva rečenica [prvog emaila](https://www.metzdowd.com/pipermail/cryptography/2008-November/014814.html) kao odgovor na najavu Satoshi belog papira Bitcoin na mailing listi Kriptografija bila je upravo o skaliranju:
-
+Skaliranje je bilo centralna tema diskusija od samog nastanka Bitcoina. Prva rečenica [prvog emaila](https://www.metzdowd.com/pipermail/cryptography/2008-November/014814.html) kao odgovor na Satoshi-jevo objavljivanje Bitcoin whitepapera na Cryptography mailing listi zaista je bila o skaliranju:
 
 > Satoshi Nakamoto je napisao:
 >
@@ -1416,53 +1406,50 @@ Skaliranje je bilo u fokusu diskusije još od Genesis od Bitcoin. Prva rečenica
 
 > Veoma, veoma nam je potreban takav sistem, ali kako ja razumem vaš predlog, čini se da ne može da se skalira na potrebnu veličinu.
 
-Sama razgovor možda nije baš zanimljiv niti tačan, ali pokazuje da je skaliranje bilo zabrinutost od samog početka.
-
+Sama konverzacija možda nije ni naročito zanimljiva niti tačna, ali pokazuje da je skaliranje bilo pitanje od samog početka.“
 
 Diskusije o skaliranju dostigle su vrhunac interesovanja oko 2015-2017, kada je bilo mnogo različitih ideja o tome da li i kako povećati maksimalno ograničenje veličine bloka. To je bila prilično neinteresantna diskusija o promeni parametra u izvornom kodu, promena koja suštinski nije rešavala ništa već je problem skaliranja pomerala dalje u budućnost, stvarajući tehnički dug.
 
 
-Godine 2015, konferencija pod nazivom [Scaling Bitcoin](https://scalingbitcoin.org/) održana je u Montrealu, sa naknadnom konferencijom šest meseci kasnije u Hong Kongu, a potom i na brojnim drugim lokacijama širom sveta. Fokus je bio upravo na tome kako skalirati Address. Mnogi Bitcoin developeri i drugi entuzijasti okupili su se na ovim konferencijama kako bi diskutovali o raznim pitanjima skaliranja i predlozima. Većina ovih diskusija nije se vrtela oko povećanja veličine blokova, već oko dugoročnijih rešenja.
+Godine 2015, konferencija pod nazivom [Scaling Bitcoin](https://scalingbitcoin.org/) održana je u Montrealu, sa naknadnom konferencijom šest meseci kasnije u Hong Kongu, a potom i na brojnim drugim lokacijama širom sveta. Pažnja je bila usmerena tačno na to kako rešiti problem skaliranja. Mnogi Bitcoin developeri i drugi entuzijasti okupili su se na ovim konferencijama kako bi diskutovali o raznim pitanjima skaliranja i predlozima. Većina ovih diskusija nije se vrtela oko povećanja veličine blokova, već oko dugoročnijih rešenja.
 
 
 Nakon konferencije u Hong Kongu u decembru 2015, Gregory Maxwell je [sumirao svoje viđenje](https://lists.linuxfoundation.org/pipermail/Bitcoin-dev/2015-December/011865.html) o mnogim pitanjima koja su bila predmet rasprave, počevši sa opštom filozofijom skaliranja:
 
 
-> Sa dostupnom tehnologijom, postoje osnovni kompromisi između skale i decentralizacije. Ako je sistem previše skup, ljudi će biti primorani da veruju trećim stranama umesto da samostalno sprovode pravila sistema. Ako je potrošnja resursa Bitcoin Blockchain, u odnosu na dostupnu tehnologiju, prevelika, Bitcoin gubi svoje konkurentske prednosti u poređenju sa starim sistemima jer će validacija biti preskupa (isključujući mnoge korisnike), primoravajući povratak poverenja u sistem. Ako je kapacitet prenizak i naši načini transakcija previše neefikasni, pristup lancu za rešavanje sporova biće preskup, što opet vraća poverenje u sistem.
+> Sa dostupnom tehnologijom, postoje osnovni kompromisi između skaliranja i decentralizacije. Ako je sistem previše skup, ljudi će biti primorani da veruju trećim stranama umesto da samostalno sprovodu pravila sistema. Ako je potrošnja resursa Bitcoin blockchaina, u odnosu na dostupnu tehnologiju, prevelika, Bitcoin gubi svoje konkurentske prednosti u poređenju sa starim sistemima jer će validacija biti preskupa (isključujući mnoge korisnike), primoravajući povratak poverenja u sistem. Ako kapacitet bude nedovoljan i metode transakcija neefikasne, pristup blockchainu radi rešavanja sporova biće previše skup, što opet gura poverenje nazad u sistem.
 
 Govori o kompromisu između propusnosti i decentralizacije. Ako dozvolite veće blokove, neki ljudi će biti isključeni iz mreže jer više neće imati resurse za validaciju blokova. Ali s druge strane, ako pristup prostoru blokova postane skuplji, manje ljudi će moći priuštiti njegovo korišćenje kao mehanizam za rešavanje sporova. U oba slučaja, korisnici su usmereni ka pouzdanim uslugama.
 
 
-Nastavlja tako što rezimira mnoge pristupe skaliranju predstavljene na konferenciji. Među njima su računski efikasnije provere potpisa, *segregated witness* uključujući promenu ograničenja veličine bloka, mehanizam za efikasniju propagaciju blokova, i izgradnja protokola na vrhu Bitcoin u slojevima. Mnogi od ovih
-
-pristupi su od tada implementirani.
+Nastavlja tako što rezimira mnoge pristupe skaliranju predstavljene na konferenciji. Među njima su računski efikasnije provere potpisa, *segregated witness* uključujući promenu ograničenja veličine bloka, mehanizam za efikasniju propagaciju blokova, i izgradnja protokola na vrhu Bitcoina u slojevima. Mnogi od ovih
+pristupa su od tada implementirani.
 
 
 ### Pristupi skaliranju
 
 
 
-Kao što je nagovešteno gore, skaliranje Bitcoin ne mora nužno da se odnosi na povećanje limita veličine bloka ili drugih ograničenja. Sada ćemo proći kroz neke opšte pristupe skaliranju, od kojih neki ne pate od kompromisa između propusnosti i decentralizacije pomenutog u prethodnom odeljku.
-
+Kao što je nagovešteno gore, Bitcoin skaliranje ne mora nužno da se odnosi na povećanje limita veličine bloka ili drugih ograničenja. Sada ćemo proći kroz neke opšte pristupe skaliranju, od kojih neki ne podležu kompromisu između propusnog opsega i decentralizacije pomenutom u prethodnom odeljku.
 
 #### Vertikalno skaliranje
 
 
 
-Vertikalno skaliranje je proces povećanja računarskih resursa mašina koje obrađuju podatke. U kontekstu Bitcoin, ove potonje bi bile pune čvorove, odnosno mašine koje validiraju Blockchain u ime svojih korisnika.
+Vertikalno skaliranje je proces povećanja računarskih resursa mašina koje obrađuju podatke. U Bitcoin kontekstu, ovi potonji bi bile puni čvorovi, odnosno mašine koje validiraju blockchain u ime svojih korisnika.
 
 
-Najčešće diskutovana tehnika za vertikalno skaliranje u Bitcoin je povećanje limita veličine bloka. Ovo bi zahtevalo da neki puni čvorovi unaprede svoj hardver kako bi pratili rastuće računarske zahteve. Nedostatak je što se to dešava na račun centralizacije.
+Najčešće diskutovana tehnika za vertikalno skaliranje u Bitcoinu je povećanje limita veličine bloka. Ovo bi zahtevalo da neki puni čvorovi unaprede svoj hardver kako bi pratili rastuće računarske zahteve. Nedostatak je što se to dešava na račun centralizacije.
 
 
-Pored negativnih efekata na decentralizaciju Full node, vertikalno skaliranje može takođe negativno uticati na decentralizaciju i sigurnost Bitcoin na manje očigledne načine. Pogledajmo kako bi rudari "trebalo" da rade. Recimo da Miner iskopa blok na visini 7 i objavi taj blok na Bitcoin mreži. Biće potrebno neko vreme da ovaj blok postigne široko prihvatanje, što je uglavnom zbog dva faktora:
+Pored negativnih efekata na decentralizaciju full node-a, vertikalno skaliranje može takođe negativno uticati na decentralizaciju i sigurnost Bitcoina na manje očigledne načine. Pogledajmo kako bi rudari "trebalo" da rade. Recimo da rudar iskopa blok na visini 7 i objavi taj blok na Bitcoin mreži. Biće potrebno neko vreme da ovaj blok postigne široko prihvatanje, što je uglavnom zbog dva faktora:
 
 
-- Prenos bloka između vršnjaka traje zbog ograničenja propusnog opsega.
+- Prenos bloka unutar mreže traje zbog ograničenja propusnog opsega.
 - Validacija bloka zahteva vreme.
 
 
-Dok se blok 7 propagira kroz mrežu, mnogi rudari su još uvek Mining na vrhu bloka 6 jer još nisu primili i validirali blok 7. Tokom ovog vremena, ako bilo koji od ovih rudara pronađe novi blok na visini 7, postojaće dva konkurentna bloka na toj visini. Može postojati samo jedan blok na visini 7 (ili bilo kojoj drugoj visini), što znači da jedan od dva kandidata mora postati zastareo.
+Dok se blok 7 propagira kroz mrežu, mnogi rudari će još uvek rudariti na vrhu bloka 6 jer još nisu primili i validirali blok 7. Tokom ovog vremena, ako bilo koji od ovih rudara pronađe novi blok na visini 7, postojaće dva konkurentna bloka na toj visini. Može postojati samo jedan blok na visini 7 (ili bilo kojoj drugoj visini), što znači da jedan od dva kandidata mora postati zastareo.
 
 
 Ukratko, zastareli blokovi se dešavaju zato što je potrebno vreme da se svaki blok propagira, a što duže traje propagacija, veća je verovatnoća za zastarele blokove.
@@ -1471,43 +1458,41 @@ Ukratko, zastareli blokovi se dešavaju zato što je potrebno vreme da se svaki 
 Pretpostavimo da je ograničenje veličine bloka ukinuto i da se prosečna veličina bloka značajno poveća. Blokovi bi se tada sporije širili mrežom zbog ograničenja propusnog opsega i vremena verifikacije. Povećanje vremena propagacije će takođe povećati šanse za zastarele blokove.
 
 
-Rudari ne vole da im blokovi postanu zastareli jer će izgubiti svoj Block reward, pa će učiniti sve što mogu da to izbegnu.
-
-scenariju. Mere koje mogu preduzeti uključuju:
+Rudari ne vole da im blokovi postanu zastareli jer će izgubiti svoj nagradu za blok, pa će učiniti sve što mogu da to izbegnu taj scenarijo. Mere koje mogu preduzeti uključuju:
 
 
 
-- Odlaganje validacije dolaznog bloka, takođe poznato kao *validationless Mining*. Rudari mogu samo proveriti zaglavlje bloka Proof-of-Work i nastaviti sa rudarenjem na njemu, dok u međuvremenu preuzimaju ceo blok i validiraju ga.
-- Povezivanje sa Mining pool sa većim protokom i povezivošću.
+- Odlaganje validacije dolaznog bloka, takođe poznato kao *validationless mining*. Rudari mogu jednostavno da provere dokaz rada (proof-of-work) u zaglavlju bloka i nastaviti sa rudarenjem na njemu, dok u međuvremenu preuzimaju ceo blok i validiraju ga.
+- Povezivanje sa rudarskim bazenom koji ima veći protok i povezanost.
 
 
-Mining bez validacije dodatno podriva decentralizaciju Full node, jer se Miner oslanja na poverenje u dolazne blokove, barem privremeno. Takođe, to donekle narušava bezbednost jer deo računarske snage mreže potencijalno gradi na nevažećem Blockchain, umesto da gradi na najjačem i važećem lancu.
+Rudarenje bez validacije dodatno podriva decentralizaciju full node-a, jer se rudar oslanja na poverenje u dolazne blokove, barem privremeno. Takođe, to donekle narušava bezbednost jer deo računarske snage mreže potencijalno gradi na nevažećem blockchainu, umesto da gradi na najjačem i važećem lancu.
 
 
-Druga tačka ima negativan efekat na decentralizaciju Miner, jer obično bazeni sa najboljom mrežnom povezanošću i širinom pojasa su takođe najveći, što uzrokuje da rudari gravitiraju ka nekoliko velikih bazena.
+Druga tačka ima negativan efekat na decentralizaciju rudarenja, jer su obično rudarski bazeni sa najboljom mrežnom povezanošću i propusnim opsegom takođe i najveći, što uzrokuje da rudari gravitiraju ka nekoliko velikih bazena.
 
 
 #### Horizontalno skaliranje
 
 
 
-Horizontalno skaliranje odnosi se na tehnike koje dele radno opterećenje na više mašina. Iako je ovo rasprostranjen pristup skaliranju među popularnim vebsajtovima i bazama podataka, nije lako izvodljivo u Bitcoin.
+Horizontalno skaliranje odnosi se na tehnike koje dele radno opterećenje na više mašina. Iako je ovo rasprostranjen pristup skaliranju među popularnim vebsajtovima i bazama podataka, nije lako izvodljivo u Bitcoinu.
 
 
-Mnogi ljudi nazivaju ovaj Bitcoin pristup skaliranju *sharding*. U suštini, sastoji se u tome da svaki Full node verifikuje samo deo Blockchain. Peter Todd je mnogo razmišljao o konceptu shardinga. Napisao je [blog post](https://petertodd.org/2015/why-scaling-Bitcoin-with-sharding-is-very-Hard) objašnjavajući sharding u opštim terminima, a takođe je predstavio svoju ideju nazvanu *treechains*. Članak je teško čitanje, ali Todd iznosi neke tačke koje su prilično razumljive:
+Mnogi ljudi nazivaju ovaj Bitcoin pristup skaliranju *sharding*. U suštini, sastoji se u tome da svaki full node verifikuje samo deo blockchaina. Peter Todd je mnogo razmišljao o konceptu shardinga. Napisao je [blog post](https://petertodd.org/2015/why-scaling-Bitcoin-with-sharding-is-very-Hard) objašnjavajući sharding u opštim terminima, a takođe je predstavio svoju ideju nazvanu *treechains*. Članak je težak za čitanje, ali Todd iznosi neke tačke koje su prilično razumljive:
 
 
-> U šardovanim sistemima “Full node odbrana” ne funkcioniše, barem ne direktno. Cela poenta je da ne poseduje svako sve podatke, tako da morate odlučiti šta se dešava kada nisu dostupni.
+> U šardovanim sistemima “full node odbrana” ne funkcioniše, barem ne direktno. Cela poenta je da ne poseduje svako sve podatke, tako da morate odlučiti šta se dešava kada nisu dostupni.
 
 Zatim iznosi različite ideje o tome kako pristupiti sharding-u, ili horizontalnom skaliranju. Pred kraj objave zaključuje:
 
 
-> Ipak postoji veliki problem: sveti !@#$ gore navedeno je složeno u poređenju sa Bitcoin! Čak je i "dečija" verzija šardinga - moja linearizacija umesto zk-SNARKS - verovatno jedan ili dva reda veličine složenija nego što je trenutno korišćenje Bitcoin protokola, a ipak se čini da je veliki % kompanija u ovom prostoru digao ruke i umesto toga koristio centralizovane API provajdere. Stvarno implementiranje gore navedenog i dostavljanje krajnjim korisnicima neće biti lako.
+> Ipak postoji veliki problem: sveti !@#$ gore navedeno je složenije u poređenju sa Bitcoinom! Čak je i "dečija" verzija šardinga - moja linearizacija umesto zk-SNARKS - verovatno je jedan ili dva reda veličine složenija nego što je trenutno korišćenje Bitcoin protokola, a ipak se čini da je veliki % kompanija u ovom prostoru digao ruke i umesto toga koristio centralizovane API provajdere. Stvarno implementiranje gore navedenog i dostavljanje krajnjim korisnicima neće biti lako.
 >
 
 > S druge strane, decentralizacija nije jeftina: korišćenje PayPal-a je jedan ili dva reda veličine jednostavnije od Bitcoin protokola.
 
-Zaključak koji donosi je da šardovanje *možda* tehnički može biti moguće, ali bi došlo uz cenu ogromne složenosti. S obzirom na to da mnogi korisnici već smatraju da je Bitcoin previše složen i radije koriste centralizovane usluge, biće Hard da ih ubedi da koriste nešto još složenije.
+Zaključak koji donosi je da šardovanje *možda* tehnički može biti moguće, ali bi došlo uz cenu ogromne složenosti. S obzirom na to da mnogi korisnici već sada smatraju da je Bitcoin previše složen i radije koriste centralizovane usluge, biće teško ih ubediti da koriste nešto još složenije.
 
 
 #### Unutrašnje skaliranje
@@ -1520,13 +1505,13 @@ Iako su horizontalno i vertikalno skaliranje istorijski dobro funkcionisali u ce
 Pristup koji dobija premalo priznanja je ono što možemo nazvati *unutrašnje skaliranje*, što se prevodi kao "uradi više sa manje". Odnosi se na stalni rad koji mnogi programeri obavljaju kako bi optimizovali već postojeće algoritme, tako da možemo postići više unutar postojećih granica sistema.
 
 
-Poboljšanja koja su postignuta kroz unutrašnje skaliranje su impresivna, blago rečeno. Da bismo vam dali opštu ideju o poboljšanjima tokom godina, Jameson Lopp [je sproveo testove performansi](https://blog.lopp.net/Bitcoin-core-performance-evolution/) na Blockchain sinhronizaciji, upoređujući mnoge različite verzije Bitcoin Core unazad do verzije 0.8.
+Poboljšanja koja su postignuta kroz unutrašnje skaliranje su impresivna, blago rečeno. Da bismo vam dali opštu ideju o poboljšanjima tokom godina, Jameson Lopp [je sproveo testove performansi](https://blog.lopp.net/Bitcoin-core-performance-evolution/) (benchmark) sinhronizacije blockchaina, upoređujući mnoge različite verzije Bitcoin Core unazad do verzije 0.8.
 
 
 ![](assets/sr-Latn/012.webp)
 
 
-Početna brzina preuzimanja blokova različitih verzija Bitcoin Core. Na Y-osi je visina bloka koja je sinhronizovana, a na X-osi je vreme potrebno za sinhronizaciju do te visine.
+Na gornjem grafikonu možete videti performanse inicijalnog preuzimanja blokova (initial block download) različitih verzija Bitcoin Core-a. Na Y-osi je visina bloka koja je sinhronizovana, a na X-osi je vreme potrebno za sinhronizaciju do te visine.
 
 
 Različite linije predstavljaju različite verzije Bitcoin Core. Krajnja leva linija je najnovija, tj. verzija 0.22, koja je objavljena u septembru 2021. i kojoj je bilo potrebno 396 minuta za potpuno sinhronizovanje. Krajnja desna je verzija 0.8 iz novembra 2013, kojoj je bilo potrebno 3452 minuta. Sve ovo - otprilike 10x - poboljšanje je zbog unutrašnjeg skaliranja.
@@ -1535,21 +1520,19 @@ Različite linije predstavljaju različite verzije Bitcoin Core. Krajnja leva li
 Poboljšanja se mogu kategorizovati kao ušteda prostora (RAM, disk, propusni opseg, itd.) ili ušteda računarske snage. Obe kategorije doprinose poboljšanjima u dijagramu iznad.
 
 
-Dobar primer računarskog poboljšanja može se pronaći u biblioteci [libsecp256k1](https://github.com/Bitcoin-core/secp256k1), koja, između ostalog, implementira kriptografske primitive potrebne za kreiranje i verifikaciju digitalnih potpisa. Pieter Wuille je jedan od saradnika na ovoj biblioteci, i napisao je [Twitter nit](https://twitter.com/pwuille/status/1450471673321381896) koja prikazuje poboljšanja performansi postignuta kroz različite pull zahteve.
+Dobar primer računarskog poboljšanja može se pronaći u biblioteci [libsecp256k1](https://github.com/Bitcoin-core/secp256k1), koja, između ostalog, implementira kriptografske primitive potrebne za kreiranje i verifikaciju digitalnih potpisa. Pieter Wuille je jedan od saradnika na ovoj biblioteci, i napisao je [Twitter niz](https://twitter.com/pwuille/status/1450471673321381896) koja prikazuje poboljšanja performansi postignuta kroz različite pull zahteve.
 
 
 ![](assets/sr-Latn/013.webp)
 
 
-Performanse verifikacije potpisa tokom vremena, sa značajnim pull request-ovima označenim na vremenskoj liniji
+Na gornjem grafikonu možete videti performanse verifikacije potpisa tokom vremena, pri čemu su značajni pull request-ovi označeni na vremenskoj liniji.
 
 
 Grafikon prikazuje trend za dve različite vrste 64-bitnih CPU-a, naime ARM i x86. Razlika u performansama je zbog specijalizovanijih instrukcija dostupnih na x86 u poređenju sa ARM arhitekturom, koja ima manje i generičnije instrukcije. Međutim, opšti trend je isti za obe arhitekture. Napomena: Y-os je logaritamska, što čini da poboljšanja izgledaju manje impresivno nego što zapravo jesu.
 
 
-Postoji i nekoliko dobrih primera poboljšanja uštede prostora koja su doprinela poboljšanju performansi. U a
-
-[Medium blog post](https://murchandamus.medium.com/2-of-3-Multisig-inputs-using-Pay-to-Taproot-d5faf2312ba3) o doprinosu Taproot u uštedi prostora, korisnik Murch poredi koliko prostora u bloku bi zahtevala 2-od-3 praga potpis, koristeći Taproot na različite načine kao i bez njegovog korišćenja.
+Postoji i nekoliko dobrih primera poboljšanja uštede prostora koja su doprinela poboljšanju performansi. U [Medium blog post](https://murchandamus.medium.com/2-of-3-Multisig-inputs-using-Pay-to-Taproot-d5faf2312ba3) o doprinosu Taproot-a u uštedi prostora, korisnik Murch poredi koliko prostora u bloku bi zahtevala prag-potpis 2-od-3, koristeći Taproot na različite načine kao i bez njegovog korišćenja.
 
 
 ![](assets/sr-Latn/014.webp)
@@ -1558,10 +1541,10 @@ Postoji i nekoliko dobrih primera poboljšanja uštede prostora koja su doprinel
 Ušteda prostora za različite tipove potrošnje, Taproot i nasleđene verzije.
 
 
-A 2-of-3 Multisig koristeći native SegWit zahtevao bi ukupno 104.5+43 vB = 147.5 vB, dok bi najprostornije korišćenje Taproot zahtevalo samo 57.5+43 vB = 100.5 vB u standardnom slučaju upotrebe. U najgorem i retkim slučajevima, kao kada standardni potpisnik nije dostupan iz nekog razloga, Taproot bi koristio 107.5+43 vB = 150.5 vB. Ne morate razumeti sve detalje, ali ovo bi vam trebalo dati ideju o tome kako programeri razmišljaju o uštedi prostora - svaki bajt je bitan.
+Prag-potpis 2-od-3 koristeći native SegWit zahtevao bi ukupno 104.5+43 vB = 147.5 vB, dok bi najprostornije korišćenje Taproot zahtevalo samo 57.5+43 vB = 100.5 vB u standardnom slučaju upotrebe. U najgorem i retkim slučajevima, kao kada standardni potpisnik nije dostupan iz nekog razloga, Taproot bi koristio 107.5+43 vB = 150.5 vB. Ne morate razumeti sve detalje, ali ovo bi vam trebalo dati ideju o tome kako programeri razmišljaju o uštedi prostora - svaki bajt je bitan.
 
 
-Osim unutrašnjeg skaliranja u Bitcoin softveru, postoje neki načini na koje korisnici mogu doprineti unutrašnjem skaliranju. Oni mogu obavljati svoje transakcije inteligentnije kako bi uštedeli na naknadama za transakcije, istovremeno smanjujući svoj uticaj na zahteve Full node. Dve uobičajene tehnike za postizanje ovog cilja nazivaju se grupisanje transakcija i konsolidacija izlaza.
+Osim unutrašnjeg skaliranja u Bitcoin softveru, postoje neki načini na koje korisnici mogu doprineti unutrašnjem skaliranju. Oni mogu obavljati svoje transakcije inteligentnije kako bi uštedeli na naknadama za transakcije, istovremeno smanjujući svoj uticaj na zahteve full node-a. Dve uobičajene tehnike za postizanje ovog cilja nazivaju se grupisanje transakcija i konsolidacija izlaza.
 
 
 Ideja sa grupisanjem transakcija je da se više uplata kombinuje u jednu jedinu transakciju, umesto da se pravi jedna transakcija po uplati. Ovo može uštedeti mnogo na naknadama, a istovremeno smanjiti opterećenje prostora u bloku.
@@ -1579,13 +1562,13 @@ Konsolidacija izlaza odnosi se na iskorišćavanje perioda niske potražnje za b
 ![](assets/sr-Latn/016.webp)
 
 
-Konsolidacija izlaza: Istopite svoje kovanice u jednu veliku kovanicu kada su naknade niske da biste kasnije uštedeli na naknadama.
+Konsolidacija izlaza: istopite svoje kovanice u jednu veliku kovanicu kada su naknade niske da biste kasnije uštedeli na naknadama.
 
 
-Možda nije očigledno kako konsolidacija izlaza doprinosi unutrašnjem skaliranju. Uostalom, ukupna količina Blockchain podataka je čak malo povećana ovom metodom. Ipak, UTXO set, tj. baza podataka koja prati ko poseduje koje kovanice, se smanjuje jer trošite više UTXO-a nego što kreirate. Ovo olakšava teret za pune čvorove da održavaju svoje UTXO setove.
+Možda nije očigledno kako konsolidacija izlaza doprinosi unutrašnjem skaliranju. Uostalom, ukupna količina blockchain podataka je čak malo povećana ovom metodom. Ipak, UTXO set, tj. baza podataka koja prati ko poseduje koje kovanice, se smanjuje jer trošite više UTXO-a nego što kreirate. Ovo olakšava teret za full čvorove da održavaju svoje UTXO setove.
 
 
-Nažalost, međutim, ove dve tehnike *UTXO upravljanja* mogu biti loše za vašu ili privatnost vaših primalaca. U slučaju grupisanja, svaki primalac će znati da su svi grupisani izlazi od vas ka drugim primaocima (osim možda kusura). U slučaju UTXO konsolidacije, otkrićete da izlazi koje konsolidujete pripadaju istom Wallet. Dakle, možda ćete morati da napravite kompromis između efikasnosti troškova i privatnosti.
+Nažalost, međutim, ove dve tehnike *UTXO upravljanja* mogu biti loše za vašu ili privatnost vaših primalaca. U slučaju grupisanja, svaki primalac će znati da su svi grupisani izlazi od vas ka drugim primaocima (osim možda kusura). U slučaju UTXO konsolidacije, otkrićete da izlazi koje konsolidujete pripadaju istom novčaniku. Dakle, možda ćete morati da napravite kompromis između efikasnosti troškova i privatnosti.
 
 
 #### Slojevito skaliranje
