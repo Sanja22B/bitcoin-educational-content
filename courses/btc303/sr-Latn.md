@@ -1575,46 +1575,46 @@ Nažalost, međutim, ove dve tehnike *UTXO upravljanja* mogu biti loše za vašu
 
 
 
-Najuticajniji pristup skaliranju je verovatno slojevitost. Opšta ideja iza slojevitosti je da protokol može da reguliše plaćanja između korisnika bez dodavanja transakcija na Blockchain.
+Najuticajniji pristup skaliranju je verovatno slojevitost. Opšta ideja iza slojevitosti je da protokol može da reguliše plaćanja između korisnika bez dodavanja transakcija na blockchain.
 
 
-Slojeviti protokol počinje sa dvoje ili više ljudi koji se dogovaraju o početnoj transakciji koja se stavlja na Blockchain, kao što je prikazano na slici ispod.
+Slojeviti protokol počinje sa dvoje ili više ljudi koji se dogovaraju o početnoj transakciji koja se stavlja na blockchain, kao što je prikazano na slici ispod.
 
 
 ![](assets/sr-Latn/017.webp)
 
 
 
-Kako se ova početna transakcija kreira varira između protokola, ali zajednička tema je da učesnici kreiraju nepotpisanu početnu transakciju i broj unapred potpisanih kaznenih transakcija, koje troše izlaz početne transakcije na različite načine. Nakon toga, početna transakcija je u potpunosti potpisana i objavljena na Blockchain, a kaznene transakcije mogu biti u potpunosti potpisane i objavljene kako bi se kaznila strana koja se ne ponaša ispravno. Ovo motiviše učesnike da održe svoja obećanja kako bi protokol mogao raditi na Trustless način.
+Kako se ova početna transakcija kreira varira između protokola, ali zajednička tema je da učesnici kreiraju nepotpisanu početnu transakciju i broj unapred potpisanih kaznenih transakcija, koje troše izlaz početne transakcije na različite načine. Nakon toga, početna transakcija je u potpunosti potpisana i objavljena na blockchain-u, a kaznene transakcije mogu biti u potpunosti potpisane i objavljene kako bi se kaznila strana koja se ne ponaša ispravno. Ovo motiviše učesnike da održe svoja obećanja kako bi protokol mogao raditi na način na koji se ne zahteva poverenje.
 
 
-Jednom kada transakcija započne na Blockchain, protokol može raditi ono što treba. Na primer, mogao bi omogućiti super brza plaćanja između učesnika, implementirati neke tehnike za poboljšanje privatnosti ili izvršiti naprednije skriptovanje koje ne bi bilo podržano od strane Bitcoin Blockchain.
+Jednom kada transakcija započne na blockchain-u, protokol može raditi ono što treba. Na primer, mogao bi omogućiti super brza plaćanja između učesnika, implementirati neke tehnike za poboljšanje privatnosti ili izvršiti naprednije skriptovanje koje ne bi bilo podržano od strane Bitcoin blockchain-a.
 
 
-Nećemo ulaziti u detalje kako tačno funkcionišu protokoli, ali kao što možete videti na prethodnoj slici, Blockchain se retko koristi tokom životnog ciklusa protokola. Sva uzbudljiva akcija dešava se *off-chain*. Videli smo kako ovo može biti korisno za privatnost ako se pravilno uradi, ali takođe može biti prednost za skalabilnost.
+Nećemo ulaziti u detalje kako tačno funkcionišu protokoli, ali kao što možete videti na prethodnoj slici, blockchain se retko koristi tokom životnog ciklusa protokola. Sva uzbudljiva akcija dešava se *off-chain*. Videli smo kako ovo može biti korisno za privatnost ako se pravilno uradi, ali takođe može biti prednost za skalabilnost.
 
 
-U [Reddit postu](https://www.reddit.com/r/Bitcoin/comments/438hx0/a_trip_to_the_moon_requires_a_rocket_with/) pod naslovom "Putovanje na Mesec zahteva raketu sa više faza, inače će vas jednačina rakete 'pojesti za ručak'... pakovanje svih u stilu klovnovskog automobila u trebušet i nadajući se uspehu je potpuno pogrešno.", Gregory Maxwell objašnjava zašto je slojevitost naša najbolja šansa da Bitcoin skaliramo za redove veličine.
+U [Reddit postu](https://www.reddit.com/r/Bitcoin/comments/438hx0/a_trip_to_the_moon_requires_a_rocket_with/) pod naslovom "Putovanje na Mesec zahteva raketu sa više faza, inače će vas jednačina rakete 'pojesti za ručak'... nagurati sve kao klovnove u mali auto i ubaciti ih u trebušet i nadajući se uspehu je potpuno pogrešno.", Gregory Maxwell objašnjava zašto je slojevitost naša najbolja šansa da Bitcoin skaliramo za redove veličine.
 
 
-Počinje naglašavanjem zablude u posmatranju Vise ili Mastercarda kao glavnih konkurenata Bitcoin i ističe kako je povećanje maksimalne veličine bloka loš pristup za suočavanje s navedenom konkurencijom. Zatim govori o tome kako napraviti stvarnu razliku korišćenjem slojeva:
+Počinje naglašavanjem zablude u posmatranju Vise ili Mastercarda kao glavnih konkurenata Bitcoina i ističe kako je povećanje maksimalne veličine bloka loš pristup za suočavanje s navedenom konkurencijom. Zatim govori o tome kako napraviti stvarnu razliku korišćenjem slojeva:
 
 
 > Dakle-- Da li to znači da Bitcoin ne može biti veliki pobednik kao tehnologija plaćanja? Ne. Ali da bismo dostigli kapacitet potreban za zadovoljenje potreba plaćanja u svetu, moramo raditi inteligentnije.
 >
 
-> Od samog početka Bitcoin je dizajniran da inkorporira slojeve na siguran način kroz svoju sposobnost pametnog ugovaranja (Šta, mislite da je to tamo stavljeno samo da bi ljudi mogli filozofirati o besmislenim "DAO-ima"?). U suštini, koristićemo sistem Bitcoin kao visoko pristupačnog i savršeno pouzdanog robotičkog sudiju i obavljati većinu našeg poslovanja van sudnice -- ali transaktovati na takav način da, ako nešto pođe po zlu, imamo sve dokaze i uspostavljene sporazume kako bismo bili sigurni da će robotički sud to ispraviti. (Geek dodatak: Ako vam ovo deluje nemoguće, pročitajte ovaj stari post o transaction cut-through)
+> Od samog početka Bitcoin je dizajniran da inkorporira slojeve na siguran način kroz svoju sposobnost pametnog ugovaranja (šta, mislite da je to tamo stavljeno samo da bi ljudi mogli filozofirati o besmislenim "DAO-ima"?). U suštini, koristićemo Bitcoin sistem kao visoko pristupačnog i savršeno pouzdanog robotičkog sudiju i obavljati većinu našeg poslovanja van sudnice -- ali transaktovati na takav način da, ako nešto pođe po zlu, imamo sve dokaze i uspostavljene sporazume kako bismo bili sigurni da će robotički sud to ispraviti. (Geek dodatak: Ako vam ovo deluje nemoguće, pročitajte ovaj stari post o transaction cut-through (cut-through transakcija))
 >
 
-> Ovo je moguće upravo zbog osnovnih svojstava Bitcoin. Sistem baze koji se može cenzurisati ili reverzibilan nije baš pogodan za izgradnju snažnog gornjeg Layer sistema za obradu transakcija na njemu... a ako osnovna imovina nije pouzdana, malo je smisla uopšte transaktovati s njom.
+> Ovo je moguće upravo zbog osnovnih Bitcoin svojstava. Sistem baze koji se može cenzurisati ili je reverzibilan nije baš pogodan za izgradnju snažnog gornjeg sloja sistema za obradu transakcija na njemu... a ako osnovna imovina nije pouzdana, malo je smisla uopšte transaktovati s njom.
 
-Analogija sa sudijom je prilično ilustrativna za način na koji slojevi funkcionišu: ova sutkinja mora biti neiskvarljiva i nikada ne sme promeniti mišljenje, inače slojevi iznad osnovnog Bitcoin sloja Layer neće raditi pouzdano.
-
-
-Nastavlja tako što ističe poentu o centralizovanim uslugama. Obično nema problema sa poverenjem centralnom serveru sa trivijalnim količinama Bitcoin da bi se stvari obavile: to je takođe slojevito skaliranje.
+Analogija sa sudijom je prilično ilustrativna za način na koji slojevi funkcionišu: ova sutkinja mora biti neiskvarljiva i nikada ne sme promeniti mišljenje, inače slojevi iznad osnovnog Bitcoin sloja neće raditi pouzdano.
 
 
-Prošlo je mnogo godina otkako je Maxwell napisao gornji tekst, i njegove reči su i dalje tačne. Uspeh Lightning Network dokazuje da je slojevitost zaista put napred za povećanje korisnosti Bitcoin.
+Nastavlja tako što ističe poentu o centralizovanim uslugama. Obično nema problema sa poverenjem centralnom serveru sa trivijalnim količinama Bitcoina da bi se stvari obavile: to je takođe slojevito skaliranje.
+
+
+Prošlo je mnogo godina otkako je Maxwell napisao gornji tekst, i njegove reči su i dalje tačne. Uspeh Lightning mreže dokazuje da je slojevitost zaista put napred za povećanje Bitcoin korisnosti.
 
 
 
@@ -1622,10 +1622,10 @@ Prošlo je mnogo godina otkako je Maxwell napisao gornji tekst, i njegove reči 
 
 
 
-Razgovarali smo o različitim načinima na koje bi neko mogao želeti da skalira Bitcoin, poveća kapacitet korišćenja Bitcoin. Skaliranje je bilo zabrinutost u Bitcoin od njegovih najranijih dana.
+Razgovarali smo o različitim načinima na koje bi neko mogao želeti da skalira Bitcoin, poveća kapacitet korišćenja Bitcoina. Skaliranje je bilo zabrinutost u Bitcoinu od njegovih najranijih dana.
 
 
-Danas znamo da Bitcoin ne skalira dobro vertikalno ("kupiti veći hardver") ili horizontalno ("verifikovati samo delove podataka"), već radije unutra ("uraditi više sa manje") i u slojevima ("izgraditi protokole na vrhu Bitcoin").
+Danas znamo da Bitcoin ne skalira dobro vertikalno ("kupiti veći hardver") ili horizontalno ("verifikovati samo delove podataka"), već radije unutra ("uraditi više sa manje") i u slojevima ("izgraditi protokole na vrhu Bitcoina").
 
 
 ## Kad sranje pogodi ventilator
@@ -1636,14 +1636,14 @@ Danas znamo da Bitcoin ne skalira dobro vertikalno ("kupiti veći hardver") ili 
 
 ![](assets/sr-Latn/018.webp)
 
-Bitcoin je napravljen od strane ljudi. Ljudi pišu softver, i ljudi zatim pokreću taj softver. Kada se otkrije sigurnosna ranjivost ili ozbiljna greška - da li zaista postoji razlika između ta dva? - uvek ih otkriju ljudi, od krvi i mesa. Ovo poglavlje razmatra šta ljudi rade, šta bi trebalo da rade, i šta ne bi trebalo da rade kada stvari krenu po zlu. Prvi deo objašnjava termin *odgovorno otkrivanje*, koji se odnosi na to kako neko ko otkrije ranjivost može odgovorno da postupi kako bi pomogao u minimiziranju štete od nje. Ostatak poglavlja vodi vas kroz neke od najozbiljnijih ranjivosti otkrivenih tokom godina, i kako su se sa njima nosili programeri, rudari i korisnici. Stvari nisu bile tako rigorozne u ranom detinjstvu Bitcoin kao što su danas.
+Bitcoin je napravljen od strane ljudi. Ljudi pišu softver, i ljudi zatim pokreću taj softver. Kada se otkrije sigurnosna ranjivost ili ozbiljna greška - da li zaista postoji razlika između ta dva? - uvek ih otkriju ljudi, od krvi i mesa. Ovo poglavlje razmatra šta ljudi rade, šta bi trebalo da rade, i šta ne bi trebalo da rade kada stvari krenu po zlu. Prvi deo objašnjava termin *odgovorno otkrivanje*, koji se odnosi na to kako neko ko otkrije ranjivost može odgovorno da postupi kako bi pomogao u minimiziranju štete od nje. Ostatak poglavlja vodi vas kroz neke od najozbiljnijih ranjivosti otkrivenih tokom godina, i kako su se sa njima nosili programeri, rudari i korisnici. Stvari nisu bile tako rigorozne u ranom detinjstvu Bitcoina kao što su danas.
 
 
 ### Odgovorno otkrivanje
 
 
 
-Zamislite da otkrijete grešku u Bitcoin Core, grešku koja omogućava bilo kome da daljinski isključi Bitcoin Core čvor koristeći posebno kreirane mrežne poruke. Zamislite takođe da niste zlonamerni i želite da ovaj problem ostane neiskorišćen. Šta radite? Ako ostanete tihi o tome, verovatno će neko drugi otkriti problem, a ne možete biti sigurni da ta osoba neće biti zlonamerna.
+Zamislite da otkrijete grešku u Bitcoin Core-u, grešku koja omogućava bilo kome da daljinski isključi Bitcoin Core čvor koristeći posebno kreirane mrežne poruke. Zamislite takođe da niste zlonamerni i želite da se ova ranjivost ne zloupotrebi. Šta radite? Ako ostanete tihi o tome, verovatno će neko drugi otkriti problem, a ne možete biti sigurni da ta osoba neće biti zlonamerna.
 
 
 Kada se otkrije sigurnosni problem, osoba koja ga otkrije treba da primeni _odgovorno otkrivanje_ što je termin koji se često koristi među Bitcoin programerima. Termin je [objašnjen na Wikipediji](https://en.wikipedia.org/wiki/Coordinated_vulnerability_disclosure):
@@ -1653,7 +1653,7 @@ Kada se otkrije sigurnosni problem, osoba koja ga otkrije treba da primeni _odgo
 ranjivosti. Hakeri i naučnici za računarsku bezbednost smatraju da je njihova društvena odgovornost da obaveste javnost o ranjivostima. Sakrivanje problema može izazvati osećaj lažne sigurnosti. Da bi se to izbeglo, uključene strane koordiniraju i pregovaraju o razumnom vremenskom periodu za popravku ranjivosti. U zavisnosti od potencijalnog uticaja ranjivosti, očekivanog vremena potrebnog za razvoj i primenu hitne popravke ili zaobilaznog rešenja i drugih faktora, ovaj period može varirati između nekoliko dana i nekoliko meseci.
 
 
-To znači da ako pronađete sigurnosni problem, trebali biste ga prijaviti timu odgovornom za sistem. Ali šta to znači u kontekstu Bitcoin? Niko ne kontroliše Bitcoin, ali trenutno postoji fokusna tačka za razvoj Bitcoin, naime [Bitcoin Core Github repozitorijum](https://github.com/Bitcoin/Bitcoin). Održavaoci navedenog repozitorijuma su odgovorni za kod u njemu, ali nisu odgovorni za sistem u celini - niko nije. Ipak, opšta najbolja praksa je poslati email na security@bitcoincore.org.
+To znači da ako pronađete sigurnosni problem, trebali biste ga prijaviti timu odgovornom za sistem. Ali šta to znači u Bitcoin kontekstu? Niko ne kontroliše Bitcoin, ali trenutno postoji fokusna tačka za razvoj Bitcoina, naime [Bitcoin Core Github repozitorijum](https://github.com/Bitcoin/Bitcoin). Održavaoci navedenog repozitorijuma su odgovorni za kod u njemu, ali nisu odgovorni za sistem u celini - niko nije. Ipak, opšta najbolja praksa je poslati email na security@bitcoincore.org.
 
 
 U [email prepisci](https://lists.linuxfoundation.org/pipermail/Bitcoin-dev/2017-September/015002.html) pod naslovom "Odgovorno otkrivanje grešaka" iz 2017. godine, Anthony Towns je pokušao da sumira ono što je smatrao trenutnim najboljim praksama. Prikupio je informacije iz nekoliko izvora i od različitih ljudi kako bi oblikovao svoje mišljenje o toj temi.
@@ -1662,24 +1662,24 @@ U [email prepisci](https://lists.linuxfoundation.org/pipermail/Bitcoin-dev/2017-
 
 
 - Ranljivosti treba prijaviti putem security at bitcoincore.org
-- Kritično pitanje (koje se može odmah iskoristiti ili se već iskorišćava i izaziva veliku štetu) biće rešeno od strane:
-  - objavljena zakrpa ASAP
+- Kritično pitanje (koje se može odmah iskoristiti ili se već iskorišćava i izaziva veliku štetu) biće rešeno:
+  - objavljivanjem zakrpa što pre (ASAP)
   - široko obaveštenje o potrebi za nadogradnjom (ili onemogućavanjem pogođenih sistema)
   - minimalno otkrivanje stvarnog problema, kako bi se odložili napadi
-- Nekritična ranjivost (zato što je teško ili skupo iskoristiti) će biti rešena od strane:
-  - zakrpa i pregled obavljeni u uobičajenom toku razvoja
+- Nekritična ranjivost (zato što je teško ili skupo iskoristiti) će biti rešena:
+  - zakrpom i pregled obavljeni u uobičajenom toku razvoja
   - backport rešenja ili zaobilaznog rešenja sa mastera na trenutno objavljenu verziju
 - Programeri će pokušati da osiguraju da objavljivanje ispravke ne otkrije prirodu ranjivosti tako što će predloženu ispravku dati iskusnim programerima koji nisu informisani o ranjivosti, reći im da ispravka rešava ranjivost i zamoliti ih da identifikuju ranjivost.
-- Devs mogu preporučiti da druge implementacije Bitcoin usvoje ispravke ranjivosti pre nego što ispravka bude objavljena i široko primenjena, ako to mogu učiniti bez otkrivanja ranjivosti; npr, ako ispravka ima značajne performanse koje bi opravdale njeno uključivanje.
-- Pre nego što ranjivost postane javna, programeri će generalno preporučiti prijateljskim Altcoin programerima da bi trebalo da se ažuriraju sa ispravkama. Ali to je tek nakon što su ispravke široko primenjene u Bitcoin mreži.
-- Programeri obično neće obavestiti Altcoin programere koji su se ponašali na neprijateljski način (npr. koristeći ranjivosti za napad na druge, ili koji krše embarga).
+- Devs mogu preporučiti da druge Bitcoin implementacije usvoje ispravke ranjivosti pre nego što ispravka bude objavljena i široko primenjena, ako to mogu učiniti bez otkrivanja ranjivosti; npr, ako ispravka ima značajne performanse koje bi opravdale njeno uključivanje.
+- Pre nego što ranjivost postane javna, programeri će generalno preporučiti prijateljskim altcoin programerima da bi trebalo da se ažuriraju sa ispravkama. Ali to je tek nakon što su ispravke široko primenjene u Bitcoin mreži.
+- Programeri obično neće obavestiti altcoin programere koji su se ponašali na neprijateljski način (npr. koristeći ranjivosti za napad na druge, ili koji krše embarga).
 - Bitcoin developeri neće otkriti detalje o ranjivosti dok >80% Bitcoin čvorova ne primeni ispravke. Otkrivači ranjivosti se ohrabruju i traži se da slede istu politiku. [1] [6]
 
 
-Ova lista prikazuje koliko pažljiv neko mora biti prilikom objavljivanja zakrpa za Bitcoin, jer sama zakrpa može otkriti ranjivost. Četvrta stavka je posebno zanimljiva jer objašnjava kako testirati da li je zakrpa dovoljno dobro prikrivena. Zaista, ako nekoliko zaista iskusnih programera ne može uočiti ranjivost čak i znajući da zakrpa ispravlja jednu, verovatno će biti zaista Hard za druge da je otkriju.
+Ova lista prikazuje koliko pažljiv neko mora biti prilikom objavljivanja zakrpa za Bitcoin, jer sama zakrpa može otkriti ranjivost. Četvrta stavka je posebno zanimljiva jer objašnjava kako testirati da li je zakrpa dovoljno dobro prikrivena. Zaista, ako nekoliko zaista iskusnih programera ne može uočiti ranjivost čak i znajući da zakrpa ispravlja jednu, verovatno će biti zaista teško za druge da je otkriju.
 
 
-Nit koja je dovela do ovog emaila raspravljala je o tome da li, kada i kako otkriti ranjivosti altcoin-ima i drugim implementacijama Bitcoin. Ovde nema jasnog odgovora. "Pomoći dobrim momcima" deluje kao razumna stvar, ali ko odlučuje ko su oni i gde se povlači granica? Bryan Bishop [je tvrdio](https://lists.linuxfoundation.org/pipermail/Bitcoin-dev/2017-September/014983.html) da je pomaganje altcoin-ima, pa čak i scamcoin-ima, da se odbrane od sigurnosnih eksploatacija moralna dužnost:
+Nit koja je dovela do ovog emaila raspravljala je o tome da li, kada i kako otkriti ranjivosti altcoin-ima i drugim implementacijama Bitcoina. Ovde nema jasnog odgovora. "Pomoći dobrim momcima" deluje kao razumna stvar, ali ko odlučuje ko su oni i gde se povlači granica? Bryan Bishop [je tvrdio](https://lists.linuxfoundation.org/pipermail/Bitcoin-dev/2017-September/014983.html) da je pomaganje altcoin-ima, pa čak i scamcoin-ima, da se odbrane od sigurnosnih eksploatacija moralna dužnost:
 
 
 > Nije dovoljno braniti Bitcoin i njegove korisnike od aktivnih pretnji, postoji opštija odgovornost da se brane sve vrste korisnika i različiti softveri od mnogih vrsta pretnji u bilo kojim oblicima, čak i ako ljudi koriste glup i nesiguran softver koji lično ne održavate, ne doprinosite mu ili ga ne zagovarate. Rukovanje znanjem o ranjivosti je delikatna stvar i možda ćete primiti znanje sa ozbiljnijim direktnim ili indirektnim uticajem nego što je prvobitno opisano.
@@ -1687,38 +1687,38 @@ Nit koja je dovela do ovog emaila raspravljala je o tome da li, kada i kako otkr
 Takođe, pre Town-ovog gorenavedenog email-a bio je [post](https://lists.linuxfoundation.org/pipermail/Bitcoin-dev/2017-September/014977.html) od Gregory Maxwell-a, u kojem je tvrdio da bezbednosni propusti mogu biti ozbiljniji nego što izgledaju:
 
 
-> Više puta sam video da se Hard problem sa eksploatacijom ispostavi trivijalnim kada pronađete pravi trik, ili da se manji dos problem ispostavi mnogo ozbiljnijim.
+> Više puta sam video da se težak problem sa eksploatacijom ispostavi trivijalnim kada pronađete pravi trik, ili da se manji DoS problem ispostavi mnogo ozbiljnijim.
 >
 
-> Jednostavne greške u performansama, stručno primenjene, mogu potencijalno biti korišćene za razdvajanje mreže--- Miner A i Exchange B idu u jednu particiju, svi ostali u drugu.. i dvostruko trošenje.
+> Jednostavne greške u performansama, stručno primenjene, mogu potencijalno biti korišćene za razdvajanje mreže--- rudar A i kripto-menjačnica B idu u jednu particiju, svi ostali u drugu.. i dvostruko trošenje.
 >
 
 > I tako dalje. Dakle, iako se apsolutno slažem da različite stvari treba i mogu biti tretirane drugačije, nije uvek tako jasno. Pametno je tretirati stvari kao ozbiljnije nego što znate da jesu.
 
-Dakle, čak i ako se ranjivost čini Hard za eksploataciju, možda je najbolje pretpostaviti da je lako iskoristiva i da još niste shvatili kako.
+Dakle, čak i ako se ranjivost čini teškom za eksploataciju, možda je najbolje pretpostaviti da je lako iskoristiva i da još niste shvatili kako.
 
 
-On takođe pominje kako je "donekle netačno nazvati ovu temu bilo čim u vezi sa objavljivanjem, ova tema nije o objavljivanju. Objavljivanje je kada obavestite dobavljača. Ova tema je o publikaciji i to ima veoma različite implikacije. Publikacija je kada ste sigurni da ste obavestili potencijalne napadače". Ova poslednja opservacija u vezi sa razlikom između objavljivanja i publikacije je važna. Laka stvar je odgovorno objavljivanje; Hard deo je razumno objavljivanje.
+On takođe pominje kako je "donekle netačno nazvati ovu temu bilo čim u vezi sa objavljivanjem, ova tema nije o objavljivanju. Objavljivanje je kada obavestite dobavljača. Ova tema je o publikaciji i to ima veoma različite implikacije. Publikacija je kada ste sigurni da ste obavestili potencijalne napadače". Ova poslednja opservacija u vezi sa razlikom između objavljivanja i publikacije je važna. Laka stvar je odgovorno objavljivanje; težak deo je razumno objavljivanje.
 
 
-### Traumatično detinjstvo Bitcoin
+### Bitcoinovo traumatično detinjstvo
 
 
 
 Bitcoin je započeo kao projekat jednog čoveka (barem tako sugeriše pseudonim njegovog tvorca), i Bitcoin je u početku imao malu ili nikakvu vrednost. Kao takav, ranjivosti i ispravke grešaka nisu bile rešavane tako rigorozno kao danas.
 
 
-Bitcoin viki ima [listu uobičajenih ranjivosti i izloženosti](https://en.Bitcoin.it/wiki/Common_Vulnerabilities_and_Exposures) (CVE) kroz koje je Bitcoin prošao. Ovaj deo predstavlja mali prikaz nekih bezbednosnih problema i incidenata iz ranih godina Bitcoin. Nećemo pokriti sve, ali smo odabrali nekoliko koje smatramo posebno zanimljivim.
+Bitcoin viki ima [listu uobičajenih ranjivosti i izloženosti](https://en.Bitcoin.it/wiki/Common_Vulnerabilities_and_Exposures) (CVE) kroz koje je Bitcoin prošao. Ovaj deo predstavlja mali prikaz nekih bezbednosnih problema i incidenata iz ranih godina Bitcoina. Nećemo pokriti sve, ali smo odabrali nekoliko koje smatramo posebno zanimljivim.
 
 
-#### 2010-07-28: Potrošite bilo čije novčiće (CVE-2010-5141)
+#### 2010-07-28: Mogućnost trošenja tuđih novčića (CVE-2010-5141)
 
 
 
 Dana 28. jula 2010. godine, pseudonimna osoba po imenu ArtForz otkrila je grešku u verziji 0.3.4 koja bi omogućila bilo kome da uzme novčiće od bilo koga drugog. ArtForz je *odgovorno* prijavio ovo Satoshi Nakamotu i drugom Bitcoin programeru po imenu Gavin Andresen.
 
 
-Problem je bio u tome što bi skript operater `OP_RETURN` jednostavno prekinuo izvršavanje programa, tako da ako je scriptPubKey bio `<pubkey> OP_CHECKSIG` a scriptSig bio `OP_1 OP_RETURN`, deo programa u scriptPubKey nikada ne bi bio izvršen. Jedina stvar koja bi se desila bila bi da se `1` stavi na stek, a zatim bi `OP_RETURN` izazvao prekid programa. Bilo koja nenulta vrednost na vrhu steka nakon izvršenja programa znači da je uslov za trošenje ispunjen. Pošto je vršni element steka `1` nenulti, trošenje bi bilo u redu.
+Problem je bio u tome što bi skript operater `OP_RETURN` jednostavno prekinuo izvršavanje programa, tako da ako je scriptPubKey bio `<pubkey> OP_CHECKSIG` a scriptSig bio `OP_1 OP_RETURN`, deo programa u scriptPubKey nikada ne bi bio izvršen. Jedina stvar koja bi se desila bila bi da se `1` stavi na stek, a zatim bi `OP_RETURN` izazvao prekid programa. Bilo koja nenulta vrednost na vrhu steka nakon izvršenja programa znači da je uslov za trošenje ispunjen. Pošto je element na vrhu steka `1` nenulti, trošenje bi bilo u redu.
 
 
 Ovo je bio kod za rukovanje `OP_RETURN`:
@@ -1732,7 +1732,7 @@ pc = pend;
 break;
 ```
 
-Efekat `pc = pend;` je bio da se ostatak programa preskoči, što znači da bi bilo koji locking script u scriptPubKey bio ignorisan. Ispravka je sadržala promenu značenja `OP_RETURN` tako da odmah ne uspe, umesto toga.
+Efekat `pc = pend;` je bio da se ostatak programa preskoči, što znači da bi bilo koji locking script u scriptPubKey bio ignorisan. Popravka je podrazumevala promenu značenja `OP_RETURN`-a, tako da se izvršavanje odmah prekida neuspehom.
 
 
 ```
@@ -1785,31 +1785,29 @@ U ovom trenutku je takođe izgleda ažurirao originalni post da spomene 0.3.6 um
 
 > Windows i Linux korisnici: ako imate 0.3.5 i dalje treba da nadogradite na 0.3.6.
 
-Imajte na umu razliku u karakterizaciji problema iz prve poruke: "moglo bi biti prikazano kao prihvaćeno" naspram "moglo bi biti prihvaćeno". Možda je Satoshi umanjio ozbiljnost greške u svojoj komunikaciji kako ne bi privukao previše pažnje na stvarni problem. U svakom slučaju, ljudi su nadogradili na 0.3.6 i radilo je kako se očekivalo. Ovaj konkretan problem je rešen, neverovatno, bez gubitaka Bitcoin.
+Imajte na umu razliku u karakterizaciji problema iz prve poruke: "moglo bi biti prikazano kao prihvaćeno" naspram "moglo bi biti prihvaćeno". Možda je Satoshi umanjio ozbiljnost greške u svojoj komunikaciji kako ne bi privukao previše pažnje na stvarni problem. U svakom slučaju, ljudi su nadogradili na 0.3.6 i radilo je kako se očekivalo. Ovaj konkretan problem je rešen, neverovatno, bez gubitaka Bitcoina.
 
 
-Poruka Satoshi takođe je opisala neka poboljšanja performansi za Mining. Nije jasno zašto je to uključeno u kritičnu bezbednosnu ispravku, moguće je da je svrha bila da se zamagli pravi problem. Međutim, čini se verovatnijim da je jednostavno objavio sve što je bilo na čelu razvojne grane Subversion repozitorijuma, sa dodatom bezbednosnom ispravkom.
+Poruka Satoshija takođe je opisala neka poboljšanja performansi za rudarenje. Nije jasno zašto je to uključeno u kritičnu bezbednosnu ispravku, moguće je da je svrha bila da se zamagli pravi problem. Međutim, čini se verovatnijim da je jednostavno objavio sve što je bilo na čelu razvojne grane Subversion repozitorijuma, sa dodatom bezbednosnom ispravkom.
 
 
-U to vreme, nije bilo ni približno toliko korisnika kao danas, a vrednost Bitcoin bila je blizu nule. Ako bi se danas ovako reagovalo na grešku, smatralo bi se potpunim haosom iz više razloga:
+U to vreme, nije bilo ni približno toliko korisnika kao danas, a vrednost Bitcoina bila je blizu nule. Ako bi se danas ovako reagovalo na grešku, smatralo bi se potpunim haosom iz više razloga:
 
 
 
 - Satoshi je napravio binarno-izdanje verzije 0.3.5 koje sadrži ispravku. Nije obezbeđen nikakav patch ili kod, možda kao mera da se problem zamagli.
 - 0.3.5 [nije ni radila](https://bitcointalk.org/index.php?topic=626.msg6455#msg6455).
-- Popravka u 0.3.6 je zapravo bila Hard Fork.
+- Popravka u 0.3.6 je zapravo bila hard fork.
 
 
 Još jedna stvar o kojoj se može raspravljati je da li je dobro ili loše što su korisnici bili zamoljeni da isključe svoje čvorove. Danas to ne bi bilo izvodljivo, ali u to vreme mnogi korisnici su aktivno pratili forume za ažuriranja i obično su bili u toku sa stvarima. S obzirom na to da je to bilo moguće uraditi, možda je to bila razumna stvar za učiniti.
 
 
-#### 2010-08-15 Kombinovani izlazni preliv (CVE-2010-5139)
+#### 2010-08-15 Combined output overflow (prelivanje kombinovanog izlaza) (CVE-2010-5139)
 
 
 
-Sredinom avgusta 2010. godine, korisnik Bitcointalk foruma jgarzik, poznat i kao Jeff Garzik,
-
-[otkriveno je da](https://bitcointalk.org/index.php?topic=822.msg9474#msg9474) određena transakcija na visini bloka 74638 ima dva izlaza neobično visoke vrednosti:
+Sredinom avgusta 2010. godine, korisnik Bitcointalk foruma jgarzik, poznat i kao Jeff Garzik, [otkriveno je da](https://bitcointalk.org/index.php?topic=822.msg9474#msg9474) određena transakcija na visini bloka 74638 ima dva izlaza neobično visoke vrednosti:
 
 
 ```
@@ -1834,18 +1832,18 @@ Sredinom avgusta 2010. godine, korisnik Bitcointalk foruma jgarzik, poznat i kao
 Pretpostavlja se da je postojala greška koja je uzrokovala da zbir dva int64 (ne uint64, kako je Garzik pretpostavio) izlaza pređe u negativnu vrednost -0.00997538 BTC. Bez obzira na zbir ulaza, "zbir" izlaza bi bio manji, čineći ovu transakciju ispravnom prema tadašnjem kodu.
 
 
-U ovom slučaju, greška je bila otkrivena i objavljena putem stvarnog eksploita. Nesrećna posledica ovoga bila je da je oko 2x92 milijarde Bitcoin bilo kreirano, što je ozbiljno razvodnilo novac Supply od oko 3.7 miliona novčića koji su postojali u to vreme.
+U ovom slučaju, greška je bila otkrivena i objavljena putem stvarnog eksploita. Nesrećna posledica ovoga bila je da je oko 2x92 milijarde Bitcoin bilo kreirano, što je ozbiljno razvodnilo ponudu novca od oko 3.7 miliona novčića koji su postojali u to vreme.
 
 
-U povezanoj temi, [Satoshi je objavio](https://bitcointalk.org/index.php?topic=823.msg9531#msg9531) da bi cenio kada bi ljudi prestali sa Mining (ili *generisanjem*, kako su to tada zvali):
+U povezanoj temi, [Satoshi je objavio](https://bitcointalk.org/index.php?topic=823.msg9531#msg9531) da bi cenio kada bi ljudi prestali sa rudarenjem (ili *generisanjem*, kako su to tada zvali):
 
 
-> Bilo bi od pomoći kada bi ljudi prestali generisati. Verovatno ćemo morati ponovo napraviti granu oko trenutne, i što manje generate to će biti brže.
+> Bilo bi od pomoći kada bi ljudi prestali generisati. Verovatno ćemo morati ponovo napraviti granu oko trenutne, i što manje generišete to će biti brže.
 >
 
 > Prva zakrpa će biti u SVN rev 132. Još nije postavljena. Prvo ću pomeriti neke druge razne izmene, a zatim ću postaviti zakrpu za ovo.
 
-Njegov plan je bio da napravi Soft Fork kako bi transakcije poput one o kojoj se ovde diskutuje bile nevažeće, čime bi se poništili blokovi (posebno blok 74638) koji su sadržali takve transakcije. Manje od sat vremena kasnije, on je primenio [zakrpu u reviziji 132](https://sourceforge.net/p/Bitcoin/code/132/) Subversion repozitorijuma i [objavio na forumu](https://bitcointalk.org/index.php?topic=823.msg9548#msg9548) opisujući šta misli da korisnici treba da urade:
+Njegov plan je bio da napravi soft fork kako bi transakcije poput one o kojoj se ovde diskutuje bile nevažeće, čime bi se poništili blokovi (posebno blok 74638) koji su sadržali takve transakcije. Manje od sat vremena kasnije, on je primenio [zakrpu u reviziji 132](https://sourceforge.net/p/Bitcoin/code/132/) Subversion repozitorijuma i [objavio na forumu](https://bitcointalk.org/index.php?topic=823.msg9548#msg9548) opisujući šta misli da korisnici treba da urade:
 
 
 > Patch je otpremljen na SVN rev 132!
@@ -1863,72 +1861,72 @@ Njegov plan je bio da napravi Soft Fork kako bi transakcije poput one o kojoj se
 
 > Izgradiću izdanja uskoro.
 
-Želeo je da ljudi preuzmu podatke o blokovima od određenog korisnika, naime knightmb, koji je objavio svoj Blockchain kako se pojavio na njegovom disku, datoteke blkXXXX.dat i blkindex.dat. Razlog za preuzimanje Blockchain podataka na ovaj način, umesto sinhronizacije od početka, bio je smanjenje zagušenja mrežnog protoka.
+Želeo je da ljudi preuzmu podatke o blokovima od određenog korisnika, naime knightmb, koji je objavio svoj blockchain kako se pojavio na njegovom disku, datoteke blkXXXX.dat i blkindex.dat. Razlog za preuzimanje blockchain podataka na ovaj način, umesto sinhronizacije od početka, bio je smanjenje zagušenja mrežnog protoka.
 
 
 Postojao je veliki uslov uz ovo: podaci koje bi korisnici preuzeli od knightmb [nisu bili verifikovani od strane Bitcoin softvera](https://Bitcoin.stackexchange.com/a/113682/69518) pri pokretanju. Datoteka blkindex.dat sadržala je UTXO set, i softver bi prihvatio bilo koje podatke u njoj kao da ih je već verifikovao. knightmb je mogao manipulisati podacima kako bi sebi ili bilo kome drugom dao neke bitkoine.
 
 
-Ponovo, činilo se da su se ljudi složili s tim, i poništavanje nevažećeg bloka i njegovih naslednika bilo je uspešno. Rudari su počeli da rade na novom nasledniku bloka [74637](https://Mempool.space/block/0000000000606865e679308edf079991764d88e8122ca9250aef5386962b6e84) i, prema bloku Timestamp, naslednik se pojavio u 23:53 UTC, oko 6 sati nakon što je problem otkriven. U 08:10 narednog dana, 16. avgusta, oko bloka 74689, novi lanac je pretekao stari lanac, te su svi neapdejtovani čvorovi reorganizovani da prate novi lanac. Ovo je najdublja reorganizacija - 52 bloka - u istoriji Bitcoin.
+Ponovo, činilo se da su se ljudi složili s tim, i poništavanje nevažećeg bloka i njegovih naslednika bilo je uspešno. Rudari su počeli da rade na novom nasledniku bloka [74637](https://Mempool.space/block/0000000000606865e679308edf079991764d88e8122ca9250aef5386962b6e84) i, prema vremenskom pečetu bloka, naslednik se pojavio u 23:53 UTC, oko 6 sati nakon što je problem otkriven. U 08:10 narednog dana, 16. avgusta, oko bloka 74689, novi lanac je pretekao stari lanac, te su svi neažurirani čvorovi reorganizovani da prate novi lanac. Ovo je najdublja reorganizacija - 52 bloka - u istoriji Bitcoina.
 
 
-U poređenju sa problemom OP_RETURN, ovaj problem je rešen na nešto čistiji način:
+U poređenju sa OP_RETURN problemo , ovaj problem je rešen na nešto čistiji način:
 
 
 - Nema izdanja zakrpe samo u binarnom obliku
 - Objavljeni softver je radio kako je zamišljeno
-- No Hard Fork
+- Nije bio hard fork
 
 
-Korisnicima je takođe zatraženo da zaustave Mining tokom ovog problema. Možemo diskutovati o tome da li je to dobra ideja ili ne, ali zamislite da ste Miner i uvereni ste da će svi blokovi iznad lošeg bloka na kraju biti izbrisani u dubokom reorganizovanju: zašto biste trošili resurse na Mining blokove osuđene na propast?
+Korisnicima je takođe zatraženo da zaustave sa rudarenjem tokom ovog problema. Možemo diskutovati o tome da li je to dobra ideja ili ne, ali zamislite da ste rudar i uvereni ste da će svi blokovi iznad lošeg bloka na kraju biti izbrisani u dubokom reorganizovanju: zašto biste trošili resurse na rudarenje blokova osuđene na propast?
 
 
-Možda ćete takođe misliti da je pomalo sumnjivo postupiti kako je Nakamoto predložio i preuzeti Blockchain, uključujući UTXO set, sa Hard drajva nekog nasumičnog tipa. Ako je tako, u pravu ste: to jeste sumnjivo. Ali, s obzirom na okolnosti, ovaj hitni odgovor je bio razuman.
+Možda ćete takođe misliti da je pomalo sumnjivo postupiti kako je Nakamoto predložio i preuzeti blockchain, uključujući UTXO set, sa hard drajva nekog nasumičnog tipa. Ako je tako, u pravu ste: to jeste sumnjivo. Ali, s obzirom na okolnosti, ovaj hitni odgovor je bio razuman.
 
 
-Postoji važna razlika između ovog slučaja i prethodnog slučaja OP_RETURN: ovaj problem je iskorišćen u divljini, i stoga je rešenje moglo biti jednostavnije. U slučaju OP_RETURN, morali su da zamagle rešenje i daju javne izjave koje nisu direktno otkrivale u čemu je problem.
+Postoji važna razlika između ovog slučaja i prethodnog OP_RETURN slučaja: ovaj problem je zloupotrebljen u praksi, i stoga je ispravka mogla biti izvedena jednostavnije. U slučaju OP_RETURN, morali su da zamagle rešenje i daju javne izjave koje nisu direktno otkrivale u čemu je problem.
 
 
-#### 2013-03-11 DB locks issue 0.7.2 - 0.8.0 (CVE-2013-3220)
+#### 2013-03-11 Problem sa zaključavanjem baze podataka (DB locks) 0.7.2 - 0.8.0 (CVE-2013-3220)
 
 
 
-Vrlo zanimljivo i obrazovno vredno pitanje pojavilo se u martu 2013. Činilo se da se Blockchain podelio (iako se u citatu ispod koristi reč "Fork") nakon bloka 225429. Detalji ovog incidenta su [prijavljeni u BIP50](https://github.com/Bitcoin/bips/blob/master/bip-0050.mediawiki). Rezime kaže:
+Vrlo zanimljivo i obrazovno vredno pitanje pojavilo se u martu 2013. Činilo se da se blockchain podelio (iako se u citatu ispod koristi reč "fork") nakon bloka 225429. Detalji ovog incidenta su [prijavljeni u BIP50](https://github.com/Bitcoin/bips/blob/master/bip-0050.mediawiki). Rezime kaže:
 
 
-> Blok koji je imao veći broj ukupnih ulaza transakcija nego što je ranije viđeno je iskopan i emitovan. Bitcoin 0.8 čvorovi su mogli da se nose sa tim, ali neki pre-0.8 Bitcoin čvorovi su ga odbacili, što je izazvalo neočekivani Fork Blockchain. Lanac nekompatibilan sa pre-0.8 (od sada, 0.8 lanac) u tom trenutku je imao oko 60% Mining Hash snage, osiguravajući da se podela nije automatski rešila (što bi se desilo da je pre-0.8 lanac nadmašio 0.8 lanac u ukupnom radu, primoravajući 0.8 čvorove da se reorganizuju na pre-0.8 lanac).
+> Blok koji je imao veći broj ukupnih ulaza transakcija nego što je ranije viđeno je iskopan i emitovan. Bitcoin 0.8 čvorovi su mogli da se nose sa tim, ali neki pre-0.8 Bitcoin čvorovi su ga odbacili, što je izazvalo neočekivani fork (razdvajanje) blockchaina. Lanac nekompatibilan sa pre-0.8 (od sada, 0.8 lanac) u tom trenutku je imao oko 60% rudarske heš snage, osiguravajući da se podela nije automatski rešila (kao što bi se desilo da je pre-0.8 lanac nadmašio 0.8 lanac u ukupnom radu, primoravajući 0.8 čvorove da se reorganizuju na pre-0.8 lanac).
 >
 
 > Kako bi što pre obnovili kanonski lanac, BTCGuild i Slush su degradirali svoje Bitcoin 0.8 čvorove na 0.7 kako bi njihovi bazeni takođe odbacili veći blok. Ovo je postavilo većinsku heš moć na lanac bez većeg bloka, što je na kraju uzrokovalo da se 0.8 čvorovi reorganizuju na lanac pre-0.8.
 
-Brza akcija koju su Mining bazeni BTCGuild i Slush preduzeli bila je imperativna u ovoj vanrednoj situaciji. Uspeli su da preusmere većinu Hash snage na pre-0.8 granu podele, i tako pomognu u vraćanju konsenzusa. Ovo je dalo programerima vreme da pronađu održivo rešenje.
+Brza akcija koju su rudarski bazeni BTCGuild i Slush preduzeli bila je imperativna u ovoj vanrednoj situaciji. Uspeli su da preusmere većinu heš snage na pre-0.8 granu podele, i tako pomognu u vraćanju konsenzusa. Ovo je dalo programerima vreme da pronađu održivo rešenje.
 
 
 Šta je takođe veoma interesantno u ovom izdanju je da verzija 0.7.2 nije bila kompatibilna sama sa sobom, kao što je bio slučaj i sa prethodnim verzijama. Ovo je objašnjeno u [Root cause section of BIP50](https://github.com/Bitcoin/bips/blob/master/bip-0050.mediawiki#root-cause):
 
 
-> Sa nedovoljno visokom BDB konfiguracijom zaključavanja, implicitno je postalo pravilo konsenzusa mreže koje određuje validnost bloka (iako je an
+> Sa nedovoljno visokom BDB konfiguracijom zaključavanja, implicitno je postalo pravilo konsenzusa mreže koje određuje validnost bloka (iako je
 nedosledno i nesigurno pravilo, jer upotreba zaključavanja može varirati od čvora do čvora).
 
 
-Ukratko, problem je u tome što broj zaključavanja baze podataka koji softver Bitcoin Core treba da verifikuje blok nije deterministički. Jednom čvoru može biti potrebno X zaključavanja, dok drugom može biti potrebno X+1 zaključavanja. Čvorovi takođe imaju ograničenje na broj zaključavanja koje Bitcoin može preuzeti. Ako broj potrebnih zaključavanja premaši ograničenje, blok će se smatrati nevažećim. Dakle, ako X+1 premašuje ograničenje, ali ne i X, tada će se dva čvora podeliti na Blockchain i neće se složiti oko toga koja je grana važeća.
+Ukratko, problem je u tome što broj zaključavanja baze podataka koji Bitcoin Core softver treba da verifikuje blok nije deterministički. Jednom čvoru može biti potrebno X zaključavanja, dok drugom može biti potrebno X+1 zaključavanja. Čvorovi takođe imaju ograničenje na broj zaključavanja koje Bitcoin može preuzeti. Ako broj potrebnih zaključavanja premaši ograničenje, blok će se smatrati nevažećim. Dakle, ako X+1 premašuje ograničenje, ali ne i X, tada će se dva čvora podeliti na blockchainu i neće se složiti oko toga koja je grana važeća.
 
 
 Rešenje koje je izabrano, osim trenutnih akcija koje su preduzeli oba bazena da bi povratili konsenzus, bilo je da
 
 
 
-- ograničiti blokove u smislu veličine i potrebnih zaključavanja na verziji 0.8.1
-- zakrpi stare verzije (0.7.2 i neke starije) sa istim novim pravilima i povećaj globalni limit zaključavanja.
+- ograniče blokove u smislu veličine i potrebnih zaključavanja na verziju 0.8.1
+- zakrpe stare verzije (0.7.2 i neke starije) sa istim novim pravilima i povećaju globalni limit zaključavanja.
 
 
 Osim povećanog globalnog ograničenja zaključavanja u drugoj tački, ova pravila su privremeno implementirana na unapred određeno vreme. Plan je bio da se ova ograničenja uklone kada većina čvorova bude nadograđena.
 
 
-Ovaj Soft Fork je dramatično smanjio rizik od neuspeha konsenzusa, a nekoliko meseci kasnije, 15. maja, privremena pravila su deaktivirana u skladu sa mrežom. Imajte na umu da je ova deaktivacija u stvari bila Hard Fork, ali nije bila sporna. Štaviše, objavljena je zajedno sa prethodnim Soft Fork, tako da su ljudi koji su koristili Soft-forked softver bili dobro svesni da će Hard Fork uslediti. Stoga je velika većina čvorova ostala u konsenzusu kada je Hard Fork aktiviran. Nažalost, međutim, nekoliko čvorova koji nisu nadograđeni izgubljeni su u procesu.
+Ovaj soft fork je dramatično smanjio rizik od neuspeha konsenzusa, a nekoliko meseci kasnije, 15. maja, privremena pravila su deaktivirana u skladu sa mrežom. Imajte na umu da je ova deaktivacija u stvari bila hard fork, ali nije bila sporna. Štaviše, objavljena je zajedno sa prethodnim soft forkom, tako da su ljudi koji su koristili softver sa soft forkom bili dobro svesni da će hard fork uslediti. Stoga je velika većina čvorova ostala u konsenzusu kada je hard fork aktiviran. Nažalost, međutim, nekoliko čvorova koji nisu nadograđeni izgubljeni su u procesu.
 
 
-Čovek bi se mogao zapitati da li bi ovo bilo izvodljivo danas. Pejzaž Mining je danas složeniji, i, u zavisnosti od Hash snage na svakoj strani podele, moglo bi biti Hard da se brzo izda zakrpa kao što je ona u BIP50. Verovatno bi bilo Hard ubediti rudare na "pogrešnoj" grani da se odreknu svojih nagrada za blokove.
+Čovek bi se mogao zapitati da li bi ovo bilo izvodljivo danas. Ekosistem rudarenja je danas složeniji, i, zavisno od količine hash moći na svakoj strani razdvajanja, moglo bi biti teško da se brzo izda zakrpa kao što je ona u BIP50. Verovatno bi bilo teško ubediti rudare na "pogrešnoj" grani da se odreknu svojih nagrada za blokove.
 
 
 #### BIP66
@@ -1939,10 +1937,10 @@ BIP66 je zanimljiv jer ističe važnost:
 
 
 
-- dobar izbor kriptografija
-- odgovorno otkrivanje
-- razmeštanje bez otkrivanja ranjivosti
-- Mining na vrhu verifikovanih blokova
+- dobrog izbora kriptografija
+- odgovornog otkrivanja
+- deploy bez javnog otkrivanja ranjivosti
+- rudarenja na vrhu verifikovanih blokova
 
 
 BIP66 je bio predlog za pooštravanje pravila za kodiranje potpisa u Bitcoin Script. [Motivacija](https://github.com/Bitcoin/bips/blob/master/bip-0066.mediawiki#motivation) je bila mogućnost parsiranja potpisa pomoću softvera ili biblioteka osim OpenSSL-a, pa čak i novijih verzija OpenSSL-a. OpenSSL je biblioteka za kriptografiju opšte namene koju je Bitcoin Core koristio u to vreme.
@@ -1951,13 +1949,11 @@ BIP66 je bio predlog za pooštravanje pravila za kodiranje potpisa u Bitcoin Scr
 BIP je aktiviran 4. jula 2015. Međutim, iako je gore navedeno tačno, BIP66 takođe rešava mnogo ozbiljniji problem koji nije pomenut u BIP-u.
 
 
-##### Ranljivost
+##### Ranjivost
 
 
 
-Potpuno otkrivanje ovog problema objavio je Pieter Wuille 28. jula 2015. u an
-
-[email Bitcoin-dev mailing list](https://lists.linuxfoundation.org/pipermail/Bitcoin-dev/2015-July/009697.html):
+Potpuno otkrivanje ovog problema objavio je Pieter Wuille 28. jula 2015. u [email Bitcoin-dev mailing list](https://lists.linuxfoundation.org/pipermail/Bitcoin-dev/2015-July/009697.html):
 
 
 > Zdravo svima,
@@ -1969,14 +1965,14 @@ Potpuno otkrivanje ovog problema objavio je Pieter Wuille 28. jula 2015. u an
 > Kratak opis:
 >
 
-> Posebno izrađena transakcija mogla je da razdvoji Blockchain između čvorova:
+> Posebno izrađena transakcija mogla je da razdvoji blockchain između čvorova:
 >
 
 > - korišćenje OpenSSL na 32-bitnim sistemima i na 64-bitnim Windows sistemima
 > - korišćenje OpenSSL-a na ne-Windows 64-bitnim sistemima (Linux, OSX, ...)
 > - korišćenje nekih kodnih baza koje nisu OpenSSL za parsiranje potpisa
 
-E-pošta dalje iznosi detalje o tome kako je problem otkriven i tačnije šta ga je izazvalo. Na kraju, on podnosi vremenski sled događaja, a mi ćemo ovde ponovo prikazati neke od najvažnijih. Neki od njih su, kao što je prikazano na slici iznad, već opisani.
+E-mail dalje iznosi detalje o tome kako je problem otkriven i tačnije šta ga je izazvalo. Na kraju, on podnosi vremenski sled događaja, a mi ćemo ovde ponovo prikazati neke od najvažnijih. Neki od njih su, kao što je prikazano na slici iznad, već opisani.
 
 
 ![](assets/sr-Latn/019.webp)
