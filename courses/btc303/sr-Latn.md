@@ -1988,7 +1988,7 @@ Vremenska linija događaja oko BIP66. Stavke u crnom su objašnjene iznad.
 Bez da iko zna za problem, mogao je biti rešen povučenim BIP62, koji je bio predlog za smanjenje mogućnosti transakcione malleabilnosti. Među predloženim promenama u BIP62 bilo je pooštravanje konsenzusnih pravila za kodiranje potpisa, ili "strogo DER kodiranje". Pieter Wuille je predložio neke izmene BIP-a u julu 2014. godine, koje bi rešile problem:
 
 
-> 2014-Jul-18: Kako bi pravila za kodiranje potpisa Bitcoin-a bila nezavisna od specifičnog parsera OpenSSL-a, izmenio sam BIP62 predlog tako da zahtev za striktne DER potpise važi i za transakcije verzije 1. U to vreme, nijedan ne-DER potpis više nije bio rudaren u blokove, pa se pretpostavljalo da to neće imati nikakav uticaj. Pogledajte https://github.com/Bitcoin/bips/pull/90 i http://lists.linuxfoundation.org/pipermail/Bitcoin-dev/2014-July/006299.html. U to vreme nije bilo poznato, ali ako bi se primenilo, ovo bi rešilo ranjivost.
+> 2014-Jul-18: Kako bi pravila za kodiranje Bitcoin potpisa bila nezavisna od specifičnog parsera OpenSSL-a, izmenio sam BIP62 predlog tako da zahtev za striktne DER potpise važi i za transakcije verzije 1. U to vreme, nijedan ne-DER potpis više nije bio rudaren u blokove, pa se pretpostavljalo da to neće imati nikakav uticaj. Pogledajte https://github.com/Bitcoin/bips/pull/90 i http://lists.linuxfoundation.org/pipermail/Bitcoin-dev/2014-July/006299.html. U to vreme nije bilo poznato, ali ako bi se primenilo, ovo bi rešilo ranjivost.
 
 Zbog širine ovog BIP-a, koji je pokrivao znatno više od samo "strogo DER kodiranje", stalno se menjao i nikada nije bio blizu implementacije. BIP je kasnije povučen jer je Segregated Witness, BIP141, rešio malleability transakcija na drugačiji i potpuniji način.
 
@@ -1997,12 +1997,12 @@ Zbog širine ovog BIP-a, koji je pokrivao znatno više od samo "strogo DER kodir
 
 
 
-OpenSSL je objavio nove verzije svog softvera sa zakrpama koje bi, da su korišćene u Bitcoin od početka, rešile problem. Međutim, korišćenje bilo koje nove verzije OpenSSL-a samo u novom izdanju Bitcoin Core bi pogoršalo stvari. Gregory Maxwell to objašnjava u drugoj [email diskusiji](https://lists.linuxfoundation.org/pipermail/Bitcoin-dev/2015-January/007097.html) u januaru 2015:
+OpenSSL je objavio nove verzije svog softvera sa zakrpama koje bi, da su korišćene u Bitcoin-u od početka, rešile problem. Međutim, korišćenje bilo koje nove verzije OpenSSL-a samo u novom izdanju Bitcoin Core bi pogoršalo stvari. Gregory Maxwell to objašnjava u drugoj [email diskusiji](https://lists.linuxfoundation.org/pipermail/Bitcoin-dev/2015-January/007097.html) u januaru 2015:
 
 
 > Iako je za većinu aplikacija generalno prihvatljivo da se unapred odbace neki potpisi, Bitcoin je konsenzusni sistem gde svi učesnici moraju generalno da se slože oko tačne validnosti ili nevalidnosti ulaznih podataka. U izvesnom smislu, doslednost je važnija od "ispravnosti".
 > [...]
-> Zakrpe iznad, međutim, rešavaju samo jedan simptom opšteg problema: oslanjanje na softver koji nije dizajniran ili distribuiran za konsenzusnu upotrebu (posebno OpenSSL) za konsenzusno-normativno ponašanje. Stoga, kao inkrementalno poboljšanje, predlažem ciljani Soft-Fork da uskoro sprovede strogu DER usklađenost, koristeći podskup BIP62.
+> Zakrpe iznad, međutim, rešavaju samo jedan simptom opšteg problema: oslanjanje na softver koji nije dizajniran ili distribuiran za konsenzusnu upotrebu (posebno OpenSSL) za konsenzusno-normativno ponašanje. Stoga, kao inkrementalno poboljšanje, predlažem ciljani soft fork da uskoro sprovede strogu DER usklađenost, koristeći podskup BIP62.
 
 Ističe da korišćenje koda koji nije namenjen za upotrebu u konsenzus sistemima predstavlja ozbiljne rizike, i predlaže da Bitcoin implementira striktno DER kodiranje. Ovo je veoma jasan primer važnosti dobre selekcije kriptografije.
 
@@ -2010,7 +2010,7 @@ Ističe da korišćenje koda koji nije namenjen za upotrebu u konsenzus sistemim
 Ovi događaji mogu vam dati utisak da je Gregory Maxwell znao za ranjivost koju je Pieter Wuille kasnije objavio, ali je želeo da pomogne u ubacivanju ispravke prikrivene kao mera predostrožnosti, bez privlačenja previše pažnje na stvarni problem. Možda je tako, ali to je čista spekulacija.
 
 
-Zatim, kako je predložio Maxwell, BIP66 je kreiran kao podskup BIP62 koji je specificirao samo striktno DER kodiranje. Ovaj BIP je očigledno široko prihvaćen i implementiran u julu, iako su se ironično dogodile dve Blockchain podele zbog *validacionog Mining*. Ove podele su diskutovane u sledećem odeljku.
+Zatim, kako je predložio Maxwell, BIP66 je kreiran kao podskup BIP62 koji je specificirao samo striktno DER kodiranje. Ovaj BIP je očigledno široko prihvaćen i implementiran u julu, iako su se ironično dogodile dve blockchain podele zbog *validacionog rudarenja*. Ove podele su diskutovane u sledećem odeljku.
 
 
 ![](assets/sr-Latn/020.webp)
@@ -2019,19 +2019,18 @@ Zatim, kako je predložio Maxwell, BIP66 je kreiran kao podskup BIP62 koji je sp
 Ključna pouka iz ovoga je da BIP-ovi treba da budu više ili manje *atomski*, što znači da treba da budu dovoljno kompletni da pruže nešto korisno ili reše specifičan problem, ali dovoljno mali da omoguće široku podršku među korisnicima. Što više stvari stavite u BIP, manja je šansa za prihvatanje.
 
 
-##### Pukotine zbog nedostatka validacije Mining
+##### Podele usled rudarenja bez validacije
 
 
+Nažalost, priča o BIP66 se tu nije završila. Kada je BIP66 aktiviran, ispostavilo se da je prilično neuredno jer neki rudari nisu verifikovali blokove koje su pokušavali da prošire. Ovo se naziva rudarenje bez validacije, ili SPV-rudarenje (kao u Simplified Payment Verification). Poruka upozorenja je poslata na Bitcoin čvorove sa linkom ka [web stranici koja opisuje problem](https://Bitcoin.org/en/alert/2015-07-04-spv-Mining):
 
-Nažalost, priča o BIP66 tu nije završila. Kada je BIP66 aktiviran, ispostavilo se da je prilično neuredno jer neki rudari nisu verifikovali blokove koje su pokušavali da prošire. Ovo se naziva validationless Mining, ili SPV-Mining (kao u Simplified Payment Verification). Poruka upozorenja je poslata na Bitcoin čvorove sa linkom ka [web stranici koja opisuje problem](https://Bitcoin.org/en/alert/2015-07-04-spv-Mining):
 
-
-> Rano ujutru 4. jula 2015, prag od 950/1000 (95%) je dostignut. Nedugo zatim, mali Miner (deo neapgrejdovanih 5%) je iskopao nevažeći blok – što je bilo očekivano. Nažalost, ispostavilo se da je otprilike polovina mrežnog Hash protoka bila Mining bez potpune validacije blokova (nazvana SPV Mining), i gradila je nove blokove na vrhu tog nevažećeg bloka.
+> Rano ujutru 4. jula 2015, prag od 950/1000 (95%) je dostignut. Nedugo zatim, mali procenat rudara (deo neažuriranih 5%) je iskopao nevažeći blok – što je bilo očekivano. Nažalost, ispostavilo se da je otprilike polovina mrežnog heš protoka bila rudarenje bez potpune validacije blokova (nazvana SPV rudarenje), i gradila je nove blokove na vrhu tog nevažećeg bloka.
 
 Stranica sa upozorenjem je uputila ljude da sačekaju 30 dodatnih potvrda nego što bi to inače činili u slučaju da koriste starije verzije Bitcoin Core.
 
 
-Podela pomenuta gore dogodila se 2015-07-04 u 02:10 UTC nakon visine bloka [363730](https://Mempool.space/block/000000000000000006a320d752b46b532ec0f3f815c5dae467aff5715a6e579e). Ovaj problem je rešen u 03:50 istog dana, nakon što je iskopano 6 nevažećih blokova. Nažalost, isti problem se ponovo dogodio sledećeg dana, tj. 2015-07-05 u 21:50, ali ovaj put nevažeća grana je trajala samo 3 bloka.
+Podela pomenuta gore dogodila se 2015-07-04 u 02:10 UTC nakon visine bloka [363730 (https://Mempool.space/block/000000000000000006a320d752b46b532ec0f3f815c5dae467aff5715a6e579e). Ovaj problem je rešen u 03:50 istog dana, nakon što je iskopano 6 nevažećih blokova. Nažalost, isti problem se ponovo dogodio sledećeg dana, tj. 2015-07-05 u 21:50, ali ovaj put nevažeća grana je trajala samo 3 bloka.
 
 
 ![](assets/sr-Latn/021.webp)
@@ -2042,16 +2041,16 @@ Događaji koji su doveli do BIP66, njegovo uvođenje i posledice predstavljaju v
 
 - Ravnoteža između otvorenosti i neobjavljivanja ranjivosti je delikatna.
 - Implementacija popravki za neobjavljene ranjivosti je složena igra.
-- Zadržavanje konsenzusa je Hard.
+- Zadržavanje konsenzusa je teško.
 - Softver koji nije namenjen za konsenzusne sisteme je generalno rizičan.
 - BIP-ovi bi trebali biti donekle atomarni.
 
 
-### Zaključak o tome kada sranje pogodi ventilator
+### Zaključak o ponašanju sistema u kriznim situacijama
 
 
 
-Bitcoin ima greške. Ljudi koji otkriju greške se podstiču da ih odgovorno prijave developerima Bitcoin, kako bi mogli da isprave grešku bez njenog javnog otkrivanja. Idealno bi bilo da se ispravka greške prikaže kao poboljšanje performansi ili neka druga dimna zavesa.
+Bitcoin ima greške. Ljudi koji otkriju greške se podstiču da ih odgovorno prijave Bitcoin developerima, kako bi mogli da isprave grešku bez njenog javnog otkrivanja. Idealno bi bilo da se ispravka greške prikaže kao poboljšanje performansi ili neka druga dimna zavesa.
 
 
 Pregledali smo neke od ozbiljnijih problema koji su se pojavili tokom godina i kako su rešeni. Neki su otkriveni javno putem eksploatacija, dok su drugi odgovorno prijavljeni i mogli su biti popravljeni pre nego što su zlonamerni akteri imali priliku da ih iskoriste.
@@ -2062,31 +2061,31 @@ Pregledali smo neke od ozbiljnijih problema koji su se pojavili tokom godina i k
 <chapterId>91462ca7-f09c-55da-a5b9-3e211de31da5</chapterId>
 
 
-Ova pitanja za diskusiju nisu samo rekapitulacija sadržaja u "Bitcoin razvojna filozofija", već su namenjena da vas podstaknu na dalje istraživanje, zato obavezno istražujte dalje.
+Ova pitanja za diskusiju nisu samo rekapitulacija sadržaja u kursu "Razvojna filozofija bitcoin-a", već su namenjena da vas podstaknu na dalje istraživanje, zato obavezno istražujte dalje.
 
 
-Možete testirati dubinu svog razumevanja pisanjem [mini-eseja](https://www.youtube.com/watch?v=N4YjXJVzoZY) od 100-300 reči birajući temu iz ovog skupa pitanja. Ako želite povratne informacije o svom radu, možete ga poslati na mini-essay@planb.network, bićemo više nego srećni da ga pregledamo.
+Možete proveriti koliko dobro razumete pisanjem [mini-eseja](https://www.youtube.com/watch?v=N4YjXJVzoZY) od 100-300 reči birajući temu iz ovog skupa pitanja. Ako želite povratne informacije o svom radu, možete ga poslati na mini-essay@planb.network, bićemo više nego srećni da ga pregledamo.
 
 
 #### Decentralizacija
 
 
 
-- Decentralizacija je Hard. Zašto prolazimo kroz sve ove poteškoće da bi to funkcionisalo? Da li bismo mogli da se odlučimo za hibridni pristup, gde su neki delovi centralizovani, a drugi nisu?
+- Decentralizacija je teška. Zašto prolazimo kroz sve ove poteškoće da bi to funkcionisalo? Da li bismo mogli da se odlučimo za hibridni pristup, gde su neki delovi centralizovani, a drugi nisu?
 - Da li decentralizacija uvodi problem dvostrukog trošenja, ili problem dvostrukog trošenja zahteva decentralizaciju? Kako je Satoshi rešio problem dvostrukog trošenja?
 - U kojim aspektima je Bitcoin i dalje najpodložniji cenzuri, i zašto je cenzura tako loša stvar? Postoje li neki argumenti u korist cenzure?
 - Navodi se da je Bitcoin bez dozvole. Da li postoje neki drugi načini plaćanja koje biste mogli smatrati bez dozvole?
 
 
 
-#### Nepoverenje
+#### Odsustvo potrebe za poverenjem
 
 
 
 
-- Nepoverljivost je često spektar, a ne binarna. Koji aspekti Bitcoin su više Trustless, a koji obično uključuju viši nivo poverenja? Mogu li se ublažiti?
-- Želite da pokrenete Full node kako biste mogli u potpunosti da validirate sve transakcije. Preuzimate Bitcoin Core sa https://Bitcoin.org/en/download. Gde ste postavili poverenje, a gde ste u potpunosti Trustless?
-- Možete li izgraditi Trustless sistem na vrhu pouzdanog sistema?
+- Odsustvo potrebe za poverenjem je često spektar, a ne binarna. Koji aspekti Bitcoin-a su više bez potrebe za poverenjem, a koji obično uključuju viši nivo poverenja? Mogu li se ublažiti?
+- Želite da pokrenete full node kako biste mogli u potpunosti da validirate sve transakcije. Preuzimate Bitcoin Core sa https://Bitcoin.org/en/download. Gde se oslanjate na poverenje, a gde to uopšte nije potrebno??
+- Možete li izgraditi sistem bez potrebe za poverenjem na vrhu pouzdanog sistema?
 
 
 
@@ -2095,20 +2094,20 @@ Možete testirati dubinu svog razumevanja pisanjem [mini-eseja](https://www.yout
 
 
 
-- Koje su neke važne koristi koje korisnik stiče kada održava dobru privatnost prilikom interakcije sa Bitcoin? Koje su neke altruističke koristi za mrežu?
+- Koje su neke važne koristi koje korisnik stiče kada održava dobru privatnost prilikom interakcije sa Bitcoin-om? Koje su neke altruističke koristi za mrežu?
 - Kako ponovno korišćenje adresa utiče na vašu privatnost?
-- Bitcoin koristi model UTXO, dok neke alternativne kriptovalute koriste model računa. Koje su implikacije ovog izbora na privatnost?
+- Bitcoin koristi UTXO model, dok neke alternativne kriptovalute koriste account model. Koje su implikacije ovog izbora na privatnost?
 
 
 
-#### Finite Supply
+#### Ograničena ponuda
 
 
 
 
-- Kakva je veza između konačnog Bitcoin i Supply i njegovog izdavanja novčića putem Coinbase Transaction? Kakva je veza između izdavanja novčića i budžeta za bezbednost, i kako su oni u sukobu?
-- Koje parametre je Satoshi mogao da promeni da bi izmenio Bitcoin-ov Supply limit? Šta bi se promenilo da je odlučio da ograniči Supply na 1 milion? Šta ako bi bilo 1 trilion?
-- Zašto neki ljudi zagovaraju povećanje Bitcoin Supply? Mislite li da će se to dogoditi?
+- Kakva je veza između konačne Bitcoin ponude i izdavanja Bitcoin novčića putem coinbase transakcije? Kakva je veza između izdavanja novčića i budžeta za bezbednost, i kako su oni u sukobu?
+- Koje parametre je Satoshi mogao da promeni da bi izmenio Bitcoin-vu limitiranost ponude? Šta bi se promenilo da je odlučio da ograniči ponudu na 1 milion? Šta ako bi bilo 1 trilion?
+- Zašto neki ljudi zagovaraju povećanje Bitcoin ponude? Mislite li da će se to dogoditi?
 
 
 #### Nadogradnja
@@ -2116,17 +2115,17 @@ Možete testirati dubinu svog razumevanja pisanjem [mini-eseja](https://www.yout
 
 
 - Šta je Speedy Trial i zašto je bilo potrebno aktivirati Taproot?
-- Zašto nam je potreban tako visok procenat rudara za nadogradnju u softforku? Zašto prag nije samo 51%?
+- Zašto nam je potreban tako visok procenat rudara za nadogradnju u soft forku? Zašto prag nije samo 51%?
 
 
 
-#### Adverzijalno razmišljanje
+#### Razmišljanje iz ugla protivnika
 
 
 
 
 - Šta je sybil napad i zašto je decentralizovana mreža tako podložna njemu?
-- Zašto je važno da svi igrači u Bitcoin mreži - a ne samo programeri - razmišljaju na suparnički način?
+- Zašto je važno da svi igrači u Bitcoin mreži - a ne samo programeri - razmišljaju iz ugla protivnika?
 
 
 
@@ -2139,7 +2138,7 @@ Možete testirati dubinu svog razumevanja pisanjem [mini-eseja](https://www.yout
 - Da li je proces razvoja otvorenog koda podložan Sybil napadu? Ako jeste, kako biste to sprečili?
 - Koje su prednosti i nedostaci oslanjanja na open source biblioteke trećih strana, i koji pristup je primenjen sa Bitcoin Core?
 - Na koje načine nam je potrebna revizija osim same revizije koda? Kako odrediti koliko je revizije dovoljno?
-- Kako osigurati da uvek ima dovoljno ljudi sa stručnim znanjem koji rade na Bitcoin? Šta se dešava kada ih nema, i kako procenjujemo njihov integritet i namere?
+- Kako osigurati da uvek ima dovoljno ljudi sa stručnim znanjem koji rade na Bitcoin-u? Šta se dešava kada ih nema, i kako procenjujemo njihov integritet i namere?
 
 
 
@@ -2149,10 +2148,10 @@ Možete testirati dubinu svog razumevanja pisanjem [mini-eseja](https://www.yout
 
 
 - Tvrdnja je da šardovanje nudi prednosti skaliranja po cenu složenosti. Zašto bismo ili ne bismo trebali usvojiti tehnološka poboljšanja samo zato što su teška za razumevanje, čak i ako deluju tehnološki ispravno?
-- Koje su neke od metoda unutrašnjeg skaliranja uvedene u Bitcoin?
+- Koje su neke od metoda unutrašnjeg skaliranja uvedene u Bitcoin-u?
 - Zašto je vertikalno skaliranje mnogo teže u decentralizovanom sistemu? Šta je sa horizontalnim skaliranjem?
-- Čini se da nismo ni blizu postizanja konsenzusa o tome kako bismo mogli uključiti ceo svet na Bitcoin. Zar Satoshi nije trebalo barem da razmisli o putu ka tome, pre nego što je Mining prvi blok 2009?
-- Kako biste klasifikovali (vertikalna, horizontalna, unutrašnja, ili nije tehnika skaliranja) svaku od sledećih: sharding, povećanje veličine bloka, SegWit, SPV čvorovi, centralizovane berze, Lightning Network, smanjenje intervala bloka, Taproot, bočni lanci
+- Čini se da nismo ni blizu postizanja konsenzusa o tome kako bismo mogli uključiti ceo svet na Bitcoin. Zar Satoshi nije trebalo barem da razmisli o putu ka tome, pre nego što je izrudario prvi blok 2009?
+- Kako biste klasifikovali (vertikalna, horizontalna, unutrašnja, ili nije tehnika skaliranja) svaku od sledećih: sharding, povećanje veličine bloka, SegWit, SPV čvorovi, centralizovane berze, Lightning mreža, smanjenje intervala bloka, Taproot, bočni lanci?
 
 
 # Završni deo
