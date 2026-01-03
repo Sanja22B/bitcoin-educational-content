@@ -1,5 +1,5 @@
 question: Koja je primarna zabrinutost u vezi sa fee sniping-om kada se Bitcoin-ova blok subvencija približi nuli?
-answer: Rudari mogu smatrati da je isplativije reogranizovati prethodne blokove sa visokim naknadama nego rudariti nove blokove.
+answer: Rudari mogu smatrati da je isplativije reogranizovati prethodne blokove sa visokim naknadama nego rudariti nove blokove
 wrong_answers:
   - Naknade za transakcije postat će preskupe da bi ih obični korisnici mogli priuštiti za Bitcoin transakcije
   - Ukupna ponuda bitcoina premašiće 21 milion zbog povećanih podsticaja za rudarenje
