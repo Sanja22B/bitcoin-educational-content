@@ -1,12 +1,12 @@
 ---
 name: Filozofija Bitcoin razvoja
-goal: Steknite duboko filozofsko razumevanje principa na kojima je dizajniran Bitcoin.
+goal: Steknite duboko filozofsko razumevanje principa na kojima je dizajniran Bitcoin
 objectives: 
 
-  - Analizirajte fundamentalne kompromisе i arhitektonske izbore na kojima se Bitcoin zasniva.
-  - Naučite kako da procenite predložene izmene i inovacije Bitcoin protokola.
-  - Sintetizujte više od decenije istorije razvoja Bitcoina i debata unutar zajednice.
-  - Primenite okrvir kritičkog razmišljanja prilikom procene novih BIP-ova.
+  - Analizirajte fundamentalne kompromisе i arhitektonske izbore na kojima se Bitcoin zasniva
+  - Naučite kako da procenite predložene izmene i inovacije Bitcoin protokola
+  - Sintetizujte više od decenije istorije razvoja Bitcoina i debata unutar zajednice
+  - Primenite okrvir kritičkog razmišljanja prilikom procene novih BIP-ova
 
 
 ---
@@ -17,13 +17,13 @@ objectives:
 
 Filozofija razvoja Bitcoina je kurs za Bitcoin programere koji već razumeju osnovne koncepte i procese kao što su Proof-of-Work, formiranje blokova i životni ciklus transakcija, i koji žele da unaprede svoje znanje sticanjem dubljeg razumevanja kompromisa u dizajnu Bitcoina i njegove filozofije.
 
-Treba da pomogne novim programerima da usvoje najvažnije lekcije iz više od decenije razvoja i javne rasprave o Bitcoin, dok im pruža koristan kontekst za evaluaciju novih ideja (dobrih i loših!).
+Treba da pomogne novim programerima da usvoje najvažnije lekcije iz više od decenije razvoja i javne rasprave o Bitcoinu, dok im pruža koristan kontekst za evaluaciju novih ideja (dobrih i loših!).
 
 
 ### Šta možete očekivati?
 
 
-Kao što je gore navedeno, ovo je praktičan vodič za Bitcoin programere. Međutim, Bitcoin je široka i složena tema i ne možemo pokriti sve njene aspekte ovde. Sa ovim kursom, nadamo se da ćemo diskutovati o neophodnim funkcijama kako biste započeli svoju razvojnu aktivnost, kao i da vam omogućimo da je dalje istražujete samostalno.
+Kao što je gore navedeno, ovo je praktičan vodič za Bitcoin programere. Međutim, Bitcoin je široka i složena tema i ne možemo pokriti sve njene aspekte ovde. Sa ovim kursom, nadamo se da ćemo diskutovati o neophodnim karakteristikama kako biste započeli svoju razvojnu aktivnost, kao i da vam omogućimo da je dalje istražujete samostalno.
 
 
 U Bitcoin je uključeno mnogo ljudi; pošto neki od njih imaju suprotna mišljenja, ovde možete pronaći izvore koji izražavaju kontradiktorne ideje. Međutim, uvek pokušavamo da se držimo domena činjenica, gde mišljenja nisu bitna.
@@ -55,11 +55,11 @@ Tokom ovog kursa steći ćete jasno razumevanje osnovnih vrednosti i strategija 
 
 ### Ključne vrednosti Bitcoina
 
-Šta čini Bitcoin jedinstvenim? Ova sekcija otkriva temeljne vrednosti u samom srcu Bitcoinovog dizajna. Istražićete decentralizaciju, kao kamen-temeljac koji obezbeđuje da nijedan entitet ne kontroliše mrežu; nepovredivo poverenje (trustlessness), ključno za uklanjanje oslanjanja na treće strane; privatnost, neophodnu kako za individualnu slobodu tako i za integritet sistema; kao i ograničenu ponudu bitcoina, kodiranu garanciju oskudnosti koja oblikuje ekonomsku prirodu Bitcoina. Ovladavanje ovim konceptima omogućiće vam da u potpunosti razumete snage i slabosti Bitcoina.
+Šta čini Bitcoin jedinstvenim? Ova sekcija otkriva temeljne vrednosti u samom srcu Bitcoinovog dizajna. Istražićete **decentralizaciju**, kamen-temeljac koji obezbeđuje da nijedan entitet ne kontroliše mrežu; **odsustvo potrebe za poverenjem** (eng. trustlessness), ključno za uklanjanje oslanjanja na treće strane; **privatnost**, neophodnu kako za individualnu slobodu tako i za integritet sistema; kao i **ograničenu ponudu bitcoina**, kodiranu garanciju oskudnosti koja oblikuje ekonomsku prirodu Bitcoina. Ovladavanje ovim konceptima omogućiće vam da u potpunosti razumete snage i slabosti Bitcoina.
 
 ### Proces donošenja odluka u Bitcoin mreži - decentralizovano upravljanje (eng. Bitcoin Governance)
 
-Snalaženje u složenom upravljačkom pejzažu Bitcoina zahteva više od tehničke stručnosti; potrebno je razumevanje jedinstvenog pristupa Bitcoina konsenzusu i donošenju odluka. U ovom delu kursa detaljno ćete proučiti mehanizme i filozofije koje stoje iza ključnih procesa kao što su nadogradnje protokola, značaj razmišljanje kroz scenarije napada/grešaka (eng. adversarial thinking), snaga saradnje u open-source zajednici, stalni izazovi skalabilnosti, kao i nijansirane strategije potrebne kada stvari neizbežno krenu po zlu. Opremljeni ovim znanjem, bićete spremni ne samo da učestvujete, već i da efikasno i odgovorno oblikujete budućnost Bitcoina.
+Snalaženje u složenom upravljačkom pejzažu Bitcoina zahteva više od tehničke stručnosti; potrebno je razumevanje jedinstvenog pristupa Bitkoina postizanju konsenzusa i donošenju odluka. U ovom delu kursa detaljno ćete proučiti mehanizme i filozofije koje stoje iza ključnih procesa kao što su nadogradnje protokola, značaj razmišljanje u uslovima protivnika (eng. adversarial thinking), snaga saradnje u open-source zajednici, stalni izazovi skalabilnosti, kao i nijansirane strategije potrebne kada stvari neizbežno krenu po zlu. Opremljeni ovim znanjem, bićete spremni ne samo da učestvujete, već i da efikasno i odgovorno oblikujete budućnost Bitcoina.
 
 Spremni da napravite sledeći korak na svom Bitcoin putovanju? Hajde da počnemo!
 
@@ -78,7 +78,7 @@ Spremni da napravite sledeći korak na svom Bitcoin putovanju? Hajde da počnemo
 <chapterId>9397c84b-0038-5d0e-88d5-11767ce8182d</chapterId>
 
 
-Ovo poglavlje analizira šta je decentralizacija i zašto je ključna za funkcionisanje Bitcoina. Pravimo razliku između decentralizacija rudara i full node-ova ((puni čvor – računar koji čuva kompletnu kopiju blockchaina i validira sve transakcije i blokove prema pravilima Bitcoina), i diskutujemo šta oni donose za otpornost na cenzuru, jedno od najcentralnijih svojstava Bitcoina.
+Ovo poglavlje analizira šta je decentralizacija i zašto je ključna za funkcionisanje Bitcoina. Pravimo razliku između decentralizacija rudara i full node-ova (puni čvor – računar koji čuva kompletnu kopiju blockchaina i validira sve transakcije i blokove prema pravilima Bitcoina), i diskutujemo šta oni donose za otpornost na cenzuru, jedna od najvažnijih osobina Bitkoina.
 
 
 Diskusija se zatim prebacuje na razumevanje neutralnosti - ili nepostojanja ograničenja prema korisnicima, rudarima i programerima - što je neophodno svojstvo svakog decentralizovanog sistema. Na kraju, dotičemo se koliko može biti teško shvatiti decentralizovani sistem kao što je Bitcoin, i predstavljamo neke mentalne modele koji vam mogu pomoći da ga razumete.
@@ -106,10 +106,10 @@ Decentralizacija rudara odnosi se na činjenicu da obrada transakcija nije izvr�
 Postojali su pokušaji stvaranja digitalnih valuta pre Bitcoina, ali većina njih je propala zbog nedostatka decentralizovanog upravljanja i otpornosti na cenzuru.
 
 
-Decentralizacija rudara u Bitcoinu znači da *redosled transakcija* ne obavlja nijedan pojedinačni entitet ili fiksni skup entiteta. To se obavlja kolektivno od strane svih aktera koji žele da učestvuju u tome; ovaj kolektiv rudara je dinamičan skup korisnika. Svako može da se pridruži ili napusti po želji. Ovo svojstvo čini Bitcoin otpornim na cenzuru.
+Decentralizacija rudara u Bitcoinu znači da *redosled transakcija* ne sprovodi nijedan pojedinačni entitet ili fiksni skup entiteta. To se obavlja kolektivno od strane svih aktera koji žele da učestvuju u tome; ovaj kolektiv rudara je dinamičan skup korisnika. Svako može da se pridruži ili napusti po želji. Ovo svojstvo čini Bitcoin otpornim na cenzuru.
 
 
-Ako bi Bitcoin bio centralizovan, bio bi ranjiv na one koji bi želeli da ga cenzurišu, kao što su vlade. Doživeo bi istu sudbinu kao raniji pokušaji stvaranja digitalnog novca. U uvodu [rada](https://www.blockstream.com/sidechains.pdf) pod nazivom "Omogućavanje Blockchain inovacija sa povezanim bočnim lancima", autori objašnjavaju kako rane verzije digitalnog novca nisu bile opremljene za neprijateljsko okruženje (pogledajte i poglavlje o neprijateljskom razmišljanju u sledećem delu).
+Ako bi Bitcoin bio centralizovan, bio bi ranjiv na one koji bi želeli da ga cenzurišu, kao što su vlade. Doživeo bi istu sudbinu kao raniji pokušaji stvaranja digitalnog novca. U uvodu [rada](https://www.blockstream.com/sidechains.pdf) pod nazivom "Omogućavanje Blockchain inovacija sa Pegged Sidechains (povezani sporedni lancovi)", autori objašnjavaju kako rane verzije digitalnog novca nisu bile opremljene za neprijateljsko okruženje (pogledajte i poglavlje o neprijateljskom razmišljanju u sledećem delu).
 
 
 David Chaum je uveo digitalni novac kao istraživačku temu 1983. godine, u okruženju sa centralnim serverom kojem se veruje da sprečava dvostruko trošenje (eng. double spending). Da bi ublažio rizik po privatnost pojedinaca od ove centralne pouzdane strane i da bi osigurao zamenjivost, Chaum je uveo slepi potpis (eng. blind signature), koji je koristio da obezbedi kriptografski način za sprečavanje povezivanja potpisa centralnog servera (koji predstavljaju novčiće), dok je i dalje omogućavao centralnom serveru da izvrši prevenciju dvostrukog trošenja.
@@ -128,7 +128,7 @@ Takođe, nedostatak otpornosti na cenzuru omogućio bi cenzoru da primora korisn
 
 
 - usvojiti: prihvatiti promene i usvojiti ih u njihov full node.
-- odbiti: odbiti usvajanje promena; ovo ostavlja korisnika sa sistemom koji više ne obrađuje transakcije, jer su blokovi cenzora sada proglašeni nevažećim od strane korisnikovog full node.
+- odbiti: odbiti usvajanje promena; ovo ostavlja korisnika sa sistemom koji više ne obrađuje transakcije, jer su blokovi cenzora sada proglašeni nevažećim od strane korisnikovog full node-a.
 - potez: imenovati novu centralnu tačku kontrole; svi korisnici moraju shvatiti kako da se koordiniraju i zatim se dogovore o novoj centralnoj tački kontrole.
 
 
@@ -138,10 +138,10 @@ Ako uspeju, isti problemi će se najverovatnije ponovo pojaviti u nekom trenutku
 Nijedna od ovih opcija nije korisna za korisnika.
 
 
-Otpornost na cenzuru kroz decentralizaciju je ono što odvaja Bitcoin od drugih monetarnih sistema, ali to nije lako postići zbog *problema dvostrukog trošenja*. Ovaj problem se odnosi na to kako osigurati da niko ne može da potroši isti novčić dva puta, što je pitanje za koje su mnogi smatrali da je nemoguće rešiti na decentralizovan način. Satoshi Nakamoto piše u svom [Bitcoin belom papiru](https://planb.academy/bitcoin.pdf) o tome kako rešiti problem dvostrukog trošenja:
+Otpornost na cenzuru kroz decentralizaciju je ono što odvaja Bitcoin od drugih monetarnih sistema, ali to nije lako postići zbog *problema dvostrukog trošenja*. Ovaj problem se odnosi na to kako osigurati da niko ne može da potroši isti novčić dva puta, što je pitanje za koje su mnogi smatrali da je nemoguće rešiti na decentralizovan način. Satoshi Nakamoto piše u svom [Bitcoin white paper-u](https://planb.academy/bitcoin.pdf) o tome kako rešiti problem dvostrukog trošenja:
 
 
-> U ovom radu predlažemo rešenje za problem dvostrukog trošenja koristeći distribuiranog peer-to-peer servera sa vremenskim pečatom, koji generiše računarski dokaz hronološkog reda transakcija.
+> U ovom radu predlažemo rešenje za problem dvostrukog trošenja koristeći distribuiranog peer-to-peer servera sa vremenskim pečatom, koji generiše računarski dokaz hronološkog redosleda transakcija.
 
 Ovde koristi specifičan izraz „peer-to-peer distribuirani server sa vremenskim pečatom“. Ključna reč ovde je *distribuiran*, što u ovom kontekstu znači da ne postoji centralna tačka kontrole. Nakamoto zatim objašnjava kako je Proof-of-Work rešenje.
 
@@ -153,7 +153,7 @@ Ipak, niko to ne objašnjava bolje od
 > Decentralizovani sistem kao što je Bitcoin koristi javne izbore. Ali ne možete jednostavno imati glasanje 'ljudi' u decentralizovanom sistemu jer bi to zahtevalo centralizovanu stranku da ovlasti ljude za glasanje. Umesto toga, Bitcoin koristi glasanje računarske snage jer je moguće verifikovati računarsku snagu bez pomoći bilo kakve centralizovane treća strana.
 
 
-Post objašnjava kako decentralizovana Bitcoin mreža može postići dogovor o redosledu transakcija korišćenjem Proof-of-Work.
+Post objašnjava kako decentralizovana Bitcoin mreža može postići dogovor o redosledu transakcija korišćenjem Proof-of-Work-a.
 
 
 Zatim zaključuje rekavši da napad od 51% nije posebno zabrinjavajući, u poređenju sa ljudima koji ne mare ili ne razumeju decentralizacione osobine Bitcoina:
@@ -161,7 +161,7 @@ Zatim zaključuje rekavši da napad od 51% nije posebno zabrinjavajući, u pore�
 
 > Mnogo veći rizik za Bitcoin je da javnost koja ga koristi neće razumeti, neće mariti i neće štititi svojstva decentralizacije koja ga čine vrednim u poređenju sa centralizovanim alternativama.
 
-Zaključak je važan. Ako ljudi ne zaštite decentralizaciju Bitcoina, koja je posrednik za njegovu otpornost na cenzuru, Bitcoin bi mogao postati žrtva centralizovanih sila, sve dok ne postane toliko centralizovan da cenzura postane stvarnost. Tada većina, ako ne i sva, njegova vrednost nestaje. Ovo nas dovodi do sledećeg odeljka o decentralizaciji full node-ova.
+Zaključak je važan. Ako ljudi ne zaštite decentralizaciju Bitcoina, koja služi kao posredni pokazatelj njegove otpornosti na cenzuru, Bitcoin bi mogao postati žrtva centralizovanih sila, sve dok ne postane toliko centralizovan da cenzura postane stvarnost. Tada većina, ako ne i sva, njegova vrednost nestaje. Ovo nas dovodi do sledećeg odeljka o decentralizaciji full node-ova.
 
 
 ### Full node decentralizacija
