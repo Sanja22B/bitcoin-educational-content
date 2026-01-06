@@ -180,7 +180,7 @@ Korisnik prelazi sa direktnog sprovođenja pravila konsenzusa mreže na poverenj
 U [članku Bitcoin Magazine-a](https://bitcoinmagazine.com/technical/decentralist-perspective-Bitcoin-might-need-small-blocks-1442090446), Aaron van Wirdum intervjuiše Bitcoin developere o njihovim pogledima na decentralizaciju i rizicima povezanim sa povećanjem maksimalne veličine Bitcoin bloka. Ova diskusija bila je vruća tema tokom perioda 2014-2017, kada su se mnogi ljudi raspravljali o povećanju limita veličine bloka kako bi se omogućio veći protok transakcija.
 
 
-Snažan argument protiv povećanja veličine bloka je da to povećava troškove verifikacije. Ako troškovi verifikacije porastu, to će naterati neke korisnike da prestanu sa radom svojih punih čvorova. Ovo će, zauzvrat, dovesti do toga da više ljudi neće moći da koristi sistem na način koji ne zahteva poverenje od nijedne treće strane.
+Snažan argument protiv povećanja veličine bloka je da to povećava troškove verifikacije. Ako troškovi verifikacije porastu, to će naterati neke korisnike da prestanu sa pokretanjem svojih punih čvorova. Ovo će, zauzvrat, dovesti do toga da više ljudi neće moći da koristi sistem na način koji ne zahteva poverenje od nijedne treće strane.
 
 
 Pieter Wuille je citiran u članku, gde objašnjava rizike centralizacije full node-ova:
@@ -189,7 +189,7 @@ Pieter Wuille je citiran u članku, gde objašnjava rizike centralizacije full n
 > Ako mnoge kompanije koriste full node, to znači da sve one treba da budu uverene da implementiraju drugačiji skup pravila. Drugim rečima: decentralizacija validacije blokova je ono što daje težinu pravilima konsenzusa.
 > Ali ako bi broj full node-ova drastično opao, na primer zato što svi koriste iste web-novčanike, kripto-menjačnice i SPV ili mobilne novčanike, regulacija bi mogla postati stvarnost. A ako vlasti mogu da regulišu pravila konsenzusa, to znači da mogu promeniti bilo šta što čini Bitcoin Bitcoin-om. Čak i limit od 21 milion bitcoina.
 
-Evo ti. Bitcoin korisnici treba da pokreću svoje sopstvene pune čvorove kako bi odvratili regulatore i velike korporacije od pokušaja promene pravila konsenzusa.
+Eto ga. Bitcoin korisnici treba da pokreću svoje sopstvene pune čvorove kako bi odvratili regulatore i velike korporacije od pokušaja promene pravila konsenzusa.
 
 
 ### Neutralnost
@@ -220,7 +220,7 @@ Sve dok se pridržavate pravila, slobodni ste da ga koristite kako želite, bez 
 Na svim nivoima, nastojanja da se ograniči ko može da koristi Bitcoin i za šta, štetiće Bitcoinu do tačke u kojoj on više ne opravdava svoju osnovnu vrednost.
 
 
-Pieter Wuille https://Bitcoin.stackexchange.com/a/92055/69518[odgovara na pitanje na Stack Exchange] o odnosu između blokčejna i običnih baza podataka. On objašnjava kako je nepostojanje dozvola ostvarivo kroz korišćenje Proof-of-Work u kombinaciji sa ekonomskim podsticajima.
+Pieter Wuille https://Bitcoin.stackexchange.com/a/92055/69518[odgovara na pitanje na Stack Exchange] o odnosu između blokčejna i običnih baza podataka. On objašnjava kako je nepostojanje dozvola ostvarivo kroz korišćenje Proof-of-Work-a u kombinaciji sa ekonomskim podsticajima.
 
 
 Zaključuje:
@@ -229,7 +229,7 @@ Zaključuje:
 > Korišćenje algoritama konsenzusa bez potrebe za poverenjem, poput PoW, zaista dodaje nešto što nijedna druga konstrukcija ne pruža (učešće bez dozvole, što znači da ne postoji unapred određena grupa učesnika koja može cenzurisati vaše promene), ali dolazi uz visoku cenu, a njegove ekonomske pretpostavke ga čine prilično korisnim samo za sisteme koji definišu sopstvenu kriptovalutu.
 > Verovatno postoji samo jedno ili nekoliko ovih sistema koji se zaista koriste u svetu.
 
-On objašnjava da, kako bi se postigla nemanje potrebe za poverenjem, sistem najverovatnije treba svoju valutu, čime se "ograničavaju slučajevi upotrebe na efektivno samo kriptovalute". Ovo je zato što učešće bez potrebe za poverenjem, ili rudarenje, zahteva ekonomske podsticaje ugrađene u sam sistem.
+On objašnjava da, kako bi se postiglo nemanje potrebe za poverenjem, sistem najverovatnije treba svoju valutu, čime se "ograničavaju slučajevi upotrebe na efektivno samo kriptovalute". Ovo je zato što učešće bez potrebe za poverenjem, ili rudarenje, zahteva ekonomske podsticaje ugrađene u sam sistem.
 
 
 ### Razumevanje decentralizacije
@@ -242,7 +242,7 @@ Zanimljiv aspekt Bitcoina je kako je teško shvatiti da ga niko ne kontroliše. 
 > Mnogim ljudima je teško da razumeju autonomne sisteme; u njihovim životima ih ima mnogo, poput engleskog jezika — ali ljudi ih uzimaju zdravo za gotovo i čak ne razmišljaju o njima kao o sistemima. Zaglavljeni su u centralizovanom načinu razmišljanja, gde sve što smatraju ‘stvarima’ ima autoritet koji to kontroliše.
 >
 
-> Bitcoin se ne fokusira na ništa. Različiti ljudi koji su usvojili Bitcoin odlučili su svojom slobodnom voljom da ga promovišu, i kako to odluče da urade je njihova stvar. Ljudi fiksirani na autoritet mogu videti ove aktivnosti i verovati da su to neka operacija od strane Bitcoin autoriteta, ali takav autoritet ne postoji.
+> Bitcoin se ne fokusira na ništa. Različiti ljudi koji su usvojili Bitcoin odlučili su svojom slobodnom voljom da ga promovišu, i kako to odluče da urade je njihova stvar. Ljudi fiksirani na autoritet mogu videti ove aktivnosti i verovati da su to neke operacije od strane Bitcoin autoriteta, ali takav autoritet ne postoji.
 
 
 Način na koji Bitcoin funkcioniše kroz decentralizaciju podseća na izvanrednu kolektivnu inteligenciju koja se nalazi među mnogim vrstama u prirodi. Računarska naučnica Radhika Nagpal govori u [Ted govoru](https://www.ted.com/talks/radhika_nagpal_what_intelligent_machines_can_learn_from_a_school_of_fish) o kolektivnom ponašanju jata riba i kako naučnici pokušavaju da ga imitiraju koristeći robote.
@@ -294,7 +294,7 @@ Ljudi često kažu stvari poput "Bitcoin je sjajan jer je ne zahteva poverenje u
 Šta se misli pod odsustvom poverenja? Pieter Wuille objašnjava ovaj široko korišćen termin na [Stack Exchange](https://Bitcoin.stackexchange.com/a/45674/69518):
 
 
-> Poverenje u terminu ‘trustless’ je tehnički apstraktan pojam. Sistem se naziva trustless kada može pravilno da funkcioniše bez oslanjanja na bilo koga kome bi trebalo verovati.
+> Poverenje o kojem govorimo u izrazu ‘trustless’ jeste apstraktan tehnički pojam.. Sistem se naziva trustless (bez poverenja) kada može pravilno da funkcioniše bez oslanjanja na bilo koga kome bi trebalo verovati.
 
 Ukratko, reč *trustless* odnosi se na svojstvo Bitcoin protokola prema kojem može logički funkcionisati bez "bilo kakvih pouzdanih strana". Ovo je drugačije od poverenja koje neizbežno morate imati u softver ili hardver koji koristite. Više o ovom poslednjem aspektu poverenja biće diskutovano dalje u ovom poglavlju.
 
@@ -321,21 +321,21 @@ David Harding je autor [članka na veb-sajtu Bitcoin.org](https://Bitcoin.org/en
 > Kada prihvatite bitkoine, imate moć da sprovedete Bitcoin pravila, kao što je sprečavanje konfiskacije bitkoina bilo koje osobe bez pristupa privatnim ključevima te osobe.
 >
 
-> Nažalost, mnogi korisnici prepuštaju svoju moć sprovođenja. Ovo ostavlja Bitcoin decentralizaciju u oslabljenom stanju gde se nekolicina rudara može udružiti sa nekolicinom banaka i besplatnih usluga (kao što su lagani novčanici) kako bi promenili Bitcoin pravila za sve one korisnike koji ne verifikuju i koji su prepustili svoju moć.
+> Nažalost, mnogi korisnici prepuštaju svoju moć sprovođenja. Ovo ostavlja Bitcoin decentralizaciju u oslabljenom stanju gde se nekolicina rudara može udružiti sa nekolicinom banaka i besplatnih usluga (_kao što su provajderi SPV novčanika_) kako bi promenili Bitcoin pravila za sve one korisnike koji ne verifikuju i koji su prepustili svoju moć.
 >
 
-> Za razliku od drugih novčanika, Bitcoin Core sprovodi pravila—tako da ako rudari i banke promene pravila za svoje korisnike koji ne vrše verifikaciju, ti korisnici neće moći da plaćaju korisnicima Bitcoin Core sa punom validacijom kao što ste vi.
+> Za razliku od drugih novčanika, Bitcoin Core sprovodi pravila—tako da ako rudari i banke promene pravila za svoje korisnike koji ne vrše verifikaciju, ti korisnici neće moći da plaćaju korisnicima Bitcoin Core-a koji pokreću nodove sa punom validacijom kao što ste vi.
 
 
-Kaže da pokretanje full node pomaže da proverite svaki aspekt blockchain-a bez potrebe za poverenjem u bilo koga drugog, kako biste osigurali da su novčići koje primate od drugih autentični. Ovo je sjajno, ali postoji jedna važna stvar sa kojom full node ne može da vam pomogne: ne može sprečiti dvostruko trošenje kroz prepisivanje lanca:
+Kaže da pokretanje full node-a pomaže da proverite svaki aspekt blockchain-a bez potrebe za poverenjem u bilo koga drugog, kako biste osigurali da su novčići koje primate od drugih autentični. Ovo je sjajno, ali postoji jedna važna stvar sa kojom full node ne može da vam pomogne: ne može sprečiti dvostruko trošenje kroz reorganizovanje lanca:
 
 
 > Imajte na umu da su svi programi—uključujući Bitcoin Core—podložni promenama u lancu, Bitcoin pruža mehanizam odbrane: što više potvrda imaju vaše transakcije, to ste sigurniji. Ne postoji poznata decentralizovana odbrana bolja od toga.
 
-Bez obzira na to koliko je vaš softver napredan, i dalje morate verovati da blokovi koji sadrže vaše kovanice neće biti menjani. Međutim, kako je istakao Harding, može se sačekati određeni broj potvrda, posle čega se verovatnoća prepisivanja lanca smatra dovoljno niskom da se može prihvatiti.
+Bez obzira na to koliko je vaš softver napredan, i dalje morate verovati da blokovi koji sadrže vaše kovanice neće biti menjani. Međutim, kako je istakao Harding, može se sačekati određeni broj potvrda, posle čega se verovatnoća reorganizovanja lanca smatra dovoljno niskom da se može prihvatiti.
 
 
-Podsticaji za Bitcoin korišćenje na način koji ne zahteva poverenje usklađeni su sa potrebom sistema za decentralizacijom full node-ova. Što više ljudi koristi svoje sopstvene full čvorove, to je veća decentralizacija full node-ova, i samim tim Bitcoin je jači protiv zlonamernih promena u protokolu. Ali nažalost, kao što je objašnjeno u odeljku o decentralizaciji full node-ova, korisnici često koriste pouzdane servise kao rezultat neizbežnog kompromisa između odsustva potrebe za poverenjem i praktičnosti.
+Podsticaji za korišćenje Bitcoina na način koji ne zahteva poverenje usklađeni su sa potrebom sistema za decentralizacijom full node-ova. Što više ljudi koristi svoje sopstvene full čvorove, to je veća decentralizacija full node-ova, i samim tim Bitcoin je jači protiv zlonamernih promena u protokolu. Ali nažalost, kao što je objašnjeno u odeljku o decentralizaciji full node-ova, korisnici često koriste pouzdane servise kao rezultat neizbežnog kompromisa između odsustva potrebe za poverenjem i praktičnosti.
 
 
 Bitcoin-ova sposobnost rada bez potrebe za poverenjem je apsolutno ključna iz perspektive sistema. Godine 2018, Matt Corallo, [govorio je o odsustvu potrebe za poverenjem](https://btctranscripts.com/baltic-honeybadger/2018/trustlessness-scalability-and-directions-in-security-models/) na konferenciji Baltic Honeybadger u Rigi.
@@ -344,7 +344,7 @@ Bitcoin-ova sposobnost rada bez potrebe za poverenjem je apsolutno ključna iz p
 ![video](https://youtu.be/66ZoGUAnY9s?t=4019)
 
 
-Ključna poruka tog izlaganja je da se sistemi koji ne zahtevaju poverenje ne mogu razvijati na osnovi poverljivih sistema, dok se sistemi kojima je potrebno poverenje – na primer kustodijalni novčanici – mogu razvijati na osnovi sistema koji je bez potrebe za poverenjem.
+Ključna poruka tog izlaganja je da se sistemi koji ne zahtevaju poverenje ne mogu razvijati na osnovi koju predstavljaju poverljivi sistemi, dok se sistemi kojima je potrebno poverenje – na primer depozitarski novčanici (eng. custodial wallets) – mogu razvijati na osnovi sistema koji je bez potrebe za poverenjem.
 
 
 Osnovni sloj koji funkcioniše bez potrebe za poverenjem pruža mogućnost različitih kompromisa u slojevima iznad njega.
