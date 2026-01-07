@@ -998,7 +998,7 @@ Ali na internetu stvari su drugačije:
 Posledica je da se sve poznate slabosti u Bitcoinu moraju nekako rešiti, inače će biti iskorišćene. Na kraju krajeva, Bitcoin je najveći mamac na svetu.
 
 
-Poelstra dalje pominje kako je Bitcoin nova vrsta sistema; to je više nejasno nego, na primer, protokol potpisivanja koji ima veoma jasno definisane bezbednosne pretpostavke.
+Poelstra zatim nastavlja da objašnjava kako je Bitcoin nova vrsta sistema; on je znatno neodređeniji (maglovitiji) nego, na primer, protokol za potpisivanje, koji ima vrlo jasno definisane bezbednosne pretpostavke.
 
 
 Na svom ličnom blogu, softverski inženjer Jameson Lopp, [dublje istražuje ovo](https://blog.lopp.net/bitcoins-security-model-a-deep-dive/):
@@ -1071,7 +1071,7 @@ Eric Voskuil [piše na svojoj Cryptoeconomics wiki stranici](https://github.com/
 Ono što on suštinski kaže je da je smisleno pokušati samo kada se pretpostavi da je moguće stvoriti sistem koji države ne mogu kontrolisati.
 
 
-To znači da biste radili na Bitcoinu, treba da prihvatite aksiom otpora, inače bi bilo bolje da svoje vreme posvetite drugim projektima. Priznavanje tog aksioma pomaže vam da usmerite svoje razvojne napore na stvarne probleme: kodiranje u kontekstu protivnika na nivou države. Drugim rečima, razmišljajte na suparnički način.
+To znači da biste radili na Bitcoinu, treba da prihvatite aksiom otpora, inače bi bilo bolje da svoje vreme posvetite drugim projektima. Priznavanje tog aksioma pomaže vam da usmerite svoje razvojne napore na stvarne probleme: kodiranje u kontekstu protivnika na nivou države. Drugim rečima, razmišljajte imajući u obzir protivnike.
 
 
 ### Zaključak o razmišljanju u neprijateljskom okruženju
@@ -1093,13 +1093,13 @@ Da biste održali Bitcoin sigurnim, morate znati njegove neprijatelje i njihove 
 ![](assets/sr-Latn/010.webp)
 
 
-Bitcoin je izgrađen koristeći softver otvorenog koda. U ovom poglavlju analiziramo šta to znači, kako funkcioniše održavanje softvera i kako softver otvorenog koda u Bitcoinu omogućava razvoj bez dozvola. Zaranjamo u *selektivnu kriptografiju*, koja se bavi izborom i korišćenjem biblioteka u kriptografskim sistemima. Poglavlje uključuje deo o procesu pregleda Bitcoina, nakon čega sledi deo o načinima na koje programeri Bitcoin dobijaju finansiranje. Poslednji deo govori o tome kako kultura otvorenog koda Bitcoina može izgledati zaista čudno spolja, i zašto je ta percipirana čudnost zapravo znak dobrog zdravlja.
+Bitcoin je izgrađen koristeći softver otvorenog koda. U ovom poglavlju analiziramo šta to znači, kako funkcioniše održavanje softvera i kako softver otvorenog koda u Bitcoinu omogućava razvoj bez dozvola. Zaranjamo u *selektivnu kriptografiju*, koja se bavi izborom i korišćenjem biblioteka u kriptografskim sistemima. Poglavlje uključuje deo o procesu pregleda izmena u Bitcoinu, nakon čega sledi deo o načinima na koje programeri Bitcoin dobijaju finansiranje. Poslednji deo govori o tome kako kultura otvorenog koda Bitcoina može izgledati zaista čudno spolja, i zašto je ta percipirana čudnost zapravo znak dobrog zdravlja.
 
 
 Većina Bitcoin softvera, a posebno Bitcoin Core, je otvorenog koda. To znači da je izvorni kod softvera dostupan široj javnosti za pregled, eksperimentisanje, modifikaciju i redistribuciju. Definicija otvorenog koda na [](https://opensource.org/osd) uključuje, između ostalog, sledeće važne tačke:
 
 
-> Besplatna redistribucija: Licenca ne sme ograničiti bilo koju stranu da prodaje ili poklanja softver kao komponentu zbirne distribucije softvera koja sadrži programe iz nekoliko različitih izvora. Licenca ne sme zahtevati tantijeme ili drugu naknadu za takvu prodaju.
+> Besplatna redistribucija: Licenca ne sme ograničiti bilo koju stranu da prodaje ili poklanja softver kao komponentu agregirane distribucije softvera koja sadrži programe iz nekoliko različitih izvora. Licenca ne sme zahtevati tantijeme ili drugu naknadu za takvu prodaju.
 >
 
 > Izvorni kod: Program mora uključivati izvorni kod i mora omogućiti distribuciju u izvornom kodu kao i u kompajliranom obliku. Gde neki oblik proizvoda nije distribuiran sa izvornim kodom, mora postojati dobro objavljen način za dobijanje izvornog koda za ne više od razumnih troškova reprodukcije, po mogućstvu preuzimanjem putem interneta bez naknade. Izvorni kod mora biti preferirani oblik u kojem bi programer modifikovao program. Namerno zamagljen izvorni kod nije dozvoljen. Srednji oblici kao što je izlaz preprocesora ili prevodioca nisu dozvoljeni.
@@ -1140,7 +1140,7 @@ Bitcoin i stručnjak za bezbednost Jameson Lopp to vrlo dobro objašnjava u [blo
 
 > Bitcoin Core je žarišna tačka za razvoj Bitcoin protokola, a ne tačka komandovanja i kontrole. Ako bi iz bilo kog razloga prestala da postoji, pojavila bi se nova žarišna tačka — tehnička komunikaciona platforma na kojoj se zasniva (trenutno GitHub repozitorijum) je stvar pogodnosti, a ne definicije / integriteta projekta. Zapravo, već smo videli da se žarišna tačka za razvoj Bitcoina promenila u pogledu platformi, pa čak i imena!
 
-On dalje objašnjava kako se softver Bitcoin Core održava i osigurava protiv zlonamernih promena koda. Opšti zaključak iz ovog celog članka je sažet na samom kraju:
+On dalje objašnjava kako se Bitcoin Core softver održava i osigurava protiv zlonamernih promena koda. Opšti zaključak iz ovog celog članka je sažet na samom kraju:
 
 
 > Niko ne kontroliše Bitcoin.
@@ -1175,7 +1175,7 @@ Verovatno podjednako važno je da korisnici mogu slobodno razvijati sisteme na B
 
 - Lightning Network: Mreža plaćanja koja omogućava brzo plaćanje vrlo malih iznosa. Zahteva vrlo malo on-chain Bitcoin transakcija. Postoje razne interoperabilne implementacije, kao što su [Core Lightning](https://github.com/ElementsProject/lightning), [LND](https://github.com/lightningnetwork/LND), [Eclair](https://github.com/ACINQ/eclair), i [Lightning Dev Kit](https://github.com/lightningdevkit).
 - CoinJoin: Više strana sarađuje kako bi kombinovale svoje uplate u jednu transakciju, čime se otežava grupisanje adresa. Postoje različite implementacije.
-- Sidechains: This system can lock a coin on Bitcoin's Blockchain in order to unlock it on some other Blockchain. This allows for bitcoins to be moved to some other Blockchain, namely a Sidechain, so as to use the features available on that Sidechain. Examples include [Blockstream's Elements](https://github.com/ElementsProject/Elements).
+- Sidechains: Ovaj sistem može da zaključa novčić na Bitcoin blokčejnu kako bi ga otključao na nekom drugom blokčejnu. To omogućava da se bitcoini prebace na neki drugi blokčejn, odnosno na bočni lanac (sidechain), kako bi se koristile funkcionalnosti dostupne na tom bočnom lancu. Primeri uključuju [Blockstream's Elements](https://github.com/ElementsProject/Elements).
 - OpenTimestamps: Omogućava vam da [vremenski pečetirate dokument](https://opentimestamps.org/) na Bitcoin-ovom blockchain-u na privatan način. Zatim možete koristiti taj vremenski pečat da dokažete da je dokument morao postojati pre određenog vremena.
 
 
@@ -1231,7 +1231,7 @@ Open source developeri često koriste open source biblioteke koje su razvili dru
 U filozofskoj [diskusiji o kriptografiji](https://btctranscripts.com/greg-maxwell/2015-04-29-gmaxwell-Bitcoin-selection-cryptography/), Gregory Maxwell želi da redefiniše termin "kriptografija" za koji smatra da je previše sužen. On objašnjava da fundamentalno *informacije žele biti slobodne*, i na osnovu toga daje svoju definiciju kriptografije:
 
 
-> Kriptografija je umetnost i nauka koju koristimo da bismo se borili protiv fundamentalne prirode informacija, da bismo ih savili prema našoj političkoj i moralnoj volji, i da bismo ih usmerili ka ljudskim ciljevima uprkos svim šansama i naporima da im se suprotstavimo.
+> Kriptografija je umetnost i nauka koju koristimo da bismo se borili protiv fundamentalne prirode informacija, da bismo ih savili prema našoj političkoj i moralnoj volji, i da bismo ih usmerili ka ljudskim ciljevima uprkos svemu što tome stoji na putu.
 
 Zatim uvodi termin *selektivna kriptografija*, koji se odnosi na umetnost odabira kriptografskih alata, i objašnjava zašto je to važan deo kriptografije. To se vrti oko toga kako odabrati kriptografske biblioteke, alate i prakse, ili kako on kaže "kriptosistem biranja kriptosistema".
 
@@ -1286,7 +1286,7 @@ Jedan od najplodnijih pregledalaca koda na Bitcoin Core je Jon Atack. Napisao je
 
 > Dobar pristup je da ne bude o vama, već "Kako mogu najbolje služiti?"
 
-Ističe činjenicu da je pregled koda zaista ograničavajući faktor u Bitcoin Core. Mnoge dobre ideje zaglave u limbu gde se ne dešava pregled koda, čekajući. Primetite da pregled nije samo koristan za Bitcoin, već je i odličan način da naučite o softveru dok istovremeno pružate vrednost njemu. Atackovo pravilo je da pregledate 5-15 PR-ova pre nego što napravite bilo koji svoj PR. Ponovo, vaš fokus treba da bude na tome kako najbolje služiti zajednici, a ne na tome kako da vaš kod bude prihvaćen. Uz to, on ističe koliko je važno raditi pregled na odgovarajućem nivou: da li je u ovom trenutku fokus na sitnim detaljima i slovnim greškama, ili je programeru potrebniji pregled koji se bavi širim, konceptualnim pitanjima? Jon Attack dodaje:
+Ističe činjenicu da je pregled koda zaista ograničavajući faktor u Bitcoin Core-u. Mnoge dobre ideje zaglave u limbu gde se ne dešava pregled koda, čekajući. Primetite da pregled nije samo koristan za Bitcoin, već je i odličan način da naučite o softveru dok istovremeno pružate vrednost njemu. Atackovo pravilo je da pregledate 5-15 PR-ova pre nego što napravite bilo koji svoj PR. Ponovo, vaš fokus treba da bude na tome kako najbolje služiti zajednici, a ne na tome kako da vaš kod bude prihvaćen. Uz to, on ističe koliko je važno raditi pregled na odgovarajućem nivou: da li je u ovom trenutku fokus na sitnim detaljima i slovnim greškama, ili je programeru potrebniji pregled koji se bavi širim, konceptualnim pitanjima? Jon Attack dodaje:
 
 
 > Korisno prvo pitanje kada započinjete pregled može biti: "šta je najpotrebnije ovde u ovom trenutku?" Odgovaranje na ovo pitanje zahteva iskustvo i akumulirani kontekst, ali je korisno pitanje u odlučivanju kako možete dodati najviše vrednosti u najmanje vremena.
@@ -1328,7 +1328,7 @@ Debata je trajala naizgled zauvek, i bilo je stvarno teško videti bilo kakav ko
 
 > U ovom trenutku, dodatno čekanje ne doprinosi većoj reviziji i sigurnosti. Umesto toga, dodatno odlaganje iscrpljuje inerciju i potencijalno povećava rizik jer ljudi počinju da zaboravljaju detalje, odlažu rad na daljoj upotrebi (kao što je podrška za novčanik) i ne ulažu toliko dodatnog napora u reviziju koliko bi ulagali da su sigurni u vremenski okvir aktivacije.
 
-Na kraju, ovaj spor je rešen zahvaljujući novom predlogu Davida Hardinga i Russela O'Connora nazvanom Speedy Trial, koji je podrazumevao relativno kraći period signalizacije za rudare da zaključe aktivaciju Taproot-a, ili brzo propadnu. Ako bi ga aktivirali tokom tog vremenskog okvira, tada bi Taproot bio implementiran otprilike 6 meseci kasnije.
+Na kraju, ovaj spor je rešen zahvaljujući novom predlogu Davida Hardinga i Russela O'Connora nazvanom Speedy Trial, koji je podrazumevao relativno kraći period signalizacije za rudare da zaključe aktivaciju Taproot-a, ili brzo utvrdili neuspeh.. Ako bi ga aktivirali tokom tog vremenskog okvira, tada bi Taproot bio implementiran otprilike 6 meseci kasnije.
 
 
 Neko ko nije navikao na razvojni proces Bitcoina verovatno bi pomislio da ove žustre rasprave izgledaju užasno loše, pa čak i toksično. Postoje najmanje dva faktora koja ih čine lošim u očima nekih ljudi:
@@ -1396,7 +1396,7 @@ Uskoro ćemo se upustiti u različite pristupe skaliranju, ali hajde da počnemo
 
 
 
-Skaliranje je bilo centralna tema diskusija od samog nastanka Bitcoina. Prva rečenica [prvog emaila](https://www.metzdowd.com/pipermail/cryptography/2008-November/014814.html) kao odgovor na Satoshi-jevo objavljivanje Bitcoin whitepapera na Cryptography mailing listi zaista je bila o skaliranju:
+Skaliranje je bilo centralna tema diskusija od samog nastanka Bitcoina. Prva rečenica [prvog emaila](https://www.metzdowd.com/pipermail/cryptography/2008-November/014814.html) kao odgovor na Satoshi-jevo objavljivanje Bitcoin whitepaper-a na Cryptography mailing listi zaista je bila o skaliranju:
 
 > Satoshi Nakamoto je napisao:
 >
