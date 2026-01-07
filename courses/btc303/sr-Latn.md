@@ -878,13 +878,13 @@ Puno predloga za mehanizme aktivacije počelo je kružiti, a David Harding [sumi
 BIP8 bez prisilne aktivacije je veoma sličan [BIP9](https://github.com/Bitcoin/bips/blob/master/bip-0009.mediawiki) verzijskim bitovima sa istekom i odlaganjem, pri čemu je jedina suštinska razlika u tome što BIP 8 određuje aktivaciju prema visini bloka, dok BIP 9 koristi medijanu prošlih vremena (MTP). Ovo podešavanje omogućava pokušaju da ne uspe (ali se može ponovo pokušati kasnije).
 
 
-BIP8 sa prinudnom aktivacijom završava obaveznim periodom signalizacije gde svi blokovi proizvedeni u skladu sa njegovim pravilima moraju signalizirati spremnost za Soft Fork na način koji će pokrenuti aktivaciju u ranijem uvođenju istog Soft Fork sa neobaveznom aktivacijom. Drugim rečima, ako je verzija čvora x objavljena bez prinudne aktivacije, a kasnije je objavljena verzija y koja uspešno primorava rudare da počnu signalizaciju spremnosti u istom vremenskom periodu, obe verzije će početi sprovođenje novih pravila konsenzusa u isto vreme.
+BIP8 sa prinudnom aktivacijom završava obaveznim periodom signalizacije gde svi blokovi proizvedeni u skladu sa njegovim pravilima moraju signalizirati spremnost za soft fork na način koji će pokrenuti aktivaciju u ranijem uvođenju istog soft fork-a sa neobaveznom aktivacijom. Drugim rečima, ako je verzija čvora x objavljena bez prinudne aktivacije, a kasnije je objavljena verzija y koja uspešno primorava rudare da počnu signalizaciju spremnosti u istom vremenskom periodu, obe verzije će početi sprovođenje novih pravila konsenzusa u isto vreme.
 
 
 Ova fleksibilnost revidiranog BIP8 predloga omogućava izražavanje nekih drugih ideja u smislu kako bi izgledale koristeći BIP8. Ovo pruža zajednički faktor za korišćenje pri kategorizaciji mnogih različitih predloga.
 
 
-Od ovog trenutka diskusije su postale veoma žustre, posebno oko toga da li `lockinontimeout` treba da bude `true` (kao u slučaju kada korisnik aktivira Soft Fork, što Harding naziva "BIP8 sa prisilnom aktivacijom") ili `false` (kao u slučaju kada Miner aktivira Soft Fork, što Harding naziva "BIP8 bez prisilne aktivacije").
+Od ovog trenutka diskusije su postale veoma žustre, posebno oko toga da li `lockinontimeout` treba da bude `true` (kao u slučaju kada korisnik aktivira soft fork, što Harding naziva "BIP8 sa prisilnom aktivacijom") ili `false` (kao u slučaju kada rudar aktivira soft fork, što Harding naziva "BIP8 bez prisilne aktivacije").
 
 
 Među navedenim predlozima, jedan od njih nosio je naslov "Da vidimo šta će se desiti". Iz nekog razloga, ovaj predlog nije privukao mnogo pažnje sve do sedam meseci kasnije.
@@ -894,16 +894,16 @@ Tokom tih sedam meseci, diskusija je trajala i činilo se da nema načina da se 
 
 
 ```
-06:42 < harding> roconnor: is somebody proposing BIP8(3m, false)?  I mentioned that the other day but I didn't see any responses.
+06:42 < harding> roconnor: da li neko predlaže BIP8 (3m, false)? Pomenuo sam to pre neki dan, ali nisam video nikakav odgovor.
 [...]
-06:43 < willcl_ark_> Amusingly, I was just thinking to myself that, vs this, the SegWit activation was actually pretty straightforward: simply a LOT=false and if it fails a UASF.
-06:43 < maybehuman> it's funny, "let's see what happens" (i.e. false, 3m) was a poular choice right at the beginning of this channel iirc
-06:44 < roconnor> harding: I think I am.  I don't know how much that is worth.  Mostly I think it would be a widely acceptable configuration based on my understanding of everyone's concerns.
-06:44 < willcl_ark_> maybehuman: becuase everybody actually wants this, even miners reckoned they could upgrade in about two weeks (or at least f2pool said that)
-06:44 < roconnor> harding: BIP8(3m,false) with an extended lockin-period.
-06:45 < harding> roconnor: oh, good.  It's been my favorite option since I first summarized the options on the wiki like seven months ago.
-06:45 <@michaelfolkson> UASF wouldn't release (true,3m) but yeah Core could release (false, 3m)
-06:45 < willcl_ark_> harding: It certainly seems like a good approach to me. _if_ that fails, then you can try an understand why, without wasting too much time
+06:43 < willcl_ark_> Zanimljivo, baš sam pomislio da je, u poređenju s ovim, aktivacija SegWit-a zapravo bila prilično jednostavna: jednostavno LOT=false, a ako to ne uspe — UASF.
+06:43 < maybehuman> Zanimljivo je da je ‘hajde da vidimo šta će se desiti’ (odnosno false, 3m) bilo dosta popularno na početku ovog kanala, koliko se sećam.
+06:44 < roconnor> harding: Mislim da jesam. Ne znam koliko to vredi. Uglavnom mislim da bi to bila široko prihvatljiva konfiguracija, na osnovu mog razumevanja briga svih uključenih.
+06:44 < willcl_ark_> maybehuman: Zato što ovo zapravo svi žele; čak su i rudari procenjivali da bi mogli da izvrše nadogradnju za oko dve nedelje (ili je bar f2pool to rekao).
+06:44 < roconnor> harding: BIP8(3m, false) sa produženim periodom zaključavanja (lock-in periodom).
+06:45 < harding> roconnor: Ah, odlično. To mi je omiljena opcija još otkako sam prvi put sumirao opcije na vikiju, pre nekih sedam meseci.
+06:45 <@michaelfolkson> UASF ne bi išao sa (true, 3m), ali Core bi mogao sa (false, 3m).
+06:45 < willcl_ark_> harding: Svakako mi deluje kao dobar pristup. Ako to ne uspe, onda možeš da pokušaš da razumeš zašto, bez gubljenja previše vremena.
 ```
 
 
@@ -912,7 +912,7 @@ Pristup "hajde da vidimo šta će se desiti" konačno je počeo da se uklapa u u
 > Ranija verzija ovog predloga je dokumentovana pre više od 200 dana, a osnovni Taproot kod je spojen u Bitcoin Core pre više od 140 dana. Da smo započeli Speedy Trial u vreme kada je Taproot spojen (što je pomalo nerealno), bili bismo ili manje od dva meseca udaljeni od implementacije Taproot ili bismo prešli na sledeći pokušaj aktivacije pre više od mesec dana.
 >
 
-> Umesto toga, dugo smo raspravljali i ne izgleda da smo bliže rešenju koje je široko prihvatljivo nego kada je mejling lista počela da diskutuje o šemama aktivacije posle SegWit pre više od godinu dana. Mislim da je Speedy Trial način za brzo napredovanje generate koji će ili okončati debatu (za sada, ako je aktivacija uspešna) ili nam dati neke stvarne podatke na osnovu kojih ćemo zasnivati buduće predloge za aktivaciju Taproot.
+> Umesto toga, dugo smo raspravljali i ne izgleda da smo bliže rešenju koje je široko prihvatljivo nego kada je mejling lista počela da diskutuje o šemama aktivacije posle SegWit-a pre više od godinu dana. Mislim da je Speedy Trial način da se postigne brz napredak koji će ili okončati raspravu (barem za sada, ako aktivacija uspe), ili nam dati konkretne podatke na osnovu kojih možemo zasnivati buduće predloge za aktivaciju Taproot-a.
 
 Ovaj mehanizam za implementaciju je usavršen tokom dva meseca i zatim objavljen u [Bitcoin Core verziji 0.21.1](https://github.com/Bitcoin/Bitcoin/blob/master/doc/release-notes/release-notes-0.21.1.md#Taproot-Soft-Fork). Rudari su brzo počeli da signaliziraju za ovo unapređenje, pomerajući stanje implementacije na `LOCKED_IN`, a nakon perioda prilagođavanja Taproot pravila su aktivirana sredinom novembra 2021. u bloku [709632](https://Mempool.space/block/0000000000000000000687bca986194dc2c1f949318629b44bb54ec0a94d8244).
 
@@ -920,7 +920,7 @@ Ovaj mehanizam za implementaciju je usavršen tokom dva meseca i zatim objavljen
 #### Budući mehanizmi implementacije
 
 
-S obzirom na probleme sa nedavnim soft forkovima, SegWit i Taproot, nije jasno kako će sledeće unapređenje biti implementirano. Speedy Trial je korišćen za implementaciju Taproot, ali je korišćen da premosti jaz između UASF i MASF grupa, a ne zato što se pojavio kao najbolji poznati mehanizam implementacije.
+S obzirom na probleme sa nedavnim soft forkovima, SegWit-a i Taproot-a, nije jasno kako će sledeće unapređenje biti implementirano. Speedy Trial je korišćen za implementaciju Taproot-a, ali je korišćen da premosti jaz između UASF i MASF grupa, a ne zato što se pojavio kao najbolji poznati mehanizam implementacije.
 
 
 ### Rizici
@@ -950,7 +950,7 @@ U kontekstu Bitcoina, on ilustruje negativne eksternalije koristeći Bitcoin Cas
 Među mnogim primerima jednokratnih troškova, on pominje one koje su imale kripto-menjačnice:
 
 
-> Dakle, imamo gomilu kripto-menjačnica i one su imale mnogo jednokratnih troškova koje su morale da plate. Prva stvar koja se desila je da su depoziti i povlačenja morali biti zaustavljeni na dan ili dva za ove kripto-menjačnice jer nisu znali šta će se desiti. Mnoge od ovih berzi su morale da posegnu u Cold storage (_(hladno skladište) označava način čuvanja kriptovaluta pri kojem su privatni ključevi potpuno van mreže (offline)_) jer su njihovi korisnici zahtevali bcash. To je deo njihove fiducijarne dužnosti, moraju to da urade. Takođe morate da izvršite reviziju novog softvera. Ovo je nešto što smo morali da uradimo u itbit-u. Želimo da potrošimo bcash - kako to da uradimo? Moramo da preuzmemo electron cash? Da li ima malver? Moramo da ga pregledamo. Imali smo oko 10 dana da utvrdimo da li je ovo u redu ili ne. I onda morate da odlučite, da li ćemo samo dozvoliti jednokratno povlačenje, ili ćemo uvrstiti ovu novu valutu? Za kripto-menjačnice da uvrsti novu valutu, nije lako - postoje sve vrste novih procedura za hladno skladište, potpisivanje, depozite, povlačenja. Ili možete jednostavno imati ovaj jednokratni događaj gde im date njihov bcash u nekom trenutku i onda više nikada ne razmišljate o tome. Ali i to ima svoje probleme. I na kraju, i na koji god način to uradite, povlačenja ili uvrštavanje - trebat će vam nova infrastruktura da radite sa ovim token na neki način, čak i ako je to jednokratno povlačenje. Trebate neki način da date ove tokene svojim korisnicima. Opet, kratki rok. Zar ne? Nema vremena za ovo, mora se brzo uraditi.
+> Dakle, imamo gomilu kripto-menjačnica i one su imale mnogo jednokratnih troškova koje su morale da plate. Prva stvar koja se desila je da su depoziti i povlačenja morali biti zaustavljeni na dan ili dva za ove kripto-menjačnice jer nisu znali šta će se desiti. Mnoge od ovih berzi su morale da posegnu u Cold storage (_(hladno skladište)- označava način čuvanja kriptovaluta pri kojem su privatni ključevi potpuno van mreže (offline)_) jer su njihovi korisnici zahtevali bcash. To je deo njihove fiducijarne dužnosti, moraju to da urade. Takođe morate da izvršite reviziju novog softvera. Ovo je nešto što smo morali da uradimo u itbit-u. Želimo da potrošimo bcash - kako to da uradimo? Moramo da preuzmemo electron cash? Da li ima malver? Moramo da ga pregledamo. Imali smo oko 10 dana da utvrdimo da li je ovo u redu ili ne. I onda morate da odlučite, da li ćemo samo dozvoliti jednokratno povlačenje, ili ćemo uvrstiti ovu novu valutu? Za kripto-menjačnice da uvrsti novu valutu, nije lako - postoje sve vrste novih procedura za hladno skladište, potpisivanje, depozite, povlačenja. Ili možete jednostavno imati ovaj jednokratni događaj gde im date njihov bcash u nekom trenutku i onda više nikada ne razmišljate o tome. Ali i to ima svoje probleme. I na kraju, i na koji god način to uradite, povlačenja ili uvrštavanje - trebat će vam nova infrastruktura da radite sa ovim token na neki način, čak i ako je to jednokratno povlačenje. Trebate neki način da date ove tokene svojim korisnicima. Opet, kratki rok. Zar ne? Nema vremena za ovo, mora se brzo uraditi.
 
 On takođe navodi jednokratne troškove koje snose trgovci, procesori plaćanja, novčanici, rudari i korisnici, kao i neke od stalnih troškova, na primer gubitak privatnosti i veći rizik od reorganizacija.
 
