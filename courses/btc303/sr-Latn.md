@@ -1406,7 +1406,7 @@ Skaliranje je bilo centralna tema diskusija od samog nastanka Bitcoina. Prva re�
 
 > Veoma, veoma nam je potreban takav sistem, ali kako ja razumem vaš predlog, čini se da ne može da se skalira na potrebnu veličinu.
 
-Sama konverzacija možda nije ni naročito zanimljiva niti tačna, ali pokazuje da je skaliranje bilo pitanje od samog početka.“
+Sama konverzacija možda nije ni naročito zanimljiva niti tačna, ali pokazuje da je skaliranje bilo pitanje od samog početka.
 
 Diskusije o skaliranju dostigle su vrhunac interesovanja oko 2015-2017, kada je bilo mnogo različitih ideja o tome da li i kako povećati maksimalno ograničenje veličine bloka. To je bila prilično neinteresantna diskusija o promeni parametra u izvornom kodu, promena koja suštinski nije rešavala ništa već je problem skaliranja pomerala dalje u budućnost, stvarajući tehnički dug.
 
@@ -1514,7 +1514,7 @@ Poboljšanja koja su postignuta kroz unutrašnje skaliranje su impresivna, blago
 Na gornjem grafikonu možete videti performanse inicijalnog preuzimanja blokova (initial block download) različitih verzija Bitcoin Core-a. Na Y-osi je visina bloka koja je sinhronizovana, a na X-osi je vreme potrebno za sinhronizaciju do te visine.
 
 
-Različite linije predstavljaju različite verzije Bitcoin Core. Krajnja leva linija je najnovija, tj. verzija 0.22, koja je objavljena u septembru 2021. i kojoj je bilo potrebno 396 minuta za potpuno sinhronizovanje. Krajnja desna je verzija 0.8 iz novembra 2013, kojoj je bilo potrebno 3452 minuta. Sve ovo - otprilike 10x - poboljšanje je zbog unutrašnjeg skaliranja.
+Različite linije predstavljaju različite verzije Bitcoin Core-a. Krajnja leva linija je najnovija, tj. verzija 0.22, koja je objavljena u septembru 2021. i kojoj je bilo potrebno 396 minuta za potpuno sinhronizovanje. Krajnja desna je verzija 0.8 iz novembra 2013, kojoj je bilo potrebno 3452 minuta. Sve ovo - otprilike 10x - poboljšanje je zbog unutrašnjeg skaliranja.
 
 
 Poboljšanja se mogu kategorizovati kao ušteda prostora (RAM, disk, propusni opseg, itd.) ili ušteda računarske snage. Obe kategorije doprinose poboljšanjima u dijagramu iznad.
@@ -1625,7 +1625,7 @@ Prošlo je mnogo godina otkako je Maxwell napisao gornji tekst, i njegove reči 
 Razgovarali smo o različitim načinima na koje bi neko mogao želeti da skalira Bitcoin, poveća kapacitet korišćenja Bitcoina. Skaliranje je bilo zabrinutost u Bitcoinu od njegovih najranijih dana.
 
 
-Danas znamo da Bitcoin ne skalira dobro vertikalno ("kupiti veći hardver") ili horizontalno ("verifikovati samo delove podataka"), već radije unutra ("uraditi više sa manje") i u slojevima ("izgraditi protokole na vrhu Bitcoina").
+Danas znamo da Bitcoin ne skalira dobro vertikalno ("kupiti veći hardver") ili horizontalno ("verifikovati samo delove podataka"), već radije unutra ("uraditi više sa manje") i u slojevima ("izgraditi protokole povrh Bitcoina").
 
 
 ## Kad sranje pogodi ventilator
@@ -1662,13 +1662,13 @@ U [email prepisci](https://lists.linuxfoundation.org/pipermail/Bitcoin-dev/2017-
 
 
 - Ranljivosti treba prijaviti putem security at bitcoincore.org
-- Kritično pitanje (koje se može odmah iskoristiti ili se već iskorišćava i izaziva veliku štetu) biće rešeno:
+- Kritičan problem (koje se može odmah iskoristiti ili se već iskorišćava i izaziva veliku štetu) biće rešen:
   - objavljivanjem zakrpa što pre (ASAP)
-  - široko obaveštenje o potrebi za nadogradnjom (ili onemogućavanjem pogođenih sistema)
-  - minimalno otkrivanje stvarnog problema, kako bi se odložili napadi
+  - širokim obaveštenjem o potrebi za nadogradnjom (ili onemogućavanjem pogođenih sistema)
+  - minimalnim otkrivanje stvarnog problema, kako bi se odložili napadi
 - Nekritična ranjivost (zato što je teško ili skupo iskoristiti) će biti rešena:
-  - zakrpom i pregled obavljeni u uobičajenom toku razvoja
-  - backport rešenja ili zaobilaznog rešenja sa mastera na trenutno objavljenu verziju
+  - zakrpom i pregledom obavljenim u uobičajenom toku razvoja
+  - backport rešenja ili zaobilazno rešenje sa mastera na trenutno objavljenu verziju
 - Programeri će pokušati da osiguraju da objavljivanje ispravke ne otkrije prirodu ranjivosti tako što će predloženu ispravku dati iskusnim programerima koji nisu informisani o ranjivosti, reći im da ispravka rešava ranjivost i zamoliti ih da identifikuju ranjivost.
 - Devs mogu preporučiti da druge Bitcoin implementacije usvoje ispravke ranjivosti pre nego što ispravka bude objavljena i široko primenjena, ako to mogu učiniti bez otkrivanja ranjivosti; npr, ako ispravka ima značajne performanse koje bi opravdale njeno uključivanje.
 - Pre nego što ranjivost postane javna, programeri će generalno preporučiti prijateljskim altcoin programerima da bi trebalo da se ažuriraju sa ispravkama. Ali to je tek nakon što su ispravke široko primenjene u Bitcoin mreži.
@@ -1698,7 +1698,7 @@ Takođe, pre Town-ovog gorenavedenog email-a bio je [post](https://lists.linuxfo
 Dakle, čak i ako se ranjivost čini teškom za eksploataciju, možda je najbolje pretpostaviti da je lako iskoristiva i da još niste shvatili kako.
 
 
-On takođe pominje kako je "donekle netačno nazvati ovu temu bilo čim u vezi sa objavljivanjem, ova tema nije o objavljivanju. Objavljivanje je kada obavestite dobavljača. Ova tema je o publikaciji i to ima veoma različite implikacije. Publikacija je kada ste sigurni da ste obavestili potencijalne napadače". Ova poslednja opservacija u vezi sa razlikom između objavljivanja i publikacije je važna. Laka stvar je odgovorno objavljivanje; težak deo je razumno objavljivanje.
+On takođe pominje kako je "donekle netačno nazvati ovu temu bilo čim u vezi sa objavljivanjem, ova tema nije o objavljivanju. Objavljivanje je kada obavestite dobavljača. Ova tema je o publikaciji i to ima veoma različite implikacije. Publikacija je kada ste sigurni da ste obavestili potencijalne napadače". Ova poslednja opservacija u vezi sa razlikom između objavljivanja i publikacije je važna. Laka stvar je odgovorno objavljivanje; težak deo je razumna publikacija.
 
 
 ### Bitcoinovo traumatično detinjstvo
@@ -1807,7 +1807,7 @@ Još jedna stvar o kojoj se može raspravljati je da li je dobro ili loše što 
 
 
 
-Sredinom avgusta 2010. godine, korisnik Bitcointalk foruma jgarzik, poznat i kao Jeff Garzik, [otkriveno je da](https://bitcointalk.org/index.php?topic=822.msg9474#msg9474) određena transakcija na visini bloka 74638 ima dva izlaza neobično visoke vrednosti:
+Sredinom avgusta 2010. godine, korisnik Bitcointalk foruma jgarzik, poznat i kao Jeff Garzik, [otkrio je da](https://bitcointalk.org/index.php?topic=822.msg9474#msg9474) određena transakcija na visini bloka 74638 ima dva izlaza neobično visoke vrednosti:
 
 
 ```
@@ -1832,7 +1832,7 @@ Sredinom avgusta 2010. godine, korisnik Bitcointalk foruma jgarzik, poznat i kao
 Pretpostavlja se da je postojala greška koja je uzrokovala da zbir dva int64 (ne uint64, kako je Garzik pretpostavio) izlaza pređe u negativnu vrednost -0.00997538 BTC. Bez obzira na zbir ulaza, "zbir" izlaza bi bio manji, čineći ovu transakciju ispravnom prema tadašnjem kodu.
 
 
-U ovom slučaju, greška je bila otkrivena i objavljena putem stvarnog eksploita. Nesrećna posledica ovoga bila je da je oko 2x92 milijarde Bitcoin bilo kreirano, što je ozbiljno razvodnilo ponudu novca od oko 3.7 miliona novčića koji su postojali u to vreme.
+U ovom slučaju, greška je bila otkrivena i objavljena putem stvarnog eksploita. Nesrećna posledica ovoga bila je da je oko 2x92 milijarde bitcoina bilo kreirano, što je ozbiljno razvodnilo ponudu novca od oko 3.7 miliona novčića koji su postojali u to vreme.
 
 
 U povezanoj temi, [Satoshi je objavio](https://bitcointalk.org/index.php?topic=823.msg9531#msg9531) da bi cenio kada bi ljudi prestali sa rudarenjem (ili *generisanjem*, kako su to tada zvali):
@@ -1859,7 +1859,7 @@ Njegov plan je bio da napravi soft fork kako bi transakcije poput one o kojoj se
 > Ako ne želite da koristite knightmb-ove fajlove, možete jednostavno obrisati vaše blk*.dat fajlove, ali će to biti veliko opterećenje za mrežu ako svi budu preuzimali ceo indeks blokova odjednom.
 >
 
-> Izgradiću izdanja uskoro.
+> Izgradiću release uskoro.
 
 Želeo je da ljudi preuzmu podatke o blokovima od određenog korisnika, naime knightmb, koji je objavio svoj blockchain kako se pojavio na njegovom disku, datoteke blkXXXX.dat i blkindex.dat. Razlog za preuzimanje blockchain podataka na ovaj način, umesto sinhronizacije od početka, bio je smanjenje zagušenja mrežnog protoka.
 
@@ -1943,7 +1943,7 @@ BIP66 je zanimljiv jer ističe važnost:
 - rudarenja na vrhu verifikovanih blokova
 
 
-BIP66 je bio predlog za pooštravanje pravila za kodiranje potpisa u Bitcoin Script. [Motivacija](https://github.com/Bitcoin/bips/blob/master/bip-0066.mediawiki#motivation) je bila mogućnost parsiranja potpisa pomoću softvera ili biblioteka osim OpenSSL-a, pa čak i novijih verzija OpenSSL-a. OpenSSL je biblioteka za kriptografiju opšte namene koju je Bitcoin Core koristio u to vreme.
+BIP66 je bio predlog za pooštravanje pravila za kodiranje potpisa u Bitcoin Script-i. [Motivacija](https://github.com/Bitcoin/bips/blob/master/bip-0066.mediawiki#motivation) je bila mogućnost parsiranja potpisa pomoću softvera ili biblioteka osim OpenSSL-a, pa čak i novijih verzija OpenSSL-a. OpenSSL je biblioteka za kriptografiju opšte namene koju je Bitcoin Core koristio u to vreme.
 
 
 BIP je aktiviran 4. jula 2015. Međutim, iako je gore navedeno tačno, BIP66 takođe rešava mnogo ozbiljniji problem koji nije pomenut u BIP-u.
@@ -1985,7 +1985,7 @@ Vremenska linija događaja oko BIP66. Stavke u crnom su objašnjene iznad.
 
 
 
-Bez da iko zna za problem, mogao je biti rešen povučenim BIP62, koji je bio predlog za smanjenje mogućnosti transakcione malleabilnosti. Među predloženim promenama u BIP62 bilo je pooštravanje konsenzusnih pravila za kodiranje potpisa, ili "strogo DER kodiranje". Pieter Wuille je predložio neke izmene BIP-a u julu 2014. godine, koje bi rešile problem:
+Bez da iko zna za problem, mogao je biti rešen povučenim BIP62, koji je bio predlog za smanjenje mogućnosti transakcione malleabilnosti (izmenjivost transakcije). Među predloženim promenama u BIP62 bilo je pooštravanje konsenzusnih pravila za kodiranje potpisa, ili "strogo DER kodiranje". Pieter Wuille je predložio neke izmene BIP-a u julu 2014. godine, koje bi rešile problem:
 
 
 > 2014-Jul-18: Kako bi pravila za kodiranje Bitcoin potpisa bila nezavisna od specifičnog parsera OpenSSL-a, izmenio sam BIP62 predlog tako da zahtev za striktne DER potpise važi i za transakcije verzije 1. U to vreme, nijedan ne-DER potpis više nije bio rudaren u blokove, pa se pretpostavljalo da to neće imati nikakav uticaj. Pogledajte https://github.com/Bitcoin/bips/pull/90 i http://lists.linuxfoundation.org/pipermail/Bitcoin-dev/2014-July/006299.html. U to vreme nije bilo poznato, ali ako bi se primenilo, ovo bi rešilo ranjivost.
@@ -2002,7 +2002,7 @@ OpenSSL je objavio nove verzije svog softvera sa zakrpama koje bi, da su koriš�
 
 > Iako je za većinu aplikacija generalno prihvatljivo da se unapred odbace neki potpisi, Bitcoin je konsenzusni sistem gde svi učesnici moraju generalno da se slože oko tačne validnosti ili nevalidnosti ulaznih podataka. U izvesnom smislu, doslednost je važnija od "ispravnosti".
 > [...]
-> Zakrpe iznad, međutim, rešavaju samo jedan simptom opšteg problema: oslanjanje na softver koji nije dizajniran ili distribuiran za konsenzusnu upotrebu (posebno OpenSSL) za konsenzusno-normativno ponašanje. Stoga, kao inkrementalno poboljšanje, predlažem ciljani soft fork da uskoro sprovede strogu DER usklađenost, koristeći podskup BIP62.
+> Zakrpe iznad, međutim, rešavaju samo jedan simptom opšteg problema: oslanjanje na softver koji nije dizajniran ili distribuiran za konsenzusnu upotrebu (posebno OpenSSL) za konsenzusno-normativno ponašanje. Stoga, kao inkrementalno poboljšanje, predlažem ciljani soft fork kako bi se uskoro nametnulo striktno poštovanje DER standarda, koristeći podskup BIP-62.
 
 Ističe da korišćenje koda koji nije namenjen za upotrebu u konsenzus sistemima predstavlja ozbiljne rizike, i predlaže da Bitcoin implementira striktno DER kodiranje. Ovo je veoma jasan primer važnosti dobre selekcije kriptografije.
 
@@ -2043,7 +2043,7 @@ Događaji koji su doveli do BIP66, njegovo uvođenje i posledice predstavljaju v
 - Implementacija popravki za neobjavljene ranjivosti je složena igra.
 - Zadržavanje konsenzusa je teško.
 - Softver koji nije namenjen za konsenzusne sisteme je generalno rizičan.
-- BIP-ovi bi trebali biti donekle atomarni.
+- BIP-ovi bi trebalo da budu relativno samostalne celine.
 
 
 ### Zaključak o ponašanju sistema u kriznim situacijama
@@ -2061,7 +2061,7 @@ Pregledali smo neke od ozbiljnijih problema koji su se pojavili tokom godina i k
 <chapterId>91462ca7-f09c-55da-a5b9-3e211de31da5</chapterId>
 
 
-Ova pitanja za diskusiju nisu samo rekapitulacija sadržaja u kursu "Razvojna filozofija bitcoin-a", već su namenjena da vas podstaknu na dalje istraživanje, zato obavezno istražujte dalje.
+Ova pitanja za diskusiju nisu samo rekapitulacija sadržaja u kursu "Filozofija razvoja Bitcoina", već su namenjena da vas podstaknu na dalje istraživanje, zato obavezno istražujte dalje.
 
 
 Možete proveriti koliko dobro razumete pisanjem [mini-eseja](https://www.youtube.com/watch?v=N4YjXJVzoZY) od 100-300 reči birajući temu iz ovog skupa pitanja. Ako želite povratne informacije o svom radu, možete ga poslati na mini-essay@planb.network, bićemo više nego srećni da ga pregledamo.
@@ -2083,7 +2083,7 @@ Možete proveriti koliko dobro razumete pisanjem [mini-eseja](https://www.youtub
 
 
 
-- Odsustvo potrebe za poverenjem je često spektar, a ne binarna. Koji aspekti Bitcoin-a su više bez potrebe za poverenjem, a koji obično uključuju viši nivo poverenja? Mogu li se ublažiti?
+- Odsustvo potrebe za poverenjem je često spektar, a ne binarna. Koji aspekti Bitcoina su više bez potrebe za poverenjem, a koji obično uključuju viši nivo poverenja? Mogu li se ublažiti?
 - Želite da pokrenete full node kako biste mogli u potpunosti da validirate sve transakcije. Preuzimate Bitcoin Core sa https://Bitcoin.org/en/download. Gde se oslanjate na poverenje, a gde to uopšte nije potrebno??
 - Možete li izgraditi sistem bez potrebe za poverenjem na vrhu pouzdanog sistema?
 
@@ -2094,7 +2094,7 @@ Možete proveriti koliko dobro razumete pisanjem [mini-eseja](https://www.youtub
 
 
 
-- Koje su neke važne koristi koje korisnik stiče kada održava dobru privatnost prilikom interakcije sa Bitcoin-om? Koje su neke altruističke koristi za mrežu?
+- Koje su neke važne koristi koje korisnik stiče kada održava dobru privatnost prilikom interakcije sa Bitcoinom? Koje su neke altruističke koristi za mrežu?
 - Kako ponovno korišćenje adresa utiče na vašu privatnost?
 - Bitcoin koristi UTXO model, dok neke alternativne kriptovalute koriste account model. Koje su implikacije ovog izbora na privatnost?
 
@@ -2137,7 +2137,7 @@ Možete proveriti koliko dobro razumete pisanjem [mini-eseja](https://www.youtub
 - Samo nekolicina održavatelja ima potrebne GitHub dozvole za spajanje koda u [Bitcoin Core](https://github.com/Bitcoin/Bitcoin) repozitorijum. Zar to nije u suprotnosti sa mrežom bez dozvola?
 - Da li je proces razvoja otvorenog koda podložan Sybil napadu? Ako jeste, kako biste to sprečili?
 - Koje su prednosti i nedostaci oslanjanja na open source biblioteke trećih strana, i koji pristup je primenjen sa Bitcoin Core?
-- Na koje načine nam je potrebna revizija osim same revizije koda? Kako odrediti koliko je revizije dovoljno?
+- Na koje načine nam je potrebno pregleda osim samog pregleda koda? Kako odrediti koliko pregleda je dovoljno?
 - Kako osigurati da uvek ima dovoljno ljudi sa stručnim znanjem koji rade na Bitcoin-u? Šta se dešava kada ih nema, i kako procenjujemo njihov integritet i namere?
 
 
