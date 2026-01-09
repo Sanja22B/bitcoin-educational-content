@@ -30,7 +30,7 @@ In particular, the period from spring 2011 to summer 2012 is characterized by a 
 <chapterId>ce630c81-dd1d-59a0-afea-8e6d3313e8ad</chapterId>
 
 
-This course aims to tell the first part of the second phase of the Bitcoin story (2011-2014). This follows the first phase (2008-2011), known as the "proof of concept" phase, characterized by the presence of Satoshi and the project's relative discretion. And it precedes the third phase (2014-2018), marked in particular by the *blocksize war*, the internal conflict that tore the community apart for several years. We'll try to capture the originality of this period, and how it represents a necessary step in the construction of Bitcoin.
+This course aims to cover the first part of the second phase of the Bitcoin story (2011–2014). It follows the first phase (2008–2011), known as the “proof-of-concept” phase, characterized by Satoshi’s presence and the project’s relative discretion, and it precedes the third phase (2014–2018), marked in particular by the *blocksize war*—an internal conflict that tore the community apart for several years. We'll try to capture the originality of this period, and how it represents a necessary step in the construction of Bitcoin.
 
 
 ### The Wild West of finance
