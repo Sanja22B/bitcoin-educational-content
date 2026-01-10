@@ -338,13 +338,13 @@ So, a little over a year after the sale of Laszlo's pizzas, Silk Road became the
 <chapterId>451293d5-d691-5c36-91dd-4ee5e6dcc9e3</chapterId>
 
 
-The period that began in the spring of 2011 was characterized by the development of foreign exchange activity between bitcoin and traditional currencies, such as the dollar and the euro. This type of service played an essential role in Bitcoin's economy, which was too small to operate in a closed loop. Miners needed to sell their rewards to pay their electricity bills. Traders, including the Silk Road vendors, needed to collect dollars to pay back their suppliers. Their customers, who generally didn't have bitcoin, needed to obtain it beforehand. There was also strong speculative demand, from people who saw cryptocurrency as an investment.
+The period that began in the spring of 2011 was characterized by the development of exchange activity between bitcoin and traditional currencies, such as the dollar and the euro. This type of service played an essential role in Bitcoin's economy, which was too small to operate in a closed loop. Miners needed to sell their rewards to pay their electricity bills. Traders, including the Silk Road vendors, needed to collect dollars to pay back their suppliers. Their customers, who generally didn't have bitcoin, needed to obtain it beforehand. There was also strong speculative demand, from people who saw cryptocurrency as an investment.
 
 
-The first major foreign exchange platform was Mt. Gox, launched "on a lark" in July 2010 by entrepreneur Jed McCaleb. Thanks to its automated operation, it quickly established itself as the main way to exchange dollars into bitcoins, and vice versa. In early 2011, faced with the scale of the task, Jed McCaleb decided to hand over the platform to a more technically qualified and motivated individual: French developer Mark Karpelès.
+The first major exchange platform was Mt. Gox, launched "on a lark" in July 2010 by entrepreneur Jed McCaleb. Thanks to its automated operation, it quickly established itself as the main way to exchange dollars into bitcoins, and vice versa. In early 2011, faced with the scale of the task, Jed McCaleb decided to hand over the platform to a more technically qualified and motivated individual: French developer Mark Karpelès.
 
 
-Along with Silk Road, the platform was central to this part of Bitcoin's history. It was the main site of the first real speculative bubble in the price of bitcoin, which peaked at $32 in June. It also suffered a massive hack, and was linked to several incidents that then occurred in the ecosystem. In this chapter, we'll talk about the circumstances surrounding the takeover of Mt. Gox, its meteoric success from the spring onwards, the competitors that emerged at the same time, the problems it encountered and the consequences this had on Bitcoin's economy. But let's start by introducing its new owner, Mark Karpelès.
+Along with Silk Road, the platform was central in this part of Bitcoin's history. It was the main site of the first real speculative bubble in the price of bitcoin, which peaked at $32 in June. It also suffered a massive hack, and was linked to several incidents that then occurred in the ecosystem. In this chapter, we'll talk about the circumstances surrounding the takeover of Mt. Gox, its meteoric success from the spring onwards, the competitors that emerged at the same time, the problems it encountered and the consequences this had on Bitcoin's economy. But let's start by introducing its new owner, Mark Karpelès.
 
 
 ### Mark Karpelès, the geek
@@ -359,47 +359,32 @@ Mark Karpelès was born in France in 1985. An only child, he was raised by his s
 *Mark Karpelès in Suck My Geek in 2007 (source: [MrReportageTV](https://www.youtube.com/watch?v=cAOLU4_4QGg) on Youtube)*
 
 
-He learned about Bitcoin in the autumn of 2010 from a French customer based in Peru (William Waisse [alias](https://bitcointalk.org/index.php?topic=1719.msg21107#msg21107) Neofutur), who asked him if he could pay an invoice in bitcoins. Mark is open to the possibility, and quickly develops a passion for the system. Unlike Martti Malmi, Ross Ulbricht or Roger Ver, the young Frenchman is not an ideologically motivated libertarian; nor is he a profit-hungry speculator. Rather, his interest in Bitcoin is rooted in technical curiosity. As he [will say](https://web.archive.org/web/20140918220234/http://www.thedailybeast.com/articles/2014/09/17/mt-gox-s-karpeles-on-losing-a-half-billion-bucks-in-bitcoins.html) in 2014:
+He learned about Bitcoin in the autumn of 2010 from a French customer based in Peru (William Waisse [alias](https://bitcointalk.org/index.php?topic=1719.msg21107#msg21107) Neofutur), who asked him if he could pay an invoice in bitcoins. Mark is open to the possibility, and quickly develops a passion for the system. Unlike Martti Malmi, Ross Ulbricht or Roger Ver, the young Frenchman is not an ideologically motivated libertarian; nor is he a profit-hungry speculator. Rather, his interest in Bitcoin is rooted in technical curiosity. As he [would say](https://web.archive.org/web/20140918220234/http://www.thedailybeast.com/articles/2014/09/17/mt-gox-s-karpeles-on-losing-a-half-billion-bucks-in-bitcoins.html) in 2014:
 
+> "What interested me in bitcoin was the technological aspects. In other words, the fact of maintaining a global database in a secured way. The fact that each client has a secured private wallet. To have an entirely decentralized system. Also, bitcoin allows you to have a database that is public."
 
-> "What interested me in bitcoin were the technical aspects. Namely, the fact that a global database is securely maintained. The fact that each customer has a secure private wallet. The fact that the system is entirely decentralized. What's more, bitcoin makes it possible to have a database that is public."
->
-
-> original: "What interested me in bitcoin was the technological aspects. In other words, the fact of maintaining a global database in a secured way. The fact that each client has a secured private wallet. To have an entirely decentralized system. Also, bitcoin allows you to have a database that is public."
-
-As soon as he discovered it, he immersed himself in the workings of Bitcoin and began writing programs to take advantage of it. In November, he [starts](https://bitcointalk.org/index.php?topic=30.msg20699#msg20699) accepting bitcoin payments with KalyHost (Ross Ulbricht [uses](https://cdn.arstechnica.net/wp-content/uploads/2015/01/Govt.motion.1.19.pdf) this service to host the Silkroadmarket.org web page). In December 2010, he [creates](https://bitcointalk.org/index.php?topic=2321.msg30872#msg30872) a new wiki, Bitcoin.it, which will soon become Bitcoin's main wiki. He also set out to develop a software implementation, dubbed [QBitcoin](https://web.archive.org/web/20110326023018/http://bitcoinweekly.com/articles/interview-with-magicaltux-on-qbitcoin), but didn't follow through.
+As soon as he discovered it, he immersed himself in the workings of Bitcoin and began writing programs to take advantage of it. In November, he [started](https://bitcointalk.org/index.php?topic=30.msg20699#msg20699) accepting bitcoin payments with KalyHost (Ross Ulbricht [would use](https://cdn.arstechnica.net/wp-content/uploads/2015/01/Govt.motion.1.19.pdf) this service to host the Silkroadmarket.org web page). In December 2010, he [created](https://bitcointalk.org/index.php?topic=2321.msg30872#msg30872) a new wiki, Bitcoin.it, which will soon become Bitcoin's main wiki. He also set out to develop a software implementation, dubbed [QBitcoin](https://web.archive.org/web/20110326023018/http://bitcoinweekly.com/articles/interview-with-magicaltux-on-qbitcoin), but didn't follow through.
 
 
 ### The purchase of Mt. Gox
 
 
-At the beginning of 2011, Jed McCaleb is managing Mt. Gox as best he can. The platform is not secure at all, as some community members, such as [Casascius](https://bitcointalk.org/index.php?topic=4187.msg66477#msg66477), point out. What's more, Jed isn't sure about the regulatory compliance of his business. The PC World article has already had an effect on the price, and he fears (rightly) that the upward trend will continue. He is therefore looking for a buyer.
+At the beginning of 2011, Jed McCaleb is managing Mt. Gox as best he could. The platform was not secure at all, as some community members, such as [Casascius](https://bitcointalk.org/index.php?topic=4187.msg66477#msg66477), pointed out. Furthermore, Jed was unsure about the regulatory compliance of his business. The PC World article had already affected the price, and he rightly feared that the upward trend would continue. He therefore began looking for a buyer.
 
 
-His choice fell on Mark Karpelès, who is active in the developer community, notably on the IRC channel \#bitcoin-dev. The Frenchman helped Martti Malmi host Bitcoin.org and helped Jed accept the euro, thus demonstrating his technical skills. On January 18, Jed offered Mark the chance to take over Mt. Gox. In his e-mail, he [writes](https://web.archive.org/web/20170602025506/http://www.thedailybeast.com/behind-the-biggest-bitcoin-heist-in-history-inside-the-implosion-of-mt-gox):
-
+His choice fell on Mark Karpelès, who was active in the developer community, notably on the IRC channel \#bitcoin-dev. The Frenchman helped Martti Malmi host Bitcoin.org and helped Jed accept the euro, thus demonstrating his technical skills. On January 18, Jed offered Mark the chance to take over Mt. Gox. In his e-mail, he [wrote](https://web.archive.org/web/20170602025506/http://www.thedailybeast.com/behind-the-biggest-bitcoin-heist-in-history-inside-the-implosion-of-mt-gox):
 
 > "Hi Mark,
 >
 
-> Please keep this confidential, as I don't want to create panic, and nothing is certain yet, but I'm thinking of selling mtgox. I have other projects I'd like to focus on. Would you be interested? I could sell it for very little in exchange for interest on profits, for example. There's also an investment fund ready to invest in mtgox. Probably around $158k. So you could just pick up the box with some cash." (Translation by Cyril Gay)
->
-
-> original: "Hi Mark,
->
-
 > Please keep all this confidential I don't want to start a panic and I'm not sure I'll do it yet but I'm thinking I might try to sell mtgox. I just have these other projects I would like to devote more time to. Would you be interested? It could be very little up front and just a payout based on revenue or something. There is also an investment group that wants to fund mtgox. Probably around $158k. So you could most likely take it over with some cash."
 
-After discussions on the terms of the agreement, the contract was finally signed on February 3. Jed McCaleb retains 12% of the company and 50% of revenues for six months, in return for which the remainder is transferred to Mark Karpelès' company, Tibanne Co. Ltd. A clause in the contract releases Jed from any legal liability.
+After discussions on the terms of the agreement, the contract was finally signed on February 3. Jed McCaleb retained 12% of the company and 50% of revenues for six months, after which the rest was transferred to Mark Karpelès' company, Tibanne Co. Ltd. A clause in the contract released Jed from any legal liability.
 
 
-On March 6, Jed McCaleb publicly [officializes](https://bitcointalk.org/index.php?topic=4187.msg60610#msg60610) the transfer on the Bitcoin forum. In his last message with the Mt. Gox account, he explains:
+On March 6, Jed McCaleb made the transfer [official](https://bitcointalk.org/index.php?topic=4187.msg60610#msg60610) on the Bitcoin forum. In his last message with the Mt. Gox account, he explained:
 
-
-> "I created mtgox on a whim after reading an article about bitcoins last summer. It turned out to be an interesting and fun experience. I'm still convinced that bitcoins have a bright future. But to really make mtgox realize its full potential, it would take more time than I currently have. So I've decided to pass the torch to someone who will be better placed to take the site to the next level."
->
-
-> original: "I created mtgox on a lark after reading about bitcoins last summer. It has been interesting and fun to do. I'm still very confident that bitcoins have a bright future. But to really make mtgox what it has the potential to be would require more time than I have right now. So I've decided to pass the torch to someone better able to take the site to the next level."
+> "I created mtgox on a lark after reading about bitcoins last summer. It has been interesting and fun to do. I'm still very confident that bitcoins have a bright future. But to really make mtgox what it has the potential to be would require more time than I have right now. So I've decided to pass the torch to someone better able to take the site to the next level."
 
 In the months that followed, Jed continued to help Mark manage the platform. However, he would soon be absorbed by a [new project](https://bitcointalk.org/index.php?topic=10193.msg146250#msg146250) for digital currency, which would materialize in the redesign of Ripple in 2012, followed by the creation of Stellar in 2014.
 
@@ -407,19 +392,14 @@ In the months that followed, Jed continued to help Mark manage the platform. How
 ### The first incidents
 
 
-As we said at the beginning of 2011, the Mt. Gox platform is not secure. And it was logically subject to a number of attacks of varying degrees of severity, including an XML injection that enabled a malicious user to make an unauthorized [withdrawal](https://blog.bitmex.com/wp-content/uploads/2018/02/CrackingMtGox.pdf) of $50,000 from his Liberty Reserve account. When Mt. Gox changed hands, the platform was already a poisoned chalice for Mark Karpelès. But the trouble didn't stop there.
+As we said at the beginning of 2011, the Mt. Gox platform was not secure. And it was logically subject to a number of attacks of varying degrees of severity, including an XML injection that enabled a malicious user to make an unauthorized [withdrawal](https://blog.bitmex.com/wp-content/uploads/2018/02/CrackingMtGox.pdf) of $50,000 from his Liberty Reserve account. When Mt. Gox changed hands, the platform was already a poisoned gift for Mark Karpelès. But the trouble didn't stop there.
 
 
-On March 1, 2011, just as the transfer was about to be made official, 80,000 bitcoins [evaporated](https://mempool.space/tx/e67a0550848b7932d7796aeea16ab0e48a5cfe81c4e8cca2c5b03e0416850114) into thin air thanks to malicious access to the site's wallet.dat file. On the 3rd, Jed McCaleb notices the withdrawal and [informs](https://web.archive.org/web/20200427200314/https://courts.ms.gov/appellatecourts/docket/sendPDF.php?f=dc00001_live.SCT.17.M.1681.102741.5.pdf&c=87490&a=N&s=2) Mark on IRC that "something bad happened". It was a major loss (one bitcoin sold for $0.92 at the time), which would get bigger and bigger over the months as the price rose unheard of.
+On March 1, 2011, just as the transfer was about to be made official, 80,000 bitcoins [evaporated](https://mempool.space/tx/e67a0550848b7932d7796aeea16ab0e48a5cfe81c4e8cca2c5b03e0416850114) into thin air thanks to malicious access to the site's wallet.dat file. On the 3rd, Jed McCaleb noticed the withdrawal and [informed](https://web.archive.org/web/20200427200314/https://courts.ms.gov/appellatecourts/docket/sendPDF.php?f=dc00001_live.SCT.17.M.1681.102741.5.pdf&c=87490&a=N&s=2) Mark on IRC that "something bad happened". It was a major loss (one bitcoin sold for $0.92 at the time), which would grow larger and larger over the following months with the unprecedented rise in price.
 
+This problem is [mentioned](https://web.archive.org/web/20170602025506/http://www.thedailybeast.com/web/20170602025506/http://www.thedailybeast.com/behind-the-biggest-bitcoin-heist-in-history-inside-the-implosion-of-mt-gox) by Jed on April 18 in an email to Mark, where he wrote:
 
-This problem is [mentioned](https://web.archive.org/web/20170602025506/http://www.thedailybeast.com/web/20170602025506/http://www.thedailybeast.com/behind-the-biggest-bitcoin-heist-in-history-inside-the-implosion-of-mt-gox) by Jed on April 18 in an email to Mark, where he writes:
-
-
-> "I can't tell you how big of a problem the problem will be if 80 kBTC go missing and their value climbs to $100 or so. That will be quite a debt, but by then mtgox should have pocketed a ton of BTC. You can also count on the fact that the BTC balance will probably never fall below 80k. So maybe you don't have to worry." (Translation by Cyril Gay, slightly modified)
->
-
-> original: "I can't tell how big an issue it will be to be short 80k BTC if the price goes to $100 or something. That is quite a bit to owe at that point but mtgox should have made a ton of BTC (Bitcoin) getting to there. There is also still the fact that the BTC (Bitcoin) balance will probably never fall below 80k. So maybe you don't really need to worry about it."
+> "I can't tell how big an issue it will be to be short 80k BTC if the price goes to $100 or something. That is quite a bit to owe at that point but mtgox should have made a ton of BTC (Bitcoin) getting to there. There is also still the fact that the BTC (Bitcoin) balance will probably never fall below 80k. So maybe you don't really need to worry about it."
 
 ### Managing the first speculative bubble
 
