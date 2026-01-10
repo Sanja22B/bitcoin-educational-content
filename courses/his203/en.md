@@ -221,26 +221,22 @@ To build the site, he [asked](https://antilop.cc/sr/files/2015_01_22_Ulbricht_tr
 
 After setting up the platform, Ross Ulbricht turned his attention to promoting it. On January 27, 2011, he registered under the pseudonym Altoid on the forum of *The Shroomery*, a site dedicated to hallucinogenic mushrooms, and [published](https://www.shroomery.org/forums/showflat.php/Number/13860995) a message there mentioning the marketplace, in which he claimed to have stumbled across it by chance. On January 29, he [repeated](https://bitcointalk.org/index.php?topic=175.msg42670#msg42670) this maneuver on the Bitcoin forum, in the thread devoted to Teppy's "heroin store". He writes:
 
-> "Has anyone seen Silk Road yet?  It's kind of like an anonymous\[A\]mazon.com.  I don't think they have heroin on there, but they are selling other stuff.  They basically use bitcoin and tor to broker anonymous transactions."
+> "Has anyone seen Silk Road yet?  It's kind of like an anonymous Amazon.com.  I don't think they have heroin on there, but they are selling other stuff.  They basically use bitcoin and tor to broker anonymous transactions."
 
-In the message, he provides the address of the site on Tor (`tydgccykixpbu6uz.onion` then `ianxz6zefk72ulzz.onion`), as well as a link to a [Wordpress blog](https://web.archive.org/web/20110204025853/http://silkroad420.wordpress.com/) containing detailed instructions on how to access the platform. The latter is [soon suspended](https://web.archive.org/web/20110309130446/http://silkroad420.wordpress.com/), so Ross is forced to set up a new intermediate website at [Silkroadmarket.org](https://web.archive.org/web/20110304201806/http://silkroadmarket.org/).
+In the message, he provides the address of the site on Tor (`tydgccykixpbu6uz.onion` then `ianxz6zefk72ulzz.onion`), as well as a link to a [Wordpress blog](https://web.archive.org/web/20110204025853/http://silkroad420.wordpress.com/) containing detailed instructions on how to access the platform. The latter was [soon suspended](https://web.archive.org/web/20110309130446/http://silkroad420.wordpress.com/), so Ross was forced to set up a new intermediate website at [Silkroadmarket.org](https://web.archive.org/web/20110304201806/http://silkroadmarket.org/).
 
 
 A forum member, using the pseudonym ShadowOfHarbringer, quotes his post and replies:
 
+> "So here we go, first Bitcoin drug store. We're going into deep water faster than I thought then. I wonder how long will it take for govs to start investigating Bitcoin."
 
-> "So here we are: the first drug store using Bitcoin. We're venturing into deep waters faster than I thought. I wonder how long it will be before the states start investigating Bitcoin."
->
-
-> original: "So here we go, first Bitcoin drug store. We're going into deep water faster than i thought then. I wonder how long will it take for govs to start investigating Bitcoin."
-
-However, the platform soon ran into technical problems and was temporarily taken offline. During February, Ross asks his friend Richard again for technical advice. On March 1, he finally makes an official [announcement](https://bitcointalk.org/index.php?topic=3984.msg57080#msg57080) with a dedicated account on the Bitcoin forum, stating that "28 transactions have been made" (original: "28 transactions have been made!") since launch.
+However, the platform soon ran into technical problems and was temporarily taken offline. During February, Ross asks his friend Richard again for technical advice. On March 1, he finally made an official [announcement](https://bitcointalk.org/index.php?topic=3984.msg57080#msg57080) with a dedicated account on the Bitcoin forum, stating that "28 transactions have been made!" since launch.
 
 
-Back then, the Bitcoin forum hosted a *marketplace* where people could buy and sell things in bitcoins. However, there were no rules prohibiting illegal drugs. Martti Malmi, who [attends](https://bitcointalk.org/index.php?topic=175.msg42790#msg42790) the launch of Silk Road, finally [bans](https://bitcointalk.org/index.php?topic=3535.msg51426#msg51426) the sale of illegal goods on February 19.
+Back then, the Bitcoin forum hosted a *marketplace* where people could buy and sell things in bitcoins. However, there were no rules prohibiting illegal drugs. Martti Malmi, who [attended](https://bitcointalk.org/index.php?topic=175.msg42790#msg42790) the launch of Silk Road, eventually [banned](https://bitcointalk.org/index.php?topic=3535.msg51426#msg51426) the sale of illegal goods on February 19.
 
 
-Silk Road draws the attention of Bitcoin users, and in particular agorists, who [consider](https://web.archive.org/web/20110606111034/http://www.bitcoinweekly.com/articles/counter-economics-and-bitcoin) that "due to its anonymity and security, Bitcoin is ideally suited for use in counter-economic activities" (original: "Bitcoin is ideally suited for use in counter-economic activities, due to its anonymity and security"). The marketplace is also mentioned in numerous places, including on the radio program [*Free Talk Live*](https://bitcointalk.org/index.php?topic=3984.msg66567#msg66567) and on [4Chan](https://bitcointalk.org/index.php?topic=3984.msg68196#msg68196).
+Silk Road draws the attention of Bitcoin users, and in particular agorists, who [consider](https://web.archive.org/web/20110606111034/http://www.bitcoinweekly.com/articles/counter-economics-and-bitcoin) that "Bitcoin is ideally suited for use in counter-economic activities, due to its anonymity and security". The marketplace is also mentioned in numerous places, including on the radio program [*Free Talk Live*](https://bitcointalk.org/index.php?topic=3984.msg66567#msg66567) and on [4Chan](https://bitcointalk.org/index.php?topic=3984.msg68196#msg68196).
 
 
 ### How Silk Road works
@@ -255,16 +251,16 @@ Silk Road is a marketplace, meaning it acts as an intermediary between buyers an
 *Screenshot of Silk Road in May 2011 (source: [archive](https://web.archive.org/web/20110603015735/http://gawker.com/5805928/the-underground-website-where-you-can-buy-any-drug-imaginable) from Gawker)*
 
 
-Products are shipped via the postal service (the *United States Postal Service* in the case of the USA), as systematic searches are prohibited in most countries around the world. In the event of an unannounced search, packages are cleverly camouflaged to make them look like a joint shipment. Products with odors likely to be detected by sniffer dogs are placed in vacuum bags.
+Products are shipped via the postal service (the *United States Postal Service* in the case of the USA), as systematic searches are prohibited in most countries around the world. In the event of an unexpected inspection, the packages are cleverly disguised to appear as ordinary shipments. Products with odors likely to be detected by sniffer dogs are placed in vacuum bags.
 
 
 In keeping with Ross's libertarian philosophy, the products that can be listed on the site [must](https://antilop.cc/sr/exhibits/GX-120_Redacted.pdf) not have been obtained by harming others: drugs, medicines, precious metal coins, but never stolen bank cards, child pornography or hitmen's services. On the whole, the site is mainly used for illicit drug trafficking, and in particular for the sale of small quantities of cannabis. Legal products such as books, art, electronic components, gold, etc. can also be found on the site, but these make up a tiny proportion of the trade carried out on the platform.
 
 
-Initially, Ross Ulbricht validated all sales by hand. Self-taught in computer science, the site he set up was riddled with flaws and faults. With the increase in traffic associated with the launch, these problems became hard to bear. So Ross decides to rewrite the platform's code, while continuing to manually manage orders and hold down a job in his official life. The workload is enormous: [in his diary](https://antilop.cc/sr/exhibits/253456476-Silk-Road-exhibits-GX-240B.pdf), he explains that "the two months of rewriting the site were the most trying of my life". (original: "Rewriting the site was the most stressful couple of months I've ever experienced.")
+Initially, Ross Ulbricht validated all sales by hand. Self-taught in computer science, the site he set up was riddled with flaws and faults. With the increase in traffic associated with the launch, these problems became hard to bear. So Ross decides to rewrite the platform's code, while continuing to manually manage orders and hold down a job in his official life. The workload was enormous: [in his diary](https://antilop.cc/sr/exhibits/253456476-Silk-Road-exhibits-GX-240B.pdf), he explains that "Rewriting the site was the most stressful couple of months I've ever experienced."
 
 
-The new version of Silk Road [release](https://bitcointalk.org/index.php?topic=3984.msg128554#msg128554) finally goes live on May 18, 2011. It includes automated payment processing and a bitcoin shuffler, enabling processed bitcoins to be anonymized. However, it also suffers from a flaw that causes a loss of several "thousands of dollars" at the time, prompting Ross to revise the entire processing procedure to fix the problem. Despite this, the site eventually gains popularity through word of mouth.
+The new version of Silk Road [was finally released](https://bitcointalk.org/index.php?topic=3984.msg128554#msg128554) on May 18, 2011. It includes automated payment processing and a bitcoin shuffler, enabling processed bitcoins to be anonymized. However, it also suffers from a flaw that caused a loss of several "thousands of dollars" at the time, prompting Ross to revise the entire processing procedure to fix the problem. Despite this, the site eventually gains popularity through word of mouth.
 
 
 ### The Gawker article
@@ -273,7 +269,7 @@ The new version of Silk Road [release](https://bitcointalk.org/index.php?topic=3
 The existence of Silk Road has been known on the Bitcoin forum since its inception. At first, however, it escaped the radar of the general press. Thus, even though the hypothetical case of drug trafficking was [mentioned](https://www.forbes.com/forbes/2011/0509/technology-psilocybin-bitcoins-gavin-andresen-crypto-currency.html) in April by Andy Greenberg in his article for Forbes, the journalist was not yet aware of the platform.
 
 
-The first mention of Silk Road in the mainstream media came on June 1, 2011, when an article by Adrien Chen was [published](https://www.gawkerarchives.com/the-underground-website-where-you-can-buy-any-drug-imag-30818160) on Gawker, a popular blog hosting multiple authors. The article, entitled "The Underground Website Where You Can Buy Any Drug Imaginable" (original: "Le site web souterrain où vous pouvez acheter n'importe quelle drogue imaginable"), presents the platform in a favorable light and includes testimonials from several satisfied users.
+The first mention of Silk Road in the mainstream media came on June 1, 2011, when an article by Adrien Chen was [published](https://www.gawkerarchives.com/the-underground-website-where-you-can-buy-any-drug-imag-30818160) on Gawker, a popular blog hosting multiple authors. The article, entitled "The Underground Website Where You Can Buy Any Drug Imaginable", presents the platform in a favorable light and includes testimonials from several satisfied users.
 
 
 ![Article du 1er juin 2011 à propos de Silk Road](assets/en/003.webp)
@@ -282,63 +278,47 @@ The first mention of Silk Road in the mainstream media came on June 1, 2011, whe
 *June 1, 2011 article about Silk Road (source: [archive](https://web.archive.org/web/20110603015735/http://gawker.com/5805928/the-underground-website-where-you-can-buy-any-drug-imaginable) from Gawker)*
 
 
-The author even includes a few quotes from Ross Ulbricht, whom he interviewed by e-mail and introduces as "Silk Road's administrator". Ross is thus able to share his real motivations, rather than leaving the journalist to speculate on the subject. In the article, he states:
+The author even includes a few quotes from Ross Ulbricht, whom he interviewed by e-mail and introduced as "Silk Road's administrator". Ross is thus able to share his real motivations, rather than leaving the journalist to speculate on the subject. In the article, he states:
+
+> "The state is the primary source of violence, oppression, theft and all forms of coercion. \[...\] Stop funding the state with your tax dollars and direct your productive energies into the black market."
+
+This article revealed the existence of Silk Road to the general public, as the story was taken up by the mainstream press, such as [*The Atlantic*](https://www.theatlantic.com/technology/archive/2011/06/libertarian-dream-a-site-where-you-buy-drugs-with-digital-dollars/239776/). As a result of this unprecedented publicity, traffic on the platform exploded. Servers were struggling to keep up, so much so that Ross [was forced](https://bitcointalk.org/index.php?topic=3984.msg189007#msg189007) to freeze registrations.
 
 
-> "The state is the main source of violence, oppression, theft and all forms of coercion. \[...\] Stop funding the state with your tax dollars and direct your productive energy to the black market."
->
-
-> original: "The state is the primary source of violence, oppression, theft and all forms of coercion. \Stop funding the state with your tax dollars and direct your productive energies into the black market."
-
-This article had the effect of revealing the existence of Silk Road to the general public, the news being picked up by the mainstream press, such as [*The Atlantic*](https://www.theatlantic.com/technology/archive/2011/06/libertarian-dream-a-site-where-you-buy-drugs-with-digital-dollars/239776/). As a result of this unprecedented publicity, traffic on the platform exploded. Servers are struggling to keep up, so much so that Ross [is forced](https://bitcointalk.org/index.php?topic=3984.msg189007#msg189007) to freeze registrations.
-
-
-We are also seeing [competitors](https://gwern.net/dnm-survival) emerge, copying the Silk Road model, such as Black Market Reloaded, which launched at the end of June. Nevertheless, Silk Road remained number 1 until its closure, thanks to its "first mover advantage" and unique philosophy.
+[Competitors](https://gwern.net/dnm-survival) also began to emerge, copying the Silk Road model, such as Black Market Reloaded, which was launched at the end of June. Nevertheless, Silk Road remained number one until its shutdown, thanks to its "first mover advantage" and unique philosophy.
 
 
 ### Reactions to the site's popularity
 
 
-The publicity generated by the Gawker article is not to everyone's liking. The fact that Silk Road is in the spotlight has the collateral effect of intensifying the attention paid to Bitcoin (if only because customers have to acquire bitcoin to buy products). And it turns out that part of the Bitcoin community is hostile to this connection between cryptocurrency and drug trafficking.
+Not everyone welcomed the publicity generated by the Gawker article. The fact that Silk Road was in the spotlight had the side effect of increasing attention on Bitcoin (Not least because customers had to obtain bitcoins to buy products). And it turns out that part of the Bitcoin community was hostile to this connection between cryptocurrency and drug trafficking.
 
 
-In particular, programmer Jeff Garzik, who was involved in the development of the software at the time, took a dim view of this unwelcome association. Following publication of the article, he personally [contacts](https://www.theatlantic.com/technology/archive/2011/06/libertarian-dream-a-site-where-you-buy-drugs-with-digital-dollars/239776/) Adrien Chen by e-mail to explain that Bitcoin is not as anonymous as it seems, since all transactions are permanently recorded on the chain. He concludes his e-mail with the following statement:
+In particular, programmer Jeff Garzik, who was involved in the development of the software at the time, took a dim view of this unwelcome association. Following publication of the article, he personally [contacted](https://www.theatlantic.com/technology/archive/2011/06/libertarian-dream-a-site-where-you-buy-drugs-with-digital-dollars/239776/) Adrien Chen by e-mail to explain that Bitcoin is not as anonymous as it seems, since all transactions are permanently recorded on the chain. He ends his email with this assessment:
 
+> "Attempting major illicit transactions with bitcoin, given existing statistical analysis techniques deployed in the field by law enforcement, is pretty damned dumb."
 
-> "Given the existing statistical analysis techniques deployed in the field by law enforcement agencies, it's downright foolish to attempt to conduct significant illicit transactions with bitcoin."
->
+The Gawker article also attracted the attention of the authorities. On June 5, a few days after its publication, Senators Chuck Schumer (New York) and Joe Manchin (West Virginia) intervened in the public discourse to demand a shutdown of the platform. In an [open letter](https://web.archive.org/web/20180918162447/https://www.manchin.senate.gov/newsroom/press-releases/manchin-urges-federal-law-enforcement-to-shut-down-online-black-market-for-illegal-drugs) addressed to the Attorney General of the Department of Justice and the Administrator of the DEA, they wrote:
 
-> original: "Attempting major illicit transactions with bitcoin, given existing statistical analysis techniques deployed in the field by law enforcement, is pretty damned dumb."
+> "We write to express our grave concern upon discovery of an online marketplace for illegal drugs, known as 'Silk Road.'  Launched in February, this underground website allows users to hide their identities and freely purchase and sell illegal drugs, ranging from cocaine, heroin, ecstasy, and marijuana. (...) Pursuant to 21 U.S.C. 853(a)(2), the Attorney General has the authority to shut down such entities involved in the delivery and distribution of controlled substances by seizing the website domain name. The Drug Enforcement Administration has been and continues to be rigorous in enforcing our controlled substance laws and regulations.  As part of this critical mission, we urge you to take immediate action and shut down the Silk Road network."
 
-The Gawker article also attracted the attention of the authorities. On June 5, a few days after its publication, Senators Chuck Schumer (New York) and Joe Manchin (West Virginia) intervened in the public discourse to demand a shutdown of the platform. In an [open letter](https://web.archive.org/web/20180918162447/https://www.manchin.senate.gov/newsroom/press-releases/manchin-urges-federal-law-enforcement-to-shut-down-online-black-market-for-illegal-drugs) addressed to the Attorney General of the Department of Justice and the Administrator of the DEA, they write:
+Furthermore, in a press conference, Senator Schumer [accused](https://web.archive.org/web/20120804222559/http://www.nbcnewyork.com/news/local/123187958.html) Bitcoin of being "an online form of money laundering used to disguise the source of money, and to disguise who's both selling and buying the drug". This has prompted a reaction from Gavin Andresen, the software's main maintainer, who was not in favor of Silk Road, but was sorry to hear such a thing being said on Bitcoin. On his blog, he [wrote](https://gavinthink.blogspot.com/2011/06/but-you-can-use-it-to-buy-drugs.html):
 
-
-> "We are writing to express our deep concern following the discovery of an online market for illegal drugs, known as "Silk Road". Launched in February, this clandestine website allows users to conceal their identity, and freely buy and sell illegal drugs such as cocaine, heroin, ecstasy and marijuana. \Under 21 U.S.C. § 853(a)(2), the Attorney General is empowered to shut down entities involved in the delivery and distribution of controlled substances by seizing the website's domain name. The Drug Enforcement Administration has been and continues to be rigorously vigilant in enforcing our laws and regulations on controlled substances. As part of this critical mission, we urge you to take immediate action and shut down the Silk Road network."
->
-
-> original: "We write to express my \[sic\] grave concern upon discovery of an online marketplace for illegal drugs, known as 'Silk Road.'  Launched in February, this underground website allows users to hide their identities and freely purchase and sell illegal drugs, ranging from cocaine, heroin, ecstasy, and marijuana. (...) Pursuant to 21 U.S.C. 853(a)(2), the Attorney General has the authority to shut down such entities involved in the delivery and distribution of controlled substances by seizing the website domain name. The Drug Enforcement Administration has been and continues to be rigorous in enforcing our controlled substance laws and regulations.  As part of this critical mission, we urge you to take immediate action and shut down the Silk Road network."
-
-Furthermore, in a press conference, Senator Schumer [accuses](https://web.archive.org/web/20120804222559/http://www.nbcnewyork.com/news/local/123187958.html) Bitcoin of being "an online form of money laundering used to disguise the source of money, and to disguise who's both selling and buying the drug". This has prompted a reaction from Gavin Andresen, the software's main maintainer, who is not in favor of Silk Road, but is sorry to hear such a thing being said on Bitcoin. On his blog, he [writes](https://gavinthink.blogspot.com/2011/06/but-you-can-use-it-to-buy-drugs.html):
-
-
-> "No one can control what is purchased with bitcoins, just as my local bank can't control what I do with the cash I withdraw from the ATM. I wonder if Senators Schumer and Manchin want to replace all cash with a state-issued smart card; after all, then criminals would have a much harder time buying illegal goods anonymously, and if we're law-abiding citizens, we shouldn't worry about the state having knowledge of all our purchases... right?"
->
-
-> original: "Second, nobody can control what is purchased with bitcoins, just like my local bank cannot control what I do with the cash I withdraw from their ATM machine. I wonder if Senators Schumer and Manchin would like to replace all cash with a government-issued smart card; after all, that would make it much harder for criminals to get away with buying illegal goods anonymously, and if we are all law-abiding citizens then we shouldn't worry about the government knowing about all of our purchases... right?"
+> "Second, nobody can control what is purchased with bitcoins, just like my local bank cannot control what I do with the cash I withdraw from their ATM machine. I wonder if Senators Schumer and Manchin would like to replace all cash with a government-issued smart card; after all, that would make it much harder for criminals to get away with buying illegal goods anonymously, and if we are all law-abiding citizens then we shouldn't worry about the government knowing about all of our purchases... right?"
 
 ### The success of the Amazon of drugs
 
 
-With the attention of the press, Silk Road took off and eventually became profitable. By the end of the summer, the site's activity had grown to [represent](https://www.chainalysis.com/blog/silk-road-doj-seizure-november-2020/) almost 10% of the volume traded on the Bitcoin chain. The site, which is financed by commissions on sales, [achieves](https://antilop.cc/sr/exhibits/253456480-Silk-Road-exhibits-GX-250.pdf) tens of thousands of dollars a month, at a much lower cost. Ross can now afford to pay himself a generous salary and ends his official employment.
+With the attention of the press, Silk Road took off and eventually became profitable. By the end of the summer, the site's activity had grown to [represent](https://www.chainalysis.com/blog/silk-road-doj-seizure-november-2020/) almost 10% of the volume traded on the Bitcoin chain. The site, which was financed by commissions on sales, [achieves](https://antilop.cc/sr/exhibits/253456480-Silk-Road-exhibits-GX-250.pdf) tens of thousands of dollars a month, at a much lower cost. Ross could now afford to pay himself a generous salary and ended his official employment.
 
 
-Faced with the growing success of his project, he also had to learn to delegate. So he hires employees to manage site disputes and moderate forum discussions. In his diary, he [writes](https://antilop.cc/sr/exhibits/253456476-Silk-Road-exhibits-GX-240B.pdf) that "After making about $100k and up to a good $20-25k monthly, I decided it was time to bring in some hired guns to help me take the site to the next level" (original: "After making about $100k and up to a good $20-25k monthly, I decided it was time to bring in some hired guns to help me take the site to the next level"). This is how he starts paying people whose formal identity he doesn't know but trusts.
+Faced with the growing success of his project, he also had to learn to delegate. So he hired employees to manage site disputes and moderate forum discussions. In his diary, he [wrote](https://antilop.cc/sr/exhibits/253456476-Silk-Road-exhibits-GX-240B.pdf) that "After making about $100k and up to a good $20-25k monthly, I decided it was time to bring in some hired guns to help me take the site to the next level". This is how he started paying people whose formal identities he did not know, but whom he trusted.
 
 
-Over the summer, he sees his friend Richard in Austin, and the two men [plan](https://antilop.cc/sr/files/2015_01_22_Ulbricht_trial_transcript_W2_D3.pdf#page=120) to open a bitcoin exchange platform. Ross is accustomed to using Bitcoin and is already considering how this platform could enable him to launder the money he's made from Silk Road. However, it will never see the light of day.
+Over the summer, he saw his friend Richard in Austin, and the two men [planned](https://antilop.cc/sr/files/2015_01_22_Ulbricht_trial_transcript_W2_D3.pdf#page=120) to open a bitcoin exchange platform. Ross was accustomed to using Bitcoin and is already considering how this platform could enable him to launder the money he had made from Silk Road. However, it will never see the light of day.
 
 
-It's in this approach that Ross makes a fundamental mistake. On October 11, he publishes an [ad](https://bitcointalk.org/index.php?topic=47811.msg568744#msg568744) on the Bitcoin forum in which he states that he is looking for an "IT professional" for a "venture-backed bitcoin startup company" (original: "I'm looking for the best and brightest IT pro in the bitcoin community to be the lead developer in a venture-backed bitcoin startup company"). He uses the pseudonym Altoid (with which he previously promoted Silk Road). In the message, he reveals his e-mail address, containing his civilian name: `rossulbricht@gmail.com`. This mistake will cost him dearly, as it will help the police investigation against Silk Road to identify and arrest him two years later...
+It's in this approach that Ross makes a fundamental mistake. On October 11, he published an [ad](https://bitcointalk.org/index.php?topic=47811.msg568744#msg568744) on the Bitcoin forum in which he stated "I'm looking for the best and brightest IT pro in the bitcoin community to be the lead developer in a venture-backed bitcoin startup company". He used the pseudonym Altoid (with which he previously promoted Silk Road). In the message, he revealed his e-mail address, containing his legal name: `rossulbricht@gmail.com`. This mistake will cost him dearly, as it will help the police investigation against Silk Road to identify and arrest him two years later...
 
 
 ### A central element in the construction of Bitcoin
