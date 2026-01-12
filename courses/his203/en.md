@@ -819,7 +819,7 @@ However, despite the price drop and the criticism, the heart of the community wa
 Gradually, the price climbed back up to exceed $4 again at the end of December, so much so that the online press was forced to admit that Bitcoin was not dead. On December 21, Timothy Lee [wrote](https://arstechnica.com/tech-policy/2011/12/bitcoins-comeback-should-western-union-be-afraid/) that "the currency's apparent stability over the last month has inspired him to give it a second look". In particular, he reflects on the value of bitcoin, which he saw not so much as an "alternative currency", but as a "metacurrency" that allows "low-cost and regulation-free transfer of wealth between nations", in competition with Western Union.
 
 
-### BitInstant, the Bitcoin exchange hub
+### BitInstant, a central hub for bitcoin exchange
 
 
 During the bear market, the number of foreign exchange platforms multiplied. In addition to those launched during the bubble's bullish phase, several other platforms emerged during the summer. These include BTC-e, [launched](https://bitcointalk.org/index.php?topic=29698.msg437237#msg437237) by Russians Alexander Vinnik and Aleksandr Bilyuchenko on August 7; Bitstamp, [launched](https://web.archive.org/web/20140430233930/https://bitcointalk.org/index.php?topic=20292.220) by Slovenians Nejc Kodrič and Damijan Merlak on August 19; and Crypto X Change, [inaugurated](https://bitcointalk.org/index.php?topic=51457.msg613057#msg613057) on November 10 by Australians Ken and Colin Armitt.
@@ -858,10 +858,10 @@ Charlie Shrem comes from a strict Syrian Orthodox Jewish family (https://fortune
 In 2011, Charlie attended *Brooklyn College*, where he studied for a degree in economics and finance. He was still living in the basement of the family home. According to him, he first [heard about](https://www.youtube.com/watch?v=XM2712vOyus&t=96s) Bitcoin in 2009, when the charity he worked for, Tikvot, had its PayPal account frozen. He also saw mention of it in the hacker circles he frequented on IRC. However, his attention wasn't really caught until he discovered Silk Road via the Gawker article published on June 1, 2011. A few hours after the article appeared, he [published](https://twitter.com/CharlieShrem/status/76021290842079232) a tweet to get hold of bitcoin; being a cannabis user himself, he was probably looking to give the platform a try. On June 10, he [registered](https://web.archive.org/web/20111127073246/https://bitcointalk.org/index.php?action=profile;u=21181) on the Bitcoin forum, under the pseudonym Yankee.
 
 
-So when Gareth published his advert on June 13, Charlie was all ears. He contacts Gareth and they quickly come to an agreement. For his part, Charlie asks his parents for a $10,000 loan; his father refuses, but his mother accepts. That same evening, Gareth [announces](https://bitcointalk.org/index.php?topic=16472.msg214518#msg214518) that he has found an investor in Charlie Shrem and reveals the name of the project: BitInstant.
+So when Gareth published his advert on June 13, Charlie was all ears. He contacted Gareth and they quickly came to an agreement. For his part, Charlie asked his parents for a $10,000 loan; his father refused, but his mother accepted. That same evening, Gareth [announced](https://bitcointalk.org/index.php?topic=16472.msg214518#msg214518) that he had found an investor in Charlie Shrem and reveals the name of the project: BitInstant.
 
 
-They develop the service over the summer. On August 23, after a two-week [beta phase](https://bitcointalk.org/index.php?topic=36184.msg469342#msg469342), BitInstant [opens](https://bitcointalk.org/index.php?topic=38914.msg476106#msg476106) its doors to the general public. The company benefits from a partnership with foreign exchange platform TradeHill, enabling instant transfers to the latter using Liberty Reserve or Dwolla. On November 21, Mt. Gox is finally [added](https://bitcointalk.org/index.php?topic=52476.msg626239#msg626239) as an option to the service.
+They developed the service over the summer. On August 23, after a two-week [beta phase](https://bitcointalk.org/index.php?topic=36184.msg469342#msg469342), BitInstant [opened](https://bitcointalk.org/index.php?topic=38914.msg476106#msg476106) its doors to the general public. The company benefited from a partnership with foreign exchange platform TradeHill, enabling instant transfers to the latter using Liberty Reserve or Dwolla. On November 21, Mt. Gox was finally [added](https://bitcointalk.org/index.php?topic=52476.msg626239#msg626239) as an option to the service.
 
 
 ![Capture du site de BitInstant, le 26 janvier 2012](assets/en/023.webp)
@@ -870,10 +870,10 @@ They develop the service over the summer. On August 23, after a two-week [beta p
 *BitInstant website capture, January 26, 2012 (source: [archive](https://web.archive.org/web/20120126191036/https://bitinstant.com/) from Bitinstant.com)*
 
 
-At the same time, Charlie Shrem promotes the startup as a co-founder. In August, he attends Bruce Wagner's conference in New York, and meets several ecosystem players in person. In September, he [attends](https://bitcointalk.org/index.php?topic=41932.msg510329#msg510329) the *Open Video Conference* organized by the Mozilla Foundation and New York Law School, to speak at a workshop on alternative currencies. The following month, he [appeared](https://www.youtube.com/watch?v=PxMazut6-0U) on the *Bitcoin Show* to present BitInstant.
+At the same time, Charlie Shrem was promoting the startup as a co-founder. In August, he attended Bruce Wagner's conference in New York, and met several players in the ecosystem in person. In September, he [attended](https://bitcointalk.org/index.php?topic=41932.msg510329#msg510329) the *Open Video Conference* organized by the Mozilla Foundation and New York Law School, to speak at a workshop on alternative currencies. The following month, he [appeared](https://www.youtube.com/watch?v=PxMazut6-0U) on the *Bitcoin Show* to present BitInstant.
 
 
-In December, BitInstant [realizes](https://observer.com/2011/12/brooklyn-based-bitcoin-startup-bitinstant-raises-seed-round/) a round of financing from angel investors (or *business angels*). The most important of these was none other than Roger Ver, who acquired 15% of the company for $120,000 and quickly became its marketing director. Roger Ver advises Charlie Shrem to hire Erik Voorhees, who becomes the company's head of communications and marketing in February 2012. Ira Miller also joins the team as a developer. Although Charlie Shrem is not politically motivated as such, the association with these people will have the effect of altering his perception of politics.
+In December, BitInstant [realized](https://observer.com/2011/12/brooklyn-based-bitcoin-startup-bitinstant-raises-seed-round/) a round of financing from angel investors (or *business angels*). The most important of these was none other than Roger Ver, who acquired 15% of the company for $120,000 and quickly became its marketing director. Roger Ver advised Charlie Shrem to hire Erik Voorhees, who became the company's head of communications and marketing in February 2012. Ira Miller also joined the team as a developer. Although Charlie Shrem was not politically motivated as such, the association with these people would have the effect of altering his perception of politics.
 
 
 ![Erik Voorhees, Charlie Shrem et Ira Miller dans les locaux de BitInstant en février 2012](assets/en/024.webp)
@@ -882,7 +882,7 @@ In December, BitInstant [realizes](https://observer.com/2011/12/brooklyn-based-b
 *Erik Voorhees, Charlie Shrem and Ira Miller at BitInstant's offices in February 2012 (source: Brian Patrick Eha for [Fortune](https://fortune.com/2017/06/26/bitcoin-blockchain-cryptocurrency-market/))*
 
 
-At the start of 2012, BitInstant diversified its money transfer methods to interact with the main platforms in the ecosystem, notably adding cash deposit to its offering, and began to become popular. On January 2, the volume transferred since opening [is](https://bitcointalk.org/index.php?topic=56392.msg671272#msg671272) $1.2 million, which is a good start. In a sign of good business health, a new interface [goes live](https://bitcointalk.org/index.php?topic=74624.msg826565#msg826565) at the end of March.
+At the start of 2012, BitInstant diversified its money transfer methods to interact with the main platforms in the ecosystem, notably adding cash deposit to its offering, and began to become popular. On January 2, the volume transferred since opening [was](https://bitcointalk.org/index.php?topic=56392.msg671272#msg671272) $1.2 million, which was a good start. In a sign of good business health, a new interface [went live](https://bitcointalk.org/index.php?topic=74624.msg826565#msg826565) at the end of March.
 
 
 ![Interface de BitInstant en juin 2012](assets/en/025.webp)
@@ -894,10 +894,10 @@ At the start of 2012, BitInstant diversified its money transfer methods to inter
 ### Margin trading with Bitcoinica
 
 
-At the end of summer 2011, existing exchange platforms only offered ways of exchanging traditional currencies with bitcoin, and did not integrate any advanced financial operations. In particular, they lack a platform for margin trading (*margin trading*), leverage (*leverage*) and short selling (*short selling*). The Bitcoinica platform was created to meet this need.
+At the end of summer 2011, existing exchange platforms only offered ways of exchanging traditional currencies with bitcoin, and did not integrate any advanced financial operations. In particular, they lack a platform for *margin trading*, *leverage* and *short selling*. The Bitcoinica platform was created to meet this need.
 
 
-Bitcoinica was [launched](https://bitcointalk.org/index.php?topic=81581.msg897948#msg897948) on September 8, 2011 by a 17-year-old Chinese boy called Zhou Tong, whose real name is Ryan Tong Zhou. He is a gifted student in Singapore. He is inspired by personal development, having read Robert Kiyosaki's *Rich Father, Poor Father* and taken an interest in the lives of successful entrepreneurs such as Tony Hsieh (of Zappos) and Steve Jobs (of Apple). He also has a background in web development.
+Bitcoinica was [launched](https://bitcointalk.org/index.php?topic=81581.msg897948#msg897948) on September 8, 2011 by a 17-year-old Chinese boy called Zhou Tong, whose real name was Ryan Tong Zhou. He was a gifted student in Singapore. He was inspired by personal development, having read Robert Kiyosaki's *Rich Father, Poor Father* and taken an interest in the lives of successful entrepreneurs such as Tony Hsieh (of Zappos) and Steve Jobs (of Apple). He also had a background in web development.
 
 
 ![Zhou Tong en janvier 2010](assets/en/026.webp)
@@ -909,7 +909,7 @@ Bitcoinica was [launched](https://bitcointalk.org/index.php?topic=81581.msg89794
 He [heard](https://bitcointalk.org/index.php?topic=67521.msg785510#msg785510) about Bitcoin in late 2010, but didn't really get interested until the following summer, when the speculative bubble was raging. He bought his first bitcoins at $8 each in August. And he invested in the Bitcoin economy, developing Bitcoinica within a week.
 
 
-It presents Bitcoinica as an "advanced bitcoin trading platform" (original: "Advanced Bitcoin Trading Platform"), which is "elegant", "professional" and "revolutionary" (original: "Elegant. Professional. Revolutionary."). The platform does not initially manage wallets, bitcoins being held in a dedicated account on Mt. Gox account. Deposits and withdrawals are made in bitcoins, by redeemable Mt. Gox codes or by international bank transfer.
+He presented Bitcoinica as an "Advanced Bitcoin Trading Platform", which was "Elegant. Professional. Revolutionary". The platform did not initially manage wallets, bitcoins were held in a dedicated account on Mt. Gox account. Deposits and withdrawals were made in bitcoins, by redeemable Mt. Gox codes or by international bank transfer.
 
 
 ![Interface de Bitcoinica en février 2012](assets/en/027.webp)
@@ -918,22 +918,22 @@ It presents Bitcoinica as an "advanced bitcoin trading platform" (original: "Adv
 *Interface from Bitcoinica in February 2012 (source: [archive](https://web.archive.org/web/20120209171119/http://bitcoinica.com/) from Bitcoinica.com)*
 
 
-It was a success right from the start. In the first 24 hours, 3,724 bitcoins were exchanged by 290 different users, equivalent to $19,000. Volume over the first 7 days [is](https://web.archive.org/web/20111019032441/http://blog.bitcoinica.com/) 160,865 bitcoins, or over $800,000, making Bitcoinica the second-largest trading platform in terms of dollars exchanged, behind Mt. Gox.
+It was a success right from the start. In the first 24 hours, 3,724 bitcoins were exchanged by 290 different users, equivalent to $19,000. Volume over the first 7 days [was](https://web.archive.org/web/20111019032441/http://blog.bitcoinica.com/) 160,865 bitcoins, or over $800,000, making Bitcoinica the second-largest trading platform in terms of dollars exchanged, behind Mt. Gox.
 
 
-In particular, the platform hosts speculation: the leverage effect can multiply gains (and losses) tenfold, making it ideal for big players who want to bet everything on a price movement. Speculative success is such that liquidation on the platform acquires its own [appellation](https://bitcointalk.org/index.php?topic=49445.msg588749#msg588749): "get Zhou Tonged". This expression [gives its name](https://www.youtube.com/watch?v=kdvTkddp1F0) to the Youtube channel *Zhou Tonged*, which was launched in March 2012 to host musical parodies about Bitcoin and trading. The platform also has the advantage of offering short selling, enabling economic players (such as merchants holding bitcoin in reserve) to hedge against a possible drop in the price.
+The platform notably hosted speculative activity: leverage made it possible to multiply gains (and losses), which suited large players willing to bet everything on a price movement. Speculative success was such that liquidation on the platform acquired its own [nickname](https://bitcointalk.org/index.php?topic=49445.msg588749#msg588749): "get Zhou Tonged". This expression [gave its name](https://www.youtube.com/watch?v=kdvTkddp1F0) to the Youtube channel *Zhou Tonged*, which was launched in March 2012 to host musical parodies about Bitcoin and trading. The platform also had the advantage of offering short selling, enabling economic players (such as merchants holding bitcoin in reserve) to hedge against a possible drop in the price.
 
 
-In early March 2012, Bitcoinica [accepts](https://bitcointalk.org/index.php?topic=67521.msg785510#msg785510) more than a dozen deposit and withdrawal methods, including bitcoin directly, Liberty Reserve, PerfectMoney, Pecunix, as well as SEPA transfers in euros. It now has almost as much volume as Mt. Gox.
+In early March 2012, Bitcoinica [accepted](https://bitcointalk.org/index.php?topic=67521.msg785510#msg785510) more than a dozen deposit and withdrawal methods, including bitcoin directly, Liberty Reserve, PerfectMoney, Pecunix, as well as SEPA transfers in euros. It now had almost as much volume as Mt. Gox.
 
 
 ### Issuing financial securities with GLBSE
 
 
-In 2011, Bitcoin's lack of need for authorization led community members to imagine uses that went beyond simple monetary exchange and speculation. They are looking to liberalize investment by providing a means of issuing shares and bonds for companies in the ecosystem. The aim is to circumvent regulations imposed by the *Securities and Exchange Commission* in the United States (the American equivalent of the AMF), by [taking advantage](http://trilema.com/2012/the-reasons-why-bitcoin-securities-cant-be-regulated-by-the-sec/) of Bitcoin's innovative character and the legal vagueness that surrounds it. The idea is to create an alternative model to the classic financial system, which could be self-entrenching according to the agorist approach.
+In 2011, Bitcoin's lack of need for authorization led community members to imagine uses that went beyond simple monetary exchange and speculation. They were looking to liberalize investment by providing a means of issuing shares and bonds for companies in the ecosystem. The aim was to circumvent regulations imposed by the *Securities and Exchange Commission* in the United States (the American equivalent of the AMF), by [taking advantage](http://trilema.com/2012/the-reasons-why-bitcoin-securities-cant-be-regulated-by-the-sec/) of Bitcoin's innovative character and the legal vagueness that surrounds it. The idea was to create an alternative model to the classic financial system, which could be self-entrenching according to the agorist approach.
 
 
-One of the individuals involved in this movement is James McCarthy, who uses the pseudonym Nefario on the Bitcoin forum, in reference to the character of the same name in the animated film *Moi, moche et méchant*. Nefario is an Irishman living in China, with a job as an English professor at a university. He is interested in the Austrian school and the ideas of the cypherpunks, [declaring](https://web.archive.org/web/20110607050421/http://bitcoinweekly.com/articles/interview-with-nefario-founder-of-bitcoin-global) himself to be "something of a cypherpunk". He [discovered](https://bitcointalk.org/index.php?topic=2502.msg33800#msg33800) the existence of Bitcoin during 2010 and mined over a thousand of them. He then got involved in several projects, including the Bitcoin Weekly online magazine project.
+One of the individuals involved in this movement is James McCarthy, who used the pseudonym Nefario on the Bitcoin forum, in reference to the character of the same name in the animated film *Despicable Me*. Nefario was an Irishman living in China, with a job as an English professor at a university. He was interested in the Austrian school and the ideas of the cypherpunks, [declaring](https://web.archive.org/web/20110607050421/http://bitcoinweekly.com/articles/interview-with-nefario-founder-of-bitcoin-global) himself to be "something of a cypherpunk". He [discovered](https://bitcointalk.org/index.php?topic=2502.msg33800#msg33800) the existence of Bitcoin during 2010 and mined over a thousand of them. He then got involved in several projects, including the Bitcoin Weekly online magazine project.
 
 
 ![James McCarthy (Nefario) en février 2012](assets/en/028.webp)
@@ -942,7 +942,7 @@ One of the individuals involved in this movement is James McCarthy, who uses the
 *James McCarthy (Nefario) in February 2012 (source: [archive](https://web.archive.org/web/20121008033716/https://www.tedxleeds.com/nefario-james-mccarthy/) from TEDxLeeds)*
 
 
-In April 2011, James [launches](https://bitcointalk.org/index.php?topic=6500.msg94943#msg94943) GLBSE (pronounced glib-zee), an acronym for *GLobal Bitcoin Stock Exchange*. Users interact with the platform's server via a command-line interface. The client is a modified version of software developed by Amir Taaki. According to the website, the platform [allows](https://web.archive.org/web/20110427033244/http://glbse.com/) "issue shares to raise capital; pay dividends to shareholders; submit resolutions to shareholders and obtain their vote; issue and sell bonds; borrow and lend on the market; make and receive loan repayments; issue futures contracts; meta-trade in unlisted companies (on other exchanges); and exchange all of the above with other traders on the market" (original: "Issue shares to raise capital; Pay dividends to shareholders; Put resolutions to shareholders and get their vote; Issue and sell bonds; Borrow and lend to the market; Make and recieve \[sic\] loan repayments; Issue futures contracts; Meta-trade on non listed companies (on other exchanges); And trade all of the above with other traders on the market").
+In April 2011, James [launched](https://bitcointalk.org/index.php?topic=6500.msg94943#msg94943) GLBSE (pronounced glib-zee), an acronym for *GLobal Bitcoin Stock Exchange*. Users interacted with the platform's server via a command-line interface. The client was a modified version of software developed by Amir Taaki. According to the website, the platform [allowed](https://web.archive.org/web/20110427033244/http://glbse.com/) "Issue shares to raise capital; Pay dividends to shareholders; Put resolutions to shareholders and get their vote; Issue and sell bonds; Borrow and lend to the market; Make and recieve loan repayments; Issue futures contracts; Meta-trade on non listed companies (on other exchanges); And trade all of the above with other traders on the market".
 
 
 ![Capture du site web de GLBSE, le 17 août 2011](assets/en/029.webp)
@@ -951,16 +951,16 @@ In April 2011, James [launches](https://bitcointalk.org/index.php?topic=6500.msg
 *GLBSE website, August 17, 2011 (source: [archive](https://web.archive.org/web/20110817072049/http://glbse.com/))*
 
 
-The first "IPO" (*Initial Public Offering*, a term usually translated as "introduction en bourse" in French) is [carried out](https://bitcointalk.org/index.php?topic=6838.msg100170#msg100170) from April 30 by a project called Ubitex, an in-person foreign exchange platform connecting buyers and sellers present in the same region. The operation involves selling a certain number of shares (in this case 1,000) for bitcoins, in exchange for which shareholders will benefit from the company's profits. The project's sole developer, Nathaniel Theis aka Cuddlefish on the forum, recovers 1,100 BTC in this way, or around $10,000. However, he is [only 14 years old](https://bitcointalk.org/index.php?topic=6584.msg707259#msg707259) and lacks maturity: he briefly gets the service up and running, but ends up suddenly disappearing when his computer [breaks down](https://bitcointalk.org/index.php?topic=6584.msg414585#msg414585) in July, giving no sign of life and failing to repay investors.
+The first "IPO" (*Initial Public Offering*) was [carried out](https://bitcointalk.org/index.php?topic=6838.msg100170#msg100170) from April 30 by a project called Ubitex, an in-person foreign exchange platform connecting buyers and sellers present in the same region. The operation involved selling a certain number of shares (in this case 1,000) for bitcoins, in exchange for which shareholders would benefit from the company's profits. The project's sole developer, Nathaniel Theis aka Cuddlefish on the forum, raised 1,100 BTC in this way, amounting to approximately $10,000. However, he was [only 14 years old](https://bitcointalk.org/index.php?topic=6584.msg707259#msg707259) and lacked maturity: he briefly set the service up and running, but ended up suddenly disappearing when his computer [broke down](https://bitcointalk.org/index.php?topic=6584.msg414585#msg414585) in July, giving no sign of life and failing to repay investors.
 
 
-Despite this, GLBSE continues to operate. By early autumn, some 30 assets are [available](https://web.archive.org/web/20110923234458/http://charts.glbse.com/markets/) for exchange. In March 2012, a version 2 of the platform is [released](https://bitcointalk.org/index.php?topic=73910.msg817887#msg817887).
+Despite this, GLBSE continued to operate. By early autumn, some 30 assets were [available](https://web.archive.org/web/20110923234458/http://charts.glbse.com/markets/) for exchange. In March 2012, a version 2 of the platform was [released](https://bitcointalk.org/index.php?topic=73910.msg817887#msg817887).
 
 
 ### MPEx: options and shares
 
 
-Another such project to emerge some time later is MPEx, the creation of a highly controversial figure by the name of Mircea Popescu. Romanian, originally from Transylvania, he is a prolific writer on his blog [Trilema](http://trilema.com/archives-categories/): he writes on all subjects (philosophy, politics, sexuality), in a deliberately provocative style, initially in Romanian. He became interested in Bitcoin in the summer of 2011 and began to [talk](http://trilema.com/2011/ce-este-bitcoin/) about it on his blog.
+Another such project to emerge some time later was MPEx, the creation of a highly controversial figure by the name of Mircea Popescu. Romanian, originally from Transylvania, he was a prolific writer on his blog [Trilema](http://trilema.com/archives-categories/): he wrote on all subjects (philosophy, politics, sexuality), in a deliberately provocative style, initially in Romanian. He became interested in Bitcoin in the summer of 2011 and began to [talk](http://trilema.com/2011/ce-este-bitcoin/) about it on his blog.
 
 
 ![Mircea Popescu, date indéterminée](assets/en/030.webp)
@@ -969,10 +969,10 @@ Another such project to emerge some time later is MPEx, the creation of a highly
 *Mircea Popescu, undetermined date (source: Mircea Popescu for [Wired](https://web.archive.org/web/20140405150603/https://www.wired.com/2014/01/openbsd/))*
 
 
-In August, Mircea [opens](https://bitcointalk.org/index.php?topic=15672.msg444367#msg444367) "Mircea Popescu's BTC Options Trading Emporium" (MPOE), which [offers](https://web.archive.org/web/20110824221522/http://polimedia.us/bitcoin/options.php) BTC call (*call*) and put (*put*) options. It copies a similar service called Bitoption.org, [launched](https://bitcointalk.org/index.php?topic=9611.msg138413#msg138413) in May. The platform is profitable overall, making over 140 BTC in net profits over six months.
+In August, Mircea [opened](https://bitcointalk.org/index.php?topic=15672.msg444367#msg444367) "Mircea Popescu's BTC Options Trading Emporium" (MPOE), which [offered](https://web.archive.org/web/20110824221522/http://polimedia.us/bitcoin/options.php) BTC *call* and *put* options. It copied a similar service called Bitoption.org, [launched](https://bitcointalk.org/index.php?topic=9611.msg138413#msg138413) in May. The platform was profitable overall, making over 140 BTC in net profits over six months.
 
 
-At the end of February 2012, he proceeds with a [fundraising](http://trilema.com/2012/sa-ne-jucam-de-a-investitiile-n-bitcoini/#comment-78745) by issuing shares and bonds, raising over 3,200 bitcoins, or around $16,000 at the time. On April 11, after a beta phase, the platform [finally becomes](https://bitcointalk.org/index.php?topic=76239.msg845954#msg845954) a bitcoin exchange for issuing and exchanging various shares, and is renamed MPEx (for "Mircea Popescu's Exchange").
+At the end of February 2012, he proceeded with a [fundraising](http://trilema.com/2012/sa-ne-jucam-de-a-investitiile-n-bitcoini/#comment-78745) by issuing shares and bonds, raising over 3,200 bitcoins, or around $16,000 at the time. On April 11, after a beta phase, the platform [finally became](https://bitcointalk.org/index.php?topic=76239.msg845954#msg845954) a bitcoin exchange for issuing and exchanging various shares, and was renamed MPEx (for "Mircea Popescu's Exchange").
 
 
 ![Capture de MPEx, août 2012](assets/en/031.webp)
@@ -981,13 +981,13 @@ At the end of February 2012, he proceeds with a [fundraising](http://trilema.com
 *Capture of MPEx, August 2012 (source: [archive](https://web.archive.org/web/20120829092213/http://polimedia.us/bitcoin/mpex.php) from Polymedia.us)*
 
 
-The platform will meet with some success, including hosting the IPO of SatoshiDICE, the online casino run by Erik Voorhees, and will evolve over time, [integrating](http://trilema.com/2012/futures-on-mpex/) futures contracts in December.
+The platform would go on to achieve a certain degree of success and would notably host the “IPO” of SatoshiDICE, the online casino operated by Erik Voorhees. It evolved over time, [integrating](http://trilema.com/2012/futures-on-mpex/) futures contracts in December.
 
 
 ### A construction phase
 
 
-The bear market that followed the bursting of the great bubble of 2011 was a difficult time for the Bitcoin community. The dollar price fell by over 90% from its June peak, and the online press took the opportunity to denigrate the cryptocurrency.
+The bear market that followed the bursting of the great bubble of 2011 was a difficult time for the Bitcoin community. The dollar price fell by over 90% from its June peak, and the online press took the opportunity to disparage the cryptocurrency.
 
 
 Despite low morale, it was a good time to build. A host of financial services, such as BitInstant, Bitcoinica and GLBSE, contributed to the subsequent success of Bitcoin. The entrepreneurs involved quickly became pillars of the community, staunchly supporting Nakamoto's creation.
@@ -1009,10 +1009,10 @@ Moreover, this economic progress was accompanied by technical development suppor
 The Wild West of finance was a time for expanding Bitcoin to a wider audience, less computer-literate and unwilling to run a heavy program on a fixed computer. For this reason, it was a time for improving the user experience, as evidenced by the appearance of lightweight wallets and the multiplication of ways to store bitcoins.
 
 
-When Satoshi retired in December 2010, newcomers could only choose between the main software and Custodial applications such as MyBitcoin. But from 2011 onwards, alternative solutions appeared. Lightweight software wallets, such as *Bitcoin Wallet for Android* and Electrum, implemented simplified payment verification. Web wallets, such as Blockchain.info, enabled funds to be managed from a browser. Paper wallets offered the possibility of storing funds offline. Some enthusiasts, like the emblematic Casascius, developed physical carriers, which were a kind of embodiment of virtual units in the real world.
+When Satoshi retired in December 2010, newcomers could only choose between the main software and custodial applications such as MyBitcoin. But from 2011 onwards, alternative solutions appeared. Lightweight software wallets, such as *Bitcoin Wallet for Android* and Electrum, implemented simplified payment verification. Web wallets, such as Blockchain.info, enabled funds to be managed from a browser. Paper wallets offered the possibility of storing funds offline. Some enthusiasts, like the emblematic Casascius, developed physical carriers, which were a kind of embodiment of virtual units in the real world.
 
 
-The personal safekeeping of bitcoins is a complex issue, and is subject to the dilemma that exists between loss and theft. To keep one's bitcoins, one must both keep access to one's private keys and exclude other people from them, two conditions that can never really be achieved simultaneously. Thus, too easy access makes the wallet too susceptible to theft, as we saw with the hacking of Allinvain's 25,000 BTCs in June 2011. Conversely, access that's too difficult makes bitcoins more likely to be lost, as with Stefan Thomas's 7,000 or so BTCs [lost](https://bitcointalk.org/index.php?topic=5400.msg259238#msg259238) due to overly complex encryption. It's these constraints that wallet designers have sought to address.
+Personal custody of bitcoins was a complex problem, subject to the dilemma between loss and theft. To hold one’s bitcoins, it was necessary both to maintain access to one’s private keys and to prevent others from accessing them—two conditions that could never truly be achieved simultaneously. Thus, too easy access makes the wallet too susceptible to theft, as seen with the hacking of Allinvain's 25,000 BTCs in June 2011. Conversely, too difficult access made bitcoins more likely to be lost, as seen with Stefan Thomas's 7,000 or so BTCs [lost](https://bitcointalk.org/index.php?topic=5400.msg259238#msg259238) due to overly complex encryption. It's these constraints that wallet designers have sought to address.
 
 In this chapter, we will study the different ways of using Bitcoin that emerged during the period mentioned. We will first discuss custodial applications and alternative software implementations. Then, we will examine in more detail the case of lightweight wallets, which led among other things to the development of a deterministic structure for storing private keys. We will present paper wallets and physical forms of private key representations which were means of holding cryptocurrency safe from hacks. We will finish by discussing the rise of the first bitcoin mixing services, which allowed for improved user privacy.
 
