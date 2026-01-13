@@ -1020,7 +1020,7 @@ In this chapter, we will study the different ways of using Bitcoin that emerged 
 ### Custodial applications
 
 
-In 2011, the most popular custodian application, after the infamous MyBitcoin, is Instawallet. It's an easy-to-use web application [launched](https://bitcointalk.org/index.php?topic=6785.msg99378#msg99378) on April 29, 2011 by Jan Vornberger, aka Jav, a young German developer. It's a custodial service: the funds are held "server-side", meaning that Jav manages them. It requires no registration; access is via a URL, such as `https://instawallet.org/w/rq2SB02ai6BnWaEBywAlP52cw7qwUAA`, which is generated during the first interaction with the service and saved in the web browser. Users are assigned a Bitcoin address, enabling them to send and receive funds. Transfers between Instawallet users are processed internally and are therefore instantaneous. What's more, from the end of July, the service [integrates](https://bitcointalk.org/index.php?topic=32818.msg409974#msg409974) a certification process (called "green address") enabling proof to other market players that a transaction issued originates from Instawallet, to ensure that it is processed more quickly, as part of a relationship of trust.
+In 2011, the most popular custodian application, after the infamous MyBitcoin, was Instawallet. It was an easy-to-use web application [launched](https://bitcointalk.org/index.php?topic=6785.msg99378#msg99378) on April 29, 2011 by Jan Vornberger, aka Jav, a young German developer. It was a custodial service: the funds were held "server-side", meaning that Jav managed them. It required no registration; access was via a URL, such as `https://instawallet.org/w/rq2SB02ai6BnWaEBywAlP52cw7qwUAA`, which was generated during the first interaction with the service and saved in the web browser. Users were assigned a Bitcoin address, enabling them to send and receive funds. Transfers between Instawallet users were processed internally and were therefore instantaneous. What's more, from the end of July, the service [integrated](https://bitcointalk.org/index.php?topic=32818.msg409974#msg409974) a certification process (called "green address") enabling proof to other market players that a transaction issued originated from Instawallet, to ensure that it was processed more quickly, as part of a relationship of trust.
 
 
 ![Interface d'Instawallet en juin 2012](assets/en/032.webp)
@@ -1029,13 +1029,13 @@ In 2011, the most popular custodian application, after the infamous MyBitcoin, i
 *Instawallet's Interface in June 2012 (source: [Bitcoin Magazine](https://web.archive.org/web/20120922131335/http://bitcoinmagazine.net/bitcoin-wallet-options/))*
 
 
-On March 2, 2012, Jav [announces](https://bitcointalk.org/index.php?topic=67085.msg780164#msg780164) to close Instawallet having "neither the time nor the resources to continue to maintain the site" (original: "I don't have the time and resources to continue to support the site"). The service was nevertheless [resumed](https://bitcointalk.org/index.php?topic=67602.msg786523#msg786523) a few days later by Paymium, who kept it going until its fatal hack in April 2013.
+On March 2, 2012, Jav [announced](https://bitcointalk.org/index.php?topic=67085.msg780164#msg780164) the closure of Instawallet stating "I don't have the time and resources to continue to support the site". The service was nevertheless [resumed](https://bitcointalk.org/index.php?topic=67602.msg786523#msg786523) a few days later by Paymium, who kept it going until its fatal hack in April 2013.
 
 
-Paymium SAS is a French company [founded](https://web.archive.org/web/20111120231150/http://www.paymium.com/) by Gonzague Grandval, Pierre Noizat (aka Boussac on the forum) and David François in June 2011. It initially focuses on the payments field, and its main product is a bankcard fraud prevention application. Thanks to Pierre Noizat and David François' attraction to Bitcoin, it gradually became a company focused on Bitcoin.
+Paymium SAS was a French company [founded](https://web.archive.org/web/20111120231150/http://www.paymium.com/) by Gonzague Grandval, Pierre Noizat (aka Boussac on the forum) and David François in June 2011. It initially focused on the payments field, and its main product was a bankcard fraud prevention application. Thanks to Pierre Noizat and David François' attraction to Bitcoin, it gradually became a company focused on Bitcoin.
 
 
-In early 2012, Paymium developed its own Custodial app: Paytunia. The Paytunia app is described as "a groundbreaking application based on the open source Bitcoin protocol for secure, easy, online payments and money transfers" (original: "Paytunia is a groundbreaking application based on the open source Bitcoin protocol for secure, easy, online payments and money transfers"). It was [launched](https://bitcointalk.org/index.php?topic=75550.msg836770#msg836770) in April 2012 on Android. Users of Bitcoin-Central (the money exchange platform run by David François) [can](https://web.archive.org/web/20120514233205/https://bitcoin-central.net/) also access it with their existing account, as both services use the same system in the background. As with Instawallet, transfers between Paytunia users [are](https://bitcointalk.org/index.php?topic=75550.msg836948#msg836948) instantaneous.
+In early 2012, Paymium developed its own Custodial app: Paytunia. The Paytunia app was described as "Paytunia is a groundbreaking application based on the open source Bitcoin protocol for secure, easy, online payments and money transfers"). It was [launched](https://bitcointalk.org/index.php?topic=75550.msg836770#msg836770) in April 2012 on Android. Users of Bitcoin-Central (the money exchange platform run by David François) [could](https://web.archive.org/web/20120514233205/https://bitcoin-central.net/) also access it with their existing account, as both services use the same system in the background. As with Instawallet, transfers between Paytunia users [were](https://bitcointalk.org/index.php?topic=75550.msg836948#msg836948) instantaneous.
 
 
 ![Interface (en français) de l'application Paytunia en novembre 2012](assets/en/033.webp)
@@ -1047,24 +1047,20 @@ In early 2012, Paymium developed its own Custodial app: Paytunia. The Paytunia a
 ### Alternative software implementations
 
 
-It was also a good time to rewrite the Bitcoin protocol. The main software, simply called "Bitcoin" at the time, is a complete implementation in that it requires the entire blockchain to be maintained and new transactions and blocks to be relayed. But it's the only one in existence, so the whole network relies on it alone to function. Hence the desire to develop alternative implementations of Bitcoin.
+It was also a good time to rewrite the Bitcoin protocol. The main software, simply called "Bitcoin" at the time, was a complete implementation in that it required the entire blockchain to be maintained and new transactions and blocks to be relayed. But it was the only one in existence, so the whole network relied on it alone to function. Hence the desire to develop alternative implementations of Bitcoin.
 
 
 Satoshi Nakamoto was essentially opposed to rewriting the protocol so as not to compromise the operation of mining. In a [message](https://bitcointalk.org/index.php?topic=195.msg1611#msg1611) posted in June 2010 on the forum, he wrote:
 
+> "I don't believe a second, compatible implementation of Bitcoin will ever be a good idea. So much of the design depends on all nodes getting exactly identical results in lockstep that a second implementation would be a menace to the network. The MIT license is compatible with all other licenses and commercial uses, so there is no need to rewrite it from a licensing standpoint."
 
-> "I don't think a second compatible implementation of Bitcoin is a good idea. The model depends largely on the
-the MIT license is compatible with all other licenses and commercial uses, so there's no need to rewrite it from a legal point of view. The MIT license is compatible with all other licenses and commercial uses, so there's no need to rewrite it from a legal point of view."
->
-> original: "I don't believe a second, compatible implementation of Bitcoin will ever be a good idea. So much of the design depends on all nodes getting exactly identical results in lockstep that a second implementation would be a menace to the network. The MIT license is compatible with all other licenses and commercial uses, so there is no need to rewrite it from a licensing standpoint."
-
-However, this comment does not apply to partial implementations, intended to read the string and serve users. So, when developer Mike Hearn approached him with his Java implementation project in March 2011, he didn't object to this reprogramming of the protocol, [believing](https://plan99.net/~mike/satoshi-emails/thread4.html) that "Much complexity can be left behind in a clean rewrite with only client requirements" (original: "Much complexity can be left behind in a clean rewrite with only client requirements").
+However, this observation did not apply to partial implementations designed to read the blockchain and provide services to users. So, when developer Mike Hearn approached him with his Java implementation project in March 2011, he didn't object to this reprogramming of the protocol, [believing](https://plan99.net/~mike/satoshi-emails/thread4.html) that "much complexity can be left behind in a clean rewrite with only client requirements".
 
 
-Mike Hearn's software implementation is BitCoinJ. This is an implementation of Simplified Payment Verification (SPV) as described in the white paper, which interacts primarily with thin clients, particularly those on phones using the Android operating system. Mike developed this project [from](https://plan99.net/~mike/satoshi-emails/thread3.html) late 2010 and [published](https://bitcointalk.org/index.php?topic=4236.msg61438#msg61438) a first version on March 7, 2011. As he works as an engineer for Google, the code must be attributed to the multinational, but the license (Apache 2) is free.
+Mike Hearn's software implementation is BitCoinJ. This is an implementation of Simplified Payment Verification (SPV) as described in the white paper, which interacts primarily with thin clients, particularly those on phones using the Android operating system. Mike developed this project [from](https://plan99.net/~mike/satoshi-emails/thread3.html) late 2010 and [published](https://bitcointalk.org/index.php?topic=4236.msg61438#msg61438) a first version on March 7, 2011. As he was working as an engineer at Google, the code had to be attributed to the multinational company, but the license (Apache 2) was open.
 
 
-The rewriting of the Bitcoin protocol doesn't stop there. In July 2011, after the departure of Satoshi, Bitcoin Consultancy members Amir Taaki and Patrick Strateman [launched](https://bitcointalk.org/index.php?topic=30646.msg384791#msg384791) Libbitcoin, a C++ implementation aiming for the highest possible extensibility, scalability and configurability. Their aim is to "rewrite bitcoin, make it super-pluggable, very easy to do and hack everything at every level, and very configurable". The code is published under an open copyleft license (AGPL), which obliges those who reuse the software to publish their work under the same license.
+The rewriting of the Bitcoin protocol did not stop there. In July 2011, after the departure of Satoshi, Bitcoin Consultancy members Amir Taaki and Patrick Strateman [launched](https://bitcointalk.org/index.php?topic=30646.msg384791#msg384791) Libbitcoin, a C++ implementation aiming for the highest possible extensibility, scalability and configurability. Their aim was to "rewrite bitcoin, make it super-pluggable, very easy to do and hack everything at every level, and very configurable". The code is published under an open copyleft license (AGPL), which obliges those who reuse the software to publish their work under the same license.
 
 
 ![Logo de Libbitcoin en septembre 2013](assets/en/034.webp)
@@ -1073,16 +1069,16 @@ The rewriting of the Bitcoin protocol doesn't stop there. In July 2011, after th
 *Libbitcoin logo in September 2013 (source: [archive](https://web.archive.org/web/20130913065137/http://libbitcoin.dyne.org/) from Libbitcoin.dyne.org)*
 
 
-In October, the software [manages](https://bitcointalk.org/index.php?topic=30646.msg553961#msg553961) to do a complete string check. Amir Taaki also writes a "Zen of Libbitcoin", structured along the same lines as the Zen of Python, a set of principles influencing the design of the Python programming language. He will also publish a [manifesto](https://libbitcoin.dyne.org/libbitcoin-manifesto.pdf) (*The Libbitcoin Manifesto*) in September 2013.
+In October, the software [managed](https://bitcointalk.org/index.php?topic=30646.msg553961#msg553961) to perform a full verification of the blockchain. Amir Taaki also authored a “Zen of Libbitcoin,” modeled on the Zen of Python, a collection of principles that influenced the design of the Python programming language. He will also publish a [manifesto](https://libbitcoin.dyne.org/libbitcoin-manifesto.pdf) (*The Libbitcoin Manifesto*) in September 2013.
 
 
 ### Lightweight wallets
 
 
-The problem with full implementations is that they are resource-intensive and impractical for many people to use. What's more, they can't be used on mobile devices. That's why new and occasional users are turning to the easy way out: custodian applications. In November 2010, a forum member (Kiba) set up a collective [bounty](https://bitcointalk.org/index.php?topic=1812.msg22319#msg22319) for the development of a Bitcoin mobile client. On July 29, 2011, the closure of MyBitcoin confirmed the need for an intermediate solution. This is the catalyst for the development of light-weight wallets (or *lightweight wallets*).
+The problem with full implementations is that they are resource-intensive and impractical for many people to use. What's more, they can't be used on mobile devices. That's why new and occasional users are turning to the easy way out: custodian applications. In November 2010, a forum member (Kiba) set up a collective [bounty](https://bitcointalk.org/index.php?topic=1812.msg22319#msg22319) for the development of a Bitcoin mobile client. On July 29, 2011, the closure of MyBitcoin confirmed the need for an intermediate solution. This was the catalyst for the development of *lightweight wallets*.
 
 
-The first idea is to use a node as a remote server, in which the user has complete trust. In February 2011, Amir Taaki [launched](https://bitcointalk.org/index.php?topic=3451.msg48538#msg48538) a software client for managing a wallet locally by connecting to an existing node called Spesmilo. The client initially ran on Linux, but was soon ported to Windows. The name is a reference to spesmilo, the ancient international currency unit proposed by Swiss mathematician René de Saussure (the brother of linguist Ferdinand) in 1907, as part of the Esperanto project.
+The first idea was to use a node as a remote server, in which the user has complete trust. In February 2011, Amir Taaki [launched](https://bitcointalk.org/index.php?topic=3451.msg48538#msg48538) a software client for managing a wallet locally by connecting to an existing node called Spesmilo. The client initially ran on Linux, but was soon ported to Windows. The name was a reference to spesmilo, the ancient international currency unit proposed by Swiss mathematician René de Saussure (the brother of linguist Ferdinand) in 1907, as part of the Esperanto project.
 
 
 ![Interface de Spesmilo en février 2011](assets/en/035.webp)
@@ -1091,7 +1087,7 @@ The first idea is to use a node as a remote server, in which the user has comple
 *Interface from Spesmilo in February 2011 (source: [Bitcoin Wiki](https://en.bitcoin.it/w/index.php?title=Spesmilo&oldid=8271))*
 
 
-Amir [is](https://bitcointalk.org/index.php?topic=1568.msg19443#msg19443) an Esperanto speaker himself and has been translating the software into Esperanto from day one. He is joined by developer Luke-Jr, who helps him maintain the software. The latter [adds](https://gitlab.com/bitcoin/spesmilo/-/commit/b889211e98111b243de2b11fe88caf91d069b2a5) to the program the [tonal numeration](https://en.bitcoin.it/wiki/Tonal_Bitcoin) system, a hexadecimal system proposed by John W. Nystrom in the 19th century, where the unit "bitcoin" equals 65,536 satoshis. The Spesmilo project was abandoned in November 2011, however, in favor of a far more ambitious project (presented below): Electrum.
+Amir [was](https://bitcointalk.org/index.php?topic=1568.msg19443#msg19443) an Esperanto speaker himself and had been translating the software into Esperanto from day one. He was joined by developer Luke-Jr, who helped him maintain the software. The latter [added](https://gitlab.com/bitcoin/spesmilo/-/commit/b889211e98111b243de2b11fe88caf91d069b2a5) to the program the [tonal numeration](https://en.bitcoin.it/wiki/Tonal_Bitcoin) system, a hexadecimal system proposed by John W. Nystrom in the 19th century, where the unit "bitcoin" equals 65,536 satoshis. The Spesmilo project was abandoned in November 2011, however, in favor of a far more ambitious project (presented below): Electrum.
 
 
 ![Andreas Schildbach à la conférence re:publica à Berlin en mai 2016](assets/en/036.webp)
@@ -1100,7 +1096,7 @@ Amir [is](https://bitcointalk.org/index.php?topic=1568.msg19443#msg19443) an Esp
 *Andreas Schildbach at the re:publica conference in Berlin in May 2016 (source: Holger Bleich on [Twitter](https://twitter.com/_robinhob/status/727167827132727300))*
 
 
-The other, more convenient idea is to use simplified payment verification (SPV), which allows transactions to be verified as belonging to the blockchain without having to download the entire data set. On March 11, 2011, a few days after the release of BitCoinJ, a Berlin-based developer by the name of Andreas Schildbach, aka Goonie on the forum, [unveiled](https://bitcointalk.org/index.php?topic=4384.msg64142#msg64142) the prototype of a wallet for phones running Android, based on Mike Hearn's implementation. Soberly named *Bitcoin Wallet for Android*, this becomes the first working model of a lightweight wallet on mobile.
+The other, more convenient idea was to use simplified payment verification (SPV), which allowed transactions to be verified as belonging to the blockchain without having to download the entire data set. On March 11, 2011, a few days after the release of BitCoinJ, a Berlin-based developer by the name of Andreas Schildbach, aka Goonie on the forum, [unveiled](https://bitcointalk.org/index.php?topic=4384.msg64142#msg64142) the prototype of a wallet for phones running Android, based on Mike Hearn's implementation. Under the unassuming name *Bitcoin Wallet for Android*, it became the first working model of a lightweight wallet on mobile.
 
 
 ![Interface du Bitcoin Wallet for Android en juillet 2011](assets/en/037.webp)
@@ -1109,16 +1105,16 @@ The other, more convenient idea is to use simplified payment verification (SPV),
 *Interface from Bitcoin Wallet for Android in July 2011 (source: Brandon Iles for [Wired](https://web.archive.org/web/20110710020745/https://www.wired.com/gadgetlab/2011/07/bitcoin-android-app/))*
 
 
-Another BitCoinJ-based wallet available on the PC is MultiBit, which was [created](https://bitcointalk.org/index.php?topic=43616.msg520542#msg520542) in September 2011 by British developer Jim Burton. Its distinctive feature is multiple account management within the interface.
+Another BitCoinJ-based wallet available on the PC was MultiBit, which was [created](https://bitcointalk.org/index.php?topic=43616.msg520542#msg520542) in September 2011 by British developer Jim Burton. Its distinguishing feature was the ability to manage multiple accounts within the interface.
 
 
 ### Deterministic wallets
 
 
-The effort to improve the use of Bitcoin has also led to the appearance of deterministic wallets (or *deterministic wallets*). These are wallets that apply key derivation: instead of being generated individually at random, as is done in the main software, private keys are derived deterministically from information (called the seed) using cryptographic functions. Knowing this information enables the user to recover all his funds, which greatly simplifies wallet backup. There's no need to save the `wallet.dat` file over and over again!
+The effort to improve Bitcoin usability also led to the emergence of *deterministic wallets*. These are wallets that apply key derivation: instead of being generated individually at random, as was done in the main software, private keys are derived deterministically from information (called the seed) using cryptographic functions. Knowing this information enables the user to recover all his funds, which greatly simplifies wallet backup. There's no need to save the `wallet.dat` file over and over again!
 
 
-Deterministic wallets are largely the brainchild of American developer Gregory Maxwell. A supporter of free software, he has been a [contributor](https://commons.wikimedia.org/wiki/User:Gmaxwell) to Wikipedia since 2004 and works for the Xiph.org foundation, where he is involved in the development of the Opus audio codec. In May 2011, he began to get involved with Bitcoin, and [tried his hand](https://bitcointalk.org/index.php?topic=7171.msg119591#msg119591) at mining. He also writes a lot and quickly becomes very active on the forum and on the IRC channel \#bitcoin-dev, where he uses the pseudonym Gmaxwell.
+Deterministic wallets are largely the brainchild of American developer Gregory Maxwell. A supporter of free software, he had been a [contributor](https://commons.wikimedia.org/wiki/User:Gmaxwell) to Wikipedia since 2004 and worked for the Xiph.org foundation, where he was involved in the development of the Opus audio codec. In May 2011, he began to get involved with Bitcoin, and [tried his hand](https://bitcointalk.org/index.php?topic=7171.msg119591#msg119591) at mining. He also wrote a lot and quickly became very active on the forum and on the IRC channel \#bitcoin-dev, where he used the pseudonym Gmaxwell.
 
 
 ![Gregory Maxwell en 2006](assets/en/038.webp)
@@ -1127,18 +1123,15 @@ Deterministic wallets are largely the brainchild of American developer Gregory M
 *Gregory Maxwell in 2006 (source: [Wikimedia](https://commons.wikimedia.org/wiki/File:Gmaxwell-boat.webp))*
 
 
-Gregory Maxwell has lots of ideas on how to improve the use of Bitcoin, and key derivation is one of them. He's not the first to have this idea (Casascius [made](https://bitcointalk.org/index.php?topic=6897.msg100975#msg100975) a similar proposal in April), but he's the first to formalize it. On June 18, following [discussions](https://buildingbitcoin.org/bitcoin-dev/log-2011-06-08.html#l-1089) on IRC, he writes a description on the forum. He [writes](https://bitcointalk.org/index.php?topic=19137.msg239768#msg239768):
+Gregory Maxwell had lots of ideas on how to improve the use of Bitcoin, and key derivation was one of them. He was not the first to have this idea (Casascius [made](https://bitcointalk.org/index.php?topic=6897.msg100975#msg100975) a similar proposal in April), but he was the first to formalize it. On June 18, following [discussions](https://buildingbitcoin.org/bitcoin-dev/log-2011-06-08.html#l-1089) on IRC, he wrote a description on the forum. He [wrote](https://bitcointalk.org/index.php?topic=19137.msg239768#msg239768):
 
-
-> "Bitcoin should really enable and recommend the use of deterministic wallets by default.   The additional security provided by current pre-generated wallets is relatively low given the way most people use bitcoin. And the burden of losses due to incomplete backups and increased pressure to keep a single wallet operational is enormous."
->
 
 > "Bitcoin really ought to offer and default to using deterministic wallets.   The additional security of the current pre-generated ones is fairly small considering how most people use bitcoin and the liability of harm due to insufficient backups and increased pressure to keep a single wallet online is enormous."
 
-Two types of derivation are envisaged. One (type 1) is simple and generates private keys directly from the seed. The other (type 2) is more complex, but allows addresses to be derived from a master public key obtained from the seed, without accessing the seed itself. This enables payment processing software to generate an address for each transaction, without exposing the private keys.
+Two types of derivation were envisaged. One type (type 1) was straightforward, generating private keys directly from the seed. The other (type 2) was more complex, but allowed addresses to be derived from a master public key obtained from the seed, without accessing the seed itself. This enabled payment processing software to generate an address for each transaction, without exposing the private keys.
 
 
-Later, in February 2012, standardization took place with the [publication](https://en.bitcoin.it/w/index.php?title=BIP_0032&oldid=26198) of BIP 32. This describes the general structure of "hierarchical deterministic wallets" (*Hierarchical Deterministic Wallets*, HD Wallets), where derivations are used methodically to derive seed keys and addresses. It was gradually adopted by most wallets over the years.
+Later, in February 2012, standardization took place with the [publication](https://en.bitcoin.it/w/index.php?title=BIP_0032&oldid=26198) of BIP 32. It described the general structure of *Hierarchical Deterministic Wallets*, HD Wallets, where derivations are used methodically to derive seed keys and addresses. It has been gradually adopted by most wallets over the years.
 
 
 https://planb.academy/courses/46b0ced2-9028-4a61-8fbc-3b005ee8d70f
@@ -1146,10 +1139,10 @@ https://planb.academy/courses/46b0ced2-9028-4a61-8fbc-3b005ee8d70f
 ### BitcoinSpinner, Electrum and Armory
 
 
-Other software wallets appear during 2011. During the summer, a Danish developer by the name of Jan Møller develops a Java interface called BCCAPI (for *BitCoin Client API*). This was [announced](https://bitcointalk.org/index.php?topic=36892.msg453652#msg453652) on August 23. It's a software interface for connecting a client running on an Android phone to a server. On the client side, it implements deterministic generation of private keys, with no need for regular backups.
+Other software wallets appeared during 2011. During the summer, a Danish developer by the name of Jan Møller developed a Java interface called BCCAPI (for *BitCoin Client API*). This was [announced](https://bitcointalk.org/index.php?topic=36892.msg453652#msg453652) on August 23. It was a software interface for connecting a client running on an Android phone to a server. On the client side, it implemented deterministic generation of private keys, with no need for regular backups.
 
 
-A few months later, this interface was used to create a lightweight wallet called BitcoinSpinner, available on Google Play. This is [announced](https://bitcointalk.org/index.php?topic=52674.msg628527#msg628527) by Jan on November 23. It is officially managed by the Danish company Miracle A/S, which Jan [joins](https://bitcointalk.org/index.php?topic=53353.msg672264#msg672264) at the end of December.
+A few months later, this interface was used to create a lightweight wallet called BitcoinSpinner, available on Google Play. It was [announced](https://bitcointalk.org/index.php?topic=52674.msg628527#msg628527) by Jan on November 23. It was officially managed by the Danish company Miracle A/S, which Jan [joined](https://bitcointalk.org/index.php?topic=53353.msg672264#msg672264) at the end of December.
 
 
 ![Interface de BitcoinSpinner en juin 2012](assets/en/039.webp)
@@ -1158,13 +1151,13 @@ A few months later, this interface was used to create a lightweight wallet calle
 *Interface from BitcoinSpinner in June 2012 (source: [Bitcoin Magazine](https://web.archive.org/web/20120922131335/http://bitcoinmagazine.net/bitcoin-wallet-options/))*
 
 
-However, BCCAPI [suffers](https://bitcointalk.org/index.php?topic=46493.msg571018#msg571018) from a few shortcomings, which make it not to everyone's taste. On the one hand, the code of the server's software infrastructure, which is based on BitCoinJ, is not public, making it impossible to deploy other servers. On the other hand, the system stores transactions linked to addresses managed by a wallet in order to provide the total balance, which reduces bandwidth but poses a confidentiality problem.
+However, BCCAPI [suffered](https://bitcointalk.org/index.php?topic=46493.msg571018#msg571018) from a few shortcomings, which meant it was not to everyone’s taste. On the one hand, the server's software infrastructure, which was based on BitCoinJ, was not public, which prohibited the deployment of additional servers. On the other hand, the system stored transactions linked to addresses managed by a wallet in order to provide the total balance, which reduced bandwidth but posed a confidentiality problem.
 
 
-These shortcomings particularly bothered Frenchman Thomas Voegtlin, who was a computer researcher at the time and used the pseudonym ThomasV on the forum. He is interested in contributing and [seeks](https://bitcointalk.org/index.php?topic=46493.msg569756#msg569756) to set up "servers to which you don't have to be faithful" (original: "I am thinking about servers you don't have to be faithful to"). On October 20, he [decides](https://bitcointalk.org/index.php?topic=46493.msg585227#msg585227) to "do it from scratch in python".
+These shortcomings particularly bothered Frenchman Thomas Voegtlin, who was a computer researcher at the time and used the pseudonym ThomasV on the forum. He was interested in contributing and [sought](https://bitcointalk.org/index.php?topic=46493.msg569756#msg569756) to set up "servers that did not require user loyalty" (original: "I am thinking about servers you don't have to be faithful to"). On October 20, he [decided](https://bitcointalk.org/index.php?topic=46493.msg585227#msg585227) to "do it from scratch in python".
 
 
-The result is Electrum, which [comes out](https://bitcointalk.org/index.php?topic=50936.msg607510#msg607510) on November 5. Its name refers to electrum, a natural alloy of gold and silver, which was used to mint the first coins in Lydia and Greece.
+The result was Electrum, which [came out](https://bitcointalk.org/index.php?topic=50936.msg607510#msg607510) on November 5. Its name refers to electrum, a natural alloy of gold and silver, which was used to mint the first coins in Lydia and Greece.
 
 
 ![Thomas Voegtlin en 2006](assets/en/040.webp)
