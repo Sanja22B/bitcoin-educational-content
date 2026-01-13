@@ -1166,7 +1166,7 @@ The result was Electrum, which [came out](https://bitcointalk.org/index.php?topi
 *Thomas Voegtlin in 2006 (source: [archive](https://web.archive.org/web/20060516200739/http://www.loria.fr/%7Evoegtlin/) from his personal page)*
 
 
-The client connects to a network of special servers to retrieve the transactions. The servers run the software (bitcoind) and index all transactions using the ABE block explorer code. In this wallet, the seed takes the form of a hexadecimal character string. As of November 10, it [is](https://bitcointalk.org/index.php?topic=51397.msg612674#msg612674) also represented as a 12-word mnemonic phrase. Each word is chosen from a predefined list, allowing information bits to be represented. This type of sentence will be standardized by BIP 39, [draft](https://github.com/trezor/python-mnemonic/blob/217999150812f7d356169661e4ac0b2e09fecd1d/BIP_0039.txt) in 2013.
+The client connects to a network of special servers to retrieve the transactions. The servers run the software (bitcoind) and index all transactions using the ABE block explorer code. In this wallet, the seed takes the form of a hexadecimal character string. As of November 10, it [was](https://bitcointalk.org/index.php?topic=51397.msg612674#msg612674) also represented as a 12-word mnemonic phrase. Each word is chosen from a predefined list, allowing information bits to be represented. This type of sentence would be standardized by BIP 39, which [was drafted](https://github.com/trezor/python-mnemonic/blob/217999150812f7d356169661e4ac0b2e09fecd1d/BIP_0039.txt) in 2013.
 
 
 ![Graine et phrase mnémotechnique d'Electrum en 2012](assets/en/041.webp)
@@ -1175,10 +1175,10 @@ The client connects to a network of special servers to retrieve the transactions
 *Electrum seed and mnemonic phrase in 2012 (source: [archive](https://web.archive.org/web/20120826021721/http://electrum-desktop.com:80/seed.html) from the Electrum website)*
 
 
-On December 16, Electrum [integrates](https://bitcointalk.org/index.php?topic=50936.msg652435#msg652435) type 2 derivation, so that addresses can be generated, without access to the seed. In October 2012, Thomas Voegtlin [will add](https://bitcointalk.org/index.php?topic=50936.msg1302941#msg1302941) also simplified payment verification to Electrum, making it one of the best lightweight wallets in the ecosystem.
+On December 16, Electrum [integrated](https://bitcointalk.org/index.php?topic=50936.msg652435#msg652435) type 2 derivation, so that addresses cold be generated, without access to the seed. In October 2012, Thomas Voegtlin [would add](https://bitcointalk.org/index.php?topic=50936.msg1302941#msg1302941) also simplified payment verification to Electrum, making it one of the best lightweight wallets in the ecosystem.
 
 
-A third advanced wallet [comes out](https://bitcointalk.org/index.php?topic=56424.msg671650#msg671650) in early 2012: Armory. This software was developed from July 2011 by American engineer Alan Reiner, who goes by the forum name Etotheipi (in reference to Euler's mathematical identity). It [initially](https://github.com/etotheipi/BitcoinArmory/blob/d68259dcf4116473d82458770e5ad73b95238797/README) takes the form of a Python software library called PyBtcEngine, before becoming a full-fledged client in November.
+A third advanced wallet [came out](https://bitcointalk.org/index.php?topic=56424.msg671650#msg671650) in early 2012: Armory. This software was developed from July 2011 by American engineer Alan Reiner, who went by the forum name Etotheipi (in reference to Euler's mathematical identity). It [initially](https://github.com/etotheipi/BitcoinArmory/blob/d68259dcf4116473d82458770e5ad73b95238797/README) took the form of a Python software library called PyBtcEngine, before becoming a full-fledged client in November.
 
 
 ![Interface du portefeuille Armory en janvier 2012](assets/en/042.webp)
@@ -1187,16 +1187,16 @@ A third advanced wallet [comes out](https://bitcointalk.org/index.php?topic=5642
 *Interface from the Armory wallet in January 2012 (source: [archive](https://web.archive.org/web/20120225130943/http://bitcoinarmory.com/) from the Armory website)*
 
 
-On January 3, 2012, Armory was presented as "The most advanced Bitcoin Client in existence": it [integrates](https://web.archive.org/web/20120113212542/http://bitcoinarmory.com/index.php/start-page/sample-page/features) numerous features, such as a multi-account interface, deterministic infrastructure with paper backup, part selection and address import. But above all, it [offers](https://web.archive.org/web/20120115015741/http://bitcoinarmory.com/index.php/using-offline-wallets-in-armory) the possibility of managing funds offline, a practice known as cold storage (described below). In February-March, Alan Reiner [carries out](https://web.archive.org/web/20120515220140/https://bitcointalk.org/index.php?topic=64449.0) a crowdfunding campaign which raises over $4,000. As the months go by, Armory becomes the benchmark for security.
+On January 3, 2012, Armory was presented as "The most advanced Bitcoin Client in existence": it [integrate](https://web.archive.org/web/20120113212542/http://bitcoinarmory.com/index.php/start-page/sample-page/features) numerous features, such as a multi-account interface, deterministic infrastructure with paper backup, part selection and address import. But above all, it [offered](https://web.archive.org/web/20120115015741/http://bitcoinarmory.com/index.php/using-offline-wallets-in-armory) the possibility of managing funds offline, a practice known as cold storage (described below). In February-March, Alan Reiner [carried out](https://web.archive.org/web/20120515220140/https://bitcointalk.org/index.php?topic=64449.0) a crowdfunding campaign which raised over $4,000. As the months went by, Armory became the benchmark for security.
 
 
 ### Web wallets
 
 
-A hybrid form of wallet is emerging: the web wallet, or *web wallet*, which involves accessing funds from a browser by connecting to a service that stores an encrypted copy of the private keys.
+A hybrid form of wallet was emerging: the *web wallet*, which allowed accessing funds from a browser by connecting to a service that stored an encrypted copy of the private keys.
 
 
-From March 2011, Stefan Thomas (justmoon), the German producer of the video "*What is Bitcoin?*" and manager of WeUseCoins, has been working on a Javascript library (in Node.js) to interact with the Bitcoin protocol. This library, called BitcoinJS, will be [released](https://bitcointalk.org/index.php?topic=7357.msg108003#msg108003) on May 5. It enables web developers to deploy clients running in the user's browser.
+From March 2011, Stefan Thomas (justmoon), the German producer of the video "*What is Bitcoin?*" and manager of WeUseCoins, had been working on a Javascript library (in Node.js) to interact with the Bitcoin protocol. This library, called BitcoinJS, would be [released](https://bitcointalk.org/index.php?topic=7357.msg108003#msg108003) on May 5. It enabled web developers to deploy clients running in the user's browser.
 
 
 ![Présentation de la bibliothèque BitcoinJS par Stefan Thomas (de WeUseCoins) et Eric Brigham (de Trucoin)](https://www.youtube.com/watch?v=KTmFwnIRG9c)
@@ -1205,10 +1205,10 @@ From March 2011, Stefan Thomas (justmoon), the German producer of the video "*Wh
 *Presentation of the BitcoinJS library by Stefan Thomas (WeUseCoins) and Eric Brigham (Trucoin)*
 
 
-The first developer to exploit this library was a forum member calling himself DogIsland, who [presented](https://bitcointalk.org/index.php?topic=36169.msg445796#msg445796) a web wallet concept called StrongCoin in August. The interface allows users to create an account and log in with a username and password. It specifies that private keys are encrypted using AES before being sent to the server, so that only the user has access to the funds. The service [officially opens](https://twitter.com/strongcoin/status/122263762035146753) on October 7, but [has the disadvantage](https://web.archive.org/web/20111113070337/http://www.thebitcointrader.com/2011/11/bitcoins-killer-app-is-here.html) of charging a 1% fee (up to BTC) on each amount sent.
+The first developer to use this library was a forum member calling himself DogIsland, who [presented](https://bitcointalk.org/index.php?topic=36169.msg445796#msg445796) a web wallet concept called StrongCoin in August. The interface allowed users to create an account and log in with a username and password. It specified that private keys are encrypted using AES before being sent to the server, so that only the user has access to the funds. The service [officially opened](https://twitter.com/strongcoin/status/122263762035146753) on October 7, but [had the disadvantage](https://web.archive.org/web/20111113070337/http://www.thebitcointrader.com/2011/11/bitcoins-killer-app-is-here.html) of charging a 1% fee (up to BTC) on each amount sent.
 
 
-The BitcoinJS library is also [used](https://web.archive.org/web/20180611012256/https://github.com/zootreeves/blockchain.info) by Benjamin Reeves, a young British developer living in York, known on the forum as Piuk. Very much a recluse, he's also a workaholic. In August, he [develops](https://bitcointalk.org/index.php?topic=40264.msg500726#msg500726) a block explorer that "Includes orphaned blocks which can be used to track possible double spends" and "Estimates the actual volume of BTC transacted (not just BTC sent)", which he hosts on his personal website. It competes with Theymos' Bitcoin Block Explorer (BBE), and with [ABE](https://bitcointalk.org/index.php?topic=22785.msg286515#msg286515), an open-source alternative intended to be hosted by users. In October, the site [obtains](https://bitcointalk.org/index.php?topic=40264.msg576916#msg576916) its own domain name: Blockchain.info. It quickly becomes the preferred explorer for community members.
+The BitcoinJS library was also [used](https://web.archive.org/web/20180611012256/https://github.com/zootreeves/blockchain.info) by Benjamin Reeves, a young British developer living in York, known on the forum as Piuk. Very much a recluse, he was also a workaholic. In August, he [developed](https://bitcointalk.org/index.php?topic=40264.msg500726#msg500726) a block explorer that "includes orphaned blocks which can be used to track possible double spends" and "estimates the actual volume of BTC transacted (not just BTC sent)", which he hosts on his personal website. It competes with Theymos' Bitcoin Block Explorer (BBE), and with [ABE](https://bitcointalk.org/index.php?topic=22785.msg286515#msg286515), an open-source alternative intended to be hosted by users. In October, the site [obtained](https://bitcointalk.org/index.php?topic=40264.msg576916#msg576916) its own domain name: Blockchain.info. It quickly became the preferred explorer for community members.
 
 
 ![Ben Reeves dans les locaux de Y Combinator à San Francisco en avril 2012](assets/en/043.webp)
@@ -1217,7 +1217,7 @@ The BitcoinJS library is also [used](https://web.archive.org/web/20180611012256/
 *Ben Reeves at the Y Combinator offices in San Francisco in April 2012 (source: [Imgur](https://imgur.com/U5iUy))*
 
 
-On December 1, Ben Reeves [integrates](http://bitcointalk.org/index.php?topic=40264.msg636996#msg636996) a wallet functionality to the platform. This feature, soberly named "My Wallet", is similar to StrongCoin: users access their wallet with a login and password; their private keys are encrypted and stored on the server. No commission is charged, however. What's more, the service benefits from the clarity of the block explorer, showing details of the transactions carried out.
+On December 1, Ben Reeves [integrated](http://bitcointalk.org/index.php?topic=40264.msg636996#msg636996) a wallet functionality to the platform. This feature, simply named "My Wallet", was similar to StrongCoin: users access their wallet with a login and password; their private keys are encrypted and stored on the server. However, no commission was charged. What's more, the service benefited from the clarity of the block explorer, showing the details of executed transactions.
 
 
 ![Interface de My Wallet en décembre 2011](assets/en/044.webp)
@@ -1226,7 +1226,7 @@ On December 1, Ben Reeves [integrates](http://bitcointalk.org/index.php?topic=40
 *Interface from My Wallet in December 2011 (source: [Bitcointalk](https://web.archive.org/web/20120519160806/https://bitcointalk.org/index.php?topic=40264.140))*
 
 
-The wallet's practicality makes it very popular. The service quickly attracts thousands of users, reaching [5,000](https://bitcointalk.org/index.php?topic=40264.msg790252#msg790252) open accounts in March 2012. Daily volume on the blockchain, which counts bitcoins moved by transactions issued from Blockchain.info (My Wallet and API) and exaggerates actual transfers, grows steadily. At the beginning of May, it exploded thanks to the activity generated by the online dice game SatoshiDICE, exceeding 18,000 bitcoins, or $90,000 at that point! By July, the total volume moved by Blockchain.info will be [estimated](https://web.archive.org/web/20120720035456/https://blockchain.info/wallet/) at $13.6 million.
+The wallet's practicality makes it very popular. The service quickly attracted thousands of users, reaching [5,000](https://bitcointalk.org/index.php?topic=40264.msg790252#msg790252) open accounts in March 2012. Daily volume on the blockchain, which counts bitcoins moved by transactions issued from Blockchain.info (My Wallet and API) and overstating actual transfers, grew steadily. At the beginning of May, it exploded thanks to the activity generated by the online dice game SatoshiDICE, exceeding 18,000 bitcoins, or $90,000 at that point! By July, the total volume moved by Blockchain.info would be [estimated](https://web.archive.org/web/20120720035456/https://blockchain.info/wallet/) at $13.6 million.
 
 
 ![Volume journalier des transactions émises par Blockchain.info](assets/en/045.webp)
@@ -1238,13 +1238,13 @@ The wallet's practicality makes it very popular. The service quickly attracts th
 ### Cold storage and paper wallets
 
 
-2011 also saw the emergence of paper wallets, an application of the concept of cold storage. Holding bitcoin simply means keeping a piece of information safe from threats, whether from the vagaries of life (loss) or the curiosity of others (theft). This information - the private key - can be [generated](https://bitcointalk.org/index.php?topic=1610.msg19131#msg19131) by devices that are never connected to the Internet. This is what is known as cold storage [as of 2011](https://en.bitcoin.it/w/index.php?title=Cold_storage&oldid=16769).
+2011 also saw the emergence of paper wallets, an application of the concept of cold storage. Holding bitcoin simply means keeping certain information protected from risks, whether from from accidental loss or the curiosity of others (theft). This information - the private key - can be [generated](https://bitcointalk.org/index.php?topic=1610.msg19131#msg19131) by devices that are never connected to the Internet. This has been known as cold storage [as of 2011](https://en.bitcoin.it/w/index.php?title=Cold_storage&oldid=16769).
 
 
 Cold storage can be achieved by storing your private keys on a digital backup medium, such as a USB stick. But a much more practical method is the paper wallet, which is simply a sheet of paper containing the private key and public address. The key can be generated by any software wallet, provided the device on which it is located remains offline.
 
 
-A paper wallet can also be generated using a specific tool. This type of tool was launched in the summer of 2011. The main one is BitAddress, developed by a certain Pointbiz, which was [launched](https://web.archive.org/web/20111102021042/https://bitcointalk.org/index.php?topic=43496.0) in September. This is a Javascript-coded, browser-based tool. The interface invites the user to create entropy to optimize the generation of pseudo-random numbers. The resulting private key and address can then be printed out for safekeeping. It can of course (and is recommended!) be used without an Internet connection, by saving the HTML page.
+A paper wallet can also be generated using a specific tool. This type of tool was launched in the summer of 2011. The main one was BitAddress, developed by a certain Pointbiz, which was [launched](https://web.archive.org/web/20111102021042/https://bitcointalk.org/index.php?topic=43496.0) in September. This was a Javascript-coded, browser-based tool. The interface invited the user to create entropy to optimize the generation of pseudo-random numbers. The resulting private key and address could then be printed out for safekeeping. It can of course (and is recommended!) to be used without an Internet connection, by saving the HTML page.
 
 
 ![Portefeuille papier généré avec BitAddress en septembre 2011](assets/en/046.webp)
@@ -1253,10 +1253,10 @@ A paper wallet can also be generated using a specific tool. This type of tool wa
 *Paper wallet generated with BitAddress in September 2011 (source: [capture](https://web.archive.org/web/20120519160806/https://bitcointalk.org/index.php?topic=40264.140) from BitAddress.org)*
 
 
-Another tool that appeared at this time was VanityGen, [created](https://web.archive.org/web/20111104120932/https://bitcointalk.org/index.php?topic=25804.0) in July by a forum member calling himself Samr7. This is a program for creating a personalized address (*vanity address*), starting with specific characters, by testing a large number of private keys. This is useful for identifying the donation addresses of individuals. For example, Pointbiz's address for its BitAddress maintenance, `1NiNja1bUmhSoTXozBRBEtR8LeF9TGbZBN`, contains the word "ninja".
+Another tool that appeared at this time was VanityGen, [created](https://web.archive.org/web/20111104120932/https://bitcointalk.org/index.php?topic=25804.0) in July by a forum member calling himself Samr7. It was a program for creating a personalized address (*vanity address*), starting with specific characters, by testing a large number of private keys. This is useful for identifying the donation addresses of individuals. For example, Pointbiz's address for its BitAddress maintenance, `1NiNja1bUmhSoTXozBRBEtR8LeF9TGbZBN`, contained the word "ninja".
 
 
-Finally, the most effective method of protection against theft is the "mental wallet" (original: "brain wallet"), which involves memorizing a secret phrase that gives access to the bitcoins stored at the corresponding address. For example, the secret phrase can be hashed with SHA-256 to obtain the private key that enables the funds to be spent. This method is [proposed](https://bitcointalk.org/index.php?topic=35082.msg436289#msg436289) by Casascius in August 2011 and [highlighted](https://www.forbes.com/sites/jonmatonis/2012/03/12/brainwallet-the-ultimate-in-mobile-money/) in Forbes by Jon Matonis in March 2012. It is, however, very insecure if entropy is not sufficient. And it's obviously subject to the vagaries of human memory; it's more a practical demonstration of Bitcoin's power than a perennial application.
+Finally, the most effective method of protection against theft is the "brain wallet", which involves memorizing a secret phrase that gives access to the bitcoins stored at the corresponding address. For example, the secret phrase can be hashed with SHA-256 to obtain the private key that enables the funds to be spent. This method was [proposed](https://bitcointalk.org/index.php?topic=35082.msg436289#msg436289) by Casascius in August 2011 and [highlighted](https://www.forbes.com/sites/jonmatonis/2012/03/12/brainwallet-the-ultimate-in-mobile-money/) in Forbes by Jon Matonis in March 2012. It is, however, very insecure if entropy is not sufficient. And it is, of course, subject to the limitations of human memory; it is more a practical demonstration of Bitcoin’s power than a sustainable application.
 
 
 ### Physical forms of private key representations
@@ -1265,7 +1265,7 @@ Finally, the most effective method of protection against theft is the "mental wa
 Another possibility for cold storage is the physical storage of private key, which involves embedding private keys or signatures in specific objects. This idea emerged as early as the summer of 2010, with Gavin Andresen's [proposal](https://bitcointalk.org/index.php?topic=737.msg7990#msg7990) to "print bitcoins" (original: "Printing bitcoins") so that they could be exchanged in person, but it wasn't implemented until 2011.
 
 
-The first objects of this type are Bitbills, [launched](https://bitcointalk.org/index.php?topic=7724.msg112655#msg112655) by Doug Feigelson (aka Llama) in May 2011, which are plastic cards with QR codes representing the address and private key respectively. The private key is covered by a sticker, so that it cannot be read without showing signs of tampering. The card is fitted with holograms to prevent counterfeiting. Bitbills are, according to their designer, "the first physical incarnation of bitcoins". They [form](https://web.archive.org/web/20110511215306/http://bitbills.com/) a good way of "transferring bitcoins in person, just like cash!" (original: "With Bitbills you can transfer bitcoins in person, just like cash!").
+The first objects of this type are Bitbills, [launched](https://bitcointalk.org/index.php?topic=7724.msg112655#msg112655) by Doug Feigelson (aka Llama) in May 2011, which are plastic cards with QR codes representing the address and private key respectively. The private key is covered by a sticker, so that it cannot be read without showing signs of tampering. The card is fitted with holograms to prevent counterfeiting. Bitbills are, according to their designer, "the first physical incarnation of bitcoins". They [provided](https://web.archive.org/web/20110511215306/http://bitbills.com/) a good way of "transferring bitcoins in person, just like cash!" (original: "With Bitbills you can transfer bitcoins in person, just like cash!").
 
 
 ![Bitbills mis aux enchères par Charlie Lee en avril 2013](assets/en/047.webp)
@@ -1274,16 +1274,16 @@ The first objects of this type are Bitbills, [launched](https://bitcointalk.org/
 *Bitbills auctioned by Charlie Lee in April 2013 (source: Inversor Inteligente on [Substack](https://inversorinteligente.substack.com/p/casascius-monedas-fisicas-de-bitcoin))*
 
 
-The first Bitcoin ATM (or *Bitcoin ATM*), [designed](https://bitcointalk.org/index.php?topic=5122.msg461848#msg461848) by entrepreneur Todd Bethell, includes a feature for funds to be sent to a specially printed Bitbills card. It is [tested](https://web.archive.org/web/20110827115138/http://bitcoinatm.com/) for the first time in public in San Diego, California on August 17, 2013. An introductory video is published in September :
+The first *Bitcoin ATM*, [designed](https://bitcointalk.org/index.php?topic=5122.msg461848#msg461848) by entrepreneur Todd Bethell, included a feature for funds to be sent to a specially printed Bitbills card. It was [tested](https://web.archive.org/web/20110827115138/http://bitcoinatm.com/) for the first time in public in San Diego, California on August 17, 2013. An introductory video was published in September :
 
 
 ![Vidéo de présentation du premier distributeur de BitcoinATM.com](https://www.youtube.com/watch?v=Lnq2I-N-xYQ)
 
 
-Bitbills met with some success, but Doug Feigelson struggled to keep up with demand. In May 2012, Bitbills production was definitively halted (https://web.archive.org/web/20120508074832/http://bitbills.com/order). But there is a competitor: "physical representations of bitcoin" made by Mike Caldwell, aka Casascius.
+Bitbills met with some success, but Doug Feigelson struggled to keep up with demand. In May 2012, Bitbills production was definitively halted (https://web.archive.org/web/20120508074832/http://bitbills.com/order). But there was a competitor: "physical representations of bitcoin" made by Mike Caldwell, aka Casascius.
 
 
-Mike Caldwell is a 33-year-old American developer who lives in the suburbs of Salt Lake City, Utah, and runs a business automation company called [Swipeclock](https://www.linkedin.com/company/swipeclock/). His pseudonym, Casascius, is a Latinized form of CASAS, the initials of the saying *call a spade a spade*. A rationalist, he is fascinated by cryptography and is attracted by the technical side of Bitcoin. He tries his hand at mining for a while.
+Mike Caldwell was a 33-year-old American developer who lived in the suburbs of Salt Lake City, Utah, and run a business automation company called [Swipeclock](https://www.linkedin.com/company/swipeclock/). His pseudonym, Casascius, is a Latinized form of CASAS, the initials of the saying *call a spade a spade*. A rationalist, he was fascinated by cryptography and was attracted by the technical side of Bitcoin. He tried his hand at mining for a while.
 
 
 ![Mike Caldwell en 2013](assets/en/048.webp)
@@ -1292,10 +1292,10 @@ Mike Caldwell is a 33-year-old American developer who lives in the suburbs of Sa
 *Mike Caldwell, aka Casascius, in 2013 (source: [IMDb](https://www.imdb.com/fr/name/nm5669287/))*
 
 
-Casascius is particularly interested in bitcoin storage, and therefore wallets. He developed a [utility](https://bitcointalk.org/index.php?topic=25141.msg312005#msg312005) to convert a private key into a Bitcoin address, generate custom keys and create a derivation seed. But above all, he set out, as he [explains](https://bitcointalk.org/index.php?topic=2657.msg36011#msg36011), to "make a real tangible bitcoin that actually conveys BTC". This is how he [sells](https://bitcointalk.org/index.php?topic=21878.msg275000#msg275000) paper wallets from June on his personal website.
+Casascius was particularly interested in bitcoin storage, and therefore wallets. He developed a [utility](https://bitcointalk.org/index.php?topic=25141.msg312005#msg312005) to convert a private key into a Bitcoin address, generate custom keys and create a derivation seed. But above all, he set out, as he [explained](https://bitcointalk.org/index.php?topic=2657.msg36011#msg36011), to "make a real tangible bitcoin that actually conveys BTC". This is how he began [selling](https://bitcointalk.org/index.php?topic=21878.msg275000#msg275000) paper wallets from June on his personal website.
 
 
-On August 19, Casascius [share](https://bitcointalk.org/index.php?topic=38048.msg467209#msg467209) publicly announced his plan to manufacture "real physical representations of bitcoin". On September 6, he begins machining them. On September 6, he [announces](https://bitcointalk.org/index.php?topic=41892.msg509883#msg509883) the sale of "Casascius physical representations of bitcoin", more commonly known as "Casascius coins". The private key is covered by a personalized hologram, so that it cannot be recovered without damaging the coin. The first 8 characters of Bitcoin's public address are visible on the outside and pre-printed on the hologram by the manufacturer. Surprisingly, the first coins feature a typographical error: Casascius is spelled Casacius.
+On August 19, Casascius publicly [shared](https://bitcointalk.org/index.php?topic=38048.msg467209#msg467209) his plan to manufacture "real physical representations of bitcoin". On September 6, he began producing them. On September 6, he [announced](https://bitcointalk.org/index.php?topic=41892.msg509883#msg509883) the sale of "Casascius physical representations of bitcoin", more commonly known as "Casascius coins". The private key was covered by a personalized hologram, so that it could not be retrieved without damaging the coin. The first eight characters of the Bitcoin public address were visible on the outside and pre-printed on the hologram by the manufacturer. Surprisingly, the first coins contained a typographical error: Casascius was spelled Casacius.
 
 
 ![Les premiers bitcoins de Casascius en 2011](assets/en/049.webp)
@@ -1304,39 +1304,35 @@ On August 19, Casascius [share](https://bitcointalk.org/index.php?topic=38048.ms
 *Casascius' first bitcoins in 2011 (source: [casascius.com](https://www.casascius.com/casasciusphysicalbitcoins.webp))*
 
 
-Initially available in 1 and 25 BTC coins, Casascius bitcoins are rapidly being made available in other denominations and in ingots, up to 1000 BTC! Physical representations of bitcoin are [sold](https://web.archive.org/web/20111107191637/https://www.casascius.com/) on Casascius's personal website, but [also](https://web.archive.org/web/20111028171555/http://www.memorydealers.com/bieq.html) on MemoryDealers (Roger Ver's online store) from October. They will also be [found](https://odysee.com/@adamkokesh:2/moment-in-monetary-history-bitcoin-by:9) in a vending machine at the following year's PorcFest, in June 2012.
+Initially available in 1 and 25 BTC coins, Casascius bitcoins were quickly offered in other denominations and as bars, reaching up to 1,000 BTC! Physical representations of bitcoin were [sold](https://web.archive.org/web/20111107191637/https://www.casascius.com/) on Casascius's personal website, but [also](https://web.archive.org/web/20111028171555/http://www.memorydealers.com/bieq.html) on MemoryDealers (Roger Ver's online store) from October. They were also made [available](https://odysee.com/@adamkokesh:2/moment-in-monetary-history-bitcoin-by:9) through an ATM at the following year's PorcFest, in June 2012.
 
 
-In this way, they serve an educational purpose, as well as attracting a different audience, such as numismatic enthusiasts. In 2013, Mike Caldwell [will explain](https://bitcointalk.org/index.php?topic=41892.msg3727984#msg3727984) himself:
+In this way, they served an educational purpose and appealed to a different audience, including coin collectors. In 2013, Mike Caldwell [would explain](https://bitcointalk.org/index.php?topic=41892.msg3727984#msg3727984) himself:
+
+> "My purpose in introducing Casascius Coins was as a teaching tool, to help the world at large visualize a virtual coin with a tactile functional object"
+
+Casascius bitcoins will be a huge success over the two years they were distributed. According to [Uberbills](https://casascius.uberbills.com/), 27,910 coins and ingots would be produced, with a total of 98,284 BTC stored on these media.
 
 
-> "My aim in introducing the Casascius Coins was to use them as an educational tool to help the general public visualize a virtual coin with a tangible functional object."
->
-
-> original: "My purpose in introducing Casascius Coins was as a teaching tool, to help the world at large visualize a virtual coin with a tactile functional object"
-
-Casascius bitcoins will be a huge success over the two years they are distributed. According to [Uberbills](https://casascius.uberbills.com/), 27,910 coins and ingots will be produced, with a total of 98,284 BTC stored on these media.
-
-
-### The first parts mixing services
+### The first coin-mixing services
 
 
 Finally, it was during this period that questions began to be asked about Bitcoin's confidentiality. Since Bitcoin was initially presented as "anonymous", many people thought they had nothing to fear. But the registry is public, so funds can be traced and associated with an identity, leading to a question mark.
 
 
-With the popularization of Silk Road and its adoption by WikiLeaks in the summer of 2011, the question of anonymity [is](https://bitcointalk.org/index.php?topic=175.msg57305#msg57305) [increasingly](https://web.archive.org/web/20110610205500/http://bitcoinweekly.com/articles/the-battle-is-on-silk-road-vs-government-and-bitcoin-anonymity). On July 24, Martin Harrigan and Fergal Reid, two Irish researchers from University College Dublin, [pre-published](https://web.archive.org/web/20110725131444/https://anonymity-in-bitcoin.blogspot.com/2011/07/bitcoin-is-not-anonymous.html) a study showing that Bitcoin is not as anonymous as most people imagine. Confidential activity has not been rendered impossible; it is just more complicated to achieve than might be expected at first sight.
+With the popularization of Silk Road and its adoption by WikiLeaks in the summer of 2011, concerns about anonymity [grew](https://bitcointalk.org/index.php?topic=175.msg57305#msg57305) [steadily](https://web.archive.org/web/20110610205500/http://bitcoinweekly.com/articles/the-battle-is-on-silk-road-vs-government-and-bitcoin-anonymity). On July 24, Martin Harrigan and Fergal Reid, two Irish researchers from University College Dublin, [pre-published](https://web.archive.org/web/20110725131444/https://anonymity-in-bitcoin.blogspot.com/2011/07/bitcoin-is-not-anonymous.html) a study showing that Bitcoin was not as anonymous as most people imagined. Conducting confidential transactions was not impossible, but it was more difficult than it might initially appear.
 
 
-The solution to this problem, to break the provenance and the background, is *coin mixing*. This type of mixing is implemented by centralized mixers, known as *mixers* or *tumblers*. Three of these stand out from the crowd and prove not to be scams.
+To address this problem and break the traceability of funds, the solution was coin mixing, which made it possible to obscure transaction trails. This type of mixing was implemented by centralized mixers, known as *mixers* or *tumblers*. Three of these stood out from the crowd and proved not to be scams.
 
 
-The first is BitLaundry. This service was [launched](https://bitcointalk.org/index.php?topic=963.msg11823#msg11823) in September 2010 by Peter Vessenes, an American entrepreneur with a degree in cryptography who discovered the existence of Bitcoin at the time of slashdotting. The blender [provides](https://maltemoeser.de/paper/money-laundering.pdf#page=5) the user with a single-use address, to which the funds to be anonymized are sent. The bitcoins are then sent back in the form of several coins (UTXO), within a multiple-entry transaction that includes bitcoins from other users, making the blending effective. The fees charged are around 2.5% of the amount involved. In May 2011, sensing the legal complications that could arise from this activity, Peter Vessenes [cedes](https://bitcointalk.org/index.php?topic=963.msg122955#msg122955) the service to Mike Gogulski, an activist who has the distinction of being administratively stateless, having renounced his US citizenship without possessing another.
+The first is BitLaundry. This service was [launched](https://bitcointalk.org/index.php?topic=963.msg11823#msg11823) in September 2010 by Peter Vessenes, an American entrepreneur with a degree in cryptography who discovered the existence of Bitcoin at the time of slashdotting. The blender [provided](https://maltemoeser.de/paper/money-laundering.pdf#page=5) the user with a single-use address, to which the funds to be anonymized were sent. The bitcoins were then sent back in the form of several coins (UTXO), within a multiple-entry transaction that includes bitcoins from other users, making the blending effective. The fees charged were around 2.5% of the amount involved. In May 2011, sensing the legal complications that could arise from this activity, Peter Vessenes [transferred](https://bitcointalk.org/index.php?topic=963.msg122955#msg122955) the service to Mike Gogulski, an activist notable for being stateless, having renounced his US citizenship without possessing another.
 
 
-The second blender is Bitcoin Fog (the "bitcoin scrambler"), [created](https://web.archive.org/web/20121102102447/https://bitcointalk.org/index.php?topic=50037.0) in October 2011 by Roman Sterlingov, a 23-year-old Russian-Swedish man. Unlike BitLaundry, this service requires users to have a local balance in their account and to withdraw funds to make them less traceable, via blending with other users' bitcoins. Withdrawals are made on a delayed basis, in several stages to different addresses, over a period of between 6 and 96 hours. Fees are between 1% and 3%.
+The second blender was Bitcoin Fog (the "bitcoin scrambler"), [created](https://web.archive.org/web/20121102102447/https://bitcointalk.org/index.php?topic=50037.0) in October 2011 by Roman Sterlingov, a 23-year-old Russian-Swedish man. Unlike BitLaundry, this service required users to hold a local account balance and then withdraw the funds to reduce traceability, by mixing them with the bitcoins of other users. Withdrawals were made on a delayed basis, in several stages to different addresses, over a period of between 6 and 96 hours. Fees were between 1% and 3%.
 
 
-The third is of a special kind, as it's the blender built into Ben Reeves' Blockchain.info wallet. This service was [implemented](https://bitcointalk.org/index.php?topic=40264.msg1015499#msg1015499) in July 2012 as a feature called "Send Anonymously". The commission charged is 1.5%.
+The third was of a special kind, as it was the mixer built into Ben Reeves' Blockchain.info wallet. This service was [implemented](https://bitcointalk.org/index.php?topic=40264.msg1015499#msg1015499) in July 2012 as a feature called "Send Anonymously". The commission charged was 1.5%.
 
 
 ![Illustration de la fonctionnalité Send Anonymously du portefeuille de Blockchain.info](assets/en/050.webp)
@@ -1345,19 +1341,19 @@ The third is of a special kind, as it's the blender built into Ben Reeves' Block
 *Illustration of the "Send Anonymously" functionality of the Blockchain.info wallet (source: [archive](https://web.archive.org/web/20120708011906/https://blockchain.info/wallet/send-anonymously))*
 
 
-The proliferation of centralized mixers has had the effect of catalyzing thinking around decentralized part mixing, which began in the summer of 2011 with a [proposal](https://bitcointalk.org/index.php?topic=12751.msg315793#msg315793) by Hashcoin. This led to the [formalization](https://bitcointalk.org/index.php?topic=279249.msg2983902#msg2983902) of CoinJoin by Gregory Maxwell in 2013. But that's another story altogether...
+The proliferation of centralized mixers had the effect of catalyzing thinking around decentralized coin mixing, which began in the summer of 2011 with a proposal [proposal](https://bitcointalk.org/index.php?topic=12751.msg315793#msg315793) put forward by Hashcoin. This led to the [formalization](https://bitcointalk.org/index.php?topic=279249.msg2983902#msg2983902) of CoinJoin by Gregory Maxwell in 2013. But that's another story altogether...
 
 
 ### A period of progress for wallets
 
 
-The 2011-2012 period was a busy one for the development of various solutions for using Bitcoin. In addition to Custodial applications, we saw the emergence of software wallets like *Bitcoin Wallet for Android* and Electrum, web wallets like Blockchain.info, paper wallet generators like BitAddress, and physical representations of bitcoin like Bitbills and Casascius Coins. Several blending services have been developed to offer users greater confidentiality.
+The 2011-2012 period was a busy one for the development of various solutions for using Bitcoin. In addition to custodial applications, we saw the emergence of software wallets like *Bitcoin Wallet for Android* and Electrum, web wallets like Blockchain.info, paper wallet generators like BitAddress, and physical representations of bitcoin like Bitbills and Casascius Coins. Several mixing services had been developed to offer users greater confidentiality.
 
 
-In addition, the period saw the development of deterministic wallets, based on the derivation of keys from a single datum called the seed. The model was enhanced and standardized in BIP 32 in early 2012, to add a hierarchy to this derivation. But the movement didn't stop there, as other proposals were subsequently published. BIP 39, published in September 2013, standardized the use of the mnemonic phrase, in the same vein as Electrum. BIP 43 and 44, drafted in April 2014, made standard the structure of wallets holding multiple cryptocurrencies and multiple accounts. These proposals were made by Marek Palatinus (Slush) and Pavol Rusnak (Stick), who were working on making the first hardware wallet, Bitcoin Trezor.
+In addition, the period saw the development of deterministic wallets, based on the derivation of keys from a single piece of data called the seed. The model was enhanced and standardized in BIP 32 in early 2012, to add a hierarchy to this derivation. But the movement didn't stop there, as other proposals were subsequently published. BIP 39, published in September 2013, standardized the use of the mnemonic phrase, in the same vein as Electrum. BIP 43 and 44, drafted in April 2014, standardized the structure of wallets holding multiple cryptocurrencies and multiple accounts. These proposals were made by Marek Palatinus (Slush) and Pavol Rusnak (Stick), who were working on making the first hardware wallet, Bitcoin Trezor.
 
 
-However, wallets weren't the only area to see significant advances; so too were mining pools. Indeed, the latter swelled during 2011, as the difficulty of mining intensified, leading to the generalization of this mode of mining. In the next chapter, we'll focus on this central aspect of the Bitcoin story.
+However, wallets weren't the only area to see significant advances; so too were mining pools. Indeed, these spread throughout 2011, as mining difficulty intensified, ultimately resulting in the generalization of this mining approach. In the next chapter, we'll focus on this central aspect of the Bitcoin story.
 
 
 ## The rise of mining pools
