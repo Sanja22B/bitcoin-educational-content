@@ -1552,10 +1552,10 @@ Over the months, Stratum had established itself as the protocol used by most poo
 ### FPGA and ASIC mining
 
 
-As a result, the organization of mining changed considerably in 2011 and 2012, becoming the business of cooperatives rather than solo miners. There has been a veritable proliferation of mining groups, which are very diverse in terms of both their philosophy and their method of remuneration (proportional, PPS, etc.) This change has, however, led to a centralization of mining activity, which encouraged the creation of the P2Pool decentralized cooperative model in July 2011. Communication within the cooperatives also improved, culminating in the appearance of the lightweight Stratum protocol in September 2012.
+As a result, the organization of mining changed considerably in 2011 and 2012, becoming the business of cooperatives rather than solo miners. There had been a veritable proliferation of mining groups, which were very diverse in terms of both their philosophy and their method of remuneration (proportional, PPS, etc.) This change had, however, led to a centralization of mining activity, which encouraged the creation of the P2Pool decentralized cooperative model in July 2011. Communication within the cooperatives also improved, culminating in the appearance of the lightweight Stratum protocol in September 2012.
 
 
-Obviously, the evolution of mining wasn't just about the organization of choppers; it was also about the hardware itself. While the switch from the central processing unit (CPU) to the graphics processing unit (GPU) had already been a breakthrough, it only foreshadowed the advent of specialized integrated circuits, or ASICs, which would take the network's computing power to another giant leap forward.
+Obviously, the evolution of mining wasn't just about the organization of hashers; it was also about the hardware itself. While the switch from the central processing unit (CPU) to the graphics processing unit (GPU) had already been a breakthrough, it only foreshadowed the advent of specialized integrated circuits, or ASICs, which would take the network's computing power to another giant leap forward.
 
 
 This final evolution, [planned](https://www.metzdowd.com/pipermail/cryptography/2008-November/014815.html) long ago by Satoshi Nakamoto, was gradually developed thanks to programmable logic circuits (FPGAs), which made it possible to virtually optimize the hardware for Bitcoin's hash function. The first open FPGA algorithm was [published](https://bitcointalk.org/index.php?topic=9047.msg130885#msg130885) in May 2011, and ASIC applied FPGA optimizations to the chips themselves. The first ASIC pre-sale, by US company Butterfly Labs, [took place](https://web.archive.org/web/20120619090952/http://news.yahoo.com/butterfly-labs-announces-next-generation-asic-lineup-054626776.html) in June 2012. Finally, the first working ASIC, the Avalon ASIC, was [distributed](https://bitcointalk.org/index.php?topic=137534.msg1465887#msg1465887) to the general public in January 2013.
@@ -1572,16 +1572,16 @@ However, it's a story that deserves a little more attention, which we'll be doin
 After Satoshi Nakamoto's departure, software development was taken over by the community, which had to coordinate under Gavin Andresen's supervision. In particular, Bitcoin's programmability had to be improved, as this had been temporarily restricted by the introduction of relay rules on the network.
 
 
-In the winter of 2011-2012, a controversy arose around the implementation of multiparty signing in Bitcoin. This concerned, among other things, the scheme known as "Pay to Script Hash", or P2SH. Pete Rizzo and Aaron van Wirdum [would](https://bitcoinmagazine.com/technical/the-battle-for-p2sh-the-untold-story-of-the-first-bitcoin-war) call this conflict "the Battle for P2SH". This was the first major dispute over the protocol's evolution, and the first to raise the question of governance.
+In the winter of 2011-2012, a controversy arose around the implementation of multisignature in Bitcoin. It concerned, among other things, the scheme known as "Pay to Script Hash", or P2SH. Pete Rizzo and Aaron van Wirdum [would](https://bitcoinmagazine.com/technical/the-battle-for-p2sh-the-untold-story-of-the-first-bitcoin-war) call this conflict "the Battle for P2SH". This was the first major dispute over the protocol's evolution, and the first to raise the question of governance.
 
 
-In this chapter, we look back at this unique episode in Bitcoin's technical history. First, we'll analize the development of the software and the idea of the multiparty signature. We'll then look at the various proposals for implementing this technique, starting with OP\_EVAL and P2SH. Finally, we'll talk about how Pay to Script Hash was activated, despite the many difficulties encountered.
+In this chapter, we look back at this unique episode in Bitcoin's technical history. First, we'll analize the development of the software and the idea of the multisignature. We'll then look at the various proposals for implementing this technique, starting with OP\_EVAL and P2SH. Finally, we'll talk about how Pay to Script Hash was activated, despite the many difficulties encountered.
 
 
 ### Development of Bitcoin-Qt
 
 
-Following the release of version 0.4 of the software on September 23, which marks Gavin Andresen's takeover as main maintainer, development of the main Bitcoin implementation continues. In particular, a new graphical interface for the software appeared: Bitcoin-Qt, which was [developed](https://bitcointalk.org/index.php?topic=15276.msg203205#msg203205) by Wladimir van der Laan from June onwards. It is based on the Qt graphics framework, which replaces the wxWindows library originally used by Satoshi. The interface is [included](https://bitcointalk.org/index.php?topic=45742.msg545547#msg545547) in the main branch of the code on September 26 and [becomes](https://bitcointalk.org/index.php?topic=52480.msg626275#msg626275) the official graphical appearance of the software in version 0.5, released on November 21. From then on, the software is called Bitcoin-Qt/bitcoind, or even Bitcoin-Qt for short (bitcoind being the daemon).
+Following the release of version 0.4 of the software on September 23, which marked Gavin Andresen's takeover as main maintainer, development of the main Bitcoin implementation continued. In particular, a new graphical interface for the software appeared: Bitcoin-Qt, which was [developed](https://bitcointalk.org/index.php?topic=15276.msg203205#msg203205) by Wladimir van der Laan from June onwards. It was based on the Qt graphics framework, which replaced the wxWindows library originally used by Satoshi. The interface was [included](https://bitcointalk.org/index.php?topic=45742.msg545547#msg545547) in the main branch of the code on September 26 and [became](https://bitcointalk.org/index.php?topic=52480.msg626275#msg626275) the official graphical appearance of the software in version 0.5, released on November 21. From then on, the software was called Bitcoin-Qt/bitcoind, or even Bitcoin-Qt for short (bitcoind being the daemon).
 
 
 ![Capture de Bitcoin-Qt 0.5.2 en février 2012](assets/en/060.webp)
@@ -1590,7 +1590,7 @@ Following the release of version 0.4 of the software on September 23, which mark
 *Capture of Bitcoin-Qt 0.5.2 in February 2012 (source: [JimNelin](https://commons.wikimedia.org/wiki/File:Screenshot_of_Bitcoin-qt-0.5.2.webp) for Wikimedia)*
 
 
-Gavin is still the project leader, but he is helped by several people. As of October 2011, Bitcoin's "titular" developers (i.e. those [listed](https://web.archive.org/web/20111022025640/http://www.bitcoin.org/) on Bitcoin.org) are Gavin Andresen, Pieter Wuille, Nils Schneider, Jeff Garzik and Wladimir van der Laan. These programmers are supposed to represent Bitcoin on a technical level, and can be contacted by e-mail. They are maintainers, who [benefit](https://bitcointalk.org/index.php?topic=1774750.msg17700787#msg17700787) from write access to the GitHub repository. Gregory Maxwell [joined](https://web.archive.org/web/20120223113428/http://www.bitcoin.org/) in February 2012, and Nils Schneider stopped contributing in May of the same year. The resulting team of developers [will remain](https://bitcointalk.org/index.php?topic=1774750.msg17700787#msg17700787) in place until 2014.
+Gavin is still the project leader, but he was helped by several people. As of October 2011, Bitcoin's "titular" developers (i.e. those [listed](https://web.archive.org/web/20111022025640/http://www.bitcoin.org/) on Bitcoin.org) are Gavin Andresen, Pieter Wuille, Nils Schneider, Jeff Garzik and Wladimir van der Laan. These programmers were supposed to represent Bitcoin on a technical level, and could be contacted by e-mail. They were maintainers, who [benefited](https://bitcointalk.org/index.php?topic=1774750.msg17700787#msg17700787) from write access to the GitHub repository. Gregory Maxwell [joined](https://web.archive.org/web/20120223113428/http://www.bitcoin.org/) in February 2012, and Nils Schneider stopped contributing in May of the same year. The resulting team of developers [would remain](https://bitcointalk.org/index.php?topic=1774750.msg17700787#msg17700787) in place until 2014.
 
 
 ![The Gavinator, dessin de Gavin Andresen brûlant des billets réalisé par Shazow en avril 2011](assets/en/061.webp)
@@ -1599,10 +1599,10 @@ Gavin is still the project leader, but he is helped by several people. As of Oct
 *"The Gavinator": drawing of Gavin Andresen burning bills, made by Shazow in April 2011 (source: [archive](https://web.archive.org/web/20140426185712/https://bitcointalk.org/index.php?topic=5770.80) from BitcoinTalk)*
 
 
-At the same time, the system of Bitcoin improvement proposals, [introduced](https://gnusha.org/pi/bitcoindev/1316392315.46221.YahooMailNeo@web121014.mail.ne1.yahoo.com/) by Amir Taaki in September 2011, is beginning to bear fruit. The first BIPs were written by the end of the year. This is the case, for example, of BIP 10, which is [published](https://gist.github.com/etotheipi/1321518) on October 28 by Alan Reiner, the developer of the Armory wallet.
+At the same time, the system of Bitcoin improvement proposals, [introduced](https://gnusha.org/pi/bitcoindev/1316392315.46221.YahooMailNeo@web121014.mail.ne1.yahoo.com/) by Amir Taaki in September 2011, was beginning to bear fruit. The first BIPs were written by the end of the year. This is the case, for example, of BIP 10, which was [published](https://gist.github.com/etotheipi/1321518) on October 28 by Alan Reiner, the developer of the Armory wallet.
 
 
-On January 9, 2012, a certain David Perry, known as Enmaku on the forum, [publishes](https://web.archive.org/web/20120830214308/http://codinginmysleep.com/bitcoin-development-history-visually/) a visualization of the software's development progress, made using a tool called Gource. It shows the contributions made by developers to the software: it begins with the actions of Satoshi Nakamoto and Martti Malmi, continues with the growing role taken by Gavin Andresen from July 2010, and shows the complexification of the code that leads to an explosion of development from April 2011.
+On January 9, 2012, a certain David Perry, known as Enmaku on the forum, [published](https://web.archive.org/web/20120830214308/http://codinginmysleep.com/bitcoin-development-history-visually/) a visualization of the software's development progress, made using a tool called Gource. It showed the contributions made by developers to the software: it began with the actions of Satoshi Nakamoto and Martti Malmi, continued with the growing role taken by Gavin Andresen from July 2010, and showed the complexification of the code that lead to an explosion of development from April 2011.
 
 
 ![Visualisation des contributions au logiciel de Bitcoin entre août 2009 et septembre 2012](https://www.youtube.com/watch?v=2VNPScd-xg0)
@@ -1618,28 +1618,28 @@ Bitcoin features an internal programming system. As we [discussed](https://planb
 
 > The design supports a tremendous variety of possible transaction types that I designed years ago.  Escrow transactions, bonded contracts, third party arbitration, multi-party signature, etc.  If Bitcoin catches on in a big way, these are things we'll want to explore in the future, but they all had to be designed at the beginning to make sure they would be possible later.
 
-This range of possibilities is of deep interest to a number of people, not least Mike Hearn. The latter [discusses](https://plan99.net/~mike/satoshi-emails/thread4.html) it with Satoshi in private correspondence in 2011. Over the summer, Mike [highlights](https://en.bitcoin.it/w/index.php?title=Contract&oldid=16063) "distributed contracts" on Bitcoin's wiki, where he gives several examples such as anti-spam, escrow, collateral contracts, external oracles or atomic exchanges. He also adds a reference to Nick Szabo's seminal 1997 article on *smart contracts*.
+This range of possibilities was of deep interest to a number of people, not least Mike Hearn. The latter [discussed](https://plan99.net/~mike/satoshi-emails/thread4.html) it with Satoshi in private correspondence in 2011. Over the summer, Mike [highlighted](https://en.bitcoin.it/w/index.php?title=Contract&oldid=16063) "distributed contracts" on Bitcoin's wiki, where he gave several examples such as anti-spam, escrow, collateral contracts, external oracles or atomic exchanges. He also added a reference to Nick Szabo's seminal 1997 article on *smart contracts*.
 
 
-### Multiparty signature
+### Multisignature
 
 
-Multiparty signature, or multisignature, is a way of requiring several signatures for an expense. It forms the cornerstone for the deployment of contracts involving several people. This technique would be useful for securing funds, which, with the increase in piracy, is a very important issue these days. It could also be used in escrow contracts, making economic exchanges safer for the seller. Such contracts are indeed in demand by users, as evidenced by the existence of Gavin Andresen's escrow service, [ClearCoin](https://clearcoin.blogspot.com/2011/06/ill-be-closing-clearcoin-to-new.html), between December 2010 and summer 2011.
+Multisignature, is a way of requiring several signatures for an expense. It forms the cornerstone for the deployment of contracts involving several people. This technique would be useful for securing funds, which, with the increase in piracy, is a very important issue these days. It could also be used in escrow contracts, making economic exchanges safer for the seller. Such contracts were indeed in demand by users, as evidenced by the existence of Gavin Andresen's escrow service, [ClearCoin](https://clearcoin.blogspot.com/2011/06/ill-be-closing-clearcoin-to-new.html), between December 2010 and summer 2011.
 
 
 Bitcoin's scripting language contains a transaction code, `OP_CHECKMULTISIG`, which allows M signatures to be required among N participants to authorize an expenditure, with M ≤ N. The public keys of any signatories are written to the transactional output lock script. Any subset of M signatures can unlock the document containing the script.
 
 
-Interestingly, the `OP_CHECKMULTISIG` implementation contains a bug. It was [discovered](https://github.com/bitcoin/bitcoin/pull/319#issuecomment-1472505) on June 30 by a certain Bobby Groff (aka Groffer), who was trying to integrate an escrow mechanism into the software. He writes that the operator "drops one too many items from the stack", so "to push a dummy value to work around that". However, this bug cannot be corrected without modifying the protocol and branching the chain. This is why it will remain in the code after all.
+Interestingly, the `OP_CHECKMULTISIG` implementation contains a bug. It was [discovered](https://github.com/bitcoin/bitcoin/pull/319#issuecomment-1472505) on June 30 by a certain Bobby Groff (aka Groffer), who was trying to integrate an escrow mechanism into the software. He wrote that the operator "drops one too many items from the stack", so "to push a dummy value to work around that". However, this bug cannot be corrected without modifying the protocol and branching the chain. This is why it will remain in the code after all.
 
 
-On August 23, 2011, a few days after the New York conference, Gavin Andresen [initiates](https://gnusha.org/pi/bitcoindev/CABsx9T1uw43JuvhEmJP0KCyojsDi1r7v6BaLBHz7wWazduE5iw@mail.gmail.com/) the discussion about multiparty signing on the BitcoinTalk forum and on the `bitcoin-development` list. He wants to standardize transactions involving multiple signatories, which he describes as "the fastest path to very secure, very-hard-to-lose bitcoin wallets wallets". Since December 2010, only two schemes [are](https://bitcointalk.org/index.php?topic=2129.msg27744#msg27744) considered standard: P2PK and P2PKH. The idea is to add a raw multisignature scheme, where the number of participants can reach a maximum of 3.
+On August 23, 2011, a few days after the New York conference, Gavin Andresen [initiated](https://gnusha.org/pi/bitcoindev/CABsx9T1uw43JuvhEmJP0KCyojsDi1r7v6BaLBHz7wWazduE5iw@mail.gmail.com/) the discussion about multisignature on the BitcoinTalk forum and on the `bitcoin-development` list. He wanted to standardize transactions involving multiple signatories, which he described as "the fastest path to very secure, very-hard-to-lose bitcoin wallets". Since December 2010, only two schemes [were](https://bitcointalk.org/index.php?topic=2129.msg27744#msg27744) considered standard: P2PK and P2PKH. The idea was to add a raw multisignature scheme, where the number of participants can reach a maximum of 3.
 
 
-Gavin would like the public keys involved to be used as addresses (as in the case of P2PKH). But these addresses wouldn't be supported by the clients anyway. So, even if it means releasing an incompatible client, he proposes to "do things right in the first place, implement or enable opcodes so the new bitcoin addresses can be small, and schedule a block chain split" for a few months later. Driven by a sense of urgency, he favors rapid action, explaining that his "biggest worry" is that people will become complacent in the debate and that "there is still no consensus" after six months.
+Gavin would like the public keys involved to be used as addresses (as in the case of P2PKH). But these addresses wouldn't be supported by the clients anyway. So, at the risk of releasing an incompatible client, he proposed to "do things right in the first place, implement or enable opcodes so the new bitcoin addresses can be small, and schedule a block chain split" for a few months later. Driven by a sense of urgency, he favored rapid action, explaining that his "biggest worry" was that people would become complacent in the debate and that "there is still no consensus" after six months.
 
 
-Following Gavin's message, Casascius [proposes](https://bitcointalk.org/index.php?topic=38954.msg476689#msg476689) to modify the OP\_CHECKSIG operator (the one used to check normal signatures) so that it takes multisignature scripts into account. Addresses can then be the footprint of the script, and the entire script is supplied at the time of expenditure, as the public key is in the case of expenditure of a P2PKH output. He [reformulated](https://bitcointalk.org/index.php?topic=45211.msg538756#msg538756) this proposal a month later. On October 1, a certain Jim Babcock, software developer and rationalist, [realizes](https://bitcointalk.org/index.php?topic=46429.msg553217#msg553217) a similar proposal. Their description inspired the mysterious Nicolas van Saberhagen, alias ByteCoin, who [conceived](https://bitcointalk.org/index.php?topic=46538.msg553689#msg553689) a new operating code called `OP_EVAL` on the night of October 1 to 2. Gavin Andresen [makes](https://bitcointalk.org/index.php?topic=45211.msg553668#msg553668) a relatively equivalent proposal (with `BEGIN_DIGEST` and `END_DIGEST` operators) at the same time. However, it's `OP_EVAL` that comes out the winner from this abundance of ideas.
+Following Gavin's message, Casascius [proposed](https://bitcointalk.org/index.php?topic=38954.msg476689#msg476689) to modify the OP\_CHECKSIG operator (the one used to check normal signatures) so that it takes multisignature scripts into account. Addresses can then be the hash of the script, and the entire script is provided when spending, just as the public key is in the case of spending a P2PKH output. He [reformulated](https://bitcointalk.org/index.php?topic=45211.msg538756#msg538756) this proposal a month later. On October 1, a certain Jim Babcock, software developer and rationalist, [made](https://bitcointalk.org/index.php?topic=46429.msg553217#msg553217) a similar proposal. Their description inspired the mysterious Nicolas van Saberhagen, alias ByteCoin, who [conceived](https://bitcointalk.org/index.php?topic=46538.msg553689#msg553689) a new operating code called `OP_EVAL` on the night of October 1 to 2. Gavin Andresen [made](https://bitcointalk.org/index.php?topic=45211.msg553668#msg553668) a relatively equivalent proposal (with `BEGIN_DIGEST` and `END_DIGEST` operators) at the same time. However, it's `OP_EVAL` that came out the winner from this abundance of ideas.
 
 
 ### OP_EVAL: run a script within a script
@@ -1661,96 +1661,96 @@ This involves adding an instruction to the scripting language, which requires a 
 His idea is based on a feature of Bitcoin's internal programming language: the `OP_NOP` operators added by Satoshi in summer 2010, which are silent instructions that don't invalidate the script they're in. These allow "backwards-compatible" protocol modifications to be made for older versions of the software, ensuring that only one string survives, in cases where the computing power applying it is in the majority. These modifications will later be referred to as soft forks. It is thus possible to transform `OP_NOP1` into `OP_EVAL`, and arrange for the change to be applied by mining pools.
 
 
-Other members of the technical community were quick to validate Gavin's discovery. In particular, Gregory Maxwell [explains](https://buildingbitcoin.org/bitcoin-dev/log-2011-10-02.html#l-1426) that "Gavin's point that EVAL can be done without a split blew his mind".
+Other members of the technical community were quick to validate Gavin's discovery. In particular, Gregory Maxwell [explained](https://buildingbitcoin.org/bitcoin-dev/log-2011-10-02.html#l-1426) that "Gavin's point that EVAL can be done without a split blew his mind".
 
 
-Two weeks later, on October 19, Gavin Andresen [writes](https://bitcointalk.org/index.php?topic=46538.msg583615#msg583615) three Bitcoin enhancement proposals, which are promptly hosted on the Bitcoin.it wiki:
+Two weeks later, on October 19, Gavin Andresen [wrote](https://bitcointalk.org/index.php?topic=46538.msg583615#msg583615) three Bitcoin enhancement proposals, which were promptly hosted on the Bitcoin.it wiki:
 
 
 
 - The [BIP 11](https://en.bitcoin.it/w/index.php?title=BIP_0011&oldid=18340), which describes raw multisignature scripting schemes;
-- BIP 12](https://en.bitcoin.it/w/index.php?title=BIP_0012&oldid=18348), which describes the OP\_EVAL instruction and the corresponding script schema;
+- The [BIP 12](https://en.bitcoin.it/w/index.php?title=BIP_0012&oldid=18348), which describes the OP\_EVAL instruction and the corresponding script schema;
 - The [BIP 13](https://en.bitcoin.it/w/index.php?title=BIP_0013&oldid=18495), which describes address formatting for OP\_EVAL,: "This BIP describes a new type of Bitcoin address to support arbitrarily complex transactions".
 
 
-Activation of BIP 12 is scheduled for February 1, 2012, provided that 50% of miners signal their support by inserting the string `OP_EVAL` in the blocks they produce before January 15. If this threshold is not reached, the rollout will be postponed to a later date. This is to ensure that the upgrade goes smoothly, without a competing branch being created.
+Activation of BIP 12 was scheduled for February 1, 2012, provided that 50% of miners signal their support by inserting the string `OP_EVAL` in the blocks they produce before January 15. If this threshold was not reached, the rollout would be postponed to a later date. It was to ensure that the upgrade goes smoothly, without a competing branch being created.
 
 
 ### OP_EVAL's shortcomings
 
 
-However, the `OP_EVAL` operator does have its shortcomings. These are highlighted mainly by Russell O'Connor, a Canadian computer scientist working at Radboud University in Nijmegen, the Netherlands.
+However, the `OP_EVAL` operator does have its shortcomings. These were highlighted mainly by Russell O'Connor, a Canadian computer scientist working at Radboud University in Nijmegen, the Netherlands.
 
 
 On the one hand, the obvious flaw is recursiveness. Bitcoin's scripting system is designed not to loop and to stop cleanly (it's not Turing-complete). A naive implementation makes recursion possible by running the program until the machine can't keep up (the example given by Gavin is `<OP_DUP OP_EVAL> OP_DUP OP_EVAL`). We therefore need to add a limit to the depth of recursion.
 
 
-However, the risk of a bug remains. On December 27, 2011, Russell O'Connor [does](https://github.com/bitcoin/bitcoin/issues/729#issue-2660989) a code review and finds a recursion flaw. He added the following remark to his report:
+However, the risk of a bug remained. On December 27, 2011, Russell O'Connor [did](https://github.com/bitcoin/bitcoin/issues/729#issue-2660989) a code review and found a recursion flaw. He added the following remark to his report:
 
 
 > More generally, this OP\_EVAL is a very large change that clearly hasn't been vetted nearly enough. It took me all of 70 minutes of looking to find this bug. You guys are not ready to implement this. (...) You guys need to stop what you are doing and really understand Bitcoin.
 
-On the other hand, even if recursivity is corrected, OP\_EVAL makes it impossible to analyze before executing the script. This means you can't count the resource-intensive signature operators before executing the script itself.
+On the other hand, even if the recursion is fixed, OP\_EVAL makes it impossible to analyze the script prior to execution. As a result, one cannot count the signature operators (which are resource-intensive) before executing the script itself.
 
 
-Russell O'Connor points out the lack of analysis capabilities offered by `OP_EVAL`. On December 29, he [writes](https://gnusha.org/pi/bitcoindev/alpine.LRH.2.00.1112290111310.22327@theorem.ca/) that "with the OP\_EVAL proposal there is no way to statically analyze the script (say to count the number of uses of OP\_CHECKSIG or OP\_MULTICHECKSIG or other analysis) without actually executing the script".
+Russell O'Connor pointed out the lack of analysis capabilities offered by `OP_EVAL`. On December 29, he [wrote](https://gnusha.org/pi/bitcoindev/alpine.LRH.2.00.1112290111310.22327@theorem.ca/) that "with the OP\_EVAL proposal there is no way to statically analyze the script (say to count the number of uses of OP\_CHECKSIG or OP\_MULTICHECKSIG or other analysis) without actually executing the script".
 
 
-On the `bitcoin-development` list, he [asks](https://gnusha.org/pi/bitcoindev/alpine.LRH.2.00.1112291143220.22327@theorem.ca/) Gavin to push back the activation date "by two months", pointing out that "OP\_EVAL just isn't ready yet". In the same vein, Alan Reiner [reminds](https://gnusha.org/pi/bitcoindev/CALf2ePzoC85=16h63ngn-KaEHDSYFqAOkW7UWqB_Jgd2F_pkTQ@mail.gmail.com/) developers that they are trafficking in "something worth over $20 million" (original: "I would like to remind everyone that we/you are messing with a $20+ million dollar *thing*"), referring to the aggregate value of all bitcoins, and that "there's more than just a piece of software at stake".
+On the `bitcoin-development` list, he [asked](https://gnusha.org/pi/bitcoindev/alpine.LRH.2.00.1112291143220.22327@theorem.ca/) Gavin to push back the activation date "by two months", pointing out that "OP\_EVAL just wasn't ready yet". In the same vein, Alan Reiner [reminded](https://gnusha.org/pi/bitcoindev/CALf2ePzoC85=16h63ngn-KaEHDSYFqAOkW7UWqB_Jgd2F_pkTQ@mail.gmail.com/) developers that they are tinkering with ‘an object in "something worth over $20 million" (original: "I would like to remind everyone that we/you are messing with a $20+ million dollar *thing*"), referring to the aggregate value of all bitcoins, and that "there's more than just a piece of software at stake".
 
 
-It was therefore decided to study the other proposals before making any decisions. One is operation code `OP_CODEHASH`, [designed](https://gnusha.org/pi/bitcoindev/alpine.LRH.2.00.1112290111310.22327@theorem.ca/) Russell O'Connor by himself, which requires the creation of a virtual machine-specific stack to preserve the script. Another is the `OP_CHECKEDEVAL` instruction, [designed](https://gnusha.org/pi/bitcoindev/20111229190838.GA29609@ulyssis.org/) by Pieter Wuille.
+It was therefore decided to study the other proposals before making any decisions. One was `OP_CODEHASH` operation code, [designed](https://gnusha.org/pi/bitcoindev/alpine.LRH.2.00.1112290111310.22327@theorem.ca/) by Russell O'Connor himself, which required the creation of a virtual machine-specific stack to preserve the script. Another was the `OP_CHECKEDEVAL` instruction, [designed](https://gnusha.org/pi/bitcoindev/20111229190838.GA29609@ulyssis.org/) by Pieter Wuille.
 
 
 ### Pay to Script Hash
 
 
-The principle behind `OP_EVAL` is to pay for a script footprint and provide said script upon unlocking funds. On January 2, 2012, Gavin Andresen [came up with the idea](https://buildingbitcoin.org/bitcoin-dev/log-2012-01-02.html#l-760) to take up this principle, with the exception that the virtual machine would recognize the form of the script. Amir Taaki comments, writing that "the idea is a hack" but that he "likes it" . Gavin [titles](https://gnusha.org/pi/bitcoindev/CABsx9T3gNNmPen=WtCpG8RCChSwpJ73r7WU2Kz_fP31wAQ+jQg@mail.gmail.com/) his idea "pay to script hash", a name [modeled](https://buildingbitcoin.org/bitcoin-dev/log-2011-12-17.html#l-715) on the *Pay to Public Key Hash* (P2PKH) scheme, which is a standard form of script.
+The principle behind `OP_EVAL` is to pay to a script hash and provide the script itself when unlocking the funds. On January 2, 2012, Gavin Andresen [came up with the idea](https://buildingbitcoin.org/bitcoin-dev/log-2012-01-02.html#l-760) to take up this principle, with the exception that the virtual machine would recognize the form of the script. Amir Taaki commented, writing that "the idea is a hack" but that he "likes it" . Gavin [titled](https://gnusha.org/pi/bitcoindev/CABsx9T3gNNmPen=WtCpG8RCChSwpJ73r7WU2Kz_fP31wAQ+jQg@mail.gmail.com/) his idea "pay to script hash", a name [modeled](https://buildingbitcoin.org/bitcoin-dev/log-2011-12-17.html#l-715) on the *Pay to Public Key Hash* (P2PKH) scheme, which is a standard form of script.
 
 
-The next day, January 3 at 21:00 UTC, a meeting is [organized](https://bitcointalk.org/index.php?topic=56376.msg670964#msg670964) on the IRC channel \#bitcoin-dev by Amir Taaki, to get the developers to agree. A large majority are in favor of Pay to Script Hash, [including](https://gnusha.org/pi/bitcoindev/alpine.LRH.2.00.1201021134030.21247@theorem.ca/) Russell O'Connor. Gavin [will](https://bitcointalk.org/index.php?topic=56969.msg679219#msg679219) describe the proposal as "a simpler, safer-but-less-powerful alternative for creating bitcoin addresses for multisignature and future more-complex transactions".
+The next day, January 3 at 21:00 UTC, a meeting was [organized](https://bitcointalk.org/index.php?topic=56376.msg670964#msg670964) on the IRC channel \#bitcoin-dev by Amir Taaki, to get the developers to agree. A large majority were in favor of Pay to Script Hash, [including](https://gnusha.org/pi/bitcoindev/alpine.LRH.2.00.1201021134030.21247@theorem.ca/) Russell O'Connor. Gavin [would](https://bitcointalk.org/index.php?topic=56969.msg679219#msg679219) describe the proposal as "a simpler, safer-but-less-powerful alternative for creating bitcoin addresses for multisignature and future more-complex transactions".
 
 
-Gavin Andresen wrote a draft of BIP that evening, and it was [put online](https://en.bitcoin.it/w/index.php?title=BIP_0016&oldid=21680) the following day, as number 16. In the document, he concedes that "recognizing one 'special' form of scriptPubKey and performing extra validation when it is detected is ugly", but explains that "the alternatives are either uglier, are more complex to implement, and/or expand the power of the expression language in dangerous ways". He also changes the reporting process to make it automatic: in the last week of January, if 55% of the computing power reports Pay to Script Hash (including the string `/P2SH/` in the blocks produced), then the upgrade will be activated at midnight on February 15. Gavin then [makes](https://github.com/bitcoin/bitcoin/pull/748) a request to modify the software code on the GitHub repository, which he himself accepts on January 13 as main maintainer. It includes the default P2SH flag.
+Gavin Andresen wrote a draft of BIP that evening, and it was [put online](https://en.bitcoin.it/w/index.php?title=BIP_0016&oldid=21680) the following day, as number 16. In the document, he conceded that "recognizing one 'special' form of scriptPubKey and performing extra validation when it is detected is ugly", but explains that "the alternatives are either uglier, are more complex to implement, and/or expand the power of the expression language in dangerous ways". He also changed the reporting process to make it automatic: in the last week of January, if 55% of the computing power reported Pay to Script Hash (including the string `/P2SH/` in the blocks produced), then the upgrade will be activated at midnight on February 15. Gavin then [made](https://github.com/bitcoin/bitcoin/pull/748) a request to modify the software code on the GitHub repository, which he himself accepted on January 13 as main maintainer. It included the default P2SH flag.
 
 
-Gavin wants to move fast, very fast, which inevitably creates tensions. So, even though he [evokes](https://bitcointalk.org/index.php?topic=56969.msg679219#msg679219) a "consensus" around Pay to Script Hash, not all developers are unanimously in agreement, and the general community has not been consulted. Opposition is therefore building up.
+Gavin wanted to move fast, very fast, which inevitably created tensions. So, even though he [evoked](https://bitcointalk.org/index.php?topic=56969.msg679219#msg679219) a "consensus" around Pay to Script Hash, not all developers were unanimously in agreement, and the general community had not been consulted. Opposition was therefore building up.
 
 
 ### Luke-Jr's reaction
 
 
-The slingshot is led by developer Luke-Jr. During the IRC meeting on January 3, 2012, he [opposes](https://en.bitcoin.it/wiki/User:Genjix/Meetings/3_Jan_2012) P2SH, considering that "OP_EVAL was far better than this ugly thing". On the 13th, he [creates](https://web.archive.org/web/20130307042411/https://bitcointalk.org/index.php?topic=58579.0) a thread on BitcoinTalk, in which he calls for action against BIP 16. He considers P2SH to be "far worse" than `OP_EVAL` because "it essentially replaces the scripting system on which Bitcoin is built with a single special model". Furthermore, he points out that "Gavin is forcing everyone using the latest Bitcoin code to vote for BIP 16", and [creates](https://github.com/bitcoin/bitcoin/pull/755) consequently a *pull request* to make this flagging optional, which will be accepted. Finally, he proposes a community vote, directly on the forum, which is largely won by P2SH.
+The slingshot was led by developer Luke-Jr. During the IRC meeting on January 3, 2012, he [opposed](https://en.bitcoin.it/wiki/User:Genjix/Meetings/3_Jan_2012) P2SH, considering that "OP_EVAL was far better than this ugly thing". On the 13th, he [created](https://web.archive.org/web/20130307042411/https://bitcointalk.org/index.php?topic=58579.0) a thread on BitcoinTalk, in which he called for action against BIP 16. He considerd P2SH to be "far worse" than `OP_EVAL` because "it essentially replaces the scripting system on which Bitcoin is built with a single special model". Furthermore, he pointed out that "Gavin is forcing everyone using the latest Bitcoin code to vote for BIP 16", and [created](https://github.com/bitcoin/bitcoin/pull/755) consequently a *pull request* to make this flagging optional, which will be accepted. Finally, he proposed a community vote, directly on the forum, which was overwhelmingly won by P2SH.
 
 
-This attitude deeply annoys Gavin Andresen, who [responds](https://bitcointalk.org/index.php?topic=58579.msg689812#msg689812) in this latest thread:
+This attitude deeply annoyed Gavin Andresen, who [responded](https://bitcointalk.org/index.php?topic=58579.msg689812#msg689812) in this latest thread:
 
 
 > Luke, you try my patience. I'm going to step away from the code for a few days to calm down before I do something stupid because my patience is wearing thin.
 
-Another forum member, a German miner using the pseudonym Nachtwind, [writes](https://bitcointalk.org/index.php?topic=58579.msg690009#msg690009) that Luke demonstrates a certain "mental instability" through his comments. This miner is disinterested in open source; he admits to liking "the way bitcoin was handled till now" and to trusting Gavin more than Luke "to make the right choice" (original: "i trsut \[sic\] HIM more than you to make the right choice"). Luke's [reply](https://bitcointalk.org/index.php?topic=58579.msg690042#msg690042) is scathing:
+Another forum member, a German miner using the pseudonym Nachtwind, [wrote](https://bitcointalk.org/index.php?topic=58579.msg690009#msg690009) that Luke demonstrated a certain "mental instability" through his comments. This miner was disinterested in open source; he admited to like "the way bitcoin was handled till now" and to trust Gavin more than Luke "to make the right choice" (original: "i trsut \[sic\] HIM more than you to make the right choice"). Luke's [reply](https://bitcointalk.org/index.php?topic=58579.msg690042#msg690042) is scathing:
 
 
 > If you want a monarchial currency, why not just use the Fed's USD? Gavin isn't perfect, and this is one example. Sorry you consider making people aware of a problem to be 'mental instability'.
 
-From January 12, Luke [develops](https://bitcointalk.org/index.php?topic=56969.msg687795#msg687795) his own operation code as an alternative to P2SH, which is initially called `OP_CODEHASHCHECK` (CHC), then takes the name `OP_CHECKHASHVERIFY` (CHV). On January 18, he [writes](https://en.bitcoin.it/w/index.php?title=BIP_0017&oldid=22435) BIP 17, which describes this new instruction. It involves executing the script provided during unlocking, hashing it and comparing the result with the fingerprint corresponding to the address. However, his proposal [does not take into account](https://bitcointalk.org/index.php?topic=60433.msg703923#msg703923) the complexities of the virtual machine.
+From January 12, Luke [developed](https://bitcointalk.org/index.php?topic=56969.msg687795#msg687795) his own operation code as an alternative to P2SH, which was initially called `OP_CODEHASHCHECK` (CHC), then changed the name to `OP_CHECKHASHVERIFY` (CHV). On January 18, he [wrote](https://en.bitcoin.it/w/index.php?title=BIP_0017&oldid=22435) BIP 17, which described this new instruction. It involved executing the script provided during unlocking, hashing it and comparing the result with the fingerprint corresponding to the address. However, his proposal [did not take into account](https://bitcointalk.org/index.php?topic=60433.msg703923#msg703923) the complexities of the virtual machine.
 
 
 ### Debate among developers
 
 
-These various proposals are creating a debate among developers. Amir Taaki, who [declares](https://github.com/bitcoin/bitcoin/issues/729#issuecomment-3325652) "protocol-conservative implementation-liberal by nature", is particularly cautious about adopting P2SH. He favors a broader decision-making process. On January 28, he [writes](https://buildingbitcoin.org/bitcoin-dev/log-2012-01-28.html) on IRC that he prefers "people have a say in the matter even if it makes life tougher for developers to explain their decisions".
+These various proposals were creating a debate among developers. Amir Taaki, who [declared](https://github.com/bitcoin/bitcoin/issues/729#issuecomment-3325652) "protocol-conservative implementation-liberal by nature", was particularly cautious about adopting P2SH. He favored a broader decision-making process. On January 28, he [wrote](https://buildingbitcoin.org/bitcoin-dev/log-2012-01-28.html) on IRC that he prefers "people have a say in the matter even if it makes life tougher for developers to explain their decisions".
 
 
-On January 29, Amir [publishes](https://web.archive.org/web/20120131212150/http://bitcoinmedia.com/the-truth-behind-bip-16-and-17/) a long article on Bitcoin Media, entitled "The Truth behind BIP 16 and 17", in which he summarizes the situation and the various proposals. He [makes](https://bitcointalk.org/index.php?topic=61705.msg719790#msg719790) the following comment:
+On January 29, Amir [published](https://web.archive.org/web/20120131212150/http://bitcoinmedia.com/the-truth-behind-bip-16-and-17/) a long article on Bitcoin Media, entitled "The Truth behind BIP 16 and 17", in which he summarized the situation and the various proposals. He [made](https://bitcointalk.org/index.php?topic=61705.msg719790#msg719790) the following comment:
 
 
 > My worry is bitcoin someday becomes corrupted. Developers: see this extra scrutiny as an opportunity to build a culture of openness. It is not at all bad.
 
-However, this is not the opinion of Gavin Andresen, who chooses to settle the debate in favor of BIP 16 and therefore P2SH. He feels there has been enough discussion, and doesn't want developers to continue arguing over details, such as "[the color of the bike shed](https://en.wikipedia.org/wiki/Law_of_triviality)". On January 30, he [declares](https://buildingbitcoin.org/bitcoin-dev/log-2012-01-30.html#l-1766) on IRC: "I'm done wasting time on BIP 17".
+However, this is not the opinion of Gavin Andresen, who chose to settle the debate in favor of BIP 16 and therefore P2SH. He felt there had been enough discussion, and didn't want developers to continue arguing over details, such as "[the color of the bike shed](https://en.wikipedia.org/wiki/Law_of_triviality)". On January 30, he [declared](https://buildingbitcoin.org/bitcoin-dev/log-2012-01-30.html#l-1766) on IRC: "I'm done wasting time on BIP 17".
 
 
-Luke-Jr [creates](https://buildingbitcoin.org/bitcoin-dev/log-2012-01-30.html#l-2147) a page on the Bitcoin wiki listing developers' positions, following the suggestion of a certain Userjj. Gavin's rejection of CHV is categorical, and contrasts with the other technicians who approve of it or consider it better than nothing.
+Luke-Jr [created](https://buildingbitcoin.org/bitcoin-dev/log-2012-01-30.html#l-2147) a page on the Bitcoin wiki listing developers' positions, following the suggestion of a certain Userjj. Gavin's rejection of CHV was categorical, and contrasted with the other technicians who approved it or considered it better than nothing.
 
 
 ![Avis des développeurs sur les différentes propositions, le 2 février 2012](assets/en/063.webp)
@@ -1759,12 +1759,12 @@ Luke-Jr [creates](https://buildingbitcoin.org/bitcoin-dev/log-2012-01-30.html#l-
 *Developer opinions on the various proposals, February 2, 2012 (source: [Bitcoin.it](https://en.bitcoin.it/w/index.php?title=P2SH_Votes&oldid=23259))*
 
 
-On February 1, 2012, Casascius puts a piece back into the machine by [proposing](https://bitcointalk.org/index.php?topic=62181.msg725161#msg725161) a BIP (improperly assigned to number 22) that takes up his idea of modifying the `OP_CHECKSIG` opcode. Gavin immediately [asks](https://bitcointalk.org/index.php?topic=62181.msg725876#msg725876) him to stop, pointing out that "BIP 16 has overwhelming support, it will be the solution". He adds:
+On February 1, 2012, Casascius put a piece back into the machine by [proposing](https://bitcointalk.org/index.php?topic=62181.msg725161#msg725161) a BIP (improperly assigned to number 22) that took up his idea of modifying the `OP_CHECKSIG` opcode. Gavin immediately [asked](https://bitcointalk.org/index.php?topic=62181.msg725876#msg725876) him to stop, pointing out that "BIP 16 has overwhelming support, it will be the solution". He added:
 
 
 > You are proposing a non-backwards-compatible change, which would mean a "hard" blockchain split. **Everyone agrees that is a bad idea. The confusion and potential for hacks if a significant fraction of bitcoin users were on a separate chain is massive; you gloss over all of that in your proposal.
 
-A few days later, Gavin [will explain](https://bitcointalk.org/index.php?topic=62181.msg729444#msg729444) (referring to the TV show *Who Wants to Be a Millionaire?*):
+A few days later, Gavin [would explain](https://bitcointalk.org/index.php?topic=62181.msg729444#msg729444) (referring to the TV show *Who Wants to Be a Millionaire?*):
 
 
 > I used my Phone-a-Friend and Ask the Audience, and I'm locking in BIP 16 as my Final Answer
@@ -1772,7 +1772,7 @@ A few days later, Gavin [will explain](https://bitcointalk.org/index.php?topic=6
 ### Reporting minors
 
 
-Another problem concerns the activation of the upgrade by mining pools. For the change to be backwards compatible, a majority of the hash rate must apply it. But as the end of January approaches, hopes of activating P2SH are dwindling.
+Another problem concerns the activation of the upgrade by mining pools. For the change to be backwards compatible, a majority of the hash rate must apply it. But as the end of January approaches, hopes of activating P2SH were dwindling.
 
 
 At the time, computing power was divided among some [fifty](https://en.bitcoin.it/w/index.php?title=Comparison_of_mining_pools&oldid=21595) mining pools, but three stood out: DeepBit, BTC Guild and BitcoinCZ Mining (Slush's cooperative). In particular, DeepBit remains the dominant cooperative: at the start of 2012, it alone possessed around 30% of the network's computing power. The other two account for around 10-15%.
