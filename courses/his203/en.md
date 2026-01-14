@@ -1769,13 +1769,13 @@ A few days later, Gavin [would explain](https://bitcointalk.org/index.php?topic=
 
 > I used my Phone-a-Friend and Ask the Audience, and I'm locking in BIP 16 as my Final Answer
 
-### Reporting minors
+### Miner signaling
 
 
-Another problem concerns the activation of the upgrade by mining pools. For the change to be backwards compatible, a majority of the hash rate must apply it. But as the end of January approaches, hopes of activating P2SH were dwindling.
+Another problem concerned the activation of the upgrade by mining pools. For the change to be backwards compatible, a majority of the hash rate must apply it. But as the end of January approached, hopes of activating P2SH were dwindling.
 
 
-At the time, computing power was divided among some [fifty](https://en.bitcoin.it/w/index.php?title=Comparison_of_mining_pools&oldid=21595) mining pools, but three stood out: DeepBit, BTC Guild and BitcoinCZ Mining (Slush's cooperative). In particular, DeepBit remains the dominant cooperative: at the start of 2012, it alone possessed around 30% of the network's computing power. The other two account for around 10-15%.
+At the time, computing power was divided among some [fifty](https://en.bitcoin.it/w/index.php?title=Comparison_of_mining_pools&oldid=21595) mining pools, but three stood out: DeepBit, BTC Guild and BitcoinCZ Mining (Slush's cooperative). In particular, DeepBit remained the dominant cooperative: at the start of 2012, it alone possessed around 30% of the network's computing power. The other two account for around 10-15%.
 
 
 ![Proportion des blocs minés par les coopératives de minage durant la journée du 19 décembre 2011](assets/en/064.webp)
@@ -1784,21 +1784,21 @@ At the time, computing power was divided among some [fifty](https://en.bitcoin.i
 *Proportion of blocks mined by mining pools during the day of December 19, 2011 (source: [Blockchain.info](https://web.archive.org/web/20111219124912/http://blockchain.info/pools))*
 
 
-On January 25, as the evaluation of the report begins, a few small cooperatives [vote in favor](https://web.archive.org/web/20120125091902/http://blockchain.info/P2SH) of P2SH. Eligius, Luke-Jr's cooperative, voted against. However, it transpires that Deepbit's operator, Tycho, refuses to deploy P2SH within his co-op, as he [explains](https://buildingbitcoin.org/bitcoin-dev/log-2012-01-23.html#l-851) on IRC. In response, Gavin [writes](https://bitcointalk.org/index.php?topic=61125.msg712822#msg712822) a long message on the forum, where he explains the situation "in layman's terms", noting in particular:
+On January 25, as the evaluation of the signaling began, a few small cooperatives [vote in favor](https://web.archive.org/web/20120125091902/http://blockchain.info/P2SH) of P2SH. Eligius, Luke-Jr's cooperative, voted against. However, it appeared that Deepbit's operator, Tycho, refused to deploy P2SH within his co-op, as he [explained](https://buildingbitcoin.org/bitcoin-dev/log-2012-01-23.html#l-851) on IRC. In response, Gavin [wrote](https://bitcointalk.org/index.php?topic=61125.msg712822#msg712822) a long message on the forum, where he explained the situation "in layman's terms", noting in particular:
 
 
 > Right now, it looks like one person/pool (Tycho/deepbit) has enough hashing power to veto any change. I believe Tycho liked, and planned to support, the original OP\_EVAL proposal, but doesn't like/support either BIP 16 or BIP 17 (he does like/support BIP 11, the multisignature-as-standard-transactions part of all this), so unless he changes his mind or there is a mass exodus from his pool short, multisignature bitcoin addresses will have to wait.
 
-Tycho responds by [writing](https://bitcointalk.org/index.php?topic=61125.msg714209#msg714209) that this is wrong, that he can't block the upgrade with the 32% of computing power at his disposal. He [justifies](https://bitcointalk.org/index.php?topic=61125.msg714231#msg714231) his attitude by giving three reasons: that there is no "consensus between devs or miners" on how to implement payment to scripts; that the proposed solution is a bit "hackish"; and that he doesn't wish "to become the single entity to decide on this".
+Tycho responded by [writing](https://bitcointalk.org/index.php?topic=61125.msg714209#msg714209) that this was wrong, that he couldn't block the upgrade with the 32% of computing power at his disposal. He [justified](https://bitcointalk.org/index.php?topic=61125.msg714231#msg714231) his attitude by giving three reasons: that there is no "consensus between devs or miners" on how to implement payment to scripts; that the proposed solution is a bit "hackish"; and that he doesn't wish "to become the single entity to decide on this".
 
 
-Gavin continues to support the adoption of P2SH by cooperatives. Nevertheless, on January 30, he was forced to admit that activation would not take place immediately. He [postpones](https://bitcointalk.org/index.php?topic=61922.msg722508#msg722508) the notification to the last week of February, and the eventual switchover to March 15.
+Gavin continued to support the adoption of P2SH by cooperatives. Nevertheless, on January 30, he was forced to admit that activation would not take place immediately. He [postponed](https://bitcointalk.org/index.php?topic=61922.msg722508#msg722508) the notification to the last week of February, and the eventual switchover to March 15.
 
 
-This role of miners in activating the upgrade gives rise to a special conception: that miners direct the evolution of the protocol using their computing power. This conception is [supported](https://web.archive.org/web/20120203023138/http://bitcoinmedia.com/cathartic-progress/) by Amir Taaki. For him, decision-making is exactly and correctly characterized as an election" and "each unit of mining power *is* a vote" in accordance with the "one-CPU-one-vote" principle set out by Satoshi in the white paper.
+The role of miners in activating the upgrade gave rise to a special conception: that miners direct the evolution of the protocol using their computing power. This conception was [supported](https://web.archive.org/web/20120203023138/http://bitcoinmedia.com/cathartic-progress/) by Amir Taaki. For him, decision-making was "exactly and correctly characterized as an election" and "each unit of mining power *is* a vote" in accordance with the "one-CPU-one-vote" principle set out by Satoshi in the white paper.
 
 
-This interpretation is widely disputed by Gregory Maxwell, who takes exception [on IRC](https://buildingbitcoin.org/bitcoin-dev/log-2012-01-28.html#l-1038), then [on the forum](https://bitcointalk.org/index.php?topic=61922.msg723476#msg723476). He writes:
+This interpretation was widely disputed by Gregory Maxwell, who objected [on IRC](https://buildingbitcoin.org/bitcoin-dev/log-2012-01-28.html#l-1038), then [on the forum](https://bitcointalk.org/index.php?topic=61922.msg723476#msg723476). He wrote:
 
 
 > The Bitcoin system is _NOT_ up for a majority election. Not a majority of hashpower, not a majority of people, not a majority of money. For example, what happens if a super-majority-even 100%-of the current miners decide that the subsidy should be 50 BTC forever?  **NOTHING**. Miners who change that rule in their software simply stop existing from the perspective of the bitcoin network.
@@ -1806,30 +1806,30 @@ This interpretation is widely disputed by Gregory Maxwell, who takes exception [
 ### BIP 30: correction of duplicate transactions
 
 
-At the end of February, the situation still seems to be at a standstill. The number of minors reporting for P2SH is still in the minority, [approaching](https://web.archive.org/web/20120307015754/http://blockchain.info/P2SH) 40%. Gavin Andresen is forced to [postpone](https://gnusha.org/pi/bitcoindev/CABsx9T3748C0LiZETf=dRN5z0-izN=wh6vhuUSB+crXCXcuyAQ@mail.gmail.com/) the evaluation and activation dates again, by two weeks, so that the switchover can take place on April 1. This time seems to be the right one: according to Gavin, Tycho intends to support the upgrade after integrating and testing the changes.
+At the end of February, the situation still seemed to be at a standstill. The number of minors reporting for P2SH was still in the minority, [approaching](https://web.archive.org/web/20120307015754/http://blockchain.info/P2SH) 40%. Gavin Andresen was forced to [postpone](https://gnusha.org/pi/bitcoindev/CABsx9T3748C0LiZETf=dRN5z0-izN=wh6vhuUSB+crXCXcuyAQ@mail.gmail.com/) the evaluation and activation dates again, by two weeks, so that the switchover could take place on April 1. This time seemed to be the right one: according to Gavin, Tycho intended to support the upgrade after integrating and testing the changes.
 
 
 But first a more urgent problem had to be solved: as Luke-Jr [wrote](https://gnusha.org/pi/bitcoindev/201203061429.16460.luke@dashjr.org/) on March 6, "the priority is to get BIP 30 deployed first". The deployment of P2SH is therefore interrupted by an emergency update: the BIP 30.
 
 
-The problem is "duplicated transactions" on the blockchain: reward transactions with the same identifier included in different blocks. Four blocks mined in November 2010 contain such transactions: the transaction with identifier `d5d27987d2a3dfc724e359870c6644b40e497bdc0589a033220fe15429d88599` is included in both blocks [91 812](https://mempool.space/block/00000000000af0aed4792b1acee3d966af36cf5def14935db8de83d6f9306f2f) and [91 842](https://mempool.space/block/00000000000a4d0a398161ffc163c503763b1f4360639393e0e4c8e300e0caec); and the identifier transaction `e3bf3d07d4b0375638d5f1db5255fe07ba2c4cb067cd81b84ee974b6585fb468` is part of both block [91 722](https://mempool.space/block/00000000000271a2dc26e7667f8419f2e15416dc6955e5a6c6cdf3f2574dd08e) and block [91 880](https://mempool.space/block/00000000000743f190a18c5577a3c2d2a1f610ae9601ac046a38084ccb7cd721). This problem had been noticed, but had been solved by the miners themselves. Generally speaking, there didn't seem to be any urgent need to resolve this problem, as it wasn't thought to fundamentally disrupt Bitcoin's operation.
+The problem was "duplicated transactions" on the blockchain: reward transactions with the same identifier included in different blocks. Four blocks mined in November 2010 contained such transactions: the transaction with identifier `d5d27987d2a3dfc724e359870c6644b40e497bdc0589a033220fe15429d88599` was included in both blocks [91 812](https://mempool.space/block/00000000000af0aed4792b1acee3d966af36cf5def14935db8de83d6f9306f2f) and [91 842](https://mempool.space/block/00000000000a4d0a398161ffc163c503763b1f4360639393e0e4c8e300e0caec); and the identifier transaction `e3bf3d07d4b0375638d5f1db5255fe07ba2c4cb067cd81b84ee974b6585fb468` was part of both block [91 722](https://mempool.space/block/00000000000271a2dc26e7667f8419f2e15416dc6955e5a6c6cdf3f2574dd08e) and block [91 880](https://mempool.space/block/00000000000743f190a18c5577a3c2d2a1f610ae9601ac046a38084ccb7cd721). This problem had been noticed, but had been solved by the miners themselves. Generally speaking, there didn't seem to be any urgent need to resolve this problem, as it wasn't thought to fundamentally disrupt Bitcoin's operation.
 
 
-However, on February 4, 2012, Russell O'Connor [discovers](https://buildingbitcoin.org/bitcoin-dev/log-2012-02-04.html) a vulnerability that allows all transactions that arise from a duplicate reward transaction to be deleted outright via chain recoordination, and [describes](https://r6.ca/blog/20120206T005236Z.html) the attack in a blog post the following day. To correct the problem, on February 28 Pieter Wuille [writes](https://en.bitcoin.it/w/index.php?title=BIP_0030&oldid=24321) a BIP on the subject, BIP 30, which prohibits future blocks from "to contain a transaction whose identifier matches that of an earlier, not-fully-spent transaction in the same chain". The rule was [added](https://github.com/bitcoin/bitcoin/commit/a206b0ea12eb4606b93323268fc81a4f1f952531) to the code on March 3. The protocol change is [included](https://bitcointalk.org/index.php?topic=68895.msg803183#msg803183) in software version 0.5.3 and becomes active at midnight on March 15th. It is also [present](https://gnusha.org/pi/bitcoindev/CABsx9T3B0hMfS5kL+RaKwRq5MO0Bfs2EJRrzS6pfNsk+DPjx3w@mail.gmail.com/) in a preliminary version of Bitcoin-Qt 0.6, which is supposed to activate P2SH.
+However, on February 4, 2012, Russell O'Connor [discovered](https://buildingbitcoin.org/bitcoin-dev/log-2012-02-04.html) a vulnerability that allowed all transactions that arise from a duplicate reward transaction to be deleted outright via chain reorganization, and [described](https://r6.ca/blog/20120206T005236Z.html) the attack in a blog post the following day. To correct the problem, on February 28 Pieter Wuille [wrote](https://en.bitcoin.it/w/index.php?title=BIP_0030&oldid=24321) a BIP on the subject, BIP 30, which prohibits future blocks from "to contain a transaction whose identifier matches that of an earlier, not-fully-spent transaction in the same chain". The rule was [added](https://github.com/bitcoin/bitcoin/commit/a206b0ea12eb4606b93323268fc81a4f1f952531) to the code on March 3. The protocol change was [included](https://bitcointalk.org/index.php?topic=68895.msg803183#msg803183) in software version 0.5.3 and became active at midnight on March 15th. It was also [present](https://gnusha.org/pi/bitcoindev/CABsx9T3B0hMfS5kL+RaKwRq5MO0Bfs2EJRrzS6pfNsk+DPjx3w@mail.gmail.com/) in a preliminary version of Bitcoin-Qt 0.6, which was supposed to activate P2SH.
 
 
 ### Activating Pay to Script Hash
 
 
-After the hiatus caused by the application of BIP 30 (which required a great deal of effort on the part of the miners), reporting for P2SH is back on track. On March 10, Tycho carries out the first tests to implement reporting within Deepbit. On March 15, he [states](https://bitcointalk.org/index.php?topic=3889.msg803685#msg803685) that he has "tried to delay P2SH as much as possible", but that "this is not productive already". As a result, he gives up the fight and deploys the change within his cooperative.
+After the hiatus caused by the application of BIP 30 (which required a great deal of effort on the part of the miners), signaling for P2SH was back on track. On March 10, Tycho carried out the first tests to implement signaling within Deepbit. On March 15, he [stated](https://bitcointalk.org/index.php?topic=3889.msg803685#msg803685) that he had "tried to delay P2SH as much as possible", but that "this is not productive already". As a result, he gave up the fight and deployed the change within his cooperative.
 
 
-A week later, on March 21, the report for P2SH exceeded 70%! Gavin Andresen [writes](https://bitcointalk.org/index.php?topic=71226.msg812897#msg812897) on the forum:
+A week later, on March 21, signaling for P2SH exceeded 70%! Gavin Andresen [wrote](https://bitcointalk.org/index.php?topic=71226.msg812897#msg812897) on the forum:
 
 
 > Therefore I'd like to announce that support for BIP16 has acquired a majority of mining support needed to prevent a potential permanent fork and will be activated on April 1st as previously planned. \So if you are a pool operator, solo miner, or p2pool miner you need to upgrade your Bitcoin-Qt/bitcoind before April 1st. Running a version of bitcoind earlier than 0.6 release candidate 3 past this date means running the risk of potentially wasting your hashing power mining invalid blocks since earlier versions will accept invalid spends of BIP16 transactions into their memory pools and will put them into blocks considered invalid by the majority.
 
-Two further preliminary versions were released in the following days, and the official version 0.6 [released](https://bitcointalk.org/index.php?topic=74737.msg827484#msg827484) on March 30. It adds the standard raw multisignature scheme (BIP 11), implements short addresses for P2SH (BIP 13) and applies P2SH itself (BIP 16). The upgrade took place at midnight on April 1, without any major incident. As expected, no chain splitting occurs.
+Two further preliminary versions were released in the following days, and the official version 0.6 [released](https://bitcointalk.org/index.php?topic=74737.msg827484#msg827484) on March 30. It added the standard raw multisignature scheme (BIP 11), implemented short addresses for P2SH (BIP 13) and applied P2SH itself (BIP 16). The upgrade took place at midnight on April 1, without any major incident. As expected, no chain splitting occured.
 
 
 ### The first major disagreement
@@ -1841,7 +1841,7 @@ The Hash Pay to Script battle was the first major discord in Bitcoin's history. 
 This "battle" demonstrated that the development of Bitcoin was not a smooth ride, due to its open and free nature and the stakes involved. It raised the question of Bitcoin's governance, and presaged a far more violent conflict: the Block War, which took place between 2015 and 2017.
 
 
-Moreover, the debate over the protocol's evolution was not the only consequence of Bitcoin's open and free nature. It also made it possible to implement more or less different versions of Bitcoin, taking over the code or concept, which would soon be called "alternative cryptocurrencies". These alternative cryptocurrencies, which contributed in their own way to the construction of Bitcoin, will be the subject of the next chapter.
+Moreover, the debate over the protocol's evolution was not the only consequence of Bitcoin's open and free nature. It also made possible to implement more or less different versions of Bitcoin, taking over the code or concept, which would soon be called "alternative cryptocurrencies". These alternative cryptocurrencies, which contributed in their own way to the construction of Bitcoin, will be the subject of the next chapter.
 
 
 # Excessive use
