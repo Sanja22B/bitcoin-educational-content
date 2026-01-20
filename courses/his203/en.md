@@ -116,7 +116,7 @@ We also drew inspiration from the documentary films covering this part of the Bi
 
 
 - [*The Bitcoin Phenomenon*](https://www.youtube.com/watch?v=6pWblf8COH4), directed by Bhu Srinivasan and released on April 12, 2014;
-- [*The Rise and Rise of Bitcoin*](https://www.youtube.com/watch?v=A06qdTpOYcg), directed by Nicholas Mross and released on October 10, 2014;
+- [*The Rise and Rise of Bitcoin*](https://www.youtube.com/watch?v=Yh1dOmQJoWQ), directed by Nicholas Mross and released on October 10, 2014;
 - [*Deep Web*](https://www.youtube.com/watch?v=L7emWKAMEvI), directed by Alex Winter, for release on May 31, 2015.
 
 
@@ -2282,10 +2282,7 @@ But most importantly, BitInstant members were manning a booth, called "*Bernanke
 Their stand was located on the part of the grounds [called](https://web.archive.org/web/20120606043337/http://happyporcupine.info/agoravalley/) the *Agora Valley*, an area reserved for trade that included around forty listed stalls. Vendors offered everything from food and drink to books, clothes, knives, hats and much more. As in previous editions, merchants generally accepted silver and copper coins as means of payment, as well as dollars (or "Federal Reserve Notes" as they call them). But that year, more than half of them also accepted bitcoin. With the help of BitInstant, this percentage [climbed](https://bitcointalk.org/index.php?topic=89714.msg987575#msg987575) to 80% by the end of the event.
 
 
-![Visite en vidéo de l'Agora Valley au PorcFest 2012, réalisée par Johnson Rice](https://www.youtube.com/watch?v=HTiEmGvXyTw)
-
-
-*Video tour of Agora Valley at PorcFest 2012, directed by Johnson Rice*
+[Video tour of Agora Valley at PorcFest 2012, directed by Johnson Rice](https://www.youtube.com/watch?v=HTiEmGvXyTw)
 
 
 In particular, a certain George Mandrik, a libertarian of Greek origin, [offered](https://twitter.com/Mandrik/status/1488885417151807489) for sale gyros (Greek sandwiches akin to doner kebab) and baklava (traditional oriental desserts), as well as paleo pancakes baked in coconut oil. He made a lot of sales thanks to a BitPay deposit card, which [attracted](https://bitcointalk.org/index.php?topic=89714.msg987946#msg987946) the attention of Tony Gallippi. Thanks to this involvement, Mandrik was later hired by BitInstant to manage customer service.
