@@ -4,12 +4,12 @@ goal: Razumevanje, instalacija, konfiguracija i korišćenje Bitcoin čvora
 objectives: 
 
 
-  - Razumeti ulogu i svrhu Bitcoin čvora.
-  - Identifikujte različita hardverska i softverska rešenja koja su dostupna.
-  - Instalirajte i konfigurišite Full node (Bitcoin core).
-  - Koristite Interface Umbrel i dodajte korisne aplikacije.
-  - Povežite lični Wallet na njegov čvor.
-  - Istražite napredna podešavanja i najbolje bezbednosne prakse.
+  - Razumevanje uloge i svrhe Bitcoin čvora.
+  - Identifikovanje različitih dostupnih hardverskih i softverskih rešenja.
+  - Instaliranje i konfiguracija full node-a (Bitcoin core).
+  - Korišćenje Umbrel grafičkog interfejsa i dodavanje korisnih aplikacija.
+  - Povezivanje ličnog novčanika na full node.
+  - Istraživanje naprednih podešavanja i najboljih bezbednosnih praksi.
 
 
 ---
@@ -21,7 +21,7 @@ Verovatno ste upoznati sa izrekom "Nisu tvoji ključevi, nisu tvoji novčići", 
 
 
 
-BTC 202 je pristupačna obuka osmišljena da vas nauči kako da pokrenete sopstveni Bitcoin čvor, čak i ako niste tehnički stručnjak. Počećemo definisanjem šta je Bitcoin čvor, čemu služi i zašto je apsolutno neophodno da ga sami pokrenete. Zatim ću vas korak po korak voditi kroz izbor hardvera, instalaciju potrebnog softvera, povezivanje vašeg wallet softvera i prve moguće optimizacije za dalji napredak.
+BTC 202 je pristupačna obuka osmišljena da vas nauči kako da pokrenete sopstveni Bitcoin čvor, čak i ako niste tehnički stručnjak. Počećemo definisanjem šta je Bitcoin čvor, čemu služi i zašto je apsolutno neophodno da ga sami pokrenete. Zatim ću vas korak po korak voditi kroz izbor hardvera, instalaciju potrebnog softvera, povezivanje vašeg softverskog novčanika i prve moguće optimizacije za dalji napredak.
 
 
 
@@ -50,7 +50,7 @@ Pokretanje Bitcoin čvora nije samo opcija za stručnjake; to je nužnost. To je
 
 
 
-Dobrodošli u BTC 202, gde ćete naučiti kako da instalirate, konfigurišete i koristite Bitcoin čvor lako i samostalno. Ali to nije sve: takođe ćete saznati više o mestu i funkciji čvorova u Bitcoin sistemu. Kurs se izmjenjuje između teorijskih objašnjenja i vođene praktične vežbe.
+Dobrodošli u BTC 202, gde ćete naučiti kako da instalirate, konfigurišete i koristite Bitcoin čvor lako i samostalno. Ali to nije sve: takođe ćete saznati više o mestu i funkciji čvorova u Bitcoin sistemu. Kurs kombinuje teoriju sa vođenom praktičnom vežbom.
 
 
 
@@ -58,7 +58,7 @@ Dobrodošli u BTC 202, gde ćete naučiti kako da instalirate, konfigurišete i 
 
 
 
-U ovom prvom delu kursa, razjasnićemo osnovne pojmove, a zatim preći na preciznije definicije. Šta je čvor? Koje su razlike između čvora, Wallet i Miner? Zatim ćete naučiti o Bitcoin core i implementacijama protokola. Cilj je govoriti istim jezikom, izbeći zabunu i uspostaviti čvrstu teorijsku osnovu.
+U ovom prvom delu kursa, razjasnićemo osnovne pojmove, a zatim preći na preciznije definicije. Šta je čvor? Koje su razlike između čvora (eng. node), novčanika (eng. wallet) i rudara (eng. miner)? Zatim ćete naučiti o Bitcoin Core-u i implementacijama protokola. Cilj je govoriti istim jezikom, izbeći zabunu i uspostaviti čvrstu teorijsku osnovu.
 
 
 
@@ -66,7 +66,7 @@ U ovom prvom delu kursa, razjasnićemo osnovne pojmove, a zatim preći na preciz
 
 
 
-U ovom drugom delu, počeću objašnjavajući zašto je važno pokrenuti sopstveni Bitcoin čvor. Zatim ćemo istražiti različite tipove čvorova koji postoje (kompletni, pruned, SPV...), kako funkcionišu i njihove tehničke implikacije.
+U ovom drugom delu, počeću objašnjavajući zašto je važno pokrenuti sopstveni Bitcoin čvor. Zatim ćemo istražiti različite tipove čvorova koji postoje (kompletni, pruned - čvor sa skraćenom istorijom blokova), SPV...), kako funkcionišu i njihove tehničke implikacije.
 
 
 
@@ -78,11 +78,11 @@ Ovaj odeljak, dakle, ilustruje put suverenog bitkoinera: razumevanje zašto je n
 
 
 
-### Deo 3 - Lako instaliranje Bitcoin čvora
+### Deo 3 - Jednostavna instalacija Bitcoin čvora
 
 
 
-Kada je ova priprema završena, vreme je da pređemo na praktični deo sa Delom 3 posvećenim Umbrelu: kućnom cloud operativnom sistemu koji pojednostavljuje samostalno hostovanje i instalaciju Bitcoin i Lightning čvora.
+Kada je ova priprema završena, vreme je za praktičan deo u 3. poglavlju posvećenom Umbrel-u: kućnom cloud operativnom sistemu koji pojednostavljuje samostalno hostovanje i instalaciju Bitcoin i Lightning čvora.
 
 
 
@@ -90,15 +90,15 @@ Nakon kratkog uvoda u Umbrel, pružićemo detaljan vodič koji će vas voditi kr
 
 
 
-### Deo 4 - Povezivanje vašeg Wallet sa vašim čvorom
+### Deo 4 - Povezivanje vašeg novčanika sa vašim čvorom
 
 
 
-Sada kada ste postavili Bitcoin čvor, vreme je da ga koristite! U ovom odeljku ćete naučiti kako da povežete vaš Wallet softver za upravljanje (kao što je Sparrow wallet) sa vašim sopstvenim Address indeksatorom (Electrs ili Fulcrum), ili direktno sa Bitcoin core, tako da više ne zavisite od javnih servera.
+Sada kada ste postavili Bitcoin čvor, vreme je da ga koristite! U ovom odeljku ćete naučiti kako da povežete svoj softver za upravljanje novčanikom (kao što je Sparrow novčanik) sa vašim sopstvenim indeksatorom adresa (Electrs ili Fulcrum), ili direktno sa Bitcoin core-om, tako da više ne zavisite od javnih servera.
 
 
 
-Takođe ćemo ispitati ulogu indeksatora i različite metode povezivanja sa vašim čvorom (LAN, Tor, Tailscale, itd.). Na kraju, u poslednjem poglavlju, pregledaćemo najkorisnije aplikacije dostupne na Umbrel-u za svakodnevnog bitkoinera.
+Takođe ćemo ispitati ulogu indeksatora i različite metode povezivanja sa vašim čvorom (LAN, Tor, Tailscale, itd.). Na kraju, u poslednjem poglavlju, pregledaćemo najkorisnije aplikacije dostupne na Umbrel-u koje svakodnevni korisnici Bitcoina mogu koristiti.
 
 
 
@@ -110,7 +110,7 @@ U ovom završnom delu BTC 202, cilj je produbiti vaše znanje. Prvo ćemo pogled
 
 
 
-Zatim ćemo odvojiti vreme da pregledamo neke od teorija obrađenih ranije u kursu, uključujući razumevanje IBD procesa i otkrivanje vršnjaka u detalje, istraživanje anatomije čvora, i na kraju učenje kako koristiti `Bitcoin.conf` fajl za fino podešavanje vaših postavki.
+Zatim ćemo odvojiti vreme da pregledamo neke od teorija obrađenih ranije u kursu, uključujući razumevanje IBD procesa i peer discovery (pronalaženje drugih čvorova) u detalje, istraživanje anatomije čvora, i na kraju učenje kako koristiti `Bitcoin.conf` fajl za fino podešavanje postavki.
 
 
 
@@ -122,7 +122,7 @@ Kao i kod svih Plan ₿ Academy kurseva, u poslednjem delu ćete pronaći završ
 
 
 
-Dakle, jeste li spremni da uključite svoj prvi Bitcoin čvor? Postavite kurs za suverenitet!
+Dakle, jeste li spremni da uključite svoj prvi Bitcoin čvor? Kreni putem suvereniteta!
 
 
 
