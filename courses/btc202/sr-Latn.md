@@ -133,18 +133,18 @@ Dakle, jeste li spremni da uključite svoj prvi Bitcoin čvor? Kreni putem suver
 
 
 
-Kako je opisao njegov tvorac, Satoshi Nakamoto, Bitcoin se predstavlja kao peer-to-peer elektronski gotovinski sistem. Ova jednostavna rečenica, koja je naslov Bele knjige, sadrži mnoge tragove o prirodi Bitcoin:
+Kako je opisao njegov tvorac, Satoshi Nakamoto, Bitcoin se predstavlja kao peer-to-peer elektronski novčani sistem. Ova jednostavna rečenica, koja je ujedno i naslov White Paper-a, sadrži mnoge naznake o prirodi Bitcoina:
 
 
 
 
 - Prvo, Satoshi opisuje Bitcoin kao "sistem", drugim rečima, koherentan skup hardverskih i softverskih komponenti koje međusobno deluju kako bi pružile određenu uslugu ili izvršile određenu funkciju;
 - Dalje, on objašnjava da ovaj sistem omogućava korišćenje elektronskog novca, tj. oblika nematerijalne valute;
-- Na kraju, on ističe da ovaj sistem nije zavisan od bilo koje centralne entitete: on je "peer-to-peer", što znači da su sami korisnici ti koji upravljaju sistemom.
+- Na kraju, on ističe da ovaj sistem nije zavisan od bilo kojeg centralnog entiteta: on je "peer-to-peer", što znači da su sami korisnici ti koji upravljaju sistemom.
 
 
 
-Pošto je Bitcoin sistem, mora se nužno pokretati na računarima. I, zbog svoje peer-to-peer prirode, sami korisnici preuzimaju odgovornost za pokretanje ovih mašina. Ono što nazivamo "Bitcoin čvor" je upravo taj računar na kojem se pokreće softver koji implementira Bitcoin protokol (kao Bitcoin core, ali o tome ćemo kasnije). Ovo je ono što omogućava Bitcoin da funkcioniše bez centralnog autoriteta: validacija se sprovodi na distribuiran način, od strane hiljada nezavisnih mašina koje pripadaju hiljadama korisnika.
+Pošto je Bitcoin sistem, mora se nužno pokretati na računarima. I, zbog svoje peer-to-peer prirode, sami korisnici preuzimaju odgovornost za pokretanje ovih mašina. Ono što nazivamo "Bitcoin čvor" je upravo taj računar na kojem se pokreće softver koji implementira Bitcoin protokol (kao Bitcoin core, ali o tome ćemo kasnije). Ovo je ono što omogućava Bitcoinu da funkcioniše bez centralnog autoriteta: validacija se sprovodi na distribuiran način, od strane hiljada nezavisnih mašina koje pripadaju hiljadama korisnika.
 
 
 
@@ -156,11 +156,10 @@ Nakamoto, S. (2008). *Bitcoin: A Peer-to-Peer Electronic Cash System*. https://B
 
 
 
-Upravo ti korisnici osiguravaju bezbednost Bitcoin. Kako Eric Voskuil objašnjava u svojoj knjizi *Cryptoeconomics*, bezbednost Bitcoin ne zavisi ni od Blockchain, ni od snage heširanja, ni od validacije, decentralizacije, kriptografije, otvorenog koda, niti teorije igara. Bezbednost Bitcoin zavisi prvenstveno od pojedinaca koji su spremni da se izlože ličnom riziku. Decentralizacija omogućava da se ovaj rizik raspodeli na veliki broj pojedinaca, i samo njihova sposobnost da odole osigurava otpornost sistema.
+Upravo ti korisnici osiguravaju bezbednost Bitcoina. Kako Eric Voskuil objašnjava u svojoj knjizi *Cryptoeconomics*, bezbednost Bitcoina ne zavisi ni od blokčejna, ni od snage heširanja, ni od validacije, decentralizacije, kriptografije, otvorenog koda, niti teorije igara. Bezbednost Bitcoina zavisi prvenstveno od pojedinaca koji su spremni da se izlože ličnom riziku. Decentralizacija omogućava da se ovaj rizik raspodeli na veliki broj pojedinaca, a upravo njihova sposobnost da pruže otpor obezbeđuje otpornost sistema.
 
 
-
-Ovaj princip je lako razumeti: ako bi Bitcoin zavisio od jednog čvora u vlasništvu jedne osobe, zatvaranje te osobe bilo bi dovoljno da se ugasi mreža, jer bi samo oni preuzeli sve rizike. Sa desetinama hiljada čvorova rasprostranjenih širom sveta, rizik je raspršen: svaki od ovih operatera bi morao biti neutralisan da bi se ugasio Bitcoin.
+Ovaj princip je lako razumeti: kada bi Bitcoin zavisio od jednog jedinog čvora u vlasništvu jedne osobe, bilo bi dovoljno tu osobu zatvoriti da bi se mreža ugasila, jer bi ona sama snosila sav rizik. Sa desetinama hiljada čvorova rasprostranjenih širom sveta, rizik je raspršen: svaki od ovih operatera bi morao biti neutralisan da bi se ugasio Bitcoin.
 
 
 
@@ -174,11 +173,11 @@ Možemo tako razlikovati i imenovati nekoliko pojmova kako bismo razjasnili stva
 
 
 - Bitcoin valuta: jedinica obračuna koja se koristi za transakcije unutar ovog sistema;
-- Mreža Bitcoin: skup svih povezanih čvorova;
-- Bitcoin čvorovi: mašine koje pokreću implementaciju Bitcoin;
-- implementacije Bitcoin: softver koji prevodi protokol u izvršne instrukcije;
+- Bitcoin mreža: skup svih povezanih čvorova;
+- Bitcoin čvorovi: mašine koje pokreću Bitcoin implementaciju;
+- Bitcoin implementacije: softver koji prevodi protokol u izvršne instrukcije;
 - Bitcoin protokol: skup pravila koja upravljaju radom sistema;
-- Sistem Bitcoin: koherentna kombinacija svih ovih Elements.
+- Bitcoin sistem: koherentna kombinacija svih ovih elemenata.
 
 
 
@@ -190,15 +189,15 @@ Bitcoin čvorovi zajedno formiraju ono što je poznato kao Bitcoin mreža. Oni o
 
 
 
-Od samog početka, Bitcoin je dizajniran da omogući svakom korisniku da pokrene lični čvor. Ovaj slučaj ostaje važeći i sa današnjim Bitcoin core softverom, koji kombinuje uloge Wallet i čvora. Ali danas se ova funkcija često razdvaja: mnogi moderni Bitcoin novčanici su samo novčanici koji se povezuju na eksterne čvorove (u vlasništvu iste osobe ili ne).
+Od samog početka, Bitcoin je dizajniran da omogući svakom korisniku da pokrene lični čvor. Ovaj slučaj ostaje važeći i sa današnjim Bitcoin core softverom, koji kombinuje uloge novčanika i čvora. Ali danas se ova funkcija često razdvaja: mnogi moderni Bitcoin novčanici su samo novčanici koji se povezuju na eksterne čvorove (u vlasništvu iste osobe ili ne).
 
 
 
-### Zadrži Blockchain
+### Održavanje kopije blokčejna
 
 
 
-Prvi zadatak čvora je da održava lokalnu kopiju Blockchain. Da bi se sprečio Double-spending na Bitcoin bez uključivanja centralnog autoriteta, svaki korisnik mora proveriti da ne postoji transakcija u sistemu. Jedini način da se u to bude siguran je da se poznaju sve transakcije napravljene na Bitcoin. Iz tog razloga, sve transakcije su vremenski označene i grupisane u blokove, a svaki čvor skladišti ceo Blockchain.
+Prvi zadatak čvora je da održava lokalnu kopiju blokčejna. Da bi se sprečila dvostruka potrošnja na Bitcoinu bez uključivanja centralnog autoriteta, svaki korisnik mora proveriti da ne postoji transakcija u sistemu. Jedini način da se u to bude siguran je da se poznaju sve transakcije napravljene na Bitcoinu. Iz tog razloga, sve transakcije su vremenski označene i grupisane u blokove, a svaki čvor skladišti ceo blokčejn.
 
 
 
@@ -208,7 +207,7 @@ Nakamoto, S. (2008). *Bitcoin: A Peer-to-Peer Electronic Cash System*. https://B
 
 
 
-Blockchain je stoga evoluirajući registar: svaki put kada Miner objavi novi blok, čvor proverava njegovu validnost pre nego što ga doda svojoj lokalnoj kopiji lanca. Zaključno sa današnjim danom (jul 2025), kompletan Blockchain premašuje 675 GB, a ova veličina nastavlja da raste, jer se u proseku novi blok dodaje svakih 10 minuta.
+Blokčejn je stoga evoluirajući registar: svaki put kada rudar objavi novi blok, čvor proverava njegovu validnost pre nego što ga doda svojoj lokalnoj kopiji lanca. Zaključno sa današnjim danom (jul 2025), kompletan blokčejn premašuje 675 GB, a ova veličina nastavlja da raste, jer se u proseku novi blok dodaje svakih 10 minuta.
 
 
 
@@ -220,18 +219,18 @@ Blockchain je stoga evoluirajući registar: svaki put kada Miner objavi novi blo
 
 
 
-### Verifikuj i distribuiraj transakcije
+### Verifikacija i distribucija transakcija
 
 
 
-Druga uloga čvora je da osigura verifikaciju i propagaciju transakcija. Kada nova transakcija stigne do čvora (bilo putem Wallet softvera ili drugog čvora), proveriće da li je u skladu sa skupom pravila (pravila konsenzusa i pravila prenosa). Na primer:
+Druga uloga čvora je da osigura verifikaciju i propagaciju transakcija. Kada nova transakcija stigne do čvora (bilo putem softver za upravljanje novčanikom ili drugog čvora), proveriće da li je u skladu sa skupom pravila (pravila konsenzusa (eng. consensus rules) i pravila prenosa (eng. relay rules)). Na primer:
 
 
 
 
 - potrošeni bitkoini moraju postojati u svom UTXO skupu (bazi podataka nepotrošenih izlaza);
-- potpis mora biti važeći, i svi uslovi potrošnje moraju biti ispunjeni (važeći skript);
-- ukupna količina izlaza ne sme premašiti ukupnu količinu ulaza, što znači da troškovi ne mogu biti negativni.
+- potpis mora biti važeći, i svi uslovi potrošnje moraju biti ispunjeni (važeća skripta);
+- ukupna vrednost izlaza ne sme premašiti ukupnu vrednost ulaza, što znači da troškovi naknada ne mogu biti negativni.
 
 
 
@@ -239,15 +238,15 @@ Druga uloga čvora je da osigura verifikaciju i propagaciju transakcija. Kada no
 
 
 
-Nakon validacije, transakcija se čuva u čvoru Mempool, privremenom memorijskom prostoru rezervisanom za nepotvrđene transakcije, a zatim se prenosi drugim mrežnim čvorovima na koje je povezana. Ovaj mehanizam distribucije i validacije nastavlja se od čvora do čvora. Na ovaj način, transakcija se propagira kroz Bitcoin mrežu, i svaki čvor je čuva u Mempool dok nije uključena u važeći blok od strane Miner, koji zatim deluje na njenu prvu potvrdu.
+Nakon validacije, transakcija se čuva u [mempool-u](https://planb.academy/resources/glossary/mempool) čvora, privremenom memorijskom prostoru rezervisanom za nepotvrđene transakcije, a zatim se prenosi drugim mrežnim čvorovima na koje je povezan. Ovaj mehanizam distribucije i validacije nastavlja se od čvora do čvora. Na ovaj način, transakcija se propagira kroz Bitcoin mrežu, i svaki čvor je čuva u mempool-u dok nije uključena u važeći blok od strane rudara, nakon čega ona stupa na snagu sa prvim potvrđivanjem.
 
 
 
-### Proveri i distribuiraj blokove
+### Provera i distribucija blokova
 
 
 
-Treća uloga čvora uključuje upravljanje iskopanim blokovima. Kada Miner otkrije novi blok sa važećim Proof of Work, on se emituje na mreži. Čvorovi ga primaju, proveravaju da li je u skladu sa svim pravilima protokola, i zatim ga integrišu u svoju lokalnu kopiju Blockchain ako je važeći. Kao i kod transakcija, novo potvrđeni blokovi se zatim prenose svim čvorovima povezanim na čvor. Ovaj proces se nastavlja dok svi čvorovi na Bitcoin mreži ne budu obavešteni o novom bloku.
+Treća uloga čvora uključuje upravljanje "izrudarenim" blokovima. Kada rudar otkrije novi blok sa važećim Proof of Work-om, on se emituje na mreži. Čvorovi ga primaju, proveravaju da li je u skladu sa svim pravilima protokola, i zatim ga integrišu u svoju lokalnu kopiju blokčejna ako je važeći. Kao i kod transakcija, novo potvrđeni blokovi se zatim prenose svim čvorovima povezanim na čvor. Ovaj proces se nastavlja dok svi čvorovi na Bitcoin mreži ne budu obavešteni o novom bloku.
 
 
 
@@ -255,33 +254,33 @@ Treća uloga čvora uključuje upravljanje iskopanim blokovima. Kada Miner otkri
 
 
 
-## Koja je razlika između luka i Wallet?
+## Koja je razlika između čvora i novčanika?
 
 
 <chapterId>de5af634-a628-4b90-b869-468c208e178b</chapterId>
 
 
 
-Važno je razlikovati između dve različite vrste softvera kada koristite Bitcoin: čvor i Wallet.
+Važno je razlikovati dve različite vrste softvera kada koristite Bitcoin: čvor i novčanik.
 
 
 
-Čvor Bitcoin, kao što je gore pomenuto, je deo softvera koji aktivno učestvuje u peer-to-peer mreži. Obavlja tri glavna zadatka:
+Bitcoin čvor, kao što je gore pomenuto, je deo softvera koji aktivno učestvuje u peer-to-peer mreži. Obavlja tri glavna zadatka:
 
 
 
 
-- backup of Blockchain,
-- validacija i prosleđivanje transakcija,
-- blok validacija i prosleđivanje.
+- pravljenje rezervne kopije (eng. backup) blokčejna,
+- validaranje i prosleđivanje transakcija,
+- validaranje i prosleđivanje blokova.
 
 
 
-S druge strane, Bitcoin Wallet je softverski alat dizajniran za čuvanje i upravljanje vašim privatnim ključevima. Ovi ključevi omogućavaju vam da trošite svoje bitkoine ispunjavanjem skripti za zaključavanje (obično putem potpisa). Wallet može da se poveže sa čvorom (bilo lokalnim ili udaljenim) kako bi proverio status Blockchain i emitovao transakcije koje kreira, ali kao takav nije učesnik u mreži.
+S druge strane, Bitcoin novčanik je softverski alat dizajniran za čuvanje i upravljanje vašim privatnim ključevima. Ovi ključevi omogućavaju vam da trošite svoje bitkoine ispunjavanjem skripti za zaključavanje (obično putem potpisa). Novčanik može da se poveže sa čvorom (bilo lokalnim ili udaljenim) kako bi proverio status blokčejna i emitovao transakcije koje kreira, ali kao takav nije učesnik u mreži.
 
 
 
-U nekim slučajevima, ove dve funkcije koegzistiraju unutar istog softvera, kao što je slučaj sa Bitcoin core, koji služi i kao Full node i kao Wallet. Međutim, mnogi popularni Wallet programi (Sparrow, BlueWallet, itd.) zahtevaju vezu sa eksternim čvorom (bilo vašim ili treće strane) za emitovanje transakcija i određivanje Wallet stanja.
+U nekim slučajevima, ove dve funkcije koegzistiraju unutar istog softvera, kao što je slučaj sa Bitcoin core-om, koji služi i kao potpuni (eng. full) node i kao novčanik. Međutim, mnogi popularni programi za upravljanjem novčanikom (Sparrow, BlueWallet, itd.) zahtevaju vezu sa eksternim čvorom (bilo vašim ili treće strane) za emitovanje transakcija i određivanje raspoloživih sredstava novčanika.
 
 
 
@@ -289,22 +288,22 @@ U nekim slučajevima, ove dve funkcije koegzistiraju unutar istog softvera, kao 
 
 
 
-## Koja je razlika između čvora i Miner?
+## Koja je razlika između čvora i rudara?
 
 
 <chapterId>d2992614-7ab7-4bf9-81b1-f548cda67257</chapterId>
 
 
 
-Pojmovi čvora i Miner se često mešaju. Ipak, ova dva Elements obavljaju radikalno različite funkcije unutar sistema.
+Pojmovi čvora i rudara se često mešaju. Ipak, ova dva elementa obavljaju radikalno različite funkcije unutar sistema.
 
 
 
-U početku, kada je Bitcoin lansiran od strane Satoshi Nakamoto 2009. godine, očekivalo se da svaki korisnik učestvuje u mreži kao celini. Tako je originalni Bitcoin softver kombinovao nekoliko funkcija odjednom: delovao je kao Wallet, čvor, i takođe kao Miner, sposoban za generisanje novih blokova. U to vreme, težina Mining je bila veoma niska. Sve što je trebalo da uradite bilo je da pokrenete Bitcoin softver na svom računaru kako biste pronašli blokove i dobili bitkoine kao nagradu.
+U početku, kada je Bitcoin lansiran od strane Satoshi Nakamoto 2009. godine, očekivalo se da svaki korisnik učestvuje u mreži kao celini. Tako je originalni Bitcoin softver kombinovao nekoliko funkcija odjednom: delovao je kao novčanik, čvor, i takođe kao rudar, sposoban za generisanje novih blokova. U to vreme, [težina rudarenja](https://planb.academy/resources/glossary/difficulty) (eng. mining difficulty) je bila veoma niska. Sve što je trebalo da uradite bilo je da pokrenete Bitcoin softver na svom računaru kako biste pronašli blokove i dobili bitkoine kao nagradu.
 
 
 
-Međutim, sa postepenom popularizacijom Bitcoin i povećanjem broja rudara, konkurentski pejzaž u Mining doživeo je radikalnu promenu. Danas je Mining postala izuzetno konkurentna aktivnost, kojom dominiraju industrijski igrači opremljeni specijalizovanom infrastrukturom. Snaga potrebna za rudarenje novog bloka sada je toliko velika da je praktično nemoguće da pojedinačni korisnik to postigne koristeći samo konvencionalni računar. Kao rezultat toga, Mining se sada prvenstveno obavlja korišćenjem specijalizovanih mašina nazvanih ASICs (*Application-Specific Integrated Circuits*). Ovi čipovi su optimizovani isključivo za pokretanje dvostrukog SHA-256, algoritma koji se koristi za Mining na Bitcoin.
+Međutim, kako je Bitcoin postajao sve popularniji i broj rudara se povećavao, konkurencija među rudarima doživela je radikalnu promenu. Danas je rudarenje postala izuzetno konkurentna aktivnost, kojom dominiraju industrijski igrači opremljeni specijalizovanom infrastrukturom. Snaga potrebna za rudarenje novog bloka sada je toliko velika da je praktično nemoguće da pojedinačni korisnik to postigne koristeći samo konvencionalni računar. Kao rezultat toga, rudarenje se sada prvenstveno obavlja korišćenjem specijalizovanih mašina nazvanih ASICs (*Application-Specific Integrated Circuits*). Ovi čipovi su optimizovani isključivo za izvršavanje dvostrukog heširanja koristeći SHA-256, algoritma koji se koristi za Bitcoin rudarenje.
 
 
 
@@ -312,23 +311,23 @@ Međutim, sa postepenom popularizacijom Bitcoin i povećanjem broja rudara, konk
 
 
 
-Suočeni sa ovom evolucijom, uloge čvora Bitcoin i Miner postale su jasno različite. Kao što je prikazano gore, uloga čvora Bitcoin je isključivo informativna i zasnovana na validaciji. Uloga Miner je drugačija:
+Suočeni sa ovom evolucijom, uloge Bitcoin čvora i rudara postale su jasno odvojene. Kao što je prikazano gore, uloga Bitcoin čvora je isključivo informativna i zasnovana na validaciji. Uloga rudara je drugačija:
 
 
 
 
-- Odabire transakcije na čekanju u Mempool.
-- Gradi kandidatski blok integrišući ove transakcije.
-- On traži metodom pokušaja i greške validan Proof of Work.
+- Odabira transakcija koje su na čekanju u mempool-u.
+- Pravljenje blok-kandidata koji uključuje ove transakcije.
+- Traženje metodom pokušaja i greške validan Proof of Work.
 - Ako pronađe važeći dokaz, emituje blok putem svog čvora ka ostalim čvorovima.
 
 
 
-Miner treba Bitcoin čvor za interakciju sa mrežom.
+Rudaru treba Bitcoin čvor za interakciju sa mrežom.
 
 
 
-Uloga Miner se ponekad razlikuje od one koju ima grind. Grind je uređaj čiji je zadatak da Hash šablonske blokove koje obezbeđuje server bazena, tražeći heševe koji zadovoljavaju cilj težine definisan za deonice, a ne onaj od Bitcoin. Ostatak Mining procesa, koji uključuje stvarnu izgradnju blokova, izbor transakcija ili Proof-of-Work pretragu prema sopstvenoj težini Bitcoin, kao i distribuciju, direktno obavljaju bazeni.
+Uloga rudara se ponekad takođe razlikuje od uloge ‘chopper-a’. Rudar je mašina čiji je zadatak da hešira predložene blokove koje obezbeđuje server [rudarskog bazena](https://planb.academy/resources/glossary/pool-mining) (eng. mining pool), tražeći heševe koji zadovoljavaju cilj težine definisan za [šerove](https://planb.academy/resources/glossary/shares) (eng. shares), a ne za Bitcoin. Ostatak rudarskog procesa, koji uključuje stvarnu izgradnju blokova, izbor transakcija ili Proof-of-Work pretragu prema stvarnog težini rudarenja Bitcoina, kao i distribuciju, direktno obavljaju bazeni.
 
 
 
@@ -336,7 +335,7 @@ Uloga Miner se ponekad razlikuje od one koju ima grind. Grind je uređaj čiji j
 
 
 
-Konačno, postoji važna razlika u smislu ekonomskog podsticaja između Miner i čvora. Pokretanje Bitcoin čvora ne donosi direktnu novčanu korist. S druge strane, učešće u Mining donosi nagrade (subvencije i naknade za transakcije) za svaki pronađeni blok.
+Konačno, postoji važna razlika u smislu ekonomskog podsticaja između rudara i čvora. Pokretanje Bitcoin čvora ne donosi direktnu novčanu korist. S druge strane, učešće u rudarenju donosi nagrade (subvencije i naknade za transakcije) za svaki pronađeni blok.
 
 
 
@@ -351,15 +350,15 @@ U Delu 2, istražićemo detaljnije praktične i lične prednosti instaliranja i 
 
 
 
-Bitcoin protokol nije softver: to je skup prećutnih pravila koja dele korisnici mreže. On definiše uslove validnosti transakcija, mehanizme kreiranja novca, format bloka, uslove Proof-of-Work i mnoge druge specifikacije. Da bi interagovali sa ovim protokolom, korisnici moraju pokrenuti softver koji implementira ova pravila: ovo je poznato kao **implementacija** Bitcoin.
+Bitcoin protokol nije softver: to je skup nepisanih pravila koja dele korisnici mreže. On definiše uslove za validnost transakcija, mehanizme kreiranja novca, format bloka, Proof-of-Work uslove i mnoge druge specifikacije. Da bi mogli da koriste ovaj protokol, korisnici moraju pokretati softver koji sprovodi ova pravila: to je poznato kao **implementacija** Bitcoina.
 
 
 
-Implementacija je stoga softver čvora: program sposoban za interakciju sa drugim mašinama na Bitcoin mreži, preuzimanje, verifikaciju, skladištenje i propagaciju blokova i transakcija, i lokalno sprovođenje pravila konsenzusa i prenosa. Svaka implementacija je konkretna interpretacija protokola, napisana u određenom programskom jeziku, sa svojom arhitekturom, performansama i ergonomijom. Svaka implementacija će takođe imati svoju razvojnu organizaciju, sa sopstvenom podelom odgovornosti.
+Implementacija je stoga softver čvora: program sposoban za interakciju sa drugim mašinama na Bitcoin mreži, preuzimanje, verifikaciju, skladištenje i propagaciju blokova i transakcija, i lokalno sprovođenje konsenzusnih pravila i pravila prosleđivanja. Svaka implementacija je konkretna interpretacija protokola, napisana u određenom programskom jeziku, sa svojom arhitekturom, performansama i ergonomijom. Svaka implementacija će takođe imati svoju razvojnu organizaciju, sa sopstvenom podelom odgovornosti.
 
 
 
-Među ovim implementacijama, jedna daleko dominira: **Bitcoin core**.
+Među ovim implementacijama, jedna daleko dominira: **Bitcoin Core**.
 
 
 
@@ -371,15 +370,15 @@ Među ovim implementacijama, jedna daleko dominira: **Bitcoin core**.
 
 
 
-Bitcoin core je referentni softver za Bitcoin protokol. Izveden je iz originalnog koda koji je napisao Satoshi Nakamoto 2008-2009. godine i predstavlja direktan nastavak tog koda. U početku poznat kao "*Bitcoin*", zatim "*Bitcoin QT*" (zbog dodavanja grafičkog Interface putem Qt biblioteke), preimenovan je u "*Bitcoin core*" 2014. godine kako bi se jasno razlikovao softver od mreže. Od verzije 0.5, distribuira se sa dva komponenta: `Bitcoin-qt` (grafički Interface) i `bitcoind` (komandno-linijski Interface).
+Bitcoin Core je referentni softver za Bitcoin protokol. Izveden je iz originalnog koda koji je napisao Satoshi Nakamoto 2008-2009. godine i predstavlja direktan nastavak tog koda. U početku poznat kao "*Bitcoin*", zatim "*Bitcoin QT*" (zbog dodavanja grafičkog interfejsa putem Qt biblioteke), preimenovan je u "*Bitcoin Core*" 2014. godine kako bi se jasno razlikovao softver od mreže. Od verzije 0.5, distribuira se sa dve komponente: `Bitcoin-qt` (grafički interfejs) i `bitcoind` (komandno-linijski interfejs).
 
 
 
-U teoriji, Bitcoin core ne predstavlja Bitcoin protokol; već je samo jedna implementacija među mnogima. Međutim, odlikuje se masovnim usvajanjem, svojom starošću, robusnošću svog koda i rigoroznošću svog razvojnog procesa. Shodno tome, u praksi, pravila koja primenjuje Bitcoin core su de facto pravila Bitcoin protokola: korisnici, programeri, rudari i usluge ekosistema se gotovo isključivo na njega pozivaju.
+U teoriji, Bitcoin core ne predstavlja Bitcoin protokol; već je samo jedna implementacija među mnogima. Međutim, odlikuje se masovnim usvajanjem, svojom starošću, robusnošću svog koda i rigoroznošću svog razvojnog procesa. Shodno tome, u praksi, pravila koja primenjuje Bitcoin Core su de facto pravila Bitcoin protokola: korisnici, programeri, rudari i razliiti servisi unutar ekosistema se gotovo isključivo na njega pozivaju.
 
 
 
-### Trenutna distribucija implementacija
+### Trenutna raspodela implementacija
 
 
 
@@ -388,9 +387,9 @@ Prema [podacima prikupljenim u avgustu 2025. od strane Luke Dashjr](https://luke
 
 
 
-- Bitcoin core**: 87.3% čvorova
-- Bitcoin Knots**: 12.5
-- Ostale kumulativne implementacije**: 0.2% (btcsuite, Bcoin, BTCD...)
+- **Bitcoin Core**: 87.3% čvorova
+- **Bitcoin Knots**: 12.5
+- **Ostale kumulativne implementacije**: 0.2% (btcsuite, Bcoin, BTCD...)
 
 
 
@@ -398,11 +397,11 @@ Prema [podacima prikupljenim u avgustu 2025. od strane Luke Dashjr](https://luke
 
 
 
-Drugim rečima, oko 9 od 10 javnih čvorova koristi Bitcoin core. Ostatak mreže se oslanja na marginalnije klijente (iako je udeo Knots-a naglo porastao u poslednjim mesecima, posebno nakon debata o ograničenju veličine `OP_RETURN`). Ove alternativne implementacije često održava jedna osoba ili mali tim.
+Drugim rečima, oko 9 od 10 javnih čvorova koristi Bitcoin Core. Ostatak mreže se oslanja na marginalnije klijente (iako je udeo Knots-a naglo porastao u poslednjim mesecima, posebno nakon debata o ograničenju veličine `OP_RETURN`). Ove alternativne implementacije često održava jedna osoba ili mali tim.
 
 
 
-**Napomena:** Ove brojke su i dalje procene, jer se zasnivaju prvenstveno na *čvorištima koja slušaju*, tj. čvorištima koja prihvataju dolazne veze (sa otvorenim portom 8333). *Čvorišta koja ne slušaju* su mnogo složenija za brojanje, jer je nemoguće direktno se povezati sa njima: morate čekati da inicijativa dođe od njih, u obliku odlazne veze. Sajt Luke Dashjr tvrdi da pokušava da broji i ova *čvorišta koja ne slušaju*, ali ostaje nemoguće dobiti potpuno tačne podatke o njima, a ažuriranje ovih statistika neizbežno zaostaje za stvarnošću.
+**Napomena:** Ove brojke su i dalje procene, jer se zasnivaju prvenstveno na *čvorovima koja slušaju*, tj. čvorovima koja prihvataju dolazne veze (sa otvorenim portom 8333). *Čvorovi koja ne slušaju* su mnogo složeniji za brojanje, jer je nemoguće direktno se povezati sa njima: morate čekati da inicijativa dođe od njih, u obliku odlazne veze. Sajt Luke Dashjr tvrdi da pokušava da broji i ove *čvorove koja ne slušaju*, ali ostaje nemoguće dobiti potpuno tačne podatke o njima, a ažuriranje ovih statistika neizbežno zaostaje za stvarnošću.
 
 
 
