@@ -894,7 +894,7 @@ Lično, preporučujem da izaberete Core, prvenstveno da biste brže iskoristili 
 
 
 
-_Node-in-a-box_ kombinuje Bitcoin core (ili Knots) sa unapred konfiguriranim operativnim sistemom, web interfejs, i App Store-om za samohostujuće usluge (Lightning, explorers, Electrum server, Mempool, BTCPay Server, Nextcloud, itd.). Samo jednim klikom možete instalirati, ažurirati i međusobno povezati ove različite module.
+_Node-in-a-box_ kombinuje Bitcoin Core (ili Knots) sa unapred konfiguriranim operativnim sistemom, web interfejsom, i App Store-om za samohostujuće usluge (Lightning, explorers, Electrum server, Mempool, BTCPay Server, Nextcloud, itd.). Samo jednim klikom možete instalirati, ažurirati i međusobno povezati ove različite module.
 
 
 
@@ -902,7 +902,7 @@ To je mnogo jednostavnije rešenje za pokretanje i upravljanje brojnim pomoćnim
 
 
 
-Dakle, čvor-u-kutiji je izuzetno lak za korišćenje sve dok sve radi kako treba, ali u slučaju greške, morate biti spremni da sprovedete dugotrajne pretrage, čekate pomoć i "zaprljate ruke".
+Dakle, node-in-a-box je izuzetno lak za korišćenje sve dok sve radi kako treba, ali u slučaju greške, morate biti spremni da sprovedete dugotrajne pretrage, čekate pomoć i "zaprljate ruke".
 
 
 
@@ -911,12 +911,12 @@ Većina ovih rešenja dostupna je u dva formata:
 
 
 
-- Unapred sastavljena mašina: kompletan računar sa već instaliranim operativnim sistemom. Ove mašine na principu "plati kako koristiš" jednostavno treba priključiti na struju i povezati na Internet da bi bile operativne. Ako vaš budžet to dozvoljava, ova opcija ima prednost što je vrlo jednostavna za postavljanje, često nudi prioritetnu podršku i doprinosi finansiranju razvoja, s obzirom da je poslovni model ovih kompanija uglavnom zasnovan na prodaji hardvera.
+- Unapred sastavljena mašina: kompletan računar sa već instaliranim operativnim sistemom. Ove mašine na principu "plati kako koristiš" jednostavno treba priključiti na struju i povezati na internet da bi bile operativne. Ako vaš budžet to dozvoljava, ova opcija ima prednost što je vrlo jednostavna za postavljanje, često nudi prioritetnu podršku i doprinosi finansiranju razvoja, s obzirom da je poslovni model ovih kompanija uglavnom zasnovan na prodaji hardvera.
 - "Uradi sam": instaliraj distribucioni OS na svoju mašinu (stari PC, NUC, Raspberry Pi, kućni server...). Ovo je najekonomičnije rešenje, jer možete reciklirati staru mašinu ili odabrati hardver koji tačno odgovara vašim potrebama i budžetu. Takođe je najfleksibilnija opcija i najzadovoljavajuća za konfigurisanje. Ovaj pristup ćemo istražiti u praktičnom delu kursa.
 
 
 
-Evo je pregleda glavnih rešenja node-in-a-box dostupnih (2025. godine):
+Evo pregled glavnih dostupnih node-in-a-box rešenja (2025. godine):
 
 
 
@@ -924,7 +924,7 @@ Evo je pregleda glavnih rešenja node-in-a-box dostupnih (2025. godine):
 
 
 
-[Danas je Umbrel lider u rešenjima za node-in-a-box (https://umbrel.com/). Njegov uspeh je u velikoj meri zahvaljujući jednostavnosti instalacije (kada je lansiran na jednostavnom Raspberry Pi), njegovom elegantnom i intuitivnom Interface, i ekosistemu aplikacija koji je brzo rastao i sada je izuzetno obiman.
+[Danas je Umbrel lider u rešenjima za node-in-a-box (https://umbrel.com/). Njegov uspeh je u velikoj meri zahvaljujući jednostavnosti instalacije (kada je pokrenut na običnom Raspberry Pi uređaju), njegovom elegantnom i intuitivnom interfejsu, i ekosistemu aplikacija koji je brzo rastao i sada je izuzetno obiman.
 
 
 
@@ -932,11 +932,11 @@ Evo je pregleda glavnih rešenja node-in-a-box dostupnih (2025. godine):
 
 
 
-Pokrenut 2020. godine kao jednostavan Bitcoin čvor praćen nekolicinom pomoćnih aplikacija, Umbrel je postepeno evoluirao u potpuno opremljen, moderan kućni oblak.
+Pokrenut 2020. godine kao jednostavan Bitcoin čvor praćen nekolicinom pomoćnih aplikacija, Umbrel je postepeno evoluirao u potpuno opremljen, moderan kućni oblak (eng. cloud).
 
 
 
-Neću ulaziti u više detalja ovde o tome kako funkcioniše i njegovim specifičnim karakteristikama, jer ćemo ih detaljnije ispitati u prvom poglavlju sledećeg dela. Zaista, za potrebe ovog BTC 202 kursa, odlučio sam da koristim UmbrelOS, za koji verujem da je trenutno najbolje rešenje za čvor-u-kutiji za početnike i korisnike srednjeg nivoa.
+Neću ulaziti u više detalja ovde o tome kako funkcioniše i njegovim specifičnim karakteristikama, jer ćemo ih detaljnije ispitati u prvom poglavlju sledećeg dela. Zaista, za potrebe ovog BTC 202 kursa, odlučio sam da koristim UmbrelOS, za koji verujem da je trenutno najbolje rešenje za node-in-a-box za početnike i korisnike srednjeg nivoa.
 
 
 
@@ -950,7 +950,7 @@ https://planb.academy/tutorials/node/bitcoin/umbrel-8b0e3b5b-d3cf-4a1e-8bb8-1ad2
 
 
 
-Na strani Bitcoin, StartOS vam omogućava instalaciju Full node, Lightning čvora, BTCPay Servera, Electrs-a i mnogih drugih servisa. Međutim, privlačnost Start9 seže dalje od ovoga: nudi mogućnost otkrivanja, konfiguracije i izlaganja različitog softvera (oblak za fajlove, poruke, nadgledanje) na jedinstven način, uz potpunu kontrolu. Projekat je stoga namenjen korisnicima koji žele robusnu platformu za samostalno hostovanje, a ne samo jednostavan Bitcoin čvor. Verovatno je najkompletniji ekosistem posle Umbrel-a.
+Na strani Bitcoina, StartOS vam omogućava instalaciju full node-a, Lightning čvora, BTCPay Servera, Electrs-a i mnogih drugih servisa. Međutim, privlačnost Start9 seže dalje od ovoga: nudi mogućnost otkrivanja, konfiguracije i izlaganja različitog softvera (oblak za fajlove, poruke, nadgledanje) na jedinstven način, uz potpunu kontrolu. Projekat je stoga namenjen korisnicima koji žele robusnu platformu za samostalno hostovanje, a ne samo jednostavan Bitcoin čvor. Verovatno je najkompletniji ekosistem posle Umbrel-a.
 
 
 
@@ -958,11 +958,11 @@ Na strani Bitcoin, StartOS vam omogućava instalaciju Full node, Lightning čvor
 
 
 
-Glavna razlika sa Umbrelom leži u Interface. Umbrel se oslanja na visoko uglađen UX, dok Start9 nudi grublji, funkcionalniji Interface. Ekosistem aplikacija Start9 je manje bogat od Umbrelovog, ali to nadoknađuje sa nekoliko tehničkih prednosti: pristup naprednim postavkama aplikacija je pojednostavljen, dok Umbrel brzo postaje restriktivan ako željena opcija nije obezbeđena od strane Interface. Start9 takođe briljira u upravljanju rezervnim kopijama: osim Umbrelovog efikasnog rešenja za LND, ne postoji jedinstveni mehanizam, za razliku od Start9. Štaviše, nudi pristupačnije alate za nadgledanje i šifrovanu daljinsku vezu (`https`), dok je lokalni pristup Umbrelu putem `http`.
+Glavna razlika sa Umbrelom leži u interfejsu. Umbrel se oslanja na visoko uglađen UX, dok Start9 nudi grublji, funkcionalniji interfejs. Ekosistem aplikacija Start9 je manje bogat od Umbrelovog, ali to nadoknađuje sa nekoliko tehničkih prednosti: pristup naprednim postavkama aplikacija je pojednostavljen, dok Umbrel brzo postaje restriktivan ako željena opcija nije obezbeđena od strane interfejsa. Start9 je takođe veoma dobar u upravljanju bekapovima: osim Umbrelovog dobrog rešenja za LND, ne postoji objedinjeni sistem kao što to ima Start9. Štaviše, nudi pristupačnije alate za nadgledanje i šifrovanu daljinsku vezu (`https`), dok je lokalni pristup Umbrelu putem `http`.
 
 
 
-Ukratko, ako vam jednostavno trebaju osnovne aplikacije za Bitcoin, bez posebnog interesa za Umbrel-ov vrlo bogat ekosistem, i korisnik Interface nije prioritet, onda je Start9 bolja opcija. U suprotnom, Umbrel je bolji izbor.
+Ukratko, ako vam jednostavno trebaju osnovne aplikacije za Bitcoin, bez posebnog interesa za Umbrel-ov vrlo bogat ekosistem, i korisnički interfejs nije prioritet, onda je Start9 bolja opcija. U suprotnom, Umbrel je bolji izbor.
 
 
 
@@ -972,7 +972,7 @@ https://planb.academy/tutorials/node/bitcoin/start9-8c8b6827-8423-4929-bcba-8905
 
 
 
-[MyNode je distribucija fokusirana isključivo na Bitcoin i Lightning](https://mynodebtc.com/), koja nudi web Interface, tržište aplikacija i nadogradnje jednim klikom. Možete kupiti gotov hardver (*Model Two* dostupan za $549) ili instalirati MyNode besplatno na sopstvenoj mašini. Projekat takođe nudi *Premium* verziju softvera ($94), koja uključuje prioritetnu podršku i napredne funkcije.
+[MyNode je distribucija fokusirana isključivo na Bitcoin i Lightning](https://mynodebtc.com/), koja nudi web interfejs, tržište aplikacija i nadogradnje jednim klikom. Možete kupiti gotov hardver (*Model Two* dostupan za $549) ili instalirati MyNode besplatno na sopstvenoj mašini. Projekat takođe nudi *Premium* verziju softvera ($94), koja uključuje prioritetnu podršku i napredne funkcije.
 
 
 
@@ -980,7 +980,7 @@ https://planb.academy/tutorials/node/bitcoin/start9-8c8b6827-8423-4929-bcba-8905
 
 
 
-U praksi, MyNode okuplja sve osnovne građevinske blokove potrebne za rad sa Full node, kao i aplikacije neophodne korisnicima Bitcoin. Stoga je to prikladno rešenje ako vam nisu potrebne aplikacije izvan ekosistema Bitcoin, kao što su aplikacije koje se samostalno hostuju i koje se nalaze u Start9 i Umbrel sistemima.
+U praksi, MyNode okuplja sve osnovne komponente potrebne za rad full node-a, kao i aplikacije neophodne Bitcoin korisnicima. Stoga je to prikladno rešenje ako vam nisu potrebne aplikacije izvan Bitcoin ekosistema, kao što su aplikacije koje se samostalno hostuju i koje se nalaze u Start9 i Umbrel sistemima.
 
 
 
@@ -990,7 +990,7 @@ https://planb.academy/tutorials/node/bitcoin/mynode-a481fef3-2fd3-4df3-91c0-112c
 
 
 
-[RaspiBlitz je 100% open source projekat](https://docs.raspiblitz.org/) (MIT licenca) za montiranje Bitcoin čvora i Lightning čvora na Raspberry Pi. Jednostavno preuzmite sliku, pokrenite je, a zatim pratite čarobnjaka da biste imali funkcionalan čvor-u-kutiji na vašem Raspberry Pi-ju. Unapred sastavljeni kompleti su takođe dostupni od trećih strana, obično između $300 i $400, u zavisnosti od hardvera. RaspiBlitz takođe nudi niz dodatnih, lako instalirajućih aplikacija.
+[RaspiBlitz je 100% open source projekat](https://docs.raspiblitz.org/) (MIT licenca) za montiranje Bitcoin čvora i Lightning čvora na Raspberry Pi. Jednostavno preuzmite sliku, pokrenite je, a zatim pratite čarobnjaka da biste imali funkcionalan node-in-a-box na vašem Raspberry Pi-ju. Unapred sastavljeni kompleti su takođe dostupni od trećih strana, obično između $300 i $400, u zavisnosti od hardvera. RaspiBlitz takođe nudi niz dodatnih, lako instalirajućih aplikacija.
 
 
 
@@ -998,7 +998,7 @@ https://planb.academy/tutorials/node/bitcoin/mynode-a481fef3-2fd3-4df3-91c0-112c
 
 
 
-Ako posedujete Raspberry Pi, ovo je odlična opcija, jer sve kompletniji sistemi poput Umbrel postaju sve zahtevniji za ovu vrstu mini-PC-ja.
+Ako posedujete Raspberry Pi, ovo je odlična opcija, jer sve kompletniji sistemi poput Umbrel-a postaju sve zahtevniji za ovu vrstu mini-PC-ja.
 
 
 
@@ -1008,11 +1008,11 @@ https://planb.academy/tutorials/node/bitcoin/raspiblitz-d8cdba2e-a682-46cf-9fdc-
 
 
 
-[RoninDojo je čvor-u-kutiji fokusiran na privatnost](https://wiki.ronindojo.io/en/home) koji automatizuje implementaciju Samurai Dojo i Whirlpool, sa posvećenim Interface i dodacima posebno dizajniranim za Samurai ekosistem.
+[RoninDojo je node-in-a-box fokusiran na privatnost](https://wiki.ronindojo.io/en/home) koji automatizuje implementaciju Samurai Dojo i Whirlpool, sa posvećenim grafičkim interfejsom i dodacima posebno dizajniranim za Samurai ekosistem.
 
 
 
-Princip je jednostavan: ako koristite Ashigaru Wallet (naslednik Fork Samurai Wallet, nakon hapšenja njegovih programera) ili ako želite da iskoristite napredne alate za privatnost, RoninDojo je za vas.
+Princip je jednostavan: ako koristite Ashigaru Wallet (naslednik forkovane verzije Samurai Wallet-a, nakon hapšenja njegovih programera) ili ako želite da iskoristite napredne alate za privatnost, RoninDojo je za vas.
 
 
 
