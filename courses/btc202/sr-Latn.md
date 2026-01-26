@@ -6,7 +6,7 @@ objectives:
 
   - Razumevanje uloge i svrhe Bitcoin čvora.
   - Identifikovanje različitih dostupnih hardverskih i softverskih rešenja.
-  - Instaliranje i konfiguracija full node-a (Bitcoin core).
+  - Instaliranje i konfiguracija full node-a (Bitcoin Core-a).
   - Korišćenje Umbrel grafičkog interfejsa i dodavanje korisnih aplikacija.
   - Povezivanje ličnog novčanika na full node.
   - Istraživanje naprednih podešavanja i najboljih bezbednosnih praksi.
@@ -405,18 +405,18 @@ Drugim rečima, oko 9 od 10 javnih čvorova koristi Bitcoin Core. Ostatak mreže
 
 
 
-### Interna operacija Bitcoin core
+### Unutrašnje funkcionisanje Bitcoin Core-a
 
 
 
-Bitcoin Core je softver napisan u C++. To je takođe open-source projekat koji održava zajednica programera — volontera ili onih koje finansiraju različiti subjekti (često kompanije iz ekosistema koje imaju interes da se razvoj Core-a odvija povoljno). [Kod je hostovan na GitHubu](https://github.com/bitcoin/bitcoin), a razvoj prati rigorozan model:
+Bitcoin Core je softver napisan u C++. To je takođe open-source projekat koji održava zajednica programera — volontera ili onih koje finansiraju različiti subjekti (često kompanije iz ekosistema koje imaju interes da se razvoj Core-a odvija povoljno). [Kôd je hostovan na GitHubu](https://github.com/bitcoin/bitcoin), a razvoj prati rigorozan model:
 
 
 
 
-- Doprinosioci** podnose predloge u obliku _pull request_ (PR). U principu, svako može predložiti izmenu, ali ona mora biti testirana, dokumentovana i proći kroz proces recenzije od strane kolega.
-- **Održavaoci** imaju pravo da odobravaju i spajaju PR-ove. Oni su ti koji garantuju koherentnost i stabilnost projekta. U julu 2025. godine, njih petoro su: Hennadii Stepanov, Michael Ford, Andrew Chow, Gloria Zhao i Ryan Ofsky.
-- Nije bilo **glavnog održavaoca** od februara 2023. Ovu ulogu je u početku imao Satoshi Nakamoto prilikom lansiranja Bitcoin, zatim Gavin Andresen nakon Nakamotovog odlaska početkom 2011, i na kraju Wladimir J. Van Der Laan od 2014. do 2023.
+- **Doprinosioci** podnose predloge u obliku _pull request_ (PR). U principu, svako može da predloži izmenu, ali ona mora biti testirana, dokumentovana i proći kroz proces recenzije (eng. review) od strane kolega.
+- **Održavaoci** imaju pravo da odobravaju i spajaju PR-ove. Oni su ti koji garantuju koherentnost i stabilnost projekta. U julu 2025. godine, ima ih ukupno pet i oni su: Hennadii Stepanov, Michael Ford, Andrew Chow, Gloria Zhao i Ryan Ofsky.
+- Nije bilo **glavnog održavaoca** od februara 2023. Ovu ulogu je u početku imao Satoshi Nakamoto prilikom lansiranja Bitcoina, zatim Gavin Andresen nakon Nakamotovog odlaska početkom 2011, i na kraju Wladimir J. Van Der Laan od 2014. do 2023.
 
 
 
@@ -424,15 +424,15 @@ Bitcoin Core je softver napisan u C++. To je takođe open-source projekat koji o
 
 
 
-Razvoj Bitcoin core prati meritokratsku logiku: novi saradnici se podstiču da pregledaju i testiraju kod pre nego što sami predlože bilo kakve izmene. Odluke se donose na osnovu tehničkog konsenzusa, a veće izmene (posebno u oblastima konsenzusa) zahtevaju diskusije uzvodno na javnim kanalima, kao što su mejling liste ili klubovi za pregled PR-a.
+Razvoj Bitcoin Core-a prati meritokratsku logiku: novi saradnici se podstiču da pregledaju i testiraju kôd pre nego što sami predlože bilo kakve izmene. Odluke se donose na osnovu tehničkog konsenzusa, a veće izmene (posebno u oblastima konsenzusa) zahtevaju prethodne rasprave na javnim kanalima, kao što su mejling liste ili PR review klubovi.
 
 
 
-### Druge implementacije Bitcoin
+### Druge implementacije Bitcoina
 
 
 
-Iako marginalni u smislu usvajanja, postoje i drugi klijenti. Glavni je Bitcoin Knots, koji je razvio Luke Dashjr, Fork od Bitcoin core koji uključuje dodatne opcije i konzervativniji pristup razvoju. Ovo uključuje strožija ograničenja na formate transakcija.
+Iako marginalni u smislu usvajanja, postoje i drugi klijenti. Glavni je Bitcoin Knots, koji je razvio Luke Dashjr, koji je [fork](https://planb.academy/en/resources/glossary/fork-git) od Bitcoin Core-a koji uključuje dodatne opcije i konzervativniji pristup razvoju. Ovo uključuje strožija ograničenja na formate transakcija.
 
 
 
@@ -445,13 +445,13 @@ Možemo takođe pomenuti:
 
 
 
-- Libbitcoin**: modularna C++ biblioteka koju je razvio Amir Taaki i održava Eric Voskuil;
-- Bcoin**: JavaScript implementacija, više se ne održava;
+- **Libbitcoin**: modularna C++ biblioteka koju je razvio Amir Taaki i održava Eric Voskuil;
+- **Bcoin**: JavaScript implementacija, više se ne održava;
 - **BTCD/btcsuite** : implementacija u Go-u.
 
 
 
-Ovi projekti doprinose raznolikosti ekosistema, ali njihovo usvajanje ostaje veoma ograničeno, što otežava da Bitcoin core evoluira nezavisno.
+Ovi projekti doprinose raznolikosti ekosistema, ali se koriste u vrlo maloj meri, zbog čega Bitcoin Core u praksi ima dominantnu ulogu, što otežava da se razvija nezavisno od ostatka mreže.
 
 
 
@@ -459,15 +459,15 @@ Ovi projekti doprinose raznolikosti ekosistema, ali njihovo usvajanje ostaje veo
 
 
 
-Možda mislite da Bitcoin core developeri imaju direktnu kontrolu nad Bitcoin, ali to nije slučaj. Oni ne mogu nametnuti promenu u protokolu. Njihova uloga je da predlože kod. Na svakom korisniku je, putem njihovog čvora, da odluči da li će koristiti taj kod ili ne.
+Možda mislite da Bitcoin Core developeri imaju direktnu kontrolu nad Bitcoinom, ali to nije slučaj. Oni ne mogu nametnuti promenu u protokolu. Njihova uloga je da predlože kôd. Na svakom korisniku je, putem njihovog čvora, da odluči da li će koristiti taj kôd ili ne.
 
 
 
-To znači da ako promena u Bitcoin core ne postigne konsenzus, čvorovi je mogu ignorisati, bilo tako što neće ažurirati Bitcoin core ili jednostavno promenom implementacije. Suprotno tome, ako je funkcija koju korisnici žele blokirana u procesu razvoja Core-a, uvek je moguće preći na drugu implementaciju ili Fork projekat.
+To znači da ako promena u Bitcoin Core-u ne postigne konsenzus, čvorovi je mogu ignorisati, bilo tako što neće ažurirati Bitcoin Core ili jednostavno promenom implementacije. Suprotno tome, ako je funkcija koju korisnici žele blokirana u procesu razvoja Core-a, uvek je moguće preći na drugu implementaciju ili forkovati projekat.
 
 
 
-Kao što ćemo kasnije diskutovati u ovom kursu, čvorovi, prema njihovoj ekonomskoj težini (tj. trgovci), su ti koji daju korisnost verziji protokola (i stoga odgovarajućoj valuti), prihvatajući jedinice koje poštuju njegova pravila. Prava moć upravljanja nad Bitcoin, stoga, leži kod ovih trgovaca, a ne kod programera.
+Kao što ćemo kasnije diskutovati u ovom kursu, čvorovi, prema njihovoj ekonomskoj težini (tj. trgovci), su ti koji daju vrednost i upotrebljivost određenoj verziji protokola (i stoga odgovarajućoj valuti), prihvatajući jedinice koje poštuju njegova pravila. Prava moć upravljanja nad Bitcoinom, stoga, leži kod ovih trgovaca, a ne kod programera.
 
 
 
@@ -487,7 +487,7 @@ Kao što ćemo kasnije diskutovati u ovom kursu, čvorovi, prema njihovoj ekonom
 
 
 
-Postoji široko rasprostranjeno verovanje da je upravljanje Bitcoin čvorom isključivo altruistički čin, bez lične koristi, samo u službi decentralizacije mreže. Neki to smatraju oblikom dužnosti za bitkoinere da podrže sistem i pokažu svoju zahvalnost Bitcoin.
+Postoji široko rasprostranjeno verovanje da je upravljanje Bitcoin čvorom isključivo altruistički čin, bez lične koristi, samo u službi decentralizacije mreže. Neki smatraju da je za bitkoinere svojevrsna dužnost da podržavaju sistem i pokažu zahvalnost Bitcoinu.
 
 
 
@@ -495,15 +495,15 @@ Kao što smo istakli u prethodnim poglavljima, pokretanje čvora ne donosi direk
 
 
 
-### Više poverljivo širenje transakcija
+### Poverljivija distribucija transakcija
 
 
 
-Kada se softver Wallet poveže sa spoljnim čvorom, prenosi svoje transakcije na infrastrukturu koja nije pod vašom kontrolom. Ovo generiše očigledne rizike od nadzora: operater udaljenog čvora može analizirati detalje vaših transakcija, uključujući iznose i učestalost, i, ukrštanjem određenih metapodataka (kao što su IP adrese, vremena i lokacije), potencijalno ih povezati sa vašim identitetom.
+Kada se softver za upravljanje novčanikom poveže sa spoljnim čvorom, on prenosi svoje transakcije na infrastrukturu koja nije pod vašom kontrolom. Ovo generiše očigledne rizike od nadzora: operater udaljenog čvora može analizirati detalje vaših transakcija, uključujući iznose i učestalost, i, ukrštanjem određenih metapodataka (kao što su IP adrese, vremena i lokacije), potencijalno ih povezati sa vašim identitetom.
 
 
 
-Zaista, kao što je istaknuto u prethodnom poglavlju, novčanici ne komuniciraju sa Bitcoin mrežom magijom; moraju se povezati sa čvorom kako bi proverili stanja ili emitovali transakcije. Ako nikada niste postavili svoj čvor, to znači da vaš Wallet zavisi od infrastrukture treće strane (obično kompanije koja stoji iza softvera). Ova treća strana, posebno ako je kompanija, može posmatrati, iskoristiti ili čak otkriti ove podatke: bilo iz komercijalnih razloga, pod zakonskim pritiskom, ili kao rezultat piraterije.
+Zaista, kao što je istaknuto u prethodnom poglavlju, novčanici ne komuniciraju sa Bitcoin mrežom magijom; moraju se povezati sa čvorom kako bi proverili stanja ili emitovali transakcije. Ako nikada niste postavili svoj čvor, to znači da vaš novčanik zavisi od infrastrukture treće strane (obično kompanije koja stoji iza softvera). Ova treća strana, posebno ako je kompanija, može posmatrati, iskoristiti ili čak otkriti ove podatke: bilo iz komercijalnih razloga, pod zakonskim pritiskom, ili kao rezultat piraterije.
 
 
 
@@ -511,7 +511,7 @@ Zaista, kao što je istaknuto u prethodnom poglavlju, novčanici ne komuniciraju
 
 
 
-Korišćenjem sopstvenog čvora, direktno emitujete svoje transakcije na mrežu, zaobilazeći posrednike. Pod uslovom da pravilno obezbedite svoj čvor (o čemu ćemo kasnije razgovarati) ili se pridržavate određenih standarda, nijedna informacija nije izložena: ni vaš IP Address niti detalji vaših transakcija ne prolaze kroz entitet koji ne kontrolišete. Ovo je osnovni preduslov za očuvanje vaše poverljivosti na Bitcoin.
+Korišćenjem sopstvenog čvora, direktno emitujete svoje transakcije na mrežu, zaobilazeći posrednike. Pod uslovom da pravilno obezbedite svoj čvor (o čemu ćemo kasnije razgovarati) ili se pridržavate određenih standarda, nijedna informacija nije izložena: ni vaša IP adresa niti detalji vaših transakcija ne prolaze kroz entitet koji ne kontrolišete. Ovo je osnovni preduslov za očuvanje vaše poverljivosti na Bitcoinu.
 
 
 
@@ -521,11 +521,11 @@ https://planb.academy/courses/65c138b0-4161-4958-bbe3-c12916bc959c
 
 
 
-Iz istih razloga navedenih gore, Wallet softver zasnovan na čvoru treće strane je podložan riziku cenzure: operater udaljenog čvora može odbiti da prosledi određene transakcije iz raznih razloga. Može ih smatrati sumnjivim ili suprotnim svojoj politici. Transakcija takođe može biti blokirana ako nije u skladu sa pravilima prosleđivanja čvora. Na kraju, operater može specifično ciljati vaš IP Address kako bi blokirao emitovanje vaših transakcija.
+Iz istih razloga navedenih gore, softver za upravljanje novčanikom zasnovan na čvoru treće strane je podložan riziku cenzure: operater udaljenog čvora može odbiti da prosledi određene transakcije iz raznih razloga. Može ih smatrati sumnjivim ili suprotnim svojoj politici. Transakcija takođe može biti blokirana ako nije u skladu sa pravilima prosleđivanja čvora. Na kraju, operater može specifično ciljati vašu IP adresu kako bi blokirao emitovanje vaših transakcija.
 
 
 
-Suprotno tome, korišćenjem sopstvenog čvora, obezbeđujete propagaciju svojih transakcija unutar peer-to-peer mreže. To znači da zadržavate potpunu kontrolu nad distribucijom svojih transakcija, bez zavisnosti od posrednika. Sve dok transakcija ispunjava konsenzus i pravila prenosa čvorova povezanih sa vašim, biće emitovana na mreži, a zatim, pod uslovom da su uključene dovoljne naknade, integrisana u blok od strane Miner. Imati sopstveni čvor garantuje neutralnu, bezdozvolnu potvrdu vaših transakcija.
+Suprotno tome, korišćenjem sopstvenog čvora, obezbeđujete propagaciju svojih transakcija unutar peer-to-peer mreže. To znači da zadržavate potpunu kontrolu nad distribucijom svojih transakcija, bez zavisnosti od posrednika. Sve dok transakcija poštuje konsenzus i pravila prosleđivanja čvorova povezanih sa vašim, biće emitovana na mreži, a zatim, pod uslovom da su uključene dovoljne naknade, biće uključena u blok od strane rudara. Posedovanje sopstvenog čvora omogućava neutralno potvrđivanje vaših transakcija bez potrebe za dozvolom.
 
 
 
@@ -533,7 +533,7 @@ Suprotno tome, korišćenjem sopstvenog čvora, obezbeđujete propagaciju svojih
 
 
 
-Bez ličnog čvora, ostajete zavisni od treće strane za pristup informacijama, kao što su vaš Address saldo, status potvrde transakcije i validnost bloka. Ovo podrazumeva implicitno poverenje u tačnost i integritet eksternog čvora.
+Bez ličnog čvora, ostajete zavisni od treće strane za pristup informacijama, kao što su vaš saldo na adresi, status potvrde transakcije i validnost bloka. Ovo podrazumeva implicitno poverenje u tačnost i integritet eksternog čvora.
 
 
 
@@ -541,29 +541,28 @@ Bez ličnog čvora, ostajete zavisni od treće strane za pristup informacijama, 
 
 
 
-Pokretanje Full node znači da možete sami proveriti sva pravila protokola, za svaku transakciju i svaki blok. Kao rezultat, saldo prikazan na vašem Wallet nije podatak primljen sa udaljenog servera, već rezultat izračunat lokalno iz kompletne kopije Blockchain, validirane blok po blok. Ovaj pristup daje puno značenje maksimi bitkoinera:
+Pokretanje full node-a znači da možete sami proveriti sva pravila protokola, za svaku transakciju i svaki blok. Kao rezultat, saldo prikazan na vašem novčaniku nije podatak primljen sa udaljenog servera, već rezultat koji se lokalno izračunava iz potpune kopije blokčejna, validirane blok po blok. Ovaj pristup daje puno značenje maksimi bitkoinera:
 
 
 
 > Ne veruj, proveri.
 
-### Bolja distribucija sigurnosti sistema
+### Bolja raspodela sigurnosti sistema
 
 
 
-Svaki čvor koji se pridruži mreži pojačava redundanciju i otpornost Bitcoin. Olakšava širenje informacija i omogućava novim vršnjacima da se međusobno povežu. Bez čvorova, sistem bi jednostavno bio neoperativan.
+Svaki čvor koji se pridruži mreži pojačava redundanciju i otpornost Bitcoina. Olakšava širenje informacija i omogućava novim čvorovima da se međusobno povežu. Bez čvorova, sistem bi jednostavno bio neoperativan.
 
 
 
-Kao što smo videli, bezbednost Bitcoin nije zasnovana na decentralizaciji, Mining, ili kriptografiji: kao i kod svakog sistema, oslanja se na pojedince. Tačnije, zavisi od sposobnosti operatera čvorova da se odupru prinudi.
+Kao što smo videli, bezbednost Bitcoina nije zasnovana na decentralizaciji, rudarenju, ili kriptografiji: kao i kod svakog sistema, oslanja se na pojedince. Tačnije, zavisi od sposobnosti operatera čvorova da se odupru prinudi.
 
 
 
-Ono što razlikuje decentralizovane sisteme poput Bitcoin je raspodela rizika među svim učesnicima u njihovom radu. Pokretanje sopstvenog Bitcoin čvora znači prihvatanje dela ovog rizika obezbeđivanjem sigurnosti vaše instance; na taj način, takođe olakšavate teret rizika za druge operatere čvorova.
+Ono što razlikuje decentralizovane sisteme poput Bitcoina je raspodela rizika među svim učesnicima u njihovom radu. Pokretanje sopstvenog Bitcoin čvora znači da preuzimate deo ovog rizika time što obezbeđujete bezbednost svoje instance; istovremeno, na taj način olakšavate teret rizika za ostale operatere čvorova.
 
 
-
-Dakle, to nije direktna lična korist: pokretanje čvora čini vas delimično odgovornim za bezbednost mreže. Iznad svega, to je kolektivna korist, jer vaše učešće pomaže u širenju rizika. Zauzvrat, povećavate sopstvenu sposobnost pouzdanog korišćenja Bitcoin.
+Dakle, to nije direktna lična korist: pokretanje čvora čini vas delimično odgovornim za bezbednost mreže. Iznad svega, to je kolektivna korist, jer vaše učešće pomaže u raspodeli rizika. Zauzvrat, povećavate sopstvenu sposobnost pouzdanog korišćenja Bitcoina.
 
 
 
@@ -571,7 +570,7 @@ Dakle, to nije direktna lična korist: pokretanje čvora čini vas delimično od
 
 
 
-Instalacija Full node nije trivijalan zadatak. Uključuje instalaciju softvera, razumevanje osnovnog rada, praćenje sinhronizacije, pregledanje logova u slučaju problema, pa čak i korišćenje terminala. Ovo će vas nužno navesti da produbite svoje razumevanje protokola. Ovo je indirektna, ali ne i beznačajna prednost.
+Instalacija full node-a nije trivijalan zadatak. Uključuje instalaciju softvera, razumevanje osnovnog rada, praćenje sinhronizacije, pregledanje logova u slučaju problema, pa čak i korišćenje terminala. Ovo će vas nužno navesti da produbite svoje razumevanje protokola. Ovo je indirektna, ali ne i beznačajna prednost.
 
 
 
@@ -589,7 +588,7 @@ Važan aspekt, koji se često pogrešno shvata, jeste da upravljanje čvorom omo
 
 
 
-- Pravila konsenzusa**:
+- **Pravila konsenzusa**:
 
 
 
@@ -597,45 +596,45 @@ Ovo su osnovna pravila Bitcoin protokola, koja osiguravaju integritet sistema i 
 
 
 
-Promena ovih pravila je ekvivalentna promeni protokola, a samim tim i valute (Hard Fork). Međutim, čak i bez pokušaja da ih modifikujemo, sama činjenica striktne primene postojećih pravila daje određenu moć: ako blok krši pravila, čvor ga odmah odbacuje.
+Promena ovih pravila je ekvivalentna promeni protokola, a samim tim i valute ([Hard Fork](https://planb.academy/en/resources/glossary/hard-fork)). Međutim, čak i bez pokušaja da ih modifikujemo, sama činjenica striktne primene postojećih pravila daje određenu moć: ako blok krši pravila, čvor ga odmah odbacuje.
 
 
 
 
 
-- Pravila štafete**:
+- **Pravila prosleđivanja (eng. relay rules)**:
 
 
 
-Ovo su pravila specifična za svaki Bitcoin čvor, koja se dodaju konsenzus pravilima kako bi se definisala struktura nepotvrđenih transakcija prihvaćenih u Mempool i prosleđenih vršnjacima. Svaki čvor konfiguriše i primenjuje ova pravila lokalno, što objašnjava zašto se mogu razlikovati od jednog čvora do drugog. Ona se primenjuju samo na nepotvrđene transakcije: transakcija koju čvor smatra "nestandardnom" biće prihvaćena samo ako se već pojavljuje u važećem bloku. Promena ovih pravila ne isključuje čvor iz Bitcoin sistema.
+To su pravila koja važe za svaki Bitcoin čvor i koja se nadovezuju na konsenzus pravila, kako bi definisala strukturu nepotvrđenih transakcija prihvaćenih u Mempool-u i prosleđivanih drugim čvorovima. Svaki čvor konfiguriše i primenjuje ova pravila lokalno, što objašnjava zašto se mogu razlikovati od jednog čvora do drugog. Ona se primenjuju samo na nepotvrđene transakcije: transakcija koju čvor smatra "nestandardnom" biće prihvaćena samo ako se već pojavljuje u važećem bloku. Promena ovih pravila ne isključuje čvor iz Bitcoin sistema.
 
 
 
-Na primer, transakcija bez naknada je, prema pravilima konsenzusa, potpuno validna, ali će biti odbijena po defaultu prema Bitcoin core politici prosleđivanja, jer je parametar `minRelayTxFee` postavljen na `0.00001` (u BTC/kB). Međutim, moguće je, na vašem sopstvenom čvoru, smanjiti ovaj prag kako bi se prosleđivale transakcije sa nižim naknadama, ili, obrnuto, povećati limit, na primer, na 2 Sats/vB, kako bi se izbeglo prosleđivanje transakcija sa niskim naknadama.
+Na primer, transakcija bez naknada je, prema pravilima konsenzusa, potpuno validna, ali će biti odbijena po defaultu prema Bitcoin Core politici prosleđivanja, jer je parametar `minRelayTxFee` postavljen na `0.00001` (u BTC/kB). Međutim, moguće je, na vašem sopstvenom čvoru, smanjiti ovaj prag kako bi se prosleđivale transakcije sa nižim naknadama, ili, obrnuto, povećati limit, na primer, na 2 Sats/vB, kako bi se izbeglo prosleđivanje transakcija sa niskim naknadama.
 
 
 
-Pokretanje sopstvenog čvora znači tvrditi: "Validiram ono što odlučim da validiram, prema pravilima koja sam sam usvojio"*. Tako postajete akter u upravljanju sistemom, sposoban da odbacite evoluciju koja vam se čini neprihvatljivom, ili da odobrite ažuriranje prema sopstvenim kriterijumima.
+Pokretanje sopstvenog čvora znači tvrditi: *"Validiram ono što odlučim da validiram, prema pravilima koja sam sam usvojio"*. Tako postajete akter u upravljanju sistemom, sposoban da odbacite promenu koja vam se čini neprihvatljivom, ili da odobrite ažuriranje prema sopstvenim kriterijumima.
 
 
 
-Tako možemo brzo pokušati da razumemo koliko moći imate nad pravilima zahvaljujući vašem čvoru. A obim ove moći zavisiće od tipa pravila.
+Na taj način možemo brzo proceniti koliko uticaja imate na pravila zahvaljujući svom čvoru. Obim tog uticaja, međutim, zavisi od vrste pravila.
 
 
 
-#### Za pravila releja
+#### Za pravila prosleđivanja
 
 
 
-Što se tiče pravila prenosa, suštinska stvar je jednostavno posedovanje čvora, bez obzira na njegovu ekonomsku aktivnost. Ono što je ovde u pitanju jeste da li se slažete da prenosite određene tipove transakcija.
+Što se tiče pravila prosleđivanja, suštinska stvar je jednostavno posedovanje čvora, bez obzira na njegovu ekonomsku aktivnost. Ono što je ovde u pitanju jeste da li se slažete da prenosite određene tipove transakcija.
 
 
 
-Ako, na primer, verujete da transakcije sa naknadama manjim od 1 sat/vB treba da budu prihvaćene na Bitcoin, možete prilagoditi ovo pravilo na svom čvoru tako da emituje te transakcije, olakšavajući njihovo širenje na mreži dok ih Miner na kraju ne uključi u važeći blok. U suštini, to je pitanje moći nad širenjem transakcija: svaki čvor ima moć donošenja odluka, jer pristajanje na prosleđivanje određene vrste transakcije je jednako promovisanju njenog prihvatanja na Bitcoin mreži. Kao rezultat toga, ako upravljate sa nekoliko čvorova, imate veći uticaj na politiku prosleđivanja, jer svaki čvor ima svoje veze i oblasti uticaja na mreži.
+Ako, na primer, verujete da transakcije sa naknadama manjim od 1 sat/vB treba da budu prihvaćene na Bitcoinu, možete prilagoditi ovo pravilo na svom čvoru tako da emituje te transakcije, olakšavajući njihovo širenje na mreži dok ih rudar na kraju ne uključi u važeći blok. U suštini, to je pitanje moći nad širenjem transakcija: svaki čvor ima moć donošenja odluka, jer pristajanjem na prosleđivanje određenog tipa transakcije je jednako promovisanju njenog prihvatanja na Bitcoin mreži. Kao rezultat toga, ako upravljate sa nekoliko čvorova, imate veći uticaj na politiku prosleđivanja, jer svaki čvor ima svoje veze i oblasti uticaja na mreži.
 
 
 
-Zaista, imati jedan ili više čvorova konfigurisanih sa specifičnim pravilima prenosa znači odrediti koji deo mreže prihvata da propagira određenu vrstu transakcije. Širenje poruke u peer-to-peer grafu, kao što je slučaj za Bitcoin transakcije, prati logiku teorije perkolacije. Zamislite svaki čvor kao mesto koje može biti aktivno (`p` = prenosi) ili neaktivno (`1-p`). Čim proporcija `p` pređe kritični prag (`p_c`), pojavljuje se džinovska komponenta: transakcija uspeva da pređe mrežu i ima svaku šansu da stigne do Miner. U mreži kao što je Bitcoin, gde svaki čvor održava u proseku 8 odlaznih veza, prag `p_c` je generalno postavljen na samo nekoliko procenata, čak i niže ako neki čvorovi imaju veoma veliki broj veza.
+Zaista, imati jedan ili više čvorova konfigurisanih sa specifičnim pravilima prosleđivanja znači odrediti koji deo mreže prihvata da propagira određeni tip transakcije. Širenje poruke u peer-to-peer grafu, kao što je slučaj za Bitcoin transakcije, prati logiku teorije perkolacije. Zamislite svaki čvor kao mesto koje može biti aktivno (`p` = prenosi) ili neaktivno (`1-p`). Čim proporcija `p` pređe kritični prag (`p_c`), pojavljuje se džinovska komponenta: transakcija uspeva da pređe mrežu i ima velike šanse da stigne do rudara. U mreži kao što je Bitcoin, gde svaki čvor održava u proseku 8 odlaznih veza, prag `p_c` je generalno postavljen na samo nekoliko procenata, čak i niže ako neki čvorovi imaju veoma veliki broj veza.
 
 
 
@@ -643,15 +642,15 @@ Zaista, imati jedan ili više čvorova konfigurisanih sa specifičnim pravilima 
 
 
 
-Sve dok je `p` ispod `p_c`, transakcija ostaje ograničena na izolovane džepove i ne doseže Miner. Čim se ovaj prag prekorači, širi se gotovo trenutno kroz celu mrežu.
+Sve dok je `p` ispod `p_c`, transakcija ostaje ograničena na izolovane džepove i ne stiže do rudara. Čim se ovaj prag prekorači, širi se gotovo trenutno kroz celu mrežu.
 
 
 
-Na kraju, uvek su rudari ti koji odlučuju da li će uključiti transakciju u blok ili ne. Međutim, čvorovi intervenišu uzvodno utičući na distribuciju transakcija: oni određuju da li će rudari biti svesni određene transakcije ili ne. Ako transakcija nije prosleđena rudarima, očigledno je nemoguće da je uključe u blok.
+Na kraju, uvek su rudari ti koji odlučuju da li će uključiti transakciju u blok ili ne. Međutim, čvorovi intervenišu "uzvodno" utičući na distribuciju transakcija: oni određuju da li će rudari biti svesni određene transakcije ili ne. Ako transakcija nije prosleđena rudarima, očigledno je nemoguće da će je uključiti u blok.
 
 
 
-Dodavanje još nekoliko čvorova će stoga imati samo marginalni uticaj ako je mreža već u fazi perkolacije za datu vrstu transakcije, ali može biti presudno kako se prag perkolacije približava. Posedovanje ili uticaj na nekoliko čvorova, posebno ako su dobro povezani, može povećati ili smanjiti vrednost `p` i, posledično, indirektno usmeriti pravila prenosa koja određuju koje transakcije se vide i na kraju prihvataju od strane rudara.
+Dodavanje još nekoliko čvorova će stoga imati samo marginalni uticaj ako je mreža već u fazi perkolacije za dati tip transakcije, ali može biti presudno kako se prag perkolacije približava. Posedovanje ili uticaj na nekoliko čvorova, posebno ako su dobro povezani, može povećati ili smanjiti vrednost `p` i, posledično, indirektno usmeriti pravila prosleđivanja koja određuju koje transakcije se vide i na kraju prihvataju od strane rudara.
 
 
 
@@ -659,15 +658,15 @@ Dodavanje još nekoliko čvorova će stoga imati samo marginalni uticaj ako je m
 
 
 
-Kada je reč o uticaju vašeg čvora na pravila konsenzusa, njegova ekonomska težina je, pre svega, ono što će biti presudno. Ovo je ključni koncept: vrednost bilo koje valute je direktno povezana sa njenom sposobnošću da olakša Exchange. Zaista, ako neki predmet nije prihvaćen od strane bilo koga u Exchange za robu ili usluge, teoretski nema monetarnu korisnost. Na primer, ako nijedan trgovac ne prihvata kamenčiće kao sredstvo plaćanja, oni nemaju upotrebu kao novac. Naravno, korisnost ostaje subjektivni pojam na individualnom nivou, ali na datoj teritoriji, što je veći broj trgovaca koji prihvataju neki predmet kao sredstvo Exchange, veća je verovatnoća da taj predmet ima monetarnu korisnost za ljude koji žive na toj teritoriji.
+Kada je reč o uticaju vašeg čvora na pravila konsenzusa, njegova ekonomska težina je, pre svega, ono što će biti presudno. Ovo je ključni koncept: vrednost bilo koje valute je direktno povezana sa njenom sposobnošću da olakšava razmenu. Zaista, ako neki predmet nije prihvaćen od strane bilo koga u razmeni za robu ili usluge, teoretski nema monetarnu korisnost. Na primer, ako nijedan trgovac ne prihvata kamenčiće kao sredstvo plaćanja, oni nemaju upotrebu kao novac. Naravno, korisnost ostaje subjektivni pojam na individualnom nivou, ali na datoj teritoriji, što je veći broj trgovaca koji prihvataju neki predmet kao sredstvo razmene, veća je verovatnoća da taj predmet ima monetarnu korisnost za ljude koji žive na toj teritoriji.
 
 
 
-Uzmimo primer sela gde mnogi trgovci prihvataju zlato u Exchange za robu: verovatno je da zlato ima monetarnu korisnost za seljane. Ovo ukazuje da korisnost valute direktno zavisi od odluka trgovaca da je prihvate ili odbiju.
+Uzmimo primer sela gde mnogi trgovci prihvataju zlato u razmeni za robu: verovatno je da zlato ima monetarnu korisnost za seljane. Ovo ukazuje da korisnost valute direktno zavisi od odluka trgovaca da je prihvate ili odbiju.
 
 
 
-Ovaj koncept je ključan za razumevanje dinamike moći u sistemu Bitcoin. Satoshi jasno pokazuje: Bitcoin je elektronski sistem gotovine; drugim rečima, pruža uslugu koja nudi oblik valute, Bitcoin (ili BTC). Kada se pravila protokola modifikuju na način koji nije unazad kompatibilan (Hard Fork), to znači stvaranje novog sistema i stoga nove valute. Uspeh ili neuspeh ovog Fork zatim zavisi od veličine njegove ekonomije, koja je zauzvrat određena brojem trgovaca koji prihvataju ovaj novi oblik valute.
+Ovaj koncept je ključan za razumevanje dinamike moći u Bitcoin sistemu. Satoshi jasno pokazuje: Bitcoin je elektronski sistem gotovine; drugim rečima, pruža uslugu koja nudi oblik valute, Bitcoin (ili BTC). Kada se pravila protokola modifikuju na način koji nije unazad kompatibilan (hard fork), to znači stvaranje novog sistema i stoga nove valute. Uspeh ili neuspeh ovog forka zatim zavisi od veličine njegove ekonomije, koja je zauzvrat određena brojem trgovaca koji prihvataju ovaj novi oblik valute.
 
 
 
@@ -675,15 +674,15 @@ Ovaj koncept je ključan za razumevanje dinamike moći u sistemu Bitcoin. Satosh
 
 
 
-Hajde da uzmemo primer: pretpostavimo da Bitcoin doživi Hard Fork. Tada bi postojala 2 različita oblika valute: BTC-1 (originalna, nepromenjena verzija) i BTC-2 (nova valuta sa različitim pravilima konsenzusa). Ako svi trgovci koji su prihvatali BTC-1 nastave da to čine, ali odbiju BTC-2, onda bi potonja, u teoriji, imala veoma ograničenu monetarnu korisnost. Kao korisnik, ne bih imao interes da zadržim i koristim BTC-2, znajući da ga nijedan trgovac ne bi želeo u Exchange za robu ili usluge. Suprotno tome, ako 50% trgovaca odluči da prihvati isključivo BTC-2, a preostalih 50% uzima samo BTC-1, tada bi korisnost BTC-1, u teoriji, bila prepolovljena. Koristim termin "u teoriji" jer korisnost ostaje subjektivna na individualnom nivou i zavisi od mnoštva faktora (kao što su teritorija i potrošačke navike) koje je teško razumeti na pojedinačnoj osnovi.
+Hajde da uzmemo primer: pretpostavimo da Bitcoin doživi hard fork. Tada bi postojala 2 različita oblika valute: BTC-1 (originalna, nepromenjena verzija) i BTC-2 (nova valuta sa različitim pravilima konsenzusa). Ako svi trgovci koji su prihvatali BTC-1 nastave da to čine, ali odbiju BTC-2, onda bi potonja, u teoriji, imala veoma ograničenu monetarnu korisnost. Kao korisnik, ne bih imao interes da zadržim i koristim BTC-2, znajući da ga nijedan trgovac ne bi želeo u razmeni za robu ili usluge. Suprotno tome, ako 50% trgovaca odluči da prihvati isključivo BTC-2, a preostalih 50% uzima samo BTC-1, tada bi korisnost BTC-1, u teoriji, bila prepolovljena. Koristim termin "u teoriji" jer korisnost ostaje subjektivna na individualnom nivou i zavisi od mnoštva faktora (kao što su teritorija i potrošačke navike) koje je teško razumeti na pojedinačnoj osnovi.
 
 
 
-Na Bitcoin, uloga "trgovca", shvaćena kao bilo koji entitet s određenom ekonomskom težinom, naravno uključuje preduzeća (fizičke prodavnice, sajtove za online prodaju, pružaoce usluga, itd.), ali takođe i Exchange platforme, budući da prihvataju Bitcoin u Exchange za druge valute, i rudare, budući da prihvataju Bitcoin putem naknada u Exchange za uslugu uključivanja transakcije u blok.
+Na Bitcoin, uloga "trgovca", shvaćena kao bilo koji entitet s određenom ekonomskom težinom, naravno uključuje preduzeća (fizičke prodavnice, sajtove za online prodaju, pružaoce usluga, itd.), ali takođe i menjačnice, budući da prihvataju Bitcoin u razmenu za druge valute, i rudare, budući da prihvataju Bitcoin putem naknada u zamenu za uslugu uključivanja transakcije u blok.
 
 
 
-Što se tiče pravila konsenzusa, vaš čvor vam omogućava da usmerite svoju ekonomsku aktivnost ka jednoj ili drugoj valuti. Na primer, ako imate 10 punih čvorova kod kuće, ali nemate značajnu ekonomsku aktivnost, vaš uticaj tokom Fork će biti gotovo nikakav. Suprotno tome, jedan čvor koji se koristi za upravljanje lancem od 200 prodavnica koje prihvataju Bitcoin daje značajnu ekonomsku težinu.
+Što se tiče pravila konsenzusa, vaš čvor vam omogućava da usmerite svoju ekonomsku aktivnost ka jednoj ili drugoj valuti. Na primer, ako imate 10 punih čvorova kod kuće, ali nemate značajnu ekonomsku aktivnost, vaš uticaj tokom forka će biti gotovo nikakav. Suprotno tome, jedan čvor koji se koristi za upravljanje lancem od 200 prodavnica koje prihvataju Bitcoin daje značajnu ekonomsku težinu.
 
 
 
