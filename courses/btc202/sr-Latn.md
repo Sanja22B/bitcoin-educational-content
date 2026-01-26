@@ -700,15 +700,15 @@ Dakle, nije važan broj čvorova, već važnost ekonomske aktivnosti koju podrž
 
 
 
-Čvor Bitcoin je, dakle, mašina koja pokreće implementaciju protokola Bitcoin. Iza ove uobičajene definicije čvorova, postoji nekoliko mogućih konfiguracija, od kojih ne nude sve isti nivo autonomije, potrošnje resursa i korisnosti za mrežu. U ovom poglavlju pokušaćemo da razumemo ove razlike kako bismo vam pomogli da izaberete arhitekturu čvora koja odgovara vašoj upotrebi i hardverskim ograničenjima.
+Bitcoin čvor  je, dakle, mašina koja pokreće implementaciju Bitcoin protokola. Iza ove uobičajene definicije čvorova, postoji nekoliko mogućih konfiguracija, od kojih ne nude sve isti nivo autonomije, potrošnje resursa i korisnosti za mrežu. U ovom poglavlju pokušaćemo da razumemo ove razlike kako bismo vam pomogli da izaberete arhitekturu čvora koja odgovara vašoj upotrebi i hardverskim ograničenjima.
 
 
 
-### Potpuni čvor
+### Potpuni (eng. full) čvor
 
 
 
-Full node je jednostavno Bitcoin čvor koji preuzima ceo Blockchain iz Genesis bloka, nezavisno validira svaki blok i lokalno čuva istoriju celog tog Blockchain. Ovo je "normalan" oblik Bitcoin čvora, kako ga je zamislio Satoshi Nakamoto.
+Full node je jednostavno Bitcoin čvor koji preuzima ceo blokčejn iz Genesis bloka, nezavisno validira svaki blok i lokalno čuva istoriju celog tog blokčejna. Ovo je "normalan" oblik Bitcoin čvora, kako ga je zamislio Satoshi Nakamoto.
 
 
 
@@ -720,19 +720,19 @@ Full node ne mora da veruje nikome jer validira i zna sve informacije u sistemu.
 
 
 
-U praksi, Full node zahteva netrivijalne resurse, uključujući nekoliko stotina gigabajta za blok fajlove, procesor sposoban za validaciju skripti, RAM za Mempool i keš memoriju, kao i stabilnu propusnost. Prva sinhronizacija (*IBD*) čita i verifikuje kompletnu istoriju: to je intenzivno, ali se dešava samo jednom. Full node aktivno učestvuje u mreži, prosleđuje blokove i transakcije, i može prihvatiti dolazne konekcije kako bi pomogao drugim čvorovima.
+U praksi, full node zahteva netrivijalne resurse, uključujući nekoliko stotina gigabajta za blok fajlove, procesor sposoban za validaciju skripti, RAM za mempool i keš memoriju, kao i stabilnu propusnost. Prva sinhronizacija (*IBD*) čita i verifikuje kompletnu istoriju: to je intenzivno, ali se dešava samo jednom. Full node aktivno učestvuje u mreži, prosleđuje blokove i transakcije, i može prihvatiti dolazne konekcije kako bi pomogao drugim čvorovima.
 
 
 
-U zavisnosti od vaših potreba, možete dodati indeksator na vaš Full node. Bitcoin core nudi indeksiranje transakcija kao opcionalnu funkciju (deaktiviranu po defaultu), što može biti korisno za specifične svrhe. Međutim, ne uključuje Address indeksator, koji je često najtraženija funkcija za individualne korisnike. Da biste to rešili, možete instalirati posvećeni softver na vaš čvor, kao što su Electrs ili Fulcrum, kako biste ubrzali Address upite za verifikaciju stanja iz povezanih UTXO-a. Vratit ćemo se na ulogu indeksatora detaljnije u posebnom poglavlju.
+U zavisnosti od vaših potreba, možete dodati indeksator na vaš full node. Bitcoin Core nudi indeksiranje transakcija kao opcionalnu funkciju (deaktiviranu po defaultu), što može biti korisno za specifične svrhe. Međutim, ne uključuje indeksator adresa, koji je često najtraženija funkcija za individualne korisnike. Da biste to rešili, možete instalirati specijalizovani softver na vaš čvor, kao što su Electrs ili Fulcrum, kako bi se ubrzali upiti za proveru stanja adresa na osnovu povezanih UTXO-a. Vratit ćemo se na ulogu indeksatora detaljnije u posebnom poglavlju.
 
 
 
-### Orezani čvor
+### Pruned čvor
 
 
 
-Čvor pruned validira sve kao Full node, od bloka Genesis do glave lanca sa najviše rada, ali **čuva samo najnoviji deo blok fajlova**. Kada se stari blokovi provere, postepeno ih briše kako bi ostao ispod ograničenja prostora koje možete postaviti. Ova konfiguracija je idealna ako imate ograničenja u prostoru na disku: zadržavate nezavisnost validacije blokova, bez čuvanja kompletne arhive istorije Blockchain. Ova opcija je posebno korisna ako jednostavno želite da instalirate Bitcoin core na svom ličnom računaru, bez korišćenja posvećene mašine.
+Pruned čvor validira sve kao full node, od Genesis bloka do vrha lanca sa najviše "rada", ali **čuva samo najnoviji deo blok fajlova**. Kada se stari blokovi provere, postepeno ih briše kako bi ostao ispod ograničenja prostora koje možete postaviti. Ova konfiguracija je idealna ako imate ograničenja u prostoru na disku: zadržavate nezavisnost validacije blokova, bez čuvanja kompletne arhive istorije blokčejna. Ova opcija je posebno korisna ako jednostavno želite da instalirate Bitcoin Core na svom ličnom računaru, bez korišćenja specijalizovane mašine.
 
 
 
@@ -740,15 +740,15 @@ U zavisnosti od vaših potreba, možete dodati indeksator na vaš Full node. Bit
 
 
 
-Tehničke implikacije ove opcije su prilično jednostavne: čvor pruned je savršeno sposoban da emituje vaše transakcije, učestvuje u prenosu, verifikuje blokove i transakcije, i prati lanac. S druge strane, ne može služiti kao izvor istorijskih podataka izvan svojih granica za druge aplikacije (npr. puni istraživači, indeksatori, novčanici). Funkcije koje zahtevaju arhivu (ili globalni indeks) stoga neće biti dostupne.
+Tehničke implikacije ove opcije su prilično jednostavne: pruned čvor je savršeno sposoban da emituje vaše transakcije, učestvuje u prenosu, verifikuje blokove i transakcije, i prati lanac blokova. S druge strane, ne može služiti kao izvor istorijskih podataka izvan svojih granica za druge aplikacije (npr. puni istraživači, indeksatori, novčanici). Funkcije koje zahtevaju arhivu (ili globalni indeks) stoga neće biti dostupne.
 
 
 
-U praktičnom smislu, možete koristiti pruned čvor za povezivanje Wallet softvera za upravljanje kao što je Sparrow wallet. Međutim, nećete moći skenirati transakcije na vašem Wallet koje su starije od limita za obrezivanje. Na primer, ako imate transakciju registrovanu u bloku 901 458, ali vaš čvor čuva samo blokove od 905 402 pa naviše (jer su najstariji bili pruned), nećete moći da skenirate ovu transakciju. S druge strane, ako ste je već skenirali kada je vaš čvor još uvek imao ovu visinu bloka, tada će vaš Wallet softver za upravljanje sačuvati informacije i prikazati saldo odgovarajućih UTXO-a ispravno.
+U praktičnom smislu, možete koristiti pruned čvor za povezivanje softvera za upravljanje novčanikom kao što je Sparrow novčanik. Međutim, nećete moći skenirati transakcije na vašem novčaniku koje su starije od limita za obrezivanje. Na primer, ako imate transakciju registrovanu u bloku 901 458, ali vaš čvor čuva samo blokove od 905 402 pa naviše (jer su najstariji izbrisani), nećete moći da skenirate ovu transakciju. S druge strane, ako ste je već skenirali kada je vaš čvor još uvek imao ovu visinu bloka, tada će vaš softver za upravljanje novčanikom sačuvati informacije i prikazati saldo odgovarajućih UTXO-a ispravno.
 
 
 
-Ukratko, praćenje Wallet funkcioniše bez problema na pruned čvoru ako kreirate novi Wallet dok je vaš softver već povezan sa tim čvorom. S druge strane, možete naići na poteškoće ako obnovite stari Wallet, jer prošle transakcije koje čvor više ne čuva očigledno neće biti dostupne.
+Ukratko, praćenje novčanika radi glatko na pruned node-u ako napravite novi novčanik dok je softver povezan na taj čvor. Međutim, pri obnavljanju starog novčanika mogu se pojaviti problemi, jer čvor više ne čuva stare transakcije, pa one neće biti dostupne.
 
 
 
@@ -756,7 +756,7 @@ Ukratko, praćenje Wallet funkcioniše bez problema na pruned čvoru ako kreirat
 
 
 
-SPV (*Simplified Payment Verification*) čvor, ili lagani čvor, zadržava samo zaglavlja blokova, a ne detalje transakcija, i oslanja se na druge pune čvorove da dobije dokaz da je transakcija u bloku (Merkle dokazi putem stabala) za koji ima zaglavlje. Koncept pojednostavljene verifikacije plaćanja nije nov, predložio ga je Satoshi Nakamoto lično u delu 8 Belog papira.
+SPV (*Simplified Payment Verification*) čvor, ili lagani čvor, zadržava samo zaglavlja blokova, a ne detalje transakcija, i oslanja se na druge potpune čvorove da dobije dokaz da je transakcija u bloku (Merkle dokazi putem stabala) za koji ima zaglavlje. Koncept pojednostavljene verifikacije plaćanja nije nov, predložio ga je Satoshi Nakamoto lično u delu 8 White paper-a.
 
 
 
@@ -768,11 +768,11 @@ Nakamoto, S. (2008). *Bitcoin: A Peer-to-Peer Electronic Cash System*. https://B
 
 
 
-Ovaj tip čvora je očigledno mnogo lakši u pogledu skladištenja i korišćenja CPU-a od Full node ili čak pruned čvora. SPV čvor je stoga dobro prilagođen manjim uređajima i povremenim vezama. Zapravo, često je direktno integrisan u Wallet, posebno u mobilni softver kao što je Blockstream App.
+Ovaj tip čvora je očigledno mnogo lakši u pogledu skladištenja i korišćenja CPU-a od potpunog node-a ili čak pruned čvora. SPV čvor je stoga dobro prilagođen manjim uređajima i povremenim vezama. Zapravo, često je direktno integrisan u novčanik, posebno u mobilni softver kao što je Blockstream App.
 
 
 
-Kompromis je poverenje i poverljivost: SPV klijent ne proverava skripte ili politike validacije sam; pretpostavlja da je lanac sa najviše rada validan i zavisi od jednog ili više punih čvorova za odgovore. Korišćenje ovog tipa čvora je stoga bolja opcija nego povezivanje sa čvorom treće strane; međutim, i dalje je manje povoljno nego imati Full node ili čak pruned čvor.
+Kompromis je poverenje i poverljivost: SPV klijent ne proverava skripte ili politike validacije sam; pretpostavlja da je lanac sa najviše rada validan i zavisi od jednog ili više punih čvorova za odgovore. Korišćenje ovog tipa čvora je stoga bolja opcija nego povezivanje sa čvorom treće strane; međutim, i dalje je manje povoljno nego imati potpuni čvor ili čak pruned čvor.
 
 
 
@@ -780,7 +780,7 @@ Kompromis je poverenje i poverljivost: SPV klijent ne proverava skripte ili poli
 
 
 
-### Koji čvor za koju potrebu?
+### Koji čvor je za koju potrebu?
 
 
 
@@ -790,7 +790,7 @@ Kompromis je poverenje i poverljivost: SPV klijent ne proverava skripte ili poli
 
 
 
-Za početnika koji koristi samo Wallet na mobilnoj aplikaciji, korišćenje SPV čvora je sigurno najbolji način za početak. Instalacija je brza, zahteva malo resursa, a iskustvo je jednostavno i fluidno. To znači da možete sami verifikovati određene informacije i, stoga, manje se oslanjati na čvorove trećih strana dok istovremeno postajete nezavisniji kada je u pitanju emitovanje transakcija.
+Za početnika koji koristi samo novčanik na mobilnoj aplikaciji, korišćenje SPV čvora je sigurno najbolji način za početak. Instalacija je brza, zahteva malo resursa, a iskustvo je jednostavno i fluidno. To znači da možete sami verifikovati određene informacije i, stoga, manje se oslanjati na čvorove trećih strana dok istovremeno postajete nezavisniji kada je u pitanju emitovanje transakcija.
 
 
 
@@ -800,7 +800,7 @@ Za početnika koji koristi samo Wallet na mobilnoj aplikaciji, korišćenje SPV 
 
 
 
-Korisnik srednjeg nivoa sa PC-jem može instalirati pruned čvor kako bi iskoristio gotovo sve prednosti Full node, bez svakodnevnog preopterećenja svog računara: puna validacija, umjerena upotreba diska i jednostavno održavanje. To je idealno rešenje za povezivanje vaših desktop novčanika i ostajanje nezavisnim u distribuciji vaših transakcija, bez ulaganja u posvećenu mašinu ili preopterećenja prostora na disku.
+Korisnik srednjeg nivoa sa PC-jem može instalirati pruned čvor kako bi iskoristio gotovo sve prednosti full node-a, bez svakodnevnog preopterećenja svog računara: puna validacija, umjerena upotreba diska i jednostavno održavanje. To je idealno rešenje za povezivanje vaših desktop novčanika i ostajanje nezavisnim u distribuciji vaših transakcija, bez ulaganja u specijalizovanu mašinu ili preopterećenja prostora na disku.
 
 
 
@@ -810,7 +810,7 @@ Korisnik srednjeg nivoa sa PC-jem može instalirati pruned čvor kako bi iskoris
 
 
 
-Full node ostaje najbolje rešenje ako želite da budete potpuno nezavisni u korišćenju Bitcoin i da se kasnije ne ograničavate na napredne upotrebe kao što su indeksator, Lightning čvor, ili čak Block explorer. Upravo to ćemo istražiti u ovom kursu!
+Puni čvor ostaje najbolje rešenje ako želite da budete potpuno nezavisni u korišćenju Bitcoina i da se kasnije ne ograničavate u naprednijim upotrebama, poput indeksera, Lightning čvora ili čak pretraživača blokova. Upravo to ćemo istražiti u ovom kursu!
 
 
 
@@ -826,24 +826,24 @@ Sa softverske strane, postoje 2 glavna načina za pokretanje Bitcoin čvora:
 
 
 
-- direktno instalirajte implementaciju protokola, kao što je Bitcoin core (preporučeno), ili Bitcoin Knots,
-- ili koristiti turnkey distribuciju (često nazvanu "_node-in-a-box_") koja integriše Bitcoin implementaciju na isti način, ali takođe uključuje Interface administrativni sistem, prodavnicu aplikacija i alate spremne za upotrebu (Lightning, pretraživače, serverske indekse, čak i aplikacije za samostalno hostovanje van Bitcoin...).
+- direktno instalirajte implementaciju protokola, kao što je Bitcoin Core (preporučeno), ili Bitcoin Knots,
+- ili koristiti turnkey distribuciju (često nazvanu "_node-in-a-box_") koja uključuje Bitcoin implementaciju na isti način, ali takođe uključuje sistem za administraciju preko interfejsa, prodavnicu aplikacija i alate spremne za upotrebu (Lightning, pretraživače, indekser servere (eng. index servers), čak i aplikacije za samostalno hostovanje izvan Bitcoina...).
 
 
 
-Oba pristupa vode istom cilju: imati svoj čvor, ali se razlikuju u pogledu instalacije i korišćenja Interface, održavanja, proširivosti i troškova. To ćemo istražiti u ovom poglavlju.
+Oba pristupa vode istom cilju: imati svoj čvor, ali se razlikuju u pogledu instalacije i korišćenja grafičkog interfejsa, održavanja, proširivosti i troškova. To ćemo istražiti u ovom poglavlju.
 
 
 
-### Sirovi Bitcoin čvor implementacije
+### Osnovne implementacije Bitcoin čvorova
 
 
 
-Instaliranje sirove implementacije znači direktno korišćenje softvera implementacije Bitcoin protokola (kao što je Core), bez dodatnog softvera Layer. Sami upravljate konfiguracijom, ažuriranjima i povezanim uslugama (indeksiranje, API, Lightning, bekapovi, itd.) prema vašim potrebama.
+Instaliranje osnovne implementacije znači direktno korišćenje softvera sa implementacijom Bitcoin protokola (kao što je Core), bez dodatnog softverskog sloja. Sami upravljate konfiguracijom, ažuriranjima i povezanim uslugama (indeksiranje, API, Lightning, bekapovi, itd.) prema vašim potrebama.
 
 
 
-Ovo je najviše suvereni i fleksibilni pristup: tačno znate šta se pokreće, gde su podaci i kako sve funkcioniše. S druge strane, postaje složenije čim želite da pređete jednostavno rukovanje Bitcoin čvorom. Ako vam je cilj samo da imate čvor, složenost je uporediva sa čvorom-u-kutiji, ili čak manja, jer je jednostavno pitanje instaliranja softvera.
+Ovo je najviše suvereni i fleksibilni pristup: tačno znate šta se pokreće, gde su podaci i kako sve funkcioniše. S druge strane, postaje složenije čim želite da pređete jednostavno rukovanje Bitcoin čvorom. Ako vam je cilj samo da imate čvor, složenost je uporediva sa čvorom tipa 'node-in-a-box', pa čak i manja, jer se radi jednostavno o instaliranju softvera.
 
 
 
@@ -851,15 +851,15 @@ Ovo je najviše suvereni i fleksibilni pristup: tačno znate šta se pokreće, g
 
 
 
-[Bitcoin core je ultra-većinski klijent mreže](https://bitcoincore.org/). Preuzima, validira i održava Blockchain, pruža RPC/REST API-je i može integrisati Wallet. Ako preferirate standardne alate i osećate se prijatno da sami dodajete usluge (kao što su Electrum server, explorer i LND), bolje je da koristite Core kakav jeste.
+[Bitcoin Core je klijent koji koristi ogromna većina mreže.](https://bitcoincore.org/). Preuzima, validira i održava blokčejn, pruža RPC/REST API-je i može integrisati novčanik. Ako preferirate standardne alate i osećate se prijatno da sami dodajete usluge (kao što su Electrum server, explorer i LND), bolje je da koristite Core kakav jeste.
 
 
 
-**Prednosti:** Maksimalna stabilnost, predvidljivo ponašanje, sirovo iskustvo, lako za instalaciju i konfiguraciju.
+**Prednosti:** Maksimalna stabilnost, predvidljivo ponašanje, iskustvo iz prve ruke, lako za instalaciju i konfiguraciju.
 
 
 
-**Nedostaci:** Morate ručno izgraditi ostatak steka kako biste kreirali kompletno aplikaciono okruženje, a ne samo Bitcoin čvor.
+**Nedostaci:** Morate ručno izgraditi ostatak softverskog sloja kako biste kreirali kompletno aplikaciono okruženje, a ne samo Bitcoin čvor.
 
 
 
@@ -871,7 +871,7 @@ https://planb.academy/tutorials/node/bitcoin/bitcoin-core-mac-windows-9684ab02-e
 
 
 
-[Bitcoin Knots je Fork od Bitcoin core](https://bitcoinknots.org/), koji održava Luke Dashjr. To je glavna alternativna klijent za Core za implementaciju Bitcoin protokola. Potpuno kompatibilan sa ostatkom mreže (nikako nije Hard Fork kao Bitcoin Cash), ipak nudi dodatne funkcije, uključujući opcije politike prenosa koje su odsutne iz Core-a, ili se primenjuju strožije po defaultu kako bi se ograničilo ono što neki smatraju spamom.
+[Bitcoin Knots je fork od Bitcoin Core-a](https://bitcoinknots.org/), koji održava Luke Dashjr. To je glavni alternativni klijent za Core za implementaciju Bitcoin protokola. Potpuno kompatibilan sa ostatkom mreže (nikako nije hard fork kao Bitcoin Cash), ipak nudi dodatne funkcije, uključujući opcije za definisanje pravila prosleđivanja (eng. relay rules) koje su odsutne iz Core-a, ili se primenjuju strožije po defaultu kako bi se ograničilo ono što neki smatraju spamom (neželjeni sadržaj).
 
 
 
@@ -880,8 +880,8 @@ Postoje 2 moguća razloga za odabir Knots-a umesto Core-a:
 
 
 
-- Tehnike**: Različite opcije iz Core-a, posebno u smislu upravljanja relejima, određivanjem koje transakcije prihvata i emituje vaš čvor.
-- Policy**: Neki ljudi preferiraju korišćenje alternativnih klijenata kao što je Knots iz netehničkih razloga, posebno da bi podržali alternativu Core-u i tako smanjili njegov monopol. Ako bi Core ikada bio kompromitovan, bilo bi korisno ne samo imati solidne, dobro održavane alternativne klijente već i znati kako ih efikasno koristiti. Drugi koriste Knots iz protesta, jer su izgubili poverenje u Core-ove programere ili ne odobravaju većinu upravljanja klijentom.
+- **Tehnički**: Različite opcije iz Core-a, posebno u smislu upravljanja relejima (prosleđivanjima), određivanjem koje transakcije prihvata i emituje vaš čvor.
+- **Politički**: Neki ljudi preferiraju korišćenje alternativnih klijenata kao što je Knots iz netehničkih razloga, posebno da bi podržali alternativu Core-u i tako smanjili njegov monopol. Ako bi Core ikada bio kompromitovan, bilo bi korisno ne samo imati solidne, dobro održavane alternativne klijente već i znati kako ih efikasno koristiti. Drugi koriste Knots iz protesta, jer su izgubili poverenje u Core-ove programere ili ne odobravaju većinu upravljanja klijentom.
 
 
 https://planb.academy/tutorials/node/bitcoin/bitcoin-knots-e04b2196-4df2-4246-86ef-c02269c29098
@@ -894,7 +894,7 @@ Lično, preporučujem da izaberete Core, prvenstveno da biste brže iskoristili 
 
 
 
-_node-in-a-box_ kombinuje Bitcoin core (ili Knots) sa unapred konfiguriranim operativnim sistemom, Interface Web, i App Store-om za samohostujuće usluge (Lightning, explorers, Electrum server, Mempool, BTCPay Server, Nextcloud, itd.). Samo jednim klikom možete instalirati, ažurirati i međusobno povezati ove različite module.
+_Node-in-a-box_ kombinuje Bitcoin core (ili Knots) sa unapred konfiguriranim operativnim sistemom, web interfejs, i App Store-om za samohostujuće usluge (Lightning, explorers, Electrum server, Mempool, BTCPay Server, Nextcloud, itd.). Samo jednim klikom možete instalirati, ažurirati i međusobno povezati ove različite module.
 
 
 
