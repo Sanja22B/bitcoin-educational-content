@@ -1276,7 +1276,7 @@ Ispod predlažem tri konkretne konfiguracije, prilagođene različitim budžetim
 
 
 
-Prvo i najvažnije, potreban vam je SSD koji je dovoljno velik da primi Blockchain, a da pritom ostane prostora za manevrisanje. SSD-ovi imaju ograničen vek trajanja u smislu ciklusa pisanja i ukupne količine podataka koji se pišu. Međutim, Bitcoin čvor stavlja značajno opterećenje na disk prilikom pisanja. Zato ne preporučujem modele početnog nivoa; umesto toga, predlažem NVMe SSD, koji nudi značajno bolje performanse.
+Prvo i najvažnije, potreban vam je SSD koji je dovoljno velik da primi blokčejn, a da pritom ostane prostora za manevrisanje. SSD-ovi imaju ograničen vek trajanja u smislu ciklusa pisanja i ukupne količine podataka koji se pišu. Međutim, Bitcoin čvor stavlja značajno opterećenje na disk prilikom pisanja. Zato ne preporučujem modele početnog nivoa; umesto toga, predlažem NVMe SSD, koji nudi značajno bolje performanse.
 
 
 
@@ -1292,11 +1292,11 @@ Kao primer, za potrebe ovog kursa, izabrao sam sledeći model: *Samsung 990 EVO 
 
 
 
-Očigledno, ako je vaš budžet veoma ograničen (ispod €200), savetovao bih vam da ne investirate u namenski uređaj, već da instalirate Bitcoin core direktno na vaš svakodnevni PC (u pruned modu ako vam nedostaje prostora na disku).
+Očigledno, ako je vaš budžet veoma ograničen (ispod €200), savetovao bih vam da ne investirate u namenski uređaj, već da instalirate Bitcoin Core direktno na vaš svakodnevni PC (u pruned modu ako vam nedostaje prostora na disku).
 
 
 
-Inače, za početni budžet preporučujem *HP EliteDesk 800 G2 Mini*. Našao sam obnovljeni model za 96 € na Amazonu, opremljen Intel Core i5 procesorom 6. generacije i 8 GB RAM-a. Ovo je posebno zanimljiva opcija za početnike: ovaj procesor i ova količina memorije su više nego dovoljni za pokretanje Core na Umbrel, kao i nekoliko aplikacija istovremeno, kao što su Electrs indeksator, Lightning čvor i Mempool instanca, pod uslovom da ne dodelite previše keša za Core. Štaviše, ovaj tip mini-PC-a omogućava lako povećanje RAM-a na 16 GB, na primer, ako se ukaže potreba (očekujte da ćete platiti oko 30-40 € dodatno za jedan ili dva kvalitetna memorijska štapića).
+Inače, za početni budžet preporučujem *HP EliteDesk 800 G2 Mini*. Našao sam obnovljeni model za 96 € na Amazonu, opremljen Intel Core i5 procesorom 6. generacije i 8 GB RAM-a. Ovo je posebno zanimljiva opcija za početnike: ovaj procesor i ova količina memorije su više nego dovoljni za pokretanje Core-a na Umbrel-u, kao i nekoliko aplikacija istovremeno, kao što su Electrs indeksator, Lightning čvor i Mempool instanca, pod uslovom da ne dodelite previše keša za Core. Štaviše, ovaj tip mini-PC-a omogućava lako povećanje RAM-a na 16 GB, na primer, ako se ukaže potreba (očekujte da ćete platiti oko 30-40 € dodatno za jedan ili dva kvalitetna RAM modula).
 
 
 
@@ -1320,7 +1320,7 @@ Ako imate prosečan budžet od oko €300 za mašinu koja će hostovati vaš čv
 
 
 
-Sa ovom mašinom, imate udobnu konfiguraciju: brz IBD i mogućnost pokretanja brojnih aplikacija na vašem Umbrel ili Start9 bez poteškoća. Ovo je upravo konfiguracija koju koristim za ovaj BTC 202 kurs.
+Sa ovom mašinom, imate udobnu konfiguraciju: brz IBD i mogućnost pokretanja brojnih aplikacija na vašem Umbrel-u ili Start9 bez poteškoća. Ovo je upravo konfiguracija koju koristim za ovaj BTC 202 kurs.
 
 
 
@@ -1354,7 +1354,7 @@ U zavisnosti od vaše namene, možete se odlučiti za SSD od 2TB, kao u drugim k
 
 
 
-- Ako želite da kupite polovnu opremu i platite u bitkoinima, pridružite se okupljanju u vašoj blizini! Razgovarajući sa drugim učesnicima, sigurno ćete pronaći odgovarajuću opremu po povoljnoj ceni, dok pomažete da se održi cirkularna ekonomija oko Bitcoin. To je takođe prilika da dobijete korisne savete od zajednice.
+- Ako želite da kupite polovnu opremu i platite u bitkoinima, pridružite se okupljanju u vašoj blizini! Razgovarajući sa drugim učesnicima, sigurno ćete pronaći odgovarajuću opremu po povoljnoj ceni, dok pomažete da se održi cirkularna ekonomija oko Bitcoina. To je takođe prilika da dobijete korisne savete od zajednice.
 
 
 
@@ -1366,13 +1366,13 @@ U zavisnosti od vaše namene, možete se odlučiti za SSD od 2TB, kao u drugim k
 
 
 
-- Neka okruženja, kao što je Umbrel, omogućavaju korišćenje Wi-Fi-ja, ali performanse će generalno biti lošije (posebno ako želite da koristite svoj Lightning čvor na daljinu, jer to može imati uticaj). Ako izaberete Wi-Fi, osigurajte da vaš uređaj ima ugrađenu karticu ili dodajte kompatibilni dongle.
+- Neka okruženja, kao što je Umbrel, omogućavaju korišćenje Wi-Fi-ja, ali performanse će generalno biti lošije (posebno ako želite da koristite svoj Lightning čvor na daljinu, jer to može imati uticaj). Ako izaberete Wi-Fi, osigurajte da vaš uređaj ima ugrađenu karticu ili dodajte kompatibilni adapter.
 
 
 
 
 
-- Uvek koristite originalni proizvođačev napajanje Supply za vašu mašinu. Ovo je ključno kako biste sprečili oštećenje vaše opreme i rizik od izbijanja požara.
+- Uvek koristite originalno proizvođačevo napajanje za vašu mašinu. Ovo je ključno kako biste sprečili oštećenje vaše opreme i rizik od izbijanja požara.
 
 
 
@@ -1384,17 +1384,17 @@ U zavisnosti od vaše namene, možete se odlučiti za SSD od 2TB, kao u drugim k
 
 
 
-- U zavisnosti od vrednosti vaše opreme i vaše geografske lokacije, sistem za zaštitu od groma može biti takođe prikladan, bilo direktno na razvodnoj tabli ili na korišćenoj produžnoj letvi.
+- U zavisnosti od vrednosti vaše opreme i vaše geografske lokacije, sistem protiv udara groma takođe može biti prikladan, bilo direktno na razvodnoj ploči, bilo na produžnoj utičnici
 
 
 
 
 
-- Na kraju, zapamtite da optimizujete hlađenje vaše mašine: redovno je čistite i instalirajte na hladnom, dobro provetrenom, urednom mestu kako biste izbegli pregrevanje, što može dovesti do smanjenja performansi (dobrovoljno ograničenje brzine vašeg procesora).
+- Na kraju, zapamtite da optimizujete hlađenje vaše mašine: redovno je čistite i instalirajte na hladnom, dobro provetrenom, urednom mestu kako biste izbegli pregrevanje, što može dovesti do smanjenja performansi (throttling - namerno smanjenje brzine procesora).
 
 
 
-# Instaliranje Bitcoin čvora jednostavno
+# Jednostavna instalacija Bitcoin čvora
 
 
 <partId>ca6cf2a5-0bcc-41d9-b556-0d38865bf98f</partId>
