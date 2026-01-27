@@ -1409,20 +1409,19 @@ U zavisnosti od vaše namene, možete se odlučiti za SSD od 2TB, kao u drugim k
 
 
 
-Umbrel je operativni sistem za lične servere dizajniran da učini samostalno hostovanje pristupačnim: instalirate Umbrel, otvorite pregledač na `umbrel.local` i upravljate svime putem jednostavnog daljinskog Interface.
+Umbrel je operativni sistem za lične servere dizajniran da učini samostalno hostovanje pristupačnim: instalirate Umbrel, otvorite pregledač na `umbrel.local` i upravljate svime putem jednostavnog daljinskog interfejsa.
 
 
 
-Projekat je prvo popularizovao ideju o Bitcoin i Lightning čvoru na jedan klik, a zatim se proširio u pravi "kućni oblak": skladištenje fajlova i fotografija, multimedijalni streaming, mrežni alati, kućna automatizacija, lokalna AI i stotine aplikacija koje se mogu instalirati iz integrisane prodavnice aplikacija.
+Projekat je prvo popularizovao ideju o Bitcoin i Lightning čvoru na jedan klik, a zatim se proširio u pravi "kućni oblak": skladištenje fajlova i fotografija, multimedijalni streaming, mrežni alati, kućna automatizacija, lokalni AI i stotine aplikacija koje se mogu instalirati iz integrisane prodavnice aplikacija.
 
 
 
-U Umbrelu, svaka aplikacija radi u Docker containeru (izolacija, atomska ažuriranja, nezavisno pokretanje/zaustavljanje). Interface centralizuje pristup svim ovim aplikacijama, nudeći jedinstvenu prijavu (sa opcionalnim 2FA), ažuriranja jednim klikom za OS i aplikacije, praćenje rada mašine u realnom vremenu (CPU, RAM, temperatura, skladište), upravljanje dozvolama između aplikacija i pregled njihove potrošnje.
+U Umbrelu, svaka aplikacija radi u Docker containeru (izolacija, atomska ažuriranja, nezavisno pokretanje/zaustavljanje). Interfejs centralizuje pristup svim ovim aplikacijama, nudeći jedinstvenu prijavu (sa opcionalnim 2FA), ažuriranja OS i aplikacija jednim klikom, praćenje rada mašine u realnom vremenu (CPU, RAM, temperatura, skladište), upravljanje dozvolama između aplikacija i pregled njihove potrošnje.
 
 
 
-Cilj Umbrela je stoga da vam vrati kontrolu i poverljivost nad vašim podacima, bez oslanjanja na cloud usluge, izvan jednostavnog upravljanja Bitcoin čvorom.
-
+Umbrel ima za cilj da vam vrati kontrolu i poverljivost vaših podataka bez oslanjanja na cloud servise — i ne svodeći se samo na pokretanje Bitcoin noda.
 
 
 ### Umbrel Home vs umbrelOS
@@ -1435,7 +1434,7 @@ Umbrel nudi dva različita pristupa:
 
 
 
-- [**Umbrel Home**](https://umbrel.com/umbrel-home): ovo je mini-server spreman za upotrebu, posebno dizajniran i optimizovan za umbrelOS. Kompaktan, tih, povezan putem Ethernet-a, opremljen je NVMe SSD-om (opciono do 4TB), 16GB RAM-a i četvorojezgarnim CPU-om. Naručite ga, priključite i idete na `umbrel.local`. Možete imati operativni Umbrel u funkciji za nekoliko minuta. To je plug-and-play opcija.
+- [**Umbrel Home**](https://umbrel.com/umbrel-home): ovo je mini-server spreman za upotrebu, posebno dizajniran i optimizovan za umbrelOS. Kompaktan, tih, povezan putem ethernet kabla, opremljen je NVMe SSD-om (opciono do 4TB), 16GB RAM-a i četvorojezgarnim CPU-om. Naručite ga, priključite i idete na `umbrel.local`. Možete imati operativni Umbrel u funkciji za nekoliko minuta. To je plug-and-play opcija.
 
 
 
@@ -1445,7 +1444,7 @@ Umbrel nudi dva različita pristupa:
 
 
 
-- [**umbrelOS**](https://umbrel.com/umbrelos): ovo je operativni sistem koji možete sami instalirati na svoj hardver (mini-PC, NUC, tower, posvećeni laptop...). Imate isti Interface i istu App Store kao na Umbrel Home.
+- [**umbrelOS**](https://umbrel.com/umbrelos): ovo je operativni sistem koji možete sami instalirati na svoj hardver (mini-PC, NUC, klasični desktop u velikom kućištu, posvećeni laptop...). Imate isti interfejs i isti App Store kao na Umbrel Home.
 
 
 
@@ -1465,7 +1464,7 @@ U sledećem poglavlju, istražićemo kako instalirati umbrelOS DIY na vašoj sop
 
 
 
-### Slučaj upotrebe: od Bitcoin čvora do kućnog oblaka
+### Primena: od Bitcoin noda do kućnog cloud servera
 
 
 
@@ -1475,7 +1474,7 @@ Umbrel može ostati vrlo minimalistički i fokusiran isključivo na Bitcoin, ili
 
 
 
-- Jednostavan Bitcoin čvor**: ovo je osnova na kojoj se Umbrel oslanjao od samog početka. Možete pokrenuti Bitcoin core (ili Knots), direktno povezati svoje novčanike sa svojim čvorom, izložiti Electrum server, hostovati svoj Mempool Block explorer za pregled Blockchain, i proceniti troškove... Na ove upotrebe ćemo se fokusirati u ovom kursu.
+- **Jednostavan Bitcoin čvor**: ovo je osnova na kojoj se Umbrel oslanjao od samog početka. Možete pokrenuti Bitcoin Core (ili Knots), direktno povezati svoje novčanike sa svojim čvorom, izložiti Electrum server, hostovati svoj Mempool Block explorer za pregled blokčejna, i proceniti troškove... Na ove upotrebe ćemo se fokusirati u ovom kursu.
 
 
 
@@ -1485,7 +1484,7 @@ Umbrel može ostati vrlo minimalistički i fokusiran isključivo na Bitcoin, ili
 
 
 
-- Lightning Network**: Umbrel vam takođe omogućava da implementirate LND ili Core Lightning, dve implementacije Lightning Network, kako biste upravljali sopstvenim Lightning čvorom. Moći ćete da otvarate kanale, upravljate svojom likvidnošću, vršite plaćanja, automatizujete balansiranje, nudite usluge, povežete udaljeni Wallet, ili iskoristite napredno upravljanje Interface zahvaljujući mnogim dostupnim aplikacijama. Ovaj specifičan slučaj upotrebe ćemo razmatrati u našem sledećem LNP 202 kursu.
+- **Lightning Network**: Umbrel vam takođe omogućava da implementirate LND ili Core Lightning, dve implementacije Lightning Network-a, kako biste upravljali sopstvenim Lightning čvorom. Moći ćete da otvarate kanale, upravljate svojom likvidnošću, vršite plaćanja, automatizujete balansiranje, nudite usluge, povežete udaljeni novčanik, ili iskoristite napredno upravljanje interfejsom zahvaljujući mnogim dostupnim aplikacijama. Ovaj specifičan slučaj upotrebe ćemo razmatrati u našem sledećem LNP 202 kursu.
 
 
 
@@ -1495,8 +1494,7 @@ Umbrel može ostati vrlo minimalistički i fokusiran isključivo na Bitcoin, ili
 
 
 
-- Opšte samostalno hostovanje**: sa Nextcloud, Immich, Jellyfin/Plex, DNS-širokim blokatorima oglasa (Pi-hole/AdGuard), VPN-ovima (WireGuard, Tailscale), kućnom automatizacijom (Home Assistant), rezervnim kopijama, upravljanjem beleškama, kancelarijskim alatima, lokalnom veštačkom inteligencijom (Ollama + Open WebUI)... Umbrel može postati vaš lični server, omogućavajući vam da povratite kontrolu nad vašim podacima. Sami hostujete usluge koje svakodnevno koristite, sa uglađenim korisničkim iskustvom koje blisko podseća na spoljne solucije, dok zadržavate potpunu kontrolu nad vašim podacima i privatnošću.
-
+- **Opšte samostalno hostovanje**: sa Nextcloud, Immich, Jellyfin/Plex, sistemi za blokiranje reklama na DNS nivou (za celu mrežu) (Pi-hole/AdGuard), VPN-ovima (WireGuard, Tailscale), kućnom automatizacijom (Home Assistant), rezervnim kopijama, upravljanjem beleškama, kancelarijskim alatima, lokalnom veštačkom inteligencijom (Ollama + Open WebUI)... Umbrel može postati vaš lični server, omogućavajući vam da povratite kontrolu nad vašim podacima. Sami pokrećete servise koje koristite svaki dan, sa korisničkim iskustvom sličnim komercijalnim rešenjima, ali uz potpunu kontrolu nad podacima i privatnošću.
 
 
 Korišćenjem aplikacija u kontejnerima, možete oblikovati Umbrel po želji: počnite sa jednostavnim Bitcoin čvorom i nekoliko aplikacija povezanih sa njegovim ekosistemom, zatim instalirajte Lightning čvor pored vašeg Bitcoin čvora, i postepeno obogatite svoju instancu sa aplikacijama za samostalno hostovanje koje su vam potrebne.
@@ -1519,15 +1517,15 @@ Jedna od ključnih prednosti Umbrela u odnosu na konkurenciju je njegova velika 
 
 
 
-Umbrelov kod je javno dostupan (možete ga pregledati, Fork, i modifikovati), ali nije pod pravom open-source licencom. Zapravo, umbrelOS se distribuira pod [*PolyForm Noncommercial 1.0*] licencom (https://polyformproject.org/licenses/noncommercial/1.0.0/), iako su neki povezani alati za razvoj dostupni pod MIT licencom.
+Umbrelov kod je javno dostupan (možete ga pregledati, forkovati, i modifikovati), ali nije pod pravom open-source licencom. Zapravo, umbrelOS se distribuira pod [*PolyForm Noncommercial 1.0*] licencom (https://polyformproject.org/licenses/noncommercial/1.0.0/), iako su neki povezani alati za razvoj dostupni pod MIT licencom.
 
 
 
-U praktičnom smislu, možete raditi gotovo sve što želite sa umbrelOS, sve dok je to za ličnu, nekomercijalnu upotrebu: modifikacija, redistribucija u neprofitne svrhe, kreiranje izvedenica za sebe ili za neprofitne organizacije, pod uslovom da poštujete pravne napomene.
+U praktičnom smislu, možete raditi gotovo sve što želite sa umbrelOS, sve dok je to za ličnu, nekomercijalnu upotrebu: modifikacija, redistribucija u neprofitne svrhe, pravljenje prilagođenih verzija za sebe ili za neprofitne organizacije, pod uslovom da poštujete pravne napomene.
 
 
 
-Međutim, zabranjeno je prodavati Umbrel ili njegove derivate (na primer, unapred sastavljenu mašinu sa unapred instaliranim umbrelOS-om), nuditi usluge povezane sa Umbrelom komercijalno, ili integrisati njegov kod u proizvod radi profita.
+Međutim, zabranjeno je prodavati Umbrel ili njegove izvedene verzije (na primer, unapred sastavljenu mašinu sa unapred instaliranim umbrelOS-om), nuditi usluge povezane sa Umbrelom komercijalno, ili integrisati njegov kod u proizvod radi profita.
 
 
 
@@ -1535,12 +1533,12 @@ Tehnički, ova licenca ne ograničava instalaciju, reviziju ili prilagođavanje 
 
 
 
-Međutim, svaka aplikacija u Prodavnici zadržava svoju licencu, često otvorenog koda.
+Međutim, svaka aplikacija u App Store-u zadržava svoju licencu, često otvorenog koda.
 
 
 
 
-## Instalacija Full node sa Umbrel
+## Instalacija potpunog čvora sa Umbrel-om
 
 
 <chapterId>61bc09c7-787d-4649-b142-457ec018b0f4</chapterId>
