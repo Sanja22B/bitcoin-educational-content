@@ -1054,7 +1054,7 @@ Nakon što ste istražili različita softverska rešenja, sada je vreme da izabe
 
 
 
-Sada kada smo istražili sve softverske mogućnosti, usredsredimo se na hardver potreban za vaš čvor. Pružiću vam konkretne savete o izboru komponenti, zajedno sa konfiguracijama prilagođenim različitim budžetima. Naravno, ovo je moje lično mišljenje i povratne informacije: sigurno postoje i druge relevantne alternative pored onih predstavljenih ovde. Nadalje, neću ponovo razmatrati unapred sastavljene mašine koje nude projekti čvor-u-kutiji, koje smo već pokrili u prethodnom poglavlju. Ovde ćemo se isključivo fokusirati na DIY rešenja.
+Sada kada smo istražili sve softverske mogućnosti, usredsredimo se na hardver potreban za vaš čvor. Pružiću vam konkretne savete o izboru komponenti, zajedno sa konfiguracijama prilagođenim različitim budžetima. Naravno, ovo je moje lično mišljenje i povratne informacije: sigurno postoje i druge relevantne alternative pored onih predstavljenih ovde. Nadalje, neću ponovo razmatrati unapred sastavljene mašine koje nude projekti node-in-a-box, koje smo već pokrili u prethodnom poglavlju. Ovde ćemo se isključivo fokusirati na DIY rešenja.
 
 
 
@@ -1062,7 +1062,7 @@ Sada kada smo istražili sve softverske mogućnosti, usredsredimo se na hardver 
 
 
 
-Tokom proteklih nekoliko godina, bitkoineri su postali sve svesniji uobičajene zablude, posebno sa popularizacijom node-in-a-box početkom 2020-ih: Bitcoin čvor treba nužno da radi na mašini posvećenoj isključivo ovoj svrsi. Ali to nije tačno. Ne treba vam nužno posvećen računar za pokretanje Bitcoin čvora: Bitcoin core je savršeno sposoban da radi na vašem svakodnevnom računaru. Ako imate dovoljno prostora na disku za Blockchain ili omogućite pruning, možete validirati lanac, povezati svoj Wallet, pa čak i zatvoriti program kada završite sa korišćenjem. Prednost ovog pristupa je značajna: nulta početna investicija i minimalna složenost.
+Tokom proteklih nekoliko godina, bitkoineri su postali sve svesniji uobičajene zablude, posebno sa popularizacijom node-in-a-box početkom 2020-ih: Bitcoin čvor treba nužno da radi na mašini posvećenoj isključivo ovoj svrsi. Ali to nije tačno. Ne treba vam nužno posvećen računar za pokretanje Bitcoin čvora: Bitcoin Core je savršeno sposoban da radi na vašem svakodnevnom računaru. Ako imate dovoljno prostora na disku za blokčejn ili omogućite pruning, možete validirati lanac, povezati svoj novčanik, pa čak i zatvoriti program kada završite sa korišćenjem. Prednost ovog pristupa je značajna: nulta početna investicija i minimalna složenost.
 
 
 
@@ -1070,7 +1070,7 @@ Tokom proteklih nekoliko godina, bitkoineri su postali sve svesniji uobičajene 
 
 
 
-To je rečeno, korišćenje posvećene mašine je često udobnije. Može raditi neprekidno (24/7), biti daljinski dostupna u svakom trenutku, ne monopolizovati resurse vaše glavne mašine, i, iznad svega, izolovati upotrebe (dobra sigurnosna praksa: ako vaš lični računar naiđe na problem, vaš čvor nastavlja da funkcioniše, i obrnuto). Dakle, pitanje nije "Da li treba da posvetim mašinu?", već "Da li mi treba čvor koji je stalno online, dostupan drugim uređajima, i sposoban za evoluciju?" (Lightning, indeksatori, dodatne aplikacije...). Ako je odgovor da, izbor zasebne mašine će stvari učiniti mnogo jednostavnijim.
+S tim u vezi, korišćenje namenske mašine je često praktičnije. Namenska mašina može raditi neprekidno (24/7), biti daljinski dostupna u svakom trenutku, neće monopolizovati resurse vaše glavne mašine, i, iznad svega, izolovanje upotrebe (dobra sigurnosna praksa: ako vaš lični računar naiđe na problem, vaš čvor nastavlja da funkcioniše, i obrnuto). Dakle, pitanje nije "Da li treba da ima posebnu mašinu?", već "Da li mi treba čvor koji je stalno online, dostupan drugim uređajima, i koji je prilagodljiv i može da se unapređuje?" (Lightning, indeksatori, dodatne aplikacije...). Ako je odgovor da, izbor zasebne mašine će stvari učiniti mnogo jednostavnijim.
 
 
 
@@ -1082,7 +1082,7 @@ To je rečeno, korišćenje posvećene mašine je često udobnije. Može raditi 
 
 
 
-To je najekonomičnije rešenje. Većina nas ima stari PC koji skuplja Dust kod kuće, ili kod prijatelja i porodice: ovo je savršena prilika da ga vratite u upotrebu! Da biste ga prilagodili za korišćenje kao Bitcoin čvor, jednostavno dodajte 2TB SSD i, u zavisnosti od vaših potreba, zamenite ili dodajte RAM memorijske module kako biste povećali RAM. Očekujte da ćete platiti između €100 i €200 za potpuno funkcionalnu mašinu.
+To je najekonomičnije rešenje. Većina nas ima stari PC koji skuplja prašinu kod kuće, ili kod prijatelja i porodice: ovo je savršena prilika da ga vratite u upotrebu! Da biste ga prilagodili za korišćenje kao Bitcoin čvor, jednostavno dodajte 2TB SSD i, u zavisnosti od vaših potreba, zamenite ili dodajte RAM memorijske module kako biste povećali RAM. Očekujte da ćete platiti između €100 i €200 za potpuno funkcionalnu mašinu.
 
 
 
@@ -1094,7 +1094,7 @@ Međutim, budite oprezni ako koristite laptop: baterija može postati problem to
 
 
 
-#### Rekondicionirano ili polovno
+#### Obnovljeno ili polovno
 
 
 
@@ -1126,7 +1126,7 @@ Ako vaš budžet dozvoljava, možete se odlučiti i za novu mašinu. Ovo je dobr
 
 
 
-#### Mini-PC "NUC" / barebone
+#### Mini-PC "NUC" / barebone (osnovna konfiguracija bez RAM-a i diska)
 
 
 
@@ -1162,11 +1162,11 @@ To je odlična jeftina alternativa mini-PC-ju: danas možete pronaći polovne il
 
 
 
-**Istaknuto:** Sve-u-jednom rešenje, baterija deluje kao UPS (bez prekida napajanja), pojednostavljena instalacija zahvaljujući integrisanom ekranu i tastaturi, integrisana Wi-Fi kartica i širok izbor korišćenih i novih tržišta (što često znači da možete pregovarati o cenama).
+**Istaknuto:** Sve-u-jednom rešenje, baterija deluje kao UPS (bez prekida napajanja), pojednostavljena instalacija zahvaljujući integrisanom ekranu i tastaturi, integrisana Wi-Fi kartica, kao i velikom izboru na tržištu polovnih i novih uređaja (što često znači da možete pregovarati o cenama).
 
 
 
-**Slabosti:** nešto veća potrošnja energije u poređenju sa golim Mini-PC-jem, postepeno trošenje baterije pri 24/7 radu uz gubitak kapaciteta, retki ali stvarni rizik od oticanja baterije ili termalnog bekstva sa starošću. Upravo ovaj aspekt me navodi da smatram mini-PC boljom opcijom od laptopa: postepena degradacija baterije i povezani rizici.
+**Slabosti:** nešto veća potrošnja energije u poređenju sa barebone Mini-PC-jem, postepeno trošenje baterije pri 24/7 radu uz gubitak kapaciteta, retki ali stvarni rizik je da s vremenom može doći do naduvavanja baterije ili termalne nestabilnosti (pregrevanje i rizik od samopropadanja). Upravo ovaj aspekt me navodi da smatram mini-PC boljom opcijom od laptopa: postepena degradacija baterije i povezani rizici.
 
 
 
@@ -1174,7 +1174,7 @@ Ako izaberete ovo rešenje, preporučujem da pažljivo pratite stanje baterije k
 
 
 
-**Savjet:** Ako BIOS/UEFI ili alat proizvođača to omogućava, postavite ograničenje opterećenja (npr. 60% ili 80%) kako biste produžili vek trajanja baterije.
+**Savet:** Ako BIOS/UEFI ili alat proizvođača to omogućava, postavite ograničenje opterećenja (npr. 60% ili 80%) kako biste produžili vek trajanja baterije.
 
 
 
@@ -1190,7 +1190,7 @@ Početkom 2020-ih, sa porastom softvera node-in-a-box, Raspberry Pi manija se ta
 
 
 
-U praksi, ako je vaš cilj isključivo pokretanje Bitcoin čvora bez dodatnih aplikacija, Raspberry Pi može biti dovoljan. Ali čim želite koristiti Umbrel, Start9 ili bogatiji ekosistem (Block explorer, Address indeksator, Lightning čvor, aplikacije za samostalno hostovanje...), mašina brzo dostiže svoje granice.
+U praksi, ako je vaš cilj isključivo pokretanje Bitcoin čvora bez dodatnih aplikacija, Raspberry Pi može biti dovoljan. Ali čim želite koristiti Umbrel, Start9 ili bogatiji ekosistem (Block explorer, indeksator adresa, Lightning čvor, aplikacije za samostalno hostovanje...), mašina brzo dostiže svoje granice.
 
 
 
@@ -1200,8 +1200,8 @@ Raspberry Pi ima nekoliko nedostataka:
 
 
 - procesori koji su previše tanki, sa ARM arhitekturom koja je ponekad nekompatibilna sa određenim softverom ili zahteva više rukovanja;
-- Zalemljeni RAM, nemoguće ga je nadograditi, sa ograničenim konfiguracijama (često maksimalno 8 GB);
-- spoljašnji kućišta za SSD-ove povezana kablom, česti izvori grešaka, zahtevaju kupovinu specifične kartice za stabilan SSD;
+- zalemljeni RAM, nemoguće ga je nadograditi, sa ograničenim konfiguracijama (često maksimalno 8 GB);
+- eksterna kućišta za SSD-ove povezana kablom, česti izvori grešaka, zahtevaju kupovinu specifične kartice za stabilan SSD;
 - tendencija brzog zagrevanja i poteškoće u osiguravanju pravilnog hlađenja;
 - treba kupiti dodatni hardver (kućište, ventilator, SSD kartica, itd.);
 - veoma ograničena povezanost.
@@ -1220,7 +1220,7 @@ Istorijski gledano, velika prednost SBC-ova poput Raspberry Pi-ja bila je njihov
 
 
 
-Tehnički, moguće je pokrenuti Bitcoin čvor na HDD-u. Problem je što će se sve znatno usporiti, posebno IBD, koji će postati izuzetno dug zbog intenzivne upotrebe diska kao keša od strane Bitcoin core (posebno za UTXO set). Zato snažno savetujem protiv korišćenja HDD-a: stvara pravi usko grlo, ozbiljno ograničava buduću evoluciju (npr. za Lightning čvor), i može čak dovesti do nesklada u sinhronizaciji sa Blockchain glavom. Štaviše, konstantan stres na mehaničkom disku povećava rizik od prevremenog habanja.
+Tehnički, moguće je pokrenuti Bitcoin čvor na HDD-u. Problem je što će se sve znatno usporiti, posebno IBD, koji će postati izuzetno dug zbog intenzivne upotrebe diska kao keša od strane Bitcoin Core-a (posebno za UTXO set). Zato snažno savetujem protiv korišćenja HDD-a: stvara pravo usko grlo, značajno ograničava buduće mogućnosti nadogradnje (npr. za Lightning čvor), i može čak izazvati probleme u sinhronizaciji sa najnovijim blokom na blokčejnu. Štaviše, konstantan stres na mehaničkom disku povećava rizik od prevremenog habanja.
 
 
 
@@ -1232,7 +1232,7 @@ SSD-ovi radikalno menjaju vaše korisničko iskustvo: sve postaje brže i glađe
 
 
 
-U smislu kapaciteta, 2TB se postepeno uspostavlja kao nova razumna minimalna vrednost. U leto 2025. godine, Blockchain već dostiže 700 GB, a ako dodate Umbrel, Address indeksator i nekoliko aplikacija, 1 TB SSD će se brzo zasićiti. Sa 2TB, imate udobnu marginu za godine koje dolaze (u širokoj proceni, između 5 i 15 godina). Takođe možete odabrati 4TB ako planirate koristiti mnogo aplikacija na Umbrel-u, skladištiti velike fajlove u samohostingu, ili ako želite da u velikoj meri predvidite svoje potrebe za diskovnim prostorom.
+U smislu kapaciteta, 2TB se postepeno uspostavlja kao nova razumna minimalna vrednost. U leto 2025. godine, blokčejn već dostiže 700 GB, a ako dodate Umbrel, indeksator adresa i nekoliko aplikacija, 1 TB SSD će ubrzo biti iskorišćen do kraja. Sa 2TB, imate udobnu marginu za godine koje dolaze (u širokoj proceni, između 5 i 15 godina). Takođe možete odabrati 4TB ako planirate koristiti mnogo aplikacija na Umbrel-u, skladištiti velike fajlove u samohostingu, ili ako želite da u velikoj meri predvidite svoje potrebe za prostorom na disku.
 
 
 
@@ -1248,11 +1248,11 @@ U smislu kapaciteta, 2TB se postepeno uspostavlja kao nova razumna minimalna vre
 
 
 
-Za Bitcoin core sam (bez Umbrel sloja), preporuke programera ukazuju na minimum od 256 MB RAM-a sa podešavanjima prilagođenim na najniže postavke, 512 MB sa podrazumevanim podešavanjima i 1 GB za normalnu upotrebu.
+Za Bitcoin Core sam (bez Umbrel sloja), preporuke programera ukazuju na minimum od 256 MB RAM-a sa podešavanjima prilagođenim na najniže postavke, 512 MB sa podrazumevanim podešavanjima i 1 GB za normalnu upotrebu.
 
 
 
-S druge strane, ako koristite sistem "node-in-a-box" kao što su Umbrel ili Start9, zahtevi za RAM-om su značajno veći. Programeri Umbrela preporučuju minimum od 4 GB RAM-a. Ovo može biti dovoljno samo za pokretanje Core-a, ali ćete uskoro biti ograničeni. Stoga preporučuju 8 GB, što i ja smatram minimumom za osnovnu konfiguraciju oko Bitcoin (Core, LND, indeksator i nekoliko aplikacija). Po mom iskustvu, sa Umbrelom i nekoliko dodatnih usluga, 8 GB je i dalje malo tesno. Da biste bili zaista komforni i imali neku rezervu, preporučio bih 16 GB RAM-a.
+S druge strane, ako koristite sistem "node-in-a-box" kao što su Umbrel ili Start9, zahtevi za RAM-om su značajno veći. Programeri Umbrela preporučuju minimum od 4 GB RAM-a. Ovo može biti dovoljno samo za pokretanje Core-a, ali ćete uskoro biti ograničeni. Stoga preporučuju 8 GB, što i ja smatram minimumom za osnovnu konfiguraciju oko Bitcoina (Core, LND, indeksator i nekoliko aplikacija). Po mom iskustvu, sa Umbrelom i nekoliko dodatnih usluga, 8 GB je i dalje malo tesno. Da biste bili zaista komforni i imali neku rezervu, preporučio bih 16 GB RAM-a.
 
 
 
@@ -1260,7 +1260,7 @@ S druge strane, ako koristite sistem "node-in-a-box" kao što su Umbrel ili Star
 
 
 
-Za Umbrel čvor, minimalni zahtev je dvojezgarni 64-bitni procesor od Intela ili AMD-a. Ako želite da koristite nekoliko aplikacija pored Bitcoin core, četvorojezgarni (ili jači) procesor će napraviti stvarnu razliku u pogledu fluidnosti. Na primer, procesori i5/i7 od 6. do 10. generacije su odlične opcije na tržištu polovnih uređaja.
+Za Umbrel čvor, minimalni zahtev je dvojezgarni 64-bitni procesor od Intela ili AMD-a. Ako želite da koristite nekoliko aplikacija pored Bitcoin Core-a, četvorojezgarni (ili jači) procesor će napraviti stvarnu razliku u pogledu fluidnosti. Na primer, procesori i5/i7 od 6. do 10. generacije su odlične opcije na tržištu polovnih uređaja.
 
 
 
