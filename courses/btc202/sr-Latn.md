@@ -1557,13 +1557,13 @@ Ovde ćemo koristiti UmbrelOS x86 sliku (tačnije, x86_64 verziju). Moći ćete 
 
 
 
-Ako ste se odlučili za Raspberry Pi 5 (opcija koju ne preporučujem, kao što je pomenuto u prethodnom odeljku), instalacija je malo drugačija. Zatim možete pratiti ovaj posvećeni vodič i vratiti se na moj kurs kada budete na Interface web `http://umbrel.local`:
+Ako ste se odlučili za Raspberry Pi 5 (opcija koju ne preporučujem, kao što je pomenuto u prethodnom odeljku), instalacija je malo drugačija. Zatim možete pratiti ovaj posvećeni vodič i vratiti se na moj kurs kada budete na `http://umbrel.local` web interfejsu:
 
 
 
 https://planb.academy/tutorials/node/bitcoin/umbrel-8b0e3b5b-d3cf-4a1e-8bb8-1ad2db4dd848
 
-Kao što je pomenuto u prethodnom delu, odlučio sam da pokrenem ovaj tutorijal na malom obnovljenom računaru koji sam pronašao po povoljnoj ceni: *Lenovo ThinkCentre M900 Tiny* opremljen Intel Core i7 procesorom i 16 GB RAM-a. Ovo je veoma udobna konfiguracija za pokretanje Umbrel-a, posebno za Bitcoin čvor. Međutim, izabrao sam ovu konfiguraciju jer želim da instaliram Lightning čvor i druge zahtevnije aplikacije kasnije. Takođe sam dodao 2TB SSD svom ThinkCentre-u kako bih zadržao puni Blockchain i još uvek imao udobnu marginu. Sa ovom konfiguracijom, ukupni trošak je 270 €, uključujući sve troškove.
+Kao što je pomenuto u prethodnom delu, odlučio sam da pokrenem ovaj tutorijal na malom obnovljenom računaru koji sam pronašao po povoljnoj ceni: *Lenovo ThinkCentre M900 Tiny* opremljen Intel Core i7 procesorom i 16 GB RAM-a. Ovo je veoma udobna konfiguracija za pokretanje Umbrel-a, posebno za Bitcoin čvor. Međutim, izabrao sam ovu konfiguraciju jer želim da instaliram Lightning čvor i druge zahtevnije aplikacije kasnije. Takođe sam dodao 2TB SSD svom ThinkCentre-u kako bih zadržao puni blokčejn i i dalje imao solidnu rezervu prostora. Sa ovom konfiguracijom, ukupni trošak je 270 €, uključujući sve troškove.
 
 
 
@@ -1575,7 +1575,7 @@ Posebno mi se sviđa Lenovo ThinkCentre Tiny serija, jer su to kompaktne, tihe i
 
 
 
-Ako ste, poput mene, odabrali PC bez monitora, **trebaće vam da povežete monitor i tastaturu** samo tokom trajanja instalacije. Nakon toga, moći ćete da mu pristupite daljinski sa drugog računara na istoj mreži (ili putem drugih metoda koje ćemo pokriti u kasnijim poglavljima). Takođe će vam biti potreban RJ45 Ethernet kabl da povežete vaš uređaj na lokalnu mrežu, i USB ključ od najmanje 4 GB za čuvanje instalacione slike.
+Ako ste, poput mene, odabrali PC bez monitora, **trebaće vam da povežete monitor i tastaturu** samo tokom trajanja instalacije. Nakon toga, moći ćete da mu pristupite daljinski sa drugog računara na istoj mreži (ili putem drugih metoda koje ćemo pokriti u kasnijim poglavljima). Takođe će vam biti potreban RJ45 Ethernet kabl da povežete vaš uređaj na lokalnu mrežu, i USB priključak od najmanje 4 GB za čuvanje instalacione slike.
 
 
 
@@ -1584,7 +1584,7 @@ Da rezimiramo, ovde su zahtevi za opremu:
 
 
 
-- Računar sa x86_64 procesorom (minimalno Dvojezgarni, preporučeno Četvorojezgarni);
+- Računar sa x86_64 procesorom (minimalno dvojezgarni, preporučeno četvorojezgarni);
 - RAM memorija (minimum 4 GB, preporučeno 8 GB ili više za produženu upotrebu);
 - SSD (preporučeno + 2 TB);
 - USB ključ (+ 4 GB) za instalaciju UmbrelOS slike;
@@ -1611,7 +1611,7 @@ Pre nego što instalirate UmbrelOS na vaš uređaj, potrebno je da napravite USB
 
 
 
-- Počnite preuzimanjem najnovije verzije UmbrelOS-a u USB formatu:
+- Najpre preuzmite najnoviju verziju UmbrelOS-a kao USB sliku:
 
 
 
@@ -1629,7 +1629,7 @@ Idite na [zvaničnu Umbrel veb stranicu da preuzmete ISO sliku](https://download
 
 
 
-Da biste kreirali USB stik sa mogućnošću pokretanja, koristićete jednostavan alat koji radi na više platformi, pod nazivom [Balena Etcher](https://www.balena.io/etcher/). Preuzmite ga i instalirajte na vašem računaru.
+Za kreiranje USB uređaja za pokretanje sistema (eng. bootable USB), koristićete jednostavan alat koji radi na više platformi, pod nazivom [Balena Etcher](https://www.balena.io/etcher/). Preuzmite ga i instalirajte na vašem računaru.
 
 
 
@@ -1649,7 +1649,7 @@ Priključite USB ključ u svoj računar (onaj na koji ste upravo preuzeli Umbrel
 
 
 
-- Narežite ISO sliku na USB stik pomoću Balena Etcher:
+- Prebacite (upišite) ISO sliku na USB stik pomoću alata Balena Etcher.
 
 
 
@@ -1661,7 +1661,7 @@ Pokrenite Balena Etcher i izaberite ISO datoteku `umbrelos-amd64-usb-installer.i
 
 
 
-Kada je operacija završena, imaćete USB ključ sa kojeg se može pokrenuti UmbrelOS, spreman za pokretanje i instalaciju Umbrela na vašem računaru.
+Kada se postupak završi, imaćete butabilni USB uređaj sa UmbrelOS-om, spreman za pokretanje i instalaciju Umbrela na vaš računar.
 
 
 
@@ -1693,7 +1693,7 @@ Umbrel očigledno zahteva internet konekciju. Povežite RJ45 Ethernet kabl izme�
 
 
 
-Uključite svoju mašinu. U većini slučajeva, ona bi automatski trebalo da detektuje USB ključ i pokrene se sa njega. Zatim će se pojaviti instalacioni ekran UmbrelOS Interface.
+Uključite svoju mašinu. U većini slučajeva, ona bi automatski trebalo da detektuje USB ključ i pokrene se sa njega. Zatim će se pojaviti instalacioni ekran UmbrelOS-a.
 
 
 
@@ -1705,7 +1705,7 @@ Ako se uređaj pokrene na drugom sistemu ili prikaže poruku o grešci, to verov
 
 
 
-Kada se uređaj pokrene sa USB memorije, dočekaće vas instalacija Interface UmbrelOS-a. Ovaj korak podrazumeva instaliranje sistema direktno na interni Hard disk vaše mašine.
+Kada se uređaj pokrene sa USB memorije, dočekaće vas instalacioni ekran UmbrelOS-a. Ovaj korak podrazumeva instaliranje sistema direktno na interni hard disk vaše mašine.
 
 
 
@@ -1717,7 +1717,7 @@ Ekran koji se pojavljuje prikazuje sve interne uređaje za skladištenje koje je
 
 
 
-Jednom kada identifikujete ispravan disk (obično onaj sa najvećim kapacitetom, da smesti Blockchain), zabeležite broj koji mu je dodeljen. Na primer, ako se disk koji ste odabrali pojavljuje pod brojem `2`, jednostavno unesite `2`, zatim pritisnite taster `Enter` na tastaturi.
+Jednom kada identifikujete ispravan disk (obično onaj sa najvećim kapacitetom, da smestite blokčejn), zabeležite broj koji mu je dodeljen. Na primer, ako se disk koji ste odabrali pojavljuje pod brojem `2`, jednostavno unesite `2`, zatim pritisnite taster `Enter` na tastaturi.
 
 
 
@@ -1741,7 +1741,7 @@ Kada je instalacija završena, bićete upitani da isključite uređaj. Pritisnit
 
 
 
-Sada možete ukloniti USB ključ, tastaturu i ekran, koji više nisu potrebni za vaš Umbrel. Sve što ostaje od vašeg čvora je napajanje Supply i RJ45 Ethernet kabl.
+Sada možete ukloniti USB ključ, tastaturu i ekran, koji više nisu potrebni za vaš Umbrel. Sve što ostaje od vašeg čvora je napajanje i RJ45 Ethernet kabl.
 
 
 
@@ -1755,12 +1755,12 @@ Pre nego što ponovo pokrenete uređaj, proverite sledeće dve tačke:
 
 
 
-- USB ključ je isključen**: ako ostane povezan, sistem se može ponovo pokrenuti na njemu umesto na internom disku;
-- Ethernet kabl je priključen**: uređaj mora biti povezan sa vašim ruterom da bi radio.
+- **USB ključ je isključen**: ako ostane povezan, sistem se može ponovo pokrenuti na njemu umesto na internom disku;
+- **Ethernet kabl je priključen**: uređaj mora biti povezan sa vašim ruterom da bi radio.
 
 
 
-Pritisnite dugme za napajanje. Sistem se automatski pokreće sa internog diska gde je UmbrelOS instaliran. Prvo pokretanje može trajati približno **5 minuta**. Tokom ovog vremena, Umbrel inicijalizuje svoje servise i Interface.
+Pritisnite dugme za napajanje. Sistem se automatski pokreće sa internog diska gde je UmbrelOS instaliran. Prvo pokretanje može trajati približno **5 minuta**. Tokom ovog vremena, Umbrel inicijalizuje svoje servise i interfejs.
 
 
 
@@ -1774,11 +1774,11 @@ http://umbrel.local
 
 
 
-Ovaj Address se koristi za pristup Umbrel Interface grafičkom korisničkom Interface na daljinu i započinjanje konfiguracije.
+Ova adresa se koristi za pristup Umbrel grafičkom korisničkom interfejsu na daljinu i započinjanje konfiguracije.
 
 
 
-Ako Address `http://umbrel.local` ne radi na vašem pregledaču nakon čekanja od najmanje 5 minuta, jednostavno pokušajte:
+Ako `http://umbrel.local` adresa ne radi na vašem pregledaču nakon čekanja od najmanje 5 minuta, jednostavno pokušajte:
 
 
 
@@ -1788,7 +1788,7 @@ http://umbrel
 
 
 
-Ako ovo i dalje ne radi, unesite lokalnu IP adresu vašeg Umbrela Address direktno u pregledač. Na primer (zamenite `42` brojem vaše mašine koja hostuje Umbrel na lokalnoj mreži):
+Ako ovo i dalje ne radi, unesite lokalnu IP adresu vašeg Umbrela direktno u pregledač. Na primer (zamenite `42` brojem vaše mašine koja hostuje Umbrel na lokalnoj mreži):
 
 
 
@@ -1798,19 +1798,19 @@ http://192.168.1.42
 
 
 
-Da biste identifikovali IP adresu vašeg Umbrel-a Address, postoji nekoliko metoda, od najjednostavnijih do najnaprednijih:
+Da biste identifikovali IP adresu vašeg Umbrel-a, postoji nekoliko metoda, od najjednostavnijih do najnaprednijih:
 
 
 
 
 
-- Pristupite administraciji rutera Interface i pronađite IP Address Umbrel uređaja na lokalnoj mreži.
+- Pristupite administrativnom interfejsu rutera i pronađite IP adresu Umbrel uređaja na lokalnoj mreži.
 
 
 
 
 
-- Koristite softver za skeniranje mreže kao što je Angry IP Scanner da biste otkrili povezane uređaje i locirali IP adresu vašeg Umbrela Address.
+- Koristite softver za skeniranje mreže kao što je Angry IP Scanner da biste otkrili povezane uređaje i locirali IP adresu vašeg Umbrela.
 
 
 
@@ -1880,11 +1880,11 @@ Vaša Umbrel konfiguracija je sada završena.
 
 
 
-#### Otkrivanje Interface
+#### Upoznavanje sa interfejsom UmbrelOS-a
 
 
 
-Umbrelov Interface je prilično intuitivan:
+Umbrelov interfejs je prilično intuitivan:
 
 
 
@@ -1910,7 +1910,7 @@ Umbrelov Interface je prilično intuitivan:
 
 
 
-- Meni "*Files*" centralizuje sve dokumente pohranjene na vašem Umbrelu.
+- Meni "*Files*" centralizuje sve dokumente sačuvane na vašem Umbrelu.
 
 
 
@@ -1921,10 +1921,10 @@ Umbrelov Interface je prilično intuitivan:
 
 
 - Meni "*Settings*" vam omogućava da izmenite postavke vašeg Umbrela i pristupite njegovim informacijama, uključujući:
-    - Ažuriraj, ponovo pokreni ili zaustavi svoju mašinu;
-    - Proverite dostupni prostor za skladištenje, korišćenje RAM-a i temperaturu procesora;
-    - Promeni pozadinu;
-    - Upravljajte daljinskim pristupom putem Tor-a, aktivirajte Wi-Fi ili 2FA.
+    - Ažuriraranje, ponovo pokretanje ili zaustavljanje mašine;
+    - Proveru dostupnog prostora za skladištenje, korišćenje RAM-a i temperature procesora;
+    - Promenu pozadine;
+    - Upravljanje daljinskim pristupom putem Tor-a, aktiviranje Wi-Fi ili 2FA.
 
 
 
@@ -1932,11 +1932,11 @@ Umbrelov Interface je prilično intuitivan:
 
 
 
-#### Bezbednosna i podešavanja veze
+#### Bezbednosna i mrežna podešavanja
 
 
 
-Prvo i najvažnije, toplo preporučujem omogućavanje dvofaktorske autentifikacije (2FA). Ovo dodaje dodatni Layer sigurnosti vašoj lozinki. Gotovo je neophodno ako planirate koristiti svoj Umbrel za čuvanje ličnih fajlova, pokretanje Lightning čvora ili obavljanje bilo koje druge osetljive aktivnosti.
+Prvo i najvažnije, toplo preporučujem omogućavanje dvofaktorske autentifikacije (2FA). Ovo dodaje dodatni sloj sigurnosti vašoj lozinki. Gotovo je neophodno ako planirate koristiti svoj Umbrel za čuvanje ličnih fajlova, pokretanje Lightning čvora ili obavljanje bilo koje druge osetljive aktivnosti.
 
 
 
@@ -1962,19 +1962,19 @@ Od sada će svaka nova veza na vaš Umbrel zahtevati i lozinku i 6-cifreni kod g
 
 
 
-Što se tiče daljinskog pristupa putem Tor-a, ako vam nije potreban, preporučujem da ovu opciju ostavite onemogućenju kako biste ograničili površinu napada na vaš Umbrel. Podrazumevano, vaš čvor može biti pristupljen samo sa mašine povezane na istu lokalnu mrežu. Omogućavanje pristupa putem Tor-a će vam ipak omogućiti da upravljate vašim Umbrel-om u pokretu.
+Što se tiče daljinskog pristupa putem Tor-a, ako vam nije potreban, preporučujem da ovu opciju ostavite onemogućenu kako biste ograničili površinu napada na vaš Umbrel. Podrazumevano, vaš čvor može biti pristupljen samo sa mašine povezane na istu lokalnu mrežu. Omogućavanje pristupa putem Tor-a će vam ipak omogućiti da upravljate vašim Umbrel-om u pokretu.
 
 
 
-Ako omogućite ovu funkciju, teoretski postaje moguće da bilo koja mašina na svetu pokuša da se poveže sa vašim čvorom, pod uslovom da zna Tor Address. Međutim, vaša lozinka i 2FA će vas i dalje štititi.
+Ako omogućite ovu funkciju, teoretski postaje moguće da bilo koja mašina na svetu pokuša da se poveže sa vašim čvorom, pod uslovom da zna Tor adresu. Međutim, vaša lozinka i 2FA će vas i dalje štititi.
 
 
 
-Ako aktivirate ovu opciju, osigurajte da imate omogućenu dvofaktorsku autentifikaciju (2FA), jaku lozinku i nikada ne otkrivajte vašu Tor vezu Address.
+Ako aktivirate ovu opciju, osigurajte da imate omogućenu dvofaktorsku autentifikaciju (2FA), jaku lozinku i nikada ne otkrivajte vašu Tor adresu za povezivanje.
 
 
 
-Jednostavno unesite ovaj Tor Address u vaš Tor pregledač da biste pristupili Umbrelovom Interface sa bilo koje mreže.
+Jednostavno unesite ovu Tor adresu u vaš Tor pregledač da biste pristupili Umbrelovom interfejsu sa bilo koje mreže.
 
 
 
@@ -1982,7 +1982,7 @@ Jednostavno unesite ovaj Tor Address u vaš Tor pregledač da biste pristupili U
 
 
 
-Konačno, na ovoj stranici sa podešavanjima, možete takođe aktivirati Wi-Fi konekciju. Ako vaša mašina koja hostuje Umbrel ima Wi-Fi mrežnu karticu ili Wi-Fi dongle, ovo vam omogućava pristup Internetu bez korišćenja RJ45 kabla. Međutim, u zavisnosti od vaše konfiguracije, ovo rešenje može usporiti konekciju, što može uticati na inicijalnu sinhronizaciju (IBD) i buduće korišćenje čvora (npr. za Lightning transakcije). Lično, ne preporučujem ovu opciju, jer čvor nije namenjen za mobilnu upotrebu: uvek mu se pristupa na daljinu, pa ga možete ostaviti priključenim.
+Konačno, na ovoj stranici sa podešavanjima, možete takođe aktivirati Wi-Fi konekciju. Ako vaša mašina koja hostuje Umbrel ima Wi-Fi mrežnu karticu ili Wi-Fi adapter, ovo vam omogućava pristup internetu bez korišćenja RJ45 kabla. Međutim, u zavisnosti od vaše konfiguracije, ovo rešenje može usporiti konekciju, što može uticati na inicijalnu sinhronizaciju (IBD) i buduće korišćenje čvora (npr. za Lightning transakcije). Lično, ne preporučujem ovu opciju, jer čvor nije namenjen za mobilnu upotrebu: uvek mu se pristupa na daljinu, pa ga možete ostaviti priključenim.
 
 
 
@@ -1990,7 +1990,7 @@ Konačno, na ovoj stranici sa podešavanjima, možete takođe aktivirati Wi-Fi k
 
 
 
-Sada kada je UmbrelOS ispravno instaliran i konfigurisan na vašem uređaju, možete nastaviti sa instalacijom vašeg Bitcoin čvora. Ništa lakše: idite u App Store, otvorite kategoriju "*Bitcoin*", zatim izaberite aplikaciju "*Bitcoin Node*" (zapravo je Bitcoin core).
+Sada kada je UmbrelOS ispravno instaliran i konfigurisan na vašem uređaju, možete nastaviti sa instalacijom vašeg Bitcoin čvora. Ništa lakše: idite u App Store, otvorite kategoriju "*Bitcoin*", zatim izaberite aplikaciju "*Bitcoin Node*" (zapravo je Bitcoin Core).
 
 
 
@@ -2014,11 +2014,11 @@ Kada je instalacija završena, vaš Bitcoin čvor će pokrenuti svoj IBD (*Initi
 
 
 
-Ova faza je posebno vremenski zahtevna, jer njeno trajanje zavisi od nekoliko faktora, uključujući količinu RAM-a dodeljenog kešu čvora, brzinu diska, brzinu internet konekcije i snagu procesora. Opseg trajanja je stoga veoma širok, u zavisnosti od konfiguracije. Sa visokoperformansnim računarom (NVMe SSD, +32 GB RAM, snažan procesor i dobra internet konekcija), IBD se može završiti za oko deset sati. S druge strane, stari procesor, mala količina RAM-a ili, još gore, mehanički Hard disk (strogo se ne preporučuje) mogu produžiti ovu operaciju na nekoliko nedelja.
+Ova faza je posebno vremenski zahtevna, jer njeno trajanje zavisi od nekoliko faktora, uključujući količinu RAM-a koja je dodeljena kešu čvora, brzinu diska, brzinu internet konekcije i snagu procesora. Opseg trajanja je stoga veoma širok, u zavisnosti od konfiguracije. Sa visokoperformansnim računarom (NVMe SSD, +32 GB RAM, snažan procesor i dobra internet konekcija), IBD se može završiti za oko deset sati. S druge strane, stari procesor, mala količina RAM-a ili, još gore, mehanički hard disk (strogo se ne preporučuje) mogu produžiti ovu operaciju na nekoliko nedelja.
 
 
 
-Sa PC-jem normalne konfiguracije (pristojan procesor, 8 do 16 GB RAM-a i SSD), omogućava oko 2 do 7 dana.
+Sa PC-jem normalne konfiguracije (pristojan procesor, 8 do 16 GB RAM-a i SSD), moguće je za oko 2 do 7 dana.
 
 
 
@@ -2030,11 +2030,11 @@ Da biste malo ubrzali IBD, možete povećati RAM dodeljen kešu čvora (koji se 
 
 
 
-Podrazumevano, vrednost parametra `dbcache` u Bitcoin core je postavljena na 450 MiB, ili oko 472 MB. Povećanjem ove vrednosti, možete blago ubrzati IBD. Međutim, ne bih nužno preporučio da ovaj parametar postavite previše visoko: čak i postavljanje na 4 GiB će samo učiniti sinhronizaciju oko 10% bržom, i može uzrokovati gubitak vremena u slučaju prekida tokom IBD.
+Podrazumevano, vrednost parametra `dbcache` u Bitcoin Core-u je postavljena na 450 MiB, ili oko 472 MB. Povećanjem ove vrednosti, možete blago ubrzati IBD. Međutim, ne bih nužno preporučio da ovaj parametar postavite previše visoko: čak i postavljanje na 4 GiB će samo učiniti sinhronizaciju oko 10% bržom, i može uzrokovati gubitak vremena u slučaju prekida tokom IBD.
 
 
 
-Budite oprezni da ne dodelite vrednost koja je prevelika za vašu mašinu. Ako RAM dostupan za UmbrelOS ponestane, vaš čvor može naglo prestati sa radom, prekidajući IBD i zahtevajući da ga ručno ponovo pokrenete, što može rezultirati značajnim gubitkom vremena.
+Budite oprezni da ne dodelite vrednost koja je prevelika za vašu mašinu. Ako ponestane RAM dostupan za UmbrelOS, vaš čvor može naglo prestati sa radom, prekidajući IBD i zahtevajući da ga ručno ponovo pokrenete, što može rezultirati značajnim gubitkom vremena.
 
 
 
@@ -2050,13 +2050,13 @@ Kada je IBD vašeg čvora završen (100% sinhronizacija), sada imate potpuno ope
 
 
 
-U sledećem delu, istražićemo praktičnu upotrebu vašeg novog čvora: kako povezati vaš Wallet sa njim i koje aplikacije treba da instalirate da biste postali suvereni Bitcoiner.
+U sledećem delu, istražićemo praktičnu upotrebu vašeg novog čvora: kako povezati vaš novčanik sa njim i koje aplikacije treba da instalirate da biste postali suvereni Bitcoiner.
 
 
 
 
 
-# Povezivanje vašeg Wallet sa vašim čvorom
+# Povezivanje vašeg novčanika sa vašim čvorom
 
 
 <partId>418d0afd-3a61-4b5a-9db4-203c0335fd29</partId>
@@ -2070,7 +2070,7 @@ U sledećem delu, istražićemo praktičnu upotrebu vašeg novog čvora: kako po
 
 
 
-Ako ste već istraživali Bitcoin čvorove pre nego što ste pohađali ovaj kurs, možda ste naišli na termin "indekser". To su alati kao što su Electrs ili Fulcrum, koji se mogu dodati na Bitcoin core čvor. Ali koja je tačno njihova uloga? Kako funkcionišu u praksi? I da li bi trebalo da instalirate jedan na vaš novi Bitcoin čvor? To je ono što ćemo istražiti u ovom poglavlju.
+Ako ste već istraživali Bitcoin čvorove pre nego što ste pohađali ovaj kurs, možda ste naišli na termin "indekser". To su alati kao što su Electrs ili Fulcrum, koji se mogu dodati na Bitcoin Core čvor. Ali koja je tačno njihova uloga? Kako funkcionišu u praksi? I da li bi trebalo da instalirate jedan na vaš novi Bitcoin čvor? To je ono što ćemo istražiti u ovom poglavlju.
 
 
 
@@ -2086,7 +2086,7 @@ U laičkim terminima, to je isti princip kao indeks u knjizi: ako tražite odre�
 
 
 
-U Bitcoin čvoru, kao što su Bitcoin core, Blockchain podaci se čuvaju u svom sirovom, hronološkom obliku. Svaki blok sadrži transakcije, koje zauzvrat sadrže ulaze i izlaze, bez ikakve posebne klasifikacije po Address, identifikatoru, ili Wallet. Ova linearna organizacija je optimizovana za validaciju blokova, ali nije pogodna za ciljane pretrage. Na primer, ako želite pronaći sve transakcije povezane sa određenim Address u neindeksiranom čvoru, morali biste ručno pregledati ceo Blockchain, blok po blok i transakciju po transakciju. Upravo tu dolazi indeksator na vašem Bitcoin čvoru.
+U Bitcoin čvoru, kao što je Bitcoin Core, blokčejn podaci se čuvaju u svom sirovom, hronološkom obliku. Svaki blok sadrži transakcije, koje zauzvrat sadrže ulaze i izlaze, bez ikakve posebne klasifikacije po adresi, identifikatoru, ili novčaniku. Ova linearna organizacija je optimizovana za validaciju blokova, ali nije pogodna za ciljane pretrage. Na primer, ako želite pronaći sve transakcije povezane sa određenom adresom u neindeksiranom čvoru, morali biste ručno pregledati ceo blokčejn, blok po blok i transakciju po transakciju. Upravo tu dolazi indeksator na vašem Bitcoin čvoru.
 
 
 
