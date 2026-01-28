@@ -2256,7 +2256,7 @@ U ovom vodiču, fokusiraćemo se na povezivanje sa vašim čvorom putem Tor-a, j
 
 
 
-Koristićemo Sparrow kao primer u ovom poglavlju, ali procedura je ista za sav ostali Wallet softver za upravljanje koji prihvata veze sa Electrum serverima. Jednostavno pronađite odgovarajuće podešavanje u parametrima vaše aplikacije (obično u "*Server*", "*Network*", "*Node*"...).
+Koristićemo Sparrow kao primer u ovom poglavlju, ali procedura je ista za sav ostali softver za upravljanje novčanikom koji prihvata veze sa Electrum serverima. Jednostavno pronađite odgovarajuće podešavanje u parametrima vaše aplikacije (obično u "*Server*", "*Network*", "*Node*"...).
 
 
 
@@ -2276,22 +2276,22 @@ Zatim kliknite na "*Server*" da pristupite parametrima veze.
 
 
 
-Zatim ćete otkriti tri opcije za povezivanje vašeg softvera sa Bitcoin čvorom:
+Zatim ćete videti tri opcije za povezivanje vašeg softvera sa Bitcoin čvorom:
 
 
 
 
-- Javni Server* (žuto): po podrazumevanoj postavci, ako ne posedujete Bitcoin čvor, ova opcija vas povezuje sa javnim čvorom koji ne posedujete (obično kompanijskim). Ova opcija nije relevantna ovde, jer imate svoj čvor na Umbrel.
-- Bitcoin core* (Green): ova opcija odgovara povezivanju putem Interface RPC, tj. direktno na Bitcoin core.
-- Privatni Electrum* (plavo): ova opcija vam omogućava povezivanje putem vašeg indekserskog Interface Electrum Servera (Electrs ili Fulcrum).
+- *Javni server* (žuto): po podrazumevanoj postavci, ako ne posedujete Bitcoin čvor, ova opcija vas povezuje sa javnim čvorom koji ne posedujete (obično kompanijskim). Ova opcija nije relevantna ovde, jer imate svoj čvor na Umbrelu.
+- *Bitcoin core* (Green): ova opcija odgovara povezivanju putem RPC interfejsa, tj. direktno na Bitcoin core.
+- *Privatni Electrum* (plavo): ova opcija vam omogućava povezivanje putem interfejsa vašeg indeksatora Electrum Servera (Electrs ili Fulcrum).
 
 
 
-### Povezivanje sa Bitcoin core RPC
+### Povezivanje sa Bitcoin Core RPC interfejsom
 
 
 
-Ako vaš Umbrel čvor nema indeksator, ovo je opcija koju treba da odaberete. Na Sparrow, kliknite na "*Bitcoin core*".
+Ako vaš Umbrel čvor nema indeksator, ovo je opcija koju treba da odaberete. Na Sparrow-u, kliknite na "*Bitcoin core*".
 
 
 
@@ -2299,7 +2299,7 @@ Ako vaš Umbrel čvor nema indeksator, ovo je opcija koju treba da odaberete. Na
 
 
 
-Trebaće da unesete nekoliko informacija kako biste uspostavili vezu sa vašim čvorom. Svi ovi podaci mogu se pristupiti iz aplikacije "*Bitcoin Node*" na Umbrel-u klikom na dugme "*Connect*" u gornjem desnom uglu Interface.
+Trebaće da unesete nekoliko informacija kako biste uspostavili vezu sa vašim čvorom. Svim ovim podacima može se pristupiti iz aplikacije "*Bitcoin Node*" na Umbrel-u klikom na dugme "*Connect*" u gornjem desnom uglu grafičkog interfejsa.
 
 
 
@@ -2307,7 +2307,7 @@ Trebaće da unesete nekoliko informacija kako biste uspostavili vezu sa vašim �
 
 
 
-Kartica "*RPC Details*" prikazuje sve potrebne informacije za povezivanje. Izaberite povezivanje putem Tor Address (u `.onion`).
+Kartica "*RPC Details*" prikazuje sve potrebne informacije za povezivanje. Izaberite povezivanje putem Tor adrese (u `.onion`).
 
 
 
@@ -2315,7 +2315,7 @@ Kartica "*RPC Details*" prikazuje sve potrebne informacije za povezivanje. Izabe
 
 
 
-Unesite ove podatke u odgovarajuća polja na Sparrow wallet, zatim kliknite na dugme "*Test Connection*".
+Unesite ove podatke u odgovarajuća polja na Sparrow novčaniku, zatim kliknite na dugme "*Test Connection*".
 
 
 
@@ -2323,7 +2323,7 @@ Unesite ove podatke u odgovarajuća polja na Sparrow wallet, zatim kliknite na d
 
 
 
-Ako je veza uspešna, pojaviće se oznaka Green i poruka o potvrdi.
+Ako je veza uspešna, pojaviće se zelena oznaka i poruka o potvrdi.
 
 
 
@@ -2331,15 +2331,14 @@ Ako je veza uspešna, pojaviće se oznaka Green i poruka o potvrdi.
 
 
 
-Oznaka na dnu desno Interface Sparrow wallet sada će biti Green (označavajući direktnu vezu sa Bitcoin core).
-
+Kvačica u donjem desnom uglu interfejsa Sparrow novčanika sada će biti zelena (što označava direktnu vezu sa Bitcoin Core-om).
 
 
 **Napomena:** Da bi veza bila uspešna, vaš čvor mora biti 100% sinhronizovan. Ako to nije slučaj, molimo vas da sačekate do kraja IBD-a.
 
 
 
-### Poveži se sa Electrs
+### Povezivanje na Electrs
 
 
 
@@ -2347,7 +2346,7 @@ Ako vaš čvor ima indeksator, bolje je povezati se s njim nego koristiti Bitcoi
 
 
 
-Na Sparrow, idite na karticu "*Private Electrum*".
+Na Sparrow-u, idite na karticu "*Private Electrum*".
 
 
 
@@ -2359,7 +2358,7 @@ Zatim ćete morati uneti nekoliko informacija kako biste uspostavili vezu sa va�
 
 
 
-Odaberite karticu "*Tor*" da biste dobili `.onion` vezu Address. Ako želite da povežete mobilni softver Wallet, možete direktno skenirati QR kod.
+Odaberite karticu "*Tor*" da biste dobili `.onion` adresu. Ako želite da povežete mobilni novčanik, možete direktno skenirati QR kod.
 
 
 
@@ -2367,7 +2366,7 @@ Odaberite karticu "*Tor*" da biste dobili `.onion` vezu Address. Ako želite da 
 
 
 
-Jednostavno unesite Tor Address vašeg Electrum servera u polje "*URL*", zatim kliknite na dugme "*Test Connection*".
+Jednostavno unesite Tor adresu vašeg Electrum servera u polje "*URL*", zatim kliknite na dugme "*Test Connection*".
 
 
 
@@ -2383,7 +2382,7 @@ Ako je veza uspešna, biće prikazana oznaka za potvrdu i poruka o potvrdi.
 
 
 
-Oznaka u donjem desnom uglu Interface Sparrow wallet će postati plava (boja povezana sa povezivanjem na Electrum server).
+Oznaka u donjem desnom uglu grafičkog interfejsa Sparrow novčanika će postati plava (boja povezana sa povezivanjem na Electrum server).
 
 
 
@@ -2391,7 +2390,7 @@ Oznaka u donjem desnom uglu Interface Sparrow wallet će postati plava (boja pov
 
 
 
-Sada znate kako da povežete svoj Wallet sa svojim Bitcoin čvorom! U sledećem poglavlju, predstaviću vam nekoliko dodatnih aplikacija dostupnih na Umbrel-u koje su mi posebno drage, a koje će vam omogućiti da unapredite svakodnevno korišćenje Bitcoin preko vašeg čvora.
+Sada znate kako da povežete svoj novčanik sa svojim Bitcoin čvorom! U sledećem poglavlju, predstaviću vam nekoliko dodatnih aplikacija dostupnih na Umbrel-u koje su mi posebno drage, a koje će vam omogućiti da unapredite svakodnevno korišćenje Bitcoina preko vašeg čvora.
 
 
 
@@ -2403,15 +2402,15 @@ Sada znate kako da povežete svoj Wallet sa svojim Bitcoin čvorom! U sledećem 
 
 
 
-Umbrel nudi opsežnu prodavnicu aplikacija. Kao što ćete videti, postoji mnogo alata povezanih sa Bitcoin, ali i širok spektar aplikacija u veoma različitim oblastima: rešenja za samostalno hostovanje usluga i fajlova, aplikacije za produktivnost, opštiji finansijski alati, upravljanje medijima, bezbednost i administracija mreže, razvoj, veštačka inteligencija, društvene mreže, pa čak i automatizacija doma.
+Umbrel nudi opsežnu prodavnicu aplikacija. Kao što ćete videti, postoji mnogo alata povezanih sa Bitcoinom, ali i širok spektar aplikacija u veoma različitim oblastima: rešenja za samostalno hostovanje servisa i fajlova, aplikacije za produktivnost, opštiji finansijski alati, upravljanje medijima, bezbednost i administracija mreže, razvoj, veštačka inteligencija, društvene mreže, pa čak i automatizacija doma.
 
 
 
-U ovom kursu BTC 202, fokusiraćemo se isključivo na aplikacije povezane sa Bitcoin. Međutim, slobodno istražite ostatak kataloga za alate koji vam mogu biti od koristi.
+U ovom kursu BTC 202, fokusiraćemo se isključivo na aplikacije povezane sa Bitcoinom. Međutim, slobodno istražite ostatak kataloga za alate koji vam mogu biti od koristi.
 
 
 
-Naravno, bilo bi nemoguće navesti sve Bitcoin aplikacije ovde. U ovom poglavlju, želeo bih da vas upoznam sa osnovnim alatima koji će olakšati i obogatiti vašu svakodnevnu upotrebu Bitcoin.
+Naravno, bilo bi nemoguće navesti sve Bitcoin aplikacije ovde. U ovom poglavlju, želeo bih da vas upoznam sa osnovnim alatima koji će olakšati i obogatiti vašu svakodnevnu upotrebu Bitcoina.
 
 
 
@@ -2419,7 +2418,7 @@ Naravno, bilo bi nemoguće navesti sve Bitcoin aplikacije ovde. U ovom poglavlju
 
 
 
-U svakodnevnoj upotrebi Bitcoin, ako postoji jedan alat koji je zaista nezamenljiv, to je Block explorer. Bilo da je dostupan online ili instaliran lokalno, on transformiše sirove podatke Blockchain u strukturiran, jasan i lako čitljiv format. Takođe poseduje pretraživač koji omogućava korisnicima da brzo pronađu određeni blok, transakciju ili Address.
+U svakodnevnoj upotrebi Bitcoina, ako postoji jedan alat koji je zaista nezamenljiv, to je block explorer. Bilo da je dostupan online ili instaliran lokalno, on transformiše sirove blokčejn podatke u strukturiran, jasan i lako čitljiv format. Takođe poseduje pretraživač koji omogućava korisnicima da brzo pronađu određeni blok, transakciju ili adresu.
 
 
 
@@ -2427,17 +2426,17 @@ U konkretnim terminima, istraživač vam omogućava da procenite naknade potrebn
 
 
 
-Kao što je ranije pomenuto, explorer može biti hostovan online na vebsajtu ili pokrenut lokalno na vašem računaru. Glavni nedostatak online usluga je što mogu ugroziti vašu privatnost. Bez VPN-a ili Tor-a, server koji hostuje explorer može povezati vaš IP Address sa transakcijama koje pregledate, što može pružiti idealnu ulaznu tačku za analizu lanca.
+Kao što je ranije pomenuto, explorer može biti hostovan online na vebsajtu ili pokrenut lokalno na vašem računaru. Glavni nedostatak online usluga je što mogu ugroziti vašu privatnost. Bez VPN-a ili Tor-a, server koji hostuje explorer može povezati vašu IP adresu sa transakcijama koje pregledate, što može pružiti idealnu ulaznu tačku za analizu lanca.
 
 
 
 https://planb.academy/courses/65c138b0-4161-4958-bbe3-c12916bc959c
 
-Štaviše, vaš Internet provajder (ISP) može znati da pregledate određenu transakciju putem Block explorer sajta. Ovo takođe postavlja pitanje poverenja: morate se osloniti na onlajn servis da vam pruži tačne informacije o vašim transakcijama, bez mogućnosti da sami proverite njihovu istinitost.
+Štaviše, vaš Internet provajder (ISP) može znati da pregledate određenu transakciju putem block explorer sajta. Ovo takođe postavlja pitanje poverenja: morate se osloniti na onlajn servis da vam pruži tačne informacije o vašim transakcijama, bez mogućnosti da sami proverite njihovu istinitost.
 
 
 
-Zato je uvek najbolje koristiti svoj lokalni Block explorer. Na ovaj način, nijedan podatak vezan za vašu pretragu neće procuriti, jer se svi upiti obrađuju direktno na mašini koju kontrolišete, bez prolaska kroz Internet. Štaviše, lokalni istraživač se oslanja na podatke sa vašeg sopstvenog Bitcoin čvora, koji ste sami validirali, prema sopstvenim pravilima, i kojem možete verovati.
+Zato je uvek najbolje koristiti svoj lokalni block explorer. Na ovaj način, nijedan podatak vezan za vašu pretragu neće procuriti, jer se svi upiti obrađuju direktno na mašini koju kontrolišete, bez prolaska kroz internet. Štaviše, lokalni istraživač se oslanja na podatke sa vašeg sopstvenog Bitcoin čvora, koji ste sami validirali, prema sopstvenim pravilima, i kojem možete verovati.
 
 
 
@@ -2452,7 +2451,7 @@ Umbrel nudi nekoliko istraživača blokova:
 
 
 
-Posebno mi se sviđa Mempool.Space, koji sam instalirao na svom čvoru. Imajte na umu: za korišćenje većine blok istraživača na Umbrel-u, potreban je Address indeksator. Stoga vam je potrebna aplikacija Bitcoin Node (ili Bitcoin Knots), koja ima 100% sinhronizovan Blockchain, kao i indeksator kao što su Electrs ili Fulcrum, koji je takođe 100% sinhronizovan.
+Posebno mi se sviđa Mempool.Space, koji sam instalirao na svom čvoru. Imajte na umu: za korišćenje većine blok istraživača na Umbrel-u, potreban je indeksator adresa. Stoga vam je potrebna aplikacija Bitcoin Node (ili Bitcoin Knots), koja ima 100% sinhronizovan blokčejn, kao i indeksator kao što su Electrs ili Fulcrum, koji je takođe 100% sinhronizovan.
 
 
 
@@ -2464,13 +2463,13 @@ Jednom kada je aplikacija instalirana, jednostavno je otvorite da biste pristupi
 
 
 
-Da biste saznali više o korišćenju Mempool.Space explorer, preporučujem ovaj sveobuhvatan vodič:
+Da biste saznali više o korišćenju Mempool.Space explorera, preporučujem ovaj sveobuhvatan vodič:
 
 
 
 https://planb.academy/tutorials/privacy/explorer/mempool-space-f3e468a1-92f1-43ce-b2e4-c3298fa0e02f
 
-### Lightning Node
+### Lightning čvor
 
 
 
@@ -2490,8 +2489,7 @@ Umbrel nudi brojne aplikacije koje će vam pomoći da pokrenete vaš Lightning �
 
 https://planb.academy/tutorials/node/lightning-network/umbrel-lnd-b12e0b5b-12ff-45f1-978e-62f4b4a8ba16
 
-Zatim možete upravljati svojim čvorom sa glavnog Interface, ili, za još veću funkcionalnost i napredne opcije, instalirati *Ride The Lightning* ili *ThunderHub*. Ovi alati će vam pružiti mnogo sveobuhvatniji web-bazirani sistem upravljanja Interface za vaš čvor.
-
+Zatim možete upravljati svojim čvorom sa glavnog interfejsa, ili, za još veću funkcionalnost i napredne opcije, instalirati *Ride The Lightning* ili *ThunderHub*. Ovi alati će vam pružiti znatno sveobuhvatniji web interfejs za upravljanje vašim čvorom.
 
 
 https://planb.academy/tutorials/node/lightning-network/ride-the-lightning-ca007688-0653-490c-8349-81d330d744b5
@@ -2524,7 +2522,7 @@ Još jedna aplikacija koja mi se posebno sviđa na Umbrel-u je Tailscale. To je 
 
 
 
-Na Umbrel-u, instalacija Tailscale-a povezuje vaš Bitcoin čvor sa vašom sopstvenom virtuelnom privatnom mrežom. Kada se konfiguriše, vaš čvor dobija privatnu Tailscale IP adresu Address, dostupnu samo sa drugih uređaja povezanih na istu Tailscale mrežu (kao što su računari, pametni telefoni i tableti). Ova veza je end-to-end enkriptovana i ne prolazi kroz nezaštićenu javnu mrežu, što značajno poboljšava sigurnost u poređenju sa neenkriptovanom vezom.
+Na Umbrel-u, instalacija Tailscale-a povezuje vaš Bitcoin čvor sa vašom sopstvenom virtuelnom privatnom mrežom. Kada se konfiguriše, vaš čvor dobija privatnu Tailscale IP adresu, dostupnu samo sa drugih uređaja povezanih na istu Tailscale mrežu (kao što su računari, pametni telefoni i tableti). Ova veza je end-to-end enkriptovana i ne prolazi kroz nezaštićenu javnu mrežu, što značajno poboljšava sigurnost u poređenju sa neenkriptovanom vezom.
 
 
 
@@ -2538,13 +2536,13 @@ U konkretnim terminima, Tailscale vam nudi nekoliko prednosti kada koristite va�
 
 
 
-- Možete upravljati Interface Umbrelom ili pristupiti aplikacijama povezanim s vašim čvorom (kao što su Mempool, Ride The Lightning, ThunderHub...) s bilo kojeg mesta, kao da ste na istoj lokalnoj mreži, bez otvaranja portova na Internetu i bez korišćenja Tor-a, koji je veoma spor;
+- Možete upravljati Umbrelom interfejsom ili pristupiti aplikacijama povezanim s vašim čvorom (kao što su Mempool, Ride The Lightning, ThunderHub...) s bilo kojeg mesta, kao da ste na istoj lokalnoj mreži, bez otvaranja portova na internetu i bez korišćenja Tor-a, koji je veoma spor;
 
 
 
 
 
-- Možete se povezati sa svojim Electrum serverom (Electrs ili Fulcrum) ili direktno na Bitcoin core putem vašeg VPN-a, zaobilazeći Tor. Ovo pruža sigurnu vezu, uporedivu sa korišćenjem Tor-a, ali sa mnogo većom brzinom i smanjenom latencijom. Ukratko, zadržavate prednosti privatnosti i sigurnosti Tor-a dok uživate u brzini Clearnet veze. Za On-Chain Wallet, ovaj dobitak može delovati marginalno, ali ako planirate da kasnije postavite svoj Lightning čvor, razlika je značajna. Naime, plaćanja putem vašeg čvora u pokretu na Tor-u su izuzetno spora zbog brojnih razmena koje su potrebne, dok sa Tailscale-om, radi savršeno.
+- Možete se povezati sa svojim Electrum serverom (Electrs ili Fulcrum) ili direktno na Bitcoin Core putem vašeg VPN-a, zaobilazeći Tor. Ovo pruža sigurnu vezu, uporedivu sa korišćenjem Tor-a, ali sa mnogo većom brzinom i smanjenom latencijom. Ukratko, dobijate privatnost i sigurnost Tora, ali uz brzinu klasične internet veze (clearnet). Za On-Chain novčanik, ova prednost može delovati marginalno, ali ako planirate da kasnije pokrenete sopstveni Lightning čvor, razlika je značajna. Naime, plaćanja putem vašeg čvora u pokretu na Tor-u su izuzetno spora zbog brojnih razmena koje su potrebne, dok sa Tailscale-om, radi savršeno.
 
 
 
@@ -2568,7 +2566,7 @@ https://planb.academy/tutorials/computer-security/communication/tailscale-9acbd7
 
 
 
-Nostr, akronim za "*Notes and Other Stuff Transmitted by Relays*", je otvoreni, decentralizovani protokol dizajniran da omogući objavljivanje i razmenu poruka na Internetu bez oslanjanja na centralizovanu platformu. Svaki korisnik ima par kriptografskih ključeva: javni ključ (`npub`), koji služi kao identifikator, i privatni ključ (`nsec`), koji se koristi za potpisivanje poruka i garantovanje njihove autentičnosti.
+Nostr, akronim za "*Notes and Other Stuff Transmitted by Relays*", je otvoreni, decentralizovani protokol dizajniran da omogući objavljivanje i razmenu poruka na internetu bez oslanjanja na centralizovanu platformu. Svaki korisnik ima par kriptografskih ključeva: javni ključ (`npub`), koji služi kao identifikator, i privatni ključ (`nsec`), koji se koristi za potpisivanje poruka i garantovanje njihove autentičnosti.
 
 
 
@@ -2576,7 +2574,7 @@ Poruke se prenose putem mreže nezavisnih releja. Ova distribuirana arhitektura 
 
 
 
-Ovaj protokol je veoma popularan unutar Bitcoin zajednice jer, kao i Bitcoin, Nostr rešava pitanja digitalnog suvereniteta i kontrole podataka. Njegov tvorac, Fiatjaf, je programer već prepoznat u ekosistemu po svojim brojnim doprinosima.
+Ovaj protokol je veoma popularan unutar Bitcoin zajednice jer, kao i Bitcoin, Nostr rešava pitanja digitalnog suvereniteta i kontrole podataka. Njegov tvorac, Fiatjaf, programer koji je već prepoznat u ekosistemu po svojim brojnim doprinosima.
 
 
 
@@ -2584,7 +2582,7 @@ Sa vašim Umbrelom, možete optimizovati korišćenje Nostr-a. Instaliranjem apl
 
 
 
-Nostr klijenti ***noStrudel*** ili ***Snort*** su takođe dostupni na Umbrel-u. Zahvaljujući ovim aplikacijama, možete objavljivati, čitati, pretraživati profile i komunicirati sa Nostr ekosistemom direktno sa Interface web-a na vašem Umbrel-u.
+Nostr klijenti ***noStrudel*** ili ***Snort*** su takođe dostupni na Umbrel-u. Zahvaljujući ovim aplikacijama, možete objavljivati, čitati, pretraživati profile i komunicirati sa Nostr ekosistemom direktno preko web interfejsa na svom Umbrelu.
 
 
 
@@ -2602,11 +2600,11 @@ https://planb.academy/tutorials/node/others/umbrel-nostr-7ae147e8-f5cd-46e1-861b
 
 
 
-BTCPay Server je besplatan, open-source procesor plaćanja koji vam omogućava da prihvatate uplate putem Bitcoin i Lightning Network bez posrednika, zadržavajući samostalno staranje o sredstvima.
+BTCPay Server je besplatan, open-source procesor plaćanja koji vam omogućava da prihvatate uplate putem Bitcoin i Lightning mreže bez posrednika, dok i dalje zadržavate punu kontrolu nad svojim sredstvima.
 
 
 
-Arhitektura BTCPay Server-a zasnovana je na čvoru Bitcoin, a za Lightning na kompatibilnoj implementaciji (LND, Core Lightning...), što ga čini jednim od retkih potpuno ne-kustodijalnih PoS rešenja. Takođe je najopsežniji softver za praćenje i računovodstvo.
+Arhitektura BTCPay Server-a zasnovana je na Bitcoin čvoru, a za Lightning na kompatibilnoj implementaciji (LND, Core Lightning...), što ga čini jednim od retkih potpuno ne-kustodijalnih PoS rešenja. Takođe je najopsežniji softver za praćenje i računovodstvo.
 
 
 
@@ -2620,7 +2618,7 @@ Ako posedujete biznis i želite da prihvatate Bitcoin uplate direktno putem vaš
 
 
 
-- Kurs BIZ 101 o korišćenju Bitcoin u vašem poslovanju:
+- Kurs BIZ 101 o korišćenju Bitcoina u vašem poslovanju:
 
 
 
@@ -2650,14 +2648,14 @@ https://planb.academy/tutorials/business/point-of-sale/btcpay-server-928eb01e-82
 
 
 
-## Održavanje svog Umbrel čvora
+## Održavanje Umbrel čvora
 
 
 <chapterId>06d77d09-bf24-4555-b2ba-c08bbda477c7</chapterId>
 
 
 
-Da započnemo ovaj poslednji deo, i pre nego što pređemo na napredniju teoriju, voleo bih da ispitam najbolje prakse i konkretne akcije koje možete preduzeti kada je vaš Umbrel čvor instaliran, sinhronizovan i pravilno konfigurisan u ovom kratkom poglavlju. Kako ga održavati svakodnevno?
+Za početak ove završne sekcije, pre nego što pređemo na naprednu teoriju, u ovom kratkom poglavlju pogledaćemo najbolje prakse i konkretne korake koje možete preduzeti kada je vaš Umbrel nod instaliran, sinhronizovan i pravilno konfigurisan. Kako održavati Umbrel svakodnevno?
 
 
 
@@ -2665,15 +2663,15 @@ Da započnemo ovaj poslednji deo, i pre nego što pređemo na napredniju teoriju
 
 
 
-Pouzdani čvor počinje sa stabilnim hardverom. Osigurajte da je mašina koja sadrži vaš čvor pravilno ventilisana, bez Dust, i instalirana u suvom okruženju, daleko od bilo kakvih izvora toplote i vlage. Izbegavajte da je smestite u skučen prostor i odlučite se za dobro ventilisanu lokaciju.
+Pouzdani čvor počinje sa stabilnim hardverom. Osigurajte da je mašina koja sadrži vaš čvor pravilno ventilisana, bez prašine, i instalirana u suvom okruženju, daleko od bilo kakvih izvora toplote i vlage. Izbegavajte da je smestite u skučen prostor i odlučite se za dobro ventilisanu lokaciju.
 
 
 
-Na Raspberry Pi i mini-PC-jevima, Dust na kraju začepljuje hladnjake, podižući temperaturu i dovodeći do usporavanja (dobrovoljno ograničenje korišćenja resursa), što zauzvrat rezultira padom efikasnosti vašeg čvora. Zato preporučujem periodično čišćenje ulaza za vazduh i ventilatora, idealno svakih nekoliko meseci.
+Na Raspberry Pi i mini-PC-jevima, prašina na kraju začepljuje hladnjake, podižući temperaturu i dovodeći do usporavanja (dobrovoljno ograničenje korišćenja resursa), što zauzvrat rezultira padom efikasnosti vašeg čvora. Zato preporučujem periodično čišćenje ulaza za vazduh i ventilatora, idealno svakih nekoliko meseci.
 
 
 
-Osigurajte da koristite visokokvalitetni napajanje Supply, jer nestabilan napon može dovesti do oštećenja sistema, pa čak i predstavljati opasnost od požara. Idealno bi bilo da koristite originalno napajanje Supply koje je isporučio proizvođač vaše mašine. Takođe, pazite na pregrevanje zbog Džulovog efekta na produžnim kablovima: uvek poštujte maksimalnu dozvoljenu snagu i nikada ne povezujte više produžnih kablova u kaskadu.
+Osigurajte da koristite visokokvalitetno napajanje, jer nestabilan napon može dovesti do oštećenja sistema, pa čak i predstavljati opasnost od požara. Idealno bi bilo da koristite originalno napajanje koje je isporučio proizvođač vaše mašine. Takođe, budite oprezni zbog mogućeg pregrevanja produžnih kablova usled Joule-ovog efekta: uvek se pridržavajte maksimalno dozvoljene snage i nikada ne spajajte više produžnih kablova jedan za drugim.
 
 
 
@@ -2681,7 +2679,7 @@ Takođe preporučujem ulaganje u UPS. Ovo štiti vaš čvor od naglih gašenja, 
 
 
 
-Na strani skladištenja, pratite napredak: ako se disk približava zasićenju, razmislite o oslobađanju prostora (deinstalirajte neiskorišćene aplikacije, prilagodite postavke indeksatora) ili migrirajte na veći SSD. Nedostatak pune Bitcoin čvorne tačke je što se njeni zahtevi za skladištenjem kontinuirano povećavaju, jer se novi blok generiše svakih 10 minuta i stari blokovi ne mogu biti obrisani (osim ako čvor nije pruned). Stoga vam savetujem da planirate dovoljno veliki kapacitet prilikom kupovine vaše opreme (minimum 2 TB).
+Na strani skladištenja, pratite napredak: ako se disk približava zasićenju, razmislite o oslobađanju prostora (deinstalirajte neiskorišćene aplikacije, prilagodite postavke indeksatora) ili o prelasku na veći SSD. Mane punog Bitcoin čvora su što se zahtevi za skladištenjem stalno povećavaju, jer se novi blok generiše na svakih 10 minuta, a stari blokovi se ne mogu brisati (osim ako čvor nije u pruned režimu). Stoga vam savetujem da planirate dovoljno veliki kapacitet prilikom kupovine vaše opreme (minimum 2 TB).
 
 
 
