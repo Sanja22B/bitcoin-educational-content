@@ -2102,73 +2102,73 @@ Indekser je specijalizovani softverski program koji analizira ovu masu sirovih p
 
 
 
-Indeksiranje vam omogućava da brzo, precizno i efikasno pretražujete informacije na vašem čvoru. Na primer, kada povežete Wallet kao što je Sparrow sa vašim čvorom, može gotovo trenutno prikazati stanje Address. Konkretno, postavlja upit indeksatoru sa zahtevom kao što je: "_Koji UTXO-i su povezani sa ovim skriptom-Hash?_" Indeksator odgovara gotovo odmah, bez potrebe da ponovo čita ceo Blockchain, jer su ovi podaci već navedeni u njegovoj bazi podataka.
+Indeksiranje vam omogućava da brzo, precizno i efikasno pretražujete informacije na vašem čvoru. Na primer, kada povežete novčanik kao što je Sparrow sa vašim čvorom, može gotovo trenutno prikazati stanje adresa. Konkretno, postavlja upit indeksatoru sa zahtevom kao što je: "_Koji UTXO-ovi su povezani sa ovim script-hash-om?_" Indeksator odgovara gotovo odmah, bez potrebe da ponovo čita ceo blokčejn, jer su ovi podaci već navedeni u njegovoj bazi podataka.
 
 
 
-### Da li Bitcoin core ima indeksator?
+### Da li Bitcoin Core ima indeksator?
 
 
 
-Bez potrebe za dodatnim softverom, Bitcoin core, strogo govoreći, ne nudi kompletan Address indeksator uporediv sa onima koji se nalaze u softverima kao što su Electrs ili Fulcrum. Ipak, on uključuje nekoliko internih mehanizama za indeksiranje, kao i opcione opcije za proširenje svojih mogućnosti upita. Da bismo u potpunosti razumeli situaciju, potrebno je da napravimo zaobilaznicu u istoriju projekta.
+Bez potrebe za dodatnim softverom, Bitcoin Core, strogo govoreći, ne nudi kompletan indeksator adresa uporediv sa onima koji se nalaze u softverima kao što su Electrs ili Fulcrum. Ipak, on uključuje nekoliko internih mehanizama za indeksiranje, kao i opcione opcije za proširenje svojih mogućnosti upita. Da bismo u potpunosti shvatili situaciju, potrebno je da se nakratko osvrnemo na istoriju projekta.
 
 
 
-Do verzije Bitcoin core 0.8.0, validacija transakcija se zasnivala na globalnom indeksu transakcija, poznatom kao `txindex`. Ovaj indeks je referencirao sve Blockchain transakcije i njihove izlaze. Kada bi čvor primio novu transakciju, konsultovao bi ovaj indeks da verifikuje da li konzumirani izlazi (u ulazima) zaista postoje i da nisu već potrošeni. `txindex` je stoga bio neophodan za validaciju transakcija u to vreme.
+Do verzije Bitcoin Core 0.8.0, validacija transakcija se zasnivala na globalnom indeksu transakcija, poznatom kao `txindex`. Ovaj indeks je referencirao sve blokčejn transakcije i njihove izlaze. Kada bi čvor primio novu transakciju, konsultovao bi ovaj indeks da verifikuje da li iskorišćeni izlazi (u ulazima) zaista postoje i da nisu već potrošeni. `txindex` je stoga bio neophodan za validaciju transakcija u to vreme.
 
 
 
-Međutim, ovaj pristup imao je svoja ograničenja: bio je spor, skup u pogledu skladištenja i suvišan u pogledu informacija. Da bi se to rešilo, verzija 0.8.0 uvodi prepravku modela validacije pod nazivom ***Ultraprune***. Umesto da skladišti sve u obliku indeksa transakcija, Bitcoin core održava jednostavnu bazu podataka posvećenu isključivo UTXO-ima, nazvanu `chainstate` (u svakodnevnom jeziku, ovo je poznato kao "UTXO set"), i ažurira svoju listu kako se izlazi troše i kreiraju.
+Međutim, ovaj pristup imao je svoja ograničenja: bio je spor, skup u pogledu skladištenja i suvišan u pogledu informacija. Da bi se to rešilo, verzija 0.8.0 uvodi prepravku modela validacije pod nazivom ***Ultraprune***. Umesto da skladišti sve u obliku indeksa transakcija, Bitcoin Core održava jednostavnu bazu podataka posvećenu isključivo UTXO-ima, nazvanu `chainstate` (u svakodnevnom jeziku, ovo je poznato kao "UTXO set"), i ažurira svoju listu kako se izlazi troše i kreiraju.
 
 
 
-Ova metoda je mnogo brža i čuva samo trenutno stanje registra, čineći `txindex` indeksator nepotrebnim. Međutim, umesto brisanja `txindex` koda, programeri su odlučili da zadrže ovu funkcionalnost iza jednostavnog parametra (`txindex=1`). Omogućavanjem ove opcije na vašem čvoru, možete upitati bilo koju transakciju iz njenog `txid`.
+Ova metoda je mnogo brža i čuva samo trenutno stanje registra, čineći `txindex` indeksator nepotrebnim. Međutim, umesto brisanja `txindex` koda, programeri su odlučili da zadrže ovu funkcionalnost iza jednostavnog parametra (`txindex=1`). Omogućavanjem ove opcije na svom čvoru, možete pretraživati bilo koju transakciju po njenom `txid`.
 
 
 
-Suprotno uvreženom mišljenju, Bitcoin core ne nudi indeksiranje zasnovano na Address kao što to čine Electrs ili Fulcrum. Postoji nekoliko razloga za ovaj izbor:
-
-
-
-
-
-- Uloga Bitcoin core nije da postane potpuni Block explorer, niti da obezbedi API prilagođen svakoj upotrebi. Integrisanje indeksa zasnovanog na Address podrazumevalo bi dugoročnu održavanje Commitment koja prevazilazi početni opseg softvera.
+Suprotno uvreženom mišljenju, Bitcoin Core ne nudi indeksiranje zasnovano na adresama kao što to čine Electrs ili Fulcrum. Postoji nekoliko razloga za ovaj izbor:
 
 
 
 
 
-- Većina slučajeva upotrebe može se već pokriti na druge načine. Na primer, da biste procenili saldo Address, možete koristiti komandu `scantxoutset`, koja direktno ispituje skup UTXO bez potrebe za punim indeksom.
+- Uloga Bitcoin Core-a nije da postane potpuni Block explorer, niti da obezbedi API prilagođen svakoj upotrebi. Dodavanje indeksa po adresama zahtevalo bi dugoročno održavanje, što izlazi iz okvira prvobitnog dizajna softvera.
 
 
 
 
 
-- Svaki softverski program ima specifične zahteve u vezi sa formatom ili tipom podataka koji treba indeksirati (Address, Hash skripta, vlasnički tag, itd.). Fleksibilnije je i logičnije dozvoliti tim programima da izgrade sopstvene prilagođene indekse nego primeniti generičko rešenje u Bitcoin core.
+- Većina slučajeva upotrebe može se već pokriti na druge načine. Na primer, da biste procenili stanje neke adrese, možete koristiti komandu `scantxoutset`, koja direktno ispituje UTXO skup bez potrebe za punim indeksom.
 
 
 
-Bitcoin core ima opcioni indeksator transakcija (`txindex`), ostatak iz njegove istorijske operacije, ali ne pruža Address indeks, niti direktan Interface za složene pretrage. U nekim slučajevima, stoga, može biti korisno dodati eksterni indeksator.
+
+
+- Svaki softverski program ima specifične zahteve u vezi sa formatom ili tipom podataka koji treba indeksirati (adresa, hash skripta, vlasnički tag, itd.). Fleksibilnije je i logičnije dozvoliti tim programima da izgrade sopstvene prilagođene indekse nego primeniti generičko rešenje u Bitcoin Core-u.
 
 
 
-### Da li treba da dodate Address indeksator na vaš čvor?
+Bitcoin Core ima opcioni indeksator transakcija (`txindex`), ostatak iz njegove istorijske operacije, ali ne pruža indeks adresa, niti direktan interfejs za složene pretrage. U nekim slučajevima, stoga, može biti korisno dodati eksterni indeksator.
 
 
 
-Dodavanje Address indeksatora, kao što su Electrs ili Fulcrum, nije obavezno; zavisi od vaših specifičnih potreba.
+### Da li treba da dodate indeksator adresa na vaš čvor?
 
 
 
-Ako jednostavno želite da povežete Wallet, kao što je Sparrow, sa svojim čvorom da biste pregledali stanja i emitovali transakcije, ovo je potpuno moguće direktno putem Bitcoin core's Interface RPC, bilo lokalno ili na daljinu putem Tor-a.
+Dodavanje indeksatora adresa, kao što su Electrs ili Fulcrum, nije obavezno; zavisi od vaših specifičnih potreba.
 
 
 
-S druge strane, za korišćenje naprednijeg softvera, kao što je pokretanje Mempool.Lokalno, instalacija Address indeksatora postaje neophodna za prostor Block explorer.
+Ako jednostavno želite da povežete novčanik, kao što je Sparrow, sa svojim čvorom da biste pregledali stanja i emitovali transakcije, ovo je potpuno moguće direktno putem RPC interfejsa Bitcoin Core-a, bilo lokalno ili na daljinu putem Tor-a.
 
 
 
-Indekser zahteva određeno vreme za sinhronizaciju (manje od IBD) i zauzeće dodatni prostor na disku. Ako vaš SSD i dalje ima dovoljno slobodnog prostora nakon preuzimanja Blockchain, možete lako dodati indekser.
+S druge strane, za korišćenje naprednijeg softvera, kao što je lokalno pokretanje mempool.space, instalacija indeksatora adresa postaje neophodna za block explorer.
+
+
+
+Indekser zahteva određeno vreme za sinhronizaciju (manje od IBD) i zauzeće dodatni prostor na disku. Ako vaš SSD i dalje ima dovoljno slobodnog prostora nakon preuzimanja blokčejna, možete lako dodati indekser.
 
 
 
@@ -2176,7 +2176,7 @@ Indekser zahteva određeno vreme za sinhronizaciju (manje od IBD) i zauzeće dod
 
 
 
-Dva softverska programa se obično koriste za izradu ove vrste Address indeksa i omogućavanje pristupa: **Electrs** i **Fulcrum**. Ovi alati indeksiraju Blockchain prema script-Hash (adresama) i zatim predlažu standardizovani Interface (Electrum protokol), na koji se povezuje mnoštvo novčanika, kao što su Electrum Wallet, Sparrow, ili Phoenix.
+Dva softverska programa se obično koriste za izradu ove vrste indeksa adresa i omogućavanje pristupa: **Electrs** i **Fulcrum**. Ovi alati indeksiraju blokčejn prema script-hash-u (adresama) i zatim predlažu standardizovani interfejs (Electrum protokol), na koji se povezuje mnoštvo novčanika, kao što su Electrum Wallet, Sparrow, ili Phoenix.
 
 
 
@@ -2184,7 +2184,7 @@ Dva softverska programa se obično koriste za izradu ove vrste Address indeksa i
 
 
 
-Jednostavno rečeno, Electrs je prilično kompaktan: indeksira Blockchain brže i zauzima manje prostora na disku, ali ima nešto slabije performanse u upitima u poređenju sa Fulcrumom. Nasuprot tome, Fulcrum troši više prostora na disku i duže traje indeksiranje, ali nudi superiorne performanse upita.
+Jednostavno rečeno, Electrs je prilično kompaktan: indeksira blokčejn brže i zauzima manje prostora na disku, ali ima nešto slabije performanse u upitima u poređenju sa Fulcrumom. Nasuprot tome, Fulcrum troši više prostora na disku i duže traje indeksiranje, ali nudi superiorne performanse upita.
 
 
 
@@ -2197,13 +2197,13 @@ U konkretnim terminima, u avgustu 2025. godine, Electrs će zahtevati približno
 
 
 
-- Ako vam je prostor na disku veoma ograničen, moraćete da se snađete sa Bitcoin core bez spoljnog Address indeksatora.
+- Ako vam je prostor na disku veoma ograničen, moraćete da se snađete sa Bitcoin Core bez spoljnog indeksatora adresa.
 - Ako želite da koristite indeksator, ali ste i dalje ograničeni kapacitetom, odlučite se za Electrs.
 - Ako imate dovoljno prostora na disku, Fulcrum može biti upravo ono što tražite.
 
 
 
-Za ostatak ovog BTC 202 kursa, koristiću Electrs, ali možete lako pratiti sa Fulcrum: procedura instalacije je identična, kao i Interface konekcija na Wallet, pošto oba izlažu Electrum server.
+Za ostatak ovog BTC 202 kursa, koristiću Electrs, ali možete lako pratiti sa Fulcrum: postupak instalacije je isti, kao i način povezivanja interfejsa sa novčanikom, jer oba koriste Electrum server.
 
 
 
@@ -2227,18 +2227,18 @@ Kada je instalacija završena, Electrs će nastaviti sa fazom sinhronizacije (in
 
 
 
-Kada je sinhronizacija završena, možete povezati svoj Wallet softver sa vašim Electrum serverom, koji je hostovan na Umbrel.
+Kada je sinhronizacija završena, možete povezati svoj softver za upravljanje novčanikom sa vašim Electrum serverom, koji je hostovan na Umbrel-u.
 
 
 
-## Kako da povežem svoj Wallet sa svojim Bitcoin čvorom?
+## Kako da povežem svoj novčanik sa svojim Bitcoin čvorom?
 
 
 <chapterId>35519b1a-f681-4a69-a652-9fbe510cd17f</chapterId>
 
 
 
-Sada kada imate kompletan Bitcoin čvor, vreme je da ga iskoristite na pravi način! U sledećem poglavlju, istražićemo druge potencijalne upotrebe za vašu Umbrel instancu. Međutim, počnimo sa osnovama: povezivanje vašeg Wallet softvera kako biste koristili informacije sa vašeg sopstvenog Blockchain i distribuirali transakcije kroz vaš sopstveni čvor.
+Sada kada imate kompletan Bitcoin čvor, vreme je da ga iskoristite na pravi način! U sledećem poglavlju, istražićemo druge potencijalne upotrebe za vašu Umbrel instancu. Međutim, počnimo sa osnovama: povezivanje vašeg softvera za upravljanje novčanikom kako biste koristili informacije sa vašeg sopstvenog blokčejna i distribuirali transakcije kroz vaš sopstveni čvor.
 
 
 
@@ -2247,8 +2247,8 @@ Kao što je gore pomenuto, postoje dva glavna interfejsa za povezivanje:
 
 
 
-- Direktna veza sa Bitcoin core preko RPC;
-- Ili se povežite sa Electrum serverom (Electrs ili Fulcrum).
+- Direktna veza sa Bitcoin Core-om preko RPC;
+- Ili se povežite na Electrum server (Electrs ili Fulcrum).
 
 
 
