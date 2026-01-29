@@ -2870,11 +2870,11 @@ Možete primorati punu validaciju svih skripti onemogućavanjem ovog mehanizma, 
 
 
 
-### Otkrivanje partnera: Kako vaš čvor pronalazi Bitcoin mrežu?
+### Otkrivanje peer-ova: Kako vaš čvor povezuje i pronalazi druge čvorove u Bitcoin mreži?
 
 
 
-Kada se čvor prvi put pokrene, još uvek ne zna nijednog vršnjaka. Međutim, mora pronaći druge Bitcoin čvorove na Internetu kako bi zatražio zaglavlja, a zatim blokove, da bi završio svoj IBD. Da bi pokrenuo ove veze, Bitcoin core prati prioritetnu logiku.
+Kada se čvor prvi put pokrene, još uvek ne zna za nijedan drugi čvor. Međutim, mora pronaći druge Bitcoin čvorove na internetu kako bi zatražio zaglavlja, a zatim blokove, i samim tim da bi završio svoj IBD. Da bi uspostavio ove veze, Bitcoin Core prati prioritetnu logiku.
 
 
 
@@ -2882,11 +2882,11 @@ Kada se čvor prvi put pokrene, još uvek ne zna nijednog vršnjaka. Međutim, m
 
 
 
-Kada se čvor ponovo pokrene nakon što je već bio korišćen, Core prvo pokušava da se ponovo poveže sa odlaznim čvorovima registrovanim pre gašenja, informacijama koje su sačuvane u datoteci `anchors.dat`. Zatim konsultuje svoju IP Address knjigu **`peers.dat`**, koja čuva listu prethodno susretanih čvorova, kako bi se ponovo povezao sa njima. Ovo je jednostavno lokalna datoteka, koju Core ažurira i održava. S druge strane, za novi čvor koji je tek pokrenut, ove 2 datoteke su prazne, jer još uvek nije komunicirao sa drugim Bitcoin čvorovima.
+Kada se čvor ponovo pokrene nakon što je već bio korišćen, Core prvo pokušava da se ponovo poveže sa odlaznim čvorovima registrovanim pre gašenja, informacijama koje su sačuvane u datoteci `anchors.dat`. Zatim konsultuje svoju knjigu IP adresa **`peers.dat`**, koja čuva listu prethodno susretanih čvorova, kako bi se ponovo povezao sa njima. Ovo je jednostavno lokalna datoteka, koju Core ažurira i održava. S druge strane, za novi čvor koji je tek pokrenut, ove 2 datoteke su prazne, jer čvor još uvek nije komunicirao sa drugim Bitcoin čvorovima.
 
 
 
-U ovom slučaju, softver upituje _**DNS seeds**_. To su [serveri koje održavaju priznati programeri ekosistema](https://github.com/Bitcoin/Bitcoin/blob/master/src/kernel/chainparams.cpp), koji vraćaju listu IP adresa pretpostavljenih aktivnih čvorova. Ove adrese omogućavaju novom čvoru da započne svoje prve konekcije i zatraži potrebne podatke od IBD-a. Evo liste *DNS seeds* aktivnih do danas (avgust 2025):
+U ovom slučaju, softver pretražuje _**DNS seed-ove**_. To su [serveri koje održavaju priznati programeri ekosistema](https://github.com/Bitcoin/Bitcoin/blob/master/src/kernel/chainparams.cpp), koji vraćaju listu IP adresa pretpostavljenih aktivnih čvorova. Ove adrese omogućavaju novom čvoru da započne svoje prve konekcije i zatraži potrebne podatke za IBD. Evo liste *DNS seeds* aktivnih do danas (avgust 2025):
 
 
 
@@ -2903,7 +2903,7 @@ U ovom slučaju, softver upituje _**DNS seeds**_. To su [serveri koje održavaju
 
 
 
-U velikoj većini slučajeva, korak *DNS seeds* je dovoljan za uspostavljanje prvih veza sa drugim čvorovima. Ako, izuzetno, ovi serveri ne odgovore u roku od 60 sekundi, čvor prelazi na drugi metod: [statistička lista sa preko 1.000 adresa](https://github.com/Bitcoin/Bitcoin/blob/master/src/chainparamsseeds.h) _seed čvorova_ je ugrađena u kod Bitcoin core i redovno se ažurira. Ako prva dva metoda dobijanja IP adresa ne uspeju, ovo poslednje rešenje uspostavlja početnu vezu, od koje čvor može zatim zatražiti nove IP adrese.
+U velikoj većini slučajeva, *DNS seeds* korak je dovoljan za uspostavljanje prvih veza sa drugim čvorovima. Ako, izuzetno, ovi serveri ne odgovore u roku od 60 sekundi, čvor prelazi na drugi metod: [statistička lista sa preko 1.000 adresa](https://github.com/Bitcoin/Bitcoin/blob/master/src/chainparamsseeds.h) _seed čvorova_ je ugrađena u kod Bitcoin core i redovno se ažurira. Ako prva dva metoda dobijanja IP adresa ne uspeju, ovo poslednje rešenje uspostavlja početnu vezu, od koje čvor može zatim zatražiti nove IP adrese.
 
 
 
@@ -2911,34 +2911,33 @@ U velikoj većini slučajeva, korak *DNS seeds* je dovoljan za uspostavljanje pr
 
 
 
-Kao poslednja opcija, možete ručno dodati Supply IP adrese putem `peers.dat` fajla da biste forsirali specifične konekcije.
+Kao poslednja opcija, možete ručno uneti IP adrese u fajl `peers.dat` kako biste forsirali povezivanje sa određenim čvorovima.
+
+
+Jednom kada se pokrene, interni menadžer adresa  diversifikuje izvore (odvojene autonomne mreže, clearnet i Tor, kao i različite geografske oblasti) kako bi smanjio rizik od topološke izolacije. Čvor uspostavlja ove odlazne veze (veze koje sam bira, i koje su stoga sigurnije).
 
 
 
-Jednom kada se pokrene, interni Address menadžer diversifikuje izvore (odvojene autonomne mreže, clearnet i Tor, kao i različite geografske oblasti) kako bi smanjio rizik od topološke izolacije. Čvor uspostavlja ove odlazne veze (veze koje sam bira, i koje su stoga sigurnije).
-
-
-
-Ako vaš čvor sluša na otvorenom portu (po defaultu, 8333), prihvata dolazne veze. Ove veze pojačavaju ukupnu otpornost mreže pružajući tačku kontakta za nove čvorove, bez donošenja posebne koristi vašem sopstvenom IBD-u. Ako vaš čvor radi na Tor-u, logika ostaje ista, ali korišćene adrese su `.onion` servisi.
+Ako vaš čvor sluša na otvorenom portu (po defaultu, 8333), on prihvata i dolazne veze. Ovi mehanizmi povećavaju otpornost mreže, jer omogućavaju novim nodovima da se povežu, ali ne pružaju direktnu korist vašem sopstvenom inicijalnom preuzimanju blokova (IBD). Ako vaš čvor radi na Tor-u, logika ostaje ista, ali korišćene adrese su `.onion` servisi.
 
 
 
 
-## Anatomija tvog Bitcoin čvora
+## Anatomija Bitcoin čvora
 
 
 <chapterId>b420bd9d-7e2a-4984-bc70-2b732a94c8ce</chapterId>
 
 
 
-Kada vaš čvor završi svoju početnu sinhronizaciju, lokalno skladišti nekoliko komplementarnih skupova podataka, omogućavajući mu da validira blokove i transakcije, opslužuje mrežne peer-ove i brzo se ponovo pokrene dok održava svoje stanje. 3 glavne cigle su ključne na čvoru:
+Kada vaš čvor završi svoju početnu sinhronizaciju, lokalno skladišti nekoliko komplementarnih skupova podataka, omogućavajući mu da validira blokove i transakcije, opslužuje mrežne peer-ove i brzo se ponovo pokrene dok održava svoje stanje. Tri ključna temelja čvora su::
 
 
 
 
 - **blokovi** blokčejna sačuvani na disku,
-- **UTXO set** održavan u bazi podataka ključ-vrednost,
-- i **Mempool** se čuva u RAM-u i povremeno serijalizuje.
+- **UTXO set** održavan u key-value bazi podataka,
+- i **mempool** koji se čuva u RAM-u i povremeno serijalizuje.
 
 
 
@@ -2950,7 +2949,7 @@ Pored toga, nekoliko pomoćnih fajlova (peers, procene naknada, liste isključen
 
 
 
-Podrazumevano, Bitcoin core čuva svoje podatke u specifičnom radnom direktorijumu. Pod GNU/Linux-om, to je obično u `~/.Bitcoin/`, pod Windows-om u `%APPDATA%\Bitcoin/`, a pod macOS-om u `~/Library/Application Support/Bitcoin/`. Ako koristite pakovano rešenje (npr. unutar node distribucije), ovaj direktorijum može biti montiran na drugom mestu, ali njegova struktura ostaje ista. Važni pod-folderi i fajlovi opisani u nastavku i dalje se nalaze ovde.
+Podrazumevano, Bitcoin Core čuva svoje podatke u specifičnom radnom direktorijumu. U GNU/Linux-u, to je obično u `~/.Bitcoin/`, u Windows-u u `%APPDATA%\Bitcoin/`, a u macOS-u u `~/Library/Application Support/Bitcoin/`. Ako koristite spremno rešenje (npr. unutar node distribucije), ovaj direktorijum može biti montiran na drugom mestu, ali njegova struktura ostaje ista. Važni pod-folderi i fajlovi opisani u nastavku i dalje se nalaze ovde.
 
 
 
@@ -2962,11 +2961,11 @@ Podrazumevano, Bitcoin core čuva svoje podatke u specifičnom radnom direktorij
 
 
 
-Blockchain je, dakle, kolekcija blokova. Full node skladišti ove blokove kao sekvencijalne ravne fajlove i održava paralelni indeks za brzo preuzimanje. Kada je potrebno (reorganizacija, Wallet ponovno skeniranje, usluga vršnjaka), ovi podaci se ponovo čitaju u izvornom obliku.
+Blokčejn je, dakle, kolekcija blokova. Full node skladišti ove blokove kao sekvencijalne flat fajlove i održava paralelni indeks za brzo preuzimanje. Kada je potrebno (reorganizacija, ponovno skeniranje novčanika, usluga drugog čvora), ovi podaci se ponovo čitaju u izvornom obliku.
 
 
 
-**Napomena:** Reorganizacija, ili resinhronizacija, je fenomen u kojem Blockchain prolazi kroz modifikaciju svoje strukture zbog postojanja konkurentskih blokova na istoj visini. Ovo se dešava kada se deo Blockchain zameni drugim lancem sa većom količinom akumuliranog rada. Ove resinhronizacije su prirodni deo rada Bitcoin, gde različiti rudari mogu pronaći nove blokove gotovo istovremeno, čime se Bitcoin mreža deli na dva dela. U takvim slučajevima, mreža se može privremeno podeliti na konkurentske lance. Na kraju, kako jedan od ovih lanaca akumulira više rada, drugi lanci bivaju napušteni od strane čvorova, a njihovi blokovi postaju poznati kao "zastareli blokovi" ili "blokovi siročad". Ovaj proces zamene jednog lanca drugim naziva se resinhronizacija.
+**Napomena:** Reorganizacija, ili resinhronizacija, je fenomen u kojem blokčejn prolazi kroz modifikaciju svoje strukture zbog postojanja konkurentskih blokova na istoj visini. Ovo se dešava kada se deo blokčejna zameni drugim lancem sa većom količinom akumuliranog rada. Ove resinhronizacije su prirodni deo rada Bitcoina, gde različiti rudari mogu pronaći nove blokove gotovo istovremeno, čime se Bitcoin mreža deli na dva dela. U takvim slučajevima, mreža se može privremeno podeliti na konkurentske lance. Na kraju, kako jedan od ovih lanaca akumulira više rada, drugi lanci bivaju napušteni od strane čvorova, a njihovi blokovi postaju poznati kao "zastareli blokovi" ili "blokovi siročad". Ovaj proces zamene jednog lanca drugim naziva se resinhronizacija.
 
 
 
@@ -2974,7 +2973,7 @@ Blockchain je, dakle, kolekcija blokova. Full node skladišti ove blokove kao se
 
 
 
-Primljeni i validirani blokovi se upisuju u sekvencijalne kontejnere nazvane `blkNNNNN.dat`, smeštene u fascikli `blocks/`. Svaka datoteka se popunjava redom dok ne dostigne maksimalnu veličinu od 128 MiB, nakon čega Core otvara sledeću datoteku. Unutra, svaki blok je serijalizovan u mrežnom formatu, prethodi mu magični identifikator i dužina. Ova organizacija omogućava brzo pisanje na disk i olakšava uslugu blokova za sinhronizaciju sa vršnjacima.
+Primljeni i validirani blokovi se upisuju u sekvencijalne kontejnere nazvane `blkNNNNN.dat`, smeštene u fascikli `blocks/`. Svaka datoteka se popunjava redom dok ne dostigne maksimalnu veličinu od 128 MiB, nakon čega Core otvara sledeću datoteku. Unutra, svaki blok je serijalizovan u mrežnom formatu, prethodi mu magični identifikator i dužina. Ova organizacija omogućava brzo pisanje na disk i olakšava uslugu blokova za sinhronizaciju sa drugim čvorovima.
 
 
 
