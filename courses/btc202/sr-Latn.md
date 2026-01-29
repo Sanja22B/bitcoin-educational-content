@@ -2687,13 +2687,13 @@ Na strani skladištenja, pratite napredak: ako se disk približava zasićenju, r
 
 
 
-Ažuriranja čvorova su važna iz tri glavna razloga: prvo, bezbednost (zakrpe za ranjivosti, jačanje mreže i zaštita od DoS napada); drugo, kompatibilnost (promene u politici prenosa, promene formata i nadogradnje protokola); i treće, pouzdanost i performanse (ispravke grešaka, potrošnja resursa i druga poboljšanja). Zato periodično proveravajte da li su UmbrelOS i vaše aplikacije ažurirane:
+Ažuriranja (eng. updates) čvorova su važna iz tri glavna razloga: prvo, bezbednost (zakrpe za ranjivosti, jačanje mreže i zaštita od DoS napada); drugo, kompatibilnost (promene u politici prenosa, promene formata i nadogradnje protokola); i treće, pouzdanost i performanse (ispravke grešaka, potrošnja resursa i druga poboljšanja). Zato periodično proveravajte da li su UmbrelOS i vaše aplikacije ažurirane:
 
 
 
 
 
-- Da biste ažurirali sistem: Otvorite meni sa podešavanjima, zatim kliknite na dugme "*Check for Update*" pored parametra "*UmbrelOS*".
+- Da biste ažurirali sistem: otvorite meni sa podešavanjima (eng. settings), zatim kliknite na dugme "*Check for Update*" pored parametra "*UmbrelOS*".
 
 
 
@@ -2703,7 +2703,7 @@ Ažuriranja čvorova su važna iz tri glavna razloga: prvo, bezbednost (zakrpe z
 
 
 
-- Da biste ažurirali aplikacije: Idite na App Store. Ako neka od vaših aplikacija zahteva ažuriranje, dugme sa crvenim mehurićem će se pojaviti u gornjem desnom uglu Interface. Jednostavno kliknite na njega, a zatim ažurirajte svaku aplikaciju.
+- Da biste ažurirali aplikacije: idite na App Store. Ako neka od vaših aplikacija zahteva ažuriranje, dugme sa crvenim mehurićem će se pojaviti u gornjem desnom uglu interfejsa. Jednostavno kliknite na njega, a zatim ažurirajte svaku aplikaciju.
 
 
 
@@ -2711,15 +2711,14 @@ Redovno izvodite ovu operaciju kako biste održavali vaš operativni sistem i ap
 
 
 
-### Bekapovi
+### Bekapovi (rezervne kopije)
 
 
 
-Ako koristite samo svoj Bitcoin čvor za validaciju i distribuciju vaših transakcija, ali su vaši novčanici upravljani izvan Umbrel-a (npr. sa Hardware Wallet i Sparrow wallet), nema ničega što bi se direktno bekapovalo na Umbrel. U ovom slučaju, osnovni bekap ostaje onaj od fraze za oporavak i Descriptor vašeg spoljnog Wallet, i to važi bez obzira da li koristite svoj čvor ili ne. Dakle, ništa se ne menja u odnosu na vašu prethodnu konfiguraciju.
+Ako koristite samo svoj Bitcoin čvor za validaciju i distribuciju vaših transakcija, ali su vaši novčanici upravljani izvan Umbrel-a (npr. sa hardware novčanikom i Sparrow novčanikom), nema ničega što bi se direktno bekapovalo na Umbrel. U ovom slučaju, ključna rezervna kopija ostaje [seed fraza](https://planb.academy/resources/glossary/recovery-phrase) i [deskriptor vašeg eksternog novčanika](https://planb.academy/resources/glossary/output-script-descriptors), bez obzira na to da li koristite sopstveni čvor. Drugim rečima, u odnosu na prethodnu postavku, ništa se ne menja.
 
 
-
-S druge strane, u zavisnosti od dodatnih aplikacija koje koristite na Umbrel-u, mogu biti potrebne dodatne rezervne kopije. Ovo je posebno slučaj ako upravljate Lightning čvorom na Umbrel-u. U ovom slučaju, apsolutno je neophodno napraviti rezervnu kopiju seed koji je isporučen kada ste instalirali vaš Lightning čvor. Pored seed, potrebno je imati ažuriranu ***Static Channel Backup (SCB)*** kako biste mogli da povratite vaš Lightning čvor u slučaju problema. SCB vam omogućava da povratite svoja sredstva prisilnim zatvaranjem kanala. Ako nedostaje ili seed ili SCB, nemoguće je povratiti Lightning čvor.
+S druge strane, u zavisnosti od dodatnih aplikacija koje koristite na Umbrel-u, mogu biti potrebne dodatne rezervne kopije. Ovo je posebno slučaj ako upravljate Lightning čvorom na Umbrel-u. U ovom slučaju, apsolutno je neophodno napraviti rezervnu kopiju seed fraze koja je generisana kada ste instalirali vaš Lightning čvor. Pored seed fraze, potrebno je imati ažuriranu ***Static Channel Backup (SCB)*** kako biste mogli da povratite vaš Lightning čvor u slučaju problema. SCB vam omogućava da povratite svoja sredstva prisilnim zatvaranjem kanala. Ako nedostaje ili seed ili SCB, nemoguće je povratiti Lightning čvor.
 
 
 
@@ -2731,15 +2730,15 @@ Ponovo ćemo razmotriti ove aspekte detaljno u sledećem LNP202 kursu.
 
 
 
-### Bezbednost svakodnevnog poslovanja
+### Svakodnevna operativna bezbednost
 
 
 
-U smislu bezbednosti, koristite dugu, jedinstvenu i nasumičnu lozinku za Interface Umbrel, i ne zaboravite da aktivirate dvofaktorsku autentifikaciju (2FA). Za aplikacije koje nude zaštitu lozinkom i 2FA, uvek aktivirajte obe opcije i promenite podrazumevane lozinke.
+U pogledu bezbednosti, koristite dugu, jedinstvenu i nasumično generisanu lozinku za Umbrel interfejs, i ne zaboravite da aktivirate dvofaktorsku autentifikaciju (2FA). Za aplikacije koje nude zaštitu lozinkom i 2FA, uvek aktivirajte obe opcije i promenite podrazumevane lozinke.
 
 
 
-Nikada ne izlažite kontrolnu tablu internetu bez korišćenja sigurnog prolaza (kao što su VPN, Tor, ili samo lokalni pristup). Ograničite broj aplikacija koje instalirate i redovno brišite one koje vam više nisu potrebne, kako biste smanjili površinu napada.
+Nikada ne izlažite kontrolnu tablu (eng. dashboard) internetu bez korišćenja sigurnog prolaza (kao što su VPN, Tor, ili samo lokalni pristup). Ograničite broj aplikacija koje instalirate i redovno brišite one koje vam više nisu potrebne, kako biste smanjili površinu napada.
 
 
 
@@ -2753,7 +2752,7 @@ https://planb.academy/courses/4ba0e3de-e67f-4ea1-a514-f111206810d1
 
 
 
-U slučaju greške na vašem Umbrel-u, prvo generate dijagnostički paket putem odeljka za rešavanje problema u UmbrelOS-u ili u odgovarajućoj aplikaciji, zatim čisto restartujte aplikaciju. Ako je potrebno, pokušajte i sa potpunim restartovanjem sistema.
+U slučaju greške na vašem Umbrelu, prvo generišite dijagnostički paket preko sekcije za rešavanje problema u UmbrelOS-u ili odgovarajućoj aplikaciji, a zatim uredno restartujte aplikaciju. Ako je potrebno, pokušajte i sa potpunim restartovanjem sistema.
 
 
 
@@ -2770,18 +2769,18 @@ Uz ove jednostavne navike, vaš Umbrel čvor će ostati stabilan, siguran i kori
 
 
 
-## Razumevanje IBD i procesa otkrivanja vršnjaka
+## Razumevanje IBD-a i pronalaženja peer-ova (drugih čvorova u mreži)
 
 
 <chapterId>175ac9d1-ea23-45d9-9918-d3e7352435cd</chapterId>
 
 
 
-Vaš Bitcoin čvor se pokreće bez ikakvog prethodnog znanja o istoriji transakcija. U početku, to je samo računar koji pokreće softver (Bitcoin core ili sličan). Da bi postao potpuno sinhronizovan i operativan Bitcoin čvor, mora lokalno rekonstruisati stanje Ledger proveravajući sve blokove objavljene od Genesis bloka (blok 0, objavljen od strane Satoshi Nakamoto 3. januara 2009). Ovaj korak se zove **IBD (_Initial Block Download_)**.
+Vaš Bitcoin čvor se pokreće bez ikakvog prethodnog znanja o istoriji transakcija. U početku, to je samo računar koji pokreće softver (Bitcoin Core ili sličan). Da bi postao potpuno sinhronizovan i operativan Bitcoin čvor, mora lokalno rekonstruisati stanje blokčejna proveravajući sve blokove objavljene od Genesis bloka (blok 0, objavljen od strane Satoshi Nakamoto 3. januara 2009). Ovaj korak se zove **IBD (_Initial Block Download_)**.
 
 
 
-IBD se sastoji od preuzimanja i verifikacije svakog bloka i transakcije pojedinačno, primenjujući pravila konsenzusa, kako bi se izgradila sopstvena verzija Blockchain. Cilj nije samo preuzimanje kopije neproverenih podataka, već dolazak do istog zaključka potpuno nezavisno, kao poštena većina mreže.
+IBD se sastoji od preuzimanja i verifikacije svakog bloka i transakcije pojedinačno, primenjujući pravila konsenzusa, kako bi se izgradila sopstvena verzija blokčejna. Cilj nije samo preuzimanje kopije neproverenih podataka, već dolazak do istog zaključka potpuno nezavisno, kao poštena većina mreže.
 
 
 
@@ -2793,7 +2792,7 @@ IBD se sastoji od preuzimanja i verifikacije svakog bloka i transakcije pojedina
 
 
 
-Sinhronizacija počinje sa korakom _**headers-first**_. Vaš čvor zahteva sekvencu zaglavlja blokova od nekoliko vršnjaka i, za svako od njih, proverava Proof of Work, prilagođavanje težine, sintaksu, kao i Timestamp i pravila verzije broja. Ukratko, osigurava da svako primljeno zaglavlje ispunjava pravila konsenzusa.
+Sinhronizacija počinje sa korakom _**headers-first**_. Vaš nod traži niz zaglavlja blokova od više drugih čvorova u mreži i za svaki blok proverava proof of work u odnosu na difficulty (cilj težine), sintaksu, kao i pravila vezana za vremensku oznaku i broj verzije. Ukratko, osigurava da svako primljeno zaglavlje ispunjava pravila konsenzusa.
 
 
 
@@ -2801,16 +2800,16 @@ Sinhronizacija počinje sa korakom _**headers-first**_. Vaš čvor zahteva sekve
 
 
 
-Kao podsetnik, Bitcoin blok se sastoji od zaglavlja od 80 bajtova i liste transakcija. Otisak bloka se dobija primenom dvostrukog SHA-256 Hash na ovo zaglavlje, koje sadrži 6 polja:
+Kao podsetnik, Bitcoin blok se sastoji od zaglavlja od 80 bajtova i liste transakcija. Jedinstveni identifikator bloka ili otisak bloka se dobija primenom dvostrukog SHA-256 heš algoritma na ovo zaglavlje, koje sadrži 6 polja:
 
 
 
 
 - verzija
-- Hash prethodnog bloka
-- Merkle Root transakcija
+- Heš vrednost prethodnog bloka
+- Merkle Root (glavni heš) svih transakcija u bloku
 - Timestamp (veće od srednjeg vremena prethodnih 11 blokova)
-- ciljna težina
+- ciljna težina (eng. difficulty target)
 - Nonce
 
 
@@ -2819,7 +2818,7 @@ Kao podsetnik, Bitcoin blok se sastoji od zaglavlja od 80 bajtova i liste transa
 
 
 
-Transakcije su posvećene Merkle Tree. Ovo je struktura koja sumira veliki skup podataka (u ovom slučaju, sve transakcije u bloku) agregiranjem njihovih heševa progresivno dva po dva do jednog "korena", čime se dokazuje da element pripada skupu (i otkriva bilo kakva modifikacija). Na ovaj način, svaka modifikacija transakcije takođe menja koren Merkle Tree i stoga otisak zaglavlja bloka. SegWit je uveo zaseban dodatni Commitment za kolačiće (potpise), postavljen u coinbase.
+Transakcije se organizuju u Merkle stablo. Ovo je struktura koja sumira veliki skup podataka (u ovom slučaju, sve transakcije u bloku) agregiranjem njihovih heševa progresivno dva po dva do jednog "korena", čime se dokazuje da element pripada skupu (i otkriva bilo kakva modifikacija). Na ovaj način, svaka modifikacija transakcije takođe menja koren Merkle Tree-a i stoga menja i otisak (jedinstveni heš) zaglavlja bloka. SegWit je uveo poseban dodatni zapis za witness (potpise), koji se nalazi u coinbase transakciji.
 
 
 
@@ -2831,27 +2830,27 @@ Ovaj korak _**headers-first**_ omogućava čvoru da identifikuje granu sa najvi�
 
 
 
-S druge strane, Mempool dolazi u igru samo kada se približava vrhu lanca: sve dok čvor ostaje kasno, nema transakcija na čekanju za skladištenje.
+Mempool se aktivira tek kada se čvor približi najnovijem bloku lanca: dok je čvor još u zaostatku, nema transakcija na čekanju koje bi trebalo da čuva.
 
 
 
-Kada je IBD završen, čvor ulazi u svoju normalnu fazu: validira nove blokove kako se objavljuju, održava svoj Mempool sa transakcijama na čekanju prema svojim pravilima prenosa, prenosi transakcije i blokove, i upravlja bilo kakvim reorganizacijama lanca.
+Kada je IBD završen, čvor ulazi u svoju normalnu fazu: validira nove blokove kako se objavljuju, održava svoj mempool sa transakcijama na čekanju prema svojim pravilima prenosa, prenosi transakcije i blokove, i upravlja bilo kakvim reorganizacijama lanca.
 
 
 
-### PretpostaviVažeće
+### AssumeValid
 
 
 
-Bitcoin core uključuje mehanizam dizajniran da smanji vreme potrebno pre nego što čvor postane potpuno operativan, dok zadržava suštinu principa autonomne verifikacije: AssumeValid.
+Bitcoin Core uključuje mehanizam dizajniran da smanji potrebno vreme pre nego što čvor postane potpuno operativan, dok zadržava suštinu principa autonomne verifikacije: AssumeValid.
 
 
 
-Parametar `assumevalid` zasnovan je na referentnom bloku iz prošlosti, Hash, koji je integrisan u svaku verziju softvera. Tokom IBD-a, ako vaš čvor ustanovi da se ovaj blok zaista nalazi na grani sa najviše rada, može ignorisati verifikaciju skripti za sve transakcije pre ove tačke.
+Parametar `assumevalid` zasniva se na prethodnom referentnom bloku, čiji je hash integrisan u svaku verziju softvera. Tokom IBD-a, ako vaš čvor ustanovi da se ovaj blok zaista nalazi na grani sa najviše rada, može ignorisati verifikaciju skripti za sve transakcije pre ove tačke.
 
 
 
-Sva ostala pravila (blok struktura, Proof of Work, ograničenja veličine, iznosi transakcija, UTXO-i, itd.) ostaju potpuno verifikovana. Samo se izračunavanje skripti pre ovog referentnog bloka ignoriše. Dobitak u performansama je značajan na IBD-u, jer verifikacija potpisa čini veliki deo opterećenja CPU-a. Nakon ovog referentnog bloka, verifikacija se vraća u svoje normalno stanje.
+Sva ostala pravila (blok struktura, Proof of Work, ograničenja veličine, iznosi transakcija, UTXO-i, itd.) ostaju potpuno verifikovana. Samo se izračunavanje skripti pre ovog referentnog bloka ignoriše. Dobitak u performansama je značajan na IBD-u, jer verifikacija potpisa čini veliki deo CPU opterećenja. Nakon ovog referentnog bloka, verifikacija se vraća u svoje normalno stanje.
 
 
 
@@ -2859,11 +2858,11 @@ Možete primorati punu validaciju svih skripti onemogućavanjem ovog mehanizma, 
 
 
 
-### PretpostaviUTXO
+### AssumeUTXO
 
 
 
-`assumeutxo` je još jedan postojeći parametar, ali za razliku od `assumevalid`, nije aktiviran po defaultu. Ovaj mehanizam omogućava softveru da učita snimak UTXO seta, zajedno sa njegovim metapodacima, i privremeno ga smatra referentnim stanjem, nakon što potvrdi da zaglavlja zaista vode do Blockchain sa najviše rada.
+`assumeutxo` je još jedan postojeći parametar, ali za razliku od `assumevalid`, nije aktiviran po defaultu. Ovaj mehanizam omogućava softveru da učita snimak UTXO seta, zajedno sa njegovim metapodacima, i privremeno ga smatra referentnim stanjem, nakon što potvrdi da zaglavlja zaista vode do blokčejna sa najviše rada.
 
 
 
