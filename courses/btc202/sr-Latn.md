@@ -3001,7 +3001,7 @@ Kako bi mogao da se vrati u prošlost tokom reorganizacije, Core čuva, paraleln
 
 
 
-Pretraživanje bloka direktno u flat fajlovima bi bilo previše vremenski zahtevno. Core stoga održava LevelDB bazu podataka u `blocks/index/` koja navodi, za svaki poznati blok, metapodatke kao što su Hash, visina, status validacije, `blk` fajl i pomeraj gde se nalazi. Kada peer zatraži blok, ili kada interni komponent treba da pristupi specifičnom bloku, ovaj indeks omogućava brz pristup. Bez ovog indeksa, bilo bi potrebno previše operacija.
+Pretraživanje bloka direktno u flat fajlovima bi bilo previše vremenski zahtevno. Core stoga održava LevelDB bazu podataka u `blocks/index/` koja navodi, za svaki poznati blok, metapodatke kao što su heš vrednost, visina, status validacije, `blk` fajl i pomeraj gde se nalazi. Kada peer zatraži blok, ili kada interna komponenta treba da pristupi specifičnom bloku, ovaj indeks omogućava brz pristup. Bez ovog indeksa, bilo bi potrebno previše operacija.
 
 
 
@@ -3018,16 +3018,16 @@ Neki indeksi su opcionalni i po defaultu su onemogućeni, jer povećavaju zauze�
 
 
 
-- `indexes/txindex/`, koji smo već pomenuli, pruža tabelu mapiranja transakcija → lokacija, omogućavajući pronalaženje bilo koje potvrđene transakcije bez poznavanja bloka koji je sadrži. Ovo je korisno za off-Wallet `getrawtransaction` tip RPC upita, ali je prilično skupo.
-- indeksi/blockfilter/` koji može sadržati kompaktne blok filtere (BIP157/158) za tanke klijente. Ove strukture ubrzavaju verifikaciju na strani klijenta na račun dodatnog skladištenja na indekserskom čvoru.
+- `indexes/txindex/`, koji smo već pomenuli, pruža tabelu mapiranja transakcija → lokacija, omogućavajući pronalaženje bilo koje potvrđene transakcije bez poznavanja bloka koji je sadrži. Ova opcija je korisna za RPC pozive poput `getrawtransaction` koji nisu vezani za konkretan novčanik, ali troši dosta resursa.
+- indeksi/blockfilter/` koji može sadržati kompaktne blok filtere (BIP157/158) za SPV klijente. Ove strukture ubrzavaju verifikaciju na strani klijenta na račun dodatnog skladištenja na indekserskom čvoru.
 
 
 
-### UTXO set (chainstate)
+### UTXO set (tzv. chainstate, baza trenutnog stanja lanca)
 
 
 
-Model UTXO (*Unspent Transaction Output*) je računovodstveni prikaz Bitcoin: svaki neutrošeni izlaz je dostupan "Coin" koji se može koristiti kao ulaz za buduću transakciju.
+UTXO model  (*Unspent Transaction Output*) je računovodstveni prikaz Bitcoina: svaki neutrošeni izlaz je dostupan "novčić" ili na engleskom "coin" koji se može koristiti kao ulaz za buduću transakciju.
 
 
 
@@ -3035,7 +3035,7 @@ Model UTXO (*Unspent Transaction Output*) je računovodstveni prikaz Bitcoin: sv
 
 
 
-Ukupnost svih ovih delova u datom trenutku T čini UTXO skup: veliku listu svih delova koji su sada dostupni. Ovo je stanje koje čvor konsultuje da odluči da li transakcija troši legitimne jedinice koje nisu već korišćene u prethodnoj transakciji (da bi se izbegao Double-spending).
+Ukupnost svih ovih delova u datom trenutku T čini UTXO set: veliku listu svih delova koji su sada dostupni. Ovo je stanje koje čvor konsultuje da odluči da li transakcija troši legitimne jedinice koje nisu već korišćene u prethodnoj transakciji (da bi se izbegla dvostruka potrošnja).
 
 
 
@@ -3043,7 +3043,7 @@ Ukupnost svih ovih delova u datom trenutku T čini UTXO skup: veliku listu svih 
 
 
 
-UTXO set je smešten u fascikli `chainstate/` kao kompaktna LevelDB baza podataka. Svaki deo povezuje ključ izveden iz Hash transakcije i izlazni indeks sa vrednošću koja sadrži: iznos, `scriptPubKey` zaključavanje, visinu bloka kreacije i indikator coinbase-a.
+UTXO set je smešten u fascikli `chainstate/` kao kompaktna LevelDB baza podataka. Svaki deo povezuje ključ izveden iz heša transakcije i izlazni indeks sa vrednošću koja sadrži: iznos, `scriptPubKey` zaključavanje, visinu bloka kreacije i indikator coinbase-a.
 
 
 
@@ -3051,15 +3051,15 @@ UTXO set je smešten u fascikli `chainstate/` kao kompaktna LevelDB baza podatak
 
 
 
-Čvor održava memorijsku keš memoriju iznad LevelDB-a kako bi apsorbovao učestale operacije čitanja i pisanja. Parametar `dbcache` može se koristiti za modifikaciju veličine ove keš memorije: što je veća, to više koristi IBD i trenutna validacija imaju od pristupa memoriji, po cenu veće potrošnje RAM-a. Kada Miner pronađe novi blok, čvor briše iz skupa UTXO izlaze koji su potrošeni (ili konzumirani) transakcijama uključenim u blok i dodaje novo kreirane izlaze.
+Čvor održava memorijsku keš memoriju iznad LevelDB-a kako bi apsorbovao učestale operacije čitanja i pisanja. Parametar `dbcache` može se koristiti za modifikaciju veličine ove keš memorije: što je veća, to više koristi IBD i trenutna validacija imaju od pristupa memoriji, po cenu veće potrošnje RAM-a. Kada rudar pronađe novi blok, čvor briše iz skupa UTXO izlaze koji su potrošeni (ili konzumirani) transakcijama uključenim u blok i dodaje novo kreirane izlaze.
 
 
 
-Teoretski, mogli bismo potvrditi transakciju ponovnim skeniranjem istorije blokova kako bismo proverili da izlaz nikada nije potrošen. U praksi, međutim, ovo bi bilo previše vremenski zahtevno, jer bi ceo Blockchain morao biti skeniran za svaku novu transakciju. Skup UTXO, stoga, pruža minimalni pregled potreban da se lokalno i u razumnom vremenskom periodu dokaže odsustvo Double-spending.
+Teoretski, mogli bismo potvrditi transakciju ponovnim skeniranjem istorije blokova kako bismo proverili da izlaz nikada nije potrošen. U praksi, međutim, ovo bi bilo previše vremenski zahtevno, jer bi ceo blokčejn morao biti skeniran za svaku novu transakciju. UTXO skup, stoga, pruža minimalni pregled potreban da se lokalno i u razumnom vremenskom periodu dokaže odsustvo dvostruke potrošnje.
 
 
 
-Imajte na umu da je set UTXO često u centru zabrinutosti oko decentralizacije Bitcoin, jer se njegova veličina prirodno brzo povećava. Ovo je delimično zbog rastuće cene Bitcoin, koja podstiče fragmentaciju delova, a delimično zbog sve veće usvajanja sistema: što je više korisnika, veća je potražnja za UTXO-ima.
+Imajte na umu da je UTXO set često u centru zabrinutosti oko decentralizacije Bitcoina, jer se njegova veličina prirodno brzo povećava. Ovo je delimično zbog rastuće cene Bitcoina, koja podstiče fragmentaciju delova, a delimično zbog sve veće usvajanja sistema: što je više korisnika, veća je potražnja za UTXO-ima.
 
 
 
@@ -3067,13 +3067,13 @@ Imajte na umu da je set UTXO često u centru zabrinutosti oko decentralizacije B
 
 
 
-Rast rasta UTXO takođe proizlazi iz strukture jednostavnih platnih transakcija na Bitcoin. Zaista, kada izvršite uplatu, koristite jedan UTXO kao ulaz i kreirate 2 nova UTXO-a kao izlaz (jedan za uplatu i drugi za Exchange). Na kraju, heuristika analize lanca, nazvana CIOH (*Common Input Ownership Heuristic*), pruža dodatni podsticaj da se izbegne konsolidacija Coin.
+Rast rasta UTXO takođe proizlazi iz strukture jednostavnih platnih transakcija na Bitcoinu. Zaista, kada izvršite uplatu, koristite jedan UTXO kao ulaz i kreirate 2 nova UTXO-a kao izlaz (jedan za uplatu i drugi za kusur). Na kraju, heuristika analize lanca, nazvana CIOH (*Common Input Ownership Heuristic*), pruža dodatni podsticaj da se izbegne konsolidacija "novčića".
 
 
 
 https://planb.academy/courses/65c138b0-4161-4958-bbe3-c12916bc959c
 
-Pošto se deo toga mora čuvati u RAM-u kako bi se transakcije verifikovale u razumnom vremenu, set UTXO može postepeno učiniti rad Full node previše skupim. Da bi se rešio ovaj problem, već postoji nekoliko predloga, posebno [Utreexo](https://planb.academy/resources/glossary/utreexo).
+Pošto se deo toga mora čuvati u RAM-u kako bi se transakcije verifikovale u razumnom vremenu, UTXO set može postepeno učiniti rad full node-a previše skupim. Da bi se rešio ovaj problem, već postoji nekoliko predloga, posebno [Utreexo](https://planb.academy/resources/glossary/utreexo).
 
 
 
@@ -3081,18 +3081,18 @@ Pošto se deo toga mora čuvati u RAM-u kako bi se transakcije verifikovale u ra
 
 
 
-Mempool je lokalni skup važećih transakcija koje su primljene, ali još nisu potvrđene. Kao podsetnik, "potvrđena transakcija" je ona koja je uključena u važeći blok. Svaki čvor održava svoj Mempool, koji može da se razlikuje od onog drugih čvorova u mreži u zavisnosti od:
+Mempool je lokalni skup važećih transakcija koje su primljene, ali još nisu potvrđene. Kao podsetnik, "potvrđena transakcija" je ona koja je uključena u važeći blok. Svaki čvor održava svoj mempool, koji može da se razlikuje od onog drugih čvorova u mreži u zavisnosti od:
 
 
 
 
-- veličina dodeljena Mempool putem parametra `maxmempool`: čvor sa većim Mempool moći će da drži više transakcija nego čvor sa manjim Mempool (osim ako se potonji ne isprazni);
-- pravila mempool-a: ona predstavljaju podskup pravila prenosa čvora i definišu karakteristike koje nepotvrđena transakcija mora ispuniti da bi bila prihvaćena u mempool;
-- transakcija perkolacija: zbog različitih faktora, određena transakcija može biti distribuirana jednom delu mreže, ali još uvek nije stigla do drugog.
+- veličina dodeljena mempool-u putem parametra `maxmempool`: čvor sa većim mempool-om moći će da drži više transakcija nego čvor sa manjim mempool-om (osim ako se potonji ne isprazni);
+- pravila mempool-a: ona predstavljaju podskup pravila prosleđivanja čvora i definišu karakteristike koje nepotvrđena transakcija mora ispuniti da bi bila prihvaćena u mempool;
+- perkolacija transakcija: zbog različitih faktora, određena transakcija može biti distribuirana jednom delu mreže, ali još uvek nije stigla do drugog.
 
 
 
-Važno je napomenuti da čvorovi mempool-a nemaju konsenzusnu vrednost. Bitcoin radi savršeno čak i ako svaki čvor ima različit Mempool. Na kraju, autoritativni blokovi su uvek oni dodati u Blockchain. Na primer, čak i ako čvor u početku odbije određenu transakciju u svom Mempool (validnu prema pravilima konsenzusa), biće obavezan da je prihvati ako je na kraju uključena u blok sa validnim Proof of Work. Ako to ne učini i odbije ovaj blok, iako je u skladu sa pravilima konsenzusa, to bi pokrenulo Hard Fork, tj. stvaranje novog, odvojenog Bitcoin na kojem bi bio sam.
+Važno je napomenuti da mempool-ovi čvorova nemaju konsenzusnu vrednost. Bitcoin radi savršeno čak i ako svaki čvor ima različit mempool. Na kraju, autoritativni blokovi su uvek oni dodati u blokčejn. Na primer, čak i ako čvor u početku odbije određenu transakciju u svom mempool-u (validnu prema pravilima konsenzusa), biće obavezan da je prihvati ako je na kraju uključena u blok sa validnim Proof of Work-om. Ako to ne učini i odbije ovaj blok, iako je u skladu sa pravilima konsenzusa, to bi pokrenulo hard fork, tj. stvaranje novog, odvojenog Bitcoina na kojem bi bio sam.
 
 
 
@@ -3100,11 +3100,11 @@ Važno je napomenuti da čvorovi mempool-a nemaju konsenzusnu vrednost. Bitcoin 
 
 
 
-Kada se transakcija primi, Core primenjuje niz provera prema pravilima konsenzusa (sintaksa, validni skriptovi, bez dvostrukog trošenja, itd.) i Mempool pravilima, koja su lokalna politika (RBF, minimalni pragovi naplate, ograničenje podataka u `OP_RETURN`, itd.). Ako transakcija poštuje ova pravila, ona se čuva u memoriji.
+Kada se transakcija prihvati, Core primenjuje niz provera prema pravilima konsenzusa (sintaksa, validni skriptovi, bez dvostrukog trošenja, itd.) i mempool pravilima, koja su lokalna politika (RBF, minimalni pragovi naplate, ograničenje podataka u `OP_RETURN`, itd.). Ako transakcija poštuje ova pravila, ona se čuva u memoriji.
 
 
 
-Veličina Mempool je ograničena parametrima `maxmempool` u datoteci `Bitcoin.conf` (više o tome u sledećem poglavlju). Podrazumevano, ograničenje je 300 MB. Kada je popunjen, čvor dinamički podiže svoj minimalni prag naplate i izbacuje najmanje profitabilne transakcije prvo (tj. zadržava transakcije koje bi trebalo prvo da budu rudarske). Transakcije koje su previše stare takođe mogu isteći nakon podešenog kašnjenja.
+Veličina mempool-a je ograničena parametrima `maxmempool` u datoteci `Bitcoin.conf` (više o tome u sledećem poglavlju). Podrazumevano, ograničenje je 300 MB. Kada je popunjen, čvor dinamički podiže svoj minimalni prag naplate i izbacuje najmanje profitabilne transakcije prvo (tj. zadržava transakcije koje bi trebalo prvo da budu izrudarene). Transakcije koje su previše stare takođe mogu isteći nakon podešenog kašnjenja.
 
 
 
@@ -3112,7 +3112,7 @@ Veličina Mempool je ograničena parametrima `maxmempool` u datoteci `Bitcoin.co
 
 
 
-Da bi se ubrzala ponovna pokretanja, Core periodično serijalizuje stanje Mempool u datoteku `Mempool.dat` kada se čvor isključi. Pored stvarnog Mempool, koji ostaje u memoriji, Core čuva ovu datoteku `Mempool.dat` na disku. Sledeći put kada se čvor pokrene, on ponovo učitava ovu snimku i briše sve što više nije važeće za trenutni Blockchain.
+Da bi se ubrzala ponovna pokretanja, Core periodično serijalizuje stanje mempool-a u datoteku `Mempool.dat` kada se čvor isključi. Pored stvarnog mempool-a, koji ostaje u memoriji, Core čuva ovu datoteku `Mempool.dat` na disku. Sledeći put kada se čvor pokrene, on ponovo učitava ovu snimku i briše sve što više nije važeće za trenutni blokčejn.
 
 
 
@@ -3125,31 +3125,31 @@ Nekoliko drugih fajlova na istom nivou kao `blocks/`, `chainstate/` i `indexes/`
 
 
 
-- `peers.dat` čuva IP Address knjigu potencijalnih vršnjaka, dopunjenu inicijalnim DNS otkrivanjem, mrežnim razmenama i ručnim dodacima. Kada se čvor pokrene, može koristiti ovu datoteku za uspostavljanje odlaznih veza.
-- Kada je čvor isključen, `anchors.dat` čuva adrese odlaznih vršnjaka, tako da možete brzo pokušati da ih kontaktirate ponovo sledeći put kada pokrenete sistem.
-- `banlist.json` sadrži lokalne zabrane koje je odredio operater ili čvor (ponovljeno nevažeće ponašanje), kako bi se sprečilo da se čvor ponovo poveže ili prihvati veze od ovih specifičnih vršnjaka.
+- `peers.dat` čuva knjigu IP adresa potencijalnih peer-ova, dopunjenu inicijalnim DNS otkrivanjem, mrežnim razmenama i ručnim dodacima. Kada se čvor pokrene, može koristiti ovu datoteku za uspostavljanje odlaznih veza.
+- Kada je čvor isključen, `anchors.dat` čuva adrese odlaznih peer-ova, tako da možete brzo pokušati da ih kontaktirate ponovo sledeći put kada pokrenete sistem.
+- `banlist.json` sadrži lokalne zabrane koje je odredio operater ili čvor (ponovljeno nevažeće ponašanje), kako bi se sprečilo da se čvor ponovo poveže ili prihvati veze od ovih specifičnih peer-ova.
 - `fee_estimates.dat` skladišti statistiku vremenskog horizonta o posmatranim potvrđivanjima, koju koristi procenjivač naknada za predlaganje stopa naknada u skladu sa ciljevima kašnjenja izabranim prilikom kreiranja transakcije.
-- `bitcoin.conf` sadrži parametre konfiguracije vašeg čvora. Upravo u ovoj datoteci mogu se podesiti pravila prenosa. O tome ću detaljnije govoriti u sledećem poglavlju;
+- `bitcoin.conf` sadrži parametre konfiguracije vašeg čvora. Upravo u ovoj datoteci mogu se podesiti pravila prosleđivanja. O tome ću detaljnije govoriti u sledećem poglavlju;
 - Datoteka `settings.json` sadrži dodatne parametre za `Bitcoin.conf`.
 - `debug.log` je dijagnostički tekstualni log, koji se može koristiti za razumevanje aktivnosti čvora u slučaju greške.
 - `bitcoind.pid` beleži identifikator procesa tokom izvršavanja, što omogućava drugim aplikacijama ili skriptama da lako identifikuju Bitcoind (*Bitcoin Daemon*) i po potrebi interaguju sa njim. Kreira se pri pokretanju čvora i briše pri gašenju;
 - `ip_asn.map` je tabela mapiranja IP → ASN (samostalni sistem) koja se koristi za grupisanje i diversifikaciju peer-ova (opcija `-asmap`).
-- `onion_v3_private_key` čuva privatni ključ Tor v3 servisa kada je opcija `-listenonion` omogućena, kako bi se održao stabilan onion Address između ponovnih pokretanja.
+- `onion_v3_private_key` čuva privatni ključ Tor v3 servisa kada je opcija `-listenonion` omogućena, kako bi se održala stabilna onion adresa između ponovnih pokretanja.
 - `i2p_private_key` čuva I2P privatni ključ kada se koristi `-i2psam=`, za uspostavljanje odlaznih i moguće dolaznih veza na I2P.
-- `.cookie` sadrži efemerni RPC autentifikacioni token (kreiran pri pokretanju, obrisan pri gašenju) kada se koristi autentifikacija putem kolačića. Ovo se može koristiti, na primer, za povezivanje Wallet softvera.
+- `.cookie` sadrži efemerni RPC autentifikacioni token (kreiran pri pokretanju, obrisan pri gašenju) kada se koristi autentifikacija putem kolačića. Ovo se može koristiti, na primer, za povezivanje softvera za upravljanje novčanikom.
 - `.lock` je zaključavanje direktorijuma podataka, koje sprečava više instanci da istovremeno pišu u isti datadir.
 - `guisettings.ini.bak` je automatsko čuvanje GUI podešavanja (*Bitcoin Qt*) kada se koristi opcija `-resetguisettings`.
 
 
 
-Kao što smo videli u prvim delovima ovog BTC 202 kursa, Bitcoin core je i Bitcoin čvor softver i Wallet. Međutim, to nije nužno rešenje koje bih preporučio za upravljanje vašim novčanicima, jer njegov Interface ostaje osnovni i njegove funkcionalnosti su ograničene u poređenju sa modernim softverom kao što su Sparrow ili Liana. Core takođe uključuje fajlove za upravljanje vašim novčanicima:
+Kao što smo videli u prvim delovima ovog BTC 202 kursa, Bitcoin Core je i Bitcoin čvor softver i novčanik. Međutim, to nije nužno rešenje koje bih preporučio za upravljanje vašim novčanicima, jer njegov interfejs ostaje osnovni i njegove funkcionalnosti su ograničene u poređenju sa modernim softverom kao što su Sparrow ili Liana. Core takođe uključuje fajlove za upravljanje vašim novčanicima:
 
 
 
 
 
 - `wallets/` je podrazumevani direktorijum koji sadrži jedan ili više novčanika;
-- `wallets/<name>/Wallet.dat` je SQLite baza podataka Wallet (ključevi, deskriptori, metapodaci transakcija, itd.);
+- `wallets/<name>/Wallet.dat` je SQLite baza podataka za novačnik (ključevi, deskriptori, metapodaci transakcija, itd.);
 - `wallets/<name>/wallet.dat-journal` je SQLite rollback dnevnik.
 
 
@@ -3219,11 +3219,11 @@ Paralelno, podaci za poništavanje se upisuju u `rev*.dat`, a metapodaci u indek
 
 
 
-Datoteka `Bitcoin.conf` je glavna konfiguraciona datoteka Interface za Bitcoin core. Omogućava vam da prilagodite ponašanje i parametre vašeg čvora bez potrebe za rekompajliranjem izvornog koda ili pravljenjem izmena u komandnoj liniji. Konkretno, to je obična tekstualna datoteka strukturirana u parovima ključ-vrednost, što znači da svaka linija datoteke referencira određeni parametar (ključ) i njegovu pridruženu vrednost, koja se može modifikovati da bi se prilagodio taj parametar.
+Datoteka `Bitcoin.conf` predstavlja glavni konfiguracioni fajl za interfejs Bitcoin Core-a. Omogućava vam da prilagodite ponašanje i parametre vašeg čvora bez potrebe za rekompajliranjem izvornog koda ili pravljenjem izmena u komandnoj liniji. Konkretno, to je obična tekstualna datoteka strukturirana u parovima ključ-vrednost, što znači da svaka linija datoteke referencira određeni parametar (ključ) i njegovu pridruženu vrednost, koja se može modifikovati da bi se prilagodio taj parametar.
 
 
 
-Mreža, prenos transakcija, performanse, indeksiranje, logovanje i parametri pristupa RPC mogu biti definisani u `Bitcoin.conf`. Međutim, ova konfiguraciona datoteka nikada ne menja pravila konsenzusa protokola: ona samo postavlja lokalnu politiku čvora (pravila prenosa), način na koji se povezuje, indeksira i izlaže usluge.
+Mreža, prosleđivanje transakcija, performanse, indeksiranje, logovanje i parametri RPC pristupa mogu biti definisani u `Bitcoin.conf`. Međutim, ova konfiguraciona datoteka nikada ne menja pravila konsenzusa protokola: ona samo postavlja lokalnu politiku čvora (pravila prosleđivanja), način na koji se povezuje, indeksira i izlaže usluge???????.
 
 
 
@@ -3231,7 +3231,7 @@ Mreža, prenos transakcija, performanse, indeksiranje, logovanje i parametri pri
 
 
 
-Podrazumevano, `Bitcoin.conf` se nalazi u Bitcoin core direktorijumu podataka. Ovo je čuveni direktorijum koji smo pomenuli u prethodnom poglavlju. Međutim, ovaj fajl nije automatski kreiran od strane Bitcoin core, osim u određenim okruženjima, kao što je Umbrel. Ako već ne postoji, moraćete da ga generate sami tako što ćete jednostavno kreirati fajl pod nazivom `Bitcoin.conf`, a zatim ga otvoriti u tekst editoru da biste izvršili svoje izmene.
+Podrazumevano, `Bitcoin.conf` se nalazi u Bitcoin Core direktorijumu podataka. Ovo je čuveni direktorijum koji smo pomenuli u prethodnom poglavlju. Međutim, ovaj fajl nije automatski kreiran od strane Bitcoin Core-a, osim u određenim okruženjima, kao što je Umbrel. Ako već ne postoji, moraćete ga generisati sami tako što ćete jednostavno kreirati fajl pod nazivom `Bitcoin.conf`, a zatim ga otvoriti u tekst editoru da biste izvršili svoje izmene.
 
 
 
@@ -3240,7 +3240,7 @@ Parametri definisani u `Bitcoin.conf` mogu biti prepisani sa 2 sloja:
 
 
 
-- `settings.json` (napisan dinamički od strane Interface grafike ili nekog RPC),
+- `settings.json` (dinamički generisan od strane grafičkog interfejsa ili nekog RPC poziva),
 - i opcije modifikovane putem komandnih linija.
 
 
@@ -3257,7 +3257,7 @@ Format `Bitcoin.conf` je stoga veoma jednostavan: jedna linija po opciji, u obli
 
 
 
-Gotovo sve Booleove opcije mogu biti onemogućene sa prefiksom `no`. Na primer, `listen=0` i `nolisten=1` su ekvivalentni u zavisnosti od verzije.
+Većinu Boolean opcija možete isključiti tako što ćete im dodati prefiks `no`. Na primer, `listen=0` i `nolisten=1` su ekvivalentni u zavisnosti od verzije.
 
 
 
@@ -3269,13 +3269,13 @@ Da biste segmentirali konfiguraciju po mreži, možete koristiti sekcije: `[main
 
 
 
-Kao što je objašnjeno gore, pravila konsenzusa očigledno nisu konfigurisana u `Bitcoin.conf`, jer bi to moglo stvoriti Hard Fork. S druge strane, mnogi drugi aspekti su konfigurisani. Postoje 3 korisne klase koje treba imati na umu:
+Kao što je objašnjeno gore, pravila konsenzusa očigledno nisu konfigurisana u `Bitcoin.conf`, jer bi to moglo stvoriti hard fork. S druge strane, mnogi drugi aspekti su konfigurisani. Postoje 3 korisne klase koje treba imati na umu:
 
 
 
 
 - Isključivo lokalni parametri. Oni utiču samo na vaš čvor: veličina keša (`dbcache`), pruned režim (`prune`), opcioni indeksi... Oni utiču na performanse vaše mašine, ali ne i na mrežu.
-- Prosleđivanje i Mempool politike. One odlučuju šta vaš čvor prihvata, zadržava i prosleđuje pre potvrde: minimalni prag naknade (`minrelaytxfee`), veličina i vreme zadržavanja Mempool (`maxmempool`, `mempoolexpiry`), zamena transakcija (RBF)... Ova pravila nisu deo konsenzusa, tako da dva različita čvora mogu imati različite politike i i dalje biti potpuno kompatibilni. S druge strane, ovi parametri će imati uticaj na Bitcoin mrežu (kao što je objašnjeno u prvom delu, naročito sa teorijom perkolacije).
+- Prosleđivanje i mempool politike. One odlučuju šta vaš čvor prihvata, zadržava i prosleđuje pre potvrde: minimalni prag naknade (`minrelaytxfee`), veličina i vreme zadržavanja u mempool-u (`maxmempool`, `mempoolexpiry`), zamena transakcija (RBF)... Ova pravila nisu deo konsenzusa, tako da dva različita čvora mogu imati različite politike i dalje biti potpuno kompatibilni. S druge strane, ovi parametri će imati uticaj na Bitcoin mrežu (kao što je objašnjeno u prvom delu, naročito sa teorijom perkolacije).
 - Povezivanje na mrežu. Ove opcije određuju kako vaš čvor pronalazi peer-ove, sluša, prelazi preko NAT-a, koristi Tor ili proxy, ili ograničava svoj propusni opseg. One oblikuju vašu topologiju, ali ne menjaju prosleđivanje transakcija.
 
 
@@ -3315,7 +3315,7 @@ Ove dve vrste veze su savršeno sposobne za razmenu istih podataka u oba smera; 
 
 
 
-Full node dodaje veću vrednost mreži prihvatanjem dolaznih konekcija. Parametar `listen=1` omogućava slušanje na podrazumevanom portu 8333 mreže o kojoj je reč, omogućavajući prijem ovih dolaznih konekcija na clearnet-u. Da bi ovo funkcionisalo, ovaj port mora biti otvoren i na vašem ruteru. Ako nije, vaš čvor će nastaviti da radi samo sa odlaznim konekcijama, što neće imati uticaja na vašu ličnu upotrebu Bitcoin. Izbor da li ćete dozvoliti dolazne konekcije je vaš; ne postoji "najbolji izbor."
+Full node dodaje veću vrednost mreži prihvatanjem dolaznih konekcija. Parametar `listen=1` omogućava slušanje na podrazumevanom portu 8333 mreže o kojoj je reč, omogućavajući prijem ovih dolaznih konekcija na clearnet-u. Da bi ovo funkcionisalo, ovaj port mora biti otvoren i na vašem ruteru. Ako nije, vaš čvor će nastaviti da radi samo sa odlaznim konekcijama, što neće imati uticaja na vašu ličnu upotrebu Bitcoina. Izbor da li ćete dozvoliti dolazne konekcije je vaš; ne postoji "najbolji izbor."
 
 
 
@@ -3341,16 +3341,16 @@ Na nivou mreže, takođe imamo:
 
 
 
-Podrazumevano, vaš čvor komunicira preko clearnet-a, Tor-a i I2P-a. To znači da vršnjaci sa kojima se povezuje na clearnet-u mogu videti vaš javni IP Address, a vaš ISP će verovatno moći da otkrije da pokrećete Bitcoin čvor (iako P2P Transport V2 otežava ISP-u prisluškivanje). Ovo nije nužno problem, ali ako želite da izbegnete bilo kakvo curenje ovih informacija, možete povezati svoj čvor isključivo putem Tor mreže.
+Podrazumevano, vaš čvor komunicira preko clearnet-a, Tor-a i I2P-a. To znači da peer-ovi sa kojima se povezuje na clearnet-u mogu videti vašu javnu IP adresu, a vaš ISP će verovatno moći da otkrije da pokrećete Bitcoin čvor (iako P2P Transport V2 otežava ISP-u prisluškivanje). Ovo nije nužno problem, ali ako želite da izbegnete bilo kakvo curenje ovih informacija, možete povezati svoj čvor isključivo putem Tor mreže.
 
 
 
-Da bi bio potpuno omogućen za Tor, potrebno je prisiliti Bitcoin core da koristi samo ovu mrežu i da kreira skriveni servis za dolazne veze (ako želite da ih omogućite). U `Bitcoin.conf`, potrebno je dodati ovu konfiguraciju:
+Da bi bio potpuno omogućen za Tor, potrebno je prisiliti Bitcoin Core da koristi samo ovu mrežu i da kreira skriveni servis za dolazne veze (ako želite da ih omogućite). U `Bitcoin.conf`, potrebno je dodati ovu konfiguraciju:
 
 
 
 
-- `samonion=uključen`,
+- `onlynet=onion`,
 - `proxy=127.0.0.1:9050`,
 - `listenonion=1`,
 - `torcontrol=127.0.0.1:9051`,
@@ -3362,7 +3362,7 @@ Da bi bio potpuno omogućen za Tor, potrebno je prisiliti Bitcoin core da korist
 
 
 
-Sve vaše P2P konekcije idu kroz Tor. Vaš čvor prima `.onion` Address za dolazne konekcije, tako da nije potrebno otvarati portove na ruteru. Vaš ISP vidi samo Tor saobraćaj, a vaši vršnjaci nisu svesni vaše stvarne javne IP adrese Address.
+Sve vaše P2P konekcije idu kroz Tor. Vaš čvor prima `.onion` adresu za dolazne konekcije, tako da nije potrebno otvarati portove na ruteru. Vaš ISP vidi samo Tor saobraćaj, a vaši vršnjaci nisu svesni vaše stvarne javne IP adrese.
 
 
 
@@ -3382,25 +3382,25 @@ Očigledno, ako ste početnik, savetovao bih vam da za sada ostavite sva ova mre
 
 
 
-Evo osnovnih parametara koje možete modifikovati u vašem `Bitcoin.conf` u vezi sa upravljanjem vašim Mempool i prosleđivanjem nepotvrđenih transakcija:
+Evo osnovnih parametara koje možete modifikovati u vašem `Bitcoin.conf` u vezi sa upravljanjem vašim mempool-om i prosleđivanjem nepotvrđenih transakcija:
 
 
 
 
 
-- `maxmempool=<n>`: Ograničava maksimalnu veličinu lokalnog Mempool na `<n>` megabajta (podrazumevano: `300`). Kada se dostigne limit, vaš čvor dinamički povećava svoj efektivni prag naknade i daje prioritet najmanje profitabilnim transakcijama (na osnovu stope naknade, a ne apsolutne vrednosti) kako bi ostao ispod limita. Možete ostaviti ovo podešavanje kao podrazumevano. Povećanje može biti korisno ako ste Mining solo, ili ako želite da dobijete tačniji prikaz zagušenja Mempool i poboljšate procenu naknada. Suprotno tome, smanjenje će uštedeti RAM i, u manjoj meri, druge sistemske resurse.
+- `maxmempool=<n>`: Ograničava maksimalnu veličinu lokalnog mempool-a na `<n>` megabajta (podrazumevano: `300`). Kada se dostigne limit, vaš čvor dinamički povećava svoj efektivni prag naknade i daje prioritet najmanje profitabilnim transakcijama (na osnovu stope naknade, a ne apsolutne vrednosti) kako bi ostao ispod limita. Možete ostaviti ovo podešavanje kao podrazumevano. Povećanje može biti korisno ako rudarite samostalno, ili ako želite da dobijete tačniji prikaz zagušenja mempool-a i poboljšate procenu naknada. Suprotno tome, smanjenje će uštedeti RAM i, u manjoj meri, druge sistemske resurse.
 
 
 
 
 
-- `mempoolexpiry=<n>`: Maksimalno vreme zadržavanja nepotvrđenih transakcija u Mempool (u satima, podrazumevano: `336`). Nakon ovog vremena, transakcije se uklanjaju čak i ako ima dostupnog prostora.
+- `mempoolexpiry=<n>`: Maksimalno vreme zadržavanja nepotvrđenih transakcija u mempool-u (u satima, podrazumevano: `336`). Nakon ovog vremena, transakcije se uklanjaju čak i ako ima dostupnog prostora.
 
 
 
 
 
-- `persistmempool=1`: Čuva snimak Mempool u stanju mirovanja i ponovo ga učitava pri ponovnom pokretanju (podrazumevano: `1`). Ovo ubrzava oporavak nakon ponovnog pokretanja, izbegavajući potrebu za ponovnim učenjem stanja putem mreže.
+- `persistmempool=1`: Čuva snimak mempool-a u stanju mirovanja i ponovo ga učitava pri ponovnom pokretanju (podrazumevano: `1`). Ovo ubrzava oporavak nakon ponovnog pokretanja, izbegavajući potrebu za ponovnim učenjem stanja putem mreže.
 
 
 
@@ -3436,7 +3436,7 @@ Kao podsetnik, RBF je transakcioni mehanizam koji omogućava pošiljaocu da zame
 
 
 
-Evo su napredna podešavanja za Mempool i politiku releja. Ako ste početnik, ne bi trebalo da menjate ova podešavanja:
+Evo su napredna podešavanja za mempool i politiku releja. Ako ste početnik, ne bi trebalo da menjate ova podešavanja:
 
 
 
@@ -3508,7 +3508,7 @@ Kao podsetnik, sva ova pravila releja nemaju uticaj na validnost transakcija ukl
 
 
 
-Takođe možete prilagoditi način na koji se vaši novčanici upravljaju u datoteci `Bitcoin.conf`. Ako ne koristite direktno Wallet u Core, već eksterni softver za upravljanje kao što su Sparrow ili Liana, ovi parametri će biti od male važnosti:
+Takođe možete prilagoditi način na koji se vaši novčanici upravljaju u datoteci `Bitcoin.conf`. Ako ne koristite direktno novčanik Core-a, već eksterni softver za upravljanje kao što su Sparrow ili Liana, ovi parametri će biti od male važnosti:
 
 
 
@@ -3734,7 +3734,7 @@ Konačno, datoteka `Bitcoin.conf` takođe vam omogućava da konfigurišete param
 
 
 
-- `rpcbind=<addr>[:port]`: RPC server sluša Address/port. Podrazumevano, sluša se samo lokalno (`127.0.0.1` i `::1`). Ovaj parametar se ignoriše ako `rpcallowip` nije takođe definisan. Koristite ga da eksplicitno ograničite Interface.
+- `rpcbind=<addr>[:port]`: RPC server sluša Address/port. Podrazumevano, sluša se samo lokalno (`127.0.0.1` i `::1`). Ovaj parametar se ignoriše ako `rpcallowip` nije takođe definisan. Koristite ga da eksplicitno ograničite interfejs.
 
 
 
@@ -3876,11 +3876,11 @@ Konačno, datoteka `Bitcoin.conf` takođe vam omogućava da konfigurišete param
 
 
 
-Sada smo završili sa nabrajanjem većine parametara konfiguracije. Ovaj `Bitcoin.conf` fajl stoga predstavlja pravu komandnu tablu vašeg čvora: definiše mrežnu konfiguraciju, upravljanje Mempool, korišćenje diska i memorije, indeksiranje i opštu administraciju. Ako želite da saznate više o ovom fajlu i kreirate jedan prilagođen vašim potrebama, preporučujem korišćenje [Jameson Lopp-ovog generatora](https://jlopp.github.io/Bitcoin-core-config-generator/).
+Sada smo završili sa nabrajanjem većine parametara konfiguracije. Ovaj `Bitcoin.conf` fajl stoga predstavlja pravu komandnu tablu vašeg čvora: definiše mrežnu konfiguraciju, upravljanje mempool-om, korišćenje diska i memorije, indeksiranje i opštu administraciju. Ako želite da saznate više o ovom fajlu i kreirate jedan prilagođen vašim potrebama, preporučujem korišćenje [Jameson Lopp-ovog generatora](https://jlopp.github.io/Bitcoin-core-config-generator/).
 
 
 
-Došli smo do zaključka ovog BTC 202 kursa, koji će vam omogućiti ne samo da razumete osnove kako čvorovi funkcionišu i kako međusobno deluju unutar sistema, već i da postavite svoj sopstveni. Sada ste suvereni Bitcoiner, sa sopstvenim samostalnim čuvanjem Wallet, emitujući svoje transakcije putem svog čvora. Čestitamo!
+Došli smo do zaključka ovog BTC 202 kursa, koji će vam omogućiti ne samo da razumete osnove kako čvorovi funkcionišu i kako međusobno deluju unutar sistema, već i da postavite svoj sopstveni. Sada ste suvereni Bitcoiner, sa sopstvenim samostalnim čuvanjem novčanika, emitujući svoje transakcije putem svog čvora. Čestitamo!
 
 
 
