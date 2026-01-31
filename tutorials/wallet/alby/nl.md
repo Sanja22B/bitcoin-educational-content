@@ -9,7 +9,7 @@ description: Browseruitbreiding voor Bitcoin en Lightning Network
 
 
 
-Betalingen steeds eenvoudiger maken met bitcoin is de uitdaging waar veel bedrijven in de sector voor staan. Alby onderscheidt zich met zijn Alby wallet extensie voor browsers. Deze extensie heeft als doel een vloeiend raamwerk op te zetten dat automatisch adressen detecteert en waarmee je frictieloze bitcoinbetalingen kunt doen. In deze tutorial ontdekken we de Alby extensie en testen we hoe deze betalingen vanuit de browser mogelijk maakt.
+Betalingen steeds eenvoudiger maken met bitcoin is de uitdaging waar veel bedrijven in de sector voor staan. Alby onderscheidt zich met zijn Alby wallet browserextensie. Deze extensie heeft als doel een vloeiende omkadering op te zetten dat automatisch adressen detecteert en waarmee je vlot bitcoinbetalingen kunt doen. In deze tutorial ontdekken we de Alby-extensie en testen we hoe deze betalingen vanuit de browser mogelijk maakt.
 
 
 
@@ -19,11 +19,11 @@ Betalingen steeds eenvoudiger maken met bitcoin is de uitdaging waar veel bedrij
 
 
 
-## Alby uitbreiding
+## Alby-extensie
 
 
 
-De Alby extensie is een hulpmiddel waarmee je webbrowser gemakkelijk en veilig kan communiceren met het Bitcoin netwerk en de Lightning Network laag. Het wordt gekenmerkt door drie aspecten:
+De Alby-extensie is een handige tool waarmee je webbrowser eenvoudig en veilig met het Bitcoin-netwerk en haar Lightning Network-laag kan communiceren. Het wordt gekenmerkt door drie aspecten:
 
 
 
@@ -42,11 +42,11 @@ https://planb.academy/tutorials/node/others/umbrel-nostr-7ae147e8-f5cd-46e1-861b
 
 
 
-In deze tutorial gebruiken we de Alby extensie in de Firefox browser onder een Ubuntu besturingssysteem. Het is echter ook beschikbaar op Windows en met browsers zoals Chrome.
+In deze tutorial gebruiken we de Alby-extensie in de Firefox browser onder een Ubuntu besturingssysteem. Het is echter ook beschikbaar op Windows en met browsers zoals Chrome.
 
 
 
-Je kunt de Alby extensie aan je browser toevoegen door de [Firefox] extensie store (https://addons.mozilla.org/fr/firefox/addon/alby/) of de [Chrome] extensie store (https://chromewebstore.google.com/detail/alby-bitcoin-wallet-for-l/iokeahhehimjnekafflcihljlcjccdbe) te bezoeken.
+Je kunt de Alby-extensie aan je browser toevoegen door de [Firefox] extensie store (https://addons.mozilla.org/fr/firefox/addon/alby/) of de [Chrome] extensie store (https://chromewebstore.google.com/detail/alby-bitcoin-wallet-for-l/iokeahhehimjnekafflcihljlcjccdbe) te bezoeken.
 
 
 
@@ -124,7 +124,7 @@ Log in op uw Alby account, of maak er een aan als u er nog geen heeft.
 
 
 
-Eenmaal ingelogd kun je op de Alby extensie in de werkbalk klikken om je portfolio te openen.
+Eenmaal ingelogd kun je op de Alby-extensie in de werkbalk klikken om je portfolio te openen.
 
 
 
@@ -174,7 +174,7 @@ Open verzendkanalen door het blokkeren van satoshis op een bitcoin onchain adres
 
 
 
-Je kunt nu satoshi's verzenden en ontvangen via de Alby extensie.
+Je kunt nu satoshi's verzenden en ontvangen via de Alby-extensie.
 
 
 
@@ -182,7 +182,7 @@ Je kunt nu satoshi's verzenden en ontvangen via de Alby extensie.
 
 
 
-Vanaf dit punt is de Alby extensie in staat om Lightning-adressen en facturen te detecteren die beschikbaar zijn op de webpagina's die je bezoekt, en zal ze je voorstellen om ze rechtstreeks vanuit je extensie te betalen in bitcoin of Lightning.
+Vanaf dit punt is de Alby-extensie in staat om Lightning-adressen en facturen te detecteren die beschikbaar zijn op de webpagina's die je bezoekt, en zal ze je voorstellen om ze rechtstreeks vanuit je extensie te betalen in bitcoin of Lightning.
 
 
 
@@ -199,7 +199,7 @@ Vanaf dit punt is de Alby extensie in staat om Lightning-adressen en facturen te
 
 
 
-De hoofdsleutel die wordt aangeboden door de Alby uitbreiding werkt als een beschermende overlay die u in staat stelt om veilig te communiceren met de hoofdlaag van het Bitcoin netwerk (Onchain), het Nostr systeem en stelt u in staat om de Lightning verbinding met Nostr toepassingen te activeren.
+De hoofdsleutel die wordt aangeboden door de Alby uitbreiding werkt als een beschermende overlay die u in staat stelt om veilig te communiceren met de hoofdlaag van het Bitcoin-netwerk (Onchain), het Nostr systeem en stelt u in staat om de Lightning verbinding met Nostr toepassingen te activeren.
 
 
 
@@ -218,7 +218,7 @@ https://planb.academy/tutorials/wallet/backup/backup-mnemonic-22c0ddfa-fb9f-4e3a
 
 
 
-U kunt nu wrijvingsloze bitcoin- en Lightning-betalingen ervaren met de Alby extensie. Als je deze tutorial leuk vond, raden we je onze Alby Hub tutorial aan om je eigen Alby node op te zetten en alle aspecten van je Alby wallets te beheren vanuit een soepele en krachtige interface.
+U kunt nu wrijvingsloze bitcoin- en Lightning-betalingen ervaren met de Alby-extensie. Als je deze tutorial leuk vond, raden we je onze Alby Hub tutorial aan om je eigen Alby node op te zetten en alle aspecten van je Alby wallets te beheren vanuit een soepele en krachtige interface.
 
 
 
