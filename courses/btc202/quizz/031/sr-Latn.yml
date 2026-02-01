@@ -1,4 +1,4 @@
-question: Koja distribucija je najprikladnija za Raspberry Pi, s obzirom da je posebno lagana?
+question: Koja distribucija je najprikladnija za Raspberry Pi, s obzirom da ne zahteva puno kompjuterskih resursa?
 answer: RaspiBlitz
 wrong_answers:
   - Umbrel
