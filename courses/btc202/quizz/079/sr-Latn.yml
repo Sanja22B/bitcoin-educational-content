@@ -1,9 +1,9 @@
 question: Koja je maksimalna veličina blkNNNNN.dat fajla pre nego što se kreira novi fajl?
-answer: 128 MiB
+answer: 128 MB
 wrong_answers:
-  - 256 MiB
-  - 256 GiB
-  - 128 GiB
+  - 256 MB
+  - 256 GB
+  - 128 GB
 explanation: |
-  Datoteke blkNNNNN.dat skladište blokove sekvencijalno i dostižu veličinu od oko 128 MiB pre nego što Bitcoin core otvori sledeću.
+  Fajlovi blkNNNNN.dat skladište blokove jedan za drugim i rastu do približno 128 MB, nakon čega Bitcoin Core kreira novi fajl.
 reviewed: true
