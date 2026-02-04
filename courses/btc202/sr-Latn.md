@@ -66,7 +66,7 @@ U ovom prvom delu kursa, razjasnićemo osnovne pojmove, a zatim preći na preciz
 
 
 
-U ovom drugom delu, počeću objašnjavajući zašto je važno pokrenuti sopstveni Bitcoin čvor. Zatim ćemo istražiti različite tipove čvorova koji postoje (kompletni, pruned - čvor sa skraćenom istorijom blokova), SPV...), kako funkcionišu i njihove tehničke implikacije.
+U ovom drugom delu, počeću objašnjavajući zašto je važno pokrenuti sopstveni Bitcoin čvor. Zatim ćemo istražiti različite tipove čvorova koji postoje (kompletni, pruned - (čvor sa skraćenom istorijom blokova), SPV...), kako funkcionišu i njihove tehničke implikacije.
 
 
 
@@ -74,7 +74,7 @@ Zatim ćemo vam pružiti pregled softvera dostupnog za pokretanje Bitcoin čvora
 
 
 
-Ovaj odeljak, dakle, ilustruje put suverenog bitkoinera: razumevanje zašto je neophodno pokrenuti čvor, izbor tipa čvora, na osnovu ovog izbora, odabir softvera, i, u zavisnosti od izabranog softvera, određivanje odgovarajućeg hardvera.
+Ovaj odeljak, dakle, ilustruje put suverenog bitkoinera: razumevanje zašto je neophodno pokrenuti čvor, izbor tipa čvora, i na osnovu ovog izbora odabir softvera, i u zavisnosti od izabranog softvera, izbor odgovarajućeg hardvera.
 
 
 
@@ -110,7 +110,7 @@ U ovom završnom delu BTC 202, cilj je produbiti vaše znanje. Prvo ćemo pogled
 
 
 
-Zatim ćemo odvojiti vreme da pregledamo neke od teorija obrađenih ranije u kursu, uključujući razumevanje IBD procesa i peer discovery (pronalaženje drugih čvorova) u detalje, istraživanje anatomije čvora, i na kraju učenje kako koristiti `Bitcoin.conf` fajl za fino podešavanje postavki.
+Zatim ćemo odvojiti vreme da pregledamo neke od teorija obrađenih ranije u kursu, uključujući razumevanje IBD procesa i peer discovery (pronalaženje drugih čvorova) detaljnije, istraživanje anatomije čvora, i na kraju učenje kako koristiti `Bitcoin.conf` fajl za fino podešavanje postavki.
 
 
 
@@ -144,7 +144,7 @@ Kako je opisao njegov tvorac, Satoshi Nakamoto, Bitcoin se predstavlja kao peer-
 
 
 
-Pošto je Bitcoin sistem, mora se nužno pokretati na računarima. I, zbog svoje peer-to-peer prirode, sami korisnici preuzimaju odgovornost za pokretanje ovih mašina. Ono što nazivamo "Bitcoin čvor" je upravo taj računar na kojem se pokreće softver koji implementira Bitcoin protokol (kao Bitcoin core, ali o tome ćemo kasnije). Ovo je ono što omogućava Bitcoinu da funkcioniše bez centralnog autoriteta: validacija se sprovodi na distribuiran način, od strane hiljada nezavisnih mašina koje pripadaju hiljadama korisnika.
+Pošto je Bitcoin sistem, mora se nužno pokretati na računarima i zbog svoje peer-to-peer prirode, sami korisnici preuzimaju odgovornost za pokretanje ovih mašina. Ono što nazivamo "Bitcoin čvor" je upravo taj računar na kojem se pokreće softver koji implementira Bitcoin protokol (kao Bitcoin core, ali o tome ćemo kasnije). Ovo je ono što omogućava Bitcoinu da funkcioniše bez centralnog autoriteta: validacija se sprovodi na distribuiran način, od strane hiljada nezavisnih mašina koje pripadaju hiljadama korisnika.
 
 
 
@@ -156,7 +156,7 @@ Nakamoto, S. (2008). *Bitcoin: A Peer-to-Peer Electronic Cash System*. https://B
 
 
 
-Upravo ti korisnici osiguravaju bezbednost Bitcoina. Kako Eric Voskuil objašnjava u svojoj knjizi *Cryptoeconomics*, bezbednost Bitcoina ne zavisi ni od blokčejna, ni od snage heširanja, ni od validacije, decentralizacije, kriptografije, otvorenog koda, niti teorije igara. Bezbednost Bitcoina zavisi prvenstveno od pojedinaca koji su spremni da se izlože ličnom riziku. Decentralizacija omogućava da se ovaj rizik raspodeli na veliki broj pojedinaca, a upravo njihova sposobnost da pruže otpor obezbeđuje otpornost sistema.
+Upravo ti korisnici osiguravaju bezbednost Bitcoina. Kako Eric Voskuil objašnjava u svojoj knjizi *Cryptoeconomics*, bezbednost Bitcoina ne zavisi ni od blockchaina, ni od [snage heširanja](https://planb.academy/resources/glossary/hashrate), ni od validacije, decentralizacije, kriptografije, otvorenog koda, niti teorije igara. Bezbednost Bitcoina zavisi prvenstveno od pojedinaca koji su spremni da se izlože ličnom riziku. Decentralizacija omogućava da se ovaj rizik raspodeli na veliki broj pojedinaca, a upravo njihova sposobnost da pruže otpor obezbeđuje otpornost sistema.
 
 
 Ovaj princip je lako razumeti: kada bi Bitcoin zavisio od jednog jedinog čvora u vlasništvu jedne osobe, bilo bi dovoljno tu osobu zatvoriti da bi se mreža ugasila, jer bi ona sama snosila sav rizik. Sa desetinama hiljada čvorova rasprostranjenih širom sveta, rizik je raspršen: svaki od ovih operatera bi morao biti neutralisan da bi se ugasio Bitcoin.
@@ -193,11 +193,11 @@ Od samog početka, Bitcoin je dizajniran da omogući svakom korisniku da pokrene
 
 
 
-### Održavanje kopije blokčejna
+### Održavanje kopije blockchaina
 
 
 
-Prvi zadatak čvora je da održava lokalnu kopiju blokčejna. Da bi se sprečila dvostruka potrošnja na Bitcoinu bez uključivanja centralnog autoriteta, svaki korisnik mora proveriti da ne postoji transakcija u sistemu. Jedini način da se u to bude siguran je da se poznaju sve transakcije napravljene na Bitcoinu. Iz tog razloga, sve transakcije su vremenski označene i grupisane u blokove, a svaki čvor skladišti ceo blokčejn.
+Prvi zadatak čvora je da održava lokalnu kopiju blockchaina. Da bi se sprečila dvostruka potrošnja na Bitcoinu bez uključivanja centralnog autoriteta, svaki korisnik mora proveriti da ne postoji transakcija u sistemu. Jedini način da se u to bude siguran je da se poznaju sve transakcije napravljene na Bitcoinu. Iz tog razloga, sve transakcije su vremenski označene i grupisane u blokove, a svaki čvor skladišti ceo blockchain.
 
 
 
@@ -207,7 +207,7 @@ Nakamoto, S. (2008). *Bitcoin: A Peer-to-Peer Electronic Cash System*. https://B
 
 
 
-Blokčejn je stoga evoluirajući registar: svaki put kada rudar objavi novi blok, čvor proverava njegovu validnost pre nego što ga doda svojoj lokalnoj kopiji lanca. Zaključno sa današnjim danom (jul 2025), kompletan blokčejn premašuje 675 GB, a ova veličina nastavlja da raste, jer se u proseku novi blok dodaje svakih 10 minuta.
+Blockchain je stoga evoluirajući registar: svaki put kada rudar objavi novi blok, čvor proverava njegovu validnost pre nego što doda blok svojoj lokalnoj kopiji lanca. Zaključno sa današnjim danom (jul 2025), kompletan blockchain premašuje 675 GB, a ova veličina nastavlja da raste, jer se u proseku novi blok dodaje svakih 10 minuta.
 
 
 
@@ -246,7 +246,7 @@ Nakon validacije, transakcija se čuva u [mempool-u](https://planb.academy/resou
 
 
 
-Treća uloga čvora uključuje upravljanje "izrudarenim" blokovima. Kada rudar otkrije novi blok sa važećim Proof of Work-om, on se emituje na mreži. Čvorovi ga primaju, proveravaju da li je u skladu sa svim pravilima protokola, i zatim ga integrišu u svoju lokalnu kopiju blokčejna ako je važeći. Kao i kod transakcija, novo potvrđeni blokovi se zatim prenose svim čvorovima povezanim na čvor. Ovaj proces se nastavlja dok svi čvorovi na Bitcoin mreži ne budu obavešteni o novom bloku.
+Treća uloga čvora uključuje upravljanje "izrudarenim" blokovima. Kada rudar otkrije novi blok sa važećim [Proof of Work-om](https://planb.academy/resources/glossary/proof-of-work), on se emituje na mreži. Čvorovi ga primaju, proveravaju da li je u skladu sa svim pravilima protokola, i zatim ga, ako je važeći, integrišu u svoju lokalnu kopiju blockchaina. Kao i kod transakcija, novo potvrđeni blokovi se zatim prenose svim čvorovima povezanim na čvor. Ovaj proces se nastavlja dok svi čvorovi na Bitcoin mreži ne budu obavešteni o novom bloku.
 
 
 
@@ -265,22 +265,22 @@ Važno je razlikovati dve različite vrste softvera kada koristite Bitcoin: čvo
 
 
 
-Bitcoin čvor, kao što je gore pomenuto, je deo softvera koji aktivno učestvuje u peer-to-peer mreži. Obavlja tri glavna zadatka:
+Bitcoin čvor, kao što je gore pomenuto, je deo softvera koji aktivno učestvuje u [peer-to-peer](https://planb.academy/resources/glossary/peertopeer-p2p) mreži. Obavlja tri glavna zadatka:
 
 
 
 
-- pravljenje rezervne kopije (eng. backup) blokčejna,
+- pravljenje rezervne kopije (eng. backup) blockchaina,
 - validaranje i prosleđivanje transakcija,
 - validaranje i prosleđivanje blokova.
 
 
 
-S druge strane, Bitcoin novčanik je softverski alat dizajniran za čuvanje i upravljanje vašim privatnim ključevima. Ovi ključevi omogućavaju vam da trošite svoje bitkoine ispunjavanjem skripti za zaključavanje (obično putem potpisa). Novčanik može da se poveže sa čvorom (bilo lokalnim ili udaljenim) kako bi proverio status blokčejna i emitovao transakcije koje kreira, ali kao takav nije učesnik u mreži.
+S druge strane, Bitcoin novčanik je softverski alat dizajniran za čuvanje i upravljanje vašim privatnim ključevima. Ovi ključevi omogućavaju vam da trošite svoje bitkoine ispunjavanjem skripti za zaključavanje (obično putem potpisa). Novčanik može da se poveže sa čvorom (bilo lokalnim ili udaljenim) kako bi proverio status blockchaina i emitovao transakcije koje kreira, ali kao takav nije učesnik u mreži.
 
 
 
-U nekim slučajevima, ove dve funkcije koegzistiraju unutar istog softvera, kao što je slučaj sa Bitcoin core-om, koji služi i kao potpuni (eng. full) node i kao novčanik. Međutim, mnogi popularni programi za upravljanjem novčanikom (Sparrow, BlueWallet, itd.) zahtevaju vezu sa eksternim čvorom (bilo vašim ili treće strane) za emitovanje transakcija i određivanje raspoloživih sredstava novčanika.
+U nekim slučajevima, ove dve funkcije koegzistiraju unutar istog softvera, kao što je slučaj sa Bitcoin Core-om, koji služi i kao potpuni (eng. full) node i kao novčanik. Međutim, mnogi popularni programi za upravljanjem novčanikom (Sparrow, BlueWallet, itd.) zahtevaju vezu sa eksternim čvorom (bilo vašim ili treće strane) za emitovanje transakcija i određivanje raspoloživih sredstava novčanika.
 
 
 
@@ -317,8 +317,8 @@ Suočeni sa ovom evolucijom, uloge Bitcoin čvora i rudara postale su jasno odvo
 
 
 - Odabira transakcija koje su na čekanju u mempool-u.
-- Pravljenje blok-kandidata koji uključuje ove transakcije.
-- Traženje metodom pokušaja i greške validan Proof of Work.
+- Pravi blok-kandidata koji uključuje ove transakcije.
+- Traži metodom pokušaja i greške validan Proof of Work.
 - Ako pronađe važeći dokaz, emituje blok putem svog čvora ka ostalim čvorovima.
 
 
@@ -327,7 +327,7 @@ Rudaru treba Bitcoin čvor za interakciju sa mrežom.
 
 
 
-Uloga rudara se ponekad takođe razlikuje od uloge ‘chopper-a’. Rudar je mašina čiji je zadatak da hešira predložene blokove koje obezbeđuje server [rudarskog bazena](https://planb.academy/resources/glossary/pool-mining) (eng. mining pool), tražeći heševe koji zadovoljavaju cilj težine definisan za [šerove](https://planb.academy/resources/glossary/shares) (eng. shares), a ne za Bitcoin. Ostatak rudarskog procesa, koji uključuje stvarnu izgradnju blokova, izbor transakcija ili Proof-of-Work pretragu prema stvarnog težini rudarenja Bitcoina, kao i distribuciju, direktno obavljaju bazeni.
+Uloga rudara se ponekad takođe razlikuje od uloge sekača blokova (na francuskom hacheur). Sekač blokova je mašina čiji je zadatak da hešira (u bukvalnom prevodu seče) predložene blokove koje obezbeđuje server [rudarskog bazena](https://planb.academy/resources/glossary/pool-mining) (eng. mining pool), tražeći heševe koji zadovoljavaju [cilj težine](https://planb.academy/resources/glossary/difficulty-target) definisan za [šerove](https://planb.academy/resources/glossary/shares) (eng. shares), a ne za Bitcoin. Ostatak rudarskog procesa, koji uključuje stvarnu izgradnju blokova, izbor transakcija ili Proof-of-Work pretragu prema stvarnoj težini rudarenja Bitcoina, kao i distribuciju, direktno obavljaju bazeni.
 
 
 
@@ -343,7 +343,7 @@ U Delu 2, istražićemo detaljnije praktične i lične prednosti instaliranja i 
 
 
 
-## Bitcoin core i implementacije protokola
+## Bitcoin Core i implementacije protokola
 
 
 <chapterId>72381876-9317-4faa-8d41-2b252a945b8a</chapterId>
@@ -374,7 +374,7 @@ Bitcoin Core je referentni softver za Bitcoin protokol. Izveden je iz originalno
 
 
 
-U teoriji, Bitcoin core ne predstavlja Bitcoin protokol; već je samo jedna implementacija među mnogima. Međutim, odlikuje se masovnim usvajanjem, svojom starošću, robusnošću svog koda i rigoroznošću svog razvojnog procesa. Shodno tome, u praksi, pravila koja primenjuje Bitcoin Core su de facto pravila Bitcoin protokola: korisnici, programeri, rudari i razliiti servisi unutar ekosistema se gotovo isključivo na njega pozivaju.
+U teoriji, Bitcoin Core ne predstavlja Bitcoin protokol; već je samo jedna implementacija među mnogima. Međutim, odlikuje se masovnim usvajanjem, svojom starošću, robusnošću svog koda i rigoroznošću svog razvojnog procesa. Shodno tome, u praksi, pravila koja primenjuje Bitcoin Core su de facto pravila Bitcoin protokola: korisnici, programeri, rudari i različiti servisi unutar ekosistema se gotovo isključivo na njega pozivaju.
 
 
 
@@ -499,7 +499,7 @@ Kao što smo istakli u prethodnim poglavljima, pokretanje čvora ne donosi direk
 
 
 
-Kada se softver za upravljanje novčanikom poveže sa spoljnim čvorom, on prenosi svoje transakcije na infrastrukturu koja nije pod vašom kontrolom. Ovo generiše očigledne rizike od nadzora: operater udaljenog čvora može analizirati detalje vaših transakcija, uključujući iznose i učestalost, i, ukrštanjem određenih metapodataka (kao što su IP adrese, vremena i lokacije), potencijalno ih povezati sa vašim identitetom.
+Kada se softver za upravljanje novčanikom poveže sa spoljnim čvorom, on prenosi svoje transakcije na infrastrukturu koja nije pod vašom kontrolom. Ovo generiše očigledne rizike od nadzora: operater udaljenog čvora može analizirati detalje vaših transakcija, uključujući iznose i učestalost, i ukrštanjem određenih metapodataka (kao što su IP adrese, vremena i lokacije), potencijalno ih povezati sa vašim identitetom.
 
 
 
@@ -541,7 +541,7 @@ Bez ličnog čvora, ostajete zavisni od treće strane za pristup informacijama, 
 
 
 
-Pokretanje full node-a znači da možete sami proveriti sva pravila protokola, za svaku transakciju i svaki blok. Kao rezultat, saldo prikazan na vašem novčaniku nije podatak primljen sa udaljenog servera, već rezultat koji se lokalno izračunava iz potpune kopije blokčejna, validirane blok po blok. Ovaj pristup daje puno značenje maksimi bitkoinera:
+Pokretanje full node-a znači da možete sami proveriti sva pravila protokola, za svaku transakciju i svaki blok. Kao rezultat, saldo prikazan na vašem novčaniku nije podatak primljen sa udaljenog servera, već rezultat koji se lokalno izračunava iz vaše potpune kopije blockchaina, validirane blok po blok. Ovaj pristup daje puno značenje maksimi bitkoinera:
 
 
 
@@ -606,7 +606,7 @@ Promena ovih pravila je ekvivalentna promeni protokola, a samim tim i valute ([H
 
 
 
-To su pravila koja važe za svaki Bitcoin čvor i koja se nadovezuju na konsenzus pravila, kako bi definisala strukturu nepotvrđenih transakcija prihvaćenih u Mempool-u i prosleđivanih drugim čvorovima. Svaki čvor konfiguriše i primenjuje ova pravila lokalno, što objašnjava zašto se mogu razlikovati od jednog čvora do drugog. Ona se primenjuju samo na nepotvrđene transakcije: transakcija koju čvor smatra "nestandardnom" biće prihvaćena samo ako se već pojavljuje u važećem bloku. Promena ovih pravila ne isključuje čvor iz Bitcoin sistema.
+To su pravila koja važe za svaki Bitcoin čvor i koja se nadovezuju na konsenzus pravila, kako bi definisala strukturu nepotvrđenih transakcija prihvaćenih u mempool-u i prosleđivanih drugim čvorovima. Svaki čvor konfiguriše i primenjuje ova pravila lokalno, što objašnjava zašto se mogu razlikovati od jednog čvora do drugog. Ona se primenjuju samo na nepotvrđene transakcije: transakcija koju čvor smatra "nestandardnom" biće prihvaćena samo ako se već pojavljuje u važećem bloku. Promena ovih pravila ne isključuje čvor iz Bitcoin sistema.
 
 
 
@@ -622,7 +622,7 @@ Na taj način možemo brzo proceniti koliko uticaja imate na pravila zahvaljuju�
 
 
 
-#### Za pravila prosleđivanja
+#### Pravila prosleđivanja (releja)
 
 
 
@@ -630,7 +630,7 @@ Na taj način možemo brzo proceniti koliko uticaja imate na pravila zahvaljuju�
 
 
 
-Ako, na primer, verujete da transakcije sa naknadama manjim od 1 sat/vB treba da budu prihvaćene na Bitcoinu, možete prilagoditi ovo pravilo na svom čvoru tako da emituje te transakcije, olakšavajući njihovo širenje na mreži dok ih rudar na kraju ne uključi u važeći blok. U suštini, to je pitanje moći nad širenjem transakcija: svaki čvor ima moć donošenja odluka, jer pristajanjem na prosleđivanje određenog tipa transakcije je jednako promovisanju njenog prihvatanja na Bitcoin mreži. Kao rezultat toga, ako upravljate sa nekoliko čvorova, imate veći uticaj na politiku prosleđivanja, jer svaki čvor ima svoje veze i oblasti uticaja na mreži.
+Ako, na primer, verujete da transakcije sa naknadama manjim od 1 sat/vB treba da budu prihvaćene na Bitcoinu, možete prilagoditi ovo pravilo na svom čvoru tako da emituje te transakcije, olakšavajući njihovo širenje kroz mrežu dok ih rudar na kraju ne uključi u važeći blok. U suštini, to je pitanje moći nad širenjem transakcija: svaki čvor ima moć donošenja odluka, jer pristajanjem na prosleđivanje određenog tipa transakcije je jednako promovisanju njenog prihvatanja na Bitcoin mreži. Kao rezultat toga, ako upravljate sa nekoliko čvorova, imate veći uticaj na politiku prosleđivanja, jer svaki čvor ima svoje veze i oblasti uticaja na mreži.
 
 
 
@@ -654,7 +654,7 @@ Dodavanje još nekoliko čvorova će stoga imati samo marginalni uticaj ako je m
 
 
 
-#### Za pravila konsenzusa
+#### Pravila konsenzusa
 
 
 
@@ -708,7 +708,7 @@ Bitcoin čvor  je, dakle, mašina koja pokreće implementaciju Bitcoin protokola
 
 
 
-Full node je jednostavno Bitcoin čvor koji preuzima ceo blokčejn iz Genesis bloka, nezavisno validira svaki blok i lokalno čuva istoriju celog tog blokčejna. Ovo je "normalan" oblik Bitcoin čvora, kako ga je zamislio Satoshi Nakamoto.
+Full node je jednostavno Bitcoin čvor koji preuzima ceo blockchain iz Genesis bloka, nezavisno validira svaki blok i lokalno čuva istoriju celog tog blockchaina. Ovo je "normalan" oblik Bitcoin čvora, kako ga je zamislio Satoshi Nakamoto.
 
 
 
@@ -724,7 +724,7 @@ U praksi, full node zahteva netrivijalne resurse, uključujući nekoliko stotina
 
 
 
-U zavisnosti od vaših potreba, možete dodati indeksator na vaš full node. Bitcoin Core nudi indeksiranje transakcija kao opcionalnu funkciju (deaktiviranu po defaultu), što može biti korisno za specifične svrhe. Međutim, ne uključuje indeksator adresa, koji je često najtraženija funkcija za individualne korisnike. Da biste to rešili, možete instalirati specijalizovani softver na vaš čvor, kao što su Electrs ili Fulcrum, kako bi se ubrzali upiti za proveru stanja adresa na osnovu povezanih UTXO-a. Vratit ćemo se na ulogu indeksatora detaljnije u posebnom poglavlju.
+U zavisnosti od vaših potreba, možete dodati indeksator na vaš full node. Bitcoin Core nudi indeksiranje transakcija kao opcionalnu funkciju (deaktiviranu po defaultu), što može biti korisno za specifične svrhe. Međutim, ne uključuje indeksator adresa, koji je često najtraženija funkcija za individualne korisnike. Da biste to rešili, možete instalirati specijalizovani softver na vaš čvor, kao što su Electrs ili Fulcrum, kako bi se ubrzali upiti za proveru stanja sredstava na jednoj adresi na osnovu povezanih UTXO-a. Vratit ćemo se na ulogu indeksatora detaljnije u posebnom poglavlju.
 
 
 
@@ -732,7 +732,7 @@ U zavisnosti od vaših potreba, možete dodati indeksator na vaš full node. Bit
 
 
 
-Pruned čvor validira sve kao full node, od Genesis bloka do vrha lanca sa najviše "rada", ali **čuva samo najnoviji deo blok fajlova**. Kada se stari blokovi provere, postepeno ih briše kako bi ostao ispod ograničenja prostora koje možete postaviti. Ova konfiguracija je idealna ako imate ograničenja u prostoru na disku: zadržavate nezavisnost validacije blokova, bez čuvanja kompletne arhive istorije blokčejna. Ova opcija je posebno korisna ako jednostavno želite da instalirate Bitcoin Core na svom ličnom računaru, bez korišćenja specijalizovane mašine.
+Pruned čvor validira sve kao full node, od Genesis bloka do vrha lanca sa najviše "rada", ali **čuva samo najnoviji deo blok fajlova**. Kada se stari blokovi provere, postepeno ih briše kako bi ostao ispod ograničenja prostora koje možete postaviti. Ova konfiguracija je idealna ako imate ograničenja u prostoru na disku: zadržavate nezavisnost validacije blokova, bez čuvanja kompletne arhive istorije blockchaina. Ova opcija je posebno korisna ako jednostavno želite da instalirate Bitcoin Core na svom ličnom računaru, bez korišćenja specijalizovane mašine.
 
 
 
@@ -740,11 +740,11 @@ Pruned čvor validira sve kao full node, od Genesis bloka do vrha lanca sa najvi
 
 
 
-Tehničke implikacije ove opcije su prilično jednostavne: pruned čvor je savršeno sposoban da emituje vaše transakcije, učestvuje u prenosu, verifikuje blokove i transakcije, i prati lanac blokova. S druge strane, ne može služiti kao izvor istorijskih podataka izvan svojih granica za druge aplikacije (npr. puni istraživači, indeksatori, novčanici). Funkcije koje zahtevaju arhivu (ili globalni indeks) stoga neće biti dostupne.
+Tehničke implikacije ove opcije su prilično jednostavne: pruned čvor je savršeno sposoban da emituje vaše transakcije, učestvuje u prosleđivanju, verifikuje blokove i transakcije, i prati lanac blokova. S druge strane, ne može služiti kao izvor istorijskih podataka izvan svojih granica za druge aplikacije (npr. kompletan blok-istraživač, indeksatori, novčanici...). Funkcije koje zahtevaju arhivu (ili globalni indeks) stoga neće biti dostupne.
 
 
 
-U praktičnom smislu, možete koristiti pruned čvor za povezivanje softvera za upravljanje novčanikom kao što je Sparrow novčanik. Međutim, nećete moći skenirati transakcije na vašem novčaniku koje su starije od limita za obrezivanje. Na primer, ako imate transakciju registrovanu u bloku 901 458, ali vaš čvor čuva samo blokove od 905 402 pa naviše (jer su najstariji izbrisani), nećete moći da skenirate ovu transakciju. S druge strane, ako ste je već skenirali kada je vaš čvor još uvek imao ovu visinu bloka, tada će vaš softver za upravljanje novčanikom sačuvati informacije i prikazati saldo odgovarajućih UTXO-a ispravno.
+U praktičnom smislu, možete koristiti pruned čvor za povezivanje softvera za upravljanje novčanikom kao što je Sparrow novčanik. Međutim, nećete moći skenirati transakcije na vašem novčaniku koje su starije od granice orezivanja (pruning-a). Na primer, ako imate transakciju registrovanu u bloku 901 458, ali vaš čvor čuva samo blokove od 905 402 pa naviše (jer su najstariji izbrisani), nećete moći da skenirate ovu transakciju. S druge strane, ako ste je već skenirali kada je vaš čvor još uvek imao ovu visinu bloka, tada će vaš softver za upravljanje novčanikom sačuvati informacije i prikazati saldo odgovarajućih UTXO-a ispravno.
 
 
 
@@ -752,7 +752,7 @@ Ukratko, praćenje novčanika radi glatko na pruned node-u ako napravite novi no
 
 
 
-### Laki čvor / SPV
+### Lagani čvor / SPV
 
 
 
@@ -800,7 +800,7 @@ Za početnika koji koristi samo novčanik na mobilnoj aplikaciji, korišćenje S
 
 
 
-Korisnik srednjeg nivoa sa PC-jem može instalirati pruned čvor kako bi iskoristio gotovo sve prednosti full node-a, bez svakodnevnog preopterećenja svog računara: puna validacija, umjerena upotreba diska i jednostavno održavanje. To je idealno rešenje za povezivanje vaših desktop novčanika i ostajanje nezavisnim u distribuciji vaših transakcija, bez ulaganja u specijalizovanu mašinu ili preopterećenja prostora na disku.
+Korisnik srednjeg nivoa sa PC-jem može instalirati pruned čvor kako bi iskoristio gotovo sve prednosti full node-a, bez svakodnevnog preopterećenja svog računara: puna validacija, umerena upotreba diska i jednostavno održavanje. To je idealno rešenje za povezivanje vaših desktop novčanika i ostajanje nezavisnim u distribuciji vaših transakcija, bez ulaganja u specijalizovanu mašinu ili preopterećenja prostora na disku.
 
 
 
@@ -843,7 +843,7 @@ Instaliranje osnovne implementacije znači direktno korišćenje softvera sa imp
 
 
 
-Ovo je najviše suvereni i fleksibilni pristup: tačno znate šta se pokreće, gde su podaci i kako sve funkcioniše. S druge strane, postaje složenije čim želite da pređete jednostavno rukovanje Bitcoin čvorom. Ako vam je cilj samo da imate čvor, složenost je uporediva sa čvorom tipa 'node-in-a-box', pa čak i manja, jer se radi jednostavno o instaliranju softvera.
+Ovo je najviše suvereni i fleksibilni pristup: tačno znate šta se pokreće, gde su podaci i kako sve funkcioniše. S druge strane, postaje složenije čim želite da pređete dalje od samog osnovnog rada Bitcoin čvora. Ako vam je cilj samo da imate čvor, složenost je uporediva sa čvorom tipa 'node-in-a-box', pa čak i manja, jer se radi jednostavno o instaliranju softvera.
 
 
 
@@ -851,7 +851,7 @@ Ovo je najviše suvereni i fleksibilni pristup: tačno znate šta se pokreće, g
 
 
 
-[Bitcoin Core je klijent koji koristi ogromna većina mreže.](https://bitcoincore.org/). Preuzima, validira i održava blokčejn, pruža RPC/REST API-je i može integrisati novčanik. Ako preferirate standardne alate i osećate se prijatno da sami dodajete usluge (kao što su Electrum server, explorer i LND), bolje je da koristite Core kakav jeste.
+[Bitcoin Core je klijent koji koristi ogromna većina mreže.](https://bitcoincore.org/). Preuzima, validira i održava blockchain, pruža RPC/REST API-je i može integrisati novčanik. Ako preferirate standardne alate i osećate se prijatno da sami dodajete usluge (kao što su Electrum server, explorer i LND), bolje je da koristite Core kakav jeste.
 
 
 
@@ -881,7 +881,7 @@ Postoje 2 moguća razloga za odabir Knots-a umesto Core-a:
 
 
 - **Tehnički**: Različite opcije iz Core-a, posebno u smislu upravljanja relejima (prosleđivanjima), određivanjem koje transakcije prihvata i emituje vaš čvor.
-- **Politički**: Neki ljudi preferiraju korišćenje alternativnih klijenata kao što je Knots iz netehničkih razloga, posebno da bi podržali alternativu Core-u i tako smanjili njegov monopol. Ako bi Core ikada bio kompromitovan, bilo bi korisno ne samo imati solidne, dobro održavane alternativne klijente već i znati kako ih efikasno koristiti. Drugi koriste Knots iz protesta, jer su izgubili poverenje u Core-ove programere ili ne odobravaju većinu upravljanja klijentom.
+- **Politički**: Neki ljudi preferiraju korišćenje alternativnih klijenata kao što je Knots iz netehničkih razloga, posebno da bi podržali alternativu Core-u i tako smanjili njegov monopol. Ako bi Core ikada bio kompromitovan, bilo bi korisno ne samo imati solidne, dobro održavane alternativne klijente već i znati kako ih efikasno koristiti. Drugi koriste Knots iz protesta, jer su izgubili poverenje u Core-ove programere ili ne odobravaju način upravljanja većinskim klijentom.
 
 
 https://planb.academy/tutorials/node/bitcoin/bitcoin-knots-e04b2196-4df2-4246-86ef-c02269c29098
@@ -936,7 +936,7 @@ Pokrenut 2020. godine kao jednostavan Bitcoin čvor praćen nekolicinom pomoćni
 
 
 
-Neću ulaziti u više detalja ovde o tome kako funkcioniše i njegovim specifičnim karakteristikama, jer ćemo ih detaljnije ispitati u prvom poglavlju sledećeg dela. Zaista, za potrebe ovog BTC 202 kursa, odlučio sam da koristim UmbrelOS, za koji verujem da je trenutno najbolje rešenje za node-in-a-box za početnike i korisnike srednjeg nivoa.
+Neću ulaziti u više detalja ovde o tome kako funkcioniše i njegovim specifičnim karakteristikama, jer ćemo ih detaljnije ispitati u prvom poglavlju sledećeg dela. Zaista, za potrebe ovog BTC 202 kursa, odlučio sam da koristim umbrelOS, za koji verujem da je trenutno najbolje rešenje za node-in-a-box za početnike i korisnike srednjeg nivoa.
 
 
 
@@ -950,7 +950,7 @@ https://planb.academy/tutorials/node/bitcoin/umbrel-8b0e3b5b-d3cf-4a1e-8bb8-1ad2
 
 
 
-Na strani Bitcoina, StartOS vam omogućava instalaciju full node-a, Lightning čvora, BTCPay Servera, Electrs-a i mnogih drugih servisa. Međutim, privlačnost Start9 seže dalje od ovoga: nudi mogućnost otkrivanja, konfiguracije i izlaganja različitog softvera (oblak za fajlove, poruke, nadgledanje) na jedinstven način, uz potpunu kontrolu. Projekat je stoga namenjen korisnicima koji žele robusnu platformu za samostalno hostovanje, a ne samo jednostavan Bitcoin čvor. Verovatno je najkompletniji ekosistem posle Umbrel-a.
+Na strani Bitcoina, StartOS vam omogućava instalaciju full node-a, Lightning čvora, BTCPay Servera, Electrs-a i mnogih drugih servisa. Međutim, privlačnost Start9 seže dalje od ovoga: nudi mogućnost pregleda, konfiguracije i izlaganje različitih softverskih servisa (oblak za fajlove, poruke, nadgledanje) na jedinstven način, uz potpunu kontrolu. Projekat je stoga namenjen korisnicima koji žele robusnu platformu za samostalno hostovanje, a ne samo jednostavan Bitcoin čvor. Verovatno je najkompletniji ekosistem posle Umbrel-a.
 
 
 
@@ -972,7 +972,7 @@ https://planb.academy/tutorials/node/bitcoin/start9-8c8b6827-8423-4929-bcba-8905
 
 
 
-[MyNode je distribucija fokusirana isključivo na Bitcoin i Lightning](https://mynodebtc.com/), koja nudi web interfejs, tržište aplikacija i nadogradnje jednim klikom. Možete kupiti gotov hardver (*Model Two* dostupan za $549) ili instalirati MyNode besplatno na sopstvenoj mašini. Projekat takođe nudi *Premium* verziju softvera ($94), koja uključuje prioritetnu podršku i napredne funkcije.
+[MyNode je distribucija fokusirana isključivo na Bitcoin i Lightning](https://mynodebtc.com/), koja nudi web interfejs, prodavnicu aplikacija i nadogradnje jednim klikom. Možete kupiti gotov hardver (*Model Two* dostupan za $549) ili instalirati MyNode besplatno na sopstvenoj mašini. Projekat takođe nudi *Premium* verziju softvera ($94), koja uključuje prioritetnu podršku i napredne funkcije.
 
 
 
@@ -998,7 +998,7 @@ https://planb.academy/tutorials/node/bitcoin/mynode-a481fef3-2fd3-4df3-91c0-112c
 
 
 
-Ako posedujete Raspberry Pi, ovo je odlična opcija, jer sve kompletniji sistemi poput Umbrel-a postaju sve zahtevniji za ovu vrstu mini-PC-ja.
+Ako posedujete Raspberry Pi, ovo je odlična opcija, jer sve kompletniji sistemi poput Umbrel-a postaju sve zahtevniji za ovakve mini-PC uređaje.
 
 
 
@@ -1008,7 +1008,7 @@ https://planb.academy/tutorials/node/bitcoin/raspiblitz-d8cdba2e-a682-46cf-9fdc-
 
 
 
-[RoninDojo je node-in-a-box fokusiran na privatnost](https://wiki.ronindojo.io/en/home) koji automatizuje implementaciju Samurai Dojo i Whirlpool, sa posvećenim grafičkim interfejsom i dodacima posebno dizajniranim za Samurai ekosistem.
+[RoninDojo je node-in-a-box fokusiran na privatnost](https://wiki.ronindojo.io/en/home) koji automatizuje implementaciju Samurai Dojo-a i Whirlpool-a, sa posvećenim grafičkim interfejsom i dodacima posebno dizajniranim za Samurai ekosistem.
 
 
 
@@ -1054,15 +1054,15 @@ Nakon što ste istražili različita softverska rešenja, sada je vreme da izabe
 
 
 
-Sada kada smo istražili sve softverske mogućnosti, usredsredimo se na hardver potreban za vaš čvor. Pružiću vam konkretne savete o izboru komponenti, zajedno sa konfiguracijama prilagođenim različitim budžetima. Naravno, ovo je moje lično mišljenje i povratne informacije: sigurno postoje i druge relevantne alternative pored onih predstavljenih ovde. Nadalje, neću ponovo razmatrati unapred sastavljene mašine koje nude projekti node-in-a-box, koje smo već pokrili u prethodnom poglavlju. Ovde ćemo se isključivo fokusirati na DIY rešenja.
+Sada kada smo istražili sve softverske mogućnosti, usredsredimo se na hardver potreban za vaš čvor. Pružiću vam konkretne savete o izboru komponenti, zajedno sa konfiguracijama prilagođenim različitim budžetima. Naravno, ovo je moje lično mišljenje i povratna informacija iz iskustva: sigurno postoje i druge relevantne alternative pored onih predstavljenih ovde. Nadalje, neću ponovo razmatrati unapred sastavljene mašine koje nude projekti node-in-a-box, koje smo već pokrili u prethodnom poglavlju. Ovde ćemo se isključivo fokusirati na DIY rešenja.
 
 
 
-### Da li vam zaista treba posvećena mašina?
+### Da li vam zaista treba namenska mašina?
 
 
 
-Tokom proteklih nekoliko godina, bitkoineri su postali sve svesniji uobičajene zablude, posebno sa popularizacijom node-in-a-box početkom 2020-ih: Bitcoin čvor treba nužno da radi na mašini posvećenoj isključivo ovoj svrsi. Ali to nije tačno. Ne treba vam nužno posvećen računar za pokretanje Bitcoin čvora: Bitcoin Core je savršeno sposoban da radi na vašem svakodnevnom računaru. Ako imate dovoljno prostora na disku za blokčejn ili omogućite pruning, možete validirati lanac, povezati svoj novčanik, pa čak i zatvoriti program kada završite sa korišćenjem. Prednost ovog pristupa je značajna: nulta početna investicija i minimalna složenost.
+Tokom proteklih nekoliko godina, bitkoineri su postali sve svesniji uobičajene zablude, posebno sa popularizacijom node-in-a-box početkom 2020-ih: Bitcoin čvor treba nužno da radi na mašini posvećenoj isključivo ovoj svrsi. Ali to nije tačno. Ne treba vam nužno posvećen računar za pokretanje Bitcoin čvora: Bitcoin Core je savršeno sposoban da radi na vašem svakodnevnom računaru. Ako imate dovoljno prostora na disku za blockchain ili omogućite pruning, možete validirati lanac, povezati svoj novčanik, pa čak i zatvoriti program kada završite sa korišćenjem. Prednost ovog pristupa je značajna: nulta početna investicija i minimalna složenost.
 
 
 
@@ -1142,7 +1142,7 @@ Lično, više volim *Lenovo ThinkCentre Tiny*, koji je veoma rasprostranjen na t
 
 
 
-**Ističe se:** mali otisak, umerena potrošnja energije, nizak nivo buke, skalabilnost (u zavisnosti od modela) i pouzdanost.
+**Ističe se:** kompaktne dimenzije, umerena potrošnja energije, nizak nivo buke, skalabilnost (u zavisnosti od modela) i pouzdanost.
 
 
 
@@ -1154,7 +1154,7 @@ Lično, više volim *Lenovo ThinkCentre Tiny*, koji je veoma rasprostranjen na t
 
 
 
-To je odlična jeftina alternativa mini-PC-ju: danas možete pronaći polovne ili čak nove laptopove po niskim cenama, opremljene pristojnim procesorima, brojnim portovima, kao i integrisanim ekranom i tastaturom (veoma praktično za početnu instalaciju). Iznad svega, baterija deluje kao prirodni UPS: u slučaju nestanka struje, čvor se ne gasi naglo i može ostati operativan čak nekoliko sati.
+Posvećen laptop je odlična jeftina alternativa mini-PC-ju: danas možete pronaći polovne ili čak nove laptopove po niskim cenama, opremljene pristojnim procesorima, brojnim portovima, kao i integrisanim ekranom i tastaturom (veoma praktično za početnu instalaciju). Iznad svega, baterija deluje kao prirodni UPS: u slučaju nestanka struje, čvor se ne gasi naglo i može ostati operativan čak nekoliko sati.
 
 
 
@@ -1190,7 +1190,7 @@ Početkom 2020-ih, sa porastom softvera node-in-a-box, Raspberry Pi manija se ta
 
 
 
-U praksi, ako je vaš cilj isključivo pokretanje Bitcoin čvora bez dodatnih aplikacija, Raspberry Pi može biti dovoljan. Ali čim želite koristiti Umbrel, Start9 ili bogatiji ekosistem (Block explorer, indeksator adresa, Lightning čvor, aplikacije za samostalno hostovanje...), mašina brzo dostiže svoje granice.
+U praksi, ako je vaš cilj isključivo pokretanje Bitcoin čvora bez dodatnih aplikacija, Raspberry Pi može biti dovoljan. Ali čim želite koristiti Umbrel, Start9 ili bogatiji ekosistem (block explorer, indeksator adresa, Lightning čvor, aplikacije za samostalno hostovanje...), mašina brzo dostiže svoje granice.
 
 
 
@@ -1220,7 +1220,7 @@ Istorijski gledano, velika prednost SBC-ova poput Raspberry Pi-ja bila je njihov
 
 
 
-Tehnički, moguće je pokrenuti Bitcoin čvor na HDD-u. Problem je što će se sve znatno usporiti, posebno IBD, koji će postati izuzetno dug zbog intenzivne upotrebe diska kao keša od strane Bitcoin Core-a (posebno za UTXO set). Zato snažno savetujem protiv korišćenja HDD-a: stvara pravo usko grlo, značajno ograničava buduće mogućnosti nadogradnje (npr. za Lightning čvor), i može čak izazvati probleme u sinhronizaciji sa najnovijim blokom na blokčejnu. Štaviše, konstantan stres na mehaničkom disku povećava rizik od prevremenog habanja.
+Tehnički, moguće je pokrenuti Bitcoin čvor na HDD-u. Problem je što će se sve znatno usporiti, posebno IBD, koji će postati izuzetno dug zbog intenzivne upotrebe diska kao keša od strane Bitcoin Core-a (posebno za UTXO set). Zato snažno savetujem protiv korišćenja HDD-a: stvara pravo usko grlo, značajno ograničava buduće mogućnosti nadogradnje (npr. za Lightning čvor), i može čak izazvati probleme u sinhronizaciji sa najnovijim blokom na blockchainu. Štaviše, konstantan stres na mehaničkom disku povećava rizik od prevremenog habanja.
 
 
 
@@ -1232,7 +1232,7 @@ SSD-ovi radikalno menjaju vaše korisničko iskustvo: sve postaje brže i glađe
 
 
 
-U smislu kapaciteta, 2TB se postepeno uspostavlja kao nova razumna minimalna vrednost. U leto 2025. godine, blokčejn već dostiže 700 GB, a ako dodate Umbrel, indeksator adresa i nekoliko aplikacija, 1 TB SSD će ubrzo biti iskorišćen do kraja. Sa 2TB, imate udobnu marginu za godine koje dolaze (u širokoj proceni, između 5 i 15 godina). Takođe možete odabrati 4TB ako planirate koristiti mnogo aplikacija na Umbrel-u, skladištiti velike fajlove u samohostingu, ili ako želite da u velikoj meri predvidite svoje potrebe za prostorom na disku.
+U smislu kapaciteta, 2TB se postepeno uspostavlja kao nova razumna minimalna vrednost. U leto 2025. godine, blockchain već dostiže 700 GB, a ako dodate Umbrel, indeksator adresa i nekoliko aplikacija, 1 TB SSD će ubrzo biti iskorišćen do kraja. Sa 2TB, imate udobnu marginu za godine koje dolaze (u širokoj proceni, između 5 i 15 godina). Takođe možete odabrati 4TB ako planirate koristiti mnogo aplikacija na Umbrel-u, skladištiti velike fajlove u samohostingu, ili ako želite da u velikoj meri predvidite svoje potrebe za prostorom na disku.
 
 
 
@@ -1276,7 +1276,7 @@ Ispod predlažem tri konkretne konfiguracije, prilagođene različitim budžetim
 
 
 
-Prvo i najvažnije, potreban vam je SSD koji je dovoljno velik da primi blokčejn, a da pritom ostane prostora za manevrisanje. SSD-ovi imaju ograničen vek trajanja u smislu ciklusa pisanja i ukupne količine podataka koji se pišu. Međutim, Bitcoin čvor stavlja značajno opterećenje na disk prilikom pisanja. Zato ne preporučujem modele početnog nivoa; umesto toga, predlažem NVMe SSD, koji nudi značajno bolje performanse.
+Prvo i najvažnije, potreban vam je SSD koji je dovoljno velik da primi blockchain, a da pritom ostane prostora za manevrisanje. SSD-ovi imaju ograničen vek trajanja u smislu ciklusa pisanja i ukupne količine podataka koji se pišu. Međutim, Bitcoin čvor stavlja značajno opterećenje na disk prilikom pisanja. Zato ne preporučujem modele početnog nivoa; umesto toga, predlažem NVMe SSD, koji nudi značajno bolje performanse.
 
 
 
@@ -1474,7 +1474,7 @@ Umbrel može ostati vrlo minimalistički i fokusiran isključivo na Bitcoin, ili
 
 
 
-- **Jednostavan Bitcoin čvor**: ovo je osnova na kojoj se Umbrel oslanjao od samog početka. Možete pokrenuti Bitcoin Core (ili Knots), direktno povezati svoje novčanike sa svojim čvorom, izložiti Electrum server, hostovati svoj Mempool Block explorer za pregled blokčejna, i proceniti troškove... Na ove upotrebe ćemo se fokusirati u ovom kursu.
+- **Jednostavan Bitcoin čvor**: ovo je osnova na kojoj se Umbrel oslanjao od samog početka. Možete pokrenuti Bitcoin Core (ili Knots), direktno povezati svoje novčanike sa svojim čvorom, izložiti Electrum server, hostovati svoj Mempool Block explorer za pregled blockchaina, i proceniti troškove... Na ove upotrebe ćemo se fokusirati u ovom kursu.
 
 
 
@@ -1563,7 +1563,7 @@ Ako ste se odlučili za Raspberry Pi 5 (opcija koju ne preporučujem, kao što j
 
 https://planb.academy/tutorials/node/bitcoin/umbrel-8b0e3b5b-d3cf-4a1e-8bb8-1ad2db4dd848
 
-Kao što je pomenuto u prethodnom delu, odlučio sam da pokrenem ovaj tutorijal na malom obnovljenom računaru koji sam pronašao po povoljnoj ceni: *Lenovo ThinkCentre M900 Tiny* opremljen Intel Core i7 procesorom i 16 GB RAM-a. Ovo je veoma udobna konfiguracija za pokretanje Umbrel-a, posebno za Bitcoin čvor. Međutim, izabrao sam ovu konfiguraciju jer želim da instaliram Lightning čvor i druge zahtevnije aplikacije kasnije. Takođe sam dodao 2TB SSD svom ThinkCentre-u kako bih zadržao puni blokčejn i i dalje imao solidnu rezervu prostora. Sa ovom konfiguracijom, ukupni trošak je 270 €, uključujući sve troškove.
+Kao što je pomenuto u prethodnom delu, odlučio sam da pokrenem ovaj tutorijal na malom obnovljenom računaru koji sam pronašao po povoljnoj ceni: *Lenovo ThinkCentre M900 Tiny* opremljen Intel Core i7 procesorom i 16 GB RAM-a. Ovo je veoma udobna konfiguracija za pokretanje Umbrel-a, posebno za Bitcoin čvor. Međutim, izabrao sam ovu konfiguraciju jer želim da instaliram Lightning čvor i druge zahtevnije aplikacije kasnije. Takođe sam dodao 2TB SSD svom ThinkCentre-u kako bih zadržao puni blockchain i i dalje imao solidnu rezervu prostora. Sa ovom konfiguracijom, ukupni trošak je 270 €, uključujući sve troškove.
 
 
 
@@ -1717,7 +1717,7 @@ Ekran koji se pojavljuje prikazuje sve interne uređaje za skladištenje koje je
 
 
 
-Jednom kada identifikujete ispravan disk (obično onaj sa najvećim kapacitetom, da smestite blokčejn), zabeležite broj koji mu je dodeljen. Na primer, ako se disk koji ste odabrali pojavljuje pod brojem `2`, jednostavno unesite `2`, zatim pritisnite taster `Enter` na tastaturi.
+Jednom kada identifikujete ispravan disk (obično onaj sa najvećim kapacitetom, da smestite blockchain), zabeležite broj koji mu je dodeljen. Na primer, ako se disk koji ste odabrali pojavljuje pod brojem `2`, jednostavno unesite `2`, zatim pritisnite taster `Enter` na tastaturi.
 
 
 
@@ -2086,7 +2086,7 @@ U laičkim terminima, to je isti princip kao indeks u knjizi: ako tražite odre�
 
 
 
-U Bitcoin čvoru, kao što je Bitcoin Core, blokčejn podaci se čuvaju u svom sirovom, hronološkom obliku. Svaki blok sadrži transakcije, koje zauzvrat sadrže ulaze i izlaze, bez ikakve posebne klasifikacije po adresi, identifikatoru, ili novčaniku. Ova linearna organizacija je optimizovana za validaciju blokova, ali nije pogodna za ciljane pretrage. Na primer, ako želite pronaći sve transakcije povezane sa određenom adresom u neindeksiranom čvoru, morali biste ručno pregledati ceo blokčejn, blok po blok i transakciju po transakciju. Upravo tu dolazi indeksator na vašem Bitcoin čvoru.
+U Bitcoin čvoru, kao što je Bitcoin Core, blockchain podaci se čuvaju u svom sirovom, hronološkom obliku. Svaki blok sadrži transakcije, koje zauzvrat sadrže ulaze i izlaze, bez ikakve posebne klasifikacije po adresi, identifikatoru, ili novčaniku. Ova linearna organizacija je optimizovana za validaciju blokova, ali nije pogodna za ciljane pretrage. Na primer, ako želite pronaći sve transakcije povezane sa određenom adresom u neindeksiranom čvoru, morali biste ručno pregledati ceo blockchain, blok po blok i transakciju po transakciju. Upravo tu dolazi indeksator na vašem Bitcoin čvoru.
 
 
 
@@ -2102,7 +2102,7 @@ Indekser je specijalizovani softverski program koji analizira ovu masu sirovih p
 
 
 
-Indeksiranje vam omogućava da brzo, precizno i efikasno pretražujete informacije na vašem čvoru. Na primer, kada povežete novčanik kao što je Sparrow sa vašim čvorom, može gotovo trenutno prikazati stanje adresa. Konkretno, postavlja upit indeksatoru sa zahtevom kao što je: "_Koji UTXO-ovi su povezani sa ovim script-hash-om?_" Indeksator odgovara gotovo odmah, bez potrebe da ponovo čita ceo blokčejn, jer su ovi podaci već navedeni u njegovoj bazi podataka.
+Indeksiranje vam omogućava da brzo, precizno i efikasno pretražujete informacije na vašem čvoru. Na primer, kada povežete novčanik kao što je Sparrow sa vašim čvorom, može gotovo trenutno prikazati stanje adresa. Konkretno, postavlja upit indeksatoru sa zahtevom kao što je: "_Koji UTXO-ovi su povezani sa ovim script-hash-om?_" Indeksator odgovara gotovo odmah, bez potrebe da ponovo čita ceo blockchain, jer su ovi podaci već navedeni u njegovoj bazi podataka.
 
 
 
@@ -2114,7 +2114,7 @@ Bez potrebe za dodatnim softverom, Bitcoin Core, strogo govoreći, ne nudi kompl
 
 
 
-Do verzije Bitcoin Core 0.8.0, validacija transakcija se zasnivala na globalnom indeksu transakcija, poznatom kao `txindex`. Ovaj indeks je referencirao sve blokčejn transakcije i njihove izlaze. Kada bi čvor primio novu transakciju, konsultovao bi ovaj indeks da verifikuje da li iskorišćeni izlazi (u ulazima) zaista postoje i da nisu već potrošeni. `txindex` je stoga bio neophodan za validaciju transakcija u to vreme.
+Do verzije Bitcoin Core 0.8.0, validacija transakcija se zasnivala na globalnom indeksu transakcija, poznatom kao `txindex`. Ovaj indeks je referencirao sve blockchain transakcije i njihove izlaze. Kada bi čvor primio novu transakciju, konsultovao bi ovaj indeks da verifikuje da li iskorišćeni izlazi (u ulazima) zaista postoje i da nisu već potrošeni. `txindex` je stoga bio neophodan za validaciju transakcija u to vreme.
 
 
 
@@ -2168,7 +2168,7 @@ S druge strane, za korišćenje naprednijeg softvera, kao što je lokalno pokret
 
 
 
-Indekser zahteva određeno vreme za sinhronizaciju (manje od IBD) i zauzeće dodatni prostor na disku. Ako vaš SSD i dalje ima dovoljno slobodnog prostora nakon preuzimanja blokčejna, možete lako dodati indekser.
+Indekser zahteva određeno vreme za sinhronizaciju (manje od IBD) i zauzeće dodatni prostor na disku. Ako vaš SSD i dalje ima dovoljno slobodnog prostora nakon preuzimanja blockchaina, možete lako dodati indekser.
 
 
 
@@ -2176,7 +2176,7 @@ Indekser zahteva određeno vreme za sinhronizaciju (manje od IBD) i zauzeće dod
 
 
 
-Dva softverska programa se obično koriste za izradu ove vrste indeksa adresa i omogućavanje pristupa: **Electrs** i **Fulcrum**. Ovi alati indeksiraju blokčejn prema script-hash-u (adresama) i zatim predlažu standardizovani interfejs (Electrum protokol), na koji se povezuje mnoštvo novčanika, kao što su Electrum Wallet, Sparrow, ili Phoenix.
+Dva softverska programa se obično koriste za izradu ove vrste indeksa adresa i omogućavanje pristupa: **Electrs** i **Fulcrum**. Ovi alati indeksiraju blockchain prema script-hash-u (adresama) i zatim predlažu standardizovani interfejs (Electrum protokol), na koji se povezuje mnoštvo novčanika, kao što su Electrum Wallet, Sparrow, ili Phoenix.
 
 
 
@@ -2184,7 +2184,7 @@ Dva softverska programa se obično koriste za izradu ove vrste indeksa adresa i 
 
 
 
-Jednostavno rečeno, Electrs je prilično kompaktan: indeksira blokčejn brže i zauzima manje prostora na disku, ali ima nešto slabije performanse u upitima u poređenju sa Fulcrumom. Nasuprot tome, Fulcrum troši više prostora na disku i duže traje indeksiranje, ali nudi superiorne performanse upita.
+Jednostavno rečeno, Electrs je prilično kompaktan: indeksira blockchain brže i zauzima manje prostora na disku, ali ima nešto slabije performanse u upitima u poređenju sa Fulcrumom. Nasuprot tome, Fulcrum troši više prostora na disku i duže traje indeksiranje, ali nudi superiorne performanse upita.
 
 
 
@@ -2238,7 +2238,7 @@ Kada je sinhronizacija završena, možete povezati svoj softver za upravljanje n
 
 
 
-Sada kada imate kompletan Bitcoin čvor, vreme je da ga iskoristite na pravi način! U sledećem poglavlju, istražićemo druge potencijalne upotrebe za vašu Umbrel instancu. Međutim, počnimo sa osnovama: povezivanje vašeg softvera za upravljanje novčanikom kako biste koristili informacije sa vašeg sopstvenog blokčejna i distribuirali transakcije kroz vaš sopstveni čvor.
+Sada kada imate kompletan Bitcoin čvor, vreme je da ga iskoristite na pravi način! U sledećem poglavlju, istražićemo druge potencijalne upotrebe za vašu Umbrel instancu. Međutim, počnimo sa osnovama: povezivanje vašeg softvera za upravljanje novčanikom kako biste koristili informacije sa vašeg sopstvenog blockchaina i distribuirali transakcije kroz vaš sopstveni čvor.
 
 
 
@@ -2418,7 +2418,7 @@ Naravno, bilo bi nemoguće navesti sve Bitcoin aplikacije ovde. U ovom poglavlju
 
 
 
-U svakodnevnoj upotrebi Bitcoina, ako postoji jedan alat koji je zaista nezamenljiv, to je block explorer. Bilo da je dostupan online ili instaliran lokalno, on transformiše sirove blokčejn podatke u strukturiran, jasan i lako čitljiv format. Takođe poseduje pretraživač koji omogućava korisnicima da brzo pronađu određeni blok, transakciju ili adresu.
+U svakodnevnoj upotrebi Bitcoina, ako postoji jedan alat koji je zaista nezamenljiv, to je block explorer. Bilo da je dostupan online ili instaliran lokalno, on transformiše sirove blockchain podatke u strukturiran, jasan i lako čitljiv format. Takođe poseduje pretraživač koji omogućava korisnicima da brzo pronađu određeni blok, transakciju ili adresu.
 
 
 
@@ -2451,7 +2451,7 @@ Umbrel nudi nekoliko istraživača blokova:
 
 
 
-Posebno mi se sviđa Mempool.Space, koji sam instalirao na svom čvoru. Imajte na umu: za korišćenje većine blok istraživača na Umbrel-u, potreban je indeksator adresa. Stoga vam je potrebna aplikacija Bitcoin Node (ili Bitcoin Knots), koja ima 100% sinhronizovan blokčejn, kao i indeksator kao što su Electrs ili Fulcrum, koji je takođe 100% sinhronizovan.
+Posebno mi se sviđa Mempool.Space, koji sam instalirao na svom čvoru. Imajte na umu: za korišćenje većine blok istraživača na Umbrel-u, potreban je indeksator adresa. Stoga vam je potrebna aplikacija Bitcoin Node (ili Bitcoin Knots), koja ima 100% sinhronizovan blockchain, kao i indeksator kao što su Electrs ili Fulcrum, koji je takođe 100% sinhronizovan.
 
 
 
@@ -2776,11 +2776,11 @@ Uz ove jednostavne navike, vaš Umbrel čvor će ostati stabilan, siguran i kori
 
 
 
-Vaš Bitcoin čvor se pokreće bez ikakvog prethodnog znanja o istoriji transakcija. U početku, to je samo računar koji pokreće softver (Bitcoin Core ili sličan). Da bi postao potpuno sinhronizovan i operativan Bitcoin čvor, mora lokalno rekonstruisati stanje blokčejna proveravajući sve blokove objavljene od Genesis bloka (blok 0, objavljen od strane Satoshi Nakamoto 3. januara 2009). Ovaj korak se zove **IBD (_Initial Block Download_)**.
+Vaš Bitcoin čvor se pokreće bez ikakvog prethodnog znanja o istoriji transakcija. U početku, to je samo računar koji pokreće softver (Bitcoin Core ili sličan). Da bi postao potpuno sinhronizovan i operativan Bitcoin čvor, mora lokalno rekonstruisati stanje blockchaina proveravajući sve blokove objavljene od Genesis bloka (blok 0, objavljen od strane Satoshi Nakamoto 3. januara 2009). Ovaj korak se zove **IBD (_Initial Block Download_)**.
 
 
 
-IBD se sastoji od preuzimanja i verifikacije svakog bloka i transakcije pojedinačno, primenjujući pravila konsenzusa, kako bi se izgradila sopstvena verzija blokčejna. Cilj nije samo preuzimanje kopije neproverenih podataka, već dolazak do istog zaključka potpuno nezavisno, kao poštena većina mreže.
+IBD se sastoji od preuzimanja i verifikacije svakog bloka i transakcije pojedinačno, primenjujući pravila konsenzusa, kako bi se izgradila sopstvena verzija blockchaina. Cilj nije samo preuzimanje kopije neproverenih podataka, već dolazak do istog zaključka potpuno nezavisno, kao poštena većina mreže.
 
 
 
@@ -2862,7 +2862,7 @@ Možete primorati punu validaciju svih skripti onemogućavanjem ovog mehanizma, 
 
 
 
-`assumeutxo` je još jedan postojeći parametar, ali za razliku od `assumevalid`, nije aktiviran po defaultu. Ovaj mehanizam omogućava softveru da učita snimak UTXO seta, zajedno sa njegovim metapodacima, i privremeno ga smatra referentnim stanjem, nakon što potvrdi da zaglavlja zaista vode do blokčejna sa najviše rada.
+`assumeutxo` je još jedan postojeći parametar, ali za razliku od `assumevalid`, nije aktiviran po defaultu. Ovaj mehanizam omogućava softveru da učita snimak UTXO seta, zajedno sa njegovim metapodacima, i privremeno ga smatra referentnim stanjem, nakon što potvrdi da zaglavlja zaista vode do blockchaina sa najviše rada.
 
 
 
@@ -2935,7 +2935,7 @@ Kada vaš čvor završi svoju početnu sinhronizaciju, lokalno skladišti nekoli
 
 
 
-- **blokovi** blokčejna sačuvani na disku,
+- **blokovi** blockchaina sačuvani na disku,
 - **UTXO set** održavan u key-value bazi podataka,
 - i **mempool** koji se čuva u RAM-u i povremeno serijalizuje.
 
@@ -2961,11 +2961,11 @@ Podrazumevano, Bitcoin Core čuva svoje podatke u specifičnom radnom direktorij
 
 
 
-Blokčejn je, dakle, kolekcija blokova. Full node skladišti ove blokove kao sekvencijalne flat fajlove i održava paralelni indeks za brzo preuzimanje. Kada je potrebno (reorganizacija, ponovno skeniranje novčanika, usluga drugog čvora), ovi podaci se ponovo čitaju u izvornom obliku.
+blockchain je, dakle, kolekcija blokova. Full node skladišti ove blokove kao sekvencijalne flat fajlove i održava paralelni indeks za brzo preuzimanje. Kada je potrebno (reorganizacija, ponovno skeniranje novčanika, usluga drugog čvora), ovi podaci se ponovo čitaju u izvornom obliku.
 
 
 
-**Napomena:** Reorganizacija, ili resinhronizacija, je fenomen u kojem blokčejn prolazi kroz modifikaciju svoje strukture zbog postojanja konkurentskih blokova na istoj visini. Ovo se dešava kada se deo blokčejna zameni drugim lancem sa većom količinom akumuliranog rada. Ove resinhronizacije su prirodni deo rada Bitcoina, gde različiti rudari mogu pronaći nove blokove gotovo istovremeno, čime se Bitcoin mreža deli na dva dela. U takvim slučajevima, mreža se može privremeno podeliti na konkurentske lance. Na kraju, kako jedan od ovih lanaca akumulira više rada, drugi lanci bivaju napušteni od strane čvorova, a njihovi blokovi postaju poznati kao "zastareli blokovi" ili "blokovi siročad". Ovaj proces zamene jednog lanca drugim naziva se resinhronizacija.
+**Napomena:** Reorganizacija, ili resinhronizacija, je fenomen u kojem blockchain prolazi kroz modifikaciju svoje strukture zbog postojanja konkurentskih blokova na istoj visini. Ovo se dešava kada se deo blockchaina zameni drugim lancem sa većom količinom akumuliranog rada. Ove resinhronizacije su prirodni deo rada Bitcoina, gde različiti rudari mogu pronaći nove blokove gotovo istovremeno, čime se Bitcoin mreža deli na dva dela. U takvim slučajevima, mreža se može privremeno podeliti na konkurentske lance. Na kraju, kako jedan od ovih lanaca akumulira više rada, drugi lanci bivaju napušteni od strane čvorova, a njihovi blokovi postaju poznati kao "zastareli blokovi" ili "blokovi siročad". Ovaj proces zamene jednog lanca drugim naziva se resinhronizacija.
 
 
 
@@ -3055,7 +3055,7 @@ UTXO set je smešten u fascikli `chainstate/` kao kompaktna LevelDB baza podatak
 
 
 
-Teoretski, mogli bismo potvrditi transakciju ponovnim skeniranjem istorije blokova kako bismo proverili da izlaz nikada nije potrošen. U praksi, međutim, ovo bi bilo previše vremenski zahtevno, jer bi ceo blokčejn morao biti skeniran za svaku novu transakciju. UTXO skup, stoga, pruža minimalni pregled potreban da se lokalno i u razumnom vremenskom periodu dokaže odsustvo dvostruke potrošnje.
+Teoretski, mogli bismo potvrditi transakciju ponovnim skeniranjem istorije blokova kako bismo proverili da izlaz nikada nije potrošen. U praksi, međutim, ovo bi bilo previše vremenski zahtevno, jer bi ceo blockchain morao biti skeniran za svaku novu transakciju. UTXO skup, stoga, pruža minimalni pregled potreban da se lokalno i u razumnom vremenskom periodu dokaže odsustvo dvostruke potrošnje.
 
 
 
@@ -3092,7 +3092,7 @@ Mempool je lokalni skup važećih transakcija koje su primljene, ali još nisu p
 
 
 
-Važno je napomenuti da mempool-ovi čvorova nemaju konsenzusnu vrednost. Bitcoin radi savršeno čak i ako svaki čvor ima različit mempool. Na kraju, autoritativni blokovi su uvek oni dodati u blokčejn. Na primer, čak i ako čvor u početku odbije određenu transakciju u svom mempool-u (validnu prema pravilima konsenzusa), biće obavezan da je prihvati ako je na kraju uključena u blok sa validnim Proof of Work-om. Ako to ne učini i odbije ovaj blok, iako je u skladu sa pravilima konsenzusa, to bi pokrenulo hard fork, tj. stvaranje novog, odvojenog Bitcoina na kojem bi bio sam.
+Važno je napomenuti da mempool-ovi čvorova nemaju konsenzusnu vrednost. Bitcoin radi savršeno čak i ako svaki čvor ima različit mempool. Na kraju, autoritativni blokovi su uvek oni dodati u blockchain. Na primer, čak i ako čvor u početku odbije određenu transakciju u svom mempool-u (validnu prema pravilima konsenzusa), biće obavezan da je prihvati ako je na kraju uključena u blok sa validnim Proof of Work-om. Ako to ne učini i odbije ovaj blok, iako je u skladu sa pravilima konsenzusa, to bi pokrenulo hard fork, tj. stvaranje novog, odvojenog Bitcoina na kojem bi bio sam.
 
 
 
@@ -3112,7 +3112,7 @@ Veličina mempool-a je ograničena parametrima `maxmempool` u datoteci `Bitcoin.
 
 
 
-Da bi se ubrzala ponovna pokretanja, Core periodično serijalizuje stanje mempool-a u datoteku `Mempool.dat` kada se čvor isključi. Pored stvarnog mempool-a, koji ostaje u memoriji, Core čuva ovu datoteku `Mempool.dat` na disku. Sledeći put kada se čvor pokrene, on ponovo učitava ovu snimku i briše sve što više nije važeće za trenutni blokčejn.
+Da bi se ubrzala ponovna pokretanja, Core periodično serijalizuje stanje mempool-a u datoteku `Mempool.dat` kada se čvor isključi. Pored stvarnog mempool-a, koji ostaje u memoriji, Core čuva ovu datoteku `Mempool.dat` na disku. Sledeći put kada se čvor pokrene, on ponovo učitava ovu snimku i briše sve što više nije važeće za trenutni blockchain.
 
 
 
