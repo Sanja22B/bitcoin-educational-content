@@ -1,30 +1,22 @@
 ---
-name: Intangamarara kuri Bitcoin Mining.
-goal: Gutahura ingene uruganda rwa mining rukora biciye mu kwimenyereza gusubira gukoresha ASIC.
+name: Shyushya inzu yawe mu gihe uriko ucukura bitcoins
+goal: Gusubiza gukoresha Antminer S9 uyigira Attakai, igikoresho ca DIY co gushusha inzu mu bucukuzi bwo muhira, hamwe n’itunganirizwa riyobowe.
 objectives: 
 
-  - Gutahura iciyumviro kiri inyuma ya mining.
-  - Gutahura uruganda rwa mining
-  - Guhindura S9 mu gikoresho gishusha
-  - Mine (cukura) Satoshi yawe ya mbere.
+  - Gutahura ivy’ishimikiro vy’ubucukuzi bwa Bitcoin
+  - Kuronka Antminer S9 yakoreshejwe mu buryo butekanye
+  - Kwubaka igikoresho ca DIY co gushusha ca Attakai
+  - Gutunganya BraiinsOS+ no kwifatanya n’itsinda ryo gucukura
 
 ---
 
-# Intambwe zawe za mbere muri mining!
+# Wubake icuma cawe ca mbere co gushusha Bitcoin DIY
 
+Iyi nyigisho yubatswe kuri Attakai, umushinga wa DIY wo mu bikorwa uhindura umucukuzi wa S9 wakoreshejwe ugahinduka igikoresho co gushusha Bitcoin mu nzu.
 
-Muri iri menyerezwa, tuzokwinjira cane mu bijanye n’ubuhinga bwa mining kugira ngo dushire ahabona ibijanye niki kintu kigoye! Imenyerezwa ryoronka umuntu wese kandi nta mutahe wundi bisaba mugutangura.
+Uzotangura n'incamake y'ubucukuzi bwa Bitcoin n'ukuri kw'inganda z'ubucukuzi, hanyuma ujye mu kubaka: gushaka ibikoresho bikwiye, gushyira no gushiraho BraiinsOS+, gushiraho umuyoboro, gusimbuza abasetiri, kwinjira mu kirwa cy'ubucukuzi, no kunoza imikorere ku bushyuhe, urusaku, n'imikorere myiza.
 
-
-Igice ca mbere kizoba ari ic’ivyiyumviro, aho jewe na Ajelex tuzogira ikiganiro cimbitse ku bintu bitandukanye bijanye na mining. Ivyo bizodufasha gutahura neza urwo ruganda n’ibibazo vy’ubutunzi n’ivya poritike y’ibihugu bifitaniye isano narwo.
-
-Mu gice ca kabiri, tuzokwihweza ikintu gishobora gukorwa. Nkako, tuzomenya ingene twohindura S9 Miner yakoreshejwe ngo ibe sisiteme yo gutuma muhira hashuha! Biciye mu nyandiko z’uburongozi n’amasanamu muri ico gikorwa, tuzokwereka kandi tubasigurira intambwe zose zo gushika kuri ivyo muhira iwanyu :)
-
-
-Biciye muri iki cigwa, twimirije kukwereka ko uruganda rwa mining rugoye kuruta uko bigaragara, kandi kuvyiga birafasha gutuma ubasha dutahura impaka bifitaniye isano!
-
-nimba ukeneye ubufasha mu gutegura, hariho umugwi wa Telegram wakorewe abanyeshure, kandi ibintu vyose bikenewe biraboneka ku rubuga rwacu rw’ubudandaji! (e-commerce)
-
+Inzira z'intambwe ku ntambwe zikuyobora mu nzira yose kugira ngo ushobore kubaka Attakai mu rugo kandi ucukure sats zawe za mbere mu gihe ushyushya umwanya wawe.
 
 +++
 
@@ -40,7 +32,7 @@ nimba ukeneye ubufasha mu gutegura, hariho umugwi wa Telegram wakorewe abanyeshu
 <chapterId>7ad1abeb-a190-5c85-8bff-44df71331e4d</chapterId>
 
 
-Ikaze mu cigwa ca MIN201: Intangamarara kuri Mining. Ajelex, Jim & Rogzy baranezerewe no kukuyobora mu ntambwe zawe za mbere muri uru ruganda. Twizeye ko uzoryoherwa niki cigwa hama utangure urugendo rwo kugira mining muhira!
+Murakaza neza kuri MIN 302, isomo ku mushinga wa Attakai. Ajelex, Jim na Rogzy bazakuyobora mu bintu by'ibanze by'ubucukuzi bwa Bitcoin, hanyuma bakuyobore intambwe ku ntambwe mu kubaka Attakai yawe, sisitemu yo gushyushya mu rugo wakora wenyine yakozwe muri S9 yakoreshejwe. Twizera ko isomo rizakwishimisha kandi ko uzatangira ibihe by'ubucukuzi mu rugo!
 
 
 Iri menyerezwa rigutwara mu mutima w’uruganda rwa Bitcoin mining, riguha ubumenyi bw’ivyiyumviro n’ubumenyi bw’ibikorwa. Waba uri uwutangura canke uri uwumaze kumenya neza ibi turiko turavuga, iki cigwa kizogufasha gutahura ibijanye n'ubutunzi be n’ubuhinga bwa mining, mu gihe uriko urakora umugambi ngirakamaro wo gusubira guha ubushobozi bundi ASIC wifashisha mu gutuma muhira hashuha.
