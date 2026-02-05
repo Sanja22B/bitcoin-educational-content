@@ -2164,7 +2164,7 @@ Ako jednostavno želite da povežete novčanik, kao što je Sparrow, sa svojim �
 
 
 
-S druge strane, za korišćenje naprednijeg softvera, kao što je lokalno pokretanje mempool.space, instalacija indeksatora adresa postaje neophodna za block explorer.
+S druge strane, za korišćenje naprednijeg softvera, kao što je lokalno mempool.space pokretanje, instalacija indeksatora adresa postaje neophodna za block explorer.
 
 
 
@@ -2252,7 +2252,7 @@ Kao što je gore pomenuto, postoje dva glavna interfejsa za povezivanje:
 
 
 
-U ovom vodiču, fokusiraćemo se na povezivanje sa vašim čvorom putem Tor-a, jer je ovo jednostavno i sigurno rešenje za početnike. Snažno savetujem protiv izlaganja RPC porta vašeg čvora u otvorenom obliku, jer pogrešna konfiguracija predstavlja značajan rizik za sigurnost i poverljivost vaših podataka. Glavni nedostatak komunikacije putem Tor-a je njegova sporost. U sledećem poglavlju, istražićemo brzu i sigurnu alternativu za Tor za daljinski pristup vašem čvoru: VPN.
+U ovom vodiču, fokusiraćemo se na povezivanje sa vašim čvorom putem Tor-a, jer je ovo jednostavno i sigurno rešenje za početnike. Snažno savetujem protiv izlaganja RPC porta vašeg čvora u otvorenom obliku (clear net), jer pogrešna konfiguracija predstavlja značajan rizik za sigurnost i poverljivost vaših podataka. Glavni nedostatak komunikacije putem Tor-a je njegova sporost. U sledećem poglavlju, istražićemo brzu i sigurnu alternativu za Tor za daljinski pristup vašem čvoru: VPN.
 
 
 
@@ -2281,9 +2281,9 @@ Zatim ćete videti tri opcije za povezivanje vašeg softvera sa Bitcoin čvorom:
 
 
 
-- *Javni server* (žuto): po podrazumevanoj postavci, ako ne posedujete Bitcoin čvor, ova opcija vas povezuje sa javnim čvorom koji ne posedujete (obično kompanijskim). Ova opcija nije relevantna ovde, jer imate svoj čvor na Umbrelu.
-- *Bitcoin core* (Green): ova opcija odgovara povezivanju putem RPC interfejsa, tj. direktno na Bitcoin core.
-- *Privatni Electrum* (plavo): ova opcija vam omogućava povezivanje putem interfejsa vašeg indeksatora Electrum Servera (Electrs ili Fulcrum).
+- *Public server* (žuto): po podrazumevanoj postavci, ako ne posedujete Bitcoin čvor, ova opcija vas povezuje sa javnim čvorom koji ne posedujete (obično kompanijskim). Ova opcija nije relevantna ovde, jer imate svoj čvor na Umbrelu.
+- *Bitcoin core* (zeleno): ova opcija odgovara povezivanju putem RPC interfejsa, tj. direktno na Bitcoin core.
+- *Private Electrum* (plavo): ova opcija vam omogućava povezivanje putem Electrum Server interfejsa vašeg indeksatora (Electrs ili Fulcrum).
 
 
 
@@ -2342,7 +2342,7 @@ Kvačica u donjem desnom uglu interfejsa Sparrow novčanika sada će biti zelena
 
 
 
-Ako vaš čvor ima indeksator, bolje je povezati se s njim nego koristiti Bitcoin core direktno, jer će vaši upiti biti obrađeni brže.
+Ako vaš čvor ima indeksator, bolje je povezati se s njim nego koristiti Bitcoin Core direktno, jer će vaši upiti biti obrađeni brže.
 
 
 
