@@ -1232,7 +1232,7 @@ SSD-ovi radikalno menjaju vaše korisničko iskustvo: sve postaje brže i glađe
 
 
 
-U smislu kapaciteta, 2TB se postepeno uspostavlja kao nova razumna minimalna vrednost. U leto 2025. godine, blockchain već dostiže 700 GB, a ako dodate Umbrel, indeksator adresa i nekoliko aplikacija, 1 TB SSD će ubrzo biti iskorišćen do kraja. Sa 2TB, imate udobnu marginu za godine koje dolaze (u širokoj proceni, između 5 i 15 godina). Takođe možete odabrati 4TB ako planirate koristiti mnogo aplikacija na Umbrel-u, skladištiti velike fajlove u samohostingu, ili ako želite da u velikoj meri predvidite svoje potrebe za prostorom na disku.
+U smislu kapaciteta, 2TB se postepeno uspostavlja kao nova razumna minimalna vrednost. U leto 2025. godine, blockchain već dostiže 700 GB, a ako dodate Umbrel, indeksator adresa i nekoliko aplikacija, 1 TB SSD će ubrzo biti iskorišćen do kraja. Sa 2TB, imate udobnu marginu za godine koje dolaze (u širokoj proceni, između 5 i 15 godina). Takođe možete odabrati 4TB ako planirate koristiti mnogo aplikacija na Umbrel-u, skladištiti velike fajlove u samostalnom hostingu, ili ako želite da u velikoj meri predvidite svoje potrebe za prostorom na disku.
 
 
 
@@ -1268,7 +1268,7 @@ Za Umbrel čvor, minimalni zahtev je dvojezgarni 64-bitni procesor od Intela ili
 
 
 
-Ispod predlažem tri konkretne konfiguracije, prilagođene različitim budžetima i potrebama, sa preciznim modelima koji ih podržavaju. Ovi izbori su dati kao primeri da ilustruju informacije u ovom poglavlju; niste obavezni da izaberete tačno ove modele. Kako smatram da je Mini-PC najbolja opcija na duži rok, oslanjaću se na ovaj format za tri predložene konfiguracije.
+Ispod predlažem tri konkretne konfiguracije, prilagođene različitim budžetima i potrebama, sa preciznim modelima koji ih podržavaju. Ovi izbori su dati kao primeri da ilustruju informacije u ovom poglavlju; niste obavezni da izaberete tačno ove modele. Kako smatram da je mini-PC najbolja opcija na duži rok, oslanjaću se na ovaj format za tri predložene konfiguracije.
 
 
 
@@ -1421,7 +1421,7 @@ U Umbrelu, svaka aplikacija radi u Docker containeru (izolacija, atomska ažurir
 
 
 
-Umbrel ima za cilj da vam vrati kontrolu i poverljivost vaših podataka bez oslanjanja na cloud servise — i ne svodeći se samo na pokretanje Bitcoin noda.
+Umbrel ima za cilj da vam vrati kontrolu i poverljivost vaših podataka bez oslanjanja na cloud servise — i ne svodeći se samo na pokretanje Bitcoin čvora.
 
 
 ### Umbrel Home vs umbrelOS
@@ -1464,7 +1464,7 @@ U sledećem poglavlju, istražićemo kako instalirati umbrelOS DIY na vašoj sop
 
 
 
-### Primena: od Bitcoin noda do kućnog cloud servera
+### Primena: od Bitcoin čvora do kućnog cloud servera
 
 
 
@@ -1474,7 +1474,7 @@ Umbrel može ostati vrlo minimalistički i fokusiran isključivo na Bitcoin, ili
 
 
 
-- **Jednostavan Bitcoin čvor**: ovo je osnova na kojoj se Umbrel oslanjao od samog početka. Možete pokrenuti Bitcoin Core (ili Knots), direktno povezati svoje novčanike sa svojim čvorom, izložiti Electrum server, hostovati svoj Mempool Block explorer za pregled blockchaina, i proceniti troškove... Na ove upotrebe ćemo se fokusirati u ovom kursu.
+- **Jednostavan Bitcoin čvor**: ovo je osnova na kojoj se Umbrel oslanjao od samog početka. Možete pokrenuti Bitcoin Core (ili Knots), direktno povezati svoje novčanike sa svojim čvorom, pokrenuti Electrum server, hostovati svoj Mempool block explorer za pregled blockchaina i procenu naknada... Na ove upotrebe ćemo se fokusirati u ovom kursu.
 
 
 
@@ -1484,7 +1484,7 @@ Umbrel može ostati vrlo minimalistički i fokusiran isključivo na Bitcoin, ili
 
 
 
-- **Lightning Network**: Umbrel vam takođe omogućava da implementirate LND ili Core Lightning, dve implementacije Lightning Network-a, kako biste upravljali sopstvenim Lightning čvorom. Moći ćete da otvarate kanale, upravljate svojom likvidnošću, vršite plaćanja, automatizujete balansiranje, nudite usluge, povežete udaljeni novčanik, ili iskoristite napredno upravljanje interfejsom zahvaljujući mnogim dostupnim aplikacijama. Ovaj specifičan slučaj upotrebe ćemo razmatrati u našem sledećem LNP 202 kursu.
+- **Lightning Network**: Umbrel vam takođe omogućava da implementirate LND ili Core Lightning, dve implementacije Lightning mreže, kako biste upravljali sopstvenim Lightning čvorom. Moći ćete da otvarate kanale, upravljate svojom likvidnošću, vršite plaćanja, automatizujete balansiranje, nudite usluge, povežete udaljeni novčanik, ili koristiti napredni interfejs za upravljanje zahvaljujući mnogim dostupnim aplikacijama. Ovaj specifičan slučaj upotrebe ćemo razmatrati u našem sledećem LNP 202 kursu.
 
 
 
@@ -1525,7 +1525,7 @@ U praktičnom smislu, možete raditi gotovo sve što želite sa umbrelOS, sve do
 
 
 
-Međutim, zabranjeno je prodavati Umbrel ili njegove izvedene verzije (na primer, unapred sastavljenu mašinu sa unapred instaliranim umbrelOS-om), nuditi usluge povezane sa Umbrelom komercijalno, ili integrisati njegov kod u proizvod radi profita.
+Međutim, zabranjeno je prodavati Umbrel ili njegove izvedene verzije (na primer, unapred sastavljenu mašinu sa unapred instaliranim umbrelOS-om), nuditi usluge povezane sa Umbrelom komercijalno, ili integrisati njegov kȏd u proizvod radi profita.
 
 
 
@@ -1681,7 +1681,7 @@ Kao što je objašnjeno na početku ovog poglavlja, za dovršetak instalacije bi
 
 
 
-**Savjet:** Ako kod kuće nemate periferni ekran, možete koristiti svoj TV. Sa svojim HDMI (ili drugim) ulazom, može se koristiti kao privremeni ekran dok instalirate operativni sistem.
+**Savet:** Ako kod kuće nemate periferni ekran, možete koristiti svoj TV. Sa svojim HDMI (ili drugim) ulazom, može se koristiti kao privremeni ekran dok instalirate operativni sistem.
 
 
 
@@ -1852,7 +1852,7 @@ Da biste započeli konfiguraciju svog Umbrela, kliknite na dugme "*Start*".
 
 
 
-Izaberite pseudonim ili unesite svoje ime, zatim postavite jaku lozinku. Budite pažljivi: ova lozinka je jedina barijera koja štiti pristup vašem Umbrelu sa vaše mreže (i stoga, potencijalno, vašim bitcoinima ako pokrećete Lightning čvor na Umbrelu). Takođe štiti daljinski pristup putem Tor-a ili VPN-a, ako su ove usluge omogućene.
+Izaberite pseudonim ili unesite svoje ime, zatim postavite jaku lozinku. Budite pažljivi: ova lozinka je jedina barijera koja štiti pristup vašem Umbrelu sa vaše mreže (i stoga, potencijalno, vašim bitkoinima ako pokrećete Lightning čvor na Umbrelu). Takođe štiti daljinski pristup putem Tor-a ili VPN-a, ako su ove usluge omogućene.
 
 
 
@@ -1910,7 +1910,7 @@ Umbrelov interfejs je prilično intuitivan:
 
 
 
-- Meni "*Files*" centralizuje sve dokumente sačuvane na vašem Umbrelu.
+- Meni "*Files*" centralizuje sva dokumenta sačuvane na vašem Umbrelu.
 
 
 
@@ -2102,7 +2102,7 @@ Indekser je specijalizovani softverski program koji analizira ovu masu sirovih p
 
 
 
-Indeksiranje vam omogućava da brzo, precizno i efikasno pretražujete informacije na vašem čvoru. Na primer, kada povežete novčanik kao što je Sparrow sa vašim čvorom, može gotovo trenutno prikazati stanje adresa. Konkretno, postavlja upit indeksatoru sa zahtevom kao što je: "_Koji UTXO-ovi su povezani sa ovim script-hash-om?_" Indeksator odgovara gotovo odmah, bez potrebe da ponovo čita ceo blockchain, jer su ovi podaci već navedeni u njegovoj bazi podataka.
+Indeksiranje vam omogućava da brzo, precizno i efikasno pretražujete informacije na vašem čvoru. Na primer, kada povežete novčanik kao što je Sparrow sa vašim čvorom, može gotovo trenutno prikazati stanje adresa. Konkretno, postavljanje upita indeksatoru sa zahtevom kao što je: "_Koji UTXO-ovi su povezani sa ovim script-hash-om?_" Indeksator odgovara gotovo odmah, bez potrebe da ponovo čita ceo blockchain, jer su ovi podaci već navedeni u njegovoj bazi podataka.
 
 
 
@@ -2110,7 +2110,7 @@ Indeksiranje vam omogućava da brzo, precizno i efikasno pretražujete informaci
 
 
 
-Bez potrebe za dodatnim softverom, Bitcoin Core, strogo govoreći, ne nudi kompletan indeksator adresa uporediv sa onima koji se nalaze u softverima kao što su Electrs ili Fulcrum. Ipak, on uključuje nekoliko internih mehanizama za indeksiranje, kao i opcione opcije za proširenje svojih mogućnosti upita. Da bismo u potpunosti shvatili situaciju, potrebno je da se nakratko osvrnemo na istoriju projekta.
+Bez dodavanja dodatnog softvera, Bitcoin Core, strogo govoreći, ne nudi kompletan indeksator adresa uporediv sa onima koji se nalaze u softverima kao što su Electrs ili Fulcrum. Ipak, on uključuje nekoliko internih mehanizama za indeksiranje, kao i opcione opcije za proširenje svojih mogućnosti upita. Da bismo u potpunosti shvatili situaciju, potrebno je da se nakratko osvrnemo na istoriju projekta.
 
 
 
