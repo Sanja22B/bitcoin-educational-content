@@ -2402,7 +2402,7 @@ Sada znate kako da povežete svoj novčanik sa svojim Bitcoin čvorom! U sledeć
 
 
 
-Umbrel nudi opsežnu prodavnicu aplikacija. Kao što ćete videti, postoji mnogo alata povezanih sa Bitcoinom, ali i širok spektar aplikacija u veoma različitim oblastima: rešenja za samostalno hostovanje servisa i fajlova, aplikacije za produktivnost, opštiji finansijski alati, upravljanje medijima, bezbednost i administracija mreže, razvoj, veštačka inteligencija, društvene mreže, pa čak i automatizacija doma.
+Umbrel nudi opsežnu prodavnicu aplikacija. Kao što ćete videti, postoji mnogo alata povezanih sa Bitcoinom, ali i širok spektar aplikacija u veoma različitim oblastima: rešenja za samostalno hostovanje servisa i fajlova, aplikacije za produktivnost, opštiji finansijski alati, upravljanje medijima, bezbednost i administracija mreže, razvoj softvera, veštačka inteligencija, društvene mreže, pa čak i automatizacija doma.
 
 
 
@@ -2426,7 +2426,7 @@ U konkretnim terminima, istraživač vam omogućava da procenite naknade potrebn
 
 
 
-Kao što je ranije pomenuto, explorer može biti hostovan online na vebsajtu ili pokrenut lokalno na vašem računaru. Glavni nedostatak online usluga je što mogu ugroziti vašu privatnost. Bez VPN-a ili Tor-a, server koji hostuje explorer može povezati vašu IP adresu sa transakcijama koje pregledate, što može pružiti idealnu ulaznu tačku za analizu lanca.
+Kao što je ranije pomenuto, istraživač blokova (eng. explorer) može biti hostovan online na vebsajtu ili pokrenut lokalno na vašem računaru. Glavni nedostatak online usluga je što mogu ugroziti vašu privatnost. Bez VPN-a ili Tor-a, server koji hostuje explorer može povezati vašu IP adresu sa transakcijama koje pregledate, što može pružiti idealnu ulaznu tačku za analizu lanca.
 
 
 
@@ -2436,7 +2436,7 @@ https://planb.academy/courses/65c138b0-4161-4958-bbe3-c12916bc959c
 
 
 
-Zato je uvek najbolje koristiti svoj lokalni block explorer. Na ovaj način, nijedan podatak vezan za vašu pretragu neće procuriti, jer se svi upiti obrađuju direktno na mašini koju kontrolišete, bez prolaska kroz internet. Štaviše, lokalni istraživač se oslanja na podatke sa vašeg sopstvenog Bitcoin čvora, koji ste sami validirali, prema sopstvenim pravilima, i kojem možete verovati.
+Zato je uvek najbolje koristiti svoj lokalni block explorer. Na ovaj način, nijedan podatak vezan za vašu pretragu neće procuriti, jer se svi upiti obrađuju direktno na mašini koju kontrolišete, bez prolaska kroz internet. Štaviše, lokalni istraživač blokova se oslanja na podatke sa vašeg sopstvenog Bitcoin čvora, koji ste sami validirali, prema sopstvenim pravilima, i kojem možete verovati.
 
 
 
@@ -2473,7 +2473,7 @@ https://planb.academy/tutorials/privacy/explorer/mempool-space-f3e468a1-92f1-43c
 
 
 
-Sada kada imate svoj Bitcoin čvor, možete postaviti i svoj Lightning čvor za obavljanje off-chain transakcija, bez oslanjanja na infrastrukturu treće strane.
+Sada kada imate svoj Bitcoin čvor, možete postaviti i svoj Lightning čvor za obavljanje [off-chain](https://planb.academy/resources/glossary/offchain) transakcija, bez oslanjanja na infrastrukturu treće strane.
 
 
 
@@ -2536,19 +2536,19 @@ U konkretnim terminima, Tailscale vam nudi nekoliko prednosti kada koristite va�
 
 
 
-- Možete upravljati Umbrelom interfejsom ili pristupiti aplikacijama povezanim s vašim čvorom (kao što su Mempool, Ride The Lightning, ThunderHub...) s bilo kojeg mesta, kao da ste na istoj lokalnoj mreži, bez otvaranja portova na internetu i bez korišćenja Tor-a, koji je veoma spor;
+- Možete upravljati Umbrel interfejsom ili pristupiti aplikacijama povezanim s vašim čvorom (kao što su Mempool, Ride The Lightning, ThunderHub...) s bilo kojeg mesta, kao da ste na istoj lokalnoj mreži, bez otvaranja portova na internetu i bez korišćenja Tor-a, koji je veoma spor;
 
 
 
 
 
-- Možete se povezati sa svojim Electrum serverom (Electrs ili Fulcrum) ili direktno na Bitcoin Core putem vašeg VPN-a, zaobilazeći Tor. Ovo pruža sigurnu vezu, uporedivu sa korišćenjem Tor-a, ali sa mnogo većom brzinom i smanjenom latencijom. Ukratko, dobijate privatnost i sigurnost Tora, ali uz brzinu klasične internet veze (clearnet). Za On-Chain novčanik, ova prednost može delovati marginalno, ali ako planirate da kasnije pokrenete sopstveni Lightning čvor, razlika je značajna. Naime, plaćanja putem vašeg čvora u pokretu na Tor-u su izuzetno spora zbog brojnih razmena koje su potrebne, dok sa Tailscale-om, radi savršeno.
+- Možete se povezati sa svojim Electrum serverom (Electrs ili Fulcrum) ili direktno na Bitcoin Core putem vašeg VPN-a, zaobilazeći Tor. Ovo pruža sigurnu vezu, uporedivu sa korišćenjem Tor-a, ali sa mnogo većom brzinom i smanjenom latencijom. Ukratko, dobijate privatnost i sigurnost Tora, ali uz brzinu klasične internet veze (clearnet). Za on-chain novčanik, ova prednost može delovati marginalno, ali ako planirate da kasnije pokrenete sopstveni Lightning čvor, razlika je značajna. Naime, plaćanja putem vašeg čvora u pokretu na Tor-u su izuzetno spora zbog brojnih razmena koje su potrebne, dok sa Tailscale-om, radi savršeno.
 
 
 
 
 
-- Nema potrebe za konfigurisanje NAT pravila, otvaranje portova ili postavljanje konvencionalnog VPN servera. Kada je aplikacija instalirana na Umbrel i vaše uređaje, mreža se automatski uspostavlja.
+- Nema potrebe za konfigurisanje NAT pravila, otvaranje portova ili postavljanje konvencionalnog VPN servera. Kada je aplikacija instalirana na Umbrelu i vašim uređajima, mreža se automatski uspostavlja.
 
 
 
@@ -2604,7 +2604,7 @@ BTCPay Server je besplatan, open-source procesor plaćanja koji vam omogućava d
 
 
 
-Arhitektura BTCPay Server-a zasnovana je na Bitcoin čvoru, a za Lightning na kompatibilnoj implementaciji (LND, Core Lightning...), što ga čini jednim od retkih potpuno ne-kustodijalnih PoS rešenja. Takođe je najopsežniji softver za praćenje i računovodstvo.
+Arhitektura BTCPay Server-a zasnovana je na Bitcoin čvoru, a za Lightning na kompatibilnoj implementaciji (LND, Core Lightning...), što ga čini jednim od retkih potpuno ne-kastodijalnih PoS rešenja. Takođe je najopsežniji softver za praćenje i računovodstvo.
 
 
 
@@ -2655,7 +2655,7 @@ https://planb.academy/tutorials/business/point-of-sale/btcpay-server-928eb01e-82
 
 
 
-Za početak ove završne sekcije, pre nego što pređemo na naprednu teoriju, u ovom kratkom poglavlju pogledaćemo najbolje prakse i konkretne korake koje možete preduzeti kada je vaš Umbrel nod instaliran, sinhronizovan i pravilno konfigurisan. Kako održavati Umbrel svakodnevno?
+Za početak ove završne sekcije, pre nego što pređemo na naprednu teoriju, u ovom kratkom poglavlju pogledaćemo najbolje prakse i konkretne korake koje možete preduzeti kada je vaš Umbrel čvor instaliran, sinhronizovan i pravilno konfigurisan. Kako održavati Umbrel svakodnevno?
 
 
 
@@ -2788,11 +2788,11 @@ IBD se sastoji od preuzimanja i verifikacije svakog bloka i transakcije pojedina
 
 
 
-### IBD prekretnice
+### Glavne faze IBD-a
 
 
 
-Sinhronizacija počinje sa korakom _**headers-first**_. Vaš nod traži niz zaglavlja blokova od više drugih čvorova u mreži i za svaki blok proverava proof of work u odnosu na difficulty (cilj težine), sintaksu, kao i pravila vezana za vremensku oznaku i broj verzije. Ukratko, osigurava da svako primljeno zaglavlje ispunjava pravila konsenzusa.
+Sinhronizacija počinje sa korakom _**headers-first**_. Vaš čvor traži niz zaglavlja blokova od više drugih čvorova u mreži i za svaki blok proverava proof of work u odnosu na difficulty (cilj težine), sintaksu, kao i pravila vezana za vremensku oznaku i broj verzije. Ukratko, osigurava da svako primljeno zaglavlje ispunjava pravila konsenzusa.
 
 
 
@@ -2903,7 +2903,7 @@ U ovom slučaju, softver pretražuje _**DNS seed-ove**_. To su [serveri koje odr
 
 
 
-U velikoj većini slučajeva, *DNS seeds* korak je dovoljan za uspostavljanje prvih veza sa drugim čvorovima. Ako, izuzetno, ovi serveri ne odgovore u roku od 60 sekundi, čvor prelazi na drugi metod: [statistička lista sa preko 1.000 adresa](https://github.com/Bitcoin/Bitcoin/blob/master/src/chainparamsseeds.h) _seed čvorova_ je ugrađena u kod Bitcoin core i redovno se ažurira. Ako prva dva metoda dobijanja IP adresa ne uspeju, ovo poslednje rešenje uspostavlja početnu vezu, od koje čvor može zatim zatražiti nove IP adrese.
+U velikoj većini slučajeva, *DNS seeds* korak je dovoljan za uspostavljanje prvih veza sa drugim čvorovima. Ako, izuzetno, ovi serveri ne odgovore u roku od 60 sekundi, čvor prelazi na drugi metod: [statistička lista sa preko 1.000 adresa](https://github.com/Bitcoin/Bitcoin/blob/master/src/chainparamsseeds.h) _seed čvorova_ je ugrađena u kȏd Bitcoin Core-a i redovno se ažurira. Ako prva dva metoda dobijanja IP adresa ne uspeju, ovo poslednje rešenje uspostavlja početnu vezu, od koje čvor može zatim zatražiti nove IP adrese.
 
 
 
@@ -2914,7 +2914,7 @@ U velikoj većini slučajeva, *DNS seeds* korak je dovoljan za uspostavljanje pr
 Kao poslednja opcija, možete ručno uneti IP adrese u fajl `peers.dat` kako biste forsirali povezivanje sa određenim čvorovima.
 
 
-Jednom kada se pokrene, interni menadžer adresa  diversifikuje izvore (odvojene autonomne mreže, clearnet i Tor, kao i različite geografske oblasti) kako bi smanjio rizik od topološke izolacije. Čvor uspostavlja ove odlazne veze (veze koje sam bira, i koje su stoga sigurnije).
+Jednom kada se pokrene, interni menadžer adresa diversifikuje izvore (odvojene autonomne mreže, clearnet i Tor, kao i različite geografske oblasti) kako bi smanjio rizik od topološke izolacije. Čvor uspostavlja ove odlazne veze (veze koje sam bira, i koje su stoga sigurnije).
 
 
 
@@ -2930,7 +2930,7 @@ Ako vaš čvor sluša na otvorenom portu (po defaultu, 8333), on prihvata i dola
 
 
 
-Kada vaš čvor završi svoju početnu sinhronizaciju, lokalno skladišti nekoliko komplementarnih skupova podataka, omogućavajući mu da validira blokove i transakcije, opslužuje mrežne peer-ove i brzo se ponovo pokrene dok održava svoje stanje. Tri ključna temelja čvora su::
+Kada vaš čvor završi svoju početnu sinhronizaciju, lokalno skladišti nekoliko komplementarnih skupova podataka, omogućavajući mu da validira blokove i transakcije, opslužuje mrežne peer-ove i da se brzo restartuje zadržavajući svoje stanje.. Tri ključna temelja čvora su::
 
 
 
@@ -2961,7 +2961,7 @@ Podrazumevano, Bitcoin Core čuva svoje podatke u specifičnom radnom direktorij
 
 
 
-blockchain je, dakle, kolekcija blokova. Full node skladišti ove blokove kao sekvencijalne flat fajlove i održava paralelni indeks za brzo preuzimanje. Kada je potrebno (reorganizacija, ponovno skeniranje novčanika, usluga drugog čvora), ovi podaci se ponovo čitaju u izvornom obliku.
+Blockchain je, dakle, kolekcija blokova. Full node skladišti ove blokove kao sekvencijalne flat fajlove i održava paralelni indeks za brzo preuzimanje. Kada je potrebno (reorganizacija, ponovno skeniranje novčanika, usluga drugom čvoru), ovi podaci se ponovo čitaju u izvornom obliku.
 
 
 
@@ -2973,7 +2973,7 @@ blockchain je, dakle, kolekcija blokova. Full node skladišti ove blokove kao se
 
 
 
-Primljeni i validirani blokovi se upisuju u sekvencijalne kontejnere nazvane `blkNNNNN.dat`, smeštene u fascikli `blocks/`. Svaka datoteka se popunjava redom dok ne dostigne maksimalnu veličinu od 128 MiB, nakon čega Core otvara sledeću datoteku. Unutra, svaki blok je serijalizovan u mrežnom formatu, prethodi mu magični identifikator i dužina. Ova organizacija omogućava brzo pisanje na disk i olakšava uslugu blokova za sinhronizaciju sa drugim čvorovima.
+Primljeni i validirani blokovi se upisuju u sekvencijalne kontejnere nazvane `blkNNNNN.dat`, smeštene u fascikli `blocks/`. Svaka datoteka se popunjava redom dok ne dostigne maksimalnu veličinu od 128 MiB, nakon čega Core otvara sledeću datoteku. Unutra, svaki blok je serijalizovan u mrežnom formatu, prethodi mu magični identifikator i dužina. Ova organizacija omogućava brzo pisanje na disk i olakšava serviranje blokova drugim čvorovima koji se sinhronizuju.
 
 
 
@@ -2989,7 +2989,7 @@ U pruned režimu, čvor zadržava samo nedavni prozor ovih datoteka kako bi ogra
 
 
 
-Kako bi mogao da se vrati u prošlost tokom reorganizacije, Core čuva, paralelno sa svakim `blk` fajlom, `revNNNNN.dat` fajl u `blocks/`. Ovaj fajl sadrži informacije potrebne za poništavanje efekta bloka na UTXO skup: za svaki izlaz koji blok potroši, prethodno stanje odgovarajućeg UTXO se čuva (iznos, skripta, visina...). U slučaju prekida bloka, čvor može brzo rekonstituisati prethodno stanje bez potrebe za ponovnim skeniranjem celog lanca.
+Kako bi mogao da se vrati u prošlost tokom reorganizacije, Core čuva, paralelno sa svakim `blk` fajlom, `revNNNNN.dat` fajl u `blocks/`. Ovaj fajl sadrži informacije potrebne za poništavanje efekta bloka na UTXO skup: za svaki izlaz koji blok potroši, prethodno stanje odgovarajućeg UTXO se čuva (iznos, skripta, visina...). U slučaju napuštanja bloka, čvor može brzo rekonstituisati prethodno stanje bez potrebe za ponovnim skeniranjem celog lanca.
 
 
 
