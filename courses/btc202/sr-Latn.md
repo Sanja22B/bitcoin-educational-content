@@ -3637,19 +3637,19 @@ Fajl konfiguracije takođe vam omogućava da prilagodite parametre vezane za va�
 
 
 
-- `dbcache=<n>`: Alocira `<n>` MiB za keš baze podataka (*LevelDB*) koji koristi indeks blokova i `chainstate` (podrazumevano: `450`). Što je veća vrednost, brži su IBD i trenutna validacija, uz cenu veće potrošnje RAM-a.
+- `dbcache=<n>`: Alocira `<n>` MiB za keš baze podataka (*LevelDB*) koje koriste indeks blokova i `chainstate` (podrazumevano: `450`). Što je veća vrednost, brži su IBD i trenutna validacija, uz cenu veće potrošnje RAM-a.
 
 
 
 
 
-- `prune=<n>`: Omogućava obrezivanje blok fajlova i postavlja cilj za prostor na disku u MiB (podrazumevano: `0` = onemogućeno; `1` = ručno obrezivanje putem RPC; `>=550` = automatsko obrezivanje ispod cilja). Nekompatibilno sa `txindex=1`. Čvor ostaje potpuno validirajući čvor, ali više ne može pružiti staru istoriju. Ova opcija je posebno korisna ako je vaš prostor na disku ograničen, na primer, kada instalirate čvor na vašem kućnom računaru.
+- `prune=<n>`: Omogućava orezivanje (pruning) fajlova sa blokovima i postavlja ciljnu količinu prostora na disku u MiB (podrazumevano: `0` = onemogućeno; `1` = ručno orezivanje putem RPC; `>=550` = automatsko orezivanje (pruning) ispod zadate ciljne vrednosti). Nekompatibilno sa `txindex=1`. Čvor ostaje potpuno validirajući čvor, ali više ne može da pruži stariju istoriju (stare blokove/transakcije). Ova opcija je posebno korisna ako je vaš prostor na disku ograničen, na primer, kada instalirate čvor na vašem kućnom računaru.
 
 
 
 
 
-- `txindex=1` : Kreira i održava globalni indeks potvrđenih transakcija. Neophodno za određene upite (`getrawtransaction` van novčanika) i za istraživačke svrhe, ali značajno povećava upotrebu diska. Nije kompatibilno sa režimom orezivanja.
+- `txindex=1` : Kreira i održava globalni indeks potvrđenih transakcija. Neophodno za određene upite (`getrawtransaction` za transakcije koje ne pripadaju vašem novčaniku) i za istraživačke svrhe, ali značajno povećava upotrebu diska. Nije kompatibilno sa režimom orezivanja.
 
 
 
@@ -3661,7 +3661,7 @@ Fajl konfiguracije takođe vam omogućava da prilagodite parametre vezane za va�
 
 
 
-- `reindex=1`: Rekonstruiše indekse blokova i stanje (`chainstate`) iz `blk*.dat` fajlova na disku. Takođe ponovo izgrađuje opcione aktivne indekse. Ovo je vremenski zahtevan proces koji se koristi za popravku oštećene baze podataka ili za čisto aktiviranje/deaktiviranje teških indeksa.
+- `reindex=1`: Rekonstruiše indekse blokova i stanje (`chainstate`) na osnovu `blk*.dat` fajlova koji se nalaze na disku. Takođe ponovo izgrađuje opcione aktivne indekse. Ovo je vremenski zahtevan proces koji se koristi za popravku oštećene baze podataka ili za čisto aktiviranje/deaktiviranje zahtevnih (teških) indeksa.
 
 
 
@@ -3673,37 +3673,37 @@ Fajl konfiguracije takođe vam omogućava da prilagodite parametre vezane za va�
 
 
 
-- `blockfilterindex=<type>`: Održava indekse kompaktnih blok filtera (npr. `basic`) koje koriste tanki klijenti (BIP157/158) i neki RPC-ovi. Podrazumevano je onemogućeno (`0`). Troši dodatni prostor na disku i vreme za indeksiranje.
+- `blockfilterindex=<type>`: Održava indekse kompaktnih blok filtera (npr. `basic`) koje koriste lagani klijenti (BIP157/158) i neki RPC-ovi. Podrazumevano je onemogućeno (`0`). Troši dodatni prostor na disku i vreme za indeksiranje.
 
 
 
 
 
-- `coinstatsindex=1`: Održava UTXO indeks statistike skupa kojim upravlja poziv `gettxoutsetinfo`. Korisno za revizije i metrike, eliminiše potrebu za skupim preračunavanjem. Onemogućeno po defaultu.
+- `coinstatsindex=1`: Održava indeks statistika UTXO seta koji koristi RPC poziv `gettxoutsetinfo`. Korisno za revizije i metrike, eliminiše potrebu za skupim preračunavanjem. Onemogućeno po defaultu.
 
 
 
 
 
-- `loadblock=<file>`: Uvozi blokove pri pokretanju iz spoljašnje `blk*.dat` datoteke. Koristi se za unapredno učitavanje istorije iz vanjskog izvora (lokalna kopija, spoljašnji medij) kako bi se ubrzala inicijalizacija.
+- `loadblock=<file>`: Prilikom pokretanja uvozi blokove iz eksternog `blk*.dat` fajla. Služi za predučitavanje (preload) istorije iz offline izvora (lokalna kopija, eksterni medij) kako bi se ubrzala inicijalizacija čvora.
 
 
 
 
 
-- `par=<n>`: Postavlja broj niti za verifikaciju skripte (od `-10` do `15`, `0` = automatski, `<0` = ostavlja ovaj broj jezgara slobodnim). Omogućava podešavanje paralelizma CPU-a tokom validacije. Automatski režim je pogodan u većini slučajeva.
+- `par=<n>`: Postavlja broj niti (eng. threads) za verifikaciju skripte (od `-10` do `15`, `0` = automatski, `<0` = ostavlja ovaj broj jezgara slobodnim). Omogućava podešavanje CPU paralelizma tokom validacije transakcija i blokova. Automatski režim je obično dovoljan u većini slučajeva.
 
 
 
 
 
-- `debuglogfile=<file>`: Specificira lokaciju `debug.log` loga.
+- `debuglogfile=<file>`: Specificira lokaciju `debug.log` fajla.
 
 
 
 
 
-- `shrinkdebugfile=1`: Smanjuje veličinu `debug.log` pri pokretanju (podrazumevano: `1` kada `-debug` nije aktivan).
+- `shrinkdebugfile=1`: Smanjuje veličinu `debug.log` fajla pri pokretanju (podrazumevano: `1` kada `-debug` nije aktivan).
 
 
 
@@ -3717,7 +3717,7 @@ Fajl konfiguracije takođe vam omogućava da prilagodite parametre vezane za va�
 
 
 
-Konačno, datoteka `Bitcoin.conf` takođe vam omogućava da konfigurišete parametre pristupa za vaš čvor. Budite oprezni sa ovim postavkama, posebno ako ste tek počeli: izbegavajte njihovo menjanje bez potpunog razumevanja posledica, jer to može uvesti ranjivosti.
+Konačno, datoteka `bitcoin.conf` takođe vam omogućava da konfigurišete parametre pristupa za vaš čvor. Budite oprezni sa ovim postavkama, posebno ako ste tek počeli: izbegavajte njihovo menjanje bez potpunog razumevanja posledica, jer to može uvesti ranjivosti.
 
 
 
@@ -3729,7 +3729,7 @@ Konačno, datoteka `Bitcoin.conf` takođe vam omogućava da konfigurišete param
 
 
 
-- `rpcbind=<addr>[:port]`: RPC server sluša Address/port. Podrazumevano, sluša se samo lokalno (`127.0.0.1` i `::1`). Ovaj parametar se ignoriše ako `rpcallowip` nije takođe definisan. Koristite ga da eksplicitno ograničite interfejs.
+- `rpcbind=<addr>[:port]`: Adresa/port na kojem RPC server osluškuje. Podrazumevano, sluša se samo lokalno (`127.0.0.1` i `::1`). Ovaj parametar se ignoriše ako `rpcallowip` nije takođe definisan. Koristite ga da eksplicitno ograničite interfejs.
 
 
 
@@ -3741,7 +3741,7 @@ Konačno, datoteka `Bitcoin.conf` takođe vam omogućava da konfigurišete param
 
 
 
-- `rpcallowip=<ip|cidr>`: Dozvoljava RPC klijentima sa date IP adrese ili podmreže (može se ponoviti). Koristite u kombinaciji sa `rpcbind` da izložite API samo pouzdanom segmentu (LAN/VPN).
+- `rpcallowip=<ip|cidr>`: Dozvoljava RPC klijentima sa određene IP adrese ili podmreže da se povežu na čvor (može se koristiti više puta za različite adrese/podmreže). Koristite u kombinaciji sa `rpcbind` da izložite API samo pouzdanom segmentu (LAN/VPN).
 
 
 
@@ -3753,19 +3753,19 @@ Konačno, datoteka `Bitcoin.conf` takođe vam omogućava da konfigurišete param
 
 
 
-- `rpccookiefile=<path>`: Putanja do kolačića za autentifikaciju (podrazumevano: `.cookie` datoteka u okviru `datadir/`). Ovo se koristi za lokalni pristup od strane istog korisnika bez upravljanja trajnim lozinkama. Na primer, možete ga koristiti za povezivanje Liana Wallet sa vašim Bitcoin core na istom računaru.
+- `rpccookiefile=<path>`: Putanja do kolačića za autentifikaciju (podrazumevano: `.cookie` datoteka u okviru `datadir/`). Ovo se koristi za lokalni pristup od strane istog korisnika bez upravljanja trajnim lozinkama. Na primer, možete ga koristiti za povezivanje Liana Wallet-a sa vašim Bitcoin Core-om na istom računaru.
 
 
 
 
 
-- `rpcuser=<user>` / `rpcpassword=<pw>`: Klasična RPC autentifikacija sa lozinkom u običnom tekstu. Izbegavajte korišćenje ovoga u korist `rpcauth` ili kolačića.
+- `rpcuser=<user>` / `rpcpassword=<pw>`: Klasična RPC autentifikacija sa lozinkom u običnom tekstu. Treba izbegavati i koristiti umesto toga `rpcauth` ili cookie autentifikaciju. 
 
 
 
 
 
-- `rpcthreads=<n>`: Broj niti za opsluživanje RPC poziva (podrazumevano: `4`). Povećajte ako imate visoke vršne pozive na strani alata za nadgledanje/spoljni alat.
+- `rpcthreads=<n>`: Broj niti za opsluživanje RPC poziva (podrazumevano: `4`). Povećajte ovu vrednost ako imate velike skokove u broju poziva sa strane monitoring sistema ili spoljnog alata.
 
 
 
@@ -3777,8 +3777,7 @@ Konačno, datoteka `Bitcoin.conf` takođe vam omogućava da konfigurišete param
 
 
 
-- `rpcwhitelistdefault=1|0`: Podrazumevano ponašanje bele liste: ako je omogućeno i koristi se bela lista, nepopisani pozivi se odbijaju. Ovo takođe može forsirati podrazumevani prazan skup (nijedan poziv nije dozvoljen) sve dok ništa nije eksplicitno navedeno.
-
+- `rpcwhitelistdefault=1|0`: Podrazumevano ponašanje whitelist lista: ako je omogućena i koristi se whitelist, pozivi koji nisu na listi se odbijaju. Takođe, može podrazumevano primorati praznu listu (nijedan poziv nije dozvoljen) dok se nešto eksplicitno ne doda na listu.
 
 
 
@@ -3789,13 +3788,13 @@ Konačno, datoteka `Bitcoin.conf` takođe vam omogućava da konfigurišete param
 
 
 
-- `conf=<file>`: Specifikuje, samo na komandnoj liniji, datoteku konfiguracije samo za čitanje. Korisno za zamrzavanje profila izvršavanja (nepromenljiv) na strani operacija.
+- `conf=<file>`: Specifikuje, samo preko komandne linije, fajl konfiguracije koji se učitava samo za čitanje. Korisno za zamrzavanje izvršnog profila (nepromenljiv) sa operativne strane.
 
 
 
 
 
-- `includeconf=<file>`: Učitava dodatnu konfiguracionu datoteku (putanja relativna na `datadir/`). Omogućava razdvajanje uloga: zajednička baza + osetljivo lokalno preopterećenje.
+- `includeconf=<file>`: Učitava dodatni konfiguracioni fajl (putanja relativna u odnosu na `datadir/`). Omogućava razdvajanje uloga: zajednička baza + lokalna osetljiva prepiska (override).
 
 
 
@@ -3813,7 +3812,7 @@ Konačno, datoteka `Bitcoin.conf` takođe vam omogućava da konfigurišete param
 
 
 
-- `sandbox=<log-and-abort|abort>`: Omogućava eksperimentalno peskovanje sistemskih poziva: dozvoljeni su samo očekivani sistemski pozivi.
+- `sandbox=<log-and-abort|abort>`: Omogućava eksperimentalno sandboxovanje sistemskih poziva (syscalls): dozvoljeni su samo očekivani syscalls.
 
 
 
@@ -3855,23 +3854,23 @@ Konačno, datoteka `Bitcoin.conf` takođe vam omogućava da konfigurišete param
 
 
 
-- `printtoconsole=1`: Šalje tragove/debugove na konzolu (*stdout*).
+- `printtoconsole=1`: Šalje trace/debug poruke na konzolu (*stdout*).
 
 
 
 
 
-- `help-debug=1`: Prikazuje pomoć za opciju otklanjanja grešaka i izlazi.
+- `help-debug=1`: Prikazuje pomoć za debug opcije i zatim izlazi iz programa.
 
 
 
 
 
-- `uacomment=<cmt>`: Dodaje komentar na User-Agent P2P.
+- `uacomment=<cmt>`: Dodaje komentar u P2P User-Agent. (Tj. omogućava da čvor u svom identifikatoru P2P protokola uključi dodatnu napomenu ili oznaku.)
 
 
 
-Sada smo završili sa nabrajanjem većine parametara konfiguracije. Ovaj `Bitcoin.conf` fajl stoga predstavlja pravu komandnu tablu vašeg čvora: definiše mrežnu konfiguraciju, upravljanje mempool-om, korišćenje diska i memorije, indeksiranje i opštu administraciju. Ako želite da saznate više o ovom fajlu i kreirate jedan prilagođen vašim potrebama, preporučujem korišćenje [Jameson Lopp-ovog generatora](https://jlopp.github.io/Bitcoin-core-config-generator/).
+Sada smo završili sa nabrajanjem većine parametara konfiguracije. Ovaj `bitcoin.conf` fajl stoga predstavlja pravu komandnu tablu vašeg čvora: definiše mrežnu konfiguraciju, upravljanje mempool-om, korišćenje diska i memorije, indeksiranje i opštu administraciju. Ako želite da saznate više o ovom fajlu i kreirate jedan prilagođen vašim potrebama, preporučujem korišćenje [Jameson Lopp-ovog generatora](https://jlopp.github.io/Bitcoin-core-config-generator/).
 
 
 
