@@ -228,7 +228,7 @@ Maak van de gelegenheid gebruik om de herstel apparaten op een veilige plaats op
 Voor extra veiligheid kun je de onderdelen die je gebruikt voor herstel in een verzegelde zak doen (*tamper-evident bag*) en het serienummer ergens opschrijven. Dit zorgt ervoor dat niemand erbij kan en dat je apparaat geldig blijft.
 
 
-In ons voorbeeld hebben we de volgende elementen samengesteld:
+In ons voorbeeld hebben we de volgende onderdelen samengesteld:
 
 
 
@@ -259,31 +259,31 @@ Het hoofdscherm van Liana toont je saldo en de transacties (verleden en huidig) 
 ![Écran principal](assets/fr/20.webp)
 
 
-Om geld te ontvangen, ga je naar het tabblad "*Ontvangen*" en klik je op "*generate Address*". Een nieuwe Address zou op je scherm moeten verschijnen. Het is langer dan in conventionele portemonnees: het is een Address gekoppeld aan een zelfstandige Contract (P2WSH of Taproot).
+Om geld te ontvangen, ga je naar het tabblad "*Receive*" en klik je op "*Generate address*". Een nieuw adres zou op je scherm moeten verschijnen. Het is langer dan in conventionele wallets: het is een adres gekoppeld aan een stand-alone contract (P2WSH of Taproot).
 
 
 ![Générer nouvelle adresse](assets/fr/21.webp)
 
 
-Je moet deze Address verifiëren op je hardware wallet door te klikken op "*Verify on hardware device*".
+Je moet dit adres verifiëren op je hardware wallet door te klikken op "*Verify on hardware device*".
 
 
 ![Vérifier adresse portefeuille matériel](assets/fr/22.webp)
 
 
-Zodra het geld is overgemaakt, verschijnt de transactie op het hoofdscherm (eerst als onbevestigd, dan als bevestigd). Hier hebben we voor deze test 50.000 satoshis (iets meer dan $50 op het moment van de overdracht) overgemaakt. Het spreekt voor zich dat het overgemaakte bedrag in jouw geval een orde van grootte hoger zal moeten zijn dan deze waarde, vanwege de transactiekosten.
+Zodra het geld is ontvangen, verschijnt de transactie op het hoofdscherm (eerst als onbevestigd, dan als bevestigd). Hier hebben we voor deze test 50.000 satoshis (iets meer dan $50 op het moment van de ontvangst) overgemaakt. Het spreekt voor zich dat het overgemaakte bedrag in jouw geval een orde van grootte hoger zal moeten zijn dan deze waarde, vanwege de transactiekosten.
 
 
 ![Vérifier solde](assets/fr/23.webp)
 
 
-Je kunt de vervaldatum van je tegoeden controleren door naar het tabblad "*Munten*" te gaan. Dit tabblad toont je de verschillende munten (UTXO) in je wallet. Hier kunnen we zien dat de 50.000 satoshis Coin, gecreëerd door onze transactie, op dezelfde dag verloopt (over een uur).
+Je kunt de vervaldatum van je tegoeden controleren door naar het tabblad "*Coins*" te gaan. Dit tabblad toont je de verschillende munten (UTXO) in je wallet. Hier kunnen we zien dat de 50.000 satoshis UTXO, gecreëerd door onze transactie, op dezelfde dag verloopt (over een uur).
 
 
 ![Obtenir informations pièce](assets/fr/24.webp)
 
 
-Om het UTXO representatiemodel dat in Bitcoin gebruikt wordt beter te begrijpen, kun je het eerste deel van de cursus over vertrouwelijkheid in Bitcoin, geschreven door Loïc Morel, raadplegen:
+Om het UTXO-representatiemodel dat in Bitcoin gebruikt wordt beter te begrijpen, kun je het eerste deel van de cursus over privacy in Bitcoin, geschreven door Loïc Morel, raadplegen:
 
 
 https://planb.academy/courses/65c138b0-4161-4958-bbe3-c12916bc959c
@@ -291,25 +291,25 @@ https://planb.academy/courses/65c138b0-4161-4958-bbe3-c12916bc959c
 ## Lopende uitgaven
 
 
-Huidige uitgaven is de normale situatie voor het gebruik van Liana. Bitcoins versturen met de hoofdsleutel werkt zoals in alle klassieke Bitcoin wallets zoals Electrum of Sparrow.
+Lopende uitgaven is de normale situatie voor het gebruik van Liana. Bitcoins versturen met de hoofdsleutel werkt zoals in alle klassieke Bitcoin-wallets zoals Electrum of Sparrow.
 
 
-Ga naar de tab "*Versturen*" en voer de essentiële informatie in: de BTC Address van de ontvanger, het te versturen bedrag en het gewenste tarief. Een beschrijving (lokaal opgeslagen) kan ook worden toegevoegd voor je persoonlijk gemak. In ons voorbeeld stuurden we 10.000 satoshis naar een bepaalde Bob, voor een laadtarief van 4 sat/ov, of $0,67 op het moment van de transactie.
+Ga naar de tab "*Send*" en voer de essentiële informatie in: het BTC-adres van de ontvanger, het te versturen bedrag en het gewenste tarief. Een beschrijving (lokaal opgeslagen) kan ook worden toegevoegd voor je persoonlijk gemak. In ons voorbeeld stuurden we 10.000 satoshis naar een bepaalde Bob, voor een kost van 4 sat/vB, of $0,67 op het moment van de transactie.
 
 
-Liana biedt ook "Coin controle": je geeft aan welke Coin (UTXO) je wilt uitgeven. Hier hebben we gekozen voor de 50.000 satoshis die Coin eerder creëerde.
+Liana biedt ook "Coin controle": je geeft aan welke coin (UTXO) je wilt uitgeven. Hier hebben we gekozen voor de UTXO van 50.000 satoshis die we eerder creëerde.
 
 
 ![Envoyer fonds clé principale](assets/fr/25.webp)
 
 
-Onderteken vervolgens de transactie met je handtekeningapparaat dat is gekoppeld aan de hoofdsleutel door op "*Teken*" te klikken. Je moet de transactie verifiëren en bevestigen op je hardware wallet. Hier hebben we de Nano S Plus gebruikt om de transactie te ondertekenen.
+Onderteken vervolgens de transactie met je ondertekenapparaat dat is gekoppeld aan de hoofdsleutel door op "*Sign*" te klikken. Je moet de transactie verifiëren en bevestigen op je hardware wallet. Hier hebben we de Nano S Plus gebruikt om de transactie te ondertekenen.
 
 
 ![Signer transaction clé principale](assets/fr/26.webp)
 
 
-Zend ten slotte de transactie over het netwerk uit door op "*Zend uit*" te klikken. Merk op dat het verzenden van fondsen de hersteltijd voor gebruikte munten zal resetten.
+Zend ten slotte de transactie uit over het netwerk door op "*Broadcast*" te klikken. Merk op dat het verzenden van fondsen de hersteltijd voor gebruikte munten zal resetten.
 
 
 ![Diffuser transaction clé principale](assets/fr/27.webp)
@@ -321,13 +321,13 @@ De transactie verschijnt op het hoofdscherm en je saldo wordt bijgewerkt.
 ![Solde après dépense](assets/fr/28.webp)
 
 
-## Portefeuille-update
+## Wallet bijwerken
 
 
-Zoals hierboven uitgelegd, vereist de Liana-wallet dat u je fondsen regelmatig bijwerkt door een transactie uit te voeren op de Blockchain. Als u dit niet doet, kan je erfgenaam (of je tweede apparaat in het geval van een uitgebreide back-up) je fondsen terugvorderen. Als je dit niet doet, kan je geld worden teruggehaald door je erfgenaam (of door je tweede apparaat in het geval van een uitgebreide back-up). Deze situatie is niet extreem gevaarlijk, maar gaat wel in tegen het doel van dit mechanisme: controle houden over je bitcoins zonder een beroep te doen op een vertrouwde derde partij, terwijl je profiteert van een vangnet.
+Zoals hierboven uitgelegd, vereist de Liana-wallet dat je je fondsen regelmatig bijwerkt door een transactie uit te voeren op de blockchain. Als je dit niet doet, kan je erfgenaam (of je tweede apparaat in het geval van een uitgebreide back-up) je fondsen terugvorderen. Deze situatie is niet extreem gevaarlijk, maar gaat wel in tegen het doel van dit mechanisme: controle houden over je bitcoins zonder een beroep te doen op een vertrouwde derde partij, terwijl je profiteert van een vangnet.
 
 
-Er wordt een waarschuwing weergegeven voordat je geld (of een deel ervan) vervalt en kan worden uitgegeven door de herstelsleutel. Het zal aangeven dat je "herstelpad" (*herstelpad*) binnenkort beschikbaar zal zijn. Gezien de korte hersteltijd (een uur), wordt dit bericht in ons geval direct weergegeven.
+Er wordt een waarschuwing weergegeven voordat je geld (of een deel ervan) vervalt en kan worden uitgegeven door de herstelsleutel (recovery key). Het zal aangeven dat je "recovery path" (*herstelpad*) binnenkort beschikbaar zal zijn. Gezien de korte hersteltijd (een uur), wordt dit bericht in ons geval direct weergegeven.
 
 
 ![Avertissement chemin récupération](assets/fr/29.webp)
@@ -339,46 +339,46 @@ Wanneer de deadline nadert, verschijnt er een knop die je vraagt om de betreffen
 ![Actualiser pièces depuis l'écran principal](assets/fr/30.webp)
 
 
-Om je munten bij te werken, ga je naar het tabblad "*Munten*" en klik je op "*Vernieuw Coin*" in het overeenkomstige Coin vakje. Als je meerdere munten hebt, moet je ze om redenen van vertrouwelijkheid één voor één en met relatief korte tussenpozen verversen. Om de kosten laag te houden, kun je je fondsen consolideren door de hele wallet naar een nieuwe ontvangende Address te sturen, maar dit tast je vertrouwelijkheid aan.
+Om je munten bij te werken, ga je naar het tabblad "*Coins*" en klik je op "*Refresh Coin*" in het overeenkomstige coin vakje. Als je meerdere munten hebt, moet je ze om redenen van privacy één voor één en met relatief korte tussenpozen verversen. Om de kosten laag te houden, kun je je fondsen consolideren door de hele wallet naar een nieuwe ontvangstadres te sturen, maar dit tast je privacy aan.
 
 
 ![Actualiser pièce](assets/fr/31.webp)
 
 
-Geef het gewenste tarief voor de transactie aan. Aangezien dit een overboeking naar jezelf is, kun je een vrij laag tarief instellen, vooral als je dit enkele dagen voor de vervaldatum doet.
+Geef het gewenste tarief voor de transactie op. Aangezien dit een overboeking naar jezelf is, kun je een vrij laag tarief instellen, vooral als je dit enkele dagen voor de vervaldatum doet.
 
 
 ![Transfert à soi-même](assets/fr/32.webp)
 
 
-De transactie (met het label "*zelftransfer*") zal alleen zichtbaar zijn in het tabblad "*transacties*".
+De transactie (met het label "*Self-transfer*") zal alleen zichtbaar zijn in het tabblad "*Transactions*".
 
 
 ![Transactions après auto-transfert](assets/fr/33.webp)
 
 
-Eenmaal bevestigd, is je Coin veilig! U kunt gerust zijn tot de volgende vervaldatum.
+Eenmaal bevestigd, is je munt (UTXO) veilig! Je kunt gerust zijn tot de volgende vervaldatum.
 
 
-## Bitcoin herstel
+## Herstel (recovery) van bitcoins
 
 
 Wanneer je geld terughaalt van de Liana Wallet, kun je te maken krijgen met één van twee situaties. Misschien heb je toegang tot de computer waarop de software geïnstalleerd is, in dat geval hoef je hem alleen maar te openen (wat zal gebeuren in het geval van het uitgebreide back-up model). Het is echter mogelijk dat je geen toegang hebt tot deze computer, dus beginnen we hier vanaf nul. Merk op dat de herstelprocedure in beide gevallen hetzelfde is.
 
 
-Om te beginnen, download Liana van [de officiële Wizardsardine website](https://wizardsardine.com/Liana/), of van [de GitHub repository](https://github.com/wizardsardine/Liana/releases), waar je de authenticiteit van de software kunt controleren. Installeer de software en voer het uit. De versie die wij gebruiken is 0.9, dus de afbeeldingen kunnen veranderd zijn. Selecteer op het welkomstscherm de optie "Een bestaande Liana-wallet toevoegen".
+Om te beginnen, download Liana van [de officiële Wizardsardine website](https://wizardsardine.com/Liana/), of van [de GitHub repository](https://github.com/wizardsardine/Liana/releases), waar je de authenticiteit van de software kunt controleren. Installeer de software en voer het uit. De versie die wij gebruiken is 0.9, dus de afbeeldingen kunnen veranderd zijn. Selecteer op het welkomstscherm de optie "Add an existing Liana wallet".
 
 
 ![Ajouter portefeuille existant](assets/fr/34.webp)
 
 
-Configureer hoe je verbinding wilt maken met het netwerk. Je kunt je eigen node gebruiken (lokaal of op afstand) of de infrastructuur van WizardSardine. In het laatste geval heb je de e-mail Address nodig die de wallet maker gebruikt, zodat fondsen automatisch gelokaliseerd kunnen worden. Als je deze informatie niet hebt, kies dan de eerste optie.
+Configureer hoe je verbinding wilt maken met het netwerk. Je kunt je eigen node gebruiken (lokaal of op afstand) of de infrastructuur van WizardSardine. In het laatste geval heb je het e-mailadres nodig dat de maker van de wallet heeft gebruikt, zodat fondsen automatisch gelokaliseerd kunnen worden. Als je deze informatie niet hebt, kies dan de eerste optie.
 
 
 ![Sélectionner connexion réseau](assets/fr/35.webp)
 
 
-Als je je eigen knooppunt gebruikt, importeer dan de wallet descriptor. Dit is een technische beschrijving van de rekening, waarmee je de fondsen op de rekening kunt ophalen. In ons geval is het de volgende informatie:
+Als je je eigen node gebruikt, importeer dan de wallet descriptor. Dit is een technische beschrijving van de rekening, waarmee je de fondsen op de rekening kunt ophalen. In ons geval is het de volgende informatie:
 
 
 ```plaintext
@@ -389,7 +389,7 @@ wsh(or_d(pk([3689a8e7/48'/0'/0'/2']xpub6FKYNH4XbbdADV98yTVxgZZrtB4eE2tiUPreEv5iJ
 ![Importer descripteur](assets/fr/36.webp)
 
 
-Liana vraagt u vervolgens een Mnemonic-zin in te voeren. Als je een werkend signatuurapparaat (hardware wallet) hebt, kun je dit deel overslaan. Als je apparaat ontbreekt of beschadigd is, maar je hebt wel de corresponderende 12 of 24 woorden, dan kun je deze optie nog steeds gebruiken. Om het zekere voor het onzekere te nemen (als het te herstellen aantal hoog is), raden we toch aan om een nieuwe hardware wallet aan te schaffen en de Mnemonic te gebruiken om de sleutels erop te herstellen.
+Liana vraagt je vervolgens een mnemonische zin in te voeren. Als je een werkend ondertekenapparaat (hardware wallet) hebt, kun je dit deel overslaan. Als je apparaat ontbreekt of beschadigd is, maar je hebt wel de corresponderende 12 of 24 woorden, dan kun je deze optie nog steeds gebruiken. Om het zekere voor het onzekere te nemen (als het te herstellen bedrag hoog is), raden we toch aan om een nieuwe hardware wallet aan te schaffen en de mnemonische zin te gebruiken om de sleutels erop te herstellen.
 
 
 In ons geval gebruiken we de Blockstream Jade hardware wallet als herstelapparaat en kiezen we ervoor om deze stap over te slaan ("*Skip*").
@@ -398,43 +398,43 @@ In ons geval gebruiken we de Blockstream Jade hardware wallet als herstelapparaa
 ![Passer phrase mnémotechnique](assets/fr/37.webp)
 
 
-Controleer en sla de descriptor op in je handtekeningapparaat door het te selecteren op het scherm. Als je hardware wallet niet verschijnt, controleer dan of deze is aangesloten en ontgrendeld. Controleer en bevestig dat deze informatie is toegevoegd aan je apparaat.
+Controleer en sla de descriptor op in je ondertekenapparaat door het te selecteren op het scherm. Als je hardware wallet niet verschijnt, controleer dan of deze is aangesloten en ontgrendeld. Controleer en bevestig dat deze informatie is toegevoegd aan je apparaat.
 
 
 ![Enregistrer descripteur sur l'appareil de récupération](assets/fr/38.webp)
 
 
-Configureer je knooppunt. U kunt een bestaand knooppunt gebruiken of een *pruned knooppunt* op je machine installeren. In ons geval hebben we een bestaand knooppunt gebruikt.
+Configureer je node. Je kunt een bestaande node gebruiken of een *pruned node* op je machine installeren. In ons geval hebben we een bestaande node gebruikt.
 
 
 ![Choisir type de nœud](assets/fr/39.webp)
 
 
-Voor deze tutorial gebruikten we een publieke Electrum server. Deze had echter toegang tot al onze activiteiten met de Liana Wallet. Als je je privacy wilt beschermen, kun je beter je eigen node gebruiken.
+Voor deze tutorial gebruikten we een publieke Electrum-server. Deze had echter toegang tot al onze activiteiten met de Liana-Wallet. Als je je privacy wilt beschermen, kun je beter je eigen node gebruiken.
 
 
 ![Connexion serveur Electrum public](assets/fr/17.webp)
 
 
-Zodra je het knooppunt hebt ingesteld, kom je op het hoofdscherm van de Wallet, waar je het saldo en eerdere transacties kunt bekijken die aan de rekening zijn gekoppeld. Je kunt ook zien of fondsen kunnen worden opgehaald. Hier zien we dat een Coin kan worden opgehaald.
+Zodra je de node hebt ingesteld, kom je op het hoofdscherm van de wallet, waar je het saldo en eerdere transacties kunt bekijken die aan de rekening zijn gekoppeld. Je kunt ook zien of fondsen kunnen worden opgehaald. Hier zien we dat een munt (coin) kan worden opgehaald.
 
 
 ![Accueil Liana récupération](assets/fr/40.webp)
 
 
-Om het geld in de wallet terug te krijgen, ga naar Instellingen ("*Instellingen*") linksonder en klik op "*Terughalen*".
+Om het geld in de wallet terug te krijgen, ga naar "*Settings*" linksonder en klik op "*Recover*".
 
 
 ![Récupération dans paramètres](assets/fr/41.webp)
 
 
-Geef de Coin uit in de wallet door het juiste vakje aan te vinken. Geef de BTC Address aan waarnaar je het geld wilt sturen, evenals de transactiekosten. Klik dan op "*Volgende*".
+Geef de coin uit in de wallet door het juiste vakje aan te vinken. Geef het BTC-adres aan waarnaar je het geld wilt sturen, evenals de transactiekosten. Klik dan op "*Next*".
 
 
 ![Récupération des pièces](assets/fr/42.webp)
 
 
-Onderteken de transactie door op "*Teken*" te klikken en de transactie te valideren op je hardware wallet.
+Onderteken de transactie door op "*Sign*" te klikken en de transactie te valideren op je hardware wallet.
 
 
 ![Signer transaction clé de récupération](assets/fr/43.webp)
@@ -455,10 +455,10 @@ De transactie zou op het hoofdscherm moeten verschijnen. Eenmaal bevestigd, is h
 ## Bonus: descriptor analyse
 
 
-De descriptor is een door mensen leesbare tekenreeks die een set adressen uitputtend beschrijft. Het combineert een aantal essentiële stukken informatie voor het ophalen van de onderdelen (UTXO) van een geavanceerde Wallet. De manier waarop de descriptor is geschreven, is gebaseerd op [Miniscript syntax](https://bitbox.swiss/blog/understanding-Bitcoin-miniscript-part-2/), de scripttaal die in 2019 is ontwikkeld door Andrew Poelstra, Pieter Wuille en Sanket Kanjalkar.
+De descriptor is een door mensen leesbare tekenreeks die een set adressen volledig beschrijft. Het combineert een aantal essentiële stukken informatie voor het ophalen van de onderdelen (UTXO's) van een geavanceerde wallet. De manier waarop de descriptor is geschreven, is gebaseerd op [Miniscript syntax](https://bitbox.swiss/blog/understanding-Bitcoin-miniscript-part-2/), de scripttaal die in 2019 is ontwikkeld door Andrew Poelstra, Pieter Wuille en Sanket Kanjalkar.
 
 
-Om beter te begrijpen waarom deze tekenreeks belangrijk is, analyseren we de descriptor in ons voorbeeld, die :
+Om beter te begrijpen waarom deze tekenreeks belangrijk is, analyseren we de descriptor in ons voorbeeld:
 
 
 ```plaintext
@@ -471,20 +471,20 @@ De volgende informatie kan uit deze descriptor worden gehaald:
 
 
 
-- `wsh` (afkorting van *witness script Hash*): Dit is het type transactionele uitvoer dat wordt gemaakt. Als we Taproot hadden gebruikt, zou de identifier `tr` zijn geweest.
+- `wsh` (afkorting van *witness Script Hash*): Dit is het type transactie output dat wordt gemaakt. Als we Taproot hadden gebruikt, zou de identifier `tr` zijn geweest.
 - `or_d`: Dit is een logische operator die aangeeft dat aan *één van de volgende twee* voorwaarden moet worden voldaan om de uitgave te accepteren (de `_d` geeft een bepaalde syntaxis aan).
-- `pk` (afkorting voor *publieke sleutel*): Deze operator controleert een gegeven handtekening tegen de volgende publieke sleutel en geeft het antwoord als een Booleaanse (TRUE of FALSE).
-- `[3689a8e7/48'/0'/0'/2']`: Dit element bevat de *vingerafdruk* van de hoofdsleutel voor de belangrijkste hardware wallet (in dit geval de Nano S Plus), en het afleidingspad naar de gekoppelde uitgebreide privésleutel (waarvan alle andere privésleutels zijn afgeleid).
+- `pk` (afkorting voor *public key*): Deze operator controleert een gegeven handtekening tegen de volgende publieke sleutel en geeft het antwoord als een Booleaanse (TRUE of FALSE).
+- `[3689a8e7/48'/0'/0'/2']`: Dit element bevat de *fingerprint* van de hoofdsleutel (master key) voor de belangrijkste hardware wallet (in dit geval de Nano S Plus), en het afleidingspad naar de gekoppelde uitgebreide privésleutel (waarvan alle andere privésleutels zijn afgeleid).
 - `xpub6FKY ... WQa`: Dit is de uitgebreide publieke sleutel die gekoppeld is aan de hoofd-hardware wallet (hier de Nano S Plus)
-- `/<0;1>/*`: Dit zijn de afleidingspaden voor het verkrijgen van eenvoudige sleutels en adressen: `0` voor ontvangst, `1` voor interne operaties (*wijziging*), met een "wildcard" (`*`) die sequentiële afleiding van meerdere adressen op een configureerbare manier toestaat, vergelijkbaar met het "gap limit" beheer van klassieke wallet software.
-- en_v`: Dit is een logische operator die aangeeft dat *aan de volgende twee* voorwaarden moet worden voldaan om de uitgave te accepteren (de `_v` geeft een bepaalde syntaxis aan).
-- `v:pkh` (afkorting van *verifieer: publieke sleutel Hash*): Deze operator verifieert een gegeven handtekening en publieke sleutel tegen de publieke sleutel Hash (*Hash*) die volgt. Dit is in wezen dezelfde controle als voor P2PKH en P2WPKH scripts.
-- `[42e629dd/48'/0'/0'/2']`: Dit is hetzelfde element als hierboven (bestaande uit het spoor en het afleidingspad), behalve dat het spoor van de hoofdsleutel van de hardwareherstel wallet (in dit geval de Jade) wordt aangegeven.
+- `/<0;1>/*`: Dit zijn de afleidingspaden voor het verkrijgen van eenvoudige sleutels en adressen: `0` voor ontvangst, `1` voor interne operaties (*change*), met een "wildcard" (`*`) die sequentiële afleiding van meerdere adressen op een configureerbare manier toestaat, vergelijkbaar met het "gap limit" beheer van klassieke wallet software.
+- `and_v`: Dit is een logische operator die aangeeft dat *aan de volgende twee* voorwaarden moet worden voldaan om de uitgave te accepteren (de `_v` geeft een bepaalde syntaxis aan).
+- `v:pkh` (afkorting van *Verify: Public Key Hash*): Deze operator verifieert een gegeven handtekening en publieke sleutel tegen de publieke sleutel Hash (*Hash*) die volgt. Dit is in wezen dezelfde controle als voor P2PKH en P2WPKH scripts.
+- `[42e629dd/48'/0'/0'/2']`: Dit is hetzelfde element als hierboven (bestaande uit het spoor en het afleidingspad), behalve dat het spoor van de hoofdsleutel van de herstel-hardware wallet (in dit geval de Jade) wordt aangegeven.
 - `xpub6DpQ ... WQd`: Dit is de uitgebreide publieke sleutel gekoppeld aan de hardware recovery wallet (hier de Jade).
-- `older(6)` : Deze operator controleert of de aangemaakte transactionele uitvoer een leeftijd moet hebben die strikt groter is dan 6 blokken om uitgegeven te kunnen worden.
+- `older(6)` : Deze operator controleert of de aangemaakte transactie output een leeftijd moet hebben die strikt groter is dan 6 blokken om uitgegeven te kunnen worden.
 
 
-Het laatste data-item (`8alrve5h`) is de descriptor controlesom en komt overeen met de wallet identificatie.
+Het laatste data-item (`8alrve5h`) is de descriptor-controlesom en komt overeen met de walletidentificatie.
 
 
 De scripts die door deze wallet worden aangemaakt, hebben de volgende vorm:
@@ -495,7 +495,7 @@ De scripts die door deze wallet worden aangemaakt, hebben de volgende vorm:
 ```
 
 
-Omdat de veiligheid van je Bitcoin wallet ook afhangt van je begrip van hoe het werkt, stel ik voor dat je de mechanismen van deterministische en hiërarchische wallets grondig bestudeert door deze gratis training over Plan ₿ Academy te volgen:
+Omdat de veiligheid van je Bitcoin-wallet ook afhangt van je begrip van hoe het werkt, stel ik voor dat je de mechanismen van deterministische en hiërarchische wallets grondig bestudeert door deze gratis training over Plan ₿ Academy te volgen:
 
 
 https://planb.academy/courses/46b0ced2-9028-4a61-8fbc-3b005ee8d70f
