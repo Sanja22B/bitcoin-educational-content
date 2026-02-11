@@ -1,5 +1,5 @@
 question: What is the purpose of the Merkle root in a Bitcoin block header?
-answer: To commit to all transactions in the block
+answer: To commit all transactions in the block
 wrong_answers:
   - To calculate the block's proof of work
   - To signal the block version
