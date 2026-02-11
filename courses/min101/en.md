@@ -17,10 +17,10 @@ objectives:
 To understand the proof of work is to understand how Bitcoin works. Without this invention and its ingenious use, Bitcoin simply couldn't have existed. This course provides you with all the mining theory you need for your bitcoin journey.
 
 
-MIN 101 is primarily aimed at beginners, as it explains all the concepts precisely from scratch. However, if you already have an intermediate level of knowledge, this course will enable you to consolidate your understanding, correct some rough intuitions and explore details often missing from mainstream explanations.
+MIN 101 is primarily aimed at beginners, as it explains all the concepts precisely from scratch. However, if you already have an intermediate level of knowledge, this course will enable you to consolidate your understanding, correct some approximate intuitions and explore details often missing from mainstream explanations.
 
 
-By the end of this course, you'll be able to explain how proof-of-work works in a simple and rigorous way. MIN 101 is also an ideal introduction to all the other more advanced courses devoted to mining Bitcoin on Plan ₿ Academy, whether theoretical or practical.
+By the end of this course, you'll be able to explain how proof-of-work works in a simple and rigorous way. MIN 101 is also an ideal introduction to all the other more advanced courses devoted to Bitcoin mining on Plan ₿ Academy, whether theoretical or practical.
 
 
 +++
@@ -39,7 +39,7 @@ By the end of this course, you'll be able to explain how proof-of-work works in 
 Welcome to the MIN 101 course, in which you'll discover the fundamental theoretical concepts of mining and Proof-of-Work within the Bitcoin system. This course is the first step in your bitcoiner journey to understand how mining works. Once you've completed it, you'll be able to move on to more advanced theory courses, or get hands-on and become a bitcoin miner yourself!
 
 
-In this MIN 101 course, we won't be going back over the basic concepts of Bitcoin, as we'll be getting straight to the heart of the matter: mining. If you've never heard of Bitcoin, or if its fundamentals are still a little unclear to you, I strongly recommend that you start with our introductory BTC 101 course. Once you've got the basics down, you'll be able to tackle MIN 101 with confidence:
+In this MIN 101 course, we won't be going back over the basic concepts of Bitcoin, as we'll be getting straight to the heart of the matter: mining. If you've never heard of Bitcoin, or if its fundamentals are still a little unclear to you, I strongly recommend that you start with our introductory BTC 101 course. Once you have acquired these fundamentals, you'll be able to tackle MIN 101 with confidence:
 
 
 https://planb.academy/courses/2b7dc507-81e3-4b70-88e6-41ed44239966
@@ -51,13 +51,13 @@ https://planb.academy/courses/2b7dc507-81e3-4b70-88e6-41ed44239966
 We're going to start this course with an optional first chapter, in which I offer a very simplified explanation of mining, to give you a clear mental picture before getting into the technical mechanisms.
 
 
-The aim here is not to give you all the technical details (they'll come later in the course), but to give you the main thread. Once this framework is in place, each more advanced notion tackled later will naturally relate to this structure.
+The aim here is not to give you all the technical details (they'll come later in the course), but to give you a guiding thread. Once this framework is in place, each more advanced concept introduced afterward will naturally fit into this structure.
 
 
 ### Part 2 - How proof of work works
 
 
-After the introduction, Part 2 is the technical foundation of the training program. Its aim is to explain, step by step, how Bitcoin produces valid blocks. We'll start by discovering the structure of a block, before going into the proof-of-work mechanism: the role of the target, the nonce and the hash function. Finally, we'll see how Bitcoin manages to maintain a stable block production rate despite variations in hash power, thanks to the difficulty adjustment mechanism. At the end of this section, you'll have a complete understanding of the fundamental principles of Bitcoin proof-of-work.
+After the introduction, Part 2 is the technical foundation of the training program. Its aim is to explain, step by step, how Bitcoin produces valid blocks. We'll start by discovering the structure of a block, before going into the proof-of-work mechanism: the role of the target, the nonce and the hash function. Finally, we'll see how Bitcoin manages to maintain a stable block production rate despite variations in hash power, thanks to the difficulty adjustment mechanism. At the end of this section, you'll have a complete understanding of the fundamental principles of Bitcoin's proof-of-work.
 
 
 ### Part 3 - The Bitcoin mining incentive system
@@ -108,7 +108,7 @@ In Bitcoin, when you make a payment, you create a transaction. This transaction 
 A block is simply a set of transactions grouped together. When a block is ready, it's not enough to publish it. You have to prove to the network that the block is worthy of being added to the pool. This is where mining comes in.
 
 
-Mining is the work of validating a block by expending energy. Actors called miners use specialized computers. These machines consume electricity to carry out a very large number of tests, in a loop, until they find a proof that the network accepts. When a miner finds this proof, his block is considered valid.
+Mining is the work of validating a block by consuming energy. Actors called miners use specialized computers. These machines consume electricity to carry out a very large number of tests, in a loop, until they find a proof that the network accepts. When a miner finds this proof, his block is considered valid.
 
 
 Once the block has been validated, it is broadcast to the network. The other nodes quickly check that it complies with the rules, then add it to the sequence of previous blocks. This is why it's called a "blockchain": each new block comes after the others, in sequential order, and this chain grows little by little.
@@ -117,13 +117,13 @@ Once the block has been validated, it is broadcast to the network. The other nod
 ![Image](assets/fr/051.webp)
 
 
-To sum up, transactions are first created. Then, they are grouped together in a block. Then, a miner validates this block by expending electricity. Finally, this block is added to the blockchain, and the transactions it contains become confirmed.
+To sum up, transactions are first created. Then, they are grouped together in a block. Then, a miner validates this block by consuming electricity. Finally, this block is added to the blockchain, and the transactions it contains become confirmed.
 
 
-If miners consume electricity, it's not because they're volunteers. They do it because there's a reward. When a miner validates a block, he receives two types of income. On the one hand, he receives newly created bitcoins. On the other, he recovers the fees paid by users in the transactions included in the block. In other words, the miner is remunerated both by programmed money creation, and by a market in fees.
+If miners consume electricity, it's not because they're volunteers. They do it because there's a reward. When a miner validates a block, he receives two types of income. On the one hand, he receives newly created bitcoins. On the other, he collects the fees paid by users for the transactions included in the block. In other words, the miner is compensated both through programmed monetary issuance, and by transaction fees determined by a market.
 
 
-At this stage, you're deliberately given a very simple view of mining. It doesn't yet explain how the block is constructed in detail, or how exactly the proof miners are looking for works, or how Bitcoin keeps a steady pace, or how the reward is calculated precisely, or how it's cashed in. That's okay, that's all we're going to see in the rest of this MIN 101 course!
+At this stage, you're deliberately given a very simple view of mining. It doesn't yet explain how the block is constructed in detail, or how exactly the proof miners are looking for works, or how Bitcoin keeps a steady pace, or how the reward is calculated precisely, or how it's claimed. That's okay, that's all we're going to see in the rest of this MIN 101 course!
 
 
 The aim of this chapter was simply to give you a clear mental structure: transactions → blocks → mining → blockchain → reward. Keep this chain of ideas in mind. In the rest of the course, each chapter will add a layer of technical detail on one of these elements, until you understand not only what's going on, but how and why it works reliably, at scale, without a boss, and without needing trust.
@@ -142,7 +142,7 @@ The aim of this chapter was simply to give you a clear mental structure: transac
 To understand what Bitcoin mining is all about, we first need to follow the path of a typical Bitcoin transaction. This will show you exactly where the block comes into play, and why it's at the heart of the system. That's what I'd like you to discover in this first chapter.
 
 
-On Bitcoin, a transaction is a data structure that transfers ownership of bitcoins from one user to another. In concrete terms, it consumes `outputs` from past transactions (so-called UTXOs), referring to them as `inputs`, and then creates new `outputs` that define to whom these bitcoins now belong and under what conditions they can be spent later.
+In Bitcoin, a transaction is a data structure that transfers ownership of bitcoins from one user to another. In concrete terms, it consumes `outputs` from past transactions (so-called UTXOs), referring to them as `inputs`, and then creates new `outputs` that define to whom these bitcoins now belong and under what conditions they can be spent later.
 
 
 ![Image](assets/fr/001.webp)
@@ -158,7 +158,7 @@ The digital signature in Bitcoin plays two important roles:
 
 
 - Authorize expenditure: this proves that the user possesses the private key expected by the UTXO expenditure condition;
-- Integrity protection: links authorization to the precise details of the transaction (recipients, amounts, fees, etc.). If someone alters the transaction after the fact, the signature no longer corresponds.
+- Integrity protection: links authorization to the precise details of the transaction (recipients, amounts, fees, etc.). If someone alters the transaction afterward, the signature will no longer be valid.
 
 
 Once the transaction has been correctly constructed and signed by the user's Bitcoin wallet, it must be broadcast on the Bitcoin network.
@@ -180,7 +180,7 @@ When you send a transaction from a wallet, the wallet forwards it to a node (you
 - etc.
 
 
-If the transaction passes all these checks, the node propagates it to the other nodes in the network with which it is connected. They in turn check it and relay it, and so on. In a matter of seconds, the transaction is propagated and becomes known to the whole, or at least a large part, of the Bitcoin network.
+If the transaction passes all these checks, the node propagates it to the other nodes in the network with which it is connected. They in turn check it and relay it, and so on. In a matter of seconds, the transaction is propagated and becomes known to the whole, or at least to a large part, of the Bitcoin network.
 
 
 ![Image](assets/fr/003.webp)
@@ -189,7 +189,7 @@ If the transaction passes all these checks, the node propagates it to the other 
 ### The mempool: the transaction waiting room
 
 
-Between the moment a transaction is broadcast and the moment it is confirmed in a block, it must wait. This waiting area is called **the mempool** (contraction of `memory` and `pool`). A mempool is therefore a temporary storage space for valid, but as yet unconfirmed, transactions.
+Between the moment a transaction is broadcast and the moment it is confirmed in a block, it must wait. This waiting area is called **the mempool** (contraction of `memory` and `pool`). A mempool is therefore a temporary storage space for valid, but still unconfirmed, transactions.
 
 
 Important point: there's no such thing as a single mempool, only mempools. Each node maintains its own mempool, with its own local constraints. This means that at any given moment, two nodes may have slightly different mempool contents (depending on what they have received, what they have rejected, or what they have purged).
@@ -204,7 +204,7 @@ At this stage, the network knows about the transaction, has verified it and is h
 ### Blockchain: a public time-stamping register
 
 
-As bitcoin is an immaterial currency, it has to address one problem: preventing double spending without a central authority. If two transactions attempt to spend the same UTXO, everyone must be able to converge on a single, coherent state. Satoshi Nakamoto sums up this issue with this famous sentence:
+As bitcoin is an intangible currency, it has to address one problem: preventing double spending without a central authority. If two transactions attempt to spend the same UTXO, everyone must be able to converge on a single, coherent state. Satoshi Nakamoto sums up this issue with this famous sentence:
 
 
 > The only way to confirm the absence of a transaction is to be aware of all transactions.
@@ -221,7 +221,7 @@ This register cannot be rewritten, thanks to a simple principle: each block incl
 ![Image](assets/fr/005.webp)
 
 
-Once we've understood these basic principles of Bitcoin, we can describe a miner's objective in more concrete terms: to build a new block that extends the existing chain, by inscribing pending transactions, and then attempt to make it valid (this is the famous "working proof" that we'll study in a later chapter). But first, let's discover together in the next chapter how a candidate block is constructed.
+Once we've understood these basic principles of Bitcoin, we can describe a miner's objective in more concrete terms: to build a new block that extends the existing chain, by inscribing pending transactions, and then attempt to make it valid (this is the famous "proof of work" that we'll study in a later chapter). But first, let's discover together in the next chapter how a candidate block is constructed.
 
 
 ## Building a Bitcoin block
@@ -235,12 +235,12 @@ You've now understood how a Bitcoin transaction works, and the role of the block
 ### The candidate block
 
 
-Miners have to build their blocks themselves before trying to mine them. Each miner, in turn, constructs what is known as a candidate block from the transactions pending in his mempool. Building a candidate block therefore consists of :
+Miners have to build their blocks themselves before trying to mine them. Each miner, in turn, constructs what is known as a candidate block from the transactions pending in his mempool. Building a candidate block therefore consists of:
 
 
-- choose which transactions to include ;
+- choose which transactions to include;
 - organize these transactions in a way that is compatible with Bitcoin rules;
-- produce the block's metadata, contained in its header.
+- produce the block's metadata, stored in its header.
 
 
 The choice of transactions follows a simple economic logic: a block has a capacity limited by the Bitcoin protocol, so the miner seeks to maximize what he earns for this space. He selects as a priority the transactions offering the highest fees relative to the space they occupy in the block (this is known as the "fee rate", expressed in sats/vB). The details of fees will be dealt with later; just remember the idea of sorting by space efficiency.
@@ -249,8 +249,8 @@ The choice of transactions follows a simple economic logic: a block has a capaci
 A Bitcoin block therefore consists of two main parts:
 
 
-- a list of transactions ;
-- a block header, which serves as a kind of block identity card.
+- a list of transactions;
+- a block header, which serves, in a way, as block's identity card.
 
 
 ![Image](assets/fr/006.webp)
@@ -268,9 +268,9 @@ Listing all the transactions in the header would be impossible: a block can cont
 The principle is as follows:
 
 
-- the cryptographic fingerprint of each transaction is calculated;
-- these prints are grouped together two by two, placed end to end, then chopped again to obtain a new layer of prints;
-- this operation is repeated until a single final impression is obtained: the Merkle root.
+- the cryptographic fingerprint (hash) of each transaction is calculated;
+- these hashes are paired, concatenated, and then hashed again to form a new layer of hashes;
+- this process is repeated until a single final hash is obtained: the Merkle root.
 
 
 ![Image](assets/fr/007.webp)
@@ -289,8 +289,7 @@ The block header is 80 bytes long and contains exactly 6 fields. It is these six
 
 
 
-- The version (`version`): This indicates which rules or update signals the block uses. It is a compatibility and protocol evolution mechanism.
-
+- The version (`version`): This indicates which rules or update signals the block adheres to. It serves as a mechanism for maintaining protocol compatibility and evolution.
 
 
 - Previous block hash (`previousblockhash`): This is the hash of the previous block's header. This is what links the blocks together. Without this field, we'd have independent blocks. By including the hash of the previous block's header, we obtain a chain, where each new block builds on the previous one.
@@ -309,7 +308,7 @@ The block header is 80 bytes long and contains exactly 6 fields. It is these six
 
 
 
-- Nonce (`nonce`): This is a value that the miner can freely modify. It serves as an adjustment variable during proof-of-work. I'll explain its role in more detail in the next chapter, but it's important to understand that the nonce is part of the block header and is intended to allow successive trials.
+- Nonce (`nonce`): This is a value that the miner can freely modify. It serves as an adjustable variable during proof-of-work. I'll explain its role in more detail in the next chapter, but it's important to understand that the nonce is part of the block header and is designed to allow successive attempts.
 
 
 To make this easier to visualize, here's an example of a block header in hexadecimal format (80 bytes):
@@ -335,7 +334,7 @@ nonce: 43f09a40
 ```
 
 
-This header of the candidate block built by the miner constitutes his working base. When searching for a valid proof-of-work, it's not the entire list of transactions that is directly hashed in a loop, but rather this 80-byte block, which contains everything needed to link the block to the past and commit its contents, while embedding the parameters needed for the mining mechanism, which we'll discover in the next chapter.
+This candidate block header, constructed by the miner, forms the basis of their work. When searching for a valid proof-of-work, it's not the entire list of transactions that is directly hashed in a loop, but rather this 80-byte block, which contains everything needed to link the block to the past and commit its contents, while also including the parameters necessary for the mining mechanism, which we'll explore in the next chapter.
 
 
 ## The hash, the target and the nonce
