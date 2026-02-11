@@ -6,4 +6,4 @@ wrong_answers:
   - To know all private keys
 explanation: |
   Double-spending is detected by comparing a transaction to past spending recorded in a shared ledger.
-reviewed: false
+reviewed: true
