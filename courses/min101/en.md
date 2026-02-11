@@ -351,7 +351,7 @@ Understanding the mining process is pretty straightforward. It boils down to 3 c
 ### The hash function
 
 
-A hash function is a tool that takes a message as input and produces an output of fixed size, called "*print*" or "*hash*".
+A hash function is a tool that takes a message as input and produces an output of fixed size, called "*fingerprint*" or "*hash*".
 
 
 ![Image](assets/fr/010.webp)
@@ -361,7 +361,7 @@ The hash function is interesting in computer systems because it has certain prop
 
 
 
-- If you change a single bit of the input, the output fingerprint changes completely and unpredictably;
+- If you change a single bit of the input, the resulting output hash changes completely and unpredictably;
 
 
 ![Image](assets/fr/011.webp)
@@ -375,13 +375,13 @@ The hash function is interesting in computer systems because it has certain prop
 
 
 
-- It's impossible to find two different messages that give exactly the same impression.
+- It's impossible to find two different messages that give exactly the same hash.
 
 
 ![Image](assets/fr/013.webp)
 
 
-The hash function used in Bitcoin for mining is `SHA256`, applied twice in succession. This is known as double SHA256, or `SHA256d`. It is this double application that produces the block's fingerprint.
+The hash function used in Bitcoin for mining is `SHA256`, applied twice in succession. This is known as double SHA256, or `SHA256d`. It is this double hashing that produces the block's fingerprint.
 
 
 ```text
@@ -395,18 +395,18 @@ In our case, the `message` corresponds in fact to the block header, which you sa
 ![Image](assets/fr/014.webp)
 
 
-### Proof of work: finding a footprint smaller than the target
+### Proof of work: finding a hash smaller than the target
 
 
-Proof-of-Work is often described as solving a complex problem. In reality, it's not so much a problem as a trial-and-error search: the miner must find a version of the header whose fingerprint (after passing through the `SHA256d` hash function) respects a simple condition: it must be smaller than a certain target.
+Proof-of-Work is often described as solving a complex problem. In reality, it's not so much a problem as a trial-and-error search: the miner must find a version of the header whose hash (after passing through the `SHA256d` hash function) respects a simple condition: it must be smaller than a certain target.
 
 
 This condition is formulated as follows:
 
 
-- the block header fingerprint is calculated using the hash function ;
-- we interpret this imprint as a number ;
-- for the block to be valid, this number must be less than or equal to a value called "*difficulty target*" or "*difficulty factor*".
+- the block header’s hash is computed using a hash function;
+- we interpret this hash as a number;
+- for the block to be valid, this number must be less than or equal to a value called "*difficulty target*".
 
 
 In other words, a block is valid if :
@@ -420,43 +420,43 @@ SHA256d(block_header) <= target
 ![Image](assets/fr/015.webp)
 
 
-The target is a 256-bit number. As the fingerprint produced by `SHA256d` is also 256 bits, they can be compared as two numbers. The lower the target, the more difficult the condition, as there are fewer possible results below this threshold. Conversely, the higher the target, the easier the condition to satisfy, and the simpler it becomes to mine a block. We'll be taking a closer look at how this target is determined in later chapters.
+The target is a 256-bit number. As the hash produced by `SHA256d` is also 256 bits, they can be compared as two numbers. The lower the target, the more difficult the condition, as there are fewer possible results below this threshold. Conversely, the higher the target, the easier the condition is to satisfy, and the easier it becomes to mine a block. We'll be taking a closer look at how this target is determined in later chapters.
 
 
-In this system, the hash function is interesting. Remember that it's easy to calculate the output from the input, but impossible to find an input by knowing only the function's output. In mining, miners are not asked to find a precise fingerprint, but rather to find a fingerprint below a target value. The only way to achieve this is to make a very large number of attempts, until a particular header of their candidate block, when hashed, produces an imprint smaller than this target.
+In this system, the hash function is interesting. Remember that it's easy to calculate the output from the input, but impossible to find an input by knowing only the function's output. In mining, miners are not asked to find a precise hash, but rather to find a hash below a target value. The only way to achieve this is to make a very large number of attempts, until a particular header of their candidate block, when hashed, produces a hash smaller than this target.
 
 
-Once the target is sufficiently low, this process becomes costly. The miner calculates the hash of its candidate block header, checks the result and, if the condition is not met, modifies the header and repeats the calculation. This loop is repeated until a valid header is found. When the hash of the header finally satisfies the condition, the proof of work is established, the block is considered valid and can be broadcast on the Bitcoin network for nodes to add to their blockchain. The winning miner then receives the associated reward (we'll detail its composition later), while all the miners immediately set off in search of a new, valid header for the next block.
+Once the target is sufficiently low, this process becomes costly. The miner calculates the hash of its candidate block's header, checks the result and, if the condition is not met, modifies the header and repeats the calculation. This loop is repeated until a valid header is found. When the hash of the header finally satisfies the condition, the proof of work is established, the block is considered valid and can be broadcast on the Bitcoin network for nodes to add to their blockchain. The winning miner then receives the associated reward (we'll detail its composition later), while all the miners immediately set off in search of a new, valid header for the next block.
 
 
-The fundamental advantage of this mechanism lies in its asymmetry. Producing a proof of work is costly for miners, as it requires a large number of hash calculations. On the other hand, for verifiers, i.e. network nodes, verification is extremely simple: all they have to do is hash the block header supplied by the miner and check that the resulting hash is well below the target. Finding a proof therefore requires a lot of work and resources, whereas verifying its validity is quick and inexpensive. It is precisely this property that defines an efficient proof-of-work system.
+The fundamental advantage of this mechanism lies in its asymmetry. Producing a proof of work is costly for miners, as it requires a large number of hash calculations. On the other hand, for verifiers, i.e. network nodes, verification is extremely simple: all they have to do is hash the block header supplied by the miner and check that the resulting hash is indeed lower than the target. Finding a proof therefore requires a lot of work and resources, whereas verifying its validity is quick and inexpensive. It is precisely this property that defines an efficient proof-of-work system.
 
 
 ### The nonce
 
 
-A practical question remains: if the candidate block header constructed by the miner doesn't give a valid fingerprint, how can the miner try again? He needs to modify something in the header to obtain a different fingerprint. This is precisely the role of the nonce.
+A practical question remains: if the candidate block's header constructed by the miner doesn't give a valid hash, how can the miner try again? He needs to modify something in the header to obtain a different hash. This is precisely the role of the nonce.
 
 
-Remember the first property of a hash function: changing a single bit of the input is enough to produce a totally different and unpredictable output fingerprint. Each hash calculation is therefore akin to a random draw.
+Remember the first property of a hash function: changing a single bit of the input is enough to produce a totally different and unpredictable output hash. Each hash calculation is therefore akin to a random draw.
 
 
 ![Image](assets/fr/016.webp)
 
 
-To try his luck again, the miner doesn't need to modify the entire header of his candidate block: he just needs to change a tiny part of it, because the slightest different bit will result in a completely new fingerprint, potentially valid if it's smaller than the target.
+To try his luck again, the miner doesn't need to modify the entire header of his candidate block: he just needs to change a tiny part of it, because even a single different bit will result in a completely new hash, potentially valid if it's smaller than the target.
 
 
-This is precisely why the block header contains a nonce. The nonce is a 32-bit value, used once and then replaced. In practical terms, for the same candidate block, a miner can test some 4.29 billion possible values (from `0` to `2^32 - 1`). Each variation of the nonce modifies the block header and, consequently, completely changes the fingerprint produced after application of the `SHA256d` hash function.
+This is precisely why the block header contains a nonce. The nonce is a 32-bit value, used once and then replaced. In practical terms, for the same candidate block, a miner can test some 4.29 billion possible values (from `0` to `2^32 - 1`). Each variation of the nonce modifies the block header and, consequently, completely changes the hash produced after applying the `SHA256d` hash function.
 
 
 The mining process is very simple:
 
 
 - the miner builds a candidate block (transactions + header);
-- it calculates the footprint of the `SHA256d(header)` header;
-- if the result is greater than the target, it changes the nonce ;
-- he starts again;
+- then calculates the hash of the `SHA256d(header)`;
+- if the result is greater than the target, it changes the nonce;
+- starts again;
 - etc.
 
 
@@ -469,30 +469,30 @@ In fact, the nonce is not the only field that can be modified. Any modification 
 ### What's the point of proof of work?
 
 
-We call it "proof" because the result is immediately verifiable: once a block has been produced, any node can check, in a fraction of a second, that the cryptographic fingerprint of its header is well below the required target. We call this "work" because achieving this fingerprint has required a multitude of trials, and therefore a real cost in terms of computation and energy.
+We call it "proof" because the result is immediately verifiable: once a block has been produced, any node can check, in a fraction of a second, that the cryptographic hash of its header is indeed below the required target. We call it "work" because achieving this hash requires a multitude of attempts, and therefore a real cost in terms of computation and energy.
 
 
-In the Bitcoin White Paper, Satoshi Nakamoto puts forward two interests in using a proof-of-work system in Bitcoin :
+In the Bitcoin White Paper, Satoshi Nakamoto puts forward two advantages in using a proof-of-work system in Bitcoin:
 
 
 
-- Sealing the economic history:**
+- **Sealing the economic history:**
 
 
-Once the computational load has been expended, the block is frozen: altering it would mean redoing the proof of work for that block. And as the blocks are chained together, altering an old block would also mean recalculating all the subsequent blocks, then catching up with and overtaking the continuous work of the honest chain.
+Once the computational load has been spent, the block is locked: modifying it would require redoing that block’s proof of work. And as the blocks are chained together, altering an old block would also mean recalculating all the subsequent blocks, and then catching up to and surpassing the ongoing work of the honest chain.
 
 
 In other words, the proof-of-work serves as the backbone of the time-stamping system, making it increasingly costly to falsify the past as blocks accumulate. When a new block is mined, the security provided by the proof of work is applied simultaneously and uniformly to all existing UTXOs. With each block added, each UTXO thus accumulates an additional amount of security from the Proof-of-Work.
 
 
 
-- Define majority rule (consensus) and neutralize Sybil:**
+- **Define majority rule (consensus) and neutralize Sybil:**
 
 
 Proof-of-Work also allows Bitcoin to reach consensus without relying on the "one ID = one vote" voting rule, which could be easily fudged by the massive creation of identities (IPs, nodes, keys...).
 
 
-In Bitcoin, the "*majority*" is not the greatest number of participants, but the **chain that accumulates the most work**. As Satoshi puts it, this is a "one CPU = one vote" principle, i.e. a vote weighted by the computing power actually expended to produce valid blocks. So deploying thousands of nodes brings no advantage in itself over Bitcoin. Without additional computing power, no more proofs of work are accumulated, and the Sybil attack becomes useless, while the decision rule remains objective and requires no identification of participants.
+In Bitcoin, the "*majority*" is not the greatest number of participants, but the **chain that accumulates the most work**. As Satoshi puts it, this is a "one CPU = one vote" principle, i.e. a vote weighted by the actual computing power spent to produce valid blocks. So deploying thousands of nodes brings no advantage in itself over Bitcoin. Without additional computing power, no more proofs of work are accumulated, and the Sybil attack becomes useless, while the decision rule remains objective and requires no identification of participants.
 
 
 ![Image](assets/fr/018.webp)
@@ -504,7 +504,7 @@ In Bitcoin, the "*majority*" is not the greatest number of participants, but the
 The principles relating to the usefulness and powers of minors are a highly complex subject, which I won't go into in greater detail in this course. However, we will return to this subject in depth in future MIN 201 training courses.
 
 
-For the moment, you can summarize how mining works like this: miners build a candidate block with the transactions pending in the mempools, then look for a fingerprint of its header (via `SHA256d`) that is less than or equal to a target. They achieve this by testing nonces through trial and error.
+For the moment, you can summarize how mining works like this: miners build a candidate block with the transactions pending in the mempools, then look for a hash of its header (via `SHA256d`) that is less than or equal to a target. They achieve this by testing nonces through trial and error.
 
 
 In the next chapter, we'll take a brief historical detour into the proof-of-work principle to understand its background, and then look at how the difficulty target is determined by the system.
@@ -521,7 +521,7 @@ Proof-of-work was not invented for Bitcoin. Satoshi Nakamoto took up and assembl
 ### Hashcash
 
 
-In the late 1990s, the problem of e-mail spam became significant. Indeed, while sending one e-mail costs almost nothing, a spammer can send millions. But if each message requires a small computational effort, sending a single legitimate message remains easy for a normal user, whereas sending millions of messages becomes very expensive.
+In the late 1990s, the problem of e-mail spam became significant. Indeed, if sending an e-mail costs almost nothing, a spammer can send millions. But if each message requires a small computational effort, sending a single legitimate message remains easy for a normal user, whereas sending millions of messages becomes very expensive.
 
 
 This is the aim of Hashcash, proposed by Adam Back in 1997, which is considered to be the invention of the proof-of-work principle. The Hashcash principle is very similar to mining: produce a hash that respects a condition (having a certain number of zeros at the beginning of the hash). The proof then accompanies the message and can be verified very quickly by the recipient. If an e-mail is received that does not contain this proof, it can be immediately considered as spam, and therefore filtered. Spammers are then forced to expend a considerable amount of energy to send millions of messages, which drastically reduces (or even completely nullifies) the profitability of this type of operation, whether marketing or fraudulent.
@@ -539,10 +539,10 @@ Hashcash wasn't about creating money. It sought to impose a marginal cost on an 
 ### Bit Gold
 
 
-In the late 1990s and early 2000s, Nick Szabo explored the idea of digital scarcity based on proof of work. His conceptual project, called Bit Gold, imagines the creation of units of value by solving a costly proof of work, then recording these proofs in a register to establish a form of ownership.
+In the late 1990s and early 2000s, Nick Szabo explored the idea of digital scarcity based on proof of work. His conceptual project, called Bit Gold, envisions the creation of units of value by solving a costly proof of work, then recording these proofs in a register to establish a form of ownership.
 
 
-Bit Gold didn't result in a deployed system like Bitcoin, but it does contain several important insights: the idea that computation can produce scarcity, and the idea of time-stamping elements in time to create a history that's difficult to rewrite.
+Bit Gold didn't result in a deployed system like Bitcoin, but it does contain several important insights: the idea that computation can produce scarcity, and the idea of timestamping elements over time to create a history that is difficult to rewrite.
 
 
 ### RPOW
