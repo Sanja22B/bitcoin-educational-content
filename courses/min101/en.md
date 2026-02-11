@@ -565,7 +565,7 @@ Hashcash, Bit Gold and RPOW use proof-of-work to impose a cost and create a form
 In previous chapters, you saw the heart of proof-of-work: miners hash the header of their candidate block with `SHA256d`, and the block is only considered valid if the resulting hash is numerically less than or equal to a reference value called the target. The question then remains: where does this target come from, and how does the system ensure that it remains consistent over time?
 
 
-Bitcoin is aiming for an average rate of one block found every 10 minutes. This rate is obviously not a promise to the second. In practice, some blocks are found a few seconds after the previous one, while others are found after more than an hour. What matters here is the average over a sufficiently long period.
+Bitcoin is aiming for an average rate of one block found every 10 minutes. Obviously, this pace isn’t guaranteed to the second. In practice, some blocks are found a few seconds after the previous one, while others are found after more than an hour. What matters here is the average over a sufficiently long period.
 
 
 ![Image](assets/fr/019.webp)
@@ -580,19 +580,19 @@ This variability stems from the probabilistic nature of mining: each hash is an 
 Although there is no evidence of this, Satoshi Nakamoto surely chose 10 minutes as a practical compromise between efficiency and security. A shorter interval would give more frequent confirmations, but would cause more temporary network splits. To understand this point, we need to go back to the way a block propagates.
 
 
-When a miner finds a valid block, he immediately distributes it to his peers. The nodes that receive it check its validity (transactions, proof of work, consensus rules, etc.), then relay it in turn. This propagation takes a certain amount of time, limited by Internet latency, bandwidth and the ability of each node to verify the block.
+When a miner finds a valid block, he immediately distributes it to his peers. The nodes that receive it check its validity (transactions, proof of work, consensus rules, etc.), then relay it in turn. This propagation takes a certain amount of time, limited by internet latency, bandwidth and the ability of each node to verify the block.
 
 
 ![Image](assets/fr/020.webp)
 
 
-If, during this diffusion delay, another miner also discovers a valid block at the same height, the network may be temporarily split: one part of the nodes and miners relies on block A, while the other relies on block B. This is a temporary division of the network.
+If, during this diffusion delay, another miner also discovers a valid block at the same height, the network may be temporarily split: one part of the nodes and miners rely on block A, while the other rely on block B. This is a temporary division of the network.
 
 
 ![Image](assets/fr/021.webp)
 
 
-These divisions are not catastrophic. The Nakamoto consensus predicts that, in the long term, only one branch will prevail: the one that accumulates the most work. Indeed, as soon as a new block is mined on top of block A, for example, the whole network resynchronizes on this branch and abandons block B, which then becomes a "*stale block*", sometimes erroneously called an "*orphan block*" in common parlance.
+These divisions are not catastrophic. The Nakamoto consensus predicts that, in the long term, only one branch will prevail: the one that accumulates the most work. Indeed, as soon as a new block is mined on top of block A, for example, the whole network resynchronizes on this branch and abandons block B, which then becomes a "*stale block*", sometimes erroneously called an "*orphan block*" in everyday language.
 
 
 ![Image](assets/fr/022.webp)
@@ -601,21 +601,20 @@ These divisions are not catastrophic. The Nakamoto consensus predicts that, in t
 On the other hand, they have a cost: for a few minutes, a fraction of the miners work on a branch that will be abandoned. This work is then wasted from the point of view of overall security, as it has not contributed to the final chain. The faster the interval between each block, the greater the probability of such splits, since the propagation time represents a larger proportion of the time between each block.
 
 
-The 10-minute interval generally allows enough time for the winning block to propagate widely before a possible block at the same height is found. It's a compromise that limits splits, reduces wasted computing power, and helps the network stay synchronized on a global scale.
+The 10-minute interval generally allows enough time for the winning block to propagate widely before a competing block at the same height is found. It's a compromise that limits splits, reduces wasted computing power, and helps the network stay synchronized on a global scale.
 
 
 ### Understanding hashrate
 
 
-hashrate*" refers to the amount of hash computation produced per second, whether by a single miner, a group of miners, or all miners on Bitcoin. It is expressed in `H/s` (hashes per second), with multiples such as `TH/s` (terahashes per second) or `EH/s` (exahashes per second). This represents the number of attempts miners can make each second to obtain a hash inferior to the target.
+*"Hashrate*" refers to the amount of hash computation produced per second, whether by a single miner, a group of miners, or all miners in Bitcoin. It is expressed in `H/s` (hashes per second), with multiples such as `TH/s` (terahashes per second) or `EH/s` (exahashes per second). This represents the number of attempts miners can make each second to try to get a hash lower than the target.
 
 
-If the target remains fixed, then :
+If the target remains fixed, then:
 
 
-- each trial has a fixed probability of success;
-- making more trials per second increases the probability of a winning trial appearing quickly.
-
+- each attempt has a fixed probability of success;
+- making more attempts per second increases the likelihood that a winning attempt will appear quickly
 
 In other words, if tomorrow's Bitcoin network doubles its computing power by connecting twice as many mining machines, without a corrective mechanism, blocks would be found on average twice as fast. The target must therefore be adjusted to compensate for hashrate variations.
 
@@ -635,7 +634,7 @@ The aim of this mechanism is to reduce the average production time of a block to
 The calculation is based on the observed time for the period elapsed:
 
 
-- if the last 2016 blocks were found too quickly, this means that hashrate increased during this period; Bitcoin then makes the condition more difficult by lowering the target for the next period ;
+- if the last 2016 blocks were found too quickly, this means that hashrate increased during this period; Bitcoin then makes the condition more difficult by lowering the target for the next period;
 - if the 2016 blocks were found too slowly, this means that hashrate has decreased; Bitcoin eases the condition by increasing the target.
 
 
@@ -650,8 +649,8 @@ Tn = To * (Ta / Tt)
 With :
 
 
-- tn": new target
-- to: old target
+- `tn`: new target
+- `to`: old target
 - `Ta`: elapsed real time for the last 2016 blocks
 - `Tt`: target time (in seconds)
 
@@ -677,14 +676,13 @@ Tn = 14 918 779 020
 With :
 
 
-- `To = 18,045,755,102`**: Old target, i.e. the reference value before adjustment.
-- ta = 1,000,000 seconds**: Time actually spent producing the last 2016 blocks. Since this time is less than the target time, the network has mined too quickly.
-- 1,209,600 seconds**: Target time corresponding to 10 minutes per block for 2016 blocks, used as a reference for adjustment.
-- tn = 14,918,779,020**: New target calculated after difficulty adjustment.
+- `**To = 18,045,755,102**`: Old target, i.e. the reference value before adjustment.
+- `**ta = 1,000,000 seconds**`: Time actually spent producing the last 2016 blocks. Since this time is less than the target time, the network has mined too quickly.
+- `**1,209,600 seconds**`: Target time corresponding to 10 minutes per block for 2016 blocks, used as a reference for adjustment.
+- `**tn = 14,918,779,020**`: New target calculated after difficulty adjustment.
 
 
-The new target here is lower than the old one, which means an increase in mining difficulty to slow down block production in the next period.
-
+Here, the new target is lower than the old one, which means mining becomes harder in order to slow down block production in the next period.
 
 *The target values in this example are simplified and scaled for teaching purposes; the actual target used on Bitcoin is a 256-bit integer of a completely different order of magnitude.*
 
@@ -701,11 +699,11 @@ There's an important detail to note about this adjustment: **it is limited**. Bi
 In the block header, the target does not appear in its full 256-bit form, as this would take up too much space. Instead, the 32-bit `nBits` field encodes the target in a compact format, comparable to base 256 scientific notation: an exponent (1 byte) and a coefficient (3 bytes). The complete target is then reconstructed from these two values. We won't go into detail here, as the subject is relatively complex and adds nothing to the understanding of mining. Just remember that the target is not stored in raw form in the block header, but in compact form.
 
 
-With this final chapter of Part I, we have taken a tour of how proof-of-work works on Bitcoin: the miner builds a candidate block by selecting transactions from its mempool, calculates the candidate block header, hashes it, compares the resulting fingerprint with the period target, then starts again by modifying the nonce until a valid fingerprint is obtained. Finally, every 2016 blocks, the network recalculates a new target in order to maintain an average time of around 10 minutes per block, despite the constant variations in hashrate.
+With this final chapter of Part I, we have taken a tour of how proof-of-work works in Bitcoin: the miner builds a candidate block by selecting transactions from its mempool, calculates the candidate block header, hashes it, compares the resulting hash with the period target, then starts again by modifying the nonce until a valid hash is obtained. Finally, every 2016 blocks, the network recalculates a new target in order to maintain an average time of around 10 minutes per block, despite the constant variations in hashrate.
 
 
 
-# Bitcoin mining incentive system
+# The incentive system for Bitcoin mining
 
 <partId>27fb10c1-d53b-4dc2-90fa-3cb0309b74c1</partId>
 
@@ -715,13 +713,13 @@ With this final chapter of Part I, we have taken a tour of how proof-of-work wor
 <chapterId>b316fb89-9c18-417e-917b-ab98f1722646</chapterId>
 
 
-As you can imagine, mining on Bitcoin is not an altruistic activity. Miners have very real costs: electricity to run their mining computers, the purchase of specialized equipment, payroll for maintenance, sometimes premises and cooling systems. For the Bitcoin system to work, the private interests of the miners must be aligned with the collective interests of the network. This is exactly the role of the mining reward. It encourages miners to invest in proof of work, to include valid transactions, and to respect the rules of the protocol rather than trying to corrupt it.
+As you can imagine, mining in Bitcoin is not an altruistic activity. Miners have real costs: electricity to run their mining computers, the purchase of specialized equipment, payroll for maintenance, sometimes premises and cooling systems. For the Bitcoin system to work, the private interests of the miners must be aligned with the collective interests of the network. This is exactly the role of the mining reward. It encourages miners to invest in proof of work, to include valid transactions, and to respect the rules of the protocol rather than trying to corrupt it.
 
 
-This logic is based on game theory: the protocol makes honesty rational. A miner earns money when he produces a valid block accepted by the nodes. Conversely, if he tries to cheat, his block will be rejected by the nodes, and he will get nothing. Since producing a block has a cost, a rejected block represents a dead loss. In a competitive environment where thousands of players are simultaneously searching for a valid block, the most profitable strategy, most of the time, is therefore to follow the rules strictly and maximize your income honestly.
+This logic is based on game theory: the protocol makes honesty rational. A miner earns money when he produces a valid block accepted by the nodes. Conversely, if he tries to cheat, his block will be rejected by the nodes, and he will get nothing. Since producing a block has a cost, a rejected block represents a direct loss. In a competitive environment where thousands of players are simultaneously searching for a valid block, the most profitable strategy, most of the time, is therefore to follow the rules strictly and maximize your income honestly.
 
 
-To achieve this, the Bitcoin protocol stipulates that the miner who finds a valid block wins the right to include a particular transaction in it, which awards him a certain sum of BTC. This is known as **block reward**. In this first chapter of this part, the aim is to understand what it's made up of and how it's determined. Later, we'll see how the money creation part evolves over time (with halvings) and how it is actually recovered technically (via the coinbase transaction).
+To achieve this, the Bitcoin protocol stipulates that the miner who finds a valid block wins the right to include a particular transaction in it, which awards him a certain sum of BTC. This is known as **block reward**. In this first chapter of this section, the aim is to understand what it's made up of and how it's determined. Later, we'll see how the money creation part evolves over time (with halvings) and how it is actually collected technically (via the coinbase transaction).
 
 
 ### What does the block reward consist of?
