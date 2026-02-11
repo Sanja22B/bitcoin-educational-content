@@ -1,4 +1,4 @@
-question: What element is the Bitcoin proof of work calculated on?
+question: On what element is the Bitcoin proof of work calculated?
 answer: The block header
 wrong_answers:
   - The block height
