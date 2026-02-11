@@ -6,4 +6,4 @@ wrong_answers:
   - To determine the block difficulty
 explanation: |
   The Merkle root summarizes all transactions; if one changes, the root changes as well.
-reviewed: false
+reviewed: true
