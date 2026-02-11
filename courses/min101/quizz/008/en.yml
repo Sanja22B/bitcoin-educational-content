@@ -6,4 +6,4 @@ wrong_answers:
   - The first 21 transactions of the block
 explanation: |
   Mining consists of repeatedly hashing the 80-byte block header, which commits to the block's content.
-reviewed: false
+reviewed: true
