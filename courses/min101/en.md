@@ -731,8 +731,8 @@ In previous chapters, we saw how miners manage to find a valid block. Once a min
 It is precisely this event (the actual addition of the block to the blockchain) that triggers the awarding of a reward to the winning miner. This reward is made up of two distinct elements that are added together:
 
 
-- block grant** ;
-- transaction fees**.
+- **block grant**;
+- **transaction fees**.
 
 
 ![Image](assets/fr/024.webp)
@@ -747,18 +747,18 @@ Let's take a look at what these two parts of the reward correspond to.
 The block grant corresponds to the monetary creation part of the reward. When a miner produces a valid block, the protocol authorizes him to create a certain number of new bitcoins and to allocate them to himself as a reward. These bitcoins are created ex nihilo. They did not exist before.
 
 
-However, the quantity of newly created bitcoins is by no means arbitrary. It is strictly defined by the Bitcoin protocol rules and is identical for all miners. We'll take a closer look at this mechanism in the next chapter, as the subsidy is not a fixed value indefinitely: it is divided up periodically according to a precise schedule. For now, just remember that :
+However, the quantity of newly created bitcoins is by no means arbitrary. It is strictly defined by the Bitcoin protocol rules and is identical for all miners. We'll take a closer look at this mechanism in the next chapter, as the subsidy is not a fixed value indefinitely: it is divided up periodically according to a precise schedule. For now, just remember that:
 
 
-- the block grant is one of the two components of the block reward ;
-- it is capped and determined by the protocol, not by the minor (even if the minor can technically request less than the maximum amount);
+- the block grant is one of the two components of the block reward;
+- it is capped and determined by the protocol, not by the miner (even if the miner can technically request less than the maximum amount);
 - it creates bitcoins out of thin air.
 
 
 This subsidy plays two main roles within the Bitcoin protocol. The first is to encourage players to participate in mining. In the early years of Bitcoin (and sometimes still today), transaction fees were very low. The subsidy therefore guaranteed sufficient remuneration to attract miners and maintain a level of security for the system.
 
 
-The second role relates to currency distribution. Any new currency faces the question of how to distribute monetary units fairly to the population Block granting provides an answer to this problem. By creating bitcoins via mining, it enables their initial distribution in an open and neutral way: anyone can obtain them, provided they participate in the mining, with no prior authorization or identification required.
+The second role relates to currency distribution. Any new currency faces the question of how to distribute monetary units fairly to the population? The block subsidy provides an answer to this problem. By creating bitcoins via mining, it enables their initial distribution in an open and neutral way: anyone can obtain them, provided they participate in the mining, with no prior authorization or identification required.
 
 
 On the other hand, since these bitcoins are created out of nothing, their value doesn't come from nowhere. By increasing the amount of money in circulation, the subsidy mechanically dilutes the value of existing bitcoins. It therefore introduces a form of monetary inflation. However, we'll see in the next chapter that this subsidy is destined to disappear gradually, and that inflation will eventually cease.
@@ -776,8 +776,8 @@ The second component of block reward is linked to system usage: when a user post
 You can think of it as an auction system: each transaction proposes a fee amount, and miners prioritize those that maximize their income, under space constraints. This mechanism naturally aligns interests:
 
 
-- users in a hurry pay more to be included quickly ;
-- miners are encouraged to include the transactions that best remunerate the block space;
+- users in a hurry pay more to be included quickly;
+- miners are encouraged to include the transactions that pay the highest fees for block space.
 - the network avoids spam, because publishing a transaction has a cost.
 
 
@@ -787,7 +787,7 @@ You can think of it as an auction system: each transaction proposes a fee amount
 Contrary to popular belief, charges are not an output in a Bitcoin transaction. In fact, a transaction spends inputs and creates outputs. Inputs represent the source of bitcoins used, while outputs represent the destination of payments. Transaction fees are simply **the difference between total inputs and total outputs**.
 
 
-In other words, the user inputs bitcoins that belong to him/her, creates outputs for the recipients, but does not recreate in outputs the full amount consumed in inputs. The difference between the two constitutes the transaction costs that the miner can recover.
+In other words, the user inputs bitcoins that belong to him/her, creates outputs for the recipients, but does not recreate in outputs the full amount consumed in inputs. The difference between the two constitutes the transaction costs that the miner can collect.
 
 
 Let's take an example. A transaction consumes two inputs, one of `100,000 sats` and the other of `150,000 sats`, and creates three outputs of `35,000 sats`, `42,000 sats` and `170,000 sats`.
@@ -805,7 +805,7 @@ The sum of inputs is therefore `250,000 sats`, while the sum of outputs is `247,
 If a miner includes this transaction in a valid block, he will be entitled to recover these `3,000 sats`, in addition to the fees of all other transactions included in the block. However, there is no direct on-chain link between the transaction that pays the fee and the sats actually collected by the miner. Technically, the `3,000 sats` in fees are destroyed, and, in return, the miner obtains the right to recreate the same amount for himself.
 
 
-#### Expense ratio
+#### The fee ratio
 
 
 A block is not limited by the number of transactions, but by its total capacity (today, in practice, by the weight of the block). Some transactions take up more space than others: a transaction with many inputs and outputs will be larger than a simple transaction with a single input and two outputs. The scripts used will also influence size.
@@ -817,7 +817,7 @@ A block is not limited by the number of transactions, but by its total capacity 
 Two transactions may therefore pay the same amount of fees in absolute terms, but not be economically equivalent from the miner's point of view. If one is twice as big, it costs twice as much space in the block. Space is scarce, so the miner seeks to maximize his revenue per unit of space.
 
 
-This is why, in practice, we express the competitiveness of a transaction with a charge ratio, usually in `sats/vB` (satoshis per virtual byte). Calculating this ratio is straightforward:
+This is why, in practice, we express the competitiveness of a transaction with a fee ratio, usually in `sats/vB` (satoshis per virtual byte). Calculating this ratio is straightforward:
 
 
 ```text
@@ -833,7 +833,7 @@ For example, if we have a transaction weighing `141 vB` and allocating `1,974 sa
 ```
 
 
-This ratio explains the economic choices made by miners: at fixed capacity, including high-rate transactions maximizes total block costs, and therefore the miner's remuneration. It also explains why low-cost transactions remain queued in mempools for long periods: they compete with other transactions that pay more per unit of space.
+This ratio explains the economic choices made by miners: at fixed capacity, including high-rate transactions maximizes total block costs, and therefore the miner's compensation. It also explains why low-cost transactions remain queued in mempools for long periods: they compete with other transactions that pay more per unit of space.
 
 
 ### Network protection against spam
@@ -845,7 +845,7 @@ Fees also serve an operational security purpose: they introduce a cost to the mu
 In practice, nodes apply local relay policies (mempool rules) and often set a minimum fee threshold below which they will not relay a transaction (by default, `0.1 sat/vB` on Bitcoin Core via `minRelayTxFee`). A transaction may be valid in the strict sense of the consensus rules, but not relayed by most nodes if its fees are too low. As a result, it doesn't circulate, doesn't reach the miners, and has very little chance of being confirmed.
 
 
-At this point, you've got the gist of the block reward: it corresponds to the remuneration of the winning miner and is made up of two distinct elements. On the one hand, a block grant, defined by the protocol rules, which creates new bitcoins ex nihilo. Secondly, the costs of transactions included in the mined block.
+At this point, you've got the gist of the block reward: it corresponds to the compensation for the winning miner and is made up of two distinct elements. On the one hand, a block grant, defined by the protocol rules, which creates new bitcoins ex nihilo. On the other hand, the fees of transactions included in the mined block.
 
 
 In the next chapter, we'll focus in more detail on the block grant, to understand precisely how it is calculated and how it evolves over time according to the rules of the Bitcoin protocol.
