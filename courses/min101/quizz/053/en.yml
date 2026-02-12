@@ -6,4 +6,4 @@ wrong_answers:
   - In a scriptSig
 explanation: |
   The transaction is not written instantly to the blockchain. It is first integrated into a block.
-reviewed: false
+reviewed: true
