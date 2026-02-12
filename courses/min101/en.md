@@ -923,13 +923,13 @@ Halving is repeated as long as the subsidy can be expressed in the system's mini
 ```
 
 
-As the subsidy is halved, fractions of bitcoin so small that they become less than 1 sat are eventually reached. At this point, it is no longer possible to create half a unit of satoshi. Money creation via block granting stops, and miners are remunerated solely on the basis of transaction fees. From this point on, all bitcoins will be in circulation, and it will no longer be possible to produce new units.
+As the subsidy is halved, we eventually reach fractions of a bitcoin so small that they become less than 1 satoshi. At this point, it is no longer possible to create half a unit of satoshi. The creation of money through the block subsidy stops, and miners are compensated solely on the basis of transaction fees. From this point on, all bitcoins will be in circulation, and it will no longer be possible to produce new units.
 
 
 The definitive end to block subsidies will come at block level 6,930,000, i.e. at the 33rd and final halving. This event is expected to take place around the year 2140, although it is impossible to give an exact date, as it will depend on the actual speed at which blocks are found between now and then.
 
 
-As the block grant follows a geometric sequence of reason 1/2 at each halving, money creation was extremely high in the early days of Bitcoin, but is now decreasing very rapidly. By the 7th halving, over 99% of bitcoins will already have been put into circulation. The 99% threshold is expected to be crossed between 2032 and 2036. This means that it will then take over 100 years to mine the last remaining 1% of bitcoins. While monetary inflation was very high when Bitcoin was launched, to enable widespread distribution of the currency, it is now very low and will continue to fall, until it reaches true hard currency, the supply of which in circulation can no longer increase.
+Since the block subsidy follows a geometric sequence with a ratio of 1/2 at each halving, money creation was extremely high in Bitcoin’s early days, and then decreases very quickly. By the 7th halving, over 99% of bitcoins will already have been put into circulation. The 99% threshold is expected to be crossed between 2032 and 2036. This means that it will then take over 100 years to mine the last remaining 1% of bitcoins. While monetary inflation was very high when Bitcoin was launched, to enable widespread distribution of the currency, it is now very low and will continue to fall, until it reaches true hard currency, whose circulating supply can no longer increase.
 
 
 ![Image](assets/fr/030.webp)
@@ -941,16 +941,16 @@ As the block grant follows a geometric sequence of reason 1/2 at each halving, m
 Bitcoin's maximum monetary supply is often presented as 21 million BTC. This is a good approximation for understanding its monetary policy, but from a strictly technical point of view, the total supply will never actually reach exactly 21,000,000 bitcoins.
 
 
-The main reason is mechanical. Through successive halvings, the block grant eventually falls below the minimum value of 1 sat, thus ending the issue before precisely reaching the theoretical sum. As a result of this minimum granularity and the rounding rules, the total number of bitcoins created by the subsidy is slightly less than 21 million.
+The main reason is mechanical. Through successive halvings, the block subsidy eventually falls below the minimum value of 1 sat, which ends issuance before reaching the exact theoretical total. As a result of this minimum granularity and the rounding rules, the total number of bitcoins created by the subsidy is slightly less than 21 million.
 
 
-In addition, there may be marginal discrepancies of protocol origin. For example, in rare cases, some miners may not have claimed their full subsidy, which definitively reduces the quantity of bitcoins actually issued. We can also mention the genesis block, produced by Satoshi on January 3, 2009, whose bitcoins created are not part of UTXO set, as well as certain historical events linked to bugs, such as duplicate coinbase transaction identifiers.
+In addition, marginal protocol-related deviations can also add to this. For example, in rare cases, some miners may not have claimed their full subsidy, which definitively reduces the quantity of bitcoins actually issued. We can also mention the genesis block, produced by Satoshi on January 3, 2009, whose bitcoins created are not part of UTXO set, as well as certain historical events linked to bugs, such as duplicate coinbase transaction identifiers.
 
 
 Finally, we must also take into account all the bitcoins that have been destroyed or blocked:
 
 
-- bitcoins locked in unsolvable scripts ;
+- bitcoins locked in unsolvable scripts;
 - those deliberately destroyed by `OP_RETURN` scripts;
 - or loss of private keys at application level.
 
@@ -966,7 +966,7 @@ In theory, Bitcoin's supply is therefore limited to 21 million. In practice, how
 In the previous chapters, we presented two important points. Firstly, the miner who succeeds in producing and distributing a valid block receives a reward. On the other hand, we saw that this reward is made up of two distinct elements:
 
 
-- a block grant (bitcoins created ex nihilo, the maximum amount of which is set by the protocol and gradually reduced via halvings);
+- a block subsidy (bitcoins created ex nihilo, the maximum amount of which is set by the protocol and gradually reduced via halvings);
 - all transaction fees paid by users whose transactions have been included in the block.
 
 
@@ -976,7 +976,7 @@ One question remains, however: by what mechanism does the miner collect this rew
 ### How the coinbase transaction works
 
 
-As we saw in the first part of the course, each Bitcoin block contains a list of pending transactions that it will confirm. The very first of these is always the coinbase transaction. It is this transaction that enables the winning miner to collect his reward.
+As we saw in the first part of the course, each Bitcoin block contains a list of pending transactions that it will confirm. The very first of these is always the coinbase transaction. It is what allows the winning miner to receive their reward.
 
 
 ![Image](assets/fr/031.webp)
@@ -988,7 +988,7 @@ At first glance, it looks like a classic Bitcoin transaction: it has a TXID, out
 In a classic Bitcoin transaction, `inputs` reference previous unspent outputs (UTXOs), which provide the input value. Outputs then redistribute this value to new UTXOs, with new spending conditions. In other words, to send bitcoins, you must already own them. The coinbase transaction, on the other hand, consumes no bitcoins in input: it creates bitcoins in output directly from scratch.
 
 
-It is precisely this mechanism that enables new bitcoins to be introduced into circulation via the block subsidy, and credits the miner with the fees associated with the transactions included in the block. The coinbase transaction cannot reference a real existing UTXO (in fact, it references a fictitious UTXO), since its role is precisely to create part of the value (the subsidy) and recover the other part (the fees), without receiving them from a previous transaction. For the whole to remain coherent, the share corresponding to the fees must exactly equal the sum of bitcoins consumed as inputs but not recreated as outputs in the other transactions of the block.
+It is precisely this mechanism that enables new bitcoins to be introduced into circulation via the block subsidy, and credits the miner with the fees associated with the transactions included in the block. The coinbase transaction cannot reference a real existing UTXO (in fact, it references a fictitious UTXO), since its role is precisely to create part of the value (the subsidy) and recover the other part (the fees), without receiving them from a previous transaction. For the whole system to remain consistent, the portion corresponding to fees must exactly equal the sum of bitcoins consumed in inputs but not recreated in outputs in the other transactions of the block.
 
 
 ![Image](assets/fr/032.webp)
