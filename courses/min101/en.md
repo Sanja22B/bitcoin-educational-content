@@ -1185,7 +1185,7 @@ In the last part of the course, we'll return to more concrete aspects, to show y
 <chapterId>2d2f9055-75fd-4630-b493-a577d708a39f</chapterId>
 
 
-In the early days of Bitcoin, mining was not an industrial activity. It was part of the Bitcoin software, launched on a personal computer, often out of curiosity, sometimes to support the network, and secondarily to recover bitcoins which then had virtually no market value.
+In the early days of Bitcoin, mining was not an industrial activity. It was part of the Bitcoin software, launched on a personal computer, often out of curiosity, sometimes to support the network, and secondarily to obtain bitcoins which then had virtually no market value.
 
 
 Over the years, this activity has undergone a transformation: the machines have changed, the difficulty has exploded, and mining has become an industry in its own right. Let's take a look at the operational aspects of Bitcoin mining.
@@ -1194,13 +1194,13 @@ Over the years, this activity has undergone a transformation: the machines have 
 ### Getting started: mining with a CPU
 
 
-In 2009 and in the early years, mining was mainly carried out using the CPU of a conventional computer. Bitcoin was a simple piece of software that took on the role of wallet, node and miner. Simply launching the Satoshi Nakamoto software on your personal computer was enough to participate in the mining process and, in many cases, to find blocks.
+In 2009 and in the early years, mining was mainly carried out using the CPU of a conventional computer. Bitcoin was then just a simple piece of software, serving as a wallet, a node, and a miner. Simply launching the Satoshi Nakamoto's software on your personal computer was enough to participate in the mining process and, in many cases, to find blocks.
 
 
 A CPU can do everything, but it's not optimized for anything. It executes very general instructions, with complex logic. For a task like repetitive hashing of block headers, it's not the ideal tool, but at network start-up, the difficulty is so low that it's more than enough to find blocks.
 
 
-This period is important, because it reminds us of an important point: proof of work does not depend on a particular category of equipment. What counts is the ability to calculate hashes faster than others, at a given cost. As soon as a technical advantage appears, it is mechanically transformed into an economic advantage. But in absolute terms, it's still possible today to attempt to find Bitcoin blocks using a conventional CPU. This is the approach adopted by the NerdMiner project, for example. The chances of finding a block are virtually nil, but there is still an infinitesimal probability.
+This period is important, because it reminds us of an important point: proof of work does not depend on a particular category of equipment. What counts is the ability to calculate hashes faster than others, at a given cost. As soon as a technical advantage appears, it is automatically transformed into an economic advantage. But in absolute terms, it's still possible today to attempt to find Bitcoin blocks using a conventional CPU. This is the approach adopted by the NerdMiner project, for example. The chances of finding a block are virtually nil, but there is still an infinitesimal probability.
 
 
 https://planb.academy/tutorials/mining/hardware/nerdminer-c9826fd9-c2b4-4d1e-8c78-809122de1654
@@ -1214,7 +1214,7 @@ Soon enough, miners realized that the bottleneck was not power, but the ability 
 With comparable power consumption, a GPU can produce far more hashes per second than a CPU. At the same time, bitcoin now has an exchange rate against the dollar, its value increases, and exchange platforms appear. From then on, the nature of mining began to change. It's no longer just about participating, but about making money. Dedicated configurations appeared: machines built around several graphics cards, sometimes without screens, with a minimal system and specialized software, whose sole purpose was to mine.
 
 
-It was at this point that the difficulty of mining began to explode. Between mid-2010 and mid-2011, it even increased by a factor of 1,000. Mechanically, specialization began, as did the first forms of industrialization, and normal users, who were content to run the Bitcoin software on their personal computers, now had only a very low probability of finding a valid block.
+It was at this point that the difficulty of mining began to explode. Between mid-2010 and mid-2011, it even increased by a factor of 1,000. Mechanically, specialization begins, just like the early forms of industrialization, and ordinary users—who are content to run the Bitcoin software on their personal computers—now have only a very small chance of finding a valid block.
 
 
 ![Image](assets/fr/044.webp)
@@ -1223,13 +1223,13 @@ It was at this point that the difficulty of mining began to explode. Between mid
 *Source: [CoinWarz.com](https://www.coinwarz.com/mining/bitcoin/hashrate-chart)*
 
 
-Between the GPU era and the modern ASIC era, there is an intermediate phase: the use of FPGAs. An FPGA is a reprogrammable component: it can be configured to directly implement a logic circuit dedicated to a particular calculation, in this case `SHA256d`. The idea is to move even further away from general-purpose hardware (CPU/GPU) to gain in energy efficiency. But soon, the improvements made virtually on FPGAs will be applied physically to the chips themselves: that's the arrival of ASIC.
+Between the GPU era and the modern ASIC era, there was an intermediate phase: the use of FPGAs. An FPGA is a reprogrammable component: it can be configured to directly implement a logic circuit dedicated to a particular calculation, in this case `SHA256d`. The idea is to move even further away from general-purpose hardware (CPU/GPU) to gain in energy efficiency. But soon, the improvements made virtually on FPGAs will be applied physically to the chips themselves: that's the arrival of ASIC.
 
 
 ### The arrival of ASIC
 
 
-The final stage in the specialization of mining hardware is the appearance of ASICs (*Application-Specific Integrated Circuits*). A ASIC is a chip designed for a single task. In the case of Bitcoin mining, this task is precisely the execution of `SHA256d` at maximum speed and with optimum energy efficiency. Unlike a GPU, a ASIC isn't used to run games, 3D rendering or AI. It's for chopping, and that's all.
+The final stage in the specialization of mining hardware was the appearance of ASICs (*Application-Specific Integrated Circuits*). An ASIC is a chip designed for a single task. In the case of Bitcoin mining, this task is precisely the execution of `SHA256d` at maximum speed and with optimum energy efficiency. Unlike a GPU, a ASIC isn't used to run games, 3D rendering or AI. It's for hashing, and that's all.
 
 
 ![Image](assets/fr/045.webp)
@@ -1241,25 +1241,25 @@ The final stage in the specialization of mining hardware is the appearance of AS
 This specialization has two major consequences:
 
 
-- The first is a leap in performance and efficiency. For an equivalent generation, a ASIC produces a far higher number of hashes per second than a GPU, while consuming less power. Mining with a GPU quickly becomes uncompetitive: even if it works technically, the electricity cost far exceeds the expected revenue in most contexts;
-- The second is a change of model: investment becomes mainly in industrial equipment. Miner now involves buying machines designed for this purpose, powering them continuously, cooling them, maintaining them, and absorbing their obsolescence. Because a ASIC is not economically eternal: when a new, more efficient generation comes onto the market, the old machines become progressively less profitable, even if they remain functional.
+- The first is a leap in performance and efficiency. For an equivalent generation, an ASIC produces a far higher number of hashes per second than a GPU, while consuming less power. Mining with a GPU quickly became uncompetitive: even though it works technically, the electricity cost far outweight the expected revenue in most contexts;
+- The second is a change of model: investment mainly shifted to industrial-grade hardware. Miner now involves buying machines designed for this purpose, powering them continuously, cooling them, maintaining them, and absorbing their obsolescence. Because an ASIC is not economically eternal: when a new, more efficient generation comes onto the market, the old machines become progressively less profitable, even if they remain functional.
 
 
 From that point on, we're no longer just talking about a hobby. We're talking about a sector where competitiveness depends on an equation:
 
 
-- cost of electricity ;
-- cost of equipment and depreciation ;
+- cost of electricity;
+- cost of equipment and depreciation;
 - ability to cool and operate on a large scale;
-- machine availability and reliability ;
-- speed of communication ;
+- machine availability and reliability;
+- speed of communications;
 - etc.
 
 
 ### Mining farms
 
 
-An isolated machine can mine, but by grouping hundreds, then thousands of ASICs in a single location, we mutualize fixed costs, optimize logistics, and move closer to a specialized data center model.
+An isolated machine can mine, but by grouping hundreds, then thousands of ASICs in a single location, we share fixed costs, optimize logistics, and move closer to a specialized data center model.
 
 
 A mining farm, in its simplest form, is a building (or set of containers) filled with ASICs running 24/7. The challenge now is to maintain stable operating conditions:
@@ -1267,7 +1267,7 @@ A mining farm, in its simplest form, is a building (or set of containers) filled
 
 - supply large amounts of low-cost, stable electrical power;
 - manage heat to avoid throttling, as the energy density is considerable;
-- filter dust, control humidity, clean ;
+- filter dust, control humidity, clean;
 - real-time monitoring of machine performance (temperatures, hardware errors, hashrate drops, etc.).
 
 
@@ -1289,7 +1289,7 @@ Even without going into the details of profitability models, it's important to u
 Miner from Bitcoin has thus evolved from an activity accessible to anyone in its early days, to one dominated by specialized equipment and professional operations. This does not change the rules of the protocol. In theory, anyone can mine with any machine. But in practice, the level of difficulty and efficiency of ASIC has made domestic mining largely uncompetitive in most contexts.
 
 
-Of course, there are still situations in which home mining can be of interest, for example if you benefit from very cheap electricity, or if you use the heat generated by your miner to heat your home in winter. But in any case, you'll still need to buy a machine equipped with a ASIC chip. What's more, since your mining power will remain extremely limited on the scale of the Bitcoin network, you'll need to find a way of reducing the variance of your income: this is precisely the role of mining pools, which we'll be discussing in the next chapter.
+Of course, there are still situations in which home mining can be of interest, for example if you benefit from very cheap electricity, or if you use the heat generated by your miner to heat your home in winter. But in any case, you'll still need to buy a machine equipped with an ASIC chip. What's more, since your mining power will remain extremely small relative to the Bitcoin network, you'll need to find a way of reducing the variance of your income: this is precisely the role of mining pools, which we'll be discussing in the next chapter.
 
 
 If you'd like to explore home mining solutions with heat recovery, we have tutorials on various tools, both ready-to-use and DIY :
@@ -1306,7 +1306,7 @@ https://planb.academy/tutorials/mining/hardware/attakai-0d177e6b-e167-4b25-8e38-
 <chapterId>c871bece-eebe-4ef4-9789-d47251f16c8b</chapterId>
 
 
-Mining Bitcoin involves ongoing, incompressible costs, foremost among which is machine power consumption. These expenses are incurred independently of any results, even though revenues from mining are, by their very nature, rare and random. The discovery of a block depends exclusively on the miner's share of hashrate, which makes earnings all the more unpredictable the smaller that share is. It is precisely this practical problem that rapidly led to the widespread use of mining pools. In this final chapter of the MIN 101 course, I offer an introduction to the principles and operation of mining pools on Bitcoin.
+Mining Bitcoin involves ongoing, incompressible costs, foremost among which is machine power consumption. These expenses are incurred independently of any results, even though revenues from mining are, by their very nature, rare and random. The discovery of a block depends exclusively on the miner's share of hashrate, which makes earnings all the more unpredictable the smaller that share is. It is precisely this practical problem that rapidly led to the widespread use of mining pools. In this final chapter of the MIN 101 course, I offer an introduction to the principles and operation of mining pools in Bitcoin.
 
 
 ### What's a mining pool?
@@ -1315,7 +1315,7 @@ Mining Bitcoin involves ongoing, incompressible costs, foremost among which is m
 A mining pool is an organization (often an online service) that aggregates the computing power of many independent miners, in order to increase the frequency with which their group finds blocks. When the pool finds a block, the block reward is then redistributed among the participants according to internal pool rules (which will be covered in the MIN 201 course, as they are too complex for MIN 101).
 
 
-Participants in a mining pool are then often referred to as "miners", rather than as "miners", as they no longer carry out all the mining work, but simply hash the data transmitted to them by the pool.
+Participants in a mining pool are then often referred to as "hashers", rather than as "miners", as they no longer carry out all the mining work, but simply hash the data transmitted to them by the pool.
 
 
 Be careful not to confuse the mining pool with the mining farm. These are two different concepts. As we saw in the previous chapter, a farm is a physical site where a single entity operates numerous mining machines. A pool, on the other hand, is above all a virtual grouping: thousands of machines, often geographically dispersed, work under a common coordination. However, a farm can, and often does, participate in a pool.
@@ -1327,7 +1327,7 @@ Be careful not to confuse the mining pool with the mining farm. These are two di
 ### Reducing income variance
 
 
-So why pool together? Quite simply because the result of mining activity is probabilistic: with each hash attempt, you have a tiny chance of falling below the difficulty target and therefore producing a valid block.
+So why join a pool? Quite simply because the result of mining activity is probabilistic: with each hash attempt, there is a very small chance that it will meet the difficulty target and therefore produce a valid block.
 
 
 Over the very long term, your average earnings should be proportional to your share of the overall hashrate. This principle follows directly from the laws of probability: each hash calculation constitutes an independent random draw, and, by the law of large numbers, the frequency with which you discover blocks converges mathematically towards your fraction of the network's total hashrate. In the short to medium term, however, your actual earnings can be extremely irregular. It's this discrepancy between theoretical average and random reality that we call **variance** in mathematics.
@@ -1383,7 +1383,7 @@ Here is a ranking, to date, of the main mining pools and their respective share 
 ![Image](assets/fr/046.webp)
 
 
-| Classement | Pool           | Blocs trouvés | Part du hashrate |
+| Ranking    | Pool           | Blocks found  | Hashrate share   |
 | ---------: | -------------- | ------------: | ---------------: |
 |          1 | Foundry USA    |          1297 |           29.57% |
 |          2 | AntPool        |           755 |           17.21% |
@@ -1412,7 +1412,7 @@ Here is a ranking, to date, of the main mining pools and their respective share 
 *Source [mempool.space](https://mempool.space/graphs/mining/pools), one-month data, December 16, 2025 to January 16, 2025.*
 
 
-In a more advanced course, we'll go further into the internal workings of the pools (shares, network protocols, payment methods...), as this is where the details come into play that determine both profitability for the miner, and the possible implications for Bitcoin.
+In a more advanced course, we'll go further into the internal workings of the pools (shares, network protocols, payment methods...), because this is where the details that determine both the miner's profitability and the potential implications for Bitcoin come into play.
 
 
 ---
@@ -1420,7 +1420,7 @@ In a more advanced course, we'll go further into the internal workings of the po
 We've now come to the end of MIN 101. Thank you for following it through to the end. If you'd like to assess the skills you've acquired throughout the course, a final exam awaits you in the next section.
 
 
-With the basic knowledge you've just acquired, you can now take more advanced courses on mining on Plan ₿ Academy, whether in theory, like this one, or more practical courses, so that you too can start participating in mining on Bitcoin!
+With the basic knowledge you've just acquired, you can now take more advanced courses on mining on Plan ₿ Academy, whether in theory, like this one, or more practical courses, so that you too can start participating in Bitcoin mining!
 
 
 # Final part
