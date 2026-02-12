@@ -1003,7 +1003,7 @@ This transaction is not optional. A block that does not contain a coinbase trans
 The coinbase transaction actually fulfils several roles simultaneously:
 
 
-- The first is the one we have just detailed: it awards the miner the reward to which he is entitled for having produced a valid block.
+- The first is the one we have just detailed: it assigns to the miner the reward they are entitled to for having produced a valid block.
 - Its second, more technical, role is to anchor the cryptographic commitment to the witnesses (signatures) of the SegWit transactions included in the block.
 - A third role, this time not directly protocol-related but linked to the modern industrialization of mining, is that the coinbase is now frequently used to anchor arbitrary technical data. This data is generally linked to the operation of mining pools and their internal organization.
 
@@ -1042,10 +1042,9 @@ Directly followed by the false index:
 In the basic Bitcoin protocol, as described in Satoshi Nakamoto, this false input is the only constraint imposed on the coinbase transaction.
 
 
-Like any UTXO referenced in a transaction's input, it is associated with a `scriptSig` field. In a conventional transaction, this `scriptSig` field contains the elements needed to satisfy the `scriptPubKey` and thus unlock the spent UTXO. But in the particular case of coinbase, since the UTXO referenced is deliberately fictitious, the `scriptSig` field is entirely free. Miners can therefore enter any data they like. We'll see later what uses are made of this freedom.
+Like any UTXO referenced in a transaction's input, it is associated with a `scriptSig` field. In a conventional transaction, this `scriptSig` field contains the elements needed to satisfy the `scriptPubKey` and thus unlock the spent UTXO. But in the particular case of coinbase, since the UTXO referenced is deliberately fictitious, the `scriptSig` field is entirely free. Miners can therefore enter any data they like. We’ll look later at how this freedom is used.
 
-
-In addition to this false input, there are one or more perfectly standard outputs, which enable the miner to collect the bitcoins from the reward on one of his Bitcoin addresses. These outputs are UTXOs locked by a `scriptPubKey` (e.g. a script pointing to an address controlled by the miner or the pool). The only peculiarity here lies in the rule for calculating their value: the total sum of the coinbase's outputs must never exceed the maximum subsidy allowed, to which the block fee is added.
+In addition to this false input, there are one or more perfectly standard outputs, which enable the miner to collect the bitcoins from the reward on one of his Bitcoin addresses. These outputs are UTXOs locked by a `scriptPubKey` (e.g. a script pointing to an address controlled by the miner or the pool). The only peculiarity here lies in the rule for calculating their value: the total sum of the coinbase's outputs must never exceed the maximum subsidy allowed, to which the block fees are added.
 
 
 Historically, then, the coinbase transaction boiled down to this simple scheme: a fake input referencing a non-existent UTXO, and one or more outputs designed to distribute the block reward to the winning miner. Today, however, the coinbase is no longer limited to this distribution role. Its special position in the block and the great flexibility of its structure have led to new uses, both in the protocol itself and in mining pool management mechanisms.
@@ -1075,7 +1074,7 @@ Thus, the coinbase's `scriptSig` is not totally free. Since the activation of BI
 #### The extra-nonce
 
 
-As we saw in the first chapters of this course, the miner has a 32-bit hash field in the block header, which he modifies by trial and error to find a hash less than or equal to the target. This 32-bit space already allows a very large number of combinations to be explored, but when the mining difficulty is high, this range can be covered in its entirety in a relatively short time, and therefore not allow any combination giving a valid hash. If all possible values of the `nonce` have been tested without success, the miner must then modify another element to vary the block header and restart a new series of trials.
+As we saw in the first chapters of this course, the miner has a 32-bit hash field in the block header, which he modifies by trial and error to find a hash less than or equal to the target. This 32-bit space already allows a very large number of combinations to be explored, but when mining difficulty is high, this range can be fully exhausted in a relatively short time and thus may yield no combination that produces a valid hash. If all possible values of the `nonce` have been tested without success, the miner must then modify another element to change the block header and start a new series of attempts.
 
 
 As the coinbase transaction offers a free field via the `scriptSig` of its input, the solution used to extend the nonce's space is to exploit part of this `scriptSig`. This is generally referred to as the extra-nonce. By modifying the extra-nonce, the miner modifies the coinbase's `scriptSig`, i.e. the transaction identifier, then the Merkle root of the block, and finally the block header itself. He thus obtains a new hash search space to explore, without having to touch the other components of his candidate block.
@@ -1084,13 +1083,13 @@ As the coinbase transaction offers a free field via the `scriptSig` of its input
 ![Image](assets/fr/036.webp)
 
 
-#### Identifying pools and minors
+#### Identifying pools and miners
 
 
 Today, a very large proportion of the world's hashrate is organized in mining pools. These structures bring together individual miners to pool their work and reduce the variance of their income.
 
 
-For operational reasons, mining pools also exploit the free field of the coinbase input `scriptSig` to insert various pieces of information. These vary from pool to pool and from network protocol to network protocol, but generally include a unique identifier (often an extra-nunciation structured in several sub-parts) assigned to each chopper, to avoid duplication of work within the pool. A pool identification tag is usually added, used for public allocation of found blocks, mining statistics and other tracking purposes.
+For operational reasons, mining pools also exploit the free field of the coinbase input's `scriptSig` to insert various pieces of information. These vary from pool to pool and from network protocol to network protocol, but generally include a unique identifier (often an extra nonce structured into several sub-parts) assigned to each miner, to avoid duplication of work within the pool. A pool identification tag is usually added, used for public attribution of found blocks, mining statistics and other tracking purposes.
 
 
 ![Image](assets/fr/037.webp)
@@ -1099,16 +1098,16 @@ For operational reasons, mining pools also exploit the free field of the coinbas
 #### SegWit's commitment
 
 
-Since the fork SegWit soft enabled in 2017, witness data (i.e. generally signatures) has been separated from transaction master data, notably to correct the malleability problem of Bitcoin transactions. This separation therefore introduces a new element to be committed in the block.
+Since the SegWit soft fork was enabled in 2017, witness data (i.e. generally signatures) has been separated from transaction master data, notably to correct the malleability problem of Bitcoin transactions. This separation therefore introduces a new element to be committed in the block.
 
 
-To do this, the cookies are grouped together in another dedicated Merkle tree, whose root is then committed to the coinbase transaction via a `OP_RETURN` output.
+To do this, the witnesses are grouped together in another dedicated Merkle tree, whose root is then committed to the coinbase transaction via a `OP_RETURN` output.
 
 
 ![Image](assets/fr/038.webp)
 
 
-I won't go into more detail on this mechanism in this course, as it's beyond the scope of this article, but just remember that since the introduction of SegWit, the coinbase transaction has been used to anchor in the block an imprint summarizing all SegWit witnesses. The cookies are placed in an independent Merkle tree, the root of this tree is written to an output of the coinbase transaction, and this coinbase transaction is itself included in the main Merkle tree along with all the other transactions, whose root appears in the block header. This is how the separate witnesses in the header are engaged.
+I won't go into more detail on this mechanism in this course, as it's beyond the scope of this article, but just remember that since the introduction of SegWit, the coinbase transaction serves as a vehicle to anchor in the block a fingerprint summarizing all SegWit witnesses. The witnesses are placed in an independent Merkle tree, the root of this tree is written to an output of the coinbase transaction, and this coinbase transaction is itself included in the main Merkle tree along with all the other transactions, whose root appears in the block header. This is how the witnesses, stored separately from the main transaction data, are still committed to the block header.
 
 
 ![Image](assets/fr/039.webp)
@@ -1117,7 +1116,7 @@ I won't go into more detail on this mechanism in this course, as it's beyond the
 #### Arbitrary messages
 
 
-Since the `scriptSig` allows free insertion of information of the miner's choice, some have taken advantage of the opportunity to add messages of a more personal nature, rather than technical ones. The most famous case is of course Satoshi Nakamoto, with his now emblematic message:
+Since the `scriptSig` allows free insertion of information of the miner's choice, some have taken advantage of the opportunity to add messages of a more personal nature, rather than technical ones. The most famous case is of course Satoshi Nakamoto, with his now-iconic message:
 
 
 > The Times 03/Jan/2009 Chancellor on brink of second bailout for banks
@@ -1136,7 +1135,7 @@ This message, present in the Genesis block (the very first block of Bitcoin) is 
 ### The maturity period
 
 
-Once the block has been mined and distributed, the coinbase transaction appears on the blockchain like any other transaction. It creates UTXOs for the winning miner, enabling him to collect his reward. However, these UTXOs are not immediately spendable: they are subject to a maturity period. This maturity is set at 100 blocks after the block containing the coinbase. In concrete terms, the coinbase transaction must therefore total 101 confirmations for its outputs to become spendable by the winning miner.
+Once the block has been mined and distributed, the coinbase transaction appears on the blockchain like any other transaction. It creates UTXOs for the winning miner, enabling them to collect their reward. However, these UTXOs are not immediately spendable: they are subject to a maturity period. This maturity is set at 100 blocks after the block containing the coinbase. In concrete terms, the coinbase transaction must therefore total 101 confirmations for its outputs to become spendable by the winning miner.
 
 
 ![Image](assets/fr/040.webp)
@@ -1145,7 +1144,7 @@ Once the block has been mined and distributed, the coinbase transaction appears 
 The aim of this rule is to limit the impact of chain reorganizations on the economy. As we have seen in previous chapters, it can happen that at the same height, two distinct valid blocks are found almost simultaneously by different miners. For a brief moment, the network may split: some nodes receive block A first, while others see block B first. Then, over the course of subsequent blocks, one of the two branches accumulates more work and becomes the reference branch. The other branch is abandoned and its blocks become obsolete. The transactions it contained can then, in theory, return to the mempools awaiting confirmation.
 
 
-In practice, this rarely happens, as the fee market often leads to virtually the same transactions being found in two competing blocks at the same height. This is one of the reasons why a Bitcoin transaction is commonly considered to become immutable after six confirmations: reorganizations of more than six blocks are so unlikely that they can reasonably be considered impossible.
+In practice, this rarely happens, because the fee market often results in nearly the same transactions appearing in two competing blocks at the same height. This is one of the reasons why a Bitcoin transaction is commonly considered to become immutable after six confirmations: reorganizations of more than six blocks are so unlikely that they can reasonably be considered impossible.
 
 
 ![Image](assets/fr/041.webp)
@@ -1173,7 +1172,7 @@ This rule prevents newly-created block-reward money from starting to circulate b
 We've now come to the end of our explanation of how Bitcoin mining works. You should now have a clear picture of the basic mechanisms involved.
 
 
-In the last part of the course, we'll return to more concrete aspects, to show you how Bitcoin mining materializes in the real world: its industrialization, the machines used, the grouping of players, and so on. The aim will be to give you an overall view of Bitcoin mining, both from the theoretical and protocol angles we've just seen, and in its practical, operational dimension.
+In the last part of the course, we'll return to more concrete aspects, to show you how Bitcoin mining materializes in the real world: its industrialization, the machines used, the grouping of players, and so on. The aim will be to give you an overall view of Bitcoin mining, both from the theoretical and protocol perspective we've just seen, and also from its practical and operational side.
 
 
 # The Bitcoin mining industry
