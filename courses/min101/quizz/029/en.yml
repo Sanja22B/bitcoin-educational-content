@@ -6,4 +6,4 @@ wrong_answers:
   - Hashrate + fees
 explanation: |
   The reward adds the block subsidy and all the fees from the included transactions.
-reviewed: false
+reviewed: true
