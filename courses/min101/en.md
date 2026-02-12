@@ -904,13 +904,13 @@ subsidy(n) = 50 / 2^n
 Here is a summary table of halvings that have already occurred, with their block height, date and the new block grant applicable after the event:
 
 
-| Événement           |   Hauteur | Date                        | Subvention |
+| Event               |   Height  | Date                        | Subsidy    |
 | ------------------- | --------: | --------------------------- | ---------: |
 | Halving 1           |   210 000 | 28 novembre 2012            |     25 BTC |
-| Halving 2           |   420 000 | 9 juillet 2016              |   12,5 BTC |
-| Halving 3           |   630 000 | 11 mai 2020                 |   6,25 BTC |
-| Halving 4           |   840 000 | 20 avril 2024               |  3,125 BTC |
-| Halving 5 (à venir) | 1 050 000 | Printemps 2028 (estimation) | 1,5625 BTC |
+| Halving 2           |   420 000 | 9 july 2016                 |   12,5 BTC |
+| Halving 3           |   630 000 | 11 may 2020                 |   6,25 BTC |
+| Halving 4           |   840 000 | 20 april 2024               |  3,125 BTC |
+| Halving 5 (upcoming) | 1 050 000 | Spring   2028 (estimation) | 1,5625 BTC |
 
 ### When and how does the subsidy end?
 
