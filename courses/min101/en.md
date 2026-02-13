@@ -684,7 +684,7 @@ With :
 
 Here, the new target is lower than the old one, which means mining becomes harder in order to slow down block production in the next period.
 
-*The target values in this example are simplified and scaled for teaching purposes; the actual target used on Bitcoin is a 256-bit integer of a completely different order of magnitude.*
+*The target values in this example are simplified and scaled for teaching purposes; the actual target used in Bitcoin is a 256-bit integer of a completely different order of magnitude.*
 
 
 This calculation is performed locally by each node, based on the timestamps entered in the blocks. As all nodes apply the same rules, they arrive at the same result, and the new target becomes the common reference for the next 2016 blocks.
@@ -703,7 +703,7 @@ With this final chapter of Part I, we have taken a tour of how proof-of-work wor
 
 
 
-# The incentive system for Bitcoin mining
+# The Bitcoin mining incentive system
 
 <partId>27fb10c1-d53b-4dc2-90fa-3cb0309b74c1</partId>
 
@@ -713,13 +713,13 @@ With this final chapter of Part I, we have taken a tour of how proof-of-work wor
 <chapterId>b316fb89-9c18-417e-917b-ab98f1722646</chapterId>
 
 
-As you can imagine, mining in Bitcoin is not an altruistic activity. Miners have real costs: electricity to run their mining computers, the purchase of specialized equipment, payroll for maintenance, sometimes premises and cooling systems. For the Bitcoin system to work, the private interests of the miners must be aligned with the collective interests of the network. This is exactly the role of the mining reward. It encourages miners to invest in proof of work, to include valid transactions, and to respect the rules of the protocol rather than trying to corrupt it.
+As you can imagine, Bitcoin mining is not an altruistic activity. Miners have real costs: electricity to run their mining computers, the purchase of specialized equipment, payroll for maintenance, sometimes premises and cooling systems. For the Bitcoin system to work, the private interests of the miners must be aligned with the collective interests of the network. This is exactly the role of the mining reward. It encourages miners to invest in proof of work, to include valid transactions, and to respect the rules of the protocol rather than trying to corrupt it.
 
 
 This logic is based on game theory: the protocol makes honesty rational. A miner earns money when he produces a valid block accepted by the nodes. Conversely, if he tries to cheat, his block will be rejected by the nodes, and he will get nothing. Since producing a block has a cost, a rejected block represents a direct loss. In a competitive environment where thousands of players are simultaneously searching for a valid block, the most profitable strategy, most of the time, is therefore to follow the rules strictly and maximize your income honestly.
 
 
-To achieve this, the Bitcoin protocol stipulates that the miner who finds a valid block wins the right to include a particular transaction in it, which awards him a certain sum of BTC. This is known as **block reward**. In this first chapter of this section, the aim is to understand what it's made up of and how it's determined. Later, we'll see how the money creation part evolves over time (with halvings) and how it is actually collected technically (via the coinbase transaction).
+To achieve this, the Bitcoin protocol stipulates that the miner who finds a valid block wins the right to include a particular transaction in it, which awards the miner a certain sum of BTC. This is known as **block reward**. In this first chapter of this section, the aim is to understand what it's made up of and how it's determined. Later, we'll see how the money creation part evolves over time (with halvings) and how it is actually collected technically (via the coinbase transaction).
 
 
 ### What does the block reward consist of?
@@ -728,10 +728,10 @@ To achieve this, the Bitcoin protocol stipulates that the miner who finds a vali
 In previous chapters, we saw how miners manage to find a valid block. Once a miner has found a header whose hash is smaller than the target, his candidate block is considered valid. He can then distribute it to the entire Bitcoin network. The block is added to the rest of the blockchain, confirming the transactions it contains.
 
 
-It is precisely this event (the actual addition of the block to the blockchain) that triggers the awarding of a reward to the winning miner. This reward is made up of two distinct elements that are added together:
+It is precisely this event (the actual addition of the block to the blockchain) that triggers giving a reward to the winning miner. This reward is made up of two distinct elements that are added together:
 
 
-- **block grant**;
+- **block subsidy**;
 - **transaction fees**.
 
 
@@ -741,27 +741,27 @@ It is precisely this event (the actual addition of the block to the blockchain) 
 Let's take a look at what these two parts of the reward correspond to.
 
 
-### Block grant
+### Block subsidy
 
 
-The block grant corresponds to the monetary creation part of the reward. When a miner produces a valid block, the protocol authorizes him to create a certain number of new bitcoins and to allocate them to himself as a reward. These bitcoins are created ex nihilo. They did not exist before.
+The block subsidy corresponds to the monetary creation part of the reward. When a miner produces a valid block, the protocol authorizes him to create a certain number of new bitcoins and to allocate them to himself as a reward. These bitcoins are created ex nihilo. They did not exist before.
 
 
 However, the quantity of newly created bitcoins is by no means arbitrary. It is strictly defined by the Bitcoin protocol rules and is identical for all miners. We'll take a closer look at this mechanism in the next chapter, as the subsidy is not a fixed value indefinitely: it is divided up periodically according to a precise schedule. For now, just remember that:
 
 
-- the block grant is one of the two components of the block reward;
-- it is capped and determined by the protocol, not by the miner (even if the miner can technically request less than the maximum amount);
+- the block subsidy is one of the two components of the block reward;
+- it is capped and determined by the protocol, not by the miner (even though the miner can technically request less than the maximum amount);
 - it creates bitcoins out of thin air.
 
 
-This subsidy plays two main roles within the Bitcoin protocol. The first is to encourage players to participate in mining. In the early years of Bitcoin (and sometimes still today), transaction fees were very low. The subsidy therefore guaranteed sufficient remuneration to attract miners and maintain a level of security for the system.
+This subsidy plays two main roles within the Bitcoin protocol. The first is to encourage players to participate in mining. In the early years of Bitcoin (and sometimes still today), transaction fees were very low. The subsidy therefore has guaranteed sufficient compensation to attract miners and maintain a level of security for the system.
 
 
-The second role relates to currency distribution. Any new currency faces the question of how to distribute monetary units fairly to the population? The block subsidy provides an answer to this problem. By creating bitcoins via mining, it enables their initial distribution in an open and neutral way: anyone can obtain them, provided they participate in the mining, with no prior authorization or identification required.
+The second role relates to currency distribution. Any new currency faces the question of how to distribute monetary units fairly to the population. The block subsidy provides an answer to this problem. By creating bitcoins via mining, it enables their initial distribution in an open and neutral way: anyone can obtain them, provided they participate in the mining, with no prior authorization or identification required.
 
 
-On the other hand, since these bitcoins are created out of nothing, their value doesn't come from nowhere. By increasing the amount of money in circulation, the subsidy mechanically dilutes the value of existing bitcoins. It therefore introduces a form of monetary inflation. However, we'll see in the next chapter that this subsidy is destined to disappear gradually, and that inflation will eventually cease.
+On the other hand, since these bitcoins are created out of nothing, their value is not without a basis. By increasing the amount of money in circulation, the subsidy mechanically dilutes the value of existing bitcoins. It therefore introduces a form of monetary inflation. However, we'll see in the next chapter that this subsidy is destined to disappear gradually, and that inflation will eventually cease.
 
 
 ![Image](assets/fr/025.webp)
@@ -770,24 +770,24 @@ On the other hand, since these bitcoins are created out of nothing, their value 
 ### Transaction fees
 
 
-The second component of block reward is linked to system usage: when a user posts a transaction, he wants it to be confirmed. However, block space is limited, and a block appears on average only every 10 minutes or so. Block space is therefore a scarce resource. When demand exceeds supply, the price rises: this is the transaction fee market. Each miner who manages to produce a valid block obtains the right to collect, for his own account, the full transaction fees associated with all the transactions he has included in his block.
+The second component of the block reward is linked to system usage: when a user posts a transaction, he wants it to be confirmed. However, block space is limited, and blocks appears on average only every 10 minutes or so. Block space is therefore a scarce resource. When demand exceeds supply, the price rises: this is the transaction fee market. Each miner who manages to produce a valid block obtains the right to collect, for his own account, the full transaction fees associated with all the transactions he has included in his block.
 
 
 You can think of it as an auction system: each transaction proposes a fee amount, and miners prioritize those that maximize their income, under space constraints. This mechanism naturally aligns interests:
 
 
 - users in a hurry pay more to be included quickly;
-- miners are encouraged to include the transactions that pay the highest fees for block space.
+- miners are encouraged to include transactions that pay the highest fees for block space.
 - the network avoids spam, because publishing a transaction has a cost.
 
 
 #### How are transaction fees calculated?
 
 
-Contrary to popular belief, charges are not an output in a Bitcoin transaction. In fact, a transaction spends inputs and creates outputs. Inputs represent the source of bitcoins used, while outputs represent the destination of payments. Transaction fees are simply **the difference between total inputs and total outputs**.
+Contrary to popular belief, fees are not an output in a Bitcoin transaction. In fact, a transaction spends inputs and creates outputs. Inputs represent the source of bitcoins used, while outputs represent the destination of payments. Transaction fees are simply **the difference between total inputs and total outputs**.
 
 
-In other words, the user inputs bitcoins that belong to him/her, creates outputs for the recipients, but does not recreate in outputs the full amount consumed in inputs. The difference between the two constitutes the transaction costs that the miner can collect.
+In other words, the user's bitcoin inputs, which belong to them, create outputs for the recipients, but do not reproduce the full amount consumed by the inputs. The difference between the two represents the transaction fees that the miner can collect.
 
 
 Let's take an example. A transaction consumes two inputs, one of `100,000 sats` and the other of `150,000 sats`, and creates three outputs of `35,000 sats`, `42,000 sats` and `170,000 sats`.
@@ -833,7 +833,7 @@ For example, if we have a transaction weighing `141 vB` and allocating `1,974 sa
 ```
 
 
-This ratio explains the economic choices made by miners: at fixed capacity, including high-rate transactions maximizes total block costs, and therefore the miner's compensation. It also explains why low-cost transactions remain queued in mempools for long periods: they compete with other transactions that pay more per unit of space.
+This ratio explains the economic choices made by miners: at fixed capacity, including high-rate transactions maximizes the block’s total fees, and therefore the miner's compensation. It also explains why low-cost transactions remain queued in mempools for long periods: they compete with other transactions that pay more per unit of space.
 
 
 ### Network protection against spam
@@ -842,13 +842,13 @@ This ratio explains the economic choices made by miners: at fixed capacity, incl
 Fees also serve an operational security purpose: they introduce a cost to the multiplication of transactions. If publishing a transaction were free, it would be easy to flood the network with useless transactions and saturate mempools, increasing the load on nodes.
 
 
-In practice, nodes apply local relay policies (mempool rules) and often set a minimum fee threshold below which they will not relay a transaction (by default, `0.1 sat/vB` on Bitcoin Core via `minRelayTxFee`). A transaction may be valid in the strict sense of the consensus rules, but not relayed by most nodes if its fees are too low. As a result, it doesn't circulate, doesn't reach the miners, and has very little chance of being confirmed.
+In practice, nodes apply local relay policies (mempool rules) and often set a minimum fee threshold below which they will not relay a transaction (by default, `0.1 sat/vB` in Bitcoin Core via `minRelayTxFee`). A transaction may be valid in the strict sense of the consensus rules, but not relayed by most nodes if its fees are too low. As a result, it doesn't circulate, doesn't reach the miners, and has very little chance of being confirmed.
 
 
-At this point, you've got the gist of the block reward: it corresponds to the compensation for the winning miner and is made up of two distinct elements. On the one hand, a block grant, defined by the protocol rules, which creates new bitcoins ex nihilo. On the other hand, the fees of transactions included in the mined block.
+At this point, you've got the gist of the block reward: it corresponds to the compensation for the winning miner and is made up of two distinct elements. On the one hand, a block subsidy, defined by the protocol rules, which creates new bitcoins ex nihilo. And on the other hand, the fees of transactions included in the mined block.
 
 
-In the next chapter, we'll focus in more detail on the block grant, to understand precisely how it is calculated and how it evolves over time according to the rules of the Bitcoin protocol.
+In the next chapter, we'll focus in more detail on the block subsidy, to understand precisely how it is calculated and how it evolves over time according to the rules of the Bitcoin protocol.
 
 
 ## Halving
@@ -862,10 +862,10 @@ In the previous chapter, we saw that miners who produce a valid block receive a 
 ### What is halving?
 
 
-Halving is an event programmed into the Bitcoin protocol that halves the block grant, i.e. the maximum amount of new bitcoins that the winning miner is allowed to create with each block. It does not affect transaction fees: fees exist independently and remain determined by user activity and competition for block space.
+Halving is an event programmed into the Bitcoin protocol that halves the block subsidy, i.e. the maximum amount of new bitcoins that the winning miner is allowed to create with each block. It does not affect transaction fees: fees exist independently and remain determined by user activity and competition for block space.
 
 
-When Bitcoin was launched in 2009, the block grant was set at 50 BTC for each block mined. Since then, this subsidy has been halved several times for each halving.
+When Bitcoin was launched in 2009, the block subsidy was set at 50 BTC for each mined block. Since then, this subsidy has been halved several times for each halving.
 
 
 ![Image](assets/fr/029.webp)
@@ -901,7 +901,7 @@ subsidy(n) = 50 / 2^n
 ### Past halvings
 
 
-Here is a summary table of halvings that have already occurred, with their block height, date and the new block grant applicable after the event:
+Here is a summary table of halvings that have already occurred, with their block height, date and the new block subsidy applicable after the event:
 
 
 | Event               |   Height  | Date                        | Subsidy    |
@@ -929,7 +929,7 @@ As the subsidy is halved, we eventually reach fractions of a bitcoin so small th
 The definitive end to block subsidies will come at block level 6,930,000, i.e. at the 33rd and final halving. This event is expected to take place around the year 2140, although it is impossible to give an exact date, as it will depend on the actual speed at which blocks are found between now and then.
 
 
-Since the block subsidy follows a geometric sequence with a ratio of 1/2 at each halving, money creation was extremely high in Bitcoin’s early days, and then decreases very quickly. By the 7th halving, over 99% of bitcoins will already have been put into circulation. The 99% threshold is expected to be crossed between 2032 and 2036. This means that it will then take over 100 years to mine the last remaining 1% of bitcoins. While monetary inflation was very high when Bitcoin was launched, to enable widespread distribution of the currency, it is now very low and will continue to fall, until it reaches true hard currency, whose circulating supply can no longer increase.
+Since the block subsidy follows a geometric sequence with a ratio of 1/2 at each halving, money creation was extremely high in Bitcoin’s early days, and then decreases very quickly. By the 7th halving, over 99% of bitcoins will have already been put into circulation. The 99% threshold is expected to be crossed between 2032 and 2036. This means that it will then take over 100 years to mine the last remaining 1% of bitcoins. While monetary inflation was very high when Bitcoin was launched, to enable widespread distribution of the currency, it is now very low and will continue to fall, until it reaches the level of a true hard currency, whose circulating supply can no longer increase.
 
 
 ![Image](assets/fr/030.webp)
@@ -944,7 +944,7 @@ Bitcoin's maximum monetary supply is often presented as 21 million BTC. This is 
 The main reason is mechanical. Through successive halvings, the block subsidy eventually falls below the minimum value of 1 sat, which ends issuance before reaching the exact theoretical total. As a result of this minimum granularity and the rounding rules, the total number of bitcoins created by the subsidy is slightly less than 21 million.
 
 
-In addition, marginal protocol-related deviations can also add to this. For example, in rare cases, some miners may not have claimed their full subsidy, which definitively reduces the quantity of bitcoins actually issued. We can also mention the genesis block, produced by Satoshi on January 3, 2009, whose bitcoins created are not part of UTXO set, as well as certain historical events linked to bugs, such as duplicate coinbase transaction identifiers.
+In addition, marginal protocol-related deviations can also add to this. For example, in rare cases, some miners may not have claimed their full subsidy, which definitively reduces the quantity of bitcoins actually issued. We can also mention the genesis block, produced by Satoshi on January 3, 2009, whose bitcoins created are not part of the UTXO set, as well as certain historical events linked to bugs, such as duplicate coinbase transaction identifiers.
 
 
 Finally, we must also take into account all the bitcoins that have been destroyed or blocked:
@@ -970,7 +970,7 @@ In the previous chapters, we presented two important points. Firstly, the miner 
 - all transaction fees paid by users whose transactions have been included in the block.
 
 
-One question remains, however: by what mechanism does the miner collect this reward on Bitcoin? This is precisely the role of a particular transaction called a "coinbase".
+One question remains, however: by what mechanism does the miner collect this reward in Bitcoin? This is precisely the role of a particular transaction called a "coinbase".
 
 
 ### How the coinbase transaction works
@@ -997,7 +997,7 @@ It is precisely this mechanism that enables new bitcoins to be introduced into c
 This transaction is not optional. A block that does not contain a coinbase transaction is invalid and will be systematically rejected by network nodes.
 
 
-⚠️ Please note: the term "*coinbase*" has no connection with the exchange platform of the same name. On Bitcoin, "*coinbase*" historically refers to the transaction that creates the block reward. The company has simply adopted this term for its name.
+⚠️ Please note: the term "*coinbase*" has no connection with the exchange platform of the same name. In Bitcoin, "*coinbase*" historically refers to the transaction that creates the block reward. The company has simply adopted this term for its name.
 
 
 The coinbase transaction actually fulfils several roles simultaneously:
@@ -1044,10 +1044,10 @@ In the basic Bitcoin protocol, as described in Satoshi Nakamoto, this false inpu
 
 Like any UTXO referenced in a transaction's input, it is associated with a `scriptSig` field. In a conventional transaction, this `scriptSig` field contains the elements needed to satisfy the `scriptPubKey` and thus unlock the spent UTXO. But in the particular case of coinbase, since the UTXO referenced is deliberately fictitious, the `scriptSig` field is entirely free. Miners can therefore enter any data they like. We’ll look later at how this freedom is used.
 
-In addition to this false input, there are one or more perfectly standard outputs, which enable the miner to collect the bitcoins from the reward on one of his Bitcoin addresses. These outputs are UTXOs locked by a `scriptPubKey` (e.g. a script pointing to an address controlled by the miner or the pool). The only peculiarity here lies in the rule for calculating their value: the total sum of the coinbase's outputs must never exceed the maximum subsidy allowed, to which the block fees are added.
+In addition to this false input, there are one or more perfectly standard outputs, which enable the miner to collect the bitcoins from the reward on one of their Bitcoin addresses. These outputs are UTXOs locked by a `scriptPubKey` (e.g. a script pointing to an address controlled by the miner or the pool). The only peculiarity here lies in the rule for calculating their value: the total sum of the coinbase's outputs must never exceed the maximum subsidy allowed, to which the block fees are added.
 
 
-Historically, then, the coinbase transaction boiled down to this simple scheme: a fake input referencing a non-existent UTXO, and one or more outputs designed to distribute the block reward to the winning miner. Today, however, the coinbase is no longer limited to this distribution role. Its special position in the block and the great flexibility of its structure have led to new uses, both in the protocol itself and in mining pool management mechanisms.
+Historically, then, the coinbase transaction is boiled down to this simple scheme: a fake input referencing a non-existent UTXO, and one or more outputs designed to distribute the block reward to the winning miner. Today, however, the coinbase is no longer limited to this distribution role. Its special position in the block and the great flexibility of its structure have led to new uses, both in the protocol itself and in mining pool management mechanisms.
 
 
 ### Other coinbase uses
@@ -1074,10 +1074,10 @@ Thus, the coinbase's `scriptSig` is not totally free. Since the activation of BI
 #### The extra-nonce
 
 
-As we saw in the first chapters of this course, the miner has a 32-bit hash field in the block header, which he modifies by trial and error to find a hash less than or equal to the target. This 32-bit space already allows a very large number of combinations to be explored, but when mining difficulty is high, this range can be fully exhausted in a relatively short time and thus may yield no combination that produces a valid hash. If all possible values of the `nonce` have been tested without success, the miner must then modify another element to change the block header and start a new series of attempts.
+As we saw in the first chapters of this course, the miner has a 32-bit nonce field in the block header, which they modify by trial and error to find a hash less than or equal to the target. This 32-bit space already allows a very large number of combinations to be explored, but when mining difficulty is high, this range can be fully exhausted in a relatively short time and thus may yield no combination that produces a valid hash. If all possible values of the `nonce` have been tested without success, the miner must then modify another element to change the block header and start a new series of attempts.
 
 
-As the coinbase transaction offers a free field via the `scriptSig` of its input, the solution used to extend the nonce's space is to exploit part of this `scriptSig`. This is generally referred to as the extra-nonce. By modifying the extra-nonce, the miner modifies the coinbase's `scriptSig`, i.e. the transaction identifier, then the Merkle root of the block, and finally the block header itself. He thus obtains a new hash search space to explore, without having to touch the other components of his candidate block.
+As the coinbase transaction offers a free field via the `scriptSig` of its input, the solution used to extend the nonce's space is to exploit part of this `scriptSig`. This is generally referred to as the extra-nonce. By modifying the extra-nonce, the miner modifies the coinbase's `scriptSig`, i.e. the transaction identifier, then the Merkle root of the block, and finally the block header itself. In this way, they obtain a new search space of hashes to explore, without having to modify the other components of their candidate block.
 
 
 ![Image](assets/fr/036.webp)
@@ -1086,7 +1086,7 @@ As the coinbase transaction offers a free field via the `scriptSig` of its input
 #### Identifying pools and miners
 
 
-Today, a very large proportion of the world's hashrate is organized in mining pools. These structures bring together individual miners to pool their work and reduce the variance of their income.
+Today, a very large proportion of the world's hashrate is organized in mining pools. These structures bring together individual miners to combine their work and reduce the variance of their income.
 
 
 For operational reasons, mining pools also exploit the free field of the coinbase input's `scriptSig` to insert various pieces of information. These vary from pool to pool and from network protocol to network protocol, but generally include a unique identifier (often an extra nonce structured into several sub-parts) assigned to each miner, to avoid duplication of work within the pool. A pool identification tag is usually added, used for public attribution of found blocks, mining statistics and other tracking purposes.
@@ -1116,7 +1116,7 @@ I won't go into more detail on this mechanism in this course, as it's beyond the
 #### Arbitrary messages
 
 
-Since the `scriptSig` allows free insertion of information of the miner's choice, some have taken advantage of the opportunity to add messages of a more personal nature, rather than technical ones. The most famous case is of course Satoshi Nakamoto, with his now-iconic message:
+Since the `scriptSig` allows free insertion of arbitrary information chosen by the miner, some have taken advantage of the opportunity to add messages of a more personal nature, rather than technical ones. The most famous case is of course Satoshi Nakamoto, with his now-iconic message:
 
 
 > The Times 03/Jan/2009 Chancellor on brink of second bailout for banks
@@ -1164,7 +1164,7 @@ The bitcoins in circulation would then never have existed in the final chain, an
 The maturity period imposes a timeframe long enough to make this scenario unrealistic. A reorganization of 101 blocks is considered, in practice, impossible (even if there remains an infinitesimal probability). We don't know exactly why Satoshi chose such a high value for maturity, but it is likely that it was chosen so that the mechanism would remain functional, even in the event of major network malfunctions.
 
 
-This rule prevents newly-created block-reward money from starting to circulate before the block that generated it has been extremely solidly anchored under a large amount of accumulated labor.
+This rule prevents newly-created block-reward money from starting to circulate before the block that generated it has been securely buried under a large amount of accumulated work.
 
 
 ---
