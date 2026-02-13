@@ -6,7 +6,7 @@ objectives:
   - Understand the role and purpose of a Bitcoin node.
   - Identify the different hardware and software solutions available.
   - Install and configure a full node (Bitcoin Core).
-  - Use the Interface Umbrel and add useful applications.
+  - Use Umbrel graphical interface and add useful applications.
   - Connect a personal wallet to its own node.
   - Explore advanced settings and best security practices.
 
@@ -280,7 +280,7 @@ Among these implementations, one dominates by far: **Bitcoin Core**.
 ### A historic implementation that has become a benchmark
 
 
-Bitcoin Core is the reference software for the Bitcoin protocol. It is derived from the original code written by Satoshi Nakamoto in 2008-2009, and is a direct continuation of it. Initially known as "*Bitcoin*", then "*Bitcoin QT*" (due to the addition of a graphical Interface via the Qt library), it was renamed "*Bitcoin Core*" in 2014 to clearly differentiate the software from the network. Since version 0.5, it has been distributed with two components: `Bitcoin-qt` (the graphical Interface) and `bitcoind` (the command-line Interface).
+Bitcoin Core is the reference software for the Bitcoin protocol. It is derived from the original code written by Satoshi Nakamoto in 2008-2009, and is a direct continuation of it. Initially known as "*Bitcoin*", then "*Bitcoin QT*" (due to the addition of a graphical interface via the Qt library), it was renamed "*Bitcoin Core*" in 2014 to clearly differentiate the software from the network. Since version 0.5, it has been distributed with two components: `Bitcoin-qt` (the graphical interface) and `bitcoind` (the command-line interface).
 
 
 In theory, Bitcoin Core does not represent the Bitcoin protocol; rather, it is just one implementation among many. It is, however, distinguished by its massive adoption, its age, the robustness of its code, and the rigor of its development process. Consequently, in practice, the rules applied by Bitcoin Core are de facto those of the Bitcoin protocol: users, developers, miners, and ecosystem services refer to it almost exclusively.
@@ -621,10 +621,10 @@ On the software side, there are 2 main ways to run a Bitcoin node:
 
 
 - directly install a protocol implementation, such as Bitcoin Core (recommended), or Bitcoin Knots,
-- or use a turnkey distribution (often called "_node-in-a-box_") which integrates a Bitcoin implementation in the same way, but also includes an Interface administration system, an application store, and ready-to-use tools (Lightning, browsers, index servers, even self-hosting applications external to Bitcoin...).
+- or use a turnkey distribution (often called "_node-in-a-box_") which integrates a Bitcoin implementation in the same way, but also includes an interface for system administration, an application store, and ready-to-use tools (Lightning, browsers, index servers, even self-hosting applications external to Bitcoin...).
 
 
-Both approaches lead to the same goal: to have your own node, but they differ in terms of Interface installation and use, maintenance, expandability, and cost. That's what we'll explore in this chapter.
+Both approaches lead to the same goal: to have your own node, but they differ in terms of interface installation and use, maintenance, expandability, and cost. That's what we'll explore in this chapter.
 
 
 ### Raw Bitcoin node implementations
@@ -672,7 +672,7 @@ Personally, I recommend you choose Core, mainly to benefit from security patches
 ### Node-in-a-box distributions
 
 
-The _node-in-a-box_ combines Bitcoin Core (or Knots) with a preconfigured operating system, an Interface Web, and an App Store of self-hosting services (Lightning, explorers, Electrum server, Mempool, BTCPay Server, Nextcloud, etc.). In just one click, you can install, update, and interconnect these different modules.
+The _node-in-a-box_ combines Bitcoin Core (or Knots) with a preconfigured operating system, a web interface, and an App Store of self-hosting services (Lightning, explorers, Electrum server, Mempool, BTCPay Server, Nextcloud, etc.). In just one click, you can install, update, and interconnect these different modules.
 
 
 It's a much simpler solution for starting up and managing numerous ancillary applications on a day-to-day basis. The downside is that when a problem occurs (e.g., Docker image conflict, faulty update, corrupted database), debugging can become very complex, as you depend on the distribution's own integration. What's more, community or official support is often complicated.
@@ -694,7 +694,7 @@ Here's an overview of the main node-in-a-box solutions available (in 2025):
 ### Umbrel (umbrelOS & Umbrel Home)
 
 
-[Today, Umbrel is the leader in node-in-a-box solutions (https://umbrel.com/). Its success is largely due to the simplicity of its installation (when it was launched on a simple Raspberry Pi), its elegant and intuitive Interface, and an ecosystem of applications that has grown rapidly and is now extremely extensive.
+[Today, Umbrel is the leader in node-in-a-box solutions (https://umbrel.com/). Its success is largely due to the simplicity of its installation (when it was launched on a simple Raspberry Pi), its elegant and intuitive graphical interface, and an ecosystem of applications that has grown rapidly and is now extremely extensive.
 
 
 ![Image](assets/fr/067.webp)
@@ -720,10 +720,10 @@ On the Bitcoin side, StartOS lets you install a full node, a Lightning node, BTC
 ![Image](assets/fr/068.webp)
 
 
-The main difference with Umbrel lies in the Interface. Umbrel relies on a highly polished UX, while Start9 offers a cruder, more functional Interface. Start9's application ecosystem is less rich than Umbrel's, but it compensates for this with several technical advantages: access to advanced application settings is simplified, whereas Umbrel quickly becomes restrictive if the desired option is not provided by the Interface. Start9 also excels in backup management: apart from Umbrel's efficient solution for LND, there is no unified mechanism, unlike Start9. What's more, it offers more accessible monitoring tools and an encrypted remote connection (`https`), whereas local access to Umbrel is via `http`.
+The main difference with Umbrel lies in the graphical interface. Umbrel relies on a highly polished UX, while Start9 offers a cruder, more functional interface. Start9's application ecosystem is less rich than Umbrel's, but it compensates for this with several technical advantages: access to advanced application settings is simplified, whereas Umbrel quickly becomes restrictive if the desired option is not provided by the interface. Start9 also excels in backup management: apart from Umbrel's efficient solution for LND, there is no unified mechanism, unlike Start9. What's more, it offers more accessible monitoring tools and an encrypted remote connection (`https`), whereas local access to Umbrel is via `http`.
 
 
-In short, if you simply need the essential applications for Bitcoin, with no particular interest in Umbrel's very rich ecosystem, and the Interface user is not a priority, then Start9 is a better option. Otherwise, Umbrel is the better choice.
+In short, if you simply need the essential applications for Bitcoin, with no particular interest in Umbrel's very rich ecosystem, and the user's graphical interface is not a priority, then Start9 is a better option. Otherwise, Umbrel is the better choice.
 
 
 https://planb.academy/tutorials/node/bitcoin/start9-8c8b6827-8423-4929-bcba-89057670ed6a
@@ -759,7 +759,7 @@ https://planb.academy/tutorials/node/bitcoin/raspiblitz-d8cdba2e-a682-46cf-9fdc-
 ### RoninDojo
 
 
-[RoninDojo is a privacy-focused node-in-a-box](https://wiki.ronindojo.io/en/home) that automates the deployment of Samurai Dojo and Whirlpool, with a dedicated Interface and plugins specifically designed for the Samurai ecosystem.
+[RoninDojo is a privacy-focused node-in-a-box](https://wiki.ronindojo.io/en/home) that automates the deployment of Samurai Dojo and Whirlpool, with a dedicated interface and plugins specifically designed for the Samurai ecosystem.
 
 
 The principle is simple: if you use Ashigaru wallet (the Fork successor to Samurai wallet, following the arrest of its developers) or if you want to benefit from advanced privacy tools, RoninDojo is for you.
@@ -1057,13 +1057,13 @@ Depending on your intended use, you can opt for either a 2TB SSD, as in the othe
 <chapterId>dd4c04f1-924a-43e1-94f3-ea9fbc83dd43</chapterId>
 
 
-Umbrel is a personal server operating system designed to make self-hosting accessible: you install Umbrel, open a browser on `umbrel.local`, and manage everything via a simple remote Interface.
+Umbrel is a personal server operating system designed to make self-hosting accessible: you install Umbrel, open a browser on `umbrel.local`, and manage everything via a simple remote interface.
 
 
 The project first popularized the idea of a one-click Bitcoin and Lightning node, then expanded into a veritable "home cloud": file and photo storage, multimedia streaming, network tools, home automation, local AI, and hundreds of apps installable from an integrated App Store.
 
 
-In Umbrel, each application runs in a Docker container (isolation, atomic updates, independent start/stop). The Interface centralizes access to all these apps, offering single sign-on (with optional 2FA), one-click updates for OS and apps, live monitoring of the machine (CPU, RAM, temperature, storage), permissions management between apps, and an overview of their consumption.
+In Umbrel, each application runs in a Docker container (isolation, atomic updates, independent start/stop). The interface centralizes access to all these apps, offering single sign-on (with optional 2FA), one-click updates for OS and apps, live monitoring of the machine (CPU, RAM, temperature, storage), permissions management between apps, and an overview of their consumption.
 
 
 Umbrel's aim is therefore to give you back control and confidentiality over your data, without relying on cloud services, beyond simply operating a Bitcoin node.
@@ -1083,7 +1083,7 @@ Umbrel offers two distinct approaches:
 
 
 
-- [**umbrelOS**](https://umbrel.com/umbrelos): this is the operating system you can install yourself on your own hardware (mini-PC, NUC, tower, dedicated laptop...). You have the same Interface and the same App Store as on Umbrel Home.
+- [**umbrelOS**](https://umbrel.com/umbrelos): this is the operating system you can install yourself on your own hardware (mini-PC, NUC, tower, dedicated laptop...). You have the same interface and the same App Store as on Umbrel Home.
 
 
 ![Image](assets/fr/080.webp)
@@ -1112,7 +1112,7 @@ Umbrel can remain very minimalist and focused solely on Bitcoin, or evolve into 
 
 
 
-- **Lightning Network**: Umbrel also lets you deploy LND or Core Lightning, two implementations of the Lightning Network, to manage your own Lightning node. You'll be able to open channels, manage your liquidity, make payments, automate balancing, offer services, connect a remote wallet, or take advantage of advanced Interface management thanks to the many applications available. We'll be looking at this specific use case in our next LNP 202 course.
+- **Lightning Network**: Umbrel also lets you deploy LND or Core Lightning, two implementations of the Lightning Network, to manage your own Lightning node. You'll be able to open channels, manage your liquidity, make payments, automate balancing, offer services, connect a remote wallet, or take advantage of advanced interface for management thanks to the many applications available. We'll be looking at this specific use case in our next LNP 202 course.
 
 
 ![Image](assets/fr/083.webp)
@@ -1167,7 +1167,7 @@ Now that we have all the necessary information, it's time to delve into the deta
 Here, we'll be using the UmbrelOS x86 image (more precisely, the x86_64 version). You'll be able to follow this guide on whatever machine you choose, as long as it's not equipped with an ARM architecture processor (no Apple Silicon, Raspberry Pi, etc.). This means that any computer with an Intel or AMD 64-bit processor will suffice, as long as it meets the minimum requirements, depending on how you intend to use your Umbrel (at least a dual-core processor is recommended).
 
 
-If you've opted for a Raspberry Pi 5 (an option I don't recommend, as mentioned in the previous section), the installation is slightly different. You can then follow this dedicated tutorial and return to my course once on the Interface web `http://umbrel.local`:
+If you've opted for a Raspberry Pi 5 (an option I don't recommend, as mentioned in the previous section), the installation is slightly different. You can then follow this dedicated tutorial and return to my course once on the web interface `http://umbrel.local`:
 
 
 https://planb.academy/tutorials/node/bitcoin/umbrel-8b0e3b5b-d3cf-4a1e-8bb8-1ad2db4dd848
@@ -1268,7 +1268,7 @@ Umbrel obviously requires an Internet connection. Connect the RJ45 Ethernet cabl
 ![Image](assets/fr/006.webp)
 
 
-Switch on your machine. In most cases, it should automatically detect the USB key and boot from it. You'll then see the UmbrelOS Interface installation screen appear.
+Switch on your machine. In most cases, it should automatically detect the USB key and boot from it. You'll then see the UmbrelOS installation screen appear.
 
 
 If the device boots on another system or displays an error message, this probably means that it is not booting automatically from the USB key. In this case, reboot and enter the BIOS/UEFI settings (usually accessed by pressing `DEL`, `F2`, `F12`, or `ESC`, depending on the computer manufacturer). Then, change the boot order to give priority to the USB key. Then restart the device to launch UmbrelOS.
@@ -1277,7 +1277,7 @@ If the device boots on another system or displays an error message, this probabl
 ### Step 4: Install UmbrelOS on your computer
 
 
-Once the device has booted from the USB stick, you'll be greeted by the Interface UmbrelOS installation. This step involves installing the system directly onto your machine's internal hard disk.
+Once the device has booted from the USB stick, you'll be greeted by the UmbrelOS installation interface. This step involves installing the system directly onto your machine's internal hard disk.
 
 
 The screen that appears lists all the internal storage devices detected by the computer. Each disk is accompanied by a number, a name, and a storage capacity. Locate the disk on which you wish to install Umbrel. **Warning: all files on this disk will be permanently deleted.**
@@ -1318,7 +1318,7 @@ Before restarting the device, check the following two points:
 - **Ethernet cable is plugged in**: the device must be connected to your router to operate.
 
 
-Press the power button. The system boots automatically from the internal disk where UmbrelOS was installed. The first boot may take approximately **5 minutes**. During this time, Umbrel initializes its services and Interface.
+Press the power button. The system boots automatically from the internal disk where UmbrelOS was installed. The first boot may take approximately **5 minutes**. During this time, Umbrel initializes its services and interface.
 
 
 From another computer (your everyday PC) connected to the **same local network**, open a web browser (Firefox, Chrome...) and go to:
@@ -1329,7 +1329,7 @@ http://umbrel.local
 ```
 
 
-This address is used to access the Umbrel Interface graphical user interface remotely and begin configuration.
+This address is used to access the Umbrel graphical user interface remotely and begin configuration.
 
 
 If the address `http://umbrel.local` doesn't work on your browser after waiting at least 5 minutes, simply try:
@@ -1352,7 +1352,7 @@ To identify your Umbrel's IP address, there are several methods, from the simple
 
 
 
-- Access your router's administration Interface and find the IP address of the Umbrel device on the local network.
+- Access your router's administration interface and find the IP address of the Umbrel device on the local network.
 
 
 
@@ -1410,10 +1410,10 @@ Your Umbrel configuration is now complete.
 ![Image](assets/fr/015.webp)
 
 
-#### Discovery of Interface
+#### Discovery of interface
 
 
-Umbrel's Interface is quite intuitive:
+Umbrel's interface is quite intuitive:
 
 
 
@@ -1480,7 +1480,7 @@ If you enable this feature, it theoretically becomes possible for any machine in
 If you activate this option, ensure that you have two-factor authentication (2FA) enabled, a strong password, and never disclose your Tor connection address.
 
 
-Simply enter this Tor address in your Tor browser to access Umbrel's Interface from any network.
+Simply enter this Tor address in your Tor browser to access Umbrel's interface from any network.
 
 
 ![Image](assets/fr/026.webp)
@@ -1609,7 +1609,7 @@ Contrary to popular belief, Bitcoin Core doesn't offer address-based indexing li
 - Each software program has specific requirements regarding the format or type of data to be indexed (address, Hash script, proprietary tag, etc.). It's more flexible and logical to let these programs build their own customized indexes than to fix a generic solution in Bitcoin Core.
 
 
-Bitcoin Core does have an optional transaction indexer (`txindex`), a vestige of its historical operation, but it does not provide an address index, nor a direct Interface for complex searches. In some cases, therefore, it may be useful to add an external indexer.
+Bitcoin Core does have an optional transaction indexer (`txindex`), a vestige of its historical operation, but it does not provide an address index, nor a direct interface for complex searches. In some cases, therefore, it may be useful to add an external indexer.
 
 
 ### Should you add an address indexer to your node?
@@ -1618,7 +1618,7 @@ Bitcoin Core does have an optional transaction indexer (`txindex`), a vestige of
 Adding an address indexer, such as Electrs or Fulcrum, is not mandatory; it depends on your specific needs.
 
 
-If you simply want to connect a wallet, such as Sparrow, to your node to view balances and broadcast transactions, this is entirely possible directly via Bitcoin Core's Interface RPC, either locally or remotely via Tor.
+If you simply want to connect a wallet, such as Sparrow, to your node to view balances and broadcast transactions, this is entirely possible directly via Bitcoin Core's RPC interface, either locally or remotely via Tor.
 
 
 On the other hand, to use more advanced software, such as running mempool.space locally, the installation of an address indexer becomes indispensable for the space block explorer.
@@ -1650,7 +1650,7 @@ In concrete terms, in August 2025, Electrs will require approximately 56 GB of s
 - If you've got a comfortable amount of disk space, Fulcrum may be just what you're looking for.
 
 
-For the rest of this BTC 202 course, I'll be using Electrs, but you can easily follow along with Fulcrum: the installation procedure is identical, as is the Interface connection to the wallet, since both expose an Electrum server.
+For the rest of this BTC 202 course, I'll be using Electrs, but you can easily follow along with Fulcrum: the installation procedure is identical, as is the  connection interface to the wallet, since both expose an Electrum server.
 
 
 ### How do I install an indexer on Umbrel?
@@ -1707,9 +1707,9 @@ Then click on "*Server*" to access the connection parameters.
 You will then discover three options for linking your software to a Bitcoin node:
 
 
-- Public Server* (yellow): by default, if you don't own a Bitcoin node, this option connects you to a public node you don't own (usually a company's). This option is not relevant here, as you have your own node on Umbrel.
-- Bitcoin Core* (green): this option corresponds to connection via Interface RPC, i.e., directly to Bitcoin Core.
-- Private Electrum* (blue): this option lets you connect via your indexer's Interface Electrum Server (Electrs or Fulcrum).
+- *Public Server* (yellow): by default, if you don't own a Bitcoin node, this option connects you to a public node you don't own (usually a company's). This option is not relevant here, as you have your own node on Umbrel.
+- *Bitcoin Core* (green): this option corresponds to connection via RPC interface, i.e., directly to Bitcoin Core.
+- *Private Electrum* (blue): this option lets you connect via your indexer's Electrum Server interface(Electrs or Fulcrum).
 
 
 ### Connection to Bitcoin Core RPC
@@ -1721,7 +1721,7 @@ If your Umbrel node doesn't have an indexer, this is the option you need to sele
 ![Image](assets/fr/032.webp)
 
 
-You will then need to enter several pieces of information to establish the connection to your node. All this data can be accessed from the "*Bitcoin Node*" application on Umbrel by clicking the "*Connect*" button in the top-right corner of the Interface.
+You will then need to enter several pieces of information to establish the connection to your node. All this data can be accessed from the "*Bitcoin Node*" application on Umbrel by clicking the "*Connect*" button in the top-right corner of the interface.
 
 
 ![Image](assets/fr/033.webp)
@@ -1745,7 +1745,7 @@ If the connection is successful, a green tick and a confirmation message will ap
 ![Image](assets/fr/036.webp)
 
 
-The tick at the bottom right of the Interface Sparrow wallet will now be green (indicating a direct connection to Bitcoin Core).
+The tick at the bottom right of the Sparrow wallet interface will now be green (indicating a direct connection to Bitcoin Core).
 
 
 **Note:** For the connection to succeed, your node must be 100% synchronized. If this is not the case, please wait until the end of the IBD.
@@ -1784,7 +1784,7 @@ If the connection is successful, a check mark and a confirmation message will be
 ![Image](assets/fr/040.webp)
 
 
-The tick in the bottom right-hand corner of the Interface Sparrow wallet will turn blue (the color associated with connection to an Electrum server).
+The tick in the bottom right-hand corner of the Sparrow wallet interface will turn blue (the color associated with connection to an Electrum server).
 
 
 **Note:** For the connection to work, your indexer must be 100% synchronized. If this is not the case, wait until the indexing process is complete.
@@ -1865,7 +1865,7 @@ Umbrel offers a number of applications to help you get your Lightning node up an
 
 https://planb.academy/tutorials/node/lightning-network/umbrel-lnd-b12e0b5b-12ff-45f1-978e-62f4b4a8ba16
 
-You can then administer your node from the main Interface, or, for even greater functionality and advanced options, install *Ride The Lightning* or *ThunderHub*. These tools will provide you with a much more comprehensive web-based interface management system for your node.
+You can then administer your node from the main interface, or, for even greater functionality and advanced options, install *Ride The Lightning* or *ThunderHub*. These tools will provide you with a much more comprehensive web-based management system interface for your node.
 
 
 https://planb.academy/tutorials/node/lightning-network/ride-the-lightning-ca007688-0653-490c-8349-81d330d744b5
@@ -1902,7 +1902,7 @@ In concrete terms, Tailscale offers you several advantages when using your Umbre
 
 
 
-- You can administer the Interface Umbrel or access the applications linked to your node (such as Mempool, Ride The Lightning, ThunderHub...) from anywhere, as if you were on the same local network, without exposing ports on the Internet and without going through Tor, which is very slow;
+- You can administer the Umbrel interface or access the applications linked to your node (such as Mempool, Ride The Lightning, ThunderHub...) from anywhere, as if you were on the same local network, without exposing ports on the Internet and without going through Tor, which is very slow;
 
 
 
@@ -1936,7 +1936,7 @@ This protocol is very popular within the Bitcoin community because, like Bitcoin
 With your Umbrel, you can optimize your use of Nostr. By installing the ***Nostr Relay*** application, you can host your own private relay directly on your machine, ensuring that all your posts and interactions on Nostr are saved locally and can't be lost through deletion by public relays.
 
 
-Nostr clients ***noStrudel*** or ***Snort*** are also available on Umbrel. Thanks to these applications, you can publish, read, search for profiles, and interact with the Nostr ecosystem directly from the Interface web on your Umbrel.
+Nostr clients ***noStrudel*** or ***Snort*** are also available on Umbrel. Thanks to these applications, you can publish, read, search for profiles, and interact with the Nostr ecosystem directly from the web interface on your Umbrel.
 
 
 Finally, there is the ***Nostr wallet Connect*** application on Umbrel, which allows native Lightning payments within Nostr. Specifically, you can link your future Lightning node to your Nostr clients to send micro-payments, called "*zaps*", to reward content or interact in a monetized way, without going through a third-party service. These payments are sent directly from your personal node via your channels.
@@ -2026,7 +2026,7 @@ Node updates are important for three main reasons: first, security (vulnerabilit
 
 
 
-- To update applications: Go to the App Store. If any of your applications require updating, a button with a red bubble will appear in the top right-hand corner of the Interface. Simply click on it, then update each application.
+- To update applications: Go to the App Store. If any of your applications require updating, a button with a red bubble will appear in the top right-hand corner of the graphical interface. Simply click on it, then update each application.
 
 
 Perform this operation regularly to keep your operating system and applications up to date.
@@ -2050,7 +2050,7 @@ We'll revisit these aspects in detail in the next LNP202 course.
 ### Day-to-day operational safety
 
 
-In terms of security, use a long, unique, and random password for Interface Umbrel, and remember to activate two-factor authentication (2FA). For applications that offer both password and 2FA protection, always activate both and change the default passwords.
+In terms of security, use a long, unique, and random password for Umbrel interface, and remember to activate two-factor authentication (2FA). For applications that offer both password and 2FA protection, always activate both and change the default passwords.
 
 
 Never expose the dashboard to the Internet without using a secure gateway (such as a VPN, Tor, or local access only). Limit the number of applications you install, and regularly delete those you no longer need, to reduce the attack surface.
@@ -2360,7 +2360,7 @@ Several other files at the same level as `blocks/`, `chainstate/`, and `indexes/
 - `guisettings.ini.bak` is the automatic saving of GUI settings (*Bitcoin Qt*) when the `-resetguisettings` option is used.
 
 
-As we saw in the first parts of this BTC 202 course, Bitcoin Core is both Bitcoin node software and wallet. However, it's not necessarily the solution I'd recommend for managing your wallets, as its Interface remains basic and its functionalities are limited compared with modern software such as Sparrow or Liana. Core also includes files for managing your wallets:
+As we saw in the first parts of this BTC 202 course, Bitcoin Core is both Bitcoin node software and wallet. However, it's not necessarily the solution I'd recommend for managing your wallets, as its interface remains basic and its functionalities are limited compared with modern software such as Sparrow or Liana. Core also includes files for managing your wallets:
 
 
 
@@ -2427,7 +2427,7 @@ In parallel, undo data is written to `rev*.dat` and metadata to the `blocks/inde
 <chapterId>c54a629a-ddb1-41cb-9a88-21dfd9be50ca</chapterId>
 
 
-The `Bitcoin.conf` file is the main Interface configuration file for Bitcoin Core. It allows you to adjust the behavior and parameters of your node without having to recompile its source code or make command-line modifications. In concrete terms, it's a plain text file structured in key-value pairs, meaning that each line of the file references a specific parameter (the key) and its associated value, which can be modified to adjust that parameter.
+The `Bitcoin.conf` file is the main configuration file for Bitcoin Core. It allows you to adjust the behavior and parameters of your node without having to recompile its source code or make command-line modifications. In concrete terms, it's a plain text file structured in key-value pairs, meaning that each line of the file references a specific parameter (the key) and its associated value, which can be modified to adjust that parameter.
 
 
 Network, transaction relay, performance, indexing, logging, and RPC access parameters can be defined in the `Bitcoin.conf`. However, this configuration file never modifies the protocol's consensus rules: it only sets the node's local policy (relaying rules), the way it connects, indexes, and exposes services.
@@ -2442,7 +2442,7 @@ By default, `Bitcoin.conf` resides in the Bitcoin Core data directory. This is t
 The parameters defined in the `Bitcoin.conf` can be overridden by 2 layers:
 
 
-- `settings.json` (written dynamically by Interface graphics or some RPC),
+- `settings.json` (written dynamically by graphical interface or some RPC),
 - and options modified via command lines.
 
 
@@ -2788,7 +2788,7 @@ Finally, the `Bitcoin.conf` file also allows you to configure the access paramet
 
 
 
-- `rpcbind=<addr>[:port]`: RPC server listening address/port. By default, listening is done locally only (`127.0.0.1` and `::1`). This parameter is ignored if `rpcallowip` is not also defined. Use it to explicitly restrict Interface.
+- `rpcbind=<addr>[:port]`: RPC server listening address/port. By default, listening is done locally only (`127.0.0.1` and `::1`). This parameter is ignored if `rpcallowip` is not also defined. Use it to explicitly restrict interface.
 
 
 
