@@ -1208,10 +1208,10 @@ https://planb.academy/tutorials/mining/hardware/nerdminer-c9826fd9-c2b4-4d1e-8c7
 ### Switching to GPUs
 
 
-Soon enough, miners realized that the bottleneck was not power, but the ability to perform a huge number of similar operations in parallel. This is exactly what graphics processing units (GPUs) can do. Originally, a GPU was designed to perform the same operations on large quantities of data. This architecture lends itself very well to a task like repeated hashing: instead of having a few highly versatile cores, you have hundreds, then thousands of units capable of executing the same instructions simultaneously.
+Soon enough, miners realized that the bottleneck was not power, but the ability to perform a huge number of similar operations in parallel. This was exactly what graphics processing units (GPUs) could do. Originally, a GPU had been designed to perform the same operations on large quantities of data. This architecture was perfectly suited for a task like repeated hashing: instead of having a few highly versatile cores, you have hundreds, then thousands of units capable of executing the same instructions simultaneously.
 
 
-With comparable power consumption, a GPU can produce far more hashes per second than a CPU. At the same time, bitcoin now has an exchange rate against the dollar, its value increases, and exchange platforms appear. From then on, the nature of mining began to change. It's no longer just about participating, but about making money. Dedicated configurations appeared: machines built around several graphics cards, sometimes without screens, with a minimal system and specialized software, whose sole purpose was to mine.
+With comparable power consumption, a GPU can produce far more hashes per second than a CPU. At the same time, bitcoin had an exchange rate against the dollar, its value was increasing, and exchange platforms were appearing. From then on, the nature of mining began to change. It was no longer just about participating, but about making money. Dedicated configurations appeared: machines built around several graphics cards, sometimes without screens, with a minimal system and specialized software, whose sole purpose was to mine.
 
 
 It was at this point that the difficulty of mining began to explode. Between mid-2010 and mid-2011, it even increased by a factor of 1,000. Mechanically, specialization begins, just like the early forms of industrialization, and ordinary users—who are content to run the Bitcoin software on their personal computers—now have only a very small chance of finding a valid block.
@@ -1223,7 +1223,7 @@ It was at this point that the difficulty of mining began to explode. Between mid
 *Source: [CoinWarz.com](https://www.coinwarz.com/mining/bitcoin/hashrate-chart)*
 
 
-Between the GPU era and the modern ASIC era, there was an intermediate phase: the use of FPGAs. An FPGA is a reprogrammable component: it can be configured to directly implement a logic circuit dedicated to a particular calculation, in this case `SHA256d`. The idea is to move even further away from general-purpose hardware (CPU/GPU) to gain in energy efficiency. But soon, the improvements made virtually on FPGAs will be applied physically to the chips themselves: that's the arrival of ASIC.
+Between the GPU era and the modern ASIC era, there was an intermediate phase: the use of FPGAs. An FPGA is a reprogrammable component: it can be configured to directly implement a logic circuit dedicated to a particular calculation, in this case `SHA256d`. The idea was to move even further away from general-purpose hardware (CPU/GPU) to gain in energy efficiency. But soon, the improvements made virtually on FPGAs would be applied physically to the chips themselves: that's the arrival of ASIC.
 
 
 ### The arrival of ASIC
@@ -1241,8 +1241,8 @@ The final stage in the specialization of mining hardware was the appearance of A
 This specialization has two major consequences:
 
 
-- The first is a leap in performance and efficiency. For an equivalent generation, an ASIC produces a far higher number of hashes per second than a GPU, while consuming less power. Mining with a GPU quickly became uncompetitive: even though it works technically, the electricity cost far outweight the expected revenue in most contexts;
-- The second is a change of model: investment mainly shifted to industrial-grade hardware. Miner now involves buying machines designed for this purpose, powering them continuously, cooling them, maintaining them, and absorbing their obsolescence. Because an ASIC is not economically eternal: when a new, more efficient generation comes onto the market, the old machines become progressively less profitable, even if they remain functional.
+- The first is a leap in performance and efficiency. For devices of comparable generation, an ASIC produces a far more of hashes per second than a GPU, while consuming less power. Mining with a GPU quickly became uncompetitive: even though it worked technically, the electricity cost far outweighed the expected revenue in most contexts;
+- The second is a change of model: investment mainly shifted to industrial-grade hardware. Mining now involves buying machines designed for this purpose, powering them continuously, cooling them, maintaining them, and absorbing their obsolescence. Because an ASIC is not economically eternal: when a new, more efficient generation comes onto the market, the old machines become progressively less profitable, even if they remain functional.
 
 
 From that point on, we're no longer just talking about a hobby. We're talking about a sector where competitiveness depends on an equation:
@@ -1286,7 +1286,7 @@ Mining is now driven by industrial players, some of them listed on the stock exc
 Even without going into the details of profitability models, it's important to understand why mining has taken this form. Proof-of-work is a competitive mechanism: the probability of finding a block, and therefore making money, is proportional to the share of hashrate you deploy. As a result, there is constant pressure to increase computing power, reduce the cost per unit of computation and limit losses. As a result, environments that offer cheaper electricity, a climate conducive to cooling, or an abundant energy infrastructure, naturally become more attractive.
 
 
-Miner from Bitcoin has thus evolved from an activity accessible to anyone in its early days, to one dominated by specialized equipment and professional operations. This does not change the rules of the protocol. In theory, anyone can mine with any machine. But in practice, the level of difficulty and efficiency of ASIC has made domestic mining largely uncompetitive in most contexts.
+Mining Bitcoin has thus evolved from an activity accessible to anyone in its early days, to one dominated by specialized equipment and professional operations. This does not change the rules of the protocol. In theory, anyone can mine with any machine. But in practice, the level of difficulty and efficiency of ASIC has made domestic mining largely uncompetitive in most contexts.
 
 
 Of course, there are still situations in which home mining can be of interest, for example if you benefit from very cheap electricity, or if you use the heat generated by your miner to heat your home in winter. But in any case, you'll still need to buy a machine equipped with an ASIC chip. What's more, since your mining power will remain extremely small relative to the Bitcoin network, you'll need to find a way of reducing the variance of your income: this is precisely the role of mining pools, which we'll be discussing in the next chapter.
@@ -1306,7 +1306,7 @@ https://planb.academy/tutorials/mining/hardware/attakai-0d177e6b-e167-4b25-8e38-
 <chapterId>c871bece-eebe-4ef4-9789-d47251f16c8b</chapterId>
 
 
-Mining Bitcoin involves ongoing, incompressible costs, foremost among which is machine power consumption. These expenses are incurred independently of any results, even though revenues from mining are, by their very nature, rare and random. The discovery of a block depends exclusively on the miner's share of hashrate, which makes earnings all the more unpredictable the smaller that share is. It is precisely this practical problem that rapidly led to the widespread use of mining pools. In this final chapter of the MIN 101 course, I offer an introduction to the principles and operation of mining pools in Bitcoin.
+Mining Bitcoin involves ongoing and unavoidable costs, foremost among which is machine power consumption. These expenses are incurred independently of any results, even though revenues from mining are, by their very nature, rare and random. The discovery of a block depends exclusively on the miner's share of hashrate, which makes earnings all the more unpredictable the smaller that share is. It is precisely this practical problem that rapidly led to the widespread use of mining pools. In this final chapter of the MIN 101 course, I offer an introduction to the principles and operation of mining pools in Bitcoin.
 
 
 ### What's a mining pool?
@@ -1344,16 +1344,16 @@ Here's a simple example to illustrate the principle:
 But this value corresponds only to a mathematical expectation: the distribution of discovery times follows a random law, so it's perfectly possible, in practice, never to discover a single block, even over a very long period. You can be unlucky and find nothing for a very long time, while paying recurring costs (electricity, maintenance, equipment depreciation...).
 
 
-The mining pool changes the nature of this problem: by pooling hashrates, the pool finds blocks more often. Each participant then agrees to receive only a fraction of each block found, but much more frequently. It's a transformation from a highly volatile, widely-spaced income to a more regular one, at the cost of sharing and service fees.
+The mining pool changes the nature of this problem: by combining hashrates, the pool finds blocks more often. Each participant then agrees to receive only a fraction of each block found, but much more frequently. It's a transformation from a highly volatile, widely-spaced income to a more regular one, at the cost of sharing the rewards and paying service fees.
 
 
 ### Why does variance drop when you group together?
 
 
-The higher your computing power, the higher your expected frequency of blocks found. More importantly, the more frequent the events, the closer the observed results are to the statistical average over a given period.
+The higher your computing power, the higher your expected frequency of found blocks. More importantly, the more frequent the events, the closer the observed results are to the statistical average over a given period.
 
 
-On a solo basis, a small-scale miner may go for years without a single block, then get a big payout one day, then nothing. In a pool, the same probabilistic reality exists, but it's smoothed out on a collective scale: the pool finds blocks more often, and redistribution transforms these events into more regular payouts for each participant. **The mining pool therefore sells predictability on the mining activity**.
+On a solo basis, a small-scale miner may go for years without a single block, then get a big payout one day, then nothing. In a pool, the same probabilistic reality still applies, but it's smoothed out at the collective scale: the pool finds blocks more often, and redistribution converts these events into more regular payouts for each participant. **The mining pool therefore sells predictability on the mining activity**.
 
 
 ### Historical landmarks
@@ -1362,19 +1362,19 @@ On a solo basis, a small-scale miner may go for years without a single block, th
 As we saw in the previous chapter, at the very beginning, mining could be done solo with a conventional computer, as the difficulty was very low. But as the global hashrate exploded (GPU, then ASIC), solo mining became a very time-consuming gamble for most participants.
 
 
-The first pools were created precisely in response to this new reality. Braiins Pool (formerly Slush Pool / Bitcoin.cz) is the first Bitcoin mining pool: it mined its first block on December 16, 2010. The success of this first mining pool has been rapid, as in just a few days it has achieved almost 3.5% of global hashrate.
+The first pools were created precisely in response to this new reality. Braiins Pool (formerly Slush Pool / Bitcoin.cz) is the first Bitcoin mining pool: it mined its first block on December 16, 2010. The success of this first mining pool was rapid, as in just a few days it captured nearly 3.5% of the global hashrate.
 
 
 ![Image](assets/fr/047.webp)
 
 
-On the technical side, pools were then structured around specialized communication protocols between the pool and the miners (e.g. Stratum, then Stratum V2), to efficiently orchestrate distributed work. We'll be taking a closer look at these concepts in our MIN 201 training course.
+On the technical side, pools were then structured around specialized communication protocols between the pool and the miners (e.g. Stratum, then Stratum V2), in order to efficiently orchestrate distributed work. We'll be taking a closer look at these concepts in our MIN 201 training course.
 
 
 ### The modern situation
 
 
-At the time of writing (early 2026), the global hashrate of Bitcoin is at an order of magnitude of zetta-hash per second (= 1,000 EH/s = 1,000,000,000,000,000,000 hashes per second), and almost all the blocks found come from mining pools.
+At the time of writing (early 2026), the global Bitcoin hashrate is at an order of magnitude of zetta-hash per second (= 1,000 EH/s = 1,000,000,000,000,000,000 hashes per second), and almost all the blocks found come from mining pools.
 
 
 Here is a ranking, to date, of the main mining pools and their respective share of hashrate. This ranking is likely to change by the time you read this course. For up-to-date data, please visit [mempool.space](https://mempool.space/graphs/mining/pools).
