@@ -4,7 +4,7 @@ goal: Understanding, installing, configuring, and using a Bitcoin node
 objectives: 
 
   - Understand the role and purpose of a Bitcoin node.
-  - Identify the different hardware and software solutions available.
+  - Identify different hardware and software solutions available.
   - Install and configure a full node (Bitcoin Core).
   - Use Umbrel graphical interface and add useful applications.
   - Connect a personal wallet to its own node.
@@ -17,7 +17,7 @@ objectives:
 You're probably familiar with the adage "Not your keys, not your coins", which encourages self-custody of your bitcoins. Holding your own keys is indeed an essential first step, but it's not enough. To achieve true monetary sovereignty, you also need to install and use your own Bitcoin node. This course is designed to guide you through this fundamental step in your Bitcoin journey!
 
 
-BTC 202 is an accessible course designed to teach you how to run your own Bitcoin node, even if you’re not a technical expert. We’ll start by defining what a Bitcoin node is, what it does, and why it’s absolutely essential to run one yourself. I’ll then guide you step by step through choosing your hardware, installing the necessary software, connecting your wallet software, and performing the first possible optimizations to go further.
+BTC 202 is an accessible course designed to teach you how to run your own Bitcoin node, even if you’re not a technical expert. We’ll start by defining what a Bitcoin node is, what it does, and why it’s absolutely essential to run one yourself. I’ll then guide you step by step through choosing your hardware, installing the necessary software, connecting your wallet application, and performing advanced optimizations if you want to go further.
 
 
 Running a Bitcoin node is not just an option for experts; it's a necessity. It's a resilience tool that every user needs to understand and implement. This course is your starting point to becoming a sovereign bitcoiner!
@@ -46,13 +46,13 @@ Welcome to BTC 202, where you'll learn how to install, configure, and use a Bitc
 ### Part 1 - Introduction
 
 
-In this first part of the course, we will clarify the basic notions and then proceed to more precise definitions. What is a node? What are the differences between node, wallet, and miner? You'll then learn about Bitcoin Core and the protocol's implementations. The aim is to speak the same language, avoid confusion, and establish a solid theoretical foundation.
+In this first part of the course, we will clarify the basic notions and then proceed to more precise definitions. What is a node? What are the differences between a node, a wallet, and a miner? You'll then learn about Bitcoin Core and the protocol's implementations. The aim is to speak the same language, avoid confusion, and establish a solid theoretical foundation.
 
 
 ### Part 2 - Becoming a sovereign bitcoiner
 
 
-In this second part, I'll start by explaining why it's important to run your own Bitcoin node. We'll then explore the different types of nodes that exist (complete, pruned, SPV...), how they work, and their technical implications.
+In the second part, I'll start by explaining why it's important to run your own Bitcoin node. We'll then explore the different types of nodes that exist (complete, pruned, SPV...), how they work, and their technical implications.
 
 
 We'll then provide you with an overview of the software available to run a Bitcoin node, including its advantages and disadvantages. Finally, we'll conclude with some very practical recommendations for choosing the right hardware for your needs and budget.
@@ -85,7 +85,7 @@ We'll also examine the role of indexers and the various methods of connecting to
 In this final part of BTC 202, the aim is to deepen your knowledge. First, we'll look at the best practices to adopt with your new Bitcoin node and how to maintain it over the long term.
 
 
-We'll then take the time to review some of the theory covered earlier in the course, including understanding the IBD process and peer discovery in detail, exploring the anatomy of a node, and finally learning how to use the `Bitcoin.conf` file to fine-tune your settings.
+We'll then take the time to review some of the theory covered earlier in the course, including understanding the IBD process and peer discovery in detail, exploring the anatomy of a node, and finally learning how to use the `bitcoin.conf` file to fine-tune your settings.
 
 
 ### Part 6 - Final section
@@ -356,7 +356,7 @@ As we'll discuss later in this course, it's the nodes, according to their econom
 
 
 
-# Become a sovereign bitcoiner
+# Becoming a sovereign bitcoiner
 
 <partId>df64cad2-e92d-4949-9cca-14394aad0bc6</partId>
 
@@ -2141,7 +2141,7 @@ The `assumevalid` parameter is based on a past reference block, the hash of whic
 All other rules (block structure, proof of work, size limits, transaction amounts, UTXOs, etc.) remain fully verified. Only the calculation of scripts prior to this reference block is ignored. The performance gain is significant on the IBD, as signature verification accounts for a major portion of the CPU load. Beyond this reference block, verification returns to its normal state.
 
 
-You can force full validation of all scripts by disabling this mechanism, at the cost of a much longer IBD, using the `assumevalid=0` parameter in the `Bitcoin.conf` file.
+You can force full validation of all scripts by disabling this mechanism, at the cost of a much longer IBD, using the `assumevalid=0` parameter in the `bitcoin.conf` file.
 
 
 ### AssumeUTXO
@@ -2329,7 +2329,7 @@ It is important to note that node mempools have no consensus value. Bitcoin work
 When a transaction is received, Core applies a series of checks against consensus rules (syntax, valid scripts, no double spending, etc.) and Mempool rules, which are a local policy (RBF, minimum charge thresholds, data limit in `OP_RETURN`, etc.). If the transaction adheres to these rules, it is stored in memory.
 
 
-The size of the Mempool is limited by the `maxmempool` parameter in the `Bitcoin.conf` file (more on this in the next chapter). By default, the limit is 300 MB. When it's full, the node dynamically raises its minimum charge threshold and expels the least profitable transactions first (i.e., it retains transactions that should be mined first). Transactions that are too old can also expire after a configured delay.
+The size of the Mempool is limited by the `maxmempool` parameter in the `bitcoin.conf` file (more on this in the next chapter). By default, the limit is 300 MB. When it's full, the node dynamically raises its minimum charge threshold and expels the least profitable transactions first (i.e., it retains transactions that should be mined first). Transactions that are too old can also expire after a configured delay.
 
 
 #### Mempool persistence on disk
@@ -2349,7 +2349,7 @@ Several other files at the same level as `blocks/`, `chainstate/`, and `indexes/
 - `banlist.json` contains local bans decided by the operator or by the node (repeated invalid behavior), in order to prevent the node from reconnecting or accepting connections from these specific peers.
 - `fee_estimates.dat` stores time horizon statistics on observed confirmations, used by the fee estimator to propose fee rates consistent with the delay objectives chosen when creating a transaction.
 - `bitcoin.conf` contains your node’s configuration parameters. It is in this file that the relay rules can be adjusted. I will discuss this in more detail in the next chapter;
-- `settings.json` contains additional parameters to `Bitcoin.conf`.
+- `settings.json` contains additional parameters to `bitcoin.conf`.
 - `debug.log` is the diagnostic text log, which can be used to understand node activity in the event of a bug.
 - `bitcoind.pid` records the process ID during execution, allowing other applications or scripts to easily identify Bitcoind (*Bitcoin Daemon*) and interact with it if necessary. It is created when the node starts and deleted when it stops;
 - `ip_asn.map` is an IP → ASN mapping table (standalone system) used for bucketing and peer diversification (`-asmap` option).
@@ -2422,37 +2422,37 @@ In parallel, undo data is written to `rev*.dat` and metadata to the `blocks/inde
 
 
 
-## Understanding Bitcoin.conf
+## Understanding bitcoin.conf
 
 <chapterId>c54a629a-ddb1-41cb-9a88-21dfd9be50ca</chapterId>
 
 
-The `Bitcoin.conf` file is the main configuration file for Bitcoin Core. It allows you to adjust the behavior and parameters of your node without having to recompile its source code or make command-line modifications. In concrete terms, it's a plain text file structured in key-value pairs, meaning that each line of the file references a specific parameter (the key) and its associated value, which can be modified to adjust that parameter.
+The `bitcoin.conf` file is the main configuration file for Bitcoin Core. It allows you to adjust the behavior and parameters of your node without having to recompile its source code or make command-line modifications. In concrete terms, it's a plain text file structured in key-value pairs, meaning that each line of the file references a specific parameter (the key) and its associated value, which can be modified to adjust that parameter.
 
 
-Network, transaction relay, performance, indexing, logging, and RPC access parameters can be defined in the `Bitcoin.conf`. However, this configuration file never modifies the protocol's consensus rules: it only sets the node's local policy (relaying rules), the way it connects, indexes, and exposes services.
+Network, transaction relay, performance, indexing, logging, and RPC access parameters can be defined in the `bitcoin.conf`. However, this configuration file never modifies the protocol's consensus rules: it only sets the node's local policy (relaying rules), the way it connects, indexes, and exposes services.
 
 
 ### Location and priority
 
 
-By default, `Bitcoin.conf` resides in the Bitcoin Core data directory. This is the famous directory we mentioned in the previous chapter. However, this file is not automatically created by Bitcoin Core, except in certain environments, such as Umbrel. If it doesn't already exist, you'll have to generate it yourself by simply creating a file named `Bitcoin.conf`, then opening it in a text editor to make your modifications.
+By default, `bitcoin.conf` resides in the Bitcoin Core data directory. This is the famous directory we mentioned in the previous chapter. However, this file is not automatically created by Bitcoin Core, except in certain environments, such as Umbrel. If it doesn't already exist, you'll have to generate it yourself by simply creating a file named `bitcoin.conf`, then opening it in a text editor to make your modifications.
 
 
-The parameters defined in the `Bitcoin.conf` can be overridden by 2 layers:
+The parameters defined in the `bitcoin.conf` can be overridden by 2 layers:
 
 
 - `settings.json` (written dynamically by graphical interface or some RPC),
 - and options modified via command lines.
 
 
-Note that any modification to `Bitcoin.conf` requires a node restart to take effect.
+Note that any modification to `bitcoin.conf` requires a node restart to take effect.
 
 
 ### Format and structure
 
 
-The format of the `Bitcoin.conf` is therefore very simple: one line per option, in the form `option=value`. Unnecessary spaces and blank lines are ignored, and code comments begin with `#`.
+The format of the `bitcoin.conf` is therefore very simple: one line per option, in the form `option=value`. Unnecessary spaces and blank lines are ignored, and code comments begin with `#`.
 
 
 Almost all Boolean options can be disabled with a `no` prefix. For example, `listen=0` and `nolisten=1` are equivalent depending on the version.
@@ -2461,10 +2461,10 @@ Almost all Boolean options can be disabled with a `no` prefix. For example, `lis
 To segment the configuration by network, you can use sections: `[main]`, `[test]` (testnet3), `[testnet4]`, `[bookmark]`, `[regtest]`. Alternatively, you can prefix the option name with `regtest.maxmempool=100`.
 
 
-### What Bitcoin.conf can and cannot do
+### What bitcoin.conf can and cannot do
 
 
-As explained above, consensus rules are obviously not configurable in `Bitcoin.conf`, as this could create a Hard Fork. On the other hand, many other aspects are configurable. There are 3 useful classes to keep in mind:
+As explained above, consensus rules are obviously not configurable in `bitcoin.conf`, as this could create a Hard Fork. On the other hand, many other aspects are configurable. There are 3 useful classes to keep in mind:
 
 
 - Purely local parameters. These affect only your node: cache size (`dbcache`), pruned mode (`prune`), optional indexes... They influence your machine's performance, but not the network.
@@ -2521,7 +2521,7 @@ On the network level, we also have:
 By default, your node communicates over clearnet, Tor, and I2P. This means that the peers it connects with on the clearnet can see your public IP address, and your ISP will likely be able to detect that you're running a Bitcoin node (although P2P Transport V2 makes it more difficult for an ISP to eavesdrop). This isn't necessarily a problem, but if you want to avoid any leakage of this information, you can connect your node exclusively via the Tor network.
 
 
-To be fully Tor-enabled, you need to force Bitcoin Core to use only this network and to create a hidden service for incoming connections (if you want to enable them). In the `Bitcoin.conf`, you need to add this configuration:
+To be fully Tor-enabled, you need to force Bitcoin Core to use only this network and to create a hidden service for incoming connections (if you want to enable them). In the `bitcoin.conf`, you need to add this configuration:
 
 
 - `onlynet=onion`,
@@ -2550,7 +2550,7 @@ Obviously, if you're a beginner, I'd advise you to leave all these network setti
 #### Basic parameters
 
 
-Here are the basic parameters you can modify on your `Bitcoin.conf` concerning the management of your Mempool and the relaying of unconfirmed transactions:
+Here are the basic parameters you can modify on your `bitcoin.conf` concerning the management of your Mempool and the relaying of unconfirmed transactions:
 
 
 
@@ -2636,7 +2636,7 @@ As a reminder, all these relay rules have no impact on the validity of transacti
 ### wallets
 
 
-You can also adjust the way your wallets are managed in the `Bitcoin.conf` file. If you're not using wallet directly in Core, but rather external management software such as Sparrow or Liana, these parameters will be of little importance:
+You can also adjust the way your wallets are managed in the `bitcoin.conf` file. If you're not using wallet directly in Core, but rather external management software such as Sparrow or Liana, these parameters will be of little importance:
 
 
 
@@ -2780,7 +2780,7 @@ The configuration file also allows you to adjust the parameters related to your 
 ### RPC access and operational safety
 
 
-Finally, the `Bitcoin.conf` file also allows you to configure the access parameters for your node. Be cautious with these settings, especially if you're just starting out: avoid changing them without a thorough understanding of the implications, as this could introduce vulnerabilities.
+Finally, the `bitcoin.conf` file also allows you to configure the access parameters for your node. Be cautious with these settings, especially if you're just starting out: avoid changing them without a thorough understanding of the implications, as this could introduce vulnerabilities.
 
 
 
@@ -2883,7 +2883,7 @@ Finally, the `Bitcoin.conf` file also allows you to configure the access paramet
 - `uacomment=<cmt>`: Adds a comment to User-Agent P2P.
 
 
-We've now finished listing most of the configuration parameters. This `Bitcoin.conf` file thus constitutes the real dashboard of your node: it defines network configuration, Mempool management, disk and memory usage, indexing, and general administration. If you'd like to learn more about this file and create one tailored to your needs, I recommend using [Jameson Lopp's generator](https://jlopp.github.io/Bitcoin-core-config-generator/).
+We've now finished listing most of the configuration parameters. This `bitcoin.conf` file thus constitutes the real dashboard of your node: it defines network configuration, Mempool management, disk and memory usage, indexing, and general administration. If you'd like to learn more about this file and create one tailored to your needs, I recommend using [Jameson Lopp's generator](https://jlopp.github.io/Bitcoin-core-config-generator/).
 
 
 We've reached the conclusion of this BTC 202 course, which will have enabled you not only to understand the basics of how nodes work and how they interact within the system, but also to set up your own. You're now a sovereign Bitcoiner, with your own self-custody wallet, broadcasting your transactions via your own node. Congratulations!
