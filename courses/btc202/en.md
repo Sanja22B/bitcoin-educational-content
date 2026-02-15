@@ -182,7 +182,7 @@ The second role of a node is to ensure the verification and propagation of trans
 ![Image](assets/fr/050.webp)
 
 
-After validation, the transaction is stored in the node's Mempool, a temporary memory space reserved for unconfirmed transactions, and then relayed to the other network peers to which it is connected. This distribution and validation mechanism continues from node to node. In this way, the transaction is propagated across the Bitcoin network, and each node stores it in Mempool until it is included in a valid block by a miner, who then acts on its first confirmation.
+After validation, the transaction is stored in the node's mempool, a temporary memory space reserved for unconfirmed transactions, and then relayed to the other network peers to which it is connected. This distribution and validation mechanism continues from node to node. In this way, the transaction is propagated across the Bitcoin network, and each node stores it in mempool until it is included in a valid block by a miner, who then acts on its first confirmation.
 
 
 ### Check and distribute blocks
@@ -239,7 +239,7 @@ However, with the gradual popularization of Bitcoin and the increase in the numb
 In the face of this evolution, the roles of the Bitcoin node and the miner have become clearly distinct. As shown above, the role of a Bitcoin node is purely informational and validation-based. The role of the miner is different:
 
 
-- It selects pending transactions in the Mempool.
+- It selects pending transactions in the mempool.
 - It builds a candidate block integrating these transactions.
 - He searches by trial and error for a valid proof of work.
 - If it finds a valid proof, it broadcasts the block via its node to the other nodes.
@@ -457,7 +457,7 @@ Changing these rules is equivalent to changing the protocol, and therefore the c
 - **Relay rules**:
 
 
-These are rules specific to each Bitcoin node, which are added to the consensus rules to define the structure of unconfirmed transactions accepted in the Mempool and relayed to peers. Each node configures and applies these rules locally, which explains why they may differ from one node to another. They only apply to unconfirmed transactions: a transaction deemed "non-standard" by a node will only be accepted if it already appears in a valid block. Changing these rules does not exclude the node from the Bitcoin system.
+These are rules specific to each Bitcoin node, which are added to the consensus rules to define the structure of unconfirmed transactions accepted in the mempool and relayed to peers. Each node configures and applies these rules locally, which explains why they may differ from one node to another. They only apply to unconfirmed transactions: a transaction deemed "non-standard" by a node will only be accepted if it already appears in a valid block. Changing these rules does not exclude the node from the Bitcoin system.
 
 
 For example, a transaction with no fees is, according to the consensus rules, perfectly valid, but it will be rejected by default according to the Bitcoin Core relay policy, because the `minRelayTxFee` parameter is set to `0.00001` (in BTC/kB). However, it is possible, on your own node, to lower this threshold to relay transactions with lower fees, or, conversely, to increase the limit, for example, to 2 Sats/vB, to avoid relaying low-fee transactions.
@@ -543,7 +543,7 @@ A full node is simply a Bitcoin node that downloads the entire Blockchain from t
 The full node doesn't need to trust anyone because it validates and knows all the information in the system. It's the type of node that gives you the most guarantees: you know, without relying on a third party, whether a payment is valid, whether a block is valid, whether a reorganization is legitimate, and so on.
 
 
-In practice, a full node requires non-trivial resources, including several hundred gigabytes for block files, a processor capable of validating scripts, RAM for the Mempool and caches, and stable bandwidth. The first synchronization (*IBD*) reads and verifies the complete history: it's intensive, but only happens once. A full node actively participates in the network, relaying blocks and transactions, and can accept incoming connections to assist other peers.
+In practice, a full node requires non-trivial resources, including several hundred gigabytes for block files, a processor capable of validating scripts, RAM for the mempool and caches, and stable bandwidth. The first synchronization (*IBD*) reads and verifies the complete history: it's intensive, but only happens once. A full node actively participates in the network, relaying blocks and transactions, and can accept incoming connections to assist other peers.
 
 
 Depending on your needs, you can add an indexer to your full node. Bitcoin Core offers transaction indexing as an optional feature (deactivated by default), which can be useful for specific purposes. However, it doesn't include an address indexer, which is often the most sought-after feature for individual users. To remedy this, you can install dedicated software on your node, such as Electrs or Fulcrum, to speed up address balance verification queries from associated UTXOs. We'll come back to the role of the indexer in more detail in a separate chapter.
@@ -1105,7 +1105,7 @@ Umbrel can remain very minimalist and focused solely on Bitcoin, or evolve into 
 
 
 
-- **Simple Bitcoin node**: this is the founding use on which Umbrel has relied from the outset. You can run Bitcoin Core (or Knots), connect your wallets directly to your node, expose an Electrum server, host your Mempool block explorer to view the Blockchain, and estimate charges... It's these uses that we'll be focusing on in this course.
+- **Simple Bitcoin node**: this is the founding use on which Umbrel has relied from the outset. You can run Bitcoin Core (or Knots), connect your wallets directly to your node, expose an Electrum server, host your mempool block explorer to view the Blockchain, and estimate charges... It's these uses that we'll be focusing on in this course.
 
 
 ![Image](assets/fr/082.webp)
@@ -2414,7 +2414,7 @@ To summarize, here is the Bitcoin Core file structure:
 ### The validation path for a new block
 
 
-On receipt of a new block, your node checks the proof of work and, more generally, compliance with the consensus rules. If all is well, it applies the changes transaction by transaction to its UTXO set: it checks that each entry spends existing UTXOs with a valid script, deletes these UTXOs, and adds the new exits. If everything is valid, the changes are committed to `chainstate/`.
+On receipt of a new block, your node checks the proof of work and, more generally, compliance with the consensus rules. If all is well, it applies the changes transaction by transaction to its UTXO set: it checks that each entry spends existing UTXOs with a valid script, deletes these UTXOs, and adds the new outputs. If everything is valid, the changes are committed to `chainstate/`.
 
 
 In parallel, undo data is written to `rev*.dat` and metadata to the `blocks/index/` index. The block is then serialized to the correct `blk*.dat` file. In the event of a reorganization, the node reads `rev*.dat` in reverse to cleanly disconnect the abandoned blocks, restore the UTXO set, and then connect the blocks of the new best chain.
@@ -2455,7 +2455,7 @@ Note that any modification to `bitcoin.conf` requires a node restart to take eff
 The format of the `bitcoin.conf` is therefore very simple: one line per option, in the form `option=value`. Unnecessary spaces and blank lines are ignored, and code comments begin with `#`.
 
 
-Almost all Boolean options can be disabled with a `no` prefix. For example, `listen=0` and `nolisten=1` are equivalent depending on the version.
+Almost all boolean options can be disabled with a `no` prefix. For example, `listen=0` and `nolisten=1` are equivalent depending on the version.
 
 
 To segment the configuration by network, you can use sections: `[main]`, `[test]` (testnet3), `[testnet4]`, `[bookmark]`, `[regtest]`. Alternatively, you can prefix the option name with `regtest.maxmempool=100`.
@@ -2464,11 +2464,11 @@ To segment the configuration by network, you can use sections: `[main]`, `[test]
 ### What bitcoin.conf can and cannot do
 
 
-As explained above, consensus rules are obviously not configurable in `bitcoin.conf`, as this could create a Hard Fork. On the other hand, many other aspects are configurable. There are 3 useful classes to keep in mind:
+As explained above, consensus rules are obviously not configurable in `bitcoin.conf`, as this could create a hard fork. On the other hand, many other aspects are configurable. There are 3 useful classes to keep in mind:
 
 
 - Purely local parameters. These affect only your node: cache size (`dbcache`), pruned mode (`prune`), optional indexes... They influence your machine's performance, but not the network.
-- Relay and Mempool policies. These decide what your node accepts, retains, and relays before confirmation: minimum fee threshold (`minrelaytxfee`), Mempool size and retention time (`maxmempool`, `mempoolexpiry`), transaction replacement (RBF)... These rules are not part of the consensus, so two different nodes can have different policies and still be fully compatible. On the other hand, these parameters will have an influence on the Bitcoin network (as explained in the first part, notably with percolation theory).
+- Relay and mempool policies. These decide what your node accepts, retains, and relays before confirmation: minimum fee threshold (`minrelaytxfee`), mempool size and retention time (`maxmempool`, `mempoolexpiry`), transaction replacement (RBF)... These rules are not part of the consensus, so two different nodes can have different policies and still be fully compatible. On the other hand, these parameters will have an influence on the Bitcoin network (as explained in the first part, notably with percolation theory).
 - Network connectivity. These options determine how your node finds peers, listens, traverses a NAT, uses Tor or a proxy, or limits its bandwidth. They shape your topology, but do not alter the relaying of transactions.
 
 
@@ -2497,7 +2497,7 @@ First of all, it's important to clearly distinguish between the 2 types of conne
 These two types of connection are perfectly capable of exchanging the same data in both directions; it's not a question of limiting the direction of flow, but only of a difference in the initiator of the connection. From our node's point of view, outgoing connections are generally considered safer, since we initiate them and choose precisely which node to connect to, making it unlikely that the connection is malicious. By default, Bitcoin Core maintains 10 outgoing connections (8 "*full-relay*" + 2 "*block-relay-only*").
 
 
-A full node adds more value to the network by accepting incoming connections. The `listen=1` parameter enables listening on the default port 8333 of the network in question, enabling these incoming connections to be received on the clearnet. For this to work, this port must also be open on your router. If it isn't, your node will continue to work with outgoing connections only, which will have no impact on your personal use of Bitcoin. The choice of whether to allow incoming connections is yours; there is no "best choice."
+A full node adds more value to the network by accepting incoming connections. The `listen=1` parameter enables listening on the network's default port 8333, allowing it to receive incoming connections on the clearnet. For this to work, this port must also be open on your router. If it isn't, your node will continue to work with outgoing connections only, which will have no impact on your personal use of Bitcoin. The choice of whether to allow incoming connections is yours; there is no "best choice."
 
 
 If you prefer not to open a port on your router, but still accept incoming connections, you can activate the `listenonion=1` parameter. This will achieve the same result, but only through the Tor network rather than clearnet.
@@ -2508,12 +2508,12 @@ On the network level, we also have:
 
 - `addnode`: adds a friendly peer to contact in addition to the usual discovery (can be specified several times).
 - `connect`: strictly restricts connections to the provided address (can be specified multiple times). Core will not connect to any other node;
-- `seednode`: is used only to fill in the book-address when connecting to a node, then disconnects.
+- `seednode`: is used only to fill in the address book when connecting to a node, then disconnects.
 - `maxconnections`: defines the global ceiling for incoming + outgoing connections. By default, this parameter is set to 125, meaning that your node will never accept more than 125 connections.
 - `maxuploadtarget` : caps the upload to limit bandwidth over a rolling 24-hour window. This cap does not sacrifice the propagation of essential recent elements;
 - `onlynet`: limits outgoing connections to selected networks only (`ipv4`, `ipv6`, `onion`, `i2p`, `cjdns`). For example, if you want your node to connect to the Bitcoin network only via Tor, you can enable the `onlynet=onion` parameter and disable incoming connections (or only allow connections via Tor as well).
-- `dnsseed`: allows or disallows _DNS seeds_ to request peers when your local address pool is low (default: `1`, unless `-connect` or `-maxconnections=0`).
-- `forcednsseed`: forces _DNS seeds_ to be requested at startup, even if you already have addresses in stock (default: `0`).
+- `dnsseed`: allows or disallows _DNS seeds_ to obtain peers when your local address pool is low (default: `1`, unless `-connect` or `-maxconnections=0`).
+- `forcednsseed`: forces _DNS seeds_ to be queried at startup, even if you already have addresses in stock (default: `0`).
 - `fixedseeds`: Allow use of *seed nodes* (hardcoded address list) if _DNS seeds_ fail or are disabled (default: `1`).
 - `dns`: Authorizes DNS resolutions in general (e.g., for `-addnode`/`-seednode`/`-connect`).
 
@@ -2550,23 +2550,23 @@ Obviously, if you're a beginner, I'd advise you to leave all these network setti
 #### Basic parameters
 
 
-Here are the basic parameters you can modify on your `bitcoin.conf` concerning the management of your Mempool and the relaying of unconfirmed transactions:
+Here are the basic parameters you can modify on your `bitcoin.conf` concerning the management of your mempool and the relaying of unconfirmed transactions:
 
 
 
-- `maxmempool=<n>`: Limits the maximum size of the local Mempool to `<n>` megabytes (default: `300`). When the limit is reached, your node dynamically raises its effective fee threshold and prioritizes the least profitable transactions (based on the fee rate, not the absolute value) to stay below the limit. You can leave this setting as the default. Increasing it can be useful if you're mining solo, or if you want to get a more accurate view of mempool congestion and improve fee estimation. Conversely, reducing it will save RAM and, to a lesser extent, other system resources.
+- `maxmempool=<n>`: Limits the maximum size of the local mempool to `<n>` megabytes (default: `300`). When the limit is reached, your node dynamically raises its effective fee threshold and prioritizes the least profitable transactions (based on the fee rate, not the absolute value) to stay below the limit. You can leave this setting as the default. Increasing it can be useful if you're mining solo, or if you want to get a more accurate view of mempool congestion and improve fee estimation. Conversely, reducing it will save RAM and, to a lesser extent, other system resources.
 
 
 
-- `mempoolexpiry=<n>`: Maximum retention time for unconfirmed transactions in Mempool (in hours, default: `336`). After this time, transactions are removed even if space remains available.
+- `mempoolexpiry=<n>`: Maximum retention time for unconfirmed transactions in mempool (in hours, default: `336`). After this time, transactions are removed even if space remains available.
 
 
 
-- `persistmempool=1`: Saves a snapshot of the Mempool at standstill and reloads it on reboot (default: `1`). This speeds up recovery after reboot, avoiding the need to relearn the state via the network.
+- `persistmempool=1`: Saves a snapshot of the mempool on shutdown and reloads it on reboot (default: `1`). This speeds up recovery after reboot, avoiding the need to relearn the state via the network.
 
 
 
-- `maxorphantx=<n>`: Maximum number of orphan transactions retained (dependent inputs from UTXOs not yet seen in the UTXO set, default: `100`). Beyond this threshold, the oldest transactions are deleted to avoid uncontrolled growth of the cache.
+- `maxorphantx=<n>`: Maximum number of orphan transactions retained (inputs dependent on UTXOs not yet seen in the UTXO set., default: `100`). Beyond this threshold, the oldest transactions are deleted to avoid uncontrolled growth of the cache.
 
 
 
@@ -2574,20 +2574,20 @@ Here are the basic parameters you can modify on your `bitcoin.conf` concerning t
 
 
 
-- `minrelaytxfee=<n>`: Minimum fee rate (in BTC/kvB) below which transactions are not accepted in the node's Mempool and not relayed to peers (default: `0.00001` = 1 sat/vB). The higher this value, the more aggressively your node filters low-cost transactions.
+- `minrelaytxfee=<n>`: Minimum fee rate (in BTC/kvB) below which transactions are not accepted in the node's mempool and not relayed to peers (default: `0.00001` = 1 sat/vB). The higher this value, the more aggressively your node filters low-cost transactions.
 
 
 
-- `mempoolfullrbf=1`: Accept RBF transactions even without explicit RBF signaling in the replaced transaction. With this "*full-RBF*" policy, a transaction offering a higher fee rate can replace another in Mempool if the other replacement conditions are met.
+- `mempoolfullrbf=1`: Accept RBF transactions even without explicit RBF signaling in the replaced transaction. With this "*full-RBF*" policy, a transaction offering a higher fee rate can replace another in mempool if the other replacement conditions are met.
 
 
-As a reminder, RBF is a transactional mechanism that enables the sender to replace a transaction with one that has higher fees in order to speed up confirmation. If a transaction with too low a fee remains blocked, the sender can use *Replace-by-fee* to increase the fee and prioritize their replacement transaction in mempools and with miners.
+As a reminder, RBF is a transactional mechanism that enables the sender to replace a transaction with one that has higher fees in order to speed up confirmation. If a transaction with too low fee remains blocked, the sender can use *Replace-by-fee* to increase the fee and prioritize their replacement transaction in mempools and with miners.
 
 
 #### Advanced and specific settings
 
 
-Here are the advanced settings for Mempool and relay policy. If you're a beginner, you shouldn't need to modify these settings:
+Here are the advanced settings for mempool and relay policy. If you're a beginner, you shouldn't need to modify these settings:
 
 
 
@@ -2599,11 +2599,11 @@ Here are the advanced settings for Mempool and relay policy. If you're a beginne
 
 
 
-- `bytespersigop=<n>`: Parameter which converts signature transactions into equivalent bytes for relay limit evaluation (default: `20`). This will influence the acceptance of `sigops` rich transactions according to local policy rules.
+- `bytespersigop=<n>`: Parameter which converts signature transactions into equivalent bytes for evaluating relay limits (default: `20`). This will influence the acceptance of `sigops` rich transactions according to local policy rules.
 
 
 
-- `permitbaremultisig=1`: Allows relaying of *bare-Multisig* P2MS transactions (default: `1`). This is the oldest script template for establishing multisignature conditions on a UTXO (invented in 2011 by Gavin Andresen).
+- `permitbaremultisig=1`: Allows relaying of *bare-multisig* P2MS transactions (default: `1`). This is the oldest script template for establishing multisignature conditions on a UTXO (invented in 2011 by Gavin Andresen).
 
 
 
@@ -2611,11 +2611,11 @@ Here are the advanced settings for Mempool and relay policy. If you're a beginne
 
 
 
-- `whitelistforcerelay=1`: Assigns "*forcerelay*" permission to whitelisted peers with default permissions (default: `0`). The node then relays their transactions even if they are already present in Mempool, thus bypassing anti-redundancy mechanisms.
+- `whitelistforcerelay=1`: Assigns "*forcerelay*" permission to whitelisted peers with default permissions (default: `0`). The node then relays their transactions even if they are already present in mempool, thus bypassing anti-redundancy mechanisms.
 
 
 
-- `whitebind=<[permissions@]addr>` / `whitelist=<[permissions@]CIDR>`: Binds an Interface or address range and assigns fine-grained permissions to the corresponding peers: `relay`, `forcerelay`, `Mempool` (Mempool content request), `noban`, `download`, `addr`, `bloomfilter`. This can be useful for granting privileged treatment to trusted peers (such as gateways, LANs, and internal services).
+- `whitebind=<[permissions@]addr>` / `whitelist=<[permissions@]CIDR>`: Binds an interface or address range and assigns fine-grained permissions to the corresponding peers: `relay`, `forcerelay`, `mempool` (mempool content request), `noban`, `download`, `addr`, `bloomfilter`. This can be useful for granting privileged treatment to trusted peers (such as gateways, LANs, and internal services).
 
 
 
@@ -2633,7 +2633,7 @@ Here are the advanced settings for Mempool and relay policy. If you're a beginne
 As a reminder, all these relay rules have no impact on the validity of transactions included in a valid block. They serve to adjust your contribution to the relay, protect your resources, and make your node predictable in constrained environments, but never allow you to refuse blocks that respect the consensus rules.
 
 
-### wallets
+### Wallets
 
 
 You can also adjust the way your wallets are managed in the `bitcoin.conf` file. If you're not using wallet directly in Core, but rather external management software such as Sparrow or Liana, these parameters will be of little importance:
@@ -2644,7 +2644,7 @@ You can also adjust the way your wallets are managed in the `bitcoin.conf` file.
 
 
 
-- `changetype=<legacy|P2SH-SegWit|bech32|bech32m>`: Force change address format (remainder of an input on a single payment).
+- `changetype=<legacy|P2SH-SegWit|bech32|bech32m>`: Forces the format of change addresses (the remainder of an input on a single payment).
 
 
 
@@ -2672,7 +2672,7 @@ You can also adjust the way your wallets are managed in the `bitcoin.conf` file.
 
 
 
-- `fallbackfee=<amt>` : Fallback fee rate (BTC/kvB) used if the estimator lacks data (default: `0.00`). Setting it to 0 completely disables the fallback.
+- `fallbackfee=<amt>`: Fallback fee rate (BTC/kvB) used if the estimator lacks data (default: `0.00`). Setting it to 0 completely disables the fallback.
 
 
 
@@ -2696,7 +2696,7 @@ You can also adjust the way your wallets are managed in the `bitcoin.conf` file.
 
 
 
-- `maxapsfee=<n>`: Budget for additional charges (BTC, absolute value) that the wallet agrees to pay to activate the "*avoid partial spends*" option.
+- `maxapsfee=<n>`: Additional fee budget (in BTC, absolute value) that the wallet is willing to pay to enable the "*avoid partial spends*" option.
 
 
 
@@ -2860,7 +2860,7 @@ Finally, the `bitcoin.conf` file also allows you to configure the access paramet
 
 
 
-- `debug=<category>|1` / `debugexclude=<category>`: Enables/disables detailed log categories (e.g. `net`, `Mempool`, `RPC`, `validation`...).
+- `debug=<category>|1` / `debugexclude=<category>`: Enables/disables detailed log categories (e.g. `net`, `mempool`, `RPC`, `validation`...).
 
 
 
@@ -2883,7 +2883,7 @@ Finally, the `bitcoin.conf` file also allows you to configure the access paramet
 - `uacomment=<cmt>`: Adds a comment to User-Agent P2P.
 
 
-We've now finished listing most of the configuration parameters. This `bitcoin.conf` file thus constitutes the real dashboard of your node: it defines network configuration, Mempool management, disk and memory usage, indexing, and general administration. If you'd like to learn more about this file and create one tailored to your needs, I recommend using [Jameson Lopp's generator](https://jlopp.github.io/Bitcoin-core-config-generator/).
+We've now finished listing most of the configuration parameters. This `bitcoin.conf` file thus constitutes the real dashboard of your node: it defines network configuration, mempool management, disk and memory usage, indexing, and general administration. If you'd like to learn more about this file and create one tailored to your needs, I recommend using [Jameson Lopp's generator](https://jlopp.github.io/Bitcoin-core-config-generator/).
 
 
 We've reached the conclusion of this BTC 202 course, which will have enabled you not only to understand the basics of how nodes work and how they interact within the system, but also to set up your own. You're now a sovereign Bitcoiner, with your own self-custody wallet, broadcasting your transactions via your own node. Congratulations!
