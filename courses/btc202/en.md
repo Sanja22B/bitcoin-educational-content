@@ -2114,19 +2114,19 @@ As a reminder, a Bitcoin block consists of an 80-byte header and a list of trans
 ![Image](assets/fr/094.webp)
 
 
-Transactions are committed to a Merkle tree. This is a structure that summarizes a large set of data (in this case, all the transactions in the block) by aggregating their hashes progressively two by two down to a single "root", thus proving that an element belongs to the set (and detecting any modification). In this way, any modification to a transaction also modifies the root of the Merkle tree and therefore the block header's fingerprint. SegWit has introduced a separate additional commitment for the witness (signatures), placed in the coinbase.
+Transactions are committed to a Merkle tree. This is a structure that summarizes a large set of data (in this case, all transactions in the block) by aggregating their hashes progressively two by two down to a single "root", thus proving that an element belongs to the set (and detecting any modification). In this way, any modification to a transaction also modifies the root of the Merkle tree and therefore the block header's fingerprint. SegWit has introduced a separate additional commitment for the witness (signatures), placed in the coinbase.
 
 
 ![Image](assets/fr/095.webp)
 
 
-This _**headers-first**_ step enables the node to identify the branch with the most work (regardless of its number of blocks), which is the branch on which Bitcoin nodes synchronize. Once this branch has been identified, the node downloads the contents of the blocks in parallel from several connections, then validates each transaction: format, validity of scripts (except `assumevalid=1`), amounts, and absence of double spending. With each successful check, the current state of unspent coins (UTXO set) is updated in the `chainstate/` database: spent outputs are removed, while new valid outputs are added.
+This _**headers-first**_ step enables the node to identify the branch with the most work (regardless of its number of blocks), which is the branch on which Bitcoin nodes synchronize. Once this branch has been identified, the node downloads the contents of the blocks in parallel from several connections, then validates each transaction: format, validity of scripts (except `assumevalid=1`), amounts, and absence of double spending. With each successful check, the current state of unspent coins (UTXO set) is updated in the `chainstate` database: spent outputs are removed, while new valid outputs are added.
 
 
-Mempool, on the other hand, only comes into play when approaching the tip of the chain: as long as the node remains late, it has no pending transactions to store.
+Mempool, on the other hand, only comes into play when approaching the tip of the chain: as long as the node is still catching up, it has no pending transactions to store.
 
 
-Once the IBD is complete, the node enters its normal phase: it validates new blocks as they are published, maintains its Mempool with pending transactions according to its relay rules, relays transactions and blocks, and manages any chain reorganizations.
+Once the IBD is complete, the node enters its normal phase: it validates new blocks as they are published, maintains its mempool with pending transactions according to its relay rules, relays transactions and blocks, and manages any chain reorganizations.
 
 
 ### AssumeValid
@@ -2147,7 +2147,7 @@ You can force full validation of all scripts by disabling this mechanism, at the
 ### AssumeUTXO
 
 
-`assumeutxo` is another existing parameter, but unlike `assumevalid`, it is not activated by default. This mechanism enables the software to load a snapshot of the UTXO set, along with its metadata, and provisionally consider it as a reference state, after verifying that the headers indeed lead to the Blockchain with the most work.
+`assumeutxo` is another existing parameter, but unlike `assumevalid`, it is not activated by default. This mechanism enables the software to load a snapshot of the UTXO set, along with its metadata, and provisionally consider it as a reference state, after verifying that the headers indeed lead to the blockchain with the most work.
 
 
 The node thus quickly becomes operational for common uses (RPC, connecting wallets, etc.), while simultaneously launching the complete, verified reconstruction of its own UTXO set in the background. Once this stage is complete, the initial snapshot is replaced by the locally reconstructed state. This approach separates fast node provision from full verification, without compromising the latter.
@@ -2156,13 +2156,13 @@ The node thus quickly becomes operational for common uses (RPC, connecting walle
 ### Peer discovery: How does your node find the Bitcoin network?
 
 
-When a node starts up for the first time, it doesn't yet know any peers. However, it must find other Bitcoin nodes on the Internet to request headers, then blocks, in order to complete its IBD. To initiate these connections, Bitcoin Core follows a prioritized logic.
+When a node starts up for the first time, it doesn't yet know any peers. However, it must find other Bitcoin nodes on the internet to request headers, then blocks, in order to complete its IBD. To initiate these connections, Bitcoin Core follows a prioritized logic.
 
 
 ![Image](assets/fr/096.webp)
 
 
-When the node restarts after having already been used, Core first attempts to reconnect to outgoing peers registered before the shutdown, information stored in the `anchors.dat` file. Then, it consults its IP address book **`peers.dat`**, which stores the list of previously encountered peers, in order to reconnect to them. This is simply a local file, updated and kept by Core. On the other hand, for a new node that has just been launched, these 2 files are empty, since it has never yet communicated with other Bitcoin nodes.
+When the node restarts after having already been used, Core first attempts to reconnect to outgoing peers registered before the shutdown, information is stored in the `anchors.dat` file. Then, it consults its IP address book **`peers.dat`**, which stores the list of previously encountered peers, in order to reconnect to them. This is simply a local file, updated and kept by Core. On the other hand, for a new node that has just been launched, these 2 files are empty, since it has never yet communicated with other Bitcoin nodes.
 
 
 In this case, the software queries _**DNS seeds**_. These are [servers maintained by recognized ecosystem developers](https://github.com/Bitcoin/Bitcoin/blob/master/src/kernel/chainparams.cpp), which return a list of IP addresses of presumed active nodes. These addresses enable the new node to initiate its first connections and request the necessary data from the IBD. Here is the list of *DNS seeds* active to date (August 2025):
@@ -2200,11 +2200,11 @@ If your node is listening on an open port (by default, 8333), it accepts incomin
 <chapterId>b420bd9d-7e2a-4984-bc70-2b732a94c8ce</chapterId>
 
 
-When your node has completed its initial synchronization, it stores several complementary data sets locally, enabling it to validate blocks and transactions, serve network peers, and restart quickly while maintaining its state. 3 main bricks are essential on a node:
+When your node has completed its initial synchronization, it stores several complementary data sets locally, enabling it to validate blocks and transactions, serve network peers, and restart quickly while maintaining its state. 3 main building blocks are essential on a node:
 
 - the **blocks** of the blockchain stored on disk,
 - the **UTXO set** maintained in a key-value database,
-- and the **Mempool** is stored in RAM and periodically serialized.
+- and the **mempool** is stored in RAM and periodically serialized.
 
 
 Additionally, several auxiliary files (peers, fee estimates, exclusion lists, wallets, etc.) complete the picture. Let's discover the role of all these files.
@@ -2213,7 +2213,7 @@ Additionally, several auxiliary files (peers, fee estimates, exclusion lists, wa
 ### Where are the node's data actually located?
 
 
-By default, Bitcoin Core saves its data in a specific working directory. Under GNU/Linux, this is usually in `~/.Bitcoin/`, under Windows in `%APPDATA%\Bitcoin/`, and under macOS in `~/Library/Application Support/Bitcoin/`. If you're using a packaged solution (e.g., within a node distribution), this directory may be mounted elsewhere, but its structure remains the same. The important sub-folders and files described below are still located here.
+By default, Bitcoin Core saves its data in a specific working directory. Under GNU/Linux, this is usually in `~/.Bitcoin/`, under Windows in `%APPDATA%\Bitcoin\`, and under macOS in `~/Library/Application Support/Bitcoin/`. If you're using a packaged solution (e.g., within a node distribution), this directory may be mounted elsewhere, but its structure remains the same. The important sub-folders and files described below are still located here.
 
 
 ![Image](assets/fr/098.webp)
@@ -2228,10 +2228,10 @@ Blockchain is, therefore, a collection of blocks. A full node stores these block
 **Note:** A reorganization, or resynchronization, is a phenomenon in which the Blockchain undergoes a modification of its structure due to the existence of competing blocks at the same height. This happens when a portion of the blockchain is replaced by another chain with a greater amount of accumulated work. These resynchronizations are a natural part of Bitcoin's operation, where different miners can find new blocks almost simultaneously, thereby splitting the Bitcoin network in two. In such cases, the network may temporarily split into competing chains. Eventually, as one of these chains accumulates more work, the other chains are abandoned by the nodes, and their blocks become known as "obsolete blocks" or "orphan blocks." This process of replacing one chain with another is called resynchronization.
 
 
-#### Blk*.dat files (raw block data)
+#### blk*.dat files (raw block data)
 
 
-Received and validated blocks are written to sequential containers named `blkNNNNN.dat`, stored in the `blocks/` folder. Each file is filled in sequence until it reaches a maximum size of 128 MiB, at which point Core opens the next file. Inside, each block is serialized in network format, preceded by a magic identifier and a length. This organization enables fast writing to disk and facilitates block service to synchronize peers.
+Received and validated blocks are written to sequential containers named `blkNNNNN.dat`, stored in the `blocks/` folder. Each file is filled in sequence until it reaches a maximum size of 128 MiB, at which point Core opens the next file. Inside, each block is serialized in network format, preceded by a magic identifier and a length. This organization enables fast writing to disk and facilitates serving blocks to peers that are synchronizing.
 
 
 ![Image](assets/fr/099.webp)
@@ -2240,10 +2240,10 @@ Received and validated blocks are written to sequential containers named `blkNNN
 In pruned mode, the node retains only a recent window of these files to limit the disk footprint. It deletes the oldest `blk*.dat` containers as soon as the configured space target is reached, while retaining sufficient history to remain consistent with the best-known chain. The index and UTXO set remain normal, enabling the next transactions and blocks to be validated.
 
 
-#### Rev*.dat files (cancellation data)
+#### rev*.dat files (cancellation data)
 
 
-In order to be able to go back in time during a reorganization, Core saves, in parallel with each `blk` file, a `revNNNNN.dat` file in `blocks/`. This file contains the information needed to undo the effect of a block on the UTXO set: for each output consumed by the block, the previous state of the corresponding UTXO is stored (amount, script, height...). In the event of a block abort, the node can quickly reconstitute the previous state without having to rescan the entire chain.
+In order to be able to go back in time during a reorganization, Core saves, in parallel with each `blk` file, a `revNNNNN.dat` file in `blocks/`. This file contains the information needed to undo the effect of a block on the UTXO set: for each output consumed by the block, the previous state of the corresponding UTXO is stored (amount, script, height...). In the event of a block abort, the node can quickly reconstruct the previous state without having to rescan the entire chain.
 
 
 ![Image](assets/fr/100.webp)
@@ -2252,7 +2252,7 @@ In order to be able to go back in time during a reorganization, Core saves, in p
 #### Block index (blocks/index)
 
 
-Searching for a block directly in the flat files would be too time-consuming. Core therefore maintains a LevelDB database in `blocks/index/` which lists, for each known block, metadata such as Hash, height, validation status, `blk` file, and offset where it is located. When a peer requests a block, or when an internal component needs to access a specific block, this index provides quick access. Without this index, too many operations would be required.
+Searching for a block directly in the flat files would be too time-consuming. Core therefore maintains a LevelDB database in `blocks/index/` which lists, for each known block, metadata such as hash, height, validation status, `blk` file, and offset where it is located. When a peer requests a block, or when an internal component needs to access a specific block, this index provides quick access. Without this index, too many operations would be required.
 
 
 ![Image](assets/fr/101.webp)
@@ -2283,16 +2283,16 @@ The totality of all these parts at a given moment T constitutes the UTXO set: a 
 ![Image](assets/fr/103.webp)
 
 
-The UTXO set is stored in the `chainstate/` folder as a compact LevelDB database. Each part associates a key derived from the Hash of the transaction and the output index with a value containing: the amount, the `scriptPubKey` lock, the height of the creation block, and a coinbase indicator.
+The UTXO set is stored in the `chainstate/` folder as a compact LevelDB database. Each part associates a key derived from the hash of the transaction and the output index with a value containing: the amount, the `scriptPubKey` lock, the height of the creation block, and a coinbase indicator.
 
 
 ![Image](assets/fr/104.webp)
 
 
-The node maintains a memory cache above LevelDB to absorb frequent read and write operations. The `dbcache` parameter can be used to modify the size of this cache: the larger it is, the more memory access the IBD and current validation benefit from, at the cost of higher RAM consumption. When a new block is found by a miner, the node deletes from the UTXO set the outputs spent (or consumed) by the transactions included in the block and adds the newly created outputs.
+The node maintains a memory cache above LevelDB to absorb frequent read and write operations. The `dbcache` parameter can be used to modify the size of this cache: the larger it is, the more the IBD and ongoing validation benefit from memory access, at the cost of higher RAM consumption. When a new block is found by a miner, the node deletes from the UTXO set the outputs spent (or consumed) by the transactions included in the block and adds the newly created outputs.
 
 
-Theoretically, we could validate a transaction by rescanning the block history to check that an output has never been spent. In practice, however, this would be far too time-consuming, as the entire Blockchain would have to be scanned for each new transaction. The UTXO set, therefore, provides the minimum view required to prove locally and in a reasonable amount of time the absence of double-spending.
+Theoretically, we could validate a transaction by rescanning the block history to check that an output has never been spent. In practice, however, this would be far too time-consuming, as the entire blockchain would have to be scanned for each new transaction. The UTXO set, therefore, provides the minimum view required to prove locally and in a reasonable amount of time the absence of double-spending.
 
 
 Note that the UTXO set is often at the heart of concerns about Bitcoin's decentralization, as its size naturally increases rapidly. This is partly due to the rising price of Bitcoin, which encourages fragmentation of parts, and partly to the growing adoption of the system: the more users there are, the greater the demand for UTXOs.
@@ -2312,36 +2312,36 @@ Since a portion of it must be kept in RAM to verify transactions in a reasonable
 ### The Mempool
 
 
-The mempool is the local set of valid transactions that have been received but not yet confirmed. As a reminder, a "confirmed transaction" is one that has been included in a valid block. Each node maintains its own Mempool, which may differ from that of other nodes in the network depending on:
+The mempool is the local set of valid transactions that have been received but not yet confirmed. As a reminder, a "confirmed transaction" is one that has been included in a valid block. Each node maintains its own mempool, which may differ from that of other nodes in the network depending on:
 
 
-- the size allocated to the Mempool via the `maxmempool` parameter: a node with a larger Mempool will be able to hold more transactions than a node with a smaller Mempool (unless the latter becomes empty);
+- the size allocated to the mempool via the `maxmempool` parameter: a node with a larger mempool will be able to hold more transactions than a node with a smaller mempool (unless the latter becomes empty);
 - mempool rules: they form a subset of the node’s relay rules and define the characteristics that an unconfirmed transaction must meet to be accepted into the mempool;
 - transaction percolation: due to various factors, a given transaction may have been distributed to one part of the network, but not yet reached another.
 
 
-It is important to note that node mempools have no consensus value. Bitcoin works perfectly even if each node has a different Mempool. Ultimately, the authoritative blocks are always those added to the Blockchain. For example, even if a node initially rejects a given transaction in its Mempool (valid according to the consensus rules), it will be obliged to accept it if it is eventually included in a block with a valid proof of work. If it failed to do so and rejected this block, even though it complied with the consensus rules, it would trigger a Hard Fork, i.e., the creation of a new, separate Bitcoin on which it would be alone.
+It is important to note that node mempools have no consensus value. Bitcoin works perfectly even if each node has a different mempool. Ultimately, the authoritative blocks are always those added to the blockchain. For example, even if a node initially rejects a given transaction in its mempool (valid according to the consensus rules), it will be obliged to accept it if it is eventually included in a block with a valid proof of work. If it failed to do so and rejected this block, even though it complied with the consensus rules, it would trigger a hard fork, i.e., the creation of a new, separate Bitcoin on which it would be alone.
 
 
 #### Memory policy and management
 
 
-When a transaction is received, Core applies a series of checks against consensus rules (syntax, valid scripts, no double spending, etc.) and Mempool rules, which are a local policy (RBF, minimum charge thresholds, data limit in `OP_RETURN`, etc.). If the transaction adheres to these rules, it is stored in memory.
+When a transaction is received, Core applies a series of checks against consensus rules (syntax, valid scripts, no double spending, etc.) and mempool rules, which are a local policy (RBF, minimum fee thresholds, data limit in `OP_RETURN`, etc.). If the transaction adheres to these rules, it is stored in memory.
 
 
-The size of the Mempool is limited by the `maxmempool` parameter in the `bitcoin.conf` file (more on this in the next chapter). By default, the limit is 300 MB. When it's full, the node dynamically raises its minimum charge threshold and expels the least profitable transactions first (i.e., it retains transactions that should be mined first). Transactions that are too old can also expire after a configured delay.
+The size of the mempool is limited by the `maxmempool` parameter in the `bitcoin.conf` file (more on this in the next chapter). By default, the limit is 300 MB. When it's full, the node dynamically raises its minimum fee threshold and expels the least profitable transactions first (i.e., it retains transactions that should be mined first). Transactions that are too old can also expire after a configured delay.
 
 
 #### Mempool persistence on disk
 
 
-To speed up restarts, Core periodically serializes the state of the Mempool in the `Mempool.dat` file when the node is shut down. In addition to the actual Mempool, which remains in memory, Core stores this `Mempool.dat` file on disk. The next time the node is launched, it reloads this snapshot and deletes anything that is no longer valid for the current Blockchain.
+To speed up restarts, Core periodically serializes the state of the mempool in the `mempool.dat` file when the node shuts down. In addition to the actual mempool, which remains in memory, Core stores this `mempool.dat` file on disk. The next time the node is launched, it reloads this snapshot and deletes anything that is no longer valid for the current blockchain.
 
 
 ### Auxiliary files and databases
 
 
-Several other files at the same level as `blocks/`, `chainstate/`, and `indexes/` participate in the proper functioning of the:
+Several other files at the same level as `blocks/`, `chainstate/`, and `indexes/` participate in the proper functioning of the node:
 
 
 - `peers.dat` keeps an IP address book of potential peers, fed by initial DNS discovery, network exchanges, and manual additions. When the node starts up, it can draw on this file to establish outgoing connections.
@@ -2352,7 +2352,7 @@ Several other files at the same level as `blocks/`, `chainstate/`, and `indexes/
 - `settings.json` contains additional parameters to `bitcoin.conf`.
 - `debug.log` is the diagnostic text log, which can be used to understand node activity in the event of a bug.
 - `bitcoind.pid` records the process ID during execution, allowing other applications or scripts to easily identify Bitcoind (*Bitcoin Daemon*) and interact with it if necessary. It is created when the node starts and deleted when it stops;
-- `ip_asn.map` is an IP → ASN mapping table (standalone system) used for bucketing and peer diversification (`-asmap` option).
+- `ip_asn.map` is an IP → ASN mapping table (standalone system) used for peer bucketing and peer diversification (`-asmap` option).
 - `onion_v3_private_key` stores the private key of the Tor v3 service when the `-listenonion` option is enabled, in order to keep a stable onion address between reboots.
 - `i2p_private_key` stores the I2P private key when `-i2psam=` is used, to make outgoing and possibly incoming connections on I2P.
 - `.cookie` contains an ephemeral RPC authentication token (created at startup, deleted at shutdown) when cookie authentication is used. This can be used, for example, to connect wallet software.
