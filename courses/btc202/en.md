@@ -2722,7 +2722,7 @@ The configuration file also allows you to adjust the parameters related to your 
 
 
 
-- `blocksdir=<dir>`: Decouples the location of the blocks files (`blocks/blk*.dat` and `blocks/rev*.dat`) from the `datadir`. This can be useful for placing the blocks archive on a different volume, while keeping the state base (`chainstate/`) on a faster medium, for example.
+- `blocksdir=<dir>`: Decouples the location of the blocks files (`blocks/blk*.dat` and `blocks/rev*.dat`) from the `datadir`. This can be useful for placing the blocks archive on a different volume, while keeping the state database (`chainstate/`) on a faster medium, for example.
 
 
 
@@ -2754,7 +2754,7 @@ The configuration file also allows you to adjust the parameters related to your 
 
 
 
-- `coinstatsindex=1`: Maintains a UTXO set statistics index operated by the `gettxoutsetinfo` call. Useful for audits and metrics, eliminating the need for costly recalculation. Disabled by default.
+- `coinstatsindex=1`: Maintains an index of UTXO set statistics operated by the `gettxoutsetinfo` call. Useful for audits and metrics, eliminating the need for costly recalculation. Disabled by default.
 
 
 
@@ -2784,15 +2784,15 @@ Finally, the `bitcoin.conf` file also allows you to configure the access paramet
 
 
 
-- `server=1`: Activates the JSON-RPC server. Essential if you're driving `bitcoind` via `bitcoin-cli` or a third-party application. Disable (`0`) on a purely validating node that doesn't expose any API, or already uses an Electrum server.
+- `server=1`: Activates the JSON-RPC server. Essential if you control `bitcoind` via `bitcoin-cli` or a third-party application. Disable (`0`) on a purely validating node that doesn't expose any API, or already uses an Electrum server.
 
 
 
-- `rpcbind=<addr>[:port]`: RPC server listening address/port. By default, listening is done locally only (`127.0.0.1` and `::1`). This parameter is ignored if `rpcallowip` is not also defined. Use it to explicitly restrict interface.
+- `rpcbind=<addr>[:port]`: RPC server listening address/port. By default, listening is done locally only (`127.0.0.1` and `::1`). This parameter is ignored if `rpcallowip` is not also defined. Use it to explicitly bind the interface.
 
 
 
-- `rpcport=<port>`: RPC port (default: `8332` on Mainnet, `18332` on Testnet, `38332` on bookmark, `18443` on regtest).
+- `rpcport=<port>`: RPC port (default: `8332` on mainnet, `18332` on testnet, `38332` on bookmark, `18443` on regtest).
 
 
 
