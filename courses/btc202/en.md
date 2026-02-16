@@ -1606,7 +1606,7 @@ Contrary to popular belief, Bitcoin Core doesn't offer address-based indexing li
 
 
 
-- Each software program has specific requirements regarding the format or type of data to be indexed (address, Hash script, proprietary tag, etc.). It's more flexible and logical to let these programs build their own customized indexes than to fix a generic solution in Bitcoin Core.
+- Each software program has specific requirements regarding the format or type of data to be indexed (address, hash script, proprietary tag, etc.). It's more flexible and logical to let these programs build their own customized indexes than fixing a generic solution in Bitcoin Core.
 
 
 Bitcoin Core does have an optional transaction indexer (`txindex`), a vestige of its historical operation, but it does not provide an address index, nor a direct interface for complex searches. In some cases, therefore, it may be useful to add an external indexer.
@@ -1621,7 +1621,7 @@ Adding an address indexer, such as Electrs or Fulcrum, is not mandatory; it depe
 If you simply want to connect a wallet, such as Sparrow, to your node to view balances and broadcast transactions, this is entirely possible directly via Bitcoin Core's RPC interface, either locally or remotely via Tor.
 
 
-On the other hand, to use more advanced software, such as running mempool.space locally, the installation of an address indexer becomes indispensable for the space block explorer.
+On the other hand, to use more advanced software, such as running mempool.space block explorer locally, the installation of an address indexer becomes essential.
 
 
 The indexer requires a certain amount of synchronization time (less than the IBD) and will occupy additional disk space. If your SSD still has enough free space after downloading blockchain, you can easily add an indexer.
@@ -1630,13 +1630,13 @@ The indexer requires a certain amount of synchronization time (less than the IBD
 ### Which indexer to choose?
 
 
-Two software programs are commonly used to build this type of address index and make it accessible: **Electrs** and **Fulcrum**. These tools index the blockchain according to script-hash (addresses) and then propose a standardized Interface (the Electrum protocol), to which numerous wallets, such as Electrum wallet, Sparrow, or Phoenix, connect.
+Two software programs are commonly used to build this type of address index and make it accessible: **Electrs** and **Fulcrum**. These tools index the blockchain by script-hash (addresses) and then provide a standardized interface (the Electrum protocol), to which numerous wallets, such as Electrum wallet, Sparrow, or Phoenix, connect.
 
 
 ![Image](assets/fr/087.webp)
 
 
-Simply put, Electrs is quite compact: it indexes blockchain faster and takes up less disk space, but performs slightly less well than Fulcrum on queries. In contrast, Fulcrum consumes more disk space and takes longer to index, but offers superior query performance.
+Simply put, Electrs is quite compact: it indexes blockchain faster and takes up less disk space, but performs slightly less well than Fulcrum on queries. In contrast, Fulcrum consumes more disk space and takes longer to index blockchain, but offers superior query performance.
 
 
 For individual use, I recommend Electrs: it consumes less space, is well-maintained, and, although it is slightly slower on certain requests than Fulcrum, it is still more than sufficient for everyday use. If you have the time and disk space, you can also try out Fulcrum, which will perform significantly better, especially on wallets with numerous addresses to verify.
@@ -1645,15 +1645,15 @@ For individual use, I recommend Electrs: it consumes less space, is well-maintai
 In concrete terms, in August 2025, Electrs will require approximately 56 GB of storage, compared to approximately 178 GB for Fulcrum. Your choice of indexer, therefore, also depends on your storage capacity:
 
 
-- If your disk space is very limited, you'll have to make do with Bitcoin Core without an external address indexer.
+- If your disk space is very limited, just use Bitcoin Core without an external address indexer.
 - If you want to use an indexer, but are still constrained by capacity, opt for Electrs.
-- If you've got a comfortable amount of disk space, Fulcrum may be just what you're looking for.
+- If you have a comfortable amount of disk space, Fulcrum may be just what you're looking for.
 
 
 For the rest of this BTC 202 course, I'll be using Electrs, but you can easily follow along with Fulcrum: the installation procedure is identical, as is the  connection interface to the wallet, since both expose an Electrum server.
 
 
-### How do I install an indexer on Umbrel?
+### How to install an indexer on Umbrel?
 
 
 To install Electrs (or Fulcrum) on your Umbrel, the procedure is straightforward: go to the App Store, search for the relevant application (located in the Bitcoin tab), and then click the "*Install*" button.
@@ -1668,15 +1668,15 @@ Once installation is complete, Electrs will proceed with a synchronization (inde
 ![Image](assets/fr/029.webp)
 
 
-Once synchronization is complete, you can connect your wallet software to your Electrum server, which is hosted on Umbrel.
+Once synchronization is complete, you can connect your software wallet to your Electrum server, which is hosted on Umbrel.
 
 
-## How do I connect my wallet to my Bitcoin node?
+## How to connect your wallet to your Bitcoin node?
 
 <chapterId>35519b1a-f681-4a69-a652-9fbe510cd17f</chapterId>
 
 
-Now that you have a complete Bitcoin node, it's time to put it to good use! In the next chapter, we'll explore other potential uses for your Umbrel instance. However, let's begin with the basics: connecting your wallet software to utilize information from your own blockchain and distribute transactions through your own node.
+Now that you have a complete Bitcoin node, it's time to put it to good use! In the next chapter, we'll explore other potential uses for your Umbrel instance. However, let's begin with the basics: connecting your software wallet to use the information from your own blockchain and broadcast your transactions through your own node.
 
 
 As mentioned above, there are two main connection interfaces:
@@ -1689,7 +1689,7 @@ As mentioned above, there are two main connection interfaces:
 In this tutorial, we'll concentrate on connecting to your node via Tor, as this is both a simple and secure solution for beginners. I strongly advise against exposing your node's RPC port in the clear, as misconfiguration represents a significant risk to the security and confidentiality of your data. The main disadvantage of communications via Tor is its slowness. In the next chapter, we'll explore a fast and secure alternative to Tor for remote access to your node: VPN.
 
 
-We'll use Sparrow as an example in this chapter, but the procedure is the same for all other wallet management software accepting connections to Electrum servers. Simply locate the corresponding setting in your application parameters (usually in "*Server*", "*Network*", "*Node*"...).
+We'll use Sparrow as an example in this chapter, but the procedure is the same for all other wallet management software that support connections to Electrum servers. Simply locate the corresponding setting in your application parameters (usually in "*Server*", "*Network*", "*Node*"...).
 
 
 On Sparrow, open the "*File*" tab and go to the "Settings" menu.
@@ -1709,7 +1709,7 @@ You will then discover three options for linking your software to a Bitcoin node
 
 - *Public Server* (yellow): by default, if you don't own a Bitcoin node, this option connects you to a public node you don't own (usually a company's). This option is not relevant here, as you have your own node on Umbrel.
 - *Bitcoin Core* (green): this option corresponds to connection via RPC interface, i.e., directly to Bitcoin Core.
-- *Private Electrum* (blue): this option lets you connect via your indexer's Electrum Server interface(Electrs or Fulcrum).
+- *Private Electrum* (blue): this option lets you connect via your indexer's Electrum Server interface (Electrs or Fulcrum).
 
 
 ### Connection to Bitcoin Core RPC
@@ -1745,7 +1745,7 @@ If the connection is successful, a green tick and a confirmation message will ap
 ![Image](assets/fr/036.webp)
 
 
-The tick at the bottom right of the Sparrow wallet interface will now be green (indicating a direct connection to Bitcoin Core).
+The checkmark in the bottom right corner of the Sparrow wallet interface will now be green (indicating a direct connection to Bitcoin Core).
 
 
 **Note:** For the connection to succeed, your node must be 100% synchronized. If this is not the case, please wait until the end of the IBD.
@@ -1766,7 +1766,7 @@ On Sparrow, go to the "*Private Electrum*" tab.
 You'll then need to enter several pieces of information to establish the connection with your indexer. You'll find this data in the "*Electrs*" application (or, where applicable, "*Fulcrum*") on Umbrel.
 
 
-Select the "*Tor*" tab to obtain the `.onion` connection address. If you wish to connect a mobile wallet software, you can also scan the QR code directly.
+Select the "*Tor*" tab to obtain the `.onion` connection address. If you wish to connect a mobile software wallet, you can also scan the QR code directly.
 
 
 ![Image](assets/fr/038.webp)
@@ -1784,7 +1784,7 @@ If the connection is successful, a check mark and a confirmation message will be
 ![Image](assets/fr/040.webp)
 
 
-The tick in the bottom right-hand corner of the Sparrow wallet interface will turn blue (the color associated with connection to an Electrum server).
+The checkmark in the bottom right-hand corner of the Sparrow wallet interface will turn blue (the color associated with connection to an Electrum server).
 
 
 **Note:** For the connection to work, your indexer must be 100% synchronized. If this is not the case, wait until the indexing process is complete.
@@ -1825,7 +1825,7 @@ https://planb.academy/courses/65c138b0-4161-4958-bbe3-c12916bc959c
 What's more, your Internet Service Provider (ISP) may know that you're viewing a particular transaction via the block explorer site. This also raises a question of trust: you must rely on the online service to provide you with accurate information about your transactions, without being able to verify its veracity yourself.
 
 
-That's why it's always best to use your own local block explorer. This way, no data related to your search activity will leak out, since all queries are processed directly on a machine you control, without passing through the Internet. What's more, a local explorer relies on data from your own Bitcoin node, which you have validated yourself, according to your own rules, and which you can trust.
+That's why it's always best to use your own local block explorer. This way, no data related to your search activity will leak out, since all queries are processed directly on a machine you control, without passing through the internet. What's more, a local explorer relies on data from your own Bitcoin node, which you have validated yourself, according to your own rules, and which you can trust.
 
 
 Umbrel offers several block explorers:
@@ -1836,7 +1836,7 @@ Umbrel offers several block explorers:
 - BTC RPC Explorer
 
 
-I'm particularly fond of Mempool.Space, which I've installed on my node. Please note: to use most block explorers on Umbrel, an address indexer is required. You therefore need the Bitcoin Node (or Bitcoin Knots) application, which has a 100% synchronized blockchain, as well as an indexer such as Electrs or Fulcrum, which is also 100% synchronized.
+I'm particularly fond of Mempool.Space, which I've installed on my node. Please note: to use most block explorers on Umbrel, an address indexer is required. You therefore need the Bitcoin Core (or Bitcoin Knots) application, which has a 100% synchronized blockchain, as well as an indexer such as Electrs or Fulcrum, which is also 100% synchronized.
 
 
 Once the application is installed, simply open it to access your own explorer.
@@ -1902,11 +1902,11 @@ In concrete terms, Tailscale offers you several advantages when using your Umbre
 
 
 
-- You can administer the Umbrel interface or access the applications linked to your node (such as Mempool, Ride The Lightning, ThunderHub...) from anywhere, as if you were on the same local network, without exposing ports on the Internet and without going through Tor, which is very slow;
+- You can administer the Umbrel interface or access the applications linked to your node (such as Mempool, Ride The Lightning, ThunderHub...) from anywhere, as if you were on the same local network, without exposing ports on the internet and without going through Tor, which is very slow;
 
 
 
-- You can connect to your Electrum server (Electrs or Fulcrum) or directly to Bitcoin Core via your VPN, bypassing Tor. This provides a secure connection, comparable to using Tor, but with much higher speed and reduced latency. In short, you retain the privacy and security benefits of Tor while enjoying the speed of a Clearnet connection. For an On-Chain wallet, this gain may seem marginal, but if you're planning to set up your own Lightning node at a later date, the difference is considerable. Indeed, making payments via your node on the move on Tor is extremely slow due to the numerous exchanges required, whereas with Tailscale, it works perfectly.
+- You can connect to your Electrum server (Electrs or Fulcrum) or directly to Bitcoin Core via your VPN, bypassing Tor. This provides a secure connection, comparable to using Tor, but with much higher speed and reduced latency. In short, you retain the privacy and security benefits of Tor while enjoying the speed of a clearnet connection. For an on-chain wallet, this gain may seem marginal, but if you're planning to set up your own Lightning node at a later date, the difference is considerable. Indeed, making payments via your node on the move on Tor is extremely slow due to the numerous exchanges required, whereas with Tailscale, it works perfectly.
 
 
 
