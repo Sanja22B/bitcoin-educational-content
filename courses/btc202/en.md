@@ -119,7 +119,7 @@ Since Bitcoin is a system, it must necessarily be run on computers. And, because
 Nakamoto, S. (2008). *Bitcoin: A Peer-to-Peer Electronic Cash System*. https://Bitcoin.org/Bitcoin.pdf
 
 
-It is precisely these users who ensure Bitcoin's security. As Eric Voskuil explains in his book *Cryptoeconomics*, the security of Bitcoin relies neither on Blockchain, nor on hashing power, nor on validation, decentralization, cryptography, open source, nor game theory. The security of Bitcoin depends primarily on the individuals who are willing to expose themselves to personal risk. Decentralization allows this risk to be spread over a large number of individuals, and it is only their ability to resist that ensures the system's robustness.
+It is precisely these users who ensure Bitcoin's security. As Eric Voskuil explains in his book *Cryptoeconomics*, the security of Bitcoin relies neither on blockchain, nor on hashing power, nor on validation, decentralization, cryptography, open source, nor game theory. The security of Bitcoin depends primarily on the individuals who are willing to expose themselves to personal risk. Decentralization allows this risk to be spread over a large number of individuals, and it is only their ability to resist that ensures the system's robustness.
 
 
 This principle is easy to understand: if Bitcoin depended on a single node owned by a single person, imprisoning that person would be enough to shut down the network, since they alone would assume all the risks. With tens of thousands of nodes spread around the world, the risk is disseminated: each of these operators would have to be neutralized to shut down Bitcoin.
@@ -148,10 +148,10 @@ The Bitcoin nodes together form what is known as the Bitcoin network. They enabl
 From the outset, Bitcoin was designed to allow each user to run a personal node. This case remains valid with today's Bitcoin Core software, which combines the roles of wallet and node. But nowadays, this function is often dissociated: many modern Bitcoin wallets are just wallets that connect to external nodes (owned by the same person or not).
 
 
-### Keep Blockchain
+### Keep blockchain
 
 
-The first task of a node is to maintain a local copy of the Blockchain. To prevent double-spending on Bitcoin without involving a central authority, each user must check that no transaction exists in the system. The only way to be sure of this is to know all the transactions made on Bitcoin. For this reason, all transactions are time-stamped and grouped into blocks, and each node stores the entire Blockchain.
+The first task of a node is to maintain a local copy of the blockchain. To prevent double-spending on Bitcoin without involving a central authority, each user must check that no transaction exists in the system. The only way to be sure of this is to know all the transactions made on Bitcoin. For this reason, all transactions are time-stamped and grouped into blocks, and each node stores the entire blockchain.
 
 
 > The only way to confirm the absence of a transaction is to be aware of all transactions.
@@ -159,7 +159,7 @@ The first task of a node is to maintain a local copy of the Blockchain. To preve
 Nakamoto, S. (2008). *Bitcoin: A Peer-to-Peer Electronic Cash System*. https://Bitcoin.org/Bitcoin.pdf
 
 
-Blockchain is therefore an evolving register: each time a new block is published by a miner, the node checks its validity before adding it to its own local copy of the chain. As of today (July 2025), the complete Blockchain exceeds 675 GB, and this size continues to grow, as a new block is added on average every 10 minutes.
+Blockchain is therefore an evolving register: each time a new block is published by a miner, the node checks its validity before adding it to its own local copy of the chain. As of today (July 2025), the complete blockchain exceeds 675 GB, and this size continues to grow, as a new block is added on average every 10 minutes.
 
 
 ![Image](assets/fr/049.webp)
@@ -188,7 +188,7 @@ After validation, the transaction is stored in the node's mempool, a temporary m
 ### Check and distribute blocks
 
 
-The third role of the node involves managing mined blocks. When a miner discovers a new block with a valid proof of work, it is broadcast on the network. The nodes receive it, check that it conforms to all the protocol rules, and then integrate it into their own local copy of the Blockchain if it is valid. As with transactions, newly validated blocks are then relayed to all peers connected to the node. This process continues until all nodes on the Bitcoin network are aware of the new block.
+The third role of the node involves managing mined blocks. When a miner discovers a new block with a valid proof of work, it is broadcast on the network. The nodes receive it, check that it conforms to all the protocol rules, and then integrate it into their own local copy of the blockchain if it is valid. As with transactions, newly validated blocks are then relayed to all peers connected to the node. This process continues until all nodes on the Bitcoin network are aware of the new block.
 
 
 ![Image](assets/fr/051.webp)
@@ -205,12 +205,12 @@ It's essential to distinguish between two distinct types of software when using 
 A Bitcoin node, as mentioned above, is a piece of software that actively participates in the peer-to-peer network. It performs three main tasks:
 
 
-- backup of Blockchain,
+- backup of blockchain,
 - transaction validation and relay,
 - block validation and relay.
 
 
-A Bitcoin wallet, on the other hand, is a piece of software designed to store and manage your private keys. These keys enable you to spend your bitcoins by satisfying the locking scripts (typically through a signature). A wallet can connect to a node (whether local or remote) in order to consult the status of the Blockchain and broadcast the transactions it builds, but it is not, as such, a participant in the network.
+A Bitcoin wallet, on the other hand, is a piece of software designed to store and manage your private keys. These keys enable you to spend your bitcoins by satisfying the locking scripts (typically through a signature). A wallet can connect to a node (whether local or remote) in order to consult the status of the blockchain and broadcast the transactions it builds, but it is not, as such, a participant in the network.
 
 
 In some cases, these two functions coexist within the same software, as is the case with Bitcoin Core, which serves as both a full node and a wallet. However, many popular wallet programs (Sparrow, Bluewallet, etc.) require a connection to an external node (whether your own or a third party's) to broadcast transactions and determine the wallet balance.
@@ -408,7 +408,7 @@ Without a personal node, you remain dependent on a third party for access to inf
 ![Image](assets/fr/060.webp)
 
 
-Running a full node means you can check all the protocol rules yourself, for every transaction and every block. As a result, the balance displayed by your wallet is not data received from a remote server, but a result calculated locally from a complete copy of the Blockchain, validated block by block. This approach gives full meaning to the bitcoiners' maxim:
+Running a full node means you can check all the protocol rules yourself, for every transaction and every block. As a result, the balance displayed by your wallet is not data received from a remote server, but a result calculated locally from a complete copy of the blockchain, validated block by block. This approach gives full meaning to the bitcoiners' maxim:
 
 
 > Don't trust, verify.
@@ -534,7 +534,7 @@ A Bitcoin node is, therefore, a machine running an implementation of the Bitcoin
 ### The full node
 
 
-A full node is simply a Bitcoin node that downloads the entire Blockchain from the Genesis block, validates each block independently, and stores the history of all that Blockchain locally. This is the "normal" form of a Bitcoin node, as imagined by Satoshi Nakamoto.
+A full node is simply a Bitcoin node that downloads the entire blockchain from the Genesis block, validates each block independently, and stores the history of all that blockchain locally. This is the "normal" form of a Bitcoin node, as imagined by Satoshi Nakamoto.
 
 
 ![Image](assets/fr/063.webp)
@@ -552,7 +552,7 @@ Depending on your needs, you can add an indexer to your full node. Bitcoin Core 
 ### The pruned node
 
 
-The pruned node validates everything as a full node, from the Genesis block to the head of the chain with the most work, but **only keeps the most recent part of the block files**. Once the old blocks have been checked, it gradually deletes them to stay below a space limit you can set. This configuration is ideal if you have disk space constraints: you retain the independence of block validation, without storing the complete Blockchain history archive. This option is particularly useful if you simply want to install Bitcoin Core on your personal computer, without using a dedicated machine.
+The pruned node validates everything as a full node, from the Genesis block to the head of the chain with the most work, but **only keeps the most recent part of the block files**. Once the old blocks have been checked, it gradually deletes them to stay below a space limit you can set. This configuration is ideal if you have disk space constraints: you retain the independence of block validation, without storing the complete blockchain history archive. This option is particularly useful if you simply want to install Bitcoin Core on your personal computer, without using a dedicated machine.
 
 
 ![Image](assets/fr/064.webp)
@@ -639,7 +639,7 @@ This is the most sovereign and flexible approach: you know exactly what's runnin
 #### Bitcoin Core (dominant client)
 
 
-[Bitcoin Core](https://bitcoincore.org/) is the network's ultra-majority client. It downloads, validates, and maintains the Blockchain, provides RPC/REST APIs, and can integrate a wallet. If you prefer standard tools and feel comfortable adding services yourself (such as Electrum server, explorer, and LND), you're better off using Core as is.
+[Bitcoin Core](https://bitcoincore.org/) is the network's ultra-majority client. It downloads, validates, and maintains the blockchain, provides RPC/REST APIs, and can integrate a wallet. If you prefer standard tools and feel comfortable adding services yourself (such as Electrum server, explorer, and LND), you're better off using Core as is.
 
 
 **Benefits:** Maximum stability, predictable behavior, raw experience, easy to install and configure.
@@ -800,7 +800,7 @@ Now that we've explored all the software possibilities, let's focus on the hardw
 ### Do you really need a dedicated machine?
 
 
-Over the past few years, bitcoiners have become increasingly aware of a common misconception, particularly with the popularization of node-in-a-box in the early 2020s: a Bitcoin node should necessarily run on a machine dedicated exclusively to this purpose. But this is not true. You don't necessarily need a dedicated computer to run a Bitcoin node: Bitcoin Core is perfectly capable of running on your everyday PC. If you have sufficient disk space for Blockchain or enable pruning, you can validate the chain, connect your wallet, and even close the program when you're done using it. The advantage of this approach is considerable: zero initial investment and minimal complexity.
+Over the past few years, bitcoiners have become increasingly aware of a common misconception, particularly with the popularization of node-in-a-box in the early 2020s: a Bitcoin node should necessarily run on a machine dedicated exclusively to this purpose. But this is not true. You don't necessarily need a dedicated computer to run a Bitcoin node: Bitcoin Core is perfectly capable of running on your everyday PC. If you have sufficient disk space for blockchain or enable pruning, you can validate the chain, connect your wallet, and even close the program when you're done using it. The advantage of this approach is considerable: zero initial investment and minimal complexity.
 
 
 ![Image](assets/fr/074.webp)
@@ -919,7 +919,7 @@ Historically, the great advantage of SBCs like the Raspberry Pi was their price:
 #### Disk storage: SSD mandatory, 2 TB minimum
 
 
-Technically, it is possible to run a Bitcoin node on an HDD. The problem is that everything will slow down considerably, especially the IBD, which will become extremely long due to Bitcoin Core's intensive use of the disk as a cache (especially for the UTXO set). This is why I strongly advise against using an HDD: it creates a real bottleneck, severely limits future evolution (e.g., for a Lightning node), and may even lead to a synchronization mismatch with the Blockchain head. What's more, constant stress on the mechanical disk increases the risk of premature wear.
+Technically, it is possible to run a Bitcoin node on an HDD. The problem is that everything will slow down considerably, especially the IBD, which will become extremely long due to Bitcoin Core's intensive use of the disk as a cache (especially for the UTXO set). This is why I strongly advise against using an HDD: it creates a real bottleneck, severely limits future evolution (e.g., for a Lightning node), and may even lead to a synchronization mismatch with the blockchain head. What's more, constant stress on the mechanical disk increases the risk of premature wear.
 
 
 SSDs radically change your user experience: everything becomes faster and smoother, with far greater reliability. The use of an SSD is therefore (almost) mandatory for your node, and you won't regret it, especially as high-capacity models are now relatively affordable.
@@ -928,7 +928,7 @@ SSDs radically change your user experience: everything becomes faster and smooth
 ![Image](assets/fr/077.webp)
 
 
-In terms of capacity, 2TB is gradually establishing itself as the new reasonable minimum. In the summer of 2025, Blockchain is already approaching 700 GB, and if you add Umbrel, an address indexer, and a few applications, a 1 TB SSD will quickly be saturated. With 2TB, you have a comfortable margin for the years to come (in a broad estimate, between 5 and 15 years). You can also opt for 4TB if you plan to use many applications on Umbrel, store large files in self-hosting, or if you want to anticipate your disk space needs to a large extent.
+In terms of capacity, 2TB is gradually establishing itself as the new reasonable minimum. In the summer of 2025, blockchain is already approaching 700 GB, and if you add Umbrel, an address indexer, and a few applications, a 1 TB SSD will quickly be saturated. With 2TB, you have a comfortable margin for the years to come (in a broad estimate, between 5 and 15 years). You can also opt for 4TB if you plan to use many applications on Umbrel, store large files in self-hosting, or if you want to anticipate your disk space needs to a large extent.
 
 
 ![Image](assets/fr/078.webp)
@@ -961,7 +961,7 @@ Below, I propose three concrete configurations, adapted to different budgets and
 *Prices shown below are indicative only and may vary according to region, vendor, and period*
 
 
-First and foremost, you need an SSD that's big enough to accommodate the Blockchain, while still leaving room for manoeuvre. SSDs have a limited lifespan in terms of write cycles and total volume of data written. However, a Bitcoin node places a significant load on the disk when writing. That's why I don't recommend the entry-level models; instead, I suggest an NVMe SSD, which offers significantly better performance.
+First and foremost, you need an SSD that's big enough to accommodate the blockchain, while still leaving room for manoeuvre. SSDs have a limited lifespan in terms of write cycles and total volume of data written. However, a Bitcoin node places a significant load on the disk when writing. That's why I don't recommend the entry-level models; instead, I suggest an NVMe SSD, which offers significantly better performance.
 
 
 As an example, for the purposes of this course, I've chosen the following model: *Samsung 990 EVO Plus NVMe M.2 SSD 2Tb*, available for around €120 on Amazon. You can also opt for other well-known brands such as Crucial, Western Digital, or Kingston.
@@ -1105,7 +1105,7 @@ Umbrel can remain very minimalist and focused solely on Bitcoin, or evolve into 
 
 
 
-- **Simple Bitcoin node**: this is the founding use on which Umbrel has relied from the outset. You can run Bitcoin Core (or Knots), connect your wallets directly to your node, expose an Electrum server, host your mempool block explorer to view the Blockchain, and estimate charges... It's these uses that we'll be focusing on in this course.
+- **Simple Bitcoin node**: this is the founding use on which Umbrel has relied from the outset. You can run Bitcoin Core (or Knots), connect your wallets directly to your node, expose an Electrum server, host your mempool block explorer to view the blockchain, and estimate charges... It's these uses that we'll be focusing on in this course.
 
 
 ![Image](assets/fr/082.webp)
@@ -1172,7 +1172,7 @@ If you've opted for a Raspberry Pi 5 (an option I don't recommend, as mentioned 
 
 https://planb.academy/tutorials/node/bitcoin/umbrel-8b0e3b5b-d3cf-4a1e-8bb8-1ad2db4dd848
 
-As mentioned in the previous section, I chose to run this tutorial on a small refurbished PC that I found at a good price: a *Lenovo ThinkCentre M900 Tiny* equipped with an Intel Core i7 processor and 16 GB RAM. This is a very comfortable configuration for running Umbrel, especially for a Bitcoin node. However, I chose this configuration because I want to install a Lightning node and other more demanding applications later on. I've also added a 2TB SSD to my ThinkCentre to retain the full Blockchain and still have a comfortable margin. With this configuration, the total cost is €270, inclusive of all expenses.
+As mentioned in the previous section, I chose to run this tutorial on a small refurbished PC that I found at a good price: a *Lenovo ThinkCentre M900 Tiny* equipped with an Intel Core i7 processor and 16 GB RAM. This is a very comfortable configuration for running Umbrel, especially for a Bitcoin node. However, I chose this configuration because I want to install a Lightning node and other more demanding applications later on. I've also added a 2TB SSD to my ThinkCentre to retain the full blockchain and still have a comfortable margin. With this configuration, the total cost is €270, inclusive of all expenses.
 
 
 ![Image](assets/fr/001.webp)
@@ -1286,7 +1286,7 @@ The screen that appears lists all the internal storage devices detected by the c
 ![Image](assets/fr/007.webp)
 
 
-Once you've identified the correct disk (usually the one with the largest capacity, to house the Blockchain), note the number assigned to it. For example, if the disk you've chosen appears under the number `2`, simply enter `2`, then press the `Enter` key on the keyboard.
+Once you've identified the correct disk (usually the one with the largest capacity, to house the blockchain), note the number assigned to it. For example, if the disk you've chosen appears under the number `2`, simply enter `2`, then press the `Enter` key on the keyboard.
 
 
 ![Image](assets/fr/008.webp)
@@ -1564,19 +1564,19 @@ Generally speaking, an indexer is a program that scans a set of raw data, extrac
 In layman's terms, it's the same principle as an index in a book: if you're looking for a specific piece of information, rather than rereading the whole book, you consult the index to directly find the page where the information you're looking for appears.
 
 
-In a Bitcoin node, such as Bitcoin Core, Blockchain data is stored in its raw, chronological form. Each block contains transactions, which in turn contain inputs and outputs, without any particular classification by address, identifier, or wallet. This linear organization is optimized for block validation, but unsuitable for targeted searches. For example, if you wanted to find all transactions linked to a specific address in a non-indexed node, you'd have to manually review the entire blockchain, block by block and transaction by transaction. This is precisely where the indexer on your Bitcoin node comes in.
+In a Bitcoin node, such as Bitcoin Core, blockchain data is stored in its raw, chronological form. Each block contains transactions, which in turn contain inputs and outputs, without any particular classification by address, identifier, or wallet. This linear organization is optimized for block validation, but unsuitable for targeted searches. For example, if you wanted to find all transactions linked to a specific address in a non-indexed node, you'd have to manually review the entire blockchain, block by block and transaction by transaction. This is precisely where the indexer on your Bitcoin node comes in.
 
 
 ![Image](assets/fr/085.webp)
 
 
-An indexer is a specialized software program that analyzes this mass of raw data (Blockchain, Mempool, UTXO set) and extracts keys, such as transaction identifiers, addresses, and block heights. From these keys, it builds its index, associating each key with the exact location of the information in the node's storage.
+An indexer is a specialized software that analyzes this mass of raw data (blockchain, mempool, UTXO set) and extracts keys, such as transaction identifiers, addresses, and block heights. From these keys, it builds its index, associating each key with the exact location of the information in the node's storage.
 
 
 ![Image](assets/fr/086.webp)
 
 
-Indexing allows you to search for information on your node quickly, accurately, and efficiently. For example, when you connect a wallet like Sparrow to your node, it can display the balance of an address almost instantly. In concrete terms, it queries the indexer with a request like: "_Which UTXOs are associated with this script-Hash?_" The indexer responds almost immediately, without having to reread the entire Blockchain, as this data is already listed in its database.
+Indexing allows you to search for information on your node quickly, accurately, and efficiently. For example, when you connect a wallet like Sparrow to your node, it can display the balance of an address almost instantly. In concrete terms, it queries the indexer with a request like: "_Which UTXOs are associated with this script-hash?_" The indexer responds almost immediately, without having to reread the entire blockchain, as this data is already listed in its database.
 
 
 ### Does Bitcoin Core have an indexer?
@@ -1585,7 +1585,7 @@ Indexing allows you to search for information on your node quickly, accurately, 
 Without the need for additional software, Bitcoin Core does not, strictly speaking, offer a complete address indexer comparable to those found in software such as Electrs or Fulcrum. Nevertheless, it does incorporate several internal indexing mechanisms, as well as optional options for extending its querying capabilities. To fully understand the situation, we need to take a detour into the project's history.
 
 
-Until Bitcoin Core version 0.8.0, transaction validation was based on a global transaction index, known as the `txindex`. This index referenced all Blockchain transactions and their outputs. When a node received a new transaction, it consulted this index to verify that the consumed outputs (in inputs) actually existed and had not already been spent. `txindex` was therefore indispensable for transaction validation at the time.
+Until Bitcoin Core version 0.8.0, transaction validation was based on a global transaction index, known as the `txindex`. This index referenced all blockchain transactions and their outputs. When a node received a new transaction, it consulted this index to verify that the consumed outputs (in inputs) actually existed and had not already been spent. `txindex` was therefore indispensable for transaction validation at the time.
 
 
 However, this approach had its limitations: it was slow, costly in terms of storage, and redundant in terms of information. To remedy this, version 0.8.0 introduces an overhaul of the validation model called ***Ultraprune***. Instead of storing everything in the form of transaction indexes, Bitcoin Core maintains a simple database dedicated solely to UTXOs, called `chainstate` (in everyday language, this is known as "UTXO set"), and updates its list as outputs are consumed and created.
@@ -1624,19 +1624,19 @@ If you simply want to connect a wallet, such as Sparrow, to your node to view ba
 On the other hand, to use more advanced software, such as running mempool.space locally, the installation of an address indexer becomes indispensable for the space block explorer.
 
 
-The indexer requires a certain amount of synchronization time (less than the IBD) and will occupy additional disk space. If your SSD still has enough free space after downloading Blockchain, you can easily add an indexer.
+The indexer requires a certain amount of synchronization time (less than the IBD) and will occupy additional disk space. If your SSD still has enough free space after downloading blockchain, you can easily add an indexer.
 
 
 ### Which indexer to choose?
 
 
-Two software programs are commonly used to build this type of address index and make it accessible: **Electrs** and **Fulcrum**. These tools index the Blockchain according to script-hash (addresses) and then propose a standardized Interface (the Electrum protocol), to which numerous wallets, such as Electrum wallet, Sparrow, or Phoenix, connect.
+Two software programs are commonly used to build this type of address index and make it accessible: **Electrs** and **Fulcrum**. These tools index the blockchain according to script-hash (addresses) and then propose a standardized Interface (the Electrum protocol), to which numerous wallets, such as Electrum wallet, Sparrow, or Phoenix, connect.
 
 
 ![Image](assets/fr/087.webp)
 
 
-Simply put, Electrs is quite compact: it indexes Blockchain faster and takes up less disk space, but performs slightly less well than Fulcrum on queries. In contrast, Fulcrum consumes more disk space and takes longer to index, but offers superior query performance.
+Simply put, Electrs is quite compact: it indexes blockchain faster and takes up less disk space, but performs slightly less well than Fulcrum on queries. In contrast, Fulcrum consumes more disk space and takes longer to index, but offers superior query performance.
 
 
 For individual use, I recommend Electrs: it consumes less space, is well-maintained, and, although it is slightly slower on certain requests than Fulcrum, it is still more than sufficient for everyday use. If you have the time and disk space, you can also try out Fulcrum, which will perform significantly better, especially on wallets with numerous addresses to verify.
@@ -1676,7 +1676,7 @@ Once synchronization is complete, you can connect your wallet software to your E
 <chapterId>35519b1a-f681-4a69-a652-9fbe510cd17f</chapterId>
 
 
-Now that you have a complete Bitcoin node, it's time to put it to good use! In the next chapter, we'll explore other potential uses for your Umbrel instance. However, let's begin with the basics: connecting your wallet software to utilize information from your own Blockchain and distribute transactions through your own node.
+Now that you have a complete Bitcoin node, it's time to put it to good use! In the next chapter, we'll explore other potential uses for your Umbrel instance. However, let's begin with the basics: connecting your wallet software to utilize information from your own blockchain and distribute transactions through your own node.
 
 
 As mentioned above, there are two main connection interfaces:
@@ -1811,7 +1811,7 @@ Of course, it would be impossible to list all the Bitcoin applications here. In 
 ### Mempool.space
 
 
-In the daily use of Bitcoin, if there's one tool that's truly indispensable, it's the block explorer. Whether accessible online or installed locally, it transforms Blockchain's raw data into a structured, clear, and easy-to-read format. It also features a search engine that allows users to quickly locate a specific block, transaction, or address.
+In the daily use of Bitcoin, if there's one tool that's truly indispensable, it's the block explorer. Whether accessible online or installed locally, it transforms blockchain's raw data into a structured, clear, and easy-to-read format. It also features a search engine that allows users to quickly locate a specific block, transaction, or address.
 
 
 In concrete terms, the explorer lets you estimate the fees required for your transaction to be included in a block, then track its progress: find out whether it is likely to be included in the near future, depending on the fee market, and finally confirm that it has indeed been included in a block. It also offers the possibility of analyzing your past transactions and consulting their history. In short, it's the bitcoiner's Swiss Army Knife.
@@ -2085,7 +2085,7 @@ With these simple habits, your Umbrel node will remain stable, safe, and useful,
 Your Bitcoin node starts up without any prior knowledge of transaction history. Initially, it's just a computer running software (Bitcoin Core or similar). To become a fully synchronized and operational Bitcoin node, it must locally reconstruct the state of the ledger by checking all blocks published since the Genesis block (block 0, published by Satoshi Nakamoto on January 3, 2009). This step is called **IBD (_Initial Block Download_)**.
 
 
-IBD consists of downloading and verifying each block and transaction individually, applying the consensus rules, to build its own version of the Blockchain. The aim is not simply to retrieve a copy of unverified data, but to arrive at the same conclusion completely independently, as the honest majority of the network.
+IBD consists of downloading and verifying each block and transaction individually, applying the consensus rules, to build its own version of the blockchain. The aim is not simply to retrieve a copy of unverified data, but to arrive at the same conclusion completely independently, as the honest majority of the network.
 
 
 ![Image](assets/fr/092.webp)
@@ -2225,7 +2225,7 @@ By default, Bitcoin Core saves its data in a specific working directory. Under G
 Blockchain is, therefore, a collection of blocks. A full node stores these blocks as sequential flat files and maintains a parallel index for quick retrieval. When needed (reorganization, wallet rescan, peer service), this data is re-read as is.
 
 
-**Note:** A reorganization, or resynchronization, is a phenomenon in which the Blockchain undergoes a modification of its structure due to the existence of competing blocks at the same height. This happens when a portion of the blockchain is replaced by another chain with a greater amount of accumulated work. These resynchronizations are a natural part of Bitcoin's operation, where different miners can find new blocks almost simultaneously, thereby splitting the Bitcoin network in two. In such cases, the network may temporarily split into competing chains. Eventually, as one of these chains accumulates more work, the other chains are abandoned by the nodes, and their blocks become known as "obsolete blocks" or "orphan blocks." This process of replacing one chain with another is called resynchronization.
+**Note:** A reorganization, or resynchronization, is a phenomenon in which the blockchain undergoes a modification of its structure due to the existence of competing blocks at the same height. This happens when a portion of the blockchain is replaced by another chain with a greater amount of accumulated work. These resynchronizations are a natural part of Bitcoin's operation, where different miners can find new blocks almost simultaneously, thereby splitting the Bitcoin network in two. In such cases, the network may temporarily split into competing chains. Eventually, as one of these chains accumulates more work, the other chains are abandoned by the nodes, and their blocks become known as "obsolete blocks" or "orphan blocks." This process of replacing one chain with another is called resynchronization.
 
 
 #### blk*.dat files (raw block data)
