@@ -875,7 +875,7 @@ It's an excellent low-cost alternative to the mini-PC: today, you can find used 
 ![Image](assets/fr/076.webp)
 
 
-**Highlights:** All-in-one solution, the battery acts as a UPS (no blackouts), simplified installation thanks to an integrated display and keyboard, an integrated Wi-Fi card, and a wide choice of used and new markets (which often means you can negotiate prices).
+**Highlights:** All-in-one solution, the battery acts as a UPS (no blackouts), simplified installation thanks to an integrated display and keyboard, an integrated Wi-Fi card, and a wide choice on both used and new markets (which often means you can negotiate prices).
 
 
 **Weaknesses:** slightly higher power consumption than a bare Mini-PC, gradual battery wear in 24/7 operation with loss of capacity, rare but real risk of battery swelling or thermal runaway with age. It's mainly this aspect that makes me consider the mini-PC a better option than the laptop: the gradual degradation of the battery and the associated risks.
@@ -1924,7 +1924,7 @@ https://planb.academy/tutorials/computer-security/communication/tailscale-9acbd7
 ### Nostr
 
 
-Nostr, an acronym for "*Notes and Other Stuff Transmitted by Relays*", is an open, decentralized protocol designed to enable messages to be published and exchanged on the Internet without depending on a centralized platform. Each user has a pair of cryptographic keys: the public key (`npub`), which serves as an identifier, and the private key (`nsec`), which is used to sign messages and guarantee their authenticity.
+Nostr, an acronym for "*Notes and Other Stuff Transmitted by Relays*", is an open, decentralized protocol designed to enable messages to be published and exchanged on the internet without depending on a centralized platform. Each user has a pair of cryptographic keys: the public key (`npub`), which serves as an identifier, and the private key (`nsec`), which is used to sign messages and guarantee their authenticity.
 
 
 Messages are transmitted via a network of independent relays. This distributed architecture makes Nostr resistant to censorship: no single server controls access or distribution, and a user can connect to as many relays as they wish.
@@ -1933,13 +1933,13 @@ Messages are transmitted via a network of independent relays. This distributed a
 This protocol is very popular within the Bitcoin community because, like Bitcoin, Nostr addresses issues of digital sovereignty and data control. Its creator, Fiatjaf, is a developer already recognized in the ecosystem for his numerous contributions.
 
 
-With your Umbrel, you can optimize your use of Nostr. By installing the ***Nostr Relay*** application, you can host your own private relay directly on your machine, ensuring that all your posts and interactions on Nostr are saved locally and can't be lost through deletion by public relays.
+With your Umbrel, you can optimize your use of Nostr. By installing the ***Nostr Relay*** application, you can host your own private relay directly on your machine, ensuring that all your posts and interactions on Nostr are saved locally and can't be lost due to deletion by public relays.
 
 
 Nostr clients ***noStrudel*** or ***Snort*** are also available on Umbrel. Thanks to these applications, you can publish, read, search for profiles, and interact with the Nostr ecosystem directly from the web interface on your Umbrel.
 
 
-Finally, there is the ***Nostr wallet Connect*** application on Umbrel, which allows native Lightning payments within Nostr. Specifically, you can link your future Lightning node to your Nostr clients to send micro-payments, called "*zaps*", to reward content or interact in a monetized way, without going through a third-party service. These payments are sent directly from your personal node via your channels.
+Finally, there is the ***Nostr Wallet Connect*** application on Umbrel, which allows native Lightning payments within Nostr. Specifically, you can link your future Lightning node to your Nostr clients to send micro-payments, called "*zaps*", to reward content or interact in a monetized way, without going through a third-party service. These payments are sent directly from your personal node via your channels.
 
 
 To find out how to use all these applications, I recommend you take a look at this complete tutorial:
@@ -1953,7 +1953,7 @@ https://planb.academy/tutorials/node/others/umbrel-nostr-7ae147e8-f5cd-46e1-861b
 BTCPay Server is a free, open-source payment processor that enables you to accept payments via Bitcoin and Lightning Network without intermediaries, while retaining self-custody of funds.
 
 
-BTCPay Server's architecture is based on a Bitcoin node and, for Lightning, on a compatible implementation (LND, Core Lightning...), making it one of the only totally non-custodial PoS solutions. It's also the most comprehensive software for tracking and accounting.
+BTCPay Server's architecture is based on a Bitcoin node and, for Lightning, on a compatible implementation (LND, Core Lightning...), making it one of the few totally non-custodial PoS solutions. It's also the most comprehensive software for tracking and accounting.
 
 
 ![Image](assets/fr/091.webp)
