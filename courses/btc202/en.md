@@ -119,7 +119,7 @@ Since Bitcoin is a system, it must necessarily be run on computers. And, because
 Nakamoto, S. (2008). *Bitcoin: A Peer-to-Peer Electronic Cash System*. https://Bitcoin.org/Bitcoin.pdf
 
 
-It is precisely these users who ensure Bitcoin's security. As Eric Voskuil explains in his book *Cryptoeconomics*, the security of Bitcoin relies neither on [Blockchain](https://planb.academy/resources/glossary/blockchain), nor on [hashing power](https://planb.academy/resources/glossary/hashrate), nor on validation, decentralization, [cryptography](https://planb.academy/resources/glossary/cryptography), [open source](https://planb.academy/resources/glossary/foss), nor game theory. The security of Bitcoin depends primarily on the individuals who are willing to expose themselves to personal risk. Decentralization allows this risk to be spread over a large number of individuals, and it is only their ability to resist that ensures the system's robustness.
+It is precisely these users who ensure Bitcoin's security. As Eric Voskuil explains in his book *Cryptoeconomics*, the security of Bitcoin relies neither on [blockchain](https://planb.academy/resources/glossary/blockchain), nor on [hashing power](https://planb.academy/resources/glossary/hashrate), nor on validation, decentralization, [cryptography](https://planb.academy/resources/glossary/cryptography), [open source](https://planb.academy/resources/glossary/foss), nor game theory. The security of Bitcoin depends primarily on the individuals who are willing to expose themselves to personal risk. Decentralization allows this risk to be spread over a large number of individuals, and it is only their ability to resist that ensures the system's robustness.
 
 
 This principle is easy to understand: if Bitcoin depended on a single node owned by a single person, imprisoning that person would be enough to shut down the network, since they alone would assume all the risks. With tens of thousands of nodes spread around the world, the risk is disseminated: each of these operators would have to be neutralized to shut down Bitcoin.
@@ -151,7 +151,7 @@ From the outset, Bitcoin was designed to allow each user to run a personal node.
 ### Keep blockchain
 
 
-The first task of a node is to maintain a local copy of the Blockchain. To prevent [double-spending](https://planb.academy/resources/glossary/double-spending-attack) on Bitcoin without involving a central authority, each user must check that no transaction exists in the system. The only way to be sure of this is to know all the transactions made on Bitcoin. For this reason, all transactions are [time-stamped](https://planb.academy/resources/glossary/timestamp) and grouped into [blocks](https://planb.academy/resources/glossary/block), and each node stores the entire Blockchain.
+The first task of a node is to maintain a local copy of the blockchain. To prevent [double-spending](https://planb.academy/resources/glossary/double-spending-attack) on Bitcoin without involving a central authority, each user must check that no transaction exists in the system. The only way to be sure of this is to know all the transactions made on Bitcoin. For this reason, all transactions are [time-stamped](https://planb.academy/resources/glossary/timestamp) and grouped into [blocks](https://planb.academy/resources/glossary/block), and each node stores the entire blockchain.
 
 
 > The only way to confirm the absence of a transaction is to be aware of all transactions.
@@ -159,7 +159,7 @@ The first task of a node is to maintain a local copy of the Blockchain. To preve
 Nakamoto, S. (2008). *Bitcoin: A Peer-to-Peer Electronic Cash System*. https://Bitcoin.org/Bitcoin.pdf
 
 
-Blockchain is therefore an evolving register: each time a new block is published by a [miner](https://planb.academy/resources/glossary/miner), the node checks its validity before adding it to its own local copy of the chain. As of today (July 2025), the complete Blockchain exceeds 675 GB, and this size continues to grow, as a new block is added on average every 10 minutes.
+Blockchain is therefore an evolving register: each time a new block is published by a [miner](https://planb.academy/resources/glossary/miner), the node checks its validity before adding it to its own local copy of the chain. As of today (July 2025), the complete blockchain exceeds 675 GB, and this size continues to grow, as a new block is added on average every 10 minutes.
 
 
 ![Image](assets/fr/049.webp)
@@ -182,13 +182,13 @@ The second role of a node is to ensure the verification and propagation of trans
 ![Image](assets/fr/050.webp)
 
 
-After validation, the transaction is stored in the node's [Mempool](https://planb.academy/resources/glossary/mempool), a temporary memory space reserved for unconfirmed transactions, and then relayed to the other network peers to which it is connected. This distribution and validation mechanism continues from node to node. In this way, the transaction is propagated across the Bitcoin network, and each node stores it in Mempool until it is included in a valid block by a miner, who then acts on its first [confirmation](https://planb.academy/resources/glossary/confirmation).
+After validation, the transaction is stored in the node's [mempool](https://planb.academy/resources/glossary/mempool), a temporary memory space reserved for unconfirmed transactions, and then relayed to the other network peers to which it is connected. This distribution and validation mechanism continues from node to node. In this way, the transaction is propagated across the Bitcoin network, and each node stores it in mempool until it is included in a valid block by a miner, who then acts on its first [confirmation](https://planb.academy/resources/glossary/confirmation).
 
 
 ### Check and distribute blocks
 
 
-The third role of the node involves managing mined blocks. When a miner discovers a new block with a valid [proof of work](https://planb.academy/resources/glossary/proof-of-work), it is [broadcast](https://planb.academy/resources/glossary/diffusion) on the network. The nodes receive it, check that it conforms to all the protocol rules, and then integrate it into their own local copy of the Blockchain if it is valid. As with transactions, newly validated blocks are then relayed to all peers connected to the node. This process continues until all nodes on the Bitcoin network are aware of the new block.
+The third role of the node involves managing mined blocks. When a miner discovers a new block with a valid [proof of work](https://planb.academy/resources/glossary/proof-of-work), it is [broadcast](https://planb.academy/resources/glossary/diffusion) on the network. The nodes receive it, check that it conforms to all the protocol rules, and then integrate it into their own local copy of the blockchain if it is valid. As with transactions, newly validated blocks are then relayed to all peers connected to the node. This process continues until all nodes on the Bitcoin network are aware of the new block.
 
 
 ![Image](assets/fr/051.webp)
@@ -248,7 +248,7 @@ In the face of this evolution, the roles of the Bitcoin node and the miner have 
 A miner needs a Bitcoin node to interact with the network.
 
 
-Sometimes we also differentiate the role of the miner from that of the Grind. A Grind is a machine whose task is to hash template blocks provided by the server of a [pool](https://planb.academy/resources/glossary/pool-mining), searching for hashes that meet the defined difficulty target for shares, rather than that of Bitcoin. The rest of the mining process, which includes the actual construction of blocks, transaction selection, or searching for proof of work according to the specific difficulty of Bitcoin, as well as broadcasting, is performed directly by the pools.
+Sometimes we also differentiate the role of the miner from that of the hasher. A hasher is a machine whose task is to hash template blocks provided by the server of a [pool](https://planb.academy/resources/glossary/pool-mining), searching for hashes that meet the defined difficulty target for shares, rather than that of Bitcoin. The rest of the mining process, which includes the actual construction of blocks, transaction selection, or searching for proof of work according to the specific difficulty of Bitcoin, as well as broadcasting, is performed directly by the pools.
 
 
 ![Image](assets/fr/054.webp)
@@ -543,7 +543,7 @@ A full node is simply a Bitcoin node that downloads the entire blockchain from t
 The full node doesn't need to trust anyone because it validates and knows all the information in the system. It's the type of node that gives you the most guarantees: you know, without relying on a third party, whether a payment is valid, whether a block is valid, whether a reorganization is legitimate, and so on.
 
 
-In practice, a full node requires non-trivial resources, including several hundred gigabytes for block files, a processor capable of validating scripts, RAM for the Mempool and caches, and stable bandwidth. The first synchronization (*[IBD](https://planb.academy/resources/glossary/initial-block-download-ibd)*) reads and verifies the complete history: it's intensive, but only happens once. A full node actively participates in the network, relaying blocks and transactions, and can accept incoming connections to assist other peers.
+In practice, a full node requires non-trivial resources, including several hundred gigabytes for block files, a processor capable of validating scripts, RAM for the mempool and caches, and stable bandwidth. The first synchronization (*[IBD](https://planb.academy/resources/glossary/initial-block-download-ibd)*) reads and verifies the complete history: it's intensive, but only happens once. A full node actively participates in the network, relaying blocks and transactions, and can accept incoming connections to assist other peers.
 
 
 Depending on your needs, you can add an indexer to your full node. Bitcoin Core offers transaction indexing as an optional feature (deactivated by default), which can be useful for specific purposes. However, it doesn't include an address indexer, which is often the most sought-after feature for individual users. To remedy this, you can install dedicated software on your node, such as Electrs or Fulcrum, to speed up address balance verification queries from associated UTXOs. We'll come back to the role of the indexer in more detail in a separate chapter.
@@ -552,7 +552,7 @@ Depending on your needs, you can add an indexer to your full node. Bitcoin Core 
 ### The pruned node
 
 
-The [pruned node](https://planb.academy/resources/glossary/pruned-node) validates everything as a full node, from the Genesis block to the head of the chain with the most work, but **only keeps the most recent part of the block files**. Once the old blocks have been checked, it gradually deletes them to stay below a space limit you can set. This configuration is ideal if you have disk space constraints: you retain the independence of block validation, without storing the complete Blockchain history archive. This option is particularly useful if you simply want to install Bitcoin Core on your personal computer, without using a dedicated machine.
+The [pruned node](https://planb.academy/resources/glossary/pruned-node) validates everything as a full node, from the Genesis block to the head of the chain with the most work, but **only keeps the most recent part of the block files**. Once the old blocks have been checked, it gradually deletes them to stay below a space limit you can set. This configuration is ideal if you have disk space constraints: you retain the independence of block validation, without storing the complete blockchain history archive. This option is particularly useful if you simply want to install Bitcoin Core on your personal computer, without using a dedicated machine.
 
 
 ![Image](assets/fr/064.webp)
@@ -639,7 +639,7 @@ This is the most sovereign and flexible approach: you know exactly what's runnin
 #### Bitcoin Core (dominant client)
 
 
-[Bitcoin Core](https://bitcoincore.org/) is the network's ultra-majority client. It downloads, validates, and maintains the Blockchain, provides [RPC](https://planb.academy/resources/glossary/rpc-remote-procedure-call)/REST APIs, and can integrate a wallet. If you prefer standard tools and feel comfortable adding services yourself (such as Electrum server, explorer, and LND), you're better off using Core as is.
+[Bitcoin Core](https://bitcoincore.org/) is the network's ultra-majority client. It downloads, validates, and maintains the blockchain, provides [RPC](https://planb.academy/resources/glossary/rpc-remote-procedure-call)/REST APIs, and can integrate a wallet. If you prefer standard tools and feel comfortable adding services yourself (such as Electrum server, explorer, and LND), you're better off using Core as is.
 
 
 **Benefits:** Maximum stability, predictable behavior, raw experience, easy to install and configure.
@@ -2326,8 +2326,7 @@ It is important to note that node mempools have no consensus value. Bitcoin work
 #### Memory policy and management
 
 
-When a transaction is received, Core applies a series of checks against consensus rules (syntax, valid scripts, no double spending, etc.) and mempool rules, which are a local policy (RBF, minimum fee thresholds, data limit in `OP_RETURN`, etc.). If the transaction adheres to these rules, it is stored in memory.
-When a transaction is received, Core applies a series of checks against consensus rules (syntax, valid scripts, no double spending, etc.) and Mempool rules, which are a local policy ([RBF](https://planb.academy/resources/glossary/rbf-replacebyfee), minimum charge thresholds, data limit in `OP_RETURN`, etc.). If the transaction adheres to these rules, it is stored in memory.
+When a transaction is received, Core applies a series of checks against consensus rules (syntax, valid scripts, no double spending, etc.) and mempool rules, which are a local policy ([RBF](https://planb.academy/resources/glossary/rbf-replacebyfee), minimum charge thresholds, data limit in `OP_RETURN`, etc.). If the transaction adheres to these rules, it is stored in memory.
 
 
 The size of the mempool is limited by the `maxmempool` parameter in the `bitcoin.conf` file (more on this in the next chapter). By default, the limit is 300 MB. When it's full, the node dynamically raises its minimum fee threshold and expels the least profitable transactions first (i.e., it retains transactions that should be mined first). Transactions that are too old can also expire after a configured delay.
