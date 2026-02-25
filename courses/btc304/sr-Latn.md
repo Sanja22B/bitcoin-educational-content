@@ -1003,16 +1003,16 @@ Dakle, nema potrebe da preuzimate "Telegram+" više, osim ako ne želite pristup
 
 Sada kada vaša Telegram grupa (ili supergrupa) radi, vreme je da **konfigurišete dozvole i postavite moderaciju**.
 
-Svaka zajednica je slobodna da izabere svoj pristup, ali iskustvo pokazuje da je **najbolje ograničiti određene dozvole članova**:
+Svaka zajednica je slobodna da izabere svoj pristup, ali iskustvo pokazuje da je **najbolje ograničiti određene dozvole članovima kao što su**:
 
 
 
-- Slanje ankete;
-- Slanje fajlova (da bi se izbegli potencijalni virusi);
-- Slanje glasovnih poruka;
-- Dodavanje korisnika (pomaže u sprečavanju invazija botova);
-- Kačenje poruka;
-- Uređivanje informacija o grupi.
+- slanje ankete;
+- slanje fajlova (da bi se izbegli potencijalni virusi);
+- slanje glasovnih poruka;
+- dodavanje korisnika (pomaže u sprečavanju invazija botova);
+- kačenje poruka;
+- uređivanje informacija o grupi.
 
 
 Preporučuje se da **napišete jasan opis vašeg okupljanja** prilikom kreiranja vaše Telegram grupe ili supergrupe, jer je to prva stvar koju će potencijalni članovi videti. Na primer:
@@ -1034,7 +1034,7 @@ U ovom primeru, administratori Bitcoin Lille su prilagodili svoj javni Telegram 
 
 
 
-U "Postavkama grupe", može biti pametno **omogućiti "Odobravanje novih članova"**.
+U "Postavkama grupe" (eng. Group settings), može biti pametno **omogućiti "Odobravanje novih članova" (eng. Approve new members)**.
 
 
 Neke Bitcoin Telegram grupe bile su meta hiljada lažnih naloga dizajniranih da spamaju ili ometaju zajednicu.
@@ -1044,9 +1044,9 @@ Neke Bitcoin Telegram grupe bile su meta hiljada lažnih naloga dizajniranih da 
 
 
 
-U okviru sekcije Administratora, možete takođe omogućiti funkciju "Agresivna Anti-Spam" za automatsko brisanje sumnjivih poruka.
+U okviru Administrator sekcije, možete takođe omogućiti funkciju "Aggressive Anti-Spam" za automatsko brisanje sumnjivih poruka.
 
-Ovo nije uvek neophodno, ali može dodati dodatni Layer zaštite.
+Ovo nije uvek neophodno, ali može dodati dodatni sloj zaštite.
 
 
 
@@ -1064,18 +1064,18 @@ Korišćenjem **bota [@GroupHelpBot](https://telegram.me/grouphelpbot)**, najkor
 
 
 
-- Komanda **pravila** (/rules) za prikaz smernica vaše zajednice;
-- **Anti-spam** zaštita za filtriranje sumnjivih poruka i naloga;
-- **Prilagodljive automatske poruke dobrodošlice** za nove članove (sa opcionalnim automatskim brisanjem nakon nekoliko minuta)
-- **Anti-flood zaštita** za sprečavanje neželjene pošte
-- Komanda **@administrator** za brzo kontaktiranje administratora grupe
-- **Pravila blokiranja** za neželjeni sadržaj
-- Komanda za **link grupe** (/link)
-- Komanda **upravljanje dozvolama**
-- **Automatsko brisanje** određenih tipova poruka
-- **Blokiranje botova** i **blokiranje ulaza/izlaza** kako biste zaštitili svoju grupu
-- Navedite **društvene mreže vaše zajednice** (/mreže)
-- I mnogo više...
+- komanda **pravila** (/rules) za prikaz smernica vaše zajednice;
+- **anti-spam** zaštita za filtriranje sumnjivih poruka i naloga;
+- **prilagodljive automatske poruke dobrodošlice** za nove članove (sa opcionalnim automatskim brisanjem nakon nekoliko minuta)
+- **anti-flood zaštita** za sprečavanje neželjene pošte
+- komanda **@administrator** za brzo kontaktiranje administratora grupe
+- **pravila blokiranja** za neželjeni sadržaj
+- komanda za **link grupe** (/link)
+- komanda **upravljanje dozvolama**
+- **automatsko brisanje** određenih tipova poruka
+- **blokiranje botova** i **blokiranje ulaza/izlaza** kako biste zaštitili svoju grupu
+- navedite **društvene mreže vaše zajednice** (/networks)
+- i mnogo više...
 
 
 
@@ -1086,7 +1086,7 @@ Korišćenjem **bota [@GroupHelpBot](https://telegram.me/grouphelpbot)**, najkor
 Bezbroj dodatnih funkcija je dostupno.
 
 
-Pro savjet: **Nemojte previše ograničavati razgovor**.
+Pro savet: **Nemojte previše ograničavati razgovor**.
 
 
 
@@ -1098,7 +1098,7 @@ Uputstvo za dodavanje multi-funkcionalnog bota u Telegram grupu ili supergrupu:
 
 
 
-(Napomena: Ceo ovaj proces sada se može obaviti direktno sa vašeg telefona. Više nije potrebna aplikacija Telegram+.)
+(Napomena: Ceo ovaj proces sada se može obaviti direktno sa vašeg telefona. Više nije potrebna Telegram+ aplikacija.)
 
 
 
@@ -1130,13 +1130,13 @@ Da bismo vam olakšali stvari, **delimo [Discord server koji možete duplicirati
 :::video id=e647458a-a21e-44e0-bd03-20b82a871777:::
 
 
-Kada je dobro dizajniran, Discord server može biti pravo bogatstvo za vašu zajednicu. Mnogi Bitkoineri već svakodnevno koriste **Discord**, a mogućnost praćenja Telegram razgovora direktno unutar Discord-a (i obrnuto) može svima uštedeti mnogo vremena.
+Kada je dobro dizajniran, Discord server može biti pravo bogatstvo za vašu zajednicu. Mnogi bitkoineri već svakodnevno koriste **Discord**, a mogućnost praćenja Telegram razgovora direktno unutar Discord-a (i obrnuto) može svima uštedeti mnogo vremena.
 
 
 Da biste sinhronizovali obe platforme, postoji bot otvorenog koda pod nazivom [TediCross](https://github.com/TediCross/TediCross). Njegova svrha je jednostavna: automatski prosleđuje poruke iz Discord tekstualnog kanala u Telegram grupu (ili temu u supergrupi), i obrnuto.
 
 
-Međutim, imajte na umu da nije najlakše za instalaciju. Moraćete da držite otvoren komandni prozor (CMD) na vašem računaru da bi bot radio, a povremeno se mogu pojaviti greške. Srećom, popravka je jednostavna: samo ponovo pokrenite bota i većinu vremena sve se vrati u normalu.
+Međutim, imajte na umu da nije najlakše za instalaciju. Moraćete da držite otvoren komandni prozor (CMD) na vašem računaru da bi bot radio, a povremeno se mogu pojaviti greške. Srećom, popravka je jednostavna: samo ponovo pokrenite bota i većini slučajeva sve se vrati u normalu.
 
 
 Da uštedite vreme, evo tutorijala kako da dodate ovog multi-funkcionalnog bota u Telegram grupu ili supergrupu:
@@ -1154,10 +1154,10 @@ Da uštedite vreme, evo tutorijala kako da dodate ovog multi-funkcionalnog bota 
 
 
 
-Kao što je ranije diskutovano, Twitter i Telegram su najčešće korišćeni alati za komunikaciju za Bitcoin zajednice u Evropi (ako ne i širom sveta).
+Kao što je ranije diskutovano, Twitter i Telegram su najčešće korišćeni alati za komunikaciju unutar Bitcoin zajednice u Evropi (ako ne i širom sveta).
 
 
-Međutim, Telegram nije baš poznat kao najbezbednija ili na privatnost fokusirana aplikacija za razmenu poruka, a Twitter, sada X, je u vlasništvu jedne od najfleksibilnijih korporacija na planeti.
+Međutim, Telegram nije baš poznat kao najbezbednija ili na privatnost fokusirana aplikacija za razmenu poruka, a Twitter, sada X, je u vlasništvu jedne od najneobuzdanijih korporacija na svetu.
 
 
 Zato, kada su vaši osnovni kanali uspostavljeni i stvari teku glatko, može biti vredno odvojiti vreme za istraživanje drugih opcija.
@@ -1171,7 +1171,7 @@ U narednim mesecima, ovaj kurs i platforma planb.network ponudiće tutorijale o 
 Jer, baš kao i društvena mreža NOSTR, oni pružaju ne samo veću privatnost već i zaštitu protiv cenzure ili proizvoljnog gašenja vaše Telegram grupe.
 
 
-I stvarno, šta bi moglo biti više u duhu Bitcoin nego biti otporan na cenzuru i otporan po dizajnu?
+I stvarno, šta bi moglo biti više u duhu Bitcoina nego biti otporan na cenzuru i izdržljiv po dizajnu?
 
 
 
@@ -1198,7 +1198,7 @@ Jednostavno je: ako niko ne može pristupiti vašoj grupi i videti kada se slede
 Twitter (X) je postao gotovo sinonim za Bitcoin razgovore na internetu. Nije savršen, daleko od toga, ali je trenutno mesto gde se okuplja veliki deo zajednice. Preporučuje se kreiranje naloga tamo.
 
 
-Da bi ostale ispred mogućih cenzura ili ograničenja, neke zajednice takođe otvaraju NOSTR profil.
+Da bi ostale korak ispred moguće cenzure ili ograničenja, neke zajednice takođe otvaraju NOSTR profil.
 
 
 To je ono što je uradio kolektiv FREE Madeira.
@@ -1252,9 +1252,9 @@ Pored toga, **vredi prilagoditi nekoliko postavki privatnosti**:
 
 
 
-- ostavite svoj Twitter nalog u "javni" režim (objave vidljive svima);
-- dozvoli svima da te pronađu;
-- onemogući praćenje lokacije i deljenje podataka sa drugim entitetima (u podešavanjima privatnosti).
+- ostavite svoj Twitter nalog u "javnom" režimu (objave su vidljive svima);
+- dozvolite svima da vas pronađu;
+- onemogućite praćenje lokacije i deljenje podataka sa drugim entitetima (u podešavanjima privatnosti).
 
 
 Za svaki događaj verovatno ćete koristiti Twitter za deljenje korisnih informacija. Ali, kao i na većini društvenih mreža, **vidljivost je sve**.
@@ -1268,7 +1268,7 @@ Evo nekoliko **ključnih stvari na koje se treba fokusirati kako biste povećali
 
 
 - Opšti saveti:
-    - Tvituje u jeziku podešenom na vašem nalogu ili na engleskom: tvitovanje na drugim jezicima može značajno smanjiti vašu vidljivost;
+    - Tvitujte u jeziku podešenom na vašem nalogu ili na engleskom: tvitovanje na drugim jezicima može značajno smanjiti vašu vidljivost;
     - Držite se svoje niše, delite samo sadržaj koji je vezan za fokus vašeg naloga; algoritam kažnjava tvitove koji nisu u temi;
     - Ciljajte na 1 do 2 tvita dnevno;
     - Objavite tokom špica: četvrtak ili petak između 8 i 10 časova obično daje najbolje rezultate (proverite na svom nalogu: Twitter Analytics).
@@ -1283,8 +1283,8 @@ Evo nekoliko **ključnih stvari na koje se treba fokusirati kako biste povećali
         - Retweet = težina 1
 - Odgovor = težina 27 (!!)
 - Odgovarajte ljudima koji odgovaraju na vaše **tvitove** (težina 75!!);
-    - Izbegavajte postavljanje linkova u glavnom tvitu: umesto toga, dodajte ih u prvi komentar.;
-    - Napiši reči u celosti, izbegavaj skraćenice.
+    - Izbegavajte postavljanje linkova u glavnom tvitu: umesto toga, dodajte ih u prvi komentar;
+    - Napišite reči u celosti, izbegavajte skraćenice.
 
 
 
@@ -1331,7 +1331,7 @@ Uputstvo za kreiranje Twitter naloga:
 
 
 
-## Približavanje susednim okupljanjima
+## Približavanje okupljanjima u okolini 
 
 
 <chapterId>12a21c3b-235a-5292-8209-67bf60f61e49</chapterId>
@@ -1342,16 +1342,16 @@ Sada kada su vaši komunikacioni kanali i društvene mreže postavljeni i odraž
 
 
 
-Na Twitteru, počnite tako što ćete pratiti ključne naloge koji globalno promovišu Bitcoin kao što su [@Bitcoin](https://twitter.com/Bitcoin) i [@planb_network](https://twitter.com/planb_network), kao i inicijative poput [@FBCEglobal](https://twitter.com/FBCEglobal). Takođe možete retvitovati čuveni tvit [@halfin](https://twitter.com/halfin) "Running Bitcoin" od 11. januara 2009. I što je još važnije, **pratite naloge zajednica i okupljanja Bitcoin u svojoj zemlji**.
+Na Twitteru, počnite tako što ćete pratiti ključne naloge koji globalno promovišu Bitcoin kao što su [@Bitcoin](https://twitter.com/Bitcoin) i [@planb_network](https://twitter.com/planb_network), kao i inicijative poput [@FBCEglobal](https://twitter.com/FBCEglobal). Takođe možete retvitovati čuveni tvit [@halfin](https://twitter.com/halfin) "Running Bitcoin" od 11. januara 2009. I što je još važnije, **pratite naloge lokalnih Bitkoin zajednica i okupljanja**.
 
 
-Ovo stvara **prilike da pratimo jedni druge, označavamo jedni druge i povećavamo kolektivnu vidljivost**. To je već uobičajena praksa među ~50 Bitcoin zajednica u Francuskoj, "Satoshi Spritz" inicijativa u Italiji i "Einundzwanzig" grupa u Nemačkoj.
+Ovo stvara **prilike da pratimo jedni druge, tagujemo jedni druge i povećavamo kolektivnu vidljivost**. To je već uobičajena praksa među ~50 Bitcoin zajednica u Francuskoj, "Satoshi Spritz" inicijativa u Italiji i "Einundzwanzig" grupa u Nemačkoj.
 
 
 
 Iako se nekima može činiti trivijalnim, **praćenje naloga lokalnih zajednica i inicijativa može dovesti do saradnji ili čak partnerstava**. Na primer, zajednice Bitcoin Liège i Bitcoin Lille (kao i Bitcoin Aix i Bitcoin Marseille) su se povezale na ovaj način, što ih je dovelo do zajedničkog organizovanja godišnjeg okupljanja.
 
-Obroci **Cercle du Coin** su još jedan dobar primer.
+Obroci u okviru **Cercle du Coin** su još jedan dobar primer.
 
 
 
@@ -1391,11 +1391,11 @@ To uključuje:
 
 
 
-- [Btcmap.org](https://btcmap.org/)**, vebsajt sa dve mape koje se ažuriraju svakodnevno: **[svetska mapa preduzeća koja prihvataju Bitcoin](https://btcmap.org/map)** i **[svetska mapa zajednica](https://btcmap.org/communities/map)**. Mnogi bitkoin entuzijasti redovno proveravaju ove mape, bilo da putuju ili obavljaju svakodnevne aktivnosti, kako bi upoznali nove ljude ili pronašli mesta za trošenje svog [Sats](https://planb.academy/resources/glossary/satoshi-sat). Btcmap je globalna referenca, a uvrštavanje vaše zajednice tamo je ključno za vidljivost.**
+- [Btcmap.org](https://btcmap.org/)**, vebsajt sa dve mape koje se ažuriraju svakodnevno: **[svetska mapa preduzeća koja prihvataju Bitcoin](https://btcmap.org/map)** i **[svetska mapa zajednica](https://btcmap.org/communities/map)**. Mnogi bitkoin entuzijasti redovno proveravaju ove mape, bilo da putuju ili obavljaju svakodnevne aktivnosti, kako bi upoznali nove ljude ili pronašli mesta za trošenje svog [sats](https://planb.academy/resources/glossary/satoshi-sat). Btcmap je globalna referenca, a uvrštavanje vaše zajednice tamo je ključno za vidljivost.**
 - [BitcoinerEvents](https://www.bitcoinerevents.com/), vebsajt kreiran od strane bitkoinera, za bitkoinere. **Omogućava vam da objavite predstojeće događaje vaše zajednice**. Međutim, u Francuskoj se još uvek ne koristi široko.
-- u zavisnosti od vaše zemlje, mogu postojati i druge lokalne inicijative. U Francuskoj, na primer, postoji [Bitcoin.fr](https://Bitcoin.fr/events/categories/evenements/), koji **navodi desetine Bitcoin događaja svakog meseca**. Dakle, ako ih još niste zapratili na Twitteru ili ih kontaktirali da podelite informacije o vašoj zajednici i događajima, sada je pravo vreme! **Da bi francuski kalendar događaja bio ažuriran, bilo bi sjajno kada bi sve francuske Bitcoin zajednice usvojile naviku da:**
-    - pominjanje @bitcoinpointfr na Twitteru za svaki novi događaj zajednice
-    - pričvršćivanje novih najava događaja u njihovoj Telegram grupi.
+- u zavisnosti od vaše zemlje, mogu postojati i druge lokalne inicijative. U Francuskoj, na primer, postoji [Bitcoin.fr](https://Bitcoin.fr/events/categories/evenements/), koji **navodi desetine Bitcoin događaja svakog meseca**. Dakle, ako ih još niste zapratili na Twitteru ili ih kontaktirali da podelite informacije o vašoj zajednici i događajima, sada je pravo vreme! **Da bi francuski kalendar događaja bio ažuriran, bilo bi sjajno kada bi sve francuske Bitcoin zajednice usvojile naviku:**
+    - pominjanja @bitcoinpointfr na Twitteru za svaki novi događaj zajednice
+    - pričvršćivanja novih najava događaja u njihovoj Telegram grupi.
 
 
 
@@ -1436,7 +1436,7 @@ Kada vam se pridruži mala grupa bitkoinera, vreme je za sledeći korak: organiz
 
 
 
-Sada kada su društvene mreže i komunikacioni kanali vaše zajednice pokrenuti, vreme je da se vaš prisustvo oseti na ovim platformama. Ohrabrite nove članove da se predstave i postepeno pridruže razgovoru.
+Sada kada su društvene mreže i komunikacioni kanali vaše zajednice pokrenuti, vreme je da se vaše prisustvo oseti na ovim platformama. Ohrabrite nove članove da se predstave i postepeno pridruže razgovoru.
 
 
 Ovo će vam osloboditi vreme, koje biste mogli iskoristiti za razmišljanje o organizovanju nekog okupljanja. Ovo će postati još relevantnije kada počnete da osećate pravo uzbuđenje unutar vaše zajednice.
@@ -1445,7 +1445,7 @@ Ovo će vam osloboditi vreme, koje biste mogli iskoristiti za razmišljanje o or
 Kao što je ranije pomenuto, **Bitcoin okupljanje može se smatrati sledećim "nivoom" za zajednicu**. S jedne strane, omogućava **članovima da se sretnu lično**, a s druge strane, pomaže **edukaciji novajlija zainteresovanih za ovaj ekosistem**.
 
 
-Događaj poput ovog vam omogućava, na vašem nivou, da **stvorite uzbuđenje oko Bitcoin** u vašem gradu, što može rasti tokom vremena kako vaša zajednica preuzima projekte.
+Događaj poput ovog vam omogućava, na vašem nivou, da **stvorite uzbuđenje oko Bitcoina** u vašem gradu, što može rasti tokom vremena kako vaša zajednica preuzima projekte.
 
 
 
@@ -1477,7 +1477,7 @@ Bolje je organizovati okupljanje kada imate barem nekoliko aktivnih članova u v
 Jednom kada osetite tu iskru, predložite susret uživo. Ako su drugi zainteresovani, preostaje samo da **odredite datum za vaš prvi susret**.
 
 
-Umesto da sami birate datum, obično je najbolje **napraviti anketu oko deset dana unapred sa nekoliko mogućih dana i vremena**. Na ovaj način, možete koristiti glasove da maksimizirate prisustvo, izgradite uzbuđenje i najbolje iskoristite svoje vreme.
+Umesto da sami birate datum, obično je najbolje **napraviti anketu oko deset dana unapred, sa više opcija za dane i vreme.**. Na ovaj način, možete koristiti rezultate glasanja da maksimizirate prisustvo, izgradite uzbuđenje i najbolje iskoristite svoje vreme.
 
 
 
@@ -1495,14 +1495,14 @@ Ako želite da se pripremite za mirnije trenutke, možete isplanirati nekoliko a
 
 
 
-- prikazivanje **[Mempool](https://Mempool.space/)** na računaru ili pametnom telefonu;
+- prikazivanje **[Mempool-a](https://Mempool.space/)** na računaru ili pametnom telefonu;
 - doneti knjigu;
-- donoseći **Nerdminer**, Bitaxe, FPGA ili čak ASIC;
+- doneti **Nerdminer**, Bitaxe, FPGA ili čak ASIC;
 - imati **Bitcoin letak**;
-- brainstorming vizuala ili logotipa Bitcoin za vašu zajednicu;
+- brainstorming vizuala ili Bitcoin logotipa za vašu zajednicu;
 - igranje **[Bitcoin kartaške igre](https://www.Maximalist.ovh/accueil/20-game-le-Coin-de-table.html)**;
 - prikazivanje mape zajednica i trgovaca na **[btcmap.org](https://btcmap.org/)**;
-- slanje ili prijem Bitcoin koristeći **Lightning**.
+- slanje ili prijem Bitcoina koristeći **Lightning**.
 
 
 Kada vaš sastanak tek počinje, često nije pravo vreme za formalnu prezentaciju. Ako je prisustvo malo, otvorena i neformalna diskusija obično najbolje funkcioniše.
@@ -1520,7 +1520,7 @@ Ako se formira redovna grupa bitkoinera i zainteresovanih učesnika, ima smisla 
 
 1) olakšava svima planiranje unapred;
 
-2) to pomaže **uspostaviti "naviku"**. Čak i ako neko prestane redovno da proverava vaše kanale, i dalje će znati kada se okupljanje dešava i može svratiti kao i obično.
+2) i pomaže **uspostaviti "naviku"**. Čak i ako neko prestane redovno da proverava vaše kanale, i dalje će znati kada se okupljanje dešava i može svratiti kao i obično.
 
 
 Ova druga tačka je jedan od razloga zašto se **u Francuskoj većina okupljanja održava prve srede svakog meseca** (pogledajte inicijativu "ambasadori", pokrenutu od strane [DecouvreBitcoin](https://decouvrebitcoin.fr/) 2022. godine).
@@ -1540,7 +1540,7 @@ Kako vaša zajednica raste i okupljanja privlače više ljudi, možete:
 
 U prvom slučaju, dok imate na umu preferencije svih, jasan cilj može osigurati da učesnici odu sa novim znanjem i da razgovori ostanu fokusirani na Bitcoin.
 
-U drugom slučaju, drugi mesečni događaj mogao bi biti posvećen određenoj temi, kao što su sesije za početnike ili radionice (Mining, Lightning, instalacija nodova, itd.).
+U drugom slučaju, drugi mesečni događaj mogao bi biti posvećen određenoj temi, kao što su sesije za početnike ili radionice (rudarenje, Lightning, instalacija nodova, itd.).
 
 
 ![image](assets/sr-Latn/031.webp)
@@ -1581,7 +1581,7 @@ Pored toga, ovde su tri važne tačke koje treba imati na umu:
 
 
 - Ako planirate da podelite veče na dva dela: prvo, prezentaciju u formalnom prostoru kako biste pomogli svima da se fokusiraju, a zatim prelazak u bar ili restoran da nastavite u opuštenijoj atmosferi, iskustvo pokazuje da promena mesta usred večeri često dovodi do toga da neki učesnici odu tokom pauze. Ovaj pristup se stoga ne preporučuje.
-- Na vašim prvim okupljanjima, prisustvo će verovatno biti malo i verovatno nećete držati formalne prezentacije. U tom slučaju, nema potrebe da se predstavljate vlasniku ili objašnjavate svoje ciljeve. Međutim, **kada okupljanja postanu redovna i dobro posećena, vredi to učiniti kako biste pokazali profesionalizam i izrazili želju da se vraćate mesečno**. Ovo može dovesti do mnogih razgovora (automatske mesečne rezervacije, besplatna pića i/ili daske sa hranom, popusti, razgovori o Bitcoin, prihvatanje plaćanja Bitcoin, itd.). Očigledno, ako specifično tražite mesto sa video projektorom za održavanje prezentacija, čini se neophodnim da zatražite sastanak (licem u lice, ili čak telefonom) sa vlasnikom i/ili menadžerom kako biste predstavili svoj projekat i ciljeve.
+- Na vašim prvim okupljanjima, prisustvo će verovatno biti malo i verovatno nećete držati formalne prezentacije. U tom slučaju, nema potrebe da se predstavljate vlasniku ili objašnjavate svoje ciljeve. Međutim, **kada okupljanja postanu redovna i dobro posećena, vredi to učiniti kako biste pokazali profesionalizam i izrazili želju da se vraćate mesečno**. Ovo može dovesti do mnogih razgovora (automatske mesečne rezervacije, besplatna pića i/ili daske sa hranom, popusti, razgovori o Bitcoinu, prihvatanje Bitcoin uplata, itd.). Očigledno, ako specifično tražite mesto sa video projektorom za održavanje prezentacija, čini se neophodnim da zatražite sastanak (licem u lice, ili čak telefonom) sa vlasnikom i/ili menadžerom kako biste predstavili svoj projekat i ciljeve.
 
 
 
@@ -1633,7 +1633,7 @@ Kontaktirajte lokaciju na kojoj ćete održati događaj i rezervišite je za pro
 
 Dva do tri dana pre događaja, ponovo podelite i retvitujte vaše objave kako biste povećali vidljivost.
 
-4/ **Ažuriraj mesto**
+4/ **Ažurirajte mesto**
 
 Dan pre (ili dva dana ranije), proverite vaše registracije i obavestite mesto održavanja o konačnom očekivanom broju učesnika.
 
@@ -1641,7 +1641,7 @@ Dan pre (ili dva dana ranije), proverite vaše registracije i obavestite mesto o
 Dodatni koraci da vaš događaj bude poseban:
 
 
-- Štampaj flajere i/ili postere
+- Štampajte flajere i/ili postere
 - Pripremite prezentaciju na određenu temu
 - Organizujte aktivnost ili radionicu
 
@@ -1670,8 +1670,8 @@ Evo šta treba uraditi:
 
 
     - Postavite poster na ulazu kako biste označili svoju lokaciju (koristite Patafix i prvo dobijte dozvolu od mesta održavanja).
-    - Prikažite postere sa temom Bitcoin unutra (Bitcoin beli papir, povelja vaše zajednice, trenutni projekti, itd.).
-    - Postavite nalepnice, flajere ili pokretače razgovora na stolove, na primer: Nerdminer, Hardware Wallet, laptop koji prikazuje svoj Mempool, ASIC Miner, ili metalnu rezervnu ploču za privatne ključeve.
+    - Postavite postere sa Bitkoin temom unutar prostora (Bitcoin white paper, povelja vaše zajednice, trenutni projekti, itd.).
+    - Postavite nalepnice, flajere ili pokretače razgovora na stolove, na primer: Nerdminer, hardverski novčanik, laptop koji prikazuje mempool, ASIC Miner, ili metalnu rezervnu ploču za privatne ključeve.
 
 
 
@@ -1696,12 +1696,12 @@ Na kraju, uzmite piće i sačekajte da ljudi stignu. I zapamtite: nemojte biti o
 Kada se okupljanje završi, vreme je za čišćenje za osoblje lokala. Pre nego što odete, ponudite se da pomognete konobarima ili menadžerima. To može biti jednostavno kao skupljanje svih čaša na jedan sto ili, ako ste blizu šanka, vraćanje istih pre nego što odete.
 
 
-Jednom kada se vratite kući, verovatno ćete još danima razmišljati o Bitcoin. To je savršeno vreme da proverite puls vaše zajednice i prikupite povratne informacije od učesnika. Možete:
+Jednom kada se vratite kući, verovatno ćete još danima razmišljati o Bitcoinu. To je savršeno vreme da proverite puls vaše zajednice i prikupite povratne informacije od učesnika. Možete:
 
 
-- Objavite poruku zahvalnosti na vašim komunikacionim kanalima i podelite sve linkove ili resurse pomenute tokom događaja.
-- Pozovite učesnike da predlože poboljšanja za sledeći sastanak.
-- Počnite planirati vaš sledeći događaj.
+- Objaviti poruku zahvalnosti na vašim komunikacionim kanalima i podelite sve linkove ili resurse pomenute tokom događaja.
+- Pozvati učesnike da predlože poboljšanja za sledeći sastanak.
+- Početi planirati vaš sledeći događaj.
 
 
 Imaćete nekoliko nedelja da razvijete sveže ideje, vizuale ili projekte kako biste sledeći sastanak učinili još boljim.
@@ -1715,13 +1715,13 @@ Imaćete nekoliko nedelja da razvijete sveže ideje, vizuale ili projekte kako b
 
 
 
-Rim nije izgrađen za jedan dan, i vaša zajednica neće biti. Momentum oko Bitcoin dolazi od održavanja redovnih okupljanja i događaja.
+Rim nije izgrađen za jedan dan, i vaša zajednica neće biti. Momentum oko Bitcoina dolazi od održavanja redovnih okupljanja i događaja.
 
 
 Da bi se to ostvarilo, jedna stvar je ključna: **održavajte učesnike angažovanim**.
 
 
-Može početi sa malom grupom strastvenih bitkoinera, čiji je cilj da se redovno okupljaju i razgovaraju o Bitcoin. Vremenom, u zavisnosti od dostupnosti i interesovanja svakog pojedinca, možete **podeliti određene organizacione zadatke sa grupom**, ili pozvati ključne **članove da preuzmu specifične projekte**. Ovi projekti mogu biti jedinstveni za vašu zajednicu, vaše sastanke ili vaš grad, ili čak inspirisani mnogim inicijativama predloženim u [delu 6/8 ovog kursa](https://planb.academy/courses/1c643dc9-a15f-4f9e-93b6-cb3c58b4ee35/3213d87a-1998-5972-ab93-97a5769ba279). **Ovo ne samo da podstiče Commitment od vaših ključnih članova, već i pomaže vašoj zajednici da raste i napreduje.**.
+Možete početi sa malom grupom strastvenih bitkoinera, čiji je cilj da se redovno okupljaju i razgovaraju o Bitcoinu. Vremenom, u zavisnosti od dostupnosti i interesovanja svakog pojedinca, možete **podeliti određene organizacione zadatke sa grupom**, ili pozvati ključne **članove da preuzmu specifične projekte**. Ovi projekti mogu biti jedinstveni za vašu zajednicu, vaše sastanke ili vaš grad, ili čak inspirisani mnogim inicijativama predloženim u [delu 6/8 ovog kursa](https://planb.academy/courses/1c643dc9-a15f-4f9e-93b6-cb3c58b4ee35/3213d87a-1998-5972-ab93-97a5769ba279). **Ovo ne samo da podstiče posvećenost od vaših ključnih članova, već i pomaže vašoj zajednici da raste i napreduje.**
 
 
 Kako se vaši sastanci budu razvijali, pojaviće se nova lica: ljudi koji su kupili BTC i/ili altcoine u prethodnim ciklusima, tehno entuzijasti koji žele da prodube svoje razumevanje, ili potpuni početnici radoznali o ovom necenzurisanom, decentralizovanom, transparentnom i fer platnom sistemu koji funkcioniše bez uslova i bez pouzdanih trećih strana.
@@ -1731,7 +1731,7 @@ Da biste bili sigurni da se svi osećaju uključeno na vašim događajima, fokus
 
 
 - **Socijalna inkluzija**: Svi koji prisustvuju treba da se osećaju dobrodošlo. Potrudite se da pozdravite novopridošle, pitajte ih zašto su došli i upoznajte ih sa drugima. Kada se ljudi osećaju uključeno, verovatnije je da će se vratiti i možda čak pomoći u organizaciji budućih događaja.
-- **Strpljenje i otvorenost**: Ovo zahteva vreme i motivaciju. Ako razgovarate sa posvećenim shitcoiner-om (ili još gore, XRP Maximalist), može biti primamljivo da ih odbacite. Ali, uključivanjem u razgovor, možete razjasniti nesporazume ili pogrešno rezonovanje. Ako su spremni da slušaju, možda su spremni da zaista razumeju Bitcoin.
+- **Strpljenje i otvorenost**: Ovo zahteva vreme i motivaciju. Ako razgovarate sa posvećenim shitcoiner-om (ili još gore, XRP maximalistom), može biti primamljivo da ih odbacite. Ali, uključivanjem u razgovor, možete razjasniti nesporazume ili pogrešno rezonovanje. Ako su spremni da slušaju, možda su spremni da zaista razumeju Bitcoin.
 
 
 
@@ -1746,7 +1746,7 @@ Sa praktične tačke gledišta, razmislite o celokupnom iskustvu događaja:
 - Da li je bilo **lako pristupiti?**
 - Zašto su se neki ljudi prijavili, ali se nisu pojavili?
 - Koji su razgovori vođeni? Da li su razgovori bili previše tehnički za početnike?
-- Da li su diskusije bile previše alkoholne?
+- Da li je tokom diskusija konzumirano previše alkohola?
 
 
 Svaki učesnik ima svoju ličnost, ciljeve i interese, tako da će iskustva varirati. Ali kada je mesto odgovarajuće, publika otvorenog uma, a namere iskrene, postoji svaki razlog da susret bude uspešan.
@@ -1755,7 +1755,7 @@ Svaki učesnik ima svoju ličnost, ciljeve i interese, tako da će iskustva vari
 Izgradnja okupljanja zahteva vreme, ali pre svega, zahteva organizaciju. To je ljudski projekat, i funkcionisaće i rasti na duže staze samo ako je dobro planiran, otvoren i inkluzivan.
 
 
-U konačnici, na vama je da odlučite koliko daleko "otvorenost i inkluzivnost" treba da idu. Samo zapamtite: shitcoiner je često samo bitcoiner u nastajanju.
+Na kraju, na vama je da odlučite koliko daleko "otvorenost i inkluzivnost" treba da idu. Samo zapamtite: shitcoiner je često samo bitcoiner u nastajanju.
 
 
 # Primeri projekata i inicijativa
