@@ -2,7 +2,7 @@ question: Koja je svrha revNNNNN.dat datoteka koje su čuvaju zajedno sa blkNNNN
 answer: Obnavljanje UTXO seta nakon reorganizacije
 wrong_answers:
   - Obnavljanje UTXO seta nakon hard forka
-  - Obnvaljanje mempool-a nakon hard forka
+  - Obnavljanje mempool-a nakon hard forka
   - Obnavljanje mempool-a nakon reorganizacije
 explanation: |
   Svaki revNNNNN.dat sadrži podatke potrebne za poništavanje efekata bloka na UTXO set, što olakšava upravljanje reorganizacijama.

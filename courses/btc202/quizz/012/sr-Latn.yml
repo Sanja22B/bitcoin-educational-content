@@ -1,9 +1,9 @@
 question: Koji deo posla pripada rudaru?
 answer: Sastavljanje kandidatskog bloka iz Mempool-a
 wrong_answers:
-  - Potvrđivanje ceolog Blockchain-a iz Mempool-a
+  - Potvrđivanje celog Blockchain-a iz Mempool-a
   - Kreiranje Bitcoin adrese za korisnike
-  - Čuvanje privatnih ključeveva za novčanike
+  - Čuvanje privatnih ključeva za novčanike
 explanation: |
   Rudar bira transakcije iz Mempool-a i gradi kandidatski blok, koji pokušava da validira pomoću Proof of Work-a.
 reviewed: true

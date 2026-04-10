@@ -1,4 +1,4 @@
-question: U kom programskom jeziku je naisan Bitcoin Core?
+question: U kom programskom jeziku je napisan Bitcoin Core?
 answer: C++
 wrong_answers:
   - Go
